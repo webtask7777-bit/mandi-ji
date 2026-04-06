@@ -1,11 +1,12 @@
 import { Router } from 'express';
-import { loadData } from '../db/connection.js';
+import { loadData, loadStateData } from '../db/connection.js';
 
 const router = Router();
 
 router.get('/', (req, res) => {
-  const districts = loadData('districts');
-  res.json(districts);
+  const { state } = req.query;
+  if (state && state !== 'chhattisgarh') return res.json(loadStateData(state, 'districts') || []);
+  res.json(loadData('districts'));
 });
 
 router.get('/:id', (req, res) => {

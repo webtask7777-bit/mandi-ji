@@ -6,7 +6,11 @@
     "seed": "node db/seed.js"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
     "express": "^5.1.0",
-    "cors": "^2.8.5"
+    "jsonwebtoken": "^9.0.3",
+    "razorpay": "^2.9.6",
+    "uuid": "^13.0.0"
   }
 }

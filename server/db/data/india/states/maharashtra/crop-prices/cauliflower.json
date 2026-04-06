@@ -1,0 +1,835 @@
+{
+  "crop": {
+    "id": "cauliflower",
+    "name": "Cauliflower",
+    "nameHi": "फूलगोभी",
+    "emoji": "🥦"
+  },
+  "history": [
+    {
+      "month": "12",
+      "date": "2025-12",
+      "market": 1544,
+      "volume": 393
+    },
+    {
+      "month": "01",
+      "date": "2026-01",
+      "market": 1465,
+      "volume": 709
+    },
+    {
+      "month": "02",
+      "date": "2026-02",
+      "market": 1431,
+      "volume": 702
+    },
+    {
+      "month": "03",
+      "date": "2026-03",
+      "market": 1337,
+      "volume": 307
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 1084,
+      "volume": 11
+    }
+  ],
+  "dailyHistory": [
+    {
+      "date": "2025-12-12",
+      "market": 2202,
+      "volume": 24,
+      "minPrice": 300,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2025-12-13",
+      "market": 2080,
+      "volume": 25,
+      "minPrice": 300,
+      "maxPrice": 4570
+    },
+    {
+      "date": "2025-12-14",
+      "market": 2148,
+      "volume": 20,
+      "minPrice": 720,
+      "maxPrice": 4010
+    },
+    {
+      "date": "2025-12-15",
+      "market": 2056,
+      "volume": 22,
+      "minPrice": 500,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2025-12-16",
+      "market": 1901,
+      "volume": 26,
+      "minPrice": 500,
+      "maxPrice": 3600
+    },
+    {
+      "date": "2025-12-17",
+      "market": 1927,
+      "volume": 29,
+      "minPrice": 200,
+      "maxPrice": 4500
+    },
+    {
+      "date": "2025-12-18",
+      "market": 1787,
+      "volume": 28,
+      "minPrice": 500,
+      "maxPrice": 4500
+    },
+    {
+      "date": "2025-12-19",
+      "market": 1540,
+      "volume": 15,
+      "minPrice": 600,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2025-12-20",
+      "market": 1593,
+      "volume": 17,
+      "minPrice": 500,
+      "maxPrice": 3020
+    },
+    {
+      "date": "2025-12-21",
+      "market": 1365,
+      "volume": 13,
+      "minPrice": 500,
+      "maxPrice": 3010
+    },
+    {
+      "date": "2025-12-22",
+      "market": 1276,
+      "volume": 22,
+      "minPrice": 400,
+      "maxPrice": 3020
+    },
+    {
+      "date": "2025-12-23",
+      "market": 1222,
+      "volume": 19,
+      "minPrice": 400,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2025-12-24",
+      "market": 1258,
+      "volume": 17,
+      "minPrice": 300,
+      "maxPrice": 2540
+    },
+    {
+      "date": "2025-12-25",
+      "market": 980,
+      "volume": 14,
+      "minPrice": 300,
+      "maxPrice": 2020
+    },
+    {
+      "date": "2025-12-26",
+      "market": 955,
+      "volume": 13,
+      "minPrice": 100,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2025-12-27",
+      "market": 1056,
+      "volume": 15,
+      "minPrice": 200,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2025-12-28",
+      "market": 934,
+      "volume": 13,
+      "minPrice": 300,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2025-12-29",
+      "market": 1093,
+      "volume": 18,
+      "minPrice": 240,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2025-12-30",
+      "market": 962,
+      "volume": 20,
+      "minPrice": 200,
+      "maxPrice": 2600
+    },
+    {
+      "date": "2025-12-31",
+      "market": 1084,
+      "volume": 23,
+      "minPrice": 360,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-01-01",
+      "market": 1109,
+      "volume": 22,
+      "minPrice": 285,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-01-02",
+      "market": 1222,
+      "volume": 18,
+      "minPrice": 200,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-01-03",
+      "market": 1162,
+      "volume": 20,
+      "minPrice": 400,
+      "maxPrice": 2700
+    },
+    {
+      "date": "2026-01-04",
+      "market": 1317,
+      "volume": 19,
+      "minPrice": 245,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-01-05",
+      "market": 1296,
+      "volume": 21,
+      "minPrice": 200,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-01-06",
+      "market": 1210,
+      "volume": 27,
+      "minPrice": 205,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-01-07",
+      "market": 1361,
+      "volume": 29,
+      "minPrice": 200,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-01-08",
+      "market": 1421,
+      "volume": 26,
+      "minPrice": 200,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-01-09",
+      "market": 1488,
+      "volume": 23,
+      "minPrice": 400,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-01-10",
+      "market": 1466,
+      "volume": 22,
+      "minPrice": 300,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-01-11",
+      "market": 1542,
+      "volume": 20,
+      "minPrice": 500,
+      "maxPrice": 3020
+    },
+    {
+      "date": "2026-01-12",
+      "market": 1619,
+      "volume": 26,
+      "minPrice": 400,
+      "maxPrice": 3200
+    },
+    {
+      "date": "2026-01-13",
+      "market": 1723,
+      "volume": 27,
+      "minPrice": 375,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-01-14",
+      "market": 1616,
+      "volume": 26,
+      "minPrice": 300,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-01-15",
+      "market": 2029,
+      "volume": 21,
+      "minPrice": 250,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-01-16",
+      "market": 1592,
+      "volume": 24,
+      "minPrice": 300,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-01-17",
+      "market": 1438,
+      "volume": 23,
+      "minPrice": 300,
+      "maxPrice": 3020
+    },
+    {
+      "date": "2026-01-18",
+      "market": 1490,
+      "volume": 21,
+      "minPrice": 500,
+      "maxPrice": 3020
+    },
+    {
+      "date": "2026-01-19",
+      "market": 1575,
+      "volume": 18,
+      "minPrice": 300,
+      "maxPrice": 3020
+    },
+    {
+      "date": "2026-01-20",
+      "market": 1373,
+      "volume": 18,
+      "minPrice": 480,
+      "maxPrice": 3070
+    },
+    {
+      "date": "2026-01-21",
+      "market": 1490,
+      "volume": 32,
+      "minPrice": 300,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-01-22",
+      "market": 1566,
+      "volume": 30,
+      "minPrice": 300,
+      "maxPrice": 3020
+    },
+    {
+      "date": "2026-01-23",
+      "market": 1489,
+      "volume": 25,
+      "minPrice": 300,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-01-24",
+      "market": 1460,
+      "volume": 24,
+      "minPrice": 300,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-01-25",
+      "market": 1538,
+      "volume": 14,
+      "minPrice": 500,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-01-26",
+      "market": 1631,
+      "volume": 13,
+      "minPrice": 300,
+      "maxPrice": 3020
+    },
+    {
+      "date": "2026-01-27",
+      "market": 1505,
+      "volume": 28,
+      "minPrice": 250,
+      "maxPrice": 12700
+    },
+    {
+      "date": "2026-01-28",
+      "market": 1392,
+      "volume": 27,
+      "minPrice": 250,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-01-29",
+      "market": 1522,
+      "volume": 15,
+      "minPrice": 480,
+      "maxPrice": 3020
+    },
+    {
+      "date": "2026-01-30",
+      "market": 1366,
+      "volume": 27,
+      "minPrice": 200,
+      "maxPrice": 2600
+    },
+    {
+      "date": "2026-01-31",
+      "market": 1413,
+      "volume": 23,
+      "minPrice": 200,
+      "maxPrice": 4500
+    },
+    {
+      "date": "2026-02-01",
+      "market": 1231,
+      "volume": 21,
+      "minPrice": 200,
+      "maxPrice": 4060
+    },
+    {
+      "date": "2026-02-02",
+      "market": 1275,
+      "volume": 26,
+      "minPrice": 100,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-02-03",
+      "market": 1314,
+      "volume": 27,
+      "minPrice": 357,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-02-04",
+      "market": 1183,
+      "volume": 27,
+      "minPrice": 400,
+      "maxPrice": 2200
+    },
+    {
+      "date": "2026-02-05",
+      "market": 1403,
+      "volume": 28,
+      "minPrice": 200,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-02-06",
+      "market": 1418,
+      "volume": 23,
+      "minPrice": 200,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-02-07",
+      "market": 1337,
+      "volume": 16,
+      "minPrice": 400,
+      "maxPrice": 2607
+    },
+    {
+      "date": "2026-02-08",
+      "market": 1416,
+      "volume": 26,
+      "minPrice": 300,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-02-09",
+      "market": 1442,
+      "volume": 28,
+      "minPrice": 300,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-02-10",
+      "market": 1570,
+      "volume": 25,
+      "minPrice": 500,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-02-11",
+      "market": 1456,
+      "volume": 29,
+      "minPrice": 500,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-02-12",
+      "market": 1573,
+      "volume": 30,
+      "minPrice": 300,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-02-13",
+      "market": 1517,
+      "volume": 26,
+      "minPrice": 300,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-02-14",
+      "market": 1423,
+      "volume": 20,
+      "minPrice": 400,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-02-15",
+      "market": 1636,
+      "volume": 19,
+      "minPrice": 500,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-02-16",
+      "market": 1713,
+      "volume": 27,
+      "minPrice": 300,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-02-17",
+      "market": 1632,
+      "volume": 31,
+      "minPrice": 500,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-02-18",
+      "market": 1539,
+      "volume": 25,
+      "minPrice": 300,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-02-19",
+      "market": 1686,
+      "volume": 23,
+      "minPrice": 200,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-02-20",
+      "market": 1507,
+      "volume": 26,
+      "minPrice": 200,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-02-21",
+      "market": 1487,
+      "volume": 25,
+      "minPrice": 333,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-02-22",
+      "market": 1500,
+      "volume": 25,
+      "minPrice": 300,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-02-23",
+      "market": 1394,
+      "volume": 26,
+      "minPrice": 200,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-02-24",
+      "market": 1409,
+      "volume": 27,
+      "minPrice": 360,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-02-25",
+      "market": 1232,
+      "volume": 25,
+      "minPrice": 200,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-02-26",
+      "market": 1262,
+      "volume": 26,
+      "minPrice": 200,
+      "maxPrice": 3250
+    },
+    {
+      "date": "2026-02-27",
+      "market": 1217,
+      "volume": 23,
+      "minPrice": 200,
+      "maxPrice": 3250
+    },
+    {
+      "date": "2026-02-28",
+      "market": 1188,
+      "volume": 22,
+      "minPrice": 420,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-03-01",
+      "market": 1326,
+      "volume": 22,
+      "minPrice": 200,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-03-02",
+      "market": 1412,
+      "volume": 17,
+      "minPrice": 400,
+      "maxPrice": 2700
+    },
+    {
+      "date": "2026-03-03",
+      "market": 1673,
+      "volume": 15,
+      "minPrice": 500,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-03-04",
+      "market": 1490,
+      "volume": 28,
+      "minPrice": 400,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-03-05",
+      "market": 1358,
+      "volume": 28,
+      "minPrice": 200,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-03-06",
+      "market": 1363,
+      "volume": 27,
+      "minPrice": 200,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-03-07",
+      "market": 1312,
+      "volume": 20,
+      "minPrice": 200,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-03-08",
+      "market": 1243,
+      "volume": 24,
+      "minPrice": 200,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-03-09",
+      "market": 1318,
+      "volume": 25,
+      "minPrice": 300,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-03-10",
+      "market": 1421,
+      "volume": 25,
+      "minPrice": 360,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-03-11",
+      "market": 1350,
+      "volume": 26,
+      "minPrice": 400,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-03-12",
+      "market": 1119,
+      "volume": 20,
+      "minPrice": 285,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-03-22",
+      "market": 875,
+      "volume": 4,
+      "minPrice": 200,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-03-26",
+      "market": 1183,
+      "volume": 6,
+      "minPrice": 500,
+      "maxPrice": 1600
+    },
+    {
+      "date": "2026-03-27",
+      "market": 1195,
+      "volume": 5,
+      "minPrice": 245,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-03-28",
+      "market": 1162,
+      "volume": 6,
+      "minPrice": 500,
+      "maxPrice": 1800
+    },
+    {
+      "date": "2026-03-29",
+      "market": 1183,
+      "volume": 6,
+      "minPrice": 400,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-03-30",
+      "market": 1030,
+      "volume": 3,
+      "minPrice": 500,
+      "maxPrice": 1800
+    },
+    {
+      "date": "2026-04-01",
+      "market": 1244,
+      "volume": 6,
+      "minPrice": 235,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-04-02",
+      "market": 1150,
+      "volume": 1,
+      "minPrice": 1000,
+      "maxPrice": 1300
+    },
+    {
+      "date": "2026-04-04",
+      "market": 828,
+      "volume": 4,
+      "minPrice": 250,
+      "maxPrice": 10000
+    }
+  ],
+  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "districtBreakdown": [
+    {
+      "district": "Pune",
+      "nameHi": "Pune",
+      "avgPrice": 1233,
+      "records": 627
+    },
+    {
+      "district": "Nagpur",
+      "nameHi": "Nagpur",
+      "avgPrice": 1410,
+      "records": 259
+    },
+    {
+      "district": "Ahmednagar",
+      "nameHi": "Ahmednagar",
+      "avgPrice": 1203,
+      "records": 208
+    },
+    {
+      "district": "Satara",
+      "nameHi": "Satara",
+      "avgPrice": 2079,
+      "records": 168
+    },
+    {
+      "district": "Sholapur",
+      "nameHi": "Sholapur",
+      "avgPrice": 1215,
+      "records": 127
+    },
+    {
+      "district": "Jalgaon",
+      "nameHi": "Jalgaon",
+      "avgPrice": 1659,
+      "records": 123
+    },
+    {
+      "district": "Kolhapur",
+      "nameHi": "Kolhapur",
+      "avgPrice": 1135,
+      "records": 108
+    },
+    {
+      "district": "Nashik",
+      "nameHi": "Nashik",
+      "avgPrice": 1442,
+      "records": 88
+    },
+    {
+      "district": "Amarawati",
+      "nameHi": "Amarawati",
+      "avgPrice": 1810,
+      "records": 66
+    },
+    {
+      "district": "Mumbai",
+      "nameHi": "Mumbai",
+      "avgPrice": 1307,
+      "records": 64
+    },
+    {
+      "district": "Chattrapati Sambhajinagar",
+      "nameHi": "Chattrapati Sambhajinagar",
+      "avgPrice": 1386,
+      "records": 61
+    },
+    {
+      "district": "Thane",
+      "nameHi": "Thane",
+      "avgPrice": 1880,
+      "records": 52
+    },
+    {
+      "district": "Ratnagiri",
+      "nameHi": "Ratnagiri",
+      "avgPrice": 2686,
+      "records": 51
+    },
+    {
+      "district": "Chandrapur",
+      "nameHi": "Chandrapur",
+      "avgPrice": 1010,
+      "records": 49
+    },
+    {
+      "district": "Dharashiv(Usmanabad)",
+      "nameHi": "Dharashiv(Usmanabad)",
+      "avgPrice": 2130,
+      "records": 46
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "id": "4248629a-8cc9-4467-9b82-ab9bc9c63e32",
+    "billNumber": "MJ-2026-53752",
+    "userId": "e9e9c1ce-3f05-42a5-90e9-542fb7275592",
+    "userName": "विवेक किसान",
+    "supplyType": "inward",
+    "docNumber": "qwert",
+    "docDate": "2026-03-12",
+    "from": {
+      "name": "WASEDRFTGHJ",
+      "gstin": "WEARTYFH",
+      "address": "EARSTYGHJ",
+      "state": "SADFG",
+      "pincode": "ASDFG"
+    },
+    "to": {
+      "name": "FGHYJHKU",
+      "gstin": "EWQRT",
+      "address": "WEARSF",
+      "state": "SAWDEF",
+      "pincode": "ASDF"
+    },
+    "items": [
+      {
+        "cropName": "CHANA",
+        "hsnCode": "SDS",
+        "quantity": 50,
+        "unit": "QTL",
+        "value": 60000
+      }
+    ],
+    "transport": {
+      "mode": "road",
+      "vehicleNumber": "KUHSDKA",
+      "distance": 120
+    },
+    "totalValue": 60000,
+    "status": "generated",
+    "validFrom": "2026-03-12T17:15:39.694Z",
+    "validUntil": "2026-03-15T17:15:39.694Z",
+    "validityDays": 3,
+    "createdAt": "2026-03-12T17:15:39.694Z"
+  }
+]

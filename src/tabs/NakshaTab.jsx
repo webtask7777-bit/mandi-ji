@@ -1,60 +1,80 @@
-import { REGION_COLORS } from "../data/constants";
-import CGMap from "../components/CGMap";
-import AnimatedCard from "../components/AnimatedCard";
+import { useState } from 'react';
+import { Card } from '@/components/ui/card';
+import { useStateContext } from '../context/StateContext';
+import LeafletMap from '../components/LeafletMap/LeafletMap';
+import CropFilter from '../components/LeafletMap/CropFilter';
+import StateExplorer from '../components/StateExplorer';
 
-export default function NakshaTab({ selectedMonth, districts, mandis }) {
+export default function NakshaTab({ selectedMonth, districts, mandis, states, isCG, crops = [] }) {
+  const { selectedState, stateNameHi } = useStateContext();
+  const [selectedCrop, setSelectedCrop] = useState(null);
+
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-      <div style={{ fontSize: 11, color: "#66BB6A", letterSpacing: 1, marginBottom: 4 }}>
-        CHHATTISGARH KA NAKSHA
+    <div className="flex flex-col gap-3">
+      {/* Header */}
+      <div className="text-[10px] text-muted-foreground tracking-wider font-semibold">
+        {selectedState ? `${stateNameHi} का नक्शा` : 'भारत का नक्शा'}
       </div>
 
-      {/* Region legend */}
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        {Object.entries(REGION_COLORS).map(([region, color]) => (
-          <span key={region} style={{
-            fontSize: 10, padding: "3px 10px",
-            background: `${color}22`, border: `1px solid ${color}44`,
-            borderRadius: 20, color,
-          }}>
-            <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: color, marginRight: 4, verticalAlign: "middle" }}/>
-            {region}
-          </span>
-        ))}
-      </div>
+      {/* Crop Filter */}
+      {crops.length > 0 && (
+        <CropFilter
+          crops={crops}
+          selectedCrop={selectedCrop}
+          onCropSelect={setSelectedCrop}
+        />
+      )}
 
-      {/* Map */}
-      <div style={{
-        background: "rgba(255,255,255,0.03)",
-        border: "1px solid rgba(255,255,255,0.07)",
-        borderRadius: 16, overflow: "hidden", position: "relative",
-      }}>
-        <CGMap selectedMonth={selectedMonth} mandis={mandis}/>
-      </div>
+      {/* Interactive Map */}
+      <Card className="bg-zinc-900 border-zinc-800 overflow-hidden p-0">
+        <LeafletMap
+          stateData={states}
+          districts={districts}
+          mandis={mandis}
+          selectedCrop={selectedCrop}
+        />
+      </Card>
 
-      {/* District count by region */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8 }}>
-        {[
-          { label: "Plains", count: districts?.filter(d => d.region === "Plains").length || 20, color: "#4CAF50" },
-          { label: "Bastar", count: districts?.filter(d => d.region === "Bastar").length || 7, color: "#8D6E63" },
-          { label: "Hills", count: districts?.filter(d => d.region === "Northern Hills").length || 6, color: "#26A69A" },
-        ].map((r, idx) => (
-          <AnimatedCard key={r.label} delay={idx * 0.06}
-            style={{ background: `${r.color}0d`, border: `1px solid ${r.color}33`, borderRadius: 12, padding: 12, textAlign: "center" }}>
-            <div style={{ fontSize: 22, fontWeight: 800, color: r.color }}>{r.count}</div>
-            <div style={{ fontSize: 10, color: "#78909C" }}>{r.label}</div>
-          </AnimatedCard>
-        ))}
-      </div>
+      {/* Hint text */}
+      {!selectedState && (
+        <Card className="bg-zinc-900 border-zinc-800 p-3 text-center text-[11px] text-muted-foreground">
+          किसी भी राज्य पर टैप करें डेटा देखने के लिए
+        </Card>
+      )}
 
-      {/* Instruction */}
-      <div style={{
-        background: "rgba(255,255,255,0.03)", borderRadius: 12, padding: 12,
-        fontSize: 11, color: "#546E7A", textAlign: "center",
-        border: "1px solid rgba(255,255,255,0.06)",
-      }}>
-        👆 Kisi bhi district par tap karein mandis dekhne ke liye
-      </div>
+      {/* State summary + explorer (when state selected) */}
+      {selectedState && districts?.length > 0 && (
+        <>
+          <div className="grid grid-cols-3 gap-2">
+            <Card className="bg-zinc-900 border-zinc-800 p-2.5 text-center">
+              <div className="text-base font-extrabold text-green-500">{districts.length}</div>
+              <div className="text-[8px] text-muted-foreground tracking-wide">ज़िले</div>
+            </Card>
+            <Card className="bg-zinc-900 border-zinc-800 p-2.5 text-center">
+              <div className="text-base font-extrabold text-amber-500">{mandis?.length || 0}</div>
+              <div className="text-[8px] text-muted-foreground tracking-wide">मंडी</div>
+            </Card>
+            <Card className="bg-zinc-900 border-zinc-800 p-2.5 text-center">
+              <div className="text-base font-extrabold text-green-500">
+                {districts.reduce((sum, d) => sum + (d.totalRecords || 0), 0)}
+              </div>
+              <div className="text-[8px] text-muted-foreground tracking-wide">रिकॉर्ड</div>
+            </Card>
+          </div>
+          <StateExplorer districts={districts} mandis={mandis} />
+        </>
+      )}
+
+      {selectedState && (!districts || districts.length === 0) && (
+        <Card className="bg-zinc-900 border-zinc-800 p-6 text-center">
+          <div className="text-amber-500 text-2xl mb-2">⏳</div>
+          <div className="text-sm font-bold text-foreground mb-1">डेटा अपडेट हो रहा है</div>
+          <div className="text-[11px] text-muted-foreground leading-relaxed">
+            {stateNameHi} का मंडी डेटा जल्द ही उपलब्ध होगा।<br/>
+            कृपया बाद में चेक करें।
+          </div>
+        </Card>
+      )}
     </div>
   );
 }

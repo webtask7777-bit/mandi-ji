@@ -1,11 +1,26 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { MONTHS, PHASE_COLORS, FALLBACK_SEASONS } from "../data/constants";
 import { getMonthPhase } from "../utils/helpers";
 import WeatherWidget from "../components/WeatherWidget";
-import AnimatedCard from "../components/AnimatedCard";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
-export default function CalendarTab({ selectedMonth, crops, seasons }) {
+const SOLID_PHASE = {
+  "Buvai": "#78350f",
+  "Ugna": "#14532d",
+  "Katai": "#9a3412",
+  "Peak Arrival": "#713f12",
+};
+
+const PHASE_HI = {
+  "Buvai": "बुवाई",
+  "Ugna": "उगना",
+  "Katai": "कटाई",
+  "Peak Arrival": "आवक",
+};
+
+export default function CalendarTab({ selectedMonth, crops, seasons, isCG }) {
   const [selectedCrop, setSelectedCrop] = useState(null);
   const displaySeasons = seasons || FALLBACK_SEASONS;
 
@@ -19,54 +34,43 @@ export default function CalendarTab({ selectedMonth, crops, seasons }) {
   });
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-      {/* Weather Widget */}
-      <WeatherWidget districtId={1} />
+    <div className="flex flex-col gap-4">
+      {isCG && <WeatherWidget districtId={1} />}
 
       {/* Active Crops */}
       <div>
-        <div style={{ fontSize: 11, color: "#66BB6A", letterSpacing: 1, marginBottom: 8 }}>
-          {MONTHS[selectedMonth].toUpperCase()} MEIN ACTIVE FASAL
+        <div className="text-[10px] text-muted-foreground tracking-wider font-semibold mb-2">
+          इस महीने सक्रिय फसलें
         </div>
         {activeCrops.length === 0 ? (
-          <div style={{ textAlign: "center", padding: 24, color: "#546E7A", fontSize: 13 }}>
-            Is mahine koi major activity nahi
-          </div>
+          <Card className="p-6 bg-zinc-900 border-zinc-800 text-center text-muted-foreground text-sm">
+            इस महीने कोई मुख्य गतिविधि नहीं
+          </Card>
         ) : (
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {activeCrops.map((crop, idx) => {
+          <div className="flex flex-col gap-2">
+            {activeCrops.map((crop) => {
               const phase = getMonthPhase(crop, selectedMonth);
               const isExpanded = selectedCrop === crop.id;
               return (
-                <AnimatedCard key={crop.id} delay={idx * 0.05}
+                <Card key={crop.id}
                   onClick={() => setSelectedCrop(isExpanded ? null : crop.id)}
-                  style={{
-                    background: isExpanded ? `linear-gradient(135deg, ${crop.bg}, rgba(0,0,0,0.2))` : "rgba(255,255,255,0.04)",
-                    border: `1px solid ${isExpanded ? crop.color + "66" : "rgba(255,255,255,0.07)"}`,
-                    borderRadius: 16, padding: 14, cursor: "pointer",
-                    boxShadow: isExpanded ? `0 4px 24px ${crop.color}22` : "none",
-                  }}>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <span style={{ fontSize: 28 }}>{crop.emoji}</span>
-                      <div>
-                        <div style={{ fontWeight: 700, fontSize: 14 }}>
-                          {crop.nameHi ? `${crop.nameHi} (${crop.name})` : crop.name}
-                        </div>
-                        <div style={{ fontSize: 11, color: "#78909C" }}>📍 {crop.region}</div>
+                  className={`cursor-pointer transition-all active:scale-[0.98] overflow-hidden ${
+                    isExpanded ? "bg-zinc-800 border-green-500" : "bg-zinc-900 border-zinc-800 hover:border-zinc-700"
+                  }`}>
+                  <div className="p-3 flex items-center gap-3">
+                    <span className="text-xl shrink-0">{crop.emoji}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-bold text-sm text-foreground truncate">
+                        {crop.nameHi || crop.name}
                       </div>
+                      <div className="text-[10px] text-muted-foreground">{crop.region}</div>
                     </div>
-                    <div style={{ textAlign: "right" }}>
-                      {phase && (
-                        <span style={{
-                          fontSize: 10, fontWeight: 700, color: phase.color,
-                          background: `${phase.color}22`, padding: "3px 8px",
-                          borderRadius: 20, border: `1px solid ${phase.color}44`,
-                        }}>
-                          {phase.icon} {phase.label}
-                        </span>
-                      )}
-                    </div>
+                    {phase && (
+                      <Badge className="text-[9px] px-1.5 py-0.5"
+                        style={{ backgroundColor: PHASE_COLORS[phase.label], color: "#fff" }}>
+                        {PHASE_HI[phase.label] || phase.label}
+                      </Badge>
+                    )}
                   </div>
                   <AnimatePresence>
                     {isExpanded && (
@@ -75,44 +79,35 @@ export default function CalendarTab({ selectedMonth, crops, seasons }) {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25 }}
-                        style={{ overflow: "hidden", marginTop: 14 }}
-                      >
-                        <p style={{ fontSize: 12, color: "#90A4AE", marginBottom: 12, lineHeight: 1.5 }}>
-                          {crop.desc}
-                        </p>
-                        <div style={{ marginBottom: 12 }}>
-                          <div style={{ fontSize: 10, color: "#546E7A", marginBottom: 6 }}>SEASONAL TIMELINE</div>
-                          <div style={{ display: "grid", gridTemplateColumns: "repeat(12, 1fr)", gap: 2 }}>
-                            {MONTHS.map((mn, i) => {
-                              const p = getMonthPhase(crop, i);
-                              return (
-                                <div key={i}>
-                                  <div style={{
-                                    height: 20, borderRadius: 4,
-                                    background: p ? PHASE_COLORS[p.label] : "rgba(255,255,255,0.05)",
-                                    outline: i === selectedMonth ? "2px solid white" : "none",
-                                  }}/>
-                                  <div style={{ fontSize: 8, color: "#546E7A", marginTop: 2, textAlign: "center" }}>{mn.slice(0,1)}</div>
-                                </div>
-                              );
-                            })}
+                        className="overflow-hidden">
+                        <div className="px-3 pb-3 border-t border-zinc-700">
+                          <p className="text-xs text-muted-foreground mt-3 mb-3 leading-relaxed">
+                            {crop.desc}
+                          </p>
+                          <div>
+                            <div className="text-[9px] text-muted-foreground mb-1.5 tracking-wider">वार्षिक टाइमलाइन</div>
+                            <div className="grid grid-cols-12 gap-0.5">
+                              {MONTHS.map((mn, i) => {
+                                const p = getMonthPhase(crop, i);
+                                return (
+                                  <div key={i}>
+                                    <div className="h-5 rounded-sm"
+                                      style={{
+                                        background: p ? SOLID_PHASE[p.label] || PHASE_COLORS[p.label] : "#27272a",
+                                        outline: i === selectedMonth ? "2px solid #22c55e" : "none",
+                                        outlineOffset: "-1px",
+                                      }}/>
+                                    <div className="text-[7px] text-muted-foreground mt-0.5 text-center">{mn.slice(0,1)}</div>
+                                  </div>
+                                );
+                              })}
+                            </div>
                           </div>
                         </div>
-                        {crop.mandis && (
-                          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                            {(Array.isArray(crop.mandis) ? crop.mandis : []).map(m => (
-                              <span key={m} style={{
-                                fontSize: 11, padding: "4px 10px",
-                                background: `${crop.color}22`, border: `1px solid ${crop.color}44`,
-                                borderRadius: 20, color: crop.color,
-                              }}>🏪 {m}</span>
-                            ))}
-                          </div>
-                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </AnimatedCard>
+                </Card>
               );
             })}
           </div>
@@ -121,58 +116,68 @@ export default function CalendarTab({ selectedMonth, crops, seasons }) {
 
       {/* Annual Calendar Grid */}
       <div>
-        <div style={{ fontSize: 11, color: "#66BB6A", letterSpacing: 1, marginBottom: 12 }}>
-          SABHI FASAL KA VARSHIK CALENDAR
+        <div className="text-[10px] text-muted-foreground tracking-wider font-semibold mb-2">
+          सभी फसलों का वार्षिक कैलेंडर
         </div>
-        <div style={{ background: "rgba(255,255,255,0.03)", borderRadius: 16, border: "1px solid rgba(255,255,255,0.07)", overflow: "hidden" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "80px repeat(12, 1fr)", gap: 2, padding: "10px 10px 4px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
+          <div className="grid gap-0.5 px-3 py-2 border-b border-zinc-800"
+            style={{ gridTemplateColumns: "60px repeat(12, 1fr)" }}>
             <div/>
             {MONTHS.map((m, i) => (
-              <div key={i} style={{ fontSize: 8, textAlign: "center", color: i === selectedMonth ? "#4CAF50" : "#546E7A", fontWeight: i === selectedMonth ? 700 : 400 }}>
+              <div key={i} className={`text-[7px] text-center ${i === selectedMonth ? "text-green-500 font-bold" : "text-muted-foreground"}`}>
                 {m.slice(0,1)}
               </div>
             ))}
           </div>
-          {crops.map(crop => (
-            <div key={crop.id} style={{ display: "grid", gridTemplateColumns: "80px repeat(12, 1fr)", gap: 2, padding: "4px 10px", borderBottom: "1px solid rgba(255,255,255,0.03)" }}>
-              <div style={{ fontSize: 10, color: "#90A4AE", display: "flex", alignItems: "center", gap: 4 }}>
-                {crop.emoji} <span style={{ fontSize: 9 }}>{crop.nameHi || crop.name}</span>
+          <div className="px-3 py-1">
+            {crops.map(crop => (
+              <div key={crop.id} className="grid gap-0.5 py-0.5 cursor-pointer hover:bg-zinc-800/50 rounded transition-colors"
+                onClick={() => setSelectedCrop(selectedCrop === crop.id ? null : crop.id)}
+                style={{ gridTemplateColumns: "60px repeat(12, 1fr)" }}>
+                <div className="text-[9px] text-muted-foreground flex items-center gap-1 truncate">
+                  <span className="shrink-0">{crop.emoji}</span>
+                  <span className="truncate">{crop.nameHi || crop.name}</span>
+                </div>
+                {MONTHS.map((_, i) => {
+                  const phase = getMonthPhase(crop, i);
+                  return (
+                    <div key={i} className="h-4 rounded-sm"
+                      style={{
+                        background: phase ? SOLID_PHASE[phase.label] || PHASE_COLORS[phase.label] : "#1c1c1e",
+                        outline: i === selectedMonth ? "1.5px solid #22c55e" : "none",
+                        outlineOffset: "-1px",
+                      }}/>
+                  );
+                })}
               </div>
-              {MONTHS.map((_, i) => {
-                const phase = getMonthPhase(crop, i);
-                return (
-                  <div key={i} style={{
-                    height: 16, borderRadius: 3,
-                    background: phase ? PHASE_COLORS[phase.label] : "rgba(255,255,255,0.04)",
-                    outline: i === selectedMonth ? "1.5px solid rgba(255,255,255,0.4)" : "none",
-                  }}/>
-                );
-              })}
-            </div>
-          ))}
-        </div>
-      </div>
+            ))}
+          </div>
+        </Card>
 
-      {/* Seasons */}
-      <div>
-        <div style={{ fontSize: 11, color: "#66BB6A", letterSpacing: 1, marginBottom: 8 }}>SEASON GUIDE</div>
-        {displaySeasons.map((s, idx) => (
-          <AnimatedCard key={s.id || s.name} delay={idx * 0.08}
-            style={{ background: "rgba(255,255,255,0.03)", border: `1px solid ${s.color}33`, borderRadius: 12, padding: 12, marginBottom: 8, display: "flex", alignItems: "center", gap: 12 }}>
-            <div style={{ width: 40, height: 40, borderRadius: 10, flexShrink: 0, background: `${s.color}22`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>
-              {s.icon}
-            </div>
-            <div>
-              <div style={{ fontWeight: 700, fontSize: 13, color: s.color }}>{s.nameHi} ({s.name})</div>
-              <div style={{ fontSize: 11, color: "#78909C" }}>{s.desc}</div>
-            </div>
-            <div style={{ marginLeft: "auto", display: "flex", gap: 3 }}>
-              {MONTHS.map((_, i) => (
-                <div key={i} style={{ width: 6, height: 20, borderRadius: 2, background: s.months.includes(i) ? s.color : "rgba(255,255,255,0.05)" }}/>
-              ))}
-            </div>
-          </AnimatedCard>
-        ))}
+        {/* Compact ऋतु गाइड — right below calendar */}
+        <div className="mt-2">
+          <div className="text-[9px] text-muted-foreground tracking-wider font-semibold mb-1.5">ऋतु गाइड</div>
+          <div className="flex gap-1.5">
+            {displaySeasons.map(s => (
+              <div key={s.id || s.name}
+                className="flex-1 rounded-lg px-2 py-1.5 border border-zinc-800"
+                style={{ backgroundColor: `${s.color}10` }}>
+                <div className="flex items-center gap-1 mb-1">
+                  <span className="text-[10px]">{s.icon}</span>
+                  <span className="text-[9px] font-bold" style={{ color: s.color }}>
+                    {s.nameHi}
+                  </span>
+                </div>
+                <div className="flex gap-px">
+                  {MONTHS.map((_, i) => (
+                    <div key={i} className="flex-1 h-1.5 rounded-full"
+                      style={{ background: s.months.includes(i) ? s.color : "#27272a" }}/>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
