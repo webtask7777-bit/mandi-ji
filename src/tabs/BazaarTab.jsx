@@ -1,3 +1,4 @@
+import '@/styles/secondary.css';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate, Link } from 'react-router-dom';
@@ -46,8 +47,8 @@ export default function BazaarTab() {
   // If not logged in, show prompt
   if (!user) {
     return (
-      <motion.div {...fadeInUp} className="flex flex-col items-center justify-center py-16 gap-4">
-        <span className="text-5xl">🏪</span>
+      <motion.div {...fadeInUp} className="sb-secondary-tab sb-market-welcome flex flex-col items-center justify-center py-16 gap-4">
+        <img className="sb-market-welcome-photo" src="/visuals/hero-mandi.webp" alt="अनाज की बोरियों के साथ मंडी का सांकेतिक दृश्य" width="1280" height="853" />
         <h2 className="text-lg font-bold text-foreground">बाज़ार में आपका स्वागत है</h2>
         <p className="text-sm text-zinc-400 text-center px-8">
           फसल बेचने या खरीदने के लिए पहले लॉग इन करें
@@ -67,8 +68,9 @@ export default function BazaarTab() {
       variants={staggerContainer}
       initial="initial"
       animate="animate"
-      className="flex flex-col gap-4"
+      className="sb-secondary-tab sb-bazaar-tab flex flex-col gap-4"
     >
+      <div className="sb-secondary-heading"><div><span className="sb-secondary-eyebrow">अपना कारोबार</span><h2>फसल का बाज़ार</h2><p>बेचने और खरीदने की लिस्टिंग देखें या अपनी लिस्टिंग जोड़ें।</p></div></div>
       {/* Buy/Sell Buttons */}
       <AnimatedBuySellButton
         onSell={() => navigate('/listing/new?type=sell')}
@@ -76,7 +78,7 @@ export default function BazaarTab() {
       />
 
       {/* Quick Stats */}
-      <motion.div {...fadeInUp} className="grid grid-cols-3 gap-2">
+      <motion.div {...fadeInUp} className="sb-market-stats grid grid-cols-3 gap-2">
         {[
           { label: 'कुल लिस्टिंग', value: listings.length, emoji: '📋' },
           { label: 'विक्रेता', value: sellCount, emoji: '🧑‍🌾' },
@@ -139,6 +141,7 @@ export default function BazaarTab() {
             <button
               key={tab.key}
               onClick={() => setTypeFilter(tab.key)}
+              aria-pressed={typeFilter === tab.key}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 typeFilter === tab.key
                   ? tab.key === 'sell' ? 'bg-green-500 text-green-950 font-bold'
@@ -172,7 +175,7 @@ export default function BazaarTab() {
         {/* Empty State */}
         {!loading && !error && filteredListings.length === 0 && (
           <Card className="p-6 bg-zinc-900 border-zinc-800 flex flex-col items-center gap-3">
-            <span className="text-4xl">🏬</span>
+            <img src="/visuals/empty-saved.webp" alt="" width="140" height="140" />
             <p className="text-sm text-zinc-400 text-center">अभी कोई लिस्टिंग नहीं है</p>
             <button
               onClick={() => navigate('/listing/new?type=sell')}
@@ -185,7 +188,7 @@ export default function BazaarTab() {
 
         {/* Listings */}
         {!loading && !error && filteredListings.length > 0 && (
-          <div className="flex flex-col gap-2">
+          <div className="sb-listing-grid">
             {filteredListings.map(listing => (
               <ListingCard key={listing._id || listing.id} listing={listing} />
             ))}

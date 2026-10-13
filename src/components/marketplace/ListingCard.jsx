@@ -1,6 +1,8 @@
+import CropImage from "@/components/CropImage";
+import '@/styles/secondary.css';
 import { motion } from 'framer-motion';
 import { MapPin, Clock } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
@@ -11,6 +13,7 @@ function relativeTimeHindi(dateStr) {
   if (!dateStr) return '';
   const now = Date.now();
   const then = new Date(dateStr).getTime();
+  if (!Number.isFinite(then)) return '';
   const diffMs = now - then;
   if (diffMs < 0) return 'अभी';
 
@@ -33,18 +36,13 @@ function relativeTimeHindi(dateStr) {
  * Format number with Indian comma grouping: 1,00,000
  */
 function formatIndianNumber(num) {
-  if (num == null) return '0';
-  const str = String(num);
-  // handle numbers < 1000
-  if (str.length <= 3) return str;
-  const last3 = str.slice(-3);
-  const rest = str.slice(0, -3);
-  const grouped = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',');
-  return `${grouped},${last3}`;
+  const value = Number(num);
+  return Number.isFinite(value)
+    ? new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 }).format(value)
+    : '—';
 }
 
 export default function ListingCard({ listing }) {
-  const navigate = useNavigate();
 
   if (!listing) return null;
 
@@ -54,7 +52,7 @@ export default function ListingCard({ listing }) {
     type,
     cropName,
     cropNameHi,
-    cropEmoji,
+    cropId,
     price,
     pricePerUnit,
     quantity,
@@ -63,32 +61,26 @@ export default function ListingCard({ listing }) {
     createdAt,
   } = listing;
 
-  const displayPrice = pricePerUnit || price;
+  const displayPrice = pricePerUnit ?? price;
 
   const listingId = _id || id;
   const isSell = type === 'sell';
   const displayName = cropNameHi || cropName || 'फसल';
-  const emoji = cropEmoji || '🌾';
   const mandiDisplay = mandiName || location?.mandi || location?.district || '---';
 
   return (
     <motion.div
       whileTap={{ scale: 0.98 }}
-      onClick={() => navigate(`/listing/${listingId}`)}
-      className="cursor-pointer"
+      className="sb-listing-shell"
     >
-      <Card className="p-3 bg-zinc-900 border-zinc-800 hover:border-zinc-700 transition-colors">
+      <Link to={`/listing/${listingId}`} className="sb-listing-link" aria-label={`${displayName} की ${isSell ? 'बिक्री' : 'खरीद'} लिस्टिंग देखें`}>
+      <Card className="sb-listing-card p-3 bg-zinc-900 border-zinc-800 hover:border-zinc-700 transition-colors">
         <div className="flex items-start gap-3">
-          {/* Left: Emoji + Name */}
-          <div className="flex flex-col items-center shrink-0 w-12">
-            <span className="text-3xl leading-none">{emoji}</span>
-            <span className="text-[10px] text-zinc-400 mt-1 text-center truncate w-full">
-              {displayName}
-            </span>
-          </div>
+          <div className="sb-listing-image"><CropImage id={cropId || cropName} name={displayName} size="lg" /></div>
 
           {/* Right: Details */}
           <div className="flex-1 min-w-0">
+            <h3 className="sb-listing-name">{displayName}</h3>
             {/* Top row: price + type badge */}
             <div className="flex items-center justify-between gap-2">
               <div className="text-sm font-bold text-foreground">
@@ -114,7 +106,7 @@ export default function ListingCard({ listing }) {
             )}
 
             {/* Bottom: location + time */}
-            <div className="flex items-center gap-3 mt-1.5 text-[10px] text-zinc-500">
+            <div className="sb-listing-meta flex items-center gap-3 mt-1.5 text-[10px] text-zinc-500">
               <span className="flex items-center gap-0.5 truncate">
                 <MapPin size={10} className="shrink-0" />
                 {mandiDisplay}
@@ -129,6 +121,7 @@ export default function ListingCard({ listing }) {
           </div>
         </div>
       </Card>
+      </Link>
     </motion.div>
   );
 }

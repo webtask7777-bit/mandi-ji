@@ -1,3 +1,5 @@
+import CropImage from "@/components/CropImage";
+import '@/styles/secondary.css';
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MONTHS, PHASE_COLORS, FALLBACK_SEASONS } from "../data/constants";
@@ -34,7 +36,8 @@ export default function CalendarTab({ selectedMonth, crops, seasons, isCG }) {
   });
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="sb-secondary-tab sb-calendar-tab flex flex-col gap-4">
+      <div className="sb-secondary-heading"><div><span className="sb-secondary-eyebrow">फसल योजना</span><h2>खेती का कैलेंडर</h2><p>बुवाई से आवक तक, अपनी फसल का मौसम समझें।</p></div><img src="/visuals/crop-paddy.webp" alt="" width="96" height="96" /></div>
       {isCG && <WeatherWidget districtId={1} />}
 
       {/* Active Crops */}
@@ -47,18 +50,20 @@ export default function CalendarTab({ selectedMonth, crops, seasons, isCG }) {
             इस महीने कोई मुख्य गतिविधि नहीं
           </Card>
         ) : (
-          <div className="flex flex-col gap-2">
+          <div className="sb-active-crops">
             {activeCrops.map((crop) => {
               const phase = getMonthPhase(crop, selectedMonth);
               const isExpanded = selectedCrop === crop.id;
               return (
                 <Card key={crop.id}
+                  role="button" tabIndex={0} aria-expanded={isExpanded}
+                  onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedCrop(isExpanded ? null : crop.id); } }}
                   onClick={() => setSelectedCrop(isExpanded ? null : crop.id)}
-                  className={`cursor-pointer transition-all active:scale-[0.98] overflow-hidden ${
+                  className={`sb-calendar-crop cursor-pointer transition-all active:scale-[0.98] overflow-hidden ${
                     isExpanded ? "bg-zinc-800 border-green-500" : "bg-zinc-900 border-zinc-800 hover:border-zinc-700"
                   }`}>
                   <div className="p-3 flex items-center gap-3">
-                    <span className="text-xl shrink-0">{crop.emoji}</span>
+                    <CropImage id={crop.id} name={crop.nameHi || crop.name} size="md" />
                     <div className="flex-1 min-w-0">
                       <div className="font-bold text-sm text-foreground truncate">
                         {crop.nameHi || crop.name}
@@ -67,7 +72,7 @@ export default function CalendarTab({ selectedMonth, crops, seasons, isCG }) {
                     </div>
                     {phase && (
                       <Badge className="text-[9px] px-1.5 py-0.5"
-                        style={{ backgroundColor: PHASE_COLORS[phase.label], color: "#fff" }}>
+                        style={{ backgroundColor: SOLID_PHASE[phase.label] || PHASE_COLORS[phase.label], color: "#fff" }}>
                         {PHASE_HI[phase.label] || phase.label}
                       </Badge>
                     )}
@@ -93,11 +98,11 @@ export default function CalendarTab({ selectedMonth, crops, seasons, isCG }) {
                                   <div key={i}>
                                     <div className="h-5 rounded-sm"
                                       style={{
-                                        background: p ? SOLID_PHASE[p.label] || PHASE_COLORS[p.label] : "#27272a",
-                                        outline: i === selectedMonth ? "2px solid #22c55e" : "none",
+                                        background: p ? SOLID_PHASE[p.label] || PHASE_COLORS[p.label] : "#e9eddf",
+                                        outline: i === selectedMonth ? "2px solid #174c3c" : "none",
                                         outlineOffset: "-1px",
                                       }}/>
-                                    <div className="text-[7px] text-muted-foreground mt-0.5 text-center">{mn.slice(0,1)}</div>
+                                    <div className="text-[7px] text-muted-foreground mt-0.5 text-center">{mn}</div>
                                   </div>
                                 );
                               })}
@@ -119,32 +124,34 @@ export default function CalendarTab({ selectedMonth, crops, seasons, isCG }) {
         <div className="text-[10px] text-muted-foreground tracking-wider font-semibold mb-2">
           सभी फसलों का वार्षिक कैलेंडर
         </div>
-        <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
+        <Card className="sb-calendar-annual bg-zinc-900 border-zinc-800">
           <div className="grid gap-0.5 px-3 py-2 border-b border-zinc-800"
-            style={{ gridTemplateColumns: "60px repeat(12, 1fr)" }}>
+            style={{ gridTemplateColumns: "106px repeat(12, minmax(28px, 1fr))" }}>
             <div/>
             {MONTHS.map((m, i) => (
               <div key={i} className={`text-[7px] text-center ${i === selectedMonth ? "text-green-500 font-bold" : "text-muted-foreground"}`}>
-                {m.slice(0,1)}
+                {m}
               </div>
             ))}
           </div>
           <div className="px-3 py-1">
             {crops.map(crop => (
               <div key={crop.id} className="grid gap-0.5 py-0.5 cursor-pointer hover:bg-zinc-800/50 rounded transition-colors"
+                role="button" tabIndex={0} aria-label={`${crop.nameHi || crop.name} का कैलेंडर`} aria-expanded={selectedCrop === crop.id}
+                onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedCrop(selectedCrop === crop.id ? null : crop.id); } }}
                 onClick={() => setSelectedCrop(selectedCrop === crop.id ? null : crop.id)}
-                style={{ gridTemplateColumns: "60px repeat(12, 1fr)" }}>
+                style={{ gridTemplateColumns: "106px repeat(12, minmax(28px, 1fr))" }}>
                 <div className="text-[9px] text-muted-foreground flex items-center gap-1 truncate">
-                  <span className="shrink-0">{crop.emoji}</span>
+                  <CropImage id={crop.id} name={crop.nameHi || crop.name} size="xs" />
                   <span className="truncate">{crop.nameHi || crop.name}</span>
                 </div>
                 {MONTHS.map((_, i) => {
                   const phase = getMonthPhase(crop, i);
                   return (
-                    <div key={i} className="h-4 rounded-sm"
+                    <div key={i} className="h-6 rounded-sm"
                       style={{
-                        background: phase ? SOLID_PHASE[phase.label] || PHASE_COLORS[phase.label] : "#1c1c1e",
-                        outline: i === selectedMonth ? "1.5px solid #22c55e" : "none",
+                        background: phase ? SOLID_PHASE[phase.label] || PHASE_COLORS[phase.label] : "#edf0e6",
+                        outline: i === selectedMonth ? "1.5px solid #174c3c" : "none",
                         outlineOffset: "-1px",
                       }}/>
                   );
@@ -171,7 +178,7 @@ export default function CalendarTab({ selectedMonth, crops, seasons, isCG }) {
                 <div className="flex gap-px">
                   {MONTHS.map((_, i) => (
                     <div key={i} className="flex-1 h-1.5 rounded-full"
-                      style={{ background: s.months.includes(i) ? s.color : "#27272a" }}/>
+                      style={{ background: s.months.includes(i) ? s.color : "#e9eddf" }}/>
                   ))}
                 </div>
               </div>

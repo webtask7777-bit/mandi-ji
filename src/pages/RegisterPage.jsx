@@ -1,8 +1,9 @@
+import '@/styles/secondary.css';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigate, Link } from 'react-router-dom';
 import {
-  Leaf, User, Phone, Mail, Lock, Eye, EyeOff,
+  User, Phone, Mail, Lock, Eye, EyeOff,
   ArrowLeft, CheckCircle2, Loader2,
 } from 'lucide-react';
 import { Input } from '../components/ui/input';
@@ -112,26 +113,26 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center px-4 py-8">
+    <div className="sb-auth-page min-h-screen bg-zinc-950 flex flex-col items-center justify-center px-4 py-8">
+      <aside className="sb-auth-scene" aria-hidden="true">
+        <img src="/visuals/hero-harvest.webp" alt="" width="1280" height="853" />
+        <div><span>अपनी मेहनत का बेहतर फैसला</span><h2>सही जानकारी।<br />सही भाव।</h2><p>फसल के भाव, मंडी की तुलना और कारोबार के साधन — एक जगह।</p></div>
+      </aside>
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
-        className="w-full max-w-lg"
+        className="sb-auth-panel w-full max-w-lg"
       >
         {/* Branding */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex flex-col items-center mb-6"
+          className="sb-auth-intro flex flex-col items-center mb-6"
         >
-          <div className="w-14 h-14 rounded-2xl bg-green-500 flex items-center justify-center mb-3">
-            <Leaf size={30} className="text-green-950" strokeWidth={2.5} />
-          </div>
-          <h1 className="text-2xl font-extrabold text-zinc-100">
-            मंडी<span className="text-amber-500">जी</span>
-          </h1>
+          <Link to="/" className="sb-auth-brand" aria-label="सही भाव — होम"><img src="/brand/logo.svg" alt="सही भाव" width="190" height="58" /></Link>
+          <h1 className="sb-auth-heading">सही भाव से जुड़ें</h1>
           <p className="text-sm text-zinc-500 mt-1">नया अकाउंट बनाएं</p>
         </motion.div>
 
@@ -217,10 +218,11 @@ export default function RegisterPage() {
 
                 {/* Name */}
                 <div className="space-y-1.5">
-                  <label className="text-sm font-medium text-zinc-300">पूरा नाम</label>
+                  <label htmlFor="register-name" className="text-sm font-medium text-zinc-300">पूरा नाम</label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
                     <Input
+                      id="register-name"
                       type="text"
                       placeholder="अपना नाम दर्ज करें"
                       value={name}
@@ -233,10 +235,11 @@ export default function RegisterPage() {
 
                 {/* Phone */}
                 <div className="space-y-1.5">
-                  <label className="text-sm font-medium text-zinc-300">फ़ोन नंबर</label>
+                  <label htmlFor="register-phone" className="text-sm font-medium text-zinc-300">फ़ोन नंबर</label>
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
                     <Input
+                      id="register-phone"
                       type="tel"
                       inputMode="numeric"
                       placeholder="10 अंकों का मोबाइल नंबर"
@@ -253,12 +256,13 @@ export default function RegisterPage() {
 
                 {/* Email (optional) */}
                 <div className="space-y-1.5">
-                  <label className="text-sm font-medium text-zinc-300">
+                  <label htmlFor="register-email" className="text-sm font-medium text-zinc-300">
                     ईमेल <span className="text-zinc-600">(वैकल्पिक)</span>
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
                     <Input
+                      id="register-email"
                       type="email"
                       placeholder="example@email.com"
                       value={email}
@@ -271,10 +275,11 @@ export default function RegisterPage() {
 
                 {/* Password */}
                 <div className="space-y-1.5">
-                  <label className="text-sm font-medium text-zinc-300">पासवर्ड</label>
+                  <label htmlFor="register-password" className="text-sm font-medium text-zinc-300">पासवर्ड</label>
                   <div className="relative">
                     <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
                     <Input
+                      id="register-password"
                       type={showPassword ? 'text' : 'password'}
                       placeholder="कम से कम 6 अक्षर"
                       value={password}
@@ -286,7 +291,8 @@ export default function RegisterPage() {
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
                       className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300 transition-colors"
-                      tabIndex={-1}
+                      aria-label={showPassword ? 'पासवर्ड छिपाएं' : 'पासवर्ड दिखाएं'}
+                      aria-pressed={showPassword}
                     >
                       {showPassword ? (
                         <EyeOff className="w-4 h-4" />
@@ -302,6 +308,7 @@ export default function RegisterPage() {
                   <motion.div
                     initial={{ opacity: 0, y: -4 }}
                     animate={{ opacity: 1, y: 0 }}
+                    role="alert"
                     className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2"
                   >
                     {error}
@@ -391,7 +398,7 @@ export default function RegisterPage() {
                   transition={{ delay: 0.5 }}
                   className="text-sm text-zinc-400 mb-8 max-w-xs"
                 >
-                  आपका अकाउंट सफलतापूर्वक बन गया है। अब आप मंडीजी के सभी फीचर्स का उपयोग कर सकते हैं।
+                  आपका अकाउंट सफलतापूर्वक बन गया है। अब आप सही भाव के सभी फीचर्स का उपयोग कर सकते हैं।
                 </motion.p>
 
                 <motion.div

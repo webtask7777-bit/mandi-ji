@@ -1,3 +1,5 @@
+import CropImage from "@/components/CropImage";
+import '@/styles/secondary.css';
 import { useState, useMemo, useEffect } from "react";
 import { TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight, BarChart3, ShieldCheck, ShieldAlert, ChevronDown, ChevronUp, Activity } from "lucide-react";
 import { MONTHS, FALLBACK_REGIONS } from "../data/constants";
@@ -5,7 +7,7 @@ import { useApi } from "../hooks/useApi";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-const HEAT = ["#18181b", "#14532d", "#166534", "#15803d", "#22c55e"];
+const HEAT = ["#edf0e6", "#c7d6b7", "#8cad8a", "#507f63", "#174c3c"];
 function heatSolid(val) {
   if (val <= 1) return HEAT[0];
   if (val <= 3) return HEAT[1];
@@ -70,8 +72,9 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
   }, [tickerData]);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="sb-secondary-tab sb-mandis-tab flex flex-col gap-4">
 
+      <div className="sb-secondary-heading"><div><span className="sb-secondary-eyebrow">मंडी नज़र</span><h2>बाज़ार की चाल समझें</h2><p>फसलों की तेजी, मंदी और मंडी की गतिविधि एक साथ देखें।</p></div></div>
       {/* Jump-to-mandi context banner */}
       {jumpToMandi && (
         <div className="flex items-center gap-2 bg-blue-500/10 border border-blue-500/25 rounded-lg px-3 py-2">
@@ -80,13 +83,13 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
             <div className="text-[10px] text-blue-400 font-bold">मंडी खोजें: {jumpToMandi}</div>
             <div className="text-[9px] text-zinc-500">भाव टैब से आए — यहाँ मंडी-वार डेटा देखें</div>
           </div>
-          <button onClick={() => onMandiConsumed?.()} className="text-zinc-600 hover:text-zinc-400 text-[10px]">✕</button>
+          <button onClick={() => onMandiConsumed?.()} aria-label="मंडी संदेश बंद करें" className="text-zinc-600 hover:text-zinc-400 text-[10px]">✕</button>
         </div>
       )}
 
       {/* ── A. Market Overview Strip ──────────────────────── */}
       {stats && (
-        <div className="grid grid-cols-4 gap-2">
+        <div className="sb-market-stats grid grid-cols-4 gap-2">
           <Card className="bg-zinc-900 border-zinc-800 p-2.5 text-center">
             <div className="text-[8px] text-zinc-500 font-semibold tracking-wider">फसलें</div>
             <div className="text-lg font-extrabold text-foreground mt-0.5">{stats.crops}</div>
@@ -151,7 +154,7 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
               {(showAllGainers ? stats.topGainers : stats.topGainers.slice(0, 5)).map(t => (
                 <div key={t.id} onClick={() => onCropClick?.(t.id)} className="px-3 py-1.5 flex items-center justify-between cursor-pointer hover:bg-zinc-800/50 active:scale-[0.98] transition-all">
                   <div className="flex items-center gap-1 min-w-0">
-                    <span className="text-xs shrink-0">{t.emoji}</span>
+                    <CropImage id={t.id} name={t.nameHi} size="sm" />
                     <span className="text-[10px] text-foreground font-medium truncate">{t.nameHi}</span>
                   </div>
                   <span className="text-[10px] text-green-500 font-bold shrink-0 ml-1">+{t.changePct}%</span>
@@ -177,7 +180,7 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
               {(showAllLosers ? stats.topLosers : stats.topLosers.slice(0, 5)).map(t => (
                 <div key={t.id} onClick={() => onCropClick?.(t.id)} className="px-3 py-1.5 flex items-center justify-between cursor-pointer hover:bg-zinc-800/50 active:scale-[0.98] transition-all">
                   <div className="flex items-center gap-1 min-w-0">
-                    <span className="text-xs shrink-0">{t.emoji}</span>
+                    <CropImage id={t.id} name={t.nameHi} size="sm" />
                     <span className="text-[10px] text-foreground font-medium truncate">{t.nameHi}</span>
                   </div>
                   <span className="text-[10px] text-red-500 font-bold shrink-0 ml-1">{t.changePct}%</span>
@@ -215,7 +218,7 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
                     <div className="grid grid-cols-[1fr_70px_80px] items-center">
                       <div className="flex items-center gap-1.5 min-w-0">
                         <span className="text-[10px] text-zinc-500 font-bold w-3">{i + 1}</span>
-                        <span className="text-xs shrink-0">{t.emoji}</span>
+                        <CropImage id={t.id} name={t.nameHi} size="sm" />
                         <span className="text-[11px] text-foreground font-semibold truncate">{t.nameHi}</span>
                       </div>
                       <div className={`text-right text-[11px] font-bold tabular-nums ${
@@ -255,7 +258,7 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
               <div className="flex flex-col gap-1.5">
                 {stats.aboveMsp.slice(0, 6).map(t => (
                   <div key={t.id} onClick={() => onCropClick?.(t.id)} className="flex items-center justify-between cursor-pointer hover:bg-zinc-800/30 rounded px-1 -mx-1 active:scale-[0.98] transition-all">
-                    <span className="text-[10px] text-foreground truncate">{t.emoji} {t.nameHi}</span>
+                    <span className="sb-inline-crop text-[10px] text-foreground truncate"><CropImage id={t.id} name={t.nameHi} size="xs" /> {t.nameHi}</span>
                     <span className="text-[9px] text-green-500 font-bold shrink-0 ml-1">+{t.mspDiffPct}%</span>
                   </div>
                 ))}
@@ -271,7 +274,7 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
               <div className="flex flex-col gap-1.5">
                 {stats.belowMsp.slice(0, 6).map(t => (
                   <div key={t.id} onClick={() => onCropClick?.(t.id)} className="flex items-center justify-between cursor-pointer hover:bg-zinc-800/30 rounded px-1 -mx-1 active:scale-[0.98] transition-all">
-                    <span className="text-[10px] text-foreground truncate">{t.emoji} {t.nameHi}</span>
+                    <span className="sb-inline-crop text-[10px] text-foreground truncate"><CropImage id={t.id} name={t.nameHi} size="xs" /> {t.nameHi}</span>
                     <span className="text-[9px] text-red-500 font-bold shrink-0 ml-1">{t.mspDiffPct}%</span>
                   </div>
                 ))}
@@ -370,7 +373,7 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
                             outline: i === selectedMonth ? "1.5px solid #f59e0b" : "none",
                             outlineOffset: "-1px",
                           }}>
-                          {i === selectedMonth && <span className="text-[7px] font-bold text-foreground">{v}</span>}
+                          {i === selectedMonth && <span className="text-[10px] font-bold" style={{ color: v > 5 ? "#ffffff" : "#1b3027" }}>{v}</span>}
                         </div>
                       ))}
                     </div>

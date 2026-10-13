@@ -1,3 +1,4 @@
+import '@/styles/secondary.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -14,18 +15,18 @@ export default function ContactPage() {
   function handleSubmit(e) {
     e.preventDefault();
     // For now, compose mailto link
-    const subject = encodeURIComponent(`मंडीजी संपर्क — ${form.name}`);
+    const subject = encodeURIComponent(`सही भाव संपर्क — ${form.name}`);
     const body = encodeURIComponent(`नाम: ${form.name}\nफ़ोन: ${form.phone}\n\n${form.message}`);
     window.open(`mailto:contact@mandiji.in?subject=${subject}&body=${body}`);
     setSent(true);
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-foreground max-w-lg mx-auto flex flex-col">
-      <SEO title="संपर्क करें" description="मंडीजी से संपर्क करें — सवाल, सुझाव, या शिकायत।" path="/contact" />
+    <div className="sb-secondary-page sb-contact-page min-h-screen bg-zinc-950 text-foreground mx-auto flex flex-col">
+      <SEO title="संपर्क करें" description="सही भाव से संपर्क करें — सवाल, सुझाव, या शिकायत।" path="/contact" />
       <header className="sticky top-0 z-30 bg-zinc-950 border-b border-zinc-800">
         <div className="flex items-center gap-3 px-4 py-3">
-          <button onClick={() => navigate(-1)} className="p-1.5 rounded-lg hover:bg-zinc-800 transition-colors">
+          <button onClick={() => navigate(-1)} aria-label="वापस जाएं" className="sb-back-button p-1.5 rounded-lg hover:bg-zinc-800 transition-colors">
             <ArrowLeft size={20} className="text-zinc-400" />
           </button>
           <MessageCircle size={18} className="text-green-500" />
@@ -33,7 +34,7 @@ export default function ContactPage() {
         </div>
       </header>
 
-      <motion.div {...fadeInUp} className="flex-1 px-4 py-6 space-y-6">
+      <motion.div {...fadeInUp} className="sb-page-content flex-1 px-4 py-6 space-y-6">
         {/* Contact Info Cards */}
         <div className="grid grid-cols-2 gap-2">
           <Card className="bg-zinc-900 border-zinc-800 p-3">
@@ -54,27 +55,27 @@ export default function ContactPage() {
             <h3 className="text-sm font-bold text-foreground mb-3">संदेश भेजें</h3>
             <form onSubmit={handleSubmit} className="space-y-3">
               <div>
-                <label className="text-[10px] text-zinc-500 block mb-1">आपका नाम</label>
+                <label htmlFor="contact-name" className="text-[10px] text-zinc-500 block mb-1">आपका नाम</label>
                 <input
-                  type="text" required value={form.name}
+                  type="text" autoComplete="name" required id="contact-name" value={form.name}
                   onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                   className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-foreground outline-none focus:border-green-500 transition-colors"
                   placeholder="नाम लिखें"
                 />
               </div>
               <div>
-                <label className="text-[10px] text-zinc-500 block mb-1">फ़ोन नंबर</label>
+                <label htmlFor="contact-phone" className="text-[10px] text-zinc-500 block mb-1">फ़ोन नंबर</label>
                 <input
-                  type="tel" value={form.phone}
+                  type="tel" id="contact-phone" value={form.phone}
                   onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                   className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-foreground outline-none focus:border-green-500 transition-colors"
                   placeholder="वैकल्पिक"
                 />
               </div>
               <div>
-                <label className="text-[10px] text-zinc-500 block mb-1">संदेश</label>
+                <label htmlFor="contact-message" className="text-[10px] text-zinc-500 block mb-1">संदेश</label>
                 <textarea
-                  required rows={4} value={form.message}
+                  required rows={4} id="contact-message" value={form.message}
                   onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                   className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-foreground outline-none focus:border-green-500 transition-colors resize-none"
                   placeholder="अपना सवाल या सुझाव लिखें..."

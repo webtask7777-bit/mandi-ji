@@ -68,9 +68,9 @@ export default function NakshaTab({ selectedMonth, districts, mandis, states, is
       {selectedState && (!districts || districts.length === 0) && (
         <Card className="bg-zinc-900 border-zinc-800 p-6 text-center">
           <div className="text-amber-500 text-2xl mb-2">⏳</div>
-          <div className="text-sm font-bold text-foreground mb-1">डेटा अपडेट हो रहा है</div>
+          <div className="text-sm font-bold text-foreground mb-1">डेटा उपलब्ध नहीं</div>
           <div className="text-[11px] text-muted-foreground leading-relaxed">
-            {stateNameHi} का मंडी डेटा जल्द ही उपलब्ध होगा।<br/>
+            {stateNameHi} का मंडी डेटा अभी उपलब्ध नहीं है।<br/>
             कृपया बाद में चेक करें।
           </div>
         </Card>

@@ -1,3 +1,4 @@
+import '@/styles/secondary.css';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Truck, Calculator, Clock, MapPin, Weight, IndianRupee, FileText } from 'lucide-react';
@@ -53,15 +54,17 @@ export default function TransportCalc() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="sb-secondary-tab sb-transport-calculator space-y-4">
+      <div className="sb-calculator-intro"><img src="/visuals/receipt-still-life.webp" alt="" width="92" height="92" /><div><h2>पहले खर्च का हिसाब करें</h2><p>रूट, मात्रा और गाड़ी चुनकर ढुलाई का अनुमान देखें।</p></div></div>
       {/* Origin */}
       <div>
-        <label className="block text-xs font-medium text-zinc-400 mb-1.5">
+        <label htmlFor="transport-origin" className="block text-xs font-medium text-zinc-400 mb-1.5">
           <MapPin size={12} className="inline mr-1 text-green-500" />
           कहाँ से (मंडी)
         </label>
         <input
           type="text"
+          id="transport-origin"
           value={origin}
           onChange={e => setOrigin(e.target.value)}
           placeholder="जैसे: रायपुर मंडी"
@@ -71,12 +74,13 @@ export default function TransportCalc() {
 
       {/* Destination */}
       <div>
-        <label className="block text-xs font-medium text-zinc-400 mb-1.5">
+        <label htmlFor="transport-destination" className="block text-xs font-medium text-zinc-400 mb-1.5">
           <MapPin size={12} className="inline mr-1 text-amber-500" />
           कहाँ तक (मंडी)
         </label>
         <input
           type="text"
+          id="transport-destination"
           value={destination}
           onChange={e => setDestination(e.target.value)}
           placeholder="जैसे: दुर्ग मंडी"
@@ -86,12 +90,13 @@ export default function TransportCalc() {
 
       {/* Weight */}
       <div>
-        <label className="block text-xs font-medium text-zinc-400 mb-1.5">
+        <label htmlFor="transport-weight" className="block text-xs font-medium text-zinc-400 mb-1.5">
           <Weight size={12} className="inline mr-1 text-blue-400" />
           मात्रा (क्विंटल)
         </label>
         <input
           type="number"
+          id="transport-weight"
           value={weight}
           onChange={e => setWeight(e.target.value)}
           placeholder="जैसे: 50"
@@ -131,7 +136,7 @@ export default function TransportCalc() {
 
       {/* Error */}
       {error && (
-        <div className="text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2">
+        <div role="alert" className="text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2">
           {error}
         </div>
       )}
@@ -159,7 +164,7 @@ export default function TransportCalc() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden"
+            className="sb-transport-result bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden"
           >
             {/* Total Cost */}
             <div className="bg-green-500/10 border-b border-zinc-800 px-4 py-4 text-center">

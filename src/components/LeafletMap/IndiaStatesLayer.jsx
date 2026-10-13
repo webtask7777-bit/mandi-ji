@@ -31,7 +31,7 @@ export default function IndiaStatesLayer({
         `<div style="font-size:12px;font-weight:700;line-height:1.3">
           ${props.nameHi || props.name}
         </div>
-        <div style="font-size:10px;color:#a1a1aa;margin-top:2px">
+        <div style="font-size:10px;color:#65736a;margin-top:2px">
           🏪 ${mandis} मंडी &nbsp;·&nbsp; 🌾 ${crops} फसल
         </div>`,
         {

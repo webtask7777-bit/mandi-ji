@@ -1,9 +1,11 @@
+import '@/styles/secondary.css';
 import { useRef, useEffect } from 'react';
+import { LayoutGrid, Truck, ShoppingBasket } from 'lucide-react';
 
 const FILTER_OPTIONS = [
-  { value: 'all', label: 'सभी', emoji: '📋' },
-  { value: 'sell', label: 'बेचना', emoji: '🚚' },
-  { value: 'buy', label: 'खरीदना', emoji: '🛒' },
+  { value: 'all', label: 'सभी', icon: LayoutGrid },
+  { value: 'sell', label: 'बेचना', icon: Truck },
+  { value: 'buy', label: 'खरीदना', icon: ShoppingBasket },
 ];
 
 export default function ListingFilters({ selected = 'all', onChange }) {
@@ -21,15 +23,17 @@ export default function ListingFilters({ selected = 'all', onChange }) {
   return (
     <div
       ref={scrollRef}
-      className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-thin"
+      className="sb-listing-filters flex gap-1.5 overflow-x-auto pb-1 scrollbar-thin"
       style={{ scrollbarWidth: 'thin' }}
     >
       {FILTER_OPTIONS.map(opt => {
         const isActive = selected === opt.value;
+        const Icon = opt.icon;
         return (
           <button
             key={opt.value}
             onClick={() => onChange(opt.value)}
+            aria-pressed={isActive}
             data-active={isActive ? 'true' : 'false'}
             className={`shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold transition-all active:scale-95 ${
               isActive
@@ -37,7 +41,7 @@ export default function ListingFilters({ selected = 'all', onChange }) {
                 : 'bg-zinc-900 text-zinc-400 border border-zinc-800 hover:border-zinc-600'
             }`}
           >
-            {opt.emoji} {opt.label}
+            <Icon size={15} aria-hidden="true" /> {opt.label}
           </button>
         );
       })}

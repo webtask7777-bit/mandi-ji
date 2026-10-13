@@ -1,233 +1,169 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useId } from "react";
 import { Card } from "@/components/ui/card";
 
-const RANGES = ['1D', '1W', '1M', '3M', '6M', '1Y'];
-const RANGE_LABELS = { '1D': '3 दिन', '1W': '7 दिन', '1M': '1 महीना', '3M': '3 महीने', '6M': '6 महीने', '1Y': '1 साल' };
+const RECORD_RANGES = [3, 7, 30, 'all'];
+const COLORS = { forest: '#174C3C', gold: '#A37A25', grid: '#E4E9DE', muted: '#65796A', ink: '#1B3027', band: '#DDE7D3', volume: '#C0CDB5' };
+const positiveNumber = value => Number.isFinite(Number(value)) && Number(value) > 0;
 
-export default function MiniChart({ data = [], dailyData = [], title = "PRICE TREND", formatMonth }) {
-  const [range, setRange] = useState('1D');
+function availableRecords(records) {
+  if (!Array.isArray(records)) return [];
+  const valid = records.filter(record => record && positiveNumber(record.market));
+  // ISO dates can be ordered without interpreting a month as a particular day.
+  return valid.every(record => /^\d{4}-\d{2}(?:-\d{2})?$/.test(record.date || ''))
+    ? [...valid].sort((a, b) => a.date.localeCompare(b.date))
+    : valid;
+}
 
-  const isDaily = ['1D', '1W', '1M', '3M'].includes(range);
+function dateLabel(record, formatMonth) {
+  const date = String(record.date || '');
+  if (/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    const [, month, day] = date.split('-');
+    return `${Number(day)}/${Number(month)}`;
+  }
+  if (/^\d{4}-\d{2}$/.test(date)) {
+    const [year, month] = date.split('-');
+    return `${Number(month)}/${year.slice(2)}`;
+  }
+  return record.month ? (formatMonth ? formatMonth(record.month) : record.month) : '';
+}
 
-  const chartData = useMemo(() => {
-    switch (range) {
-      case '1D': return (dailyData.length > 0 ? dailyData : data).slice(-3);
-      case '1W': return (dailyData.length > 0 ? dailyData : data).slice(-7);
-      case '1M': return (dailyData.length > 0 ? dailyData : data).slice(-30);
-      case '3M': return (dailyData.length > 0 ? dailyData : data).slice(-90);
-      case '6M': return (data || []).slice(-6);
-      case '1Y': return (data || []).slice(-12);
-      default: return (dailyData.length > 0 ? dailyData : data).slice(-90);
-    }
-  }, [range, data, dailyData]);
+export default function MiniChart({ data = [], dailyData = [], title = "भाव का इतिहास", formatMonth }) {
+  const [range, setRange] = useState(7);
+  const [preferredSource, setPreferredSource] = useState('daily');
+  const instanceId = useId().replace(/[^a-zA-Z0-9_-]/g, '');
+  const gradientId = `price-area-${instanceId}`;
+  const titleId = `price-title-${instanceId}`;
+  const descriptionId = `price-description-${instanceId}`;
+  const dailyRecords = useMemo(() => availableRecords(dailyData), [dailyData]);
+  const monthlyRecords = useMemo(() => availableRecords(data), [data]);
+  const source = preferredSource === 'daily'
+    ? (dailyRecords.length ? 'daily' : 'monthly')
+    : (monthlyRecords.length ? 'monthly' : 'daily');
+  const records = source === 'daily' ? dailyRecords : monthlyRecords;
+  const chartData = range === 'all' ? records : records.slice(-range);
 
-  if (chartData.length === 0) return null;
+  if (!chartData.length) return null;
 
-  const hasMsp = chartData.some(d => d.msp && d.msp > 0);
-  const prices = chartData.flatMap(d =>
-    [d.msp, d.market, d.minPrice, d.maxPrice].filter(v => v && v > 0)
-  );
+  const isMonthly = source === 'monthly';
+  const hasMsp = chartData.some(record => positiveNumber(record.msp));
+  const hasVolume = chartData.some(record => positiveNumber(record.volume));
+  const hasPriceRange = chartData.some(record => positiveNumber(record.minPrice) && positiveNumber(record.maxPrice) && Number(record.minPrice) <= Number(record.maxPrice));
+  const prices = chartData.flatMap(record => [record.market, record.msp,
+    ...(positiveNumber(record.minPrice) && positiveNumber(record.maxPrice) && Number(record.minPrice) <= Number(record.maxPrice) ? [record.minPrice, record.maxPrice] : [])]
+    .filter(positiveNumber).map(Number));
   const dataMax = Math.max(...prices);
   const dataMin = Math.min(...prices);
-  const padding = (dataMax - dataMin) * 0.15 || 100;
+  const padding = (dataMax - dataMin) * .15 || Math.max(dataMax * .08, 20);
   const yMin = Math.max(0, Math.floor((dataMin - padding) / 100) * 100);
   const yMax = Math.ceil((dataMax + padding) / 100) * 100;
   const yRange = yMax - yMin || 1;
-
-  const tickCount = 4;
-  const tickStep = Math.ceil(yRange / tickCount / 100) * 100;
+  const tickStep = Math.ceil(yRange / 4 / 100) * 100;
   const yTicks = [];
-  for (let v = yMin; v <= yMax; v += tickStep) yTicks.push(v);
+  for (let value = yMin; value <= yMax; value += tickStep) yTicks.push(value);
 
-  const maxVol = Math.max(...chartData.map(d => d.volume || 0)) || 1;
-
-  const leftPad = 48, rightPad = 12, topPad = 12, bottomPad = 48;
-  const volH = 28;
-  const chartW = 320;
-  const chartH = 140;
+  const leftPad = 50, rightPad = 18, topPad = 16, bottomPad = 33;
+  const chartW = 320, chartH = 140, volumeHeight = hasVolume ? 24 : 0;
   const totalW = leftPad + chartW + rightPad;
-  const totalH = topPad + chartH + volH + bottomPad;
-
+  const totalH = topPad + chartH + volumeHeight + bottomPad;
   const xStep = chartW / (chartData.length - 1 || 1);
-  const barW = Math.min(xStep * 0.5, 16);
-
-  const toX = (i) => leftPad + i * xStep;
-  const toY = (val) => topPad + chartH - ((val - yMin) / yRange) * chartH;
-
-  const marketPath = chartData
-    .map((d, i) => `${i === 0 ? "M" : "L"}${toX(i)},${toY(d.market)}`)
-    .join(" ");
-
-  const areaPath =
-    `M${toX(0)},${toY(chartData[0].market)} ` +
-    chartData.slice(1).map((d, i) => `L${toX(i + 1)},${toY(d.market)}`).join(" ") +
-    ` L${toX(chartData.length - 1)},${topPad + chartH} L${toX(0)},${topPad + chartH} Z`;
-
-  const mspPath = hasMsp
-    ? chartData.map((d, i) => `${i === 0 ? "M" : "L"}${toX(i)},${toY(d.msp || d.market)}`).join(" ")
-    : null;
-
-  const last = chartData[chartData.length - 1];
-  const prev = chartData.length > 1 ? chartData[chartData.length - 2] : last;
-  const change = last.market - prev.market;
-  const changePct = prev.market ? ((change / prev.market) * 100).toFixed(1) : "0.0";
-  const isUp = change >= 0;
-
-  // X-axis label: thin for daily to prevent overcrowding
-  const labelInterval = isDaily ? Math.max(1, Math.ceil(chartData.length / 8)) : 1;
-
-  function formatDailyLabel(dateStr) {
-    if (!dateStr) return '';
-    const parts = dateStr.split('-');
-    if (parts.length === 3) return `${parseInt(parts[2])}/${parseInt(parts[1])}`;
-    return dateStr;
-  }
+  const barW = Math.min(xStep * .45, 14);
+  const toX = index => chartData.length === 1 ? leftPad + chartW / 2 : leftPad + index * xStep;
+  const toY = value => topPad + chartH - ((Number(value) - yMin) / yRange) * chartH;
+  const marketPath = chartData.map((record, index) => `${index ? 'L' : 'M'}${toX(index)},${toY(record.market)}`).join(' ');
+  const areaPath = `${marketPath} L${toX(chartData.length - 1)},${topPad + chartH} L${toX(0)},${topPad + chartH} Z`;
+  // Start a fresh segment after every missing MSP. A market price is never an MSP fallback.
+  const mspPath = chartData.map((record, index) => positiveNumber(record.msp)
+    ? `${index > 0 && positiveNumber(chartData[index - 1].msp) ? 'L' : 'M'}${toX(index)},${toY(record.msp)}`
+    : '').filter(Boolean).join(' ');
+  const maxVolume = Math.max(...chartData.map(record => positiveNumber(record.volume) ? Number(record.volume) : 0), 1);
+  const last = chartData.at(-1);
+  const previous = chartData.at(-2);
+  const change = previous ? Number(last.market) - Number(previous.market) : null;
+  const changePct = previous ? (change / Number(previous.market) * 100).toFixed(1) : null;
+  const lastDate = last.date || (last.month ? (formatMonth ? formatMonth(last.month) : last.month) : 'तिथि उपलब्ध नहीं');
+  const labels = new Set([0, chartData.length - 1]);
+  // At most four well-spaced labels, including both ends of the selected records.
+  if (chartData.length > 2) [1, 2].forEach(part => labels.add(Math.round((chartData.length - 1) * part / 3)));
+  const buttonStyle = selected => ({ minHeight: 44, padding: '8px 12px', borderRadius: 8, border: '1px solid',
+    borderColor: selected ? COLORS.forest : '#DCE3D6', background: selected ? COLORS.forest : '#F8FAF5',
+    color: selected ? '#FFFFFF' : COLORS.muted, fontSize: 12, fontWeight: 600, cursor: 'pointer' });
 
   return (
-    <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
-      {/* Header */}
-      <div className="px-4 pt-3 pb-2 border-b border-zinc-800">
-        <div className="flex items-center justify-between mb-1">
-          <div className="text-[10px] text-muted-foreground tracking-wider">
-            {title} — {RANGE_LABELS[range]}
-          </div>
+    <Card className="overflow-hidden" style={{ background: '#FFFFFF', borderColor: '#DDE3D7', gap: 0 }}>
+      <div className="px-4 pt-4 pb-3" style={{ borderBottom: `1px solid ${COLORS.grid}` }}>
+        <h3 className="text-sm font-semibold" style={{ color: COLORS.ink }}>{title}</h3>
+        <p className="text-xs mt-1" style={{ color: COLORS.muted }}>
+          {isMonthly ? 'मासिक औसत' : 'दिनवार रिकॉर्ड'} · {chartData.length} उपलब्ध रिकॉर्ड · अंतिम तिथि: {lastDate}
+        </p>
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mt-3">
+          <span className="text-2xl font-bold tabular-nums" style={{ color: COLORS.ink }}>₹{Number(last.market).toLocaleString('en-IN')}</span>
+          <span className="text-xs" style={{ color: COLORS.muted }}>/क्विंटल</span>
+          {change !== null && <span className="text-xs font-semibold" style={{ color: change < 0 ? '#A54235' : COLORS.forest }}>
+            {change > 0 ? '+' : ''}{change.toLocaleString('en-IN')} ({change > 0 ? '+' : ''}{changePct}%)
+          </span>}
         </div>
-        <div className="flex items-baseline gap-3">
-          <span className="text-xl font-extrabold text-foreground">
-            ₹{last.market?.toLocaleString()}
+        {change !== null && <p className="text-xs mt-1" style={{ color: COLORS.muted }}>पिछले उपलब्ध रिकॉर्ड से बदलाव</p>}
+        {positiveNumber(last.msp) && <p className="text-xs mt-2" style={{ color: COLORS.muted }}>
+          दर्ज MSP: ₹{Number(last.msp).toLocaleString('en-IN')}
+          <span className="ml-2" style={{ color: Number(last.market) < Number(last.msp) ? '#A54235' : COLORS.forest }}>
+            {Number(last.market) === Number(last.msp) ? 'MSP के बराबर' : `MSP से ${Number(last.market) > Number(last.msp) ? 'ऊपर' : 'नीचे'}`}
           </span>
-          <span className={`text-sm font-bold ${isUp ? "text-green-500" : "text-red-500"}`}>
-            {isUp ? "+" : ""}{change.toLocaleString()} ({isUp ? "+" : ""}{changePct}%)
-          </span>
-        </div>
-        {hasMsp && last.msp && (
-          <div className="text-[11px] text-muted-foreground mt-0.5">
-            MSP: ₹{last.msp.toLocaleString()}
-            <span className={`ml-2 font-semibold ${last.market >= last.msp ? "text-green-500" : "text-red-500"}`}>
-              MSP से {last.market >= last.msp ? "ऊपर" : "नीचे"}
-            </span>
-          </div>
-        )}
-
-        {/* Time Range Selector */}
-        <div className="flex gap-1 mt-2">
-          {RANGES.map(r => (
-            <button
-              key={r}
-              onClick={() => setRange(r)}
-              className={`text-[10px] px-2.5 py-1 rounded-md font-semibold transition-all ${
-                range === r
-                  ? 'bg-green-500 text-green-950'
-                  : 'bg-zinc-800 text-zinc-400 hover:text-zinc-200'
-              }`}
-            >
-              {r}
-            </button>
-          ))}
+        </p>}
+        {dailyRecords.length > 0 && monthlyRecords.length > 0 && <div className="flex flex-wrap gap-2 mt-3" role="group" aria-label="भाव इतिहास का प्रकार">
+          <button type="button" onClick={() => setPreferredSource('daily')} aria-pressed={!isMonthly} style={buttonStyle(!isMonthly)}>दिनवार रिकॉर्ड</button>
+          <button type="button" onClick={() => setPreferredSource('monthly')} aria-pressed={isMonthly} style={buttonStyle(isMonthly)}>मासिक औसत</button>
+        </div>}
+        <div className="flex flex-wrap gap-2 mt-3" role="group" aria-label="अंतिम कितने उपलब्ध रिकॉर्ड दिखाएँ">
+          {RECORD_RANGES.map(value => <button type="button" key={value} onClick={() => setRange(value)} aria-pressed={range === value} style={buttonStyle(range === value)}>
+            {value === 'all' ? 'सभी' : `${value} रिकॉर्ड`}
+          </button>)}
         </div>
       </div>
 
-      {/* Chart */}
-      <div className="px-2 pt-2 pb-3">
-        <svg viewBox={`0 0 ${totalW} ${totalH}`} className="w-full" style={{ height: 200 }}>
-          <defs>
-            <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#22c55e" stopOpacity="0.3"/>
-              <stop offset="100%" stopColor="#22c55e" stopOpacity="0.02"/>
-            </linearGradient>
-          </defs>
-
-          {/* Grid lines + Y-axis labels */}
-          {yTicks.map((v) => (
-            <g key={v}>
-              <line x1={leftPad} y1={toY(v)} x2={leftPad + chartW} y2={toY(v)}
-                stroke="#27272a" strokeWidth="1"/>
-              <text x={leftPad - 6} y={toY(v) + 3} textAnchor="end"
-                fill="#71717a" fontSize="9" fontFamily="system-ui">
-                {v >= 1000 ? `${(v/1000).toFixed(1)}K` : v}
-              </text>
-            </g>
-          ))}
-
-          {/* Volume bars */}
-          {chartData.map((d, i) => (
-            <rect key={`v-${i}`}
-              x={toX(i) - barW / 2}
-              y={topPad + chartH + 4}
-              width={barW}
-              height={((d.volume || 0) / maxVol) * volH}
-              fill="#27272a" rx={2}/>
-          ))}
-
-          {/* Min-Max range band */}
-          {chartData.some(d => d.minPrice && d.maxPrice) && (
-            <polygon
-              points={
-                chartData.map((d, i) => `${toX(i)},${toY(d.maxPrice || d.market)}`).join(" ") + " " +
-                [...chartData].reverse().map((d, i) => `${toX(chartData.length - 1 - i)},${toY(d.minPrice || d.market)}`).join(" ")
-              }
-              fill="#14532d" opacity="0.4"/>
-          )}
-
-          {/* Area fill */}
-          <path d={areaPath} fill="url(#areaGrad)"/>
-
-          {/* MSP dashed line */}
-          {mspPath && (
-            <path d={mspPath} fill="none" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="6,4" opacity="0.8"/>
-          )}
-
-          {/* Market line */}
-          <path d={marketPath} fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-
-          {/* Data points — show fewer dots on dense charts */}
-          {chartData.map((d, i) => {
-            const isLast = i === chartData.length - 1;
-            const showDot = isLast || !isDaily || chartData.length <= 15 || i % labelInterval === 0;
-            if (!showDot) return null;
-            return (
-              <circle key={i} cx={toX(i)} cy={toY(d.market)} r={isLast ? 4 : 2.5}
-                fill={isLast ? "#22c55e" : "#18181b"} stroke="#22c55e" strokeWidth="1.5"/>
-            );
-          })}
-
-          {/* Last point highlight */}
-          <circle cx={toX(chartData.length - 1)} cy={toY(last.market)} r="7"
-            fill="none" stroke="#22c55e" strokeWidth="1" opacity="0.4"/>
-
-          {/* X-axis labels */}
-          {chartData.map((d, i) => {
-            const isLast = i === chartData.length - 1;
-            const showLabel = isLast || i === 0 || i % labelInterval === 0;
-            if (!showLabel) return null;
-
-            const label = isDaily && d.date
-              ? formatDailyLabel(d.date)
-              : (formatMonth ? formatMonth(d.month) : d.month);
-
-            return (
-              <text key={`l-${i}`} x={toX(i)} y={topPad + chartH + volH + 18}
-                textAnchor="middle" fill="#71717a" fontSize="8" fontFamily="'Noto Sans Devanagari', system-ui">
-                {label}
-              </text>
-            );
-          })}
+      <div className="px-2 pt-3 pb-1">
+        <svg viewBox={`0 0 ${totalW} ${totalH}`} className="w-full" style={{ display: 'block', minHeight: 195 }} role="img" aria-labelledby={`${titleId} ${descriptionId}`}>
+          <title id={titleId}>{`${title} — ${chartData.length} उपलब्ध रिकॉर्ड`}</title>
+          <desc id={descriptionId}>
+            {isMonthly ? 'मासिक औसत भाव।' : 'उपलब्ध दिनवार भाव।'} अंतिम रिकॉर्ड {lastDate}: ₹{Number(last.market).toLocaleString('en-IN')} प्रति क्विंटल।
+            {change !== null ? ` पिछले उपलब्ध रिकॉर्ड से ${change > 0 ? 'वृद्धि' : change < 0 ? 'कमी' : 'बदलाव नहीं'}${change ? ` ₹${Math.abs(change).toLocaleString('en-IN')}` : ''}।` : ' तुलना के लिए पिछला रिकॉर्ड उपलब्ध नहीं।'}
+            बिंदु रिकॉर्ड के क्रम में हैं; बीच की दूरी समान समय नहीं दर्शाती।
+            {hasMsp ? ' सुनहरी टूटी रेखा केवल उपलब्ध MSP दिखाती है।' : ''}
+          </desc>
+          <defs><linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={COLORS.forest} stopOpacity=".13" />
+            <stop offset="100%" stopColor={COLORS.forest} stopOpacity=".01" />
+          </linearGradient></defs>
+          {yTicks.map(value => <g key={value}>
+            <line x1={leftPad} y1={toY(value)} x2={leftPad + chartW} y2={toY(value)} stroke={COLORS.grid} />
+            <text x={leftPad - 8} y={toY(value) + 3} textAnchor="end" fill={COLORS.muted} fontSize="10" fontFamily="system-ui">
+              {value.toLocaleString('en-IN')}
+            </text>
+          </g>)}
+          {hasVolume && chartData.map((record, index) => positiveNumber(record.volume) && <rect key={`volume-${index}`}
+            x={toX(index) - barW / 2} y={topPad + chartH + 5} width={barW}
+            height={Number(record.volume) / maxVolume * volumeHeight} fill={COLORS.volume} rx="2" />)}
+          {hasPriceRange && chartData.map((record, index) => positiveNumber(record.minPrice) && positiveNumber(record.maxPrice) && Number(record.minPrice) <= Number(record.maxPrice) && <line key={`range-${index}`}
+            x1={toX(index)} x2={toX(index)} y1={toY(record.minPrice)} y2={toY(record.maxPrice)} stroke={COLORS.band} strokeWidth={Math.min(barW, 8)} strokeLinecap="round" />)}
+          <path d={areaPath} fill={`url(#${gradientId})`} />
+          {hasMsp && <path data-series="msp" d={mspPath} fill="none" stroke={COLORS.gold} strokeWidth="1.6" strokeDasharray="5,4" />}
+          {hasMsp && chartData.map((record, index) => positiveNumber(record.msp) && <circle key={`msp-${index}`} cx={toX(index)} cy={toY(record.msp)} r="2" fill={COLORS.gold} />)}
+          <path d={marketPath} fill="none" stroke={COLORS.forest} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+          {chartData.map((record, index) => (labels.has(index) || chartData.length < 10) && <circle key={`point-${index}`}
+            cx={toX(index)} cy={toY(record.market)} r={index === chartData.length - 1 ? 4 : 2.5} fill="#FFFFFF" stroke={COLORS.forest} strokeWidth="1.8" />)}
+          {chartData.map((record, index) => labels.has(index) && <text key={`label-${index}`} x={toX(index)} y={topPad + chartH + volumeHeight + 23}
+            textAnchor={chartData.length === 1 ? 'middle' : index === 0 ? 'start' : index === chartData.length - 1 ? 'end' : 'middle'} fill={COLORS.muted} fontSize="10" fontFamily="inherit">
+            {dateLabel(record, formatMonth) || `#${records.length - chartData.length + index + 1}`}
+          </text>)}
         </svg>
       </div>
-
-      {/* Legend */}
-      <div className="px-4 pb-3 flex items-center gap-4 border-t border-zinc-800 pt-2">
-        <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
-          <div className="w-3 h-[2px] bg-green-500 rounded"/> बाज़ार
+      <div className="px-4 pt-3 pb-4" style={{ borderTop: `1px solid ${COLORS.grid}` }}>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs" style={{ color: COLORS.muted }}>
+          <span className="inline-flex items-center gap-1.5"><span style={{ width: 13, height: 3, background: COLORS.forest, borderRadius: 2 }} />बाज़ार भाव</span>
+          {hasMsp && <span className="inline-flex items-center gap-1.5"><span style={{ width: 13, borderTop: `2px dashed ${COLORS.gold}` }} />दर्ज MSP</span>}
+          {hasPriceRange && <span className="inline-flex items-center gap-1.5"><span style={{ width: 10, height: 10, background: COLORS.band, borderRadius: 2 }} />न्यूनतम–अधिकतम</span>}
+          {hasVolume && <span className="inline-flex items-center gap-1.5"><span style={{ width: 10, height: 10, background: COLORS.volume, borderRadius: 2 }} />सापेक्ष मात्रा</span>}
         </div>
-        {hasMsp && (
-          <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
-            <div className="w-3 h-[2px] bg-amber-500 rounded" style={{ borderTop: "1px dashed #f59e0b" }}/> MSP
-          </div>
-        )}
-        <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
-          <div className="w-2.5 h-2.5 bg-zinc-800 rounded-sm"/> मात्रा
-        </div>
+        <p className="text-[11px] leading-relaxed mt-3" style={{ color: COLORS.muted }}>बिंदु उपलब्ध रिकॉर्ड के क्रम में हैं। बीच की दूरी समान समय नहीं दर्शाती।</p>
       </div>
     </Card>
   );

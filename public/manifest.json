@@ -1,16 +1,40 @@
 {
-  "name": "MandiJi — भारत मंडी भाव डैशबोर्ड",
-  "short_name": "MandiJi",
-  "description": "भारत की मंडियों के ताज़ा भाव। 120+ फसलें, 16,000+ मंडी, रोज़ाना अपडेट।",
+  "name": "सही भाव — भारत के मंडी भाव",
+  "short_name": "SahiBhav",
+  "description": "फसल के दर्ज भाव देखें, मंडियों की तुलना करें और बिक्री की तैयारी करें।",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a1a0a",
-  "theme_color": "#4CAF50",
-  "orientation": "portrait",
+  "background_color": "#F7F5EC",
+  "theme_color": "#174C3C",
   "lang": "hi",
-  "categories": ["business", "finance"],
+  "categories": [
+    "business",
+    "finance"
+  ],
   "icons": [
-    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }

@@ -1,39 +1,32 @@
 import { Link } from 'react-router-dom';
-import { Leaf } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import Brand from './Brand';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-800 bg-zinc-950 px-4 py-6 mt-4">
-      {/* Logo */}
-      <div className="flex items-center gap-1.5 mb-4">
-        <Leaf size={14} className="text-green-500" />
-        <span className="text-sm font-extrabold text-foreground">मंडी<span className="text-green-500">जी</span></span>
+    <footer className="sb-footer">
+      <div className="sb-footer-main">
+        <div className="sb-footer-identity">
+          <Link to="/" aria-label="सही भाव होम" className="sb-footer-brand"><Brand /></Link>
+          <p>फसल आपकी। फैसला आपका।<br />मंडी की जानकारी, एक जगह।</p>
+        </div>
+        <nav aria-label="सहायता और जानकारी" className="sb-footer-links">
+          <FooterLink to="/about">हमारे बारे में</FooterLink>
+          <FooterLink to="/contact">संपर्क करें</FooterLink>
+          <FooterLink to="/blog">खेती की जानकारी</FooterLink>
+          <FooterLink to="/pricing">Pro प्लान <ArrowUpRight size={13} aria-hidden="true" /></FooterLink>
+          <FooterLink to="/privacy">गोपनीयता नीति</FooterLink>
+          <FooterLink to="/terms">नियम और शर्तें</FooterLink>
+        </nav>
       </div>
-
-      {/* Links */}
-      <div className="grid grid-cols-2 gap-y-2 gap-x-4 mb-4">
-        <FooterLink to="/about">हमारे बारे में</FooterLink>
-        <FooterLink to="/contact">संपर्क करें</FooterLink>
-        <FooterLink to="/privacy">गोपनीयता नीति</FooterLink>
-        <FooterLink to="/terms">नियम और शर्तें</FooterLink>
-        <FooterLink to="/pricing">Pro प्लान</FooterLink>
-        <FooterLink to="/blog">ब्लॉग</FooterLink>
-      </div>
-
-      {/* Copyright */}
-      <div className="text-[9px] text-zinc-600 leading-relaxed">
-        &copy; {new Date().getFullYear()} MandiJi. सर्वाधिकार सुरक्षित।
-        <br />
-        डेटा स्रोत: data.gov.in, agriportal.cg.nic.in
+      <div className="sb-footer-bottom">
+        <span>© {new Date().getFullYear()} SahiBhav · सही भाव</span>
+        <span>डेटा स्रोत: data.gov.in · agriportal.cg.nic.in</span>
       </div>
     </footer>
   );
 }
 
 function FooterLink({ to, children }) {
-  return (
-    <Link to={to} className="text-[11px] text-zinc-400 hover:text-green-500 transition-colors">
-      {children}
-    </Link>
-  );
+  return <Link to={to}>{children}</Link>;
 }

@@ -44,7 +44,7 @@ export default function DistrictsLayer({ stateId, districts = [], mandis = [], s
       // Tooltip
       layer.bindTooltip(
         `<div style="font-size:11px;font-weight:700">${distName}</div>
-         <div style="font-size:9px;color:#a1a1aa">${info?.totalRecords || 0} रिकॉर्ड</div>`,
+         <div style="font-size:9px;color:#65736a">${info?.totalRecords || 0} रिकॉर्ड</div>`,
         { sticky: true, direction: 'top', className: 'leaflet-dark-tooltip' }
       );
 

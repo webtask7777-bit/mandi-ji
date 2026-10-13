@@ -1,3 +1,4 @@
+import '@/styles/secondary.css';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Leaf, BarChart3, Users, MapPin, Truck, TrendingUp } from 'lucide-react';
@@ -9,11 +10,11 @@ export default function AboutPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-foreground max-w-lg mx-auto flex flex-col">
-      <SEO title="हमारे बारे में" description="मंडीजी — भारत का किसान-पहले मंडी भाव प्लेटफ़ॉर्म। 120+ फसलें, 16,000+ मंडी।" path="/about" />
+    <div className="sb-secondary-page sb-about-page min-h-screen bg-zinc-950 text-foreground mx-auto flex flex-col">
+      <SEO title="हमारे बारे में" description="सही भाव — भारत का किसान-पहले मंडी भाव प्लेटफ़ॉर्म। 120+ फसलें, 16,000+ मंडी।" path="/about" />
       <header className="sticky top-0 z-30 bg-zinc-950 border-b border-zinc-800">
         <div className="flex items-center gap-3 px-4 py-3">
-          <button onClick={() => navigate(-1)} className="p-1.5 rounded-lg hover:bg-zinc-800 transition-colors">
+          <button onClick={() => navigate(-1)} aria-label="वापस जाएं" className="sb-back-button p-1.5 rounded-lg hover:bg-zinc-800 transition-colors">
             <ArrowLeft size={20} className="text-zinc-400" />
           </button>
           <Leaf size={18} className="text-green-500" />
@@ -21,19 +22,16 @@ export default function AboutPage() {
         </div>
       </header>
 
-      <motion.div {...fadeInUp} className="flex-1 px-4 py-6 space-y-6">
+      <motion.div {...fadeInUp} className="sb-page-content flex-1 px-4 py-6 space-y-6">
         {/* Hero */}
-        <div className="text-center space-y-3">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-green-500/15 border border-green-500/30">
-            <Leaf size={32} className="text-green-500" />
+        <section className="sb-editorial-hero">
+          <div className="sb-editorial-copy">
+            <img className="sb-editorial-logo" src="/brand/logo.svg" alt="सही भाव" width="190" height="58" />
+            <h2>हर फसल की मेहनत।<br />हर फैसले में सही जानकारी।</h2>
+            <p>भारत का किसान-पहले मंडी भाव प्लेटफ़ॉर्म। भाव देखें, मंडियों की तुलना करें और अपने कारोबार की योजना बनाएं।</p>
           </div>
-          <h2 className="text-xl font-extrabold">
-            मंडी<span className="text-green-500">जी</span>
-          </h2>
-          <p className="text-xs text-zinc-400 leading-relaxed max-w-xs mx-auto">
-            भारत का किसान-पहले मंडी भाव प्लेटफ़ॉर्म। सही भाव, सही फ़ैसला।
-          </p>
-        </div>
+          <img className="sb-editorial-photo" src="/visuals/guide-understand-prices.webp" alt="धान के दानों को परखते किसान के हाथ" width="1280" height="853" />
+        </section>
 
         {/* Mission */}
         <Card className="bg-zinc-900 border-zinc-800 p-4">

@@ -2,14 +2,14 @@
 <html lang="hi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Static meta (not managed by Helmet) -->
-    <meta name="author" content="MandiJi" />
-    <meta name="theme-color" content="#4CAF50" />
+    <meta name="author" content="SahiBhav" />
+    <meta name="theme-color" content="#174C3C" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="MandiJi" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="SahiBhav" />
 
     <!-- Favicons & PWA -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -17,19 +17,18 @@
     <link rel="manifest" href="/manifest.json" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preload" href="/fonts/noto-devanagari.woff" as="font" type="font/woff" crossorigin />
 
     <!-- Default title (overridden by Helmet per page) -->
-    <title>मंडीजी — भारत मंडी भाव डैशबोर्ड | MandiJi</title>
+    <title>सही भाव — भारत के मंडी भाव | SahiBhav</title>
+    <meta name="description" content="फसल के दर्ज मंडी भाव देखें, मंडियों की तुलना करें और बिक्री व परिवहन की तैयारी करें। सही भाव — SahiBhav।" data-rh="true" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js');
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
       }
     </script>
   </body>

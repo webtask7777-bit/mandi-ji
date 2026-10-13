@@ -9,7 +9,7 @@ export default function PrivacyPolicyPage() {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-foreground max-w-lg mx-auto flex flex-col">
-      <SEO title="गोपनीयता नीति" description="मंडीजी की गोपनीयता नीति — आपका डेटा कैसे सुरक्षित रखा जाता है।" path="/privacy" />
+      <SEO title="गोपनीयता नीति" description="सही भाव की गोपनीयता नीति — आपका डेटा कैसे सुरक्षित रखा जाता है।" path="/privacy" />
       <header className="sticky top-0 z-30 bg-zinc-950 border-b border-zinc-800">
         <div className="flex items-center gap-3 px-4 py-3">
           <button onClick={() => navigate(-1)} className="p-1.5 rounded-lg hover:bg-zinc-800 transition-colors">
@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
         <p className="text-xs text-zinc-500">अंतिम अपडेट: मार्च 2026</p>
 
         <Section title="1. हम कौन हैं">
-          मंडीजी (MandiJi) एक कृषि मंडी भाव डैशबोर्ड है जो भारतीय किसानों को ताज़ा मंडी भाव, फसल तुलना, और बाज़ार जानकारी प्रदान करता है।
+          सही भाव (SahiBhav) एक कृषि मंडी भाव डैशबोर्ड है जो भारतीय किसानों को ताज़ा मंडी भाव, फसल तुलना, और बाज़ार जानकारी प्रदान करता है।
         </Section>
 
         <Section title="2. हम कौन सा डेटा एकत्र करते हैं">

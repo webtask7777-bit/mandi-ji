@@ -5,48 +5,52 @@
 
 @custom-variant dark (&:is(.dark *));
 
-
-::-webkit-scrollbar { height: 4px; width: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 4px; }
+@font-face {
+  font-family: 'SahiBhav Sans';
+  src: url('/fonts/noto-devanagari.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --card: #18181b;
-  --card-foreground: #fafafa;
-  --popover: #18181b;
-  --popover-foreground: #fafafa;
-  --primary: #22c55e;
-  --primary-foreground: #052e16;
-  --secondary: #27272a;
-  --secondary-foreground: #fafafa;
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
-  --accent: #f59e0b;
-  --accent-foreground: #451a03;
-  --destructive: #ef4444;
-  --border: #3f3f46;
-  --input: #3f3f46;
-  --ring: #22c55e;
-  --chart-1: #22c55e;
-  --chart-2: #f59e0b;
-  --chart-3: #3b82f6;
-  --chart-4: #a855f7;
-  --chart-5: #ef4444;
-  --radius: 0.625rem;
-  --sidebar: #18181b;
-  --sidebar-foreground: #fafafa;
-  --sidebar-primary: #22c55e;
-  --sidebar-primary-foreground: #052e16;
-  --sidebar-accent: #27272a;
-  --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: #3f3f46;
-  --sidebar-ring: #22c55e;
+  color-scheme: light;
+  --background: #f7f5ec;
+  --foreground: #1b3027;
+  --card: #ffffff;
+  --card-foreground: #1b3027;
+  --popover: #ffffff;
+  --popover-foreground: #1b3027;
+  --primary: #174c3c;
+  --primary-foreground: #ffffff;
+  --secondary: #edf1e8;
+  --secondary-foreground: #254d3c;
+  --muted: #edf1e8;
+  --muted-foreground: #65736a;
+  --accent: #f5e8bd;
+  --accent-foreground: #765a21;
+  --destructive: #b3433e;
+  --border: #dde3d7;
+  --input: #d2dacc;
+  --ring: #39715a;
+  --chart-1: #174c3c;
+  --chart-2: #ba8322;
+  --chart-3: #477d9b;
+  --chart-4: #8a6899;
+  --chart-5: #b3433e;
+  --radius: 1rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1b3027;
+  --sidebar-primary: #174c3c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #edf1e8;
+  --sidebar-accent-foreground: #1b3027;
+  --sidebar-border: #dde3d7;
+  --sidebar-ring: #39715a;
 }
 
 @theme inline {
-  --font-sans: 'Noto Sans Devanagari', 'Mukta', system-ui, sans-serif;
+  --font-sans: 'SahiBhav Sans', 'Noto Sans Devanagari', system-ui, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -85,97 +89,89 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-  --color-green-500: #22c55e;
-  --color-green-600: #16a34a;
+  /* Existing feature screens share these semantic surface and text colours. */
+  --color-zinc-50: #1b3027;
+  --color-zinc-100: #1b3027;
+  --color-zinc-200: #294638;
+  --color-zinc-300: #40584a;
+  --color-zinc-400: #566b5d;
+  --color-zinc-500: #65736a;
+  --color-zinc-600: #738171;
+  --color-zinc-700: #d2dacc;
+  --color-zinc-800: #e5e9df;
+  --color-zinc-900: #ffffff;
+  --color-zinc-950: #f7f5ec;
+  --color-green-300: #33785b;
+  --color-green-400: #2c7054;
+  --color-green-500: #174c3c;
+  --color-green-600: #103b2e;
   --color-green-900: #14532d;
-  --color-amber-500: #f59e0b;
-  --color-amber-900: #78350f;
-  --color-zinc-700: #3f3f46;
-  --color-zinc-800: #27272a;
-  --color-zinc-900: #18181b;
-  --color-zinc-950: #09090b;
+  --color-green-950: #ffffff;
+  --color-emerald-400: #28664f;
+  --color-emerald-500: #246248;
+  --color-red-400: #b3433e;
+  --color-red-500: #b3433e;
+  --color-amber-400: #966a18;
+  --color-amber-500: #ae771c;
+  --color-amber-900: #6d4f16;
+  --color-blue-400: #3c7298;
+  --color-blue-500: #336a91;
+  --color-purple-400: #855893;
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
+  * { @apply border-border outline-ring/50; }
+  html { scroll-padding-top: 150px; }
   body {
     @apply bg-background text-foreground font-sans;
+    margin: 0;
+    min-width: 320px;
     -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
   }
+  button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+  button:not(:disabled), [role='button']:not([aria-disabled='true']) { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+  button, input, select, textarea { font: inherit; }
+  :focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+  ::selection { background: #dcebdc; color: #174c3c; }
+  input, select, textarea { accent-color: #174c3c; }
 }
 
-/* ─── Leaflet Dark Theme ─── */
-.leaflet-container {
-  background: #09090b;
-  font-family: inherit;
+::-webkit-scrollbar { height: 6px; width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #b1c1b0; border-radius: 8px; }
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+/* Bring legacy dense labels up to a readable baseline without changing data. */
+:where(#root) :is(.text-\[7px\], .text-\[8px\], .text-\[9px\]) { font-size: 11px; line-height: 1.5; }
+:where(#root) .text-\[10px\] { font-size: 12px; line-height: 1.55; }
+:where(#root) .text-\[11px\] { font-size: 13px; line-height: 1.55; }
+[data-slot='card'] { box-shadow: 0 2px 5px #233e2810; }
+
+/* Map controls share the same light surface language as the dashboard. */
+.leaflet-container { background: #eef0e6; font-family: inherit; }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #fff;
+  color: #1b3027;
+  border: 1px solid #dde3d7;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px #23443222;
 }
-.leaflet-popup-content-wrapper {
-  background: #18181b;
-  color: #fafafa;
-  border: 1px solid #3f3f46;
-  border-radius: 0.75rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-}
-.leaflet-popup-tip {
-  background: #18181b;
-  border: 1px solid #3f3f46;
-  border-top: none;
-  border-left: none;
-}
-.leaflet-popup-content {
-  margin: 10px 12px;
-  line-height: 1.4;
-}
-.leaflet-popup-close-button {
-  color: #a1a1aa !important;
-  font-size: 18px !important;
-  top: 6px !important;
-  right: 8px !important;
-}
-.leaflet-popup-close-button:hover {
-  color: #fafafa !important;
-}
-.leaflet-control-zoom a {
-  background: #18181b !important;
-  color: #a1a1aa !important;
-  border-color: #3f3f46 !important;
-  width: 32px !important;
-  height: 32px !important;
-  line-height: 32px !important;
-  font-size: 16px !important;
-}
-.leaflet-control-zoom a:hover {
-  background: #27272a !important;
-  color: #fafafa !important;
-}
-.leaflet-control-zoom {
-  border: 1px solid #3f3f46 !important;
-  border-radius: 8px !important;
-  overflow: hidden;
-}
-.leaflet-control-attribution {
-  background: rgba(9,9,11,0.7) !important;
-  color: #52525b !important;
-  font-size: 9px !important;
-}
-.leaflet-control-attribution a {
-  color: #71717a !important;
-}
-/* Dark tooltip */
-.leaflet-dark-tooltip {
-  background: #18181b !important;
-  color: #fafafa !important;
-  border: 1px solid #3f3f46 !important;
-  border-radius: 8px !important;
-  padding: 6px 10px !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.5) !important;
-  font-family: inherit !important;
-}
-.leaflet-dark-tooltip::before {
-  border-top-color: #3f3f46 !important;
-}
-.leaflet-tooltip-top::before {
-  border-top-color: #3f3f46 !important;
+.leaflet-popup-tip { border-top: none; border-left: none; border-radius: 0; }
+.leaflet-popup-content { margin: 14px 16px; line-height: 1.6; }
+.leaflet-popup-content .text-white { color: #1b3027; }
+.leaflet-popup-close-button { color: #65736a !important; font-size: 20px !important; top: 5px !important; right: 7px !important; }
+.leaflet-popup-close-button:hover { color: #174c3c !important; }
+.leaflet-control-zoom a { background: #fff !important; color: #174c3c !important; border-color: #dde3d7 !important; width: 36px !important; height: 36px !important; line-height: 36px !important; font-size: 18px !important; }
+.leaflet-control-zoom a:hover { background: #edf1e8 !important; }
+.leaflet-control-zoom { border: 1px solid #dde3d7 !important; border-radius: 10px !important; overflow: hidden; }
+.leaflet-control-attribution { background: #ffffffdf !important; color: #566b5d !important; font-size: 10px !important; }
+.leaflet-control-attribution a { color: #174c3c !important; }
+.leaflet-dark-tooltip { background: #fff !important; color: #1b3027 !important; border: 1px solid #dde3d7 !important; border-radius: 8px !important; padding: 8px 12px !important; box-shadow: 0 4px 16px #23443222 !important; font-family: inherit !important; }
+.leaflet-dark-tooltip::before, .leaflet-tooltip-top::before { border-top-color: #dde3d7 !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }

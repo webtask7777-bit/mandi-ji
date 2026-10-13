@@ -1,52 +1,54 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
+// Use the domain that is actually deployed. Set VITE_SITE_URL only after a custom
+// domain is attached in Vercel; do not point search engines at an unconnected name.
+const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://mandi-ji.vercel.app').replace(/\/$/, '');
 const DEFAULTS = {
-  title: 'मंडीजी — भारत मंडी भाव डैशबोर्ड',
-  description: 'भारत की मंडियों के ताज़ा भाव। 120+ फसलें, 16,000+ मंडी, रोज़ाना अपडेट। मुनाफ़ा कैलकुलेटर, मंडी तुलना, MSP मॉनिटर।',
-  url: 'https://mandiji.in',
-  image: 'https://mandiji.in/og-image.png',
+  title: 'सही भाव — भारत के मंडी भाव | SahiBhav',
+  description: 'फसल के दर्ज मंडी भाव देखें, मंडियों की तुलना करें और बिक्री व परिवहन की तैयारी करें। सही भाव — SahiBhav।',
+  image: `${SITE_URL}/og-image.png`,
 };
+const PRIVATE_ROUTES = /^\/(?:admin|login|register|my-listings|my-eway-bills|eway-bill|listing\/new)(?:\/|$)/;
 
 const SCHEMA_JSON = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "MandiJi",
-  alternateName: "मंडीजी",
-  url: "https://mandiji.in",
-  description: "भारत की मंडियों के ताज़ा भाव डैशबोर्ड। 120+ फसलें, 16,000+ मंडी।",
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
-  inLanguage: ["hi", "en"],
-  offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
-  author: { "@type": "Organization", name: "MandiJi" },
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'SahiBhav',
+  alternateName: 'सही भाव',
+  url: SITE_URL,
+  description: DEFAULTS.description,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  inLanguage: ['hi', 'en'],
+  author: { '@type': 'Organization', name: 'SahiBhav' },
 });
 
-export default function SEO({ title, description, path }) {
-  const pageTitle = title ? `${title} | MandiJi` : DEFAULTS.title;
+export default function SEO({ title, description, path, noIndex = false }) {
+  const { pathname } = useLocation();
+  const pageTitle = title ? `${title} | SahiBhav` : DEFAULTS.title;
   const pageDesc = description || DEFAULTS.description;
-  const pageUrl = path ? `${DEFAULTS.url}${path}` : DEFAULTS.url;
+  const pagePath = path || pathname;
+  const pageUrl = `${SITE_URL}${pagePath.startsWith('/') ? pagePath : `/${pagePath}`}`;
+  const robots = noIndex || PRIVATE_ROUTES.test(pathname) ? 'noindex, follow' : 'index, follow';
 
   return (
     <Helmet>
       <title>{pageTitle}</title>
       <meta name="description" content={pageDesc} />
-      <meta name="robots" content="index, follow" />
-      <meta name="keywords" content="मंडी भाव, mandi bhav, mandi rates, सब्जी भाव, vegetable prices, crop prices India, APMC rates, किसान, farmer, MSP, मंडी दर, आज का भाव" />
+      <meta name="robots" content={robots} />
       <link rel="canonical" href={pageUrl} />
-
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDesc} />
       <meta property="og:image" content={DEFAULTS.image} />
       <meta property="og:locale" content="hi_IN" />
-      <meta property="og:site_name" content="MandiJi" />
-
+      <meta property="og:site_name" content="SahiBhav" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDesc} />
       <meta name="twitter:image" content={DEFAULTS.image} />
-
       <script type="application/ld+json">{SCHEMA_JSON}</script>
     </Helmet>
   );

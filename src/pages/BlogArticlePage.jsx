@@ -1,106 +1,50 @@
-import { useNavigate, useParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, Tag, User } from 'lucide-react';
-import { fadeInUp } from '@/utils/animations';
+import { Link, useParams } from 'react-router-dom';
+import { ArrowLeft, ArrowRight, Calendar, Tag, User, BookOpen, AlertCircle, RefreshCw } from 'lucide-react';
 import SEO from '@/components/SEO';
+import Brand from '@/components/Brand';
 import { useApi } from '@/hooks/useApi';
 import Markdown from 'react-markdown';
+import '../styles/detail.css';
+
+function formatDate(value) {
+  const date = new Date(value);
+  return Number.isFinite(date.getTime()) ? date.toLocaleDateString('hi-IN', {
+    day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata',
+  }) : null;
+}
 
 export default function BlogArticlePage() {
   const { slug } = useParams();
-  const navigate = useNavigate();
-  const { data: post, loading } = useApi(`/cms/blog/${slug}`);
+  const { data: post, loading, error } = useApi(`/cms/blog/${encodeURIComponent(slug)}`);
+  const hasPost = post && typeof post.title === 'string';
+  const publishedDate = post?.publishedAt ? formatDate(post.publishedAt) : null;
+  const tags = Array.isArray(post?.tags) ? post.tags.filter(tag => typeof tag === 'string') : [];
 
-  function formatDate(d) {
-    return new Date(d).toLocaleDateString('hi-IN', { day: 'numeric', month: 'long', year: 'numeric' });
-  }
-
-  return (
-    <div className="min-h-screen bg-zinc-950 text-foreground max-w-lg mx-auto flex flex-col">
-      {post && (
-        <SEO
-          title={post.title}
-          description={post.excerpt || post.title}
-          path={`/blog/${slug}`}
-        />
-      )}
-      <header className="sticky top-0 z-30 bg-zinc-950 border-b border-zinc-800">
-        <div className="flex items-center gap-3 px-4 py-3">
-          <button onClick={() => navigate('/blog')} className="p-1.5 rounded-lg hover:bg-zinc-800 transition-colors">
-            <ArrowLeft size={20} className="text-zinc-400" />
-          </button>
-          <h1 className="text-base font-bold truncate">{post?.title || 'लेख'}</h1>
-        </div>
-      </header>
-
-      {loading && (
-        <div className="flex-1 flex items-center justify-center">
-          <div className="text-sm text-zinc-500 animate-pulse">लोड हो रहा है...</div>
-        </div>
-      )}
-
-      {!loading && !post && (
-        <div className="flex-1 flex flex-col items-center justify-center gap-3 px-4">
-          <span className="text-5xl">📝</span>
-          <p className="text-sm text-zinc-400">यह लेख नहीं मिला</p>
-          <button onClick={() => navigate('/blog')}
-            className="px-4 py-2 rounded-xl bg-green-500 text-green-950 font-bold text-sm">
-            ब्लॉग पर जाएं
-          </button>
-        </div>
-      )}
-
-      {post && (
-        <motion.article {...fadeInUp} className="flex-1 px-4 py-6">
-          {/* Title */}
-          <h1 className="text-lg font-extrabold text-foreground mb-3 leading-tight">{post.title}</h1>
-
-          {/* Meta */}
-          <div className="flex items-center gap-3 flex-wrap mb-5">
-            {post.author && (
-              <div className="flex items-center gap-1 text-[10px] text-zinc-500">
-                <User size={10} /> {post.author}
-              </div>
-            )}
-            {post.publishedAt && (
-              <div className="flex items-center gap-1 text-[10px] text-zinc-500">
-                <Calendar size={10} /> {formatDate(post.publishedAt)}
-              </div>
-            )}
-          </div>
-
-          {/* Tags */}
-          {post.tags?.length > 0 && (
-            <div className="flex items-center gap-1.5 flex-wrap mb-5">
-              <Tag size={10} className="text-zinc-500" />
-              {post.tags.map(tag => (
-                <span key={tag} className="text-[9px] bg-green-500/15 text-green-500 px-2 py-0.5 rounded-full font-medium">{tag}</span>
-              ))}
-            </div>
-          )}
-
-          {/* Content */}
-          <div className="prose prose-invert prose-sm max-w-none
-            prose-headings:text-foreground prose-headings:font-bold prose-headings:text-sm prose-headings:mt-5 prose-headings:mb-2
-            prose-p:text-zinc-400 prose-p:text-xs prose-p:leading-relaxed prose-p:mb-3
-            prose-li:text-zinc-400 prose-li:text-xs
-            prose-strong:text-foreground
-            prose-a:text-green-500 prose-a:no-underline hover:prose-a:underline
-            prose-blockquote:border-green-500 prose-blockquote:text-zinc-400
-            prose-code:text-green-400 prose-code:bg-zinc-800 prose-code:px-1 prose-code:rounded
-          ">
-            <Markdown>{post.content}</Markdown>
-          </div>
-
-          {/* Back to blog */}
-          <div className="mt-8 pt-4 border-t border-zinc-800 text-center">
-            <button onClick={() => navigate('/blog')}
-              className="px-6 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-green-500 font-semibold hover:bg-zinc-800 transition-colors">
-              और लेख पढ़ें
-            </button>
-          </div>
-        </motion.article>
-      )}
-    </div>
-  );
+  return <div className="sb-detail-page sb-article-page">
+    <SEO title={hasPost ? post.title : 'किसान मार्गदर्शिका'} description={hasPost ? (post.excerpt || post.title) : 'खेती और मंडी भाव के बारे में सही भाव पर पढ़ें।'} path={`/blog/${slug}`} noIndex={!loading && !hasPost} />
+    <header className="sb-detail-header"><div className="sb-detail-header__inner">
+      <Link to="/" aria-label="सही भाव के मुख्य पृष्ठ पर जाएँ"><Brand /></Link>
+      <Link to="/blog" className="sb-detail-back"><ArrowLeft size={16} aria-hidden="true" /> सभी लेख</Link>
+    </div></header>
+    <main className="sb-article-main" id="main-content">
+      <nav className="sb-detail-breadcrumb" aria-label="पृष्ठ पथ"><Link to="/">सही भाव</Link><span aria-hidden="true">/</span><Link to="/blog">मार्गदर्शिका</Link><span aria-hidden="true">/</span><span>लेख</span></nav>
+      {loading && <div className="sb-detail-status" role="status"><RefreshCw size={24} aria-hidden="true" /><h1>लेख लोड हो रहा है</h1><p>कृपया कुछ पल रुकें।</p></div>}
+      {!loading && !hasPost && <div className="sb-detail-status" role={error ? 'alert' : 'status'}>
+        {error ? <AlertCircle size={32} aria-hidden="true" /> : <BookOpen size={32} aria-hidden="true" />}
+        <h1>{error ? 'लेख लोड नहीं हो पाया' : 'यह लेख नहीं मिला'}</h1>
+        <p>{error ? 'कनेक्शन की जाँच करके दोबारा कोशिश करें।' : 'यह लिंक बदल गया हो सकता है। सभी लेखों की सूची खोलें।'}</p>
+        {error && <button className="sb-detail-primary" type="button" onClick={() => window.location.reload()}>फिर कोशिश करें</button>}
+        <Link to="/blog" className="sb-detail-text-link">सभी लेख देखें <ArrowRight size={16} aria-hidden="true" /></Link>
+      </div>}
+      {hasPost && <article className="sb-article">
+        <header className="sb-article-heading"><span className="sb-detail-kicker"><BookOpen size={15} aria-hidden="true" /> किसान मार्गदर्शिका</span><h1>{post.title}</h1>
+          {post.excerpt && <p className="sb-article-excerpt">{post.excerpt}</p>}
+          <div className="sb-article-meta">{post.author && <span><User size={15} aria-hidden="true" />{post.author}</span>}{publishedDate && <span><Calendar size={15} aria-hidden="true" /><time dateTime={post.publishedAt}>{publishedDate}</time></span>}</div>
+          {tags.length > 0 && <div className="sb-article-tags" aria-label="लेख के विषय"><Tag size={14} aria-hidden="true" />{tags.map((tag, index) => <span key={`${tag}-${index}`}>{tag}</span>)}</div>}
+        </header>
+        <div className="sb-article-content"><Markdown>{typeof post.content === 'string' ? post.content : ''}</Markdown></div>
+        <footer className="sb-article-end"><div><span className="sb-detail-kicker">आगे पढ़ें</span><h2>बेहतर समझ, बेहतर फ़ैसले।</h2><p>खेती और मंडी से जुड़ी दूसरी मार्गदर्शिकाएँ देखें।</p></div><Link to="/blog" className="sb-detail-primary">और लेख पढ़ें <ArrowRight size={17} aria-hidden="true" /></Link></footer>
+      </article>}
+    </main>
+  </div>;
 }

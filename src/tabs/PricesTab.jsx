@@ -1,490 +1,182 @@
-import { useState, useEffect, useMemo, useRef } from "react";
-import { TrendingUp, TrendingDown, ChevronRight, BarChart3, ArrowUpRight, ArrowDownRight, ShoppingCart, AlertTriangle, Flame, Activity } from "lucide-react";
+import { useState, useEffect, useMemo } from "react";
+import { TrendingUp, TrendingDown, ChevronRight, ChevronLeft, BarChart3, ArrowUpRight, ArrowDownRight, ShoppingCart, AlertTriangle, Search, LayoutList, CalendarDays, Info, Sprout, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useApi } from "../hooks/useApi";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import PriceCard from "../components/PriceCard";
+import CropImage from "../components/CropImage";
 import MiniChart from "../components/MiniChart";
 import TickerBoard from "../components/TickerBoard";
 import MandiCompare from "../components/MandiCompare";
 import ArbitrageList from "../components/ArbitrageList";
 import { getOutlierBounds, isOutlier } from "@/lib/outlier";
+import { getDataFreshness } from "../utils/dataFreshness";
+import "../styles/prices.css";
 
 const MONTH_HI = {
   '01': 'जनवरी', '02': 'फ़रवरी', '03': 'मार्च', '04': 'अप्रैल',
   '05': 'मई', '06': 'जून', '07': 'जुलाई', '08': 'अगस्त',
   '09': 'सितम्बर', '10': 'अक्टूबर', '11': 'नवम्बर', '12': 'दिसम्बर',
-  'Jan': 'जन', 'Feb': 'फ़र', 'Mar': 'मार्च', 'Apr': 'अप्रै',
-  'May': 'मई', 'Jun': 'जून', 'Jul': 'जुला', 'Aug': 'अग',
-  'Sep': 'सित', 'Oct': 'अक्टू', 'Nov': 'नव', 'Dec': 'दिस',
+  Jan: 'जनवरी', Feb: 'फ़रवरी', Mar: 'मार्च', Apr: 'अप्रैल',
+  May: 'मई', Jun: 'जून', Jul: 'जुलाई', Aug: 'अगस्त',
+  Sep: 'सितम्बर', Oct: 'अक्टूबर', Nov: 'नवम्बर', Dec: 'दिसम्बर',
 };
-function formatMonthHi(m) {
-  if (!m) return '';
-  return MONTH_HI[m] || m;
+const formatMonthHi = month => MONTH_HI[month] || month || '';
+const number = value => Number(value).toLocaleString('en-IN', { maximumFractionDigits: 0 });
+function formatTimestamp(value) {
+  if (!value || Number.isNaN(new Date(value).getTime())) return '';
+  return new Date(value).toLocaleString('hi-IN', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' }) + ' IST';
 }
-function formatDateHi(dateStr) {
-  if (!dateStr) return '';
-  const [y, m, d] = dateStr.split('-');
-  return `${parseInt(d)} ${MONTH_HI[m] || m}`;
-}
-function formatTimestamp(isoStr) {
-  if (!isoStr) return '';
-  const d = new Date(isoStr);
-  return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata' })
-    + ' ' + d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Kolkata' }) + ' IST';
-}
-
-// Pick most relevant default crop: highest |changePct| from common crops with decent records
-function getDefaultCrop(allCrops, tickerData) {
-  if (!allCrops || allCrops.length === 0) return 'paddy';
-  if (tickerData && tickerData.length > 0) {
-    const cropIds = new Set(allCrops.map(c => c.id));
-    // Popular crops only: many mandis + records + decent price
-    const common = tickerData.filter(t =>
-      cropIds.has(t.id) && t.records > 5000 && (t.mandiCount || 0) > 80 && t.price > 200
-    );
-    if (common.length > 0) {
-      // Pick top gainer (positive changePct preferred, as it's more interesting news)
-      const gainers = common.filter(t => t.changePct > 2);
-      if (gainers.length > 0) {
-        return gainers.reduce((a, b) => b.changePct > a.changePct ? b : a).id;
-      }
-      // Fallback: biggest mover either way
-      return common.reduce((a, b) => Math.abs(b.changePct) > Math.abs(a.changePct) ? b : a).id;
-    }
+function recordLabel(record) {
+  if (!record) return '';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(record.date || '')) return getDataFreshness(record.date).dateLabel;
+  if (/^\d{4}-\d{2}$/.test(record.date || '')) {
+    const [year, month] = record.date.split('-');
+    return `${formatMonthHi(month)} ${year}`;
   }
-  const sorted = [...allCrops].sort((a, b) => (b.totalRecords || 0) - (a.totalRecords || 0));
-  return sorted[0]?.id || 'paddy';
+  return formatMonthHi(record.month);
 }
 
-export default function PricesTab({ crops, stateParam, initialCropId, onCropConsumed, onMandiClick }) {
-  const allCrops = crops.length > 0 ? crops : [];
-  const mspCrops = allCrops.filter(c => c.msp);
-  const displayCrops = allCrops;
-  const [selectedCrop, setSelectedCrop] = useState(null); // will be set after ticker loads
+function getDefaultCrop(allCrops, tickerData) {
+  if (!allCrops.length) return 'paddy';
+  const cropIds = new Set(allCrops.map(crop => crop.id));
+  const common = (tickerData || []).filter(item => cropIds.has(item.id) && item.records > 5000 && item.mandiCount > 80 && item.price > 200);
+  // Choose an established, widely reported crop; a large price swing is not a
+  // reason to promote a commodity to the default selection.
+  const preferred = ['wheat', 'paddy', 'paddycommon', 'maize', 'bengal-gramgramwhole'];
+  const familiar = preferred.find(id => common.some(item => item.id === id));
+  if (familiar) return familiar;
+  return [...allCrops].sort((a, b) => (b.totalRecords || 0) - (a.totalRecords || 0))[0].id;
+}
+
+export default function PricesTab({ crops = [], stateParam, initialCropId, onCropConsumed, onMandiClick }) {
+  const allCrops = useMemo(() => Array.isArray(crops) ? crops : [], [crops]);
+  const [selection, setSelection] = useState({ crop: initialCropId || null, navigationCrop: initialCropId });
   const [showAllCards, setShowAllCards] = useState(false);
-  const [view, setView] = useState("chart"); // "chart" or "board"
+  const [showAllCrops, setShowAllCrops] = useState(false);
+  const [cropSearch, setCropSearch] = useState('');
+  const [view, setView] = useState('chart');
   const [sliderIndex, setSliderIndex] = useState(0);
-  const sliderRef = useRef(null);
-  const autoSlideRef = useRef(null);
-  const smartDefaultSet = useRef(false); // true once ticker has been used to set default
 
+  const stateQ = stateParam && stateParam !== 'all' ? `&state=${encodeURIComponent(stateParam)}` : '&state=all';
+  const tickerQ = `?state=${encodeURIComponent(stateParam || 'all')}`;
+  const { data: tickerData, loading: tickerLoading } = useApi(`/ticker${tickerQ}`);
+  const ticker = Array.isArray(tickerData) ? tickerData : [];
+
+  // A navigation request is consumed once. Adjusting this local selection
+  // during render avoids an effect that briefly shows the previous crop.
+  if (selection.navigationCrop !== initialCropId) {
+    setSelection({ crop: initialCropId || selection.crop, navigationCrop: initialCropId });
+    if (initialCropId) setView('chart');
+  }
   useEffect(() => {
-    if (displayCrops.length > 0 && selectedCrop && !displayCrops.find(c => c.id === selectedCrop)) {
-      smartDefaultSet.current = false;
-      setSelectedCrop(null);
-    }
-  }, [stateParam]);
+    if (initialCropId) onCropConsumed?.();
+  }, [initialCropId, onCropConsumed]);
 
-  // Jump to crop from external navigation (e.g., MandisTab click)
-  useEffect(() => {
-    if (initialCropId) {
-      setSelectedCrop(initialCropId);
-      setView("chart");
-      onCropConsumed?.();
-    }
-  }, [initialCropId]);
+  const activeCrop = initialCropId || (allCrops.some(crop => crop.id === selection.crop) ? selection.crop : getDefaultCrop(allCrops, tickerLoading ? [] : tickerData));
+  const { data: priceData, loading: priceLoading, error: priceError } = useApi(`/prices/${activeCrop}?months=13${stateQ}`);
+  const { data: mandiCompareData, loading: mandiLoading } = useApi(`/mandi-compare/${activeCrop}${tickerQ}`);
+  const selectedMeta = allCrops.find(crop => crop.id === activeCrop);
+  const cropName = selectedMeta?.nameHi || selectedMeta?.name || activeCrop;
+  const history = priceLoading ? [] : (priceData?.history || []).filter(record => Number(record.market) > 0);
+  const dailyHistory = priceLoading ? [] : (priceData?.dailyHistory || []).filter(record => Number(record.market) > 0).sort((a, b) => String(a.date).localeCompare(String(b.date)));
+  const latestPrice = history.at(-1);
+  const latestDay = dailyHistory.at(-1);
+  const heroRecord = latestDay || latestPrice;
+  const previousRecord = latestDay ? dailyHistory.at(-2) : history.at(-2);
+  const heroPrice = heroRecord?.market;
+  const hasPrevious = Number(previousRecord?.market) > 0;
+  const heroChange = hasPrevious ? heroPrice - previousRecord.market : null;
+  const heroChangePct = hasPrevious ? ((heroChange / previousRecord.market) * 100).toFixed(1) : null;
+  const freshness = getDataFreshness(heroRecord?.date);
+  const selectedTicker = ticker.find(item => item.id === activeCrop);
+  const comparisons = !mandiLoading && Array.isArray(mandiCompareData) ? mandiCompareData : [];
+  const mandiOutlierBounds = comparisons.length >= 4 ? getOutlierBounds(comparisons.map(mandi => mandi.recentPrice || mandi.avgPrice)) : null;
 
-  const stateQ = stateParam && stateParam !== 'all' ? `&state=${stateParam}` : stateParam === 'all' ? '&state=all' : '';
-  const tickerQ = stateParam ? `?state=${stateParam}` : '?state=all';
-  const { data: tickerData } = useApi(`/ticker${tickerQ}`);
-
-  // Set smart default crop using ticker data (once per state)
-  useEffect(() => {
-    if (tickerData && allCrops.length > 0 && !smartDefaultSet.current) {
-      smartDefaultSet.current = true;
-      setSelectedCrop(getDefaultCrop(allCrops, tickerData));
-    }
-  }, [tickerData, allCrops.length, stateParam]);
-
-  const activeCrop = selectedCrop || allCrops[0]?.id || 'paddy';
-  const { data: priceData } = useApi(`/prices/${activeCrop}?months=13${stateQ}`);
-  const { data: mandiCompareData } = useApi(`/mandi-compare/${activeCrop}${tickerQ}`);
-
-  const selectedMeta = crops.find(c => c.id === activeCrop) || crops[0];
-  const history = priceData?.history?.filter(h => h.market) || [];
-  const dailyHistory = priceData?.dailyHistory?.filter(h => h.market) || [];
-  const lastUpdated = priceData?.lastUpdated || null;
-  const latestPrice = history.length > 0 ? history[history.length - 1] : null;
-  const prevPrice = history.length > 1 ? history[history.length - 2] : null;
-
-  // Prefer latest day's price for hero card
-  const latestDay = dailyHistory.length > 0 ? dailyHistory[dailyHistory.length - 1] : null;
-  const yesterdayDay = dailyHistory.length > 1 ? dailyHistory[dailyHistory.length - 2] : null;
-
-  // Hero card values: use daily if available, else monthly
-  const heroPrice = latestDay?.market || latestPrice?.market || 0;
-  const heroPrev = latestDay ? (yesterdayDay?.market || 0) : (prevPrice?.market || 0);
-  const heroChange = heroPrev ? heroPrice - heroPrev : 0;
-  const heroChangePct = heroPrev ? ((heroChange / heroPrev) * 100).toFixed(1) : "0.0";
-  const heroIsUp = heroChange >= 0;
-  const heroLabel = latestDay ? formatDateHi(latestDay.date) : formatMonthHi(latestPrice?.month);
-  const heroCompareLabel = latestDay ? "कल से" : "पिछले महीने से";
-
-  const change = latestPrice && prevPrice ? latestPrice.market - prevPrice.market : 0;
-  const changePct = prevPrice?.market ? ((change / prevPrice.market) * 100).toFixed(1) : "0.0";
-  const isUp = change >= 0;
-
-  // Get signal for selected crop from ticker data
-  const selectedTicker = tickerData?.find(t => t.id === activeCrop);
-
-  // Outlier detection for best/worst mandi prices
-  const mandiOutlierBounds = useMemo(() => {
-    if (!mandiCompareData || mandiCompareData.length < 4) return null;
-    return getOutlierBounds(mandiCompareData.map(m => m.recentPrice || m.avgPrice));
-  }, [mandiCompareData]);
-
-  // Top movers from ticker for slider
-  const topMovers = useMemo(() => {
-    if (!tickerData || tickerData.length === 0) return [];
-    const cropIds = new Set(displayCrops.map(c => c.id));
-    const valid = tickerData.filter(t => cropIds.has(t.id) && t.records > 2000 && t.price > 100 && t.changePct !== 0);
-    const gainers = [...valid].sort((a, b) => b.changePct - a.changePct).slice(0, 5);
-    const losers = [...valid].sort((a, b) => a.changePct - b.changePct).slice(0, 3);
-    // Interleave: 2 gainers, 1 loser, 2 gainers, 1 loser, 1 gainer
-    const slides = [];
-    gainers.forEach((g, i) => {
-      slides.push({ ...g, type: 'up' });
-      if (losers[i]) slides.push({ ...losers[i], type: 'down' });
-    });
-    return slides.slice(0, 6);
-  }, [tickerData, displayCrops.length]);
-
-  // Auto-slide
-  useEffect(() => {
-    if (topMovers.length < 2) return;
-    autoSlideRef.current = setInterval(() => {
-      setSliderIndex(i => (i + 1) % topMovers.length);
-    }, 3500);
-    return () => clearInterval(autoSlideRef.current);
-  }, [topMovers.length]);
-
-  const cropsWithPrices = displayCrops.slice(0, 8).map(c => {
-    const ticker = tickerData?.find(t => t.id === c.id);
-    return {
-      ...c,
-      displayName: c.nameHi || c.name,
-      name: c.nameHi ? `${c.nameHi}` : c.name,
-      market: c.avgPrice || c.msp || 0,
-      changePct: ticker?.changePct ?? null,
-      change: ticker?.change ?? null,
-      mandiCount: ticker?.mandiCount ?? null,
-    };
+  const validTicker = ticker.filter(item => allCrops.some(crop => crop.id === item.id) && Number(item.price) > 0);
+  const topMovers = [...validTicker].filter(item => item.records > 2000 && Number.isFinite(Number(item.changePct)) && Number(item.changePct) !== 0)
+    .sort((a, b) => Math.abs(b.changePct) - Math.abs(a.changePct)).slice(0, 6);
+  const mover = topMovers.length ? topMovers[sliderIndex % topMovers.length] : null;
+  const gainers = validTicker.filter(item => Number(item.changePct) > 0).length;
+  const losers = validTicker.filter(item => Number(item.changePct) < 0).length;
+  const filteredCrops = allCrops.filter(crop => `${crop.nameHi || ''} ${crop.name || ''} ${crop.id}`.toLowerCase().includes(cropSearch.trim().toLowerCase()));
+  const visibleCrops = showAllCrops || cropSearch.trim() ? filteredCrops : filteredCrops.slice(0, 15);
+  const cropsWithPrices = allCrops.slice(0, 12).map(crop => {
+    const quote = ticker.find(item => item.id === crop.id);
+    return { ...crop, displayName: crop.nameHi || crop.name, market: Number(quote?.price) > 0 ? quote.price : crop.avgPrice,
+      priceLabel: Number(quote?.price) > 0 ? 'उपलब्ध थोक भाव' : 'रिकॉर्ड का औसत', changePct: quote?.changePct ?? null,
+      change: quote?.change ?? null, mandiCount: quote?.mandiCount ?? null };
   });
-
   const visibleCards = showAllCards ? cropsWithPrices : cropsWithPrices.slice(0, 4);
 
+  function chooseCrop(id) {
+    setSelection(current => ({ ...current, crop: id }));
+  }
+
   return (
-    <div className="flex flex-col gap-4">
-      {/* ── Top Movers Slider ── */}
-      {topMovers.length > 0 && (
-        <div>
-          <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground tracking-wider font-semibold">
-              <Flame size={11} className="text-orange-400"/>
-              आज के टॉप मूवर्स
-            </div>
-            <div className="flex items-center gap-1">
-              {topMovers.map((_, i) => (
-                <button key={i} onClick={() => { setSliderIndex(i); clearInterval(autoSlideRef.current); }}
-                  className={`w-1.5 h-1.5 rounded-full transition-all ${i === sliderIndex ? 'bg-green-500 w-3' : 'bg-zinc-700'}`}/>
-              ))}
-            </div>
-          </div>
-          <div className="overflow-hidden rounded-xl" ref={sliderRef}>
-            {topMovers.map((item, i) => (
-              <div key={item.id}
-                style={{ display: i === sliderIndex ? 'block' : 'none' }}
-                onClick={() => { setSelectedCrop(item.id); clearInterval(autoSlideRef.current); }}
-                className={`cursor-pointer rounded-xl border p-3.5 transition-all active:scale-[0.98] ${
-                  item.type === 'up'
-                    ? 'bg-green-500/10 border-green-500/25'
-                    : 'bg-red-500/10 border-red-500/25'
-                }`}>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl ${
-                      item.type === 'up' ? 'bg-green-500/20' : 'bg-red-500/20'
-                    }`}>
-                      {item.emoji}
-                    </div>
-                    <div>
-                      <div className="text-sm font-extrabold text-foreground">{item.nameHi}</div>
-                      <div className="text-[10px] text-muted-foreground">{item.mandiCount} मंडी · {item.records?.toLocaleString()} रिकॉर्ड</div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-base font-extrabold text-foreground">₹{item.price?.toLocaleString()}</div>
-                    <div className={`flex items-center justify-end gap-0.5 text-[12px] font-bold ${item.type === 'up' ? 'text-green-500' : 'text-red-500'}`}>
-                      {item.type === 'up' ? <ArrowUpRight size={13}/> : <ArrowDownRight size={13}/>}
-                      {item.type === 'up' ? '+' : ''}{item.changePct}%
-                    </div>
-                    <div className="text-[9px] text-muted-foreground">/क्विंटल</div>
-                  </div>
-                </div>
-                {item.bestMandi && (
-                  <div className="mt-2.5 pt-2.5 border-t border-white/10 flex justify-between">
-                    <div className="flex items-center gap-1">
-                      <ArrowUpRight size={10} className="text-green-500"/>
-                      <span className="text-[10px] text-foreground font-semibold">₹{item.bestMandi.price?.toLocaleString()} — {item.bestMandi.name}</span>
-                    </div>
-                    {item.worstMandi && (
-                      <div className="flex items-center gap-1">
-                        <ArrowDownRight size={10} className="text-red-500"/>
-                        <span className="text-[10px] text-foreground font-semibold">₹{item.worstMandi.price?.toLocaleString()} — {item.worstMandi.name}</span>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+    <div className="sb-prices-page">
+      {!tickerLoading && validTicker.length > 0 && <section className="sb-market-pulse" aria-label="उपलब्ध बाज़ार रिकॉर्ड का सार">
+        <div className="sb-market-pulse__title"><span className="sb-eyebrow">बाज़ार का रुख़</span><strong>उपलब्ध रिकॉर्ड में</strong></div>
+        <div><TrendingUp size={19} className="sb-change--up" aria-hidden="true" /><strong>{number(gainers)}</strong><span>फसलों में बढ़त</span></div>
+        <div><TrendingDown size={19} className="sb-change--down" aria-hidden="true" /><strong>{number(losers)}</strong><span>फसलों में गिरावट</span></div>
+        <div><Sprout size={19} aria-hidden="true" /><strong>{number(validTicker.length)}</strong><span>फसलों के भाव</span></div>
+      </section>}
+
+      <section className="sb-crop-picker" id="sb-crop-picker" aria-labelledby="sb-crop-picker-title">
+        <div className="sb-section-heading">
+          <div><p className="sb-eyebrow">पहले अपनी फसल</p><h2 id="sb-crop-picker-title">किसका भाव जानना है?</h2></div>
+          <label className="sb-crop-search"><Search size={18} aria-hidden="true" /><span className="sr-only">फसल खोजें</span><input type="search" value={cropSearch} onChange={event => setCropSearch(event.target.value)} placeholder="फसल खोजें…" /></label>
         </div>
-      )}
-
-      {/* ── Market Stats Bar ── */}
-      {tickerData && tickerData.length > 0 && (() => {
-        const cropIds = new Set(displayCrops.map(c => c.id));
-        const valid = tickerData.filter(t => cropIds.has(t.id) && t.records > 500 && t.price > 50 && t.changePct !== 0);
-        const gainers = valid.filter(t => t.changePct > 0).length;
-        const losers = valid.filter(t => t.changePct < 0).length;
-        const totalMandis = valid.reduce((sum, t) => sum + (t.mandiCount || 0), 0);
-        return (
-          <div className="grid grid-cols-3 gap-2">
-            {[
-              { label: 'बढ़े', value: gainers, color: 'text-green-500', bg: 'bg-green-500/10 border-green-500/20', icon: '▲' },
-              { label: 'गिरे', value: losers, color: 'text-red-500', bg: 'bg-red-500/10 border-red-500/20', icon: '▼' },
-              { label: 'मंडियाँ', value: totalMandis.toLocaleString(), color: 'text-amber-400', bg: 'bg-amber-500/10 border-amber-500/20', icon: '🏪' },
-            ].map(s => (
-              <div key={s.label} className={`rounded-xl border p-2.5 text-center ${s.bg}`}>
-                <div className={`text-base font-extrabold ${s.color}`}>{s.icon} {s.value}</div>
-                <div className="text-[9px] text-muted-foreground">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        );
-      })()}
-
-      {/* Latest Price Hero — Enhanced with Signal */}
-      {(latestDay || latestPrice) && (
-        <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
-          <div className={`h-1 ${heroIsUp ? "bg-green-500" : "bg-red-500"}`}/>
-          <div className="p-4">
-            <div className="flex items-center justify-between mb-1">
-              <div className="text-[10px] text-muted-foreground tracking-wider">
-                थोक भाव — {heroLabel}
-              </div>
-              <div className="flex items-center gap-1.5">
-                {selectedTicker?.signal && (
-                  <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-md border ${
-                    selectedTicker.signal === 'sell' ? 'bg-green-500/15 border-green-500/30 text-green-500' :
-                    selectedTicker.signal === 'buy' ? 'bg-red-500/15 border-red-500/30 text-red-500' :
-                    'bg-amber-500/15 border-amber-500/30 text-amber-500'
-                  }`}>
-                    {selectedTicker.signalHi}
-                  </span>
-                )}
-                {latestPrice?.msp && (
-                  <Badge variant="outline" className="text-[10px] border-zinc-700 text-amber-500">
-                    MSP ₹{latestPrice.msp?.toLocaleString()}
-                  </Badge>
-                )}
-              </div>
-            </div>
-            <div className="flex items-baseline gap-2 mt-1">
-              <span className="text-2xl font-extrabold text-foreground">
-                {selectedMeta?.emoji} ₹{heroPrice?.toLocaleString()}
-              </span>
-              <span className="text-[11px] text-muted-foreground">/क्विंटल</span>
-            </div>
-            <div className="flex items-center gap-2 mt-1.5">
-              <span className={`flex items-center gap-1 text-sm font-bold ${heroIsUp ? "text-green-500" : "text-red-500"}`}>
-                {heroIsUp ? <TrendingUp size={14}/> : <TrendingDown size={14}/>}
-                {heroIsUp ? "+" : ""}{heroChange.toLocaleString()} ({heroIsUp ? "+" : ""}{heroChangePct}%)
-              </span>
-              <span className="text-[10px] text-muted-foreground">{heroCompareLabel}</span>
-            </div>
-            {lastUpdated && (
-              <div className="text-[9px] text-zinc-500 mt-1.5">
-                Updated: {formatTimestamp(lastUpdated)}
-              </div>
-            )}
-            {/* Best/Worst Mandi Quick Info */}
-            {selectedTicker?.bestMandi && selectedTicker?.worstMandi && (
-              <div className="flex gap-2 mt-3 pt-3 border-t border-zinc-800">
-                <div className="flex-1 flex items-center gap-1.5">
-                  <ArrowUpRight size={12} className="text-green-500 shrink-0"/>
-                  <div className="min-w-0">
-                    <div className="text-[8px] text-green-500 font-semibold">सबसे ज़्यादा</div>
-                    <div className="text-[10px] text-foreground font-bold truncate">
-                      ₹{selectedTicker.bestMandi.price?.toLocaleString()} — {selectedTicker.bestMandi.name}{selectedTicker.bestMandi.stateCode ? `, ${selectedTicker.bestMandi.stateCode}` : ''}
-                    </div>
-                    {(() => { const m = mandiCompareData?.find(x => x.name === selectedTicker.bestMandi.name); const info = [m?.topVariety, m?.grade && m.grade !== 'Local' ? m.grade : null].filter(Boolean).join(' · '); return info ? <div className="text-[7px] text-zinc-400 italic truncate">{info}</div> : null; })()}
-                    {isOutlier(selectedTicker.bestMandi.price, mandiOutlierBounds) && (
-                      <div className="flex items-center gap-0.5 mt-0.5">
-                        <AlertTriangle size={7} className="text-amber-500 shrink-0"/>
-                        <span className="text-[7px] text-amber-500">असामान्य भाव</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-                <div className="flex-1 flex items-center gap-1.5">
-                  <ArrowDownRight size={12} className="text-red-500 shrink-0"/>
-                  <div className="min-w-0">
-                    <div className="text-[8px] text-red-500 font-semibold">सबसे कम</div>
-                    <div className="text-[10px] text-foreground font-bold truncate">
-                      ₹{selectedTicker.worstMandi.price?.toLocaleString()} — {selectedTicker.worstMandi.name}{selectedTicker.worstMandi.stateCode ? `, ${selectedTicker.worstMandi.stateCode}` : ''}
-                    </div>
-                    {(() => { const m = mandiCompareData?.find(x => x.name === selectedTicker.worstMandi.name); const info = [m?.topVariety, m?.grade && m.grade !== 'Local' ? m.grade : null].filter(Boolean).join(' · '); return info ? <div className="text-[7px] text-zinc-400 italic truncate">{info}</div> : null; })()}
-                    {isOutlier(selectedTicker.worstMandi.price, mandiOutlierBounds) && (
-                      <div className="flex items-center gap-0.5 mt-0.5">
-                        <AlertTriangle size={7} className="text-amber-500 shrink-0"/>
-                        <span className="text-[7px] text-amber-500">असामान्य भाव</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )}
-            {/* Sell This Crop Button */}
-            <Link
-              to={`/listing/new?type=sell&crop=${activeCrop}`}
-              className="mt-3 flex items-center justify-center gap-1.5 w-full py-2 rounded-xl bg-green-500/15 border border-green-500/30 text-green-400 text-xs font-bold hover:bg-green-500/25 transition-colors"
-            >
-              <ShoppingCart size={13} />
-              यह फसल बेचें
-            </Link>
-          </div>
-        </Card>
-      )}
-
-      {/* Crop Selector */}
-      <div>
-        <div className="flex items-center justify-between mb-2">
-          <div className="text-[10px] text-muted-foreground tracking-wider font-semibold">
-            फसल चुनें
-          </div>
-          {/* View toggle */}
-          <div className="flex gap-1 bg-zinc-900 border border-zinc-800 rounded-lg p-0.5">
-            <button onClick={() => setView("chart")}
-              className={`text-[9px] px-2 py-0.5 rounded-md transition-all ${
-                view === "chart" ? "bg-green-500 text-green-950 font-bold" : "text-zinc-400"
-              }`}>
-              📊 चार्ट
-            </button>
-            <button onClick={() => setView("board")}
-              className={`text-[9px] px-2 py-0.5 rounded-md transition-all ${
-                view === "board" ? "bg-green-500 text-green-950 font-bold" : "text-zinc-400"
-              }`}>
-              📋 बोर्ड
-            </button>
-          </div>
+        <div className={`sb-crop-choices ${showAllCrops || cropSearch.trim() ? 'sb-crop-choices--expanded' : ''}`}>
+          {visibleCrops.map(crop => <button type="button" key={crop.id} onClick={() => chooseCrop(crop.id)} aria-pressed={activeCrop === crop.id} className={`sb-crop-choice ${activeCrop === crop.id ? 'sb-crop-choice--active' : ''}`}>
+            <CropImage id={crop.id} name={crop.nameHi || crop.name} size="lg" /><span>{crop.nameHi || crop.name}</span>
+          </button>)}
         </div>
-        <div className="flex gap-1.5 overflow-x-auto pb-1 -mx-1 px-1">
-          {displayCrops.slice(0, 15).map(crop => (
-            <Badge key={crop.id}
-              onClick={() => setSelectedCrop(crop.id)}
-              variant={activeCrop === crop.id ? "default" : "outline"}
-              className={`shrink-0 cursor-pointer text-[11px] px-2.5 py-1 whitespace-nowrap transition-all active:scale-95 ${
-                activeCrop === crop.id
-                  ? "bg-green-500 text-green-950 hover:bg-green-600 border-green-500"
-                  : "border-zinc-700 text-zinc-400 hover:border-zinc-500"
-              }`}>
-              {crop.emoji} {crop.nameHi || crop.name}
-            </Badge>
-          ))}
+        {filteredCrops.length === 0 && <p className="sb-empty-copy">इस नाम से फसल नहीं मिली। हिंदी या अंग्रेज़ी नाम से खोजें।</p>}
+        {!cropSearch.trim() && allCrops.length > 15 && <button type="button" className="sb-text-button" onClick={() => setShowAllCrops(!showAllCrops)} aria-expanded={showAllCrops}>{showAllCrops ? 'कम फसलें दिखाएँ' : `सभी ${allCrops.length} फसलें देखें`}<ChevronRight size={16} aria-hidden="true" /></button>}
+      </section>
+
+      <div className="sb-section-heading sb-selected-heading">
+        <div><p className="sb-eyebrow">भाव और बाज़ार</p><h2>{cropName}</h2></div>
+        <div className="sb-view-toggle" aria-label="भाव देखने का तरीका">
+          <button type="button" onClick={() => setView('chart')} aria-pressed={view === 'chart'}><BarChart3 size={16} aria-hidden="true" />विवरण</button>
+          <button type="button" onClick={() => setView('board')} aria-pressed={view === 'board'}><LayoutList size={16} aria-hidden="true" />भाव बोर्ड</button>
         </div>
       </div>
 
-      {/* Conditional: Chart view or Board view */}
-      {view === "chart" ? (
-        <>
-          {/* Price Trend Chart */}
-          {(history.length > 0 || dailyHistory.length > 0) && (
-            <MiniChart
-              data={history}
-              dailyData={dailyHistory}
-              title={`${selectedMeta?.emoji || ''} ${selectedMeta?.nameHi || selectedMeta?.name || ''}`}
-              formatMonth={formatMonthHi}
-            />
-          )}
+      {view === 'chart' ? <>
+        {priceLoading ? <div className="sb-price-loading" role="status"><span className="sb-loading-dot" />{cropName} के भाव लोड हो रहे हैं…</div> : priceError ? <div className="sb-price-empty" role="alert"><Info size={22} /><h3>भाव अभी लोड नहीं हो पाए</h3><p>कुछ देर बाद दोबारा कोशिश करें या दूसरी फसल चुनें।</p></div> : heroRecord ? <div className="sb-price-analysis">
+          <section className="sb-quote-hero" aria-label={`${cropName} का उपलब्ध थोक भाव`}>
+            <div className="sb-quote-hero__top"><span className="sb-eyebrow">उपलब्ध थोक भाव</span><span className={`sb-freshness sb-freshness--${freshness.status}`}><CalendarDays size={13} aria-hidden="true" />{freshness.isCurrent ? 'आज का रिकॉर्ड' : freshness.status === 'stale' ? 'पुराना रिकॉर्ड' : 'तारीख जाँचें'}</span></div>
+            <div className="sb-quote-hero__main"><div><h3>{cropName}</h3><p className="sb-quote-date">{recordLabel(heroRecord) || 'भाव की तारीख उपलब्ध नहीं'}</p><div className="sb-hero-amount">₹{number(heroPrice)}</div><span className="sb-unit-label">प्रति क्विंटल · उपलब्ध रिकॉर्ड का औसत</span></div><CropImage id={activeCrop} name={cropName} size="hero" /></div>
+            {hasPrevious && <div className="sb-hero-change"><span className={`sb-change ${heroChange > 0 ? 'sb-change--up' : heroChange < 0 ? 'sb-change--down' : 'sb-change--flat'}`}>{heroChange >= 0 ? <ArrowUpRight size={18} aria-hidden="true" /> : <ArrowDownRight size={18} aria-hidden="true" />}{heroChange > 0 ? '+' : ''}₹{number(heroChange)} ({heroChange > 0 ? '+' : ''}{heroChangePct}%)</span><small>{recordLabel(previousRecord) ? `${recordLabel(previousRecord)} के रिकॉर्ड से` : 'पिछले उपलब्ध रिकॉर्ड से'}</small></div>}
+            {Number(latestPrice?.msp) > 0 && <div className="sb-msp-line"><span>दर्ज MSP</span><strong>₹{number(latestPrice.msp)} <small>/ क्विंटल</small></strong></div>}
+            {!freshness.isCurrent && <p className="sb-quote-notice"><Info size={15} aria-hidden="true" />{freshness.label}। सौदे से पहले मंडी से भाव की पुष्टि करें।</p>}
+            {selectedTicker?.bestMandi && selectedTicker?.worstMandi && <div className="sb-quote-range">
+              {[{ label: 'दर्ज अधिकतम', market: selectedTicker.bestMandi }, { label: 'दर्ज न्यूनतम', market: selectedTicker.worstMandi }].map(({ label, market }) => {
+                const details = comparisons.find(item => item.name === market.name);
+                const variety = [details?.topVariety, details?.grade && details.grade !== 'Local' ? details.grade : null].filter(Boolean).join(' · ');
+                return <div key={label}><span>{label}</span><strong>₹{number(market.price)}</strong><p>{market.name}{market.stateCode ? `, ${market.stateCode}` : ''}</p>{variety && <small>{variety}</small>}{isOutlier(market.price, mandiOutlierBounds) && <small className="sb-outlier"><AlertTriangle size={12} aria-hidden="true" />असामान्य भाव</small>}</div>;
+              })}
+            </div>}
+            {selectedTicker?.bestMandi && <p className="sb-small-note">मंडी, किस्म और तारीख अलग हो सकती है।</p>}
+            <Link to={`/listing/new?type=sell&crop=${encodeURIComponent(activeCrop)}`} className="sb-sell-button"><ShoppingCart size={17} aria-hidden="true" />यह फसल बेचने की लिस्टिंग बनाएँ<ArrowRight size={17} aria-hidden="true" /></Link>
+            {priceData?.lastUpdated && <p className="sb-sync-time">डेटा अपडेट: {formatTimestamp(priceData.lastUpdated)}</p>}
+          </section>
+          <div className="sb-trend-panel"><MiniChart data={history} dailyData={dailyHistory} title={`${cropName} का भाव इतिहास`} formatMonth={formatMonthHi} /><p className="sb-data-note"><Info size={15} aria-hidden="true" />यह उपलब्ध भावों का इतिहास है। मंडी और फसल की गुणवत्ता के अनुसार वास्तविक भाव बदल सकता है।</p></div>
+        </div> : <div className="sb-price-empty"><Sprout size={30} /><h3>इस फसल का भाव अभी उपलब्ध नहीं है</h3><p>दूसरी फसल या राज्य चुनकर उपलब्ध रिकॉर्ड देखें।</p></div>}
 
-          {/* Mandi Comparison */}
-          {mandiCompareData && mandiCompareData.length > 1 && (
-            <MandiCompare
-              data={mandiCompareData}
-              cropName={selectedMeta?.nameHi || selectedMeta?.name}
-              cropEmoji={selectedMeta?.emoji}
-              dailyHistory={dailyHistory}
-              shelfLife={selectedMeta?.shelfLife}
-              onMandiClick={onMandiClick}
-              cropId={activeCrop}
-            />
-          )}
+        {mover && <section className="sb-mover-strip" aria-label="उपलब्ध रिकॉर्ड में प्रमुख बदलाव"><div className="sb-mover-strip__label"><p className="sb-eyebrow">भाव में बदलाव</p><h3>बाज़ार की हलचल</h3><span>पिछले उपलब्ध भाव से</span></div><button type="button" className="sb-mover-quote" onClick={() => chooseCrop(mover.id)}><CropImage id={mover.id} name={mover.nameHi || mover.name} size="md" /><span><strong>{mover.nameHi || mover.name}</strong><small>{mover.mandiCount ? `${number(mover.mandiCount)} मंडियों के रिकॉर्ड` : 'उपलब्ध रिकॉर्ड'}</small></span><b>₹{number(mover.price)}<small>/ क्विंटल</small></b><span className={`sb-change ${mover.changePct > 0 ? 'sb-change--up' : 'sb-change--down'}`}>{mover.changePct > 0 ? <ArrowUpRight size={18} aria-hidden="true" /> : <ArrowDownRight size={18} aria-hidden="true" />}{mover.changePct > 0 ? '+' : ''}{mover.changePct}%</span></button>{topMovers.length > 1 && <div className="sb-mover-controls"><button type="button" onClick={() => setSliderIndex(index => (index - 1 + topMovers.length) % topMovers.length)} aria-label="पिछली फसल"><ChevronLeft size={18} /></button><span>{sliderIndex % topMovers.length + 1}/{topMovers.length}</span><button type="button" onClick={() => setSliderIndex(index => (index + 1) % topMovers.length)} aria-label="अगली फसल"><ChevronRight size={18} /></button></div>}</section>}
 
-          {/* Arbitrage Opportunities List */}
-          <ArbitrageList stateParam={stateParam} onCropClick={(cropId) => setSelectedCrop(cropId)}/>
+        {comparisons.length > 1 && <div className="sb-market-comparison"><MandiCompare data={comparisons} cropName={cropName} cropEmoji="" dailyHistory={dailyHistory} shelfLife={selectedMeta?.shelfLife} onMandiClick={onMandiClick} cropId={activeCrop} /></div>}
+        <ArbitrageList stateParam={stateParam} onCropClick={chooseCrop} />
 
-          {/* Price Cards Grid */}
-          <div>
-            <div className="text-[10px] text-muted-foreground tracking-wider font-semibold mb-2">
-              {mspCrops.length > 0 ? "MSP vs बाज़ार भाव" : "बाज़ार भाव"}
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              {visibleCards.map(crop => (
-                <PriceCard key={crop.id} crop={crop} onClick={() => setSelectedCrop(crop.id)}/>
-              ))}
-            </div>
-            {cropsWithPrices.length > 4 && (
-              <button
-                onClick={() => setShowAllCards(!showAllCards)}
-                className="w-full mt-2 py-2 text-[11px] text-green-500 font-semibold flex items-center justify-center gap-1 rounded-lg bg-zinc-900 border border-zinc-800 active:bg-zinc-800 transition-colors cursor-pointer">
-                {showAllCards ? "कम दिखाएं" : `सभी ${cropsWithPrices.length} फसलें देखें`}
-                <ChevronRight size={12} className={`transition-transform ${showAllCards ? "rotate-90" : ""}`}/>
-              </button>
-            )}
-          </div>
+        {visibleCards.length > 0 && <section className="sb-crop-overview" aria-labelledby="sb-overview-title"><div className="sb-section-heading"><div><p className="sb-eyebrow">और फसलों पर नज़र</p><h2 id="sb-overview-title">बाज़ार भाव, एक जगह</h2></div><span className="sb-small-note">उपलब्ध रिकॉर्ड के आधार पर</span></div><div className="sb-price-card-grid">{visibleCards.map(crop => <PriceCard key={crop.id} crop={crop} onClick={() => chooseCrop(crop.id)} />)}</div>{cropsWithPrices.length > 4 && <button type="button" onClick={() => setShowAllCards(!showAllCards)} aria-expanded={showAllCards} className="sb-more-button">{showAllCards ? 'कम दिखाएँ' : `सभी ${cropsWithPrices.length} फसलें देखें`}<ChevronRight size={16} aria-hidden="true" /></button>}</section>}
 
-          {/* District Breakdown */}
-          {priceData?.districtBreakdown?.length > 0 && (
-            <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
-              <div className="px-4 pt-3 pb-2 border-b border-zinc-800">
-                <div className="text-[10px] text-muted-foreground tracking-wider font-semibold">
-                  ज़िला वार कारोबार — {selectedMeta?.nameHi || selectedMeta?.name}
-                </div>
-              </div>
-              <div className="p-4 flex flex-col gap-2">
-                {priceData.districtBreakdown.slice(0, 8).map((d) => {
-                  const maxRec = priceData.districtBreakdown[0]?.records || 1;
-                  const pct = ((d.records / maxRec) * 100).toFixed(0);
-                  return (
-                    <div key={d.district || d.districtId} className="flex items-center gap-2">
-                      <span className="text-[10px] text-muted-foreground w-28 shrink-0 truncate">
-                        {d.nameHi || d.district || d.name}
-                      </span>
-                      <div className="flex-1 h-2 bg-zinc-800 rounded-full overflow-hidden">
-                        <div className="h-full rounded-full bg-green-500"
-                          style={{ width: `${pct}%`, transition: "width 0.5s ease" }}/>
-                      </div>
-                      <span className="text-[10px] text-zinc-400 w-8 text-right font-medium">
-                        {d.records}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            </Card>
-          )}
-        </>
-      ) : (
-        /* Board View — Digital Board */
-        <TickerBoard
-          data={tickerData}
-          onSelectCrop={setSelectedCrop}
-          selectedCrop={selectedCrop}
-        />
-      )}
+        {!priceLoading && priceData?.districtBreakdown?.length > 0 && <section className="sb-district-records"><div className="sb-section-heading"><div><p className="sb-eyebrow">डेटा कहाँ से है?</p><h2>ज़िला वार रिकॉर्ड — {cropName}</h2></div></div><div className="sb-district-records__rows">{priceData.districtBreakdown.slice(0, 8).map(district => {
+          const maxRecords = Math.max(...priceData.districtBreakdown.map(item => Number(item.records) || 0), 1);
+          return <div key={district.district || district.districtId || district.name}><span>{district.nameHi || district.district || district.name}</span><span className="sb-record-bar"><span style={{ width: `${Math.max(0, Number(district.records) / maxRecords * 100)}%` }} /></span><strong>{number(district.records || 0)}</strong></div>;
+        })}</div><p className="sb-small-note">यह दर्ज रिकॉर्ड की संख्या है, कारोबार की मात्रा नहीं।</p></section>}
+      </> : <TickerBoard data={validTicker} onSelectCrop={id => { chooseCrop(id); setView('chart'); }} selectedCrop={activeCrop} />}
     </div>
   );
 }

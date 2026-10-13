@@ -11,12 +11,12 @@ export const INDIA_BOUNDS = [
   [38.0, 100.0],  // NE corner
 ];
 
-export const HEAT_SCALE = ['#14532d', '#166534', '#15803d', '#22c55e', '#4ade80'];
-export const NO_DATA_COLOR = '#1c1c1e';
-export const SELECTED_COLOR = '#22c55e';
-export const BORDER_COLOR = '#3f3f46';
-export const HOVER_BORDER = '#71717a';
+export const HEAT_SCALE = ['#d4e3c6', '#a7c694', '#73a578', '#3c7b59', '#174c3c'];
+export const NO_DATA_COLOR = '#e4e7de';
+export const SELECTED_COLOR = '#174c3c';
+export const BORDER_COLOR = '#b7c5b2';
+export const HOVER_BORDER = '#597a64';
 
-// Dark CartoDB tile URL (free, no API key)
-export const DARK_TILE_URL = 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png';
-export const DARK_TILE_ATTR = '&copy; <a href="https://carto.com/">CARTO</a>';
+// CARTO light base map; names kept stable for existing imports.
+export const DARK_TILE_URL = 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png';
+export const DARK_TILE_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>';

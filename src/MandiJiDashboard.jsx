@@ -1,31 +1,35 @@
-import { useState, useRef, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Leaf, ChevronDown, X, Search, MapPin, User, LogIn, Crown, Bell, Info, AlertTriangle, Gift, CheckCircle } from "lucide-react";
+import { useState, useRef, useEffect, lazy, Suspense } from "react";
+import { AnimatePresence, motion as Motion } from "framer-motion";
+import { ChevronDown, X, Search, MapPin, User, LogIn, Crown, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useApi } from "./hooks/useApi";
 import { useStateContext } from "./context/StateContext";
 import { useAuth } from "./context/AuthContext";
-import { MONTHS, FALLBACK_CROPS, FALLBACK_SEASONS, FALLBACK_REGIONS } from "./data/constants";
+import { FALLBACK_CROPS, FALLBACK_SEASONS, FALLBACK_REGIONS } from "./data/constants";
 import { tabVariants } from "./utils/animations";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import CalendarTab from "./tabs/CalendarTab";
-import MandisTab from "./tabs/MandisTab";
 import PricesTab from "./tabs/PricesTab";
-import NakshaTab from "./tabs/NakshaTab";
-import BazaarTab from "./tabs/BazaarTab";
-import LogisticsTab from "./tabs/LogisticsTab";
 import FloatingActionButton from "./components/marketplace/FloatingActionButton";
 import SEO from "./components/SEO";
 import Footer from "./components/Footer";
+import Brand from "./components/Brand";
+import "./styles/dashboard.css";
+
+// The map and marketplace should not delay the first price screen.
+const CalendarTab = lazy(() => import('./tabs/CalendarTab'));
+const MandisTab = lazy(() => import('./tabs/MandisTab'));
+const NakshaTab = lazy(() => import('./tabs/NakshaTab'));
+const BazaarTab = lazy(() => import('./tabs/BazaarTab'));
+const LogisticsTab = lazy(() => import('./tabs/LogisticsTab'));
 
 const TAB_ITEMS = [
-  { value: "prices", icon: "📊", label: "भाव" },
-  { value: "calendar", icon: "📅", label: "कैलेंडर" },
-  { value: "mandis", icon: "🏪", label: "मंडी" },
-  { value: "naksha", icon: "🗺️", label: "नक्शा" },
-  { value: "bazaar", icon: "🛒", label: "बाज़ार" },
-  { value: "logistics", icon: "🚛", label: "ट्रांसपोर्ट" },
+  { value: "prices", icon: ChartNoAxesCombined, label: "मंडी भाव" },
+  { value: "calendar", icon: CalendarDays, label: "कैलेंडर" },
+  { value: "mandis", icon: Store, label: "मंडी" },
+  { value: "naksha", icon: Map, label: "नक्शा" },
+  { value: "bazaar", icon: ShoppingBasket, label: "बाज़ार" },
+  { value: "logistics", icon: Truck, label: "ट्रांसपोर्ट" },
 ];
 
 export default function MandiJiDashboard() {
@@ -47,9 +51,10 @@ export default function MandiJiDashboard() {
     setActiveTab("mandis");
   }
   const searchRef = useRef(null);
+  const stateDialogRef = useRef(null);
   const navigate = useNavigate();
   const { user, logout } = useAuth();
-  const { selectedState, setSelectedState, selectStateDirect, stateNameHi, isCG, stateParam } = useStateContext();
+  const { selectedState, selectStateDirect, stateNameHi, isCG, stateParam } = useStateContext();
 
   const stateQuery = stateParam !== "all" ? `?state=${stateParam}` : "?state=all";
   const { data: apiCrops } = useApi(`/crops${stateQuery}`);
@@ -67,12 +72,48 @@ export default function MandiJiDashboard() {
   const heatmap = apiHeatmap || {};
   const states = apiStates || [];
 
-  // Focus search when picker opens
+  // Keep the location picker usable with keyboard and screen readers.
   useEffect(() => {
-    if (showStatePicker && searchRef.current) {
-      setTimeout(() => searchRef.current?.focus(), 100);
+    if (!showStatePicker) return;
+    const previousFocus = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const focusTimer = window.setTimeout(() => searchRef.current?.focus(), 100);
+    function onKeyDown(event) {
+      if (event.key === "Escape") {
+        setShowStatePicker(false);
+        setStateSearch("");
+      }
+      if (event.key !== "Tab") return;
+      const items = stateDialogRef.current?.querySelectorAll('button:not([disabled]), input:not([disabled]), [tabindex="0"]');
+      if (!items?.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     }
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.clearTimeout(focusTimer);
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
+      if (previousFocus instanceof HTMLElement) previousFocus.focus();
+    };
   }, [showStatePicker]);
+
+  useEffect(() => {
+    if (!showUserMenu) return;
+    function onKeyDown(event) {
+      if (event.key === "Escape") setShowUserMenu(false);
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [showUserMenu]);
 
   // Filter states for picker
   const filteredStates = states.filter(s => {
@@ -93,34 +134,33 @@ export default function MandiJiDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground w-full max-w-lg mx-auto flex flex-col">
+    <div className="sb-dashboard">
+      <a href="#main-content" className="sb-skip-link">मुख्य जानकारी पर जाएँ</a>
       <SEO
         title={`${stateNameHi} मंडी भाव`}
-        description={`${stateNameHi} की मंडियों के ताज़ा भाव। सब्ज़ी, अनाज, दाल — सबके रोज़ाना भाव, मंडी तुलना, मुनाफ़ा कैलकुलेटर।`}
+        description={`${stateNameHi} की मंडियों के उपलब्ध दर्ज भाव। सब्ज़ी, अनाज, दाल — फसल भाव, मंडी तुलना और बिक्री कैलकुलेटर।`}
         path="/"
       />
       {/* Header */}
-      <header className="sticky top-0 z-30 bg-background border-b border-zinc-800">
-        <div className="px-4 pt-3 pb-2">
-          <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-lg bg-green-500 flex items-center justify-center shrink-0">
-              <Leaf size={20} className="text-green-950" strokeWidth={2.5} />
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="text-base font-extrabold tracking-tight leading-none">
-                मंडी<span className="text-amber-500">जी</span>
-              </div>
-              <div className="text-[10px] text-muted-foreground tracking-wider mt-0.5">
-                {stateNameHi} मंडी डैशबोर्ड
-              </div>
-            </div>
+      <header className="sb-header">
+        <div className="sb-header-inner">
+          <div className="sb-header-row">
+            <button className="sb-home-link" onClick={() => setActiveTab("prices")} aria-label="सही भाव — मंडी भाव होम">
+              <Brand />
+              <span className="sb-brand-caption">मंडी की जानकारी, एक जगह</span>
+            </button>
+            <div className="sb-header-spacer" />
             {/* State selector button */}
             <button
               onClick={() => setShowStatePicker(true)}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-zinc-900 border border-zinc-700 text-[11px] font-medium hover:border-zinc-500 active:scale-95 transition-all"
+              className="sb-location-button"
+              aria-label={`राज्य चुनें। अभी ${stateNameHi} चुना हुआ है`}
+              aria-haspopup="dialog"
+              aria-expanded={showStatePicker}
+              aria-controls="state-picker-dialog"
             >
-              <span className="text-green-500">📍</span>
-              <span className="truncate max-w-[80px]">
+              <MapPin size={16} aria-hidden="true" />
+              <span className="sb-location-name">
                 {selectedState ? stateNameHi : "भारत"}
               </span>
               <ChevronDown size={12} className="text-muted-foreground" />
@@ -128,17 +168,19 @@ export default function MandiJiDashboard() {
             {/* Pro button */}
             <button
               onClick={() => navigate('/pricing')}
-              className="flex items-center gap-1 px-2 py-1 rounded-lg bg-amber-500/15 border border-amber-500/30 text-[10px] font-bold text-amber-400 hover:bg-amber-500/25 active:scale-95 transition-all"
+              className="sb-pro-button"
+              aria-label="Pro प्लान देखें"
             >
               <Crown size={11} />
-              Pro
+              <span className="sb-pro-label">Pro</span>
             </button>
             {/* Notification bell */}
             {notifications?.length > 0 && (
               <div className="relative">
                 <button
                   onClick={() => navigate('/blog')}
-                  className="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center hover:border-zinc-500 active:scale-95 transition-all"
+                  className="sb-icon-button"
+                  aria-label={`सूचनाएँ देखें, ${notifications.length} उपलब्ध`}
                 >
                   <Bell size={14} className="text-zinc-400" />
                   <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-red-500 rounded-full text-[7px] text-white font-bold flex items-center justify-center">
@@ -152,14 +194,17 @@ export default function MandiJiDashboard() {
               <div className="relative">
                 <button
                   onClick={() => setShowUserMenu(prev => !prev)}
-                  className="w-8 h-8 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center active:scale-95 transition-all"
+                  className="sb-icon-button sb-account-button"
+                  aria-label="मेरा खाता"
+                  aria-expanded={showUserMenu}
+                  aria-controls="account-menu"
                 >
                   <User size={14} className="text-green-500" />
                 </button>
                 {showUserMenu && (
                   <>
                     <div className="fixed inset-0 z-40" onClick={() => setShowUserMenu(false)} />
-                    <div className="absolute right-0 top-10 z-50 w-48 bg-zinc-900 border border-zinc-700 rounded-xl shadow-xl overflow-hidden">
+                    <div id="account-menu" className="sb-account-menu absolute right-0 top-12 z-50 w-56 bg-zinc-900 border border-zinc-700 rounded-xl shadow-xl overflow-hidden">
                       <div className="px-3 py-2.5 border-b border-zinc-800">
                         <div className="flex items-center gap-1.5">
                           <div className="text-xs font-bold text-foreground truncate">{user.name}</div>
@@ -198,7 +243,8 @@ export default function MandiJiDashboard() {
             ) : (
               <button
                 onClick={() => navigate('/login')}
-                className="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center hover:border-zinc-500 active:scale-95 transition-all"
+                className="sb-icon-button"
+                aria-label="लॉग इन करें"
               >
                 <LogIn size={14} className="text-zinc-400" />
               </button>
@@ -206,53 +252,86 @@ export default function MandiJiDashboard() {
           </div>
         </div>
 
-        {/* Tabs */}
-        <div className="px-4 pb-2">
-          <div className="overflow-x-auto scrollbar-none">
-            <Tabs value={activeTab} onValueChange={setActiveTab}>
-              <TabsList className="bg-zinc-900 border border-zinc-800 h-9 p-0.5 flex min-w-max">
-                {TAB_ITEMS.map(tab => (
+        <nav className="sb-navigation" aria-label="मुख्य नेविगेशन">
+          <Tabs value={activeTab} onValueChange={setActiveTab}>
+            <TabsList className="sb-tab-list" aria-label="डैशबोर्ड सेक्शन">
+              {TAB_ITEMS.map(tab => {
+                const Icon = tab.icon;
+                return (
                   <TabsTrigger key={tab.value} value={tab.value}
-                    className="px-2.5 text-[10px] gap-1 h-full rounded-md whitespace-nowrap data-[state=active]:bg-green-500 data-[state=active]:text-green-950 data-[state=active]:font-bold data-[state=active]:shadow-none">
-                    <span className="text-xs">{tab.icon}</span> {tab.label}
+                    id={`tab-${tab.value}`} aria-controls={`panel-${tab.value}`}
+                    className="sb-tab">
+                    <Icon size={18} aria-hidden="true" />
+                    <span>{tab.label}</span>
                   </TabsTrigger>
-                ))}
-              </TabsList>
-            </Tabs>
-          </div>
-        </div>
+                );
+              })}
+            </TabsList>
+          </Tabs>
+        </nav>
       </header>
+
+      {activeTab === "prices" && (
+        <section className="sb-welcome" aria-labelledby="welcome-heading">
+          <div className="sb-welcome-copy">
+            <p className="sb-eyebrow"><span /> {stateNameHi} की मंडियों से</p>
+            <h1 id="welcome-heading">सही जानकारी।<br /><span>बेहतर फैसला।</span></h1>
+            <p className="sb-welcome-description">अपनी फसल का भाव जानें, मंडियों की तुलना करें<br className="sb-desktop-break" /> और अगला कदम समझदारी से चुनें।</p>
+            <div className="sb-welcome-actions">
+              <button className="sb-primary-button" onClick={() => setShowStatePicker(true)}>
+                <MapPin size={16} aria-hidden="true" /> अपना राज्य चुनें
+              </button>
+              <button className="sb-text-button" onClick={() => setActiveTab("mandis")}>
+                मंडियाँ देखें <ArrowRight size={16} aria-hidden="true" />
+              </button>
+            </div>
+          </div>
+          <div className="sb-welcome-image" aria-hidden="true">
+            <img src="/visuals/hero-harvest.webp" alt="" width="1280" height="853" fetchPriority="high" />
+            <div className="sb-image-caption">खेत से मंडी तक, आपके साथ।</div>
+          </div>
+        </section>
+      )}
 
       {/* Banners */}
       {banners?.filter(b => !dismissedBanners.includes(b.id)).map(banner => {
         const colors = { info: 'bg-blue-500/10 border-blue-500/30 text-blue-400', warning: 'bg-amber-500/10 border-amber-500/30 text-amber-400', promo: 'bg-green-500/10 border-green-500/30 text-green-400', success: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' };
         const icons = { info: <Info size={12}/>, warning: <AlertTriangle size={12}/>, promo: <Gift size={12}/>, success: <CheckCircle size={12}/> };
         return (
-          <div key={banner.id} className={`mx-4 mt-2 px-3 py-2 rounded-lg border flex items-center gap-2 ${colors[banner.type] || colors.info}`}>
+          <div key={banner.id} className={`sb-cms-banner px-3 py-2 rounded-lg border flex items-center gap-2 ${colors[banner.type] || colors.info}`}>
             {icons[banner.type] || icons.info}
             <div className="flex-1 min-w-0">
-              <div className="text-[10px] font-bold">{banner.title}</div>
-              <div className="text-[9px] opacity-80 truncate">{banner.message}</div>
+              <div className="text-sm font-bold">{banner.title}</div>
+              <div className="text-xs opacity-80">{banner.message}</div>
             </div>
             {banner.link && <button onClick={() => navigate(banner.link)} className="text-[9px] font-bold underline shrink-0">देखें</button>}
-            <button onClick={() => setDismissedBanners(prev => [...prev, banner.id])} className="opacity-50 hover:opacity-100"><X size={12}/></button>
+            <button onClick={() => setDismissedBanners(prev => [...prev, banner.id])} className="sb-icon-button" aria-label="सूचना बंद करें"><X size={14}/></button>
           </div>
         );
       })}
 
       {/* Content */}
-      <main className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-4 pb-8">
+      <main id="main-content" className="sb-main" tabIndex={-1}>
+        {activeTab !== "prices" && (
+          <div className="sb-section-heading">
+            <p className="sb-eyebrow">{stateNameHi} · सही भाव</p>
+            <h1>{TAB_ITEMS.find(tab => tab.value === activeTab)?.label}</h1>
+          </div>
+        )}
         <AnimatePresence mode="wait">
-          <motion.div key={`${activeTab}-${stateParam}`} variants={tabVariants}
+          <Motion.div key={`${activeTab}-${stateParam}`} variants={tabVariants}
+            id={`panel-${activeTab}`} role="tabpanel" aria-labelledby={`tab-${activeTab}`} className={`sb-tab-panel sb-panel-${activeTab}`}
             initial="initial" animate="animate" exit="exit"
             transition={{ duration: 0.15 }}>
+            <Suspense fallback={<div role="status" className="py-12 text-center text-muted-foreground">जानकारी खुल रही है…</div>}>
             {activeTab === "prices" && <PricesTab crops={crops} stateParam={stateParam} initialCropId={jumpToCrop} onCropConsumed={() => setJumpToCrop(null)} onMandiClick={handleMandiClick}/>}
             {activeTab === "calendar" && <CalendarTab selectedMonth={selectedMonth} crops={crops} seasons={seasons} isCG={isCG}/>}
             {activeTab === "mandis" && <MandisTab selectedMonth={selectedMonth} heatmap={heatmap} regions={isCG ? FALLBACK_REGIONS : null} stateParam={stateParam} onCropClick={handleCropClick} jumpToMandi={jumpToMandi} onMandiConsumed={() => setJumpToMandi(null)}/>}
             {activeTab === "naksha" && <NakshaTab selectedMonth={selectedMonth} districts={districts} mandis={mandis} states={states} isCG={isCG} crops={crops}/>}
             {activeTab === "bazaar" && <BazaarTab />}
             {activeTab === "logistics" && <LogisticsTab />}
-          </motion.div>
+            </Suspense>
+          </Motion.div>
         </AnimatePresence>
         <Footer />
       </main>
@@ -265,17 +344,18 @@ export default function MandiJiDashboard() {
         {showStatePicker && (
           <>
             {/* Backdrop */}
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 z-40"
+              className="sb-dialog-backdrop fixed inset-0 z-40"
               onClick={() => { setShowStatePicker(false); setStateSearch(""); }}
             />
             {/* Sheet */}
-            <motion.div
+            <Motion.div
               initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-950 border-t border-zinc-800 rounded-t-2xl max-w-lg mx-auto"
-              style={{ maxHeight: "80vh" }}
+              ref={stateDialogRef}
+              id="state-picker-dialog" role="dialog" aria-modal="true" aria-labelledby="state-picker-heading"
+              className="sb-state-picker fixed bottom-0 left-0 right-0 z-50 mx-auto"
             >
               {/* Handle */}
               <div className="flex justify-center pt-2 pb-1">
@@ -284,9 +364,9 @@ export default function MandiJiDashboard() {
 
               {/* Header */}
               <div className="px-4 pb-3 flex items-center justify-between">
-                <div className="text-sm font-bold text-foreground">राज्य चुनें</div>
+                <h2 id="state-picker-heading" className="text-lg font-bold text-foreground">अपना राज्य चुनें</h2>
                 <button onClick={() => { setShowStatePicker(false); setStateSearch(""); }}
-                  className="p-1 rounded-full hover:bg-zinc-800 transition-colors">
+                  className="sb-icon-button" aria-label="राज्य चयन बंद करें">
                   <X size={16} className="text-muted-foreground" />
                 </button>
               </div>
@@ -301,10 +381,11 @@ export default function MandiJiDashboard() {
                     value={stateSearch}
                     onChange={e => setStateSearch(e.target.value)}
                     placeholder="राज्य खोजें..."
+                    aria-label="राज्य खोजें"
                     className="bg-transparent text-sm text-foreground w-full outline-none placeholder:text-zinc-600"
                   />
                   {stateSearch && (
-                    <button onClick={() => setStateSearch("")}>
+                    <button onClick={() => setStateSearch("")} aria-label="खोज साफ करें" className="sb-clear-search">
                       <X size={12} className="text-muted-foreground" />
                     </button>
                   )}
@@ -320,7 +401,7 @@ export default function MandiJiDashboard() {
                     !selectedState ? "bg-green-500/15 border border-green-500/30" : "hover:bg-zinc-900"
                   }`}>
                   <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
-                    <span className="text-sm">🇮🇳</span>
+                    <Globe size={17} aria-hidden="true" />
                   </div>
                   <div className="text-left flex-1">
                     <div className={`text-sm font-bold ${!selectedState ? "text-green-500" : "text-foreground"}`}>
@@ -398,7 +479,7 @@ export default function MandiJiDashboard() {
                   </div>
                 )}
               </div>
-            </motion.div>
+            </Motion.div>
           </>
         )}
       </AnimatePresence>

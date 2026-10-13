@@ -1,8 +1,10 @@
+import '@/styles/secondary.css';
 import { useState, useEffect, useRef } from "react";
 import { Search, Phone, ExternalLink, MapPin, Truck, Users, Building2, ChevronDown, ChevronUp, Trash2, Plus } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
-const API = "http://localhost:3001/api";
+// Use the deployment origin in production and the configured Vite proxy locally.
+const API = "/api";
 
 const VEHICLE_OPTIONS = [
   { value: "tractor",     label: "ट्रैक्टर ट्रॉली", cap: 30 },
@@ -29,29 +31,29 @@ const TRUCK_PLATFORMS = [
 
 const TRANSPORT_DIR = [
   // North
-  { region: "उत्तर", state: "दिल्ली", hub: "Azadpur APMC", phone: "011-2769-1234", route: "All India Hub", icon: "🏛️" },
-  { region: "उत्तर", state: "पंजाब", hub: "Ludhiana Transport Nagar", phone: "0161-241-5678", route: "North + Export (Pakistan border)", icon: "🌾" },
-  { region: "उत्तर", state: "हरियाणा", hub: "Kundli Transport Hub, Sonipat", phone: "0130-224-1234", route: "Delhi NCR + North India", icon: "🚛" },
-  { region: "उत्तर", state: "उत्तर प्रदेश", hub: "Aishbagh Mandi, Lucknow", phone: "0522-220-1234", route: "UP + Bihar + MP", icon: "🏪" },
-  { region: "उत्तर", state: "राजस्थान", hub: "Muhana Mandi, Jaipur", phone: "0141-270-1234", route: "Rajasthan + Gujarat", icon: "🏜️" },
+  { region: "उत्तर", state: "दिल्ली", hub: "Azadpur APMC", route: "All India Hub", icon: "🏛️" },
+  { region: "उत्तर", state: "पंजाब", hub: "Ludhiana Transport Nagar", route: "North + Export (Pakistan border)", icon: "🌾" },
+  { region: "उत्तर", state: "हरियाणा", hub: "Kundli Transport Hub, Sonipat", route: "Delhi NCR + North India", icon: "🚛" },
+  { region: "उत्तर", state: "उत्तर प्रदेश", hub: "Aishbagh Mandi, Lucknow", route: "UP + Bihar + MP", icon: "🏪" },
+  { region: "उत्तर", state: "राजस्थान", hub: "Muhana Mandi, Jaipur", route: "Rajasthan + Gujarat", icon: "🏜️" },
   // West
-  { region: "पश्चिम", state: "महाराष्ट्र", hub: "Vashi APMC, Navi Mumbai", phone: "022-2756-7890", route: "South + Central + West India", icon: "🌊" },
-  { region: "पश्चिम", state: "नागपुर", hub: "Kalamna Market, Nagpur", phone: "0712-272-0123", route: "Central India Hub (संगम)", icon: "🍊" },
-  { region: "पश्चिम", state: "गुजरात", hub: "Jamalpur APMC, Ahmedabad", phone: "079-2531-2345", route: "West India + Export", icon: "💎" },
+  { region: "पश्चिम", state: "महाराष्ट्र", hub: "Vashi APMC, Navi Mumbai", route: "South + Central + West India", icon: "🌊" },
+  { region: "पश्चिम", state: "नागपुर", hub: "Kalamna Market, Nagpur", route: "Central India Hub (संगम)", icon: "🍊" },
+  { region: "पश्चिम", state: "गुजरात", hub: "Jamalpur APMC, Ahmedabad", route: "West India + Export", icon: "💎" },
   // Central
-  { region: "मध्य", state: "मध्य प्रदेश", hub: "Karond Mandi, Bhopal", phone: "0755-244-1234", route: "Central India", icon: "🌿" },
-  { region: "मध्य", state: "छत्तीसगढ़", hub: "Telibandha, Raipur", phone: "0771-222-3456", route: "CG + Odisha + WB", icon: "🌳" },
+  { region: "मध्य", state: "मध्य प्रदेश", hub: "Karond Mandi, Bhopal", route: "Central India", icon: "🌿" },
+  { region: "मध्य", state: "छत्तीसगढ़", hub: "Telibandha, Raipur", route: "CG + Odisha + WB", icon: "🌳" },
   // South
-  { region: "दक्षिण", state: "कर्नाटक", hub: "Yeshwanthpur APMC, Bangalore", phone: "080-2337-1234", route: "South India Hub", icon: "🌴" },
-  { region: "दक्षिण", state: "केरल", hub: "Ernakulam / Chalakudy", phone: "0484-234-5678", route: "Kerala + Tamil Nadu", icon: "🥥" },
-  { region: "दक्षिण", state: "तमिलनाडु", hub: "Koyambedu CMDA, Chennai", phone: "044-2471-3456", route: "TN + South India", icon: "🎭" },
-  { region: "दक्षिण", state: "तेलंगाना", hub: "Gaddiannaram, Hyderabad", phone: "040-2452-1234", route: "South + Central India", icon: "🌶️" },
-  { region: "दक्षिण", state: "आंध्र प्रदेश", hub: "Rythu Bazaar, Vijayawada", phone: "0866-257-1234", route: "AP + Karnataka", icon: "🍈" },
+  { region: "दक्षिण", state: "कर्नाटक", hub: "Yeshwanthpur APMC, Bangalore", route: "South India Hub", icon: "🌴" },
+  { region: "दक्षिण", state: "केरल", hub: "Ernakulam / Chalakudy", route: "Kerala + Tamil Nadu", icon: "🥥" },
+  { region: "दक्षिण", state: "तमिलनाडु", hub: "Koyambedu CMDA, Chennai", route: "TN + South India", icon: "🎭" },
+  { region: "दक्षिण", state: "तेलंगाना", hub: "Gaddiannaram, Hyderabad", route: "South + Central India", icon: "🌶️" },
+  { region: "दक्षिण", state: "आंध्र प्रदेश", hub: "Rythu Bazaar, Vijayawada", route: "AP + Karnataka", icon: "🍈" },
   // East
-  { region: "पूर्व", state: "पश्चिम बंगाल", hub: "Kolay Market, Kolkata", phone: "033-2212-1234", route: "East India + NE", icon: "🐟" },
-  { region: "पूर्व", state: "ओडिशा", hub: "Unit-1 Mandi, Bhubaneswar", phone: "0674-239-1234", route: "Odisha + CG + WB", icon: "🏖️" },
-  { region: "पूर्व", state: "बिहार", hub: "Mithapur Mandi, Patna", phone: "0612-222-3456", route: "Bihar + UP + Jharkhand", icon: "🌾" },
-  { region: "पूर्व", state: "झारखंड", hub: "Lalpur, Ranchi", phone: "0651-246-1234", route: "Jharkhand + WB + Odisha", icon: "⛏️" },
+  { region: "पूर्व", state: "पश्चिम बंगाल", hub: "Kolay Market, Kolkata", route: "East India + NE", icon: "🐟" },
+  { region: "पूर्व", state: "ओडिशा", hub: "Unit-1 Mandi, Bhubaneswar", route: "Odisha + CG + WB", icon: "🏖️" },
+  { region: "पूर्व", state: "बिहार", hub: "Mithapur Mandi, Patna", route: "Bihar + UP + Jharkhand", icon: "🌾" },
+  { region: "पूर्व", state: "झारखंड", hub: "Lalpur, Ranchi", route: "Jharkhand + WB + Odisha", icon: "⛏️" },
 ];
 
 const REGIONS = ["सभी", "उत्तर", "पश्चिम", "मध्य", "दक्षिण", "पूर्व"];
@@ -258,22 +260,22 @@ export default function LogisticsTab() {
   };
 
   return (
-    <div className="space-y-3">
+    <div className="sb-secondary-tab sb-logistics-tab space-y-3">
       {/* Header */}
-      <div>
-        <div className="text-[10px] text-muted-foreground tracking-wider font-semibold">🚛 लॉजिस्टिक्स & संपर्क</div>
-        <div className="text-[9px] text-zinc-600 mt-0.5">ट्रांसपोर्टर · व्यापारी · मंडी डायरेक्टरी — All India</div>
-      </div>
+      <section className="sb-logistics-banner">
+        <div><span className="sb-secondary-eyebrow">मंडी से मंज़िल तक</span><h2>ढुलाई और संपर्क</h2><p>ट्रांसपोर्ट खोजें, व्यापारी ढूंढें और अपना माल भेजने की योजना बनाएं।</p></div>
+        <img src="/visuals/guide-compare-markets.webp" alt="फसल ले जाने वाले छोटे ट्रक का सांकेतिक दृश्य" width="1280" height="853" />
+      </section>
 
       {/* Section Switcher */}
-      <div className="flex gap-1 overflow-x-auto pb-0.5">
+      <div className="sb-segmented flex gap-1 overflow-x-auto pb-0.5">
         {[
           { id: "truck", icon: "🚛", label: "ट्रक बुकिंग" },
           { id: "traders", icon: "🧑‍💼", label: "व्यापारी खोजें" },
           { id: "directory", icon: "📋", label: "डायरेक्टरी" },
           { id: "board", icon: "🚚", label: "खाली ट्रक" },
         ].map(s => (
-          <button key={s.id} onClick={() => setSection(s.id)}
+          <button key={s.id} onClick={() => setSection(s.id)} aria-pressed={section === s.id}
             className={`flex-1 min-w-max py-1.5 px-2 rounded-lg text-[10px] font-bold transition-all border shrink-0 ${
               section === s.id
                 ? "bg-green-500 text-green-950 border-green-500"
@@ -288,7 +290,7 @@ export default function LogisticsTab() {
       {section === "truck" && (
         <div className="space-y-2">
           <div className="text-[9px] text-zinc-500 px-0.5">खाली ट्रक ढूंढें — सीधे platform पर जाएं</div>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="sb-platform-grid grid grid-cols-2 gap-2">
             {TRUCK_PLATFORMS.map(p => (
               <button key={p.name}
                 onClick={() => window.open(p.url, "_blank")}
@@ -431,7 +433,7 @@ export default function LogisticsTab() {
             ))}
           </div>
 
-          <div className="text-[8px] text-zinc-600 px-0.5">* नंबर APMC/Transport Union के office नंबर हैं — verify करके save करें</div>
+          <div className="text-[8px] text-zinc-600 px-0.5">इन स्थानों के सत्यापित संपर्क नंबर अभी उपलब्ध नहीं हैं।</div>
 
           {/* Directory list */}
           <div className="space-y-1.5">
@@ -449,13 +451,8 @@ export default function LogisticsTab() {
                       <div className="text-[8px] text-amber-500 mt-0.5">📍 {t.route}</div>
                     </div>
                   </div>
-                  <a href={`tel:${t.phone.replace(/-/g, "")}`}
-                    className="flex items-center gap-1 px-2 py-1.5 bg-green-500/15 border border-green-500/25 rounded-lg shrink-0 active:scale-95 transition-all">
-                    <Phone size={10} className="text-green-400"/>
-                    <span className="text-[9px] text-green-400 font-bold">कॉल</span>
-                  </a>
+                  <span className="sb-contact-unavailable">संपर्क उपलब्ध नहीं</span>
                 </div>
-                <div className="mt-1.5 text-[8px] text-zinc-700 font-mono">{t.phone}</div>
               </Card>
             ))}
           </div>
@@ -467,7 +464,7 @@ export default function LogisticsTab() {
           {/* Disclaimer */}
           <Card className="bg-zinc-900 border-zinc-800 p-2.5">
             <div className="text-[8px] text-zinc-600 leading-relaxed">
-              ⚠️ यह directory APMC office और transport union के public नंबर पर आधारित है। कारोबार शुरू करने से पहले नंबर verify करें। व्यक्तिगत दलाल/एजेंट के नंबर के लिए Google Maps पर स्थानीय खोज करें।
+              मंडी या ट्रांसपोर्ट कार्यालय से आधिकारिक संपर्क की पुष्टि करें। स्थानीय व्यापारी खोजने के लिए “व्यापारी खोजें” विकल्प उपलब्ध है।
             </div>
           </Card>
         </div>

@@ -1,3 +1,4 @@
+import '@/styles/secondary.css';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -27,19 +28,23 @@ export default function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-foreground max-w-lg mx-auto flex flex-col">
-      <SEO title="ब्लॉग" description="मंडीजी ब्लॉग — कृषि टिप्स, मंडी समाचार, और किसान गाइड।" path="/blog" />
+    <div className="sb-secondary-page sb-blog-page min-h-screen bg-zinc-950 text-foreground mx-auto flex flex-col">
+      <SEO title="ब्लॉग" description="सही भाव गाइड — कृषि टिप्स, मंडी समाचार, और किसान गाइड।" path="/blog" />
       <header className="sticky top-0 z-30 bg-zinc-950 border-b border-zinc-800">
         <div className="flex items-center gap-3 px-4 py-3">
-          <button onClick={() => navigate('/')} className="p-1.5 rounded-lg hover:bg-zinc-800 transition-colors">
+          <button onClick={() => navigate('/')} aria-label="वापस जाएं" className="sb-back-button p-1.5 rounded-lg hover:bg-zinc-800 transition-colors">
             <ArrowLeft size={20} className="text-zinc-400" />
           </button>
           <BookOpen size={18} className="text-green-500" />
-          <h1 className="text-base font-bold">ब्लॉग</h1>
+          <h1 className="text-base font-bold">खेती और मंडी की समझ</h1>
         </div>
       </header>
 
-      <motion.div {...fadeInUp} className="flex-1 px-4 py-6 space-y-4">
+      <motion.div {...fadeInUp} className="sb-page-content flex-1 px-4 py-6 space-y-4">
+        <section className="sb-guide-banner">
+          <div><span className="sb-secondary-eyebrow">सही भाव गाइड</span><h2>जानकारी जो काम आए।</h2><p>फसल, मंडी और कारोबार से जुड़े लेख पढ़ें।</p></div>
+          <img src="/visuals/guide-sale-checklist.webp" alt="अनाज, रसीद और कलम की सांकेतिक तस्वीर" width="1280" height="853" />
+        </section>
         {loading && posts.length === 0 && (
           <div className="text-center py-12 text-zinc-500 text-sm animate-pulse">लोड हो रहा है...</div>
         )}
@@ -53,8 +58,8 @@ export default function BlogPage() {
         )}
 
         {posts.map(post => (
-          <Link key={post.id} to={`/blog/${post.slug}`}>
-            <Card className="bg-zinc-900 border-zinc-800 p-4 hover:border-green-500/30 transition-colors">
+          <Link className="sb-blog-link" key={post.id} to={`/blog/${post.slug}`}>
+            <Card className="sb-blog-card bg-zinc-900 border-zinc-800 p-4 hover:border-green-500/30 transition-colors">
               <h2 className="text-sm font-bold text-foreground mb-1.5">{post.title}</h2>
               {post.excerpt && (
                 <p className="text-xs text-zinc-400 line-clamp-2 mb-2">{post.excerpt}</p>

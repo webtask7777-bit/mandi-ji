@@ -11,6 +11,7 @@ import { ConfirmProvider } from './components/ui/ConfirmDialog';
 import Toast from './components/ui/Toast';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import AdminRoute from './components/auth/AdminRoute';
+import SEO from './components/SEO';
 
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage'));
@@ -47,6 +48,7 @@ function App() {
       <ToastProvider>
         <ConfirmProvider>
           <StateProvider>
+            <SEO />
             <AnimatePresence>
               {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
             </AnimatePresence>

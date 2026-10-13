@@ -22,10 +22,10 @@ export function stateStyle(feature, { stateDataMap, maxRecords, selectedState, s
     const hasC = cropMatrix[selectedCrop].states?.includes(stateId);
     if (!hasC) {
       return {
-        fillColor: '#0a0a0a',
+        fillColor: '#eef0e6',
         fillOpacity: 0.4,
         weight: 0.3,
-        color: '#1c1c1e',
+        color: '#d5ded0',
       };
     }
   }
@@ -35,7 +35,7 @@ export function stateStyle(feature, { stateDataMap, maxRecords, selectedState, s
       fillColor: SELECTED_COLOR,
       fillOpacity: 0.6,
       weight: 2.5,
-      color: '#4ade80',
+      color: '#174c3c',
     };
   }
 
@@ -63,10 +63,10 @@ export function districtStyle(feature, { districtMap, maxDistRecords, selectedCr
     );
     if (!hasCrop && info.topCrops.length > 0) {
       return {
-        fillColor: '#0a0a0a',
+        fillColor: '#eef0e6',
         fillOpacity: 0.4,
         weight: 0.5,
-        color: '#1c1c1e',
+        color: '#d5ded0',
       };
     }
   }
@@ -76,7 +76,7 @@ export function districtStyle(feature, { districtMap, maxDistRecords, selectedCr
     fillColor: bucket >= 0 ? HEAT_SCALE[bucket] : NO_DATA_COLOR,
     fillOpacity: isHovered ? 0.9 : 0.75,
     weight: isHovered ? 2 : 0.8,
-    color: isHovered ? '#71717a' : BORDER_COLOR,
+    color: isHovered ? '#597a64' : BORDER_COLOR,
   };
 }
 
@@ -85,6 +85,6 @@ export function districtStyle(feature, { districtMap, maxDistRecords, selectedCr
  */
 export const HOVER_STYLE = {
   weight: 2,
-  color: '#71717a',
+  color: '#597a64',
   fillOpacity: 0.85,
 };

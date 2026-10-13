@@ -58,7 +58,7 @@ export default function EwayBillPreview({ bill, isPreview = false }) {
               <FileText size={18} className="text-green-500" />
               <div>
                 <div className="text-sm font-bold text-foreground">E-way Bill</div>
-                <div className="text-[10px] text-zinc-500">मंडीजी - कृषि बाज़ार</div>
+                <div className="text-[10px] text-zinc-500">सही भाव - कृषि बाज़ार</div>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -197,7 +197,7 @@ export default function EwayBillPreview({ bill, isPreview = false }) {
 
         <div className="text-center border-b-2 border-black pb-3 mb-4">
           <h1 className="text-lg font-bold">E-way Bill</h1>
-          <div className="text-xs text-gray-500">MandiJi - Agricultural Marketplace</div>
+          <div className="text-xs text-gray-500">SahiBhav - Agricultural Marketplace</div>
           <div className="text-base font-mono font-bold mt-1">{bill.billNumber}</div>
         </div>
 

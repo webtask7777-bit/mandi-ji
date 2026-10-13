@@ -72,7 +72,7 @@ export default function PricingPage() {
 
       const options = {
         key: paymentData.key,
-        name: 'MandiJi Pro',
+        name: 'SahiBhav Pro',
         description: planId === 'pro_monthly' ? 'मासिक सब्सक्रिप्शन — ₹499/महीना' : 'वार्षिक प्लान — ₹4,999/साल',
         ...(planId === 'pro_monthly'
           ? { subscription_id: paymentData.subscriptionId }
@@ -118,7 +118,7 @@ export default function PricingPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SEO title="Pro प्लान" description="MandiJi Pro — असीमित मंडी भाव, मुनाफ़ा कैलकुलेटर, प्राइस अलर्ट। ₹499/महीना या ₹4,999/साल।" path="/pricing" />
+      <SEO title="Pro प्लान" description="SahiBhav Pro — असीमित मंडी भाव, मुनाफ़ा कैलकुलेटर, प्राइस अलर्ट। ₹499/महीना या ₹4,999/साल।" path="/pricing" />
 
       <div className="max-w-lg mx-auto">
         {/* Header */}
@@ -132,7 +132,7 @@ export default function PricingPage() {
             </button>
             <div className="flex items-center gap-2">
               <Crown size={18} className="text-amber-400" />
-              <h1 className="text-base font-bold">MandiJi Pro</h1>
+              <h1 className="text-base font-bold">SahiBhav Pro</h1>
             </div>
           </div>
         </header>

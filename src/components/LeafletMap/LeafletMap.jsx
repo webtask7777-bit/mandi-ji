@@ -86,7 +86,7 @@ export default function LeafletMap({
         zoomControl={false}
         scrollWheelZoom={false}
         className="w-full h-full rounded-xl"
-        style={{ background: '#09090b' }}
+        style={{ background: '#eef0e6' }}
       >
         <TileLayer url={DARK_TILE_URL} attribution={DARK_TILE_ATTR} />
         <ZoomControl position="bottomright" />

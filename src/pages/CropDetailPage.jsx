@@ -1,288 +1,118 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { useMemo } from "react";
-import { ArrowLeft, TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight, ShoppingCart, AlertTriangle } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useApi } from "../hooks/useApi";
-import { useStateContext } from "../context/StateContext";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import MiniChart from "../components/MiniChart";
-import MandiCompare from "../components/MandiCompare";
-import SEO from "../components/SEO";
-import { getOutlierBounds, isOutlier } from "@/lib/outlier";
+import { Link, useParams } from 'react-router-dom';
+import { ArrowLeft, ArrowRight, TrendingUp, TrendingDown, Minus, MapPin, Clock3, ShoppingCart, Info, AlertCircle, RefreshCw } from 'lucide-react';
+import { useApi } from '../hooks/useApi';
+import { useStateContext } from '../context/StateContext';
+import Brand from '../components/Brand';
+import CropImage from '../components/CropImage';
+import MiniChart from '../components/MiniChart';
+import MandiCompare from '../components/MandiCompare';
+import SEO from '../components/SEO';
+import { getDataFreshness } from '../utils/dataFreshness';
+import '../styles/detail.css';
 
 const MONTH_HI = {
-  '01': 'जनवरी', '02': 'फ़रवरी', '03': 'मार्च', '04': 'अप्रैल',
-  '05': 'मई', '06': 'जून', '07': 'जुलाई', '08': 'अगस्त',
-  '09': 'सितम्बर', '10': 'अक्टूबर', '11': 'नवम्बर', '12': 'दिसम्बर',
+  '01': 'जनवरी', '02': 'फ़रवरी', '03': 'मार्च', '04': 'अप्रैल', '05': 'मई', '06': 'जून',
+  '07': 'जुलाई', '08': 'अगस्त', '09': 'सितंबर', '10': 'अक्टूबर', '11': 'नवंबर', '12': 'दिसंबर',
+  Jan: 'जनवरी', Feb: 'फ़रवरी', Mar: 'मार्च', Apr: 'अप्रैल', May: 'मई', Jun: 'जून',
+  Jul: 'जुलाई', Aug: 'अगस्त', Sep: 'सितंबर', Oct: 'अक्टूबर', Nov: 'नवंबर', Dec: 'दिसंबर',
 };
-function formatMonthHi(m) { return MONTH_HI[m] || m; }
-function formatDateHi(dateStr) {
-  if (!dateStr) return '';
-  const [y, m, d] = dateStr.split('-');
-  return `${parseInt(d)} ${MONTH_HI[m] || m}`;
+const money = value => Number(value).toLocaleString('en-IN', { maximumFractionDigits: 0 });
+const positive = value => value !== null && value !== '' && Number.isFinite(Number(value)) && Number(value) > 0;
+const formatMonthHi = value => MONTH_HI[value] || value;
+function monthLabel(record) {
+  if (/^\d{4}-(0[1-9]|1[0-2])$/.test(record?.date || '')) {
+    const [year, month] = record.date.split('-');
+    return `${formatMonthHi(month)} ${year}`;
+  }
+  return record?.month ? `${formatMonthHi(record.month)}${record.year ? ` ${record.year}` : ' · वर्ष उपलब्ध नहीं'}` : 'महीना उपलब्ध नहीं';
 }
-function formatTimestamp(isoStr) {
-  if (!isoStr) return '';
-  const d = new Date(isoStr);
-  return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata' })
-    + ' ' + d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Kolkata' }) + ' IST';
+function formatTimestamp(value) {
+  const date = new Date(value);
+  return Number.isFinite(date.getTime()) ? date.toLocaleString('hi-IN', {
+    day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata',
+  }) + ' IST' : null;
 }
 
 export default function CropDetailPage() {
   const { cropId } = useParams();
-  const navigate = useNavigate();
   const { stateParam, stateNameHi } = useStateContext();
-
-  const stateQ = stateParam && stateParam !== 'all' ? `&state=${stateParam}` : '&state=all';
-  const tickerQ = stateParam ? `?state=${stateParam}` : '?state=all';
-
-  const { data: priceData, loading: priceLoading } = useApi(`/prices/${cropId}?months=13${stateQ}`);
-  const { data: mandiData } = useApi(`/mandi-compare/${cropId}${tickerQ}`);
-  const { data: tickerData } = useApi(`/ticker${tickerQ}`);
-
-  const cropTicker = tickerData?.find(t => t.id === cropId);
-  const history = priceData?.history?.filter(h => h.market) || [];
-  const dailyHistory = priceData?.dailyHistory?.filter(h => h.market) || [];
-  const lastUpdated = priceData?.lastUpdated || null;
-  const cropMeta = priceData?.crop || cropTicker || {};
-
-  // Hero price calculations
-  const latestDay = dailyHistory.length > 0 ? dailyHistory[dailyHistory.length - 1] : null;
-  const yesterdayDay = dailyHistory.length > 1 ? dailyHistory[dailyHistory.length - 2] : null;
-  const latestMonth = history.length > 0 ? history[history.length - 1] : null;
-  const prevMonth = history.length > 1 ? history[history.length - 2] : null;
-
-  const heroPrice = latestDay?.market || latestMonth?.market || cropTicker?.price || 0;
-  const heroPrev = latestDay ? (yesterdayDay?.market || 0) : (prevMonth?.market || 0);
-  const heroChange = heroPrev ? heroPrice - heroPrev : (cropTicker?.change || 0);
-  const heroChangePct = heroPrev ? ((heroChange / heroPrev) * 100).toFixed(1) : (cropTicker?.changePct || 0);
-  const heroIsUp = heroChange >= 0;
-  const heroLabel = latestDay ? formatDateHi(latestDay.date) : formatMonthHi(latestMonth?.month);
-
-  // Outlier detection for best/worst mandi
-  const mandiOutlierBounds = useMemo(() => {
-    if (!mandiData || mandiData.length < 4) return null;
-    return getOutlierBounds(mandiData.map(m => m.recentPrice || m.avgPrice));
-  }, [mandiData]);
-
-  if (priceLoading) {
-    return (
-      <div className="min-h-screen bg-background text-foreground w-full max-w-lg mx-auto flex flex-col">
-        <header className="sticky top-0 z-30 bg-background border-b border-zinc-800 px-4 py-3">
-          <button onClick={() => navigate(-1)} className="flex items-center gap-1.5 text-sm text-muted-foreground">
-            <ArrowLeft size={16}/> वापस
-          </button>
-        </header>
-        <div className="flex-1 flex items-center justify-center">
-          <div className="text-sm text-muted-foreground animate-pulse">लोड हो रहा है...</div>
-        </div>
-      </div>
-    );
-  }
+  const stateQuery = encodeURIComponent(stateParam || 'all');
+  const cropQuery = encodeURIComponent(cropId);
+  const { data: priceData, loading: priceLoading, error: priceError } = useApi(`/prices/${cropQuery}?months=13&state=${stateQuery}`);
+  const { data: mandiData, loading: mandiLoading, error: mandiError } = useApi(`/mandi-compare/${cropQuery}?state=${stateQuery}`);
+  const { data: tickerData } = useApi(`/ticker?state=${stateQuery}`);
+  const cropTicker = Array.isArray(tickerData) ? tickerData.find(row => row.id === cropId) : null;
+  const crop = priceData?.crop || cropTicker || {};
+  const cropName = crop.nameHi || crop.name || cropId;
+  const history = (Array.isArray(priceData?.history) ? priceData.history : []).filter(row => positive(row.market));
+  const dailyHistory = (Array.isArray(priceData?.dailyHistory) ? priceData.dailyHistory : [])
+    .filter(row => positive(row.market)).sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')));
+  const latestDay = dailyHistory.at(-1);
+  const latestMonth = history.at(-1);
+  const heroRecord = latestDay || latestMonth;
+  const previousRecord = latestDay ? dailyHistory.at(-2) : history.at(-2);
+  const heroPrice = positive(heroRecord?.market) ? Number(heroRecord.market) : null;
+  const change = heroPrice !== null && positive(previousRecord?.market) ? heroPrice - Number(previousRecord.market) : null;
+  const changePct = change !== null ? change / Number(previousRecord.market) * 100 : null;
+  const freshness = getDataFreshness(latestDay?.date);
+  const quoteLabel = latestDay ? freshness.dateLabel : latestMonth ? monthLabel(latestMonth) : 'भाव उपलब्ध नहीं';
+  const priorLabel = previousRecord ? (latestDay ? getDataFreshness(previousRecord.date).dateLabel : monthLabel(previousRecord)) : null;
+  const updatedLabel = priceData?.lastUpdated ? formatTimestamp(priceData.lastUpdated) : null;
+  const mandis = Array.isArray(mandiData) ? mandiData : [];
+  const districts = (Array.isArray(priceData?.districtBreakdown) ? priceData.districtBreakdown : [])
+    .filter(row => Number(row.records) > 0).sort((a, b) => Number(b.records) - Number(a.records));
+  const maxDistrictRecords = Math.max(...districts.map(row => Number(row.records)), 1);
+  const msp = positive(heroRecord?.msp) ? Number(heroRecord.msp) : positive(crop.msp) ? Number(crop.msp) : null;
 
   return (
-    <div className="min-h-screen bg-background text-foreground w-full max-w-lg mx-auto flex flex-col">
-      <SEO
-        title={`${cropMeta.nameHi || cropId} भाव — ₹${heroPrice?.toLocaleString()}/क्विंटल`}
-        description={`${cropMeta.nameHi || cropId} (${cropMeta.name || cropId}) का ताज़ा मंडी भाव ₹${heroPrice?.toLocaleString()}/क्विंटल। मंडी तुलना, मुनाफ़ा कैलकुलेटर, MSP जानकारी।`}
-        path={`/crop/${cropId}`}
-      />
-      {/* Header */}
-      <header className="sticky top-0 z-30 bg-background border-b border-zinc-800 px-4 py-3">
-        <div className="flex items-center justify-between">
-          <button onClick={() => navigate(-1)} className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
-            <ArrowLeft size={16}/> वापस
-          </button>
-          <Badge variant="outline" className="text-[10px] border-zinc-700 text-zinc-400">
-            {stateNameHi}
-          </Badge>
-        </div>
-      </header>
-
-      <main className="flex-1 overflow-y-auto px-4 py-4 pb-8 flex flex-col gap-4">
-        {/* Crop Title */}
-        <div>
-          <div className="text-xl font-extrabold">
-            {cropMeta.emoji || cropTicker?.emoji || ''} {cropMeta.nameHi || cropTicker?.nameHi || cropId}
+    <div className="sb-detail-page">
+      <SEO title={`${cropName} मंडी भाव${heroPrice !== null ? ` — ₹${money(heroPrice)}/क्विंटल` : ''}`}
+        description={`${cropName} के उपलब्ध मंडी रिकॉर्ड${heroPrice !== null ? `: ₹${money(heroPrice)}/क्विंटल, ${quoteLabel}` : ''}। भाव का इतिहास, मंडी तुलना और फसल की जानकारी देखें।`}
+        path={`/crop/${cropId}`} />
+      <header className="sb-detail-header"><div className="sb-detail-header__inner">
+        <Link to="/" aria-label="सही भाव के मुख्य पृष्ठ पर जाएँ"><Brand /></Link>
+        <Link to="/" className="sb-detail-back"><ArrowLeft size={16} aria-hidden="true" /> सभी मंडी भाव</Link>
+      </div></header>
+      <main className="sb-detail-main" id="main-content">
+        <nav className="sb-detail-breadcrumb" aria-label="पृष्ठ पथ"><Link to="/">मंडी भाव</Link><span aria-hidden="true">/</span><span>{cropName}</span></nav>
+        <section className="sb-crop-detail-heading">
+          <div><span className="sb-detail-kicker">फसल की पूरी तस्वीर</span><h1>{cropName} के मंडी भाव</h1><p>{crop.name && crop.name !== cropName ? `${crop.name} · ` : ''}भाव का इतिहास देखें और मंडियों की तुलना करें।</p></div>
+          <span className="sb-detail-location"><MapPin size={15} aria-hidden="true" />{stateNameHi || 'भारत'}</span>
+        </section>
+        {priceLoading ? <div className="sb-detail-status" role="status"><RefreshCw size={24} aria-hidden="true" /><h2>फसल के रिकॉर्ड लोड हो रहे हैं</h2><p>भाव, इतिहास और मंडी की जानकारी आ रही है।</p></div> : <>
+          {priceError && <div className="sb-detail-notice" role="alert"><AlertCircle size={20} aria-hidden="true" /><div><strong>भाव के रिकॉर्ड लोड नहीं हो पाए</strong><p>कनेक्शन की जाँच करें और पृष्ठ दोबारा खोलें।</p></div><button type="button" onClick={() => window.location.reload()}>फिर कोशिश करें</button></div>}
+          <div className="sb-crop-detail-grid">
+            <section className="sb-crop-quote" aria-label={`${cropName} का उपलब्ध भाव`}>
+              <div className="sb-crop-quote__identity"><div><span className="sb-detail-kicker">{latestDay ? 'दैनिक रिकॉर्ड का भाव' : latestMonth ? 'मासिक औसत भाव' : 'उपलब्ध मंडी भाव'}</span><h2>{cropName}</h2><p>{quoteLabel}</p></div><CropImage id={cropId} name={cropName} size="hero" /></div>
+              {heroPrice !== null ? <>
+                <div className="sb-crop-quote__value"><strong>₹{money(heroPrice)}</strong><span>/ क्विंटल</span></div>
+                {change !== null ? <div className={`sb-detail-change ${change > 0 ? 'is-up' : change < 0 ? 'is-down' : 'is-flat'}`}>
+                  {change > 0 ? <TrendingUp size={18} aria-hidden="true" /> : change < 0 ? <TrendingDown size={18} aria-hidden="true" /> : <Minus size={18} aria-hidden="true" />}
+                  <strong>{change > 0 ? '+' : change < 0 ? '−' : ''}₹{money(Math.abs(change))} ({changePct > 0 ? '+' : ''}{changePct.toFixed(1)}%)</strong>
+                  <span>{priorLabel} के रिकॉर्ड से</span>
+                </div> : <p className="sb-detail-small">बदलाव दिखाने के लिए पिछला रिकॉर्ड उपलब्ध नहीं है।</p>}
+                <div className={`sb-detail-freshness ${latestDay && freshness.isCurrent ? 'is-current' : ''}`}><Clock3 size={15} aria-hidden="true" /><span>{latestDay ? freshness.label : 'मासिक रिकॉर्ड · दैनिक भाव नहीं'}</span></div>
+                {updatedLabel && <p className="sb-detail-sync">डेटा अपडेट: {updatedLabel}</p>}
+              </> : <div className="sb-detail-no-price"><strong>इस क्षेत्र के भाव उपलब्ध नहीं हैं</strong><p>दूसरे क्षेत्र के रिकॉर्ड मुख्य मंडी भाव पृष्ठ पर देखें।</p><Link to="/">क्षेत्र बदलें <ArrowRight size={16} aria-hidden="true" /></Link></div>}
+              <Link to={`/listing/new?type=sell&crop=${encodeURIComponent(cropId)}`} className="sb-detail-primary"><ShoppingCart size={18} aria-hidden="true" />यह फसल बेचें<ArrowRight size={16} aria-hidden="true" /></Link>
+            </section>
+            <section className="sb-crop-detail-trend" aria-label="भाव का इतिहास">
+              {history.length || dailyHistory.length ? <MiniChart data={history} dailyData={dailyHistory} title={`${cropName} का भाव इतिहास`} formatMonth={formatMonthHi} /> : <div className="sb-detail-status sb-detail-status--compact"><TrendingUp size={24} aria-hidden="true" /><h2>भाव का इतिहास उपलब्ध नहीं है</h2><p>इस फसल के रिकॉर्ड आने पर यहाँ ग्राफ़ दिखाई देगा।</p></div>}
+              <p className="sb-detail-data-note"><Info size={16} aria-hidden="true" />भाव उपलब्ध रिकॉर्ड के आधार पर हैं। किस्म, गुणवत्ता, तारीख और मंडी बदलने पर बिक्री का भाव अलग हो सकता है।</p>
+            </section>
           </div>
-          <div className="text-[11px] text-muted-foreground">{cropMeta.name || cropTicker?.name || cropId}</div>
-        </div>
-
-        {/* Hero Price Card */}
-        {heroPrice > 0 && (
-          <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
-            <div className={`h-1 ${heroIsUp ? "bg-green-500" : "bg-red-500"}`}/>
-            <div className="p-4">
-              <div className="flex items-center justify-between mb-1">
-                <div className="text-[10px] text-muted-foreground tracking-wider">
-                  ताज़ा भाव — {heroLabel}
-                </div>
-                <div className="flex items-center gap-1.5">
-                  {cropTicker?.signal && (
-                    <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-md border ${
-                      cropTicker.signal === 'sell' ? 'bg-green-500/15 border-green-500/30 text-green-500' :
-                      cropTicker.signal === 'buy' ? 'bg-red-500/15 border-red-500/30 text-red-500' :
-                      'bg-amber-500/15 border-amber-500/30 text-amber-500'
-                    }`}>
-                      {cropTicker.signalHi}
-                    </span>
-                  )}
-                  {cropMeta.msp && (
-                    <Badge variant="outline" className="text-[10px] border-zinc-700 text-amber-500">
-                      MSP ₹{cropMeta.msp?.toLocaleString()}
-                    </Badge>
-                  )}
-                </div>
-              </div>
-              <div className="flex items-baseline gap-2 mt-1">
-                <span className="text-2xl font-extrabold text-foreground">
-                  ₹{heroPrice?.toLocaleString()}
-                </span>
-                <span className="text-[11px] text-muted-foreground">/क्विंटल</span>
-              </div>
-              <div className="flex items-center gap-2 mt-1.5">
-                <span className={`flex items-center gap-1 text-sm font-bold ${heroIsUp ? "text-green-500" : "text-red-500"}`}>
-                  {heroIsUp ? <TrendingUp size={14}/> : <TrendingDown size={14}/>}
-                  {heroIsUp ? "+" : ""}{heroChange.toLocaleString()} ({heroIsUp ? "+" : ""}{heroChangePct}%)
-                </span>
-              </div>
-              {lastUpdated && (
-                <div className="text-[9px] text-zinc-500 mt-1.5">
-                  Updated: {formatTimestamp(lastUpdated)}
-                </div>
-              )}
-
-              {/* Best/Worst Mandi */}
-              {cropTicker?.bestMandi && cropTicker?.worstMandi && (
-                <div className="flex gap-2 mt-3 pt-3 border-t border-zinc-800">
-                  <div className="flex-1 flex items-center gap-1.5">
-                    <ArrowUpRight size={12} className="text-green-500 shrink-0"/>
-                    <div className="min-w-0">
-                      <div className="text-[8px] text-green-500 font-semibold">सबसे ज़्यादा</div>
-                      <div className="text-[10px] text-foreground font-bold truncate">
-                        ₹{cropTicker.bestMandi.price?.toLocaleString()} — {cropTicker.bestMandi.name}{cropTicker.bestMandi.stateCode ? `, ${cropTicker.bestMandi.stateCode}` : ''}
-                      </div>
-                      {(() => { const m = mandiData?.find(x => x.name === cropTicker.bestMandi.name); const info = [m?.topVariety, m?.grade && m.grade !== 'Local' ? m.grade : null].filter(Boolean).join(' · '); return info ? <div className="text-[7px] text-zinc-400 italic truncate">{info}</div> : null; })()}
-                      {isOutlier(cropTicker.bestMandi.price, mandiOutlierBounds) && (
-                        <div className="flex items-center gap-0.5 mt-0.5">
-                          <AlertTriangle size={7} className="text-amber-500 shrink-0"/>
-                          <span className="text-[7px] text-amber-500">असामान्य भाव</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  <div className="flex-1 flex items-center gap-1.5">
-                    <ArrowDownRight size={12} className="text-red-500 shrink-0"/>
-                    <div className="min-w-0">
-                      <div className="text-[8px] text-red-500 font-semibold">सबसे कम</div>
-                      <div className="text-[10px] text-foreground font-bold truncate">
-                        ₹{cropTicker.worstMandi.price?.toLocaleString()} — {cropTicker.worstMandi.name}{cropTicker.worstMandi.stateCode ? `, ${cropTicker.worstMandi.stateCode}` : ''}
-                      </div>
-                      {(() => { const m = mandiData?.find(x => x.name === cropTicker.worstMandi.name); const info = [m?.topVariety, m?.grade && m.grade !== 'Local' ? m.grade : null].filter(Boolean).join(' · '); return info ? <div className="text-[7px] text-zinc-400 italic truncate">{info}</div> : null; })()}
-                      {isOutlier(cropTicker.worstMandi.price, mandiOutlierBounds) && (
-                        <div className="flex items-center gap-0.5 mt-0.5">
-                          <AlertTriangle size={7} className="text-amber-500 shrink-0"/>
-                          <span className="text-[7px] text-amber-500">असामान्य भाव</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Sell Button */}
-              <Link
-                to={`/listing/new?type=sell&crop=${cropId}`}
-                className="mt-3 flex items-center justify-center gap-1.5 w-full py-2 rounded-xl bg-green-500/15 border border-green-500/30 text-green-400 text-xs font-bold hover:bg-green-500/25 transition-colors"
-              >
-                <ShoppingCart size={13} />
-                यह फसल बेचें
-              </Link>
-            </div>
-          </Card>
-        )}
-
-        {/* Price Chart */}
-        {(history.length > 0 || dailyHistory.length > 0) && (
-          <MiniChart
-            data={history}
-            dailyData={dailyHistory}
-            title={`${cropMeta.emoji || ''} ${cropMeta.nameHi || cropId}`}
-            formatMonth={formatMonthHi}
-          />
-        )}
-
-        {/* Mandi Comparison (includes arbitrage card) */}
-        {mandiData && mandiData.length > 1 && (
-          <MandiCompare
-            data={mandiData}
-            cropName={cropMeta.nameHi || cropId}
-            cropEmoji={cropMeta.emoji}
-          />
-        )}
-
-        {/* District Breakdown */}
-        {priceData?.districtBreakdown?.length > 0 && (
-          <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
-            <div className="px-4 pt-3 pb-2 border-b border-zinc-800">
-              <div className="text-[10px] text-muted-foreground tracking-wider font-semibold">
-                ज़िला वार कारोबार
-              </div>
-            </div>
-            <div className="p-4 flex flex-col gap-2">
-              {priceData.districtBreakdown.slice(0, 10).map((d) => {
-                const maxRec = priceData.districtBreakdown[0]?.records || 1;
-                const pct = ((d.records / maxRec) * 100).toFixed(0);
-                return (
-                  <div key={d.district} className="flex items-center gap-2">
-                    <span className="text-[10px] text-muted-foreground w-28 shrink-0 truncate">
-                      {d.nameHi || d.district}
-                    </span>
-                    <div className="flex-1 h-2 bg-zinc-800 rounded-full overflow-hidden">
-                      <div className="h-full rounded-full bg-green-500"
-                        style={{ width: `${pct}%`, transition: "width 0.5s ease" }}/>
-                    </div>
-                    <span className="text-[10px] text-zinc-400 w-8 text-right font-medium">
-                      {d.records}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-          </Card>
-        )}
-
-        {/* Crop Info */}
-        {cropTicker && (
-          <Card className="bg-zinc-900 border-zinc-800 p-3">
-            <div className="text-[10px] text-muted-foreground font-semibold tracking-wider mb-2">फसल जानकारी</div>
-            <div className="grid grid-cols-2 gap-2 text-[10px]">
-              <div className="flex justify-between">
-                <span className="text-zinc-500">कुल मंडी</span>
-                <span className="text-foreground font-semibold">{cropTicker.mandiCount}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-zinc-500">कुल रिकॉर्ड</span>
-                <span className="text-foreground font-semibold">{cropTicker.records?.toLocaleString()}</span>
-              </div>
-              {cropTicker.msp && (
-                <>
-                  <div className="flex justify-between">
-                    <span className="text-zinc-500">MSP</span>
-                    <span className="text-amber-500 font-semibold">₹{cropTicker.msp.toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-zinc-500">MSP से</span>
-                    <span className={`font-semibold ${cropTicker.mspDiffPct > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                      {cropTicker.mspDiffPct > 0 ? '+' : ''}{cropTicker.mspDiffPct}%
-                    </span>
-                  </div>
-                </>
-              )}
-            </div>
-          </Card>
-        )}
+        </>}
+        {mandiLoading ? <div className="sb-detail-loading" role="status">मंडियों के रिकॉर्ड लोड हो रहे हैं…</div> : mandiError ? <div className="sb-detail-notice" role="alert"><Info size={18} aria-hidden="true" /><p>मंडी तुलना अभी लोड नहीं हो पाई। कृपया पृष्ठ दोबारा खोलें।</p></div> : mandis.length > 0 ? <MandiCompare key={`${cropId}-${stateQuery}`} data={mandis} cropName={cropName} cropId={cropId} dailyHistory={dailyHistory} /> : !priceLoading && <section className="sb-detail-section"><h2>मंडी तुलना</h2><p>इस फसल और क्षेत्र के लिए मंडी रिकॉर्ड उपलब्ध नहीं हैं।</p></section>}
+        {(districts.length > 0 || cropTicker || msp !== null) && <div className="sb-detail-bottom-grid">
+          {districts.length > 0 && <section className="sb-detail-section"><span className="sb-detail-kicker">डेटा कहाँ से है?</span><h2>ज़िला वार रिकॉर्ड</h2><p>उपलब्ध प्रविष्टियों की संख्या; व्यापार की मात्रा नहीं।</p><div className="sb-detail-districts">{districts.slice(0, 10).map(row => <div className="sb-detail-district" key={row.district}><span>{row.nameHi || row.district}</span><div className="sb-detail-district__track" aria-hidden="true"><span style={{ width: `${Number(row.records) / maxDistrictRecords * 100}%` }} /></div><strong>{Number(row.records).toLocaleString('en-IN')}</strong></div>)}</div></section>}
+          <section className="sb-detail-section"><span className="sb-detail-kicker">एक नज़र में</span><h2>फसल की जानकारी</h2><dl className="sb-detail-facts">
+            {Number.isFinite(Number(cropTicker?.mandiCount)) && cropTicker?.mandiCount != null && <div><dt>संग्रह में मंडियाँ</dt><dd>{Number(cropTicker.mandiCount).toLocaleString('en-IN')}</dd></div>}
+            {Number.isFinite(Number(cropTicker?.records)) && cropTicker?.records != null && <div><dt>कुल रिकॉर्ड</dt><dd>{Number(cropTicker.records).toLocaleString('en-IN')}</dd></div>}
+            {msp !== null && <div><dt>संग्रह में दिया MSP</dt><dd>₹{money(msp)}<small> / क्विंटल</small></dd></div>}
+            <div><dt>भाव की इकाई</dt><dd>₹ / क्विंटल</dd></div>
+          </dl>{msp !== null && <p className="sb-detail-small">MSP का फसल वर्ष इस रिकॉर्ड में नहीं दिया गया है। वर्तमान फसल वर्ष का MSP अलग से जाँचें।</p>}<Link to="/blog" className="sb-detail-text-link">मंडी भाव समझने के लिए पढ़ें <ArrowRight size={16} aria-hidden="true" /></Link></section>
+        </div>}
+        <footer className="sb-detail-footer"><Brand compact /><p>सही भाव। समझकर फ़ैसला।</p><Link to="/">मुख्य पृष्ठ पर जाएँ <ArrowRight size={15} aria-hidden="true" /></Link></footer>
       </main>
     </div>
   );

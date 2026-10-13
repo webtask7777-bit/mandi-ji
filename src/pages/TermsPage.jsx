@@ -9,7 +9,7 @@ export default function TermsPage() {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-foreground max-w-lg mx-auto flex flex-col">
-      <SEO title="नियम और शर्तें" description="मंडीजी की सेवा शर्तें और उपयोग के नियम।" path="/terms" />
+      <SEO title="नियम और शर्तें" description="सही भाव की सेवा शर्तें और उपयोग के नियम।" path="/terms" />
       <header className="sticky top-0 z-30 bg-zinc-950 border-b border-zinc-800">
         <div className="flex items-center gap-3 px-4 py-3">
           <button onClick={() => navigate(-1)} className="p-1.5 rounded-lg hover:bg-zinc-800 transition-colors">
@@ -24,7 +24,7 @@ export default function TermsPage() {
         <p className="text-xs text-zinc-500">अंतिम अपडेट: मार्च 2026</p>
 
         <Section title="1. सेवा का विवरण">
-          मंडीजी (MandiJi) एक कृषि मंडी भाव सूचना प्लेटफ़ॉर्म है। हम सरकारी स्रोतों से मंडी भाव एकत्र करके आपको दिखाते हैं।
+          सही भाव (SahiBhav) एक कृषि मंडी भाव सूचना प्लेटफ़ॉर्म है। हम सरकारी स्रोतों से मंडी भाव एकत्र करके आपको दिखाते हैं।
           इस सेवा का उपयोग करके आप इन नियमों से सहमत होते हैं।
         </Section>
 
@@ -41,7 +41,7 @@ export default function TermsPage() {
           <div className="bg-amber-500/10 border border-amber-500/20 rounded-lg p-3 text-amber-400 text-xs mt-2">
             मंडी भाव सरकारी स्रोतों से लिए जाते हैं। हम डेटा की 100% सटीकता की गारंटी नहीं देते।
             कृपया कोई भी व्यापारिक निर्णय लेने से पहले स्थानीय मंडी से भाव की पुष्टि करें।
-            मंडीजी किसी भी वित्तीय नुकसान के लिए ज़िम्मेदार नहीं है।
+            सही भाव किसी भी वित्तीय नुकसान के लिए ज़िम्मेदार नहीं है।
           </div>
         </Section>
 
@@ -50,7 +50,7 @@ export default function TermsPage() {
             <li>केवल कृषि उत्पादों की लिस्टिंग करें</li>
             <li>सही भाव और मात्रा लिखें</li>
             <li>गलत या भ्रामक लिस्टिंग पर खाता बंद हो सकता है</li>
-            <li>मंडीजी खरीद-बिक्री में मध्यस्थ नहीं है — सौदा दोनों पक्षों की ज़िम्मेदारी है</li>
+            <li>सही भाव खरीद-बिक्री में मध्यस्थ नहीं है — सौदा दोनों पक्षों की ज़िम्मेदारी है</li>
           </ul>
         </Section>
 
@@ -64,7 +64,7 @@ export default function TermsPage() {
         </Section>
 
         <Section title="6. बौद्धिक संपदा">
-          मंडीजी का लोगो, डिज़ाइन, और कोड हमारी बौद्धिक संपदा है। बिना अनुमति के कॉपी या पुनर्वितरण वर्जित है।
+          सही भाव का लोगो, डिज़ाइन, और कोड हमारी बौद्धिक संपदा है। बिना अनुमति के कॉपी या पुनर्वितरण वर्जित है।
           मंडी भाव डेटा सार्वजनिक सरकारी डेटा पर आधारित है।
         </Section>
 
