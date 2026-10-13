@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from "react";
 import { TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight, BarChart3, ShieldCheck, ShieldAlert, ChevronDown, ChevronUp, Activity } from "lucide-react";
 import { MONTHS, FALLBACK_REGIONS } from "../data/constants";
 import { useApi } from "../hooks/useApi";
+import { getDataFreshness, getLatestQuoteDate } from "../utils/dataFreshness";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -28,27 +29,34 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
       const t = setTimeout(() => onMandiConsumed?.(), 8000);
       return () => clearTimeout(t);
     }
-  }, [jumpToMandi]);
+  }, [jumpToMandi, onMandiConsumed]);
 
-  const tickerQ = stateParam ? `?state=${stateParam}` : '?state=all';
+  const tickerQ = `?state=${encodeURIComponent(stateParam || 'all')}`;
   const { data: tickerData } = useApi(`/ticker${tickerQ}`);
+  const { data: summaryData } = useApi(`/stats${tickerQ}`);
+  const summaryDate = Array.isArray(summaryData?.dateRange)
+    ? getLatestQuoteDate(summaryData.dateRange.map(date => ({ date })))
+    : summaryData?.dateRange?.to;
+  const freshness = getDataFreshness(summaryDate);
+  const totalMandis = Number.isFinite(summaryData?.totalMandis) ? summaryData.totalMandis : null;
 
   const displayRegions = regions || FALLBACK_REGIONS;
   const displayHeatmap = heatmap || {};
   const showRegions = regions && regions.length > 0;
-  const heatmapEntries = Object.entries(displayHeatmap);
+  const heatmapEntries = Object.entries(displayHeatmap).filter(([, values]) => Array.isArray(values));
+  const selectedMonthHasRecords = heatmapEntries.some(([, values]) => Number(values[selectedMonth]) > 0);
   const visibleHeatmap = showAllHeatmap ? heatmapEntries : heatmapEntries.slice(0, 15);
 
   // Computed market stats
   const stats = useMemo(() => {
     if (!tickerData || tickerData.length === 0) return null;
     const crops = tickerData.length;
-    const totalMandis = tickerData.reduce((s, t) => s + (t.mandiCount || 0), 0);
-    const topGainers = [...tickerData].filter(t => t.changePct > 0).sort((a, b) => b.changePct - a.changePct);
-    const topLosers = [...tickerData].filter(t => t.changePct < 0).sort((a, b) => a.changePct - b.changePct);
+    const comparable = tickerData.filter(t => t.price > 0 && t.prevPrice > 0 && Number.isFinite(t.changePct));
+    const topGainers = [...comparable].filter(t => t.changePct > 0).sort((a, b) => b.changePct - a.changePct);
+    const topLosers = [...comparable].filter(t => t.changePct < 0).sort((a, b) => a.changePct - b.changePct);
     const gainers = topGainers;
     const losers = topLosers;
-    const flat = tickerData.filter(t => t.changePct === 0);
+    const flat = comparable.filter(t => t.changePct === 0);
     const mostActive = [...tickerData].sort((a, b) => b.records - a.records).slice(0, 5);
     const maxRecords = mostActive[0]?.records || 1;
 
@@ -56,25 +64,25 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
     const aboveMsp = mspCrops.filter(t => t.mspDiffPct > 0).sort((a, b) => b.mspDiffPct - a.mspDiffPct);
     const belowMsp = mspCrops.filter(t => t.mspDiffPct < 0).sort((a, b) => a.mspDiffPct - b.mspDiffPct);
 
-    const sellCrops = tickerData.filter(t => t.signal === 'sell');
-    const holdCrops = tickerData.filter(t => t.signal === 'hold');
-    const buyCrops = tickerData.filter(t => t.signal === 'buy');
-
     return {
-      crops, totalMandis,
+      crops, comparableCount: comparable.length, missingChange: crops - comparable.length,
       gainers, losers, flat,
-      gainerPct: crops > 0 ? ((gainers.length / crops) * 100).toFixed(0) : 0,
-      loserPct: crops > 0 ? ((losers.length / crops) * 100).toFixed(0) : 0,
+      gainerPct: comparable.length > 0 ? ((gainers.length / comparable.length) * 100).toFixed(0) : 0,
+      loserPct: comparable.length > 0 ? ((losers.length / comparable.length) * 100).toFixed(0) : 0,
       topGainers, topLosers, mostActive, maxRecords,
       aboveMsp, belowMsp,
-      sellCrops, holdCrops, buyCrops,
     };
   }, [tickerData]);
 
   return (
     <div className="sb-secondary-tab sb-mandis-tab flex flex-col gap-4">
 
-      <div className="sb-secondary-heading"><div><span className="sb-secondary-eyebrow">मंडी नज़र</span><h2>बाज़ार की चाल समझें</h2><p>फसलों की तेजी, मंदी और मंडी की गतिविधि एक साथ देखें।</p></div></div>
+      <div className="sb-secondary-heading"><div><span className="sb-secondary-eyebrow">मंडी नज़र</span><h2>बाज़ार की चाल समझें</h2><p>उपलब्ध मासिक औसत में बदलाव और मंडी रिकॉर्ड देखें।</p></div></div>
+      {stats && <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs text-muted-foreground leading-relaxed">
+        <strong className="text-foreground">डेटासेट का अंतिम दर्ज दिन: {freshness.dateLabel}</strong>
+        {freshness.date && <span> · {freshness.label}</span>}
+        <p className="mt-1">तेज़ी / मंदी: पिछला उपलब्ध मासिक औसत बनाम नवीनतम उपलब्ध मासिक औसत। हर फसल की अलग तारीख इस सारांश में उपलब्ध नहीं है।</p>
+      </div>}
       {/* Jump-to-mandi context banner */}
       {jumpToMandi && (
         <div className="flex items-center gap-2 bg-blue-500/10 border border-blue-500/25 rounded-lg px-3 py-2">
@@ -95,8 +103,8 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
             <div className="text-lg font-extrabold text-foreground mt-0.5">{stats.crops}</div>
           </Card>
           <Card className="bg-zinc-900 border-zinc-800 p-2.5 text-center">
-            <div className="text-[8px] text-zinc-500 font-semibold tracking-wider">मंडी</div>
-            <div className="text-lg font-extrabold text-foreground mt-0.5">{stats.totalMandis.toLocaleString()}</div>
+            <div className="text-[8px] text-zinc-500 font-semibold tracking-wider">रिपोर्टिंग मंडियाँ</div>
+            <div className="text-lg font-extrabold text-foreground mt-0.5">{totalMandis == null ? '—' : totalMandis.toLocaleString('en-IN')}</div>
           </Card>
           <Card className="bg-zinc-900 border-zinc-800 p-2.5 text-center">
             <div className="text-[8px] text-green-500 font-semibold tracking-wider">तेज़ी</div>
@@ -115,10 +123,10 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-1.5">
               <Activity size={12} className="text-amber-500"/>
-              <span className="text-[10px] text-muted-foreground font-semibold tracking-wider">मार्केट ब्रेड्थ</span>
+              <span className="text-[10px] text-muted-foreground font-semibold tracking-wider">मासिक औसत में बदलाव</span>
             </div>
             <span className="text-[9px] text-zinc-500">
-              {stats.flat.length > 0 && `${stats.flat.length} स्थिर`}
+              {stats.flat.length} स्थिर · {stats.comparableCount} तुलनीय फसलें
             </span>
           </div>
           <div className="flex h-3 rounded-full overflow-hidden bg-zinc-800">
@@ -139,6 +147,8 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
           </div>
         </Card>
       )}
+
+      {stats?.missingChange > 0 && <p className="text-xs text-muted-foreground">{stats.missingChange} फसलों का पिछला तुलनीय औसत उपलब्ध नहीं है। इन्हें तेज़ी / मंदी की गणना में शामिल नहीं किया गया है।</p>}
 
       {/* ── C. Top Gainers & Losers ───────────────────────── */}
       {stats && (
@@ -197,13 +207,14 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
         </div>
       )}
 
-      {/* ── D. Most Active by Volume ──────────────────────── */}
+      {/* ── D. Most Reported Crops ──────────────────────── */}
       {stats && (
         <div>
           <div className="flex items-center gap-1.5 mb-2">
             <BarChart3 size={12} className="text-amber-500"/>
-            <span className="text-[10px] text-muted-foreground font-semibold tracking-wider">सबसे ज़्यादा कारोबार</span>
+            <span className="text-[10px] text-muted-foreground font-semibold tracking-wider">सबसे अधिक दर्ज रिकॉर्ड</span>
           </div>
+          <p className="text-xs text-muted-foreground mb-3">रिकॉर्ड की संख्या डेटा कवरेज बताती है; यह बिक्री की मात्रा या मूल्य नहीं है। भाव ₹ / क्विंटल में उपलब्ध मासिक औसत हैं।</p>
           <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
             <div className="px-3 py-1.5 border-b border-zinc-800 grid grid-cols-[1fr_70px_80px] text-[8px] text-zinc-500 font-semibold tracking-wider">
               <div>फसल</div>
@@ -288,54 +299,54 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
       {stats && (
         <div>
           <div className="text-[10px] text-muted-foreground font-semibold tracking-wider mb-2">
-            सिग्नल वितरण
+            बदलाव के अनुसार फसलें
           </div>
           <div className="grid grid-cols-3 gap-2">
-            {/* बेचें (Sell) */}
+            {/* Positive monthly change */}
             <Card className="bg-zinc-900 border-zinc-800 p-2.5">
               <div className="text-[9px] font-bold mb-1.5 text-green-500">
-                बेचें ({stats.sellCrops.length})
+                तेज़ी ({stats.gainers.length})
               </div>
               <div className="flex flex-wrap gap-1">
-                {stats.sellCrops.slice(0, 8).map(t => (
+                {stats.gainers.slice(0, 8).map(t => (
                   <span key={t.id} onClick={() => onCropClick?.(t.id)} className="text-[8px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-500 border border-green-500/20 cursor-pointer hover:bg-green-500/20 active:scale-95 transition-all">
-                    {t.emoji}
+                    {t.nameHi || t.name}
                   </span>
                 ))}
-                {stats.sellCrops.length > 8 && (
-                  <span className="text-[8px] text-zinc-500 px-1 py-0.5">+{stats.sellCrops.length - 8}</span>
+                {stats.gainers.length > 8 && (
+                  <span className="text-[8px] text-zinc-500 px-1 py-0.5">+{stats.gainers.length - 8}</span>
                 )}
               </div>
             </Card>
-            {/* होल्ड (Hold) */}
+            {/* No monthly change */}
             <Card className="bg-zinc-900 border-zinc-800 p-2.5">
               <div className="text-[9px] font-bold mb-1.5 text-amber-500">
-                होल्ड ({stats.holdCrops.length})
+                स्थिर ({stats.flat.length})
               </div>
               <div className="flex flex-wrap gap-1">
-                {stats.holdCrops.slice(0, 8).map(t => (
+                {stats.flat.slice(0, 8).map(t => (
                   <span key={t.id} onClick={() => onCropClick?.(t.id)} className="text-[8px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20 cursor-pointer hover:bg-amber-500/20 active:scale-95 transition-all">
-                    {t.emoji}
+                    {t.nameHi || t.name}
                   </span>
                 ))}
-                {stats.holdCrops.length > 8 && (
-                  <span className="text-[8px] text-zinc-500 px-1 py-0.5">+{stats.holdCrops.length - 8}</span>
+                {stats.flat.length > 8 && (
+                  <span className="text-[8px] text-zinc-500 px-1 py-0.5">+{stats.flat.length - 8}</span>
                 )}
               </div>
             </Card>
-            {/* खरीदें (Buy) */}
+            {/* Negative monthly change */}
             <Card className="bg-zinc-900 border-zinc-800 p-2.5">
               <div className="text-[9px] font-bold mb-1.5 text-red-500">
-                खरीदें ({stats.buyCrops.length})
+                मंदी ({stats.losers.length})
               </div>
               <div className="flex flex-wrap gap-1">
-                {stats.buyCrops.slice(0, 8).map(t => (
+                {stats.losers.slice(0, 8).map(t => (
                   <span key={t.id} onClick={() => onCropClick?.(t.id)} className="text-[8px] px-1.5 py-0.5 rounded bg-red-500/10 text-red-500 border border-red-500/20 cursor-pointer hover:bg-red-500/20 active:scale-95 transition-all">
-                    {t.emoji}
+                    {t.nameHi || t.name}
                   </span>
                 ))}
-                {stats.buyCrops.length > 8 && (
-                  <span className="text-[8px] text-zinc-500 px-1 py-0.5">+{stats.buyCrops.length - 8}</span>
+                {stats.losers.length > 8 && (
+                  <span className="text-[8px] text-zinc-500 px-1 py-0.5">+{stats.losers.length - 8}</span>
                 )}
               </div>
             </Card>
@@ -347,8 +358,10 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
       {heatmapEntries.length > 0 && (
         <div>
           <div className="text-[10px] text-muted-foreground tracking-wider font-semibold mb-2">
-            मंडी गतिविधि — 12 महीने
+            महीनेवार रिकॉर्ड सूचकांक (1–10)
           </div>
+          <p className="text-xs text-muted-foreground mb-3">उपलब्ध ऐतिहासिक रिकॉर्ड का सूचकांक; वर्ष अलग नहीं दिए गए हैं। “—” का अर्थ स्रोत में उस महीने का रिकॉर्ड नहीं मिला, मंडी बंद होना नहीं है।</p>
+          {!selectedMonthHasRecords && <div className="rounded-lg border border-zinc-800 px-3 py-2 mb-3 text-xs text-muted-foreground">{MONTHS[selectedMonth]} के लिए इन मंडियों का दर्ज सूचकांक उपलब्ध नहीं है। दूसरे महीनों का उपलब्ध इतिहास नीचे देखें।</div>}
           <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
             <div className="overflow-x-auto">
               <div className="min-w-[360px]">
@@ -366,16 +379,20 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
                     <div key={mandi} className="grid gap-0.5 py-0.5 cursor-pointer hover:bg-zinc-800/30 rounded transition-colors"
                       style={{ gridTemplateColumns: "72px repeat(12, 1fr)" }}>
                       <div className="text-[9px] text-muted-foreground flex items-center truncate">{mandi}</div>
-                      {(vals || []).map((v, i) => (
+                      {MONTHS.map((month, i) => {
+                        const v = Number(vals[i]);
+                        const hasRecord = Number.isFinite(v) && v > 0;
+                        return (
                         <div key={i} className="h-5 rounded-sm flex items-center justify-center"
+                          title={`${mandi} · ${month}: ${hasRecord ? `रिकॉर्ड सूचकांक ${v}/10` : 'महीने का रिकॉर्ड उपलब्ध नहीं'}`}
                           style={{
-                            background: heatSolid(v),
+                            background: hasRecord ? heatSolid(v) : "#f2f3ee",
                             outline: i === selectedMonth ? "1.5px solid #f59e0b" : "none",
                             outlineOffset: "-1px",
                           }}>
-                          {i === selectedMonth && <span className="text-[10px] font-bold" style={{ color: v > 5 ? "#ffffff" : "#1b3027" }}>{v}</span>}
+                          {(i === selectedMonth || !hasRecord) && <span className="text-[10px] font-bold" style={{ color: hasRecord && v > 5 ? "#ffffff" : "#708077" }}>{hasRecord ? v : "—"}</span>}
                         </div>
-                      ))}
+                      ); })}
                     </div>
                   ))}
                 </div>
@@ -403,6 +420,8 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
           </Card>
         </div>
       )}
+
+      {heatmapEntries.length === 0 && <Card className="bg-zinc-900 border-zinc-800 p-4 text-xs text-muted-foreground">इस क्षेत्र का महीनेवार रिकॉर्ड सूचकांक उपलब्ध नहीं है।</Card>}
 
       {/* Regions — only for CG */}
       {showRegions && (

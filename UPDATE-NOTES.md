@@ -24,6 +24,8 @@ Baseline: `f889f0739a70b7877f6b2ac87bb7df49f985d41b`.
 - Vercel SPA rewrites preserve direct links. Canonical, robots and sitemap URLs use the actual deployed domain instead of the previous unconnected name.
 - Render the packaged India state/district map without an external tile service; fit the national overview to the viewport.
 - Calendar rows only show crops with available phase data, with a regional/seasonal variation notice.
+- Provide a branded recovery screen if an old open tab cannot load a replaced deployment bundle.
+- Market overview uses the unique reporting-mandi count, explains monthly-average changes, and labels observation counts and missing heatmap records accurately. Price-change groups replace unsupported buy/sell instructions.
 
 ## Domain
 
