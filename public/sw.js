@@ -1,6 +1,19 @@
 // Cache only the public shell/assets. Prices and signed-in API responses always
 // come from the network, so offline caches cannot masquerade as current quotes.
-const CACHE_NAME = 'sahibhav-v3';
+const CACHE_NAME = 'sahibhav-v4';
+
+// SPA fallbacks can answer a missing deployment chunk with 200 HTML. Never
+// persist that response under a hashed asset URL (or reuse an older bad entry).
+function isUsableAssetResponse(response, pathname) {
+  if (!response?.ok || response.type !== 'basic') return false;
+  const mime = (response.headers.get('Content-Type') || '').split(';')[0].trim().toLowerCase();
+  if (mime === 'text/html' || mime === 'application/xhtml+xml') return false;
+  if (/\.(?:js|mjs)$/i.test(pathname)) {
+    return ['text/javascript', 'application/javascript', 'text/ecmascript', 'application/ecmascript'].includes(mime);
+  }
+  if (/\.css$/i.test(pathname)) return mime === 'text/css';
+  return Boolean(mime);
+}
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', (event) => {
   event.waitUntil((async () => {
@@ -24,9 +37,13 @@ self.addEventListener('fetch', (event) => {
     event.respondWith((async () => {
       const cache = await caches.open(CACHE_NAME);
       const cached = await cache.match(request);
-      if (cached) return cached;
-      const response = await fetch(request);
-      if (response.ok && response.type === 'basic') await cache.put(request, response.clone());
+      if (cached && isUsableAssetResponse(cached, url.pathname)) return cached;
+      if (cached) await cache.delete(request);
+      const response = await fetch(request, cached ? { cache: 'reload' } : undefined);
+      if (isUsableAssetResponse(response, url.pathname)) {
+        // A full browser cache must not discard a successful network response.
+        await cache.put(request, response.clone()).catch(() => {});
+      }
       return response;
     })());
   }

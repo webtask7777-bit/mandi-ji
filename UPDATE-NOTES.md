@@ -21,6 +21,7 @@ Baseline: `f889f0739a70b7877f6b2ac87bb7df49f985d41b`.
 - Prevent old crop/state responses and late network results from appearing under a newly selected crop/state.
 - Use same-origin transport API requests; remove unverified directory telephone links.
 - Do not cache market/authenticated API responses in the service worker. Offline prices are not advertised as current.
+- Validate cached asset MIME types and clear older caches so an HTML fallback cannot persist as a JavaScript or CSS bundle.
 - Vercel SPA rewrites preserve direct links. Canonical, robots and sitemap URLs use the actual deployed domain instead of the previous unconnected name.
 - Render the packaged India state/district map without an external tile service; fit the national overview to the viewport.
 - Calendar rows only show crops with available phase data, with a regional/seasonal variation notice.
