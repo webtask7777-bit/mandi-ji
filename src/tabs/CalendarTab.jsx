@@ -25,6 +25,10 @@ const PHASE_HI = {
 export default function CalendarTab({ selectedMonth, crops, seasons, isCG }) {
   const [selectedCrop, setSelectedCrop] = useState(null);
   const displaySeasons = seasons || FALLBACK_SEASONS;
+  // Match the phases the table can actually render; exclude commodities with no season data.
+  const calendarCrops = crops.filter(crop =>
+    MONTHS.some((_, month) => getMonthPhase(crop, month))
+  );
 
   const activeCrops = crops.filter(c => {
     const s = c.sowingMonths || c.sowing;
@@ -122,8 +126,11 @@ export default function CalendarTab({ selectedMonth, crops, seasons, isCG }) {
       {/* Annual Calendar Grid */}
       <div>
         <div className="text-[10px] text-muted-foreground tracking-wider font-semibold mb-2">
-          सभी फसलों का वार्षिक कैलेंडर
+          फसलों का वार्षिक कैलेंडर
         </div>
+        <p className="text-xs text-muted-foreground mb-3">
+          उपलब्ध मौसम की जानकारी वाली फसलें दिखाई गई हैं। समय क्षेत्र, किस्म और मौसम के अनुसार बदल सकता है।
+        </p>
         <Card className="sb-calendar-annual bg-zinc-900 border-zinc-800">
           <div className="grid gap-0.5 px-3 py-2 border-b border-zinc-800"
             style={{ gridTemplateColumns: "106px repeat(12, minmax(28px, 1fr))" }}>
@@ -135,7 +142,10 @@ export default function CalendarTab({ selectedMonth, crops, seasons, isCG }) {
             ))}
           </div>
           <div className="px-3 py-1">
-            {crops.map(crop => (
+            {calendarCrops.length === 0 && (
+              <p className="py-5 text-sm text-muted-foreground">इस क्षेत्र के लिए फसल कैलेंडर उपलब्ध नहीं है।</p>
+            )}
+            {calendarCrops.map(crop => (
               <div key={crop.id} className="grid gap-0.5 py-0.5 cursor-pointer hover:bg-zinc-800/50 rounded transition-colors"
                 role="button" tabIndex={0} aria-label={`${crop.nameHi || crop.name} का कैलेंडर`} aria-expanded={selectedCrop === crop.id}
                 onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedCrop(selectedCrop === crop.id ? null : crop.id); } }}

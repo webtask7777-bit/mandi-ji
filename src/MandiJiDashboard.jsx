@@ -22,6 +22,7 @@ const MandisTab = lazy(() => import('./tabs/MandisTab'));
 const NakshaTab = lazy(() => import('./tabs/NakshaTab'));
 const BazaarTab = lazy(() => import('./tabs/BazaarTab'));
 const LogisticsTab = lazy(() => import('./tabs/LogisticsTab'));
+const brandCopy = text => typeof text === 'string' ? text.replace(/मंडीजी|\bMandiJi\b/g, 'सही भाव') : text;
 
 const TAB_ITEMS = [
   { value: "prices", icon: ChartNoAxesCombined, label: "मंडी भाव" },
@@ -301,8 +302,8 @@ export default function MandiJiDashboard() {
           <div key={banner.id} className={`sb-cms-banner px-3 py-2 rounded-lg border flex items-center gap-2 ${colors[banner.type] || colors.info}`}>
             {icons[banner.type] || icons.info}
             <div className="flex-1 min-w-0">
-              <div className="text-sm font-bold">{banner.title}</div>
-              <div className="text-xs opacity-80">{banner.message}</div>
+              <div className="text-sm font-bold">{brandCopy(banner.title)}</div>
+              <div className="text-xs opacity-80">{brandCopy(banner.message)}</div>
             </div>
             {banner.link && <button onClick={() => navigate(banner.link)} className="text-[9px] font-bold underline shrink-0">देखें</button>}
             <button onClick={() => setDismissedBanners(prev => [...prev, banner.id])} className="sb-icon-button" aria-label="सूचना बंद करें"><X size={14}/></button>

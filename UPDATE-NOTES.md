@@ -22,6 +22,8 @@ Baseline: `f889f0739a70b7877f6b2ac87bb7df49f985d41b`.
 - Use same-origin transport API requests; remove unverified directory telephone links.
 - Do not cache market/authenticated API responses in the service worker. Offline prices are not advertised as current.
 - Vercel SPA rewrites preserve direct links. Canonical, robots and sitemap URLs use the actual deployed domain instead of the previous unconnected name.
+- Render the packaged India state/district map without an external tile service; fit the national overview to the viewport.
+- Calendar rows only show crops with available phase data, with a regional/seasonal variation notice.
 
 ## Domain
 

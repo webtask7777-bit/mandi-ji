@@ -1,9 +1,9 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useEffect, useCallback } from 'react';
 import L from 'leaflet';
-import { MapContainer, TileLayer, ZoomControl, useMap } from 'react-leaflet';
+import { MapContainer, ZoomControl, useMap } from 'react-leaflet';
 import {
   INDIA_CENTER, DEFAULT_ZOOM, MAX_ZOOM, MIN_ZOOM,
-  INDIA_BOUNDS, DARK_TILE_URL, DARK_TILE_ATTR,
+  INDIA_BOUNDS,
   STATE_ZOOM,
 } from './mapConstants';
 import IndiaStatesLayer from './IndiaStatesLayer';
@@ -19,8 +19,8 @@ function MapController({ selectedState, stateGeoJson }) {
 
   useEffect(() => {
     if (!selectedState) {
-      // Reset to India view
-      map.flyTo(INDIA_CENTER, DEFAULT_ZOOM, { duration: 0.8 });
+      // Fit the whole country on both narrow and wide screens.
+      map.fitBounds(INDIA_BOUNDS, { padding: [16, 16], maxZoom: DEFAULT_ZOOM });
       return;
     }
     if (!stateGeoJson) return;
@@ -48,7 +48,6 @@ export default function LeafletMap({
   mandis = [],
   selectedCrop = null,
 }) {
-  const mapRef = useRef(null);
   const { selectedState, setSelectedState } = useStateContext();
   const { geoJson: stateGeoJson, loading: statesLoading } = useGeoData('/geo/india-states.json');
   const cropMatrix = useCropMatrix();
@@ -68,15 +67,19 @@ export default function LeafletMap({
   }, [setSelectedState]);
 
   return (
-    <div className="relative w-full" style={{ height: '58vh', minHeight: 320 }}>
+    <div role="region" aria-label="भारत का मंडी नक्शा" className="relative w-full" style={{ height: '58vh', minHeight: 320 }}>
       {statesLoading && (
         <div className="absolute inset-0 z-[500] flex items-center justify-center bg-zinc-950/80">
           <div className="text-xs text-muted-foreground animate-pulse">नक्शा लोड हो रहा है...</div>
         </div>
       )}
+      {!statesLoading && !stateGeoJson && (
+        <div className="absolute inset-0 z-[500] flex items-center justify-center bg-background/95 p-6 text-center text-sm text-muted-foreground">
+          नक्शा नहीं खुल सका। इंटरनेट जाँचकर पेज दोबारा खोलें।
+        </div>
+      )}
 
       <MapContainer
-        ref={mapRef}
         center={INDIA_CENTER}
         zoom={DEFAULT_ZOOM}
         maxZoom={MAX_ZOOM}
@@ -88,7 +91,6 @@ export default function LeafletMap({
         className="w-full h-full rounded-xl"
         style={{ background: '#eef0e6' }}
       >
-        <TileLayer url={DARK_TILE_URL} attribution={DARK_TILE_ATTR} />
         <ZoomControl position="bottomright" />
 
         <MapController selectedState={selectedState} stateGeoJson={stateGeoJson} />
@@ -109,6 +111,7 @@ export default function LeafletMap({
         {/* District boundaries (shown when state selected) */}
         {selectedState && (
           <DistrictsLayer
+            key={selectedState}
             stateId={selectedState}
             districts={districts}
             mandis={mandis}
