@@ -3,57 +3,70 @@
  * Fetch the current mandi price dataset from data.gov.in
  * ("Current Daily Price of Various Commodities from Various Markets").
  *
+ * The publisher re-indexes the dataset about hourly and the row order changes each time,
+ * so paging the whole dataset by offset across a re-index skips and repeats rows.
+ * This script therefore fetches one state at a time (each slice is small enough to finish
+ * between re-indexes), repeats a slice if a re-index happened during it, and judges
+ * completeness by unique records rather than by pages read.
+ *
  * - Records are filed under their own arrival date via scripts/lib/daily-store.cjs
  *   (merge, never overwrite; atomic writes).
- * - The dataset is replaced by the publisher during the day, so progress is tied to the
- *   snapshot's `updated_date`. A rerun resumes the same snapshot; a new snapshot starts over.
- * - Nothing is written to daily/ unless the whole snapshot was read (≥ --min-complete of the
- *   reported total). An incomplete run exits 1 and keeps its progress for the next attempt.
+ * - Nothing is written to daily/ unless unique valid records reach --min-complete of the
+ *   dataset total. An incomplete run exits 1 and keeps finished states for the next run.
  *
  * Usage:
- *   node scripts/fetch-daily.cjs [--concurrency 3] [--min-complete 0.99] [--state Chhattisgarh]
+ *   node scripts/fetch-daily.cjs [--min-complete 0.98] [--delay 1300]
  * Env:
  *   DATA_GOV_API_KEY  registered key (the public sample key returns only 10 rows per call)
  */
 
 const fs = require('fs');
 const path = require('path');
-const { normalizeRecord, recordKey, mergeRecords, writeAtomic } = require('./lib/daily-store.cjs');
+const { DAILY_DIR, arrivalToISO, normalizeRecord, recordKey, mergeRecords, writeAtomic, listDays, readDay } = require('./lib/daily-store.cjs');
 
 const RESOURCE_ID = '9ef84268-d588-465a-a308-a864a43d0070';
 const API_BASE = `https://api.data.gov.in/resource/${RESOURCE_ID}`;
 const SAMPLE_KEY = '579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b';
 const API_KEY = process.env.DATA_GOV_API_KEY || SAMPLE_KEY;
 const REQUEST_LIMIT = 1000;
-const CACHE_DIR = path.join(__dirname, '..', '.cache', 'datagov');
+const MAX_SLICE_PASSES = 3;
+const CACHE_FILE = path.join(__dirname, '..', '.cache', 'datagov', 'states.json');
+const CACHE_MAX_AGE_MS = 18 * 3600 * 1000;
 const SOURCE = 'data.gov.in';
-// Last fully stored snapshot, committed with the data so scheduled runs skip a repeat.
-const LAST_SNAPSHOT_FILE = path.join(__dirname, '..', 'server', 'db', 'data', 'daily', '.datagov-last-snapshot.json');
+
+// Source spellings seen on data.gov.in. States found in recent day files are added at run
+// time; if the slices still do not add up to the dataset total, the run fails and says so.
+const KNOWN_STATES = [
+  'Andaman and Nicobar', 'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chandigarh',
+  'Chattisgarh', 'Dadra and Nagar Haveli and Daman and Diu', 'Goa', 'Gujarat', 'Haryana',
+  'Himachal Pradesh', 'Jammu and Kashmir', 'Jharkhand', 'Karnataka', 'Keralam', 'Ladakh',
+  'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'NCT of Delhi', 'Nagaland',
+  'Odisha', 'Pondicherry', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura',
+  'Uttar Pradesh', 'Uttarakhand', 'West Bengal',
+];
 
 function parseArgs() {
   const args = process.argv.slice(2);
-  const opts = { concurrency: 3, minComplete: 0.99, state: null, delayMs: 250 };
+  const opts = { minComplete: 0.98, delayMs: 1300 };
   for (let i = 0; i < args.length; i++) {
-    if (args[i] === '--concurrency') opts.concurrency = Math.max(1, parseInt(args[++i], 10) || 1);
-    else if (args[i] === '--min-complete') opts.minComplete = Math.min(1, parseFloat(args[++i]) || 0.99);
-    else if (args[i] === '--state') opts.state = args[++i];
+    if (args[i] === '--min-complete') opts.minComplete = Math.min(1, parseFloat(args[++i]) || 0.98);
     else if (args[i] === '--delay') opts.delayMs = Math.max(0, parseInt(args[++i], 10) || 0);
   }
   return opts;
 }
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+const snapshotOf = (page) => page.updated_date || String(page.updated || 'unknown');
 
-async function fetchPage(offset, opts, retries = 6) {
+async function fetchPage(offset, state, retries = 6) {
   const params = new URLSearchParams({ 'api-key': API_KEY, format: 'json', limit: String(REQUEST_LIMIT), offset: String(offset) });
-  if (opts.state) params.set('filters[state]', opts.state);
-  const url = `${API_BASE}?${params}`;
+  if (state) params.set('filters[state.keyword]', state);
   let lastError = null;
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), 45000);
-      const res = await fetch(url, { signal: controller.signal });
+      const res = await fetch(`${API_BASE}?${params}`, { signal: controller.signal });
       clearTimeout(timer);
       if (res.status === 429 || res.status >= 500) throw new Error(`HTTP ${res.status}`);
       if (!res.ok) throw Object.assign(new Error(`HTTP ${res.status}`), { fatal: true });
@@ -66,76 +79,10 @@ async function fetchPage(offset, opts, retries = 6) {
       await sleep(Math.min(60000, 2000 * 2 ** (attempt - 1)));
     }
   }
-  throw new Error(`offset ${offset}: ${lastError?.message || 'failed'} after ${retries} attempts`);
+  throw new Error(`${state || 'all'} offset ${offset}: ${lastError?.message || 'failed'} after ${retries} attempts`);
 }
 
-function loadProgress(file) {
-  try { return JSON.parse(fs.readFileSync(file, 'utf-8')); } catch { return null; }
-}
-
-async function main() {
-  const opts = parseArgs();
-  fs.mkdirSync(CACHE_DIR, { recursive: true });
-  if (API_KEY === SAMPLE_KEY) console.log('Using the public sample key (10 rows per call). Set DATA_GOV_API_KEY for faster runs.');
-
-  const first = await fetchPage(0, opts);
-  const snapshot = first.updated_date || String(first.updated || 'unknown');
-  const total = Number(first.total) || 0;
-  const pageSize = first.records.length;
-  console.log(`Snapshot ${snapshot}: ${total} records reported, ${pageSize} per call${opts.state ? `, state=${opts.state}` : ''}`);
-  if (total === 0 || pageSize === 0) {
-    console.log('Dataset is empty for this query. Nothing to store.');
-    process.exit(opts.state ? 0 : 1);
-  }
-
-  if (!opts.state) {
-    try {
-      if (JSON.parse(fs.readFileSync(LAST_SNAPSHOT_FILE, 'utf-8')).snapshot === snapshot) {
-        console.log('This snapshot is already stored. Nothing to do.');
-        return;
-      }
-    } catch { /* no previous snapshot recorded */ }
-  }
-
-  const progressFile = path.join(CACHE_DIR, `${(opts.state || 'all').replace(/\W+/g, '_')}.json`);
-  let progress = loadProgress(progressFile);
-  if (!progress || progress.snapshot !== snapshot || progress.pageSize !== pageSize) {
-    progress = { snapshot, pageSize, total, doneOffsets: [], rows: [] };
-  }
-  const done = new Set(progress.doneOffsets);
-  const rows = progress.rows;
-  if (!done.has(0)) { rows.push(...first.records); done.add(0); }
-
-  const offsets = [];
-  for (let o = pageSize; o < total; o += pageSize) if (!done.has(o)) offsets.push(o);
-  console.log(`${offsets.length} pages to fetch (${done.size} already done for this snapshot).`);
-
-  const save = () => writeAtomic(progressFile, { ...progress, doneOffsets: [...done], rows });
-  let failures = 0, i = 0, sinceSave = 0;
-  const worker = async () => {
-    while (i < offsets.length) {
-      const offset = offsets[i++];
-      try {
-        const page = await fetchPage(offset, opts);
-        const pageSnapshot = page.updated_date || String(page.updated || 'unknown');
-        if (pageSnapshot !== snapshot) throw Object.assign(new Error(`dataset changed mid-run (${snapshot} → ${pageSnapshot})`), { fatal: true });
-        rows.push(...page.records);
-        done.add(offset);
-        if (++sinceSave >= 25) { sinceSave = 0; save(); console.log(`  ${done.size * pageSize}/${total}`); }
-      } catch (e) {
-        if (e.fatal) throw e;
-        failures++;
-        console.log(`  ${e.message}`);
-      }
-      if (opts.delayMs) await sleep(opts.delayMs);
-    }
-  };
-  try {
-    await Promise.all(Array.from({ length: opts.concurrency }, worker));
-  } finally {
-    save();
-  }
-
+function uniqueValid(rows) {
   const unique = new Map();
   const rejected = {};
   for (const raw of rows) {
@@ -143,19 +90,98 @@ async function main() {
     if (error) { rejected[error] = (rejected[error] || 0) + 1; continue; }
     unique.set(recordKey(record), record);
   }
-  const completeness = rows.length / total;
-  console.log(`Read ${rows.length}/${total} rows (${(completeness * 100).toFixed(1)}%), ${failures} failed pages, ${unique.size} valid unique records.`);
-  if (Object.keys(rejected).length) console.log('Rejected rows:', rejected);
+  return { unique, rejected };
+}
 
-  if (completeness < opts.minComplete) {
-    console.error(`Incomplete snapshot: below ${(opts.minComplete * 100).toFixed(0)}%. Nothing written; rerun to resume.`);
+/** Fetch one state's slice; repeat when a re-index happened mid-slice. */
+async function fetchState(state, opts) {
+  const rows = [];
+  let total = 0;
+  for (let pass = 1; pass <= MAX_SLICE_PASSES; pass++) {
+    const first = await fetchPage(0, state);
+    total = Number(first.total) || 0;
+    if (total === 0) return { state, total: 0, rows: [] };
+    const snapshot = snapshotOf(first);
+    rows.push(...first.records);
+    let stable = true;
+    for (let offset = first.records.length; offset < total; offset += first.records.length) {
+      await sleep(opts.delayMs);
+      const page = await fetchPage(offset, state);
+      if (snapshotOf(page) !== snapshot) stable = false;
+      rows.push(...page.records);
+    }
+    // Every row read is a real observation whatever the order, so passes accumulate.
+    const unique = uniqueValid(rows).unique.size;
+    if (stable || unique >= total * opts.minComplete) return { state, total, rows };
+    console.log(`  ${state}: dataset re-indexed during the slice (${unique}/${total} unique), repeating`);
+  }
+  return { state, total, rows };
+}
+
+function loadCache(datasetTotal) {
+  try {
+    const cache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
+    if (cache.datasetTotal === datasetTotal && Date.now() - Date.parse(cache.startedAt) < CACHE_MAX_AGE_MS) return cache;
+  } catch { /* no usable progress */ }
+  return { datasetTotal, startedAt: new Date().toISOString(), states: {} };
+}
+
+function statesFromRecentDays() {
+  const names = new Set();
+  for (const day of listDays().slice(-14)) {
+    try { for (const r of readDay(path.join(DAILY_DIR, `${day}.json`)).records) names.add(r.state); } catch { /* skip */ }
+  }
+  return names;
+}
+
+async function main() {
+  const opts = parseArgs();
+  fs.mkdirSync(path.dirname(CACHE_FILE), { recursive: true });
+  if (API_KEY === SAMPLE_KEY) console.log('Using the public sample key (10 rows per call). Set DATA_GOV_API_KEY for faster runs.');
+
+  const first = await fetchPage(0, null);
+  const datasetTotal = Number(first.total) || 0;
+  const snapshot = snapshotOf(first);
+  const dates = [...new Set(first.records.map(r => r.arrival_date))].join(', ');
+  console.log(`Dataset ${snapshot}: ${datasetTotal} records (sample dates: ${dates})`);
+  if (!datasetTotal) { console.error('Dataset is empty.'); process.exit(1); }
+
+  // Skip when the first page is already stored with the same prices (rows are shuffled on
+  // re-index, so this compares content, not position).
+  const sample = first.records.map(r => normalizeRecord(r).record).filter(Boolean);
+  const stored = new Map();
+  for (const day of new Set(sample.map(r => arrivalToISO(r.arrival_date)))) {
+    try { for (const r of readDay(path.join(DAILY_DIR, `${day}.json`))?.records || []) stored.set(recordKey(r), r.modal_price); } catch { /* not stored */ }
+  }
+  if (sample.length && sample.every(r => stored.get(recordKey(r)) === r.modal_price)) {
+    console.log('This dataset is already stored. Nothing to do.');
+    return;
+  }
+
+  const cache = loadCache(datasetTotal);
+  const states = [...new Set([...KNOWN_STATES, ...statesFromRecentDays()])].filter(Boolean).sort();
+  for (const state of states) {
+    if (cache.states[state]) continue;
+    const slice = await fetchState(state, opts);
+    cache.states[state] = slice;
+    writeAtomic(CACHE_FILE, cache);
+    if (slice.total) console.log(`  ${state}: ${slice.total} records`);
+  }
+
+  const covered = Object.values(cache.states).reduce((n, s) => n + s.total, 0);
+  const { unique, rejected } = uniqueValid(Object.values(cache.states).flatMap(s => s.rows));
+  console.log(`State slices cover ${covered}/${datasetTotal}; ${unique.size} valid unique records.`);
+  if (Object.keys(rejected).length) console.log('Rejected rows:', rejected);
+  if (covered < datasetTotal) console.log(`  ${datasetTotal - covered} records belong to a state name not in the list; add it to KNOWN_STATES.`);
+
+  if (unique.size < datasetTotal * opts.minComplete) {
+    console.error(`Incomplete: below ${(opts.minComplete * 100).toFixed(0)}% of the dataset. Nothing written; finished states are kept for the next run.`);
     process.exit(1);
   }
 
   const results = mergeRecords([...unique.values()], { source: SOURCE });
   for (const r of results) console.log(`  ${r.date}: ${r.before} → ${r.after} records (+${r.added}, ${r.replaced} replaced)`);
-  fs.rmSync(progressFile, { force: true });
-  if (!opts.state) writeAtomic(LAST_SNAPSHOT_FILE, { snapshot, total, storedAt: new Date().toISOString() });
+  fs.rmSync(CACHE_FILE, { force: true });
   console.log('Done.');
 }
 

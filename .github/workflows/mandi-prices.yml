@@ -38,7 +38,7 @@ jobs:
       - name: Fetch current prices
         env:
           DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
-        run: node scripts/fetch-daily.cjs --concurrency 1 --delay 1300
+        run: node scripts/fetch-daily.cjs --delay 1300
 
       - name: Keep fetch progress for the next run
         if: always()

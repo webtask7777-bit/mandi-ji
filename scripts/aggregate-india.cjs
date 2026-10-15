@@ -74,6 +74,7 @@ const STATE_CODES = {
 // ─── State Name Aliases (agmarknet.gov.in uses different spellings) ──
 const STATE_ALIASES = {
   'Chattisgarh': 'Chhattisgarh',
+  'Keralam': 'Kerala',
   'Pondicherry': 'Puducherry',
   'Daman and Diu': 'Dadra and Nagar Haveli and Daman and Diu',
   'Dadra and Nagar Haveli': 'Dadra and Nagar Haveli and Daman and Diu',
@@ -317,6 +318,7 @@ function main() {
 
   // ─── Group by state ──────────────────────────────────────────────────
   const byState = {};
+  const droppedStates = {};
   for (const rec of allRecords) {
     // Normalize state name via aliases (agmarknet uses different spellings)
     if (STATE_ALIASES[rec.state]) rec.state = STATE_ALIASES[rec.state];
@@ -325,13 +327,15 @@ function main() {
     const stateInfo = STATES[rec.state];
     if (!stateInfo) {
       const match = Object.keys(STATES).find(s => s.toLowerCase() === rec.state?.toLowerCase());
-      if (!match) continue;
+      if (!match) { droppedStates[rec.state] = (droppedStates[rec.state] || 0) + 1; continue; }
       rec.state = match;
     }
     const sid = (STATES[rec.state] || {}).id || slugify(rec.state);
     if (!byState[sid]) byState[sid] = { name: rec.state, records: [] };
     byState[sid].records.push(rec);
   }
+
+  if (Object.keys(droppedStates).length) console.warn('⚠️  Records with an unknown state name were skipped (add an alias):', droppedStates);
 
   // ─── All-India aggregation ───────────────────────────────────────────
   const statesList = [];
