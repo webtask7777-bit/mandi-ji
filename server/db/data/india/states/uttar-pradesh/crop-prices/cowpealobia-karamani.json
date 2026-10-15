@@ -11,6 +11,24 @@
       "date": "2026-03",
       "market": 9234,
       "volume": 3
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 10000,
+      "volume": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 9066,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 9240,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -20,15 +38,36 @@
       "volume": 3,
       "minPrice": 7408,
       "maxPrice": 10645
+    },
+    {
+      "date": "2026-05-14",
+      "market": 10000,
+      "volume": 1,
+      "minPrice": 10000,
+      "maxPrice": 10000
+    },
+    {
+      "date": "2026-06-29",
+      "market": 9066,
+      "volume": 1,
+      "minPrice": 9066,
+      "maxPrice": 9066
+    },
+    {
+      "date": "2026-07-18",
+      "market": 9240,
+      "volume": 2,
+      "minPrice": 7650,
+      "maxPrice": 10846
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Ghaziabad",
       "nameHi": "Ghaziabad",
-      "avgPrice": 10080,
-      "records": 1
+      "avgPrice": 9992,
+      "records": 3
     },
     {
       "district": "Lucknow",
@@ -40,6 +79,18 @@
       "district": "Sambhal",
       "nameHi": "Sambhal",
       "avgPrice": 7408,
+      "records": 1
+    },
+    {
+      "district": "Varanasi",
+      "nameHi": "Varanasi",
+      "avgPrice": 10000,
+      "records": 1
+    },
+    {
+      "district": "Bareilly",
+      "nameHi": "Bareilly",
+      "avgPrice": 7650,
       "records": 1
     }
   ]

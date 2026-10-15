@@ -15,7 +15,19 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 5410,
+      "market": 5076,
+      "volume": 8
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 5191,
+      "volume": 8
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 5812,
       "volume": 1
     }
   ],
@@ -61,15 +73,77 @@
       "volume": 1,
       "minPrice": 5390,
       "maxPrice": 5425
+    },
+    {
+      "date": "2026-04-06",
+      "market": 4968,
+      "volume": 2,
+      "minPrice": 4500,
+      "maxPrice": 5301
+    },
+    {
+      "date": "2026-04-09",
+      "market": 5150,
+      "volume": 2,
+      "minPrice": 5000,
+      "maxPrice": 5200
+    },
+    {
+      "date": "2026-04-21",
+      "market": 4987,
+      "volume": 3,
+      "minPrice": 4800,
+      "maxPrice": 5225
+    },
+    {
+      "date": "2026-05-04",
+      "market": 5183,
+      "volume": 2,
+      "minPrice": 5100,
+      "maxPrice": 5260
+    },
+    {
+      "date": "2026-05-05",
+      "market": 4861,
+      "volume": 3,
+      "minPrice": 4750,
+      "maxPrice": 5033
+    },
+    {
+      "date": "2026-05-15",
+      "market": 5428,
+      "volume": 2,
+      "minPrice": 5330,
+      "maxPrice": 5525
+    },
+    {
+      "date": "2026-05-20",
+      "market": 5725,
+      "volume": 1,
+      "minPrice": 5700,
+      "maxPrice": 5750
+    },
+    {
+      "date": "2026-07-18",
+      "market": 5812,
+      "volume": 1,
+      "minPrice": 5791,
+      "maxPrice": 5812
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Tonk (राजस्थान)",
       "nameHi": "Tonk (राजस्थान)",
-      "avgPrice": 5236,
-      "records": 4
+      "avgPrice": 5228,
+      "records": 6
+    },
+    {
+      "district": "Jaipur (राजस्थान)",
+      "nameHi": "Jaipur (राजस्थान)",
+      "avgPrice": 5181,
+      "records": 5
     },
     {
       "district": "Ajmer (राजस्थान)",
@@ -78,15 +152,45 @@
       "records": 4
     },
     {
-      "district": "Jaipur (राजस्थान)",
-      "nameHi": "Jaipur (राजस्थान)",
-      "avgPrice": 5154,
+      "district": "Nagaur (राजस्थान)",
+      "nameHi": "Nagaur (राजस्थान)",
+      "avgPrice": 5067,
       "records": 3
     },
     {
-      "district": "Nagaur (राजस्थान)",
-      "nameHi": "Nagaur (राजस्थान)",
-      "avgPrice": 4900,
+      "district": "Banaskanth (गुजरात)",
+      "nameHi": "Banaskanth (गुजरात)",
+      "avgPrice": 4745,
+      "records": 3
+    },
+    {
+      "district": "Bikaner (राजस्थान)",
+      "nameHi": "Bikaner (राजस्थान)",
+      "avgPrice": 4925,
+      "records": 2
+    },
+    {
+      "district": "Pali (राजस्थान)",
+      "nameHi": "Pali (राजस्थान)",
+      "avgPrice": 5379,
+      "records": 2
+    },
+    {
+      "district": "Ganganagar (राजस्थान)",
+      "nameHi": "Ganganagar (राजस्थान)",
+      "avgPrice": 5190,
+      "records": 1
+    },
+    {
+      "district": "Beawar (राजस्थान)",
+      "nameHi": "Beawar (राजस्थान)",
+      "avgPrice": 5525,
+      "records": 1
+    },
+    {
+      "district": "Mandsaur (मध्य प्रदेश)",
+      "nameHi": "Mandsaur (मध्य प्रदेश)",
+      "avgPrice": 5812,
       "records": 1
     }
   ]

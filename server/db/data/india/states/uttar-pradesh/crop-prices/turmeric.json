@@ -9,8 +9,20 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 12865,
-      "volume": 3
+      "market": 13343,
+      "volume": 8
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 13164,
+      "volume": 2
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 1000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -20,15 +32,63 @@
       "volume": 3,
       "minPrice": 11523.81,
       "maxPrice": 14171.4
+    },
+    {
+      "date": "2026-04-06",
+      "market": 13974,
+      "volume": 2,
+      "minPrice": 13142.86,
+      "maxPrice": 14804.36
+    },
+    {
+      "date": "2026-04-09",
+      "market": 14500,
+      "volume": 2,
+      "minPrice": 13000,
+      "maxPrice": 16000
+    },
+    {
+      "date": "2026-04-10",
+      "market": 11200,
+      "volume": 1,
+      "minPrice": 11200,
+      "maxPrice": 11200
+    },
+    {
+      "date": "2026-05-04",
+      "market": 13524,
+      "volume": 1,
+      "minPrice": 13523.8,
+      "maxPrice": 13523.8
+    },
+    {
+      "date": "2026-05-19",
+      "market": 12805,
+      "volume": 1,
+      "minPrice": 12804.66,
+      "maxPrice": 12804.66
+    },
+    {
+      "date": "2026-06-29",
+      "market": 1000,
+      "volume": 1,
+      "minPrice": 1000,
+      "maxPrice": 1000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
+    {
+      "district": "Kanpur",
+      "nameHi": "Kanpur",
+      "avgPrice": 13695,
+      "records": 4
+    },
     {
       "district": "Lucknow",
       "nameHi": "Lucknow",
-      "avgPrice": 11524,
-      "records": 1
+      "avgPrice": 12730,
+      "records": 3
     },
     {
       "district": "Varanasi",
@@ -37,9 +97,21 @@
       "records": 1
     },
     {
-      "district": "Kanpur",
-      "nameHi": "Kanpur",
-      "avgPrice": 14171,
+      "district": "Gorakhpur",
+      "nameHi": "Gorakhpur",
+      "avgPrice": 16000,
+      "records": 1
+    },
+    {
+      "district": "Bareilly",
+      "nameHi": "Bareilly",
+      "avgPrice": 11200,
+      "records": 1
+    },
+    {
+      "district": "Badaun",
+      "nameHi": "Badaun",
+      "avgPrice": 1000,
       "records": 1
     }
   ]

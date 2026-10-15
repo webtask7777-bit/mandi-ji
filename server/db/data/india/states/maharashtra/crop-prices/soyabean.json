@@ -17,8 +17,29 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 5111,
-      "volume": 11,
+      "market": 5229,
+      "volume": 58,
+      "msp": 4892
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 6430,
+      "volume": 14,
+      "msp": 4892
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 6474,
+      "volume": 83,
+      "msp": 4892
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 6619,
+      "volume": 1199,
       "msp": 4892
     }
   ],
@@ -74,79 +95,320 @@
     },
     {
       "date": "2026-04-04",
-      "market": 5122,
-      "volume": 10,
+      "market": 5153,
+      "volume": 7,
       "minPrice": 4800,
       "maxPrice": 5600
+    },
+    {
+      "date": "2026-04-06",
+      "market": 5500,
+      "volume": 1,
+      "minPrice": 5000,
+      "maxPrice": 5500
+    },
+    {
+      "date": "2026-04-09",
+      "market": 5218,
+      "volume": 34,
+      "minPrice": 3400,
+      "maxPrice": 6351
+    },
+    {
+      "date": "2026-04-10",
+      "market": 5289,
+      "volume": 15,
+      "minPrice": 3000,
+      "maxPrice": 5735
+    },
+    {
+      "date": "2026-05-04",
+      "market": 6253,
+      "volume": 6,
+      "minPrice": 5000,
+      "maxPrice": 7350
+    },
+    {
+      "date": "2026-05-05",
+      "market": 5250,
+      "volume": 2,
+      "minPrice": 3600,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 7100,
+      "volume": 1,
+      "minPrice": 7100,
+      "maxPrice": 7100
+    },
+    {
+      "date": "2026-05-19",
+      "market": 6994,
+      "volume": 2,
+      "minPrice": 5330,
+      "maxPrice": 7600
+    },
+    {
+      "date": "2026-05-20",
+      "market": 6972,
+      "volume": 3,
+      "minPrice": 6800,
+      "maxPrice": 7495
+    },
+    {
+      "date": "2026-06-18",
+      "market": 6625,
+      "volume": 2,
+      "minPrice": 6000,
+      "maxPrice": 6895
+    },
+    {
+      "date": "2026-06-26",
+      "market": 6320,
+      "volume": 1,
+      "minPrice": 6205,
+      "maxPrice": 6490
+    },
+    {
+      "date": "2026-06-29",
+      "market": 6762,
+      "volume": 7,
+      "minPrice": 6100,
+      "maxPrice": 6920
+    },
+    {
+      "date": "2026-06-30",
+      "market": 6444,
+      "volume": 73,
+      "minPrice": 3000,
+      "maxPrice": 7155
+    },
+    {
+      "date": "2026-07-01",
+      "market": 6388,
+      "volume": 76,
+      "minPrice": 3000,
+      "maxPrice": 7050
+    },
+    {
+      "date": "2026-07-02",
+      "market": 6439,
+      "volume": 75,
+      "minPrice": 1000,
+      "maxPrice": 7180
+    },
+    {
+      "date": "2026-07-03",
+      "market": 6315,
+      "volume": 89,
+      "minPrice": 3000,
+      "maxPrice": 7100
+    },
+    {
+      "date": "2026-07-04",
+      "market": 6375,
+      "volume": 35,
+      "minPrice": 5000,
+      "maxPrice": 7700
+    },
+    {
+      "date": "2026-07-05",
+      "market": 6208,
+      "volume": 8,
+      "minPrice": 5000,
+      "maxPrice": 7021
+    },
+    {
+      "date": "2026-07-06",
+      "market": 6523,
+      "volume": 81,
+      "minPrice": 3500,
+      "maxPrice": 7150
+    },
+    {
+      "date": "2026-07-07",
+      "market": 6496,
+      "volume": 78,
+      "minPrice": 2000,
+      "maxPrice": 7800
+    },
+    {
+      "date": "2026-07-08",
+      "market": 6565,
+      "volume": 82,
+      "minPrice": 3500,
+      "maxPrice": 7276
+    },
+    {
+      "date": "2026-07-09",
+      "market": 6607,
+      "volume": 80,
+      "minPrice": 3500,
+      "maxPrice": 7325
+    },
+    {
+      "date": "2026-07-10",
+      "market": 6565,
+      "volume": 87,
+      "minPrice": 2651,
+      "maxPrice": 7300
+    },
+    {
+      "date": "2026-07-11",
+      "market": 6669,
+      "volume": 51,
+      "minPrice": 4000,
+      "maxPrice": 7290
+    },
+    {
+      "date": "2026-07-12",
+      "market": 6012,
+      "volume": 8,
+      "minPrice": 4000,
+      "maxPrice": 7181
+    },
+    {
+      "date": "2026-07-13",
+      "market": 6640,
+      "volume": 79,
+      "minPrice": 3000,
+      "maxPrice": 7800
+    },
+    {
+      "date": "2026-07-14",
+      "market": 6742,
+      "volume": 62,
+      "minPrice": 3000,
+      "maxPrice": 7300
+    },
+    {
+      "date": "2026-07-15",
+      "market": 6844,
+      "volume": 87,
+      "minPrice": 4000,
+      "maxPrice": 7481
+    },
+    {
+      "date": "2026-07-16",
+      "market": 6898,
+      "volume": 77,
+      "minPrice": 3000,
+      "maxPrice": 7900
+    },
+    {
+      "date": "2026-07-17",
+      "market": 6938,
+      "volume": 90,
+      "minPrice": 3000,
+      "maxPrice": 7700
+    },
+    {
+      "date": "2026-07-18",
+      "market": 7017,
+      "volume": 49,
+      "minPrice": 4211,
+      "maxPrice": 7620
+    },
+    {
+      "date": "2026-07-19",
+      "market": 6819,
+      "volume": 5,
+      "minPrice": 5000,
+      "maxPrice": 7588
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
-      "district": "Yavatmal",
-      "nameHi": "Yavatmal",
-      "avgPrice": 4850,
-      "records": 4
+      "district": "Buldhana",
+      "nameHi": "Buldhana",
+      "avgPrice": 6500,
+      "records": 165
     },
     {
       "district": "Amarawati",
       "nameHi": "Amarawati",
-      "avgPrice": 5077,
-      "records": 2
-    },
-    {
-      "district": "Hingoli",
-      "nameHi": "Hingoli",
-      "avgPrice": 5225,
-      "records": 2
-    },
-    {
-      "district": "Jalana",
-      "nameHi": "Jalana",
-      "avgPrice": 5150,
-      "records": 2
-    },
-    {
-      "district": "Nagpur",
-      "nameHi": "Nagpur",
-      "avgPrice": 5365,
-      "records": 2
-    },
-    {
-      "district": "Chattrapati Sambhajinagar",
-      "nameHi": "Chattrapati Sambhajinagar",
-      "avgPrice": 4750,
-      "records": 2
-    },
-    {
-      "district": "Dharashiv(Usmanabad)",
-      "nameHi": "Dharashiv(Usmanabad)",
-      "avgPrice": 5156,
-      "records": 2
-    },
-    {
-      "district": "Beed",
-      "nameHi": "Beed",
-      "avgPrice": 5450,
-      "records": 2
+      "avgPrice": 6480,
+      "records": 124
     },
     {
       "district": "Latur",
       "nameHi": "Latur",
-      "avgPrice": 5400,
-      "records": 1
+      "avgPrice": 6709,
+      "records": 114
     },
     {
-      "district": "Buldhana",
-      "nameHi": "Buldhana",
-      "avgPrice": 5100,
-      "records": 1
+      "district": "Yavatmal",
+      "nameHi": "Yavatmal",
+      "avgPrice": 6517,
+      "records": 104
+    },
+    {
+      "district": "Washim",
+      "nameHi": "Washim",
+      "avgPrice": 6776,
+      "records": 95
+    },
+    {
+      "district": "Wardha",
+      "nameHi": "Wardha",
+      "avgPrice": 6195,
+      "records": 91
+    },
+    {
+      "district": "Beed",
+      "nameHi": "Beed",
+      "avgPrice": 6625,
+      "records": 85
+    },
+    {
+      "district": "Nashik",
+      "nameHi": "Nashik",
+      "avgPrice": 6852,
+      "records": 72
+    },
+    {
+      "district": "Nagpur",
+      "nameHi": "Nagpur",
+      "avgPrice": 6446,
+      "records": 67
+    },
+    {
+      "district": "Akola",
+      "nameHi": "Akola",
+      "avgPrice": 6735,
+      "records": 56
+    },
+    {
+      "district": "Ahilyanagar",
+      "nameHi": "Ahilyanagar",
+      "avgPrice": 6587,
+      "records": 56
+    },
+    {
+      "district": "Hingoli",
+      "nameHi": "Hingoli",
+      "avgPrice": 6612,
+      "records": 50
+    },
+    {
+      "district": "Dharashiv",
+      "nameHi": "Dharashiv",
+      "avgPrice": 6649,
+      "records": 48
+    },
+    {
+      "district": "Jalna",
+      "nameHi": "Jalna",
+      "avgPrice": 6620,
+      "records": 41
     },
     {
       "district": "Parbhani",
       "nameHi": "Parbhani",
-      "avgPrice": 5361,
-      "records": 1
+      "avgPrice": 6291,
+      "records": 39
     }
   ]
 }

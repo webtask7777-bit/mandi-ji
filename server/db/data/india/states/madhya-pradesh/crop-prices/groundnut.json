@@ -17,8 +17,22 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 6523,
-      "volume": 2,
+      "market": 7123,
+      "volume": 7,
+      "msp": 6783
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 6037,
+      "volume": 3,
+      "msp": 6783
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 6920,
+      "volume": 1,
       "msp": 6783
     }
   ],
@@ -64,20 +78,67 @@
       "volume": 2,
       "minPrice": 5545,
       "maxPrice": 7652
+    },
+    {
+      "date": "2026-04-09",
+      "market": 6809,
+      "volume": 3,
+      "minPrice": 6575,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 8195,
+      "volume": 2,
+      "minPrice": 7690,
+      "maxPrice": 8700
+    },
+    {
+      "date": "2026-05-15",
+      "market": 5000,
+      "volume": 1,
+      "minPrice": 5000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 6555,
+      "volume": 2,
+      "minPrice": 6509.94,
+      "maxPrice": 6600
+    },
+    {
+      "date": "2026-06-29",
+      "market": 6920,
+      "volume": 1,
+      "minPrice": 6850,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Shivpuri",
       "nameHi": "Shivpuri",
-      "avgPrice": 6285,
-      "records": 2
+      "avgPrice": 6414,
+      "records": 4
     },
     {
       "district": "Neemuch",
       "nameHi": "Neemuch",
-      "avgPrice": 7026,
+      "avgPrice": 6967,
+      "records": 3
+    },
+    {
+      "district": "Chhindwara",
+      "nameHi": "Chhindwara",
+      "avgPrice": 6867,
+      "records": 3
+    },
+    {
+      "district": "Mandsaur",
+      "nameHi": "Mandsaur",
+      "avgPrice": 7596,
       "records": 2
     },
     {
@@ -99,15 +160,21 @@
       "records": 1
     },
     {
-      "district": "Chhindwara",
-      "nameHi": "Chhindwara",
-      "avgPrice": 7000,
+      "district": "Badwani",
+      "nameHi": "Badwani",
+      "avgPrice": 8700,
       "records": 1
     },
     {
-      "district": "Mandsaur",
-      "nameHi": "Mandsaur",
-      "avgPrice": 7501,
+      "district": "Khargone",
+      "nameHi": "Khargone",
+      "avgPrice": 5000,
+      "records": 1
+    },
+    {
+      "district": "Chhatarpur",
+      "nameHi": "Chhatarpur",
+      "avgPrice": 6920,
       "records": 1
     }
   ]

@@ -7,17 +7,47 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 2300,
-      "volume": 3
+      "month": "06",
+      "date": "2026-06",
+      "market": 5500,
+      "volume": 2
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 6900,
+      "volume": 1
     }
   ],
+  "dailyHistory": [
+    {
+      "date": "2026-06-26",
+      "market": 4500,
+      "volume": 1,
+      "minPrice": 4000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-06-30",
+      "market": 6500,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-07-01",
+      "market": 6900,
+      "volume": 1,
+      "minPrice": 6800,
+      "maxPrice": 7000
+    }
+  ],
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
-      "district": "Dhubri",
-      "nameHi": "Dhubri",
-      "avgPrice": 2300,
+      "district": "Hojai",
+      "nameHi": "Hojai",
+      "avgPrice": 5967,
       "records": 3
     }
   ]

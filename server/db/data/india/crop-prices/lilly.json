@@ -15,8 +15,26 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 270,
+      "market": 1080,
+      "volume": 6
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 2567,
+      "volume": 3
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 225,
       "volume": 2
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 4059,
+      "volume": 35
     }
   ],
   "dailyHistory": [
@@ -54,15 +72,203 @@
       "volume": 1,
       "minPrice": 200,
       "maxPrice": 280
+    },
+    {
+      "date": "2026-04-06",
+      "market": 400,
+      "volume": 1,
+      "minPrice": 300,
+      "maxPrice": 500
+    },
+    {
+      "date": "2026-04-09",
+      "market": 300,
+      "volume": 1,
+      "minPrice": 250,
+      "maxPrice": 350
+    },
+    {
+      "date": "2026-04-21",
+      "market": 2620,
+      "volume": 2,
+      "minPrice": 200,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-05-05",
+      "market": 400,
+      "volume": 1,
+      "minPrice": 300,
+      "maxPrice": 500
+    },
+    {
+      "date": "2026-05-06",
+      "market": 300,
+      "volume": 1,
+      "minPrice": 200,
+      "maxPrice": 400
+    },
+    {
+      "date": "2026-05-15",
+      "market": 7000,
+      "volume": 1,
+      "minPrice": 4000,
+      "maxPrice": 10000
+    },
+    {
+      "date": "2026-06-29",
+      "market": 200,
+      "volume": 1,
+      "minPrice": 100,
+      "maxPrice": 300
+    },
+    {
+      "date": "2026-06-30",
+      "market": 250,
+      "volume": 1,
+      "minPrice": 200,
+      "maxPrice": 300
+    },
+    {
+      "date": "2026-07-01",
+      "market": 4425,
+      "volume": 2,
+      "minPrice": 300,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-07-02",
+      "market": 7450,
+      "volume": 2,
+      "minPrice": 800,
+      "maxPrice": 20000
+    },
+    {
+      "date": "2026-07-03",
+      "market": 5600,
+      "volume": 2,
+      "minPrice": 100,
+      "maxPrice": 15000
+    },
+    {
+      "date": "2026-07-04",
+      "market": 7600,
+      "volume": 2,
+      "minPrice": 100,
+      "maxPrice": 20000
+    },
+    {
+      "date": "2026-07-05",
+      "market": 6350,
+      "volume": 2,
+      "minPrice": 600,
+      "maxPrice": 16000
+    },
+    {
+      "date": "2026-07-06",
+      "market": 2850,
+      "volume": 2,
+      "minPrice": 600,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-07",
+      "market": 2850,
+      "volume": 2,
+      "minPrice": 500,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-08",
+      "market": 2350,
+      "volume": 2,
+      "minPrice": 400,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-07-09",
+      "market": 2850,
+      "volume": 2,
+      "minPrice": 600,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-10",
+      "market": 2400,
+      "volume": 2,
+      "minPrice": 600,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-07-11",
+      "market": 8000,
+      "volume": 1,
+      "minPrice": 4000,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-07-12",
+      "market": 2850,
+      "volume": 2,
+      "minPrice": 500,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-07-13",
+      "market": 4900,
+      "volume": 2,
+      "minPrice": 600,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-07-14",
+      "market": 3650,
+      "volume": 2,
+      "minPrice": 200,
+      "maxPrice": 10000
+    },
+    {
+      "date": "2026-07-15",
+      "market": 3100,
+      "volume": 2,
+      "minPrice": 100,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-16",
+      "market": 2600,
+      "volume": 2,
+      "minPrice": 100,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-17",
+      "market": 2100,
+      "volume": 2,
+      "minPrice": 100,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-18",
+      "market": 3100,
+      "volume": 2,
+      "minPrice": 100,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Delhi (दिल्ली)",
       "nameHi": "Delhi (दिल्ली)",
-      "avgPrice": 256,
-      "records": 5
+      "avgPrice": 411,
+      "records": 29
+    },
+    {
+      "district": "Hyderabad (तेलंगाना)",
+      "nameHi": "Hyderabad (तेलंगाना)",
+      "avgPrice": 7275,
+      "records": 20
     }
   ]
 }

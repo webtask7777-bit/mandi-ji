@@ -15,8 +15,14 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 13657,
-      "volume": 7
+      "market": 12395,
+      "volume": 10
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 11075,
+      "volume": 12
     }
   ],
   "dailyHistory": [
@@ -57,8 +63,8 @@
     },
     {
       "date": "2026-04-01",
-      "market": 14017,
-      "volume": 6,
+      "market": 14925,
+      "volume": 4,
       "minPrice": 8500,
       "maxPrice": 18000
     },
@@ -68,27 +74,82 @@
       "volume": 1,
       "minPrice": 11000,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-04-06",
+      "market": 13333,
+      "volume": 3,
+      "minPrice": 8000,
+      "maxPrice": 18000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 6375,
+      "volume": 2,
+      "minPrice": 5000,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-05-14",
+      "market": 16000,
+      "volume": 1,
+      "minPrice": 16000,
+      "maxPrice": 16000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 8150,
+      "volume": 2,
+      "minPrice": 6000,
+      "maxPrice": 11000
+    },
+    {
+      "date": "2026-05-16",
+      "market": 8250,
+      "volume": 2,
+      "minPrice": 6000,
+      "maxPrice": 11500
+    },
+    {
+      "date": "2026-05-18",
+      "market": 12400,
+      "volume": 4,
+      "minPrice": 7000,
+      "maxPrice": 17000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 11500,
+      "volume": 3,
+      "minPrice": 7000,
+      "maxPrice": 17000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Thiruvananthapuram",
       "nameHi": "Thiruvananthapuram",
-      "avgPrice": 12500,
-      "records": 7
-    },
-    {
-      "district": "Idukki",
-      "nameHi": "Idukki",
-      "avgPrice": 13220,
-      "records": 5
+      "avgPrice": 12117,
+      "records": 18
     },
     {
       "district": "Kozhikode(Calicut)",
       "nameHi": "Kozhikode(Calicut)",
-      "avgPrice": 11000,
+      "avgPrice": 10375,
+      "records": 8
+    },
+    {
+      "district": "Idukki",
+      "nameHi": "Idukki",
+      "avgPrice": 13900,
       "records": 3
+    },
+    {
+      "district": "Malappuram",
+      "nameHi": "Malappuram",
+      "avgPrice": 5050,
+      "records": 1
     }
   ]
 }

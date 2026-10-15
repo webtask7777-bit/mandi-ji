@@ -11,6 +11,18 @@
       "date": "2026-03",
       "market": 8500,
       "volume": 1
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 8955,
+      "volume": 2
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 9000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -20,14 +32,34 @@
       "volume": 1,
       "minPrice": 8000,
       "maxPrice": 9000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 8955,
+      "volume": 2,
+      "minPrice": 8800,
+      "maxPrice": 9000
+    },
+    {
+      "date": "2026-05-05",
+      "market": 9000,
+      "volume": 1,
+      "minPrice": 9000,
+      "maxPrice": 9000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Kollam",
       "nameHi": "Kollam",
-      "avgPrice": 8500,
+      "avgPrice": 8833,
+      "records": 3
+    },
+    {
+      "district": "Idukki",
+      "nameHi": "Idukki",
+      "avgPrice": 8909,
       "records": 1
     }
   ]

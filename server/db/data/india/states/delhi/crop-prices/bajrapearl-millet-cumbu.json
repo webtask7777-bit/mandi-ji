@@ -34,6 +34,20 @@
       "market": 1983,
       "volume": 3,
       "msp": 2625
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2200,
+      "volume": 1,
+      "msp": 2625
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2203,
+      "volume": 4,
+      "msp": 2625
     }
   ],
   "dailyHistory": [
@@ -288,15 +302,50 @@
       "volume": 2,
       "minPrice": 1750,
       "maxPrice": 2150
+    },
+    {
+      "date": "2026-06-30",
+      "market": 2200,
+      "volume": 1,
+      "minPrice": 2200,
+      "maxPrice": 2200
+    },
+    {
+      "date": "2026-07-02",
+      "market": 2160,
+      "volume": 1,
+      "minPrice": 2160,
+      "maxPrice": 2160
+    },
+    {
+      "date": "2026-07-04",
+      "market": 2250,
+      "volume": 1,
+      "minPrice": 2250,
+      "maxPrice": 2250
+    },
+    {
+      "date": "2026-07-06",
+      "market": 2250,
+      "volume": 1,
+      "minPrice": 2250,
+      "maxPrice": 2250
+    },
+    {
+      "date": "2026-07-18",
+      "market": 2150,
+      "volume": 1,
+      "minPrice": 1500,
+      "maxPrice": 2150
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Delhi",
       "nameHi": "Delhi",
       "avgPrice": 2208,
-      "records": 43
+      "records": 48
     }
   ]
 }

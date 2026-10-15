@@ -29,6 +29,18 @@
       "date": "2026-03",
       "market": 28560,
       "volume": 5
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 32300,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 28800,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -185,15 +197,29 @@
       "volume": 2,
       "minPrice": 18000,
       "maxPrice": 36500
+    },
+    {
+      "date": "2026-04-09",
+      "market": 32300,
+      "volume": 1,
+      "minPrice": 22500,
+      "maxPrice": 42100
+    },
+    {
+      "date": "2026-07-18",
+      "market": 28800,
+      "volume": 1,
+      "minPrice": 22000,
+      "maxPrice": 35600
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Sangli",
       "nameHi": "Sangli",
-      "avgPrice": 30329,
-      "records": 26
+      "avgPrice": 30345,
+      "records": 28
     }
   ]
 }

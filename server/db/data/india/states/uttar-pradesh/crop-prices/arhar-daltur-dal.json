@@ -33,7 +33,13 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 11500,
+      "market": 10757,
+      "volume": 3
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 10800,
       "volume": 1
     }
   ],
@@ -674,15 +680,36 @@
       "volume": 1,
       "minPrice": 11500,
       "maxPrice": 11500
+    },
+    {
+      "date": "2026-04-09",
+      "market": 10370,
+      "volume": 1,
+      "minPrice": 10360,
+      "maxPrice": 10380
+    },
+    {
+      "date": "2026-04-21",
+      "market": 10400,
+      "volume": 1,
+      "minPrice": 10390,
+      "maxPrice": 10410
+    },
+    {
+      "date": "2026-06-18",
+      "market": 10800,
+      "volume": 1,
+      "minPrice": 10775,
+      "maxPrice": 10825
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Kanpur Dehat",
       "nameHi": "Kanpur Dehat",
-      "avgPrice": 10323,
-      "records": 76
+      "avgPrice": 10330,
+      "records": 79
     },
     {
       "district": "Barabanki",

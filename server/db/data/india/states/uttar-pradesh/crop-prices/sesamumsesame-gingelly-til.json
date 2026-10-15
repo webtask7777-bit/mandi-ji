@@ -9,8 +9,20 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 16500,
+      "market": 12100,
+      "volume": 2
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 8379,
       "volume": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 24958,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -20,14 +32,60 @@
       "volume": 1,
       "minPrice": 16500,
       "maxPrice": 16500
+    },
+    {
+      "date": "2026-04-09",
+      "market": 7700,
+      "volume": 1,
+      "minPrice": 7700,
+      "maxPrice": 7700
+    },
+    {
+      "date": "2026-05-18",
+      "market": 8379,
+      "volume": 1,
+      "minPrice": 8290,
+      "maxPrice": 8410
+    },
+    {
+      "date": "2026-06-26",
+      "market": 21489,
+      "volume": 1,
+      "minPrice": 21180,
+      "maxPrice": 21720
+    },
+    {
+      "date": "2026-06-29",
+      "market": 28428,
+      "volume": 1,
+      "minPrice": 28428.11,
+      "maxPrice": 28428.11
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Lucknow",
       "nameHi": "Lucknow",
-      "avgPrice": 16500,
+      "avgPrice": 18994,
+      "records": 2
+    },
+    {
+      "district": "Prayagraj",
+      "nameHi": "Prayagraj",
+      "avgPrice": 7700,
+      "records": 1
+    },
+    {
+      "district": "Mahoba",
+      "nameHi": "Mahoba",
+      "avgPrice": 8379,
+      "records": 1
+    },
+    {
+      "district": "Ghaziabad",
+      "nameHi": "Ghaziabad",
+      "avgPrice": 28428,
       "records": 1
     }
   ]

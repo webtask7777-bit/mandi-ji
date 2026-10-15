@@ -7,17 +7,53 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 1300,
-      "volume": 3
+      "month": "04",
+      "date": "2026-04",
+      "market": 2000,
+      "volume": 1
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 3000,
+      "volume": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 3000,
+      "volume": 1
     }
   ],
+  "dailyHistory": [
+    {
+      "date": "2026-04-21",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-05-05",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-06-18",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    }
+  ],
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Nuapada",
       "nameHi": "Nuapada",
-      "avgPrice": 1300,
+      "avgPrice": 2667,
       "records": 3
     }
   ]

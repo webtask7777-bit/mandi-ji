@@ -7,17 +7,47 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 6925,
-      "volume": 1
+      "month": "07",
+      "date": "2026-07",
+      "market": 6433,
+      "volume": 3
     }
   ],
+  "dailyHistory": [
+    {
+      "date": "2026-07-06",
+      "market": 7000,
+      "volume": 1,
+      "minPrice": 7000,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-07-12",
+      "market": 6000,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-07-17",
+      "market": 6300,
+      "volume": 1,
+      "minPrice": 6200,
+      "maxPrice": 6300
+    }
+  ],
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
-      "district": "Indore",
-      "nameHi": "Indore",
-      "avgPrice": 6925,
+      "district": "Mandla",
+      "nameHi": "Mandla",
+      "avgPrice": 6500,
+      "records": 2
+    },
+    {
+      "district": "Chhindwara",
+      "nameHi": "Chhindwara",
+      "avgPrice": 6300,
       "records": 1
     }
   ]

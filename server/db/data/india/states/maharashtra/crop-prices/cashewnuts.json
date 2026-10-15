@@ -34,6 +34,18 @@
       "month": "04",
       "date": "2026-04",
       "market": 113000,
+      "volume": 3
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 113000,
+      "volume": 2
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 113000,
       "volume": 1
     }
   ],
@@ -408,15 +420,50 @@
       "volume": 1,
       "minPrice": 86000,
       "maxPrice": 140000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 113000,
+      "volume": 1,
+      "minPrice": 86000,
+      "maxPrice": 140000
+    },
+    {
+      "date": "2026-04-10",
+      "market": 113000,
+      "volume": 1,
+      "minPrice": 86000,
+      "maxPrice": 140000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 113000,
+      "volume": 1,
+      "minPrice": 86000,
+      "maxPrice": 140000
+    },
+    {
+      "date": "2026-05-20",
+      "market": 113000,
+      "volume": 1,
+      "minPrice": 86000,
+      "maxPrice": 140000
+    },
+    {
+      "date": "2026-06-19",
+      "market": 113000,
+      "volume": 1,
+      "minPrice": 86000,
+      "maxPrice": 140000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Mumbai",
       "nameHi": "Mumbai",
-      "avgPrice": 96755,
-      "records": 53
+      "avgPrice": 98155,
+      "records": 58
     }
   ]
 }

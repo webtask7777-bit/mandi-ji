@@ -21,8 +21,20 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 13000,
-      "volume": 2
+      "market": 13167,
+      "volume": 3
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 27000,
+      "volume": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 27200,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -179,15 +191,36 @@
       "volume": 1,
       "minPrice": 12000,
       "maxPrice": 13500
+    },
+    {
+      "date": "2026-04-21",
+      "market": 13500,
+      "volume": 1,
+      "minPrice": 13000,
+      "maxPrice": 14000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 27000,
+      "volume": 1,
+      "minPrice": 26000,
+      "maxPrice": 27200
+    },
+    {
+      "date": "2026-06-18",
+      "market": 27200,
+      "volume": 1,
+      "minPrice": 26800,
+      "maxPrice": 27400
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Rayagada",
       "nameHi": "Rayagada",
-      "avgPrice": 13000,
-      "records": 22
+      "avgPrice": 14148,
+      "records": 25
     }
   ]
 }

@@ -16,7 +16,25 @@
       "month": "04",
       "date": "2026-04",
       "market": 12000,
-      "volume": 2
+      "volume": 3
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 12425,
+      "volume": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 12000,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 11749,
+      "volume": 8
     }
   ],
   "dailyHistory": [
@@ -37,17 +55,106 @@
     {
       "date": "2026-04-04",
       "market": 12000,
-      "volume": 2,
+      "volume": 1,
       "minPrice": 9000,
       "maxPrice": 15000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 12000,
+      "volume": 2,
+      "minPrice": 6000,
+      "maxPrice": 18000
+    },
+    {
+      "date": "2026-05-14",
+      "market": 12425,
+      "volume": 1,
+      "minPrice": 12425,
+      "maxPrice": 12425
+    },
+    {
+      "date": "2026-06-30",
+      "market": 12000,
+      "volume": 1,
+      "minPrice": 12000,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-07-04",
+      "market": 13000,
+      "volume": 1,
+      "minPrice": 7800,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-07-06",
+      "market": 10500,
+      "volume": 1,
+      "minPrice": 10000,
+      "maxPrice": 16000
+    },
+    {
+      "date": "2026-07-07",
+      "market": 13000,
+      "volume": 1,
+      "minPrice": 10600,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-07-10",
+      "market": 13000,
+      "volume": 1,
+      "minPrice": 10000,
+      "maxPrice": 14000
+    },
+    {
+      "date": "2026-07-13",
+      "market": 11000,
+      "volume": 1,
+      "minPrice": 9000,
+      "maxPrice": 11000
+    },
+    {
+      "date": "2026-07-15",
+      "market": 12525,
+      "volume": 1,
+      "minPrice": 12525,
+      "maxPrice": 12525
+    },
+    {
+      "date": "2026-07-18",
+      "market": 11467,
+      "volume": 1,
+      "minPrice": 11466.71,
+      "maxPrice": 11466.71
+    },
+    {
+      "date": "2026-07-19",
+      "market": 9500,
+      "volume": 1,
+      "minPrice": 9000,
+      "maxPrice": 11000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
+    {
+      "district": "Badwani",
+      "nameHi": "Badwani",
+      "avgPrice": 11667,
+      "records": 6
+    },
     {
       "district": "Dhar",
       "nameHi": "Dhar",
-      "avgPrice": 11367,
+      "avgPrice": 11513,
+      "records": 5
+    },
+    {
+      "district": "Indore",
+      "nameHi": "Indore",
+      "avgPrice": 12317,
       "records": 3
     },
     {

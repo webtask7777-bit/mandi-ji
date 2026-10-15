@@ -29,6 +29,24 @@
       "date": "2026-03",
       "market": 5500,
       "volume": 1
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 5300,
+      "volume": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 3100,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 3000,
+      "volume": 10
     }
   ],
   "dailyHistory": [
@@ -318,9 +336,93 @@
       "volume": 1,
       "minPrice": 5000,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 5300,
+      "volume": 1,
+      "minPrice": 5200,
+      "maxPrice": 5400
+    },
+    {
+      "date": "2026-06-19",
+      "market": 3100,
+      "volume": 1,
+      "minPrice": 3100,
+      "maxPrice": 3100
+    },
+    {
+      "date": "2026-07-01",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-02",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-05",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-07",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-09",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-10",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-12",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-14",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-16",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-17",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Rayagada",
@@ -329,10 +431,16 @@
       "records": 39
     },
     {
+      "district": "Balasore",
+      "nameHi": "Balasore",
+      "avgPrice": 3009,
+      "records": 11
+    },
+    {
       "district": "Ganjam",
       "nameHi": "Ganjam",
-      "avgPrice": 4100,
-      "records": 9
+      "avgPrice": 4220,
+      "records": 10
     }
   ]
 }

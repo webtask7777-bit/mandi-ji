@@ -27,14 +27,26 @@
     {
       "month": "03",
       "date": "2026-03",
-      "market": 7193,
-      "volume": 93
+      "market": 7151,
+      "volume": 92
     },
     {
       "month": "04",
       "date": "2026-04",
-      "market": 8578,
-      "volume": 9
+      "market": 8468,
+      "volume": 23
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 8718,
+      "volume": 16
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 10676,
+      "volume": 5
     }
   ],
   "dailyHistory": [
@@ -629,7 +641,7 @@
     {
       "date": "2026-03-13",
       "market": 11000,
-      "volume": 2,
+      "volume": 1,
       "minPrice": 10800,
       "maxPrice": 11200
     },
@@ -663,8 +675,8 @@
     },
     {
       "date": "2026-04-01",
-      "market": 8440,
-      "volume": 5,
+      "market": 8300,
+      "volume": 4,
       "minPrice": 2000,
       "maxPrice": 14700
     },
@@ -678,48 +690,146 @@
     {
       "date": "2026-04-04",
       "market": 10000,
-      "volume": 2,
+      "volume": 1,
       "minPrice": 9800,
       "maxPrice": 10200
+    },
+    {
+      "date": "2026-04-06",
+      "market": 7563,
+      "volume": 4,
+      "minPrice": 3000,
+      "maxPrice": 14020
+    },
+    {
+      "date": "2026-04-09",
+      "market": 9010,
+      "volume": 5,
+      "minPrice": 2500,
+      "maxPrice": 18000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 8753,
+      "volume": 7,
+      "minPrice": 2000,
+      "maxPrice": 16500
+    },
+    {
+      "date": "2026-05-04",
+      "market": 8793,
+      "volume": 3,
+      "minPrice": 3850,
+      "maxPrice": 13810
+    },
+    {
+      "date": "2026-05-05",
+      "market": 7925,
+      "volume": 2,
+      "minPrice": 2500,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-05-06",
+      "market": 7250,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-05-14",
+      "market": 8000,
+      "volume": 1,
+      "minPrice": 4000,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 9400,
+      "volume": 3,
+      "minPrice": 4000,
+      "maxPrice": 14000
+    },
+    {
+      "date": "2026-05-16",
+      "market": 9000,
+      "volume": 1,
+      "minPrice": 8800,
+      "maxPrice": 9200
+    },
+    {
+      "date": "2026-05-18",
+      "market": 8500,
+      "volume": 2,
+      "minPrice": 4000,
+      "maxPrice": 14000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 9270,
+      "volume": 3,
+      "minPrice": 4000,
+      "maxPrice": 16000
+    },
+    {
+      "date": "2026-06-18",
+      "market": 7500,
+      "volume": 1,
+      "minPrice": 4000,
+      "maxPrice": 9000
+    },
+    {
+      "date": "2026-06-19",
+      "market": 11430,
+      "volume": 1,
+      "minPrice": 5000,
+      "maxPrice": 17900
+    },
+    {
+      "date": "2026-06-29",
+      "market": 11483,
+      "volume": 3,
+      "minPrice": 5000,
+      "maxPrice": 26310
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Hanumangarh",
       "nameHi": "Hanumangarh",
-      "avgPrice": 6087,
-      "records": 137
+      "avgPrice": 6129,
+      "records": 139
     },
     {
       "district": "Pratapgarh",
       "nameHi": "Pratapgarh",
-      "avgPrice": 6902,
-      "records": 103
+      "avgPrice": 6932,
+      "records": 105
     },
     {
       "district": "Baran",
       "nameHi": "Baran",
-      "avgPrice": 8228,
-      "records": 91
+      "avgPrice": 8295,
+      "records": 95
     },
     {
       "district": "Kota",
       "nameHi": "Kota",
-      "avgPrice": 10042,
-      "records": 57
+      "avgPrice": 10061,
+      "records": 63
     },
     {
       "district": "Jaipur",
       "nameHi": "Jaipur",
-      "avgPrice": 7291,
-      "records": 55
+      "avgPrice": 7343,
+      "records": 62
     },
     {
       "district": "Chittorgarh",
       "nameHi": "Chittorgarh",
-      "avgPrice": 7724,
-      "records": 47
+      "avgPrice": 7815,
+      "records": 49
     },
     {
       "district": "Ajmer",
@@ -728,22 +838,22 @@
       "records": 43
     },
     {
-      "district": "Jhalawar",
-      "nameHi": "Jhalawar",
-      "avgPrice": 7695,
-      "records": 35
-    },
-    {
       "district": "Jodhpur",
       "nameHi": "Jodhpur",
-      "avgPrice": 6249,
-      "records": 35
+      "avgPrice": 6377,
+      "records": 39
     },
     {
       "district": "Ganganagar",
       "nameHi": "Ganganagar",
-      "avgPrice": 10753,
-      "records": 34
+      "avgPrice": 10545,
+      "records": 38
+    },
+    {
+      "district": "Jhalawar",
+      "nameHi": "Jhalawar",
+      "avgPrice": 7824,
+      "records": 37
     },
     {
       "district": "Bharatpur",
@@ -760,8 +870,8 @@
     {
       "district": "Sikar",
       "nameHi": "Sikar",
-      "avgPrice": 6030,
-      "records": 20
+      "avgPrice": 5945,
+      "records": 21
     },
     {
       "district": "Churu",

@@ -10,8 +10,22 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 7305,
-      "volume": 1,
+      "market": 5671,
+      "volume": 4,
+      "msp": 6783
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 6991,
+      "volume": 2,
+      "msp": 6783
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 8525,
+      "volume": 2,
       "msp": 6783
     }
   ],
@@ -22,14 +36,65 @@
       "volume": 1,
       "minPrice": 7305,
       "maxPrice": 7305
+    },
+    {
+      "date": "2026-04-09",
+      "market": 5127,
+      "volume": 3,
+      "minPrice": 3500,
+      "maxPrice": 6300
+    },
+    {
+      "date": "2026-05-04",
+      "market": 6991,
+      "volume": 2,
+      "minPrice": 4500,
+      "maxPrice": 7262
+    },
+    {
+      "date": "2026-06-29",
+      "market": 8525,
+      "volume": 2,
+      "minPrice": 7263,
+      "maxPrice": 9100
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Parbhani",
       "nameHi": "Parbhani",
-      "avgPrice": 7305,
+      "avgPrice": 6803,
+      "records": 2
+    },
+    {
+      "district": "Nashik",
+      "nameHi": "Nashik",
+      "avgPrice": 7676,
+      "records": 2
+    },
+    {
+      "district": "Chattrapati Sambhajinagar",
+      "nameHi": "Chattrapati Sambhajinagar",
+      "avgPrice": 4580,
+      "records": 1
+    },
+    {
+      "district": "Dharashiv(Usmanabad)",
+      "nameHi": "Dharashiv(Usmanabad)",
+      "avgPrice": 4500,
+      "records": 1
+    },
+    {
+      "district": "Amarawati",
+      "nameHi": "Amarawati",
+      "avgPrice": 6881,
+      "records": 1
+    },
+    {
+      "district": "Nagpur",
+      "nameHi": "Nagpur",
+      "avgPrice": 8800,
       "records": 1
     }
   ]

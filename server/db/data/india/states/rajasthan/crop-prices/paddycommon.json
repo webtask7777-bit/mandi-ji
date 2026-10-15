@@ -13,6 +13,27 @@
       "market": 3812,
       "volume": 1,
       "msp": 2300
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 4061,
+      "volume": 3,
+      "msp": 2300
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 3928,
+      "volume": 4,
+      "msp": 2300
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 4098,
+      "volume": 2,
+      "msp": 2300
     }
   ],
   "dailyHistory": [
@@ -22,15 +43,70 @@
       "volume": 1,
       "minPrice": 3401,
       "maxPrice": 4310
+    },
+    {
+      "date": "2026-04-06",
+      "market": 3942,
+      "volume": 2,
+      "minPrice": 3300,
+      "maxPrice": 4543
+    },
+    {
+      "date": "2026-04-09",
+      "market": 4300,
+      "volume": 1,
+      "minPrice": 3970,
+      "maxPrice": 4600
+    },
+    {
+      "date": "2026-05-09",
+      "market": 4166,
+      "volume": 1,
+      "minPrice": 3711,
+      "maxPrice": 4621
+    },
+    {
+      "date": "2026-05-15",
+      "market": 3793,
+      "volume": 1,
+      "minPrice": 3200,
+      "maxPrice": 4385
+    },
+    {
+      "date": "2026-05-19",
+      "market": 3876,
+      "volume": 2,
+      "minPrice": 3500,
+      "maxPrice": 4181
+    },
+    {
+      "date": "2026-06-26",
+      "market": 4155,
+      "volume": 1,
+      "minPrice": 3500,
+      "maxPrice": 4809
+    },
+    {
+      "date": "2026-06-29",
+      "market": 4040,
+      "volume": 1,
+      "minPrice": 3400,
+      "maxPrice": 4680
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
+    {
+      "district": "Bundi",
+      "nameHi": "Bundi",
+      "avgPrice": 3986,
+      "records": 6
+    },
     {
       "district": "Baran",
       "nameHi": "Baran",
-      "avgPrice": 3812,
-      "records": 1
+      "avgPrice": 3996,
+      "records": 4
     }
   ]
 }

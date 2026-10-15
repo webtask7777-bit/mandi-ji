@@ -15,8 +15,26 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 3062,
+      "market": 3295,
+      "volume": 8
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 3268,
+      "volume": 7
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 3237,
       "volume": 2
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 3508,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -51,42 +69,146 @@
     {
       "date": "2026-04-04",
       "market": 3062,
-      "volume": 2,
+      "volume": 1,
       "minPrice": 2751,
       "maxPrice": 3236
+    },
+    {
+      "date": "2026-04-06",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 2900,
+      "maxPrice": 3125
+    },
+    {
+      "date": "2026-04-09",
+      "market": 3720,
+      "volume": 3,
+      "minPrice": 2901,
+      "maxPrice": 5200
+    },
+    {
+      "date": "2026-04-10",
+      "market": 3141,
+      "volume": 1,
+      "minPrice": 2650,
+      "maxPrice": 3339
+    },
+    {
+      "date": "2026-04-21",
+      "market": 2998,
+      "volume": 2,
+      "minPrice": 2870,
+      "maxPrice": 3130
+    },
+    {
+      "date": "2026-05-04",
+      "market": 3439,
+      "volume": 1,
+      "minPrice": 3100,
+      "maxPrice": 3950
+    },
+    {
+      "date": "2026-05-05",
+      "market": 3500,
+      "volume": 1,
+      "minPrice": 3500,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-05-14",
+      "market": 3390,
+      "volume": 1,
+      "minPrice": 2950,
+      "maxPrice": 3600
+    },
+    {
+      "date": "2026-05-15",
+      "market": 3330,
+      "volume": 1,
+      "minPrice": 3043,
+      "maxPrice": 3400
+    },
+    {
+      "date": "2026-05-18",
+      "market": 3799,
+      "volume": 1,
+      "minPrice": 3400,
+      "maxPrice": 3900
+    },
+    {
+      "date": "2026-05-19",
+      "market": 2418,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 3466
+    },
+    {
+      "date": "2026-05-20",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-06-18",
+      "market": 3200,
+      "volume": 1,
+      "minPrice": 3200,
+      "maxPrice": 3200
+    },
+    {
+      "date": "2026-06-29",
+      "market": 3274,
+      "volume": 1,
+      "minPrice": 3269,
+      "maxPrice": 3311
+    },
+    {
+      "date": "2026-07-18",
+      "market": 3508,
+      "volume": 4,
+      "minPrice": 2000,
+      "maxPrice": 5200
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Davangere",
       "nameHi": "Davangere",
-      "avgPrice": 3132,
-      "records": 5
+      "avgPrice": 3043,
+      "records": 13
     },
     {
       "district": "Chamrajnagar",
       "nameHi": "Chamrajnagar",
-      "avgPrice": 3964,
-      "records": 4
+      "avgPrice": 3871,
+      "records": 5
     },
     {
       "district": "Bangalore",
       "nameHi": "Bangalore",
-      "avgPrice": 4000,
-      "records": 2
-    },
-    {
-      "district": "Bellary",
-      "nameHi": "Bellary",
-      "avgPrice": 3180,
-      "records": 1
+      "avgPrice": 4333,
+      "records": 3
     },
     {
       "district": "Chitradurga",
       "nameHi": "Chitradurga",
-      "avgPrice": 3327,
-      "records": 1
+      "avgPrice": 3302,
+      "records": 3
+    },
+    {
+      "district": "Bellary",
+      "nameHi": "Bellary",
+      "avgPrice": 3138,
+      "records": 2
+    },
+    {
+      "district": "Kolar",
+      "nameHi": "Kolar",
+      "avgPrice": 3733,
+      "records": 2
     },
     {
       "district": "Chikmagalur",
@@ -101,9 +223,33 @@
       "records": 1
     },
     {
-      "district": "Kolar",
-      "nameHi": "Kolar",
-      "avgPrice": 3667,
+      "district": "Haveri",
+      "nameHi": "Haveri",
+      "avgPrice": 3065,
+      "records": 1
+    },
+    {
+      "district": "Chamarajanagar",
+      "nameHi": "Chamarajanagar",
+      "avgPrice": 3200,
+      "records": 1
+    },
+    {
+      "district": "Vijayanagara",
+      "nameHi": "Vijayanagara",
+      "avgPrice": 3274,
+      "records": 1
+    },
+    {
+      "district": "Bengaluru",
+      "nameHi": "Bengaluru",
+      "avgPrice": 5000,
+      "records": 1
+    },
+    {
+      "district": "Mysuru",
+      "nameHi": "Mysuru",
+      "avgPrice": 3200,
       "records": 1
     }
   ]

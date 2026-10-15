@@ -33,8 +33,26 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 5711,
+      "market": 5435,
+      "volume": 4
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 5850,
+      "volume": 7
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 6332,
       "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 7194,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -604,27 +622,90 @@
       "volume": 1,
       "minPrice": 5711,
       "maxPrice": 5711
+    },
+    {
+      "date": "2026-04-09",
+      "market": 5343,
+      "volume": 3,
+      "minPrice": 1713,
+      "maxPrice": 6120
+    },
+    {
+      "date": "2026-05-04",
+      "market": 5406,
+      "volume": 3,
+      "minPrice": 1661,
+      "maxPrice": 6289
+    },
+    {
+      "date": "2026-05-06",
+      "market": 5906,
+      "volume": 1,
+      "minPrice": 5800,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-05-18",
+      "market": 6800,
+      "volume": 1,
+      "minPrice": 6800,
+      "maxPrice": 6800
+    },
+    {
+      "date": "2026-05-19",
+      "market": 6800,
+      "volume": 1,
+      "minPrice": 6800,
+      "maxPrice": 6800
+    },
+    {
+      "date": "2026-05-20",
+      "market": 5226,
+      "volume": 1,
+      "minPrice": 5226,
+      "maxPrice": 5226
+    },
+    {
+      "date": "2026-06-29",
+      "market": 6332,
+      "volume": 1,
+      "minPrice": 4505,
+      "maxPrice": 6950
+    },
+    {
+      "date": "2026-07-18",
+      "market": 7013,
+      "volume": 2,
+      "minPrice": 4367,
+      "maxPrice": 7512
+    },
+    {
+      "date": "2026-07-19",
+      "market": 7375,
+      "volume": 2,
+      "minPrice": 7050,
+      "maxPrice": 7800
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Bellary",
       "nameHi": "Bellary",
-      "avgPrice": 6523,
-      "records": 63
+      "avgPrice": 6476,
+      "records": 65
     },
     {
       "district": "Raichur",
       "nameHi": "Raichur",
-      "avgPrice": 6470,
-      "records": 44
+      "avgPrice": 6445,
+      "records": 45
     },
     {
       "district": "Bijapur",
       "nameHi": "Bijapur",
-      "avgPrice": 6241,
-      "records": 23
+      "avgPrice": 6179,
+      "records": 25
     },
     {
       "district": "Bagalkot",
@@ -643,6 +724,36 @@
       "nameHi": "Haveri",
       "avgPrice": 6375,
       "records": 6
+    },
+    {
+      "district": "Koppal",
+      "nameHi": "Koppal",
+      "avgPrice": 6578,
+      "records": 5
+    },
+    {
+      "district": "Gadag",
+      "nameHi": "Gadag",
+      "avgPrice": 5717,
+      "records": 2
+    },
+    {
+      "district": "Belgaum",
+      "nameHi": "Belgaum",
+      "avgPrice": 6289,
+      "records": 1
+    },
+    {
+      "district": "Vijayanagara",
+      "nameHi": "Vijayanagara",
+      "avgPrice": 7500,
+      "records": 1
+    },
+    {
+      "district": "Belagavi",
+      "nameHi": "Belagavi",
+      "avgPrice": 7700,
+      "records": 1
     }
   ]
 }

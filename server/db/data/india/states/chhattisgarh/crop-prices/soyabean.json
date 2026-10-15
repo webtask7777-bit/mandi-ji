@@ -13,6 +13,27 @@
       "market": 4800,
       "volume": 1,
       "msp": 4892
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 5000,
+      "volume": 1,
+      "msp": 4892
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 4750,
+      "volume": 3,
+      "msp": 4892
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 6052,
+      "volume": 15,
+      "msp": 4892
     }
   ],
   "dailyHistory": [
@@ -22,14 +43,130 @@
       "volume": 1,
       "minPrice": 4800,
       "maxPrice": 4800
+    },
+    {
+      "date": "2026-04-10",
+      "market": 5000,
+      "volume": 1,
+      "minPrice": 4500,
+      "maxPrice": 5500
+    },
+    {
+      "date": "2026-06-30",
+      "market": 4750,
+      "volume": 3,
+      "minPrice": 2500,
+      "maxPrice": 6500
+    },
+    {
+      "date": "2026-07-01",
+      "market": 5975,
+      "volume": 1,
+      "minPrice": 5800,
+      "maxPrice": 6150
+    },
+    {
+      "date": "2026-07-02",
+      "market": 6200,
+      "volume": 1,
+      "minPrice": 6100,
+      "maxPrice": 6301
+    },
+    {
+      "date": "2026-07-03",
+      "market": 6421,
+      "volume": 1,
+      "minPrice": 6421,
+      "maxPrice": 6421
+    },
+    {
+      "date": "2026-07-07",
+      "market": 5900,
+      "volume": 1,
+      "minPrice": 5900,
+      "maxPrice": 5900
+    },
+    {
+      "date": "2026-07-08",
+      "market": 5600,
+      "volume": 1,
+      "minPrice": 5600,
+      "maxPrice": 5600
+    },
+    {
+      "date": "2026-07-09",
+      "market": 6165,
+      "volume": 1,
+      "minPrice": 6130,
+      "maxPrice": 6400
+    },
+    {
+      "date": "2026-07-11",
+      "market": 6000,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-07-12",
+      "market": 5600,
+      "volume": 1,
+      "minPrice": 5600,
+      "maxPrice": 5600
+    },
+    {
+      "date": "2026-07-14",
+      "market": 5800,
+      "volume": 2,
+      "minPrice": 5200,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-07-15",
+      "market": 6006,
+      "volume": 2,
+      "minPrice": 5611,
+      "maxPrice": 6400
+    },
+    {
+      "date": "2026-07-16",
+      "market": 7036,
+      "volume": 1,
+      "minPrice": 6800,
+      "maxPrice": 7273
+    },
+    {
+      "date": "2026-07-17",
+      "market": 6138,
+      "volume": 2,
+      "minPrice": 4400,
+      "maxPrice": 7151
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Rajnandgaon",
       "nameHi": "Rajnandgaon",
-      "avgPrice": 4800,
+      "avgPrice": 5849,
+      "records": 13
+    },
+    {
+      "district": "Kabirdham",
+      "nameHi": "Kabirdham",
+      "avgPrice": 5900,
+      "records": 4
+    },
+    {
+      "district": "Khairagarh Chhuikhadan Gandai",
+      "nameHi": "Khairagarh Chhuikhadan Gandai",
+      "avgPrice": 6350,
+      "records": 2
+    },
+    {
+      "district": "Raipur",
+      "nameHi": "Raipur",
+      "avgPrice": 2500,
       "records": 1
     }
   ]

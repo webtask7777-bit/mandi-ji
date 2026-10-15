@@ -34,7 +34,25 @@
       "month": "04",
       "date": "2026-04",
       "market": 12710,
-      "volume": 2
+      "volume": 1
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 13327,
+      "volume": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 17200,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 3300,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -622,42 +640,70 @@
     {
       "date": "2026-04-04",
       "market": 12710,
-      "volume": 2,
+      "volume": 1,
       "minPrice": 6000,
       "maxPrice": 12710
+    },
+    {
+      "date": "2026-05-06",
+      "market": 13327,
+      "volume": 1,
+      "minPrice": 13327.2,
+      "maxPrice": 13327.2
+    },
+    {
+      "date": "2026-06-26",
+      "market": 17200,
+      "volume": 1,
+      "minPrice": 10000,
+      "maxPrice": 17200
+    },
+    {
+      "date": "2026-07-18",
+      "market": 1900,
+      "volume": 1,
+      "minPrice": 1500,
+      "maxPrice": 1900
+    },
+    {
+      "date": "2026-07-19",
+      "market": 4000,
+      "volume": 2,
+      "minPrice": 800,
+      "maxPrice": 7500
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Khargone",
       "nameHi": "Khargone",
-      "avgPrice": 16461,
-      "records": 92
+      "avgPrice": 16360,
+      "records": 93
     },
     {
       "district": "Indore",
       "nameHi": "Indore",
-      "avgPrice": 11624,
-      "records": 69
+      "avgPrice": 11608,
+      "records": 68
     },
     {
       "district": "Dhar",
       "nameHi": "Dhar",
-      "avgPrice": 11252,
-      "records": 20
+      "avgPrice": 11617,
+      "records": 22
+    },
+    {
+      "district": "Morena",
+      "nameHi": "Morena",
+      "avgPrice": 1617,
+      "records": 6
     },
     {
       "district": "Badwani",
       "nameHi": "Badwani",
       "avgPrice": 11760,
       "records": 5
-    },
-    {
-      "district": "Morena",
-      "nameHi": "Morena",
-      "avgPrice": 1700,
-      "records": 4
     },
     {
       "district": "Mandsaur",

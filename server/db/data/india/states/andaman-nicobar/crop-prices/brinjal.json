@@ -15,7 +15,25 @@
     {
       "month": "04",
       "date": "2026-04",
+      "market": 4000,
+      "volume": 2
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
       "market": 3500,
+      "volume": 2
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 15000,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 15000,
       "volume": 1
     }
   ],
@@ -68,15 +86,50 @@
       "volume": 1,
       "minPrice": 2500,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 4500,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-05-04",
+      "market": 3500,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-05-20",
+      "market": 3500,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-06-18",
+      "market": 15000,
+      "volume": 1,
+      "minPrice": 10000,
+      "maxPrice": 18000
+    },
+    {
+      "date": "2026-07-18",
+      "market": 15000,
+      "volume": 1,
+      "minPrice": 10000,
+      "maxPrice": 18000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
-      "district": "North and Middle Andaman ",
-      "nameHi": "North and Middle Andaman ",
-      "avgPrice": 3857,
-      "records": 7
+      "district": "North and Middle Andaman",
+      "nameHi": "North and Middle Andaman",
+      "avgPrice": 5708,
+      "records": 12
     }
   ]
 }

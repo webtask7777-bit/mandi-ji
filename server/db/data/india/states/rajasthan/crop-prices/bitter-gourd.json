@@ -33,8 +33,26 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 3025,
-      "volume": 4
+      "market": 2763,
+      "volume": 12
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 1456,
+      "volume": 17
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 1910,
+      "volume": 5
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 1900,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -684,43 +702,155 @@
     },
     {
       "date": "2026-04-01",
-      "market": 3025,
-      "volume": 4,
+      "market": 2850,
+      "volume": 3,
       "minPrice": 1800,
       "maxPrice": 3600
+    },
+    {
+      "date": "2026-04-06",
+      "market": 1950,
+      "volume": 3,
+      "minPrice": 1000,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-04-09",
+      "market": 3350,
+      "volume": 3,
+      "minPrice": 2000,
+      "maxPrice": 5700
+    },
+    {
+      "date": "2026-04-21",
+      "market": 2900,
+      "volume": 3,
+      "minPrice": 2000,
+      "maxPrice": 3700
+    },
+    {
+      "date": "2026-05-04",
+      "market": 1500,
+      "volume": 2,
+      "minPrice": 800,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-05-05",
+      "market": 1000,
+      "volume": 1,
+      "minPrice": 800,
+      "maxPrice": 1200
+    },
+    {
+      "date": "2026-05-06",
+      "market": 1200,
+      "volume": 1,
+      "minPrice": 1000,
+      "maxPrice": 1400
+    },
+    {
+      "date": "2026-05-14",
+      "market": 1850,
+      "volume": 2,
+      "minPrice": 1000,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-05-15",
+      "market": 1383,
+      "volume": 3,
+      "minPrice": 1000,
+      "maxPrice": 2200
+    },
+    {
+      "date": "2026-05-16",
+      "market": 1100,
+      "volume": 1,
+      "minPrice": 900,
+      "maxPrice": 1300
+    },
+    {
+      "date": "2026-05-18",
+      "market": 1417,
+      "volume": 3,
+      "minPrice": 800,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 1588,
+      "volume": 4,
+      "minPrice": 800,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-06-18",
+      "market": 2200,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 2400
+    },
+    {
+      "date": "2026-06-21",
+      "market": 2200,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 2400
+    },
+    {
+      "date": "2026-06-26",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 1800,
+      "maxPrice": 2200
+    },
+    {
+      "date": "2026-06-29",
+      "market": 1575,
+      "volume": 2,
+      "minPrice": 1200,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-07-19",
+      "market": 1900,
+      "volume": 1,
+      "minPrice": 1800,
+      "maxPrice": 2000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Udaipur",
       "nameHi": "Udaipur",
-      "avgPrice": 3846,
-      "records": 70
+      "avgPrice": 3792,
+      "records": 72
     },
     {
       "district": "Jaipur",
       "nameHi": "Jaipur",
-      "avgPrice": 4695,
-      "records": 58
+      "avgPrice": 4432,
+      "records": 63
     },
     {
       "district": "Jalore",
       "nameHi": "Jalore",
-      "avgPrice": 2480,
-      "records": 51
+      "avgPrice": 2425,
+      "records": 60
     },
     {
       "district": "Jodhpur",
       "nameHi": "Jodhpur",
-      "avgPrice": 3211,
-      "records": 44
+      "avgPrice": 3126,
+      "records": 47
     },
     {
       "district": "Ganganagar",
       "nameHi": "Ganganagar",
-      "avgPrice": 6200,
-      "records": 33
+      "avgPrice": 5093,
+      "records": 44
     },
     {
       "district": "Jaipur Rural",
@@ -739,6 +869,12 @@
       "nameHi": "Kota",
       "avgPrice": 3500,
       "records": 3
+    },
+    {
+      "district": "Chittorgarh",
+      "nameHi": "Chittorgarh",
+      "avgPrice": 2500,
+      "records": 1
     }
   ]
 }

@@ -15,8 +15,20 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 8000,
-      "volume": 1
+      "market": 7300,
+      "volume": 5
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 9000,
+      "volume": 2
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 16467,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -75,27 +87,83 @@
       "volume": 1,
       "minPrice": 6000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 9000,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-04-10",
+      "market": 9000,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 5250,
+      "volume": 2,
+      "minPrice": 1500,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 4250,
+      "volume": 1,
+      "minPrice": 1500,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-05-18",
+      "market": 13750,
+      "volume": 1,
+      "minPrice": 12500,
+      "maxPrice": 15000
+    },
+    {
+      "date": "2026-06-19",
+      "market": 15500,
+      "volume": 1,
+      "minPrice": 13000,
+      "maxPrice": 18000
+    },
+    {
+      "date": "2026-06-26",
+      "market": 15400,
+      "volume": 1,
+      "minPrice": 15000,
+      "maxPrice": 15800
+    },
+    {
+      "date": "2026-06-29",
+      "market": 18500,
+      "volume": 1,
+      "minPrice": 17000,
+      "maxPrice": 20000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
-    {
-      "district": "Rajkot",
-      "nameHi": "Rajkot",
-      "avgPrice": 5500,
-      "records": 4
-    },
     {
       "district": "Porbandar",
       "nameHi": "Porbandar",
-      "avgPrice": 6250,
-      "records": 4
+      "avgPrice": 7844,
+      "records": 8
+    },
+    {
+      "district": "Rajkot",
+      "nameHi": "Rajkot",
+      "avgPrice": 5125,
+      "records": 6
     },
     {
       "district": "Banaskanth",
       "nameHi": "Banaskanth",
-      "avgPrice": 14050,
-      "records": 1
+      "avgPrice": 15863,
+      "records": 4
     }
   ]
 }

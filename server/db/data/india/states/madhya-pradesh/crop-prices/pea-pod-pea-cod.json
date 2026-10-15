@@ -7,34 +7,65 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 2082,
-      "volume": 11
+      "month": "04",
+      "date": "2026-04",
+      "market": 3000,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2067,
+      "volume": 3
     }
   ],
+  "dailyHistory": [
+    {
+      "date": "2026-04-09",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 1500,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-07-03",
+      "market": 2999,
+      "volume": 1,
+      "minPrice": 2999,
+      "maxPrice": 2999
+    },
+    {
+      "date": "2026-07-09",
+      "market": 1701,
+      "volume": 1,
+      "minPrice": 1701,
+      "maxPrice": 1701
+    },
+    {
+      "date": "2026-07-13",
+      "market": 1500,
+      "volume": 1,
+      "minPrice": 1500,
+      "maxPrice": 1500
+    }
+  ],
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
-      "district": "Hoshangabad",
-      "nameHi": "Hoshangabad",
-      "avgPrice": 2071,
-      "records": 7
+      "district": "Ratlam",
+      "nameHi": "Ratlam",
+      "avgPrice": 2350,
+      "records": 2
     },
     {
       "district": "Indore",
       "nameHi": "Indore",
-      "avgPrice": 1900,
-      "records": 2
+      "avgPrice": 3000,
+      "records": 1
     },
     {
       "district": "Ujjain",
       "nameHi": "Ujjain",
-      "avgPrice": 3100,
-      "records": 1
-    },
-    {
-      "district": "Katni",
-      "nameHi": "Katni",
       "avgPrice": 1500,
       "records": 1
     }

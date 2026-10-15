@@ -15,8 +15,20 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 10428,
-      "volume": 15
+      "market": 9900,
+      "volume": 41
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 9872,
+      "volume": 25
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 13040,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -78,42 +90,176 @@
     },
     {
       "date": "2026-04-04",
-      "market": 11164,
-      "volume": 5,
+      "market": 11605,
+      "volume": 4,
       "minPrice": 9000,
       "maxPrice": 14000
+    },
+    {
+      "date": "2026-04-06",
+      "market": 9790,
+      "volume": 10,
+      "minPrice": 2500,
+      "maxPrice": 15500
+    },
+    {
+      "date": "2026-04-09",
+      "market": 9238,
+      "volume": 8,
+      "minPrice": 1500,
+      "maxPrice": 14100
+    },
+    {
+      "date": "2026-04-10",
+      "market": 10000,
+      "volume": 1,
+      "minPrice": 9000,
+      "maxPrice": 11000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 9633,
+      "volume": 8,
+      "minPrice": 2500,
+      "maxPrice": 16500
+    },
+    {
+      "date": "2026-05-04",
+      "market": 9667,
+      "volume": 3,
+      "minPrice": 8000,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-05-05",
+      "market": 10000,
+      "volume": 2,
+      "minPrice": 8000,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-05-08",
+      "market": 9200,
+      "volume": 2,
+      "minPrice": 8000,
+      "maxPrice": 11000
+    },
+    {
+      "date": "2026-05-14",
+      "market": 11583,
+      "volume": 6,
+      "minPrice": 7900,
+      "maxPrice": 15000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 9500,
+      "volume": 6,
+      "minPrice": 2500,
+      "maxPrice": 16500
+    },
+    {
+      "date": "2026-05-18",
+      "market": 8000,
+      "volume": 1,
+      "minPrice": 8000,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 9350,
+      "volume": 2,
+      "minPrice": 8000,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-05-20",
+      "market": 8733,
+      "volume": 3,
+      "minPrice": 7500,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-06-18",
+      "market": 9500,
+      "volume": 1,
+      "minPrice": 9000,
+      "maxPrice": 10000
+    },
+    {
+      "date": "2026-06-26",
+      "market": 16580,
+      "volume": 1,
+      "minPrice": 16580,
+      "maxPrice": 16580
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
-    {
-      "district": "Patiala",
-      "nameHi": "Patiala",
-      "avgPrice": 10597,
-      "records": 10
-    },
     {
       "district": "Ludhiana",
       "nameHi": "Ludhiana",
-      "avgPrice": 5125,
-      "records": 8
+      "avgPrice": 6167,
+      "records": 24
+    },
+    {
+      "district": "Patiala",
+      "nameHi": "Patiala",
+      "avgPrice": 10891,
+      "records": 21
     },
     {
       "district": "Hoshiarpur",
       "nameHi": "Hoshiarpur",
-      "avgPrice": 9667,
-      "records": 6
-    },
-    {
-      "district": "Ropar (Rupnagar)",
-      "nameHi": "Ropar (Rupnagar)",
-      "avgPrice": 10000,
-      "records": 2
+      "avgPrice": 9607,
+      "records": 14
     },
     {
       "district": "Fazilka",
       "nameHi": "Fazilka",
-      "avgPrice": 15000,
+      "avgPrice": 15583,
+      "records": 6
+    },
+    {
+      "district": "Gurdaspur",
+      "nameHi": "Gurdaspur",
+      "avgPrice": 10700,
+      "records": 5
+    },
+    {
+      "district": "Ropar (Rupnagar)",
+      "nameHi": "Ropar (Rupnagar)",
+      "avgPrice": 9333,
+      "records": 3
+    },
+    {
+      "district": "Fatehgarh",
+      "nameHi": "Fatehgarh",
+      "avgPrice": 8633,
+      "records": 3
+    },
+    {
+      "district": "Sangrur",
+      "nameHi": "Sangrur",
+      "avgPrice": 13333,
+      "records": 3
+    },
+    {
+      "district": "Muktsar",
+      "nameHi": "Muktsar",
+      "avgPrice": 12250,
+      "records": 2
+    },
+    {
+      "district": "Nawanshahr",
+      "nameHi": "Nawanshahr",
+      "avgPrice": 10700,
+      "records": 2
+    },
+    {
+      "district": "Mansa",
+      "nameHi": "Mansa",
+      "avgPrice": 14050,
       "records": 2
     },
     {
@@ -129,39 +275,15 @@
       "records": 1
     },
     {
-      "district": "Gurdaspur",
-      "nameHi": "Gurdaspur",
-      "avgPrice": 12000,
-      "records": 1
-    },
-    {
-      "district": "Fatehgarh",
-      "nameHi": "Fatehgarh",
-      "avgPrice": 8500,
-      "records": 1
-    },
-    {
       "district": "Pathankot",
       "nameHi": "Pathankot",
       "avgPrice": 9600,
       "records": 1
     },
     {
-      "district": "Muktsar",
-      "nameHi": "Muktsar",
-      "avgPrice": 12500,
-      "records": 1
-    },
-    {
-      "district": "Nawanshahr",
-      "nameHi": "Nawanshahr",
-      "avgPrice": 10800,
-      "records": 1
-    },
-    {
-      "district": "Sangrur",
-      "nameHi": "Sangrur",
-      "avgPrice": 14000,
+      "district": "Ferozpur",
+      "nameHi": "Ferozpur",
+      "avgPrice": 9000,
       "records": 1
     }
   ]

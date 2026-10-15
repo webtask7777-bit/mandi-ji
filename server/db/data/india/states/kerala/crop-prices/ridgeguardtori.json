@@ -15,8 +15,14 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 5500,
-      "volume": 1
+      "market": 5588,
+      "volume": 8
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 5560,
+      "volume": 10
     }
   ],
   "dailyHistory": [
@@ -61,26 +67,87 @@
       "volume": 1,
       "minPrice": 5000,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-04-06",
+      "market": 4950,
+      "volume": 2,
+      "minPrice": 4300,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 5860,
+      "volume": 5,
+      "minPrice": 5000,
+      "maxPrice": 6500
+    },
+    {
+      "date": "2026-05-06",
+      "market": 6400,
+      "volume": 2,
+      "minPrice": 6000,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-05-14",
+      "market": 6500,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 5750,
+      "volume": 2,
+      "minPrice": 4700,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 5933,
+      "volume": 3,
+      "minPrice": 4500,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-05-20",
+      "market": 3500,
+      "volume": 2,
+      "minPrice": 2000,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Ernakulam",
       "nameHi": "Ernakulam",
-      "avgPrice": 5500,
-      "records": 4
-    },
-    {
-      "district": "Alappuzha",
-      "nameHi": "Alappuzha",
-      "avgPrice": 4600,
-      "records": 2
+      "avgPrice": 5930,
+      "records": 10
     },
     {
       "district": "Kasargod",
       "nameHi": "Kasargod",
-      "avgPrice": 6000,
+      "avgPrice": 5550,
+      "records": 6
+    },
+    {
+      "district": "Alappuzha",
+      "nameHi": "Alappuzha",
+      "avgPrice": 4920,
+      "records": 5
+    },
+    {
+      "district": "Idukki",
+      "nameHi": "Idukki",
+      "avgPrice": 6400,
+      "records": 2
+    },
+    {
+      "district": "Palakad",
+      "nameHi": "Palakad",
+      "avgPrice": 2000,
       "records": 1
     }
   ]

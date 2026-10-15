@@ -15,8 +15,14 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 4825,
-      "volume": 2
+      "market": 4358,
+      "volume": 12
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 3895,
+      "volume": 5
     }
   ],
   "dailyHistory": [
@@ -47,14 +53,82 @@
       "volume": 2,
       "minPrice": 4400,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-04-06",
+      "market": 4056,
+      "volume": 2,
+      "minPrice": 3100,
+      "maxPrice": 5600
+    },
+    {
+      "date": "2026-04-09",
+      "market": 4113,
+      "volume": 6,
+      "minPrice": 2150,
+      "maxPrice": 4952
+    },
+    {
+      "date": "2026-04-10",
+      "market": 4700,
+      "volume": 1,
+      "minPrice": 4630,
+      "maxPrice": 4800
+    },
+    {
+      "date": "2026-04-21",
+      "market": 5150,
+      "volume": 1,
+      "minPrice": 4900,
+      "maxPrice": 5500
+    },
+    {
+      "date": "2026-05-05",
+      "market": 4050,
+      "volume": 2,
+      "minPrice": 4000,
+      "maxPrice": 4600
+    },
+    {
+      "date": "2026-05-14",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 4000,
+      "maxPrice": 4900
+    },
+    {
+      "date": "2026-05-18",
+      "market": 3700,
+      "volume": 1,
+      "minPrice": 3200,
+      "maxPrice": 5200
+    },
+    {
+      "date": "2026-05-19",
+      "market": 3675,
+      "volume": 1,
+      "minPrice": 2450,
+      "maxPrice": 4475
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Mandya",
       "nameHi": "Mandya",
-      "avgPrice": 4717,
+      "avgPrice": 4437,
+      "records": 10
+    },
+    {
+      "district": "Chamrajnagar",
+      "nameHi": "Chamrajnagar",
+      "avgPrice": 4567,
+      "records": 5
+    },
+    {
+      "district": "Kalburgi",
+      "nameHi": "Kalburgi",
+      "avgPrice": 3358,
       "records": 3
     },
     {
@@ -64,21 +138,21 @@
       "records": 2
     },
     {
-      "district": "Kalburgi",
-      "nameHi": "Kalburgi",
-      "avgPrice": 3200,
-      "records": 1
-    },
-    {
-      "district": "Chamrajnagar",
-      "nameHi": "Chamrajnagar",
-      "avgPrice": 6000,
-      "records": 1
-    },
-    {
       "district": "Bellary",
       "nameHi": "Bellary",
       "avgPrice": 4000,
+      "records": 1
+    },
+    {
+      "district": "Dharwad",
+      "nameHi": "Dharwad",
+      "avgPrice": 4085,
+      "records": 1
+    },
+    {
+      "district": "Belgaum",
+      "nameHi": "Belgaum",
+      "avgPrice": 4100,
       "records": 1
     }
   ]

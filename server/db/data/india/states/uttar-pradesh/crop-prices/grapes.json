@@ -15,8 +15,26 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 5705,
+      "market": 6781,
+      "volume": 9
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 4883,
       "volume": 2
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 4620,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 4600,
+      "volume": 5
     }
   ],
   "dailyHistory": [
@@ -61,15 +79,111 @@
       "volume": 1,
       "minPrice": 5160,
       "maxPrice": 5260
+    },
+    {
+      "date": "2026-04-06",
+      "market": 5260,
+      "volume": 1,
+      "minPrice": 5210,
+      "maxPrice": 5310
+    },
+    {
+      "date": "2026-04-09",
+      "market": 6150,
+      "volume": 3,
+      "minPrice": 5300,
+      "maxPrice": 7550
+    },
+    {
+      "date": "2026-04-10",
+      "market": 12000,
+      "volume": 1,
+      "minPrice": 12000,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 6955,
+      "volume": 2,
+      "minPrice": 6810,
+      "maxPrice": 7080
+    },
+    {
+      "date": "2026-05-05",
+      "market": 4915,
+      "volume": 1,
+      "minPrice": 4900,
+      "maxPrice": 4930
+    },
+    {
+      "date": "2026-05-18",
+      "market": 4850,
+      "volume": 1,
+      "minPrice": 4800,
+      "maxPrice": 4900
+    },
+    {
+      "date": "2026-06-30",
+      "market": 4620,
+      "volume": 1,
+      "minPrice": 4600,
+      "maxPrice": 4640
+    },
+    {
+      "date": "2026-07-01",
+      "market": 4620,
+      "volume": 1,
+      "minPrice": 4600,
+      "maxPrice": 4640
+    },
+    {
+      "date": "2026-07-02",
+      "market": 4610,
+      "volume": 1,
+      "minPrice": 4600,
+      "maxPrice": 4620
+    },
+    {
+      "date": "2026-07-03",
+      "market": 4610,
+      "volume": 1,
+      "minPrice": 4600,
+      "maxPrice": 4620
+    },
+    {
+      "date": "2026-07-04",
+      "market": 4610,
+      "volume": 1,
+      "minPrice": 4600,
+      "maxPrice": 4620
+    },
+    {
+      "date": "2026-07-06",
+      "market": 4550,
+      "volume": 1,
+      "minPrice": 4500,
+      "maxPrice": 4600
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
+    {
+      "district": "Shamli",
+      "nameHi": "Shamli",
+      "avgPrice": 4747,
+      "records": 9
+    },
     {
       "district": "Etawah",
       "nameHi": "Etawah",
-      "avgPrice": 5310,
-      "records": 4
+      "avgPrice": 5567,
+      "records": 7
+    },
+    {
+      "district": "Lalitpur",
+      "nameHi": "Lalitpur",
+      "avgPrice": 7275,
+      "records": 2
     },
     {
       "district": "Mau(Maunathbhanjan)",
@@ -81,6 +195,12 @@
       "district": "Firozabad",
       "nameHi": "Firozabad",
       "avgPrice": 6200,
+      "records": 1
+    },
+    {
+      "district": "Siddharth Nagar",
+      "nameHi": "Siddharth Nagar",
+      "avgPrice": 12000,
       "records": 1
     }
   ]

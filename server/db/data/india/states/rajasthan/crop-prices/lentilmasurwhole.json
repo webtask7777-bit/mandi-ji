@@ -9,8 +9,14 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 7536,
-      "volume": 1
+      "market": 7126,
+      "volume": 4
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 8551,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -20,14 +26,73 @@
       "volume": 1,
       "minPrice": 7536,
       "maxPrice": 7536
+    },
+    {
+      "date": "2026-04-09",
+      "market": 6545,
+      "volume": 1,
+      "minPrice": 6220,
+      "maxPrice": 6870
+    },
+    {
+      "date": "2026-04-10",
+      "market": 7373,
+      "volume": 1,
+      "minPrice": 7373,
+      "maxPrice": 7373
+    },
+    {
+      "date": "2026-04-21",
+      "market": 7050,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 7251
+    },
+    {
+      "date": "2026-05-09",
+      "market": 8701,
+      "volume": 1,
+      "minPrice": 8701,
+      "maxPrice": 8701
+    },
+    {
+      "date": "2026-05-14",
+      "market": 8400,
+      "volume": 1,
+      "minPrice": 7400,
+      "maxPrice": 9400
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Bundi",
       "nameHi": "Bundi",
-      "avgPrice": 7536,
+      "avgPrice": 8119,
+      "records": 2
+    },
+    {
+      "district": "Pratapgarh",
+      "nameHi": "Pratapgarh",
+      "avgPrice": 6545,
+      "records": 1
+    },
+    {
+      "district": "Baran",
+      "nameHi": "Baran",
+      "avgPrice": 7373,
+      "records": 1
+    },
+    {
+      "district": "Kota",
+      "nameHi": "Kota",
+      "avgPrice": 7050,
+      "records": 1
+    },
+    {
+      "district": "Jhalawar",
+      "nameHi": "Jhalawar",
+      "avgPrice": 8400,
       "records": 1
     }
   ]

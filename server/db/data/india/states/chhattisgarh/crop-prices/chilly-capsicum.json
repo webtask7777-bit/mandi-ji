@@ -15,7 +15,19 @@
     {
       "month": "04",
       "date": "2026-04",
+      "market": 3260,
+      "volume": 5
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
       "market": 2600,
+      "volume": 3
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 4550,
       "volume": 2
     }
   ],
@@ -40,21 +52,63 @@
       "volume": 1,
       "minPrice": 2400,
       "maxPrice": 2600
+    },
+    {
+      "date": "2026-04-09",
+      "market": 3300,
+      "volume": 1,
+      "minPrice": 3100,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-04-21",
+      "market": 3900,
+      "volume": 2,
+      "minPrice": 2600,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-05-09",
+      "market": 2800,
+      "volume": 1,
+      "minPrice": 2800,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3100
+    },
+    {
+      "date": "2026-05-19",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 1600,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-07-18",
+      "market": 4550,
+      "volume": 2,
+      "minPrice": 3600,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Durg",
       "nameHi": "Durg",
-      "avgPrice": 2600,
-      "records": 3
+      "avgPrice": 2775,
+      "records": 8
     },
     {
       "district": "Rajnandgaon",
       "nameHi": "Rajnandgaon",
-      "avgPrice": 1500,
-      "records": 1
+      "avgPrice": 3775,
+      "records": 4
     }
   ]
 }
