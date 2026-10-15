@@ -1,5 +1,6 @@
 import { getOutlierBounds, isOutlier } from '../lib/outlier.js';
 import { quoteDateISO } from './dataFreshness.js';
+import { isCropPriceCommodity } from './cropEligibility.js';
 
 export function getMandiPrice(mandi) {
   const recent = Number(mandi?.recentPrice);
@@ -63,6 +64,7 @@ export function calculateSaleScenario({ quantity, buyPrice, sellPrice, totalCost
 export function buildPriceGapCandidates(mandiData = {}, crops = []) {
   const meta = new Map(crops.map(c => [c.id, c]));
   return Object.entries(mandiData).flatMap(([cropId, mandis]) => {
+    if (!isCropPriceCommodity(cropId)) return [];
     const pair = getComparisonPair(Array.isArray(mandis) ? mandis : []);
     if (!pair || pair.spread < 300) return [];
     const crop = meta.get(cropId);

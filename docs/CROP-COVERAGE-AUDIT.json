@@ -1,0 +1,2601 @@
+{
+  "auditDate": "2026-10-15",
+  "scope": "Baseline photo coverage before the crop completion update; historical records are dataset counts, not traffic, sales, volume or current quotes.",
+  "apiBehavior": {
+    "all": "server/db/data/india/crops.json",
+    "chhattisgarhOrNoState": "server/db/data/crops.json",
+    "otherState": "server/db/data/india/states/{state}/crops.json",
+    "note": "The generated Chhattisgarh state file is not used by /api/crops?state=chhattisgarh."
+  },
+  "catalogUniqueIds": {
+    "allIndia": 285,
+    "allStateFilesCombined": 285,
+    "allIndiaPlusLegacyChhattisgarh": 315
+  },
+  "existingPhotoAssetFamilies": [
+    "amaranth",
+    "ash-gourd",
+    "banana",
+    "beetroot",
+    "bitter-gourd",
+    "bottle-gourd",
+    "cabbage",
+    "carrot",
+    "cauliflower",
+    "chana",
+    "coriander",
+    "cucumber",
+    "eggplant",
+    "ginger",
+    "green-banana",
+    "maize",
+    "mustard",
+    "okra",
+    "paddy",
+    "wheat"
+  ],
+  "existingAliasMap": {
+    "paddy": "paddy",
+    "paddycommon": "paddy",
+    "paddybasmati": "paddy",
+    "wheat": "wheat",
+    "chana": "chana",
+    "bengal-gramgramwhole": "chana",
+    "maize": "maize",
+    "mustard": "mustard",
+    "eggplant": "eggplant",
+    "brinjal": "eggplant",
+    "carrot": "carrot",
+    "cauliflower": "cauliflower",
+    "cabbage": "cabbage",
+    "bottle-gourd": "bottle-gourd",
+    "okra": "okra",
+    "ladies-finger": "okra",
+    "lady-finger": "okra",
+    "bhindiladies-finger": "okra",
+    "banana": "banana",
+    "ginger": "ginger",
+    "gingergreen": "ginger",
+    "cucumber": "cucumber",
+    "cucumbarkheera": "cucumber",
+    "coriander": "coriander",
+    "corianderleaves": "coriander",
+    "bitter-gourd": "bitter-gourd",
+    "green-banana": "green-banana",
+    "banana-green": "green-banana",
+    "beetroot": "beetroot",
+    "amaranth": "amaranth",
+    "amaranthus": "amaranth",
+    "ash-gourd": "ash-gourd",
+    "ashgourd": "ash-gourd"
+  },
+  "catalogs": {
+    "allIndia": {
+      "path": "server/db/data/india/crops.json",
+      "totalEntries": 285,
+      "photoCoveredEntries": 22,
+      "missingPhotoEntries": 263,
+      "totalHistoricalRecords": 759334,
+      "photoCoveredHistoricalRecords": 462156,
+      "coveredHistoricalRecordsPercent": 60.86,
+      "coveredIds": [
+        "brinjal",
+        "cauliflower",
+        "cabbage",
+        "carrot",
+        "banana",
+        "bottle-gourd",
+        "bhindiladies-finger",
+        "cucumbarkheera",
+        "gingergreen",
+        "bitter-gourd",
+        "corianderleaves",
+        "banana-green",
+        "beetroot",
+        "amaranthus",
+        "ashgourd",
+        "bengal-gramgramwhole",
+        "wheat",
+        "paddycommon",
+        "maize",
+        "mustard",
+        "ladies-finger",
+        "paddybasmati"
+      ],
+      "missing": [
+        {
+          "id": "coconut",
+          "name": "Coconut",
+          "nameHi": "नारियल",
+          "totalRecords": 17809
+        },
+        {
+          "id": "capsicum",
+          "name": "Capsicum",
+          "nameHi": "शिमला मिर्च",
+          "totalRecords": 16581
+        },
+        {
+          "id": "cluster-beans",
+          "name": "Cluster beans",
+          "nameHi": "ग्वारफली",
+          "totalRecords": 16445
+        },
+        {
+          "id": "beans",
+          "name": "Beans",
+          "nameHi": "सेम",
+          "totalRecords": 15701
+        },
+        {
+          "id": "garlic",
+          "name": "Garlic",
+          "nameHi": "लहसुन",
+          "totalRecords": 15218
+        },
+        {
+          "id": "apple",
+          "name": "Apple",
+          "nameHi": "सेब",
+          "totalRecords": 14641
+        },
+        {
+          "id": "drumstick",
+          "name": "Drumstick",
+          "nameHi": "सहजन",
+          "totalRecords": 14261
+        },
+        {
+          "id": "elephant-yamsuran-amorphophallus",
+          "name": "Elephant Yam(Suran)/Amorphophallus",
+          "nameHi": "सूरन",
+          "totalRecords": 14171
+        },
+        {
+          "id": "arhartur-red-gramwhole",
+          "name": "Arhar(Tur/Red Gram)(Whole)",
+          "nameHi": "अरहर",
+          "totalRecords": 13101
+        },
+        {
+          "id": "chikoossapota",
+          "name": "Chikoos(Sapota)",
+          "nameHi": "चीकू",
+          "totalRecords": 12651
+        },
+        {
+          "id": "chow-chow",
+          "name": "Chow Chow",
+          "nameHi": "चायोटे",
+          "totalRecords": 12579
+        },
+        {
+          "id": "cotton",
+          "name": "Cotton",
+          "nameHi": "कपास",
+          "totalRecords": 12174
+        },
+        {
+          "id": "cowpeaveg",
+          "name": "Cowpea(Veg)",
+          "nameHi": "लोबिया",
+          "totalRecords": 11402
+        },
+        {
+          "id": "colacasia",
+          "name": "Colacasia",
+          "nameHi": "अरबी",
+          "totalRecords": 9683
+        },
+        {
+          "id": "bajrapearl-millet-cumbu",
+          "name": "Bajra(Pearl Millet/Cumbu)",
+          "nameHi": "बाजरा",
+          "totalRecords": 9011
+        },
+        {
+          "id": "amlanelli-kai",
+          "name": "Amla(Nelli Kai)",
+          "nameHi": "आँवला",
+          "totalRecords": 8190
+        },
+        {
+          "id": "black-gramurd-beanswhole",
+          "name": "Black Gram(Urd Beans)(Whole)",
+          "nameHi": "सेम",
+          "totalRecords": 6380
+        },
+        {
+          "id": "french-beansfrasbean",
+          "name": "French Beans(Frasbean)",
+          "nameHi": "फ्रेंच बीन",
+          "totalRecords": 4233
+        },
+        {
+          "id": "arecanutbetelnut-supari",
+          "name": "Arecanut(Betelnut/Supari)",
+          "nameHi": "सुपारी",
+          "totalRecords": 3576
+        },
+        {
+          "id": "castor-seed",
+          "name": "Castor Seed",
+          "nameHi": "Castor Seed",
+          "totalRecords": 3390
+        },
+        {
+          "id": "cummin-seedjeera",
+          "name": "Cummin Seed(Jeera)",
+          "nameHi": "Cummin Seed(Jeera)",
+          "totalRecords": 2611
+        },
+        {
+          "id": "corriander-seed",
+          "name": "Corriander seed",
+          "nameHi": "Corriander seed",
+          "totalRecords": 2313
+        },
+        {
+          "id": "tomato",
+          "name": "Tomato",
+          "nameHi": "टमाटर",
+          "totalRecords": 2263
+        },
+        {
+          "id": "onion",
+          "name": "Onion",
+          "nameHi": "प्याज",
+          "totalRecords": 2132
+        },
+        {
+          "id": "potato",
+          "name": "Potato",
+          "nameHi": "आलू",
+          "totalRecords": 2118
+        },
+        {
+          "id": "fish",
+          "name": "Fish",
+          "nameHi": "मछली",
+          "totalRecords": 2072
+        },
+        {
+          "id": "chilly-capsicum",
+          "name": "Chilly Capsicum",
+          "nameHi": "शिमला मिर्च",
+          "totalRecords": 2042
+        },
+        {
+          "id": "green-chilli",
+          "name": "Green Chilli",
+          "nameHi": "हरी मिर्च",
+          "totalRecords": 1935
+        },
+        {
+          "id": "field-pea",
+          "name": "Field Pea",
+          "nameHi": "मटर",
+          "totalRecords": 1767
+        },
+        {
+          "id": "betal-leaves",
+          "name": "Betal Leaves",
+          "nameHi": "पान",
+          "totalRecords": 1732
+        },
+        {
+          "id": "barleyjau",
+          "name": "Barley(Jau)",
+          "nameHi": "Barley(Jau)",
+          "totalRecords": 1700
+        },
+        {
+          "id": "pumpkin",
+          "name": "Pumpkin",
+          "nameHi": "कद्दू",
+          "totalRecords": 1557
+        },
+        {
+          "id": "custard-applesharifa",
+          "name": "Custard Apple(Sharifa)",
+          "nameHi": "सेब",
+          "totalRecords": 1471
+        },
+        {
+          "id": "arhar-daltur-dal",
+          "name": "Arhar Dal(Tur Dal)",
+          "nameHi": "Arhar Dal(Tur Dal)",
+          "totalRecords": 1459
+        },
+        {
+          "id": "black-pepper",
+          "name": "Black pepper",
+          "nameHi": "Black pepper",
+          "totalRecords": 1449
+        },
+        {
+          "id": "dry-chillies",
+          "name": "Dry Chillies",
+          "nameHi": "सूखी मिर्च",
+          "totalRecords": 1428
+        },
+        {
+          "id": "berzizyphus-borehannu",
+          "name": "Ber(Zizyphus/Borehannu)",
+          "nameHi": "Ber(Zizyphus/Borehannu)",
+          "totalRecords": 1388
+        },
+        {
+          "id": "raddish",
+          "name": "Raddish",
+          "nameHi": "मूली",
+          "totalRecords": 1341
+        },
+        {
+          "id": "lemon",
+          "name": "Lemon",
+          "nameHi": "नींबू",
+          "totalRecords": 1241
+        },
+        {
+          "id": "snakeguard",
+          "name": "Snakeguard",
+          "nameHi": "चचिंडा",
+          "totalRecords": 1225
+        },
+        {
+          "id": "ridgeguardtori",
+          "name": "Ridgeguard(Tori)",
+          "nameHi": "तोरई",
+          "totalRecords": 1176
+        },
+        {
+          "id": "onion-green",
+          "name": "Onion Green",
+          "nameHi": "हरा प्याज",
+          "totalRecords": 1143
+        },
+        {
+          "id": "papaya",
+          "name": "Papaya",
+          "nameHi": "पपीता",
+          "totalRecords": 1134
+        },
+        {
+          "id": "green-avarew",
+          "name": "Green Avare(W)",
+          "nameHi": "हरी अवरे",
+          "totalRecords": 1106
+        },
+        {
+          "id": "chili-red",
+          "name": "Chili Red",
+          "nameHi": "लाल मिर्च",
+          "totalRecords": 1075
+        },
+        {
+          "id": "mintpudina",
+          "name": "Mint(Pudina)",
+          "nameHi": "पुदीना",
+          "totalRecords": 1028
+        },
+        {
+          "id": "mangoraw-ripe",
+          "name": "Mango(Raw-Ripe)",
+          "nameHi": "आम",
+          "totalRecords": 892
+        },
+        {
+          "id": "gingerdry",
+          "name": "Ginger(Dry)",
+          "nameHi": "सोंठ",
+          "totalRecords": 878
+        },
+        {
+          "id": "copra",
+          "name": "Copra",
+          "nameHi": "Copra",
+          "totalRecords": 875
+        },
+        {
+          "id": "guava",
+          "name": "Guava",
+          "nameHi": "अमरूद",
+          "totalRecords": 830
+        },
+        {
+          "id": "sweet-potato",
+          "name": "Sweet Potato",
+          "nameHi": "शकरकंद",
+          "totalRecords": 714
+        },
+        {
+          "id": "black-gram-dalurd-dal",
+          "name": "Black Gram Dal(Urd Dal)",
+          "nameHi": "उड़द दाल",
+          "totalRecords": 674
+        },
+        {
+          "id": "cowpealobia-karamani",
+          "name": "Cowpea(Lobia/Karamani)",
+          "nameHi": "Cowpea(Lobia/Karamani)",
+          "totalRecords": 660
+        },
+        {
+          "id": "tapioca",
+          "name": "Tapioca",
+          "nameHi": "कसावा",
+          "totalRecords": 613
+        },
+        {
+          "id": "bengal-gram-dalchana-dal",
+          "name": "Bengal Gram Dal(Chana Dal)",
+          "nameHi": "Bengal Gram Dal(Chana Dal)",
+          "totalRecords": 581
+        },
+        {
+          "id": "yamratalu",
+          "name": "Yam(Ratalu)",
+          "nameHi": "रतालू",
+          "totalRecords": 573
+        },
+        {
+          "id": "thondekai",
+          "name": "Thondekai",
+          "nameHi": "तोंडेकाई",
+          "totalRecords": 565
+        },
+        {
+          "id": "water-melon",
+          "name": "Water Melon",
+          "nameHi": "तरबूज",
+          "totalRecords": 513
+        },
+        {
+          "id": "knool-khol",
+          "name": "Knool Khol",
+          "nameHi": "गाँठ गोभी",
+          "totalRecords": 507
+        },
+        {
+          "id": "ajwan",
+          "name": "Ajwan",
+          "nameHi": "Ajwan",
+          "totalRecords": 504
+        },
+        {
+          "id": "coconut-seed",
+          "name": "Coconut Seed",
+          "nameHi": "नारियल",
+          "totalRecords": 492
+        },
+        {
+          "id": "coconut-oil",
+          "name": "Coconut Oil",
+          "nameHi": "नारियल",
+          "totalRecords": 474
+        },
+        {
+          "id": "grapes",
+          "name": "Grapes",
+          "nameHi": "अंगूर",
+          "totalRecords": 469
+        },
+        {
+          "id": "tender-coconut",
+          "name": "Tender Coconut",
+          "nameHi": "नारियल पानी",
+          "totalRecords": 465
+        },
+        {
+          "id": "groundnut",
+          "name": "Groundnut",
+          "nameHi": "मूँगफली",
+          "totalRecords": 419
+        },
+        {
+          "id": "pomegranate",
+          "name": "Pomegranate",
+          "nameHi": "अनार",
+          "totalRecords": 403
+        },
+        {
+          "id": "green-peas",
+          "name": "Green Peas",
+          "nameHi": "हरी मटर",
+          "totalRecords": 399
+        },
+        {
+          "id": "mousambisweet-lime",
+          "name": "Mousambi(Sweet Lime)",
+          "nameHi": "मौसम्बी",
+          "totalRecords": 376
+        },
+        {
+          "id": "lime",
+          "name": "Lime",
+          "nameHi": "नीबू",
+          "totalRecords": 341
+        },
+        {
+          "id": "indian-beansseam",
+          "name": "Indian Beans(Seam)",
+          "nameHi": "सेम",
+          "totalRecords": 339
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "nameHi": "संतरा",
+          "totalRecords": 330
+        },
+        {
+          "id": "rice",
+          "name": "Rice",
+          "nameHi": "चावल",
+          "totalRecords": 317
+        },
+        {
+          "id": "figanjura-anjeer",
+          "name": "Fig(Anjura/Anjeer)",
+          "nameHi": "Fig(Anjura/Anjeer)",
+          "totalRecords": 296
+        },
+        {
+          "id": "karbujamusk-melon",
+          "name": "Karbuja(Musk Melon)",
+          "nameHi": "खरबूजा",
+          "totalRecords": 271
+        },
+        {
+          "id": "sweet-corn",
+          "name": "Sweet Corn ",
+          "nameHi": "Sweet Corn ",
+          "totalRecords": 265
+        },
+        {
+          "id": "coffee",
+          "name": "Coffee",
+          "nameHi": "Coffee",
+          "totalRecords": 255
+        },
+        {
+          "id": "cashewnuts",
+          "name": "Cashewnuts",
+          "nameHi": "Cashewnuts",
+          "totalRecords": 253
+        },
+        {
+          "id": "alsandikai",
+          "name": "Alsandikai",
+          "nameHi": "Alsandikai",
+          "totalRecords": 236
+        },
+        {
+          "id": "soyabean",
+          "name": "Soyabean",
+          "nameHi": "सोयाबीन",
+          "totalRecords": 230
+        },
+        {
+          "id": "firewood",
+          "name": "Firewood",
+          "nameHi": "जलाऊ लकड़ी",
+          "totalRecords": 226
+        },
+        {
+          "id": "pineapple",
+          "name": "Pineapple",
+          "nameHi": "अनानास",
+          "totalRecords": 212
+        },
+        {
+          "id": "spinach",
+          "name": "Spinach",
+          "nameHi": "पालक",
+          "totalRecords": 206
+        },
+        {
+          "id": "dhaincha",
+          "name": "Dhaincha",
+          "nameHi": "Dhaincha",
+          "totalRecords": 203
+        },
+        {
+          "id": "mashrooms",
+          "name": "Mashrooms",
+          "nameHi": "मशरूम",
+          "totalRecords": 199
+        },
+        {
+          "id": "gram-rawchholia",
+          "name": "Gram Raw(Chholia)",
+          "nameHi": "Gram Raw(Chholia)",
+          "totalRecords": 196
+        },
+        {
+          "id": "amranthas-red",
+          "name": "Amranthas Red",
+          "nameHi": "Amranthas Red",
+          "totalRecords": 193
+        },
+        {
+          "id": "duster-beans",
+          "name": "Duster Beans",
+          "nameHi": "सेम",
+          "totalRecords": 187
+        },
+        {
+          "id": "tamarind-fruit",
+          "name": "Tamarind Fruit",
+          "nameHi": "इमली",
+          "totalRecords": 184
+        },
+        {
+          "id": "mango",
+          "name": "Mango",
+          "nameHi": "आम",
+          "totalRecords": 177
+        },
+        {
+          "id": "peas-wet",
+          "name": "Peas Wet",
+          "nameHi": "हरी मटर",
+          "totalRecords": 167
+        },
+        {
+          "id": "chapparad-avare",
+          "name": "Chapparad Avare",
+          "nameHi": "Chapparad Avare",
+          "totalRecords": 167
+        },
+        {
+          "id": "bunch-beans",
+          "name": "Bunch Beans",
+          "nameHi": "सेम",
+          "totalRecords": 164
+        },
+        {
+          "id": "cow",
+          "name": "Cow",
+          "nameHi": "लोबिया",
+          "totalRecords": 161
+        },
+        {
+          "id": "galgallemon",
+          "name": "Galgal(Lemon)",
+          "nameHi": "नींबू",
+          "totalRecords": 159
+        },
+        {
+          "id": "asgand",
+          "name": "Asgand",
+          "nameHi": "Asgand",
+          "totalRecords": 159
+        },
+        {
+          "id": "alasande-gram",
+          "name": "Alasande Gram",
+          "nameHi": "Alasande Gram",
+          "totalRecords": 148
+        },
+        {
+          "id": "marigoldcalcutta",
+          "name": "Marigold(Calcutta)",
+          "nameHi": "गेंदा",
+          "totalRecords": 137
+        },
+        {
+          "id": "roselocal",
+          "name": "Rose(Local)",
+          "nameHi": "गुलाब",
+          "totalRecords": 137
+        },
+        {
+          "id": "asalia",
+          "name": "Asalia",
+          "nameHi": "Asalia",
+          "totalRecords": 121
+        },
+        {
+          "id": "cotton-seed",
+          "name": "Cotton Seed",
+          "nameHi": "कपास",
+          "totalRecords": 119
+        },
+        {
+          "id": "dry-fodder",
+          "name": "Dry Fodder",
+          "nameHi": "Dry Fodder",
+          "totalRecords": 119
+        },
+        {
+          "id": "chrysanthemumloose",
+          "name": "Chrysanthemum(Loose)",
+          "nameHi": "Chrysanthemum(Loose)",
+          "totalRecords": 118
+        },
+        {
+          "id": "goat",
+          "name": "Goat",
+          "nameHi": "Goat",
+          "totalRecords": 111
+        },
+        {
+          "id": "carnation",
+          "name": "Carnation",
+          "nameHi": "Carnation",
+          "totalRecords": 110
+        },
+        {
+          "id": "turnip",
+          "name": "Turnip",
+          "nameHi": "शलगम",
+          "totalRecords": 108
+        },
+        {
+          "id": "cock",
+          "name": "Cock",
+          "nameHi": "Cock",
+          "totalRecords": 106
+        },
+        {
+          "id": "foxtail-milletnavane",
+          "name": "Foxtail Millet(Navane)",
+          "nameHi": "Foxtail Millet(Navane)",
+          "totalRecords": 99
+        },
+        {
+          "id": "guar",
+          "name": "Guar",
+          "nameHi": "ग्वार",
+          "totalRecords": 98
+        },
+        {
+          "id": "kinnow",
+          "name": "Kinnow",
+          "nameHi": "किन्नू",
+          "totalRecords": 93
+        },
+        {
+          "id": "cardamoms",
+          "name": "Cardamoms",
+          "nameHi": "Cardamoms",
+          "totalRecords": 90
+        },
+        {
+          "id": "little-gourdkundru",
+          "name": "Little gourd(Kundru)",
+          "nameHi": "कुंदरू",
+          "totalRecords": 88
+        },
+        {
+          "id": "jack-fruitripe",
+          "name": "Jack Fruit(Ripe)",
+          "nameHi": "कटहल",
+          "totalRecords": 82
+        },
+        {
+          "id": "methileaves",
+          "name": "Methi(Leaves)",
+          "nameHi": "मेथी",
+          "totalRecords": 82
+        },
+        {
+          "id": "ghee",
+          "name": "Ghee",
+          "nameHi": "Ghee",
+          "totalRecords": 81
+        },
+        {
+          "id": "big-gram",
+          "name": "Big Gram",
+          "nameHi": "Big Gram",
+          "totalRecords": 81
+        },
+        {
+          "id": "chrysanthemum",
+          "name": "Chrysanthemum",
+          "nameHi": "Chrysanthemum",
+          "totalRecords": 77
+        },
+        {
+          "id": "kabuli-chanachickpeas-white",
+          "name": "Kabuli Chana(Chickpeas-White)",
+          "nameHi": "Kabuli Chana(Chickpeas-White)",
+          "totalRecords": 76
+        },
+        {
+          "id": "wood",
+          "name": "Wood",
+          "nameHi": "लकड़ी",
+          "totalRecords": 75
+        },
+        {
+          "id": "pea-pod-pea-cod",
+          "name": "Pea Pod/Pea Cod/हरी मटर",
+          "nameHi": "हरी मटर",
+          "totalRecords": 74
+        },
+        {
+          "id": "avare-dal",
+          "name": "Avare Dal",
+          "nameHi": "Avare Dal",
+          "totalRecords": 74
+        },
+        {
+          "id": "delha",
+          "name": "Delha",
+          "nameHi": "Delha",
+          "totalRecords": 72
+        },
+        {
+          "id": "squashchappal-kadoo",
+          "name": "Squash(Chappal Kadoo)",
+          "nameHi": "Squash(Chappal Kadoo)",
+          "totalRecords": 71
+        },
+        {
+          "id": "jowarsorghum",
+          "name": "Jowar(Sorghum)",
+          "nameHi": "Jowar(Sorghum)",
+          "totalRecords": 70
+        },
+        {
+          "id": "pointed-gourdparval",
+          "name": "Pointed gourd(Parval)",
+          "nameHi": "Pointed gourd(Parval)",
+          "totalRecords": 70
+        },
+        {
+          "id": "jasmine",
+          "name": "Jasmine",
+          "nameHi": "चमेली",
+          "totalRecords": 70
+        },
+        {
+          "id": "dry-grapes",
+          "name": "Dry Grapes",
+          "nameHi": "अंगूर",
+          "totalRecords": 69
+        },
+        {
+          "id": "tinda",
+          "name": "Tinda",
+          "nameHi": "Tinda",
+          "totalRecords": 69
+        },
+        {
+          "id": "anthorium",
+          "name": "Anthorium",
+          "nameHi": "Anthorium",
+          "totalRecords": 67
+        },
+        {
+          "id": "baby-corn",
+          "name": "Baby Corn",
+          "nameHi": "Baby Corn",
+          "totalRecords": 64
+        },
+        {
+          "id": "sweet-pumpkin",
+          "name": "Sweet Pumpkin",
+          "nameHi": "कद्दू",
+          "totalRecords": 63
+        },
+        {
+          "id": "masur-dal",
+          "name": "Masur Dal",
+          "nameHi": "मसूर दाल",
+          "totalRecords": 60
+        },
+        {
+          "id": "astera",
+          "name": "Astera",
+          "nameHi": "Astera",
+          "totalRecords": 59
+        },
+        {
+          "id": "green-grammoongwhole",
+          "name": "Green Gram(Moong)(Whole)",
+          "nameHi": "मूंग",
+          "totalRecords": 58
+        },
+        {
+          "id": "absinthe",
+          "name": "Absinthe",
+          "nameHi": "Absinthe",
+          "totalRecords": 58
+        },
+        {
+          "id": "asparagus",
+          "name": "Asparagus",
+          "nameHi": "Asparagus",
+          "totalRecords": 57
+        },
+        {
+          "id": "beaten-rice",
+          "name": "Beaten Rice",
+          "nameHi": "चावल",
+          "totalRecords": 57
+        },
+        {
+          "id": "gurjaggery",
+          "name": "Gur(Jaggery)",
+          "nameHi": "Gur(Jaggery)",
+          "totalRecords": 56
+        },
+        {
+          "id": "lentilmasurwhole",
+          "name": "Lentil(Masur)(Whole)",
+          "nameHi": "Lentil(Masur)(Whole)",
+          "totalRecords": 53
+        },
+        {
+          "id": "almondbadam",
+          "name": "Almond(Badam)",
+          "nameHi": "Almond(Badam)",
+          "totalRecords": 49
+        },
+        {
+          "id": "cinamondalchini",
+          "name": "Cinamon(Dalchini)",
+          "nameHi": "Cinamon(Dalchini)",
+          "totalRecords": 47
+        },
+        {
+          "id": "tube-roseloose",
+          "name": "Tube Rose(Loose)",
+          "nameHi": "रजनीगंधा",
+          "totalRecords": 47
+        },
+        {
+          "id": "green-gram-dalmoong-dal",
+          "name": "Green Gram Dal(Moong Dal)",
+          "nameHi": "Green Gram Dal(Moong Dal)",
+          "totalRecords": 44
+        },
+        {
+          "id": "bullar",
+          "name": "Bullar",
+          "nameHi": "Bullar",
+          "totalRecords": 42
+        },
+        {
+          "id": "sponge-gourd",
+          "name": "Sponge gourd",
+          "nameHi": "नेनुआ",
+          "totalRecords": 41
+        },
+        {
+          "id": "papayaraw",
+          "name": "Papaya(Raw)",
+          "nameHi": "पपीता",
+          "totalRecords": 39
+        },
+        {
+          "id": "long-melonkakri",
+          "name": "Long Melon(Kakri)",
+          "nameHi": "Long Melon(Kakri)",
+          "totalRecords": 38
+        },
+        {
+          "id": "ashwagandha",
+          "name": "Ashwagandha",
+          "nameHi": "Ashwagandha",
+          "totalRecords": 38
+        },
+        {
+          "id": "giloy",
+          "name": "Giloy",
+          "nameHi": "Giloy",
+          "totalRecords": 38
+        },
+        {
+          "id": "methi-seeds",
+          "name": "Methi Seeds",
+          "nameHi": "मेथी दाना",
+          "totalRecords": 37
+        },
+        {
+          "id": "egg",
+          "name": "Egg",
+          "nameHi": "Egg",
+          "totalRecords": 36
+        },
+        {
+          "id": "bop",
+          "name": "BOP",
+          "nameHi": "BOP",
+          "totalRecords": 36
+        },
+        {
+          "id": "behada",
+          "name": "Behada",
+          "nameHi": "Behada",
+          "totalRecords": 32
+        },
+        {
+          "id": "calf",
+          "name": "Calf",
+          "nameHi": "Calf",
+          "totalRecords": 32
+        },
+        {
+          "id": "sesamumsesame-gingelly-til",
+          "name": "Sesamum(Sesame,Gingelly,Til)",
+          "nameHi": "Sesamum(Sesame,Gingelly,Til)",
+          "totalRecords": 29
+        },
+        {
+          "id": "guar-seedcluster-beans-seed",
+          "name": "Guar Seed(Cluster Beans Seed)",
+          "nameHi": "सेम",
+          "totalRecords": 26
+        },
+        {
+          "id": "dates",
+          "name": "Dates",
+          "nameHi": "Dates",
+          "totalRecords": 25
+        },
+        {
+          "id": "kakada",
+          "name": "Kakada",
+          "nameHi": "Kakada",
+          "totalRecords": 25
+        },
+        {
+          "id": "pegeon-peaarhar-fali",
+          "name": "Pegeon Pea(Arhar Fali)",
+          "nameHi": "अरहर फली",
+          "totalRecords": 24
+        },
+        {
+          "id": "gond",
+          "name": "Gond",
+          "nameHi": "Gond",
+          "totalRecords": 24
+        },
+        {
+          "id": "gladiolus-cut-flower",
+          "name": "Gladiolus Cut Flower",
+          "nameHi": "Gladiolus Cut Flower",
+          "totalRecords": 23
+        },
+        {
+          "id": "betelnuts",
+          "name": "Betelnuts",
+          "nameHi": "Betelnuts",
+          "totalRecords": 23
+        },
+        {
+          "id": "ragifinger-millet",
+          "name": "Ragi(Finger Millet)",
+          "nameHi": "Ragi(Finger Millet)",
+          "totalRecords": 21
+        },
+        {
+          "id": "leafy-vegetable",
+          "name": "Leafy Vegetable",
+          "nameHi": "Leafy Vegetable",
+          "totalRecords": 20
+        },
+        {
+          "id": "soanf",
+          "name": "Soanf",
+          "nameHi": "Soanf",
+          "totalRecords": 18
+        },
+        {
+          "id": "turmeric",
+          "name": "Turmeric",
+          "nameHi": "कच्ची हल्दी",
+          "totalRecords": 18
+        },
+        {
+          "id": "coleus",
+          "name": "Coleus",
+          "nameHi": "Coleus",
+          "totalRecords": 17
+        },
+        {
+          "id": "peasdry",
+          "name": "Peas(Dry)",
+          "nameHi": "Peas(Dry)",
+          "totalRecords": 17
+        },
+        {
+          "id": "mahua",
+          "name": "Mahua",
+          "nameHi": "Mahua",
+          "totalRecords": 17
+        },
+        {
+          "id": "round-gourd",
+          "name": "Round gourd",
+          "nameHi": "टिंडा",
+          "totalRecords": 16
+        },
+        {
+          "id": "coconut-coir",
+          "name": "Coconut Coir",
+          "nameHi": "नारियल",
+          "totalRecords": 15
+        },
+        {
+          "id": "buttery",
+          "name": "buttery",
+          "nameHi": "buttery",
+          "totalRecords": 15
+        },
+        {
+          "id": "mustard-oil",
+          "name": "Mustard Oil",
+          "nameHi": "सरसों",
+          "totalRecords": 15
+        },
+        {
+          "id": "ground-nut-seed",
+          "name": "Ground Nut Seed",
+          "nameHi": "Ground Nut Seed",
+          "totalRecords": 14
+        },
+        {
+          "id": "safflower",
+          "name": "Safflower",
+          "nameHi": "Safflower",
+          "totalRecords": 14
+        },
+        {
+          "id": "jute",
+          "name": "Jute",
+          "nameHi": "Jute",
+          "totalRecords": 14
+        },
+        {
+          "id": "cloves",
+          "name": "Cloves",
+          "nameHi": "Cloves",
+          "totalRecords": 13
+        },
+        {
+          "id": "seemebadnekai",
+          "name": "Seemebadnekai",
+          "nameHi": "Seemebadnekai",
+          "totalRecords": 12
+        },
+        {
+          "id": "taramira",
+          "name": "Taramira",
+          "nameHi": "Taramira",
+          "totalRecords": 12
+        },
+        {
+          "id": "tube-flower",
+          "name": "Tube Flower",
+          "nameHi": "Tube Flower",
+          "totalRecords": 12
+        },
+        {
+          "id": "sunflower",
+          "name": "Sunflower",
+          "nameHi": "Sunflower",
+          "totalRecords": 12
+        },
+        {
+          "id": "cocoa",
+          "name": "Cocoa",
+          "nameHi": "Cocoa",
+          "totalRecords": 11
+        },
+        {
+          "id": "turmericraw",
+          "name": "Turmeric(raw)",
+          "nameHi": "कच्ची हल्दी",
+          "totalRecords": 11
+        },
+        {
+          "id": "rajgir",
+          "name": "Rajgir",
+          "nameHi": "Rajgir",
+          "totalRecords": 11
+        },
+        {
+          "id": "chhappan-kaddu",
+          "name": "Chhappan Kaddu",
+          "nameHi": "Chhappan Kaddu",
+          "totalRecords": 11
+        },
+        {
+          "id": "isabgulpsyllium",
+          "name": "Isabgul(Psyllium)",
+          "nameHi": "Isabgul(Psyllium)",
+          "totalRecords": 11
+        },
+        {
+          "id": "tobacco",
+          "name": "Tobacco",
+          "nameHi": "Tobacco",
+          "totalRecords": 11
+        },
+        {
+          "id": "lakteora",
+          "name": "Lak(Teora)",
+          "nameHi": "Lak(Teora)",
+          "totalRecords": 11
+        },
+        {
+          "id": "suvadill-seed",
+          "name": "Suva(Dill Seed)",
+          "nameHi": "Suva(Dill Seed)",
+          "totalRecords": 11
+        },
+        {
+          "id": "bull",
+          "name": "Bull",
+          "nameHi": "Bull",
+          "totalRecords": 11
+        },
+        {
+          "id": "cherry",
+          "name": "Cherry",
+          "nameHi": "Cherry",
+          "totalRecords": 11
+        },
+        {
+          "id": "linseed",
+          "name": "Linseed",
+          "nameHi": "Linseed",
+          "totalRecords": 10
+        },
+        {
+          "id": "kodo-milletvaragu",
+          "name": "Kodo Millet(Varagu)",
+          "nameHi": "Kodo Millet(Varagu)",
+          "totalRecords": 10
+        },
+        {
+          "id": "kulthihorse-gram",
+          "name": "Kulthi(Horse Gram)",
+          "nameHi": "Kulthi(Horse Gram)",
+          "totalRecords": 10
+        },
+        {
+          "id": "red-gram",
+          "name": "Red Gram",
+          "nameHi": "अरहर",
+          "totalRecords": 9
+        },
+        {
+          "id": "ambady-mesta-patson",
+          "name": "Ambady/Mesta/Patson",
+          "nameHi": "Ambady/Mesta/Patson",
+          "totalRecords": 8
+        },
+        {
+          "id": "kutki",
+          "name": "Kutki",
+          "nameHi": "Kutki",
+          "totalRecords": 8
+        },
+        {
+          "id": "rubber",
+          "name": "Rubber",
+          "nameHi": "Rubber",
+          "totalRecords": 7
+        },
+        {
+          "id": "sugar",
+          "name": "Sugar",
+          "nameHi": "Sugar",
+          "totalRecords": 7
+        },
+        {
+          "id": "flax-seeds",
+          "name": "Flax seeds",
+          "nameHi": "Flax seeds",
+          "totalRecords": 7
+        },
+        {
+          "id": "surat-beanspapadi",
+          "name": "Surat Beans(Papadi)",
+          "nameHi": "पापड़ी",
+          "totalRecords": 7
+        },
+        {
+          "id": "raibel",
+          "name": "Raibel",
+          "nameHi": "Raibel",
+          "totalRecords": 7
+        },
+        {
+          "id": "marget",
+          "name": "Marget",
+          "nameHi": "Marget",
+          "totalRecords": 7
+        },
+        {
+          "id": "tamarind-seed",
+          "name": "Tamarind Seed",
+          "nameHi": "Tamarind Seed",
+          "totalRecords": 7
+        },
+        {
+          "id": "chakotha",
+          "name": "Chakotha",
+          "nameHi": "Chakotha",
+          "totalRecords": 6
+        },
+        {
+          "id": "mahedi",
+          "name": "Mahedi",
+          "nameHi": "Mahedi",
+          "totalRecords": 6
+        },
+        {
+          "id": "marigoldloose",
+          "name": "Marigold(loose)",
+          "nameHi": "Marigold(loose)",
+          "totalRecords": 6
+        },
+        {
+          "id": "same-savi",
+          "name": "Same/Savi",
+          "nameHi": "Same/Savi",
+          "totalRecords": 5
+        },
+        {
+          "id": "roseloose",
+          "name": "Rose(Loose))",
+          "nameHi": "रजनीगंधा",
+          "totalRecords": 5
+        },
+        {
+          "id": "other-green-and-fresh-vegetables",
+          "name": "Other green and fresh vegetables",
+          "nameHi": "Other green and fresh vegetables",
+          "totalRecords": 5
+        },
+        {
+          "id": "groundnut-podsraw",
+          "name": "Groundnut pods(raw)",
+          "nameHi": "मूँगफली",
+          "totalRecords": 5
+        },
+        {
+          "id": "lilly",
+          "name": "Lilly",
+          "nameHi": "Lilly",
+          "totalRecords": 5
+        },
+        {
+          "id": "wheat-atta",
+          "name": "Wheat Atta",
+          "nameHi": "गेहूँ",
+          "totalRecords": 5
+        },
+        {
+          "id": "pearmarasebu",
+          "name": "Pear(Marasebu)",
+          "nameHi": "Pear(Marasebu)",
+          "totalRecords": 4
+        },
+        {
+          "id": "sabu-dan",
+          "name": "Sabu Dan",
+          "nameHi": "Sabu Dan",
+          "totalRecords": 4
+        },
+        {
+          "id": "bhui-amlaya",
+          "name": "Bhui Amlaya",
+          "nameHi": "Bhui Amlaya",
+          "totalRecords": 4
+        },
+        {
+          "id": "tube-rosedouble",
+          "name": "Tube Rose(Double)",
+          "nameHi": "रजनीगंधा",
+          "totalRecords": 4
+        },
+        {
+          "id": "maida-atta",
+          "name": "Maida Atta",
+          "nameHi": "Maida Atta",
+          "totalRecords": 4
+        },
+        {
+          "id": "strawberry",
+          "name": "Strawberry",
+          "nameHi": "Strawberry",
+          "totalRecords": 3
+        },
+        {
+          "id": "khandsaridesi-khand",
+          "name": "Khandsari(Desi Khand)",
+          "nameHi": "Khandsari(Desi Khand)",
+          "totalRecords": 3
+        },
+        {
+          "id": "poppy-seeds",
+          "name": "poppy seeds",
+          "nameHi": "poppy seeds",
+          "totalRecords": 3
+        },
+        {
+          "id": "millets",
+          "name": "Millets",
+          "nameHi": "Millets",
+          "totalRecords": 3
+        },
+        {
+          "id": "orchid",
+          "name": "Orchid",
+          "nameHi": "Orchid",
+          "totalRecords": 3
+        },
+        {
+          "id": "tube-rosesingle",
+          "name": "Tube Rose(Single)",
+          "nameHi": "Tube Rose(Single)",
+          "totalRecords": 3
+        },
+        {
+          "id": "jaffri",
+          "name": "Jaffri",
+          "nameHi": "Jaffri",
+          "totalRecords": 3
+        },
+        {
+          "id": "patti-calcutta",
+          "name": "Patti Calcutta",
+          "nameHi": "Patti Calcutta",
+          "totalRecords": 3
+        },
+        {
+          "id": "suvarna-gadde",
+          "name": "Suvarna Gadde",
+          "nameHi": "Suvarna Gadde",
+          "totalRecords": 3
+        },
+        {
+          "id": "green-fodder",
+          "name": "Green Fodder",
+          "nameHi": "Green Fodder",
+          "totalRecords": 3
+        },
+        {
+          "id": "snow-mountain-garlic",
+          "name": "Snow Mountain Garlic",
+          "nameHi": "लहसुन",
+          "totalRecords": 3
+        },
+        {
+          "id": "duck",
+          "name": "Duck",
+          "nameHi": "Duck",
+          "totalRecords": 3
+        },
+        {
+          "id": "yam",
+          "name": "Yam",
+          "nameHi": "रतालू",
+          "totalRecords": 3
+        },
+        {
+          "id": "white-muesli",
+          "name": "White Muesli",
+          "nameHi": "White Muesli",
+          "totalRecords": 3
+        },
+        {
+          "id": "taro-arvi-stem",
+          "name": "Taro (Arvi) Stem",
+          "nameHi": "Taro (Arvi) Stem",
+          "totalRecords": 3
+        },
+        {
+          "id": "pepper-garbled",
+          "name": "Pepper garbled",
+          "nameHi": "Pepper garbled",
+          "totalRecords": 2
+        },
+        {
+          "id": "mentha-oil",
+          "name": "Mentha Oil",
+          "nameHi": "Mentha Oil",
+          "totalRecords": 2
+        },
+        {
+          "id": "rab-liquid-jaggery-molasses",
+          "name": "Rab/Liquid Jaggery/Molasses",
+          "nameHi": "Rab/Liquid Jaggery/Molasses",
+          "totalRecords": 2
+        },
+        {
+          "id": "nigella-seeds",
+          "name": "nigella seeds",
+          "nameHi": "nigella seeds",
+          "totalRecords": 2
+        },
+        {
+          "id": "groundnutsplit",
+          "name": "Groundnut(Split)",
+          "nameHi": "मूँगफली",
+          "totalRecords": 2
+        },
+        {
+          "id": "jarbara",
+          "name": "Jarbara",
+          "nameHi": "Jarbara",
+          "totalRecords": 2
+        },
+        {
+          "id": "tulip",
+          "name": "Tulip",
+          "nameHi": "Tulip",
+          "totalRecords": 2
+        },
+        {
+          "id": "soapnutantawala-retha",
+          "name": "Soapnut(Antawala/Retha)",
+          "nameHi": "Soapnut(Antawala/Retha)",
+          "totalRecords": 2
+        },
+        {
+          "id": "mataki",
+          "name": "Mataki",
+          "nameHi": "Mataki",
+          "totalRecords": 2
+        },
+        {
+          "id": "kiwi-fruit",
+          "name": "Kiwi Fruit",
+          "nameHi": "Kiwi Fruit",
+          "totalRecords": 2
+        },
+        {
+          "id": "avocado",
+          "name": "Avocado",
+          "nameHi": "Avocado",
+          "totalRecords": 2
+        },
+        {
+          "id": "she-buffalo",
+          "name": "She Buffalo",
+          "nameHi": "She Buffalo",
+          "totalRecords": 2
+        },
+        {
+          "id": "sugarcane",
+          "name": "Sugarcane",
+          "nameHi": "Sugarcane",
+          "totalRecords": 2
+        },
+        {
+          "id": "karamani",
+          "name": "Karamani",
+          "nameHi": "Karamani",
+          "totalRecords": 2
+        },
+        {
+          "id": "balekai",
+          "name": "Balekai",
+          "nameHi": "Balekai",
+          "totalRecords": 1
+        },
+        {
+          "id": "moath-dal",
+          "name": "Moath Dal",
+          "nameHi": "Moath Dal",
+          "totalRecords": 1
+        },
+        {
+          "id": "season-leaves",
+          "name": "Season Leaves",
+          "nameHi": "Season Leaves",
+          "totalRecords": 1
+        },
+        {
+          "id": "sweet-saag",
+          "name": "Sweet Saag",
+          "nameHi": "Sweet Saag",
+          "totalRecords": 1
+        },
+        {
+          "id": "makhanafoxnut",
+          "name": "Makhana(Foxnut)",
+          "nameHi": "Makhana(Foxnut)",
+          "totalRecords": 1
+        },
+        {
+          "id": "brahmi",
+          "name": "Brahmi",
+          "nameHi": "Brahmi",
+          "totalRecords": 1
+        },
+        {
+          "id": "mango-powder",
+          "name": "mango powder",
+          "nameHi": "आम",
+          "totalRecords": 1
+        },
+        {
+          "id": "harrah",
+          "name": "Harrah",
+          "nameHi": "Harrah",
+          "totalRecords": 1
+        },
+        {
+          "id": "pupadia",
+          "name": "Pupadia",
+          "nameHi": "Pupadia",
+          "totalRecords": 1
+        },
+        {
+          "id": "white-pumpkin",
+          "name": "White Pumpkin",
+          "nameHi": "कद्दू",
+          "totalRecords": 1
+        },
+        {
+          "id": "honge-seed",
+          "name": "Honge seed",
+          "nameHi": "Honge seed",
+          "totalRecords": 1
+        },
+        {
+          "id": "he-buffalo",
+          "name": "He Buffalo",
+          "nameHi": "He Buffalo",
+          "totalRecords": 1
+        },
+        {
+          "id": "pigs",
+          "name": "Pigs",
+          "nameHi": "Pigs",
+          "totalRecords": 1
+        },
+        {
+          "id": "sunflower-seed",
+          "name": "Sunflower Seed",
+          "nameHi": "Sunflower Seed",
+          "totalRecords": 1
+        },
+        {
+          "id": "white-peas",
+          "name": "White Peas",
+          "nameHi": "White Peas",
+          "totalRecords": 1
+        },
+        {
+          "id": "mahua-seedhippe-seed",
+          "name": "Mahua Seed(Hippe seed)",
+          "nameHi": "Mahua Seed(Hippe seed)",
+          "totalRecords": 1
+        },
+        {
+          "id": "niger-seedramtil",
+          "name": "Niger Seed(Ramtil)",
+          "nameHi": "Niger Seed(Ramtil)",
+          "totalRecords": 1
+        }
+      ]
+    },
+    "chhattisgarhActive": {
+      "path": "server/db/data/crops.json",
+      "totalEntries": 56,
+      "photoCoveredEntries": 11,
+      "missingPhotoEntries": 45,
+      "totalHistoricalRecords": 85172,
+      "photoCoveredHistoricalRecords": 46661,
+      "coveredHistoricalRecordsPercent": 54.78,
+      "coveredIds": [
+        "paddy",
+        "maize",
+        "wheat",
+        "cabbage",
+        "cauliflower",
+        "brinjal",
+        "carrot",
+        "banana",
+        "beetroot",
+        "coriander",
+        "mustard"
+      ],
+      "missing": [
+        {
+          "id": "mahua",
+          "name": "Mahua Flower",
+          "nameHi": "महुवे के फूल",
+          "totalRecords": 2150
+        },
+        {
+          "id": "tomato",
+          "name": "Tomato",
+          "nameHi": "टमाटर",
+          "totalRecords": 1485
+        },
+        {
+          "id": "potato",
+          "name": "Potato",
+          "nameHi": "आलू",
+          "totalRecords": 1481
+        },
+        {
+          "id": "tamarind",
+          "name": "Tamarind",
+          "nameHi": "इमली",
+          "totalRecords": 1481
+        },
+        {
+          "id": "pumpkin",
+          "name": "Pumpkin",
+          "nameHi": "कुम्हड़ा",
+          "totalRecords": 1453
+        },
+        {
+          "id": "bittergourd",
+          "name": "Bitter Gourd",
+          "nameHi": "करेला",
+          "totalRecords": 1449
+        },
+        {
+          "id": "bottlegourd",
+          "name": "Bottle Gourd",
+          "nameHi": "लौकी",
+          "totalRecords": 1444
+        },
+        {
+          "id": "cowpea",
+          "name": "Cowpea/Barbati",
+          "nameHi": "सेम बरबटी",
+          "totalRecords": 1409
+        },
+        {
+          "id": "ladyfinger",
+          "name": "Lady Finger",
+          "nameHi": "भिण्डी",
+          "totalRecords": 1382
+        },
+        {
+          "id": "capsicum",
+          "name": "Capsicum",
+          "nameHi": "शिमला मिर्च",
+          "totalRecords": 1360
+        },
+        {
+          "id": "gram",
+          "name": "Gram",
+          "nameHi": "चना",
+          "totalRecords": 1344
+        },
+        {
+          "id": "onion",
+          "name": "Onion",
+          "nameHi": "प्याज",
+          "totalRecords": 1309
+        },
+        {
+          "id": "kundru",
+          "name": "Ivy Gourd",
+          "nameHi": "कुंदरू",
+          "totalRecords": 1293
+        },
+        {
+          "id": "lemon",
+          "name": "Lemon",
+          "nameHi": "नींबू",
+          "totalRecords": 1290
+        },
+        {
+          "id": "redcowpea",
+          "name": "Red Cowpea",
+          "nameHi": "चवली",
+          "totalRecords": 1266
+        },
+        {
+          "id": "spinach",
+          "name": "Spinach",
+          "nameHi": "पालक भाजी",
+          "totalRecords": 1224
+        },
+        {
+          "id": "radish",
+          "name": "Radish",
+          "nameHi": "मूली",
+          "totalRecords": 1191
+        },
+        {
+          "id": "soybean",
+          "name": "Soyabean",
+          "nameHi": "सोयाबीन",
+          "totalRecords": 1185
+        },
+        {
+          "id": "clusterbean",
+          "name": "Cluster Bean",
+          "nameHi": "गंवार फली",
+          "totalRecords": 1137
+        },
+        {
+          "id": "tivda",
+          "name": "Tivda/Lathyrus",
+          "nameHi": "तिवड़ा",
+          "totalRecords": 1135
+        },
+        {
+          "id": "otherveg",
+          "name": "Other Vegetables",
+          "nameHi": "अन्य हरी एवं ताजी सब्जियाँ",
+          "totalRecords": 1088
+        },
+        {
+          "id": "greenchilli",
+          "name": "Green Chilli",
+          "nameHi": "हरी मिर्च",
+          "totalRecords": 986
+        },
+        {
+          "id": "millets",
+          "name": "Millets",
+          "nameHi": "कोदो-कुटकी",
+          "totalRecords": 927
+        },
+        {
+          "id": "pomegranate",
+          "name": "Pomegranate",
+          "nameHi": "अनार",
+          "totalRecords": 916
+        },
+        {
+          "id": "parwal",
+          "name": "Pointed Gourd",
+          "nameHi": "परवल",
+          "totalRecords": 905
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "nameHi": "संतरा",
+          "totalRecords": 843
+        },
+        {
+          "id": "peas",
+          "name": "Peas",
+          "nameHi": "मटर",
+          "totalRecords": 769
+        },
+        {
+          "id": "colocasia",
+          "name": "Colocasia/Arbi",
+          "nameHi": "अरबी",
+          "totalRecords": 730
+        },
+        {
+          "id": "ridgegourd",
+          "name": "Ridge Gourd",
+          "nameHi": "तुरई",
+          "totalRecords": 542
+        },
+        {
+          "id": "arhar",
+          "name": "Arhar/Toor",
+          "nameHi": "तुअर",
+          "totalRecords": 480
+        },
+        {
+          "id": "mango",
+          "name": "Mango",
+          "nameHi": "आम",
+          "totalRecords": 435
+        },
+        {
+          "id": "fenugreek",
+          "name": "Fenugreek",
+          "nameHi": "मैथी",
+          "totalRecords": 426
+        },
+        {
+          "id": "masoor",
+          "name": "Masoor",
+          "nameHi": "मसूर",
+          "totalRecords": 381
+        },
+        {
+          "id": "groundnut",
+          "name": "Groundnut",
+          "nameHi": "मूँगफली",
+          "totalRecords": 338
+        },
+        {
+          "id": "garlic",
+          "name": "Garlic",
+          "nameHi": "लहसून",
+          "totalRecords": 243
+        },
+        {
+          "id": "barnyard",
+          "name": "Barnyard Millet",
+          "nameHi": "सावां",
+          "totalRecords": 204
+        },
+        {
+          "id": "moong",
+          "name": "Moong",
+          "nameHi": "मूंग",
+          "totalRecords": 204
+        },
+        {
+          "id": "urad",
+          "name": "Urad",
+          "nameHi": "उड़द",
+          "totalRecords": 189
+        },
+        {
+          "id": "chilli",
+          "name": "Chilli",
+          "nameHi": "मिर्च",
+          "totalRecords": 160
+        },
+        {
+          "id": "linseed",
+          "name": "Linseed",
+          "nameHi": "अलसी",
+          "totalRecords": 94
+        },
+        {
+          "id": "sesame",
+          "name": "Sesame",
+          "nameHi": "तिल",
+          "totalRecords": 92
+        },
+        {
+          "id": "turmeric",
+          "name": "Turmeric",
+          "nameHi": "हल्दी",
+          "totalRecords": 35
+        },
+        {
+          "id": "ragi",
+          "name": "Finger Millet",
+          "nameHi": "रागी",
+          "totalRecords": 35
+        },
+        {
+          "id": "sunflower",
+          "name": "Sunflower",
+          "nameHi": "सूरजमुखी",
+          "totalRecords": 11
+        },
+        {
+          "id": "jowar",
+          "name": "Jowar/Sorghum",
+          "nameHi": "ज्वार",
+          "totalRecords": 10
+        }
+      ]
+    },
+    "chhattisgarhGeneratedInactive": {
+      "path": "server/db/data/india/states/chhattisgarh/crops.json",
+      "totalEntries": 69,
+      "photoCoveredEntries": 17,
+      "missingPhotoEntries": 52,
+      "totalHistoricalRecords": 495,
+      "photoCoveredHistoricalRecords": 286,
+      "coveredHistoricalRecordsPercent": 57.78,
+      "coveredIds": [
+        "bengal-gramgramwhole",
+        "paddycommon",
+        "carrot",
+        "brinjal",
+        "bottle-gourd",
+        "bitter-gourd",
+        "cabbage",
+        "amaranthus",
+        "banana",
+        "cauliflower",
+        "ashgourd",
+        "beetroot",
+        "bhindiladies-finger",
+        "maize",
+        "cucumbarkheera",
+        "wheat",
+        "mustard"
+      ],
+      "missing": [
+        {
+          "id": "arhar-daltur-dal",
+          "name": "Arhar Dal(Tur Dal)",
+          "nameHi": "Arhar Dal(Tur Dal)",
+          "totalRecords": 27
+        },
+        {
+          "id": "mahua",
+          "name": "Mahua",
+          "nameHi": "Mahua",
+          "totalRecords": 10
+        },
+        {
+          "id": "black-gramurd-beanswhole",
+          "name": "Black Gram(Urd Beans)(Whole)",
+          "nameHi": "सेम",
+          "totalRecords": 9
+        },
+        {
+          "id": "mousambisweet-lime",
+          "name": "Mousambi(Sweet Lime)",
+          "nameHi": "मौसम्बी",
+          "totalRecords": 8
+        },
+        {
+          "id": "lemon",
+          "name": "Lemon",
+          "nameHi": "नींबू",
+          "totalRecords": 8
+        },
+        {
+          "id": "jack-fruitripe",
+          "name": "Jack Fruit(Ripe)",
+          "nameHi": "कटहल",
+          "totalRecords": 7
+        },
+        {
+          "id": "guar-seedcluster-beans-seed",
+          "name": "Guar Seed(Cluster Beans Seed)",
+          "nameHi": "सेम",
+          "totalRecords": 7
+        },
+        {
+          "id": "potato",
+          "name": "Potato",
+          "nameHi": "आलू",
+          "totalRecords": 7
+        },
+        {
+          "id": "ambady-mesta-patson",
+          "name": "Ambady/Mesta/Patson",
+          "nameHi": "Ambady/Mesta/Patson",
+          "totalRecords": 6
+        },
+        {
+          "id": "onion",
+          "name": "Onion",
+          "nameHi": "प्याज",
+          "totalRecords": 6
+        },
+        {
+          "id": "raddish",
+          "name": "Raddish",
+          "nameHi": "मूली",
+          "totalRecords": 6
+        },
+        {
+          "id": "green-chilli",
+          "name": "Green Chilli",
+          "nameHi": "हरी मिर्च",
+          "totalRecords": 5
+        },
+        {
+          "id": "little-gourdkundru",
+          "name": "Little gourd(Kundru)",
+          "nameHi": "कुंदरू",
+          "totalRecords": 5
+        },
+        {
+          "id": "grapes",
+          "name": "Grapes",
+          "nameHi": "अंगूर",
+          "totalRecords": 5
+        },
+        {
+          "id": "apple",
+          "name": "Apple",
+          "nameHi": "सेब",
+          "totalRecords": 5
+        },
+        {
+          "id": "chilly-capsicum",
+          "name": "Chilly Capsicum",
+          "nameHi": "शिमला मिर्च",
+          "totalRecords": 4
+        },
+        {
+          "id": "other-green-and-fresh-vegetables",
+          "name": "Other green and fresh vegetables",
+          "nameHi": "Other green and fresh vegetables",
+          "totalRecords": 4
+        },
+        {
+          "id": "water-melon",
+          "name": "Water Melon",
+          "nameHi": "तरबूज",
+          "totalRecords": 4
+        },
+        {
+          "id": "squashchappal-kadoo",
+          "name": "Squash(Chappal Kadoo)",
+          "nameHi": "Squash(Chappal Kadoo)",
+          "totalRecords": 4
+        },
+        {
+          "id": "pointed-gourdparval",
+          "name": "Pointed gourd(Parval)",
+          "nameHi": "Pointed gourd(Parval)",
+          "totalRecords": 4
+        },
+        {
+          "id": "methileaves",
+          "name": "Methi(Leaves)",
+          "nameHi": "मेथी",
+          "totalRecords": 4
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "nameHi": "संतरा",
+          "totalRecords": 4
+        },
+        {
+          "id": "spinach",
+          "name": "Spinach",
+          "nameHi": "पालक",
+          "totalRecords": 4
+        },
+        {
+          "id": "peasdry",
+          "name": "Peas(Dry)",
+          "nameHi": "Peas(Dry)",
+          "totalRecords": 3
+        },
+        {
+          "id": "cowpeaveg",
+          "name": "Cowpea(Veg)",
+          "nameHi": "लोबिया",
+          "totalRecords": 3
+        },
+        {
+          "id": "lakteora",
+          "name": "Lak(Teora)",
+          "nameHi": "Lak(Teora)",
+          "totalRecords": 3
+        },
+        {
+          "id": "chikoossapota",
+          "name": "Chikoos(Sapota)",
+          "nameHi": "चीकू",
+          "totalRecords": 3
+        },
+        {
+          "id": "yam",
+          "name": "Yam",
+          "nameHi": "रतालू",
+          "totalRecords": 3
+        },
+        {
+          "id": "white-muesli",
+          "name": "White Muesli",
+          "nameHi": "White Muesli",
+          "totalRecords": 3
+        },
+        {
+          "id": "sweet-potato",
+          "name": "Sweet Potato",
+          "nameHi": "शकरकंद",
+          "totalRecords": 3
+        },
+        {
+          "id": "tamarind-fruit",
+          "name": "Tamarind Fruit",
+          "nameHi": "इमली",
+          "totalRecords": 3
+        },
+        {
+          "id": "pomegranate",
+          "name": "Pomegranate",
+          "nameHi": "अनार",
+          "totalRecords": 3
+        },
+        {
+          "id": "bajrapearl-millet-cumbu",
+          "name": "Bajra(Pearl Millet/Cumbu)",
+          "nameHi": "बाजरा",
+          "totalRecords": 2
+        },
+        {
+          "id": "tomato",
+          "name": "Tomato",
+          "nameHi": "टमाटर",
+          "totalRecords": 2
+        },
+        {
+          "id": "guava",
+          "name": "Guava",
+          "nameHi": "अमरूद",
+          "totalRecords": 2
+        },
+        {
+          "id": "karbujamusk-melon",
+          "name": "Karbuja(Musk Melon)",
+          "nameHi": "खरबूजा",
+          "totalRecords": 2
+        },
+        {
+          "id": "mango",
+          "name": "Mango",
+          "nameHi": "आम",
+          "totalRecords": 2
+        },
+        {
+          "id": "papaya",
+          "name": "Papaya",
+          "nameHi": "पपीता",
+          "totalRecords": 2
+        },
+        {
+          "id": "sugarcane",
+          "name": "Sugarcane",
+          "nameHi": "Sugarcane",
+          "totalRecords": 2
+        },
+        {
+          "id": "beans",
+          "name": "Beans",
+          "nameHi": "सेम",
+          "totalRecords": 2
+        },
+        {
+          "id": "ridgeguardtori",
+          "name": "Ridgeguard(Tori)",
+          "nameHi": "तोरई",
+          "totalRecords": 2
+        },
+        {
+          "id": "corriander-seed",
+          "name": "Corriander seed",
+          "nameHi": "Corriander seed",
+          "totalRecords": 1
+        },
+        {
+          "id": "barleyjau",
+          "name": "Barley(Jau)",
+          "nameHi": "Barley(Jau)",
+          "totalRecords": 1
+        },
+        {
+          "id": "soyabean",
+          "name": "Soyabean",
+          "nameHi": "सोयाबीन",
+          "totalRecords": 1
+        },
+        {
+          "id": "same-savi",
+          "name": "Same/Savi",
+          "nameHi": "Same/Savi",
+          "totalRecords": 1
+        },
+        {
+          "id": "white-peas",
+          "name": "White Peas",
+          "nameHi": "White Peas",
+          "totalRecords": 1
+        },
+        {
+          "id": "mahua-seedhippe-seed",
+          "name": "Mahua Seed(Hippe seed)",
+          "nameHi": "Mahua Seed(Hippe seed)",
+          "totalRecords": 1
+        },
+        {
+          "id": "groundnut",
+          "name": "Groundnut",
+          "nameHi": "मूँगफली",
+          "totalRecords": 1
+        },
+        {
+          "id": "millets",
+          "name": "Millets",
+          "nameHi": "Millets",
+          "totalRecords": 1
+        },
+        {
+          "id": "niger-seedramtil",
+          "name": "Niger Seed(Ramtil)",
+          "nameHi": "Niger Seed(Ramtil)",
+          "totalRecords": 1
+        },
+        {
+          "id": "knool-khol",
+          "name": "Knool Khol",
+          "nameHi": "गाँठ गोभी",
+          "totalRecords": 1
+        },
+        {
+          "id": "tinda",
+          "name": "Tinda",
+          "nameHi": "Tinda",
+          "totalRecords": 1
+        }
+      ]
+    }
+  },
+  "safeExistingAssetAliases": {
+    "bittergourd": "bitter-gourd",
+    "bottlegourd": "bottle-gourd",
+    "ladyfinger": "okra",
+    "gram": "chana"
+  },
+  "safeAliasImpact": {
+    "chhattisgarhAdditionalEntries": 4,
+    "chhattisgarhAdditionalHistoricalRecords": 5619
+  },
+  "priorityNewFamiliesByNationalHistoricalRecords": [
+    {
+      "id": "coconut",
+      "name": "Coconut",
+      "nameHi": "नारियल",
+      "totalRecords": 17809
+    },
+    {
+      "id": "capsicum",
+      "name": "Capsicum",
+      "nameHi": "शिमला मिर्च",
+      "totalRecords": 16581
+    },
+    {
+      "id": "cluster-beans",
+      "name": "Cluster beans",
+      "nameHi": "ग्वारफली",
+      "totalRecords": 16445
+    },
+    {
+      "id": "beans",
+      "name": "Beans",
+      "nameHi": "सेम",
+      "totalRecords": 15701
+    },
+    {
+      "id": "garlic",
+      "name": "Garlic",
+      "nameHi": "लहसुन",
+      "totalRecords": 15218
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "nameHi": "सेब",
+      "totalRecords": 14641
+    },
+    {
+      "id": "drumstick",
+      "name": "Drumstick",
+      "nameHi": "सहजन",
+      "totalRecords": 14261
+    },
+    {
+      "id": "elephant-yamsuran-amorphophallus",
+      "name": "Elephant Yam(Suran)/Amorphophallus",
+      "nameHi": "सूरन",
+      "totalRecords": 14171
+    },
+    {
+      "id": "arhartur-red-gramwhole",
+      "name": "Arhar(Tur/Red Gram)(Whole)",
+      "nameHi": "अरहर",
+      "totalRecords": 13101
+    },
+    {
+      "id": "chikoossapota",
+      "name": "Chikoos(Sapota)",
+      "nameHi": "चीकू",
+      "totalRecords": 12651
+    },
+    {
+      "id": "chow-chow",
+      "name": "Chow Chow",
+      "nameHi": "चायोटे",
+      "totalRecords": 12579
+    },
+    {
+      "id": "cotton",
+      "name": "Cotton",
+      "nameHi": "कपास",
+      "totalRecords": 12174
+    },
+    {
+      "id": "cowpeaveg",
+      "name": "Cowpea(Veg)",
+      "nameHi": "लोबिया",
+      "totalRecords": 11402
+    },
+    {
+      "id": "colacasia",
+      "name": "Colacasia",
+      "nameHi": "अरबी",
+      "totalRecords": 9683
+    },
+    {
+      "id": "bajrapearl-millet-cumbu",
+      "name": "Bajra(Pearl Millet/Cumbu)",
+      "nameHi": "बाजरा",
+      "totalRecords": 9011
+    },
+    {
+      "id": "amlanelli-kai",
+      "name": "Amla(Nelli Kai)",
+      "nameHi": "आँवला",
+      "totalRecords": 8190
+    },
+    {
+      "id": "black-gramurd-beanswhole",
+      "name": "Black Gram(Urd Beans)(Whole)",
+      "nameHi": "सेम",
+      "totalRecords": 6380
+    },
+    {
+      "id": "french-beansfrasbean",
+      "name": "French Beans(Frasbean)",
+      "nameHi": "फ्रेंच बीन",
+      "totalRecords": 4233
+    },
+    {
+      "id": "arecanutbetelnut-supari",
+      "name": "Arecanut(Betelnut/Supari)",
+      "nameHi": "सुपारी",
+      "totalRecords": 3576
+    },
+    {
+      "id": "castor-seed",
+      "name": "Castor Seed",
+      "nameHi": "Castor Seed",
+      "totalRecords": 3390
+    }
+  ],
+  "commonProducePriorityRegardlessOfHistoricalRecordRanking": [
+    "tomato",
+    "potato",
+    "onion",
+    "green-chilli",
+    "lemon",
+    "pumpkin",
+    "spinach",
+    "mango",
+    "groundnut",
+    "mahua",
+    "tamarind-fruit",
+    "ridgeguardtori",
+    "little-gourdkundru",
+    "pointed-gourdparval",
+    "green-peas"
+  ],
+  "topMissingNationalPhotoAdditionProjection": [
+    {
+      "additionalCommodityPhotos": 10,
+      "recordWeightedCoveragePercent": 80.69
+    },
+    {
+      "additionalCommodityPhotos": 20,
+      "recordWeightedCoveragePercent": 91.31
+    }
+  ],
+  "doNotMislabelAsCropPhotos": [
+    "fish",
+    "cow",
+    "goat",
+    "cock",
+    "egg",
+    "calf",
+    "bull",
+    "duck",
+    "she-buffalo",
+    "he-buffalo",
+    "pigs",
+    "ghee"
+  ],
+  "labelsNeedingReview": [
+    {
+      "id": "black-gramurd-beanswhole",
+      "currentHindi": "सेम",
+      "correctCommodity": "उड़द साबुत"
+    },
+    {
+      "id": "cow",
+      "currentHindi": "लोबिया",
+      "correctCommodity": "गाय"
+    },
+    {
+      "id": "custard-applesharifa",
+      "currentHindi": "सेब",
+      "correctCommodity": "सीताफल / शरीफा"
+    },
+    {
+      "id": "roseloose",
+      "currentHindi": "रजनीगंधा",
+      "correctCommodity": "गुलाब के फूल"
+    },
+    {
+      "id": "guar-seedcluster-beans-seed",
+      "currentHindi": "सेम",
+      "correctCommodity": "ग्वार बीज"
+    }
+  ],
+  "mappingRules": [
+    "Match explicit IDs; do not rely on substring or current Hindi labels.",
+    "Keep grains distinct from flour, whole pulses from dal, seeds from leaves, fresh crops from oils and dried products.",
+    "Do not use apple for custard apple or cowpea for cow.",
+    "Use neutral fallback for uncertain or broad categories such as other vegetables.",
+    "Do not claim all 263 missing national entries are distinct crops; list includes aliases, processed products, livestock and non-produce."
+  ],
+  "safeNewFamilyAliases": {
+    "arhar-whole": [
+      "arhartur-red-gramwhole",
+      "arhar",
+      "red-gram"
+    ],
+    "cluster-bean": [
+      "cluster-beans",
+      "clusterbean"
+    ],
+    "colocasia": [
+      "colacasia",
+      "colocasia"
+    ],
+    "urad-whole": [
+      "black-gramurd-beanswhole",
+      "urad"
+    ],
+    "soybean": [
+      "soyabean",
+      "soybean"
+    ],
+    "radish": [
+      "raddish",
+      "radish"
+    ],
+    "green-chilli": [
+      "green-chilli",
+      "greenchilli"
+    ],
+    "tamarind": [
+      "tamarind-fruit",
+      "tamarind"
+    ],
+    "ridge-gourd": [
+      "ridgeguardtori",
+      "ridgegourd"
+    ],
+    "ivy-gourd": [
+      "little-gourdkundru",
+      "kundru"
+    ],
+    "pointed-gourd": [
+      "pointed-gourdparval",
+      "parwal"
+    ],
+    "moong-whole": [
+      "green-grammoongwhole",
+      "moong"
+    ],
+    "masoor-whole": [
+      "lentilmasurwhole",
+      "masoor"
+    ],
+    "sesame": [
+      "sesamumsesame-gingelly-til",
+      "sesame"
+    ],
+    "ragi": [
+      "ragifinger-millet",
+      "ragi"
+    ],
+    "jowar": [
+      "jowarsorghum",
+      "jowar"
+    ],
+    "arecanut": [
+      "arecanutbetelnut-supari",
+      "betelnuts"
+    ]
+  }
+}

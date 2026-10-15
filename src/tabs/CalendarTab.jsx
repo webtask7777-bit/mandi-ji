@@ -1,201 +1,84 @@
-import CropImage from "@/components/CropImage";
+import { useEffect, useState } from 'react';
+import { CalendarDays, ChevronDown, Info, Sprout } from 'lucide-react';
+import CropImage from '@/components/CropImage';
+import { MONTHS, FALLBACK_SEASONS } from '../data/constants';
+import { getMonthPhase } from '../utils/helpers';
 import '@/styles/secondary.css';
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { MONTHS, PHASE_COLORS, FALLBACK_SEASONS } from "../data/constants";
-import { getMonthPhase } from "../utils/helpers";
-import WeatherWidget from "../components/WeatherWidget";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
-const SOLID_PHASE = {
-  "Buvai": "#78350f",
-  "Ugna": "#14532d",
-  "Katai": "#9a3412",
-  "Peak Arrival": "#713f12",
+const MONTH_NAMES = ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'];
+const PHASES = {
+  Buvai: { name: 'बुवाई', color: '#8b6143' },
+  Ugna: { name: 'बढ़वार', color: '#597d53' },
+  Katai: { name: 'कटाई', color: '#ba753e' },
+  'Peak Arrival': { name: 'मुख्य आवक', color: '#7d7134' },
 };
 
-const PHASE_HI = {
-  "Buvai": "बुवाई",
-  "Ugna": "उगना",
-  "Katai": "कटाई",
-  "Peak Arrival": "आवक",
-};
-
-export default function CalendarTab({ selectedMonth, crops, seasons, isCG }) {
+export default function CalendarTab({ selectedMonth, crops = [], seasons }) {
+  const [month, setMonth] = useState(selectedMonth);
   const [selectedCrop, setSelectedCrop] = useState(null);
-  const displaySeasons = seasons || FALLBACK_SEASONS;
-  // Match the phases the table can actually render; exclude commodities with no season data.
-  const calendarCrops = crops.filter(crop =>
-    MONTHS.some((_, month) => getMonthPhase(crop, month))
-  );
-
-  const activeCrops = crops.filter(c => {
-    const s = c.sowingMonths || c.sowing;
-    const g = c.growingMonths || c.growing;
-    const h = c.harvestMonths || c.harvest;
-    const p = c.peakMonths || c.peak;
-    return s?.includes(selectedMonth) || g?.includes(selectedMonth) ||
-           h?.includes(selectedMonth) || p?.includes(selectedMonth);
-  });
+  useEffect(() => { setMonth(selectedMonth); }, [selectedMonth]);
+  const calendarCrops = crops.filter(crop => MONTHS.some((_, index) => getMonthPhase(crop, index)));
+  const activeCrops = calendarCrops.filter(crop => getMonthPhase(crop, month));
+  const displaySeasons = Array.isArray(seasons) && seasons.length ? seasons : FALLBACK_SEASONS;
 
   return (
-    <div className="sb-secondary-tab sb-calendar-tab flex flex-col gap-4">
-      <div className="sb-secondary-heading"><div><span className="sb-secondary-eyebrow">फसल योजना</span><h2>खेती का कैलेंडर</h2><p>बुवाई से आवक तक, अपनी फसल का मौसम समझें।</p></div><img src="/visuals/crop-paddy.webp" alt="" width="96" height="96" /></div>
-      {isCG && <WeatherWidget districtId={1} />}
-
-      {/* Active Crops */}
-      <div>
-        <div className="text-[10px] text-muted-foreground tracking-wider font-semibold mb-2">
-          इस महीने सक्रिय फसलें
-        </div>
-        {activeCrops.length === 0 ? (
-          <Card className="p-6 bg-zinc-900 border-zinc-800 text-center text-muted-foreground text-sm">
-            इस महीने कोई मुख्य गतिविधि नहीं
-          </Card>
-        ) : (
-          <div className="sb-active-crops">
-            {activeCrops.map((crop) => {
-              const phase = getMonthPhase(crop, selectedMonth);
-              const isExpanded = selectedCrop === crop.id;
-              return (
-                <Card key={crop.id}
-                  role="button" tabIndex={0} aria-expanded={isExpanded}
-                  onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedCrop(isExpanded ? null : crop.id); } }}
-                  onClick={() => setSelectedCrop(isExpanded ? null : crop.id)}
-                  className={`sb-calendar-crop cursor-pointer transition-all active:scale-[0.98] overflow-hidden ${
-                    isExpanded ? "bg-zinc-800 border-green-500" : "bg-zinc-900 border-zinc-800 hover:border-zinc-700"
-                  }`}>
-                  <div className="p-3 flex items-center gap-3">
-                    <CropImage id={crop.id} name={crop.nameHi || crop.name} size="md" />
-                    <div className="flex-1 min-w-0">
-                      <div className="font-bold text-sm text-foreground truncate">
-                        {crop.nameHi || crop.name}
-                      </div>
-                      <div className="text-[10px] text-muted-foreground">{crop.region}</div>
-                    </div>
-                    {phase && (
-                      <Badge className="text-[9px] px-1.5 py-0.5"
-                        style={{ backgroundColor: SOLID_PHASE[phase.label] || PHASE_COLORS[phase.label], color: "#fff" }}>
-                        {PHASE_HI[phase.label] || phase.label}
-                      </Badge>
-                    )}
-                  </div>
-                  <AnimatePresence>
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                        className="overflow-hidden">
-                        <div className="px-3 pb-3 border-t border-zinc-700">
-                          <p className="text-xs text-muted-foreground mt-3 mb-3 leading-relaxed">
-                            {crop.desc}
-                          </p>
-                          <div>
-                            <div className="text-[9px] text-muted-foreground mb-1.5 tracking-wider">वार्षिक टाइमलाइन</div>
-                            <div className="grid grid-cols-12 gap-0.5">
-                              {MONTHS.map((mn, i) => {
-                                const p = getMonthPhase(crop, i);
-                                return (
-                                  <div key={i}>
-                                    <div className="h-5 rounded-sm"
-                                      style={{
-                                        background: p ? SOLID_PHASE[p.label] || PHASE_COLORS[p.label] : "#e9eddf",
-                                        outline: i === selectedMonth ? "2px solid #174c3c" : "none",
-                                        outlineOffset: "-1px",
-                                      }}/>
-                                    <div className="text-[7px] text-muted-foreground mt-0.5 text-center">{mn}</div>
-                                  </div>
-                                );
-                              })}
-                            </div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </Card>
-              );
-            })}
-          </div>
-        )}
+    <div className="sb-secondary-tab sb-calendar-tab flex flex-col">
+      <div className="sb-secondary-heading">
+        <div><span className="sb-secondary-eyebrow">फसल योजना</span><h2>हर मौसम की तैयारी</h2><p>महीना चुनें। बुवाई, कटाई और मुख्य आवक का उपलब्ध कैलेंडर देखें।</p></div>
+        <img src="/visuals/crop-paddy.webp" alt="" width="96" height="96" />
       </div>
 
-      {/* Annual Calendar Grid */}
-      <div>
-        <div className="text-[10px] text-muted-foreground tracking-wider font-semibold mb-2">
-          फसलों का वार्षिक कैलेंडर
+      <section className="sb-calendar-controls" aria-label="कैलेंडर का महीना चुनें">
+        <div className="sb-section-title"><CalendarDays size={20} /><h3>{MONTH_NAMES[month]} की गतिविधियाँ</h3><span>{activeCrops.length} फसलें</span></div>
+        <div className="sb-month-picker">
+          {MONTH_NAMES.map((name, index) => <button key={name} type="button" aria-pressed={month === index} onClick={() => { setMonth(index); setSelectedCrop(null); }}>{name}</button>)}
         </div>
-        <p className="text-xs text-muted-foreground mb-3">
-          उपलब्ध मौसम की जानकारी वाली फसलें दिखाई गई हैं। समय क्षेत्र, किस्म और मौसम के अनुसार बदल सकता है।
-        </p>
-        <Card className="sb-calendar-annual bg-zinc-900 border-zinc-800">
-          <div className="grid gap-0.5 px-3 py-2 border-b border-zinc-800"
-            style={{ gridTemplateColumns: "106px repeat(12, minmax(28px, 1fr))" }}>
-            <div/>
-            {MONTHS.map((m, i) => (
-              <div key={i} className={`text-[7px] text-center ${i === selectedMonth ? "text-green-500 font-bold" : "text-muted-foreground"}`}>
-                {m}
-              </div>
-            ))}
-          </div>
-          <div className="px-3 py-1">
-            {calendarCrops.length === 0 && (
-              <p className="py-5 text-sm text-muted-foreground">इस क्षेत्र के लिए फसल कैलेंडर उपलब्ध नहीं है।</p>
-            )}
-            {calendarCrops.map(crop => (
-              <div key={crop.id} className="grid gap-0.5 py-0.5 cursor-pointer hover:bg-zinc-800/50 rounded transition-colors"
-                role="button" tabIndex={0} aria-label={`${crop.nameHi || crop.name} का कैलेंडर`} aria-expanded={selectedCrop === crop.id}
-                onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedCrop(selectedCrop === crop.id ? null : crop.id); } }}
-                onClick={() => setSelectedCrop(selectedCrop === crop.id ? null : crop.id)}
-                style={{ gridTemplateColumns: "106px repeat(12, minmax(28px, 1fr))" }}>
-                <div className="text-[9px] text-muted-foreground flex items-center gap-1 truncate">
-                  <CropImage id={crop.id} name={crop.nameHi || crop.name} size="xs" />
-                  <span className="truncate">{crop.nameHi || crop.name}</span>
-                </div>
-                {MONTHS.map((_, i) => {
-                  const phase = getMonthPhase(crop, i);
-                  return (
-                    <div key={i} className="h-6 rounded-sm"
-                      style={{
-                        background: phase ? SOLID_PHASE[phase.label] || PHASE_COLORS[phase.label] : "#edf0e6",
-                        outline: i === selectedMonth ? "1.5px solid #174c3c" : "none",
-                        outlineOffset: "-1px",
-                      }}/>
-                  );
-                })}
-              </div>
-            ))}
-          </div>
-        </Card>
+      </section>
 
-        {/* Compact ऋतु गाइड — right below calendar */}
-        <div className="mt-2">
-          <div className="text-[9px] text-muted-foreground tracking-wider font-semibold mb-1.5">ऋतु गाइड</div>
-          <div className="flex gap-1.5">
-            {displaySeasons.map(s => (
-              <div key={s.id || s.name}
-                className="flex-1 rounded-lg px-2 py-1.5 border border-zinc-800"
-                style={{ backgroundColor: `${s.color}10` }}>
-                <div className="flex items-center gap-1 mb-1">
-                  <span className="text-[10px]">{s.icon}</span>
-                  <span className="text-[9px] font-bold" style={{ color: s.color }}>
-                    {s.nameHi}
-                  </span>
-                </div>
-                <div className="flex gap-px">
-                  {MONTHS.map((_, i) => (
-                    <div key={i} className="flex-1 h-1.5 rounded-full"
-                      style={{ background: s.months.includes(i) ? s.color : "#e9eddf" }}/>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <div className="sb-context-note"><Info size={17} aria-hidden="true" /><p>यह मौसमी मार्गदर्शिका है। वास्तविक समय क्षेत्र, किस्म, बारिश और सिंचाई के अनुसार बदल सकता है। खाली महीना “जानकारी उपलब्ध नहीं” दर्शाता है।</p></div>
+
+      <section aria-label={`${MONTH_NAMES[month]} में सक्रिय फसलें`}>
+        {activeCrops.length ? <div className="sb-active-crops">
+          {activeCrops.map(crop => {
+            const phase = PHASES[getMonthPhase(crop, month)?.label];
+            const expanded = selectedCrop === crop.id;
+            return <article key={crop.id} className="sb-calendar-crop" data-expanded={expanded}>
+              <button type="button" className="sb-calendar-crop-trigger" aria-expanded={expanded} onClick={() => setSelectedCrop(expanded ? null : crop.id)}>
+                <CropImage id={crop.id} name={crop.nameHi || crop.name} size="md" />
+                <span className="sb-calendar-crop-name"><strong>{crop.nameHi || crop.name}</strong><small>{crop.region || 'क्षेत्र की जानकारी उपलब्ध नहीं'}</small></span>
+                <span className="sb-phase-badge" style={{ backgroundColor: phase?.color }}>{phase?.name}</span>
+                <ChevronDown size={16} className={expanded ? 'sb-rotate' : ''} aria-hidden="true" />
+              </button>
+              {expanded && <div className="sb-calendar-crop-detail">
+                {crop.desc && <p>{crop.desc}</p>}
+                <h4>इस फसल का वर्ष</h4>
+                <div className="sb-crop-year">{MONTHS.map((name, index) => {
+                  const p = PHASES[getMonthPhase(crop, index)?.label];
+                  return <div key={name} title={`${MONTH_NAMES[index]}: ${p?.name || 'जानकारी उपलब्ध नहीं'}`}><span style={{ backgroundColor: p?.color || '#edf0e6' }} data-current={month === index} /><small>{name}</small></div>;
+                })}</div>
+              </div>}
+            </article>;
+          })}
+        </div> : <div className="sb-secondary-empty"><Sprout size={28} /><h3>{MONTH_NAMES[month]} की गतिविधि उपलब्ध नहीं</h3><p>किसी दूसरे महीने का कैलेंडर देखें। इसका अर्थ खेती या आवक बंद होना नहीं है।</p></div>}
+      </section>
+
+      <section>
+        <div className="sb-section-title"><h3>पूरे वर्ष का कैलेंडर</h3><span>{calendarCrops.length} फसलों की जानकारी</span></div>
+        <div className="sb-phase-legend" aria-label="कैलेंडर रंगों का अर्थ">{Object.entries(PHASES).map(([key, p]) => <span key={key}><i style={{ background: p.color }} />{p.name}</span>)}<span><i style={{ background: '#edf0e6' }} />जानकारी नहीं</span></div>
+        {calendarCrops.length ? <div className="sb-calendar-table-scroll" role="region" aria-label="वार्षिक कैलेंडर; सभी महीने देखने के लिए दाएँ स्क्रॉल करें" tabIndex={0}>
+          <table className="sb-calendar-table">
+            <caption className="sr-only">फसल और महीने के अनुसार प्रमुख मौसमी गतिविधि</caption>
+            <thead><tr><th scope="col">फसल</th>{MONTHS.map((name, index) => <th scope="col" key={name} data-current={month === index} title={MONTH_NAMES[index]}>{name}</th>)}</tr></thead>
+            <tbody>{calendarCrops.map(crop => <tr key={crop.id}><th scope="row"><span><CropImage id={crop.id} name={crop.nameHi || crop.name} size="xs" />{crop.nameHi || crop.name}</span></th>{MONTHS.map((name, index) => {
+              const phase = PHASES[getMonthPhase(crop, index)?.label];
+              return <td key={name} data-current={month === index}><span className="sb-calendar-cell" style={{ background: phase?.color || '#edf0e6' }} title={`${MONTH_NAMES[index]}: ${phase?.name || 'जानकारी उपलब्ध नहीं'}`}><span className="sr-only">{phase?.name || 'जानकारी उपलब्ध नहीं'}</span></span></td>;
+            })}</tr>)}</tbody>
+          </table>
+        </div> : <div className="sb-secondary-empty"><p>चुने हुए क्षेत्र के लिए फसल कैलेंडर उपलब्ध नहीं है।</p></div>}
+        {crops.length > calendarCrops.length && <p className="sb-data-caption">{crops.length - calendarCrops.length} अन्य फसलों का मौसम कैलेंडर उपलब्ध नहीं है; उन्हें तालिका में शामिल नहीं किया गया है।</p>}
+      </section>
+
+      <section><div className="sb-section-title"><h3>ऋतुओं का एक नज़र में परिचय</h3></div><div className="sb-season-grid">{displaySeasons.map(season => <article key={season.id || season.name}><h4>{season.nameHi || season.name}</h4><p>{(season.months || []).map(index => MONTH_NAMES[index]).join(' · ')}</p></article>)}</div></section>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import '@/styles/secondary.css';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Navigate, Link } from 'react-router-dom';
+import { Navigate, Link, useLocation } from 'react-router-dom';
 import {
   User, Phone, Mail, Lock, Eye, EyeOff,
   ArrowLeft, CheckCircle2, Loader2,
@@ -11,6 +11,7 @@ import KYCForm from '../components/auth/KYCForm';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 import { cn } from '@/lib/utils';
+import { safeReturnTo } from '../utils/safeReturnTo';
 
 const STEPS = [
   { label: 'जानकारी', icon: User },
@@ -36,6 +37,8 @@ const stepVariants = {
 export default function RegisterPage() {
   const { user, register, loading: authLoading } = useAuth();
   const toast = useToast();
+  const location = useLocation();
+  const returnTo = safeReturnTo(location.state?.returnTo);
 
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(1);
@@ -60,7 +63,7 @@ export default function RegisterPage() {
   }
 
   if (user && step !== 2 && step !== 3) {
-    return <Navigate to="/" replace />;
+    return <Navigate to={returnTo} replace />;
   }
 
   const goNext = () => {
@@ -407,12 +410,12 @@ export default function RegisterPage() {
                   transition={{ delay: 0.6 }}
                   className="w-full"
                 >
-                  <Link to="/">
+                  <Link to={returnTo}>
                     <motion.button
                       whileTap={{ scale: 0.97 }}
                       className="w-full py-3 rounded-xl bg-green-500 hover:bg-green-400 text-green-950 text-sm font-semibold transition-all flex items-center justify-center gap-2"
                     >
-                      डैशबोर्ड पर जाएं
+                      {returnTo === '/' ? 'डैशबोर्ड पर जाएं' : 'अपना काम आगे बढ़ाएँ'}
                     </motion.button>
                   </Link>
                 </motion.div>
@@ -432,6 +435,7 @@ export default function RegisterPage() {
             पहले से अकाउंट है?{' '}
             <Link
               to="/login"
+              state={{ returnTo }}
               className="text-green-500 hover:text-green-400 font-medium transition-colors"
             >
               लॉग इन करें

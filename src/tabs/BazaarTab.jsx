@@ -1,200 +1,73 @@
-import '@/styles/secondary.css';
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Truck, Scale, ChevronRight } from 'lucide-react';
+import { ArrowRight, ClipboardList, Info, Plus, RefreshCw, Search, ShoppingBasket, Truck, X } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { apiFetch } from '@/api/client';
-import { Card } from '@/components/ui/card';
-import AnimatedBuySellButton from '@/components/marketplace/AnimatedBuySellButton';
 import ListingCard from '@/components/marketplace/ListingCard';
-import { fadeInUp, staggerContainer } from '@/utils/animations';
+import '@/styles/secondary.css';
+
+const expiryTime = listing => listing.expiresAt ? Date.parse(listing.expiresAt) : NaN;
 
 export default function BazaarTab() {
   const { user } = useAuth();
   const navigate = useNavigate();
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(false);
+  const [retry, setRetry] = useState(0);
   const [typeFilter, setTypeFilter] = useState('all');
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    apiFetch('/listings?limit=20')
+    setError(false);
+    apiFetch(`/listings?limit=20&page=${page}`)
       .then(data => {
         if (cancelled) return;
         const items = Array.isArray(data) ? data : data?.listings || [];
-        setListings(items);
+        // Public browsing uses the existing public endpoint. Posting remains authenticated.
+        // Hide expired listings even if an older backend still labels them active.
+        const current = items.filter(listing => (!listing.status || listing.status === 'active') && (!Number.isFinite(expiryTime(listing)) || expiryTime(listing) > Date.now()));
+        setListings(previous => {
+          const combined = page === 1 ? current : [...previous, ...current];
+          return [...new Map(combined.map(listing => [listing._id || listing.id, listing])).values()];
+        });
+        setHasMore(!Array.isArray(data) && Number(data.totalPages) > page);
       })
-      .catch(err => {
-        if (cancelled) return;
-        setError(err.message);
-        setListings([]);
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
-      });
+      .catch(() => { if (!cancelled) setError(true); })
+      .finally(() => { if (!cancelled) setLoading(false); });
     return () => { cancelled = true; };
-  }, []);
+  }, [page, retry]);
 
-  const sellCount = listings.filter(l => l.type === 'sell').length;
-  const buyCount = listings.filter(l => l.type === 'buy').length;
-  const filteredListings = typeFilter === 'all'
-    ? listings
-    : listings.filter(l => l.type === typeFilter);
+  const visibleListings = useMemo(() => listings.filter(listing => {
+    const typeMatches = typeFilter === 'all' || listing.type === typeFilter;
+    const searchMatches = `${listing.cropNameHi || ''} ${listing.cropName || ''} ${listing.mandiName || ''} ${listing.district || ''} ${listing.state || ''}`.toLowerCase().includes(query.trim().toLowerCase());
+    return typeMatches && searchMatches;
+  }), [listings, query, typeFilter]);
+  const createListing = type => navigate(`/listing/new?type=${type}`);
 
-  // If not logged in, show prompt
-  if (!user) {
-    return (
-      <motion.div {...fadeInUp} className="sb-secondary-tab sb-market-welcome flex flex-col items-center justify-center py-16 gap-4">
-        <img className="sb-market-welcome-photo" src="/visuals/hero-mandi.webp" alt="अनाज की बोरियों के साथ मंडी का सांकेतिक दृश्य" width="1280" height="853" />
-        <h2 className="text-lg font-bold text-foreground">बाज़ार में आपका स्वागत है</h2>
-        <p className="text-sm text-zinc-400 text-center px-8">
-          फसल बेचने या खरीदने के लिए पहले लॉग इन करें
-        </p>
-        <button
-          onClick={() => navigate('/login')}
-          className="px-6 py-2.5 rounded-xl bg-green-500 text-green-950 font-bold text-sm"
-        >
-          लॉग इन करें
-        </button>
-      </motion.div>
-    );
-  }
+  return <div className="sb-secondary-tab sb-bazaar-tab flex flex-col">
+    <section className="sb-bazaar-hero">
+      <div><span className="sb-secondary-eyebrow">फसल का बाज़ार</span><h2>खरीद और बिक्री,<br />एक जगह।</h2><p>उपलब्ध लिस्टिंग देखें, अपनी ज़रूरत बताएँ और माल मँगाने का खर्च समझें।</p><div className="sb-bazaar-actions"><button type="button" onClick={() => createListing('sell')} className="sb-secondary-primary"><Plus size={18} />बेचने की लिस्टिंग</button><button type="button" onClick={() => createListing('buy')} className="sb-secondary-outline"><ShoppingBasket size={18} />खरीद की ज़रूरत</button></div>{!user && <small>लिस्टिंग देखना खुला है। अपनी लिस्टिंग जोड़ने के लिए लॉग इन करें।</small>}</div>
+      <img src="/visuals/hero-mandi.webp" alt="अनाज की बोरियों वाली मंडी का सांकेतिक दृश्य" width="1280" height="853" />
+    </section>
 
-  return (
-    <motion.div
-      variants={staggerContainer}
-      initial="initial"
-      animate="animate"
-      className="sb-secondary-tab sb-bazaar-tab flex flex-col gap-4"
-    >
-      <div className="sb-secondary-heading"><div><span className="sb-secondary-eyebrow">अपना कारोबार</span><h2>फसल का बाज़ार</h2><p>बेचने और खरीदने की लिस्टिंग देखें या अपनी लिस्टिंग जोड़ें।</p></div></div>
-      {/* Buy/Sell Buttons */}
-      <AnimatedBuySellButton
-        onSell={() => navigate('/listing/new?type=sell')}
-        onBuy={() => navigate('/listing/new?type=buy')}
-      />
+    <Link to="/transport" className="sb-bazaar-calculator"><span className="sb-feature-icon"><Truck size={23} /></span><span><strong>सस्ता भाव मिला — पहुँचने पर कितना पड़ेगा?</strong><small>वाहन और दूरी के हिसाब से डिलीवरी खर्च देखें।</small></span><ArrowRight size={21} /></Link>
 
-      {/* Quick Stats */}
-      <motion.div {...fadeInUp} className="sb-market-stats grid grid-cols-3 gap-2">
-        {[
-          { label: 'कुल लिस्टिंग', value: listings.length, emoji: '📋' },
-          { label: 'विक्रेता', value: sellCount, emoji: '🧑‍🌾' },
-          { label: 'खरीदार', value: buyCount, emoji: '🛒' },
-        ].map((s, i) => (
-          <Card key={i} className="p-3 bg-zinc-900 border-zinc-800 flex flex-col items-center gap-1">
-            <span className="text-lg">{s.emoji}</span>
-            <span className="text-base font-bold text-foreground">{s.value}</span>
-            <span className="text-[10px] text-zinc-500">{s.label}</span>
-          </Card>
-        ))}
-      </motion.div>
+    <section aria-labelledby="sb-listings-title">
+      <div className="sb-section-title"><ClipboardList size={20} /><h3 id="sb-listings-title">उपलब्ध लिस्टिंग</h3>{!loading && <span>{listings.length} लोड हुईं</span>}</div>
+      <div className="sb-bazaar-toolbar"><div className="sb-bazaar-filters" aria-label="लिस्टिंग प्रकार">{[{ key: 'all', label: 'सभी' }, { key: 'sell', label: 'बेचना है' }, { key: 'buy', label: 'खरीदना है' }].map(filter => <button type="button" key={filter.key} aria-pressed={typeFilter === filter.key} onClick={() => setTypeFilter(filter.key)}>{filter.label}</button>)}</div><label className="sb-secondary-search"><Search size={18} aria-hidden="true" /><span className="sr-only">लोड की गई लिस्टिंग में फसल या मंडी खोजें</span><input value={query} onChange={event => setQuery(event.target.value)} placeholder="फसल या मंडी खोजें" />{query && <button type="button" aria-label="लिस्टिंग की खोज हटाएँ" onClick={() => setQuery('')}><X size={16} /></button>}</label></div>
+      {query.trim() && <p className="sb-data-caption">खोज लोड की गई लिस्टिंग में है{hasMore ? '; पुराने परिणामों के लिए और लिस्टिंग लोड करें।' : '।'}</p>}
 
-      {/* Shortcut Cards */}
-      <motion.div {...fadeInUp} className="grid grid-cols-2 gap-2">
-        <Link to="/transport">
-          <Card className="p-3 bg-zinc-900 border-zinc-800 hover:border-green-500/40 transition-colors cursor-pointer">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-green-500/15 flex items-center justify-center">
-                <Truck size={16} className="text-green-500" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="text-xs font-bold text-foreground truncate">ट्रांसपोर्ट</div>
-                <div className="text-[10px] text-zinc-500">कैलकुलेटर</div>
-              </div>
-              <ChevronRight size={14} className="text-zinc-600 shrink-0" />
-            </div>
-          </Card>
-        </Link>
-
-        <Link to="/eway-bill/new">
-          <Card className="p-3 bg-zinc-900 border-zinc-800 hover:border-amber-500/40 transition-colors cursor-pointer">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center">
-                <Scale size={16} className="text-amber-500" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="text-xs font-bold text-foreground truncate">E-way Bill</div>
-                <div className="text-[10px] text-zinc-500">नया बिल बनाएं</div>
-              </div>
-              <ChevronRight size={14} className="text-zinc-600 shrink-0" />
-            </div>
-          </Card>
-        </Link>
-      </motion.div>
-
-      {/* Recent Listings Section */}
-      <motion.div {...fadeInUp}>
-        <div className="flex items-center justify-between mb-2">
-          <h3 className="text-sm font-bold text-foreground">हाल की लिस्टिंग</h3>
-        </div>
-
-        {/* Type Filter */}
-        <div className="flex gap-2 mb-3">
-          {[
-            { key: 'all', label: 'सभी', count: listings.length },
-            { key: 'sell', label: 'बेचना', count: sellCount },
-            { key: 'buy', label: 'खरीदना', count: buyCount },
-          ].map(tab => (
-            <button
-              key={tab.key}
-              onClick={() => setTypeFilter(tab.key)}
-              aria-pressed={typeFilter === tab.key}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                typeFilter === tab.key
-                  ? tab.key === 'sell' ? 'bg-green-500 text-green-950 font-bold'
-                    : tab.key === 'buy' ? 'bg-amber-500 text-amber-950 font-bold'
-                    : 'bg-green-500 text-green-950 font-bold'
-                  : 'bg-zinc-900 text-zinc-400 hover:bg-zinc-800'
-              }`}
-            >
-              {tab.label} ({tab.count})
-            </button>
-          ))}
-        </div>
-
-        {/* Loading State */}
-        {loading && (
-          <div className="flex flex-col gap-2">
-            {[1, 2, 3].map(i => (
-              <div key={i} className="h-20 rounded-xl bg-zinc-900 animate-pulse border border-zinc-800" />
-            ))}
-          </div>
-        )}
-
-        {/* Error State */}
-        {!loading && error && (
-          <Card className="p-4 bg-zinc-900 border-zinc-800 text-center">
-            <p className="text-sm text-red-400">लिस्टिंग लोड नहीं हो सकी</p>
-            <p className="text-[10px] text-zinc-500 mt-1">{error}</p>
-          </Card>
-        )}
-
-        {/* Empty State */}
-        {!loading && !error && filteredListings.length === 0 && (
-          <Card className="p-6 bg-zinc-900 border-zinc-800 flex flex-col items-center gap-3">
-            <img src="/visuals/empty-saved.webp" alt="" width="140" height="140" />
-            <p className="text-sm text-zinc-400 text-center">अभी कोई लिस्टिंग नहीं है</p>
-            <button
-              onClick={() => navigate('/listing/new?type=sell')}
-              className="px-4 py-2 rounded-xl bg-green-500 text-green-950 font-bold text-xs"
-            >
-              पहली लिस्टिंग बनाएं
-            </button>
-          </Card>
-        )}
-
-        {/* Listings */}
-        {!loading && !error && filteredListings.length > 0 && (
-          <div className="sb-listing-grid">
-            {filteredListings.map(listing => (
-              <ListingCard key={listing._id || listing.id} listing={listing} />
-            ))}
-          </div>
-        )}
-      </motion.div>
-    </motion.div>
-  );
+      {loading && page === 1 && <div className="sb-listing-grid" role="status" aria-label="लिस्टिंग लोड हो रही हैं"><div className="sb-listing-skeleton" /><div className="sb-listing-skeleton" /></div>}
+      {error && <div className="sb-secondary-empty" role="status"><RefreshCw size={25} /><h3>लिस्टिंग नहीं खुल सकीं</h3><p>इंटरनेट कनेक्शन जाँचें और फिर कोशिश करें।</p><button type="button" className="sb-secondary-outline" onClick={() => setRetry(value => value + 1)}>दोबारा कोशिश करें</button></div>}
+      {!loading && !error && visibleListings.length === 0 && <div className="sb-secondary-empty"><img src="/visuals/empty-saved.webp" alt="" width="128" height="128" /><h3>{query || typeFilter !== 'all' ? 'इस खोज की लिस्टिंग नहीं मिली' : 'अभी उपलब्ध लिस्टिंग नहीं है'}</h3><p>{query || typeFilter !== 'all' ? 'दूसरी फसल या मंडी खोजें, या सभी लिस्टिंग देखें।' : 'अपनी बिक्री या खरीद की ज़रूरत जोड़कर शुरुआत करें।'}</p>{query || typeFilter !== 'all' ? <button type="button" className="sb-secondary-outline" onClick={() => { setTypeFilter('all'); setQuery(''); }}>खोज और फ़िल्टर हटाएँ</button> : <button type="button" className="sb-secondary-primary" onClick={() => createListing('sell')}><Plus size={17} />लिस्टिंग जोड़ें</button>}</div>}
+      {visibleListings.length > 0 && <div className="sb-listing-grid">{visibleListings.map(listing => <div key={listing._id || listing.id}><ListingCard listing={listing} />{!Number.isFinite(expiryTime(listing)) && <p className="sb-data-caption">उपलब्धता की अंतिम तारीख दर्ज नहीं है।</p>}</div>)}</div>}
+      {hasMore && !error && <div className="sb-load-more"><button type="button" className="sb-secondary-outline" disabled={loading} onClick={() => setPage(value => value + 1)}>{loading ? 'लोड हो रहा है…' : 'और लिस्टिंग देखें'}</button></div>}
+    </section>
+    <div className="sb-context-note"><Info size={17} /><p>लिस्टिंग में दिया भाव और उपलब्धता उपयोगकर्ता की जानकारी है। सौदे से पहले किस्म, गुणवत्ता, वजन, कुल डिलीवरी खर्च और भुगतान की शर्तें पक्की करें।</p></div>
+  </div>;
 }

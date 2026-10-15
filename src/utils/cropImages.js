@@ -1,0 +1,51 @@
+// Explicit commodity IDs only. Never infer identity with substring matching:
+// seeds, leaves, whole pulses, dal, fresh produce and processed products differ.
+export const CROP_IMAGES = Object.freeze({
+  paddy: 'paddy', paddycommon: 'paddy', paddybasmati: 'paddy',
+  wheat: 'wheat', chana: 'chana', gram: 'chana', 'bengal-gramgramwhole': 'chana',
+  maize: 'maize', mustard: 'mustard', eggplant: 'eggplant', brinjal: 'eggplant',
+  carrot: 'carrot', cauliflower: 'cauliflower', cabbage: 'cabbage',
+  'bottle-gourd': 'bottle-gourd', bottlegourd: 'bottle-gourd',
+  okra: 'okra', 'ladies-finger': 'okra', 'lady-finger': 'okra',
+  ladyfinger: 'okra', 'bhindiladies-finger': 'okra',
+  banana: 'banana', ginger: 'ginger', gingergreen: 'ginger',
+  cucumber: 'cucumber', cucumbarkheera: 'cucumber',
+  corianderleaves: 'coriander',
+  'bitter-gourd': 'bitter-gourd', bittergourd: 'bitter-gourd',
+  'green-banana': 'green-banana', 'banana-green': 'green-banana',
+  beetroot: 'beetroot', amaranth: 'amaranth', amaranthus: 'amaranth',
+  'ash-gourd': 'ash-gourd', ashgourd: 'ash-gourd',
+  coconut: 'coconut', capsicum: 'capsicum',
+  'cluster-beans': 'cluster-beans', clusterbean: 'cluster-beans',
+  garlic: 'garlic', apple: 'apple', drumstick: 'drumstick',
+  'elephant-yamsuran-amorphophallus': 'elephant-yam',
+  'arhartur-red-gramwhole': 'arhar-whole', arhar: 'arhar-whole', 'red-gram': 'arhar-whole',
+  chikoossapota: 'chikoo', 'chow-chow': 'chayote', cotton: 'cotton',
+  cowpeaveg: 'cowpea-pods',
+  colacasia: 'colocasia', colocasia: 'colocasia',
+  'bajrapearl-millet-cumbu': 'bajra', 'amlanelli-kai': 'amla',
+  'black-gramurd-beanswhole': 'urad-whole', urad: 'urad-whole',
+  'french-beansfrasbean': 'french-beans',
+  'arecanutbetelnut-supari': 'arecanut', betelnuts: 'arecanut',
+  'castor-seed': 'castor-seed', tomato: 'tomato', onion: 'onion', potato: 'potato',
+  'green-chilli': 'green-chilli', greenchilli: 'green-chilli', lemon: 'lemon',
+  pumpkin: 'pumpkin', spinach: 'spinach', mahua: 'mahua',
+  'tamarind-fruit': 'tamarind', tamarind: 'tamarind',
+  soybean: 'soybean', soyabean: 'soybean', radish: 'radish', raddish: 'radish',
+  pomegranate: 'pomegranate', orange: 'orange', mango: 'mango',
+  'green-peas': 'peas', 'peas-wet': 'peas', 'pea-pod-pea-cod': 'peas',
+  groundnut: 'groundnut', 'green-grammoongwhole': 'moong-whole', moong: 'moong-whole',
+  'lentilmasurwhole': 'masoor-whole', masoor: 'masoor-whole',
+  'ragifinger-millet': 'ragi', ragi: 'ragi', 'jowarsorghum': 'jowar', jowar: 'jowar',
+  'sesamumsesame-gingelly-til': 'sesame', sesame: 'sesame',
+  'little-gourdkundru': 'ivy-gourd', kundru: 'ivy-gourd',
+  'pointed-gourdparval': 'pointed-gourd', parwal: 'pointed-gourd',
+  ridgeguardtori: 'ridge-gourd', ridgegourd: 'ridge-gourd',
+  barnyard: 'barnyard-millet', linseed: 'linseed', 'flax-seeds': 'linseed',
+  sunflower: 'sunflower-seed', 'sunflower-seed': 'sunflower-seed',
+});
+
+export function getCropImageSource(id) {
+  const image = CROP_IMAGES[String(id || '').toLowerCase()];
+  return typeof image === 'string' ? `/visuals/crop-${image}.webp` : null;
+}

@@ -1,16 +1,18 @@
 import { Router } from 'express';
 import { loadData, loadIndiaData, loadStateData } from '../db/connection.js';
+import { isCropPriceCommodity, UNSUPPORTED_COMMODITY_ERROR } from '../../src/utils/cropEligibility.js';
 
 const router = Router();
 
 router.get('/', (req, res) => {
   const { state } = req.query;
-  if (state === 'all') return res.json(loadIndiaData('crops') || []);
-  if (state && state !== 'chhattisgarh') return res.json(loadStateData(state, 'crops') || []);
-  res.json(loadData('crops'));
+  const crops = state === 'all' ? loadIndiaData('crops')
+    : state && state !== 'chhattisgarh' ? loadStateData(state, 'crops') : loadData('crops');
+  res.json((Array.isArray(crops) ? crops : []).filter(crop => isCropPriceCommodity(crop.id)));
 });
 
 router.get('/:id', (req, res) => {
+  if (!isCropPriceCommodity(req.params.id)) return res.status(422).json(UNSUPPORTED_COMMODITY_ERROR);
   const { state } = req.query;
   let crops;
   if (state === 'all') crops = loadIndiaData('crops') || [];

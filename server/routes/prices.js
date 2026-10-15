@@ -1,10 +1,13 @@
 import { Router } from 'express';
 import { loadCropPrices, loadData, loadIndiaData, loadIndiaCropPrices, loadStateCropPrices, loadStateData } from '../db/connection.js';
 
+import { isCropPriceCommodity, UNSUPPORTED_COMMODITY_ERROR } from '../../src/utils/cropEligibility.js';
+
 const router = Router();
 
 router.get('/:cropId', (req, res) => {
   const { cropId } = req.params;
+  if (!isCropPriceCommodity(cropId)) return res.status(422).json(UNSUPPORTED_COMMODITY_ERROR);
   const { state } = req.query;
   const months = Number(req.query.months) || 13;
 

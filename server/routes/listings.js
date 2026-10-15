@@ -24,7 +24,11 @@ router.get('/', (req, res) => {
       listings = listings.filter(l => l.state?.toLowerCase() === state.toLowerCase());
     }
     // Only active listings for public view
-    listings = listings.filter(l => l.status === 'active');
+    const now = Date.now();
+    listings = listings.filter(l => {
+      const expires = Date.parse(l.expiresAt);
+      return l.status === 'active' && (!Number.isFinite(expires) || expires > now);
+    });
 
     // Sort
     if (sort === 'newest') {
@@ -37,8 +41,8 @@ router.get('/', (req, res) => {
 
     // Pagination
     const total = listings.length;
-    const pageNum = parseInt(page);
-    const limitNum = parseInt(limit);
+    const pageNum = Math.max(1, parseInt(page, 10) || 1);
+    const limitNum = Math.min(100, Math.max(1, parseInt(limit, 10) || 20));
     const start = (pageNum - 1) * limitNum;
     const paginated = listings.slice(start, start + limitNum);
 

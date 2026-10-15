@@ -37,7 +37,7 @@ export default function PriceCard({ crop, onClick }) {
             </span>}
           </>
         ) : hasChange ? (
-          <><span>पिछले उपलब्ध भाव से</span><span className={`sb-change ${changeClass}`}>
+          <><span>{crop.changeBasis || 'पिछले उपलब्ध भाव से'}</span><span className={`sb-change ${changeClass}`}>
             <ChangeIcon size={14} aria-hidden="true" />{change > 0 ? "+" : ""}{change}%
           </span></>
         ) : <span>तारीख व मंडी का विवरण देखें</span>}

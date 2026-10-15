@@ -1,6 +1,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import path from 'path';
+import { normalizeCropDataset, normalizeCropPriceDetail } from './crop-display-names.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, 'data');
@@ -11,7 +12,7 @@ const cache = {};
 export function loadData(name) {
   if (!cache[name]) {
     const file = path.join(DATA_DIR, `${name}.json`);
-    cache[name] = JSON.parse(readFileSync(file, 'utf-8'));
+    cache[name] = normalizeCropDataset(name, JSON.parse(readFileSync(file, 'utf-8')));
   }
   return cache[name];
 }
@@ -20,7 +21,7 @@ export function loadCropPrices(cropId) {
   const key = `crop-prices/${cropId}`;
   if (!cache[key]) {
     const file = path.join(DATA_DIR, 'crop-prices', `${cropId}.json`);
-    cache[key] = JSON.parse(readFileSync(file, 'utf-8'));
+    cache[key] = normalizeCropPriceDetail(JSON.parse(readFileSync(file, 'utf-8')));
   }
   return cache[key];
 }
@@ -30,7 +31,7 @@ export function loadIndiaData(name) {
   if (!cache[key]) {
     const file = path.join(INDIA_DIR, `${name}.json`);
     if (!existsSync(file)) return null;
-    cache[key] = JSON.parse(readFileSync(file, 'utf-8'));
+    cache[key] = normalizeCropDataset(name, JSON.parse(readFileSync(file, 'utf-8')));
   }
   return cache[key];
 }
@@ -40,7 +41,7 @@ export function loadStateData(stateId, name) {
   if (!cache[key]) {
     const file = path.join(INDIA_DIR, 'states', stateId, `${name}.json`);
     if (!existsSync(file)) return null;
-    cache[key] = JSON.parse(readFileSync(file, 'utf-8'));
+    cache[key] = normalizeCropDataset(name, JSON.parse(readFileSync(file, 'utf-8')));
   }
   return cache[key];
 }
@@ -50,7 +51,7 @@ export function loadIndiaCropPrices(cropId) {
   if (!cache[key]) {
     const file = path.join(INDIA_DIR, 'crop-prices', `${cropId}.json`);
     if (!existsSync(file)) return null;
-    cache[key] = JSON.parse(readFileSync(file, 'utf-8'));
+    cache[key] = normalizeCropPriceDetail(JSON.parse(readFileSync(file, 'utf-8')));
   }
   return cache[key];
 }
@@ -60,7 +61,7 @@ export function loadStateCropPrices(stateId, cropId) {
   if (!cache[key]) {
     const file = path.join(INDIA_DIR, 'states', stateId, 'crop-prices', `${cropId}.json`);
     if (!existsSync(file)) return null;
-    cache[key] = JSON.parse(readFileSync(file, 'utf-8'));
+    cache[key] = normalizeCropPriceDetail(JSON.parse(readFileSync(file, 'utf-8')));
   }
   return cache[key];
 }

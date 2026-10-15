@@ -1,451 +1,80 @@
-import CropImage from "@/components/CropImage";
+import { useEffect, useMemo, useState } from 'react';
+import { Activity, ArrowDownRight, ArrowUpRight, BarChart3, ChevronDown, ChevronUp, Info, RefreshCw, ShieldCheck, Store, X } from 'lucide-react';
+import CropImage from '@/components/CropImage';
+import { MONTHS } from '../data/constants';
+import { useApi } from '../hooks/useApi';
+import { getDataFreshness, getLatestQuoteDate } from '../utils/dataFreshness';
 import '@/styles/secondary.css';
-import { useState, useMemo, useEffect } from "react";
-import { TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight, BarChart3, ShieldCheck, ShieldAlert, ChevronDown, ChevronUp, Activity } from "lucide-react";
-import { MONTHS, FALLBACK_REGIONS } from "../data/constants";
-import { useApi } from "../hooks/useApi";
-import { getDataFreshness, getLatestQuoteDate } from "../utils/dataFreshness";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
-const HEAT = ["#edf0e6", "#c7d6b7", "#8cad8a", "#507f63", "#174c3c"];
-function heatSolid(val) {
-  if (val <= 1) return HEAT[0];
-  if (val <= 3) return HEAT[1];
-  if (val <= 5) return HEAT[2];
-  if (val <= 7) return HEAT[3];
-  return HEAT[4];
-}
+const HEAT = ['#edf0e6', '#c7d6b7', '#8cad8a', '#507f63', '#174c3c'];
+const heatSolid = value => HEAT[value <= 1 ? 0 : value <= 3 ? 1 : value <= 5 ? 2 : value <= 7 ? 3 : 4];
+const number = value => value != null && Number.isFinite(Number(value)) ? Number(value).toLocaleString('en-IN', { maximumFractionDigits: 2 }) : '—';
+const change = value => `${value > 0 ? '+' : ''}${number(value)}%`;
 
 export default function MandisTab({ selectedMonth, heatmap, regions, stateParam, onCropClick, jumpToMandi, onMandiConsumed }) {
   const [showAllHeatmap, setShowAllHeatmap] = useState(false);
   const [showAllGainers, setShowAllGainers] = useState(false);
   const [showAllLosers, setShowAllLosers] = useState(false);
-
-  // Show a context banner when navigated here from a mandi name click
+  const [month, setMonth] = useState(selectedMonth);
+  const [retry, setRetry] = useState(0);
+  useEffect(() => { setMonth(selectedMonth); }, [selectedMonth]);
   useEffect(() => {
-    if (jumpToMandi) {
-      // consume after showing
-      const t = setTimeout(() => onMandiConsumed?.(), 8000);
-      return () => clearTimeout(t);
-    }
+    if (!jumpToMandi) return;
+    const timer = setTimeout(() => onMandiConsumed?.(), 8000);
+    return () => clearTimeout(timer);
   }, [jumpToMandi, onMandiConsumed]);
 
-  const tickerQ = `?state=${encodeURIComponent(stateParam || 'all')}`;
-  const { data: tickerData } = useApi(`/ticker${tickerQ}`);
-  const { data: summaryData } = useApi(`/stats${tickerQ}`);
+  const query = `?state=${encodeURIComponent(stateParam || 'all')}&refresh=${retry}`;
+  const { data: tickerData, loading, error } = useApi(`/ticker${query}`);
+  const { data: summaryData } = useApi(`/stats${query}`);
   const summaryDate = Array.isArray(summaryData?.dateRange)
     ? getLatestQuoteDate(summaryData.dateRange.map(date => ({ date })))
     : summaryData?.dateRange?.to;
   const freshness = getDataFreshness(summaryDate);
   const totalMandis = Number.isFinite(summaryData?.totalMandis) ? summaryData.totalMandis : null;
-
-  const displayRegions = regions || FALLBACK_REGIONS;
-  const displayHeatmap = heatmap || {};
-  const showRegions = regions && regions.length > 0;
-  const heatmapEntries = Object.entries(displayHeatmap).filter(([, values]) => Array.isArray(values));
-  const selectedMonthHasRecords = heatmapEntries.some(([, values]) => Number(values[selectedMonth]) > 0);
+  const heatmapEntries = Object.entries(heatmap || {}).filter(([, values]) => Array.isArray(values));
   const visibleHeatmap = showAllHeatmap ? heatmapEntries : heatmapEntries.slice(0, 15);
+  const selectedMonthHasRecords = heatmapEntries.some(([, values]) => Number(values[month]) > 0);
 
-  // Computed market stats
   const stats = useMemo(() => {
-    if (!tickerData || tickerData.length === 0) return null;
-    const crops = tickerData.length;
-    const comparable = tickerData.filter(t => t.price > 0 && t.prevPrice > 0 && Number.isFinite(t.changePct));
-    const topGainers = [...comparable].filter(t => t.changePct > 0).sort((a, b) => b.changePct - a.changePct);
-    const topLosers = [...comparable].filter(t => t.changePct < 0).sort((a, b) => a.changePct - b.changePct);
-    const gainers = topGainers;
-    const losers = topLosers;
-    const flat = comparable.filter(t => t.changePct === 0);
-    const mostActive = [...tickerData].sort((a, b) => b.records - a.records).slice(0, 5);
-    const maxRecords = mostActive[0]?.records || 1;
-
-    const mspCrops = tickerData.filter(t => t.msp);
-    const aboveMsp = mspCrops.filter(t => t.mspDiffPct > 0).sort((a, b) => b.mspDiffPct - a.mspDiffPct);
-    const belowMsp = mspCrops.filter(t => t.mspDiffPct < 0).sort((a, b) => a.mspDiffPct - b.mspDiffPct);
-
+    if (!Array.isArray(tickerData) || !tickerData.length) return null;
+    const comparable = tickerData.filter(crop => crop.price > 0 && crop.prevPrice > 0 && Number.isFinite(crop.changePct));
+    const gainers = comparable.filter(crop => crop.changePct > 0).sort((a, b) => b.changePct - a.changePct);
+    const losers = comparable.filter(crop => crop.changePct < 0).sort((a, b) => a.changePct - b.changePct);
+    const flat = comparable.filter(crop => crop.changePct === 0);
+    const mostActive = [...tickerData].sort((a, b) => (b.records || 0) - (a.records || 0)).slice(0, 5);
+    const mspCrops = tickerData.filter(crop => crop.msp > 0 && Number.isFinite(crop.mspDiffPct));
     return {
-      crops, comparableCount: comparable.length, missingChange: crops - comparable.length,
-      gainers, losers, flat,
-      gainerPct: comparable.length > 0 ? ((gainers.length / comparable.length) * 100).toFixed(0) : 0,
-      loserPct: comparable.length > 0 ? ((losers.length / comparable.length) * 100).toFixed(0) : 0,
-      topGainers, topLosers, mostActive, maxRecords,
-      aboveMsp, belowMsp,
+      crops: tickerData.length, comparableCount: comparable.length,
+      missingChange: tickerData.length - comparable.length, gainers, losers, flat, mostActive,
+      maxRecords: Math.max(1, mostActive[0]?.records || 0),
+      gainerPct: comparable.length ? gainers.length / comparable.length * 100 : 0,
+      loserPct: comparable.length ? losers.length / comparable.length * 100 : 0,
+      aboveMsp: mspCrops.filter(crop => crop.mspDiffPct > 0).sort((a, b) => b.mspDiffPct - a.mspDiffPct),
+      belowMsp: mspCrops.filter(crop => crop.mspDiffPct < 0).sort((a, b) => a.mspDiffPct - b.mspDiffPct),
     };
   }, [tickerData]);
 
-  return (
-    <div className="sb-secondary-tab sb-mandis-tab flex flex-col gap-4">
+  const cropButton = (crop, metric, direction) => <button type="button" key={crop.id} className="sb-market-crop-row" onClick={() => onCropClick?.(crop.id)} aria-label={`${crop.nameHi || crop.name}: ${metric}; भाव का विवरण देखें`}><span><CropImage id={crop.id} name={crop.nameHi || crop.name} size="sm" /><strong>{crop.nameHi || crop.name}</strong></span><b data-direction={direction}>{metric}</b></button>;
 
-      <div className="sb-secondary-heading"><div><span className="sb-secondary-eyebrow">मंडी नज़र</span><h2>बाज़ार की चाल समझें</h2><p>उपलब्ध मासिक औसत में बदलाव और मंडी रिकॉर्ड देखें।</p></div></div>
-      {stats && <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs text-muted-foreground leading-relaxed">
-        <strong className="text-foreground">डेटासेट का अंतिम दर्ज दिन: {freshness.dateLabel}</strong>
-        {freshness.date && <span> · {freshness.label}</span>}
-        <p className="mt-1">तेज़ी / मंदी: पिछला उपलब्ध मासिक औसत बनाम नवीनतम उपलब्ध मासिक औसत। हर फसल की अलग तारीख इस सारांश में उपलब्ध नहीं है।</p>
-      </div>}
-      {/* Jump-to-mandi context banner */}
-      {jumpToMandi && (
-        <div className="flex items-center gap-2 bg-blue-500/10 border border-blue-500/25 rounded-lg px-3 py-2">
-          <span className="text-[12px]">🏪</span>
-          <div className="flex-1 min-w-0">
-            <div className="text-[10px] text-blue-400 font-bold">मंडी खोजें: {jumpToMandi}</div>
-            <div className="text-[9px] text-zinc-500">भाव टैब से आए — यहाँ मंडी-वार डेटा देखें</div>
-          </div>
-          <button onClick={() => onMandiConsumed?.()} aria-label="मंडी संदेश बंद करें" className="text-zinc-600 hover:text-zinc-400 text-[10px]">✕</button>
-        </div>
-      )}
+  return <div className="sb-secondary-tab sb-mandis-tab flex flex-col">
+    <div className="sb-secondary-heading"><div><span className="sb-secondary-eyebrow">मंडी नज़र</span><h2>बाज़ार की चाल समझें</h2><p>उपलब्ध मासिक औसत में बदलाव और मंडी रिकॉर्ड एक जगह।</p></div><span className="sb-feature-icon"><BarChart3 size={28} /></span></div>
+    {jumpToMandi && <div className="sb-mandi-context"><Store size={20} /><div><strong>मंडी संदर्भ: {jumpToMandi}</strong><p>भाव टैब से आए हैं। नीचे उपलब्ध मंडियों का रिकॉर्ड इतिहास देखें।</p></div><button type="button" onClick={() => onMandiConsumed?.()} aria-label="मंडी संदेश बंद करें"><X size={18} /></button></div>}
+    {loading && <div className="sb-listing-grid" role="status" aria-label="मंडी सारांश लोड हो रहा है"><div className="sb-listing-skeleton" /><div className="sb-listing-skeleton" /></div>}
+    {!loading && error && <div className="sb-secondary-empty" role="status"><RefreshCw size={27} /><h3>मंडी सारांश नहीं खुल सका</h3><p>नेटवर्क जाँचें और फिर कोशिश करें।</p><button type="button" className="sb-secondary-outline" onClick={() => setRetry(value => value + 1)}>दोबारा कोशिश करें</button></div>}
+    {!loading && !error && !stats && <div className="sb-secondary-empty"><BarChart3 size={27} /><h3>इस क्षेत्र का भाव सारांश उपलब्ध नहीं</h3><p>ऊपर से दूसरा राज्य चुनकर उसके उपलब्ध रिकॉर्ड देखें।</p></div>}
+    {stats && <>
+      <div className="sb-context-note"><Info size={18} /><div><strong>डेटासेट का अंतिम दर्ज दिन: {freshness.dateLabel}{freshness.date ? ` · ${freshness.label}` : ''}</strong><p>तेज़ी / मंदी: पिछला उपलब्ध मासिक औसत बनाम नवीनतम उपलब्ध मासिक औसत। हर फसल की अलग तारीख इस सारांश में उपलब्ध नहीं है।</p></div></div>
+      <div className="sb-market-overview">{[{ label: 'दर्ज फसलें', value: stats.crops }, { label: 'रिपोर्टिंग मंडियाँ', value: totalMandis }, { label: 'मासिक औसत बढ़ा', value: stats.gainers.length, direction: 'up' }, { label: 'मासिक औसत घटा', value: stats.losers.length, direction: 'down' }].map(item => <article key={item.label}><span>{item.label}</span><strong data-direction={item.direction}>{item.value == null ? '—' : number(item.value)}</strong></article>)}</div>
+      <section className="sb-market-panel"><div className="sb-section-title"><Activity size={19} /><h3>मासिक औसत में बदलाव</h3><span>{stats.comparableCount} तुलनीय फसलें</span></div><div className="sb-market-breadth" aria-hidden="true"><span style={{ width: `${stats.gainerPct}%` }} /><span style={{ width: `${stats.loserPct}%` }} /></div><div className="sb-breadth-labels"><span><ArrowUpRight size={17} />{stats.gainers.length} तेज़ी</span><span>{stats.flat.length} स्थिर</span><span>{stats.losers.length} मंदी<ArrowDownRight size={17} /></span></div>{stats.missingChange > 0 && <p className="sb-data-caption">{stats.missingChange} फसलों का पिछला तुलनीय औसत नहीं मिला; इन्हें तेज़ी / मंदी की गणना में शामिल नहीं किया गया है।</p>}</section>
+      <div className="sb-market-two-col">{[{ title: 'मासिक औसत में तेज़ी', items: stats.gainers, expanded: showAllGainers, toggle: setShowAllGainers, direction: 'up' }, { title: 'मासिक औसत में मंदी', items: stats.losers, expanded: showAllLosers, toggle: setShowAllLosers, direction: 'down' }].map(group => <section className="sb-market-panel" key={group.title}><div className="sb-section-title">{group.direction === 'up' ? <ArrowUpRight size={19} /> : <ArrowDownRight size={19} />}<h3>{group.title}</h3><span>{group.items.length}</span></div><div className="sb-market-crop-list">{(group.expanded ? group.items : group.items.slice(0, 5)).map(crop => cropButton(crop, change(crop.changePct), group.direction))}{!group.items.length && <p className="sb-data-caption">तुलनीय रिकॉर्ड में इस श्रेणी की फसल नहीं मिली।</p>}</div>{group.items.length > 5 && <button type="button" className="sb-market-more" aria-expanded={group.expanded} onClick={() => group.toggle(!group.expanded)}>{group.expanded ? 'कम दिखाएँ' : `सभी ${group.items.length} फसलें देखें`}{group.expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}</button>}</section>)}</div>
+      <section className="sb-market-panel"><div className="sb-section-title"><BarChart3 size={19} /><h3>सबसे अधिक दर्ज रिकॉर्ड</h3></div><p className="sb-data-caption">रिकॉर्ड की संख्या डेटा कवरेज बताती है; यह बिक्री की मात्रा या मूल्य नहीं है। भाव ₹ / क्विंटल में उपलब्ध मासिक औसत हैं।</p><div className="sb-market-ranking-head"><span>फसल</span><span>मासिक औसत</span><span>रिकॉर्ड</span></div>{stats.mostActive.map((crop, index) => <button type="button" key={crop.id} onClick={() => onCropClick?.(crop.id)} className="sb-market-ranking"><span><small>{index + 1}</small><CropImage id={crop.id} name={crop.nameHi || crop.name} size="sm" /><strong>{crop.nameHi || crop.name}</strong></span><b>{crop.price > 0 ? `₹${number(crop.price)}` : '—'}</b><span>{number(crop.records)}</span><i style={{ width: `${Math.min(100, (crop.records || 0) / stats.maxRecords * 100)}%` }} /></button>)}</section>
+      {(stats.aboveMsp.length > 0 || stats.belowMsp.length > 0) && <section><div className="sb-section-title"><ShieldCheck size={20} /><h3>दर्ज MSP से तुलना</h3></div><p className="sb-data-caption">डेटासेट के MSP और मासिक औसत की तुलना। खरीद सुनिश्चित नहीं है; विपणन वर्ष, किस्म और खरीद केंद्र की शर्तें अलग से जाँचें।</p><div className="sb-market-two-col">{[{ title: 'दर्ज MSP से ऊपर', items: stats.aboveMsp, direction: 'up' }, { title: 'दर्ज MSP से नीचे', items: stats.belowMsp, direction: 'down' }].map(group => <div key={group.title} className="sb-market-panel"><div className="sb-section-title"><h3>{group.title}</h3><span>{group.items.length}</span></div>{group.items.slice(0, 6).map(crop => cropButton(crop, change(crop.mspDiffPct), group.direction))}{!group.items.length && <p className="sb-data-caption">इस श्रेणी में रिकॉर्ड नहीं मिला।</p>}{group.items.length > 6 && <p className="sb-data-caption">सबसे बड़े अंतर वाली 6 फसलें दिखाई गई हैं।</p>}</div>)}</div></section>}
+    </>}
 
-      {/* ── A. Market Overview Strip ──────────────────────── */}
-      {stats && (
-        <div className="sb-market-stats grid grid-cols-4 gap-2">
-          <Card className="bg-zinc-900 border-zinc-800 p-2.5 text-center">
-            <div className="text-[8px] text-zinc-500 font-semibold tracking-wider">फसलें</div>
-            <div className="text-lg font-extrabold text-foreground mt-0.5">{stats.crops}</div>
-          </Card>
-          <Card className="bg-zinc-900 border-zinc-800 p-2.5 text-center">
-            <div className="text-[8px] text-zinc-500 font-semibold tracking-wider">रिपोर्टिंग मंडियाँ</div>
-            <div className="text-lg font-extrabold text-foreground mt-0.5">{totalMandis == null ? '—' : totalMandis.toLocaleString('en-IN')}</div>
-          </Card>
-          <Card className="bg-zinc-900 border-zinc-800 p-2.5 text-center">
-            <div className="text-[8px] text-green-500 font-semibold tracking-wider">तेज़ी</div>
-            <div className="text-lg font-extrabold text-green-500 mt-0.5">{stats.gainers.length}</div>
-          </Card>
-          <Card className="bg-zinc-900 border-zinc-800 p-2.5 text-center">
-            <div className="text-[8px] text-red-500 font-semibold tracking-wider">मंदी</div>
-            <div className="text-lg font-extrabold text-red-500 mt-0.5">{stats.losers.length}</div>
-          </Card>
-        </div>
-      )}
-
-      {/* ── B. Market Breadth Bar ─────────────────────────── */}
-      {stats && (
-        <Card className="bg-zinc-900 border-zinc-800 p-3">
-          <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center gap-1.5">
-              <Activity size={12} className="text-amber-500"/>
-              <span className="text-[10px] text-muted-foreground font-semibold tracking-wider">मासिक औसत में बदलाव</span>
-            </div>
-            <span className="text-[9px] text-zinc-500">
-              {stats.flat.length} स्थिर · {stats.comparableCount} तुलनीय फसलें
-            </span>
-          </div>
-          <div className="flex h-3 rounded-full overflow-hidden bg-zinc-800">
-            {stats.gainers.length > 0 && (
-              <div className="bg-green-500 transition-all duration-700" style={{ width: `${stats.gainerPct}%` }}/>
-            )}
-            {stats.losers.length > 0 && (
-              <div className="bg-red-500 transition-all duration-700" style={{ width: `${stats.loserPct}%` }}/>
-            )}
-          </div>
-          <div className="flex justify-between mt-1.5">
-            <span className="text-[10px] text-green-500 font-bold">
-              <TrendingUp size={10} className="inline mr-0.5"/> {stats.gainers.length} तेज़ी ({stats.gainerPct}%)
-            </span>
-            <span className="text-[10px] text-red-500 font-bold">
-              {stats.losers.length} मंदी ({stats.loserPct}%) <TrendingDown size={10} className="inline ml-0.5"/>
-            </span>
-          </div>
-        </Card>
-      )}
-
-      {stats?.missingChange > 0 && <p className="text-xs text-muted-foreground">{stats.missingChange} फसलों का पिछला तुलनीय औसत उपलब्ध नहीं है। इन्हें तेज़ी / मंदी की गणना में शामिल नहीं किया गया है।</p>}
-
-      {/* ── C. Top Gainers & Losers ───────────────────────── */}
-      {stats && (
-        <div className="grid grid-cols-2 gap-2">
-          {/* Gainers */}
-          <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
-            <div className="px-3 py-2 border-b border-zinc-800 flex items-center gap-1.5">
-              <ArrowUpRight size={12} className="text-green-500"/>
-              <span className="text-[10px] text-green-500 font-bold tracking-wider">तेज़ी</span>
-              <span className="text-[8px] text-zinc-500 ml-auto">{stats.topGainers.length}</span>
-            </div>
-            <div className="divide-y divide-zinc-800/50">
-              {(showAllGainers ? stats.topGainers : stats.topGainers.slice(0, 5)).map(t => (
-                <div key={t.id} onClick={() => onCropClick?.(t.id)} className="px-3 py-1.5 flex items-center justify-between cursor-pointer hover:bg-zinc-800/50 active:scale-[0.98] transition-all">
-                  <div className="flex items-center gap-1 min-w-0">
-                    <CropImage id={t.id} name={t.nameHi} size="sm" />
-                    <span className="text-[10px] text-foreground font-medium truncate">{t.nameHi}</span>
-                  </div>
-                  <span className="text-[10px] text-green-500 font-bold shrink-0 ml-1">+{t.changePct}%</span>
-                </div>
-              ))}
-            </div>
-            {stats.topGainers.length > 5 && (
-              <button onClick={() => setShowAllGainers(!showAllGainers)}
-                className="w-full py-1.5 text-[9px] text-green-500 font-semibold border-t border-zinc-800 hover:bg-zinc-800/50">
-                {showAllGainers ? "कम" : `+${stats.topGainers.length - 5} और`}
-              </button>
-            )}
-          </Card>
-
-          {/* Losers */}
-          <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
-            <div className="px-3 py-2 border-b border-zinc-800 flex items-center gap-1.5">
-              <ArrowDownRight size={12} className="text-red-500"/>
-              <span className="text-[10px] text-red-500 font-bold tracking-wider">मंदी</span>
-              <span className="text-[8px] text-zinc-500 ml-auto">{stats.topLosers.length}</span>
-            </div>
-            <div className="divide-y divide-zinc-800/50">
-              {(showAllLosers ? stats.topLosers : stats.topLosers.slice(0, 5)).map(t => (
-                <div key={t.id} onClick={() => onCropClick?.(t.id)} className="px-3 py-1.5 flex items-center justify-between cursor-pointer hover:bg-zinc-800/50 active:scale-[0.98] transition-all">
-                  <div className="flex items-center gap-1 min-w-0">
-                    <CropImage id={t.id} name={t.nameHi} size="sm" />
-                    <span className="text-[10px] text-foreground font-medium truncate">{t.nameHi}</span>
-                  </div>
-                  <span className="text-[10px] text-red-500 font-bold shrink-0 ml-1">{t.changePct}%</span>
-                </div>
-              ))}
-            </div>
-            {stats.topLosers.length > 5 && (
-              <button onClick={() => setShowAllLosers(!showAllLosers)}
-                className="w-full py-1.5 text-[9px] text-red-500 font-semibold border-t border-zinc-800 hover:bg-zinc-800/50">
-                {showAllLosers ? "कम" : `+${stats.topLosers.length - 5} और`}
-              </button>
-            )}
-          </Card>
-        </div>
-      )}
-
-      {/* ── D. Most Reported Crops ──────────────────────── */}
-      {stats && (
-        <div>
-          <div className="flex items-center gap-1.5 mb-2">
-            <BarChart3 size={12} className="text-amber-500"/>
-            <span className="text-[10px] text-muted-foreground font-semibold tracking-wider">सबसे अधिक दर्ज रिकॉर्ड</span>
-          </div>
-          <p className="text-xs text-muted-foreground mb-3">रिकॉर्ड की संख्या डेटा कवरेज बताती है; यह बिक्री की मात्रा या मूल्य नहीं है। भाव ₹ / क्विंटल में उपलब्ध मासिक औसत हैं।</p>
-          <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
-            <div className="px-3 py-1.5 border-b border-zinc-800 grid grid-cols-[1fr_70px_80px] text-[8px] text-zinc-500 font-semibold tracking-wider">
-              <div>फसल</div>
-              <div className="text-right">भाव</div>
-              <div className="text-right">रिकॉर्ड</div>
-            </div>
-            <div className="divide-y divide-zinc-800/50">
-              {stats.mostActive.map((t, i) => {
-                const barPct = (t.records / stats.maxRecords * 100).toFixed(0);
-                return (
-                  <div key={t.id} onClick={() => onCropClick?.(t.id)} className="px-3 py-2 cursor-pointer hover:bg-zinc-800/50 active:scale-[0.98] transition-all">
-                    <div className="grid grid-cols-[1fr_70px_80px] items-center">
-                      <div className="flex items-center gap-1.5 min-w-0">
-                        <span className="text-[10px] text-zinc-500 font-bold w-3">{i + 1}</span>
-                        <CropImage id={t.id} name={t.nameHi} size="sm" />
-                        <span className="text-[11px] text-foreground font-semibold truncate">{t.nameHi}</span>
-                      </div>
-                      <div className={`text-right text-[11px] font-bold tabular-nums ${
-                        t.change > 0 ? "text-green-500" : t.change < 0 ? "text-red-500" : "text-foreground"
-                      }`}>
-                        ₹{t.price?.toLocaleString()}
-                      </div>
-                      <div className="text-right text-[10px] text-zinc-400 font-medium tabular-nums">
-                        {t.records?.toLocaleString()}
-                      </div>
-                    </div>
-                    <div className="mt-1 h-1 bg-zinc-800 rounded-full overflow-hidden">
-                      <div className="h-full bg-amber-500/60 rounded-full transition-all duration-500" style={{ width: `${barPct}%` }}/>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </Card>
-        </div>
-      )}
-
-      {/* ── E. MSP Monitor ────────────────────────────────── */}
-      {stats && (stats.aboveMsp.length > 0 || stats.belowMsp.length > 0) && (
-        <div>
-          <div className="flex items-center gap-1.5 mb-2">
-            <ShieldCheck size={12} className="text-green-500"/>
-            <span className="text-[10px] text-muted-foreground font-semibold tracking-wider">MSP मॉनिटर</span>
-          </div>
-          <div className="grid grid-cols-2 gap-2">
-            {/* Above MSP */}
-            <Card className="bg-zinc-900 border-zinc-800 p-3">
-              <div className="text-[9px] text-green-500 font-bold mb-2 flex items-center gap-1">
-                <ShieldCheck size={10}/>
-                MSP से ऊपर ({stats.aboveMsp.length})
-              </div>
-              <div className="flex flex-col gap-1.5">
-                {stats.aboveMsp.slice(0, 6).map(t => (
-                  <div key={t.id} onClick={() => onCropClick?.(t.id)} className="flex items-center justify-between cursor-pointer hover:bg-zinc-800/30 rounded px-1 -mx-1 active:scale-[0.98] transition-all">
-                    <span className="sb-inline-crop text-[10px] text-foreground truncate"><CropImage id={t.id} name={t.nameHi} size="xs" /> {t.nameHi}</span>
-                    <span className="text-[9px] text-green-500 font-bold shrink-0 ml-1">+{t.mspDiffPct}%</span>
-                  </div>
-                ))}
-              </div>
-            </Card>
-
-            {/* Below MSP */}
-            <Card className="bg-zinc-900 border-zinc-800 p-3">
-              <div className="text-[9px] text-red-500 font-bold mb-2 flex items-center gap-1">
-                <ShieldAlert size={10}/>
-                MSP से नीचे ({stats.belowMsp.length})
-              </div>
-              <div className="flex flex-col gap-1.5">
-                {stats.belowMsp.slice(0, 6).map(t => (
-                  <div key={t.id} onClick={() => onCropClick?.(t.id)} className="flex items-center justify-between cursor-pointer hover:bg-zinc-800/30 rounded px-1 -mx-1 active:scale-[0.98] transition-all">
-                    <span className="sb-inline-crop text-[10px] text-foreground truncate"><CropImage id={t.id} name={t.nameHi} size="xs" /> {t.nameHi}</span>
-                    <span className="text-[9px] text-red-500 font-bold shrink-0 ml-1">{t.mspDiffPct}%</span>
-                  </div>
-                ))}
-              </div>
-            </Card>
-          </div>
-        </div>
-      )}
-
-      {/* ── F. Signal Distribution ────────────────────────── */}
-      {stats && (
-        <div>
-          <div className="text-[10px] text-muted-foreground font-semibold tracking-wider mb-2">
-            बदलाव के अनुसार फसलें
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            {/* Positive monthly change */}
-            <Card className="bg-zinc-900 border-zinc-800 p-2.5">
-              <div className="text-[9px] font-bold mb-1.5 text-green-500">
-                तेज़ी ({stats.gainers.length})
-              </div>
-              <div className="flex flex-wrap gap-1">
-                {stats.gainers.slice(0, 8).map(t => (
-                  <span key={t.id} onClick={() => onCropClick?.(t.id)} className="text-[8px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-500 border border-green-500/20 cursor-pointer hover:bg-green-500/20 active:scale-95 transition-all">
-                    {t.nameHi || t.name}
-                  </span>
-                ))}
-                {stats.gainers.length > 8 && (
-                  <span className="text-[8px] text-zinc-500 px-1 py-0.5">+{stats.gainers.length - 8}</span>
-                )}
-              </div>
-            </Card>
-            {/* No monthly change */}
-            <Card className="bg-zinc-900 border-zinc-800 p-2.5">
-              <div className="text-[9px] font-bold mb-1.5 text-amber-500">
-                स्थिर ({stats.flat.length})
-              </div>
-              <div className="flex flex-wrap gap-1">
-                {stats.flat.slice(0, 8).map(t => (
-                  <span key={t.id} onClick={() => onCropClick?.(t.id)} className="text-[8px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20 cursor-pointer hover:bg-amber-500/20 active:scale-95 transition-all">
-                    {t.nameHi || t.name}
-                  </span>
-                ))}
-                {stats.flat.length > 8 && (
-                  <span className="text-[8px] text-zinc-500 px-1 py-0.5">+{stats.flat.length - 8}</span>
-                )}
-              </div>
-            </Card>
-            {/* Negative monthly change */}
-            <Card className="bg-zinc-900 border-zinc-800 p-2.5">
-              <div className="text-[9px] font-bold mb-1.5 text-red-500">
-                मंदी ({stats.losers.length})
-              </div>
-              <div className="flex flex-wrap gap-1">
-                {stats.losers.slice(0, 8).map(t => (
-                  <span key={t.id} onClick={() => onCropClick?.(t.id)} className="text-[8px] px-1.5 py-0.5 rounded bg-red-500/10 text-red-500 border border-red-500/20 cursor-pointer hover:bg-red-500/20 active:scale-95 transition-all">
-                    {t.nameHi || t.name}
-                  </span>
-                ))}
-                {stats.losers.length > 8 && (
-                  <span className="text-[8px] text-zinc-500 px-1 py-0.5">+{stats.losers.length - 8}</span>
-                )}
-              </div>
-            </Card>
-          </div>
-        </div>
-      )}
-
-      {/* ── G. Heatmap (preserved) ────────────────────────── */}
-      {heatmapEntries.length > 0 && (
-        <div>
-          <div className="text-[10px] text-muted-foreground tracking-wider font-semibold mb-2">
-            महीनेवार रिकॉर्ड सूचकांक (1–10)
-          </div>
-          <p className="text-xs text-muted-foreground mb-3">उपलब्ध ऐतिहासिक रिकॉर्ड का सूचकांक; वर्ष अलग नहीं दिए गए हैं। “—” का अर्थ स्रोत में उस महीने का रिकॉर्ड नहीं मिला, मंडी बंद होना नहीं है।</p>
-          {!selectedMonthHasRecords && <div className="rounded-lg border border-zinc-800 px-3 py-2 mb-3 text-xs text-muted-foreground">{MONTHS[selectedMonth]} के लिए इन मंडियों का दर्ज सूचकांक उपलब्ध नहीं है। दूसरे महीनों का उपलब्ध इतिहास नीचे देखें।</div>}
-          <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
-            <div className="overflow-x-auto">
-              <div className="min-w-[360px]">
-                <div className="grid gap-0.5 px-3 py-2 border-b border-zinc-800"
-                  style={{ gridTemplateColumns: "72px repeat(12, 1fr)" }}>
-                  <div/>
-                  {MONTHS.map((m, i) => (
-                    <div key={i} className={`text-[7px] text-center ${i === selectedMonth ? "text-amber-500 font-bold" : "text-muted-foreground"}`}>
-                      {m.slice(0,1)}
-                    </div>
-                  ))}
-                </div>
-                <div className="px-3 py-1">
-                  {visibleHeatmap.map(([mandi, vals]) => (
-                    <div key={mandi} className="grid gap-0.5 py-0.5 cursor-pointer hover:bg-zinc-800/30 rounded transition-colors"
-                      style={{ gridTemplateColumns: "72px repeat(12, 1fr)" }}>
-                      <div className="text-[9px] text-muted-foreground flex items-center truncate">{mandi}</div>
-                      {MONTHS.map((month, i) => {
-                        const v = Number(vals[i]);
-                        const hasRecord = Number.isFinite(v) && v > 0;
-                        return (
-                        <div key={i} className="h-5 rounded-sm flex items-center justify-center"
-                          title={`${mandi} · ${month}: ${hasRecord ? `रिकॉर्ड सूचकांक ${v}/10` : 'महीने का रिकॉर्ड उपलब्ध नहीं'}`}
-                          style={{
-                            background: hasRecord ? heatSolid(v) : "#f2f3ee",
-                            outline: i === selectedMonth ? "1.5px solid #f59e0b" : "none",
-                            outlineOffset: "-1px",
-                          }}>
-                          {(i === selectedMonth || !hasRecord) && <span className="text-[10px] font-bold" style={{ color: hasRecord && v > 5 ? "#ffffff" : "#708077" }}>{hasRecord ? v : "—"}</span>}
-                        </div>
-                      ); })}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {heatmapEntries.length > 15 && (
-              <button onClick={() => setShowAllHeatmap(!showAllHeatmap)}
-                className="w-full py-2 flex items-center justify-center gap-1 text-[11px] text-green-500 font-semibold border-t border-zinc-800 hover:bg-zinc-800/50 transition-colors">
-                {showAllHeatmap ? (
-                  <><ChevronUp size={14}/> कम दिखाएं</>
-                ) : (
-                  <><ChevronDown size={14}/> सभी {heatmapEntries.length} मंडी देखें</>
-                )}
-              </button>
-            )}
-
-            <div className="px-3 py-2 flex items-center gap-1 border-t border-zinc-800">
-              <span className="text-[9px] text-muted-foreground">कम</span>
-              {HEAT.map(c => (
-                <div key={c} className="w-4 h-2.5 rounded-sm" style={{ background: c }}/>
-              ))}
-              <span className="text-[9px] text-muted-foreground">ज़्यादा</span>
-            </div>
-          </Card>
-        </div>
-      )}
-
-      {heatmapEntries.length === 0 && <Card className="bg-zinc-900 border-zinc-800 p-4 text-xs text-muted-foreground">इस क्षेत्र का महीनेवार रिकॉर्ड सूचकांक उपलब्ध नहीं है।</Card>}
-
-      {/* Regions — only for CG */}
-      {showRegions && (
-        <div>
-          <div className="text-[10px] text-muted-foreground tracking-wider font-semibold mb-2">
-            क्षेत्र
-          </div>
-          <div className="flex flex-col gap-2">
-            {displayRegions.map((r) => (
-              <Card key={r.name} className="bg-zinc-900 border-zinc-800 p-3 cursor-pointer hover:border-zinc-600 transition-colors active:scale-[0.99]">
-                <div className="font-bold text-sm mb-1" style={{ color: r.color }}>{r.name}</div>
-                <div className="text-[10px] text-muted-foreground mb-2">{r.districts}</div>
-                <div className="flex gap-1.5 flex-wrap">
-                  {r.crops.map(c => (
-                    <Badge key={c} variant="outline" className="text-[10px]" style={{ borderColor: r.color, color: r.color }}>
-                      {c}
-                    </Badge>
-                  ))}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-  );
+    <section><div className="sb-section-title"><h3>महीनेवार रिकॉर्ड सूचकांक</h3><label className="sb-heatmap-month">महीना<select value={month} onChange={event => setMonth(Number(event.target.value))}>{MONTHS.map((name, index) => <option key={name} value={index}>{name}</option>)}</select></label></div><p className="sb-data-caption">उपलब्ध ऐतिहासिक रिकॉर्ड का सूचकांक (1–10); वर्ष अलग नहीं दिए गए हैं। “—” का अर्थ स्रोत में उस महीने का रिकॉर्ड नहीं मिला, मंडी बंद होना नहीं है।</p>
+      {heatmapEntries.length ? <>{!selectedMonthHasRecords && <div className="sb-context-note"><Info size={17} /><p>{MONTHS[month]} के लिए इन मंडियों का दर्ज सूचकांक उपलब्ध नहीं है। दूसरे महीनों का उपलब्ध इतिहास नीचे देखें।</p></div>}<div className="sb-calendar-table-scroll" role="region" tabIndex={0} aria-label="मंडी का महीनेवार रिकॉर्ड इतिहास; सभी महीने देखने के लिए दाएँ स्क्रॉल करें"><table className="sb-calendar-table sb-heatmap-table"><caption className="sr-only">महीने के अनुसार मंडी रिकॉर्ड सूचकांक</caption><thead><tr><th scope="col">मंडी</th>{MONTHS.map((name, index) => <th scope="col" key={name} data-current={month === index}>{name}</th>)}</tr></thead><tbody>{visibleHeatmap.map(([mandi, values]) => <tr key={mandi}><th scope="row">{mandi}</th>{MONTHS.map((name, index) => { const value = Number(values[index]); const hasRecord = Number.isFinite(value) && value > 0; return <td key={name} data-current={month === index}><span className="sb-calendar-cell" style={{ background: hasRecord ? heatSolid(value) : '#f2f3ee', color: hasRecord && value > 5 ? '#fff' : '#536559' }} title={`${mandi} · ${name}: ${hasRecord ? `${value}/10` : 'रिकॉर्ड उपलब्ध नहीं'}`}>{hasRecord ? value : '—'}</span></td>; })}</tr>)}</tbody></table></div><div className="sb-heatmap-footer"><div className="sb-phase-legend"><span>कम</span>{HEAT.map(color => <i key={color} style={{ background: color }} />)}<span>ज़्यादा</span></div>{heatmapEntries.length > 15 && <button type="button" className="sb-secondary-outline" aria-expanded={showAllHeatmap} onClick={() => setShowAllHeatmap(!showAllHeatmap)}>{showAllHeatmap ? 'कम दिखाएँ' : `सभी ${heatmapEntries.length} मंडियाँ देखें`}{showAllHeatmap ? <ChevronUp size={16} /> : <ChevronDown size={16} />}</button>}</div></> : <div className="sb-secondary-empty"><p>इस क्षेत्र का महीनेवार रिकॉर्ड सूचकांक उपलब्ध नहीं है।</p></div>}
+    </section>
+    {Array.isArray(regions) && regions.length > 0 && <section><div className="sb-section-title"><h3>क्षेत्र का परिचय</h3></div><div className="sb-season-grid">{regions.map(region => <article key={region.name}><h4>{region.name}</h4><p>{region.districts}</p><div className="sb-region-crops">{(region.crops || []).map(crop => <span key={crop}>{crop}</span>)}</div></article>)}</div></section>}
+  </div>;
 }

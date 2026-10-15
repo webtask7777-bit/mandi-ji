@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import { ChevronDown, X, Search, MapPin, User, LogIn, Crown, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useApi } from "./hooks/useApi";
 import { useStateContext } from "./context/StateContext";
 import { useAuth } from "./context/AuthContext";
@@ -21,21 +21,37 @@ const CalendarTab = lazy(() => import('./tabs/CalendarTab'));
 const MandisTab = lazy(() => import('./tabs/MandisTab'));
 const NakshaTab = lazy(() => import('./tabs/NakshaTab'));
 const BazaarTab = lazy(() => import('./tabs/BazaarTab'));
-const LogisticsTab = lazy(() => import('./tabs/LogisticsTab'));
+const DeliveryCalculatorTab = lazy(() => import('./tabs/DeliveryCalculatorTab'));
 const brandCopy = text => typeof text === 'string' ? text.replace(/मंडीजी|\bMandiJi\b/g, 'सही भाव') : text;
 
 const TAB_ITEMS = [
   { value: "prices", icon: ChartNoAxesCombined, label: "मंडी भाव" },
-  { value: "calendar", icon: CalendarDays, label: "कैलेंडर" },
+  { value: "delivery", icon: Truck, label: "डिलीवरी खर्च" },
   { value: "mandis", icon: Store, label: "मंडी" },
+  { value: "calendar", icon: CalendarDays, label: "कैलेंडर" },
   { value: "naksha", icon: Map, label: "नक्शा" },
   { value: "bazaar", icon: ShoppingBasket, label: "बाज़ार" },
-  { value: "logistics", icon: Truck, label: "ट्रांसपोर्ट" },
 ];
 
 export default function MandiJiDashboard() {
   const selectedMonth = new Date().getMonth();
-  const [activeTab, setActiveTab] = useState("prices");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const requestedTab = searchParams.get('tab');
+  const activeTab = requestedTab === 'logistics' ? 'delivery' : TAB_ITEMS.some(tab => tab.value === requestedTab) ? requestedTab : 'prices';
+  const [deliveryScenario, setDeliveryScenario] = useState(null);
+  function setActiveTab(value) {
+    setSearchParams(previous => {
+      const next = new URLSearchParams(previous);
+      if (value === 'prices') next.delete('tab');
+      else next.set('tab', value);
+      return next;
+    });
+  }
+  function handleDeliveryCalculate(scenario = {}) {
+    setDeliveryScenario({ ...scenario, id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}` });
+    setActiveTab('delivery');
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
   const [showStatePicker, setShowStatePicker] = useState(false);
   const [stateSearch, setStateSearch] = useState("");
   const [showUserMenu, setShowUserMenu] = useState(false);
@@ -138,7 +154,7 @@ export default function MandiJiDashboard() {
     <div className="sb-dashboard">
       <a href="#main-content" className="sb-skip-link">मुख्य जानकारी पर जाएँ</a>
       <SEO
-        title={`${stateNameHi} मंडी भाव`}
+        title={activeTab === 'delivery' ? 'डिलीवरी खर्च और माल की कुल लागत' : `${stateNameHi} मंडी भाव`}
         description={`${stateNameHi} की मंडियों के उपलब्ध दर्ज भाव। सब्ज़ी, अनाज, दाल — फसल भाव, मंडी तुलना और बिक्री कैलकुलेटर।`}
         path="/"
       />
@@ -276,14 +292,14 @@ export default function MandiJiDashboard() {
         <section className="sb-welcome" aria-labelledby="welcome-heading">
           <div className="sb-welcome-copy">
             <p className="sb-eyebrow"><span /> {stateNameHi} की मंडियों से</p>
-            <h1 id="welcome-heading">सही जानकारी।<br /><span>बेहतर फैसला।</span></h1>
-            <p className="sb-welcome-description">अपनी फसल का भाव जानें, मंडियों की तुलना करें<br className="sb-desktop-break" /> और अगला कदम समझदारी से चुनें।</p>
+            <h1 id="welcome-heading">भाव से आगे।<br /><span>पूरे सौदे का हिसाब।</span></h1>
+            <p className="sb-welcome-description">मंडी का भाव देखें। फिर भाड़ा, खर्च और माल की कमी जोड़कर जानें—आपके यहाँ पहुँचने पर कितना पड़ेगा?</p>
             <div className="sb-welcome-actions">
               <button className="sb-primary-button" onClick={() => setShowStatePicker(true)}>
                 <MapPin size={16} aria-hidden="true" /> अपना राज्य चुनें
               </button>
-              <button className="sb-text-button" onClick={() => setActiveTab("mandis")}>
-                मंडियाँ देखें <ArrowRight size={16} aria-hidden="true" />
+              <button className="sb-text-button" onClick={() => setActiveTab("delivery")}>
+                डिलीवरी खर्च निकालें <ArrowRight size={16} aria-hidden="true" />
               </button>
             </div>
           </div>
@@ -294,8 +310,14 @@ export default function MandiJiDashboard() {
         </section>
       )}
 
+      {activeTab === 'prices' && <nav className="sb-task-shortcuts" aria-label="अपना अगला कदम चुनें">
+        <a href="#sb-crop-picker"><span className="sb-task-number">01</span><span><strong>फसल का भाव</strong><small>दर्ज तारीख के साथ</small></span><ChartNoAxesCombined size={20} aria-hidden="true" /></a>
+        <button type="button" onClick={() => setActiveTab('mandis')}><span className="sb-task-number">02</span><span><strong>मंडी की जानकारी</strong><small>उपलब्ध रिकॉर्ड समझें</small></span><Store size={20} aria-hidden="true" /></button>
+        <button type="button" onClick={() => setActiveTab('delivery')}><span className="sb-task-number">03</span><span><strong>पहुँचने तक की लागत</strong><small>वाहन, दूरी और बचत</small></span><Truck size={20} aria-hidden="true" /></button>
+      </nav>}
+
       {/* Banners */}
-      {banners?.filter(b => !dismissedBanners.includes(b.id)).map(banner => {
+      {banners?.filter(b => !dismissedBanners.includes(b.id) && (b.type !== 'promo' || activeTab === 'prices')).map(banner => {
         const colors = { info: 'bg-blue-500/10 border-blue-500/30 text-blue-400', warning: 'bg-amber-500/10 border-amber-500/30 text-amber-400', promo: 'bg-green-500/10 border-green-500/30 text-green-400', success: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' };
         const icons = { info: <Info size={12}/>, warning: <AlertTriangle size={12}/>, promo: <Gift size={12}/>, success: <CheckCircle size={12}/> };
         return (
@@ -320,17 +342,17 @@ export default function MandiJiDashboard() {
           </div>
         )}
         <AnimatePresence mode="wait">
-          <Motion.div key={`${activeTab}-${stateParam}`} variants={tabVariants}
+          <Motion.div key={activeTab === 'delivery' ? activeTab : `${activeTab}-${stateParam}`} variants={tabVariants}
             id={`panel-${activeTab}`} role="tabpanel" aria-labelledby={`tab-${activeTab}`} className={`sb-tab-panel sb-panel-${activeTab}`}
             initial="initial" animate="animate" exit="exit"
             transition={{ duration: 0.15 }}>
             <Suspense fallback={<div role="status" className="py-12 text-center text-muted-foreground">जानकारी खुल रही है…</div>}>
-            {activeTab === "prices" && <PricesTab crops={crops} stateParam={stateParam} initialCropId={jumpToCrop} onCropConsumed={() => setJumpToCrop(null)} onMandiClick={handleMandiClick}/>}
+            {activeTab === "prices" && <PricesTab crops={crops} stateParam={stateParam} initialCropId={jumpToCrop} onCropConsumed={() => setJumpToCrop(null)} onMandiClick={handleMandiClick} onDeliveryCalculate={handleDeliveryCalculate}/>}
             {activeTab === "calendar" && <CalendarTab selectedMonth={selectedMonth} crops={crops} seasons={seasons} isCG={isCG}/>}
             {activeTab === "mandis" && <MandisTab selectedMonth={selectedMonth} heatmap={heatmap} regions={isCG ? FALLBACK_REGIONS : null} stateParam={stateParam} onCropClick={handleCropClick} jumpToMandi={jumpToMandi} onMandiConsumed={() => setJumpToMandi(null)}/>}
             {activeTab === "naksha" && <NakshaTab selectedMonth={selectedMonth} districts={districts} mandis={mandis} states={states} isCG={isCG} crops={crops}/>}
             {activeTab === "bazaar" && <BazaarTab />}
-            {activeTab === "logistics" && <LogisticsTab />}
+            {activeTab === "delivery" && <DeliveryCalculatorTab crops={crops} initialScenario={deliveryScenario} onScenarioConsumed={() => setDeliveryScenario(null)} />}
             </Suspense>
           </Motion.div>
         </AnimatePresence>

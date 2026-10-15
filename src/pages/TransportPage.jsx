@@ -1,33 +1,28 @@
-import { useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
-import TransportCalc from '../components/transport/TransportCalc';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { ArrowLeft, Truck } from 'lucide-react';
+import DeliveryCalculatorTab from '../tabs/DeliveryCalculatorTab';
 import SEO from '../components/SEO';
+import Brand from '../components/Brand';
+import Footer from '../components/Footer';
+import '../styles/dashboard.css';
 
 export default function TransportPage() {
-  const navigate = useNavigate();
-
+  const location = useLocation();
+  const [scenario, setScenario] = useState(location.state?.deliveryScenario || null);
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <SEO title="ट्रांसपोर्ट कैलकुलेटर" description="मंडी से मंडी ट्रांसपोर्ट खर्च कैलकुलेट करें। दूरी, किराया, टोल, लोडिंग — सब एक जगह।" path="/transport" />
-      <div className="max-w-lg mx-auto">
-        {/* Header */}
-        <header className="sticky top-0 z-30 bg-background border-b border-zinc-800">
-          <div className="flex items-center gap-3 px-4 py-3">
-            <button
-              onClick={() => navigate('/')}
-              className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:bg-zinc-800 transition-colors"
-            >
-              <ArrowLeft size={16} className="text-zinc-400" />
-            </button>
-            <h1 className="text-base font-bold">ट्रांसपोर्ट कैलकुलेटर</h1>
-          </div>
-        </header>
-
-        {/* Content */}
-        <main className="px-4 py-4 pb-8">
-          <TransportCalc />
-        </main>
-      </div>
+    <div className="sb-dashboard sb-delivery-page">
+      <SEO title="डिलीवरी कैलकुलेटर — वाहन, दूरी और माल की कुल लागत" description="मंडी से माल लाने का हिसाब लगाएँ। वाहन की क्षमता, दूरी, भाड़ा, पैकिंग और वजन की कमी जोड़कर प्रति किलो लागत व स्थानीय खरीद से बचत देखें।" path="/delivery-calculator" />
+      <a href="#delivery-main" className="sb-skip-link">कैलकुलेटर पर जाएँ</a>
+      <header className="sb-header sb-calculator-header">
+        <Link to="/" aria-label="सही भाव होम"><Brand /></Link>
+        <Link to="/" className="sb-text-button"><ArrowLeft size={17} aria-hidden="true" /> मंडी भाव देखें</Link>
+      </header>
+      <main id="delivery-main" className="sb-main">
+        <div className="sb-calculator-page-heading"><span className="sb-eyebrow"><Truck size={16} aria-hidden="true" />सही भाव · काम का हिसाब</span><h1>डिलीवरी कैलकुलेटर</h1></div>
+        <DeliveryCalculatorTab initialScenario={scenario} onScenarioConsumed={() => setScenario(null)} />
+        <Footer />
+      </main>
     </div>
   );
 }

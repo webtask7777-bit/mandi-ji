@@ -1,0 +1,4039 @@
+{
+  "generatedAt": "2026-10-15T19:38:05.094265+00:00",
+  "releaseDate": "2026-10-16",
+  "status": "All 66 mapped photo files exist and decode as 512×512 WebP. Live deployment verification remains separate.",
+  "coverageMeaning": "Catalog entry coverage and historical source record coverage only. These percentages do not measure traffic, users, sales, transaction volume, freshness or geographic completeness. IDs include synonyms, variants, processed products and livestock; they are not all distinct crops.",
+  "assetFamilies": {
+    "baseline": 20,
+    "mapped": 66,
+    "currentlyAvailable": 66,
+    "missingFiles": []
+  },
+  "catalogs": {
+    "allIndia": {
+      "source": "server/db/data/india/crops.json",
+      "rawCatalog": {
+        "totalEntries": 285,
+        "historicalRecords": 759334,
+        "mappedEntries": 73,
+        "unmappedEntries": 212,
+        "historicalRecordsRepresented": 694472,
+        "recordWeightedCoveragePercent": 91.46,
+        "availablePhotoEntries": 73,
+        "availableHistoricalRecordCoveragePercent": 91.46
+      },
+      "eligibleCropPriceApiCatalog": {
+        "totalEntries": 274,
+        "historicalRecords": 756798,
+        "mappedEntries": 73,
+        "unmappedEntries": 201,
+        "historicalRecordsRepresented": 694472,
+        "recordWeightedCoveragePercent": 91.76,
+        "availablePhotoEntries": 73,
+        "availableHistoricalRecordCoveragePercent": 91.76
+      },
+      "baselineRawCatalog": {
+        "totalEntries": 285,
+        "mappedEntries": 22,
+        "unmappedEntries": 263,
+        "historicalRecords": 759334,
+        "historicalRecordsRepresented": 462156,
+        "recordWeightedCoveragePercent": 60.86
+      },
+      "excludedFromCropPriceApi": [
+        {
+          "id": "fish",
+          "sourceName": "Fish",
+          "displayName": "मछली",
+          "historicalRecords": 2072,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "cow",
+          "sourceName": "Cow",
+          "displayName": "गाय",
+          "historicalRecords": 161,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "goat",
+          "sourceName": "Goat",
+          "displayName": "बकरी",
+          "historicalRecords": 111,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "cock",
+          "sourceName": "Cock",
+          "displayName": "मुर्गा",
+          "historicalRecords": 106,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "egg",
+          "sourceName": "Egg",
+          "displayName": "अंडा",
+          "historicalRecords": 36,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "calf",
+          "sourceName": "Calf",
+          "displayName": "बछड़ा",
+          "historicalRecords": 32,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "bull",
+          "sourceName": "Bull",
+          "displayName": "बैल",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "duck",
+          "sourceName": "Duck",
+          "displayName": "बत्तख",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "she-buffalo",
+          "sourceName": "She Buffalo",
+          "displayName": "भैंस",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "he-buffalo",
+          "sourceName": "He Buffalo",
+          "displayName": "नर भैंस",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "pigs",
+          "sourceName": "Pigs",
+          "displayName": "सूअर",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": true
+        }
+      ],
+      "remainingEligibleUnmappedEntries": [
+        {
+          "id": "beans",
+          "sourceName": "Beans",
+          "displayName": "सेम",
+          "historicalRecords": 15701,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cummin-seedjeera",
+          "sourceName": "Cummin Seed(Jeera)",
+          "displayName": "जीरा",
+          "historicalRecords": 2611,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "corriander-seed",
+          "sourceName": "Corriander seed",
+          "displayName": "धनिया बीज",
+          "historicalRecords": 2313,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chilly-capsicum",
+          "sourceName": "Chilly Capsicum",
+          "displayName": "शिमला मिर्च",
+          "historicalRecords": 2042,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "field-pea",
+          "sourceName": "Field Pea",
+          "displayName": "मटर",
+          "historicalRecords": 1767,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "betal-leaves",
+          "sourceName": "Betal Leaves",
+          "displayName": "पान",
+          "historicalRecords": 1732,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "barleyjau",
+          "sourceName": "Barley(Jau)",
+          "displayName": "जौ",
+          "historicalRecords": 1700,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "custard-applesharifa",
+          "sourceName": "Custard Apple(Sharifa)",
+          "displayName": "सीताफल",
+          "historicalRecords": 1471,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "arhar-daltur-dal",
+          "sourceName": "Arhar Dal(Tur Dal)",
+          "displayName": "अरहर दाल",
+          "historicalRecords": 1459,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "black-pepper",
+          "sourceName": "Black pepper",
+          "displayName": "काली मिर्च",
+          "historicalRecords": 1449,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "dry-chillies",
+          "sourceName": "Dry Chillies",
+          "displayName": "सूखी मिर्च",
+          "historicalRecords": 1428,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "berzizyphus-borehannu",
+          "sourceName": "Ber(Zizyphus/Borehannu)",
+          "displayName": "बेर",
+          "historicalRecords": 1388,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "snakeguard",
+          "sourceName": "Snakeguard",
+          "displayName": "चचिंडा",
+          "historicalRecords": 1225,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "onion-green",
+          "sourceName": "Onion Green",
+          "displayName": "हरा प्याज",
+          "historicalRecords": 1143,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "papaya",
+          "sourceName": "Papaya",
+          "displayName": "पपीता",
+          "historicalRecords": 1134,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "green-avarew",
+          "sourceName": "Green Avare(W)",
+          "displayName": "हरी अवरे",
+          "historicalRecords": 1106,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chili-red",
+          "sourceName": "Chili Red",
+          "displayName": "लाल मिर्च",
+          "historicalRecords": 1075,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mintpudina",
+          "sourceName": "Mint(Pudina)",
+          "displayName": "पुदीना",
+          "historicalRecords": 1028,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mangoraw-ripe",
+          "sourceName": "Mango(Raw-Ripe)",
+          "displayName": "आम",
+          "historicalRecords": 892,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "gingerdry",
+          "sourceName": "Ginger(Dry)",
+          "displayName": "सोंठ (सूखी अदरक)",
+          "historicalRecords": 878,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "copra",
+          "sourceName": "Copra",
+          "displayName": "खोपरा",
+          "historicalRecords": 875,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "guava",
+          "sourceName": "Guava",
+          "displayName": "अमरूद",
+          "historicalRecords": 830,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sweet-potato",
+          "sourceName": "Sweet Potato",
+          "displayName": "शकरकंद",
+          "historicalRecords": 714,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "black-gram-dalurd-dal",
+          "sourceName": "Black Gram Dal(Urd Dal)",
+          "displayName": "उड़द दाल",
+          "historicalRecords": 674,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cowpealobia-karamani",
+          "sourceName": "Cowpea(Lobia/Karamani)",
+          "displayName": "लोबिया दाना",
+          "historicalRecords": 660,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tapioca",
+          "sourceName": "Tapioca",
+          "displayName": "कसावा",
+          "historicalRecords": 613,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "bengal-gram-dalchana-dal",
+          "sourceName": "Bengal Gram Dal(Chana Dal)",
+          "displayName": "चना दाल",
+          "historicalRecords": 581,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "yamratalu",
+          "sourceName": "Yam(Ratalu)",
+          "displayName": "रतालू",
+          "historicalRecords": 573,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "thondekai",
+          "sourceName": "Thondekai",
+          "displayName": "तोंडेकाई",
+          "historicalRecords": 565,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "water-melon",
+          "sourceName": "Water Melon",
+          "displayName": "तरबूज",
+          "historicalRecords": 513,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "knool-khol",
+          "sourceName": "Knool Khol",
+          "displayName": "गाँठ गोभी",
+          "historicalRecords": 507,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "ajwan",
+          "sourceName": "Ajwan",
+          "displayName": "अजवाइन",
+          "historicalRecords": 504,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "coconut-seed",
+          "sourceName": "Coconut Seed",
+          "displayName": "नारियल बीज",
+          "historicalRecords": 492,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "coconut-oil",
+          "sourceName": "Coconut Oil",
+          "displayName": "नारियल तेल",
+          "historicalRecords": 474,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "grapes",
+          "sourceName": "Grapes",
+          "displayName": "अंगूर",
+          "historicalRecords": 469,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tender-coconut",
+          "sourceName": "Tender Coconut",
+          "displayName": "कच्चा नारियल",
+          "historicalRecords": 465,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mousambisweet-lime",
+          "sourceName": "Mousambi(Sweet Lime)",
+          "displayName": "मौसम्बी",
+          "historicalRecords": 376,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "lime",
+          "sourceName": "Lime",
+          "displayName": "नीबू",
+          "historicalRecords": 341,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "indian-beansseam",
+          "sourceName": "Indian Beans(Seam)",
+          "displayName": "सेम",
+          "historicalRecords": 339,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "rice",
+          "sourceName": "Rice",
+          "displayName": "चावल",
+          "historicalRecords": 317,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "figanjura-anjeer",
+          "sourceName": "Fig(Anjura/Anjeer)",
+          "displayName": "अंजीर",
+          "historicalRecords": 296,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "karbujamusk-melon",
+          "sourceName": "Karbuja(Musk Melon)",
+          "displayName": "खरबूजा",
+          "historicalRecords": 271,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sweet-corn",
+          "sourceName": "Sweet Corn ",
+          "displayName": "मीठा मक्का",
+          "historicalRecords": 265,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "coffee",
+          "sourceName": "Coffee",
+          "displayName": "कॉफी",
+          "historicalRecords": 255,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cashewnuts",
+          "sourceName": "Cashewnuts",
+          "displayName": "काजू",
+          "historicalRecords": 253,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "alsandikai",
+          "sourceName": "Alsandikai",
+          "displayName": "Alsandikai",
+          "historicalRecords": 236,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "firewood",
+          "sourceName": "Firewood",
+          "displayName": "जलाऊ लकड़ी",
+          "historicalRecords": 226,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "pineapple",
+          "sourceName": "Pineapple",
+          "displayName": "अनानास",
+          "historicalRecords": 212,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "dhaincha",
+          "sourceName": "Dhaincha",
+          "displayName": "Dhaincha",
+          "historicalRecords": 203,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mashrooms",
+          "sourceName": "Mashrooms",
+          "displayName": "मशरूम",
+          "historicalRecords": 199,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "gram-rawchholia",
+          "sourceName": "Gram Raw(Chholia)",
+          "displayName": "हरा चना",
+          "historicalRecords": 196,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "amranthas-red",
+          "sourceName": "Amranthas Red",
+          "displayName": "लाल चौलाई",
+          "historicalRecords": 193,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "duster-beans",
+          "sourceName": "Duster Beans",
+          "displayName": "सेम",
+          "historicalRecords": 187,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chapparad-avare",
+          "sourceName": "Chapparad Avare",
+          "displayName": "Chapparad Avare",
+          "historicalRecords": 167,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "bunch-beans",
+          "sourceName": "Bunch Beans",
+          "displayName": "सेम",
+          "historicalRecords": 164,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "galgallemon",
+          "sourceName": "Galgal(Lemon)",
+          "displayName": "नींबू",
+          "historicalRecords": 159,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "asgand",
+          "sourceName": "Asgand",
+          "displayName": "Asgand",
+          "historicalRecords": 159,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "alasande-gram",
+          "sourceName": "Alasande Gram",
+          "displayName": "Alasande Gram",
+          "historicalRecords": 148,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "marigoldcalcutta",
+          "sourceName": "Marigold(Calcutta)",
+          "displayName": "गेंदा",
+          "historicalRecords": 137,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "roselocal",
+          "sourceName": "Rose(Local)",
+          "displayName": "गुलाब",
+          "historicalRecords": 137,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "asalia",
+          "sourceName": "Asalia",
+          "displayName": "Asalia",
+          "historicalRecords": 121,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cotton-seed",
+          "sourceName": "Cotton Seed",
+          "displayName": "कपास बीज",
+          "historicalRecords": 119,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "dry-fodder",
+          "sourceName": "Dry Fodder",
+          "displayName": "Dry Fodder",
+          "historicalRecords": 119,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chrysanthemumloose",
+          "sourceName": "Chrysanthemum(Loose)",
+          "displayName": "Chrysanthemum(Loose)",
+          "historicalRecords": 118,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "carnation",
+          "sourceName": "Carnation",
+          "displayName": "Carnation",
+          "historicalRecords": 110,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "turnip",
+          "sourceName": "Turnip",
+          "displayName": "शलगम",
+          "historicalRecords": 108,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "foxtail-milletnavane",
+          "sourceName": "Foxtail Millet(Navane)",
+          "displayName": "कंगनी",
+          "historicalRecords": 99,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "guar",
+          "sourceName": "Guar",
+          "displayName": "ग्वार",
+          "historicalRecords": 98,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kinnow",
+          "sourceName": "Kinnow",
+          "displayName": "किन्नू",
+          "historicalRecords": 93,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cardamoms",
+          "sourceName": "Cardamoms",
+          "displayName": "इलायची",
+          "historicalRecords": 90,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "jack-fruitripe",
+          "sourceName": "Jack Fruit(Ripe)",
+          "displayName": "कटहल",
+          "historicalRecords": 82,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "methileaves",
+          "sourceName": "Methi(Leaves)",
+          "displayName": "मेथी पत्ती",
+          "historicalRecords": 82,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "ghee",
+          "sourceName": "Ghee",
+          "displayName": "घी",
+          "historicalRecords": 81,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "big-gram",
+          "sourceName": "Big Gram",
+          "displayName": "Big Gram",
+          "historicalRecords": 81,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chrysanthemum",
+          "sourceName": "Chrysanthemum",
+          "displayName": "Chrysanthemum",
+          "historicalRecords": 77,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kabuli-chanachickpeas-white",
+          "sourceName": "Kabuli Chana(Chickpeas-White)",
+          "displayName": "काबुली चना",
+          "historicalRecords": 76,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "wood",
+          "sourceName": "Wood",
+          "displayName": "लकड़ी",
+          "historicalRecords": 75,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "avare-dal",
+          "sourceName": "Avare Dal",
+          "displayName": "Avare Dal",
+          "historicalRecords": 74,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "delha",
+          "sourceName": "Delha",
+          "displayName": "Delha",
+          "historicalRecords": 72,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "squashchappal-kadoo",
+          "sourceName": "Squash(Chappal Kadoo)",
+          "displayName": "Squash(Chappal Kadoo)",
+          "historicalRecords": 71,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "jasmine",
+          "sourceName": "Jasmine",
+          "displayName": "चमेली",
+          "historicalRecords": 70,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "dry-grapes",
+          "sourceName": "Dry Grapes",
+          "displayName": "किशमिश",
+          "historicalRecords": 69,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tinda",
+          "sourceName": "Tinda",
+          "displayName": "टिंडा",
+          "historicalRecords": 69,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "anthorium",
+          "sourceName": "Anthorium",
+          "displayName": "Anthorium",
+          "historicalRecords": 67,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "baby-corn",
+          "sourceName": "Baby Corn",
+          "displayName": "बेबी कॉर्न",
+          "historicalRecords": 64,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sweet-pumpkin",
+          "sourceName": "Sweet Pumpkin",
+          "displayName": "मीठा कद्दू",
+          "historicalRecords": 63,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "masur-dal",
+          "sourceName": "Masur Dal",
+          "displayName": "मसूर दाल",
+          "historicalRecords": 60,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "astera",
+          "sourceName": "Astera",
+          "displayName": "Astera",
+          "historicalRecords": 59,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "absinthe",
+          "sourceName": "Absinthe",
+          "displayName": "Absinthe",
+          "historicalRecords": 58,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "asparagus",
+          "sourceName": "Asparagus",
+          "displayName": "एस्पैरागस",
+          "historicalRecords": 57,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "beaten-rice",
+          "sourceName": "Beaten Rice",
+          "displayName": "पोहा",
+          "historicalRecords": 57,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "gurjaggery",
+          "sourceName": "Gur(Jaggery)",
+          "displayName": "गुड़",
+          "historicalRecords": 56,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "almondbadam",
+          "sourceName": "Almond(Badam)",
+          "displayName": "बादाम",
+          "historicalRecords": 49,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cinamondalchini",
+          "sourceName": "Cinamon(Dalchini)",
+          "displayName": "दालचीनी",
+          "historicalRecords": 47,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tube-roseloose",
+          "sourceName": "Tube Rose(Loose)",
+          "displayName": "रजनीगंधा",
+          "historicalRecords": 47,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "green-gram-dalmoong-dal",
+          "sourceName": "Green Gram Dal(Moong Dal)",
+          "displayName": "मूंग दाल",
+          "historicalRecords": 44,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "bullar",
+          "sourceName": "Bullar",
+          "displayName": "Bullar",
+          "historicalRecords": 42,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sponge-gourd",
+          "sourceName": "Sponge gourd",
+          "displayName": "नेनुआ",
+          "historicalRecords": 41,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "papayaraw",
+          "sourceName": "Papaya(Raw)",
+          "displayName": "पपीता",
+          "historicalRecords": 39,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "long-melonkakri",
+          "sourceName": "Long Melon(Kakri)",
+          "displayName": "ककड़ी",
+          "historicalRecords": 38,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "ashwagandha",
+          "sourceName": "Ashwagandha",
+          "displayName": "Ashwagandha",
+          "historicalRecords": 38,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "giloy",
+          "sourceName": "Giloy",
+          "displayName": "Giloy",
+          "historicalRecords": 38,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "methi-seeds",
+          "sourceName": "Methi Seeds",
+          "displayName": "मेथी दाना",
+          "historicalRecords": 37,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "bop",
+          "sourceName": "BOP",
+          "displayName": "BOP",
+          "historicalRecords": 36,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "behada",
+          "sourceName": "Behada",
+          "displayName": "Behada",
+          "historicalRecords": 32,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "guar-seedcluster-beans-seed",
+          "sourceName": "Guar Seed(Cluster Beans Seed)",
+          "displayName": "ग्वार बीज",
+          "historicalRecords": 26,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "dates",
+          "sourceName": "Dates",
+          "displayName": "खजूर",
+          "historicalRecords": 25,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kakada",
+          "sourceName": "Kakada",
+          "displayName": "Kakada",
+          "historicalRecords": 25,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "pegeon-peaarhar-fali",
+          "sourceName": "Pegeon Pea(Arhar Fali)",
+          "displayName": "अरहर फली",
+          "historicalRecords": 24,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "gond",
+          "sourceName": "Gond",
+          "displayName": "Gond",
+          "historicalRecords": 24,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "gladiolus-cut-flower",
+          "sourceName": "Gladiolus Cut Flower",
+          "displayName": "Gladiolus Cut Flower",
+          "historicalRecords": 23,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "leafy-vegetable",
+          "sourceName": "Leafy Vegetable",
+          "displayName": "Leafy Vegetable",
+          "historicalRecords": 20,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "soanf",
+          "sourceName": "Soanf",
+          "displayName": "सौंफ",
+          "historicalRecords": 18,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "turmeric",
+          "sourceName": "Turmeric",
+          "displayName": "हल्दी",
+          "historicalRecords": 18,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "coleus",
+          "sourceName": "Coleus",
+          "displayName": "Coleus",
+          "historicalRecords": 17,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "peasdry",
+          "sourceName": "Peas(Dry)",
+          "displayName": "सूखी मटर",
+          "historicalRecords": 17,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "round-gourd",
+          "sourceName": "Round gourd",
+          "displayName": "टिंडा",
+          "historicalRecords": 16,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "coconut-coir",
+          "sourceName": "Coconut Coir",
+          "displayName": "नारियल रेशा",
+          "historicalRecords": 15,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "buttery",
+          "sourceName": "buttery",
+          "displayName": "buttery",
+          "historicalRecords": 15,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mustard-oil",
+          "sourceName": "Mustard Oil",
+          "displayName": "सरसों तेल",
+          "historicalRecords": 15,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "ground-nut-seed",
+          "sourceName": "Ground Nut Seed",
+          "displayName": "मूँगफली बीज",
+          "historicalRecords": 14,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "safflower",
+          "sourceName": "Safflower",
+          "displayName": "Safflower",
+          "historicalRecords": 14,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "jute",
+          "sourceName": "Jute",
+          "displayName": "Jute",
+          "historicalRecords": 14,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cloves",
+          "sourceName": "Cloves",
+          "displayName": "लौंग",
+          "historicalRecords": 13,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "seemebadnekai",
+          "sourceName": "Seemebadnekai",
+          "displayName": "Seemebadnekai",
+          "historicalRecords": 12,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "taramira",
+          "sourceName": "Taramira",
+          "displayName": "Taramira",
+          "historicalRecords": 12,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tube-flower",
+          "sourceName": "Tube Flower",
+          "displayName": "Tube Flower",
+          "historicalRecords": 12,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cocoa",
+          "sourceName": "Cocoa",
+          "displayName": "कोको",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "turmericraw",
+          "sourceName": "Turmeric(raw)",
+          "displayName": "कच्ची हल्दी",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "rajgir",
+          "sourceName": "Rajgir",
+          "displayName": "Rajgir",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chhappan-kaddu",
+          "sourceName": "Chhappan Kaddu",
+          "displayName": "Chhappan Kaddu",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "isabgulpsyllium",
+          "sourceName": "Isabgul(Psyllium)",
+          "displayName": "इसबगोल",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tobacco",
+          "sourceName": "Tobacco",
+          "displayName": "तंबाकू",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "lakteora",
+          "sourceName": "Lak(Teora)",
+          "displayName": "Lak(Teora)",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "suvadill-seed",
+          "sourceName": "Suva(Dill Seed)",
+          "displayName": "सोआ बीज",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cherry",
+          "sourceName": "Cherry",
+          "displayName": "चेरी",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kodo-milletvaragu",
+          "sourceName": "Kodo Millet(Varagu)",
+          "displayName": "कोदो",
+          "historicalRecords": 10,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kulthihorse-gram",
+          "sourceName": "Kulthi(Horse Gram)",
+          "displayName": "कुल्थी",
+          "historicalRecords": 10,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "ambady-mesta-patson",
+          "sourceName": "Ambady/Mesta/Patson",
+          "displayName": "Ambady/Mesta/Patson",
+          "historicalRecords": 8,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kutki",
+          "sourceName": "Kutki",
+          "displayName": "Kutki",
+          "historicalRecords": 8,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "rubber",
+          "sourceName": "Rubber",
+          "displayName": "रबर",
+          "historicalRecords": 7,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sugar",
+          "sourceName": "Sugar",
+          "displayName": "चीनी",
+          "historicalRecords": 7,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "surat-beanspapadi",
+          "sourceName": "Surat Beans(Papadi)",
+          "displayName": "पापड़ी",
+          "historicalRecords": 7,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "raibel",
+          "sourceName": "Raibel",
+          "displayName": "Raibel",
+          "historicalRecords": 7,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "marget",
+          "sourceName": "Marget",
+          "displayName": "Marget",
+          "historicalRecords": 7,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tamarind-seed",
+          "sourceName": "Tamarind Seed",
+          "displayName": "इमली बीज",
+          "historicalRecords": 7,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chakotha",
+          "sourceName": "Chakotha",
+          "displayName": "Chakotha",
+          "historicalRecords": 6,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mahedi",
+          "sourceName": "Mahedi",
+          "displayName": "Mahedi",
+          "historicalRecords": 6,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "marigoldloose",
+          "sourceName": "Marigold(loose)",
+          "displayName": "Marigold(loose)",
+          "historicalRecords": 6,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "same-savi",
+          "sourceName": "Same/Savi",
+          "displayName": "Same/Savi",
+          "historicalRecords": 5,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "roseloose",
+          "sourceName": "Rose(Loose))",
+          "displayName": "खुले गुलाब",
+          "historicalRecords": 5,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "other-green-and-fresh-vegetables",
+          "sourceName": "Other green and fresh vegetables",
+          "displayName": "Other green and fresh vegetables",
+          "historicalRecords": 5,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "groundnut-podsraw",
+          "sourceName": "Groundnut pods(raw)",
+          "displayName": "कच्ची मूँगफली की फलियाँ",
+          "historicalRecords": 5,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "lilly",
+          "sourceName": "Lilly",
+          "displayName": "Lilly",
+          "historicalRecords": 5,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "wheat-atta",
+          "sourceName": "Wheat Atta",
+          "displayName": "गेहूँ आटा",
+          "historicalRecords": 5,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "pearmarasebu",
+          "sourceName": "Pear(Marasebu)",
+          "displayName": "Pear(Marasebu)",
+          "historicalRecords": 4,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sabu-dan",
+          "sourceName": "Sabu Dan",
+          "displayName": "साबूदाना",
+          "historicalRecords": 4,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "bhui-amlaya",
+          "sourceName": "Bhui Amlaya",
+          "displayName": "Bhui Amlaya",
+          "historicalRecords": 4,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tube-rosedouble",
+          "sourceName": "Tube Rose(Double)",
+          "displayName": "रजनीगंधा",
+          "historicalRecords": 4,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "maida-atta",
+          "sourceName": "Maida Atta",
+          "displayName": "मैदा",
+          "historicalRecords": 4,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "strawberry",
+          "sourceName": "Strawberry",
+          "displayName": "स्ट्रॉबेरी",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "khandsaridesi-khand",
+          "sourceName": "Khandsari(Desi Khand)",
+          "displayName": "खांड",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "poppy-seeds",
+          "sourceName": "poppy seeds",
+          "displayName": "खसखस",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "millets",
+          "sourceName": "Millets",
+          "displayName": "Millets",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "orchid",
+          "sourceName": "Orchid",
+          "displayName": "Orchid",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tube-rosesingle",
+          "sourceName": "Tube Rose(Single)",
+          "displayName": "Tube Rose(Single)",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "jaffri",
+          "sourceName": "Jaffri",
+          "displayName": "Jaffri",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "patti-calcutta",
+          "sourceName": "Patti Calcutta",
+          "displayName": "Patti Calcutta",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "suvarna-gadde",
+          "sourceName": "Suvarna Gadde",
+          "displayName": "Suvarna Gadde",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "green-fodder",
+          "sourceName": "Green Fodder",
+          "displayName": "Green Fodder",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "snow-mountain-garlic",
+          "sourceName": "Snow Mountain Garlic",
+          "displayName": "लहसुन",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "yam",
+          "sourceName": "Yam",
+          "displayName": "रतालू",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "white-muesli",
+          "sourceName": "White Muesli",
+          "displayName": "White Muesli",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "taro-arvi-stem",
+          "sourceName": "Taro (Arvi) Stem",
+          "displayName": "अरबी के डंठल",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "pepper-garbled",
+          "sourceName": "Pepper garbled",
+          "displayName": "Pepper garbled",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mentha-oil",
+          "sourceName": "Mentha Oil",
+          "displayName": "पुदीना तेल",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "rab-liquid-jaggery-molasses",
+          "sourceName": "Rab/Liquid Jaggery/Molasses",
+          "displayName": "राब / शीरा",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "nigella-seeds",
+          "sourceName": "nigella seeds",
+          "displayName": "कलौंजी",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "groundnutsplit",
+          "sourceName": "Groundnut(Split)",
+          "displayName": "मूँगफली दाना",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "jarbara",
+          "sourceName": "Jarbara",
+          "displayName": "Jarbara",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tulip",
+          "sourceName": "Tulip",
+          "displayName": "Tulip",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "soapnutantawala-retha",
+          "sourceName": "Soapnut(Antawala/Retha)",
+          "displayName": "रीठा",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mataki",
+          "sourceName": "Mataki",
+          "displayName": "Mataki",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kiwi-fruit",
+          "sourceName": "Kiwi Fruit",
+          "displayName": "कीवी",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "avocado",
+          "sourceName": "Avocado",
+          "displayName": "एवोकाडो",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sugarcane",
+          "sourceName": "Sugarcane",
+          "displayName": "गन्ना",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "karamani",
+          "sourceName": "Karamani",
+          "displayName": "Karamani",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "balekai",
+          "sourceName": "Balekai",
+          "displayName": "Balekai",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "moath-dal",
+          "sourceName": "Moath Dal",
+          "displayName": "Moath Dal",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "season-leaves",
+          "sourceName": "Season Leaves",
+          "displayName": "Season Leaves",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sweet-saag",
+          "sourceName": "Sweet Saag",
+          "displayName": "Sweet Saag",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "makhanafoxnut",
+          "sourceName": "Makhana(Foxnut)",
+          "displayName": "मखाना",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "brahmi",
+          "sourceName": "Brahmi",
+          "displayName": "Brahmi",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mango-powder",
+          "sourceName": "mango powder",
+          "displayName": "अमचूर",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "harrah",
+          "sourceName": "Harrah",
+          "displayName": "Harrah",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "pupadia",
+          "sourceName": "Pupadia",
+          "displayName": "Pupadia",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "white-pumpkin",
+          "sourceName": "White Pumpkin",
+          "displayName": "कद्दू",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "honge-seed",
+          "sourceName": "Honge seed",
+          "displayName": "Honge seed",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "white-peas",
+          "sourceName": "White Peas",
+          "displayName": "सफेद मटर",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mahua-seedhippe-seed",
+          "sourceName": "Mahua Seed(Hippe seed)",
+          "displayName": "महुआ बीज",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "niger-seedramtil",
+          "sourceName": "Niger Seed(Ramtil)",
+          "displayName": "रामतिल बीज",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        }
+      ],
+      "allRawUnmappedEntries": [
+        {
+          "id": "beans",
+          "sourceName": "Beans",
+          "displayName": "सेम",
+          "historicalRecords": 15701,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cummin-seedjeera",
+          "sourceName": "Cummin Seed(Jeera)",
+          "displayName": "जीरा",
+          "historicalRecords": 2611,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "corriander-seed",
+          "sourceName": "Corriander seed",
+          "displayName": "धनिया बीज",
+          "historicalRecords": 2313,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "fish",
+          "sourceName": "Fish",
+          "displayName": "मछली",
+          "historicalRecords": 2072,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "chilly-capsicum",
+          "sourceName": "Chilly Capsicum",
+          "displayName": "शिमला मिर्च",
+          "historicalRecords": 2042,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "field-pea",
+          "sourceName": "Field Pea",
+          "displayName": "मटर",
+          "historicalRecords": 1767,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "betal-leaves",
+          "sourceName": "Betal Leaves",
+          "displayName": "पान",
+          "historicalRecords": 1732,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "barleyjau",
+          "sourceName": "Barley(Jau)",
+          "displayName": "जौ",
+          "historicalRecords": 1700,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "custard-applesharifa",
+          "sourceName": "Custard Apple(Sharifa)",
+          "displayName": "सीताफल",
+          "historicalRecords": 1471,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "arhar-daltur-dal",
+          "sourceName": "Arhar Dal(Tur Dal)",
+          "displayName": "अरहर दाल",
+          "historicalRecords": 1459,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "black-pepper",
+          "sourceName": "Black pepper",
+          "displayName": "काली मिर्च",
+          "historicalRecords": 1449,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "dry-chillies",
+          "sourceName": "Dry Chillies",
+          "displayName": "सूखी मिर्च",
+          "historicalRecords": 1428,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "berzizyphus-borehannu",
+          "sourceName": "Ber(Zizyphus/Borehannu)",
+          "displayName": "बेर",
+          "historicalRecords": 1388,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "snakeguard",
+          "sourceName": "Snakeguard",
+          "displayName": "चचिंडा",
+          "historicalRecords": 1225,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "onion-green",
+          "sourceName": "Onion Green",
+          "displayName": "हरा प्याज",
+          "historicalRecords": 1143,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "papaya",
+          "sourceName": "Papaya",
+          "displayName": "पपीता",
+          "historicalRecords": 1134,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "green-avarew",
+          "sourceName": "Green Avare(W)",
+          "displayName": "हरी अवरे",
+          "historicalRecords": 1106,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chili-red",
+          "sourceName": "Chili Red",
+          "displayName": "लाल मिर्च",
+          "historicalRecords": 1075,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mintpudina",
+          "sourceName": "Mint(Pudina)",
+          "displayName": "पुदीना",
+          "historicalRecords": 1028,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mangoraw-ripe",
+          "sourceName": "Mango(Raw-Ripe)",
+          "displayName": "आम",
+          "historicalRecords": 892,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "gingerdry",
+          "sourceName": "Ginger(Dry)",
+          "displayName": "सोंठ (सूखी अदरक)",
+          "historicalRecords": 878,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "copra",
+          "sourceName": "Copra",
+          "displayName": "खोपरा",
+          "historicalRecords": 875,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "guava",
+          "sourceName": "Guava",
+          "displayName": "अमरूद",
+          "historicalRecords": 830,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sweet-potato",
+          "sourceName": "Sweet Potato",
+          "displayName": "शकरकंद",
+          "historicalRecords": 714,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "black-gram-dalurd-dal",
+          "sourceName": "Black Gram Dal(Urd Dal)",
+          "displayName": "उड़द दाल",
+          "historicalRecords": 674,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cowpealobia-karamani",
+          "sourceName": "Cowpea(Lobia/Karamani)",
+          "displayName": "लोबिया दाना",
+          "historicalRecords": 660,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tapioca",
+          "sourceName": "Tapioca",
+          "displayName": "कसावा",
+          "historicalRecords": 613,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "bengal-gram-dalchana-dal",
+          "sourceName": "Bengal Gram Dal(Chana Dal)",
+          "displayName": "चना दाल",
+          "historicalRecords": 581,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "yamratalu",
+          "sourceName": "Yam(Ratalu)",
+          "displayName": "रतालू",
+          "historicalRecords": 573,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "thondekai",
+          "sourceName": "Thondekai",
+          "displayName": "तोंडेकाई",
+          "historicalRecords": 565,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "water-melon",
+          "sourceName": "Water Melon",
+          "displayName": "तरबूज",
+          "historicalRecords": 513,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "knool-khol",
+          "sourceName": "Knool Khol",
+          "displayName": "गाँठ गोभी",
+          "historicalRecords": 507,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "ajwan",
+          "sourceName": "Ajwan",
+          "displayName": "अजवाइन",
+          "historicalRecords": 504,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "coconut-seed",
+          "sourceName": "Coconut Seed",
+          "displayName": "नारियल बीज",
+          "historicalRecords": 492,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "coconut-oil",
+          "sourceName": "Coconut Oil",
+          "displayName": "नारियल तेल",
+          "historicalRecords": 474,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "grapes",
+          "sourceName": "Grapes",
+          "displayName": "अंगूर",
+          "historicalRecords": 469,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tender-coconut",
+          "sourceName": "Tender Coconut",
+          "displayName": "कच्चा नारियल",
+          "historicalRecords": 465,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mousambisweet-lime",
+          "sourceName": "Mousambi(Sweet Lime)",
+          "displayName": "मौसम्बी",
+          "historicalRecords": 376,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "lime",
+          "sourceName": "Lime",
+          "displayName": "नीबू",
+          "historicalRecords": 341,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "indian-beansseam",
+          "sourceName": "Indian Beans(Seam)",
+          "displayName": "सेम",
+          "historicalRecords": 339,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "rice",
+          "sourceName": "Rice",
+          "displayName": "चावल",
+          "historicalRecords": 317,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "figanjura-anjeer",
+          "sourceName": "Fig(Anjura/Anjeer)",
+          "displayName": "अंजीर",
+          "historicalRecords": 296,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "karbujamusk-melon",
+          "sourceName": "Karbuja(Musk Melon)",
+          "displayName": "खरबूजा",
+          "historicalRecords": 271,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sweet-corn",
+          "sourceName": "Sweet Corn ",
+          "displayName": "मीठा मक्का",
+          "historicalRecords": 265,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "coffee",
+          "sourceName": "Coffee",
+          "displayName": "कॉफी",
+          "historicalRecords": 255,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cashewnuts",
+          "sourceName": "Cashewnuts",
+          "displayName": "काजू",
+          "historicalRecords": 253,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "alsandikai",
+          "sourceName": "Alsandikai",
+          "displayName": "Alsandikai",
+          "historicalRecords": 236,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "firewood",
+          "sourceName": "Firewood",
+          "displayName": "जलाऊ लकड़ी",
+          "historicalRecords": 226,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "pineapple",
+          "sourceName": "Pineapple",
+          "displayName": "अनानास",
+          "historicalRecords": 212,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "dhaincha",
+          "sourceName": "Dhaincha",
+          "displayName": "Dhaincha",
+          "historicalRecords": 203,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mashrooms",
+          "sourceName": "Mashrooms",
+          "displayName": "मशरूम",
+          "historicalRecords": 199,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "gram-rawchholia",
+          "sourceName": "Gram Raw(Chholia)",
+          "displayName": "हरा चना",
+          "historicalRecords": 196,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "amranthas-red",
+          "sourceName": "Amranthas Red",
+          "displayName": "लाल चौलाई",
+          "historicalRecords": 193,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "duster-beans",
+          "sourceName": "Duster Beans",
+          "displayName": "सेम",
+          "historicalRecords": 187,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chapparad-avare",
+          "sourceName": "Chapparad Avare",
+          "displayName": "Chapparad Avare",
+          "historicalRecords": 167,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "bunch-beans",
+          "sourceName": "Bunch Beans",
+          "displayName": "सेम",
+          "historicalRecords": 164,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cow",
+          "sourceName": "Cow",
+          "displayName": "गाय",
+          "historicalRecords": 161,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "galgallemon",
+          "sourceName": "Galgal(Lemon)",
+          "displayName": "नींबू",
+          "historicalRecords": 159,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "asgand",
+          "sourceName": "Asgand",
+          "displayName": "Asgand",
+          "historicalRecords": 159,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "alasande-gram",
+          "sourceName": "Alasande Gram",
+          "displayName": "Alasande Gram",
+          "historicalRecords": 148,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "marigoldcalcutta",
+          "sourceName": "Marigold(Calcutta)",
+          "displayName": "गेंदा",
+          "historicalRecords": 137,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "roselocal",
+          "sourceName": "Rose(Local)",
+          "displayName": "गुलाब",
+          "historicalRecords": 137,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "asalia",
+          "sourceName": "Asalia",
+          "displayName": "Asalia",
+          "historicalRecords": 121,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cotton-seed",
+          "sourceName": "Cotton Seed",
+          "displayName": "कपास बीज",
+          "historicalRecords": 119,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "dry-fodder",
+          "sourceName": "Dry Fodder",
+          "displayName": "Dry Fodder",
+          "historicalRecords": 119,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chrysanthemumloose",
+          "sourceName": "Chrysanthemum(Loose)",
+          "displayName": "Chrysanthemum(Loose)",
+          "historicalRecords": 118,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "goat",
+          "sourceName": "Goat",
+          "displayName": "बकरी",
+          "historicalRecords": 111,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "carnation",
+          "sourceName": "Carnation",
+          "displayName": "Carnation",
+          "historicalRecords": 110,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "turnip",
+          "sourceName": "Turnip",
+          "displayName": "शलगम",
+          "historicalRecords": 108,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cock",
+          "sourceName": "Cock",
+          "displayName": "मुर्गा",
+          "historicalRecords": 106,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "foxtail-milletnavane",
+          "sourceName": "Foxtail Millet(Navane)",
+          "displayName": "कंगनी",
+          "historicalRecords": 99,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "guar",
+          "sourceName": "Guar",
+          "displayName": "ग्वार",
+          "historicalRecords": 98,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kinnow",
+          "sourceName": "Kinnow",
+          "displayName": "किन्नू",
+          "historicalRecords": 93,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cardamoms",
+          "sourceName": "Cardamoms",
+          "displayName": "इलायची",
+          "historicalRecords": 90,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "jack-fruitripe",
+          "sourceName": "Jack Fruit(Ripe)",
+          "displayName": "कटहल",
+          "historicalRecords": 82,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "methileaves",
+          "sourceName": "Methi(Leaves)",
+          "displayName": "मेथी पत्ती",
+          "historicalRecords": 82,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "ghee",
+          "sourceName": "Ghee",
+          "displayName": "घी",
+          "historicalRecords": 81,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "big-gram",
+          "sourceName": "Big Gram",
+          "displayName": "Big Gram",
+          "historicalRecords": 81,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chrysanthemum",
+          "sourceName": "Chrysanthemum",
+          "displayName": "Chrysanthemum",
+          "historicalRecords": 77,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kabuli-chanachickpeas-white",
+          "sourceName": "Kabuli Chana(Chickpeas-White)",
+          "displayName": "काबुली चना",
+          "historicalRecords": 76,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "wood",
+          "sourceName": "Wood",
+          "displayName": "लकड़ी",
+          "historicalRecords": 75,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "avare-dal",
+          "sourceName": "Avare Dal",
+          "displayName": "Avare Dal",
+          "historicalRecords": 74,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "delha",
+          "sourceName": "Delha",
+          "displayName": "Delha",
+          "historicalRecords": 72,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "squashchappal-kadoo",
+          "sourceName": "Squash(Chappal Kadoo)",
+          "displayName": "Squash(Chappal Kadoo)",
+          "historicalRecords": 71,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "jasmine",
+          "sourceName": "Jasmine",
+          "displayName": "चमेली",
+          "historicalRecords": 70,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "dry-grapes",
+          "sourceName": "Dry Grapes",
+          "displayName": "किशमिश",
+          "historicalRecords": 69,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tinda",
+          "sourceName": "Tinda",
+          "displayName": "टिंडा",
+          "historicalRecords": 69,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "anthorium",
+          "sourceName": "Anthorium",
+          "displayName": "Anthorium",
+          "historicalRecords": 67,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "baby-corn",
+          "sourceName": "Baby Corn",
+          "displayName": "बेबी कॉर्न",
+          "historicalRecords": 64,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sweet-pumpkin",
+          "sourceName": "Sweet Pumpkin",
+          "displayName": "मीठा कद्दू",
+          "historicalRecords": 63,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "masur-dal",
+          "sourceName": "Masur Dal",
+          "displayName": "मसूर दाल",
+          "historicalRecords": 60,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "astera",
+          "sourceName": "Astera",
+          "displayName": "Astera",
+          "historicalRecords": 59,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "absinthe",
+          "sourceName": "Absinthe",
+          "displayName": "Absinthe",
+          "historicalRecords": 58,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "asparagus",
+          "sourceName": "Asparagus",
+          "displayName": "एस्पैरागस",
+          "historicalRecords": 57,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "beaten-rice",
+          "sourceName": "Beaten Rice",
+          "displayName": "पोहा",
+          "historicalRecords": 57,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "gurjaggery",
+          "sourceName": "Gur(Jaggery)",
+          "displayName": "गुड़",
+          "historicalRecords": 56,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "almondbadam",
+          "sourceName": "Almond(Badam)",
+          "displayName": "बादाम",
+          "historicalRecords": 49,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cinamondalchini",
+          "sourceName": "Cinamon(Dalchini)",
+          "displayName": "दालचीनी",
+          "historicalRecords": 47,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tube-roseloose",
+          "sourceName": "Tube Rose(Loose)",
+          "displayName": "रजनीगंधा",
+          "historicalRecords": 47,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "green-gram-dalmoong-dal",
+          "sourceName": "Green Gram Dal(Moong Dal)",
+          "displayName": "मूंग दाल",
+          "historicalRecords": 44,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "bullar",
+          "sourceName": "Bullar",
+          "displayName": "Bullar",
+          "historicalRecords": 42,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sponge-gourd",
+          "sourceName": "Sponge gourd",
+          "displayName": "नेनुआ",
+          "historicalRecords": 41,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "papayaraw",
+          "sourceName": "Papaya(Raw)",
+          "displayName": "पपीता",
+          "historicalRecords": 39,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "long-melonkakri",
+          "sourceName": "Long Melon(Kakri)",
+          "displayName": "ककड़ी",
+          "historicalRecords": 38,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "ashwagandha",
+          "sourceName": "Ashwagandha",
+          "displayName": "Ashwagandha",
+          "historicalRecords": 38,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "giloy",
+          "sourceName": "Giloy",
+          "displayName": "Giloy",
+          "historicalRecords": 38,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "methi-seeds",
+          "sourceName": "Methi Seeds",
+          "displayName": "मेथी दाना",
+          "historicalRecords": 37,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "egg",
+          "sourceName": "Egg",
+          "displayName": "अंडा",
+          "historicalRecords": 36,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "bop",
+          "sourceName": "BOP",
+          "displayName": "BOP",
+          "historicalRecords": 36,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "behada",
+          "sourceName": "Behada",
+          "displayName": "Behada",
+          "historicalRecords": 32,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "calf",
+          "sourceName": "Calf",
+          "displayName": "बछड़ा",
+          "historicalRecords": 32,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "guar-seedcluster-beans-seed",
+          "sourceName": "Guar Seed(Cluster Beans Seed)",
+          "displayName": "ग्वार बीज",
+          "historicalRecords": 26,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "dates",
+          "sourceName": "Dates",
+          "displayName": "खजूर",
+          "historicalRecords": 25,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kakada",
+          "sourceName": "Kakada",
+          "displayName": "Kakada",
+          "historicalRecords": 25,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "pegeon-peaarhar-fali",
+          "sourceName": "Pegeon Pea(Arhar Fali)",
+          "displayName": "अरहर फली",
+          "historicalRecords": 24,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "gond",
+          "sourceName": "Gond",
+          "displayName": "Gond",
+          "historicalRecords": 24,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "gladiolus-cut-flower",
+          "sourceName": "Gladiolus Cut Flower",
+          "displayName": "Gladiolus Cut Flower",
+          "historicalRecords": 23,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "leafy-vegetable",
+          "sourceName": "Leafy Vegetable",
+          "displayName": "Leafy Vegetable",
+          "historicalRecords": 20,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "soanf",
+          "sourceName": "Soanf",
+          "displayName": "सौंफ",
+          "historicalRecords": 18,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "turmeric",
+          "sourceName": "Turmeric",
+          "displayName": "हल्दी",
+          "historicalRecords": 18,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "coleus",
+          "sourceName": "Coleus",
+          "displayName": "Coleus",
+          "historicalRecords": 17,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "peasdry",
+          "sourceName": "Peas(Dry)",
+          "displayName": "सूखी मटर",
+          "historicalRecords": 17,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "round-gourd",
+          "sourceName": "Round gourd",
+          "displayName": "टिंडा",
+          "historicalRecords": 16,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "coconut-coir",
+          "sourceName": "Coconut Coir",
+          "displayName": "नारियल रेशा",
+          "historicalRecords": 15,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "buttery",
+          "sourceName": "buttery",
+          "displayName": "buttery",
+          "historicalRecords": 15,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mustard-oil",
+          "sourceName": "Mustard Oil",
+          "displayName": "सरसों तेल",
+          "historicalRecords": 15,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "ground-nut-seed",
+          "sourceName": "Ground Nut Seed",
+          "displayName": "मूँगफली बीज",
+          "historicalRecords": 14,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "safflower",
+          "sourceName": "Safflower",
+          "displayName": "Safflower",
+          "historicalRecords": 14,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "jute",
+          "sourceName": "Jute",
+          "displayName": "Jute",
+          "historicalRecords": 14,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cloves",
+          "sourceName": "Cloves",
+          "displayName": "लौंग",
+          "historicalRecords": 13,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "seemebadnekai",
+          "sourceName": "Seemebadnekai",
+          "displayName": "Seemebadnekai",
+          "historicalRecords": 12,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "taramira",
+          "sourceName": "Taramira",
+          "displayName": "Taramira",
+          "historicalRecords": 12,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tube-flower",
+          "sourceName": "Tube Flower",
+          "displayName": "Tube Flower",
+          "historicalRecords": 12,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "cocoa",
+          "sourceName": "Cocoa",
+          "displayName": "कोको",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "turmericraw",
+          "sourceName": "Turmeric(raw)",
+          "displayName": "कच्ची हल्दी",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "rajgir",
+          "sourceName": "Rajgir",
+          "displayName": "Rajgir",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chhappan-kaddu",
+          "sourceName": "Chhappan Kaddu",
+          "displayName": "Chhappan Kaddu",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "isabgulpsyllium",
+          "sourceName": "Isabgul(Psyllium)",
+          "displayName": "इसबगोल",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tobacco",
+          "sourceName": "Tobacco",
+          "displayName": "तंबाकू",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "lakteora",
+          "sourceName": "Lak(Teora)",
+          "displayName": "Lak(Teora)",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "suvadill-seed",
+          "sourceName": "Suva(Dill Seed)",
+          "displayName": "सोआ बीज",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "bull",
+          "sourceName": "Bull",
+          "displayName": "बैल",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "cherry",
+          "sourceName": "Cherry",
+          "displayName": "चेरी",
+          "historicalRecords": 11,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kodo-milletvaragu",
+          "sourceName": "Kodo Millet(Varagu)",
+          "displayName": "कोदो",
+          "historicalRecords": 10,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kulthihorse-gram",
+          "sourceName": "Kulthi(Horse Gram)",
+          "displayName": "कुल्थी",
+          "historicalRecords": 10,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "ambady-mesta-patson",
+          "sourceName": "Ambady/Mesta/Patson",
+          "displayName": "Ambady/Mesta/Patson",
+          "historicalRecords": 8,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kutki",
+          "sourceName": "Kutki",
+          "displayName": "Kutki",
+          "historicalRecords": 8,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "rubber",
+          "sourceName": "Rubber",
+          "displayName": "रबर",
+          "historicalRecords": 7,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sugar",
+          "sourceName": "Sugar",
+          "displayName": "चीनी",
+          "historicalRecords": 7,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "surat-beanspapadi",
+          "sourceName": "Surat Beans(Papadi)",
+          "displayName": "पापड़ी",
+          "historicalRecords": 7,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "raibel",
+          "sourceName": "Raibel",
+          "displayName": "Raibel",
+          "historicalRecords": 7,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "marget",
+          "sourceName": "Marget",
+          "displayName": "Marget",
+          "historicalRecords": 7,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tamarind-seed",
+          "sourceName": "Tamarind Seed",
+          "displayName": "इमली बीज",
+          "historicalRecords": 7,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chakotha",
+          "sourceName": "Chakotha",
+          "displayName": "Chakotha",
+          "historicalRecords": 6,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mahedi",
+          "sourceName": "Mahedi",
+          "displayName": "Mahedi",
+          "historicalRecords": 6,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "marigoldloose",
+          "sourceName": "Marigold(loose)",
+          "displayName": "Marigold(loose)",
+          "historicalRecords": 6,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "same-savi",
+          "sourceName": "Same/Savi",
+          "displayName": "Same/Savi",
+          "historicalRecords": 5,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "roseloose",
+          "sourceName": "Rose(Loose))",
+          "displayName": "खुले गुलाब",
+          "historicalRecords": 5,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "other-green-and-fresh-vegetables",
+          "sourceName": "Other green and fresh vegetables",
+          "displayName": "Other green and fresh vegetables",
+          "historicalRecords": 5,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "groundnut-podsraw",
+          "sourceName": "Groundnut pods(raw)",
+          "displayName": "कच्ची मूँगफली की फलियाँ",
+          "historicalRecords": 5,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "lilly",
+          "sourceName": "Lilly",
+          "displayName": "Lilly",
+          "historicalRecords": 5,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "wheat-atta",
+          "sourceName": "Wheat Atta",
+          "displayName": "गेहूँ आटा",
+          "historicalRecords": 5,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "pearmarasebu",
+          "sourceName": "Pear(Marasebu)",
+          "displayName": "Pear(Marasebu)",
+          "historicalRecords": 4,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sabu-dan",
+          "sourceName": "Sabu Dan",
+          "displayName": "साबूदाना",
+          "historicalRecords": 4,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "bhui-amlaya",
+          "sourceName": "Bhui Amlaya",
+          "displayName": "Bhui Amlaya",
+          "historicalRecords": 4,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tube-rosedouble",
+          "sourceName": "Tube Rose(Double)",
+          "displayName": "रजनीगंधा",
+          "historicalRecords": 4,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "maida-atta",
+          "sourceName": "Maida Atta",
+          "displayName": "मैदा",
+          "historicalRecords": 4,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "strawberry",
+          "sourceName": "Strawberry",
+          "displayName": "स्ट्रॉबेरी",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "khandsaridesi-khand",
+          "sourceName": "Khandsari(Desi Khand)",
+          "displayName": "खांड",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "poppy-seeds",
+          "sourceName": "poppy seeds",
+          "displayName": "खसखस",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "millets",
+          "sourceName": "Millets",
+          "displayName": "Millets",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "orchid",
+          "sourceName": "Orchid",
+          "displayName": "Orchid",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tube-rosesingle",
+          "sourceName": "Tube Rose(Single)",
+          "displayName": "Tube Rose(Single)",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "jaffri",
+          "sourceName": "Jaffri",
+          "displayName": "Jaffri",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "patti-calcutta",
+          "sourceName": "Patti Calcutta",
+          "displayName": "Patti Calcutta",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "suvarna-gadde",
+          "sourceName": "Suvarna Gadde",
+          "displayName": "Suvarna Gadde",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "green-fodder",
+          "sourceName": "Green Fodder",
+          "displayName": "Green Fodder",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "snow-mountain-garlic",
+          "sourceName": "Snow Mountain Garlic",
+          "displayName": "लहसुन",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "duck",
+          "sourceName": "Duck",
+          "displayName": "बत्तख",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "yam",
+          "sourceName": "Yam",
+          "displayName": "रतालू",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "white-muesli",
+          "sourceName": "White Muesli",
+          "displayName": "White Muesli",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "taro-arvi-stem",
+          "sourceName": "Taro (Arvi) Stem",
+          "displayName": "अरबी के डंठल",
+          "historicalRecords": 3,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "pepper-garbled",
+          "sourceName": "Pepper garbled",
+          "displayName": "Pepper garbled",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mentha-oil",
+          "sourceName": "Mentha Oil",
+          "displayName": "पुदीना तेल",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "rab-liquid-jaggery-molasses",
+          "sourceName": "Rab/Liquid Jaggery/Molasses",
+          "displayName": "राब / शीरा",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "nigella-seeds",
+          "sourceName": "nigella seeds",
+          "displayName": "कलौंजी",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "groundnutsplit",
+          "sourceName": "Groundnut(Split)",
+          "displayName": "मूँगफली दाना",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "jarbara",
+          "sourceName": "Jarbara",
+          "displayName": "Jarbara",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tulip",
+          "sourceName": "Tulip",
+          "displayName": "Tulip",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "soapnutantawala-retha",
+          "sourceName": "Soapnut(Antawala/Retha)",
+          "displayName": "रीठा",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mataki",
+          "sourceName": "Mataki",
+          "displayName": "Mataki",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "kiwi-fruit",
+          "sourceName": "Kiwi Fruit",
+          "displayName": "कीवी",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "avocado",
+          "sourceName": "Avocado",
+          "displayName": "एवोकाडो",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "she-buffalo",
+          "sourceName": "She Buffalo",
+          "displayName": "भैंस",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "sugarcane",
+          "sourceName": "Sugarcane",
+          "displayName": "गन्ना",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "karamani",
+          "sourceName": "Karamani",
+          "displayName": "Karamani",
+          "historicalRecords": 2,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "balekai",
+          "sourceName": "Balekai",
+          "displayName": "Balekai",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "moath-dal",
+          "sourceName": "Moath Dal",
+          "displayName": "Moath Dal",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "season-leaves",
+          "sourceName": "Season Leaves",
+          "displayName": "Season Leaves",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "sweet-saag",
+          "sourceName": "Sweet Saag",
+          "displayName": "Sweet Saag",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "makhanafoxnut",
+          "sourceName": "Makhana(Foxnut)",
+          "displayName": "मखाना",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "brahmi",
+          "sourceName": "Brahmi",
+          "displayName": "Brahmi",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mango-powder",
+          "sourceName": "mango powder",
+          "displayName": "अमचूर",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "harrah",
+          "sourceName": "Harrah",
+          "displayName": "Harrah",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "pupadia",
+          "sourceName": "Pupadia",
+          "displayName": "Pupadia",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "white-pumpkin",
+          "sourceName": "White Pumpkin",
+          "displayName": "कद्दू",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "honge-seed",
+          "sourceName": "Honge seed",
+          "displayName": "Honge seed",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "he-buffalo",
+          "sourceName": "He Buffalo",
+          "displayName": "नर भैंस",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "pigs",
+          "sourceName": "Pigs",
+          "displayName": "सूअर",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": true
+        },
+        {
+          "id": "white-peas",
+          "sourceName": "White Peas",
+          "displayName": "सफेद मटर",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "mahua-seedhippe-seed",
+          "sourceName": "Mahua Seed(Hippe seed)",
+          "displayName": "महुआ बीज",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "niger-seedramtil",
+          "sourceName": "Niger Seed(Ramtil)",
+          "displayName": "रामतिल बीज",
+          "historicalRecords": 1,
+          "excludedFromCropPriceApi": false
+        }
+      ],
+      "mappedButAwaitingAsset": []
+    },
+    "chhattisgarhActive": {
+      "source": "server/db/data/crops.json",
+      "rawCatalog": {
+        "totalEntries": 56,
+        "historicalRecords": 85172,
+        "mappedEntries": 46,
+        "unmappedEntries": 10,
+        "historicalRecordsRepresented": 77473,
+        "recordWeightedCoveragePercent": 90.96,
+        "availablePhotoEntries": 46,
+        "availableHistoricalRecordCoveragePercent": 90.96
+      },
+      "eligibleCropPriceApiCatalog": {
+        "totalEntries": 56,
+        "historicalRecords": 85172,
+        "mappedEntries": 46,
+        "unmappedEntries": 10,
+        "historicalRecordsRepresented": 77473,
+        "recordWeightedCoveragePercent": 90.96,
+        "availablePhotoEntries": 46,
+        "availableHistoricalRecordCoveragePercent": 90.96
+      },
+      "baselineRawCatalog": {
+        "totalEntries": 56,
+        "mappedEntries": 11,
+        "unmappedEntries": 45,
+        "historicalRecords": 85172,
+        "historicalRecordsRepresented": 46661,
+        "recordWeightedCoveragePercent": 54.78
+      },
+      "excludedFromCropPriceApi": [],
+      "remainingEligibleUnmappedEntries": [
+        {
+          "id": "cowpea",
+          "sourceName": "Cowpea/Barbati",
+          "displayName": "सेम बरबटी",
+          "historicalRecords": 1409,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "redcowpea",
+          "sourceName": "Red Cowpea",
+          "displayName": "चवली",
+          "historicalRecords": 1266,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tivda",
+          "sourceName": "Tivda/Lathyrus",
+          "displayName": "तिवड़ा",
+          "historicalRecords": 1135,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "otherveg",
+          "sourceName": "Other Vegetables",
+          "displayName": "अन्य हरी एवं ताजी सब्जियाँ",
+          "historicalRecords": 1088,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "millets",
+          "sourceName": "Millets",
+          "displayName": "कोदो-कुटकी",
+          "historicalRecords": 927,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "peas",
+          "sourceName": "Peas",
+          "displayName": "मटर",
+          "historicalRecords": 769,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "coriander",
+          "sourceName": "Coriander",
+          "displayName": "धनिया",
+          "historicalRecords": 484,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "fenugreek",
+          "sourceName": "Fenugreek",
+          "displayName": "मैथी",
+          "historicalRecords": 426,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chilli",
+          "sourceName": "Chilli",
+          "displayName": "मिर्च",
+          "historicalRecords": 160,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "turmeric",
+          "sourceName": "Turmeric",
+          "displayName": "हल्दी",
+          "historicalRecords": 35,
+          "excludedFromCropPriceApi": false
+        }
+      ],
+      "allRawUnmappedEntries": [
+        {
+          "id": "cowpea",
+          "sourceName": "Cowpea/Barbati",
+          "displayName": "सेम बरबटी",
+          "historicalRecords": 1409,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "redcowpea",
+          "sourceName": "Red Cowpea",
+          "displayName": "चवली",
+          "historicalRecords": 1266,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "tivda",
+          "sourceName": "Tivda/Lathyrus",
+          "displayName": "तिवड़ा",
+          "historicalRecords": 1135,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "otherveg",
+          "sourceName": "Other Vegetables",
+          "displayName": "अन्य हरी एवं ताजी सब्जियाँ",
+          "historicalRecords": 1088,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "millets",
+          "sourceName": "Millets",
+          "displayName": "कोदो-कुटकी",
+          "historicalRecords": 927,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "peas",
+          "sourceName": "Peas",
+          "displayName": "मटर",
+          "historicalRecords": 769,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "coriander",
+          "sourceName": "Coriander",
+          "displayName": "धनिया",
+          "historicalRecords": 484,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "fenugreek",
+          "sourceName": "Fenugreek",
+          "displayName": "मैथी",
+          "historicalRecords": 426,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "chilli",
+          "sourceName": "Chilli",
+          "displayName": "मिर्च",
+          "historicalRecords": 160,
+          "excludedFromCropPriceApi": false
+        },
+        {
+          "id": "turmeric",
+          "sourceName": "Turmeric",
+          "displayName": "हल्दी",
+          "historicalRecords": 35,
+          "excludedFromCropPriceApi": false
+        }
+      ],
+      "mappedButAwaitingAsset": []
+    }
+  },
+  "mappingReview": {
+    "mechanism": "Exact source commodity IDs only; no substring matching.",
+    "retainedDistinctions": [
+      "paddy vs rice",
+      "whole pulses vs dal",
+      "fresh peas vs dry peas",
+      "coriander leaves vs coriander seed",
+      "coconut vs oil/coir/seed",
+      "cotton vs cotton seed",
+      "wheat vs flour",
+      "mango vs mango powder",
+      "mahua flowers vs mahua seeds"
+    ],
+    "sourceAmbiguities": [
+      {
+        "id": "coriander",
+        "scope": "legacy Chhattisgarh",
+        "evidence": "Source varieties mix Coriander Seed, Medium Green and Full Green. Generic leaf photograph is not valid for every variety.",
+        "recommendation": "Keep neutral unless source is disambiguated.",
+        "excludedFromPhotoMapping": true
+      },
+      {
+        "id": "peas",
+        "scope": "legacy Chhattisgarh",
+        "evidence": "Source varieties include Peas(Dry), Local, Ambika and JP 885.",
+        "recommendation": "Do not automatically use fresh green pea photograph.",
+        "excludedFromPhotoMapping": true
+      },
+      {
+        "id": "cowpea",
+        "scope": "legacy Chhattisgarh",
+        "evidence": "Source name is Cowpea/Barbati but varieties contain Gouard and Ashgourd.",
+        "recommendation": "Investigate source normalization; do not infer variety or price comparability from photograph.",
+        "excludedFromPhotoMapping": true
+      },
+      {
+        "id": "beans",
+        "scope": "national",
+        "evidence": "Generic Beans commodity contains no specific form in national catalog.",
+        "recommendation": "Flat-bean picture is a category illustration, not verification of variety.",
+        "excludedFromPhotoMapping": true
+      }
+    ],
+    "conservativeExclusions": [
+      "coriander",
+      "peas",
+      "cowpea",
+      "beans"
+    ],
+    "preparedAssetsAwaitingVerifiedCommodity": [
+      {
+        "path": "public/visuals/crop-flat-beans.webp",
+        "reason": "Generic beans does not establish flat-bean form; image intentionally unmapped."
+      }
+    ]
+  },
+  "displayNames": {
+    "implementation": "server/db/crop-display-names.js",
+    "normalizedContexts": [
+      "crops arrays",
+      "ticker arrays",
+      "top-level crop object in price detail"
+    ],
+    "preserved": [
+      "English source names",
+      "IDs",
+      "prices",
+      "dates",
+      "varieties",
+      "district and mandi labels",
+      "crop-info prose"
+    ],
+    "unknownRegionalNames": "Original source name retained; no speculative translations."
+  },
+  "releaseChecks": [
+    "Every asset path referenced by cropImages.js must exist and decode.",
+    "Run node --test tests/*.test.mjs and production build.",
+    "Check national/CG crop chips, hero, detail pages and fallbacks on actual deployment.",
+    "Verify API display-name corrections on deployed crop/ticker/price responses."
+  ],
+  "remainingNationalEligiblePriority": [
+    {
+      "id": "beans",
+      "sourceName": "Beans",
+      "displayName": "सेम",
+      "historicalRecords": 15701,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "cummin-seedjeera",
+      "sourceName": "Cummin Seed(Jeera)",
+      "displayName": "जीरा",
+      "historicalRecords": 2611,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "corriander-seed",
+      "sourceName": "Corriander seed",
+      "displayName": "धनिया बीज",
+      "historicalRecords": 2313,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "chilly-capsicum",
+      "sourceName": "Chilly Capsicum",
+      "displayName": "शिमला मिर्च",
+      "historicalRecords": 2042,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "field-pea",
+      "sourceName": "Field Pea",
+      "displayName": "मटर",
+      "historicalRecords": 1767,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "betal-leaves",
+      "sourceName": "Betal Leaves",
+      "displayName": "पान",
+      "historicalRecords": 1732,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "barleyjau",
+      "sourceName": "Barley(Jau)",
+      "displayName": "जौ",
+      "historicalRecords": 1700,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "custard-applesharifa",
+      "sourceName": "Custard Apple(Sharifa)",
+      "displayName": "सीताफल",
+      "historicalRecords": 1471,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "arhar-daltur-dal",
+      "sourceName": "Arhar Dal(Tur Dal)",
+      "displayName": "अरहर दाल",
+      "historicalRecords": 1459,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "black-pepper",
+      "sourceName": "Black pepper",
+      "displayName": "काली मिर्च",
+      "historicalRecords": 1449,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "dry-chillies",
+      "sourceName": "Dry Chillies",
+      "displayName": "सूखी मिर्च",
+      "historicalRecords": 1428,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "berzizyphus-borehannu",
+      "sourceName": "Ber(Zizyphus/Borehannu)",
+      "displayName": "बेर",
+      "historicalRecords": 1388,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "snakeguard",
+      "sourceName": "Snakeguard",
+      "displayName": "चचिंडा",
+      "historicalRecords": 1225,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "onion-green",
+      "sourceName": "Onion Green",
+      "displayName": "हरा प्याज",
+      "historicalRecords": 1143,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "papaya",
+      "sourceName": "Papaya",
+      "displayName": "पपीता",
+      "historicalRecords": 1134,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "green-avarew",
+      "sourceName": "Green Avare(W)",
+      "displayName": "हरी अवरे",
+      "historicalRecords": 1106,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "chili-red",
+      "sourceName": "Chili Red",
+      "displayName": "लाल मिर्च",
+      "historicalRecords": 1075,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "mintpudina",
+      "sourceName": "Mint(Pudina)",
+      "displayName": "पुदीना",
+      "historicalRecords": 1028,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "mangoraw-ripe",
+      "sourceName": "Mango(Raw-Ripe)",
+      "displayName": "आम",
+      "historicalRecords": 892,
+      "excludedFromCropPriceApi": false
+    },
+    {
+      "id": "gingerdry",
+      "sourceName": "Ginger(Dry)",
+      "displayName": "सोंठ (सूखी अदरक)",
+      "historicalRecords": 878,
+      "excludedFromCropPriceApi": false
+    }
+  ],
+  "apiEligibility": {
+    "implementation": "src/utils/cropEligibility.js",
+    "excludedIds": [
+      "bull",
+      "calf",
+      "cock",
+      "cow",
+      "duck",
+      "egg",
+      "fish",
+      "goat",
+      "he-buffalo",
+      "pigs",
+      "she-buffalo"
+    ],
+    "rawDataPreserved": true,
+    "reason": "Explicit livestock, poultry, fish and egg IDs are excluded from the crop-price experience because source data does not establish the uniform per-quintal crop-price unit. Exact IDs only; cowpea and bullar remain eligible."
+  },
+  "assetVerification": {
+    "decodedMappedFiles": 66,
+    "allMappedFilesPresent": true,
+    "allMappedFiles512SquareWebP": true,
+    "totalMappedAssetBytes": 3812914,
+    "files": [
+      {
+        "family": "amaranth",
+        "bytes": 77024,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "amla",
+        "bytes": 43068,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "apple",
+        "bytes": 64146,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "arecanut",
+        "bytes": 60508,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "arhar-whole",
+        "bytes": 58796,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "ash-gourd",
+        "bytes": 42236,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "bajra",
+        "bytes": 62114,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "banana",
+        "bytes": 31920,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "barnyard-millet",
+        "bytes": 39970,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "beetroot",
+        "bytes": 58852,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "bitter-gourd",
+        "bytes": 50502,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "bottle-gourd",
+        "bytes": 29784,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "cabbage",
+        "bytes": 49910,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "capsicum",
+        "bytes": 49978,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "carrot",
+        "bytes": 49820,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "castor-seed",
+        "bytes": 72194,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "cauliflower",
+        "bytes": 51416,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "chana",
+        "bytes": 77758,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "chayote",
+        "bytes": 48468,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "chikoo",
+        "bytes": 67974,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "cluster-beans",
+        "bytes": 62570,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "coconut",
+        "bytes": 82720,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "colocasia",
+        "bytes": 75678,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "coriander",
+        "bytes": 74494,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "cotton",
+        "bytes": 62054,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "cowpea-pods",
+        "bytes": 71852,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "cucumber",
+        "bytes": 53478,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "drumstick",
+        "bytes": 49262,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "eggplant",
+        "bytes": 37590,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "elephant-yam",
+        "bytes": 74976,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "french-beans",
+        "bytes": 50792,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "garlic",
+        "bytes": 38594,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "ginger",
+        "bytes": 55494,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "green-banana",
+        "bytes": 39246,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "green-chilli",
+        "bytes": 52712,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "groundnut",
+        "bytes": 54908,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "ivy-gourd",
+        "bytes": 60604,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "jowar",
+        "bytes": 46750,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "lemon",
+        "bytes": 48952,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "linseed",
+        "bytes": 52106,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "mahua",
+        "bytes": 62918,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "maize",
+        "bytes": 64566,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "mango",
+        "bytes": 50582,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "masoor-whole",
+        "bytes": 42414,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "moong-whole",
+        "bytes": 48350,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "mustard",
+        "bytes": 91254,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "okra",
+        "bytes": 54562,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "onion",
+        "bytes": 57506,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "orange",
+        "bytes": 58078,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "paddy",
+        "bytes": 116340,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "peas",
+        "bytes": 50896,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "pointed-gourd",
+        "bytes": 72974,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "pomegranate",
+        "bytes": 69864,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "potato",
+        "bytes": 43792,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "pumpkin",
+        "bytes": 64800,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "radish",
+        "bytes": 44616,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "ragi",
+        "bytes": 78560,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "ridge-gourd",
+        "bytes": 63480,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "sesame",
+        "bytes": 46484,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "soybean",
+        "bytes": 38340,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "spinach",
+        "bytes": 56826,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "sunflower-seed",
+        "bytes": 45174,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "tamarind",
+        "bytes": 74440,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "tomato",
+        "bytes": 52620,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "urad-whole",
+        "bytes": 41494,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      {
+        "family": "wheat",
+        "bytes": 90714,
+        "dimensions": [
+          512,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    ]
+  }
+}

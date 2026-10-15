@@ -1,0 +1,145 @@
+// Display-only corrections keyed by the source commodity ID. Never infer a
+// commodity from a substring: cow/cowpea, seeds/leaves and grain/flour differ.
+// English source names, IDs, varieties, dates and market values remain intact.
+export const CROP_DISPLAY_NAMES = Object.freeze({
+  cow: 'गाय',
+  bull: 'बैल',
+  calf: 'बछड़ा',
+  goat: 'बकरी',
+  cock: 'मुर्गा',
+  duck: 'बत्तख',
+  'she-buffalo': 'भैंस',
+  'he-buffalo': 'नर भैंस',
+  pigs: 'सूअर',
+  egg: 'अंडा',
+  ghee: 'घी',
+  'black-gramurd-beanswhole': 'साबुत उड़द',
+  'black-gram-dalurd-dal': 'उड़द दाल',
+  'bengal-gramgramwhole': 'साबुत चना',
+  'bengal-gram-dalchana-dal': 'चना दाल',
+  'kabuli-chanachickpeas-white': 'काबुली चना',
+  'arhartur-red-gramwhole': 'साबुत अरहर',
+  'arhar-daltur-dal': 'अरहर दाल',
+  'green-grammoongwhole': 'साबुत मूंग',
+  'green-gram-dalmoong-dal': 'मूंग दाल',
+  'lentilmasurwhole': 'साबुत मसूर',
+  'masur-dal': 'मसूर दाल',
+  'cowpealobia-karamani': 'लोबिया दाना',
+  cowpeaveg: 'बरबटी की फली',
+  'custard-applesharifa': 'सीताफल',
+  roseloose: 'खुले गुलाब',
+  'coconut-oil': 'नारियल तेल',
+  'coconut-seed': 'नारियल बीज',
+  'coconut-coir': 'नारियल रेशा',
+  'tender-coconut': 'कच्चा नारियल',
+  copra: 'खोपरा',
+  'cotton-seed': 'कपास बीज',
+  'wheat-atta': 'गेहूँ आटा',
+  'maida-atta': 'मैदा',
+  'beaten-rice': 'पोहा',
+  'mustard-oil': 'सरसों तेल',
+  'mango-powder': 'अमचूर',
+  'dry-grapes': 'किशमिश',
+  'guar-seedcluster-beans-seed': 'ग्वार बीज',
+  'cluster-beans': 'ग्वारफली',
+  clusterbean: 'ग्वारफली',
+  'corriander-seed': 'धनिया बीज',
+  corianderleaves: 'धनिया पत्ती',
+  // The unsuffixed source does not establish raw/dried form for every record.
+  turmeric: 'हल्दी',
+  turmericraw: 'कच्ची हल्दी',
+  gingerdry: 'सोंठ (सूखी अदरक)',
+  gingergreen: 'ताज़ी अदरक',
+  'dry-chillies': 'सूखी मिर्च',
+  'green-chilli': 'हरी मिर्च',
+  'chili-red': 'लाल मिर्च',
+  'ground-nut-seed': 'मूँगफली बीज',
+  'groundnut-podsraw': 'कच्ची मूँगफली की फलियाँ',
+  groundnutsplit: 'मूँगफली दाना',
+  'methi-seeds': 'मेथी दाना',
+  methileaves: 'मेथी पत्ती',
+  'tamarind-fruit': 'इमली',
+  'tamarind-seed': 'इमली बीज',
+  'mahua-seedhippe-seed': 'महुआ बीज',
+  'sunflower-seed': 'सूरजमुखी बीज',
+  'niger-seedramtil': 'रामतिल बीज',
+  'castor-seed': 'अरंडी बीज',
+  'cummin-seedjeera': 'जीरा',
+  ajwan: 'अजवाइन',
+  'black-pepper': 'काली मिर्च',
+  'barleyjau': 'जौ',
+  'arecanutbetelnut-supari': 'सुपारी',
+  betelnuts: 'सुपारी',
+  'berzizyphus-borehannu': 'बेर',
+  'figanjura-anjeer': 'अंजीर',
+  'sweet-corn': 'मीठा मक्का',
+  'baby-corn': 'बेबी कॉर्न',
+  coffee: 'कॉफी',
+  cashewnuts: 'काजू',
+  'gram-rawchholia': 'हरा चना',
+  'amranthas-red': 'लाल चौलाई',
+  'foxtail-milletnavane': 'कंगनी',
+  'ragifinger-millet': 'रागी',
+  'jowarsorghum': 'ज्वार',
+  'kodo-milletvaragu': 'कोदो',
+  'kulthihorse-gram': 'कुल्थी',
+  cardamoms: 'इलायची',
+  tinda: 'टिंडा',
+  'round-gourd': 'टिंडा',
+  'sweet-pumpkin': 'मीठा कद्दू',
+  asparagus: 'एस्पैरागस',
+  gurjaggery: 'गुड़',
+  'almondbadam': 'बादाम',
+  cinamondalchini: 'दालचीनी',
+  'long-melonkakri': 'ककड़ी',
+  'sesamumsesame-gingelly-til': 'तिल',
+  dates: 'खजूर',
+  soanf: 'सौंफ',
+  peasdry: 'सूखी मटर',
+  'white-peas': 'सफेद मटर',
+  cloves: 'लौंग',
+  cocoa: 'कोको',
+  'isabgulpsyllium': 'इसबगोल',
+  tobacco: 'तंबाकू',
+  'suvadill-seed': 'सोआ बीज',
+  cherry: 'चेरी',
+  linseed: 'अलसी',
+  'flax-seeds': 'अलसी बीज',
+  rubber: 'रबर',
+  sugar: 'चीनी',
+  'sabu-dan': 'साबूदाना',
+  strawberry: 'स्ट्रॉबेरी',
+  'khandsaridesi-khand': 'खांड',
+  'poppy-seeds': 'खसखस',
+  'taro-arvi-stem': 'अरबी के डंठल',
+  'mentha-oil': 'पुदीना तेल',
+  'rab-liquid-jaggery-molasses': 'राब / शीरा',
+  'nigella-seeds': 'कलौंजी',
+  'soapnutantawala-retha': 'रीठा',
+  'kiwi-fruit': 'कीवी',
+  avocado: 'एवोकाडो',
+  sugarcane: 'गन्ना',
+  'makhanafoxnut': 'मखाना',
+});
+
+export function withCropDisplayName(crop) {
+  if (!crop || typeof crop !== 'object' || Array.isArray(crop)
+    || !Object.hasOwn(CROP_DISPLAY_NAMES, crop.id)) return crop;
+  const nameHi = CROP_DISPLAY_NAMES[crop.id];
+  return crop.nameHi === nameHi ? crop : { ...crop, nameHi };
+}
+
+// Deliberately shallow and restricted. A district, mandi or editorial object
+// can also have id/nameHi fields; it must never be treated as a commodity.
+export function normalizeCropDataset(name, data) {
+  if ((name === 'crops' || name === 'ticker') && Array.isArray(data)) {
+    return data.map(withCropDisplayName);
+  }
+  return data;
+}
+
+export function normalizeCropPriceDetail(data) {
+  if (!data || typeof data !== 'object' || Array.isArray(data) || !data.crop) return data;
+  const crop = withCropDisplayName(data.crop);
+  return crop === data.crop ? data : { ...data, crop };
+}

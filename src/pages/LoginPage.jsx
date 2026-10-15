@@ -1,17 +1,20 @@
 import '@/styles/secondary.css';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Navigate, Link } from 'react-router-dom';
+import { Navigate, Link, useLocation } from 'react-router-dom';
 import { Eye, EyeOff, Phone, Lock, Loader2 } from 'lucide-react';
 import { Input } from '../components/ui/input';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 import { cn } from '@/lib/utils';
 import SEO from '../components/SEO';
+import { safeReturnTo } from '../utils/safeReturnTo';
 
 export default function LoginPage() {
   const { user, login, loading: authLoading } = useAuth();
   const toast = useToast();
+  const location = useLocation();
+  const returnTo = safeReturnTo(location.state?.returnTo);
 
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
@@ -29,7 +32,7 @@ export default function LoginPage() {
   }
 
   if (user) {
-    return <Navigate to="/" replace />;
+    return <Navigate to={returnTo} replace />;
   }
 
   const handleSubmit = async (e) => {
@@ -193,6 +196,7 @@ export default function LoginPage() {
           नया अकाउंट बनाना है?{' '}
           <Link
             to="/register"
+            state={{ returnTo }}
             className="text-green-500 hover:text-green-400 font-medium transition-colors"
           >
             अभी रजिस्टर करें

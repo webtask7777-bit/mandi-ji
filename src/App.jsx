@@ -1,5 +1,5 @@
 import { useState, lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import './index.css';
 import SplashScreen from './components/SplashScreen';
@@ -61,7 +61,8 @@ function App() {
                 <Route path="/crop/:cropId" element={<CropDetailPage />} />
                 <Route path="/listing/:id" element={<ListingDetailPage />} />
                 <Route path="/my-listings" element={<ProtectedRoute><MyListingsPage /></ProtectedRoute>} />
-                <Route path="/transport" element={<TransportPage />} />
+                <Route path="/delivery-calculator" element={<TransportPage />} />
+                <Route path="/transport" element={<Navigate to="/delivery-calculator" replace />} />
                 <Route path="/eway-bill/new" element={<ProtectedRoute><EwayBillPage /></ProtectedRoute>} />
                 <Route path="/my-eway-bills" element={<ProtectedRoute><MyEwayBills /></ProtectedRoute>} />
                 <Route path="/pricing" element={<PricingPage />} />

@@ -1,5 +1,5 @@
-import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, TrendingUp, TrendingDown, Minus, MapPin, Clock3, ShoppingCart, Info, AlertCircle, RefreshCw } from 'lucide-react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import { ArrowLeft, ArrowRight, TrendingUp, TrendingDown, Minus, MapPin, Clock3, ShoppingCart, Calculator, Info, AlertCircle, RefreshCw } from 'lucide-react';
 import { useApi } from '../hooks/useApi';
 import { useStateContext } from '../context/StateContext';
 import Brand from '../components/Brand';
@@ -35,6 +35,7 @@ function formatTimestamp(value) {
 
 export default function CropDetailPage() {
   const { cropId } = useParams();
+  const navigate = useNavigate();
   const { stateParam, stateNameHi } = useStateContext();
   const stateQuery = encodeURIComponent(stateParam || 'all');
   const cropQuery = encodeURIComponent(cropId);
@@ -63,6 +64,9 @@ export default function CropDetailPage() {
     .filter(row => Number(row.records) > 0).sort((a, b) => Number(b.records) - Number(a.records));
   const maxDistrictRecords = Math.max(...districts.map(row => Number(row.records)), 1);
   const msp = positive(heroRecord?.msp) ? Number(heroRecord.msp) : positive(crop.msp) ? Number(crop.msp) : null;
+  const openDeliveryCalculator = payload => navigate('/delivery-calculator', { state: { deliveryScenario: {
+    ...payload, id: globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+  } } });
 
   return (
     <div className="sb-detail-page">
@@ -94,7 +98,8 @@ export default function CropDetailPage() {
                 <div className={`sb-detail-freshness ${latestDay && freshness.isCurrent ? 'is-current' : ''}`}><Clock3 size={15} aria-hidden="true" /><span>{latestDay ? freshness.label : 'मासिक रिकॉर्ड · दैनिक भाव नहीं'}</span></div>
                 {updatedLabel && <p className="sb-detail-sync">डेटा अपडेट: {updatedLabel}</p>}
               </> : <div className="sb-detail-no-price"><strong>इस क्षेत्र के भाव उपलब्ध नहीं हैं</strong><p>दूसरे क्षेत्र के रिकॉर्ड मुख्य मंडी भाव पृष्ठ पर देखें।</p><Link to="/">क्षेत्र बदलें <ArrowRight size={16} aria-hidden="true" /></Link></div>}
-              <Link to={`/listing/new?type=sell&crop=${encodeURIComponent(cropId)}`} className="sb-detail-primary"><ShoppingCart size={18} aria-hidden="true" />यह फसल बेचें<ArrowRight size={16} aria-hidden="true" /></Link>
+              {heroPrice !== null && <button type="button" className="sb-detail-primary" onClick={() => openDeliveryCalculator({ cropId, cropName, buyPrice: heroPrice, quoteDate: heroRecord?.date, priceBasis: 'historical' })}><Calculator size={18} aria-hidden="true" />माल मँगाने का पूरा खर्च देखें<ArrowRight size={16} aria-hidden="true" /></button>}
+              <Link to={`/listing/new?type=sell&crop=${encodeURIComponent(cropId)}`} className={heroPrice !== null ? 'sb-detail-text-link' : 'sb-detail-primary'}><ShoppingCart size={18} aria-hidden="true" />यह फसल बेचें<ArrowRight size={16} aria-hidden="true" /></Link>
             </section>
             <section className="sb-crop-detail-trend" aria-label="भाव का इतिहास">
               {history.length || dailyHistory.length ? <MiniChart data={history} dailyData={dailyHistory} title={`${cropName} का भाव इतिहास`} formatMonth={formatMonthHi} /> : <div className="sb-detail-status sb-detail-status--compact"><TrendingUp size={24} aria-hidden="true" /><h2>भाव का इतिहास उपलब्ध नहीं है</h2><p>इस फसल के रिकॉर्ड आने पर यहाँ ग्राफ़ दिखाई देगा।</p></div>}
@@ -102,7 +107,7 @@ export default function CropDetailPage() {
             </section>
           </div>
         </>}
-        {mandiLoading ? <div className="sb-detail-loading" role="status">मंडियों के रिकॉर्ड लोड हो रहे हैं…</div> : mandiError ? <div className="sb-detail-notice" role="alert"><Info size={18} aria-hidden="true" /><p>मंडी तुलना अभी लोड नहीं हो पाई। कृपया पृष्ठ दोबारा खोलें।</p></div> : mandis.length > 0 ? <MandiCompare key={`${cropId}-${stateQuery}`} data={mandis} cropName={cropName} cropId={cropId} dailyHistory={dailyHistory} /> : !priceLoading && <section className="sb-detail-section"><h2>मंडी तुलना</h2><p>इस फसल और क्षेत्र के लिए मंडी रिकॉर्ड उपलब्ध नहीं हैं।</p></section>}
+        {mandiLoading ? <div className="sb-detail-loading" role="status">मंडियों के रिकॉर्ड लोड हो रहे हैं…</div> : mandiError ? <div className="sb-detail-notice" role="alert"><Info size={18} aria-hidden="true" /><p>मंडी तुलना अभी लोड नहीं हो पाई। कृपया पृष्ठ दोबारा खोलें।</p></div> : mandis.length > 0 ? <MandiCompare key={`${cropId}-${stateQuery}`} data={mandis} cropName={cropName} cropId={cropId} dailyHistory={dailyHistory} onDeliveryCalculate={openDeliveryCalculator} /> : !priceLoading && <section className="sb-detail-section"><h2>मंडी तुलना</h2><p>इस फसल और क्षेत्र के लिए मंडी रिकॉर्ड उपलब्ध नहीं हैं।</p></section>}
         {(districts.length > 0 || cropTicker || msp !== null) && <div className="sb-detail-bottom-grid">
           {districts.length > 0 && <section className="sb-detail-section"><span className="sb-detail-kicker">डेटा कहाँ से है?</span><h2>ज़िला वार रिकॉर्ड</h2><p>उपलब्ध प्रविष्टियों की संख्या; व्यापार की मात्रा नहीं।</p><div className="sb-detail-districts">{districts.slice(0, 10).map(row => <div className="sb-detail-district" key={row.district}><span>{row.nameHi || row.district}</span><div className="sb-detail-district__track" aria-hidden="true"><span style={{ width: `${Number(row.records) / maxDistrictRecords * 100}%` }} /></div><strong>{Number(row.records).toLocaleString('en-IN')}</strong></div>)}</div></section>}
           <section className="sb-detail-section"><span className="sb-detail-kicker">एक नज़र में</span><h2>फसल की जानकारी</h2><dl className="sb-detail-facts">

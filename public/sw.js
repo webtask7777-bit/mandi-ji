@@ -1,6 +1,6 @@
 // Cache only the public shell/assets. Prices and signed-in API responses always
 // come from the network, so offline caches cannot masquerade as current quotes.
-const CACHE_NAME = 'sahibhav-v4';
+const CACHE_NAME = 'sahibhav-v5';
 
 // SPA fallbacks can answer a missing deployment chunk with 200 HTML. Never
 // persist that response under a hashed asset URL (or reuse an older bad entry).
