@@ -16,7 +16,7 @@
 
 Run `npm run build`, then `npm test`. The build creates the client bundle, server render bundle, static HTML, sitemap, robots file and server route shells. `scripts/prerender.mjs` expects a fresh Vite build; use the full build command when rebuilding.
 
-Seven SEO integration checks cover all sitemap destinations and raw metadata, source dates, public snapshot safety, crawlable links, 404 responses, private/listing routes and traversal inputs. The existing business logic tests remain in place.
+SEO integration checks cover all sitemap destinations and raw metadata, source dates, public snapshot safety, crawlable regional links, deployment rewrite configuration, 404 responses, private/listing routes and traversal inputs. The existing business logic tests remain in place.
 
 ## Operational follow-up
 

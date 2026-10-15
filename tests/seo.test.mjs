@@ -16,6 +16,15 @@ const decodeEntities = value => value.replaceAll('&amp;', '&').replaceAll('&quot
 const attributes = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(([, key, value]) => [key.toLowerCase(), decodeEntities(value)]));
 const plainText = html => decodeEntities(html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '').replace(/<!--[^]*?-->/g, '').replace(/<[^>]*>/g, ''));
 
+test('Vercel clean URLs route rewrites to extensionless function endpoints', () => {
+  const config = JSON.parse(read(path.join(root, 'vercel.json')));
+  assert.equal(config.cleanUrls, true, 'public sitemap routes rely on clean URLs');
+  const destinations = (config.rewrites || []).map(rewrite => rewrite.destination).filter(destination => destination.startsWith('/'));
+  assert.ok(destinations.some(destination => destination.split('?')[0] === '/api/page'), 'missing-page handler remains reachable');
+  assert.ok(destinations.some(destination => destination.split('?')[0] === '/api'), 'public API uses its clean index endpoint');
+  for (const destination of destinations) assert.doesNotMatch(destination.split(/[?#]/)[0], /\.(?:html|[cm]?js)$/i, `${destination}: cleanUrls must not target a file extension`);
+});
+
 function headMetadata(html, label) {
   const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1];
   assert.ok(head, `${label}: document head exists`);
@@ -126,6 +135,9 @@ test('raw home and state pages contain navigable crop links and the blog index e
   assert.match(home, /href="\/crop\/tomato"/, 'national crop landing is linked without JavaScript');
   assert.match(state, /href="\/mandi-bhav\/chhattisgarh\/ladyfinger"/, 'state catalog keeps its own source ID and scope');
   assert.doesNotMatch(state, /href="\/crop\/ladyfinger"/, 'CG-only ID must not be sent to the national dataset');
+  const regionalCrop = htmlFor('/mandi-bhav/chhattisgarh/ladyfinger');
+  assert.match(regionalCrop, /href="\/mandi-bhav\/chhattisgarh\/ladyfinger"/, 'comparison detail link retains the regional source ID and scope');
+  assert.doesNotMatch(regionalCrop, /href="\/crop\/ladyfinger(?:[?"#])/, 'regional comparison must not link to the nonexistent national crop ID');
   const published = JSON.parse(read(path.join(root, 'server/db/data/blog-posts.json'))).filter(post => post.status === 'published' && post.slug && post.content?.trim());
   const blog = htmlFor('/blog');
   for (const post of published.slice(0, 10)) assert.ok(blog.includes(`href="/blog/${encodeURIComponent(post.slug)}"`), 'published article is discoverable from blog HTML');

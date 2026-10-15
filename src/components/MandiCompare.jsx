@@ -4,6 +4,7 @@ import { ArrowRight, Calculator, ChevronDown, ChevronUp, Search, SlidersHorizont
 import { useStateContext } from '../context/StateContext';
 import { getOutlierBounds, isOutlier } from '../lib/outlier';
 import { getDataFreshness } from '../utils/dataFreshness';
+import { cropDetailPath } from '../utils/cropUrls';
 import { getComparisonPair, getMandiPrice, getMandiPriceBasis, getMandiQuoteDate, sortMandiPrices } from '../utils/marketComparison';
 import '../styles/comparison.css';
 
@@ -17,7 +18,7 @@ export default function MandiCompare({ data = [], cropName, onMandiClick, cropId
   const [search, setSearch] = useState('');
   const [variety, setVariety] = useState('all');
   const [sort, setSort] = useState('high');
-  const { selectStateDirect } = useStateContext();
+  const { selectStateDirect, stateParam } = useStateContext();
   const validData = useMemo(() => sortMandiPrices(data || []), [data]);
   const varieties = useMemo(() => [...new Set(validData.map(row => row.topVariety).filter(Boolean))].sort(), [validData]);
   // Crop switches may retain this component. An old variety must not hide a new crop.
@@ -51,6 +52,6 @@ export default function MandiCompare({ data = [], cropName, onMandiClick, cropId
     {filtered.length > 8 && <button type="button" className="sb-comparison-more" aria-expanded={showAll} onClick={() => setShowAll(value => !value)}>{showAll ? <><ChevronUp size={16} /> कम मंडियाँ दिखाएँ</> : <><ChevronDown size={16} /> सभी {filtered.length.toLocaleString('en-IN')} मंडियाँ देखें</>}</button>}
     <p className="sb-comparison-footnote"><Info size={14} aria-hidden="true" />अलग तारीखों, किस्मों या ग्रेड के औसत सीधे बिक्री का पक्का भाव नहीं बताते। साधारण औसत को आवक के अनुसार भार नहीं दिया गया है।</p>
     {pair && <div className="sb-comparison-pair"><div className="sb-pair-heading"><span>एक जैसे दर्ज प्रकार की तुलना</span><strong>{pair.variety}{pair.grade ? ` · ${pair.grade}` : ''}</strong></div><div className="sb-gap-route"><div><span>{pair.low.name}</span><strong>₹{money(getMandiPrice(pair.low))}</strong></div><ArrowRight size={18} aria-hidden="true" /><div><span>{pair.high.name}</span><strong>₹{money(getMandiPrice(pair.high))}</strong></div><div className="sb-pair-spread"><span>भाव अंतर / क्विंटल</span><strong>₹{money(pair.spread)}</strong></div></div><p>{pair.quoteDate ? getDataFreshness(pair.quoteDate).dateLabel : 'भाव की व्यक्तिगत तारीख उपलब्ध नहीं'} · {pair.count} रिकॉर्ड{pair.outliersExcluded ? ` · ${pair.outliersExcluded} असामान्य रिकॉर्ड हटाए गए` : ''}। दूरी और खर्च की पुष्टि आवश्यक है।</p>{onDeliveryCalculate && <button type="button" className="sb-pair-calculator" onClick={calculatePair}><Calculator size={19} aria-hidden="true" /><span><strong>इस अंतर में डिलीवरी खर्च निकालें</strong><small>दोनों मंडियों के भाव अगले कदम में भर जाएँगे</small></span><ArrowRight size={18} aria-hidden="true" /></button>}</div>}
-    {cropId && <Link to={`/crop/${cropId}`} className="sb-comparison-crop-link">{cropName} की विस्तृत जानकारी <ArrowRight size={16} aria-hidden="true" /></Link>}
+    {cropId && <Link to={cropDetailPath(cropId, stateParam)} className="sb-comparison-crop-link">{cropName} की विस्तृत जानकारी <ArrowRight size={16} aria-hidden="true" /></Link>}
   </section>;
 }

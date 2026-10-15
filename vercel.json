@@ -13,16 +13,12 @@
   },
   "rewrites": [
     {
-      "source": "/api/page",
-      "destination": "/api/page.mjs"
-    },
-    {
       "source": "/api/(.*)",
-      "destination": "/api/index.mjs"
+      "destination": "/api"
     },
     {
       "source": "/:path*",
-      "destination": "/api/page.mjs?path=:path*"
+      "destination": "/api/page?path=:path*"
     }
   ],
   "headers": [
