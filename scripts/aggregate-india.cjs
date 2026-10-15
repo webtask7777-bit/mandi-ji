@@ -7,6 +7,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { recordKey } = require('./lib/daily-store.cjs');
 
 const DATA_DIR = path.join(__dirname, '..', 'server', 'db', 'data');
 const DAILY_DIR = path.join(DATA_DIR, 'daily');
@@ -76,6 +77,14 @@ const STATE_ALIASES = {
   'Pondicherry': 'Puducherry',
   'Daman and Diu': 'Dadra and Nagar Haveli and Daman and Diu',
   'Dadra and Nagar Haveli': 'Dadra and Nagar Haveli and Daman and Diu',
+};
+
+// ─── Commodity Aliases (agmarknet.gov.in spellings of the same commodity form) ──
+// Exact source names only; whole pulses and dal stay separate.
+const COMMODITY_ALIASES = {
+  'Red gram/Arhar/Tur(whole)': 'Arhar(Tur/Red Gram)(Whole)',
+  'Red gram split/Arhar dal/Tur dal': 'Arhar Dal(Tur Dal)',
+  'Spiny Gourd / Kartali(Kantola)': 'Kartali(Kantola)',
 };
 
 // ─── Hindi Crop Name Mapping ───────────────────────────────────────────
@@ -294,19 +303,24 @@ function main() {
   const recentCutoff = latestDateObj.toISOString().slice(0, 10); // "YYYY-MM-DD"
   console.log(`Recent cutoff date: ${recentCutoff}`);
 
-  const allRecords = [];
+  // The same observation can sit in two files (older fetches filed by fetch date, overlapping
+  // snapshots). Keep one copy per identity key; the later file wins.
+  const byKey = new Map();
+  let rawCount = 0;
   for (const file of dailyFiles) {
     const data = JSON.parse(fs.readFileSync(path.join(DAILY_DIR, file), 'utf-8'));
-    allRecords.push(...(data.records || []));
+    for (const rec of data.records || []) { rawCount++; byKey.set(recordKey(rec), rec); }
   }
+  const allRecords = [...byKey.values()];
 
-  console.log(`Total records: ${allRecords.length}`);
+  console.log(`Total records: ${allRecords.length} (${rawCount - allRecords.length} duplicates across files skipped)`);
 
   // ─── Group by state ──────────────────────────────────────────────────
   const byState = {};
   for (const rec of allRecords) {
     // Normalize state name via aliases (agmarknet uses different spellings)
     if (STATE_ALIASES[rec.state]) rec.state = STATE_ALIASES[rec.state];
+    if (COMMODITY_ALIASES[rec.commodity]) rec.commodity = COMMODITY_ALIASES[rec.commodity];
 
     const stateInfo = STATES[rec.state];
     if (!stateInfo) {

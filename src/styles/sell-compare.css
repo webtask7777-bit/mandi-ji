@@ -1,0 +1,24 @@
+.sb-sell-option .sb-delivery-two-fields + .sb-delivery-two-fields { margin-top: 16px; }
+.sb-sell-option .sb-delivery-extra-costs > .sb-delivery-two-fields,
+.sb-sell-option .sb-delivery-extra-costs > .sb-delivery-field { padding: 16px 13px 0; }
+.sb-sell-option .sb-delivery-extra-costs > .sb-delivery-field { padding-bottom: 16px; }
+.sb-sell-option-head { display: flex; align-items: flex-end; gap: 12px; margin-bottom: 18px; }
+.sb-sell-option-name { flex: 1; }
+.sb-sell-option .sb-delivery-small-note { padding: 0 0 14px; font-size: 12px; line-height: 1.8; }
+.sb-sell-verdict { margin: 0; padding: 20px 22px 6px; font-size: 15px; line-height: 1.8; color: #224b28; }
+.sb-sell-verdict strong { font-weight: 700; }
+.sb-delivery-results .sb-delivery-small-note { padding: 6px 22px 0; font-size: 12px; line-height: 1.8; }
+.sb-delivery-results .sb-delivery-empty-summary { padding: 0 22px; justify-content: flex-start; line-height: 1.8; }
+.sb-delivery-results .sb-delivery-table-scroll { margin: 16px 22px; }
+.sb-sell-table { width: 100%; border-collapse: collapse; text-align: left; font-variant-numeric: tabular-nums; }
+.sb-sell-table thead th { padding: 10px; font-size: 12px; font-weight: 500; color: #596b59; background: #f5f8ee; white-space: nowrap; }
+.sb-sell-table tbody th, .sb-sell-table tbody td { padding: 10px; border-top: 1px solid #e8eedf; font-size: 12px; color: #4b5f48; vertical-align: top; }
+.sb-sell-table tbody th { font-weight: 600; color: #3f622a; }
+.sb-sell-table small { display: block; font-size: 11px; font-weight: 400; color: #596b59; line-height: 1.6; margin-top: 3px; }
+.sb-sell-table td strong { white-space: nowrap; color: #224b28; }
+.sb-sell-table tr.is-best { background: #eef5e6; }
+.sb-delivery-results .sb-delivery-result-actions { grid-template-columns: 1fr; }
+.sb-delivery-results p.sb-delivery-disclaimer { margin: 0; font-size: 12px; line-height: 1.8; }
+.sb-delivery-results p.sb-delivery-privacy { margin: 0; padding: 0 22px 18px; }
+.sb-sell-table tbody td { white-space: nowrap; }
+.sb-sell-table tbody td[colspan] { white-space: normal; }
