@@ -342,7 +342,7 @@ export default function MandiJiDashboard() {
           </div>
         )}
         <AnimatePresence mode="wait">
-          <Motion.div key={activeTab === 'delivery' ? activeTab : `${activeTab}-${stateParam}`} variants={tabVariants}
+          <Motion.div key={activeTab === 'delivery' || activeTab === 'naksha' ? activeTab : `${activeTab}-${stateParam}`} variants={tabVariants}
             id={`panel-${activeTab}`} role="tabpanel" aria-labelledby={`tab-${activeTab}`} className={`sb-tab-panel sb-panel-${activeTab}`}
             initial={typeof window === 'undefined' ? false : 'initial'} animate="animate" exit="exit"
             transition={{ duration: 0.15 }}>
@@ -350,7 +350,7 @@ export default function MandiJiDashboard() {
             {activeTab === "prices" && <PricesTab crops={crops} stateParam={stateParam} initialCropId={jumpToCrop} onCropConsumed={() => setJumpToCrop(null)} onMandiClick={handleMandiClick} onDeliveryCalculate={handleDeliveryCalculate}/>}
             {activeTab === "calendar" && <CalendarTab selectedMonth={selectedMonth} crops={crops} seasons={seasons} isCG={isCG}/>}
             {activeTab === "mandis" && <MandisTab selectedMonth={selectedMonth} heatmap={heatmap} regions={isCG ? FALLBACK_REGIONS : null} stateParam={stateParam} onCropClick={handleCropClick} jumpToMandi={jumpToMandi} onMandiConsumed={() => setJumpToMandi(null)}/>}
-            {activeTab === "naksha" && <NakshaTab districts={districts} mandis={mandis} states={states} crops={cropsLoading ? [] : apiCrops || []} cropDataReady={!cropsLoading && Array.isArray(apiCrops)} loading={selectedState ? districtsLoading || mandisLoading : statesLoading} error={selectedState ? districtsError || mandisError : statesError} onDeliveryCalculate={handleDeliveryCalculate}/>}
+            {activeTab === "naksha" && <NakshaTab key={stateParam} districts={districts} mandis={mandis} states={states} crops={cropsLoading ? [] : apiCrops || []} cropDataReady={!cropsLoading && Array.isArray(apiCrops)} loading={selectedState ? districtsLoading || mandisLoading : statesLoading} error={selectedState ? districtsError || mandisError : statesError} onDeliveryCalculate={handleDeliveryCalculate}/>}
             {activeTab === "bazaar" && <BazaarTab />}
             {activeTab === "delivery" && <DeliveryCalculatorTab crops={crops} initialScenario={deliveryScenario} onScenarioConsumed={() => setDeliveryScenario(null)} />}
             </Suspense>

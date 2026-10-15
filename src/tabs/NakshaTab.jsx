@@ -40,6 +40,7 @@ export default function NakshaTab({ districts = [], mandis = [], states = [], cr
   const crop = crops.find(item => item.id === selectedCrop);
   const district = findDistrictRecord(selectedDistrict, districts);
   const cropOptions = crops.filter(item => item.totalRecords > 0).sort((a, b) => label(a).localeCompare(label(b), 'hi'));
+  const cropLabels = cropOptions.reduce((counts, item) => { counts[label(item)] = (counts[label(item)] || 0) + 1; return counts; }, {});
   const search = query.trim().normalize('NFKC').toLowerCase();
   const districtMandis = selectedDistrict ? mandis.filter(mandi => {
     const match = findDistrictRecord(getMandiDistrictName(mandi), districts);
@@ -102,7 +103,7 @@ export default function NakshaTab({ districts = [], mandis = [], states = [], cr
         <div className="sb-atlas-list-foot"><Info size={14} aria-hidden="true" /><span>सीमा न दिखे, तब भी सूची से ज़िला खोल सकते हैं।</span></div>
       </aside>
       <section className="sb-atlas-map-panel" aria-label="मंडी रिकॉर्ड का भौगोलिक दृश्य">
-        <div className="sb-atlas-map-top"><div><span className="sb-atlas-step">02</span><strong>{selectedDistrict ? district ? label(district) : selectedDistrict : stateNameHi}</strong><span className="sb-atlas-map-level">{selectedDistrict ? 'ज़िले का क्षेत्र' : selectedState ? 'ज़िलों का नक्शा' : 'राज्यों का नक्शा'}</span></div><label><Sprout size={15} aria-hidden="true" /><span className="sr-only">नक्शे पर फसल चुनें</span><select value={selectedCrop} onChange={event => setSelectedCrop(event.target.value)} disabled={!cropOptions.length}><option value="">सभी फसलें</option>{cropOptions.map(item => <option key={item.id} value={item.id}>{label(item)}</option>)}</select></label></div>
+        <div className="sb-atlas-map-top"><div><span className="sb-atlas-step">02</span><strong>{selectedDistrict ? district ? label(district) : selectedDistrict : stateNameHi}</strong><span className="sb-atlas-map-level">{selectedDistrict ? 'ज़िले का क्षेत्र' : selectedState ? 'ज़िलों का नक्शा' : 'राज्यों का नक्शा'}</span></div><label><Sprout size={15} aria-hidden="true" /><span className="sr-only">नक्शे पर फसल चुनें</span><select value={selectedCrop} onChange={event => setSelectedCrop(event.target.value)} disabled={!cropOptions.length}><option value="">सभी फसलें</option>{cropOptions.map(item => <option key={item.id} value={item.id}>{cropLabels[label(item)] > 1 ? `${label(item)} · ${item.name !== label(item) ? item.name : item.id}` : label(item)}</option>)}</select></label></div>
         <LeafletMap stateData={states} districts={districts} mandis={mandis} crops={crops} selectedCrop={selectedCrop || null} selectedDistrict={selectedDistrict} onDistrictSelect={chooseDistrict} onStateSelect={selectStateDirect} mapResetKey={mapResetKey} />
         <div className="sb-atlas-legend"><span><i className="sb-atlas-legend-scale" />कम से अधिक रिकॉर्ड</span><span><i className="sb-atlas-legend-empty" />जानकारी नहीं मिली</span>{selectedCrop && <span><i className="sb-atlas-legend-outline" />फसल की पुष्टि नहीं</span>}</div>
       </section>
