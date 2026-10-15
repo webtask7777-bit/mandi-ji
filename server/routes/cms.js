@@ -26,7 +26,8 @@ router.get('/blog', (req, res) => {
     const limit = parseInt(req.query.limit) || 10;
     const start = (page - 1) * limit;
     res.json({
-      posts: published.slice(start, start + limit),
+      // Cards and related links need summaries; full bodies belong to /blog/:slug.
+      posts: published.slice(start, start + limit).map(({ content, ...summary }) => summary),
       total: published.length,
       page,
       totalPages: Math.ceil(published.length / limit),

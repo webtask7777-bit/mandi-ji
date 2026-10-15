@@ -1,90 +1,45 @@
-import '@/styles/secondary.css';
-import { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowLeft, BookOpen, Calendar, Tag } from 'lucide-react';
-import { fadeInUp } from '@/utils/animations';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, BookOpen, CalendarDays, Clock3, Leaf, MapPin } from 'lucide-react';
 import SEO from '@/components/SEO';
-import { Card } from '@/components/ui/card';
+import Brand from '@/components/Brand';
 import { useApi } from '@/hooks/useApi';
+import '@/styles/editorial.css';
 
+function formatDate(value) {
+  const date = new Date(value);
+  return Number.isFinite(date.getTime()) ? date.toLocaleDateString('hi-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }) : null;
+}
+function PostMeta({ post }) {
+  const date = formatDate(post.updatedAt || post.publishedAt);
+  return <div className="sb-journal-meta">{date && <span><CalendarDays size={14} aria-hidden="true" /><time dateTime={post.updatedAt || post.publishedAt}>{date}</time></span>}{post.readingMinutes && <span><Clock3 size={14} aria-hidden="true" />लगभग {post.readingMinutes} मिनट</span>}</div>;
+}
 export default function BlogPage() {
-  const navigate = useNavigate();
   const [previousPosts, setPreviousPosts] = useState([]);
   const [page, setPage] = useState(1);
-  const { data, loading } = useApi(`/cms/blog?page=${page}&limit=10`);
-  const posts = [...previousPosts, ...(data?.posts || [])];
+  const [category, setCategory] = useState('सभी लेख');
+  const { data, loading, error } = useApi(`/cms/blog?page=${page}&limit=10`);
+  const posts = [...new Map([...previousPosts, ...(data?.posts || [])].map(post => [post.slug, post])).values()];
   const totalPages = data?.totalPages || page;
-
-  function formatDate(d) {
-    return new Date(d).toLocaleDateString('hi-IN', { day: 'numeric', month: 'short', year: 'numeric' });
-  }
-
-  return (
-    <div className="sb-secondary-page sb-blog-page min-h-screen bg-zinc-950 text-foreground mx-auto flex flex-col">
-      <SEO title="ब्लॉग" description="सही भाव गाइड — कृषि टिप्स, मंडी समाचार, और किसान गाइड।" path="/blog" />
-      <header className="sticky top-0 z-30 bg-zinc-950 border-b border-zinc-800">
-        <div className="flex items-center gap-3 px-4 py-3">
-          <button onClick={() => navigate('/')} aria-label="वापस जाएं" className="sb-back-button p-1.5 rounded-lg hover:bg-zinc-800 transition-colors">
-            <ArrowLeft size={20} className="text-zinc-400" />
-          </button>
-          <BookOpen size={18} className="text-green-500" />
-          <h1 className="text-base font-bold">खेती और मंडी की समझ</h1>
-        </div>
-      </header>
-
-      <motion.div {...fadeInUp} className="sb-page-content flex-1 px-4 py-6 space-y-4">
-        <section className="sb-guide-banner">
-          <div><span className="sb-secondary-eyebrow">सही भाव गाइड</span><h2>जानकारी जो काम आए।</h2><p>फसल, मंडी और कारोबार से जुड़े लेख पढ़ें।</p></div>
-          <img src="/visuals/guide-sale-checklist.webp" alt="अनाज, रसीद और कलम की सांकेतिक तस्वीर" width="1280" height="853" />
-        </section>
-        {loading && posts.length === 0 && (
-          <div className="text-center py-12 text-zinc-500 text-sm animate-pulse">लोड हो रहा है...</div>
-        )}
-
-        {!loading && posts.length === 0 && (
-          <div className="text-center py-12">
-            <BookOpen size={32} className="text-zinc-600 mx-auto mb-3" />
-            <p className="text-sm text-zinc-500">अभी कोई पोस्ट नहीं है</p>
-            <p className="text-xs text-zinc-600 mt-1">जल्द ही नए लेख आएंगे!</p>
-          </div>
-        )}
-
-        {posts.map(post => (
-          <Link className="sb-blog-link" key={post.id} to={`/blog/${post.slug}`}>
-            <Card className="sb-blog-card bg-zinc-900 border-zinc-800 p-4 hover:border-green-500/30 transition-colors">
-              <h2 className="text-sm font-bold text-foreground mb-1.5">{post.title}</h2>
-              {post.excerpt && (
-                <p className="text-xs text-zinc-400 line-clamp-2 mb-2">{post.excerpt}</p>
-              )}
-              <div className="flex items-center gap-3 flex-wrap">
-                <div className="flex items-center gap-1 text-[10px] text-zinc-500">
-                  <Calendar size={10} />
-                  {formatDate(post.publishedAt)}
-                </div>
-                {post.tags?.length > 0 && (
-                  <div className="flex items-center gap-1 flex-wrap">
-                    <Tag size={9} className="text-zinc-500" />
-                    {post.tags.slice(0, 3).map(tag => (
-                      <span key={tag} className="text-[9px] bg-zinc-800 text-zinc-400 px-1.5 py-0.5 rounded">{tag}</span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </Card>
-          </Link>
-        ))}
-
-        {page < totalPages && (
-          <button
-            onClick={() => { setPreviousPosts(posts); setPage(p => p + 1); }}
-            disabled={loading}
-            className="w-full py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-green-500 font-semibold hover:bg-zinc-800 transition-colors"
-          >
-            {loading ? 'लोड हो रहा है...' : 'और पोस्ट देखें'}
-          </button>
-        )}
-      </motion.div>
-    </div>
-  );
+  const categories = ['सभी लेख', ...new Set(posts.map(post => post.category).filter(Boolean))];
+  const visiblePosts = category === 'सभी लेख' ? posts : posts.filter(post => post.category === category);
+  const featured = posts.find(post => post.coverImage) || posts[0];
+  return <div className="sb-journal-page">
+    <SEO title="खेती, मौसम और मंडी की किसान मार्गदर्शिकाएँ" description="धान कटाई, बारिश में भीगी फसल, रबी की तैयारी, मौसम सूचना और मंडी तक ढुलाई खर्च पर स्रोतों सहित हिंदी किसान गाइड पढ़ें।" path="/blog" />
+    <a className="sb-journal-skip" href="#main-content">लेखों पर जाएँ</a>
+    <header className="sb-journal-header"><div className="sb-journal-header__inner"><Link to="/" aria-label="सही भाव के मुख्य पृष्ठ पर जाएँ"><Brand /></Link><nav aria-label="मुख्य लिंक"><Link to="/">मंडी भाव</Link><Link to="/delivery-calculator">डिलीवरी खर्च <ArrowRight size={15} aria-hidden="true" /></Link></nav></div></header>
+    <main className="sb-journal-main" id="main-content">
+      <section className="sb-journal-intro" aria-labelledby="journal-title"><div><span className="sb-journal-eyebrow"><Leaf size={15} aria-hidden="true" /> सही भाव मार्गदर्शिका</span><h1 id="journal-title">खेती की तैयारी,<br /><em>हर मौसम के साथ।</em></h1><p>फसल, मौसम और मंडी के फैसलों के लिए आसान हिंदी में जानकारी।<br className="sb-journal-desktop-break" /> स्रोत पढ़ें, अपनी परिस्थिति समझें और अगला कदम तय करें।</p></div><div className="sb-journal-focus"><MapPin size={18} aria-hidden="true" /><div><strong>स्थानीय ज़रूरतों से शुरुआत</strong><span>छत्तीसगढ़ की खेती से जुड़े सवाल<br />और दूसरे क्षेत्रों के लिए उपयोगी समझ।</span></div></div></section>
+      {featured && <section className="sb-journal-feature" aria-labelledby="featured-title"><Link to={`/blog/${featured.slug}`} className="sb-journal-feature__image" aria-label={featured.title}><img src={featured.coverImage || '/visuals/guide-sale-checklist.webp'} alt={featured.coverAlt || 'खेती और बिक्री की तैयारी का सांकेतिक चित्र'} width="1672" height="941" fetchPriority="high" /><span className="sb-journal-image-note">सांकेतिक चित्र</span></Link><div className="sb-journal-feature__copy"><span className="sb-journal-eyebrow">पढ़ने की शुरुआत यहाँ से करें</span>{featured.category && <span className="sb-journal-category">{featured.category}</span>}<h2 id="featured-title"><Link to={`/blog/${featured.slug}`}>{featured.title}</Link></h2><p>{featured.excerpt}</p><PostMeta post={featured} /><Link to={`/blog/${featured.slug}`} className="sb-journal-button">पूरी मार्गदर्शिका पढ़ें <ArrowRight size={18} aria-hidden="true" /></Link></div></section>}
+      <section className="sb-journal-library" aria-labelledby="guides-title"><div className="sb-journal-section-heading"><div><span className="sb-journal-eyebrow">सवाल से समाधान तक</span><h2 id="guides-title">काम की किसान गाइड</h2></div><span>{posts.length > 0 ? `${posts.length} लेख उपलब्ध` : 'सही भाव संपादकीय'}</span></div>
+        {categories.length > 2 && <div className="sb-journal-filters" role="group" aria-label="लेख का विषय चुनें">{categories.map(item => <button key={item} type="button" aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}</div>}
+        {loading && posts.length === 0 && <div className="sb-journal-status" role="status">मार्गदर्शिकाएँ लोड हो रही हैं…</div>}
+        {!loading && posts.length === 0 && <div className="sb-journal-status" role={error ? 'alert' : 'status'}><BookOpen size={30} aria-hidden="true" /><h3>{error ? 'लेख अभी नहीं खुल पाए' : 'नई मार्गदर्शिकाएँ जल्द आएँगी'}</h3><p>{error ? 'कनेक्शन जाँचकर पृष्ठ दोबारा खोलें।' : 'खेती और मंडी से जुड़े लेख यहाँ मिलेंगे।'}</p></div>}
+        <div className="sb-journal-grid">{visiblePosts.map(post => <article className="sb-journal-card" key={post.slug}><Link to={`/blog/${post.slug}`} className="sb-journal-card__image" tabIndex={-1} aria-hidden="true"><img src={post.coverImage || '/visuals/guide-sale-checklist.webp'} alt="" width="1672" height="941" loading="lazy" decoding="async" /><span className="sb-journal-image-note">सांकेतिक चित्र</span></Link><div className="sb-journal-card__body"><span className="sb-journal-category">{post.category || 'खेती की समझ'}</span><h3><Link to={`/blog/${post.slug}`}>{post.title}</Link></h3><p>{post.excerpt}</p><PostMeta post={post} /><Link to={`/blog/${post.slug}`} className="sb-journal-card__link" aria-label={`${post.title} — लेख पढ़ें`}>लेख पढ़ें <ArrowRight size={16} aria-hidden="true" /></Link></div></article>)}</div>
+        {page < totalPages && <button type="button" onClick={() => { setPreviousPosts(posts); setPage(current => current + 1); }} disabled={loading} className="sb-journal-load-more">{loading ? 'लोड हो रहा है…' : 'और मार्गदर्शिकाएँ देखें'} <ArrowRight size={16} aria-hidden="true" /></button>}
+      </section>
+      <aside className="sb-journal-method"><BookOpen size={24} aria-hidden="true" /><div><h2>स्रोतों के साथ पढ़ें। स्थानीय सलाह से मिलाएँ।</h2><p>इन गाइड में तैयारी और फैसले समझाए गए हैं। वर्तमान मौसम चेतावनी, खेती का उपचार या सहायता की पात्रता के लिए लेख में दिए आधिकारिक स्रोत और स्थानीय कृषि सलाह जाँचें।</p></div></aside>
+      <footer className="sb-journal-footer"><span>सही भाव · जानकारी से बेहतर तैयारी</span><Link to="/">मंडी भाव देखें <ArrowRight size={15} aria-hidden="true" /></Link></footer>
+    </main>
+  </div>;
 }
