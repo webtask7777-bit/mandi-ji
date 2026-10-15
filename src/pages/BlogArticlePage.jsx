@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Calendar, Tag, User, BookOpen, AlertCircle, RefreshCw } from 'lucide-react';
-import SEO from '@/components/SEO';
+import SEO, { SITE_URL } from '@/components/SEO';
 import Brand from '@/components/Brand';
 import { useApi } from '@/hooks/useApi';
 import Markdown from 'react-markdown';
@@ -21,7 +21,18 @@ export default function BlogArticlePage() {
   const tags = Array.isArray(post?.tags) ? post.tags.filter(tag => typeof tag === 'string') : [];
 
   return <div className="sb-detail-page sb-article-page">
-    <SEO title={hasPost ? post.title : 'किसान मार्गदर्शिका'} description={hasPost ? (post.excerpt || post.title) : 'खेती और मंडी भाव के बारे में सही भाव पर पढ़ें।'} path={`/blog/${slug}`} noIndex={!loading && !hasPost} />
+    <SEO title={hasPost ? post.title : 'किसान मार्गदर्शिका'} description={hasPost ? (post.excerpt || post.title) : 'खेती और मंडी भाव के बारे में सही भाव पर पढ़ें।'} path={`/blog/${slug}`} noIndex={!loading && !hasPost}
+      structuredData={hasPost ? { '@context': 'https://schema.org', '@graph': [
+        { '@type': 'BlogPosting', headline: post.title, description: post.excerpt || post.title, url: `${SITE_URL}/blog/${slug}`, inLanguage: 'hi',
+          ...(publishedDate ? { datePublished: post.publishedAt } : {}),
+          ...(post.author ? { author: { '@type': 'Person', name: post.author } } : {}),
+          publisher: { '@type': 'Organization', name: 'SahiBhav', url: SITE_URL } },
+        { '@type': 'BreadcrumbList', itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'सही भाव', item: `${SITE_URL}/` },
+          { '@type': 'ListItem', position: 2, name: 'मार्गदर्शिका', item: `${SITE_URL}/blog` },
+          { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}/blog/${slug}` },
+        ] },
+      ] } : undefined} />
     <header className="sb-detail-header"><div className="sb-detail-header__inner">
       <Link to="/" aria-label="सही भाव के मुख्य पृष्ठ पर जाएँ"><Brand /></Link>
       <Link to="/blog" className="sb-detail-back"><ArrowLeft size={16} aria-hidden="true" /> सभी लेख</Link>

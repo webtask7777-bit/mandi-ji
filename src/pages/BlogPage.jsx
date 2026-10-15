@@ -6,22 +6,15 @@ import { ArrowLeft, BookOpen, Calendar, Tag } from 'lucide-react';
 import { fadeInUp } from '@/utils/animations';
 import SEO from '@/components/SEO';
 import { Card } from '@/components/ui/card';
-import { apiFetch } from '@/api/client';
+import { useApi } from '@/hooks/useApi';
 
 export default function BlogPage() {
   const navigate = useNavigate();
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [previousPosts, setPreviousPosts] = useState([]);
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-
-  useEffect(() => {
-    setLoading(true);
-    apiFetch(`/cms/blog?page=${page}&limit=10`)
-      .then(d => { setPosts(prev => page === 1 ? d.posts : [...prev, ...d.posts]); setTotalPages(d.totalPages); })
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  }, [page]);
+  const { data, loading } = useApi(`/cms/blog?page=${page}&limit=10`);
+  const posts = [...previousPosts, ...(data?.posts || [])];
+  const totalPages = data?.totalPages || page;
 
   function formatDate(d) {
     return new Date(d).toLocaleDateString('hi-IN', { day: 'numeric', month: 'short', year: 'numeric' });
@@ -84,7 +77,7 @@ export default function BlogPage() {
 
         {page < totalPages && (
           <button
-            onClick={() => setPage(p => p + 1)}
+            onClick={() => { setPreviousPosts(posts); setPage(p => p + 1); }}
             disabled={loading}
             className="w-full py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-green-500 font-semibold hover:bg-zinc-800 transition-colors"
           >

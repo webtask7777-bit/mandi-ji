@@ -47,9 +47,9 @@ export default function ListingDetailPage() {
     return () => { cancelled = true; };
   }, [id, attempt]);
 
-  if (loading) return <ListingShell><SEO title="लिस्टिंग लोड हो रही है" noIndex /><section className="sb-listing-status" role="status"><RefreshCw size={28} aria-hidden="true" /><h1>फसल की जानकारी आ रही है</h1><p>भाव, मात्रा और स्थान लोड हो रहे हैं।</p></section></ListingShell>;
+  if (loading) return <ListingShell><SEO title="फसल की लिस्टिंग" /><section className="sb-listing-status" role="status"><RefreshCw size={28} aria-hidden="true" /><h1>फसल की जानकारी आ रही है</h1><p>भाव, मात्रा और स्थान लोड हो रहे हैं।</p></section></ListingShell>;
 
-  if (error || !listing) return <ListingShell><SEO title="लिस्टिंग उपलब्ध नहीं" noIndex /><section className="sb-listing-status" role="alert"><AlertCircle size={30} aria-hidden="true" /><h1>लिस्टिंग नहीं खुल पाई</h1><p>{error || 'इस लिस्टिंग की जानकारी उपलब्ध नहीं है।'}</p><button type="button" className="sb-listing-primary" onClick={() => setAttempt(value => value + 1)}><RefreshCw size={17} aria-hidden="true" /> फिर कोशिश करें</button><Link to="/?tab=bazaar" className="sb-listing-back">दूसरी लिस्टिंग देखें <ArrowRight size={16} aria-hidden="true" /></Link></section></ListingShell>;
+  if (error || !listing) return <ListingShell><SEO title="लिस्टिंग उपलब्ध नहीं" noIndex={!error || /\bAPI (404|410|422):/.test(error)} /><section className="sb-listing-status" role="alert"><AlertCircle size={30} aria-hidden="true" /><h1>लिस्टिंग नहीं खुल पाई</h1><p>{error || 'इस लिस्टिंग की जानकारी उपलब्ध नहीं है।'}</p><button type="button" className="sb-listing-primary" onClick={() => setAttempt(value => value + 1)}><RefreshCw size={17} aria-hidden="true" /> फिर कोशिश करें</button><Link to="/?tab=bazaar" className="sb-listing-back">दूसरी लिस्टिंग देखें <ArrowRight size={16} aria-hidden="true" /></Link></section></ListingShell>;
 
   const isSell = listing.type === 'sell';
   const displayName = listing.cropNameHi || listing.cropName || 'फसल';
@@ -70,6 +70,15 @@ export default function ListingDetailPage() {
   const price = positiveNumber(listing.pricePerUnit) ? Number(listing.pricePerUnit) : positiveNumber(listing.price) ? Number(listing.price) : null;
   const unit = String(listing.unit || '').toLowerCase();
   const unitLabel = ({ quintal: 'क्विंटल', kg: 'किलो', kilogram: 'किलो', tonne: 'टन', ton: 'टन' })[unit] || listing.unit || 'इकाई उपलब्ध नहीं';
+  const quantityLabel = positiveNumber(listing.quantity) ? `${number(listing.quantity)} ${unitLabel}` : '';
+  const listingTitle = [displayName, isSell ? 'बिक्री का प्रस्ताव' : 'खरीद की माँग', location, quantityLabel].filter(Boolean).join(' · ');
+  const listingDescription = [
+    `${displayName} की ${isSell ? 'बिक्री' : 'खरीद'} लिस्टिंग${location ? ` — ${location}` : ''}।`,
+    quantityLabel ? `दर्ज मात्रा ${quantityLabel}।` : '',
+    price !== null ? `दिया गया भाव ₹${number(price)}/${unitLabel}।` : '',
+    createdLabel ? `लिस्टिंग की तारीख ${createdLabel}।` : '',
+    'यह उपयोगकर्ता का प्रस्ताव है; उपलब्धता और भाव की पुष्टि करें।',
+  ].filter(Boolean).join(' ');
   const canPrefill = isSell && unit === 'quintal' && price !== null && isActive;
   const openCalculator = () => navigate('/delivery-calculator', { state: { deliveryScenario: {
     id: globalThis.crypto?.randomUUID?.() || `listing-${id}-${Date.now()}`,
@@ -82,7 +91,7 @@ export default function ListingDetailPage() {
   } } });
 
   return <ListingShell>
-    <SEO title={`${displayName} ${isSell ? 'बिक्री का प्रस्ताव' : 'खरीद की माँग'}`} description={`${displayName} की ${isSell ? 'बिक्री' : 'खरीद'} लिस्टिंग। मात्रा, दिया गया भाव और स्थान देखें।`} noIndex={!isActive} />
+    <SEO title={listingTitle} description={listingDescription} noIndex={!isActive} />
     <nav className="sb-listing-breadcrumb" aria-label="पृष्ठ पथ"><Link to="/?tab=bazaar">बाज़ार</Link><span aria-hidden="true">/</span><span>{displayName}</span></nav>
     {!isActive && <div className="sb-listing-alert" role="status"><Clock3 size={21} aria-hidden="true" /><div><strong>{isExpired ? 'इस लिस्टिंग की अवधि समाप्त हो गई है' : 'यह लिस्टिंग अभी सक्रिय नहीं है'}</strong><p>{isExpired && expiresLabel ? `${expiresLabel} को अवधि समाप्त हुई। ` : ''}दिखाई गई मात्रा और भाव वर्तमान उपलब्धता की पुष्टि नहीं करते।</p></div><Link to="/?tab=bazaar">सक्रिय लिस्टिंग देखें <ArrowRight size={16} aria-hidden="true" /></Link></div>}
     <div className="sb-listing-layout">

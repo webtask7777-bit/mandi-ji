@@ -118,7 +118,7 @@ export default function PricingPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SEO title="Pro प्लान" description="SahiBhav Pro — असीमित मंडी भाव, मुनाफ़ा कैलकुलेटर, प्राइस अलर्ट। ₹499/महीना या ₹4,999/साल।" path="/pricing" />
+      <SEO title="Pro प्लान" description="SahiBhav के Free और Pro प्लान की सुविधाएँ और कीमतें देखें। उपलब्ध सुविधाओं और प्रस्तावित सुविधाओं की स्थिति जाँचकर प्लान चुनें।" path="/pricing" />
 
       <div className="max-w-lg mx-auto">
         {/* Header */}
@@ -148,7 +148,7 @@ export default function PricingPage() {
               <Zap size={12} /> प्रो में अपग्रेड करें
             </div>
             <h2 className="text-lg font-extrabold">पूरे भारत की मंडी इंटेलिजेंस</h2>
-            <p className="text-xs text-muted-foreground mt-1">120+ फसलें, 16,000+ मंडी — सब अनलिमिटेड</p>
+            <p className="text-xs text-muted-foreground mt-1">उपलब्ध फसल और मंडी रिकॉर्ड की तुलना करें। कवरेज क्षेत्र और फसल के अनुसार बदलती है।</p>
           </motion.div>
 
           {/* Billing Toggle */}

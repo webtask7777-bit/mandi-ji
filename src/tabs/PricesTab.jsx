@@ -10,6 +10,7 @@ import MandiCompare from "../components/MandiCompare";
 import ArbitrageList from "../components/ArbitrageList";
 import { getOutlierBounds, isOutlier } from "@/lib/outlier";
 import { getDataFreshness } from "../utils/dataFreshness";
+import { cropDetailPath } from "../utils/cropUrls";
 import "../styles/prices.css";
 
 const MONTH_HI = {
@@ -161,11 +162,17 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
         </div>
         {filteredCrops.length === 0 && <p className="sb-empty-copy">{savedOnly ? 'इस सूची में फसल नहीं है। सभी फसलें खोलें, फिर भाव के पास सेव बटन दबाएँ।' : 'इस नाम से फसल नहीं मिली। हिंदी या अंग्रेज़ी नाम से खोजें।'}</p>}
         {!cropSearch.trim() && filteredCrops.length > 15 && <button type="button" className="sb-text-button" onClick={() => setShowAllCrops(!showAllCrops)} aria-expanded={showAllCrops}>{showAllCrops ? 'कम फसलें दिखाएँ' : `सभी ${filteredCrops.length} फसलें देखें`}<ChevronRight size={16} aria-hidden="true" /></button>}
+        {filteredCrops.length > 0 && <details className="mt-3 rounded-xl border border-[#dfe6d8] bg-[#fffefb] px-4">
+          <summary className="cursor-pointer py-3 text-sm font-semibold text-[#174c3c]">फसल वार मंडी भाव के पृष्ठ ({filteredCrops.length})</summary>
+          <nav aria-label="फसल वार मंडी भाव" className="grid max-h-80 grid-cols-2 gap-x-4 overflow-y-auto pb-3 sm:grid-cols-3">
+            {filteredCrops.map(crop => <Link key={crop.id} to={cropDetailPath(crop.id, stateParam)} className="flex min-h-11 items-center py-2 text-sm leading-relaxed text-[#174c3c] underline decoration-[#b3c5aa] underline-offset-4">{crop.nameHi || crop.name} मंडी भाव</Link>)}
+          </nav>
+        </details>}
       </section>
 
       <p className="sr-only" role="status">{saveNotice}</p>
       <div className="sb-section-heading sb-selected-heading">
-        <div><p className="sb-eyebrow">भाव और बाज़ार</p><h2>{cropName}</h2></div>
+        <div><p className="sb-eyebrow">भाव और बाज़ार</p><h2>{cropName}</h2><Link to={cropDetailPath(activeCrop, stateParam)} className="sb-text-button">{cropName} का पूरा भाव पृष्ठ <ArrowRight size={15} aria-hidden="true" /></Link></div>
         <div className="sb-selected-actions"><button type="button" className="sb-save-crop" onClick={toggleSavedCrop} aria-pressed={savedCrops.includes(activeCrop)} aria-label={`${cropName} ${savedCrops.includes(activeCrop) ? 'सेव सूची से हटाएँ' : 'सेव करें'}`}><Bookmark size={16} aria-hidden="true" fill={savedCrops.includes(activeCrop) ? 'currentColor' : 'none'} />{savedCrops.includes(activeCrop) ? 'सेव है' : 'सेव करें'}</button><div className="sb-view-toggle" aria-label="भाव देखने का तरीका">
           <button type="button" onClick={() => setView('chart')} aria-pressed={view === 'chart'}><BarChart3 size={16} aria-hidden="true" />विवरण</button>
           <button type="button" onClick={() => setView('board')} aria-pressed={view === 'board'}><LayoutList size={16} aria-hidden="true" />भाव बोर्ड</button>

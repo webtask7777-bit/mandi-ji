@@ -294,3 +294,7 @@
 .sb-price-card__heading{align-items:flex-start}
 .sb-price-card__heading>div>span{font-size:11px}
 }
+.sb-crop-directory { margin: 24px 0; padding: 18px; border: 1px solid #dce5db; border-radius: 16px; background: #fffdf7; }
+.sb-crop-directory h2 { color: #174c3c; font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+.sb-crop-directory-links { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.sb-crop-directory-links a { color: #246649; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; padding: 6px 0; }

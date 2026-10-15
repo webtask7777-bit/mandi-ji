@@ -2,11 +2,15 @@ import { createContext, useContext, useState, useEffect, useCallback } from 'rea
 
 const AuthContext = createContext(null);
 const BASE = '/api/auth';
+function storedToken() {
+  try { return typeof localStorage === 'undefined' ? null : localStorage.getItem('mj_token'); }
+  catch { return null; }
+}
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(() => localStorage.getItem('mj_token'));
-  const [loading, setLoading] = useState(!!localStorage.getItem('mj_token'));
+  const [token, setToken] = useState(storedToken);
+  const [loading, setLoading] = useState(() => !!storedToken());
 
   // Verify token on mount
   useEffect(() => {

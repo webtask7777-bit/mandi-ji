@@ -1,5 +1,5 @@
 import { useState, lazy, Suspense } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import './index.css';
 import SplashScreen from './components/SplashScreen';
@@ -40,15 +40,20 @@ function PageLoader() {
   );
 }
 
-function App() {
-  const [showSplash, setShowSplash] = useState(true);
+function App({ prerender = false, initialPage }) {
+  const { pathname } = useLocation();
+  const needsAccountMetadata = /^\/(?:admin|register|my-listings|my-eway-bills|eway-bill|listing\/new)(?:\/|$)/.test(pathname);
+  const [showSplash, setShowSplash] = useState(!prerender);
+  const CropPage = initialPage?.kind === 'crop' ? initialPage.Component : CropDetailPage;
+  const ArticlePage = initialPage?.kind === 'article' ? initialPage.Component : BlogArticlePage;
+  const DeliveryPage = initialPage?.kind === 'delivery' ? initialPage.Component : TransportPage;
 
   return (
     <AuthProvider>
       <ToastProvider>
         <ConfirmProvider>
           <StateProvider>
-            <SEO />
+            {needsAccountMetadata && <SEO title="आपका खाता" noIndex />}
             <AnimatePresence>
               {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
             </AnimatePresence>
@@ -58,10 +63,12 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/listing/new" element={<ProtectedRoute><CreateListingPage /></ProtectedRoute>} />
-                <Route path="/crop/:cropId" element={<CropDetailPage />} />
+                <Route path="/crop/:cropId" element={<CropPage />} />
+                <Route path="/mandi-bhav/:stateId" element={<MandiJiDashboard />} />
+                <Route path="/mandi-bhav/:stateId/:cropId" element={<CropPage />} />
                 <Route path="/listing/:id" element={<ListingDetailPage />} />
                 <Route path="/my-listings" element={<ProtectedRoute><MyListingsPage /></ProtectedRoute>} />
-                <Route path="/delivery-calculator" element={<TransportPage />} />
+                <Route path="/delivery-calculator" element={<DeliveryPage />} />
                 <Route path="/transport" element={<Navigate to="/delivery-calculator" replace />} />
                 <Route path="/eway-bill/new" element={<ProtectedRoute><EwayBillPage /></ProtectedRoute>} />
                 <Route path="/my-eway-bills" element={<ProtectedRoute><MyEwayBills /></ProtectedRoute>} />
@@ -71,7 +78,7 @@ function App() {
                 <Route path="/privacy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms" element={<TermsPage />} />
                 <Route path="/blog" element={<BlogPage />} />
-                <Route path="/blog/:slug" element={<BlogArticlePage />} />
+                <Route path="/blog/:slug" element={<ArticlePage />} />
                 <Route path="/admin/*" element={<AdminRoute><AdminLayout /></AdminRoute>} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>

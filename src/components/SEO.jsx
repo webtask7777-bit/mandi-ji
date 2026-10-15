@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 // Use the domain that is actually deployed. Set VITE_SITE_URL only after a custom
 // domain is attached in Vercel; do not point search engines at an unconnected name.
-const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://mandi-ji.vercel.app').replace(/\/$/, '');
+export const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://mandi-ji.vercel.app').replace(/\/$/, '');
 const DEFAULTS = {
   title: 'सही भाव — भारत के मंडी भाव | SahiBhav',
   description: 'फसल के दर्ज मंडी भाव देखें, मंडियों की तुलना करें और बिक्री व परिवहन की तैयारी करें। सही भाव — SahiBhav।',
@@ -24,13 +24,13 @@ const SCHEMA_JSON = JSON.stringify({
   author: { '@type': 'Organization', name: 'SahiBhav' },
 });
 
-export default function SEO({ title, description, path, noIndex = false }) {
+export default function SEO({ title, description, path, noIndex = false, structuredData }) {
   const { pathname } = useLocation();
   const pageTitle = title ? `${title} | SahiBhav` : DEFAULTS.title;
   const pageDesc = description || DEFAULTS.description;
-  const pagePath = path || pathname;
+  const pagePath = (path || pathname).split(/[?#]/)[0].replace(/\/+$/, '') || '/';
   const pageUrl = `${SITE_URL}${pagePath.startsWith('/') ? pagePath : `/${pagePath}`}`;
-  const robots = noIndex || PRIVATE_ROUTES.test(pathname) ? 'noindex, follow' : 'index, follow';
+  const robots = noIndex || PRIVATE_ROUTES.test(pathname) ? 'noindex, follow' : 'index, follow, max-image-preview:large';
 
   return (
     <Helmet>
@@ -43,6 +43,7 @@ export default function SEO({ title, description, path, noIndex = false }) {
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDesc} />
       <meta property="og:image" content={DEFAULTS.image} />
+      <meta property="og:image:alt" content="सही भाव — मंडी भाव और डिलीवरी खर्च" />
       <meta property="og:locale" content="hi_IN" />
       <meta property="og:site_name" content="SahiBhav" />
       <meta name="twitter:card" content="summary_large_image" />
@@ -50,6 +51,7 @@ export default function SEO({ title, description, path, noIndex = false }) {
       <meta name="twitter:description" content={pageDesc} />
       <meta name="twitter:image" content={DEFAULTS.image} />
       <script type="application/ld+json">{SCHEMA_JSON}</script>
+      {structuredData && <script type="application/ld+json">{JSON.stringify(structuredData).replace(/</g, '\\u003c')}</script>}
     </Helmet>
   );
 }

@@ -1,8 +1,9 @@
 import { createContext, useContext, useState, useCallback } from "react";
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const StateContext = createContext(null);
 
-const STATE_NAMES = {
+export const STATE_NAMES = {
   // States
   "andhra-pradesh": "आन्ध्र प्रदेश",
   "arunachal-pradesh": "अरुणाचल प्रदेश",
@@ -46,7 +47,15 @@ const STATE_NAMES = {
 };
 
 export function StateProvider({ children }) {
-  const [selectedState, setSelectedState] = useState(null); // null = All India
+  const location = useLocation();
+  const navigate = useNavigate();
+  const routeState = location.pathname.match(/^\/mandi-bhav\/([^/]+)/)?.[1];
+  const queryState = new URLSearchParams(location.search).get('state');
+  const candidate = routeState || queryState;
+  const selectedState = Object.hasOwn(STATE_NAMES, candidate) ? candidate : null;
+  const setSelectedState = useCallback(id => {
+    navigate(id && Object.hasOwn(STATE_NAMES, id) ? `/mandi-bhav/${encodeURIComponent(id)}` : '/');
+  }, [navigate]);
 
   const stateNameHi = selectedState
     ? (STATE_NAMES[selectedState] || selectedState)
@@ -57,12 +66,12 @@ export function StateProvider({ children }) {
 
   const selectState = useCallback((id) => {
     setSelectedState(id === selectedState ? null : id);
-  }, [selectedState]);
+  }, [selectedState, setSelectedState]);
 
   // Direct set (no toggle) — used by dropdown picker
   const selectStateDirect = useCallback((id) => {
     setSelectedState(id);
-  }, []);
+  }, [setSelectedState]);
 
   return (
     <StateContext.Provider value={{
