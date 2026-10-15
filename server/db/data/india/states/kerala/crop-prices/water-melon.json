@@ -23,6 +23,18 @@
       "date": "2026-05",
       "market": 4250,
       "volume": 2
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 1700,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2025,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -67,10 +79,43 @@
       "volume": 1,
       "minPrice": 3000,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-06-18",
+      "market": 1700,
+      "volume": 1,
+      "minPrice": 1600,
+      "maxPrice": 1800
+    },
+    {
+      "date": "2026-07-18",
+      "market": 1900,
+      "volume": 1,
+      "minPrice": 1800,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-07-19",
+      "market": 2067,
+      "volume": 3,
+      "minPrice": 1700,
+      "maxPrice": 2300
     }
   ],
   "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
+    {
+      "district": "Idukki",
+      "nameHi": "Idukki",
+      "avgPrice": 2080,
+      "records": 5
+    },
+    {
+      "district": "Malappuram",
+      "nameHi": "Malappuram",
+      "avgPrice": 1883,
+      "records": 3
+    },
     {
       "district": "Palakad",
       "nameHi": "Palakad",
@@ -78,22 +123,10 @@
       "records": 2
     },
     {
-      "district": "Idukki",
-      "nameHi": "Idukki",
-      "avgPrice": 2100,
-      "records": 2
-    },
-    {
       "district": "Ernakulam",
       "nameHi": "Ernakulam",
       "avgPrice": 4250,
       "records": 2
-    },
-    {
-      "district": "Malappuram",
-      "nameHi": "Malappuram",
-      "avgPrice": 2050,
-      "records": 1
     }
   ]
 }

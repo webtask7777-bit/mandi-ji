@@ -7,18 +7,75 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 5500,
-      "volume": 7
+      "month": "06",
+      "date": "2026-06",
+      "market": 4700,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 5360,
+      "volume": 5
     }
   ],
+  "dailyHistory": [
+    {
+      "date": "2026-06-18",
+      "market": 4700,
+      "volume": 1,
+      "minPrice": 4600,
+      "maxPrice": 4800
+    },
+    {
+      "date": "2026-07-05",
+      "market": 4900,
+      "volume": 1,
+      "minPrice": 4800,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-06",
+      "market": 4500,
+      "volume": 1,
+      "minPrice": 4500,
+      "maxPrice": 4500
+    },
+    {
+      "date": "2026-07-11",
+      "market": 6000,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-07-16",
+      "market": 6500,
+      "volume": 1,
+      "minPrice": 6500,
+      "maxPrice": 6500
+    },
+    {
+      "date": "2026-07-17",
+      "market": 4900,
+      "volume": 1,
+      "minPrice": 4800,
+      "maxPrice": 5000
+    }
+  ],
+  "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
       "district": "Malappuram",
       "nameHi": "Malappuram",
-      "avgPrice": 5500,
-      "records": 7
+      "avgPrice": 4833,
+      "records": 3
+    },
+    {
+      "district": "Idukki",
+      "nameHi": "Idukki",
+      "avgPrice": 5667,
+      "records": 3
     }
   ]
 }

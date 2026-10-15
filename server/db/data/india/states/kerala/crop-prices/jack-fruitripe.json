@@ -23,6 +23,12 @@
       "date": "2026-05",
       "market": 2600,
       "volume": 4
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2350,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -95,6 +101,34 @@
       "volume": 1,
       "minPrice": 2000,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-01",
+      "market": 2300,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-07-03",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 1000,
+      "maxPrice": 2100
+    },
+    {
+      "date": "2026-07-07",
+      "market": 2600,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-13",
+      "market": 2500,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 2500
     }
   ],
   "lastUpdated": "2026-07-20T08:48:36.178Z",
@@ -102,8 +136,20 @@
     {
       "district": "Palakad",
       "nameHi": "Palakad",
-      "avgPrice": 2900,
-      "records": 10
+      "avgPrice": 2825,
+      "records": 12
+    },
+    {
+      "district": "Thirssur",
+      "nameHi": "Thirssur",
+      "avgPrice": 2000,
+      "records": 1
+    },
+    {
+      "district": "Kollam",
+      "nameHi": "Kollam",
+      "avgPrice": 2500,
+      "records": 1
     }
   ]
 }

@@ -4,8 +4,8 @@
     "name": "Brinjal",
     "nameHi": "बैंगन",
     "emoji": "🍆",
-    "totalRecords": 48000,
-    "avgPrice": 2794,
+    "totalRecords": 48068,
+    "avgPrice": 2796,
     "sowingMonths": [
       5,
       6,
@@ -32,12 +32,47 @@
     ]
   },
   {
+    "id": "banana",
+    "name": "Banana",
+    "nameHi": "केला",
+    "emoji": "🍌",
+    "totalRecords": 45415,
+    "avgPrice": 3735,
+    "sowingMonths": [
+      1,
+      2,
+      5,
+      6
+    ],
+    "growingMonths": [
+      3,
+      4,
+      5,
+      7,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      9,
+      10,
+      11,
+      0,
+      1
+    ],
+    "peakMonths": [
+      10,
+      11,
+      0,
+      1
+    ]
+  },
+  {
     "id": "carrot",
     "name": "Carrot",
     "nameHi": "गाजर",
     "emoji": "🥕",
-    "totalRecords": 43816,
-    "avgPrice": 3314,
+    "totalRecords": 44707,
+    "avgPrice": 3373,
     "sowingMonths": [
       8,
       9,
@@ -64,7 +99,7 @@
     "name": "Cauliflower",
     "nameHi": "फूलगोभी",
     "emoji": "🥦",
-    "totalRecords": 42580,
+    "totalRecords": 42594,
     "avgPrice": 2345,
     "sowingMonths": [
       7,
@@ -93,8 +128,8 @@
     "name": "Cabbage",
     "nameHi": "पत्तागोभी",
     "emoji": "🥬",
-    "totalRecords": 42543,
-    "avgPrice": 1951,
+    "totalRecords": 42563,
+    "avgPrice": 1952,
     "sowingMonths": [
       8,
       9
@@ -120,8 +155,8 @@
     "name": "Bottle gourd",
     "nameHi": "लौकी",
     "emoji": "🥒",
-    "totalRecords": 41770,
-    "avgPrice": 2011,
+    "totalRecords": 42326,
+    "avgPrice": 2026,
     "sowingMonths": [
       1,
       2,
@@ -148,62 +183,27 @@
     ]
   },
   {
-    "id": "banana",
-    "name": "Banana",
-    "nameHi": "केला",
-    "emoji": "🍌",
-    "totalRecords": 41124,
-    "avgPrice": 3645,
-    "sowingMonths": [
-      1,
-      2,
-      5,
-      6
-    ],
-    "growingMonths": [
-      3,
-      4,
-      5,
-      7,
-      8,
-      9
-    ],
-    "harvestMonths": [
-      9,
-      10,
-      11,
-      0,
-      1
-    ],
-    "peakMonths": [
-      10,
-      11,
-      0,
-      1
-    ]
-  },
-  {
     "id": "bhindiladies-finger",
     "name": "Bhindi(Ladies Finger)",
     "nameHi": "भिंडी",
     "emoji": "🌱",
-    "totalRecords": 41087,
-    "avgPrice": 4120
+    "totalRecords": 42200,
+    "avgPrice": 4121
   },
   {
     "id": "gingergreen",
     "name": "Ginger(Green)",
     "nameHi": "अदरक",
     "emoji": "🫐",
-    "totalRecords": 35006,
-    "avgPrice": 8103
+    "totalRecords": 35789,
+    "avgPrice": 8286
   },
   {
     "id": "cucumbarkheera",
     "name": "Cucumbar(Kheera)",
     "nameHi": "खीरा",
     "emoji": "🌱",
-    "totalRecords": 31351,
+    "totalRecords": 31375,
     "avgPrice": 2859
   },
   {
@@ -211,16 +211,24 @@
     "name": "Coriander(Leaves)",
     "nameHi": "धनिया",
     "emoji": "🌿",
-    "totalRecords": 28705,
-    "avgPrice": 4366
+    "totalRecords": 28769,
+    "avgPrice": 4377
+  },
+  {
+    "id": "banana-green",
+    "name": "Banana - Green",
+    "nameHi": "कच्चा केला",
+    "emoji": "🍌",
+    "totalRecords": 28539,
+    "avgPrice": 3186
   },
   {
     "id": "bitter-gourd",
     "name": "Bitter gourd",
     "nameHi": "करेला",
     "emoji": "🥒",
-    "totalRecords": 28096,
-    "avgPrice": 4717,
+    "totalRecords": 28123,
+    "avgPrice": 4718,
     "sowingMonths": [
       1,
       2,
@@ -247,44 +255,36 @@
     ]
   },
   {
-    "id": "banana-green",
-    "name": "Banana - Green",
-    "nameHi": "कच्चा केला",
-    "emoji": "🍌",
-    "totalRecords": 27393,
-    "avgPrice": 3126
-  },
-  {
     "id": "beetroot",
     "name": "Beetroot",
     "nameHi": "चुकंदर",
     "emoji": "🥬",
-    "totalRecords": 25172,
-    "avgPrice": 3584
+    "totalRecords": 26091,
+    "avgPrice": 3629
   },
   {
     "id": "amaranthus",
     "name": "Amaranthus",
     "nameHi": "चौलाई",
     "emoji": "🌱",
-    "totalRecords": 23511,
-    "avgPrice": 2833
+    "totalRecords": 24408,
+    "avgPrice": 2859
   },
   {
     "id": "ashgourd",
     "name": "Ashgourd",
     "nameHi": "पेठा",
     "emoji": "🌱",
-    "totalRecords": 22662,
-    "avgPrice": 2308
+    "totalRecords": 23735,
+    "avgPrice": 2307
   },
   {
     "id": "coconut",
     "name": "Coconut",
     "nameHi": "नारियल",
     "emoji": "🥥",
-    "totalRecords": 22433,
-    "avgPrice": 5990,
+    "totalRecords": 22635,
+    "avgPrice": 5981,
     "sowingMonths": [],
     "growingMonths": [
       0,
@@ -334,8 +334,8 @@
     "name": "Cluster beans",
     "nameHi": "ग्वारफली",
     "emoji": "🌱",
-    "totalRecords": 21341,
-    "avgPrice": 4314
+    "totalRecords": 21732,
+    "avgPrice": 4347
   },
   {
     "id": "wheat",
@@ -363,44 +363,12 @@
     ]
   },
   {
-    "id": "capsicum",
-    "name": "Capsicum",
-    "nameHi": "शिमला मिर्च",
-    "emoji": "🫑",
-    "totalRecords": 17550,
-    "avgPrice": 4866,
-    "sowingMonths": [
-      6,
-      7,
-      10,
-      11
-    ],
-    "growingMonths": [
-      8,
-      9,
-      0,
-      1
-    ],
-    "harvestMonths": [
-      9,
-      10,
-      2,
-      3
-    ],
-    "peakMonths": [
-      10,
-      11,
-      2,
-      3
-    ]
-  },
-  {
     "id": "potato",
     "name": "Potato",
     "nameHi": "आलू",
     "emoji": "🥔",
-    "totalRecords": 16963,
-    "avgPrice": 1712,
+    "totalRecords": 17775,
+    "avgPrice": 1781,
     "sowingMonths": [
       9,
       10
@@ -426,8 +394,8 @@
     "name": "Tomato",
     "nameHi": "टमाटर",
     "emoji": "🍅",
-    "totalRecords": 16816,
-    "avgPrice": 2265,
+    "totalRecords": 17731,
+    "avgPrice": 2336,
     "sowingMonths": [
       6,
       7,
@@ -456,6 +424,38 @@
     ]
   },
   {
+    "id": "capsicum",
+    "name": "Capsicum",
+    "nameHi": "शिमला मिर्च",
+    "emoji": "🫑",
+    "totalRecords": 17557,
+    "avgPrice": 4867,
+    "sowingMonths": [
+      6,
+      7,
+      10,
+      11
+    ],
+    "growingMonths": [
+      8,
+      9,
+      0,
+      1
+    ],
+    "harvestMonths": [
+      9,
+      10,
+      2,
+      3
+    ],
+    "peakMonths": [
+      10,
+      11,
+      2,
+      3
+    ]
+  },
+  {
     "id": "beans",
     "name": "Beans",
     "nameHi": "सेम",
@@ -468,7 +468,7 @@
     "name": "Garlic",
     "nameHi": "लहसुन",
     "emoji": "🧄",
-    "totalRecords": 16235,
+    "totalRecords": 16236,
     "avgPrice": 11015
   },
   {
@@ -476,16 +476,16 @@
     "name": "Drumstick",
     "nameHi": "सहजन",
     "emoji": "🌿",
-    "totalRecords": 15400,
-    "avgPrice": 11312
+    "totalRecords": 15411,
+    "avgPrice": 11311
   },
   {
     "id": "apple",
     "name": "Apple",
     "nameHi": "सेब",
     "emoji": "🍎",
-    "totalRecords": 15239,
-    "avgPrice": 10564,
+    "totalRecords": 15244,
+    "avgPrice": 10569,
     "sowingMonths": [],
     "growingMonths": [
       3,
@@ -508,7 +508,7 @@
     "name": "Elephant Yam(Suran)/Amorphophallus",
     "nameHi": "सूरन",
     "emoji": "🌱",
-    "totalRecords": 14914,
+    "totalRecords": 14932,
     "avgPrice": 4118
   },
   {
@@ -516,7 +516,7 @@
     "name": "Chikoos(Sapota)",
     "nameHi": "चीकू",
     "emoji": "🌱",
-    "totalRecords": 14731,
+    "totalRecords": 14753,
     "avgPrice": 3933
   },
   {
@@ -524,7 +524,7 @@
     "name": "Bengal Gram(Gram)(Whole)",
     "nameHi": "चना",
     "emoji": "🫘",
-    "totalRecords": 14279,
+    "totalRecords": 14280,
     "avgPrice": 5309,
     "msp": 5440,
     "sowingMonths": [
@@ -581,6 +581,14 @@
     "avgPrice": 2678
   },
   {
+    "id": "colacasia",
+    "name": "Colacasia",
+    "nameHi": "अरबी",
+    "emoji": "🌱",
+    "totalRecords": 13011,
+    "avgPrice": 4310
+  },
+  {
     "id": "cotton",
     "name": "Cotton",
     "nameHi": "कपास",
@@ -610,20 +618,12 @@
     ]
   },
   {
-    "id": "colacasia",
-    "name": "Colacasia",
-    "nameHi": "अरबी",
-    "emoji": "🌱",
-    "totalRecords": 12453,
-    "avgPrice": 4228
-  },
-  {
     "id": "cowpeaveg",
     "name": "Cowpea(Veg)",
     "nameHi": "लोबिया",
     "emoji": "🌱",
-    "totalRecords": 11935,
-    "avgPrice": 4484
+    "totalRecords": 11956,
+    "avgPrice": 4485
   },
   {
     "id": "bajrapearl-millet-cumbu",
@@ -655,8 +655,8 @@
     "name": "Pumpkin",
     "nameHi": "कद्दू",
     "emoji": "🎃",
-    "totalRecords": 9720,
-    "avgPrice": 1738,
+    "totalRecords": 10608,
+    "avgPrice": 1780,
     "sowingMonths": [
       1,
       2,
@@ -687,7 +687,7 @@
     "name": "Amla(Nelli Kai)",
     "nameHi": "आँवला",
     "emoji": "🌱",
-    "totalRecords": 8759,
+    "totalRecords": 8762,
     "avgPrice": 6344
   },
   {
@@ -695,23 +695,23 @@
     "name": "Ridgeguard(Tori)",
     "nameHi": "तोरई",
     "emoji": "🌱",
-    "totalRecords": 7885,
-    "avgPrice": 4127
+    "totalRecords": 8009,
+    "avgPrice": 4151
   },
   {
     "id": "black-gramurd-beanswhole",
     "name": "Black Gram(Urd Beans)(Whole)",
     "nameHi": "सेम",
     "emoji": "🫘",
-    "totalRecords": 7049,
-    "avgPrice": 6703
+    "totalRecords": 7073,
+    "avgPrice": 6723
   },
   {
     "id": "raddish",
     "name": "Raddish",
     "nameHi": "मूली",
     "emoji": "🌱",
-    "totalRecords": 6771,
+    "totalRecords": 6820,
     "avgPrice": 2696
   },
   {
@@ -719,8 +719,8 @@
     "name": "Mango",
     "nameHi": "आम",
     "emoji": "🥭",
-    "totalRecords": 6731,
-    "avgPrice": 4948,
+    "totalRecords": 6811,
+    "avgPrice": 4953,
     "sowingMonths": [],
     "growingMonths": [
       1,
@@ -742,24 +742,32 @@
     "name": "Papaya",
     "nameHi": "पपीता",
     "emoji": "🍏",
-    "totalRecords": 6359,
-    "avgPrice": 3195
+    "totalRecords": 6405,
+    "avgPrice": 3194
   },
   {
     "id": "onion-green",
     "name": "Onion Green",
     "nameHi": "हरा प्याज",
     "emoji": "🧅",
-    "totalRecords": 5813,
+    "totalRecords": 5818,
     "avgPrice": 4980
+  },
+  {
+    "id": "mangoraw-ripe",
+    "name": "Mango(Raw-Ripe)",
+    "nameHi": "आम",
+    "emoji": "🥭",
+    "totalRecords": 5734,
+    "avgPrice": 2877
   },
   {
     "id": "onion",
     "name": "Onion",
     "nameHi": "प्याज",
     "emoji": "🧅",
-    "totalRecords": 5634,
-    "avgPrice": 2162,
+    "totalRecords": 5719,
+    "avgPrice": 2192,
     "sowingMonths": [
       10,
       11
@@ -781,20 +789,12 @@
     ]
   },
   {
-    "id": "mangoraw-ripe",
-    "name": "Mango(Raw-Ripe)",
-    "nameHi": "आम",
-    "emoji": "🥭",
-    "totalRecords": 5354,
-    "avgPrice": 2813
-  },
-  {
     "id": "french-beansfrasbean",
     "name": "French Beans(Frasbean)",
     "nameHi": "फ्रेंच बीन",
     "emoji": "🌱",
-    "totalRecords": 5271,
-    "avgPrice": 4391
+    "totalRecords": 5507,
+    "avgPrice": 4536
   },
   {
     "id": "mustard",
@@ -851,8 +851,8 @@
     "name": "Arecanut(Betelnut/Supari)",
     "nameHi": "सुपारी",
     "emoji": "🌱",
-    "totalRecords": 4699,
-    "avgPrice": 36883
+    "totalRecords": 4797,
+    "avgPrice": 36963
   },
   {
     "id": "castor-seed",
@@ -867,8 +867,8 @@
     "name": "Green Chilli",
     "nameHi": "हरी मिर्च",
     "emoji": "🌶️",
-    "totalRecords": 4226,
-    "avgPrice": 4262,
+    "totalRecords": 4242,
+    "avgPrice": 4269,
     "sowingMonths": [
       1,
       2,
@@ -899,8 +899,8 @@
     "name": "Guava",
     "nameHi": "अमरूद",
     "emoji": "🍏",
-    "totalRecords": 4208,
-    "avgPrice": 5680,
+    "totalRecords": 4214,
+    "avgPrice": 5679,
     "sowingMonths": [],
     "growingMonths": [
       6,
@@ -925,8 +925,8 @@
     "name": "Rice",
     "nameHi": "चावल",
     "emoji": "🌾",
-    "totalRecords": 4076,
-    "avgPrice": 3834,
+    "totalRecords": 4099,
+    "avgPrice": 3841,
     "msp": 2300,
     "sowingMonths": [
       5,
@@ -959,8 +959,8 @@
     "name": "Sweet Potato",
     "nameHi": "शकरकंद",
     "emoji": "🥔",
-    "totalRecords": 3124,
-    "avgPrice": 3500
+    "totalRecords": 3279,
+    "avgPrice": 3509
   },
   {
     "id": "corriander-seed",
@@ -983,24 +983,24 @@
     "name": "Lemon",
     "nameHi": "नींबू",
     "emoji": "🍋",
-    "totalRecords": 2534,
-    "avgPrice": 11550
+    "totalRecords": 2538,
+    "avgPrice": 11544
   },
   {
     "id": "mousambisweet-lime",
     "name": "Mousambi(Sweet Lime)",
     "nameHi": "मौसम्बी",
     "emoji": "🌱",
-    "totalRecords": 2502,
-    "avgPrice": 5589
+    "totalRecords": 2520,
+    "avgPrice": 5600
   },
   {
     "id": "snakeguard",
     "name": "Snakeguard",
     "nameHi": "चचिंडा",
     "emoji": "🌱",
-    "totalRecords": 2389,
-    "avgPrice": 3387
+    "totalRecords": 2406,
+    "avgPrice": 3389
   },
   {
     "id": "chilly-capsicum",
@@ -1027,20 +1027,36 @@
     "avgPrice": 15549
   },
   {
+    "id": "pineapple",
+    "name": "Pineapple",
+    "nameHi": "अनानास",
+    "emoji": "🍎",
+    "totalRecords": 2049,
+    "avgPrice": 4892
+  },
+  {
     "id": "field-pea",
     "name": "Field Pea",
     "nameHi": "मटर",
     "emoji": "🌱",
-    "totalRecords": 1999,
-    "avgPrice": 2764
+    "totalRecords": 2030,
+    "avgPrice": 2828
   },
   {
     "id": "green-avarew",
     "name": "Green Avare(W)",
     "nameHi": "हरी अवरे",
     "emoji": "🌱",
-    "totalRecords": 1978,
-    "avgPrice": 6527
+    "totalRecords": 1981,
+    "avgPrice": 6528
+  },
+  {
+    "id": "lime",
+    "name": "Lime",
+    "nameHi": "नीबू",
+    "emoji": "🌱",
+    "totalRecords": 1979,
+    "avgPrice": 7314
   },
   {
     "id": "mintpudina",
@@ -1049,14 +1065,6 @@
     "emoji": "🌱",
     "totalRecords": 1975,
     "avgPrice": 3624
-  },
-  {
-    "id": "lime",
-    "name": "Lime",
-    "nameHi": "नीबू",
-    "emoji": "🌱",
-    "totalRecords": 1926,
-    "avgPrice": 7384
   },
   {
     "id": "barleyjau",
@@ -1075,20 +1083,12 @@
     "avgPrice": 3298
   },
   {
-    "id": "pineapple",
-    "name": "Pineapple",
-    "nameHi": "अनानास",
-    "emoji": "🍎",
-    "totalRecords": 1662,
-    "avgPrice": 4773
-  },
-  {
     "id": "black-pepper",
     "name": "Black pepper",
     "nameHi": "Black pepper",
     "emoji": "🌱",
-    "totalRecords": 1507,
-    "avgPrice": 62533
+    "totalRecords": 1509,
+    "avgPrice": 62535
   },
   {
     "id": "arhar-daltur-dal",
@@ -1127,8 +1127,16 @@
     "name": "Tapioca",
     "nameHi": "कसावा",
     "emoji": "🌱",
-    "totalRecords": 1334,
-    "avgPrice": 3043
+    "totalRecords": 1388,
+    "avgPrice": 3045
+  },
+  {
+    "id": "water-melon",
+    "name": "Water Melon",
+    "nameHi": "तरबूज",
+    "emoji": "🌱",
+    "totalRecords": 1324,
+    "avgPrice": 1654
   },
   {
     "id": "sweet-corn",
@@ -1143,8 +1151,8 @@
     "name": "Paddy(Common)",
     "nameHi": "धान",
     "emoji": "🌾",
-    "totalRecords": 1321,
-    "avgPrice": 2315,
+    "totalRecords": 1322,
+    "avgPrice": 2316,
     "msp": 2300,
     "sowingMonths": [
       5,
@@ -1166,14 +1174,6 @@
     ]
   },
   {
-    "id": "water-melon",
-    "name": "Water Melon",
-    "nameHi": "तरबूज",
-    "emoji": "🌱",
-    "totalRecords": 1319,
-    "avgPrice": 1653
-  },
-  {
     "id": "black-gram-dalurd-dal",
     "name": "Black Gram Dal(Urd Dal)",
     "nameHi": "उड़द दाल",
@@ -1183,12 +1183,20 @@
     "msp": 6950
   },
   {
+    "id": "little-gourdkundru",
+    "name": "Little gourd(Kundru)",
+    "nameHi": "कुंदरू",
+    "emoji": "🌱",
+    "totalRecords": 1281,
+    "avgPrice": 4072
+  },
+  {
     "id": "yamratalu",
     "name": "Yam(Ratalu)",
     "nameHi": "रतालू",
     "emoji": "🌱",
-    "totalRecords": 1250,
-    "avgPrice": 5765
+    "totalRecords": 1253,
+    "avgPrice": 5764
   },
   {
     "id": "karbujamusk-melon",
@@ -1203,8 +1211,8 @@
     "name": "Grapes",
     "nameHi": "अंगूर",
     "emoji": "🍇",
-    "totalRecords": 1175,
-    "avgPrice": 9348,
+    "totalRecords": 1217,
+    "avgPrice": 9366,
     "sowingMonths": [],
     "growingMonths": [
       11,
@@ -1222,27 +1230,35 @@
     ]
   },
   {
+    "id": "indian-beansseam",
+    "name": "Indian Beans(Seam)",
+    "nameHi": "सेम",
+    "emoji": "🌱",
+    "totalRecords": 1173,
+    "avgPrice": 6455
+  },
+  {
     "id": "chili-red",
     "name": "Chili Red",
     "nameHi": "लाल मिर्च",
     "emoji": "🌱",
-    "totalRecords": 1157,
-    "avgPrice": 17194
+    "totalRecords": 1158,
+    "avgPrice": 17203
   },
   {
     "id": "gingerdry",
     "name": "Ginger(Dry)",
     "nameHi": "सोंठ",
     "emoji": "🫐",
-    "totalRecords": 1118,
-    "avgPrice": 8152
+    "totalRecords": 1142,
+    "avgPrice": 8386
   },
   {
     "id": "thondekai",
     "name": "Thondekai",
     "nameHi": "तोंडेकाई",
     "emoji": "🌱",
-    "totalRecords": 1112,
+    "totalRecords": 1113,
     "avgPrice": 3946
   },
   {
@@ -1271,19 +1287,11 @@
     ]
   },
   {
-    "id": "indian-beansseam",
-    "name": "Indian Beans(Seam)",
-    "nameHi": "सेम",
-    "emoji": "🌱",
-    "totalRecords": 1055,
-    "avgPrice": 6336
-  },
-  {
     "id": "tender-coconut",
     "name": "Tender Coconut",
     "nameHi": "नारियल पानी",
     "emoji": "🥥",
-    "totalRecords": 1029,
+    "totalRecords": 1030,
     "avgPrice": 3926
   },
   {
@@ -1325,16 +1333,16 @@
     "name": "Copra",
     "nameHi": "Copra",
     "emoji": "🌱",
-    "totalRecords": 903,
-    "avgPrice": 17277
+    "totalRecords": 907,
+    "avgPrice": 17260
   },
   {
     "id": "jack-fruitripe",
     "name": "Jack Fruit(Ripe)",
     "nameHi": "कटहल",
     "emoji": "🌱",
-    "totalRecords": 891,
-    "avgPrice": 3162
+    "totalRecords": 895,
+    "avgPrice": 3158
   },
   {
     "id": "plum",
@@ -1369,14 +1377,6 @@
     ]
   },
   {
-    "id": "little-gourdkundru",
-    "name": "Little gourd(Kundru)",
-    "nameHi": "कुंदरू",
-    "emoji": "🌱",
-    "totalRecords": 814,
-    "avgPrice": 3262
-  },
-  {
     "id": "sweet-pumpkin",
     "name": "Sweet Pumpkin",
     "nameHi": "कद्दू",
@@ -1405,16 +1405,16 @@
     "name": "Kabuli Chana(Chickpeas-White)",
     "nameHi": "Kabuli Chana(Chickpeas-White)",
     "emoji": "🟢",
-    "totalRecords": 724,
-    "avgPrice": 6747
+    "totalRecords": 742,
+    "avgPrice": 6849
   },
   {
     "id": "cowpealobia-karamani",
     "name": "Cowpea(Lobia/Karamani)",
     "nameHi": "Cowpea(Lobia/Karamani)",
     "emoji": "🌱",
-    "totalRecords": 712,
-    "avgPrice": 6717
+    "totalRecords": 713,
+    "avgPrice": 6722
   },
   {
     "id": "gram-rawchholia",
@@ -1429,8 +1429,8 @@
     "name": "Green Peas",
     "nameHi": "हरी मटर",
     "emoji": "🟢",
-    "totalRecords": 702,
-    "avgPrice": 9103
+    "totalRecords": 704,
+    "avgPrice": 9096
   },
   {
     "id": "ajwan",
@@ -1453,8 +1453,8 @@
     "name": "Orange",
     "nameHi": "संतरा",
     "emoji": "🍊",
-    "totalRecords": 634,
-    "avgPrice": 9592,
+    "totalRecords": 639,
+    "avgPrice": 9632,
     "sowingMonths": [],
     "growingMonths": [
       6,
@@ -1517,8 +1517,8 @@
     "name": "Coconut Oil",
     "nameHi": "नारियल",
     "emoji": "🥥",
-    "totalRecords": 495,
-    "avgPrice": 34972
+    "totalRecords": 496,
+    "avgPrice": 34954
   },
   {
     "id": "jasmine",
@@ -1598,6 +1598,14 @@
     ]
   },
   {
+    "id": "papayaraw",
+    "name": "Papaya(Raw)",
+    "nameHi": "पपीता",
+    "emoji": "🍏",
+    "totalRecords": 406,
+    "avgPrice": 2285
+  },
+  {
     "id": "mashrooms",
     "name": "Mashrooms",
     "nameHi": "मशरूम",
@@ -1630,14 +1638,6 @@
     "avgPrice": 2862
   },
   {
-    "id": "papayaraw",
-    "name": "Papaya(Raw)",
-    "nameHi": "पपीता",
-    "emoji": "🍏",
-    "totalRecords": 380,
-    "avgPrice": 2052
-  },
-  {
     "id": "soanf",
     "name": "Soanf",
     "nameHi": "Soanf",
@@ -1662,12 +1662,28 @@
     "avgPrice": 4095
   },
   {
+    "id": "coffee",
+    "name": "Coffee",
+    "nameHi": "Coffee",
+    "emoji": "🌱",
+    "totalRecords": 335,
+    "avgPrice": 21244
+  },
+  {
     "id": "turnip",
     "name": "Turnip",
     "nameHi": "शलगम",
     "emoji": "🌱",
     "totalRecords": 305,
     "avgPrice": 3969
+  },
+  {
+    "id": "alsandikai",
+    "name": "Alsandikai",
+    "nameHi": "Alsandikai",
+    "emoji": "🌱",
+    "totalRecords": 297,
+    "avgPrice": 5027
   },
   {
     "id": "green-grammoongwhole",
@@ -1711,20 +1727,12 @@
     "avgPrice": 2406
   },
   {
-    "id": "coffee",
-    "name": "Coffee",
-    "nameHi": "Coffee",
-    "emoji": "🌱",
-    "totalRecords": 271,
-    "avgPrice": 21273
-  },
-  {
-    "id": "alsandikai",
-    "name": "Alsandikai",
-    "nameHi": "Alsandikai",
+    "id": "long-melonkakri",
+    "name": "Long Melon(Kakri)",
+    "nameHi": "Long Melon(Kakri)",
     "emoji": "🌱",
     "totalRecords": 270,
-    "avgPrice": 4907
+    "avgPrice": 2188
   },
   {
     "id": "cashewnuts",
@@ -1749,6 +1757,14 @@
     "emoji": "🌱",
     "totalRecords": 241,
     "avgPrice": 4612
+  },
+  {
+    "id": "duster-beans",
+    "name": "Duster Beans",
+    "nameHi": "सेम",
+    "emoji": "🌱",
+    "totalRecords": 237,
+    "avgPrice": 6041
   },
   {
     "id": "chapparad-avare",
@@ -1780,8 +1796,8 @@
     "name": "Bunch Beans",
     "nameHi": "सेम",
     "emoji": "🌱",
-    "totalRecords": 212,
-    "avgPrice": 3274
+    "totalRecords": 213,
+    "avgPrice": 3275
   },
   {
     "id": "sesamumsesame-gingelly-til",
@@ -1808,20 +1824,12 @@
     "avgPrice": 4974
   },
   {
-    "id": "long-melonkakri",
-    "name": "Long Melon(Kakri)",
-    "nameHi": "Long Melon(Kakri)",
-    "emoji": "🌱",
-    "totalRecords": 200,
-    "avgPrice": 1708
-  },
-  {
     "id": "amranthas-red",
     "name": "Amranthas Red",
     "nameHi": "Amranthas Red",
     "emoji": "🌱",
-    "totalRecords": 198,
-    "avgPrice": 3519
+    "totalRecords": 201,
+    "avgPrice": 3529
   },
   {
     "id": "lentilmasurwhole",
@@ -1840,12 +1848,12 @@
     "avgPrice": 2157
   },
   {
-    "id": "duster-beans",
-    "name": "Duster Beans",
-    "nameHi": "सेम",
-    "emoji": "🌱",
+    "id": "galgallemon",
+    "name": "Galgal(Lemon)",
+    "nameHi": "नींबू",
+    "emoji": "🍋",
     "totalRecords": 195,
-    "avgPrice": 5925
+    "avgPrice": 5640
   },
   {
     "id": "cock",
@@ -1862,14 +1870,6 @@
     "emoji": "🌱",
     "totalRecords": 187,
     "avgPrice": 3986
-  },
-  {
-    "id": "galgallemon",
-    "name": "Galgal(Lemon)",
-    "nameHi": "नींबू",
-    "emoji": "🍋",
-    "totalRecords": 168,
-    "avgPrice": 5529
   },
   {
     "id": "asgand",
@@ -2104,6 +2104,14 @@
     "avgPrice": 23
   },
   {
+    "id": "turmericraw",
+    "name": "Turmeric(raw)",
+    "nameHi": "कच्ची हल्दी",
+    "emoji": "🟡",
+    "totalRecords": 80,
+    "avgPrice": 9129
+  },
+  {
     "id": "sweet-saag",
     "name": "Sweet Saag",
     "nameHi": "Sweet Saag",
@@ -2134,14 +2142,6 @@
     "emoji": "🌾",
     "totalRecords": 79,
     "avgPrice": 19377
-  },
-  {
-    "id": "turmericraw",
-    "name": "Turmeric(raw)",
-    "nameHi": "कच्ची हल्दी",
-    "emoji": "🟡",
-    "totalRecords": 76,
-    "avgPrice": 9281
   },
   {
     "id": "avare-dal",
@@ -2220,8 +2220,8 @@
     "name": "Seetapal",
     "nameHi": "Seetapal",
     "emoji": "🌱",
-    "totalRecords": 67,
-    "avgPrice": 4413
+    "totalRecords": 68,
+    "avgPrice": 4414
   },
   {
     "id": "almondbadam",
@@ -2288,6 +2288,14 @@
     "avgPrice": 8726
   },
   {
+    "id": "egg",
+    "name": "Egg",
+    "nameHi": "Egg",
+    "emoji": "🌱",
+    "totalRecords": 52,
+    "avgPrice": 42
+  },
+  {
     "id": "basil",
     "name": "basil",
     "nameHi": "basil",
@@ -2310,6 +2318,14 @@
     "emoji": "🌱",
     "totalRecords": 50,
     "avgPrice": 149778
+  },
+  {
+    "id": "white-pumpkin",
+    "name": "White Pumpkin",
+    "nameHi": "कद्दू",
+    "emoji": "🎃",
+    "totalRecords": 49,
+    "avgPrice": 1911
   },
   {
     "id": "cinamondalchini",
@@ -2400,28 +2416,12 @@
     "avgPrice": 2934
   },
   {
-    "id": "white-pumpkin",
-    "name": "White Pumpkin",
-    "nameHi": "कद्दू",
-    "emoji": "🎃",
-    "totalRecords": 38,
-    "avgPrice": 1744
-  },
-  {
     "id": "giloy",
     "name": "Giloy",
     "nameHi": "Giloy",
     "emoji": "🌱",
     "totalRecords": 38,
     "avgPrice": 2528
-  },
-  {
-    "id": "egg",
-    "name": "Egg",
-    "nameHi": "Egg",
-    "emoji": "🌱",
-    "totalRecords": 36,
-    "avgPrice": 57
   },
   {
     "id": "dal-mix",
@@ -2712,6 +2712,14 @@
     "avgPrice": 3594
   },
   {
+    "id": "cloves",
+    "name": "Cloves",
+    "nameHi": "Cloves",
+    "emoji": "🌱",
+    "totalRecords": 16,
+    "avgPrice": 71169
+  },
+  {
     "id": "surat-beanspapadi",
     "name": "Surat Beans(Papadi)",
     "nameHi": "पापड़ी",
@@ -2750,14 +2758,6 @@
     "emoji": "🌱",
     "totalRecords": 14,
     "avgPrice": 6472
-  },
-  {
-    "id": "cloves",
-    "name": "Cloves",
-    "nameHi": "Cloves",
-    "emoji": "🌱",
-    "totalRecords": 13,
-    "avgPrice": 70592
   },
   {
     "id": "cocoa",
@@ -3184,6 +3184,14 @@
     "avgPrice": 65250
   },
   {
+    "id": "pepper-ungarbled",
+    "name": "Pepper ungarbled",
+    "nameHi": "Pepper ungarbled",
+    "emoji": "🌱",
+    "totalRecords": 2,
+    "avgPrice": 67075
+  },
+  {
     "id": "cardamom",
     "name": "Cardamom",
     "nameHi": "Cardamom",
@@ -3264,20 +3272,20 @@
     "avgPrice": 6025
   },
   {
-    "id": "pepper-ungarbled",
-    "name": "Pepper ungarbled",
-    "nameHi": "Pepper ungarbled",
-    "emoji": "🌱",
-    "totalRecords": 1,
-    "avgPrice": 65950
-  },
-  {
     "id": "nutmeg",
     "name": "Nutmeg",
     "nameHi": "Nutmeg",
     "emoji": "🌱",
     "totalRecords": 1,
     "avgPrice": 89200
+  },
+  {
+    "id": "sompu",
+    "name": "Sompu",
+    "nameHi": "Sompu",
+    "emoji": "🌱",
+    "totalRecords": 1,
+    "avgPrice": 80000
   },
   {
     "id": "jaee",

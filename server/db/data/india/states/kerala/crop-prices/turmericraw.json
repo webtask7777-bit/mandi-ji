@@ -17,6 +17,12 @@
       "date": "2026-04",
       "market": 3500,
       "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 6250,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -33,21 +39,49 @@
       "volume": 1,
       "minPrice": 3500,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-07-04",
+      "market": 6000,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-07-09",
+      "market": 8000,
+      "volume": 1,
+      "minPrice": 8000,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-14",
+      "market": 5000,
+      "volume": 1,
+      "minPrice": 5000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-17",
+      "market": 6000,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 6000
     }
   ],
   "lastUpdated": "2026-07-20T08:48:36.178Z",
   "districtBreakdown": [
     {
-      "district": "Thiruvananthapuram",
-      "nameHi": "Thiruvananthapuram",
-      "avgPrice": 2500,
-      "records": 1
-    },
-    {
       "district": "Idukki",
       "nameHi": "Idukki",
-      "avgPrice": 3500,
-      "records": 1
+      "avgPrice": 5625,
+      "records": 4
+    },
+    {
+      "district": "Thiruvananthapuram",
+      "nameHi": "Thiruvananthapuram",
+      "avgPrice": 4250,
+      "records": 2
     }
   ]
 }
