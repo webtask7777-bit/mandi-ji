@@ -1,55 +1,72 @@
 import { useState, useEffect } from 'react';
 
-// Module-level cache to avoid re-fetching
-const cache = {};
+// Cache only successfully validated responses. Failed requests remain retryable
+// when the user changes the selected geography or revisits the map.
+const cache = new Map();
 
-/**
- * Hook to fetch and cache GeoJSON data
- * Files are already GeoJSON (simplified) in public/geo/
- */
 export function useGeoData(path) {
-  const [geoJson, setGeoJson] = useState(cache[path] || null);
-  const [loading, setLoading] = useState(!cache[path]);
+  const [response, setResponse] = useState(null);
 
   useEffect(() => {
-    if (!path) { setGeoJson(null); setLoading(false); return; }
-    if (cache[path]) { setGeoJson(cache[path]); setLoading(false); return; }
+    if (!path || cache.has(path)) return;
+    const controller = new AbortController();
+    let active = true;
 
-    setLoading(true);
-    fetch(path)
-      .then(r => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        return r.json();
+    fetch(path, { signal: controller.signal })
+      .then(result => {
+        if (!result.ok) throw new Error(`HTTP ${result.status}`);
+        return result.json();
       })
       .then(data => {
-        cache[path] = data;
-        setGeoJson(data);
-        setLoading(false);
+        if (data?.type !== 'FeatureCollection' || !Array.isArray(data.features) || !data.features.length) {
+          throw new Error('Geographic boundaries unavailable');
+        }
+        if (!active) return;
+        cache.set(path, data);
+        setResponse({ path, data, error: null });
       })
-      .catch(err => {
-        console.warn(`Failed to load geo data: ${path}`, err);
-        setLoading(false);
+      .catch(error => {
+        if (active && error.name !== 'AbortError') setResponse({ path, data: null, error });
       });
+
+    return () => {
+      active = false;
+      controller.abort();
+    };
   }, [path]);
 
-  return { geoJson, loading };
+  // Never expose the previous state's geometry while a new request is pending.
+  const current = response?.path === path ? response : null;
+  const geoJson = path ? (cache.get(path) || current?.data || null) : null;
+  return {
+    geoJson,
+    loading: Boolean(path && !geoJson && !current?.error),
+    error: current?.error || null,
+  };
 }
 
-/**
- * Hook to fetch crop-state matrix
- */
 export function useCropMatrix() {
-  const [matrix, setMatrix] = useState(cache['crop-matrix'] || null);
+  const [matrix, setMatrix] = useState(() => cache.get('crop-matrix') || null);
 
   useEffect(() => {
-    if (cache['crop-matrix']) { setMatrix(cache['crop-matrix']); return; }
-    fetch('/geo/crop-state-matrix.json')
-      .then(r => r.json())
+    if (cache.has('crop-matrix')) return;
+    const controller = new AbortController();
+    let active = true;
+    fetch('/geo/crop-state-matrix.json', { signal: controller.signal })
+      .then(result => {
+        if (!result.ok) throw new Error(`HTTP ${result.status}`);
+        return result.json();
+      })
       .then(data => {
-        cache['crop-matrix'] = data;
+        if (!active || !data || typeof data !== 'object' || Array.isArray(data)) return;
+        cache.set('crop-matrix', data);
         setMatrix(data);
       })
-      .catch(() => {});
+      .catch(() => { /* Missing evidence is handled as unknown by mapStyles. */ });
+    return () => {
+      active = false;
+      controller.abort();
+    };
   }, []);
 
   return matrix;

@@ -1,5 +1,6 @@
-import { createContext, useContext, useState, useCallback } from "react";
+import { createContext, useContext, useCallback } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
+import { getDashboardStateUrl } from '../utils/dashboardNavigation';
 
 const StateContext = createContext(null);
 
@@ -54,8 +55,9 @@ export function StateProvider({ children }) {
   const candidate = routeState || queryState;
   const selectedState = Object.hasOwn(STATE_NAMES, candidate) ? candidate : null;
   const setSelectedState = useCallback(id => {
-    navigate(id && Object.hasOwn(STATE_NAMES, id) ? `/mandi-bhav/${encodeURIComponent(id)}` : '/');
-  }, [navigate]);
+    const validState = id && Object.hasOwn(STATE_NAMES, id) ? id : null;
+    navigate(getDashboardStateUrl(validState, location.search));
+  }, [navigate, location.search]);
 
   const stateNameHi = selectedState
     ? (STATE_NAMES[selectedState] || selectedState)

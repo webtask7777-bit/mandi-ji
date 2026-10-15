@@ -42,18 +42,19 @@ export function stateStyle(feature, { stateDataMap, maxRecords, selectedState, s
   };
 }
 
-export function districtStyle(feature, { districtMap, maxDistRecords, selectedCrop, hoveredDistrict }) {
+export function districtStyle(feature, { districtMap, maxDistRecords, selectedCrop, hoveredDistrict, selectedDistrict }) {
   const distName = feature.properties.districtName;
   const info = districtMap?.[distName];
   const isHovered = hoveredDistrict === distName;
+  const isSelected = selectedDistrict === distName;
   // topCrops is not a complete district inventory; no match cannot mean absence.
-  if (selectedCrop && districtCropMatch(info, selectedCrop) !== 'matched') return unknownCropStyle(isHovered);
+  if (selectedCrop && districtCropMatch(info, selectedCrop) !== 'matched') return unknownCropStyle(isHovered || isSelected);
   const bucket = info ? getHeatBucket(info.totalRecords, maxDistRecords) : -1;
   return {
     fillColor: bucket >= 0 ? HEAT_SCALE[bucket] : NO_DATA_COLOR,
-    fillOpacity: isHovered ? 0.9 : 0.75,
-    weight: isHovered || selectedCrop ? 2 : 0.8,
-    color: isHovered || selectedCrop ? SELECTED_COLOR : BORDER_COLOR,
+    fillOpacity: isHovered || isSelected ? 0.9 : 0.75,
+    weight: isSelected ? 3 : isHovered || selectedCrop ? 2 : 0.8,
+    color: isHovered || isSelected || selectedCrop ? SELECTED_COLOR : BORDER_COLOR,
     dashArray: null,
   };
 }

@@ -74,11 +74,11 @@ export default function MandiJiDashboard() {
   const { selectedState, selectStateDirect, stateNameHi, isCG, stateParam } = useStateContext();
 
   const stateQuery = stateParam !== "all" ? `?state=${stateParam}` : "?state=all";
-  const { data: apiCrops } = useApi(`/crops${stateQuery}`);
-  const { data: apiMandis } = useApi(`/mandis${stateQuery}`);
-  const { data: apiDistricts } = useApi(`/districts${stateQuery}`);
+  const { data: apiCrops, loading: cropsLoading } = useApi(`/crops${stateQuery}`);
+  const { data: apiMandis, loading: mandisLoading, error: mandisError } = useApi(`/mandis${stateQuery}`);
+  const { data: apiDistricts, loading: districtsLoading, error: districtsError } = useApi(`/districts${stateQuery}`);
   const { data: apiHeatmap } = useApi(`/mandis/heatmap${stateQuery}`);
-  const { data: apiStates } = useApi('/states');
+  const { data: apiStates, loading: statesLoading, error: statesError } = useApi('/states');
   const { data: banners } = useApi('/cms/banners');
   const { data: notifications } = useApi(`/cms/notifications${stateParam !== 'all' ? `?state=${stateParam}` : ''}`);
 
@@ -350,7 +350,7 @@ export default function MandiJiDashboard() {
             {activeTab === "prices" && <PricesTab crops={crops} stateParam={stateParam} initialCropId={jumpToCrop} onCropConsumed={() => setJumpToCrop(null)} onMandiClick={handleMandiClick} onDeliveryCalculate={handleDeliveryCalculate}/>}
             {activeTab === "calendar" && <CalendarTab selectedMonth={selectedMonth} crops={crops} seasons={seasons} isCG={isCG}/>}
             {activeTab === "mandis" && <MandisTab selectedMonth={selectedMonth} heatmap={heatmap} regions={isCG ? FALLBACK_REGIONS : null} stateParam={stateParam} onCropClick={handleCropClick} jumpToMandi={jumpToMandi} onMandiConsumed={() => setJumpToMandi(null)}/>}
-            {activeTab === "naksha" && <NakshaTab selectedMonth={selectedMonth} districts={districts} mandis={mandis} states={states} isCG={isCG} crops={crops}/>}
+            {activeTab === "naksha" && <NakshaTab districts={districts} mandis={mandis} states={states} crops={cropsLoading ? [] : apiCrops || []} cropDataReady={!cropsLoading && Array.isArray(apiCrops)} loading={selectedState ? districtsLoading || mandisLoading : statesLoading} error={selectedState ? districtsError || mandisError : statesError} onDeliveryCalculate={handleDeliveryCalculate}/>}
             {activeTab === "bazaar" && <BazaarTab />}
             {activeTab === "delivery" && <DeliveryCalculatorTab crops={crops} initialScenario={deliveryScenario} onScenarioConsumed={() => setDeliveryScenario(null)} />}
             </Suspense>

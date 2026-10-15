@@ -30,7 +30,7 @@ export function deliveryFormToInput(form) {
   return {
     quantityKg: convertDeliveryQuantity(form.quantity, form.quantityUnit, 'kg'),
     packagingWeightKg: form.packagingWeightKg,
-    capacityKg: form.capacityKg, distanceKm: form.distanceKm, journeyFactor: Number(form.journeyFactor),
+    capacityKg: form.capacityKg, distanceKm: form.distanceKm, journeyFactor: form.journeyFactor,
     freightMode: form.freightMode, ratePerKm: form.ratePerKm, minFare: form.minFare,
     quotePerTrip: form.quotePerTrip, tollPerTrip: form.tollPerTrip, loadingTotal: form.loadingTotal,
     packingTotal: form.packingTotal, otherTotal: form.otherTotal, marketFeePercent: form.marketFeePercent,
@@ -42,6 +42,18 @@ export function deliveryFormToInput(form) {
 
 /** A new route does not inherit the previous route's distance or freight quote. */
 export function prefillDeliveryForm(previous, scenario) {
+  if (scenario.priceBasis === 'location-only') {
+    return {
+      ...previous,
+      cropId: scenario.cropId || '', cropName: scenario.cropName || '',
+      from: '', to: scenario.sellMandi || '',
+      quantity: '', packagingWeightKg: '', lossPercent: '',
+      buyPrice: '', benchmarkPrice: '', distanceKm: '', journeyFactor: '',
+      ratePerKm: '', quotePerTrip: '', minFare: '', tollPerTrip: '',
+      loadingTotal: '', packingTotal: '', otherTotal: '', marketFeePercent: '',
+      comparisonMode: 'resale', example: false, sourceQuote: null, locationOnly: true,
+    };
+  }
   const isListingOffer = scenario.priceBasis === 'listing-offer';
   return {
     ...previous, cropId: scenario.cropId || '', cropName: scenario.cropName || '',
@@ -49,7 +61,7 @@ export function prefillDeliveryForm(previous, scenario) {
     buyPrice: Number(scenario.buyPrice) > 0 ? scenario.buyPrice : '',
     benchmarkPrice: !isListingOffer && Number(scenario.sellPrice) > 0 ? scenario.sellPrice : '',
     distanceKm: '', ratePerKm: '', quotePerTrip: '', minFare: 0, tollPerTrip: 0,
-    comparisonMode: isListingOffer ? 'local' : 'resale', example: false,
+    comparisonMode: isListingOffer ? 'local' : 'resale', example: false, locationOnly: false,
     sourceQuote: {
       date: scenario.quoteDate || null, basis: scenario.priceBasis || '',
       variety: scenario.variety || '', grade: scenario.grade || '',
