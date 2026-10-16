@@ -1,5 +1,6 @@
 import { useState, useMemo, useId } from "react";
 import { Card } from "@/components/ui/card";
+import { comparableChange, gapNote } from '../utils/priceChange';
 
 const RECORD_RANGES = [3, 7, 30, 'all'];
 const COLORS = { forest: '#174C3C', gold: '#A37A25', grid: '#E4E9DE', muted: '#65796A', ink: '#1B3027', band: '#DDE7D3', volume: '#C0CDB5' };
@@ -78,8 +79,9 @@ export default function MiniChart({ data = [], dailyData = [], title = "भा�
   const maxVolume = Math.max(...chartData.map(record => positiveNumber(record.volume) ? Number(record.volume) : 0), 1);
   const last = chartData.at(-1);
   const previous = chartData.at(-2);
-  const change = previous ? Number(last.market) - Number(previous.market) : null;
-  const changePct = previous ? (change / Number(previous.market) * 100).toFixed(1) : null;
+  const comparison = comparableChange(last, previous, { daily: !isMonthly });
+  const change = comparison.status === 'ok' ? comparison.change : null;
+  const changePct = change !== null ? comparison.pct.toFixed(1) : null;
   const lastDate = last.date || (last.month ? (formatMonth ? formatMonth(last.month) : last.month) : 'तिथि उपलब्ध नहीं');
   const labels = new Set([0, chartData.length - 1]);
   // At most four well-spaced labels, including both ends of the selected records.
@@ -103,6 +105,7 @@ export default function MiniChart({ data = [], dailyData = [], title = "भा�
           </span>}
         </div>
         {change !== null && <p className="text-xs mt-1" style={{ color: COLORS.muted }}>पिछले उपलब्ध रिकॉर्ड से बदलाव</p>}
+        {comparison.status === 'gap' && <p className="text-xs mt-1" style={{ color: COLORS.muted }}>{gapNote(comparison)}।</p>}
         {positiveNumber(last.msp) && <p className="text-xs mt-2" style={{ color: COLORS.muted }}>
           दर्ज MSP: ₹{Number(last.msp).toLocaleString('en-IN')}
           <span className="ml-2" style={{ color: Number(last.market) < Number(last.msp) ? '#A54235' : COLORS.forest }}>
