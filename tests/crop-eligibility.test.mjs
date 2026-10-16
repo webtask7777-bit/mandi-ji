@@ -14,7 +14,7 @@ import arbitrageRouter from '../server/routes/arbitrage.js';
 const rawCrops = JSON.parse(readFileSync(new URL('../server/db/data/india/crops.json', import.meta.url), 'utf8'));
 
 test('exact known non-crop IDs are excluded without excluding cowpea or lookalikes', () => {
-  assert.equal(NON_CROP_COMMODITY_IDS.length, 13);
+  assert.equal(NON_CROP_COMMODITY_IDS.length, 14);
   for (const id of NON_CROP_COMMODITY_IDS) {
     assert.ok(rawCrops.some(crop => crop.id === id), `${id} is an exact source ID`);
     assert.equal(isCropPriceCommodity(id), false);

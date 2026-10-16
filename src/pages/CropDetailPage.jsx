@@ -106,7 +106,7 @@ export default function CropDetailPage() {
                   <span>{priorLabel} के रिकॉर्ड से</span>
                 </div> : <p className="sb-detail-small">{comparison.status === 'gap' ? `${gapNote(comparison)}।` : 'बदलाव दिखाने के लिए पिछला रिकॉर्ड उपलब्ध नहीं है।'}</p>}
                 <div className={`sb-detail-freshness ${latestDay && freshness.isCurrent ? 'is-current' : ''}`}><Clock3 size={15} aria-hidden="true" /><span>{latestDay ? freshness.label : 'मासिक रिकॉर्ड · दैनिक भाव नहीं'}</span></div>
-                {updatedLabel && <p className="sb-detail-sync">डेटा अपडेट: {updatedLabel}</p>}
+                {updatedLabel && <p className="sb-detail-sync">स्रोत से डेटा लिया गया: {updatedLabel} · भाव की तारीख ऊपर देखें</p>}
               </> : <div className="sb-detail-no-price"><strong>इस क्षेत्र के भाव उपलब्ध नहीं हैं</strong><p>दूसरे क्षेत्र के रिकॉर्ड मुख्य मंडी भाव पृष्ठ पर देखें।</p><Link to={dashboardPath}>क्षेत्र बदलें <ArrowRight size={16} aria-hidden="true" /></Link></div>}
               {heroPrice !== null && <button type="button" className="sb-detail-primary" onClick={() => openDeliveryCalculator({ cropId, cropName, buyPrice: heroPrice, quoteDate: heroRecord?.date, priceBasis: 'historical' })}><Calculator size={18} aria-hidden="true" />माल मँगाने का पूरा खर्च देखें<ArrowRight size={16} aria-hidden="true" /></button>}
               <Link to={`/listing/new?type=sell&crop=${encodeURIComponent(cropId)}`} className={heroPrice !== null ? 'sb-detail-text-link' : 'sb-detail-primary'}><ShoppingCart size={18} aria-hidden="true" />यह फसल बेचें<ArrowRight size={16} aria-hidden="true" /></Link>
@@ -123,9 +123,9 @@ export default function CropDetailPage() {
           <section className="sb-detail-section"><span className="sb-detail-kicker">एक नज़र में</span><h2>फसल की जानकारी</h2><dl className="sb-detail-facts">
             {Number.isFinite(Number(cropTicker?.mandiCount)) && cropTicker?.mandiCount != null && <div><dt>संग्रह में मंडियाँ</dt><dd>{Number(cropTicker.mandiCount).toLocaleString('en-IN')}</dd></div>}
             {Number.isFinite(Number(cropTicker?.records)) && cropTicker?.records != null && <div><dt>कुल रिकॉर्ड</dt><dd>{Number(cropTicker.records).toLocaleString('en-IN')}</dd></div>}
-            {msp !== null && <div><dt>संग्रह में दिया MSP</dt><dd>₹{money(msp)}<small> / क्विंटल</small></dd></div>}
+            {msp !== null && <div><dt>{crop.mspSeason ? `MSP ${crop.mspSeason}` : 'संग्रह में दिया MSP'}</dt><dd>₹{money(msp)}<small> / क्विंटल</small></dd></div>}
             <div><dt>भाव की इकाई</dt><dd>₹ / क्विंटल</dd></div>
-          </dl>{msp !== null && <p className="sb-detail-small">MSP का फसल वर्ष इस रिकॉर्ड में नहीं दिया गया है। वर्तमान फसल वर्ष का MSP अलग से जाँचें।</p>}<Link to="/blog" className="sb-detail-text-link">मंडी भाव समझने के लिए पढ़ें <ArrowRight size={16} aria-hidden="true" /></Link></section>
+          </dl>{msp !== null && <p className="sb-detail-small">{crop.mspSource ? <>MSP FAQ (औसत अच्छी) गुणवत्ता के लिए है; सरकारी खरीद की पात्रता और केंद्र अलग से जाँचें। <a href={crop.mspSource} target="_blank" rel="noopener noreferrer">स्रोत: PIB</a></> : 'MSP का फसल वर्ष इस रिकॉर्ड में नहीं दिया गया है। वर्तमान फसल वर्ष का MSP अलग से जाँचें।'}</p>}<Link to="/blog" className="sb-detail-text-link">मंडी भाव समझने के लिए पढ़ें <ArrowRight size={16} aria-hidden="true" /></Link></section>
         </div>}
         <footer className="sb-detail-footer"><Brand compact /><p>सही भाव। समझकर फ़ैसला।</p><Link to={dashboardPath}>मुख्य पृष्ठ पर जाएँ <ArrowRight size={15} aria-hidden="true" /></Link></footer>
       </main>
