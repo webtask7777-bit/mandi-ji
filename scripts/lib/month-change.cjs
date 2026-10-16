@@ -10,20 +10,25 @@
 const { bucketPrice } = require('./robust-price.cjs');
 
 const MIN_DAYS = 3;
+// A change between months each reported by one or two mandis is a change of markets, not
+// of price (lemon +165% from one mandi); it needs at least this many mandis on both sides.
+const MIN_MANDIS = 3;
 
-function monthChange(months, { minDays = MIN_DAYS } = {}) {
+function monthChange(months, { minDays = MIN_DAYS, minMandis = MIN_MANDIS } = {}) {
   const latest = months.at(-1);
   const prev = months.at(-2);
   const price = bucketPrice(latest?.[1]);
   const prevPrice = bucketPrice(prev?.[1]);
   const daysOf = bucket => (bucket?.days instanceof Set ? bucket.days.size : Infinity);
+  const mandisOf = bucket => (bucket?.byMandi ? Object.keys(bucket.byMandi).length : Infinity);
   const meta = {
     month: latest?.[0] || null,
     days: latest?.[1]?.days instanceof Set ? latest[1].days.size : null,
     mandis: latest?.[1]?.byMandi ? Object.keys(latest[1].byMandi).length : null,
   };
   if (!latest || !prev || !(price > 0) || !(prevPrice > 0) || !consecutive(prev[0], latest[0])
-    || daysOf(latest[1]) < minDays || daysOf(prev[1]) < minDays) {
+    || daysOf(latest[1]) < minDays || daysOf(prev[1]) < minDays
+    || mandisOf(latest[1]) < minMandis || mandisOf(prev[1]) < minMandis) {
     return { price, prevPrice: null, change: null, changePct: null, ...meta };
   }
   const change = price - prevPrice;
@@ -44,4 +49,4 @@ function changeSignal(changePct) {
   return null;
 }
 
-module.exports = { monthChange, consecutive, changeSignal, MIN_DAYS };
+module.exports = { monthChange, consecutive, changeSignal, MIN_DAYS, MIN_MANDIS };

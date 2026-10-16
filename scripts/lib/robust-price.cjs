@@ -99,12 +99,19 @@ function priceSanity(records, commodityKey, factor = 20) {
   const typical = new Map([...byCommodity].filter(([, list]) => list.length >= 20).map(([c, list]) => [c, median(list)]));
   return {
     keep(r) {
+      // A modal price far outside the record's own valid min–max range (modal 42500, range
+      // 3800–4500) is itself the typing error; the record is not used.
+      if (r.min_price > 0 && r.max_price >= r.min_price && (r.modal_price > r.max_price * 1.5 || r.modal_price < r.min_price / 1.5)) return false;
       const t = typical.get(commodityKey(r));
       return !t || (r.modal_price >= t / factor && r.modal_price <= t * factor);
     },
     clip(r) {
       if (r.max_price > r.modal_price * factor) r.max_price = 0;
       if (r.min_price > 0 && r.min_price < r.modal_price / factor) r.min_price = 0;
+      // A range that does not contain the modal price (min 5000 > modal 4500, max 4500 <
+      // modal 42500) is a typing error in one of the fields; that bound is not used.
+      if (r.min_price > r.modal_price) r.min_price = 0;
+      if (r.max_price > 0 && r.max_price < r.modal_price) r.max_price = 0;
       return r;
     },
   };
