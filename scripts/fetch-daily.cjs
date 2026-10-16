@@ -58,7 +58,7 @@ function parseArgs() {
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 const snapshotOf = (page) => page.updated_date || String(page.updated || 'unknown');
 
-async function fetchPage(offset, state, retries = 6) {
+async function fetchPage(offset, state, retries = 10) {
   const params = new URLSearchParams({ 'api-key': API_KEY, format: 'json', limit: String(REQUEST_LIMIT), offset: String(offset) });
   if (state) params.set('filters[state.keyword]', state);
   let lastError = null;
@@ -76,7 +76,7 @@ async function fetchPage(offset, state, retries = 6) {
     } catch (e) {
       if (e.fatal) throw e;
       lastError = e;
-      await sleep(Math.min(60000, 2000 * 2 ** (attempt - 1)));
+      await sleep(Math.min(180000, 3000 * 2 ** (attempt - 1))); // 429s clear within a few minutes
     }
   }
   throw new Error(`${state || 'all'} offset ${offset}: ${lastError?.message || 'failed'} after ${retries} attempts`);
@@ -159,10 +159,13 @@ async function main() {
   }
 
   const cache = loadCache(datasetTotal);
+  const failedStates = [];
   const states = [...new Set([...KNOWN_STATES, ...statesFromRecentDays()])].filter(Boolean).sort();
   for (const state of states) {
     if (cache.states[state]) continue;
-    const slice = await fetchState(state, opts);
+    let slice;
+    try { slice = await fetchState(state, opts); }
+    catch (e) { failedStates.push(state); console.log(`  ${state}: ${e.message}; will retry on the next run`); continue; }
     cache.states[state] = slice;
     writeAtomic(CACHE_FILE, cache);
     if (slice.total) console.log(`  ${state}: ${slice.total} records`);
@@ -174,6 +177,7 @@ async function main() {
   if (Object.keys(rejected).length) console.log('Rejected rows:', rejected);
   if (covered < datasetTotal) console.log(`  ${datasetTotal - covered} records belong to a state name not in the list; add it to KNOWN_STATES.`);
 
+  if (failedStates.length) console.log(`Failed states: ${failedStates.join(', ')}`);
   if (unique.size < datasetTotal * opts.minComplete) {
     console.error(`Incomplete: below ${(opts.minComplete * 100).toFixed(0)}% of the dataset. Nothing written; finished states are kept for the next run.`);
     process.exit(1);
