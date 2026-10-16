@@ -370,6 +370,72 @@ function main() {
 
   if (Object.keys(droppedStates).length) console.warn('⚠️  Records with an unknown state name were skipped (add an alias):', droppedStates);
 
+  // District reorganisations (e.g. Chhattisgarh 2020-22: Sarangarh moved from Raigarh to
+  // Sarangarh-Bilaigarh) and renames (Ahmednagar → Ahilyanagar) would split one mandi in two.
+  // Within a state, a market name's districts are unified only when one label replaced the
+  // other over time (their date ranges do not overlap); same-name markets reporting in the
+  // same period under different districts (Puthur VFPCK, Kollam and Thrissur) stay separate.
+  const spans = new Map();
+  for (const rec of allRecords) {
+    const key = `${rec.state}|${cleanMandiName(rec.market || '')}`;
+    const date = parseDateFull(rec.arrival_date) || '';
+    if (!date) continue;
+    if (!spans.has(key)) spans.set(key, new Map());
+    const byDistrict = spans.get(key);
+    const span = byDistrict.get(rec.district) || { first: date, last: date };
+    if (date < span.first) span.first = date;
+    if (date > span.last) span.last = date;
+    byDistrict.set(rec.district, span);
+  }
+  const canonicalDistrict = new Map();
+  const reassigned = [];
+  for (const [key, byDistrict] of spans) {
+    if (byDistrict.size < 2) continue;
+    const ordered = [...byDistrict.entries()].sort((a, b) => a[1].first.localeCompare(b[1].first));
+    const sequential = ordered.every(([, span], k) => k === 0 || span.first > ordered[k - 1][1].last);
+    if (!sequential) continue;
+    const newest = ordered.at(-1)[0];
+    for (const [district] of ordered) canonicalDistrict.set(`${key}|${district}`, newest);
+    reassigned.push(`${key} → ${newest} (${ordered.map(([d]) => d).join(' → ')})`);
+  }
+  for (const rec of allRecords) {
+    const target = canonicalDistrict.get(`${rec.state}|${cleanMandiName(rec.market || '')}|${rec.district}`);
+    if (target) rec.district = target;
+  }
+  // Chhattisgarh's 2020-22 districts, as the state now names them. The two sources label these
+  // mandis with old and new districts in the same period, so the time rule above cannot decide.
+  const CURRENT_DISTRICT = {
+    Chhattisgarh: {
+      Pendraroad: 'Gourela Pendra Marwahi', Manendragarh: 'Manendragarh Chirmiri Bhartpur', Baikunthpur: 'Koriya',
+      Kheragarh: 'Khairagarh Chhuikhadan Gandai', Gandai: 'Khairagarh Chhuikhadan Gandai',
+      Sarangarh: 'Sarangarh Bilaigarh', Baramkela: 'Sarangarh Bilaigarh', Bhatgaon: 'Sarangarh Bilaigarh',
+      Shakti: 'Sakti', Jaijaipur: 'Sakti', Amandulla: 'Sakti', Bandhabazar: 'Mohla Manpur Ambagarh Chowki',
+    },
+  };
+  for (const rec of allRecords) {
+    const district = CURRENT_DISTRICT[rec.state]?.[cleanMandiName(rec.market || '')];
+    if (district) rec.district = district;
+  }
+  if (reassigned.length) console.log(`District unified for ${reassigned.length} mandis:\n  ${reassigned.join('\n  ')}`);
+
+  // ─── National coverage ───────────────────────────────────────────────
+  // National figures use only days on which at least MIN_NATIONAL_STATES states reported.
+  // Earlier days hold a single state's history (Chhattisgarh, Mar–Nov 2025); they stay on that
+  // state's pages and are never presented as an all-India price.
+  const MIN_NATIONAL_STATES = 5;
+  const statesByDay = new Map();
+  for (const [sid, sd] of Object.entries(byState)) {
+    for (const rec of sd.records) {
+      const d = parseDateFull(rec.arrival_date);
+      if (!d) continue;
+      if (!statesByDay.has(d)) statesByDay.set(d, new Set());
+      statesByDay.get(d).add(sid);
+    }
+  }
+  const nationalDays = new Set([...statesByDay].filter(([, set]) => set.size >= MIN_NATIONAL_STATES).map(([d]) => d));
+  const isNational = rec => nationalDays.has(parseDateFull(rec.arrival_date));
+  console.log(`National days: ${nationalDays.size} of ${statesByDay.size} (≥${MIN_NATIONAL_STATES} states reporting)`);
+
   // ─── All-India aggregation ───────────────────────────────────────────
   const statesList = [];
   const allCrops = {};
@@ -439,13 +505,14 @@ function main() {
       }
       allCrops[cropSlug].records++;
       if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) { allCrops[cropSlug].totalModal += rec.modal_price; allCrops[cropSlug].priceCount++; }
-      const m2 = parseDate(rec.arrival_date);
+      const national = isNational(rec);
+      const m2 = national ? parseDate(rec.arrival_date) : null;
       if (m2) {
         if (!allCrops[cropSlug].byMonth[m2]) allCrops[cropSlug].byMonth[m2] = newBucket();
         if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(allCrops[cropSlug].byMonth[m2], mandiKeyOf(rec), rec.modal_price, parseDateFull(rec.arrival_date));
         allCrops[cropSlug].byMonth[m2].count++;
       }
-      const fullDate2 = parseDateFull(rec.arrival_date);
+      const fullDate2 = national ? parseDateFull(rec.arrival_date) : null;
       if (fullDate2) {
         if (!allCrops[cropSlug].byDay[fullDate2]) allCrops[cropSlug].byDay[fullDate2] = { ...newBucket(), minPrices: [], maxPrices: [] };
         if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(allCrops[cropSlug].byDay[fullDate2], mandiKeyOf(rec), rec.modal_price, fullDate2);
@@ -455,7 +522,7 @@ function main() {
       }
 
       // Track All-India district breakdown per crop
-      if (rec.district) {
+      if (national && rec.district) {
         if (!allCropDistricts[cropSlug]) allCropDistricts[cropSlug] = {};
         const distKey = `${rec.district} (${meta.nameHi})`;
         if (!allCropDistricts[cropSlug][distKey]) allCropDistricts[cropSlug][distKey] = { prices: [], count: 0 };
@@ -652,6 +719,7 @@ function main() {
 
   const allCropMandis = {};
   for (const rec of allRecords) {
+    if (!isNational(rec)) continue;
     const cropSlug = slugify(rec.commodity);
     const mandiName = cleanMandiName(rec.market);
     const stateInfo = STATES[rec.state];
@@ -770,8 +838,8 @@ function main() {
       if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) { stateCrops[slug].totalModal += rec.modal_price; stateCrops[slug].priceCount++; }
       const m = parseDate(rec.arrival_date);
       if (m) {
-        if (!stateCrops[slug].byMonth[m]) stateCrops[slug].byMonth[m] = { prices: [], count: 0 };
-        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) stateCrops[slug].byMonth[m].prices.push(rec.modal_price);
+        if (!stateCrops[slug].byMonth[m]) stateCrops[slug].byMonth[m] = newBucket();
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(stateCrops[slug].byMonth[m], mandiKeyOf(rec), rec.modal_price, parseDateFull(rec.arrival_date));
         stateCrops[slug].byMonth[m].count++;
       }
     }

@@ -34,3 +34,15 @@ test('small commodities are not judged', () => {
   const rows = [{ commodity: 'x', market: 'a', modal_price: 1000 }, { commodity: 'x', market: 'b', modal_price: 5 }];
   assert.equal(unitMismatchedSeries(rows, { seriesKey: r => r.market, commodityKey: r => r.commodity }).size, 0);
 });
+
+test('every built ticker (all-India and each state) carries the robust price basis', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const root = new URL('../server/db/data/india/', import.meta.url).pathname;
+  const files = [path.join(root, 'ticker.json'), ...fs.readdirSync(path.join(root, 'states')).map(s => path.join(root, 'states', s, 'ticker.json')).filter(f => fs.existsSync(f))];
+  for (const file of files) {
+    for (const row of JSON.parse(fs.readFileSync(file, 'utf8'))) {
+      if (row.price > 0) assert.ok(Number.isInteger(row.priceDays) && row.priceDays > 0, `${file}: ${row.id} has priceDays`);
+    }
+  }
+});
