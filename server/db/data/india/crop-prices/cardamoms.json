@@ -42,8 +42,8 @@
       "month": "04",
       "date": "2026-04",
       "market": 260000,
-      "volume": 1,
-      "days": 1,
+      "volume": 3,
+      "days": 3,
       "mandis": 1
     }
   ],
@@ -511,20 +511,36 @@
       "mandis": 1,
       "minPrice": 140000,
       "maxPrice": 380000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 260000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 140000,
+      "maxPrice": 380000
+    },
+    {
+      "date": "2026-04-10",
+      "market": 260000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 140000,
+      "maxPrice": 380000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
+      "district": "Mumbai (महाराष्ट्र)",
+      "nameHi": "Mumbai (महाराष्ट्र)",
+      "avgPrice": 193564,
+      "records": 47
+    },
+    {
       "district": "Idukki (केरल)",
       "nameHi": "Idukki (केरल)",
       "avgPrice": 221704,
-      "records": 45
-    },
-    {
-      "district": "Mumbai (महाराष्ट्र)",
-      "nameHi": "Mumbai (महाराष्ट्र)",
-      "avgPrice": 190611,
       "records": 45
     }
   ]

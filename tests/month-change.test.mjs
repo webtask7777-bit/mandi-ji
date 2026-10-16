@@ -33,9 +33,16 @@ test('single month and empty buckets are safe', () => {
 });
 
 test('a month with fewer than three reporting days is not compared', () => {
-  const withDays = (price, n) => ({ prices: [price], byMandi: { m: [price] }, days: new Set(Array.from({ length: n }, (_, i) => `d${i}`)) });
+  const withDays = (price, n) => ({ prices: [price], byMandi: { a: [price], b: [price], c: [price] }, days: new Set(Array.from({ length: n }, (_, i) => `d${i}`)) });
   const r = monthChange([['2026-09', withDays(1000, 20)], ['2026-10', withDays(1500, 1)]]);
   assert.equal(r.change, null);
   assert.equal(r.days, 1);
   assert.equal(monthChange([['2026-09', withDays(1000, 20)], ['2026-10', withDays(1100, 3)]]).changePct, 10);
+});
+
+test('a month reported by fewer than three mandis is not compared', () => {
+  const bucket = (price, mandis) => ({ prices: [price], byMandi: Object.fromEntries(Array.from({ length: mandis }, (_, i) => [`m${i}`, [price]])), days: new Set(['d1', 'd2', 'd3', 'd4']) });
+  assert.equal(monthChange([['2026-09', bucket(1000, 40)], ['2026-10', bucket(2650, 1)]]).change, null);
+  assert.equal(monthChange([['2026-09', bucket(1000, 2)], ['2026-10', bucket(1100, 40)]]).change, null);
+  assert.equal(monthChange([['2026-09', bucket(1000, 3)], ['2026-10', bucket(1100, 3)]]).changePct, 10);
 });

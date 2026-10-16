@@ -21,7 +21,6 @@ const sourceIds = new Set(walk(dataRoot)
 
 const reportedMovers = {
   marget: 'flower-category',
-  'tube-rosedouble': 'tuberose-double',
   peach: 'peach',
   giloy: 'giloy',
   'methi-seeds': 'fenugreek-seed',
@@ -43,7 +42,7 @@ const reportedMovers = {
   ajwan: 'ajwain',
 };
 
-test('all 21 reported monthly movers resolve to their exact commodity or labelled category artwork', () => {
+test('all 20 reported monthly movers resolve to their exact commodity or labelled category artwork', () => {
   const ticker = JSON.parse(readFileSync(new URL('../server/db/data/india/ticker.json', import.meta.url), 'utf8'));
   for (const [id, asset] of Object.entries(reportedMovers)) {
     assert.ok(ticker.some(crop => crop.id === id), `Source commodity ${id} exists`);
@@ -52,7 +51,7 @@ test('all 21 reported monthly movers resolve to their exact commodity or labelle
 });
 
 test('all source catalogs, tickers and price details have one explicit category and a usable image', () => {
-  assert.ok(sourceIds.size >= 392, 'Includes national, CG and state-only detail commodities');
+  assert.ok(sourceIds.size >= 360, 'Includes national, CG and state-only detail commodities');
   const classifiedIds = Object.values(CROP_IMAGE_CATEGORY_IDS).flat();
   assert.equal(new Set(classifiedIds).size, classifiedIds.length, 'No duplicate category assignments');
   for (const id of new Set([...sourceIds, ...Object.keys(CROP_IMAGES)])) {

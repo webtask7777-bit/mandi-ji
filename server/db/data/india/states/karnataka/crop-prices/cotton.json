@@ -15,8 +15,7 @@
       "market": 7441,
       "volume": 101,
       "days": 20,
-      "mandis": 13,
-      "msp": 8267
+      "mandis": 13
     },
     {
       "month": "01",
@@ -24,8 +23,7 @@
       "market": 7635,
       "volume": 162,
       "days": 31,
-      "mandis": 18,
-      "msp": 8267
+      "mandis": 18
     },
     {
       "month": "02",
@@ -33,8 +31,7 @@
       "market": 7550,
       "volume": 113,
       "days": 27,
-      "mandis": 17,
-      "msp": 8267
+      "mandis": 17
     },
     {
       "month": "03",
@@ -42,8 +39,7 @@
       "market": 7543,
       "volume": 64,
       "days": 13,
-      "mandis": 17,
-      "msp": 8267
+      "mandis": 17
     },
     {
       "month": "04",
@@ -51,26 +47,7 @@
       "market": 7617,
       "volume": 8,
       "days": 3,
-      "mandis": 8,
-      "msp": 8267
-    },
-    {
-      "month": "05",
-      "date": "2026-05",
-      "market": 7865,
-      "volume": 2,
-      "days": 1,
-      "mandis": 2,
-      "msp": 8267
-    },
-    {
-      "month": "06",
-      "date": "2026-06",
-      "market": 8625,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1,
-      "msp": 8267
+      "mandis": 8
     },
     {
       "month": "07",
@@ -78,8 +55,7 @@
       "market": 8650,
       "volume": 86,
       "days": 18,
-      "mandis": 15,
-      "msp": 8267
+      "mandis": 15
     },
     {
       "month": "10",
@@ -1016,28 +992,28 @@
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
+      "district": "Vijayapura",
+      "nameHi": "Vijayapura",
+      "avgPrice": 7962,
+      "records": 94
+    },
+    {
       "district": "Raichur",
       "nameHi": "Raichur",
       "avgPrice": 7864,
       "records": 90
     },
     {
-      "district": "Yadgiri",
-      "nameHi": "Yadgiri",
+      "district": "Yadgir",
+      "nameHi": "Yadgir",
       "avgPrice": 7435,
       "records": 80
     },
     {
-      "district": "Bijapur",
-      "nameHi": "Bijapur",
-      "avgPrice": 7811,
+      "district": "Kalaburagi",
+      "nameHi": "Kalaburagi",
+      "avgPrice": 7257,
       "records": 66
-    },
-    {
-      "district": "Kalburgi",
-      "nameHi": "Kalburgi",
-      "avgPrice": 7201,
-      "records": 64
     },
     {
       "district": "Belagavi",
@@ -1062,12 +1038,6 @@
       "nameHi": "Chitradurga",
       "avgPrice": 7610,
       "records": 30
-    },
-    {
-      "district": "Vijayapura",
-      "nameHi": "Vijayapura",
-      "avgPrice": 8319,
-      "records": 28
     },
     {
       "district": "Koppal",
@@ -1104,6 +1074,12 @@
       "nameHi": "Shivamogga",
       "avgPrice": 8850,
       "records": 2
+    },
+    {
+      "district": "Bellary",
+      "nameHi": "Bellary",
+      "avgPrice": 7872,
+      "records": 1
     }
   ]
 }

@@ -4,13 +4,13 @@
   "purpose": "Editorial discovery taxonomy audit of every distinct source commodity ID. This is not a botanical certification, a price merge, or an instruction to publish a page for every topic.",
   "sourceScope": "All crops.json and ticker.json plus crop-prices/*.json crop headers recursively under server/db/data (India, CG and individual states).",
   "sourceFileCount": 2708,
-  "commodityCount": 392,
-  "topicCount": 169,
+  "commodityCount": 370,
+  "topicCount": 165,
   "statusCounts": {
-    "curated-crop-topic": 288,
-    "non-crop": 17,
+    "curated-crop-topic": 271,
+    "non-crop": 15,
     "mixed-or-unspecified": 25,
-    "identity-review": 62
+    "identity-review": 59
   },
   "policy": [
     "Only exact normalized IDs are resolved; no substring, fuzzy, translated-name or botanical guessing.",
@@ -132,16 +132,6 @@
       "sourceExample": "server/db/data/india/crop-prices/amranthas-red.json",
       "status": "curated-crop-topic",
       "topicId": "leaf-amaranth",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "anthorium",
-      "sourceNames": [
-        "Anthorium"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/anthorium.json",
-      "status": "curated-crop-topic",
-      "topicId": "anthurium",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
@@ -495,16 +485,6 @@
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
-      "commodityId": "betelnuts",
-      "sourceNames": [
-        "Betelnuts"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/betelnuts.json",
-      "status": "curated-crop-topic",
-      "topicId": "arecanut",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
       "commodityId": "bhindiladies-finger",
       "sourceNames": [
         "Bhindi(Ladies Finger)"
@@ -583,16 +563,6 @@
       "status": "curated-crop-topic",
       "topicId": "black-pepper",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "bop",
-      "sourceNames": [
-        "BOP"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/bop.json",
-      "status": "identity-review",
-      "topicId": null,
-      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
     },
     {
       "commodityId": "bottle-gourd",
@@ -725,16 +695,6 @@
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
-      "commodityId": "cardamom",
-      "sourceNames": [
-        "Cardamom"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/cardamom.json",
-      "status": "curated-crop-topic",
-      "topicId": "cardamom",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
       "commodityId": "cardamoms",
       "sourceNames": [
         "Cardamoms"
@@ -742,16 +702,6 @@
       "sourceExample": "server/db/data/india/crop-prices/cardamoms.json",
       "status": "curated-crop-topic",
       "topicId": "cardamom",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "carnation",
-      "sourceNames": [
-        "Carnation"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/carnation.json",
-      "status": "curated-crop-topic",
-      "topicId": "carnation",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
@@ -912,16 +862,6 @@
       "sourceExample": "server/db/data/india/crop-prices/chow-chow.json",
       "status": "curated-crop-topic",
       "topicId": "chayote",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "chrysanthemum",
-      "sourceNames": [
-        "Chrysanthemum"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/chrysanthemum.json",
-      "status": "curated-crop-topic",
-      "topicId": "chrysanthemum",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
@@ -1838,16 +1778,6 @@
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
-      "commodityId": "jackfruit-seed",
-      "sourceNames": [
-        "Jackfruit Seed"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/jackfruit-seed.json",
-      "status": "curated-crop-topic",
-      "topicId": "jackfruit",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
       "commodityId": "jackfruitgreen-raw-unripe",
       "sourceNames": [
         "Jackfruit(Green/Raw/Unripe)"
@@ -1886,16 +1816,6 @@
       "status": "curated-crop-topic",
       "topicId": "jamun",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "jarbara",
-      "sourceNames": [
-        "Jarbara"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/jarbara.json",
-      "status": "identity-review",
-      "topicId": null,
-      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
     },
     {
       "commodityId": "jasmine",
@@ -2111,16 +2031,6 @@
       "reason": "Regional label can refer to millet or medicinal material; source identity must be established."
     },
     {
-      "commodityId": "ladies-finger",
-      "sourceNames": [
-        "Ladies Finger"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/ladies-finger.json",
-      "status": "curated-crop-topic",
-      "topicId": "okra",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
       "commodityId": "ladyfinger",
       "sourceNames": [
         "Lady Finger"
@@ -2238,16 +2148,6 @@
       "sourceExample": "server/db/data/india/crop-prices/long-melonkakri.json",
       "status": "curated-crop-topic",
       "topicId": "kakri",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "lotus",
-      "sourceNames": [
-        "Lotus"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/lotus.json",
-      "status": "curated-crop-topic",
-      "topicId": "lotus",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
@@ -2639,16 +2539,6 @@
       "sourceExample": "server/db/data/crop-prices/orange.json",
       "status": "curated-crop-topic",
       "topicId": "orange",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "orchid",
-      "sourceNames": [
-        "Orchid"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/orchid.json",
-      "status": "curated-crop-topic",
-      "topicId": "orchid",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
@@ -3062,26 +2952,6 @@
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
-      "commodityId": "ramphal",
-      "sourceNames": [
-        "Ramphal"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/ramphal.json",
-      "status": "curated-crop-topic",
-      "topicId": "ramphal",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "rat-tail-radishmogari",
-      "sourceNames": [
-        "Rat Tail Radish(Mogari)"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/rat-tail-radishmogari.json",
-      "status": "curated-crop-topic",
-      "topicId": "radish",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
       "commodityId": "raya",
       "sourceNames": [
         "Raya"
@@ -3092,41 +2962,11 @@
       "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
     },
     {
-      "commodityId": "rayee",
-      "sourceNames": [
-        "Rayee"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/rayee.json",
-      "status": "identity-review",
-      "topicId": null,
-      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
-    },
-    {
       "commodityId": "red-gram",
       "sourceNames": [
         "Red Gram"
       ],
       "sourceExample": "server/db/data/india/crop-prices/red-gram.json",
-      "status": "curated-crop-topic",
-      "topicId": "arhar",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "red-gram-arhar-turwhole",
-      "sourceNames": [
-        "Red gram/Arhar/Tur(whole)"
-      ],
-      "sourceExample": "server/db/data/india/states/andhra-pradesh/crop-prices/red-gram-arhar-turwhole.json",
-      "status": "curated-crop-topic",
-      "topicId": "arhar",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "red-gram-split-arhar-dal-tur-dal",
-      "sourceNames": [
-        "Red gram split/Arhar dal/Tur dal"
-      ],
-      "sourceExample": "server/db/data/india/states/assam/crop-prices/red-gram-split-arhar-dal-tur-dal.json",
       "status": "curated-crop-topic",
       "topicId": "arhar",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
@@ -3332,26 +3172,6 @@
       "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
     },
     {
-      "commodityId": "she-goat",
-      "sourceNames": [
-        "She Goat"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/she-goat.json",
-      "status": "non-crop",
-      "topicId": null,
-      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
-    },
-    {
-      "commodityId": "sheep",
-      "sourceNames": [
-        "Sheep"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/sheep.json",
-      "status": "non-crop",
-      "topicId": null,
-      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
-    },
-    {
       "commodityId": "snakeguard",
       "sourceNames": [
         "Snakeguard"
@@ -3432,16 +3252,6 @@
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
-      "commodityId": "spiny-gourd-kartalikantola",
-      "sourceNames": [
-        "Spiny Gourd / Kartali(Kantola)"
-      ],
-      "sourceExample": "server/db/data/india/states/assam/crop-prices/spiny-gourd-kartalikantola.json",
-      "status": "curated-crop-topic",
-      "topicId": "spiny-gourd",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
       "commodityId": "sponge-gourd",
       "sourceNames": [
         "Sponge gourd"
@@ -3507,16 +3317,6 @@
         "Sunflower"
       ],
       "sourceExample": "server/db/data/crop-prices/sunflower.json",
-      "status": "curated-crop-topic",
-      "topicId": "sunflower",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "sunflower-seed",
-      "sourceNames": [
-        "Sunflower Seed"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/sunflower-seed.json",
       "status": "curated-crop-topic",
       "topicId": "sunflower",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
@@ -3765,31 +3565,11 @@
       "reason": "Broad flower label is not proof that the commodity is tuberose."
     },
     {
-      "commodityId": "tube-rosedouble",
-      "sourceNames": [
-        "Tube Rose(Double)"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/tube-rosedouble.json",
-      "status": "curated-crop-topic",
-      "topicId": "tuberose",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
       "commodityId": "tube-roseloose",
       "sourceNames": [
         "Tube Rose(Loose)"
       ],
       "sourceExample": "server/db/data/india/crop-prices/tube-roseloose.json",
-      "status": "curated-crop-topic",
-      "topicId": "tuberose",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "tube-rosesingle",
-      "sourceNames": [
-        "Tube Rose(Single)"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/tube-rosesingle.json",
       "status": "curated-crop-topic",
       "topicId": "tuberose",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."

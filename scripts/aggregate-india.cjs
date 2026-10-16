@@ -88,6 +88,31 @@ const COMMODITY_ALIASES = {
   'Red gram/Arhar/Tur(whole)': 'Arhar(Tur/Red Gram)(Whole)',
   'Red gram split/Arhar dal/Tur dal': 'Arhar Dal(Tur Dal)',
   'Spiny Gourd / Kartali(Kantola)': 'Kartali(Kantola)',
+  'Cardamom': 'Cardamoms',
+  'Ladies Finger': 'Bhindi(Ladies Finger)',
+  'Sunflower Seed': 'Sunflower/Sunflower Seed',
+};
+
+// Commodities the source reports per piece, bunch or nut (betelnut ₹4, lotus ₹8, flowers
+// ₹20–₹250): a per-quintal page would be false, so they are not published.
+const NON_QUINTAL_COMMODITIES = new Set([
+  'Betelnuts', 'Lotus', 'Chrysanthemum', 'Jarbara', 'Anthorium', 'Tube Rose(Single)',
+  'Tube Rose(Double)', 'BOP', 'Carnation', 'Orchid',
+]);
+
+// The source spells some districts two ways (old and current names, transliterations).
+// One current official name per district, so a mandi and its district are not counted twice.
+const DISTRICT_ALIASES = {
+  Karnataka: {
+    Belgaum: 'Belagavi', Bijapur: 'Vijayapura', Chamrajnagar: 'Chamarajanagar', Chikmagalur: 'Chikkamagaluru',
+    Kalburgi: 'Kalaburagi', Gulbarga: 'Kalaburagi', Mysore: 'Mysuru', Tumkur: 'Tumakuru', Yadgiri: 'Yadgir',
+  },
+  Maharashtra: { Ahmednagar: 'Ahilyanagar', Jalana: 'Jalna', Sholapur: 'Solapur', Vashim: 'Washim' },
+  'Tamil Nadu': {
+    Chengalpet: 'Chengalpattu', Kallakuruchi: 'Kallakurichi', Sivagangai: 'Sivaganga', Thenkasi: 'Tenkasi',
+    Thiruvallur: 'Tiruvallur', Thiruvellore: 'Tiruvallur', Thiruvarur: 'Tiruvarur', Tuticorin: 'Thoothukudi',
+  },
+  Telangana: { Hanmakonda: 'Hanumakonda' },
 };
 
 // ─── Hindi Crop Name Mapping ───────────────────────────────────────────
@@ -141,8 +166,9 @@ const CROP_HINDI = {
 // Only the exact commodity form the release names (whole grain/seed). Basmati, dal, atta and
 // oil carry no MSP. Each value keeps its season and source so the site can say which it is.
 const MSP_SOURCES = {
-  'kharif-2026-27': { label: 'खरीफ 2026-27', url: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618' }, // 13 May 2026
-  'rabi-2026-27': { label: 'रबी 2026-27', url: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2173567' },   // 1 Oct 2025
+  // `from`: first month of that marketing season; earlier months were under an older MSP.
+  'kharif-2026-27': { label: 'खरीफ 2026-27', from: '2026-10', url: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618' }, // 13 May 2026
+  'rabi-2026-27': { label: 'रबी 2026-27', from: '2026-04', url: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2173567' },   // 1 Oct 2025
 };
 const CROP_MSP_TABLE = {
   // Kharif marketing season 2026-27
@@ -160,6 +186,11 @@ const CROP_MSP_TABLE = {
   'mustard': [6200, 'rabi-2026-27'], 'safflower': [6540, 'rabi-2026-27'],
 };
 const CROP_MSP = Object.fromEntries(Object.entries(CROP_MSP_TABLE).map(([id, [msp]]) => [id, msp]));
+/** MSP for a history month, only within the season the figure belongs to. */
+const mspForMonth = (id, month) => {
+  const row = CROP_MSP_TABLE[id];
+  return row && month >= MSP_SOURCES[row[1]].from ? row[0] : null;
+};
 const mspInfo = id => {
   const row = CROP_MSP_TABLE[id];
   if (!row) return {};
@@ -331,9 +362,14 @@ function main() {
   let rawCount = 0;
   for (const file of dailyFiles) {
     const data = JSON.parse(fs.readFileSync(path.join(DAILY_DIR, file), 'utf-8'));
-    for (const rec of data.records || []) { rawCount++; byKey.set(recordKey(rec), rec); }
+    for (const rec of data.records || []) {
+      rawCount++;
+      // Spellings first (Chattisgarh → Chhattisgarh), so one observation filed under both is kept once.
+      if (STATE_ALIASES[rec.state]) rec.state = STATE_ALIASES[rec.state];
+      byKey.set(recordKey(rec), rec);
+    }
   }
-  const dedupedRecords = [...byKey.values()];
+  const dedupedRecords = [...byKey.values()].filter(r => !NON_QUINTAL_COMMODITIES.has(COMMODITY_ALIASES[r.commodity] || r.commodity));
 
   // Leave out series reported in another unit (per bunch, per nut): they are not ₹/quintal.
   const seriesKey = r => `${r.commodity}|${r.state}|${r.district}|${r.market}`;
@@ -349,8 +385,15 @@ function main() {
   for (const r of allRecords) { const d = parseDateFull(r.arrival_date); if (d && d > newestObservation) newestObservation = d; }
   const recentCutoff = newestObservation ? new Date(Date.parse(`${newestObservation}T00:00:00Z`) - 7 * 86400000).toISOString().slice(0, 10) : '';
   console.log(`Newest observation ${newestObservation}; recent cutoff ${recentCutoff}`);
+  const heatmapFrom = newestObservation ? (() => { const [y, m] = newestObservation.slice(0, 7).split('-').map(Number); const i = y * 12 + m - 1 - 11; return `${Math.floor(i / 12)}-${String(i % 12 + 1).padStart(2, '0')}`; })() : '';
 
   console.log(`Total records: ${allRecords.length} (${rawCount - dedupedRecords.length} duplicates across files skipped)`);
+
+  // Every crop-price file is rewritten below; files left from commodities that are no longer
+  // published (renamed ids, unit-excluded items, livestock) must not keep being served.
+  fs.rmSync(path.join(INDIA_DIR, 'crop-prices'), { recursive: true, force: true });
+  const statesRoot = path.join(INDIA_DIR, 'states');
+  if (fs.existsSync(statesRoot)) for (const dir of fs.readdirSync(statesRoot)) fs.rmSync(path.join(statesRoot, dir, 'crop-prices'), { recursive: true, force: true });
 
   // ─── Group by state ──────────────────────────────────────────────────
   const byState = {};
@@ -378,6 +421,28 @@ function main() {
   // Within a state, a market name's districts are unified only when one label replaced the
   // other over time (their date ranges do not overlap); same-name markets reporting in the
   // same period under different districts (Puthur VFPCK, Kollam and Thrissur) stay separate.
+  // Current district names, then one spelling per mandi within a state ("APMC Azadpur" /
+  // "Azadpur APMC", "CHITTOOR APMC" / "Chittoor APMC"): the most reported spelling wins.
+  for (const rec of allRecords) {
+    const district = DISTRICT_ALIASES[rec.state]?.[rec.district];
+    if (district) rec.district = district;
+  }
+  const spellingKey = rec => `${rec.state}|${cleanMandiName(rec.market || '').toLowerCase().split(/[^a-z0-9]+/).filter(w => w && w !== 'apmc').sort().join(' ')}`;
+  const spellings = new Map();
+  for (const rec of allRecords) {
+    const key = spellingKey(rec);
+    if (!spellings.has(key)) spellings.set(key, new Map());
+    const counts = spellings.get(key);
+    counts.set(rec.market, (counts.get(rec.market) || 0) + 1);
+  }
+  const canonicalMarket = new Map([...spellings].map(([key, counts]) => [key, [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))[0][0]]));
+  let respelled = 0;
+  for (const rec of allRecords) {
+    const market = canonicalMarket.get(spellingKey(rec));
+    if (market && market !== rec.market) { rec.market = market; respelled++; }
+  }
+  console.log(`Mandi names: ${respelled} records moved to the most used spelling of the same mandi`);
+
   const spans = new Map();
   for (const rec of allRecords) {
     const key = `${rec.state}|${cleanMandiName(rec.market || '')}`;
@@ -595,7 +660,10 @@ function main() {
 
     writeJSON(path.join(stateDir, 'mandis.json'), mandisArr);
 
-    // State crop prices (with Hindi names, MSP)
+    // State crop prices (with Hindi names, MSP). A month or day reported by a small fraction
+    // of the state's usual mandis is left out of the series (the newest day is kept and shown
+    // with its mandi count), as for the national series.
+    for (const c of Object.values(crops)) { dropThinBuckets(c.byMonth, 0.2, { keepLatest: true }); dropThinBuckets(c.byDay, 0.2, { keepLatest: true }); }
     for (const [cropId, c] of Object.entries(crops)) {
       const msp = getCropMSP(cropId);
       const history = Object.entries(c.byMonth)
@@ -607,7 +675,7 @@ function main() {
           volume: data.count,
           days: data.days.size,
           mandis: Object.keys(data.byMandi).length,
-          ...(msp ? { msp } : {}),
+          ...(mspForMonth(cropId, month) ? { msp: mspForMonth(cropId, month) } : {}),
         }));
 
       const districtBreakdown = Object.entries(c.byDistrict)
@@ -647,7 +715,8 @@ function main() {
       const byMonthCount = {};
       for (const r of mRecords) {
         const month = parseDate(r.arrival_date);
-        if (month) byMonthCount[month] = (byMonthCount[month] || 0) + 1;
+        // Only the latest 12 months, so each calendar month comes from one year.
+        if (month && month >= heatmapFrom) byMonthCount[month] = (byMonthCount[month] || 0) + 1;
       }
       const vals = Array(12).fill(0).map((_, i) => {
         const key = Object.keys(byMonthCount).find(k => parseInt(k.split('-')[1]) === i + 1);
@@ -849,6 +918,7 @@ function main() {
         stateCrops[slug].byMonth[m].count++;
       }
     }
+    for (const c of Object.values(stateCrops)) dropThinBuckets(c.byMonth, 0.2, { keepLatest: true });
     const stTicker = [];
     for (const [cropId, c] of Object.entries(stateCrops)) {
       const months = Object.entries(c.byMonth).sort(([a], [b]) => a.localeCompare(b));
@@ -902,7 +972,7 @@ function main() {
         volume: data.count,
         days: data.days.size,
         mandis: Object.keys(data.byMandi).length,
-        ...(msp ? { msp } : {}),
+        ...(mspForMonth(cropId, month) ? { msp: mspForMonth(cropId, month) } : {}),
       }));
 
     // All-India district breakdown for this crop
@@ -957,7 +1027,7 @@ function main() {
     const byMonthCount = {};
     for (const r of mRecords) {
       const month = parseDate(r.arrival_date);
-      if (month) byMonthCount[month] = (byMonthCount[month] || 0) + 1;
+      if (month && month >= heatmapFrom) byMonthCount[month] = (byMonthCount[month] || 0) + 1;
     }
     const vals = Array(12).fill(0).map((_, i) => {
       const key = Object.keys(byMonthCount).find(k => parseInt(k.split('-')[1]) === i + 1);

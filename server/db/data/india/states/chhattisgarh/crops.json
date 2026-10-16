@@ -581,12 +581,25 @@
     ]
   },
   {
+    "id": "beetroot",
+    "name": "Beetroot",
+    "nameHi": "चुकंदर",
+    "emoji": "🥬",
+    "totalRecords": 1045,
+    "avgPrice": 2309,
+    "minPrice": 180,
+    "maxPrice": 7000,
+    "varieties": [
+      "Beetroot"
+    ]
+  },
+  {
     "id": "bengal-gramgramwhole",
     "name": "Bengal Gram(Gram)(Whole)",
     "nameHi": "चना",
     "emoji": "🫘",
-    "totalRecords": 1098,
-    "avgPrice": 5029,
+    "totalRecords": 1037,
+    "avgPrice": 5038,
     "minPrice": 1100,
     "maxPrice": 8000,
     "varieties": [
@@ -618,19 +631,6 @@
     "peakMonths": [
       3,
       4
-    ]
-  },
-  {
-    "id": "beetroot",
-    "name": "Beetroot",
-    "nameHi": "चुकंदर",
-    "emoji": "🥬",
-    "totalRecords": 1045,
-    "avgPrice": 2309,
-    "minPrice": 180,
-    "maxPrice": 7000,
-    "varieties": [
-      "Beetroot"
     ]
   },
   {
@@ -1190,24 +1190,6 @@
     ]
   },
   {
-    "id": "black-gramurd-beanswhole",
-    "name": "Black Gram(Urd Beans)(Whole)",
-    "nameHi": "सेम",
-    "emoji": "🫘",
-    "totalRecords": 170,
-    "avgPrice": 5900,
-    "minPrice": 1500,
-    "maxPrice": 9800,
-    "varieties": [
-      "Black Gram (Whole)",
-      "Local",
-      "Desi"
-    ],
-    "msp": 8200,
-    "mspSeason": "खरीफ 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
-  },
-  {
     "id": "sugarcane",
     "name": "Sugarcane",
     "nameHi": "Sugarcane",
@@ -1220,6 +1202,24 @@
       "Sugarcane",
       "Local"
     ]
+  },
+  {
+    "id": "black-gramurd-beanswhole",
+    "name": "Black Gram(Urd Beans)(Whole)",
+    "nameHi": "सेम",
+    "emoji": "🫘",
+    "totalRecords": 166,
+    "avgPrice": 5913,
+    "minPrice": 1500,
+    "maxPrice": 9800,
+    "varieties": [
+      "Black Gram (Whole)",
+      "Local",
+      "Desi"
+    ],
+    "msp": 8200,
+    "mspSeason": "खरीफ 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
   },
   {
     "id": "linseed",
@@ -1454,12 +1454,25 @@
     ]
   },
   {
+    "id": "millets",
+    "name": "Millets",
+    "nameHi": "Millets",
+    "emoji": "🌱",
+    "totalRecords": 15,
+    "avgPrice": 2624,
+    "minPrice": 1951,
+    "maxPrice": 3500,
+    "varieties": [
+      "Millets"
+    ]
+  },
+  {
     "id": "bajrapearl-millet-cumbu",
     "name": "Bajra(Pearl Millet/Cumbu)",
     "nameHi": "बाजरा",
     "emoji": "🌾",
-    "totalRecords": 16,
-    "avgPrice": 2742,
+    "totalRecords": 14,
+    "avgPrice": 2793,
     "minPrice": 2200,
     "maxPrice": 3700,
     "varieties": [
@@ -1484,19 +1497,6 @@
     "peakMonths": [
       10,
       11
-    ]
-  },
-  {
-    "id": "millets",
-    "name": "Millets",
-    "nameHi": "Millets",
-    "emoji": "🌱",
-    "totalRecords": 15,
-    "avgPrice": 2624,
-    "minPrice": 1951,
-    "maxPrice": 3500,
-    "varieties": [
-      "Millets"
     ]
   },
   {
@@ -1651,22 +1651,6 @@
     ]
   },
   {
-    "id": "barleyjau",
-    "name": "Barley(Jau)",
-    "nameHi": "Barley(Jau)",
-    "emoji": "🌾",
-    "totalRecords": 5,
-    "avgPrice": 2170,
-    "minPrice": 1500,
-    "maxPrice": 2500,
-    "varieties": [
-      "Local"
-    ],
-    "msp": 2150,
-    "mspSeason": "रबी 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2173567"
-  },
-  {
     "id": "lakteora",
     "name": "Lak(Teora)",
     "nameHi": "Lak(Teora)",
@@ -1692,6 +1676,22 @@
     "varieties": [
       "Mulethi-Organic"
     ]
+  },
+  {
+    "id": "barleyjau",
+    "name": "Barley(Jau)",
+    "nameHi": "Barley(Jau)",
+    "emoji": "🌾",
+    "totalRecords": 4,
+    "avgPrice": 2163,
+    "minPrice": 1500,
+    "maxPrice": 2500,
+    "varieties": [
+      "Local"
+    ],
+    "msp": 2150,
+    "mspSeason": "रबी 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2173567"
   },
   {
     "id": "peasdry",

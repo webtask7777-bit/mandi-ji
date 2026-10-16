@@ -22,7 +22,7 @@ const report = JSON.parse(readFileSync(new URL('../docs/crop-topic-coverage.json
 // This compares a separately curated disposition report against every live
 // catalog/detail source, so newly introduced commodities cannot silently vanish.
 test('every source commodity has exactly one reviewed editorial disposition', () => {
-  assert.ok(sourceIds.size >= 392, 'Includes India, CG and state-only commodities');
+  assert.ok(sourceIds.size >= 360, 'Includes India, CG and state-only commodities');
   assert.equal(report.commodityCount, sourceIds.size);
   assert.equal(report.commodities.length, sourceIds.size);
   assert.deepEqual(report.commodities.map(entry => entry.commodityId).sort(), [...sourceIds].sort());
