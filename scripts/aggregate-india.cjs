@@ -8,6 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 const { recordKey, MIN_PLAUSIBLE_PRICE } = require('./lib/daily-store.cjs');
+const { monthChange, changeSignal } = require('./lib/month-change.cjs');
 
 const DATA_DIR = path.join(__dirname, '..', 'server', 'db', 'data');
 const DAILY_DIR = path.join(DATA_DIR, 'daily');
@@ -660,12 +661,8 @@ function main() {
   const tickerData = [];
   for (const [cropId, c] of Object.entries(allCrops)) {
     const months = Object.entries(c.byMonth).sort(([a], [b]) => a.localeCompare(b));
-    const latest = months.length > 0 ? months[months.length - 1] : null;
-    const prev = months.length > 1 ? months[months.length - 2] : null;
-    const latestPrice = latest && latest[1].prices.length > 0 ? Math.round(latest[1].prices.reduce((a, b) => a + b, 0) / latest[1].prices.length) : 0;
-    const prevPrice = prev && prev[1].prices.length > 0 ? Math.round(prev[1].prices.reduce((a, b) => a + b, 0) / prev[1].prices.length) : 0;
-    const change = latestPrice - prevPrice;
-    const changePct = prevPrice > 0 ? ((change / prevPrice) * 100).toFixed(1) : '0.0';
+    // Change only between consecutive months; null across a data gap.
+    const { price: latestPrice, prevPrice, change, changePct } = monthChange(months);
     const msp = getCropMSP(cropId);
     const mandiCount = allCropMandis[cropId] ? Object.keys(allCropMandis[cropId]).length : 0;
     // Use recent (last 7 days) prices for best/worst mandi — not all-time average
@@ -685,12 +682,11 @@ function main() {
     let signal = 'hold', signalHi = 'होल्ड';
     if (msp && latestPrice > msp * 1.1) { signal = 'sell'; signalHi = 'बेचें'; }
     else if (msp && latestPrice < msp * 0.9) { signal = 'buy'; signalHi = 'खरीदें'; }
-    else if (change > 0 && parseFloat(changePct) > 5) { signal = 'sell'; signalHi = 'बेचें'; }
-    else if (change < 0 && parseFloat(changePct) < -5) { signal = 'buy'; signalHi = 'खरीदें'; }
+    else if (changeSignal(changePct)) ({ signal, signalHi } = changeSignal(changePct));
 
     tickerData.push({
       id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji,
-      price: latestPrice, prevPrice, change, changePct: parseFloat(changePct),
+      price: latestPrice, prevPrice, change, changePct,
       msp: msp || null,
       mspDiff: msp ? latestPrice - msp : null,
       mspDiffPct: msp ? parseFloat(((latestPrice - msp) / msp * 100).toFixed(1)) : null,
@@ -722,21 +718,15 @@ function main() {
     const stTicker = [];
     for (const [cropId, c] of Object.entries(stateCrops)) {
       const months = Object.entries(c.byMonth).sort(([a], [b]) => a.localeCompare(b));
-      const latest = months.length > 0 ? months[months.length - 1] : null;
-      const prev = months.length > 1 ? months[months.length - 2] : null;
-      const lp = latest && latest[1].prices.length > 0 ? Math.round(latest[1].prices.reduce((a, b) => a + b, 0) / latest[1].prices.length) : 0;
-      const pp = prev && prev[1].prices.length > 0 ? Math.round(prev[1].prices.reduce((a, b) => a + b, 0) / prev[1].prices.length) : 0;
-      const ch = lp - pp;
-      const chPct = pp > 0 ? ((ch / pp) * 100).toFixed(1) : '0.0';
+      const { price: lp, prevPrice: pp, change: ch, changePct: chPct } = monthChange(months);
       const msp = getCropMSP(cropId);
       let sig = 'hold', sigHi = 'होल्ड';
       if (msp && lp > msp * 1.1) { sig = 'sell'; sigHi = 'बेचें'; }
       else if (msp && lp < msp * 0.9) { sig = 'buy'; sigHi = 'खरीदें'; }
-      else if (ch > 0 && parseFloat(chPct) > 5) { sig = 'sell'; sigHi = 'बेचें'; }
-      else if (ch < 0 && parseFloat(chPct) < -5) { sig = 'buy'; sigHi = 'खरीदें'; }
+      else if (changeSignal(chPct)) ({ signal: sig, signalHi: sigHi } = changeSignal(chPct));
       stTicker.push({
         id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji,
-        price: lp, prevPrice: pp, change: ch, changePct: parseFloat(chPct),
+        price: lp, prevPrice: pp, change: ch, changePct: chPct,
         msp: msp || null, records: c.records, signal: sig, signalHi: sigHi,
       });
     }
