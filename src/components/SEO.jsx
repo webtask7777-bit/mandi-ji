@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import editorialImages from '../data/editorialImages.json';
+import { getLanguage, languageFromPath } from '../../shared/languages.js';
 
 // Use the domain that is actually deployed. Set VITE_SITE_URL only after a custom
 // domain is attached in Vercel; do not point search engines at an unconnected name.
@@ -20,7 +21,7 @@ function articleAlternatePath(value) {
   } catch { return null; }
 }
 
-const SCHEMA_JSON = JSON.stringify({
+const SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'SahiBhav',
@@ -32,9 +33,9 @@ const SCHEMA_JSON = JSON.stringify({
   inLanguage: 'hi',
   isAccessibleForFree: true,
   author: { '@type': 'Organization', name: 'SahiBhav', url: SITE_URL },
-});
+};
 
-export default function SEO({ title, description, path, noIndex = false, structuredData, image, imageAlt, type = 'website', language = 'hi', alternates = [] }) {
+export default function SEO({ title, description, path, noIndex = false, structuredData, image, imageAlt, type = 'website', language = 'hi', alternates = [], xDefaultPath }) {
   const { pathname } = useLocation();
   const pageTitle = title ? `${title} | SahiBhav` : DEFAULTS.title;
   const pageDesc = description || DEFAULTS.description;
@@ -45,18 +46,20 @@ export default function SEO({ title, description, path, noIndex = false, structu
   const pagePath = (path || pathname).split(/[?#]/)[0].replace(/\/+$/, '') || '/';
   const pageUrl = `${SITE_URL}${pagePath.startsWith('/') ? pagePath : `/${pagePath}`}`;
   const robots = noIndex || PRIVATE_ROUTES.test(pathname) ? 'noindex, follow' : 'index, follow, max-image-preview:large';
-  const pageLanguage = ['hi', 'mr', 'gu'].includes(language) ? language : 'hi';
-  const languageLinks = [...new Map(alternates.filter(item => ['hi', 'mr', 'gu'].includes(item.language) && articleAlternatePath(item.path)).map(item => [item.language, { ...item, path: articleAlternatePath(item.path) }])).values()];
+  const pageLanguage = getLanguage(language)?.code || 'hi';
+  const alternatePath = value => articleAlternatePath(value) || (languageFromPath(value)?.searchReady ? value : null);
+  const languageLinks = [...new Map(alternates.filter(item => getLanguage(item.language)?.searchReady && item.language.length === 2 && alternatePath(item.path)).map(item => [item.language, { ...item, path: alternatePath(item.path) }])).values()];
+  const defaultAlternate = xDefaultPath === '/languages' ? '/languages' : languageLinks.find(item => item.language === 'hi')?.path;
 
   return (
     <Helmet>
-      <html lang={pageLanguage} />
+      <html lang={pageLanguage} dir={getLanguage(pageLanguage)?.dir || 'ltr'} />
       <title>{pageTitle}</title>
       <meta name="description" content={pageDesc} />
       <meta name="robots" content={robots} />
       <link rel="canonical" href={pageUrl} />
       {languageLinks.map(item => <link key={item.language} rel="alternate" hrefLang={item.language} href={`${SITE_URL}${item.path}`} />)}
-      {languageLinks.some(item => item.language === 'hi') && <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${languageLinks.find(item => item.language === 'hi').path}`} />}
+      {defaultAlternate && <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${defaultAlternate}`} />}
       <meta property="og:type" content={type} />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content={pageTitle} />
@@ -74,7 +77,7 @@ export default function SEO({ title, description, path, noIndex = false, structu
       <meta name="twitter:description" content={pageDesc} />
       <meta name="twitter:image" content={pageImage} />
       <meta name="twitter:image:alt" content={pageImageAlt} />
-      <script type="application/ld+json">{SCHEMA_JSON}</script>
+      <script type="application/ld+json">{JSON.stringify({ ...SCHEMA, inLanguage: pageLanguage })}</script>
       {structuredData && <script type="application/ld+json">{JSON.stringify(structuredData).replace(/</g, '\\u003c')}</script>}
     </Helmet>
   );

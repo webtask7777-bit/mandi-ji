@@ -56,7 +56,7 @@ export default function BlogArticlePage() {
       { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: copy.brand, item: `${SITE_URL}/` }, { '@type': 'ListItem', position: 2, name: copy.guide, item: `${SITE_URL}/blog` }, { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}${articlePath}` }] },
     ] } : undefined} />
     <a className="sb-journal-skip" href="#main-content">{copy.skip}</a>
-    <header className="sb-journal-header"><div className="sb-journal-header__inner"><Link to="/" aria-label={copy.home}><Brand /></Link><Link to={blogPath} className="sb-journal-back"><ArrowLeft size={16} aria-hidden="true" />{copy.allGuides}</Link></div></header>
+    <header className="sb-journal-header"><div className="sb-journal-header__inner"><Link to="/" aria-label={copy.home}><Brand /></Link><Link to="/languages" className="sb-journal-back">{copy.language}</Link><Link to={blogPath} className="sb-journal-back"><ArrowLeft size={16} aria-hidden="true" />{copy.allGuides}</Link></div></header>
     <main className="sb-journal-article-main" id="main-content">
       <nav className="sb-journal-breadcrumb" aria-label={copy.guide}><Link to="/">{copy.brand}</Link><span aria-hidden="true">/</span><Link to={blogPath}>{copy.guide}</Link><span aria-hidden="true">/</span><span aria-current="page">{post?.category || copy.article}</span></nav>
       {loading && !hasPost && <div className="sb-detail-status" role="status"><RefreshCw size={24} aria-hidden="true" /><h1>{copy.articleLoading}</h1><p>{copy.wait}</p></div>}

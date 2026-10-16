@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { loadIndiaData, loadStateData, loadIndiaCropPrices, loadStateCropPrices } from '../server/db/connection.js';
 import { isCropPriceCommodity } from '../src/utils/cropEligibility.js';
 import { cropDetailPath } from '../src/utils/cropUrls.js';
+import { getLanguage, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, languagePath } from '../shared/languages.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.env.NODE_ENV = 'production';
@@ -24,7 +25,7 @@ const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compa
 const cache = new Map();
 const manifest = JSON.parse(await readFile(path.join(dist, '.vite/manifest.json'), 'utf8'));
 function routeAssets(route) {
-  const page = /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
+  const page = /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
   const css = new Set();
   const seen = new Set();
   function visit(key) { if (seen.has(key)) return; seen.add(key); const entry = manifest[key]; if (!entry) return; (entry.css || []).forEach(file => css.add(file)); (entry.imports || []).forEach(visit); }
@@ -70,8 +71,10 @@ async function render(route) {
   // React 19 hoists metadata but Helmet applies <html> attributes only on the client.
   // Derive the static document language from the same SEO locale output.
   const localeMeta = head.match(/<meta\b[^>]*property="og:locale"[^>]*>/)?.[0] || '';
-  const documentLanguage = localeMeta.match(/content="(hi|mr|gu)_IN"/)?.[1] || rendered.htmlAttributes?.match(/\blang="(hi|mr|gu)"/)?.[1] || 'hi';
-  return template.replace(/<html\b[^>]*>/, `<html lang="${documentLanguage}">`).replace('</head>', `${head}${routeAssets(route)}\n</head>`)
+  const localeCode = localeMeta.match(/content="([a-z]{2,3})_IN"/)?.[1] || rendered.htmlAttributes?.match(/\blang="([a-z]{2,3})"/)?.[1];
+  const languageInfo = getLanguage(localeCode) || getLanguage('hi');
+  const documentLanguage = languageInfo.code;
+  return template.replace(/<html\b[^>]*>/, `<html lang="${documentLanguage}" dir="${languageInfo.dir}">`).replace('</head>', `${head}${routeAssets(route)}\n</head>`)
     .replace('<div id="root"></div>', `<div id="root">${body.replaceAll('आज का उपलब्ध रिकॉर्ड', 'उपलब्ध दर्ज रिकॉर्ड').replace(/\d+ दिन पुराना रिकॉर्ड/g, 'पुराना रिकॉर्ड · तारीख देखें')}</div><script id="sahibhav-public-data" type="application/json">${escapeJson(pageResponses)}</script>`);
 }
 function hasPrice(detail) {
@@ -98,7 +101,7 @@ async function writePage(route, html) {
 }
 try {
   await mkdir(generated, { recursive: true });
-  const routes = new Set(['/', '/delivery-calculator', '/bechne-ka-hisab', '/data-status', '/about', '/contact', '/privacy', '/terms', '/blog']);
+  const routes = new Set(['/', '/delivery-calculator', '/bechne-ka-hisab', '/data-status', '/about', '/contact', '/privacy', '/terms', '/blog', '/languages', ...SEARCH_LANGUAGES.map(item => languagePath(item.code))]);
   const knownCrops = new Set();
   // Sitemap <lastmod>: a price page changes when its newest record does; an article on its own update.
   const lastmod = new Map();
@@ -133,6 +136,8 @@ try {
     await writePage(route, html);
     if (++count % 100 === 0) console.log(`Prerendered ${count}/${routes.size} public pages`);
   }
+  // Provisional translations are reachable, but are not indexed until their terminology is reviewed.
+  for (const language of AVAILABLE_LANGUAGES.filter(item => !item.searchReady)) await writePage(languagePath(language.code), await render(languagePath(language.code)));
   // Empty or stale catalog entries remain usable but are not advertised to search engines.
   for (const route of knownCrops) if (!routes.has(route)) await writePage(route, (await render(route)).replace(/content="index, follow, max-image-preview:large"/g, 'content="noindex, follow"'));
   const notFound = (await render('/__not-found__')).replace(/<link[^>]*rel="canonical"[^>]*>/g, '').replace(/<meta[^>]*property="og:url"[^>]*>/g, '');

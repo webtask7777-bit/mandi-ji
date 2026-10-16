@@ -1,0 +1,131 @@
+/* Local Noto fonts for national-language surfaces. Sources, checksums and OFL notices:
+ * /fonts/language-fonts-manifest.json. Keep this CSS scoped; there are no remote font requests.
+ * unicode-range makes each font eligible only for its script. Complete shaping tables are kept. */
+
+/* Bengali: as, bn */
+@font-face {
+  font-family: 'SahiBhav National';
+  src: url('/fonts/noto-bengali.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0980-09FF;
+}
+
+/* Tamil: ta */
+@font-face {
+  font-family: 'SahiBhav National';
+  src: url('/fonts/noto-tamil.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0B80-0BFF, U+11FC0-11FFF;
+}
+
+/* Telugu: te */
+@font-face {
+  font-family: 'SahiBhav National';
+  src: url('/fonts/noto-telugu.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0C00-0C7F;
+}
+
+/* Kannada: kn */
+@font-face {
+  font-family: 'SahiBhav National';
+  src: url('/fonts/noto-kannada.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0C80-0CFF;
+}
+
+/* Malayalam: ml */
+@font-face {
+  font-family: 'SahiBhav National';
+  src: url('/fonts/noto-malayalam.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0D00-0D7F;
+}
+
+/* Oriya: or */
+@font-face {
+  font-family: 'SahiBhav National';
+  src: url('/fonts/noto-odia.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0B00-0B7F;
+}
+
+/* Gurmukhi: pa */
+@font-face {
+  font-family: 'SahiBhav National';
+  src: url('/fonts/noto-gurmukhi.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0A00-0A7F;
+}
+
+/* Arabic: ur, sd, ks */
+@font-face {
+  font-family: 'SahiBhav National';
+  src: url('/fonts/noto-naskh-arabic.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-089F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+/* MeeteiMayek: mni */
+@font-face {
+  font-family: 'SahiBhav National';
+  src: url('/fonts/noto-meetei-mayek.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+AAE0-AAFF, U+ABC0-ABFF;
+}
+
+/* OlChiki: sat */
+@font-face {
+  font-family: 'SahiBhav National';
+  src: url('/fonts/noto-ol-chiki.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  unicode-range: U+1C50-1C7F;
+}
+
+.sb-language-surface.sb-language-page,
+.sb-language-surface.sb-language-chooser,
+.sb-language-surface,
+.sb-language-script-Latin,
+.sb-language-script-Devanagari,
+.sb-language-script-Gujarati,
+.sb-language-script-Bengali,
+.sb-language-script-Tamil,
+.sb-language-script-Telugu,
+.sb-language-script-Kannada,
+.sb-language-script-Malayalam,
+.sb-language-script-Oriya,
+.sb-language-script-Gurmukhi,
+.sb-language-script-Arabic,
+.sb-language-script-MeeteiMayek,
+.sb-language-script-OlChiki {
+  font-family: 'SahiBhav National', 'SahiBhav Sans', system-ui, sans-serif;
+}
+
+.sb-language-script-Arabic,
+.sb-language-surface:lang(ur),
+.sb-language-surface:lang(sd),
+.sb-language-surface:lang(ks) {
+  letter-spacing: normal;
+  font-variant-ligatures: normal;
+  line-height: 1.8;
+}

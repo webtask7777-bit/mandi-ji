@@ -4,6 +4,7 @@ import { ArrowLeft, Truck } from 'lucide-react';
 import DeliveryCalculatorTab from '../tabs/DeliveryCalculatorTab';
 import SEO from '../components/SEO';
 import Brand from '../components/Brand';
+import LanguageEntry from '../components/LanguageEntry';
 import Footer from '../components/Footer';
 import { CropImageLegend } from '../components/CropImage';
 import '../styles/dashboard.css';
@@ -17,6 +18,7 @@ export default function TransportPage() {
       <a href="#delivery-main" className="sb-skip-link">कैलकुलेटर पर जाएँ</a>
       <header className="sb-header sb-calculator-header">
         <Link to="/" aria-label="सही भाव होम"><Brand /></Link>
+        <LanguageEntry />
         <Link to="/" className="sb-text-button"><ArrowLeft size={17} aria-hidden="true" /> मंडी भाव देखें</Link>
       </header>
       <main id="delivery-main" className="sb-main">

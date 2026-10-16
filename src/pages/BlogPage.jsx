@@ -75,7 +75,7 @@ export default function BlogPage() {
   return <div className="sb-journal-page" lang={language}>
     <SEO title={`${copy.guides} — ${copy.crop}, ${copy.state}, ${copy.language}`} description={copy.intro} path="/blog" noIndex={isFilteredUrl} language={language} image="/editorial/journal-overview.webp" imageAlt="खेती से मंडी तक — फसल, मौसम और बिक्री की सही भाव मार्गदर्शिकाएँ" />
     <a className="sb-journal-skip" href="#main-content">{copy.skip}</a>
-    <header className="sb-journal-header"><div className="sb-journal-header__inner"><Link to="/" aria-label={copy.home}><Brand /></Link><nav aria-label={copy.navigation}><Link to="/">{copy.market}</Link><Link to="/delivery-calculator">{copy.delivery} <ArrowRight size={15} aria-hidden="true" /></Link></nav></div></header>
+    <header className="sb-journal-header"><div className="sb-journal-header__inner"><Link to="/" aria-label={copy.home}><Brand /></Link><nav aria-label={copy.navigation}><Link to="/languages">{copy.language}</Link><Link to="/">{copy.market}</Link><Link to="/delivery-calculator">{copy.delivery} <ArrowRight size={15} aria-hidden="true" /></Link></nav></div></header>
     <main className="sb-journal-main" id="main-content">
       <section className="sb-journal-intro" aria-labelledby="journal-title"><div><span className="sb-journal-eyebrow"><Leaf size={15} aria-hidden="true" /> {copy.brand} {copy.guide}</span><h1 id="journal-title">{copy.hero}<br /><em>{copy.heroAccent}</em></h1><p>{copy.intro}</p></div><div className="sb-journal-focus"><MapPin size={18} aria-hidden="true" /><div><strong>{copy.regionFocus}</strong><span>{copy.regionHelp}</span></div></div></section>
 

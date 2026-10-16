@@ -30,6 +30,8 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
 const TermsPage = lazy(() => import('./pages/TermsPage'));
+const LanguagesPage = lazy(() => import('./pages/LanguagesPage'));
+const LanguageToolsPage = lazy(() => import('./pages/LanguageToolsPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
 
@@ -48,6 +50,8 @@ function App({ prerender = false, initialPage }) {
   const CropPage = initialPage?.kind === 'crop' ? initialPage.Component : CropDetailPage;
   const ArticlePage = initialPage?.kind === 'article' ? initialPage.Component : BlogArticlePage;
   const DeliveryPage = initialPage?.kind === 'delivery' ? initialPage.Component : TransportPage;
+  const LanguagePage = initialPage?.kind === 'language' ? initialPage.Component : LanguageToolsPage;
+  const LanguageChooser = initialPage?.kind === 'languages' ? initialPage.Component : LanguagesPage;
 
   return (
     <AuthProvider>
@@ -61,6 +65,8 @@ function App({ prerender = false, initialPage }) {
             <Suspense fallback={<PageLoader />}>
               <Routes>
                 <Route path="/" element={<MandiJiDashboard />} />
+                <Route path="/languages" element={<LanguageChooser />} />
+                <Route path="/:language/mandi-bhav" element={<LanguagePage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/listing/new" element={<ProtectedRoute><CreateListingPage /></ProtectedRoute>} />

@@ -10,6 +10,7 @@ export default function Footer() {
           <p>फसल आपकी। फैसला आपका।<br />मंडी की जानकारी, एक जगह।</p>
         </div>
         <nav aria-label="सहायता और जानकारी" className="sb-footer-links">
+          <FooterLink to="/languages">भाषा चुनें / Languages</FooterLink>
           <FooterLink to="/about">हमारे बारे में</FooterLink>
           <FooterLink to="/contact">संपर्क करें</FooterLink>
           <FooterLink to="/blog">खेती की जानकारी</FooterLink>

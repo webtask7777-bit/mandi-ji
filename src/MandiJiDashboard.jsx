@@ -13,6 +13,7 @@ import PricesTab from "./tabs/PricesTab";
 import FloatingActionButton from "./components/marketplace/FloatingActionButton";
 import SEO from "./components/SEO";
 import Footer from "./components/Footer";
+import LanguageEntry from "./components/LanguageEntry";
 import Brand from "./components/Brand";
 import { CropImageLegend } from "./components/CropImage";
 import "./styles/dashboard.css";
@@ -183,6 +184,7 @@ export default function MandiJiDashboard() {
               </span>
               <ChevronDown size={12} className="text-muted-foreground" />
             </button>
+            <LanguageEntry />
             {/* Notification bell */}
             {notifications?.length > 0 && (
               <div className="relative">

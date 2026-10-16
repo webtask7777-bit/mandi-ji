@@ -111,7 +111,7 @@ test('published article HTML exposes its own social thumbnail, source links and 
     assert.equal(posting.author['@type'], 'Organization');
     assert.equal(posting.dateModified, post.updatedAt);
     assert.equal(posting.inLanguage, post.language);
-    assert.ok(html.includes(`<html lang="${post.language}">`), `${post.slug}: document language`);
+    assert.match(html, new RegExp(`<html[^>]*\\blang="${post.language}"`), `${post.slug}: document language`);
     assert.ok(JSON.stringify(posting.image).includes(post.coverImage));
     if (post.translationGroup) {
       for (const translated of articles.filter(item => item.translationGroup === post.translationGroup)) {
