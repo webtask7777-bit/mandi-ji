@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Users, ShoppingCart, FileText, TrendingUp, RefreshCw } from 'lucide-react';
-import { apiFetchAuth, apiPost } from '../../api/client';
-import { useToast } from '../../context/ToastContext';
+import { apiFetchAuth } from '../../api/client';
 
 const STAT_CARDS = [
   { key: 'totalUsers', label: 'कुल उपयोगकर्ता', icon: Users, color: 'text-blue-400', bg: 'bg-blue-500/10', border: 'border-blue-500/20' },
@@ -24,34 +23,18 @@ function formatDate(isoStr) {
 }
 
 export default function AdminDashboard() {
-  const toast = useToast();
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [seeding, setSeeding] = useState(false);
 
-  function loadStats() {
-    setLoading(true);
-    apiFetchAuth('/admin/stats')
-      .then(data => { setStats(data); setError(''); })
-      .catch(err => setError(err.message || 'स्टैट्स लोड करने में विफल'))
-      .finally(() => setLoading(false));
-  }
+  const fetchStats = () => apiFetchAuth('/admin/stats')
+    .then(data => { setStats(data); setError(''); })
+    .catch(err => setError(err.message || 'स्टैट्स लोड करने में विफल'))
+    .finally(() => setLoading(false));
+  // Retry buttons show the loading state; the first load starts in it already.
+  function loadStats() { setLoading(true); fetchStats(); }
 
-  useEffect(() => { loadStats(); }, []);
-
-  async function handleSeedDemo() {
-    setSeeding(true);
-    try {
-      const result = await apiPost('/admin/seed', {});
-      toast.success(`डेमो डेटा बनाया: ${result.usersAdded} उपयोगकर्ता, ${result.listingsAdded} लिस्टिंग, ${result.billsAdded} बिल`);
-      loadStats();
-    } catch (err) {
-      toast.error(err.message || 'सीड डेटा बनाने में विफल');
-    } finally {
-      setSeeding(false);
-    }
-  }
+  useEffect(() => { fetchStats(); }, []);
 
   if (loading) {
     return (
@@ -168,17 +151,6 @@ export default function AdminDashboard() {
         </div>
       )}
 
-      {/* Quick Actions */}
-      <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-4">
-        <div className="text-sm font-bold text-foreground mb-3">त्वरित कार्य</div>
-        <button
-          onClick={handleSeedDemo}
-          disabled={seeding}
-          className="bg-amber-500/15 border border-amber-500/30 text-amber-400 px-4 py-2 rounded-xl text-xs font-bold hover:bg-amber-500/25 transition-colors disabled:opacity-50"
-        >
-          {seeding ? 'सीडिंग...' : 'Seed Demo Data'}
-        </button>
-      </div>
     </div>
   );
 }
