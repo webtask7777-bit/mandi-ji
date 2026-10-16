@@ -2,12 +2,13 @@ import { Router } from 'express';
 import bcrypt from 'bcryptjs';
 import { v4 as uuid } from 'uuid';
 import { readJSON, findByField, appendItem, updateItem } from '../db/json-store.js';
-import { signToken, authRequired } from '../middleware/auth.js';
+import { signToken, authRequired, authAvailable, AUTH_UNAVAILABLE } from '../middleware/auth.js';
 
 const router = Router();
 
 // POST /api/auth/register
 router.post('/register', async (req, res) => {
+  if (!authAvailable()) return res.status(503).json(AUTH_UNAVAILABLE);
   try {
     const { name, phone, email, password } = req.body;
     if (!name || !phone || !password) {
@@ -42,6 +43,7 @@ router.post('/register', async (req, res) => {
 
 // POST /api/auth/login
 router.post('/login', async (req, res) => {
+  if (!authAvailable()) return res.status(503).json(AUTH_UNAVAILABLE);
   try {
     const { phone, password } = req.body;
     if (!phone || !password) {
