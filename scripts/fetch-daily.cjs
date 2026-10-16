@@ -11,8 +11,9 @@
  *
  * - Records are filed under their own arrival date via scripts/lib/daily-store.cjs
  *   (merge, never overwrite; atomic writes).
- * - Nothing is written to daily/ unless unique valid records reach --min-complete of the
- *   dataset total. An incomplete run exits 1 and keeps finished states for the next run.
+ * - Each state is stored once its slice is complete (unique valid records reach --min-complete
+ *   of the state's total), so finished states survive a dataset swap or a failed run. The run
+ *   exits 1 until every state is stored; the next run fetches only the missing ones.
  *
  * Usage:
  *   node scripts/fetch-daily.cjs [--min-complete 0.98] [--delay 1300]
@@ -118,12 +119,13 @@ async function fetchState(state, opts) {
   return { state, total, rows };
 }
 
-function loadCache(datasetTotal) {
+/** Progress belongs to the dataset's reporting date(s); the total grows during the day. */
+function loadCache(datasetDates) {
   try {
     const cache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
-    if (cache.datasetTotal === datasetTotal && Date.now() - Date.parse(cache.startedAt) < CACHE_MAX_AGE_MS) return cache;
+    if (cache.datasetDates === datasetDates && Date.now() - Date.parse(cache.startedAt) < CACHE_MAX_AGE_MS) return cache;
   } catch { /* no usable progress */ }
-  return { datasetTotal, startedAt: new Date().toISOString(), states: {} };
+  return { datasetDates, startedAt: new Date().toISOString(), states: {} };
 }
 
 function statesFromRecentDays() {
@@ -158,33 +160,45 @@ async function main() {
     return;
   }
 
-  const cache = loadCache(datasetTotal);
+  // Each state is stored as soon as its slice is complete, so a dataset swap or a failed
+  // run never loses finished states. The cache only records which states are done.
+  const cache = loadCache(dates);
   const failedStates = [];
+  const allRejected = {};
   const states = [...new Set([...KNOWN_STATES, ...statesFromRecentDays()])].filter(Boolean).sort();
   for (const state of states) {
-    if (cache.states[state]) continue;
+    if (cache.states[state]) {
+      // Stored already; refetch only if the state has gained records since.
+      const probe = await fetchPage(0, state).catch(() => null);
+      if (!probe || Number(probe.total) === cache.states[state].total) continue;
+      await sleep(opts.delayMs);
+    }
     let slice;
     try { slice = await fetchState(state, opts); }
     catch (e) { failedStates.push(state); console.log(`  ${state}: ${e.message}; will retry on the next run`); continue; }
-    cache.states[state] = slice;
+    const { unique, rejected } = uniqueValid(slice.rows);
+    for (const [k, n] of Object.entries(rejected)) allRejected[k] = (allRejected[k] || 0) + n;
+    if (slice.total && unique.size + Object.values(rejected).reduce((a, b) => a + b, 0) < slice.total * opts.minComplete) {
+      failedStates.push(state);
+      console.log(`  ${state}: only ${unique.size}/${slice.total} unique records; not stored, will retry`);
+      continue;
+    }
+    if (unique.size) mergeRecords([...unique.values()], { source: SOURCE });
+    cache.states[state] = { total: slice.total, stored: unique.size };
     writeAtomic(CACHE_FILE, cache);
-    if (slice.total) console.log(`  ${state}: ${slice.total} records`);
+    if (slice.total) console.log(`  ${state}: ${slice.total} records, ${unique.size} stored`);
   }
 
   const covered = Object.values(cache.states).reduce((n, s) => n + s.total, 0);
-  const { unique, rejected } = uniqueValid(Object.values(cache.states).flatMap(s => s.rows));
-  console.log(`State slices cover ${covered}/${datasetTotal}; ${unique.size} valid unique records.`);
-  if (Object.keys(rejected).length) console.log('Rejected rows:', rejected);
-  if (covered < datasetTotal) console.log(`  ${datasetTotal - covered} records belong to a state name not in the list; add it to KNOWN_STATES.`);
-
+  // A state's total can grow after it was stored; the probe above refetches it next time.
+  console.log(`Stored states cover ${covered}/${datasetTotal} records of this dataset.`);
+  if (Object.keys(allRejected).length) console.log('Rejected rows:', allRejected);
   if (failedStates.length) console.log(`Failed states: ${failedStates.join(', ')}`);
-  if (unique.size < datasetTotal * opts.minComplete) {
-    console.error(`Incomplete: below ${(opts.minComplete * 100).toFixed(0)}% of the dataset. Nothing written; finished states are kept for the next run.`);
+  if (covered < datasetTotal * opts.minComplete) {
+    if (!failedStates.length) console.log(`  ${datasetTotal - covered} records belong to a state name not in the list; add it to KNOWN_STATES.`);
+    console.error('Incomplete: the next run fetches only the missing states.');
     process.exit(1);
   }
-
-  const results = mergeRecords([...unique.values()], { source: SOURCE });
-  for (const r of results) console.log(`  ${r.date}: ${r.before} → ${r.after} records (+${r.added}, ${r.replaced} replaced)`);
   fs.rmSync(CACHE_FILE, { force: true });
   console.log('Done.');
 }
