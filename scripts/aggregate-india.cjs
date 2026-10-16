@@ -100,6 +100,15 @@ const NON_QUINTAL_COMMODITIES = new Set([
   'Tube Rose(Double)', 'BOP', 'Carnation', 'Orchid',
 ]);
 
+// Dry grains, pulses and oilseeds never trade below ₹1,000 a quintal (₹10/kg); a modal
+// price under that (white peas ₹200–500 in a few Chhattisgarh mandis while Gujarat reports
+// ₹3,000–4,500) is a per-kg or typing error. Fresh forms (green peas, peas wet/cod) are
+// vegetables and keep their own range.
+const DRY_COMMODITY = /\b(white peas|peas\(dry\)|gram|arhar|tur|moong|urd|masur|lentil|wheat|paddy|maize|jowar|bajra|ragi|soyabean|mustard|groundnut|sesamum|kabuli|chana|barley)\b/i;
+const FRESH_FORM = /green peas|peas wet|peas cod|green chilli|gram raw|green gram leaves|chana sag|groundnut pods \(raw\)/i;
+const DRY_FLOOR = 1000;
+const belowDryFloor = r => r.modal_price > 0 && r.modal_price < DRY_FLOOR && DRY_COMMODITY.test(r.commodity) && !FRESH_FORM.test(r.commodity);
+
 // The source spells some districts two ways (old and current names, transliterations).
 // One current official name per district, so a mandi and its district are not counted twice.
 const DISTRICT_ALIASES = {
@@ -377,7 +386,7 @@ function main() {
   const unitChecked = dedupedRecords.filter(r => !unitExcluded.has(seriesKey(r)));
   console.log(`Unit check: ${unitExcluded.size} series (${dedupedRecords.length - unitChecked.length} records) left out as not per quintal`);
   const sanity = priceSanity(unitChecked, r => r.commodity);
-  const allRecords = unitChecked.filter(r => sanity.keep(r)).map(r => sanity.clip(r));
+  const allRecords = unitChecked.filter(r => sanity.keep(r) && !belowDryFloor(r)).map(r => sanity.clip(r));
   console.log(`Price sanity: ${unitChecked.length - allRecords.length} records more than 20x from the commodity's typical price left out`);
 
   // "Recent" = the 7 days before the newest observation (UTC dates), not the newest file name.
