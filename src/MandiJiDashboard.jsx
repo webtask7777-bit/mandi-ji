@@ -216,13 +216,6 @@ export default function MandiJiDashboard() {
                       <div className="px-3 py-2.5 border-b border-zinc-800">
                         <div className="flex items-center gap-1.5">
                           <div className="text-xs font-bold text-foreground truncate">{user.name}</div>
-                          <span className={`px-1 py-0.5 rounded text-[8px] font-bold ${
-                            user.kycStatus === 'verified'
-                              ? 'bg-green-500/15 text-green-400 border border-green-500/30'
-                              : 'bg-zinc-800 text-zinc-500'
-                          }`}>
-                            {user.kycStatus === 'verified' ? 'KYC ✓' : 'KYC ✗'}
-                          </span>
                         </div>
                         <div className="text-[10px] text-zinc-500">{user.phone}</div>
                       </div>

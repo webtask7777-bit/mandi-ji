@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion as Motion } from 'framer-motion';
 import { ArrowLeft, FileText } from 'lucide-react';
 import { fadeInUp } from '@/utils/animations';
+import { CONTACT } from '@/data/contact';
 import SEO from '@/components/SEO';
 
 export default function TermsPage() {
@@ -69,7 +70,7 @@ export default function TermsPage() {
 
         <Section title="7. सेवा में बदलाव">
           हम किसी भी समय सेवा में बदलाव कर सकते हैं, नई सुविधाएं जोड़ सकते हैं, या पुरानी हटा सकते हैं।
-          महत्वपूर्ण बदलावों की सूचना ऐप या ईमेल के माध्यम से दी जाएगी।
+          महत्वपूर्ण बदलाव इसी पेज पर तारीख सहित दिखाए जाएंगे।
         </Section>
 
         <Section title="8. विवाद समाधान">
@@ -78,7 +79,7 @@ export default function TermsPage() {
 
         <Section title="9. संपर्क">
           इन शर्तों से जुड़े किसी भी प्रश्न के लिए:
-          <div className="mt-2 text-green-500 font-semibold">legal@mandiji.in</div>
+          <div className="mt-2 text-green-500 font-semibold">{CONTACT.email || 'संपर्क ईमेल अभी जोड़ा जा रहा है।'}</div>
         </Section>
       </Motion.div>
     </div>

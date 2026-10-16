@@ -7,16 +7,16 @@ import {
   ArrowLeft, CheckCircle2, Loader2,
 } from 'lucide-react';
 import { Input } from '../components/ui/input';
-import KYCForm from '../components/auth/KYCForm';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 import { cn } from '@/lib/utils';
 import { safeReturnTo } from '../utils/safeReturnTo';
 
+// Identity verification (DigiLocker/Aadhaar) is not available, so registration does not
+// collect ID numbers or claim verification. Step numbers stay 1 and 3.
 const STEPS = [
-  { label: 'जानकारी', icon: User },
-  { label: 'eKYC', icon: CheckCircle2 },
-  { label: 'पूर्ण', icon: CheckCircle2 },
+  { label: 'जानकारी', icon: User, step: 1 },
+  { label: 'पूर्ण', icon: CheckCircle2, step: 3 },
 ];
 
 const stepVariants = {
@@ -68,7 +68,7 @@ export default function RegisterPage() {
 
   const goNext = () => {
     setDirection(1);
-    setStep((s) => s + 1);
+    setStep(3);
   };
 
   const goBack = () => {
@@ -142,7 +142,7 @@ export default function RegisterPage() {
         {/* Progress Indicator */}
         <div className="flex items-center justify-center gap-2 mb-6">
           {STEPS.map((s, i) => {
-            const stepNum = i + 1;
+            const stepNum = s.step;
             const isActive = step === stepNum;
             const isCompleted = step > stepNum;
 
@@ -340,22 +340,6 @@ export default function RegisterPage() {
                   )}
                 </motion.button>
               </motion.form>
-            )}
-
-            {/* Step 2: eKYC */}
-            {step === 2 && (
-              <motion.div
-                key="step-2"
-                custom={direction}
-                variants={stepVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="p-6 pt-12"
-              >
-                <KYCForm onComplete={goNext} />
-              </motion.div>
             )}
 
             {/* Step 3: Success */}

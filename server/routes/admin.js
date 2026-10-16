@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { readJSON, writeJSON, appendItem, updateItem, deleteItem, findById } from '../db/json-store.js';
-import { seedMarketplace } from '../db/seed-marketplace.js';
 import { adminOnly } from '../middleware/auth.js';
 import { v4 as uuid } from 'uuid';
 
@@ -136,15 +135,8 @@ router.get('/eway-bills', (req, res) => {
   }
 });
 
-// POST /api/admin/seed — seed demo data
-router.post('/seed', async (req, res) => {
-  try {
-    const result = await seedMarketplace();
-    res.json({ success: true, ...result });
-  } catch (err) {
-    res.status(500).json({ error: 'सीड डेटा बनाने में विफल: ' + err.message });
-  }
-});
+// The demo-data seed endpoint was removed: it created fake users with made-up Aadhaar
+// numbers marked as DigiLocker-verified.
 
 // ─── CMS: Pages ─────────────────────────────────────────────
 
