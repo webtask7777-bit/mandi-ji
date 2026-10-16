@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
-import { ChevronDown, X, Search, MapPin, User, LogIn, Crown, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe } from "lucide-react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { ChevronDown, X, Search, MapPin, User, LogIn, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe } from "lucide-react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useApi } from "./hooks/useApi";
 import { useStateContext } from "./context/StateContext";
 import { useAuth } from "./context/AuthContext";
@@ -74,11 +74,11 @@ export default function MandiJiDashboard() {
   const { selectedState, selectStateDirect, stateNameHi, isCG, stateParam } = useStateContext();
 
   const stateQuery = stateParam !== "all" ? `?state=${stateParam}` : "?state=all";
-  const { data: apiCrops } = useApi(`/crops${stateQuery}`);
-  const { data: apiMandis } = useApi(`/mandis${stateQuery}`);
-  const { data: apiDistricts } = useApi(`/districts${stateQuery}`);
+  const { data: apiCrops, loading: cropsLoading } = useApi(`/crops${stateQuery}`);
+  const { data: apiMandis, loading: mandisLoading, error: mandisError } = useApi(`/mandis${stateQuery}`);
+  const { data: apiDistricts, loading: districtsLoading, error: districtsError } = useApi(`/districts${stateQuery}`);
   const { data: apiHeatmap } = useApi(`/mandis/heatmap${stateQuery}`);
-  const { data: apiStates } = useApi('/states');
+  const { data: apiStates, loading: statesLoading, error: statesError } = useApi('/states');
   const { data: banners } = useApi('/cms/banners');
   const { data: notifications } = useApi(`/cms/notifications${stateParam !== 'all' ? `?state=${stateParam}` : ''}`);
 
@@ -156,7 +156,7 @@ export default function MandiJiDashboard() {
       <SEO
         title={activeTab === 'delivery' ? 'डिलीवरी खर्च और माल की कुल लागत' : `${stateNameHi} मंडी भाव`}
         description={`${stateNameHi} की मंडियों के उपलब्ध दर्ज भाव। सब्ज़ी, अनाज, दाल — फसल भाव, मंडी तुलना और बिक्री कैलकुलेटर।`}
-        path="/"
+        path={selectedState ? `/mandi-bhav/${selectedState}` : "/"}
       />
       {/* Header */}
       <header className="sb-header">
@@ -181,15 +181,6 @@ export default function MandiJiDashboard() {
                 {selectedState ? stateNameHi : "भारत"}
               </span>
               <ChevronDown size={12} className="text-muted-foreground" />
-            </button>
-            {/* Pro button */}
-            <button
-              onClick={() => navigate('/pricing')}
-              className="sb-pro-button"
-              aria-label="Pro प्लान देखें"
-            >
-              <Crown size={11} />
-              <span className="sb-pro-label">Pro</span>
             </button>
             {/* Notification bell */}
             {notifications?.length > 0 && (
@@ -342,20 +333,21 @@ export default function MandiJiDashboard() {
           </div>
         )}
         <AnimatePresence mode="wait">
-          <Motion.div key={activeTab === 'delivery' ? activeTab : `${activeTab}-${stateParam}`} variants={tabVariants}
+          <Motion.div key={activeTab === 'delivery' || activeTab === 'naksha' ? activeTab : `${activeTab}-${stateParam}`} variants={tabVariants}
             id={`panel-${activeTab}`} role="tabpanel" aria-labelledby={`tab-${activeTab}`} className={`sb-tab-panel sb-panel-${activeTab}`}
-            initial="initial" animate="animate" exit="exit"
+            initial={typeof window === 'undefined' ? false : 'initial'} animate="animate" exit="exit"
             transition={{ duration: 0.15 }}>
             <Suspense fallback={<div role="status" className="py-12 text-center text-muted-foreground">जानकारी खुल रही है…</div>}>
             {activeTab === "prices" && <PricesTab crops={crops} stateParam={stateParam} initialCropId={jumpToCrop} onCropConsumed={() => setJumpToCrop(null)} onMandiClick={handleMandiClick} onDeliveryCalculate={handleDeliveryCalculate}/>}
             {activeTab === "calendar" && <CalendarTab selectedMonth={selectedMonth} crops={crops} seasons={seasons} isCG={isCG}/>}
             {activeTab === "mandis" && <MandisTab selectedMonth={selectedMonth} heatmap={heatmap} regions={isCG ? FALLBACK_REGIONS : null} stateParam={stateParam} onCropClick={handleCropClick} jumpToMandi={jumpToMandi} onMandiConsumed={() => setJumpToMandi(null)}/>}
-            {activeTab === "naksha" && <NakshaTab selectedMonth={selectedMonth} districts={districts} mandis={mandis} states={states} isCG={isCG} crops={crops}/>}
+            {activeTab === "naksha" && <NakshaTab key={stateParam} districts={districts} mandis={mandis} states={states} crops={cropsLoading ? [] : apiCrops || []} cropDataReady={!cropsLoading && Array.isArray(apiCrops)} loading={selectedState ? districtsLoading || mandisLoading : statesLoading} error={selectedState ? districtsError || mandisError : statesError} onDeliveryCalculate={handleDeliveryCalculate}/>}
             {activeTab === "bazaar" && <BazaarTab />}
             {activeTab === "delivery" && <DeliveryCalculatorTab crops={crops} initialScenario={deliveryScenario} onScenarioConsumed={() => setDeliveryScenario(null)} />}
             </Suspense>
           </Motion.div>
         </AnimatePresence>
+        <nav className="sb-crop-directory" aria-label="राज्य के मंडी भाव"><h2>राज्य के अनुसार मंडी भाव</h2><div className="sb-crop-directory-links">{states.filter(state => state.hasData).map(state => <Link key={state.id} to={`/mandi-bhav/${state.id}`}>{state.nameHi || state.name}</Link>)}</div></nav>
         <Footer />
       </main>
 

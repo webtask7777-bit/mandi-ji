@@ -3,12 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { fadeInUp } from '@/utils/animations';
+import SEO from '@/components/SEO';
 
 export default function NotFoundPage() {
   const navigate = useNavigate();
 
   return (
     <div className="sb-secondary-page sb-notfound-page min-h-screen bg-zinc-950 text-foreground mx-auto flex flex-col">
+      <SEO title="पेज नहीं मिला" description="यह पृष्ठ मौजूद नहीं है। सही भाव के मुख्य पृष्ठ पर उपलब्ध मंडी भाव और डिलीवरी कैलकुलेटर देखें।" noIndex />
       <header className="sticky top-0 z-30 bg-zinc-950 border-b border-zinc-800">
         <div className="flex items-center gap-3 px-4 py-3">
           <button

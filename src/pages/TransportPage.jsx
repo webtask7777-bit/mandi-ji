@@ -12,14 +12,14 @@ export default function TransportPage() {
   const [scenario, setScenario] = useState(location.state?.deliveryScenario || null);
   return (
     <div className="sb-dashboard sb-delivery-page">
-      <SEO title="डिलीवरी कैलकुलेटर — वाहन, दूरी और माल की कुल लागत" description="मंडी से माल लाने का हिसाब लगाएँ। वाहन की क्षमता, दूरी, भाड़ा, पैकिंग और वजन की कमी जोड़कर प्रति किलो लागत व स्थानीय खरीद से बचत देखें।" path="/delivery-calculator" />
+      <SEO title="मंडी डिलीवरी कैलकुलेटर और गाइड — भाड़ा, गाड़ी व पैकिंग" description="मंडी से माल लाने की पूरी लागत, बोरी-क्रेट का वजन और ट्रिप निकालें। गाड़ी चुनने, फसल की पैकिंग, ड्राइवर का भाड़ा, कागज़ और यात्रा की तैयारी की हिंदी गाइड।" path="/delivery-calculator" />
       <a href="#delivery-main" className="sb-skip-link">कैलकुलेटर पर जाएँ</a>
       <header className="sb-header sb-calculator-header">
         <Link to="/" aria-label="सही भाव होम"><Brand /></Link>
         <Link to="/" className="sb-text-button"><ArrowLeft size={17} aria-hidden="true" /> मंडी भाव देखें</Link>
       </header>
       <main id="delivery-main" className="sb-main">
-        <div className="sb-calculator-page-heading"><span className="sb-eyebrow"><Truck size={16} aria-hidden="true" />सही भाव · काम का हिसाब</span><h1>डिलीवरी कैलकुलेटर</h1></div>
+        <div className="sb-calculator-page-heading"><span className="sb-eyebrow"><Truck size={16} aria-hidden="true" />सही भाव · हिसाब और तैयारी</span><h1>मंडी डिलीवरी कैलकुलेटर और गाइड</h1></div>
         <DeliveryCalculatorTab initialScenario={scenario} onScenarioConsumed={() => setScenario(null)} />
         <Footer />
       </main>

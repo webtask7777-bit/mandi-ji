@@ -17,14 +17,14 @@ import loadBoardRouter from './routes/load-board.js';
 import ewayBillRouter from './routes/eway-bill.js';
 import adminRouter from './routes/admin.js';
 import cmsRouter from './routes/cms.js';
-import paymentsRouter, { webhookHandler } from './routes/payments.js';
+import paymentsRouter from './routes/payments.js';
 import arbitrageRouter from './routes/arbitrage.js';
 
 const app = express();
 app.use(cors());
 
-// Webhook MUST go before express.json() — needs raw body for HMAC verification
-app.post('/api/payments/webhook', express.raw({ type: 'application/json' }), webhookHandler);
+// Retire checkout and webhooks before body parsing or any authentication.
+app.use('/api/payments', paymentsRouter);
 
 app.use(express.json());
 
@@ -45,7 +45,6 @@ app.use('/api/load-board', loadBoardRouter);
 app.use('/api/eway-bill', ewayBillRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/cms', cmsRouter);
-app.use('/api/payments', paymentsRouter);
 app.use('/api/arbitrage', arbitrageRouter);
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', name: 'MandiJi API' }));

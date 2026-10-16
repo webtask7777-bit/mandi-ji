@@ -1,13 +1,14 @@
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, TrendingUp, TrendingDown, Minus, MapPin, Clock3, ShoppingCart, Calculator, Info, AlertCircle, RefreshCw } from 'lucide-react';
 import { useApi } from '../hooks/useApi';
-import { useStateContext } from '../context/StateContext';
+import { STATE_NAMES } from '../context/StateContext';
 import Brand from '../components/Brand';
 import CropImage from '../components/CropImage';
 import MiniChart from '../components/MiniChart';
 import MandiCompare from '../components/MandiCompare';
-import SEO from '../components/SEO';
+import SEO, { SITE_URL } from '../components/SEO';
 import { getDataFreshness } from '../utils/dataFreshness';
+import { cropDetailPath } from '../utils/cropUrls';
 import '../styles/detail.css';
 
 const MONTH_HI = {
@@ -34,14 +35,17 @@ function formatTimestamp(value) {
 }
 
 export default function CropDetailPage() {
-  const { cropId } = useParams();
+  const { cropId, stateId } = useParams();
   const navigate = useNavigate();
-  const { stateParam, stateNameHi } = useStateContext();
-  const stateQuery = encodeURIComponent(stateParam || 'all');
+  const stateParam = stateId || 'all';
+  const stateNameHi = stateId ? (STATE_NAMES[stateId] || stateId) : 'भारत';
+  const dashboardPath = stateId ? `/mandi-bhav/${encodeURIComponent(stateId)}` : '/';
+  const stateQuery = encodeURIComponent(stateParam);
   const cropQuery = encodeURIComponent(cropId);
   const { data: priceData, loading: priceLoading, error: priceError } = useApi(`/prices/${cropQuery}?months=13&state=${stateQuery}`);
   const { data: mandiData, loading: mandiLoading, error: mandiError } = useApi(`/mandi-compare/${cropQuery}?state=${stateQuery}`);
   const { data: tickerData } = useApi(`/ticker?state=${stateQuery}`);
+  const unavailable = [404, 422].includes(Number(priceError?.status)) || /\bAPI (404|422):/.test(priceError?.message || '');
   const cropTicker = Array.isArray(tickerData) ? tickerData.find(row => row.id === cropId) : null;
   const crop = priceData?.crop || cropTicker || {};
   const cropName = crop.nameHi || crop.name || cropId;
@@ -70,21 +74,25 @@ export default function CropDetailPage() {
 
   return (
     <div className="sb-detail-page">
-      <SEO title={`${cropName} मंडी भाव${heroPrice !== null ? ` — ₹${money(heroPrice)}/क्विंटल` : ''}`}
-        description={`${cropName} के उपलब्ध मंडी रिकॉर्ड${heroPrice !== null ? `: ₹${money(heroPrice)}/क्विंटल, ${quoteLabel}` : ''}। भाव का इतिहास, मंडी तुलना और फसल की जानकारी देखें।`}
-        path={`/crop/${cropId}`} />
+      <SEO title={`${cropName} मंडी भाव — ${stateNameHi}${heroPrice !== null ? ` · ${quoteLabel}` : ''}`}
+        description={`${stateNameHi} में ${cropName} के उपलब्ध मंडी रिकॉर्ड${heroPrice !== null ? `: ₹${money(heroPrice)}/क्विंटल, ${quoteLabel}` : ''}। भाव का इतिहास और मंडी तुलना देखें। रिकॉर्ड की तारीख जाँचकर सौदे का भाव मंडी से पुष्टि करें।`}
+        path={cropDetailPath(cropId, stateParam)} noIndex={unavailable || (!priceLoading && !priceError && !history.length && !dailyHistory.length)}
+        structuredData={cropName && !unavailable ? { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+          { '@type': 'ListItem', position: 1, name: `${stateNameHi} के मंडी भाव`, item: `${SITE_URL}${dashboardPath}` },
+          { '@type': 'ListItem', position: 2, name: cropName, item: `${SITE_URL}${cropDetailPath(cropId, stateParam)}` },
+        ] } : undefined} />
       <header className="sb-detail-header"><div className="sb-detail-header__inner">
         <Link to="/" aria-label="सही भाव के मुख्य पृष्ठ पर जाएँ"><Brand /></Link>
-        <Link to="/" className="sb-detail-back"><ArrowLeft size={16} aria-hidden="true" /> सभी मंडी भाव</Link>
+        <Link to={dashboardPath} className="sb-detail-back"><ArrowLeft size={16} aria-hidden="true" /> {stateNameHi} के मंडी भाव</Link>
       </div></header>
       <main className="sb-detail-main" id="main-content">
-        <nav className="sb-detail-breadcrumb" aria-label="पृष्ठ पथ"><Link to="/">मंडी भाव</Link><span aria-hidden="true">/</span><span>{cropName}</span></nav>
+        <nav className="sb-detail-breadcrumb" aria-label="पृष्ठ पथ"><Link to={dashboardPath}>{stateNameHi} के मंडी भाव</Link><span aria-hidden="true">/</span><span>{cropName}</span></nav>
         <section className="sb-crop-detail-heading">
           <div><span className="sb-detail-kicker">फसल की पूरी तस्वीर</span><h1>{cropName} के मंडी भाव</h1><p>{crop.name && crop.name !== cropName ? `${crop.name} · ` : ''}भाव का इतिहास देखें और मंडियों की तुलना करें।</p></div>
           <span className="sb-detail-location"><MapPin size={15} aria-hidden="true" />{stateNameHi || 'भारत'}</span>
         </section>
         {priceLoading ? <div className="sb-detail-status" role="status"><RefreshCw size={24} aria-hidden="true" /><h2>फसल के रिकॉर्ड लोड हो रहे हैं</h2><p>भाव, इतिहास और मंडी की जानकारी आ रही है।</p></div> : <>
-          {priceError && <div className="sb-detail-notice" role="alert"><AlertCircle size={20} aria-hidden="true" /><div><strong>भाव के रिकॉर्ड लोड नहीं हो पाए</strong><p>कनेक्शन की जाँच करें और पृष्ठ दोबारा खोलें।</p></div><button type="button" onClick={() => window.location.reload()}>फिर कोशिश करें</button></div>}
+          {priceError && <div className="sb-detail-notice" role="alert"><AlertCircle size={20} aria-hidden="true" /><div><strong>{unavailable ? 'यह फसल पृष्ठ उपलब्ध नहीं है' : 'भाव के रिकॉर्ड लोड नहीं हो पाए'}</strong><p>{unavailable ? 'इस क्षेत्र की उपलब्ध फसलों की सूची से भाव देखें।' : 'कनेक्शन की जाँच करें और पृष्ठ दोबारा खोलें।'}</p></div>{unavailable ? <Link to={dashboardPath}>उपलब्ध फसलें देखें</Link> : <button type="button" onClick={() => window.location.reload()}>फिर कोशिश करें</button>}</div>}
           <div className="sb-crop-detail-grid">
             <section className="sb-crop-quote" aria-label={`${cropName} का उपलब्ध भाव`}>
               <div className="sb-crop-quote__identity"><div><span className="sb-detail-kicker">{latestDay ? 'दैनिक रिकॉर्ड का भाव' : latestMonth ? 'मासिक औसत भाव' : 'उपलब्ध मंडी भाव'}</span><h2>{cropName}</h2><p>{quoteLabel}</p></div><CropImage id={cropId} name={cropName} size="hero" /></div>
@@ -97,7 +105,7 @@ export default function CropDetailPage() {
                 </div> : <p className="sb-detail-small">बदलाव दिखाने के लिए पिछला रिकॉर्ड उपलब्ध नहीं है।</p>}
                 <div className={`sb-detail-freshness ${latestDay && freshness.isCurrent ? 'is-current' : ''}`}><Clock3 size={15} aria-hidden="true" /><span>{latestDay ? freshness.label : 'मासिक रिकॉर्ड · दैनिक भाव नहीं'}</span></div>
                 {updatedLabel && <p className="sb-detail-sync">डेटा अपडेट: {updatedLabel}</p>}
-              </> : <div className="sb-detail-no-price"><strong>इस क्षेत्र के भाव उपलब्ध नहीं हैं</strong><p>दूसरे क्षेत्र के रिकॉर्ड मुख्य मंडी भाव पृष्ठ पर देखें।</p><Link to="/">क्षेत्र बदलें <ArrowRight size={16} aria-hidden="true" /></Link></div>}
+              </> : <div className="sb-detail-no-price"><strong>इस क्षेत्र के भाव उपलब्ध नहीं हैं</strong><p>दूसरे क्षेत्र के रिकॉर्ड मुख्य मंडी भाव पृष्ठ पर देखें।</p><Link to={dashboardPath}>क्षेत्र बदलें <ArrowRight size={16} aria-hidden="true" /></Link></div>}
               {heroPrice !== null && <button type="button" className="sb-detail-primary" onClick={() => openDeliveryCalculator({ cropId, cropName, buyPrice: heroPrice, quoteDate: heroRecord?.date, priceBasis: 'historical' })}><Calculator size={18} aria-hidden="true" />माल मँगाने का पूरा खर्च देखें<ArrowRight size={16} aria-hidden="true" /></button>}
               <Link to={`/listing/new?type=sell&crop=${encodeURIComponent(cropId)}`} className={heroPrice !== null ? 'sb-detail-text-link' : 'sb-detail-primary'}><ShoppingCart size={18} aria-hidden="true" />यह फसल बेचें<ArrowRight size={16} aria-hidden="true" /></Link>
             </section>
@@ -117,7 +125,7 @@ export default function CropDetailPage() {
             <div><dt>भाव की इकाई</dt><dd>₹ / क्विंटल</dd></div>
           </dl>{msp !== null && <p className="sb-detail-small">MSP का फसल वर्ष इस रिकॉर्ड में नहीं दिया गया है। वर्तमान फसल वर्ष का MSP अलग से जाँचें।</p>}<Link to="/blog" className="sb-detail-text-link">मंडी भाव समझने के लिए पढ़ें <ArrowRight size={16} aria-hidden="true" /></Link></section>
         </div>}
-        <footer className="sb-detail-footer"><Brand compact /><p>सही भाव। समझकर फ़ैसला।</p><Link to="/">मुख्य पृष्ठ पर जाएँ <ArrowRight size={15} aria-hidden="true" /></Link></footer>
+        <footer className="sb-detail-footer"><Brand compact /><p>सही भाव। समझकर फ़ैसला।</p><Link to={dashboardPath}>मुख्य पृष्ठ पर जाएँ <ArrowRight size={15} aria-hidden="true" /></Link></footer>
       </main>
     </div>
   );

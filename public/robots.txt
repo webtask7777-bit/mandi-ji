@@ -1,6 +1,20 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /admin/
+Allow: /api/crops
+Allow: /api/prices/
+Allow: /api/mandi-compare/
+Allow: /api/mandis
+Allow: /api/districts
+Allow: /api/states
+Allow: /api/ticker
+Allow: /api/stats
+Allow: /api/arbitrage
+Allow: /api/cms/blog
+Allow: /api/cms/banners
+Allow: /api/cms/notifications
+Allow: /api/listings
+
+# Account/admin pages are crawlable so their noindex directives can be read.
 
 Sitemap: https://mandi-ji.vercel.app/sitemap.xml

@@ -3,15 +3,68 @@
   "outputDirectory": "dist",
   "functions": {
     "api/index.mjs": {
-      "includeFiles": "server/**"
+      "includeFiles": "server/**",
+      "excludeFiles": "server/db/data/daily/**"
+    },
+    "api/page.mjs": {
+      "includeFiles": "server/{generated/seo/**,db/data/listings.json}",
+      "excludeFiles": "server/db/data/daily/**"
     }
   },
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/index.mjs" },
-    { "source": "/((?!api(?:/|$)).*)", "destination": "/index.html" }
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/api/page?path=:path*"
+    }
   ],
   "headers": [
-    { "source": "/sw.js", "headers": [{ "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }] },
-    { "source": "/api/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }] }
+    {
+      "source": "/sw.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/pricing",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/transport",
+      "destination": "/delivery-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "state",
+          "value": "(?<region>andaman-nicobar|andhra-pradesh|arunachal-pradesh|assam|bihar|chandigarh|chhattisgarh|delhi|goa|gujarat|haryana|himachal-pradesh|jammu-kashmir|karnataka|kerala|madhya-pradesh|maharashtra|manipur|meghalaya|nagaland|odisha|puducherry|punjab|rajasthan|tamil-nadu|telangana|tripura|uttar-pradesh|uttarakhand|west-bengal)"
+        }
+      ],
+      "destination": "/mandi-bhav/:region",
+      "permanent": true
+    }
   ]
 }
