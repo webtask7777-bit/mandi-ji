@@ -5,8 +5,8 @@
  */
 
 // When most mandis report the same price, Q1 = Q3 and every other price would look unusual.
-// The spread is never taken as less than 10% of the median.
-const MIN_SPREAD_SHARE = 0.1;
+// The spread is never taken as less than 20% of the median (MP wheat at +15% is normal).
+const MIN_SPREAD_SHARE = 0.2;
 
 function percentile(sorted, p) {
   const idx = (sorted.length - 1) * p;

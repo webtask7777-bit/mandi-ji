@@ -102,7 +102,7 @@ export default function MiniChart({ data = [], dailyData = [], title = "भा�
       <div className="px-4 pt-4 pb-3" style={{ borderBottom: `1px solid ${COLORS.grid}` }}>
         <h3 className="text-sm font-semibold" style={{ color: COLORS.ink }}>{title}</h3>
         <p className="text-xs mt-1" style={{ color: COLORS.muted }}>
-          {isMonthly ? 'मासिक औसत' : 'दिनवार रिकॉर्ड'} · {chartData.length} उपलब्ध रिकॉर्ड · अंतिम तिथि: {lastDate}{isMonthly && thinMonths > 0 ? ` · ${thinMonths} महीने 3 दिन से कम रिकॉर्ड के कारण नहीं दिखाए` : ''}
+          {isMonthly ? 'महीने का मध्य भाव' : 'दिनवार रिकॉर्ड'} · {chartData.length} उपलब्ध रिकॉर्ड · अंतिम तिथि: {lastDate}{isMonthly && thinMonths > 0 ? ` · ${thinMonths} महीने 3 दिन से कम रिकॉर्ड के कारण नहीं दिखाए` : ''}
         </p>
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mt-3">
           <span className="text-2xl font-bold tabular-nums" style={{ color: COLORS.ink }}>₹{Number(last.market).toLocaleString('en-IN')}</span>
@@ -121,7 +121,7 @@ export default function MiniChart({ data = [], dailyData = [], title = "भा�
         </p>}
         {dailyRecords.length > 0 && monthlyRecords.length > 0 && <div className="flex flex-wrap gap-2 mt-3" role="group" aria-label="भाव इतिहास का प्रकार">
           <button type="button" onClick={() => setPreferredSource('daily')} aria-pressed={!isMonthly} style={buttonStyle(!isMonthly)}>दिनवार रिकॉर्ड</button>
-          <button type="button" onClick={() => setPreferredSource('monthly')} aria-pressed={isMonthly} style={buttonStyle(isMonthly)}>मासिक औसत</button>
+          <button type="button" onClick={() => setPreferredSource('monthly')} aria-pressed={isMonthly} style={buttonStyle(isMonthly)}>महीने का मध्य भाव</button>
         </div>}
         <div className="flex flex-wrap gap-2 mt-3" role="group" aria-label="अंतिम कितने उपलब्ध रिकॉर्ड दिखाएँ">
           {RECORD_RANGES.map(value => <button type="button" key={value} onClick={() => setRange(value)} aria-pressed={range === value} style={buttonStyle(range === value)}>
@@ -134,7 +134,7 @@ export default function MiniChart({ data = [], dailyData = [], title = "भा�
         <svg viewBox={`0 0 ${totalW} ${totalH}`} className="w-full" style={{ display: 'block', minHeight: 195 }} role="img" aria-labelledby={`${titleId} ${descriptionId}`}>
           <title id={titleId}>{`${title} — ${chartData.length} उपलब्ध रिकॉर्ड`}</title>
           <desc id={descriptionId}>
-            {isMonthly ? 'मासिक औसत भाव।' : 'उपलब्ध दिनवार भाव।'} अंतिम रिकॉर्ड {lastDate}: ₹{Number(last.market).toLocaleString('en-IN')} प्रति क्विंटल।
+            {isMonthly ? 'महीने का मध्य भाव।' : 'उपलब्ध दिनवार भाव।'} अंतिम रिकॉर्ड {lastDate}: ₹{Number(last.market).toLocaleString('en-IN')} प्रति क्विंटल।
             {change !== null ? ` पिछले उपलब्ध रिकॉर्ड से ${change > 0 ? 'वृद्धि' : change < 0 ? 'कमी' : 'बदलाव नहीं'}${change ? ` ₹${Math.abs(change).toLocaleString('en-IN')}` : ''}।` : ' तुलना के लिए पिछला रिकॉर्ड उपलब्ध नहीं।'}
             बिंदु रिकॉर्ड के क्रम में हैं; बीच की दूरी समान समय नहीं दर्शाती।
             {hasMsp ? ' सुनहरी टूटी रेखा केवल उपलब्ध MSP दिखाती है।' : ''}

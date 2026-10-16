@@ -375,9 +375,9 @@
     "name": "Mango",
     "nameHi": "आम",
     "emoji": "🥭",
-    "totalRecords": 163,
-    "avgPrice": 6136,
-    "minPrice": 25,
+    "totalRecords": 160,
+    "avgPrice": 6250,
+    "minPrice": 3000,
     "maxPrice": 20000,
     "varieties": [
       "Dusheri",
@@ -490,28 +490,14 @@
     "name": "Plum",
     "nameHi": "Plum",
     "emoji": "🌱",
-    "totalRecords": 98,
-    "avgPrice": 4265,
-    "minPrice": 20,
+    "totalRecords": 97,
+    "avgPrice": 4309,
+    "minPrice": 1600,
     "maxPrice": 10000,
     "varieties": [
       "Plum",
       "Other",
       "Santa Rosa"
-    ]
-  },
-  {
-    "id": "papaya",
-    "name": "Papaya",
-    "nameHi": "पपीता",
-    "emoji": "🍏",
-    "totalRecords": 86,
-    "avgPrice": 4885,
-    "minPrice": 20,
-    "maxPrice": 10000,
-    "varieties": [
-      "Papaya",
-      "Other"
     ]
   },
   {
@@ -525,6 +511,20 @@
     "maxPrice": 13000,
     "varieties": [
       "Pine Apple",
+      "Other"
+    ]
+  },
+  {
+    "id": "papaya",
+    "name": "Papaya",
+    "nameHi": "पपीता",
+    "emoji": "🍏",
+    "totalRecords": 84,
+    "avgPrice": 5001,
+    "minPrice": 2500,
+    "maxPrice": 10000,
+    "varieties": [
+      "Papaya",
       "Other"
     ]
   },
@@ -893,23 +893,6 @@
     ]
   },
   {
-    "id": "cherry",
-    "name": "Cherry",
-    "nameHi": "Cherry",
-    "emoji": "🌱",
-    "totalRecords": 12,
-    "avgPrice": 14605,
-    "minPrice": 80,
-    "maxPrice": 40000,
-    "varieties": [
-      "Awal Number",
-      "Cherry",
-      "Makhmali",
-      "Other",
-      "Bing"
-    ]
-  },
-  {
     "id": "green-chilli",
     "name": "Green Chilli",
     "nameHi": "हरी मिर्च",
@@ -976,6 +959,22 @@
     "peakMonths": [
       11,
       0
+    ]
+  },
+  {
+    "id": "cherry",
+    "name": "Cherry",
+    "nameHi": "Cherry",
+    "emoji": "🌱",
+    "totalRecords": 10,
+    "avgPrice": 17500,
+    "minPrice": 8000,
+    "maxPrice": 40000,
+    "varieties": [
+      "Awal Number",
+      "Makhmali",
+      "Other",
+      "Bing"
     ]
   },
   {

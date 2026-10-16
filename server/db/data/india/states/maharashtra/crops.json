@@ -249,7 +249,7 @@
     "emoji": "🥕",
     "totalRecords": 2111,
     "avgPrice": 1907,
-    "minPrice": 90,
+    "minPrice": 200,
     "maxPrice": 40000,
     "varieties": [
       "Other"
@@ -319,7 +319,7 @@
     "emoji": "☁️",
     "totalRecords": 1936,
     "avgPrice": 7669,
-    "minPrice": 237,
+    "minPrice": 700,
     "maxPrice": 9600,
     "varieties": [
       "Other",
@@ -434,12 +434,12 @@
       1
     ],
     "harvestMonths": [
-      3,
-      4
+      2,
+      3
     ],
     "peakMonths": [
-      4,
-      5
+      3,
+      4
     ]
   },
   {
@@ -447,9 +447,9 @@
     "name": "Coriander(Leaves)",
     "nameHi": "धनिया",
     "emoji": "🌿",
-    "totalRecords": 1489,
-    "avgPrice": 2321,
-    "minPrice": 10,
+    "totalRecords": 1488,
+    "avgPrice": 2323,
+    "minPrice": 100,
     "maxPrice": 28500,
     "varieties": [
       "Other"
@@ -538,7 +538,7 @@
     "emoji": "🌱",
     "totalRecords": 962,
     "avgPrice": 3191,
-    "minPrice": 150,
+    "minPrice": 300,
     "maxPrice": 7500,
     "varieties": [
       "Other"
@@ -792,7 +792,7 @@
     "emoji": "🌱",
     "totalRecords": 296,
     "avgPrice": 18108,
-    "minPrice": 200,
+    "minPrice": 700,
     "maxPrice": 116000,
     "varieties": [
       "Other"
@@ -1723,19 +1723,6 @@
     ]
   },
   {
-    "id": "chrysanthemumloose",
-    "name": "Chrysanthemum(Loose)",
-    "nameHi": "Chrysanthemum(Loose)",
-    "emoji": "🌱",
-    "totalRecords": 30,
-    "avgPrice": 4226,
-    "minPrice": 60,
-    "maxPrice": 10000,
-    "varieties": [
-      "Other"
-    ]
-  },
-  {
     "id": "ajwan",
     "name": "Ajwan",
     "nameHi": "Ajwan",
@@ -1771,6 +1758,19 @@
     "avgPrice": 30345,
     "minPrice": 6200,
     "maxPrice": 43000,
+    "varieties": [
+      "Other"
+    ]
+  },
+  {
+    "id": "chrysanthemumloose",
+    "name": "Chrysanthemum(Loose)",
+    "nameHi": "Chrysanthemum(Loose)",
+    "emoji": "🌱",
+    "totalRecords": 27,
+    "avgPrice": 4684,
+    "minPrice": 1000,
+    "maxPrice": 10000,
     "varieties": [
       "Other"
     ]
@@ -2001,19 +2001,6 @@
     ]
   },
   {
-    "id": "astera",
-    "name": "Astera",
-    "nameHi": "Astera",
-    "emoji": "🌱",
-    "totalRecords": 9,
-    "avgPrice": 15,
-    "minPrice": 10,
-    "maxPrice": 20,
-    "varieties": [
-      "Other"
-    ]
-  },
-  {
     "id": "masur-dal",
     "name": "Masur Dal",
     "nameHi": "मसूर दाल",
@@ -2202,19 +2189,6 @@
     ]
   },
   {
-    "id": "jasmine",
-    "name": "Jasmine",
-    "nameHi": "चमेली",
-    "emoji": "🌱",
-    "totalRecords": 5,
-    "avgPrice": 13300,
-    "minPrice": 1000,
-    "maxPrice": 25000,
-    "varieties": [
-      "Other"
-    ]
-  },
-  {
     "id": "roseloose",
     "name": "Rose(Loose))",
     "nameHi": "रजनीगंधा",
@@ -2223,6 +2197,19 @@
     "avgPrice": 6700,
     "minPrice": 2000,
     "maxPrice": 15000,
+    "varieties": [
+      "Other"
+    ]
+  },
+  {
+    "id": "jasmine",
+    "name": "Jasmine",
+    "nameHi": "चमेली",
+    "emoji": "🌱",
+    "totalRecords": 4,
+    "avgPrice": 16250,
+    "minPrice": 10000,
+    "maxPrice": 25000,
     "varieties": [
       "Other"
     ]

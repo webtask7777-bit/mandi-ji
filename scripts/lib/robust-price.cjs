@@ -63,4 +63,51 @@ function unitMismatchedSeries(records, { seriesKey, commodityKey, minRecords = 3
   return excluded;
 }
 
-module.exports = { median, newBucket, addPrice, bucketPrice, unitMismatchedSeries };
+/**
+ * Drop buckets whose mandi count is under `share` of the series' median mandi count: a
+ * national month with 5 mandis among months of ~500 describes a different set of markets
+ * (e.g. one state's history before national coverage), not a price for the whole country.
+ * Mutates and returns the removed keys.
+ */
+function dropThinBuckets(buckets, share = 0.2, { keepLatest = false } = {}) {
+  const counts = Object.values(buckets).map(b => Object.keys(b.byMandi || {}).length).filter(n => n > 0);
+  if (counts.length < 3) return [];
+  const typical = median(counts);
+  const removed = [];
+  // The newest day is always kept: it is the latest observation and is shown with its mandi count.
+  const latest = keepLatest ? Object.keys(buckets).sort().at(-1) : null;
+  for (const [key, bucket] of Object.entries(buckets)) {
+    if (key === latest) continue;
+    if (Object.keys(bucket.byMandi || {}).length < typical * share) { delete buckets[key]; removed.push(key); }
+  }
+  return removed;
+}
+
+/**
+ * Record-level sanity against the commodity's typical price: a single modal price 20x below
+ * or above it (₹4/q garlic, a max of ₹39 lakh/q) is a data-entry error, not a market.
+ * Returns { keep(record) → boolean, clip(record) } built from all records.
+ */
+function priceSanity(records, commodityKey, factor = 20) {
+  const byCommodity = new Map();
+  for (const r of records) {
+    if (!(r.modal_price > 0)) continue;
+    const c = commodityKey(r);
+    if (!byCommodity.has(c)) byCommodity.set(c, []);
+    byCommodity.get(c).push(r.modal_price);
+  }
+  const typical = new Map([...byCommodity].filter(([, list]) => list.length >= 20).map(([c, list]) => [c, median(list)]));
+  return {
+    keep(r) {
+      const t = typical.get(commodityKey(r));
+      return !t || (r.modal_price >= t / factor && r.modal_price <= t * factor);
+    },
+    clip(r) {
+      if (r.max_price > r.modal_price * factor) r.max_price = 0;
+      if (r.min_price > 0 && r.min_price < r.modal_price / factor) r.min_price = 0;
+      return r;
+    },
+  };
+}
+
+module.exports = { median, newBucket, addPrice, bucketPrice, unitMismatchedSeries, dropThinBuckets, priceSanity };

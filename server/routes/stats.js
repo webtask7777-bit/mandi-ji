@@ -1,12 +1,26 @@
 import { Router } from 'express';
 import { loadIndiaData, resolveScope, loadScopeData, UNKNOWN_STATE_ERROR } from '../db/connection.js';
+import { isCropPriceCommodity } from '../../src/utils/cropEligibility.js';
 
 const router = Router();
 
 router.get('/', (req, res) => {
   const scope = resolveScope(req.query.state);
   if (!scope) return res.status(400).json(UNKNOWN_STATE_ERROR);
-  res.json(loadScopeData(scope, 'stats') || {});
+  const stats = loadScopeData(scope, 'stats') || {};
+  // Counts match what the screens list: crops served on price pages (livestock excluded).
+  const crops = (loadScopeData(scope, 'crops') || []).filter(crop => isCropPriceCommodity(crop.id));
+  const state = scope === 'all' ? null : (loadIndiaData('states') || []).find(s => s.id === scope);
+  const newestObservation = scope === 'all' ? stats.newestObservation || null : state?.latestObservation || null;
+  res.json({
+    ...stats,
+    totalCrops: crops.length,
+    newestObservation,
+    // A state's stats have no file-level dateRange; give the newest observation so the
+    // Mandis tab can show its date instead of "तारीख उपलब्ध नहीं".
+    dateRange: stats.dateRange || (newestObservation ? [newestObservation] : []),
+    recentMandis: scope === 'all' ? null : state?.recentMandis ?? null,
+  });
 });
 
 router.get('/data-status', (req, res) => {

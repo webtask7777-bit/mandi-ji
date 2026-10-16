@@ -1,26 +1,14 @@
 import { Router } from 'express';
-import { loadData, loadStateData } from '../db/connection.js';
+import { loadStateData } from '../db/connection.js';
 
 const router = Router();
 
 router.get('/', (req, res) => {
   const { state } = req.query;
-  if (state && state !== 'chhattisgarh') return res.json(loadStateData(state, 'districts') || []);
-  res.json(loadData('districts'));
+  if (!state || state === 'all') return res.json([]);
+  res.json(loadStateData(state, 'districts') || []);
 });
 
-router.get('/:id', (req, res) => {
-  const districts = loadData('districts');
-  const mandis = loadData('mandis');
-  const districtStats = loadData('district-stats');
-  const id = Number(req.params.id);
-
-  const district = districts.find(d => d.id === id);
-  if (!district) return res.status(404).json({ error: 'District not found' });
-
-  const districtMandis = mandis.filter(m => m.districtId === id);
-  const stats = districtStats[String(id)] || {};
-  res.json({ ...district, mandis: districtMandis, ...stats });
-});
+// GET /:id (legacy Chhattisgarh district detail, data to March 2026) was removed; no screen used it.
 
 export default router;

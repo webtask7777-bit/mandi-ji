@@ -2,6 +2,9 @@ import { useState } from "react";
 import { ChevronDown, ChevronUp, ArrowUpRight, ArrowDownRight, Minus, Info, Search, Sprout } from "lucide-react";
 import CropImage from "./CropImage";
 
+const HI_MONTHS = ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'];
+const monthLabelHi = value => { const m = /^(\d{4})-(\d{2})$/.exec(value || ''); return m ? `${HI_MONTHS[Number(m[2]) - 1]} ${m[1]}` : ''; };
+
 const number = value => Number(value).toLocaleString("en-IN", { maximumFractionDigits: 0 });
 
 export default function TickerBoard({ data, onSelectCrop, selectedCrop }) {
@@ -33,7 +36,7 @@ export default function TickerBoard({ data, onSelectCrop, selectedCrop }) {
       <div className="sb-board__table-wrap" tabIndex={0} role="region" aria-label="फसल भाव तालिका, छोटे पर्दे पर दाएँ-बाएँ स्क्रॉल करें">
         <table className="sb-board__table">
           <caption className="sr-only">अंतिम उपलब्ध महीने का औसत भाव, पिछले दर्ज महीने से बदलाव और रिकॉर्ड की संख्या। यह आज की खरीद या बिक्री की सलाह नहीं है।</caption>
-          <thead><tr><th scope="col">फसल / मंडियाँ</th><th scope="col">मासिक औसत</th><th scope="col">पिछले दर्ज महीने से</th><th scope="col">कुल रिकॉर्ड</th></tr></thead>
+          <thead><tr><th scope="col">फसल / मंडियाँ</th><th scope="col">महीने का मध्य भाव</th><th scope="col">पिछले दर्ज महीने से</th><th scope="col">कुल रिकॉर्ड</th></tr></thead>
           <tbody>{visible.map(item => {
             const changeKnown = Number(item.prevPrice) > 0 && item.changePct != null && Number.isFinite(Number(item.changePct));
             const change = Number(item.changePct);
@@ -42,9 +45,9 @@ export default function TickerBoard({ data, onSelectCrop, selectedCrop }) {
             return <tr key={item.id} className={isSelected ? "sb-board__row--selected" : ""}>
               <th scope="row"><button type="button" className="sb-board__crop" onClick={() => onSelectCrop?.(item.id)} aria-pressed={isSelected}>
                 <CropImage id={item.id} name={item.nameHi || item.name} size="sm" />
-                <span><strong>{item.nameHi || item.name}</strong><small>{item.mandiCount ? `${number(item.mandiCount)} मंडियाँ` : "रिकॉर्ड उपलब्ध"}</small></span>
+                <span><strong>{item.nameHi || item.name}</strong><small>{item.priceMandis ? `${number(item.priceMandis)} मंडियाँ इस महीने` : item.mandiCount ? `कुल ${number(item.mandiCount)} मंडियाँ` : "रिकॉर्ड उपलब्ध"}</small></span>
               </button></th>
-              <td><strong className="sb-board__price">{Number(item.price) > 0 ? `₹${number(item.price)}` : "—"}</strong>{Number(item.msp) > 0 && <small>MSP{item.mspSeason ? ` ${item.mspSeason}` : ''} ₹{number(item.msp)}</small>}</td>
+              <td><strong className="sb-board__price">{Number(item.price) > 0 ? `₹${number(item.price)}` : "—"}</strong>{item.priceMonth && <small>{monthLabelHi(item.priceMonth)}{item.priceDays ? ` · ${item.priceDays} दिन` : ''}</small>}{Number(item.msp) > 0 && <small>MSP{item.mspSeason ? ` ${item.mspSeason}` : ''} ₹{number(item.msp)}</small>}</td>
               <td><span className={`sb-change ${change > 0 ? "sb-change--up" : change < 0 ? "sb-change--down" : "sb-change--flat"}`}>
                 {changeKnown ? <><ChangeIcon size={15} aria-hidden="true" />{change > 0 ? "+" : ""}{change}%</> : "—"}
               </span></td>
@@ -57,7 +60,7 @@ export default function TickerBoard({ data, onSelectCrop, selectedCrop }) {
       {sorted.length > 10 && <button type="button" className="sb-more-button" onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>
         {expanded ? <><ChevronUp size={17} />कम दिखाएँ</> : <><ChevronDown size={17} />सभी {sorted.length} फसलें देखें</>}
       </button>}
-      <p className="sb-data-note"><Info size={15} aria-hidden="true" />बोर्ड में मासिक औसत हैं; इन्हें आज का भाव न मानें। फसल खोलकर उपलब्ध तारीख और मंडी का विवरण देखें। रिकॉर्ड की संख्या कारोबार की मात्रा नहीं है।</p>
+      <p className="sb-data-note"><Info size={15} aria-hidden="true" />बोर्ड में हर फसल के आख़िरी दर्ज महीने का मध्य भाव (मंडियों के औसत का बीच वाला मान) है, उस महीने के दिनों की संख्या के साथ। इसे आज का भाव न मानें। फसल खोलकर उपलब्ध तारीख और मंडी का विवरण देखें। रिकॉर्ड की संख्या कारोबार की मात्रा नहीं है।</p>
     </section>
   );
 }
