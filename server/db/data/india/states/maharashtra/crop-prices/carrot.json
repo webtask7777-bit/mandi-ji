@@ -53,6 +53,12 @@
       "date": "2026-07",
       "market": 2405,
       "volume": 326
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3500,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -1035,9 +1041,16 @@
       "volume": 8,
       "minPrice": 400,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3500,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Pune",
@@ -1106,6 +1119,12 @@
       "records": 77
     },
     {
+      "district": "Ratnagiri",
+      "nameHi": "Ratnagiri",
+      "avgPrice": 3113,
+      "records": 61
+    },
+    {
       "district": "Chandrapur",
       "nameHi": "Chandrapur",
       "avgPrice": 1613,
@@ -1115,12 +1134,6 @@
       "district": "Dharashiv(Usmanabad)",
       "nameHi": "Dharashiv(Usmanabad)",
       "avgPrice": 1947,
-      "records": 60
-    },
-    {
-      "district": "Ratnagiri",
-      "nameHi": "Ratnagiri",
-      "avgPrice": 3107,
       "records": 60
     },
     {

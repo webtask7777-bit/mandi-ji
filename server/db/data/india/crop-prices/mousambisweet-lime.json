@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 5853,
       "volume": 1626
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5100,
+      "volume": 33
     }
   ],
   "dailyHistory": [
@@ -415,10 +421,23 @@
       "volume": 5,
       "minPrice": 3500,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 5100,
+      "volume": 33,
+      "minPrice": 2500,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
+    {
+      "district": "Salem (तमिल नाडु)",
+      "nameHi": "Salem (तमिल नाडु)",
+      "avgPrice": 3368,
+      "records": 130
+    },
     {
       "district": "Kangra (हिमाचल प्रदेश)",
       "nameHi": "Kangra (हिमाचल प्रदेश)",
@@ -426,16 +445,10 @@
       "records": 126
     },
     {
-      "district": "Salem (तमिल नाडु)",
-      "nameHi": "Salem (तमिल नाडु)",
-      "avgPrice": 3352,
-      "records": 123
-    },
-    {
       "district": "Madurai (तमिल नाडु)",
       "nameHi": "Madurai (तमिल नाडु)",
-      "avgPrice": 8643,
-      "records": 98
+      "avgPrice": 8566,
+      "records": 102
     },
     {
       "district": "Hissar (हरियाणा)",
@@ -458,20 +471,20 @@
     {
       "district": "Coimbatore (तमिल नाडु)",
       "nameHi": "Coimbatore (तमिल नाडु)",
-      "avgPrice": 7545,
-      "records": 68
+      "avgPrice": 7454,
+      "records": 71
+    },
+    {
+      "district": "Namakkal (तमिल नाडु)",
+      "nameHi": "Namakkal (तमिल नाडु)",
+      "avgPrice": 3493,
+      "records": 69
     },
     {
       "district": "Kurukshetra (हरियाणा)",
       "nameHi": "Kurukshetra (हरियाणा)",
       "avgPrice": 4845,
       "records": 68
-    },
-    {
-      "district": "Namakkal (तमिल नाडु)",
-      "nameHi": "Namakkal (तमिल नाडु)",
-      "avgPrice": 3485,
-      "records": 65
     },
     {
       "district": "Ludhiana (पंजाब)",
@@ -482,14 +495,14 @@
     {
       "district": "Thiruvannamalai (तमिल नाडु)",
       "nameHi": "Thiruvannamalai (तमिल नाडु)",
-      "avgPrice": 7142,
-      "records": 51
+      "avgPrice": 7111,
+      "records": 52
     },
     {
       "district": "Vellore (तमिल नाडु)",
       "nameHi": "Vellore (तमिल नाडु)",
-      "avgPrice": 7943,
-      "records": 44
+      "avgPrice": 7880,
+      "records": 46
     },
     {
       "district": "Udhamsinghnagar (उत्तराखण्ड)",

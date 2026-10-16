@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 5071,
       "volume": 1478
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4978,
+      "volume": 65
     }
   ],
   "dailyHistory": [
@@ -415,45 +421,58 @@
       "volume": 75,
       "minPrice": 3000,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4978,
+      "volume": 65,
+      "minPrice": 2500,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Salem",
       "nameHi": "Salem",
-      "avgPrice": 5151,
-      "records": 271
+      "avgPrice": 5160,
+      "records": 281
     },
     {
       "district": "Theni",
       "nameHi": "Theni",
-      "avgPrice": 4093,
-      "records": 206
+      "avgPrice": 4084,
+      "records": 210
     },
     {
       "district": "Dharmapuri",
       "nameHi": "Dharmapuri",
-      "avgPrice": 5120,
-      "records": 193
+      "avgPrice": 5141,
+      "records": 199
     },
     {
       "district": "Thiruvannamalai",
       "nameHi": "Thiruvannamalai",
-      "avgPrice": 4348,
-      "records": 192
+      "avgPrice": 4356,
+      "records": 198
     },
     {
       "district": "Vellore",
       "nameHi": "Vellore",
-      "avgPrice": 4076,
-      "records": 192
+      "avgPrice": 4087,
+      "records": 196
     },
     {
       "district": "Thiruchirappalli",
       "nameHi": "Thiruchirappalli",
-      "avgPrice": 3335,
-      "records": 143
+      "avgPrice": 3322,
+      "records": 147
+    },
+    {
+      "district": "Krishnagiri",
+      "nameHi": "Krishnagiri",
+      "avgPrice": 3978,
+      "records": 135
     },
     {
       "district": "Chengalpattu",
@@ -462,10 +481,10 @@
       "records": 133
     },
     {
-      "district": "Krishnagiri",
-      "nameHi": "Krishnagiri",
-      "avgPrice": 3962,
-      "records": 132
+      "district": "Madurai",
+      "nameHi": "Madurai",
+      "avgPrice": 4615,
+      "records": 127
     },
     {
       "district": "Sivaganga",
@@ -474,40 +493,34 @@
       "records": 124
     },
     {
-      "district": "Madurai",
-      "nameHi": "Madurai",
-      "avgPrice": 4600,
-      "records": 123
-    },
-    {
       "district": "Coimbatore",
       "nameHi": "Coimbatore",
-      "avgPrice": 4165,
-      "records": 118
+      "avgPrice": 4184,
+      "records": 122
     },
     {
       "district": "The Nilgiris",
       "nameHi": "The Nilgiris",
-      "avgPrice": 3533,
-      "records": 94
+      "avgPrice": 3545,
+      "records": 97
     },
     {
       "district": "Villupuram",
       "nameHi": "Villupuram",
-      "avgPrice": 4819,
-      "records": 89
+      "avgPrice": 4829,
+      "records": 91
     },
     {
       "district": "Ramanathapuram",
       "nameHi": "Ramanathapuram",
-      "avgPrice": 4899,
-      "records": 63
+      "avgPrice": 4911,
+      "records": 64
     },
     {
       "district": "Cuddalore",
       "nameHi": "Cuddalore",
-      "avgPrice": 4667,
-      "records": 60
+      "avgPrice": 4697,
+      "records": 61
     }
   ]
 }

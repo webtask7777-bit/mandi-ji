@@ -48,6 +48,13 @@
       "market": 5640,
       "volume": 2,
       "msp": 5440
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 6383,
+      "volume": 6,
+      "msp": 5440
     }
   ],
   "dailyHistory": [
@@ -365,15 +372,46 @@
       "volume": 1,
       "minPrice": 5911,
       "maxPrice": 5911
+    },
+    {
+      "date": "2026-10-16",
+      "market": 6383,
+      "volume": 6,
+      "minPrice": 5800,
+      "maxPrice": 7500
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Kurnool",
       "nameHi": "Kurnool",
       "avgPrice": 5142,
       "records": 64
+    },
+    {
+      "district": "Ananthapuramu",
+      "nameHi": "Ananthapuramu",
+      "avgPrice": 6575,
+      "records": 2
+    },
+    {
+      "district": "Markapuram",
+      "nameHi": "Markapuram",
+      "avgPrice": 5950,
+      "records": 2
+    },
+    {
+      "district": "Prakasam",
+      "nameHi": "Prakasam",
+      "avgPrice": 6000,
+      "records": 1
+    },
+    {
+      "district": "Bapatla",
+      "nameHi": "Bapatla",
+      "avgPrice": 7250,
+      "records": 1
     }
   ]
 }

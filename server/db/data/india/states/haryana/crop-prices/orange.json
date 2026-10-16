@@ -23,6 +23,12 @@
       "date": "2026-05",
       "market": 12000,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 6000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -130,9 +136,16 @@
       "volume": 1,
       "minPrice": 15000,
       "maxPrice": 15000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 6000,
+      "volume": 1,
+      "minPrice": 5000,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Mahendragarh-Narnaul",
@@ -186,6 +199,12 @@
       "district": "Jhajar",
       "nameHi": "Jhajar",
       "avgPrice": 3000,
+      "records": 1
+    },
+    {
+      "district": "Gurgaon",
+      "nameHi": "Gurgaon",
+      "avgPrice": 6000,
       "records": 1
     }
   ]

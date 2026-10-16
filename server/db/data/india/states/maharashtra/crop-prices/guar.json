@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 4054,
       "volume": 13
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5500,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -220,9 +226,16 @@
       "volume": 3,
       "minPrice": 1500,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 5500,
+      "volume": 1,
+      "minPrice": 4000,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Pune",
@@ -237,16 +250,16 @@
       "records": 10
     },
     {
+      "district": "Ratnagiri",
+      "nameHi": "Ratnagiri",
+      "avgPrice": 4400,
+      "records": 10
+    },
+    {
       "district": "Nagpur",
       "nameHi": "Nagpur",
       "avgPrice": 4554,
       "records": 10
-    },
-    {
-      "district": "Ratnagiri",
-      "nameHi": "Ratnagiri",
-      "avgPrice": 4278,
-      "records": 9
     },
     {
       "district": "Jalgaon",

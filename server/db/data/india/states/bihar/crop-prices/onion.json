@@ -23,6 +23,12 @@
       "date": "2026-07",
       "market": 2671,
       "volume": 25
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4467,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -81,15 +87,22 @@
       "volume": 8,
       "minPrice": 2500,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4467,
+      "volume": 3,
+      "minPrice": 4000,
+      "maxPrice": 5200
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "East Champaran/ Motihari",
       "nameHi": "East Champaran/ Motihari",
-      "avgPrice": 2256,
-      "records": 9
+      "avgPrice": 2450,
+      "records": 10
     },
     {
       "district": "Muzaffarpur",
@@ -110,16 +123,16 @@
       "records": 3
     },
     {
+      "district": "Darbhanga",
+      "nameHi": "Darbhanga",
+      "avgPrice": 3183,
+      "records": 3
+    },
+    {
       "district": "Madhubani",
       "nameHi": "Madhubani",
       "avgPrice": 2900,
       "records": 3
-    },
-    {
-      "district": "Darbhanga",
-      "nameHi": "Darbhanga",
-      "avgPrice": 2675,
-      "records": 2
     },
     {
       "district": "Banka",
@@ -155,6 +168,12 @@
       "district": "Supaul",
       "nameHi": "Supaul",
       "avgPrice": 2500,
+      "records": 1
+    },
+    {
+      "district": "Aurangabad",
+      "nameHi": "Aurangabad",
+      "avgPrice": 5000,
       "records": 1
     }
   ]

@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 26617,
       "volume": 448
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 19474,
+      "volume": 19
     }
   ],
   "dailyHistory": [
@@ -394,15 +400,22 @@
       "volume": 26,
       "minPrice": 8000,
       "maxPrice": 60000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 19474,
+      "volume": 19,
+      "minPrice": 9000,
+      "maxPrice": 42000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Salem",
       "nameHi": "Salem",
-      "avgPrice": 20576,
-      "records": 157
+      "avgPrice": 20549,
+      "records": 163
     },
     {
       "district": "Chengalpattu",
@@ -413,38 +426,38 @@
     {
       "district": "Vellore",
       "nameHi": "Vellore",
-      "avgPrice": 24385,
-      "records": 91
+      "avgPrice": 24183,
+      "records": 93
     },
     {
       "district": "Thiruvannamalai",
       "nameHi": "Thiruvannamalai",
-      "avgPrice": 29278,
-      "records": 81
+      "avgPrice": 29187,
+      "records": 83
     },
     {
       "district": "Ramanathapuram",
       "nameHi": "Ramanathapuram",
-      "avgPrice": 8250,
-      "records": 67
+      "avgPrice": 8268,
+      "records": 68
     },
     {
       "district": "Villupuram",
       "nameHi": "Villupuram",
-      "avgPrice": 25432,
-      "records": 37
+      "avgPrice": 25289,
+      "records": 38
     },
     {
       "district": "Ranipet",
       "nameHi": "Ranipet",
-      "avgPrice": 35203,
-      "records": 32
+      "avgPrice": 35409,
+      "records": 33
     },
     {
       "district": "Namakkal",
       "nameHi": "Namakkal",
-      "avgPrice": 25613,
-      "records": 31
+      "avgPrice": 25531,
+      "records": 32
     },
     {
       "district": "Thiruvellore",
@@ -461,8 +474,8 @@
     {
       "district": "Dharmapuri",
       "nameHi": "Dharmapuri",
-      "avgPrice": 12413,
-      "records": 26
+      "avgPrice": 12306,
+      "records": 27
     },
     {
       "district": "Kallakuruchi",
@@ -475,6 +488,18 @@
       "nameHi": "Thanjavur",
       "avgPrice": 29357,
       "records": 7
+    },
+    {
+      "district": "Chengalpet",
+      "nameHi": "Chengalpet",
+      "avgPrice": 16167,
+      "records": 3
+    },
+    {
+      "district": "Krishnagiri",
+      "nameHi": "Krishnagiri",
+      "avgPrice": 17500,
+      "records": 1
     }
   ]
 }

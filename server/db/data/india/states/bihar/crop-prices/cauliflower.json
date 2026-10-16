@@ -11,6 +11,12 @@
       "date": "2026-06",
       "market": 2700,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3700,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -20,14 +26,27 @@
       "volume": 1,
       "minPrice": 2499.99975,
       "maxPrice": 2866.66638
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3700,
+      "volume": 1,
+      "minPrice": 3600,
+      "maxPrice": 3900
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Khagaria",
       "nameHi": "Khagaria",
       "avgPrice": 2700,
+      "records": 1
+    },
+    {
+      "district": "East Champaran/ Motihari",
+      "nameHi": "East Champaran/ Motihari",
+      "avgPrice": 3700,
       "records": 1
     }
   ]

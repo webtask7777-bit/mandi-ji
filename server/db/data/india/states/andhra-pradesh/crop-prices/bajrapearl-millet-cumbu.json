@@ -48,6 +48,13 @@
       "market": 1872,
       "volume": 1,
       "msp": 2625
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2900,
+      "volume": 1,
+      "msp": 2625
     }
   ],
   "dailyHistory": [
@@ -463,15 +470,28 @@
       "volume": 1,
       "minPrice": 1872,
       "maxPrice": 1872
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2900,
+      "volume": 1,
+      "minPrice": 2900,
+      "maxPrice": 2900
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Kurnool",
       "nameHi": "Kurnool",
       "avgPrice": 2099,
       "records": 59
+    },
+    {
+      "district": "Prakasam",
+      "nameHi": "Prakasam",
+      "avgPrice": 2900,
+      "records": 1
     }
   ]
 }

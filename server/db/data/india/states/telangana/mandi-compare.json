@@ -250,7 +250,7 @@
       "name": "L B Nagar",
       "district": "Ranga Reddy",
       "avgPrice": 2600,
-      "recentPrice": 2557,
+      "recentPrice": null,
       "minPrice": 2200,
       "maxPrice": 3200,
       "records": 16,
@@ -261,7 +261,7 @@
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 1988,
-      "recentPrice": 2500,
+      "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 3000,
       "records": 92,
@@ -272,7 +272,7 @@
       "name": "Bowenpally",
       "district": "Hyderabad",
       "avgPrice": 674,
-      "recentPrice": 643,
+      "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 2500,
       "records": 23,
@@ -282,21 +282,10 @@
   ],
   "beetroot": [
     {
-      "name": "Mahboob Manison",
-      "district": "Hyderabad",
-      "avgPrice": 3281,
-      "recentPrice": 3625,
-      "minPrice": 2250,
-      "maxPrice": 4500,
-      "records": 8,
-      "topVariety": "Beetroot",
-      "grade": "Medium"
-    },
-    {
       "name": "Siddipet(Rythu Bazar)",
       "district": "Medak",
       "avgPrice": 3337,
-      "recentPrice": 3400,
+      "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3400,
       "records": 19,
@@ -304,15 +293,15 @@
       "grade": "Grade A"
     },
     {
-      "name": "Warangal",
-      "district": "Warangal",
-      "avgPrice": 2374,
-      "recentPrice": 3356,
-      "minPrice": 1100,
-      "maxPrice": 4250,
-      "records": 112,
+      "name": "Mahboob Manison",
+      "district": "Hyderabad",
+      "avgPrice": 3281,
+      "recentPrice": null,
+      "minPrice": 2250,
+      "maxPrice": 4500,
+      "records": 8,
       "topVariety": "Beetroot",
-      "grade": "FAQ"
+      "grade": "Medium"
     },
     {
       "name": "Karimnagar",
@@ -326,10 +315,21 @@
       "grade": "Medium"
     },
     {
+      "name": "Warangal",
+      "district": "Warangal",
+      "avgPrice": 2374,
+      "recentPrice": null,
+      "minPrice": 1100,
+      "maxPrice": 4250,
+      "records": 112,
+      "topVariety": "Beetroot",
+      "grade": "FAQ"
+    },
+    {
       "name": "Venkateswarnagar",
       "district": "Nalgonda",
       "avgPrice": 2350,
-      "recentPrice": 2600,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2600,
       "records": 4,
@@ -337,21 +337,10 @@
       "grade": "Grade A"
     },
     {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 1327,
-      "recentPrice": 2400,
-      "minPrice": 600,
-      "maxPrice": 2500,
-      "records": 104,
-      "topVariety": "Beetroot",
-      "grade": "FAQ"
-    },
-    {
       "name": "L B Nagar",
       "district": "Ranga Reddy",
       "avgPrice": 2178,
-      "recentPrice": 2200,
+      "recentPrice": null,
       "minPrice": 1700,
       "maxPrice": 2500,
       "records": 18,
@@ -359,32 +348,10 @@
       "grade": "Medium"
     },
     {
-      "name": "Gudimalkapur",
-      "district": "Hyderabad",
-      "avgPrice": 1009,
-      "recentPrice": 2114,
-      "minPrice": 500,
-      "maxPrice": 2400,
-      "records": 97,
-      "topVariety": "Beetroot",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 1325,
-      "recentPrice": 2013,
-      "minPrice": 800,
-      "maxPrice": 2500,
-      "records": 71,
-      "topVariety": "Beetroot",
-      "grade": "FAQ"
-    },
-    {
       "name": "Weekly Market Area,RBZ",
       "district": "Karimnagar",
       "avgPrice": 2067,
-      "recentPrice": 2000,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2500,
       "records": 12,
@@ -395,12 +362,34 @@
       "name": "Shadnagar",
       "district": "Mahbubnagar",
       "avgPrice": 1428,
-      "recentPrice": 1525,
+      "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1800,
       "records": 43,
       "topVariety": "Beetroot",
       "grade": "Local"
+    },
+    {
+      "name": "Bowenpally",
+      "district": "Hyderabad",
+      "avgPrice": 1327,
+      "recentPrice": null,
+      "minPrice": 600,
+      "maxPrice": 2500,
+      "records": 104,
+      "topVariety": "Beetroot",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 1325,
+      "recentPrice": null,
+      "minPrice": 800,
+      "maxPrice": 2500,
+      "records": 71,
+      "topVariety": "Beetroot",
+      "grade": "FAQ"
     },
     {
       "name": "Hyderabad",
@@ -423,6 +412,17 @@
       "records": 3,
       "topVariety": "Beetroot",
       "grade": "Medium"
+    },
+    {
+      "name": "Gudimalkapur",
+      "district": "Hyderabad",
+      "avgPrice": 1009,
+      "recentPrice": null,
+      "minPrice": 500,
+      "maxPrice": 2400,
+      "records": 97,
+      "topVariety": "Beetroot",
+      "grade": "Grade B"
     }
   ],
   "berzizyphus-borehannu": [
@@ -454,7 +454,7 @@
       "name": "Adilabad (Rythu Bazar)",
       "district": "Adilabad",
       "avgPrice": 6438,
-      "recentPrice": 6000,
+      "recentPrice": null,
       "minPrice": 6000,
       "maxPrice": 8000,
       "records": 16,
@@ -476,7 +476,7 @@
       "name": "Excise Colony,RBZ",
       "district": "Hanumakonda",
       "avgPrice": 4320,
-      "recentPrice": 4333,
+      "recentPrice": null,
       "minPrice": 3600,
       "maxPrice": 4800,
       "records": 15,
@@ -487,7 +487,7 @@
       "name": "Miryalguda(Rythu Bazar)",
       "district": "Nalgonda",
       "avgPrice": 3833,
-      "recentPrice": 3857,
+      "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 4000,
       "records": 18,
@@ -498,7 +498,7 @@
       "name": "Mahabubnagar(Rythu Bazar)",
       "district": "Mahbubnagar",
       "avgPrice": 3394,
-      "recentPrice": 3320,
+      "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 4000,
       "records": 19,
@@ -506,10 +506,21 @@
       "grade": "Local"
     },
     {
+      "name": "Sangareddy",
+      "district": "Medak",
+      "avgPrice": 3363,
+      "recentPrice": null,
+      "minPrice": 2800,
+      "maxPrice": 4000,
+      "records": 8,
+      "topVariety": null,
+      "grade": "Grade B"
+    },
+    {
       "name": "Siddipet(Rythu Bazar)",
       "district": "Medak",
       "avgPrice": 3105,
-      "recentPrice": 3229,
+      "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 3400,
       "records": 21,
@@ -517,15 +528,15 @@
       "grade": "Grade A"
     },
     {
-      "name": "Sangareddy",
-      "district": "Medak",
-      "avgPrice": 3363,
-      "recentPrice": 3200,
-      "minPrice": 2800,
+      "name": "Ibrahimpatnam",
+      "district": "Ranga Reddy",
+      "avgPrice": 3071,
+      "recentPrice": null,
+      "minPrice": 2500,
       "maxPrice": 4000,
-      "records": 8,
-      "topVariety": null,
-      "grade": "Grade B"
+      "records": 17,
+      "topVariety": "Bhindi",
+      "grade": "Local"
     },
     {
       "name": "Chevella",
@@ -539,32 +550,21 @@
       "grade": "Local"
     },
     {
-      "name": "Ibrahimpatnam",
-      "district": "Ranga Reddy",
-      "avgPrice": 3071,
-      "recentPrice": 3000,
-      "minPrice": 2500,
-      "maxPrice": 4000,
-      "records": 17,
+      "name": "Warangal",
+      "district": "Warangal",
+      "avgPrice": 2972,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 5750,
+      "records": 113,
       "topVariety": "Bhindi",
-      "grade": "Local"
-    },
-    {
-      "name": "Karimnagar",
-      "district": "Karimnagar",
-      "avgPrice": 2331,
-      "recentPrice": 2556,
-      "minPrice": 1250,
-      "maxPrice": 3500,
-      "records": 27,
-      "topVariety": "Bhindi",
-      "grade": "Local"
+      "grade": "FAQ"
     },
     {
       "name": "Kalwakurthy",
       "district": "Mahbubnagar",
       "avgPrice": 2495,
-      "recentPrice": 2400,
+      "recentPrice": null,
       "minPrice": 1900,
       "maxPrice": 3000,
       "records": 21,
@@ -572,36 +572,25 @@
       "grade": "Local"
     },
     {
+      "name": "Karimnagar",
+      "district": "Karimnagar",
+      "avgPrice": 2331,
+      "recentPrice": null,
+      "minPrice": 1250,
+      "maxPrice": 3500,
+      "records": 27,
+      "topVariety": "Bhindi",
+      "grade": "Local"
+    },
+    {
       "name": "Weekly Market Area,RBZ",
       "district": "Karimnagar",
       "avgPrice": 2155,
-      "recentPrice": 2250,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2500,
       "records": 11,
       "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 2007,
-      "recentPrice": 2125,
-      "minPrice": 800,
-      "maxPrice": 4000,
-      "records": 195,
-      "topVariety": "Bhindi",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Shadnagar",
-      "district": "Mahbubnagar",
-      "avgPrice": 2001,
-      "recentPrice": 2100,
-      "minPrice": 1400,
-      "maxPrice": 2800,
-      "records": 96,
-      "topVariety": "Bhindi",
       "grade": "Local"
     },
     {
@@ -616,46 +605,24 @@
       "grade": "Medium"
     },
     {
-      "name": "L B Nagar",
+      "name": "Bowenpally",
       "district": "Hyderabad",
-      "avgPrice": 1959,
-      "recentPrice": 1980,
-      "minPrice": 1500,
-      "maxPrice": 2500,
-      "records": 17,
-      "topVariety": "Bhindi",
-      "grade": "Medium"
-    },
-    {
-      "name": "Warangal",
-      "district": "Warangal",
-      "avgPrice": 2972,
-      "recentPrice": 1971,
-      "minPrice": 1200,
-      "maxPrice": 5750,
-      "records": 113,
+      "avgPrice": 2007,
+      "recentPrice": null,
+      "minPrice": 800,
+      "maxPrice": 4000,
+      "records": 195,
       "topVariety": "Bhindi",
       "grade": "FAQ"
     },
     {
-      "name": "Venkateswarnagar",
-      "district": "Nalgonda",
-      "avgPrice": 1890,
-      "recentPrice": 1967,
-      "minPrice": 1300,
-      "maxPrice": 2500,
-      "records": 21,
-      "topVariety": "Bhindi",
-      "grade": "Local"
-    },
-    {
-      "name": "Vantamamidi",
-      "district": "Medak",
-      "avgPrice": 1819,
-      "recentPrice": 1808,
-      "minPrice": 1250,
-      "maxPrice": 2250,
-      "records": 18,
+      "name": "Shadnagar",
+      "district": "Mahbubnagar",
+      "avgPrice": 2001,
+      "recentPrice": null,
+      "minPrice": 1400,
+      "maxPrice": 2800,
+      "records": 96,
       "topVariety": "Bhindi",
       "grade": "Local"
     },
@@ -663,7 +630,7 @@
       "name": "Kukatpally,RBZ",
       "district": "Ranga Reddy",
       "avgPrice": 1974,
-      "recentPrice": 1792,
+      "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 2500,
       "records": 68,
@@ -671,15 +638,48 @@
       "grade": "FAQ"
     },
     {
+      "name": "L B Nagar",
+      "district": "Hyderabad",
+      "avgPrice": 1959,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 2500,
+      "records": 17,
+      "topVariety": "Bhindi",
+      "grade": "Medium"
+    },
+    {
+      "name": "Venkateswarnagar",
+      "district": "Nalgonda",
+      "avgPrice": 1890,
+      "recentPrice": null,
+      "minPrice": 1300,
+      "maxPrice": 2500,
+      "records": 21,
+      "topVariety": "Bhindi",
+      "grade": "Local"
+    },
+    {
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 1670,
-      "recentPrice": 1517,
+      "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 3800,
       "records": 91,
       "topVariety": "Bhindi",
       "grade": "Grade B"
+    },
+    {
+      "name": "Vantamamidi",
+      "district": "Medak",
+      "avgPrice": 1797,
+      "recentPrice": 1400,
+      "minPrice": 1250,
+      "maxPrice": 2250,
+      "records": 19,
+      "topVariety": "Bhindi",
+      "grade": "Local"
     }
   ],
   "black-gram-dalurd-dal": [
@@ -807,6 +807,17 @@
       "grade": "Grade B"
     },
     {
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 2584,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 4500,
+      "records": 61,
+      "topVariety": "Bitter Gourd",
+      "grade": "FAQ"
+    },
+    {
       "name": "Bowenpally",
       "district": "Hyderabad",
       "avgPrice": 2563,
@@ -814,17 +825,6 @@
       "minPrice": 1500,
       "maxPrice": 3500,
       "records": 88,
-      "topVariety": "Bitter Gourd",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 2584,
-      "recentPrice": 2500,
-      "minPrice": 1500,
-      "maxPrice": 4500,
-      "records": 61,
       "topVariety": "Bitter Gourd",
       "grade": "FAQ"
     },
@@ -886,11 +886,11 @@
     {
       "name": "Vantamamidi",
       "district": "Medak",
-      "avgPrice": 1250,
-      "recentPrice": null,
+      "avgPrice": 1625,
+      "recentPrice": 2000,
       "minPrice": 1250,
-      "maxPrice": 1250,
-      "records": 1,
+      "maxPrice": 2000,
+      "records": 2,
       "topVariety": "Bitter Gourd",
       "grade": "Local"
     }
@@ -968,7 +968,7 @@
       "name": "Mahabubnagar(Rythu Bazar)",
       "district": "Mahbubnagar",
       "avgPrice": 1352,
-      "recentPrice": 1371,
+      "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2000,
       "records": 21,
@@ -979,7 +979,7 @@
       "name": "Siddipet(Rythu Bazar)",
       "district": "Medak",
       "avgPrice": 1271,
-      "recentPrice": 1275,
+      "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1500,
       "records": 21,
@@ -987,21 +987,32 @@
       "grade": "Grade A"
     },
     {
-      "name": "Karimnagar",
-      "district": "Karimnagar",
-      "avgPrice": 722,
-      "recentPrice": 1000,
+      "name": "Vantamamidi",
+      "district": "Siddipet",
+      "avgPrice": 645,
+      "recentPrice": 1100,
       "minPrice": 500,
-      "maxPrice": 1000,
-      "records": 3,
+      "maxPrice": 1100,
+      "records": 20,
       "topVariety": "Bottle Gourd",
-      "grade": "Medium"
+      "grade": "Local"
+    },
+    {
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 908,
+      "recentPrice": null,
+      "minPrice": 700,
+      "maxPrice": 1200,
+      "records": 76,
+      "topVariety": "Bottle Gourd",
+      "grade": "FAQ"
     },
     {
       "name": "Weekly Market Area,RBZ",
       "district": "Karimnagar",
       "avgPrice": 900,
-      "recentPrice": 900,
+      "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 900,
       "records": 12,
@@ -1012,7 +1023,7 @@
       "name": "Venkateswarnagar",
       "district": "Nalgonda",
       "avgPrice": 809,
-      "recentPrice": 800,
+      "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1000,
       "records": 22,
@@ -1020,21 +1031,10 @@
       "grade": "Local"
     },
     {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 908,
-      "recentPrice": 775,
-      "minPrice": 700,
-      "maxPrice": 1200,
-      "records": 76,
-      "topVariety": "Bottle Gourd",
-      "grade": "FAQ"
-    },
-    {
       "name": "L B Nagar",
       "district": "Ranga Reddy",
       "avgPrice": 772,
-      "recentPrice": 757,
+      "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 900,
       "records": 18,
@@ -1053,10 +1053,21 @@
       "grade": "Medium"
     },
     {
+      "name": "Karimnagar",
+      "district": "Karimnagar",
+      "avgPrice": 722,
+      "recentPrice": null,
+      "minPrice": 500,
+      "maxPrice": 1000,
+      "records": 3,
+      "topVariety": "Bottle Gourd",
+      "grade": "Medium"
+    },
+    {
       "name": "Bowenpally",
       "district": "Hyderabad",
       "avgPrice": 655,
-      "recentPrice": 600,
+      "recentPrice": null,
       "minPrice": 350,
       "maxPrice": 1000,
       "records": 107,
@@ -1064,26 +1075,26 @@
       "grade": "FAQ"
     },
     {
-      "name": "Vantamamidi",
-      "district": "Siddipet",
-      "avgPrice": 621,
-      "recentPrice": 569,
-      "minPrice": 500,
-      "maxPrice": 750,
-      "records": 19,
-      "topVariety": "Bottle Gourd",
-      "grade": "Local"
-    },
-    {
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 492,
-      "recentPrice": 467,
+      "recentPrice": null,
       "minPrice": 300,
       "maxPrice": 1000,
       "records": 100,
       "topVariety": "Bottle Gourd",
       "grade": "Grade B"
+    },
+    {
+      "name": "Mahboob Manison",
+      "district": "Hyderabad",
+      "avgPrice": 379,
+      "recentPrice": null,
+      "minPrice": 250,
+      "maxPrice": 800,
+      "records": 19,
+      "topVariety": "Bottle Gourd",
+      "grade": "Medium"
     },
     {
       "name": "Hyderabad",
@@ -1095,17 +1106,6 @@
       "records": 60,
       "topVariety": "Bottle Gourd",
       "grade": "Medium"
-    },
-    {
-      "name": "Mahboob Manison",
-      "district": "Hyderabad",
-      "avgPrice": 379,
-      "recentPrice": 307,
-      "minPrice": 250,
-      "maxPrice": 800,
-      "records": 19,
-      "topVariety": "Bottle Gourd",
-      "grade": "Medium"
     }
   ],
   "brinjal": [
@@ -1113,7 +1113,7 @@
       "name": "Adilabad (Rythu Bazar)",
       "district": "Adilabad",
       "avgPrice": 7000,
-      "recentPrice": 7000,
+      "recentPrice": null,
       "minPrice": 7000,
       "maxPrice": 7000,
       "records": 1,
@@ -1121,21 +1121,10 @@
       "grade": "Local"
     },
     {
-      "name": "Mahabubnagar(Rythu Bazar)",
-      "district": "Mahbubnagar",
-      "avgPrice": 2400,
-      "recentPrice": 4000,
-      "minPrice": 2000,
-      "maxPrice": 4000,
-      "records": 17,
-      "topVariety": "Arkasheela Mattigulla",
-      "grade": "Local"
-    },
-    {
       "name": "Excise Colony,RBZ",
       "district": "Hanumakonda",
       "avgPrice": 4000,
-      "recentPrice": 4000,
+      "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 4000,
       "records": 1,
@@ -1157,7 +1146,7 @@
       "name": "Miryalguda(Rythu Bazar)",
       "district": "Nalgonda",
       "avgPrice": 3000,
-      "recentPrice": 3000,
+      "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3000,
       "records": 1,
@@ -1165,10 +1154,21 @@
       "grade": "Grade A"
     },
     {
+      "name": "Siddipet(Rythu Bazar)",
+      "district": "Medak",
+      "avgPrice": 2700,
+      "recentPrice": null,
+      "minPrice": 2400,
+      "maxPrice": 3000,
+      "records": 2,
+      "topVariety": "Brinjal",
+      "grade": "Grade A"
+    },
+    {
       "name": "Mahboob Manison",
       "district": "Hyderabad",
       "avgPrice": 2500,
-      "recentPrice": 2500,
+      "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2500,
       "records": 2,
@@ -1179,7 +1179,7 @@
       "name": "Weekly Market Area,RBZ",
       "district": "Karimnagar",
       "avgPrice": 2500,
-      "recentPrice": 2500,
+      "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2500,
       "records": 1,
@@ -1187,21 +1187,21 @@
       "grade": "Local"
     },
     {
-      "name": "Siddipet(Rythu Bazar)",
-      "district": "Medak",
-      "avgPrice": 2700,
-      "recentPrice": 2400,
-      "minPrice": 2400,
-      "maxPrice": 3000,
-      "records": 2,
-      "topVariety": "Brinjal",
-      "grade": "Grade A"
+      "name": "Mahabubnagar(Rythu Bazar)",
+      "district": "Mahbubnagar",
+      "avgPrice": 2400,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 4000,
+      "records": 17,
+      "topVariety": "Arkasheela Mattigulla",
+      "grade": "Local"
     },
     {
       "name": "L B Nagar",
       "district": "Ranga Reddy",
       "avgPrice": 2200,
-      "recentPrice": 2200,
+      "recentPrice": null,
       "minPrice": 2200,
       "maxPrice": 2200,
       "records": 1,
@@ -1209,37 +1209,15 @@
       "grade": "Medium"
     },
     {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 1473,
-      "recentPrice": 1833,
-      "minPrice": 800,
-      "maxPrice": 2500,
-      "records": 260,
-      "topVariety": "Brinjal",
-      "grade": "FAQ"
-    },
-    {
       "name": "Kalwakurthy",
       "district": "Mahbubnagar",
       "avgPrice": 2063,
-      "recentPrice": 1750,
+      "recentPrice": null,
       "minPrice": 1750,
       "maxPrice": 2500,
       "records": 4,
       "topVariety": "Brinjal",
       "grade": "Local"
-    },
-    {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 1416,
-      "recentPrice": 1625,
-      "minPrice": 650,
-      "maxPrice": 2300,
-      "records": 58,
-      "topVariety": "Brinjal",
-      "grade": "FAQ"
     },
     {
       "name": "Karimnagar",
@@ -1253,6 +1231,39 @@
       "grade": "Local"
     },
     {
+      "name": "Bowenpally",
+      "district": "Hyderabad",
+      "avgPrice": 1473,
+      "recentPrice": null,
+      "minPrice": 800,
+      "maxPrice": 2500,
+      "records": 260,
+      "topVariety": "Brinjal",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Warangal",
+      "district": "Warangal",
+      "avgPrice": 1463,
+      "recentPrice": null,
+      "minPrice": 700,
+      "maxPrice": 3250,
+      "records": 111,
+      "topVariety": "Brinjal",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 1416,
+      "recentPrice": null,
+      "minPrice": 650,
+      "maxPrice": 2300,
+      "records": 58,
+      "topVariety": "Brinjal",
+      "grade": "FAQ"
+    },
+    {
       "name": "Hyderabad",
       "district": "Hyderabad",
       "avgPrice": 1373,
@@ -1262,17 +1273,6 @@
       "records": 74,
       "topVariety": "Brinjal",
       "grade": "Medium"
-    },
-    {
-      "name": "Shadnagar",
-      "district": "Mahbubnagar",
-      "avgPrice": 1251,
-      "recentPrice": 1300,
-      "minPrice": 800,
-      "maxPrice": 1900,
-      "records": 80,
-      "topVariety": "Brinjal",
-      "grade": "Local"
     },
     {
       "name": "Gaddiannaram",
@@ -1286,10 +1286,32 @@
       "grade": "Medium"
     },
     {
+      "name": "Shadnagar",
+      "district": "Mahbubnagar",
+      "avgPrice": 1251,
+      "recentPrice": null,
+      "minPrice": 800,
+      "maxPrice": 1900,
+      "records": 80,
+      "topVariety": "Brinjal",
+      "grade": "Local"
+    },
+    {
+      "name": "Vantamamidi",
+      "district": "Siddipet",
+      "avgPrice": 1167,
+      "recentPrice": 1250,
+      "minPrice": 1000,
+      "maxPrice": 1250,
+      "records": 3,
+      "topVariety": "Brinjal",
+      "grade": "Local"
+    },
+    {
       "name": "Venkateswarnagar",
       "district": "Nalgonda",
       "avgPrice": 1100,
-      "recentPrice": 1200,
+      "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1300,
       "records": 6,
@@ -1297,32 +1319,10 @@
       "grade": "Local"
     },
     {
-      "name": "Warangal",
-      "district": "Warangal",
-      "avgPrice": 1463,
-      "recentPrice": 1175,
-      "minPrice": 700,
-      "maxPrice": 3250,
-      "records": 111,
-      "topVariety": "Brinjal",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Vantamamidi",
-      "district": "Siddipet",
-      "avgPrice": 1125,
-      "recentPrice": 1125,
-      "minPrice": 1000,
-      "maxPrice": 1250,
-      "records": 2,
-      "topVariety": "Brinjal",
-      "grade": "Local"
-    },
-    {
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 748,
-      "recentPrice": 900,
+      "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 1700,
       "records": 87,
@@ -1339,17 +1339,6 @@
       "minPrice": 4250,
       "maxPrice": 5750,
       "records": 97,
-      "topVariety": "Capsicum",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 3023,
-      "recentPrice": 5000,
-      "minPrice": 2000,
-      "maxPrice": 5000,
-      "records": 55,
       "topVariety": "Capsicum",
       "grade": "FAQ"
     },
@@ -1429,6 +1418,17 @@
       "records": 4,
       "topVariety": "Capsicum",
       "grade": "Medium"
+    },
+    {
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 3023,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 5000,
+      "records": 55,
+      "topVariety": "Capsicum",
+      "grade": "FAQ"
     },
     {
       "name": "Bowenpally",
@@ -1543,17 +1543,6 @@
       "grade": "Grade B"
     },
     {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 840,
-      "recentPrice": 1050,
-      "minPrice": 550,
-      "maxPrice": 1200,
-      "records": 56,
-      "topVariety": "Cabbage",
-      "grade": "FAQ"
-    },
-    {
       "name": "Kalwakurthy",
       "district": "Mahbubnagar",
       "avgPrice": 1000,
@@ -1576,6 +1565,17 @@
       "grade": "Medium"
     },
     {
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 840,
+      "recentPrice": null,
+      "minPrice": 550,
+      "maxPrice": 1200,
+      "records": 56,
+      "topVariety": "Cabbage",
+      "grade": "FAQ"
+    },
+    {
       "name": "Gaddiannaram",
       "district": "Hyderabad",
       "avgPrice": 800,
@@ -1585,6 +1585,17 @@
       "records": 6,
       "topVariety": "Cabbage",
       "grade": "Medium"
+    },
+    {
+      "name": "Vantamamidi",
+      "district": "Medak",
+      "avgPrice": 700,
+      "recentPrice": 800,
+      "minPrice": 550,
+      "maxPrice": 800,
+      "records": 3,
+      "topVariety": "Cabbage",
+      "grade": "Local"
     },
     {
       "name": "Bowenpally",
@@ -1618,17 +1629,6 @@
       "records": 9,
       "topVariety": "Cabbage",
       "grade": "Local"
-    },
-    {
-      "name": "Vantamamidi",
-      "district": "Medak",
-      "avgPrice": 650,
-      "recentPrice": null,
-      "minPrice": 550,
-      "maxPrice": 750,
-      "records": 2,
-      "topVariety": "Cabbage",
-      "grade": "Local"
     }
   ],
   "carrot": [
@@ -1636,7 +1636,7 @@
       "name": "Excise Colony,RBZ",
       "district": "Hanumakonda",
       "avgPrice": 6000,
-      "recentPrice": 6000,
+      "recentPrice": null,
       "minPrice": 6000,
       "maxPrice": 6000,
       "records": 16,
@@ -1647,7 +1647,7 @@
       "name": "Miryalguda(Rythu Bazar)",
       "district": "Nalgonda",
       "avgPrice": 5133,
-      "recentPrice": 5188,
+      "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 5500,
       "records": 15,
@@ -1658,7 +1658,7 @@
       "name": "Siddipet(Rythu Bazar)",
       "district": "Medak",
       "avgPrice": 3968,
-      "recentPrice": 4000,
+      "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 4400,
       "records": 19,
@@ -1666,21 +1666,10 @@
       "grade": "Grade A"
     },
     {
-      "name": "Warangal",
-      "district": "Warangal",
-      "avgPrice": 3100,
-      "recentPrice": 3750,
-      "minPrice": 1800,
-      "maxPrice": 4750,
-      "records": 117,
-      "topVariety": "Carrot",
-      "grade": "FAQ"
-    },
-    {
       "name": "L B Nagar",
       "district": "Ranga Reddy",
       "avgPrice": 3500,
-      "recentPrice": 3500,
+      "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 3500,
       "records": 18,
@@ -1691,12 +1680,23 @@
       "name": "Mahboob Manison",
       "district": "Hyderabad",
       "avgPrice": 3458,
-      "recentPrice": 3464,
+      "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 4500,
       "records": 18,
       "topVariety": "Carrot",
       "grade": "Medium"
+    },
+    {
+      "name": "Warangal",
+      "district": "Warangal",
+      "avgPrice": 3100,
+      "recentPrice": null,
+      "minPrice": 1800,
+      "maxPrice": 4750,
+      "records": 117,
+      "topVariety": "Carrot",
+      "grade": "FAQ"
     },
     {
       "name": "Sangareddy",
@@ -1710,32 +1710,10 @@
       "grade": "Grade B"
     },
     {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 1703,
-      "recentPrice": 2800,
-      "minPrice": 1000,
-      "maxPrice": 3000,
-      "records": 127,
-      "topVariety": "Carrot",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Venkateswarnagar",
-      "district": "Nalgonda",
-      "avgPrice": 2728,
-      "recentPrice": 2800,
-      "minPrice": 1600,
-      "maxPrice": 3200,
-      "records": 18,
-      "topVariety": "Carrot",
-      "grade": "Grade B"
-    },
-    {
       "name": "Weekly Market Area,RBZ",
       "district": "Karimnagar",
       "avgPrice": 2817,
-      "recentPrice": 2500,
+      "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 3000,
       "records": 12,
@@ -1743,15 +1721,26 @@
       "grade": "Local"
     },
     {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 1400,
-      "recentPrice": 2106,
-      "minPrice": 700,
-      "maxPrice": 2250,
-      "records": 114,
+      "name": "Venkateswarnagar",
+      "district": "Nalgonda",
+      "avgPrice": 2728,
+      "recentPrice": null,
+      "minPrice": 1600,
+      "maxPrice": 3200,
+      "records": 18,
       "topVariety": "Carrot",
-      "grade": "FAQ"
+      "grade": "Grade B"
+    },
+    {
+      "name": "Karimnagar",
+      "district": "Karimnagar",
+      "avgPrice": 2102,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 3300,
+      "records": 8,
+      "topVariety": "Carrot",
+      "grade": "Local"
     },
     {
       "name": "Hyderabad",
@@ -1765,21 +1754,10 @@
       "grade": "Medium"
     },
     {
-      "name": "Gudimalkapur",
-      "district": "Hyderabad",
-      "avgPrice": 1303,
-      "recentPrice": 1814,
-      "minPrice": 600,
-      "maxPrice": 2500,
-      "records": 102,
-      "topVariety": "Carrot",
-      "grade": "Grade B"
-    },
-    {
       "name": "Shadnagar",
       "district": "Mahbubnagar",
       "avgPrice": 1758,
-      "recentPrice": 1688,
+      "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 2500,
       "records": 69,
@@ -1787,15 +1765,15 @@
       "grade": "Local"
     },
     {
-      "name": "Karimnagar",
-      "district": "Karimnagar",
-      "avgPrice": 2102,
-      "recentPrice": 1600,
-      "minPrice": 1500,
-      "maxPrice": 3300,
-      "records": 8,
+      "name": "Bowenpally",
+      "district": "Hyderabad",
+      "avgPrice": 1703,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 3000,
+      "records": 127,
       "topVariety": "Carrot",
-      "grade": "Local"
+      "grade": "FAQ"
     },
     {
       "name": "Gaddiannaram",
@@ -1809,6 +1787,17 @@
       "grade": "Medium"
     },
     {
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 1400,
+      "recentPrice": null,
+      "minPrice": 700,
+      "maxPrice": 2250,
+      "records": 114,
+      "topVariety": "Carrot",
+      "grade": "FAQ"
+    },
+    {
       "name": "Mancharial",
       "district": "Adilabad",
       "avgPrice": 1353,
@@ -1818,6 +1807,17 @@
       "records": 2,
       "topVariety": "Carrot",
       "grade": "Local"
+    },
+    {
+      "name": "Gudimalkapur",
+      "district": "Hyderabad",
+      "avgPrice": 1303,
+      "recentPrice": null,
+      "minPrice": 600,
+      "maxPrice": 2500,
+      "records": 102,
+      "topVariety": "Carrot",
+      "grade": "Grade B"
     }
   ],
   "cherry": [
@@ -1980,17 +1980,6 @@
   ],
   "chikoossapota": [
     {
-      "name": "Gaddiannaram",
-      "district": "Hyderabad",
-      "avgPrice": 2077,
-      "recentPrice": 4000,
-      "minPrice": 1600,
-      "maxPrice": 4000,
-      "records": 75,
-      "topVariety": "Sapota",
-      "grade": "Medium"
-    },
-    {
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 2200,
@@ -2000,6 +1989,17 @@
       "records": 11,
       "topVariety": "Sapota",
       "grade": "Large"
+    },
+    {
+      "name": "Gaddiannaram",
+      "district": "Hyderabad",
+      "avgPrice": 2077,
+      "recentPrice": null,
+      "minPrice": 1600,
+      "maxPrice": 4000,
+      "records": 75,
+      "topVariety": "Sapota",
+      "grade": "Medium"
     }
   ],
   "cluster-beans": [
@@ -2007,7 +2007,7 @@
       "name": "Mahabubnagar(Rythu Bazar)",
       "district": "Mahbubnagar",
       "avgPrice": 4579,
-      "recentPrice": 4750,
+      "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 6000,
       "records": 19,
@@ -2018,21 +2018,10 @@
       "name": "Siddipet(Rythu Bazar)",
       "district": "Medak",
       "avgPrice": 3670,
-      "recentPrice": 4100,
+      "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 4400,
       "records": 20,
-      "topVariety": "Cluster Beans",
-      "grade": "Grade A"
-    },
-    {
-      "name": "Excise Colony,RBZ",
-      "district": "Hanumakonda",
-      "avgPrice": 3267,
-      "recentPrice": 3600,
-      "minPrice": 3000,
-      "maxPrice": 3600,
-      "records": 3,
       "topVariety": "Cluster Beans",
       "grade": "Grade A"
     },
@@ -2043,6 +2032,28 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 4000,
+      "records": 3,
+      "topVariety": "Cluster Beans",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Warangal",
+      "district": "Warangal",
+      "avgPrice": 3430,
+      "recentPrice": null,
+      "minPrice": 1800,
+      "maxPrice": 4750,
+      "records": 82,
+      "topVariety": "Cluster Beans",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Excise Colony,RBZ",
+      "district": "Hanumakonda",
+      "avgPrice": 3267,
+      "recentPrice": null,
+      "minPrice": 3000,
+      "maxPrice": 3600,
       "records": 3,
       "topVariety": "Cluster Beans",
       "grade": "Grade A"
@@ -2059,28 +2070,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Warangal",
-      "district": "Warangal",
-      "avgPrice": 3430,
-      "recentPrice": 2956,
-      "minPrice": 1800,
-      "maxPrice": 4750,
-      "records": 82,
-      "topVariety": "Cluster Beans",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Venkateswarnagar",
-      "district": "Nalgonda",
-      "avgPrice": 2588,
-      "recentPrice": 2933,
-      "minPrice": 1500,
-      "maxPrice": 3200,
-      "records": 17,
-      "topVariety": "Cluster Beans",
-      "grade": "Local"
-    },
-    {
       "name": "Hyderabad",
       "district": "Hyderabad",
       "avgPrice": 2908,
@@ -2095,7 +2084,7 @@
       "name": "Mahboob Manison",
       "district": "Hyderabad",
       "avgPrice": 2667,
-      "recentPrice": 2667,
+      "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 3000,
       "records": 18,
@@ -2103,10 +2092,32 @@
       "grade": "Medium"
     },
     {
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 2649,
+      "recentPrice": null,
+      "minPrice": 1750,
+      "maxPrice": 4300,
+      "records": 71,
+      "topVariety": "Cluster Beans",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Venkateswarnagar",
+      "district": "Nalgonda",
+      "avgPrice": 2588,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 3200,
+      "records": 17,
+      "topVariety": "Cluster Beans",
+      "grade": "Local"
+    },
+    {
       "name": "Weekly Market Area,RBZ",
       "district": "Karimnagar",
       "avgPrice": 2550,
-      "recentPrice": 2500,
+      "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2800,
       "records": 12,
@@ -2117,7 +2128,7 @@
       "name": "Shadnagar",
       "district": "Mahbubnagar",
       "avgPrice": 2524,
-      "recentPrice": 2438,
+      "recentPrice": null,
       "minPrice": 1900,
       "maxPrice": 3000,
       "records": 55,
@@ -2125,32 +2136,10 @@
       "grade": "Local"
     },
     {
-      "name": "L B Nagar",
-      "district": "Ranga Reddy",
-      "avgPrice": 2400,
-      "recentPrice": 2371,
-      "minPrice": 2200,
-      "maxPrice": 2500,
-      "records": 18,
-      "topVariety": "Cluster Beans",
-      "grade": "Medium"
-    },
-    {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 2649,
-      "recentPrice": 2219,
-      "minPrice": 1750,
-      "maxPrice": 4300,
-      "records": 71,
-      "topVariety": "Cluster Beans",
-      "grade": "FAQ"
-    },
-    {
       "name": "Kalwakurthy",
       "district": "Mahbubnagar",
       "avgPrice": 2464,
-      "recentPrice": 2219,
+      "recentPrice": null,
       "minPrice": 1750,
       "maxPrice": 3250,
       "records": 21,
@@ -2158,32 +2147,10 @@
       "grade": "Local"
     },
     {
-      "name": "Karimnagar",
-      "district": "Karimnagar",
-      "avgPrice": 2298,
-      "recentPrice": 2056,
-      "minPrice": 1500,
-      "maxPrice": 5000,
-      "records": 25,
-      "topVariety": "Cluster Beans",
-      "grade": "Medium"
-    },
-    {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 2338,
-      "recentPrice": 2043,
-      "minPrice": 1500,
-      "maxPrice": 4000,
-      "records": 95,
-      "topVariety": "Cluster Beans",
-      "grade": "FAQ"
-    },
-    {
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 2458,
-      "recentPrice": 2043,
+      "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 3800,
       "records": 97,
@@ -2191,10 +2158,43 @@
       "grade": "Grade B"
     },
     {
+      "name": "L B Nagar",
+      "district": "Ranga Reddy",
+      "avgPrice": 2400,
+      "recentPrice": null,
+      "minPrice": 2200,
+      "maxPrice": 2500,
+      "records": 18,
+      "topVariety": "Cluster Beans",
+      "grade": "Medium"
+    },
+    {
+      "name": "Bowenpally",
+      "district": "Hyderabad",
+      "avgPrice": 2338,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 4000,
+      "records": 95,
+      "topVariety": "Cluster Beans",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Karimnagar",
+      "district": "Karimnagar",
+      "avgPrice": 2298,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 5000,
+      "records": 25,
+      "topVariety": "Cluster Beans",
+      "grade": "Medium"
+    },
+    {
       "name": "Vantamamidi",
       "district": "Medak",
       "avgPrice": 2237,
-      "recentPrice": 1907,
+      "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 3000,
       "records": 19,
@@ -2231,7 +2231,7 @@
       "name": "Siddipet(Rythu Bazar)",
       "district": "Medak",
       "avgPrice": 3229,
-      "recentPrice": 3300,
+      "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3400,
       "records": 21,
@@ -2242,7 +2242,7 @@
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 2641,
-      "recentPrice": 2938,
+      "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 3750,
       "records": 104,
@@ -2253,7 +2253,7 @@
       "name": "Weekly Market Area,RBZ",
       "district": "Karimnagar",
       "avgPrice": 2250,
-      "recentPrice": 2233,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2500,
       "records": 8,
@@ -2261,61 +2261,39 @@
       "grade": "Local"
     },
     {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 1987,
-      "recentPrice": 2200,
-      "minPrice": 1200,
-      "maxPrice": 2700,
-      "records": 84,
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 2196,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 3000,
+      "records": 45,
       "topVariety": "Colacasia",
       "grade": "FAQ"
     },
     {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 2196,
-      "recentPrice": 2150,
-      "minPrice": 1500,
-      "maxPrice": 3000,
-      "records": 45,
+      "name": "Bowenpally",
+      "district": "Hyderabad",
+      "avgPrice": 1987,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 2700,
+      "records": 84,
       "topVariety": "Colacasia",
       "grade": "FAQ"
     }
   ],
   "cotton": [
     {
-      "name": "Khammam",
-      "district": "Khammam",
-      "avgPrice": 7422,
-      "recentPrice": 8467,
-      "minPrice": 6200,
-      "maxPrice": 8600,
-      "records": 50,
-      "topVariety": "Cotton (Unginned)",
-      "grade": "FAQ"
-    },
-    {
       "name": "Mahabubabad",
       "district": "Mahabubabad",
       "avgPrice": 8371,
-      "recentPrice": 8371,
+      "recentPrice": null,
       "minPrice": 7538,
       "maxPrice": 8826,
       "records": 3,
       "topVariety": "Local",
       "grade": "Local"
-    },
-    {
-      "name": "Jammikunta",
-      "district": "Karimnagar",
-      "avgPrice": 7457,
-      "recentPrice": 8100,
-      "minPrice": 6900,
-      "maxPrice": 8300,
-      "records": 62,
-      "topVariety": "Cotton (Unginned)",
-      "grade": "FAQ"
     },
     {
       "name": "Vemulawada",
@@ -2376,7 +2354,7 @@
       "name": "Kataram",
       "district": "Bhupalapally",
       "avgPrice": 8000,
-      "recentPrice": 8000,
+      "recentPrice": null,
       "minPrice": 8000,
       "maxPrice": 8000,
       "records": 1,
@@ -2538,13 +2516,24 @@
       "grade": "Local"
     },
     {
-      "name": "Adilabad",
-      "district": "Adilabad",
-      "avgPrice": 6904,
-      "recentPrice": 7019,
-      "minPrice": 5800,
-      "maxPrice": 7750,
-      "records": 107,
+      "name": "Jammikunta",
+      "district": "Karimnagar",
+      "avgPrice": 7457,
+      "recentPrice": null,
+      "minPrice": 6900,
+      "maxPrice": 8300,
+      "records": 62,
+      "topVariety": "Cotton (Unginned)",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Khammam",
+      "district": "Khammam",
+      "avgPrice": 7422,
+      "recentPrice": null,
+      "minPrice": 6200,
+      "maxPrice": 8600,
+      "records": 50,
       "topVariety": "Cotton (Unginned)",
       "grade": "FAQ"
     },
@@ -2558,6 +2547,17 @@
       "records": 25,
       "topVariety": "Cotton (Unginned)",
       "grade": "Grade Range-2"
+    },
+    {
+      "name": "Adilabad",
+      "district": "Adilabad",
+      "avgPrice": 6904,
+      "recentPrice": null,
+      "minPrice": 5800,
+      "maxPrice": 7750,
+      "records": 107,
+      "topVariety": "Cotton (Unginned)",
+      "grade": "FAQ"
     },
     {
       "name": "Gajwel",
@@ -2751,23 +2751,23 @@
       "grade": "Local"
     },
     {
+      "name": "Vantamamidi",
+      "district": "Medak",
+      "avgPrice": 675,
+      "recentPrice": 800,
+      "minPrice": 550,
+      "maxPrice": 800,
+      "records": 2,
+      "topVariety": "Cucumbar",
+      "grade": "Local"
+    },
+    {
       "name": "Kalwakurthy",
       "district": "Mahbubnagar",
       "avgPrice": 800,
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 800,
-      "records": 1,
-      "topVariety": "Cucumbar",
-      "grade": "Local"
-    },
-    {
-      "name": "Vantamamidi",
-      "district": "Medak",
-      "avgPrice": 550,
-      "recentPrice": null,
-      "minPrice": 550,
-      "maxPrice": 550,
       "records": 1,
       "topVariety": "Cucumbar",
       "grade": "Local"
@@ -2791,45 +2791,12 @@
       "name": "L B Nagar",
       "district": "Ranga Reddy",
       "avgPrice": 4806,
-      "recentPrice": 4857,
+      "recentPrice": null,
       "minPrice": 4500,
       "maxPrice": 5000,
       "records": 18,
       "topVariety": "Field Pea",
       "grade": "Medium"
-    },
-    {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 2605,
-      "recentPrice": 4757,
-      "minPrice": 800,
-      "maxPrice": 5000,
-      "records": 154,
-      "topVariety": "Field Pea",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Warangal",
-      "district": "Warangal",
-      "avgPrice": 3320,
-      "recentPrice": 4750,
-      "minPrice": 1200,
-      "maxPrice": 6250,
-      "records": 123,
-      "topVariety": "Field Pea",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Gudimalkapur",
-      "district": "Hyderabad",
-      "avgPrice": 2350,
-      "recentPrice": 4286,
-      "minPrice": 800,
-      "maxPrice": 6500,
-      "records": 103,
-      "topVariety": "Field Pea",
-      "grade": "Grade B"
     },
     {
       "name": "Gaddiannaram",
@@ -2843,15 +2810,48 @@
       "grade": "Medium"
     },
     {
+      "name": "Warangal",
+      "district": "Warangal",
+      "avgPrice": 3320,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 6250,
+      "records": 123,
+      "topVariety": "Field Pea",
+      "grade": "FAQ"
+    },
+    {
       "name": "Vantamamidi",
       "district": "Medak",
-      "avgPrice": 2887,
-      "recentPrice": 2931,
+      "avgPrice": 2893,
+      "recentPrice": 3000,
       "minPrice": 2050,
       "maxPrice": 3300,
-      "records": 19,
+      "records": 20,
       "topVariety": "Field Pea",
       "grade": "Local"
+    },
+    {
+      "name": "Bowenpally",
+      "district": "Hyderabad",
+      "avgPrice": 2605,
+      "recentPrice": null,
+      "minPrice": 800,
+      "maxPrice": 5000,
+      "records": 154,
+      "topVariety": "Field Pea",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Gudimalkapur",
+      "district": "Hyderabad",
+      "avgPrice": 2350,
+      "recentPrice": null,
+      "minPrice": 800,
+      "maxPrice": 6500,
+      "records": 103,
+      "topVariety": "Field Pea",
+      "grade": "Grade B"
     }
   ],
   "drumstick": [
@@ -2881,7 +2881,7 @@
       "name": "Kukatpally,RBZ",
       "district": "Ranga Reddy",
       "avgPrice": 6022,
-      "recentPrice": 3750,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 15000,
       "records": 39,
@@ -2979,6 +2979,17 @@
       "grade": "Grade Range-1"
     },
     {
+      "name": "Bhadrachalam",
+      "district": "Bhadradri Kothagudem",
+      "avgPrice": 12000,
+      "recentPrice": 12000,
+      "minPrice": 12000,
+      "maxPrice": 12000,
+      "records": 1,
+      "topVariety": "Dry Chillies",
+      "grade": "FAQ"
+    },
+    {
       "name": "Enkoor",
       "district": "Mahbubnagar",
       "avgPrice": 10970,
@@ -2992,21 +3003,10 @@
   ],
   "french-beansfrasbean": [
     {
-      "name": "Warangal",
-      "district": "Warangal",
-      "avgPrice": 4933,
-      "recentPrice": 10031,
-      "minPrice": 1750,
-      "maxPrice": 11500,
-      "records": 106,
-      "topVariety": "French Beans (Frasbean)",
-      "grade": "FAQ"
-    },
-    {
       "name": "Mahboob Manison",
       "district": "Hyderabad",
       "avgPrice": 7889,
-      "recentPrice": 8214,
+      "recentPrice": null,
       "minPrice": 6500,
       "maxPrice": 12000,
       "records": 18,
@@ -3017,7 +3017,7 @@
       "name": "L B Nagar",
       "district": "Hyderabad",
       "avgPrice": 6447,
-      "recentPrice": 6929,
+      "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 10000,
       "records": 19,
@@ -3025,48 +3025,26 @@
       "grade": "Medium"
     },
     {
-      "name": "Gudimalkapur",
-      "district": "Hyderabad",
-      "avgPrice": 3304,
-      "recentPrice": 6429,
-      "minPrice": 1500,
-      "maxPrice": 8000,
-      "records": 96,
-      "topVariety": "French Beans (Frasbean)",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 3715,
-      "recentPrice": 5938,
-      "minPrice": 1300,
-      "maxPrice": 8500,
-      "records": 71,
-      "topVariety": "French Beans (Frasbean)",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 2916,
-      "recentPrice": 5691,
-      "minPrice": 1200,
-      "maxPrice": 9000,
-      "records": 161,
-      "topVariety": "French Beans (Frasbean)",
-      "grade": "FAQ"
-    },
-    {
       "name": "Weekly Market Area,RBZ",
       "district": "Karimnagar",
       "avgPrice": 5042,
-      "recentPrice": 5000,
+      "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 5500,
       "records": 12,
       "topVariety": null,
       "grade": "Local"
+    },
+    {
+      "name": "Warangal",
+      "district": "Warangal",
+      "avgPrice": 4933,
+      "recentPrice": null,
+      "minPrice": 1750,
+      "maxPrice": 11500,
+      "records": 106,
+      "topVariety": "French Beans (Frasbean)",
+      "grade": "FAQ"
     },
     {
       "name": "Gaddiannaram",
@@ -3080,15 +3058,48 @@
       "grade": "Medium"
     },
     {
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 3715,
+      "recentPrice": null,
+      "minPrice": 1300,
+      "maxPrice": 8500,
+      "records": 71,
+      "topVariety": "French Beans (Frasbean)",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Gudimalkapur",
+      "district": "Hyderabad",
+      "avgPrice": 3304,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 8000,
+      "records": 96,
+      "topVariety": "French Beans (Frasbean)",
+      "grade": "Grade B"
+    },
+    {
       "name": "Karimnagar",
       "district": "Karimnagar",
       "avgPrice": 3049,
-      "recentPrice": 3250,
+      "recentPrice": null,
       "minPrice": 1666.67,
       "maxPrice": 5000,
       "records": 12,
       "topVariety": "French Beans (Frasbean)",
       "grade": "Medium"
+    },
+    {
+      "name": "Bowenpally",
+      "district": "Hyderabad",
+      "avgPrice": 2916,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 9000,
+      "records": 161,
+      "topVariety": "French Beans (Frasbean)",
+      "grade": "FAQ"
     },
     {
       "name": "Vantamamidi",
@@ -3155,7 +3166,7 @@
       "name": "Zaheerabad",
       "district": "Medak",
       "avgPrice": 7950,
-      "recentPrice": 13500,
+      "recentPrice": null,
       "minPrice": 5859,
       "maxPrice": 16000,
       "records": 38,
@@ -3192,7 +3203,7 @@
       "name": "Mahboob Manison",
       "district": "Hyderabad",
       "avgPrice": 8697,
-      "recentPrice": 8133,
+      "recentPrice": null,
       "minPrice": 7100,
       "maxPrice": 10000,
       "records": 18,
@@ -3229,7 +3240,7 @@
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 2616,
-      "recentPrice": 3300,
+      "recentPrice": null,
       "minPrice": 1700,
       "maxPrice": 4200,
       "records": 32,
@@ -3242,7 +3253,7 @@
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 18795,
-      "recentPrice": 18000,
+      "recentPrice": null,
       "minPrice": 18000,
       "maxPrice": 23000,
       "records": 44,
@@ -3252,21 +3263,10 @@
   ],
   "castor-seed": [
     {
-      "name": "Nagarkurnool",
-      "district": "Mahbubnagar",
-      "avgPrice": 5403,
-      "recentPrice": 6739,
-      "minPrice": 4025,
-      "maxPrice": 6739,
-      "records": 4,
-      "topVariety": "Castor seed",
-      "grade": "Local"
-    },
-    {
       "name": "Badepally",
       "district": "Mahbubnagar",
       "avgPrice": 6571,
-      "recentPrice": 6612,
+      "recentPrice": null,
       "minPrice": 6386,
       "maxPrice": 6665,
       "records": 5,
@@ -3285,17 +3285,6 @@
       "grade": "Local"
     },
     {
-      "name": "Gadwal",
-      "district": "Mahbubnagar",
-      "avgPrice": 6037,
-      "recentPrice": 6266,
-      "minPrice": 5619,
-      "maxPrice": 6381,
-      "records": 36,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Achampet",
       "district": "Mahbubnagar",
       "avgPrice": 6049,
@@ -3304,6 +3293,17 @@
       "maxPrice": 6071,
       "records": 3,
       "topVariety": "Castor seed",
+      "grade": "Local"
+    },
+    {
+      "name": "Gadwal",
+      "district": "Mahbubnagar",
+      "avgPrice": 6037,
+      "recentPrice": null,
+      "minPrice": 5619,
+      "maxPrice": 6381,
+      "records": 36,
+      "topVariety": null,
       "grade": "Local"
     },
     {
@@ -3351,6 +3351,17 @@
       "grade": "Local"
     },
     {
+      "name": "Nagarkurnool",
+      "district": "Mahbubnagar",
+      "avgPrice": 5403,
+      "recentPrice": null,
+      "minPrice": 4025,
+      "maxPrice": 6739,
+      "records": 4,
+      "topVariety": "Castor seed",
+      "grade": "Local"
+    },
+    {
       "name": "Jangaon",
       "district": "Warangal",
       "avgPrice": 4525,
@@ -3378,7 +3389,7 @@
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 6490,
-      "recentPrice": 5875,
+      "recentPrice": null,
       "minPrice": 60,
       "maxPrice": 10000,
       "records": 43,
@@ -3709,7 +3720,7 @@
       "name": "Choppadandi",
       "district": "Karimnagar",
       "avgPrice": 6022,
-      "recentPrice": 6022,
+      "recentPrice": null,
       "minPrice": 6022,
       "maxPrice": 6022,
       "records": 1,
@@ -3937,7 +3948,7 @@
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 4393,
-      "recentPrice": 4000,
+      "recentPrice": null,
       "minPrice": 3750,
       "maxPrice": 4750,
       "records": 14,
@@ -3945,21 +3956,10 @@
       "grade": "FAQ"
     },
     {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 2514,
-      "recentPrice": 3500,
-      "minPrice": 2200,
-      "maxPrice": 3500,
-      "records": 7,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 2686,
-      "recentPrice": 2500,
+      "recentPrice": null,
       "minPrice": 2300,
       "maxPrice": 3000,
       "records": 7,
@@ -3967,10 +3967,21 @@
       "grade": "Grade B"
     },
     {
+      "name": "Bowenpally",
+      "district": "Hyderabad",
+      "avgPrice": 2514,
+      "recentPrice": null,
+      "minPrice": 2200,
+      "maxPrice": 3500,
+      "records": 7,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Kukatpally,RBZ",
       "district": "Medchal Malkajgiri",
       "avgPrice": 2250,
-      "recentPrice": 2250,
+      "recentPrice": null,
       "minPrice": 2250,
       "maxPrice": 2250,
       "records": 1,
@@ -4002,6 +4013,17 @@
       "grade": "Grade Range-1"
     },
     {
+      "name": "Dammapet",
+      "district": "Khammam",
+      "avgPrice": 2425,
+      "recentPrice": 2600,
+      "minPrice": 2400,
+      "maxPrice": 2600,
+      "records": 8,
+      "topVariety": "1001",
+      "grade": "FAQ"
+    },
+    {
       "name": "Mancharial",
       "district": "Adilabad",
       "avgPrice": 2500,
@@ -4021,17 +4043,6 @@
       "maxPrice": 2500,
       "records": 2,
       "topVariety": "Paddy",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Dammapet",
-      "district": "Khammam",
-      "avgPrice": 2400,
-      "recentPrice": null,
-      "minPrice": 2400,
-      "maxPrice": 2400,
-      "records": 7,
-      "topVariety": "1001",
       "grade": "FAQ"
     },
     {
@@ -4087,6 +4098,28 @@
       "maxPrice": 2400,
       "records": 4,
       "topVariety": "1001",
+      "grade": "Local"
+    },
+    {
+      "name": "Sattupally",
+      "district": "Khammam",
+      "avgPrice": 2400,
+      "recentPrice": 2400,
+      "minPrice": 2400,
+      "maxPrice": 2400,
+      "records": 1,
+      "topVariety": "Samba Masuri",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Nelakondapally",
+      "district": "Khammam",
+      "avgPrice": 2400,
+      "recentPrice": 2400,
+      "minPrice": 2400,
+      "maxPrice": 2400,
+      "records": 1,
+      "topVariety": "Sannalu",
       "grade": "Local"
     },
     {
@@ -4598,6 +4631,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Bejjenki",
+      "district": "Siddipet",
+      "avgPrice": 2350,
+      "recentPrice": 2350,
+      "minPrice": 2350,
+      "maxPrice": 2350,
+      "records": 1,
+      "topVariety": "Local",
+      "grade": "FAQ"
+    },
+    {
       "name": "Sathupally",
       "district": "Mahbubnagar",
       "avgPrice": 2342,
@@ -4845,7 +4889,7 @@
       "name": "Excise Colony,RBZ",
       "district": "Hanumakonda",
       "avgPrice": 5635,
-      "recentPrice": 5425,
+      "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 6000,
       "records": 17,
@@ -4853,21 +4897,10 @@
       "grade": "Grade A"
     },
     {
-      "name": "Venkateswarnagar",
-      "district": "Nalgonda",
-      "avgPrice": 2859,
-      "recentPrice": 3113,
-      "minPrice": 1500,
-      "maxPrice": 3200,
-      "records": 22,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 3211,
-      "recentPrice": 3000,
+      "recentPrice": null,
       "minPrice": 2250,
       "maxPrice": 3750,
       "records": 32,
@@ -4875,10 +4908,21 @@
       "grade": "FAQ"
     },
     {
+      "name": "Venkateswarnagar",
+      "district": "Nalgonda",
+      "avgPrice": 2859,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 3200,
+      "records": 22,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Kalwakurthy",
       "district": "Mahbubnagar",
       "avgPrice": 2758,
-      "recentPrice": 2750,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 3250,
       "records": 20,
@@ -4911,7 +4955,7 @@
       "name": "Weekly Market Area,RBZ",
       "district": "Karimnagar",
       "avgPrice": 2400,
-      "recentPrice": 2333,
+      "recentPrice": null,
       "minPrice": 2200,
       "maxPrice": 2600,
       "records": 12,
@@ -4922,7 +4966,7 @@
       "name": "L B Nagar",
       "district": "Ranga Reddy",
       "avgPrice": 2317,
-      "recentPrice": 2286,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 3200,
       "records": 18,
@@ -4930,21 +4974,10 @@
       "grade": "Medium"
     },
     {
-      "name": "Vantamamidi",
-      "district": "Medak",
-      "avgPrice": 2520,
-      "recentPrice": 2188,
-      "minPrice": 1250,
-      "maxPrice": 3000,
-      "records": 20,
-      "topVariety": "Ridgeguard(Tori)",
-      "grade": "Local"
-    },
-    {
       "name": "Karimnagar",
       "district": "Karimnagar",
       "avgPrice": 2228,
-      "recentPrice": 2000,
+      "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 3333.33,
       "records": 10,
@@ -4952,21 +4985,10 @@
       "grade": "Medium"
     },
     {
-      "name": "Gudimalkapur",
-      "district": "Hyderabad",
-      "avgPrice": 1805,
-      "recentPrice": 1986,
-      "minPrice": 1200,
-      "maxPrice": 2500,
-      "records": 21,
-      "topVariety": "Ridgeguard(Tori)",
-      "grade": "Grade B"
-    },
-    {
       "name": "Kukatpally,RBZ",
       "district": "Ranga Reddy",
       "avgPrice": 1898,
-      "recentPrice": 1938,
+      "recentPrice": null,
       "minPrice": 1250,
       "maxPrice": 2500,
       "records": 23,
@@ -4977,12 +4999,34 @@
       "name": "Bowenpally",
       "district": "Hyderabad",
       "avgPrice": 1816,
-      "recentPrice": 1886,
+      "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 2600,
       "records": 46,
       "topVariety": "Ridgeguard(Tori)",
       "grade": "FAQ"
+    },
+    {
+      "name": "Gudimalkapur",
+      "district": "Hyderabad",
+      "avgPrice": 1805,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 2500,
+      "records": 21,
+      "topVariety": "Ridgeguard(Tori)",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Vantamamidi",
+      "district": "Medak",
+      "avgPrice": 2483,
+      "recentPrice": 1750,
+      "minPrice": 1250,
+      "maxPrice": 3000,
+      "records": 21,
+      "topVariety": "Ridgeguard(Tori)",
+      "grade": "Local"
     }
   ],
   "potato": [
@@ -4998,25 +5042,25 @@
       "grade": "Local"
     },
     {
-      "name": "Excise Colony,RBZ",
-      "district": "Hanumakonda",
-      "avgPrice": 2975,
-      "recentPrice": 3086,
-      "minPrice": 2800,
-      "maxPrice": 3200,
-      "records": 16,
-      "topVariety": null,
-      "grade": "Grade A"
-    },
-    {
       "name": "Miryalguda(Rythu Bazar)",
       "district": "Nalgonda",
       "avgPrice": 3000,
-      "recentPrice": 3000,
+      "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3000,
       "records": 19,
       "topVariety": "Potato",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Excise Colony,RBZ",
+      "district": "Hanumakonda",
+      "avgPrice": 2975,
+      "recentPrice": null,
+      "minPrice": 2800,
+      "maxPrice": 3200,
+      "records": 16,
+      "topVariety": null,
       "grade": "Grade A"
     },
     {
@@ -5034,7 +5078,7 @@
       "name": "Mahabubnagar(Rythu Bazar)",
       "district": "Mahbubnagar",
       "avgPrice": 2435,
-      "recentPrice": 2300,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 3000,
       "records": 23,
@@ -5045,7 +5089,7 @@
       "name": "Siddipet(Rythu Bazar)",
       "district": "Medak",
       "avgPrice": 1937,
-      "recentPrice": 2000,
+      "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2000,
       "records": 19,
@@ -5056,7 +5100,7 @@
       "name": "Kalwakurthy",
       "district": "Mahbubnagar",
       "avgPrice": 1833,
-      "recentPrice": 2000,
+      "recentPrice": null,
       "minPrice": 1700,
       "maxPrice": 2000,
       "records": 3,
@@ -5067,7 +5111,7 @@
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 1705,
-      "recentPrice": 1744,
+      "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 1800,
       "records": 32,
@@ -5075,21 +5119,10 @@
       "grade": "FAQ"
     },
     {
-      "name": "Sangareddy",
-      "district": "Medak",
-      "avgPrice": 1400,
-      "recentPrice": 1500,
-      "minPrice": 1300,
-      "maxPrice": 1500,
-      "records": 4,
-      "topVariety": null,
-      "grade": "Grade B"
-    },
-    {
       "name": "Mahboob Manison",
       "district": "Hyderabad",
       "avgPrice": 1600,
-      "recentPrice": 1500,
+      "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 1900,
       "records": 20,
@@ -5108,25 +5141,14 @@
       "grade": "Medium"
     },
     {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 1122,
-      "recentPrice": 1229,
-      "minPrice": 550,
-      "maxPrice": 1300,
-      "records": 29,
-      "topVariety": "Potato",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Gudimalkapur",
-      "district": "Hyderabad",
-      "avgPrice": 1170,
-      "recentPrice": 1214,
-      "minPrice": 900,
-      "maxPrice": 1400,
-      "records": 23,
-      "topVariety": "Potato",
+      "name": "Sangareddy",
+      "district": "Medak",
+      "avgPrice": 1400,
+      "recentPrice": null,
+      "minPrice": 1300,
+      "maxPrice": 1500,
+      "records": 4,
+      "topVariety": null,
       "grade": "Grade B"
     },
     {
@@ -5144,7 +5166,7 @@
       "name": "L B Nagar",
       "district": "Ranga Reddy",
       "avgPrice": 1200,
-      "recentPrice": 1200,
+      "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1200,
       "records": 18,
@@ -5152,10 +5174,21 @@
       "grade": "Medium"
     },
     {
+      "name": "Gudimalkapur",
+      "district": "Hyderabad",
+      "avgPrice": 1170,
+      "recentPrice": null,
+      "minPrice": 900,
+      "maxPrice": 1400,
+      "records": 23,
+      "topVariety": "Potato",
+      "grade": "Grade B"
+    },
+    {
       "name": "APMC PATANCHERU",
       "district": "Sangareddy",
       "avgPrice": 1133,
-      "recentPrice": 1133,
+      "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1200,
       "records": 9,
@@ -5163,10 +5196,21 @@
       "grade": "Local"
     },
     {
+      "name": "Bowenpally",
+      "district": "Hyderabad",
+      "avgPrice": 1122,
+      "recentPrice": null,
+      "minPrice": 550,
+      "maxPrice": 1300,
+      "records": 29,
+      "topVariety": "Potato",
+      "grade": "FAQ"
+    },
+    {
       "name": "Kukatpally,RBZ",
       "district": "Ranga Reddy",
       "avgPrice": 1087,
-      "recentPrice": 1131,
+      "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1350,
       "records": 27,
@@ -5176,11 +5220,11 @@
     {
       "name": "Vantamamidi",
       "district": "Medak",
-      "avgPrice": 930,
+      "avgPrice": 942,
       "recentPrice": 1000,
       "minPrice": 650,
       "maxPrice": 1000,
-      "records": 5,
+      "records": 6,
       "topVariety": "Potato",
       "grade": "Local"
     },
@@ -5188,7 +5232,7 @@
       "name": "Weekly Market Area,RBZ",
       "district": "Karimnagar",
       "avgPrice": 930,
-      "recentPrice": 867,
+      "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 1200,
       "records": 10,
@@ -5201,7 +5245,7 @@
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 1005,
-      "recentPrice": 1250,
+      "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1500,
       "records": 8,
@@ -5212,7 +5256,7 @@
       "name": "Gaddiannaram",
       "district": "Hyderabad",
       "avgPrice": 533,
-      "recentPrice": 400,
+      "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 600,
       "records": 3,
@@ -5225,7 +5269,7 @@
       "name": "Narsingi",
       "district": "Ranga Reddy",
       "avgPrice": 47000,
-      "recentPrice": 50000,
+      "recentPrice": null,
       "minPrice": 35000,
       "maxPrice": 50000,
       "records": 5,
@@ -5236,7 +5280,7 @@
       "name": "Babbuguda",
       "district": "Ranga Reddy",
       "avgPrice": 45000,
-      "recentPrice": 45000,
+      "recentPrice": null,
       "minPrice": 45000,
       "maxPrice": 45000,
       "records": 1,
@@ -5247,7 +5291,7 @@
       "name": "Tanduru",
       "district": "Vikarabad",
       "avgPrice": 21667,
-      "recentPrice": 35000,
+      "recentPrice": null,
       "minPrice": 15000,
       "maxPrice": 35000,
       "records": 3,
@@ -5356,7 +5400,7 @@
       "name": "Adilabad (Rythu Bazar)",
       "district": "Adilabad",
       "avgPrice": 3382,
-      "recentPrice": 3286,
+      "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 4000,
       "records": 17,
@@ -5375,21 +5419,21 @@
       "grade": "Grade A"
     },
     {
-      "name": "Mahabubnagar(Rythu Bazar)",
-      "district": "Mahbubnagar",
-      "avgPrice": 2600,
-      "recentPrice": 2833,
-      "minPrice": 1400,
-      "maxPrice": 3400,
-      "records": 23,
-      "topVariety": "Deshi",
+      "name": "Ibrahimpatnam",
+      "district": "Ranga Reddy",
+      "avgPrice": 2844,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 3500,
+      "records": 9,
+      "topVariety": "Local",
       "grade": "Local"
     },
     {
       "name": "Siddipet(Rythu Bazar)",
       "district": "Siddipet",
       "avgPrice": 2778,
-      "recentPrice": 2750,
+      "recentPrice": null,
       "minPrice": 2400,
       "maxPrice": 3500,
       "records": 18,
@@ -5408,21 +5452,21 @@
       "grade": "Local"
     },
     {
-      "name": "Ibrahimpatnam",
-      "district": "Ranga Reddy",
-      "avgPrice": 2844,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 3500,
-      "records": 9,
-      "topVariety": "Local",
+      "name": "Mahabubnagar(Rythu Bazar)",
+      "district": "Mahbubnagar",
+      "avgPrice": 2600,
+      "recentPrice": null,
+      "minPrice": 1400,
+      "maxPrice": 3400,
+      "records": 23,
+      "topVariety": "Deshi",
       "grade": "Local"
     },
     {
       "name": "Sattupalli (Ramalayam),RBZ",
       "district": "Khammam",
       "avgPrice": 2535,
-      "recentPrice": 2467,
+      "recentPrice": null,
       "minPrice": 2400,
       "maxPrice": 3100,
       "records": 17,
@@ -5433,7 +5477,7 @@
       "name": "Pavilion Ground,Khammam,RBZ",
       "district": "Khammam",
       "avgPrice": 2494,
-      "recentPrice": 2400,
+      "recentPrice": null,
       "minPrice": 2400,
       "maxPrice": 3000,
       "records": 17,
@@ -5441,10 +5485,21 @@
       "grade": "FAQ"
     },
     {
+      "name": "Miryalguda(Rythu Bazar)",
+      "district": "Nalgonda",
+      "avgPrice": 2289,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 2500,
+      "records": 19,
+      "topVariety": "Deshi",
+      "grade": "Grade A"
+    },
+    {
       "name": "Excise Colony,RBZ",
       "district": "Hanumakonda",
       "avgPrice": 2244,
-      "recentPrice": 2229,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2500,
       "records": 16,
@@ -5452,10 +5507,21 @@
       "grade": "Grade A"
     },
     {
+      "name": "Chevella",
+      "district": "Ranga Reddy",
+      "avgPrice": 2208,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 3000,
+      "records": 24,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
       "name": "Weekly Market Area,RBZ",
       "district": "Karimnagar",
       "avgPrice": 2200,
-      "recentPrice": 2200,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2500,
       "records": 11,
@@ -5466,7 +5532,7 @@
       "name": "Karimnagar",
       "district": "Karimnagar",
       "avgPrice": 2188,
-      "recentPrice": 2188,
+      "recentPrice": null,
       "minPrice": 1750,
       "maxPrice": 3250,
       "records": 12,
@@ -5474,32 +5540,10 @@
       "grade": "Medium"
     },
     {
-      "name": "Chevella",
-      "district": "Ranga Reddy",
-      "avgPrice": 2208,
-      "recentPrice": 2167,
-      "minPrice": 1000,
-      "maxPrice": 3000,
-      "records": 24,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
-      "name": "Miryalguda(Rythu Bazar)",
-      "district": "Nalgonda",
-      "avgPrice": 2289,
-      "recentPrice": 2063,
-      "minPrice": 2000,
-      "maxPrice": 2500,
-      "records": 19,
-      "topVariety": "Deshi",
-      "grade": "Grade A"
-    },
-    {
       "name": "Sangareddy",
       "district": "Sangareddy",
       "avgPrice": 1820,
-      "recentPrice": 1900,
+      "recentPrice": null,
       "minPrice": 1600,
       "maxPrice": 2200,
       "records": 10,
@@ -5510,7 +5554,7 @@
       "name": "Venkateswarnagar",
       "district": "Nalgonda",
       "avgPrice": 1695,
-      "recentPrice": 1800,
+      "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 2200,
       "records": 21,
@@ -5521,7 +5565,7 @@
       "name": "Shadnagar",
       "district": "Mahbubnagar",
       "avgPrice": 1626,
-      "recentPrice": 1613,
+      "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 2200,
       "records": 19,
@@ -5532,7 +5576,7 @@
       "name": "Kalwakurthy",
       "district": "Mahbubnagar",
       "avgPrice": 1578,
-      "recentPrice": 1538,
+      "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 2400,
       "records": 23,
@@ -5540,21 +5584,10 @@
       "grade": "Local"
     },
     {
-      "name": "APMC PATANCHERU",
-      "district": "Sangareddy",
-      "avgPrice": 1467,
-      "recentPrice": 1467,
-      "minPrice": 1200,
-      "maxPrice": 1600,
-      "records": 9,
-      "topVariety": "Tomato",
-      "grade": "Local"
-    },
-    {
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 1569,
-      "recentPrice": 1389,
+      "recentPrice": null,
       "minPrice": 550,
       "maxPrice": 2750,
       "records": 35,
@@ -5562,21 +5595,21 @@
       "grade": "FAQ"
     },
     {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 1246,
-      "recentPrice": 1331,
-      "minPrice": 700,
-      "maxPrice": 2100,
-      "records": 26,
-      "topVariety": "Deshi",
-      "grade": "Medium"
+      "name": "APMC PATANCHERU",
+      "district": "Sangareddy",
+      "avgPrice": 1467,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 1600,
+      "records": 9,
+      "topVariety": "Tomato",
+      "grade": "Local"
     },
     {
       "name": "Mahboob Manison",
       "district": "Hyderabad",
       "avgPrice": 1410,
-      "recentPrice": 1329,
+      "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2400,
       "records": 20,
@@ -5587,7 +5620,7 @@
       "name": "Bowenpally",
       "district": "Hyderabad",
       "avgPrice": 1348,
-      "recentPrice": 1257,
+      "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 2600,
       "records": 29,
@@ -5598,11 +5631,22 @@
       "name": "L B Nagar",
       "district": "Ranga Reddy",
       "avgPrice": 1300,
-      "recentPrice": 1257,
+      "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1600,
       "records": 18,
       "topVariety": "Tomato",
+      "grade": "Medium"
+    },
+    {
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 1246,
+      "recentPrice": null,
+      "minPrice": 700,
+      "maxPrice": 2100,
+      "records": 26,
+      "topVariety": "Deshi",
       "grade": "Medium"
     },
     {
@@ -5620,7 +5664,7 @@
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 1105,
-      "recentPrice": 1114,
+      "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 2000,
       "records": 21,
@@ -5928,15 +5972,15 @@
   ],
   "mango": [
     {
-      "name": "Gaddiannaram",
-      "district": "Hyderabad",
-      "avgPrice": 2989,
-      "recentPrice": 3431,
-      "minPrice": 555.56,
-      "maxPrice": 20555.72,
-      "records": 121,
+      "name": "Warangal",
+      "district": "Warangal",
+      "avgPrice": 4050,
+      "recentPrice": null,
+      "minPrice": 1400,
+      "maxPrice": 10000,
+      "records": 25,
       "topVariety": "Badami",
-      "grade": "Medium"
+      "grade": "Small"
     },
     {
       "name": "Bellampally",
@@ -5950,6 +5994,17 @@
       "grade": "Local"
     },
     {
+      "name": "Gaddiannaram",
+      "district": "Hyderabad",
+      "avgPrice": 2989,
+      "recentPrice": null,
+      "minPrice": 555.56,
+      "maxPrice": 20555.72,
+      "records": 121,
+      "topVariety": "Badami",
+      "grade": "Medium"
+    },
+    {
       "name": "Medipally",
       "district": "Karimnagar",
       "avgPrice": 2400,
@@ -5959,17 +6014,6 @@
       "records": 2,
       "topVariety": "Badami",
       "grade": "Grade A"
-    },
-    {
-      "name": "Warangal",
-      "district": "Warangal",
-      "avgPrice": 4050,
-      "recentPrice": 1450,
-      "minPrice": 1400,
-      "maxPrice": 10000,
-      "records": 25,
-      "topVariety": "Badami",
-      "grade": "Small"
     }
   ],
   "mousambisweet-lime": [
@@ -5977,7 +6021,7 @@
       "name": "Gaddiannaram",
       "district": "Hyderabad",
       "avgPrice": 2050,
-      "recentPrice": 2100,
+      "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 2400,
       "records": 18,
@@ -5988,7 +6032,7 @@
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 1938,
-      "recentPrice": 1842,
+      "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 2700,
       "records": 8,
@@ -6012,7 +6056,7 @@
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 4279,
-      "recentPrice": 4400,
+      "recentPrice": null,
       "minPrice": 3300,
       "maxPrice": 5000,
       "records": 19,
@@ -6023,7 +6067,7 @@
       "name": "Gaddiannaram",
       "district": "Hyderabad",
       "avgPrice": 2022,
-      "recentPrice": 2000,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2500,
       "records": 23,
@@ -6036,7 +6080,7 @@
       "name": "Jainath",
       "district": "Adilabad",
       "avgPrice": 3200,
-      "recentPrice": 3200,
+      "recentPrice": null,
       "minPrice": 3200,
       "maxPrice": 3200,
       "records": 1,
@@ -6047,7 +6091,7 @@
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 2056,
-      "recentPrice": 2250,
+      "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 2500,
       "records": 9,
@@ -6058,7 +6102,7 @@
       "name": "Gaddiannaram",
       "district": "Hyderabad",
       "avgPrice": 1600,
-      "recentPrice": 2013,
+      "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 2500,
       "records": 21,
@@ -6071,7 +6115,7 @@
       "name": "Bowenpally",
       "district": "Hyderabad",
       "avgPrice": 2908,
-      "recentPrice": 3343,
+      "recentPrice": null,
       "minPrice": 1600,
       "maxPrice": 4000,
       "records": 24,
@@ -6106,7 +6150,7 @@
       "name": "Gaddiannaram",
       "district": "Hyderabad",
       "avgPrice": 780,
-      "recentPrice": 800,
+      "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 800,
       "records": 20,
@@ -6119,7 +6163,7 @@
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 1185,
-      "recentPrice": 1267,
+      "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 1500,
       "records": 20,
@@ -6130,7 +6174,7 @@
       "name": "Bowenpally",
       "district": "Hyderabad",
       "avgPrice": 415,
-      "recentPrice": 425,
+      "recentPrice": null,
       "minPrice": 270,
       "maxPrice": 470,
       "records": 24,
@@ -6143,7 +6187,7 @@
       "name": "Excise Colony,RBZ",
       "district": "Hanumakonda",
       "avgPrice": 4000,
-      "recentPrice": 4000,
+      "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 4000,
       "records": 1,
@@ -6154,22 +6198,11 @@
       "name": "Miryalguda(Rythu Bazar)",
       "district": "Nalgonda",
       "avgPrice": 3500,
-      "recentPrice": 3500,
+      "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 3500,
       "records": 1,
       "topVariety": "Red",
-      "grade": "Grade A"
-    },
-    {
-      "name": "Siddipet(Rythu Bazar)",
-      "district": "Medak",
-      "avgPrice": 1950,
-      "recentPrice": 3000,
-      "minPrice": 1600,
-      "maxPrice": 3000,
-      "records": 4,
-      "topVariety": "Onion",
       "grade": "Grade A"
     },
     {
@@ -6187,7 +6220,7 @@
       "name": "APMC PATANCHERU",
       "district": "Sangareddy",
       "avgPrice": 2500,
-      "recentPrice": 2500,
+      "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2500,
       "records": 1,
@@ -6198,23 +6231,12 @@
       "name": "Sadasivpet",
       "district": "Sangareddy",
       "avgPrice": 2479,
-      "recentPrice": 2479,
+      "recentPrice": null,
       "minPrice": 2479,
       "maxPrice": 2479,
       "records": 1,
       "topVariety": "Local",
       "grade": "Local"
-    },
-    {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 1357,
-      "recentPrice": 2400,
-      "minPrice": 900,
-      "maxPrice": 2400,
-      "records": 7,
-      "topVariety": "Onion",
-      "grade": "FAQ"
     },
     {
       "name": "Patancheru",
@@ -6228,37 +6250,26 @@
       "grade": "Local"
     },
     {
-      "name": "Mahboob Manison",
-      "district": "Hyderabad",
-      "avgPrice": 1120,
-      "recentPrice": 1800,
-      "minPrice": 500,
-      "maxPrice": 2000,
-      "records": 5,
-      "topVariety": "Onion",
-      "grade": "Large"
-    },
-    {
-      "name": "Gudimalkapur",
-      "district": "Hyderabad",
-      "avgPrice": 1025,
-      "recentPrice": 1700,
-      "minPrice": 500,
-      "maxPrice": 1700,
+      "name": "Siddipet(Rythu Bazar)",
+      "district": "Medak",
+      "avgPrice": 1950,
+      "recentPrice": null,
+      "minPrice": 1600,
+      "maxPrice": 3000,
       "records": 4,
       "topVariety": "Onion",
-      "grade": "Grade B"
+      "grade": "Grade A"
     },
     {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 959,
-      "recentPrice": 1525,
-      "minPrice": 650,
-      "maxPrice": 1750,
-      "records": 11,
-      "topVariety": null,
-      "grade": "Medium"
+      "name": "Bowenpally",
+      "district": "Hyderabad",
+      "avgPrice": 1357,
+      "recentPrice": null,
+      "minPrice": 900,
+      "maxPrice": 2400,
+      "records": 7,
+      "topVariety": "Onion",
+      "grade": "FAQ"
     },
     {
       "name": "L B Nagar",
@@ -6283,6 +6294,39 @@
       "grade": "Medium"
     },
     {
+      "name": "Mahboob Manison",
+      "district": "Hyderabad",
+      "avgPrice": 1120,
+      "recentPrice": null,
+      "minPrice": 500,
+      "maxPrice": 2000,
+      "records": 5,
+      "topVariety": "Onion",
+      "grade": "Large"
+    },
+    {
+      "name": "Gudimalkapur",
+      "district": "Hyderabad",
+      "avgPrice": 1025,
+      "recentPrice": null,
+      "minPrice": 500,
+      "maxPrice": 1700,
+      "records": 4,
+      "topVariety": "Onion",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 959,
+      "recentPrice": null,
+      "minPrice": 650,
+      "maxPrice": 1750,
+      "records": 11,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Hyderabad",
       "district": "Hyderabad",
       "avgPrice": 693,
@@ -6299,7 +6343,7 @@
       "name": "Gaddiannaram",
       "district": "Hyderabad",
       "avgPrice": 10000,
-      "recentPrice": 10000,
+      "recentPrice": null,
       "minPrice": 10000,
       "maxPrice": 10000,
       "records": 5,
@@ -6323,7 +6367,7 @@
       "name": "Bowenpally",
       "district": "Hyderabad",
       "avgPrice": 1338,
-      "recentPrice": 1714,
+      "recentPrice": null,
       "minPrice": 550,
       "maxPrice": 2200,
       "records": 44,
@@ -6331,21 +6375,10 @@
       "grade": "FAQ"
     },
     {
-      "name": "Kukatpally,RBZ",
-      "district": "Ranga Reddy",
-      "avgPrice": 1100,
-      "recentPrice": 1400,
-      "minPrice": 1000,
-      "maxPrice": 1400,
-      "records": 6,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "L B Nagar",
       "district": "Ranga Reddy",
       "avgPrice": 1127,
-      "recentPrice": 1117,
+      "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1200,
       "records": 11,
@@ -6353,26 +6386,26 @@
       "grade": "Medium"
     },
     {
+      "name": "Kukatpally,RBZ",
+      "district": "Ranga Reddy",
+      "avgPrice": 1100,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 1400,
+      "records": 6,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 1005,
-      "recentPrice": 1057,
+      "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1200,
       "records": 21,
       "topVariety": "Pumpkin",
       "grade": "Grade B"
-    },
-    {
-      "name": "Vantamamidi",
-      "district": "Medak",
-      "avgPrice": 833,
-      "recentPrice": 975,
-      "minPrice": 500,
-      "maxPrice": 1250,
-      "records": 9,
-      "topVariety": "Pumpkin",
-      "grade": "Local"
     },
     {
       "name": "Gaddiannaram",
@@ -6384,6 +6417,17 @@
       "records": 2,
       "topVariety": "Pumpkin",
       "grade": "Medium"
+    },
+    {
+      "name": "Vantamamidi",
+      "district": "Medak",
+      "avgPrice": 830,
+      "recentPrice": 800,
+      "minPrice": 500,
+      "maxPrice": 1250,
+      "records": 10,
+      "topVariety": "Pumpkin",
+      "grade": "Local"
     }
   ],
   "snakeguard": [
@@ -6434,21 +6478,10 @@
   ],
   "sweet-potato": [
     {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 1727,
-      "recentPrice": 1943,
-      "minPrice": 1000,
-      "maxPrice": 2000,
-      "records": 22,
-      "topVariety": "Sweet Potato",
-      "grade": "FAQ"
-    },
-    {
       "name": "L B Nagar",
       "district": "Ranga Reddy",
       "avgPrice": 1756,
-      "recentPrice": 1850,
+      "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 2000,
       "records": 9,
@@ -6456,10 +6489,21 @@
       "grade": "Medium"
     },
     {
+      "name": "Bowenpally",
+      "district": "Hyderabad",
+      "avgPrice": 1727,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 2000,
+      "records": 22,
+      "topVariety": "Sweet Potato",
+      "grade": "FAQ"
+    },
+    {
       "name": "Kukatpally,RBZ",
       "district": "Ranga Reddy",
       "avgPrice": 1673,
-      "recentPrice": 1583,
+      "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2000,
       "records": 13,
@@ -6470,7 +6514,7 @@
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 1225,
-      "recentPrice": 1286,
+      "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1500,
       "records": 16,
@@ -6483,7 +6527,7 @@
       "name": "Bowenpally",
       "district": "Hyderabad",
       "avgPrice": 2300,
-      "recentPrice": 2250,
+      "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 4000,
       "records": 7,
@@ -6496,7 +6540,7 @@
       "name": "Bowenpally",
       "district": "Hyderabad",
       "avgPrice": 4354,
-      "recentPrice": 4643,
+      "recentPrice": null,
       "minPrice": 2600,
       "maxPrice": 5000,
       "records": 26,
@@ -6507,7 +6551,7 @@
       "name": "Vantamamidi",
       "district": "Medak",
       "avgPrice": 2594,
-      "recentPrice": 2000,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 3000,
       "records": 8,
@@ -6516,17 +6560,6 @@
     }
   ],
   "knool-khol": [
-    {
-      "name": "Bowenpally",
-      "district": "Hyderabad",
-      "avgPrice": 850,
-      "recentPrice": 900,
-      "minPrice": 800,
-      "maxPrice": 900,
-      "records": 2,
-      "topVariety": "Knool Khol",
-      "grade": "FAQ"
-    },
     {
       "name": "Gudimalkapur",
       "district": "Hyderabad",
@@ -6537,6 +6570,17 @@
       "records": 1,
       "topVariety": "Knool Khol",
       "grade": "Grade B"
+    },
+    {
+      "name": "Bowenpally",
+      "district": "Hyderabad",
+      "avgPrice": 850,
+      "recentPrice": null,
+      "minPrice": 800,
+      "maxPrice": 900,
+      "records": 2,
+      "topVariety": "Knool Khol",
+      "grade": "FAQ"
     }
   ],
   "ragifinger-millet": [
@@ -6568,7 +6612,7 @@
       "name": "Bowenpally",
       "district": "Hyderabad",
       "avgPrice": 3983,
-      "recentPrice": 3929,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 5500,
       "records": 24,
@@ -6576,26 +6620,26 @@
       "grade": "FAQ"
     },
     {
-      "name": "Vantamamidi",
-      "district": "Siddipet",
-      "avgPrice": 3500,
-      "recentPrice": 3500,
-      "minPrice": 3500,
-      "maxPrice": 3500,
-      "records": 1,
-      "topVariety": "Onion Green",
-      "grade": "Local"
-    },
-    {
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 2721,
-      "recentPrice": 2875,
+      "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 4000,
       "records": 14,
       "topVariety": "Onion Green",
       "grade": "Grade B"
+    },
+    {
+      "name": "Vantamamidi",
+      "district": "Siddipet",
+      "avgPrice": 2750,
+      "recentPrice": 2000,
+      "minPrice": 2000,
+      "maxPrice": 3500,
+      "records": 2,
+      "topVariety": "Onion Green",
+      "grade": "Local"
     }
   ],
   "wood": [
@@ -6638,7 +6682,7 @@
       "name": "Nakrekal",
       "district": "Nalgonda",
       "avgPrice": 1400,
-      "recentPrice": 1143,
+      "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 5000,
       "records": 18,
@@ -6746,26 +6790,26 @@
   ],
   "plum": [
     {
-      "name": "Warangal",
-      "district": "Warangal",
-      "avgPrice": 6886,
-      "recentPrice": 7567,
-      "minPrice": 5000,
-      "maxPrice": 7700,
-      "records": 7,
-      "topVariety": "Plum",
-      "grade": "Large"
-    },
-    {
       "name": "Gaddiannaram",
       "district": "Hyderabad",
       "avgPrice": 7350,
-      "recentPrice": 7000,
+      "recentPrice": null,
       "minPrice": 7000,
       "maxPrice": 10000,
       "records": 20,
       "topVariety": "Plum",
       "grade": "Medium"
+    },
+    {
+      "name": "Warangal",
+      "district": "Warangal",
+      "avgPrice": 6886,
+      "recentPrice": null,
+      "minPrice": 5000,
+      "maxPrice": 7700,
+      "records": 7,
+      "topVariety": "Plum",
+      "grade": "Large"
     }
   ],
   "soyabean": [
@@ -6773,7 +6817,7 @@
       "name": "Zaheerabad",
       "district": "Medak",
       "avgPrice": 6788,
-      "recentPrice": 7246,
+      "recentPrice": null,
       "minPrice": 5400,
       "maxPrice": 7246,
       "records": 12,
@@ -6784,7 +6828,7 @@
       "name": "Bhainsa",
       "district": "Adilabad",
       "avgPrice": 6388,
-      "recentPrice": 6559,
+      "recentPrice": null,
       "minPrice": 5559,
       "maxPrice": 6854,
       "records": 5,
@@ -6806,7 +6850,7 @@
       "name": "Nizamabad",
       "district": "Nizamabad",
       "avgPrice": 3896,
-      "recentPrice": 3896,
+      "recentPrice": null,
       "minPrice": 3896,
       "maxPrice": 3896,
       "records": 1,
@@ -6858,7 +6902,7 @@
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 8105,
-      "recentPrice": 7750,
+      "recentPrice": null,
       "minPrice": 6000,
       "maxPrice": 10000,
       "records": 19,
@@ -6884,7 +6928,7 @@
       "name": "Mahabubnagar(Rythu Bazar)",
       "district": "Mahbubnagar",
       "avgPrice": 7667,
-      "recentPrice": 8000,
+      "recentPrice": null,
       "minPrice": 6000,
       "maxPrice": 8000,
       "records": 6,
@@ -6897,7 +6941,7 @@
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 6158,
-      "recentPrice": 4875,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 10000,
       "records": 19,
@@ -6910,7 +6954,7 @@
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 7275,
-      "recentPrice": 6250,
+      "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 15000,
       "records": 20,
@@ -6923,7 +6967,7 @@
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 3450,
-      "recentPrice": 2800,
+      "recentPrice": null,
       "minPrice": 2800,
       "maxPrice": 5000,
       "records": 4,
@@ -6934,7 +6978,7 @@
       "name": "Gaddiannaram",
       "district": "Ranga Reddy",
       "avgPrice": 800,
-      "recentPrice": 800,
+      "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 800,
       "records": 19,
@@ -6947,7 +6991,7 @@
       "name": "Mahboob Manison",
       "district": "Hyderabad",
       "avgPrice": 12889,
-      "recentPrice": 13000,
+      "recentPrice": null,
       "minPrice": 12000,
       "maxPrice": 13000,
       "records": 9,
@@ -6973,7 +7017,7 @@
       "name": "Warangal",
       "district": "Warangal",
       "avgPrice": 11700,
-      "recentPrice": 13500,
+      "recentPrice": null,
       "minPrice": 8000,
       "maxPrice": 16000,
       "records": 5,
@@ -7010,7 +7054,7 @@
       "name": "Mahabubabad",
       "district": "Mahabubabad",
       "avgPrice": 6409,
-      "recentPrice": 5260,
+      "recentPrice": null,
       "minPrice": 5260,
       "maxPrice": 8008,
       "records": 4,
@@ -7141,7 +7185,7 @@
       "name": "Gaddiannaram",
       "district": "Ranga Reddy",
       "avgPrice": 14286,
-      "recentPrice": 14000,
+      "recentPrice": null,
       "minPrice": 14000,
       "maxPrice": 15000,
       "records": 14,
@@ -7154,7 +7198,7 @@
       "name": "Gaddiannaram",
       "district": "Ranga Reddy",
       "avgPrice": 1600,
-      "recentPrice": 1600,
+      "recentPrice": null,
       "minPrice": 1600,
       "maxPrice": 1600,
       "records": 12,
@@ -7167,7 +7211,7 @@
       "name": "Excise Colony,RBZ",
       "district": "Hanumakonda",
       "avgPrice": 3725,
-      "recentPrice": 3829,
+      "recentPrice": null,
       "minPrice": 3600,
       "maxPrice": 4000,
       "records": 16,
@@ -7178,7 +7222,7 @@
       "name": "Miryalguda(Rythu Bazar)",
       "district": "Nalgonda",
       "avgPrice": 3333,
-      "recentPrice": 3333,
+      "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 4000,
       "records": 12,
@@ -7191,7 +7235,7 @@
       "name": "Gudimalkapur",
       "district": "Hyderabad",
       "avgPrice": 19588,
-      "recentPrice": 19143,
+      "recentPrice": null,
       "minPrice": 16000,
       "maxPrice": 24000,
       "records": 17,
@@ -7204,7 +7248,7 @@
       "name": "Tanduru",
       "district": "Vikarabad",
       "avgPrice": 33333,
-      "recentPrice": 35000,
+      "recentPrice": null,
       "minPrice": 30000,
       "maxPrice": 35000,
       "records": 3,
@@ -7215,7 +7259,7 @@
       "name": "Babbuguda",
       "district": "Ranga Reddy",
       "avgPrice": 22500,
-      "recentPrice": 25000,
+      "recentPrice": null,
       "minPrice": 20000,
       "maxPrice": 25000,
       "records": 2,
@@ -7228,7 +7272,7 @@
       "name": "Nizamabad",
       "district": "Nizamabad",
       "avgPrice": 2033,
-      "recentPrice": 2015,
+      "recentPrice": null,
       "minPrice": 2015,
       "maxPrice": 2050,
       "records": 2,

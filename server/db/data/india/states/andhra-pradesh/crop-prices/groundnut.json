@@ -34,6 +34,13 @@
       "market": 5850,
       "volume": 2,
       "msp": 6783
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 7708,
+      "volume": 7,
+      "msp": 6783
     }
   ],
   "dailyHistory": [
@@ -141,9 +148,16 @@
       "volume": 2,
       "minPrice": 5200,
       "maxPrice": 6600
+    },
+    {
+      "date": "2026-10-16",
+      "market": 7708,
+      "volume": 7,
+      "minPrice": 4816,
+      "maxPrice": 9000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Kurnool",
@@ -158,10 +172,28 @@
       "records": 5
     },
     {
+      "district": "Ananthapuramu",
+      "nameHi": "Ananthapuramu",
+      "avgPrice": 7839,
+      "records": 4
+    },
+    {
       "district": "Sri Sathya Sai",
       "nameHi": "Sri Sathya Sai",
-      "avgPrice": 5850,
-      "records": 2
+      "avgPrice": 6450,
+      "records": 3
+    },
+    {
+      "district": "Annamayya",
+      "nameHi": "Annamayya",
+      "avgPrice": 8200,
+      "records": 1
+    },
+    {
+      "district": "Tirupathi",
+      "nameHi": "Tirupathi",
+      "avgPrice": 6750,
+      "records": 1
     }
   ]
 }

@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 740,
       "volume": 813
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 730,
+      "volume": 5
     }
   ],
   "dailyHistory": [
@@ -387,15 +393,22 @@
       "volume": 4,
       "minPrice": 1,
       "maxPrice": 900
+    },
+    {
+      "date": "2026-10-16",
+      "market": 730,
+      "volume": 5,
+      "minPrice": 300,
+      "maxPrice": 900
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Ludhiana",
       "nameHi": "Ludhiana",
-      "avgPrice": 525,
-      "records": 131
+      "avgPrice": 527,
+      "records": 132
     },
     {
       "district": "Patiala",
@@ -424,8 +437,8 @@
     {
       "district": "Jalandhar",
       "nameHi": "Jalandhar",
-      "avgPrice": 585,
-      "records": 85
+      "avgPrice": 583,
+      "records": 86
     },
     {
       "district": "Gurdaspur",
@@ -436,19 +449,19 @@
     {
       "district": "Mohali",
       "nameHi": "Mohali",
-      "avgPrice": 817,
-      "records": 61
+      "avgPrice": 818,
+      "records": 62
+    },
+    {
+      "district": "Tarntaran",
+      "nameHi": "Tarntaran",
+      "avgPrice": 421,
+      "records": 46
     },
     {
       "district": "Fazilka",
       "nameHi": "Fazilka",
       "avgPrice": 1081,
-      "records": 45
-    },
-    {
-      "district": "Tarntaran",
-      "nameHi": "Tarntaran",
-      "avgPrice": 410,
       "records": 45
     },
     {
@@ -476,9 +489,9 @@
       "records": 33
     },
     {
-      "district": "Ferozpur",
-      "nameHi": "Ferozpur",
-      "avgPrice": 689,
+      "district": "Amritsar",
+      "nameHi": "Amritsar",
+      "avgPrice": 545,
       "records": 28
     }
   ]

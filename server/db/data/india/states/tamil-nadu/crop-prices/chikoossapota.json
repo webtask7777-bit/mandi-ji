@@ -53,6 +53,12 @@
       "date": "2026-07",
       "market": 4374,
       "volume": 1148
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4639,
+      "volume": 19
     }
   ],
   "dailyHistory": [
@@ -1014,27 +1020,34 @@
       "volume": 62,
       "minPrice": 2500,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4639,
+      "volume": 19,
+      "minPrice": 3500,
+      "maxPrice": 6500
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Salem",
       "nameHi": "Salem",
-      "avgPrice": 3751,
-      "records": 1231
+      "avgPrice": 3753,
+      "records": 1234
     },
     {
       "district": "Virudhunagar",
       "nameHi": "Virudhunagar",
       "avgPrice": 3477,
-      "records": 795
+      "records": 797
     },
     {
       "district": "Coimbatore",
       "nameHi": "Coimbatore",
-      "avgPrice": 4046,
-      "records": 640
+      "avgPrice": 4047,
+      "records": 641
     },
     {
       "district": "Vellore",
@@ -1046,19 +1059,19 @@
       "district": "Namakkal",
       "nameHi": "Namakkal",
       "avgPrice": 3849,
-      "records": 559
+      "records": 560
     },
     {
       "district": "Madurai",
       "nameHi": "Madurai",
-      "avgPrice": 4776,
-      "records": 445
+      "avgPrice": 4777,
+      "records": 447
     },
     {
       "district": "Erode",
       "nameHi": "Erode",
-      "avgPrice": 3682,
-      "records": 437
+      "avgPrice": 3683,
+      "records": 439
     },
     {
       "district": "Thiruvannamalai",
@@ -1105,8 +1118,8 @@
     {
       "district": "Karur",
       "nameHi": "Karur",
-      "avgPrice": 4344,
-      "records": 262
+      "avgPrice": 4350,
+      "records": 263
     }
   ]
 }

@@ -53,6 +53,12 @@
       "date": "2026-07",
       "market": 5306,
       "volume": 5401
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4653,
+      "volume": 116
     }
   ],
   "dailyHistory": [
@@ -1091,57 +1097,70 @@
       "volume": 176,
       "minPrice": 400,
       "maxPrice": 9000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4653,
+      "volume": 116,
+      "minPrice": 2500,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Salem (तमिल नाडु)",
       "nameHi": "Salem (तमिल नाडु)",
-      "avgPrice": 5945,
-      "records": 1457
-    },
-    {
-      "district": "Virudhunagar (तमिल नाडु)",
-      "nameHi": "Virudhunagar (तमिल नाडु)",
-      "avgPrice": 4637,
-      "records": 972
+      "avgPrice": 5936,
+      "records": 1468
     },
     {
       "district": "Coimbatore (तमिल नाडु)",
       "nameHi": "Coimbatore (तमिल नाडु)",
-      "avgPrice": 4893,
-      "records": 969
+      "avgPrice": 4886,
+      "records": 976
+    },
+    {
+      "district": "Virudhunagar (तमिल नाडु)",
+      "nameHi": "Virudhunagar (तमिल नाडु)",
+      "avgPrice": 4636,
+      "records": 976
     },
     {
       "district": "Thiruvannamalai (तमिल नाडु)",
       "nameHi": "Thiruvannamalai (तमिल नाडु)",
-      "avgPrice": 4545,
-      "records": 837
+      "avgPrice": 4544,
+      "records": 843
     },
     {
       "district": "Thiruchirappalli (तमिल नाडु)",
       "nameHi": "Thiruchirappalli (तमिल नाडु)",
-      "avgPrice": 5275,
-      "records": 745
+      "avgPrice": 5270,
+      "records": 751
     },
     {
       "district": "Namakkal (तमिल नाडु)",
       "nameHi": "Namakkal (तमिल नाडु)",
-      "avgPrice": 5958,
-      "records": 736
+      "avgPrice": 5955,
+      "records": 742
     },
     {
       "district": "Vellore (तमिल नाडु)",
       "nameHi": "Vellore (तमिल नाडु)",
-      "avgPrice": 4034,
-      "records": 731
+      "avgPrice": 4033,
+      "records": 736
     },
     {
       "district": "Theni (तमिल नाडु)",
       "nameHi": "Theni (तमिल नाडु)",
-      "avgPrice": 4096,
-      "records": 702
+      "avgPrice": 4094,
+      "records": 705
+    },
+    {
+      "district": "Dharmapuri (तमिल नाडु)",
+      "nameHi": "Dharmapuri (तमिल नाडु)",
+      "avgPrice": 5460,
+      "records": 677
     },
     {
       "district": "Ernakulam (केरल)",
@@ -1150,34 +1169,28 @@
       "records": 676
     },
     {
-      "district": "Dharmapuri (तमिल नाडु)",
-      "nameHi": "Dharmapuri (तमिल नाडु)",
-      "avgPrice": 5461,
-      "records": 671
-    },
-    {
       "district": "Chengalpattu (तमिल नाडु)",
       "nameHi": "Chengalpattu (तमिल नाडु)",
       "avgPrice": 5076,
       "records": 638
     },
     {
-      "district": "Thiruvananthapuram (केरल)",
-      "nameHi": "Thiruvananthapuram (केरल)",
-      "avgPrice": 5498,
-      "records": 613
+      "district": "Krishnagiri (तमिल नाडु)",
+      "nameHi": "Krishnagiri (तमिल नाडु)",
+      "avgPrice": 4811,
+      "records": 617
     },
     {
       "district": "Erode (तमिल नाडु)",
       "nameHi": "Erode (तमिल नाडु)",
-      "avgPrice": 5022,
-      "records": 612
+      "avgPrice": 5016,
+      "records": 616
     },
     {
-      "district": "Krishnagiri (तमिल नाडु)",
-      "nameHi": "Krishnagiri (तमिल नाडु)",
-      "avgPrice": 4813,
-      "records": 612
+      "district": "Thiruvananthapuram (केरल)",
+      "nameHi": "Thiruvananthapuram (केरल)",
+      "avgPrice": 5498,
+      "records": 613
     },
     {
       "district": "Sivaganga (तमिल नाडु)",

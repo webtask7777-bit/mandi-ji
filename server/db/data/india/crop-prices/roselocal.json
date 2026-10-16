@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 15476,
       "volume": 506
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 18763,
+      "volume": 19
     }
   ],
   "dailyHistory": [
@@ -387,21 +393,28 @@
       "volume": 25,
       "minPrice": 5000,
       "maxPrice": 45000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 18763,
+      "volume": 19,
+      "minPrice": 9000,
+      "maxPrice": 50000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Salem (तमिल नाडु)",
       "nameHi": "Salem (तमिल नाडु)",
-      "avgPrice": 11408,
-      "records": 150
+      "avgPrice": 11479,
+      "records": 155
     },
     {
       "district": "Vellore (तमिल नाडु)",
       "nameHi": "Vellore (तमिल नाडु)",
-      "avgPrice": 12059,
-      "records": 111
+      "avgPrice": 12102,
+      "records": 113
     },
     {
       "district": "Chengalpattu (तमिल नाडु)",
@@ -412,20 +425,20 @@
     {
       "district": "Thiruvannamalai (तमिल नाडु)",
       "nameHi": "Thiruvannamalai (तमिल नाडु)",
-      "avgPrice": 15443,
-      "records": 105
+      "avgPrice": 15574,
+      "records": 108
     },
     {
       "district": "Krishnagiri (तमिल नाडु)",
       "nameHi": "Krishnagiri (तमिल नाडु)",
-      "avgPrice": 13509,
-      "records": 57
+      "avgPrice": 13729,
+      "records": 59
     },
     {
       "district": "Villupuram (तमिल नाडु)",
       "nameHi": "Villupuram (तमिल नाडु)",
-      "avgPrice": 24089,
-      "records": 56
+      "avgPrice": 24018,
+      "records": 57
     },
     {
       "district": "Thiruvellore (तमिल नाडु)",
@@ -436,8 +449,8 @@
     {
       "district": "Namakkal (तमिल नाडु)",
       "nameHi": "Namakkal (तमिल नाडु)",
-      "avgPrice": 14355,
-      "records": 31
+      "avgPrice": 14438,
+      "records": 32
     },
     {
       "district": "Kallakuruchi (तमिल नाडु)",
@@ -454,8 +467,8 @@
     {
       "district": "Ranipet (तमिल नाडु)",
       "nameHi": "Ranipet (तमिल नाडु)",
-      "avgPrice": 17407,
-      "records": 27
+      "avgPrice": 17643,
+      "records": 28
     },
     {
       "district": "Delhi (दिल्ली)",
@@ -474,6 +487,12 @@
       "nameHi": "Thanjavur (तमिल नाडु)",
       "avgPrice": 22444,
       "records": 9
+    },
+    {
+      "district": "Chengalpet (तमिल नाडु)",
+      "nameHi": "Chengalpet (तमिल नाडु)",
+      "avgPrice": 16000,
+      "records": 3
     }
   ]
 }

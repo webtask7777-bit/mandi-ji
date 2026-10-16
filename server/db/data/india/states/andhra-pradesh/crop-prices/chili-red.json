@@ -53,6 +53,12 @@
       "date": "2026-07",
       "market": 20750,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 21367,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -573,20 +579,33 @@
       "volume": 2,
       "minPrice": 14000,
       "maxPrice": 27000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 21367,
+      "volume": 3,
+      "minPrice": 16000,
+      "maxPrice": 28000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Palnadu",
       "nameHi": "Palnadu",
-      "avgPrice": 16585,
-      "records": 143
+      "avgPrice": 16668,
+      "records": 145
     },
     {
       "district": "Anantapur",
       "nameHi": "Anantapur",
       "avgPrice": 12000,
+      "records": 1
+    },
+    {
+      "district": "Bapatla",
+      "nameHi": "Bapatla",
+      "avgPrice": 19000,
       "records": 1
     }
   ]

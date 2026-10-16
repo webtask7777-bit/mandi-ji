@@ -116,7 +116,7 @@
     "name": "Bhindi(Ladies Finger)",
     "nameHi": "भिंडी",
     "emoji": "🌱",
-    "totalRecords": 2496,
+    "totalRecords": 2498,
     "avgPrice": 3930,
     "minPrice": 50,
     "maxPrice": 9100,
@@ -130,8 +130,8 @@
     "name": "Brinjal",
     "nameHi": "बैंगन",
     "emoji": "🍆",
-    "totalRecords": 1986,
-    "avgPrice": 2157,
+    "totalRecords": 1989,
+    "avgPrice": 2159,
     "minPrice": 50,
     "maxPrice": 9000,
     "varieties": [
@@ -171,8 +171,8 @@
     "name": "Bottle gourd",
     "nameHi": "लौकी",
     "emoji": "🥒",
-    "totalRecords": 1877,
-    "avgPrice": 1591,
+    "totalRecords": 1879,
+    "avgPrice": 1592,
     "minPrice": 8,
     "maxPrice": 15000,
     "varieties": [
@@ -209,7 +209,7 @@
     "name": "Cauliflower",
     "nameHi": "फूलगोभी",
     "emoji": "🥦",
-    "totalRecords": 1732,
+    "totalRecords": 1734,
     "avgPrice": 1989,
     "minPrice": 100,
     "maxPrice": 7000,
@@ -245,8 +245,8 @@
     "name": "Cabbage",
     "nameHi": "पत्तागोभी",
     "emoji": "🥬",
-    "totalRecords": 1712,
-    "avgPrice": 1145,
+    "totalRecords": 1714,
+    "avgPrice": 1146,
     "minPrice": 100,
     "maxPrice": 4500,
     "varieties": [
@@ -432,8 +432,8 @@
     "name": "Coriander(Leaves)",
     "nameHi": "धनिया",
     "emoji": "🌿",
-    "totalRecords": 1164,
-    "avgPrice": 2675,
+    "totalRecords": 1165,
+    "avgPrice": 2677,
     "minPrice": 250,
     "maxPrice": 25000,
     "varieties": [
@@ -481,8 +481,8 @@
     "name": "Ginger(Green)",
     "nameHi": "अदरक",
     "emoji": "🫐",
-    "totalRecords": 1030,
-    "avgPrice": 6359,
+    "totalRecords": 1031,
+    "avgPrice": 6360,
     "minPrice": 1100,
     "maxPrice": 18000,
     "varieties": [
@@ -566,8 +566,8 @@
     "name": "Tomato",
     "nameHi": "टमाटर",
     "emoji": "🍅",
-    "totalRecords": 652,
-    "avgPrice": 2339,
+    "totalRecords": 654,
+    "avgPrice": 2340,
     "minPrice": 100,
     "maxPrice": 6500,
     "varieties": [
@@ -645,8 +645,8 @@
     "name": "Bitter gourd",
     "nameHi": "करेला",
     "emoji": "🥒",
-    "totalRecords": 552,
-    "avgPrice": 3773,
+    "totalRecords": 553,
+    "avgPrice": 3770,
     "minPrice": 500,
     "maxPrice": 8000,
     "varieties": [
@@ -1039,6 +1039,44 @@
     ]
   },
   {
+    "id": "green-chilli",
+    "name": "Green Chilli",
+    "nameHi": "हरी मिर्च",
+    "emoji": "🌶️",
+    "totalRecords": 183,
+    "avgPrice": 3359,
+    "minPrice": 400,
+    "maxPrice": 10000,
+    "varieties": [
+      "Green Chilly",
+      "Other"
+    ],
+    "sowingMonths": [
+      1,
+      2,
+      6,
+      7
+    ],
+    "growingMonths": [
+      3,
+      4,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "peakMonths": [
+      5,
+      6,
+      10,
+      11
+    ]
+  },
+  {
     "id": "mango",
     "name": "Mango",
     "nameHi": "आम",
@@ -1071,44 +1109,6 @@
     "peakMonths": [
       5,
       6
-    ]
-  },
-  {
-    "id": "green-chilli",
-    "name": "Green Chilli",
-    "nameHi": "हरी मिर्च",
-    "emoji": "🌶️",
-    "totalRecords": 181,
-    "avgPrice": 3352,
-    "minPrice": 400,
-    "maxPrice": 10000,
-    "varieties": [
-      "Green Chilly",
-      "Other"
-    ],
-    "sowingMonths": [
-      1,
-      2,
-      6,
-      7
-    ],
-    "growingMonths": [
-      3,
-      4,
-      8,
-      9
-    ],
-    "harvestMonths": [
-      4,
-      5,
-      9,
-      10
-    ],
-    "peakMonths": [
-      5,
-      6,
-      10,
-      11
     ]
   },
   {
@@ -1187,7 +1187,7 @@
     "name": "Lemon",
     "nameHi": "नींबू",
     "emoji": "🍋",
-    "totalRecords": 146,
+    "totalRecords": 147,
     "avgPrice": 9014,
     "minPrice": 500,
     "maxPrice": 23455,
@@ -1277,8 +1277,8 @@
     "name": "Guar",
     "nameHi": "ग्वार",
     "emoji": "🌱",
-    "totalRecords": 111,
-    "avgPrice": 4349,
+    "totalRecords": 113,
+    "avgPrice": 4409,
     "minPrice": 500,
     "maxPrice": 10000,
     "varieties": [
@@ -1807,40 +1807,12 @@
     ]
   },
   {
-    "id": "water-melon",
-    "name": "Water Melon",
-    "nameHi": "तरबूज",
-    "emoji": "🌱",
-    "totalRecords": 37,
-    "avgPrice": 1056,
-    "minPrice": 500,
-    "maxPrice": 2500,
-    "varieties": [
-      "Other",
-      "Water Melon"
-    ]
-  },
-  {
-    "id": "pegeon-peaarhar-fali",
-    "name": "Pegeon Pea(Arhar Fali)",
-    "nameHi": "अरहर फली",
-    "emoji": "🫘",
-    "totalRecords": 36,
-    "avgPrice": 7083,
-    "minPrice": 3000,
-    "maxPrice": 17000,
-    "varieties": [
-      "Other",
-      "Pigeon Pea (Arhar Fali)"
-    ]
-  },
-  {
     "id": "spinach",
     "name": "Spinach",
     "nameHi": "पालक",
     "emoji": "🥬",
-    "totalRecords": 36,
-    "avgPrice": 1490,
+    "totalRecords": 37,
+    "avgPrice": 1504,
     "minPrice": 500,
     "maxPrice": 3000,
     "varieties": [
@@ -1867,6 +1839,34 @@
       0,
       1,
       2
+    ]
+  },
+  {
+    "id": "water-melon",
+    "name": "Water Melon",
+    "nameHi": "तरबूज",
+    "emoji": "🌱",
+    "totalRecords": 37,
+    "avgPrice": 1056,
+    "minPrice": 500,
+    "maxPrice": 2500,
+    "varieties": [
+      "Other",
+      "Water Melon"
+    ]
+  },
+  {
+    "id": "pegeon-peaarhar-fali",
+    "name": "Pegeon Pea(Arhar Fali)",
+    "nameHi": "अरहर फली",
+    "emoji": "🫘",
+    "totalRecords": 36,
+    "avgPrice": 7083,
+    "minPrice": 3000,
+    "maxPrice": 17000,
+    "varieties": [
+      "Other",
+      "Pigeon Pea (Arhar Fali)"
     ]
   },
   {

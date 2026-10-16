@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 1788,
       "volume": 112
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -310,9 +316,16 @@
       "volume": 9,
       "minPrice": 1000,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1000,
+      "volume": 1,
+      "minPrice": 1000,
+      "maxPrice": 1000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Kurukshetra",
@@ -396,6 +409,12 @@
       "district": "Mewat",
       "nameHi": "Mewat",
       "avgPrice": 800,
+      "records": 1
+    },
+    {
+      "district": "Rewari",
+      "nameHi": "Rewari",
+      "avgPrice": 1000,
       "records": 1
     }
   ]

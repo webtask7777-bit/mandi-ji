@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 3991,
       "volume": 11
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 9000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -241,9 +247,16 @@
       "volume": 3,
       "minPrice": 2000,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 9000,
+      "volume": 1,
+      "minPrice": 9000,
+      "maxPrice": 9000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Rajkot",
@@ -276,6 +289,12 @@
       "records": 10
     },
     {
+      "district": "Amreli",
+      "nameHi": "Amreli",
+      "avgPrice": 7200,
+      "records": 10
+    },
+    {
       "district": "Porbandar",
       "nameHi": "Porbandar",
       "avgPrice": 14250,
@@ -285,12 +304,6 @@
       "district": "Anand",
       "nameHi": "Anand",
       "avgPrice": 6500,
-      "records": 9
-    },
-    {
-      "district": "Amreli",
-      "nameHi": "Amreli",
-      "avgPrice": 7000,
       "records": 9
     },
     {

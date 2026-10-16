@@ -17,6 +17,12 @@
       "date": "2026-05",
       "market": 1160,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3200,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -40,15 +46,28 @@
       "volume": 1,
       "minPrice": 1160,
       "maxPrice": 1160
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3200,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3400
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Kurnool",
       "nameHi": "Kurnool",
       "avgPrice": 875,
       "records": 3
+    },
+    {
+      "district": "YSR Kadapa",
+      "nameHi": "YSR Kadapa",
+      "avgPrice": 3200,
+      "records": 1
     }
   ]
 }

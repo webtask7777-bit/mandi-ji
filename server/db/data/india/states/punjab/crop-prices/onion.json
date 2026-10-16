@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 2204,
       "volume": 32
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3998,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -282,15 +288,22 @@
       "volume": 4,
       "minPrice": 4.8,
       "maxPrice": 2800
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3998,
+      "volume": 4,
+      "minPrice": 2700,
+      "maxPrice": 4800
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Ludhiana",
       "nameHi": "Ludhiana",
-      "avgPrice": 1570,
-      "records": 42
+      "avgPrice": 1645,
+      "records": 43
     },
     {
       "district": "Patiala",
@@ -307,8 +320,8 @@
     {
       "district": "Mohali",
       "nameHi": "Mohali",
-      "avgPrice": 1584,
-      "records": 27
+      "avgPrice": 1688,
+      "records": 28
     },
     {
       "district": "Bhatinda",
@@ -325,14 +338,20 @@
     {
       "district": "Amritsar",
       "nameHi": "Amritsar",
-      "avgPrice": 1178,
-      "records": 16
+      "avgPrice": 1343,
+      "records": 17
     },
     {
       "district": "Jalandhar",
       "nameHi": "Jalandhar",
       "avgPrice": 1356,
       "records": 16
+    },
+    {
+      "district": "Tarntaran",
+      "nameHi": "Tarntaran",
+      "avgPrice": 1254,
+      "records": 15
     },
     {
       "district": "Ropar (Rupnagar)",
@@ -345,12 +364,6 @@
       "nameHi": "Fazilka",
       "avgPrice": 1740,
       "records": 15
-    },
-    {
-      "district": "Tarntaran",
-      "nameHi": "Tarntaran",
-      "avgPrice": 1151,
-      "records": 14
     },
     {
       "district": "Moga",

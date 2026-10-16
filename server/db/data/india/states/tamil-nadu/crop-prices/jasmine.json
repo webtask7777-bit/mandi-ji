@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 37787,
       "volume": 286
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 50536,
+      "volume": 14
     }
   ],
   "dailyHistory": [
@@ -352,27 +358,34 @@
       "volume": 3,
       "minPrice": 38000,
       "maxPrice": 54000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 50536,
+      "volume": 14,
+      "minPrice": 25000,
+      "maxPrice": 90000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Ramanathapuram",
       "nameHi": "Ramanathapuram",
-      "avgPrice": 47965,
-      "records": 57
+      "avgPrice": 48431,
+      "records": 58
     },
     {
       "district": "Salem",
       "nameHi": "Salem",
-      "avgPrice": 40724,
-      "records": 49
+      "avgPrice": 40913,
+      "records": 52
     },
     {
       "district": "Vellore",
       "nameHi": "Vellore",
-      "avgPrice": 54291,
-      "records": 43
+      "avgPrice": 54193,
+      "records": 44
     },
     {
       "district": "Thiruvellore",
@@ -383,31 +396,31 @@
     {
       "district": "Namakkal",
       "nameHi": "Namakkal",
-      "avgPrice": 39057,
-      "records": 35
+      "avgPrice": 39081,
+      "records": 37
     },
     {
       "district": "Krishnagiri",
       "nameHi": "Krishnagiri",
-      "avgPrice": 38088,
-      "records": 34
+      "avgPrice": 38357,
+      "records": 35
     },
     {
       "district": "Madurai",
       "nameHi": "Madurai",
-      "avgPrice": 30268,
-      "records": 28
+      "avgPrice": 30948,
+      "records": 29
+    },
+    {
+      "district": "Ranipet",
+      "nameHi": "Ranipet",
+      "avgPrice": 53038,
+      "records": 26
     },
     {
       "district": "Kallakuruchi",
       "nameHi": "Kallakuruchi",
       "avgPrice": 35600,
-      "records": 25
-    },
-    {
-      "district": "Ranipet",
-      "nameHi": "Ranipet",
-      "avgPrice": 51560,
       "records": 25
     },
     {
@@ -419,8 +432,8 @@
     {
       "district": "Thiruvannamalai",
       "nameHi": "Thiruvannamalai",
-      "avgPrice": 22875,
-      "records": 24
+      "avgPrice": 23340,
+      "records": 25
     },
     {
       "district": "Nagercoil (Kannyiakumari)",
@@ -433,6 +446,18 @@
       "nameHi": "Chengalpattu",
       "avgPrice": 23250,
       "records": 22
+    },
+    {
+      "district": "Kallakurichi",
+      "nameHi": "Kallakurichi",
+      "avgPrice": 60000,
+      "records": 1
+    },
+    {
+      "district": "Kannyiakumari",
+      "nameHi": "Kannyiakumari",
+      "avgPrice": 55000,
+      "records": 1
     }
   ]
 }

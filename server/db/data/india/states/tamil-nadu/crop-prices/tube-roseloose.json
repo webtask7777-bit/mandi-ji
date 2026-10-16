@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 9875,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 10500,
+      "volume": 5
     }
   ],
   "dailyHistory": [
@@ -212,15 +218,22 @@
       "volume": 2,
       "minPrice": 7500,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 10500,
+      "volume": 5,
+      "minPrice": 8000,
+      "maxPrice": 15000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Salem",
       "nameHi": "Salem",
-      "avgPrice": 5227,
-      "records": 22
+      "avgPrice": 5542,
+      "records": 24
     },
     {
       "district": "Chengalpattu",
@@ -235,15 +248,15 @@
       "records": 15
     },
     {
+      "district": "Krishnagiri",
+      "nameHi": "Krishnagiri",
+      "avgPrice": 6250,
+      "records": 10
+    },
+    {
       "district": "Thiruvellore",
       "nameHi": "Thiruvellore",
       "avgPrice": 5333,
-      "records": 9
-    },
-    {
-      "district": "Krishnagiri",
-      "nameHi": "Krishnagiri",
-      "avgPrice": 5889,
       "records": 9
     },
     {
@@ -257,6 +270,12 @@
       "nameHi": "Villupuram",
       "avgPrice": 15000,
       "records": 6
+    },
+    {
+      "district": "Chengalpet",
+      "nameHi": "Chengalpet",
+      "avgPrice": 12500,
+      "records": 2
     }
   ]
 }

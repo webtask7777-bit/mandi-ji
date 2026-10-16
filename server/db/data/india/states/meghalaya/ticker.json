@@ -18,14 +18,14 @@
     "name": "Betal Leaves",
     "nameHi": "पान",
     "emoji": "🌱",
-    "price": 18104,
-    "prevPrice": 19000,
-    "change": -896,
-    "changePct": -4.7,
+    "price": 17000,
+    "prevPrice": 18104,
+    "change": -1104,
+    "changePct": -6.1,
     "msp": null,
-    "records": 84,
-    "signal": "hold",
-    "signalHi": "होल्ड"
+    "records": 85,
+    "signal": "buy",
+    "signalHi": "खरीदें"
   },
   {
     "id": "cabbage",
@@ -46,12 +46,12 @@
     "name": "Arecanut(Betelnut/Supari)",
     "nameHi": "सुपारी",
     "emoji": "🌱",
-    "price": 21964,
-    "prevPrice": 24000,
-    "change": -2036,
-    "changePct": -8.5,
+    "price": 20000,
+    "prevPrice": 21964,
+    "change": -1964,
+    "changePct": -8.9,
     "msp": null,
-    "records": 75,
+    "records": 76,
     "signal": "buy",
     "signalHi": "खरीदें"
   },
@@ -88,14 +88,14 @@
     "name": "Banana",
     "nameHi": "केला",
     "emoji": "🍌",
-    "price": 4625,
-    "prevPrice": 4000,
-    "change": 625,
-    "changePct": 15.6,
+    "price": 4000,
+    "prevPrice": 4625,
+    "change": -625,
+    "changePct": -13.5,
     "msp": null,
-    "records": 53,
-    "signal": "sell",
-    "signalHi": "बेचें"
+    "records": 54,
+    "signal": "buy",
+    "signalHi": "खरीदें"
   },
   {
     "id": "cucumbarkheera",
@@ -224,6 +224,20 @@
     "signalHi": "होल्ड"
   },
   {
+    "id": "pineapple",
+    "name": "Pineapple",
+    "nameHi": "अनानास",
+    "emoji": "🍎",
+    "price": 6500,
+    "prevPrice": 3367,
+    "change": 3133,
+    "changePct": 93.1,
+    "msp": null,
+    "records": 17,
+    "signal": "sell",
+    "signalHi": "बेचें"
+  },
+  {
     "id": "carrot",
     "name": "Carrot",
     "nameHi": "गाजर",
@@ -236,20 +250,6 @@
     "records": 16,
     "signal": "buy",
     "signalHi": "खरीदें"
-  },
-  {
-    "id": "pineapple",
-    "name": "Pineapple",
-    "nameHi": "अनानास",
-    "emoji": "🍎",
-    "price": 3367,
-    "prevPrice": 3000,
-    "change": 367,
-    "changePct": 12.2,
-    "msp": null,
-    "records": 16,
-    "signal": "sell",
-    "signalHi": "बेचें"
   },
   {
     "id": "raddish",
@@ -406,6 +406,20 @@
     "signalHi": "बेचें"
   },
   {
+    "id": "rice",
+    "name": "Rice",
+    "nameHi": "चावल",
+    "emoji": "🌾",
+    "price": 5700,
+    "prevPrice": 6750,
+    "change": -1050,
+    "changePct": -15.6,
+    "msp": 2300,
+    "records": 3,
+    "signal": "sell",
+    "signalHi": "बेचें"
+  },
+  {
     "id": "corianderleaves",
     "name": "Coriander(Leaves)",
     "nameHi": "धनिया",
@@ -418,20 +432,6 @@
     "records": 2,
     "signal": "buy",
     "signalHi": "खरीदें"
-  },
-  {
-    "id": "rice",
-    "name": "Rice",
-    "nameHi": "चावल",
-    "emoji": "🌾",
-    "price": 6750,
-    "prevPrice": 0,
-    "change": 6750,
-    "changePct": 0,
-    "msp": 2300,
-    "records": 2,
-    "signal": "sell",
-    "signalHi": "बेचें"
   },
   {
     "id": "capsicum",
@@ -469,6 +469,20 @@
     "price": 7300,
     "prevPrice": 0,
     "change": 7300,
+    "changePct": 0,
+    "msp": null,
+    "records": 1,
+    "signal": "hold",
+    "signalHi": "होल्ड"
+  },
+  {
+    "id": "guava",
+    "name": "Guava",
+    "nameHi": "अमरूद",
+    "emoji": "🍏",
+    "price": 4000,
+    "prevPrice": 0,
+    "change": 4000,
     "changePct": 0,
     "msp": null,
     "records": 1,

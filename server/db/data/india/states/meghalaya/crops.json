@@ -38,8 +38,8 @@
     "name": "Betal Leaves",
     "nameHi": "पान",
     "emoji": "🌱",
-    "totalRecords": 84,
-    "avgPrice": 22982,
+    "totalRecords": 85,
+    "avgPrice": 22912,
     "minPrice": 12000,
     "maxPrice": 55000,
     "varieties": [
@@ -84,8 +84,8 @@
     "name": "Arecanut(Betelnut/Supari)",
     "nameHi": "सुपारी",
     "emoji": "🌱",
-    "totalRecords": 75,
-    "avgPrice": 21807,
+    "totalRecords": 76,
+    "avgPrice": 21783,
     "minPrice": 14000,
     "maxPrice": 42000,
     "varieties": [
@@ -148,8 +148,8 @@
     "name": "Banana",
     "nameHi": "केला",
     "emoji": "🍌",
-    "totalRecords": 53,
-    "avgPrice": 5777,
+    "totalRecords": 54,
+    "avgPrice": 5744,
     "minPrice": 2500,
     "maxPrice": 15000,
     "varieties": [
@@ -401,6 +401,21 @@
     ]
   },
   {
+    "id": "pineapple",
+    "name": "Pineapple",
+    "nameHi": "अनानास",
+    "emoji": "🍎",
+    "totalRecords": 17,
+    "avgPrice": 3529,
+    "minPrice": 2000,
+    "maxPrice": 7000,
+    "varieties": [
+      "Pine Apple",
+      "Other",
+      "Giant Kew"
+    ]
+  },
+  {
     "id": "carrot",
     "name": "Carrot",
     "nameHi": "गाजर",
@@ -434,21 +449,6 @@
       0,
       1,
       2
-    ]
-  },
-  {
-    "id": "pineapple",
-    "name": "Pineapple",
-    "nameHi": "अनानास",
-    "emoji": "🍎",
-    "totalRecords": 16,
-    "avgPrice": 3344,
-    "minPrice": 2000,
-    "maxPrice": 5000,
-    "varieties": [
-      "Pine Apple",
-      "Other",
-      "Giant Kew"
     ]
   },
   {
@@ -625,30 +625,18 @@
     ]
   },
   {
-    "id": "corianderleaves",
-    "name": "Coriander(Leaves)",
-    "nameHi": "धनिया",
-    "emoji": "🌿",
-    "totalRecords": 2,
-    "avgPrice": 10750,
-    "minPrice": 8000,
-    "maxPrice": 15000,
-    "varieties": [
-      "Local"
-    ]
-  },
-  {
     "id": "rice",
     "name": "Rice",
     "nameHi": "चावल",
     "emoji": "🌾",
-    "totalRecords": 2,
-    "avgPrice": 6750,
+    "totalRecords": 3,
+    "avgPrice": 6400,
     "minPrice": 5000,
     "maxPrice": 9000,
     "varieties": [
       "Other",
-      "Sticky Type"
+      "Sticky Type",
+      "Khaw Khasi"
     ],
     "msp": 2300,
     "sowingMonths": [
@@ -667,6 +655,19 @@
     "peakMonths": [
       11,
       0
+    ]
+  },
+  {
+    "id": "corianderleaves",
+    "name": "Coriander(Leaves)",
+    "nameHi": "धनिया",
+    "emoji": "🌿",
+    "totalRecords": 2,
+    "avgPrice": 10750,
+    "minPrice": 8000,
+    "maxPrice": 15000,
+    "varieties": [
+      "Local"
     ]
   },
   {
@@ -730,6 +731,37 @@
     "maxPrice": 7500,
     "varieties": [
       "Local"
+    ]
+  },
+  {
+    "id": "guava",
+    "name": "Guava",
+    "nameHi": "अमरूद",
+    "emoji": "🍏",
+    "totalRecords": 1,
+    "avgPrice": 4000,
+    "minPrice": 3000,
+    "maxPrice": 5000,
+    "varieties": [
+      "Other"
+    ],
+    "sowingMonths": [],
+    "growingMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      10,
+      11,
+      0,
+      1
+    ],
+    "peakMonths": [
+      11,
+      0,
+      1
     ]
   }
 ]

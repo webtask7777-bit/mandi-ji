@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 3400,
       "volume": 757
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3579,
+      "volume": 40
     }
   ],
   "dailyHistory": [
@@ -380,39 +386,46 @@
       "volume": 4,
       "minPrice": 2800,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3579,
+      "volume": 40,
+      "minPrice": 1500,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Vellore",
       "nameHi": "Vellore",
-      "avgPrice": 2725,
-      "records": 189
+      "avgPrice": 2730,
+      "records": 194
     },
     {
       "district": "Salem",
       "nameHi": "Salem",
-      "avgPrice": 3277,
-      "records": 167
+      "avgPrice": 3282,
+      "records": 173
     },
     {
       "district": "Coimbatore",
       "nameHi": "Coimbatore",
-      "avgPrice": 3847,
-      "records": 130
+      "avgPrice": 3844,
+      "records": 134
     },
     {
       "district": "Dharmapuri",
       "nameHi": "Dharmapuri",
-      "avgPrice": 2500,
-      "records": 100
+      "avgPrice": 2504,
+      "records": 104
     },
     {
       "district": "Thiruvannamalai",
       "nameHi": "Thiruvannamalai",
-      "avgPrice": 2392,
-      "records": 93
+      "avgPrice": 2415,
+      "records": 95
     },
     {
       "district": "Chengalpattu",
@@ -423,14 +436,14 @@
     {
       "district": "Namakkal",
       "nameHi": "Namakkal",
-      "avgPrice": 3692,
-      "records": 65
+      "avgPrice": 3716,
+      "records": 66
     },
     {
       "district": "Ranipet",
       "nameHi": "Ranipet",
-      "avgPrice": 3684,
-      "records": 53
+      "avgPrice": 3692,
+      "records": 55
     },
     {
       "district": "Madurai",
@@ -439,40 +452,40 @@
       "records": 51
     },
     {
-      "district": "Villupuram",
-      "nameHi": "Villupuram",
-      "avgPrice": 3877,
-      "records": 48
-    },
-    {
       "district": "Krishnagiri",
       "nameHi": "Krishnagiri",
-      "avgPrice": 2754,
-      "records": 48
+      "avgPrice": 2764,
+      "records": 50
+    },
+    {
+      "district": "Villupuram",
+      "nameHi": "Villupuram",
+      "avgPrice": 3880,
+      "records": 49
     },
     {
       "district": "Thiruchirappalli",
       "nameHi": "Thiruchirappalli",
-      "avgPrice": 2908,
-      "records": 46
+      "avgPrice": 2926,
+      "records": 47
     },
     {
       "district": "Karur",
       "nameHi": "Karur",
-      "avgPrice": 3744,
-      "records": 44
+      "avgPrice": 3766,
+      "records": 47
     },
     {
       "district": "Erode",
       "nameHi": "Erode",
-      "avgPrice": 3199,
-      "records": 38
+      "avgPrice": 3187,
+      "records": 39
     },
     {
       "district": "Dindigul",
       "nameHi": "Dindigul",
-      "avgPrice": 4235,
-      "records": 33
+      "avgPrice": 4250,
+      "records": 34
     }
   ]
 }

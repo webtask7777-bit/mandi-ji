@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 1350,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2420,
+      "volume": 5
     }
   ],
   "dailyHistory": [
@@ -275,9 +281,16 @@
       "volume": 1,
       "minPrice": 1200,
       "maxPrice": 1500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2420,
+      "volume": 5,
+      "minPrice": 600,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Pune (महाराष्ट्र)",
@@ -322,6 +335,12 @@
       "records": 14
     },
     {
+      "district": "Jalandhar (पंजाब)",
+      "nameHi": "Jalandhar (पंजाब)",
+      "avgPrice": 1708,
+      "records": 13
+    },
+    {
       "district": "Ganganagar (राजस्थान)",
       "nameHi": "Ganganagar (राजस्थान)",
       "avgPrice": 1423,
@@ -344,12 +363,6 @@
       "nameHi": "Mandi (हिमाचल प्रदेश)",
       "avgPrice": 1588,
       "records": 12
-    },
-    {
-      "district": "Jalandhar (पंजाब)",
-      "nameHi": "Jalandhar (पंजाब)",
-      "avgPrice": 1682,
-      "records": 11
     },
     {
       "district": "Sonipat (हरियाणा)",

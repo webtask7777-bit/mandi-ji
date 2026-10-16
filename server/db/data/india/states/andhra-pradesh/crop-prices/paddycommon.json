@@ -41,6 +41,13 @@
       "market": 1970,
       "volume": 1,
       "msp": 2300
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2612,
+      "volume": 36,
+      "msp": 2300
     }
   ],
   "dailyHistory": [
@@ -162,9 +169,16 @@
       "volume": 1,
       "minPrice": 1970,
       "maxPrice": 1970
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2612,
+      "volume": 36,
+      "minPrice": 1900,
+      "maxPrice": 3950
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Nellore",
@@ -175,25 +189,85 @@
     {
       "district": "East Godavari",
       "nameHi": "East Godavari",
-      "avgPrice": 2375,
+      "avgPrice": 2389,
+      "records": 9
+    },
+    {
+      "district": "Kakinada",
+      "nameHi": "Kakinada",
+      "avgPrice": 2420,
       "records": 8
+    },
+    {
+      "district": "Srikakulam",
+      "nameHi": "Srikakulam",
+      "avgPrice": 2530,
+      "records": 7
+    },
+    {
+      "district": "Palnadu",
+      "nameHi": "Palnadu",
+      "avgPrice": 2617,
+      "records": 6
     },
     {
       "district": "Bapatla",
       "nameHi": "Bapatla",
-      "avgPrice": 2450,
-      "records": 2
+      "avgPrice": 2800,
+      "records": 4
     },
     {
       "district": "Dr.B.R.A.Konaseema",
       "nameHi": "Dr.B.R.A.Konaseema",
-      "avgPrice": 2369,
-      "records": 2
+      "avgPrice": 2405,
+      "records": 4
+    },
+    {
+      "district": "Prakasam",
+      "nameHi": "Prakasam",
+      "avgPrice": 2750,
+      "records": 3
     },
     {
       "district": "NTR",
       "nameHi": "NTR",
       "avgPrice": 1970,
+      "records": 1
+    },
+    {
+      "district": "Nandyal",
+      "nameHi": "Nandyal",
+      "avgPrice": 2370,
+      "records": 1
+    },
+    {
+      "district": "Anakapally",
+      "nameHi": "Anakapally",
+      "avgPrice": 2400,
+      "records": 1
+    },
+    {
+      "district": "Polavaram",
+      "nameHi": "Polavaram",
+      "avgPrice": 2379,
+      "records": 1
+    },
+    {
+      "district": "Krishna",
+      "nameHi": "Krishna",
+      "avgPrice": 3600,
+      "records": 1
+    },
+    {
+      "district": "Tirupathi",
+      "nameHi": "Tirupathi",
+      "avgPrice": 2550,
+      "records": 1
+    },
+    {
+      "district": "Ananthapuramu",
+      "nameHi": "Ananthapuramu",
+      "avgPrice": 3600,
       "records": 1
     }
   ]

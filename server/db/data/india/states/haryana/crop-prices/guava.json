@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 6294,
       "volume": 59
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 6000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -324,9 +330,16 @@
       "volume": 1,
       "minPrice": 6000,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 6000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 9000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Hissar",
@@ -404,6 +417,12 @@
       "district": "Faridabad",
       "nameHi": "Faridabad",
       "avgPrice": 4500,
+      "records": 1
+    },
+    {
+      "district": "Gurgaon",
+      "nameHi": "Gurgaon",
+      "avgPrice": 6000,
       "records": 1
     }
   ]

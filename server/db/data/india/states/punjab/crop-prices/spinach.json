@@ -23,6 +23,12 @@
       "date": "2026-05",
       "market": 1567,
       "volume": 6
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2525,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -123,21 +129,34 @@
       "volume": 2,
       "minPrice": 1200,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2525,
+      "volume": 4,
+      "minPrice": 600,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Jalandhar",
       "nameHi": "Jalandhar",
-      "avgPrice": 1682,
-      "records": 11
+      "avgPrice": 1708,
+      "records": 13
     },
     {
       "district": "Tarntaran",
       "nameHi": "Tarntaran",
       "avgPrice": 840,
       "records": 5
+    },
+    {
+      "district": "Ludhiana",
+      "nameHi": "Ludhiana",
+      "avgPrice": 1967,
+      "records": 3
     },
     {
       "district": "Gurdaspur",
@@ -152,12 +171,6 @@
       "records": 3
     },
     {
-      "district": "Ludhiana",
-      "nameHi": "Ludhiana",
-      "avgPrice": 1750,
-      "records": 2
-    },
-    {
       "district": "Amritsar",
       "nameHi": "Amritsar",
       "avgPrice": 950,
@@ -167,6 +180,12 @@
       "district": "Ropar (Rupnagar)",
       "nameHi": "Ropar (Rupnagar)",
       "avgPrice": 1250,
+      "records": 1
+    },
+    {
+      "district": "Mohali",
+      "nameHi": "Mohali",
+      "avgPrice": 4000,
       "records": 1
     }
   ]

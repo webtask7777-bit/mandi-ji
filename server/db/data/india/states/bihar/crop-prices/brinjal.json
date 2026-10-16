@@ -17,6 +17,12 @@
       "date": "2026-07",
       "market": 2326,
       "volume": 17
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3600,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -47,15 +53,22 @@
       "volume": 5,
       "minPrice": 1500,
       "maxPrice": 2800
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3600,
+      "volume": 2,
+      "minPrice": 2100,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "East Champaran/ Motihari",
       "nameHi": "East Champaran/ Motihari",
-      "avgPrice": 1950,
-      "records": 7
+      "avgPrice": 1981,
+      "records": 8
     },
     {
       "district": "Madhubani",
@@ -103,6 +116,12 @@
       "district": "Supaul",
       "nameHi": "Supaul",
       "avgPrice": 2500,
+      "records": 1
+    },
+    {
+      "district": "Banka",
+      "nameHi": "Banka",
+      "avgPrice": 5000,
       "records": 1
     }
   ]

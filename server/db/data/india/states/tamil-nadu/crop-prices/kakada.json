@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 42000,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 56500,
+      "volume": 5
     }
   ],
   "dailyHistory": [
@@ -205,21 +211,28 @@
       "volume": 1,
       "minPrice": 42000,
       "maxPrice": 42000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 56500,
+      "volume": 5,
+      "minPrice": 20000,
+      "maxPrice": 110000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Ramanathapuram",
       "nameHi": "Ramanathapuram",
-      "avgPrice": 47442,
-      "records": 26
+      "avgPrice": 47722,
+      "records": 27
     },
     {
       "district": "Salem",
       "nameHi": "Salem",
-      "avgPrice": 28125,
-      "records": 16
+      "avgPrice": 28194,
+      "records": 18
     },
     {
       "district": "Nagercoil (Kannyiakumari)",
@@ -243,6 +256,18 @@
       "district": "Ranipet",
       "nameHi": "Ranipet",
       "avgPrice": 42000,
+      "records": 1
+    },
+    {
+      "district": "Villupuram",
+      "nameHi": "Villupuram",
+      "avgPrice": 70000,
+      "records": 1
+    },
+    {
+      "district": "Kannyiakumari",
+      "nameHi": "Kannyiakumari",
+      "avgPrice": 100000,
       "records": 1
     }
   ]

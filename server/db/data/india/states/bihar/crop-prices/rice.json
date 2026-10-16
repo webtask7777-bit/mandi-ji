@@ -13,6 +13,13 @@
       "market": 5500,
       "volume": 1,
       "msp": 2300
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2800,
+      "volume": 1,
+      "msp": 2300
     }
   ],
   "dailyHistory": [
@@ -22,14 +29,27 @@
       "volume": 1,
       "minPrice": 5500,
       "maxPrice": 5500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2800,
+      "volume": 1,
+      "minPrice": 2600,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Kishanganj",
       "nameHi": "Kishanganj",
       "avgPrice": 5500,
+      "records": 1
+    },
+    {
+      "district": "Aurangabad",
+      "nameHi": "Aurangabad",
+      "avgPrice": 2800,
       "records": 1
     }
   ]

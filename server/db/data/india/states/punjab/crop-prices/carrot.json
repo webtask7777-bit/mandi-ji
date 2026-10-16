@@ -53,6 +53,12 @@
       "date": "2026-07",
       "market": 2084,
       "volume": 167
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -1021,9 +1027,16 @@
       "volume": 5,
       "minPrice": 800,
       "maxPrice": 2500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 5000,
+      "volume": 1,
+      "minPrice": 5000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-07-20T08:48:36.178Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Jalandhar",
@@ -1062,15 +1075,15 @@
       "records": 250
     },
     {
+      "district": "Mohali",
+      "nameHi": "Mohali",
+      "avgPrice": 1277,
+      "records": 243
+    },
+    {
       "district": "Kapurthala",
       "nameHi": "Kapurthala",
       "avgPrice": 1003,
-      "records": 242
-    },
-    {
-      "district": "Mohali",
-      "nameHi": "Mohali",
-      "avgPrice": 1262,
       "records": 242
     },
     {
