@@ -181,3 +181,15 @@
   .sb-calculator-header .sb-brand { width: 112px; }
   .sb-calculator-header .sb-text-button { font-size: 12px; }
 }
+
+/* Tab panels slide in on change; during that half second they must not widen the page and
+   make a phone scroll sideways. `clip` keeps the sticky header working (no scroll container). */
+.sb-main { overflow-x: clip; }
+
+/* Small phones: keep the header on one row so the sticky header and tabs do not take a third
+   of the screen. The language link keeps its accessible name; only the visible text hides. */
+@media (max-width: 420px) {
+  .sb-header-row { flex-wrap: nowrap; }
+  .sb-header-row .sb-language-entry { min-width: 39px; min-height: 39px; padding: 8px; flex-shrink: 0; }
+  .sb-header-row .sb-language-entry > span:first-of-type { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
