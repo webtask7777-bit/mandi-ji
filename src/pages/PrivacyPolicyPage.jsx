@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion as Motion } from 'framer-motion';
 import { ArrowLeft, Shield } from 'lucide-react';
 import { fadeInUp } from '@/utils/animations';
+import { CONTACT } from '@/data/contact';
 import SEO from '@/components/SEO';
 
 export default function PrivacyPolicyPage() {
@@ -29,10 +30,9 @@ export default function PrivacyPolicyPage() {
 
         <Section title="2. हम कौन सा डेटा एकत्र करते हैं">
           <ul className="list-disc list-inside space-y-1 text-zinc-400">
-            <li>खाता जानकारी: नाम, फ़ोन नंबर, ईमेल (रजिस्ट्रेशन पर)</li>
-            <li>उपयोग डेटा: देखी गई फसलें, मंडियां, और पेज</li>
-            <li>डिवाइस जानकारी: ब्राउज़र टाइप, स्क्रीन साइज़</li>
-            <li>स्थान: चुना गया राज्य (GPS नहीं लिया जाता)</li>
+            <li>खाता जानकारी (केवल खाता बनाने पर): नाम, फ़ोन नंबर, ईमेल</li>
+            <li>आपकी पसंद, जैसे चुना हुआ राज्य, सेव की गई फसलें और कैलकुलेटर के हिसाब: ये केवल आपके ब्राउज़र में रहती हैं, हमारे सर्वर पर नहीं जातीं</li>
+            <li>स्थान: डिलीवरी कैलकुलेटर में "मेरी लोकेशन" दबाने पर, आपकी अनुमति से, लोकेशन केवल आपके ब्राउज़र में नज़दीकी ज़िला चुनने के लिए उपयोग होती है; सटीक लोकेशन सहेजी या भेजी नहीं जाती</li>
           </ul>
         </Section>
 
@@ -41,7 +41,6 @@ export default function PrivacyPolicyPage() {
             <li>आपके राज्य के अनुसार मंडी भाव दिखाना</li>
             <li>फसल बेचने/खरीदने की लिस्टिंग प्रबंधन</li>
             <li>ऐप अनुभव को बेहतर बनाना</li>
-            <li>ज़रूरी सूचनाएं भेजना (भाव अलर्ट आदि)</li>
           </ul>
         </Section>
 
@@ -49,12 +48,11 @@ export default function PrivacyPolicyPage() {
           हम आपका व्यक्तिगत डेटा किसी तीसरे पक्ष को नहीं बेचते। केवल निम्न स्थितियों में डेटा शेयर हो सकता है:
           <ul className="list-disc list-inside space-y-1 text-zinc-400 mt-2">
             <li>कानूनी आवश्यकता पर सरकारी अधिकारियों को</li>
-            <li>Analytics के लिए (बिना पहचान वाला डेटा)</li>
           </ul>
         </Section>
 
         <Section title="5. कुकीज़ और ट्रैकिंग">
-          हम सीमित कुकीज़ का उपयोग करते हैं — लॉगिन सेशन और आपकी पसंद (जैसे चुना हुआ राज्य) याद रखने के लिए। विज्ञापन कुकीज़ तीसरे पक्ष (Google AdSense) द्वारा प्रबंधित होती हैं।
+          हम विज्ञापन नहीं दिखाते और कोई ट्रैकिंग या विज्ञापन कुकीज़ नहीं लगाते। ब्राउज़र स्टोरेज केवल लॉगिन और आपकी पसंद (जैसे चुना हुआ राज्य) याद रखने के लिए उपयोग होता है।
         </Section>
 
         <Section title="6. डेटा सुरक्षा">
@@ -66,13 +64,12 @@ export default function PrivacyPolicyPage() {
             <li>अपना डेटा देखने का अधिकार</li>
             <li>डेटा सुधारने का अधिकार</li>
             <li>खाता हटाने का अधिकार</li>
-            <li>विज्ञापन वरीयता बदलने का अधिकार</li>
           </ul>
         </Section>
 
         <Section title="8. संपर्क">
           गोपनीयता से जुड़े किसी भी प्रश्न के लिए हमसे संपर्क करें:
-          <div className="mt-2 text-green-500 font-semibold">privacy@mandiji.in</div>
+          <div className="mt-2 text-green-500 font-semibold">{CONTACT.email || 'संपर्क ईमेल अभी जोड़ा जा रहा है।'}</div>
         </Section>
       </Motion.div>
     </div>

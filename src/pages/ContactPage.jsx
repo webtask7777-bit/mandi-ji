@@ -6,6 +6,7 @@ import { ArrowLeft, Mail, Phone, MessageCircle, Send } from 'lucide-react';
 import { fadeInUp } from '@/utils/animations';
 import SEO from '@/components/SEO';
 import { Card } from '@/components/ui/card';
+import { CONTACT, hasContact } from '@/data/contact';
 
 export default function ContactPage() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function ContactPage() {
     // For now, compose mailto link
     const subject = encodeURIComponent(`सही भाव संपर्क — ${form.name}`);
     const body = encodeURIComponent(`नाम: ${form.name}\nफ़ोन: ${form.phone}\n\n${form.message}`);
-    window.open(`mailto:contact@mandiji.in?subject=${subject}&body=${body}`);
+    window.open(`mailto:${CONTACT.email}?subject=${subject}&body=${body}`);
     setSent(true);
   }
 
@@ -35,22 +36,25 @@ export default function ContactPage() {
       </header>
 
       <Motion.div {...fadeInUp} className="sb-page-content flex-1 px-4 py-6 space-y-6">
-        {/* Contact Info Cards */}
-        <div className="grid grid-cols-2 gap-2">
-          <Card className="bg-zinc-900 border-zinc-800 p-3">
+        {/* Contact channels: only real, monitored ones are shown */}
+        {hasContact() ? <div className="grid grid-cols-2 gap-2">
+          {CONTACT.email && <Card className="bg-zinc-900 border-zinc-800 p-3">
             <Mail size={16} className="text-green-500 mb-2" />
             <div className="text-[10px] text-zinc-500 mb-0.5">ईमेल</div>
-            <div className="text-xs font-semibold text-foreground break-all">contact@mandiji.in</div>
-          </Card>
-          <Card className="bg-zinc-900 border-zinc-800 p-3">
+            <div className="text-xs font-semibold text-foreground break-all">{CONTACT.email}</div>
+          </Card>}
+          {CONTACT.whatsapp && <Card className="bg-zinc-900 border-zinc-800 p-3">
             <Phone size={16} className="text-green-500 mb-2" />
             <div className="text-[10px] text-zinc-500 mb-0.5">फ़ोन / WhatsApp</div>
-            <div className="text-xs font-semibold text-foreground">+91 XXXXX XXXXX</div>
-          </Card>
-        </div>
+            <div className="text-xs font-semibold text-foreground">{CONTACT.whatsapp}</div>
+          </Card>}
+        </div> : <Card className="bg-zinc-900 border-zinc-800 p-4">
+          <p className="text-sm text-foreground">संपर्क ईमेल और WhatsApp नंबर अभी जोड़ा जा रहा है।</p>
+          <p className="text-xs text-zinc-400 mt-1">तब तक भाव की तारीख और स्रोत <a className="underline" href="/data-status">डेटा की स्थिति</a> पेज पर देखें।</p>
+        </Card>}
 
-        {/* Contact Form */}
-        {!sent ? (
+        {/* Contact Form (opens the visitor's own email app; nothing is stored here) */}
+        {!CONTACT.email ? null : !sent ? (
           <Card className="bg-zinc-900 border-zinc-800 p-4">
             <h3 className="text-sm font-bold text-foreground mb-3">संदेश भेजें</h3>
             <form onSubmit={handleSubmit} className="space-y-3">
@@ -91,7 +95,7 @@ export default function ContactPage() {
           <Card className="bg-green-500/10 border-green-500/30 p-6 text-center">
             <div className="text-3xl mb-3">✅</div>
             <h3 className="text-sm font-bold text-green-500 mb-1">धन्यवाद!</h3>
-            <p className="text-xs text-zinc-400">आपका ईमेल क्लाइंट खुला होगा। संदेश भेजें और हम जल्द जवाब देंगे।</p>
+            <p className="text-xs text-zinc-400">आपका ईमेल ऐप खुला होगा। वहाँ से संदेश भेजें।</p>
             <button onClick={() => setSent(false)}
               className="mt-4 px-4 py-2 rounded-lg bg-zinc-800 text-foreground text-xs font-semibold">
               दोबारा भेजें
