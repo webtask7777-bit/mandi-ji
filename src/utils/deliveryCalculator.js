@@ -13,6 +13,33 @@ export const VEHICLE_PRESETS = Object.freeze([
 
 const QUANTITY_FACTORS = { kg: 1, quintal: 100, tonne: 1000 };
 
+/** Round only arithmetic noise at a full load; real excess still needs a trip. */
+export function getDeliveryTrips(loadedWeightKg, capacityKg) {
+  if (!Number.isFinite(loadedWeightKg) || !Number.isFinite(capacityKg) || loadedWeightKg <= 0 || capacityKg <= 0) return NaN;
+  const ratio = loadedWeightKg / capacityKg;
+  const nearest = Math.round(ratio);
+  const tolerance = Math.min(Number.EPSILON * Math.max(1, Math.abs(ratio)) * 2, 1e-7);
+  const trips = nearest > 0 && Math.abs(ratio - nearest) <= tolerance ? nearest : Math.ceil(ratio);
+  return Number.isSafeInteger(trips) && trips > 0 ? trips : NaN;
+}
+
+/** Shared Hindi labels must not collapse distinct source crop identities. */
+export function getDeliveryCropOptions(crops = []) {
+  const seen = new Set();
+  const options = crops.filter(crop => {
+    if (!crop?.id || seen.has(crop.id)) return false;
+    seen.add(crop.id);
+    return true;
+  }).map(crop => ({ ...crop, label: crop.nameHi || crop.name || crop.id }));
+  const labelCounts = options.reduce((counts, crop) => counts.set(crop.label, (counts.get(crop.label) || 0) + 1), new Map());
+  const named = options.map(crop => ({
+    ...crop,
+    label: labelCounts.get(crop.label) > 1 ? `${crop.label} · ${crop.name && crop.name !== crop.label ? crop.name : crop.id}` : crop.label,
+  }));
+  const fullCounts = named.reduce((counts, crop) => counts.set(crop.label, (counts.get(crop.label) || 0) + 1), new Map());
+  return named.map(crop => ({ ...crop, label: fullCounts.get(crop.label) > 1 ? `${crop.label} · ${crop.id}` : crop.label }));
+}
+
 /** Unit changes preserve the physical amount and never turn a blank into zero. */
 export function convertDeliveryQuantity(value, from, to) {
   if (value === '' || value == null) return '';
@@ -43,15 +70,16 @@ export function deliveryFormToInput(form) {
 /** A new route does not inherit the previous route's distance or freight quote. */
 export function prefillDeliveryForm(previous, scenario) {
   if (scenario.priceBasis === 'location-only') {
+    const isOrigin = scenario.routeDirection === 'from';
     return {
       ...previous,
       cropId: scenario.cropId || '', cropName: scenario.cropName || '',
-      from: '', to: scenario.sellMandi || '',
+      from: isOrigin ? scenario.buyMandi || '' : '', to: isOrigin ? '' : scenario.sellMandi || '',
       quantity: '', packagingWeightKg: '', lossPercent: '',
       buyPrice: '', benchmarkPrice: '', distanceKm: '', journeyFactor: '',
       ratePerKm: '', quotePerTrip: '', minFare: '', tollPerTrip: '',
       loadingTotal: '', packingTotal: '', otherTotal: '', marketFeePercent: '',
-      comparisonMode: 'resale', example: false, sourceQuote: null, locationOnly: true,
+      comparisonMode: isOrigin ? 'local' : 'resale', example: false, sourceQuote: null, locationOnly: true,
     };
   }
   const isListingOffer = scenario.priceBasis === 'listing-offer';
@@ -105,6 +133,7 @@ function normalizeInput(input) {
     else if (['quantityKg', 'capacityKg', 'buyPricePerKg', 'benchmarkPricePerKg'].includes(field) && value <= 0) errors[field] = `${FIELD_LABELS[field]} 0 से अधिक होना चाहिए।`;
     else if (value < 0) errors[field] = `${FIELD_LABELS[field]} ऋणात्मक नहीं हो सकता।`;
     else if (field === 'lossPercent' && value >= 100) errors[field] = 'वजन की कमी 0 से कम और 100% या अधिक नहीं हो सकती।';
+    else if (field === 'marketFeePercent' && value > 100) errors[field] = 'मंडी / कमीशन शुल्क 0 से 100% के बीच होना चाहिए।';
     else if (field === 'journeyFactor' && value !== 1 && value !== 2) errors[field] = 'एक तरफ या आने-जाने का भाड़ा चुनें।';
     else normalized[field] = value;
   }
@@ -129,7 +158,7 @@ export function calculateDeliveryScenario(input = {}) {
   if (Object.keys(errors).length) return { valid: false, errors, missingFields };
 
   const loadedWeightKg = n.quantityKg + n.packagingWeightKg;
-  const trips = Math.ceil(loadedWeightKg / n.capacityKg);
+  const trips = getDeliveryTrips(loadedWeightKg, n.capacityKg);
   const billedKm = n.distanceKm * n.journeyFactor;
   const freightPerTrip = n.freightMode === 'rate'
     ? Math.max(n.minFare, billedKm * n.ratePerKm) : n.quotePerTrip;
@@ -146,8 +175,8 @@ export function calculateDeliveryScenario(input = {}) {
   const benchmarkValue = usableKg * n.benchmarkPricePerKg;
   const benefit = benchmarkValue - totalLandCost;
   const maxAffordableTransport = benchmarkValue - nonTransportCost;
-  const occupancyPercent = (loadedWeightKg / (trips * n.capacityKg)) * 100;
-  const remainingCapacityKg = trips * n.capacityKg - loadedWeightKg;
+  const occupancyPercent = Math.min(100, (loadedWeightKg / (trips * n.capacityKg)) * 100);
+  const remainingCapacityKg = Math.max(0, trips * n.capacityKg - loadedWeightKg);
   const marginPercent = (benefit / totalLandCost) * 100;
   const totalBilledKm = billedKm * trips;
 

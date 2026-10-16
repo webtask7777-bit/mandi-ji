@@ -11,5 +11,11 @@ export function getDashboardTab(search = '') {
 export function getDashboardStateUrl(stateId, search = '') {
   const path = stateId ? `/mandi-bhav/${encodeURIComponent(stateId)}` : '/';
   const tab = getDashboardTab(search);
-  return tab === 'prices' ? path : `${path}?tab=${tab}`;
+  if (tab === 'prices') return path;
+  const params = new URLSearchParams({ tab });
+  // Place IDs belong to their source state. Only carry the crop candidate;
+  // Naksha validates it against the new state's loaded catalog before use.
+  const crop = new URLSearchParams(search).get('mapCrop');
+  if (tab === 'naksha' && crop) params.set('mapCrop', crop);
+  return `${path}?${params}`;
 }

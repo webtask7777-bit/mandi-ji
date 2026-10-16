@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { calculateDeliveryScenario, compareDeliveryVehicles, getDeliverySummaryText, VEHICLE_PRESETS, convertDeliveryPrice, convertDeliveryQuantity, deliveryFormToInput, prefillDeliveryForm } from '../src/utils/deliveryCalculator.js';
+import { calculateDeliveryScenario, compareDeliveryVehicles, getDeliverySummaryText, VEHICLE_PRESETS, convertDeliveryPrice, convertDeliveryQuantity, deliveryFormToInput, prefillDeliveryForm, getDeliveryTrips, getDeliveryCropOptions } from '../src/utils/deliveryCalculator.js';
 
 const plan = {
   quantityKg: 1000, packagingWeightKg: 0, capacityKg: 1000, distanceKm: 100, journeyFactor: 1,
@@ -36,6 +36,33 @@ test('whole trips are charged just above capacity; round trip affects km, not lo
   close(above.purchase, 40000.2);
   assert.equal(above.breakdown.loading, 200);
   close(above.occupancyPercent, 2000.01 / 3000 * 100);
+});
+
+test('decimal full loads avoid a phantom trip while actual excess still gets another trip', () => {
+  const exact = calculateDeliveryScenario({ ...plan, quantityKg: 498.91, packagingWeightKg: 1.1, capacityKg: 500.01 });
+  assert.equal(exact.valid, true);
+  assert.equal(exact.trips, 1);
+  assert.equal(exact.transportTotal, 1100);
+  assert.equal(exact.occupancyPercent, 100);
+  assert.equal(exact.remainingCapacityKg, 0);
+  assert.equal(getDeliveryTrips(498.91 + 1.1, 500.01), 1);
+  assert.equal(getDeliveryTrips(500.010000001, 500.01), 2);
+  assert.equal(getDeliveryTrips(500.02, 500.01), 2);
+  assert.equal(getDeliveryTrips(1000.03, 500.01), 3);
+  for (const [load, capacity] of [[0, 1000], [1000, 0], [NaN, 1000], [1000, Infinity], [Number.MAX_VALUE, Number.MIN_VALUE]]) {
+    assert.ok(Number.isNaN(getDeliveryTrips(load, capacity)));
+  }
+});
+
+test('commission percentage uses the stated 0 through 100 range in the actual calculation', () => {
+  for (const percent of [-.01, 100.01, 101]) {
+    const result = calculateDeliveryScenario({ ...plan, marketFeePercent: percent });
+    assert.equal(result.valid, false);
+    assert.ok(result.errors.marketFeePercent);
+    assert.equal(result.benefit, undefined);
+  }
+  assert.equal(calculateDeliveryScenario({ ...plan, marketFeePercent: 0 }).fees, 0);
+  assert.equal(calculateDeliveryScenario({ ...plan, marketFeePercent: 100 }).fees, 20000);
 });
 
 test('all unknown required costs block a result, while deliberate zero is accepted', () => {
@@ -210,6 +237,53 @@ test('mandi prefill retains date, grade and variety but never carries the old ro
   for (const key of ['distanceKm', 'ratePerKm', 'quotePerTrip']) assert.equal(next[key], '');
   assert.equal(previous.distanceKm, 150);
   assert.equal(prefillDeliveryForm(previous, {}).sourceQuote.date, null);
+});
+
+test('a map origin starts a local purchase comparison without importing prices or route economics', () => {
+  const previous = {
+    vehicleId: 'pickup', capacityKg: 1000, quantity: 1000, quantityUnit: 'kg', packagingWeightKg: 10,
+    from: 'पुरानी खरीद मंडी', to: 'पुरानी मंज़िल', priceUnit: 'quintal', buyPrice: 2200, benchmarkPrice: 2900,
+    distanceKm: 70, journeyFactor: 2, freightMode: 'rate', ratePerKm: 15, quotePerTrip: 2500,
+    minFare: 500, tollPerTrip: 50, loadingTotal: 100, packingTotal: 200, otherTotal: 300,
+    marketFeePercent: 2, lossPercent: 4, sourceQuote: { date: '2026-04-04', basis: 'modal' },
+  };
+  const next = prefillDeliveryForm(previous, {
+    priceBasis: 'location-only', routeDirection: 'from', buyMandi: 'रायपुर · Raipur',
+    sellMandi: 'अनचाही मंज़िल', cropId: 'beans', cropName: 'सेम',
+    buyPrice: 2500, sellPrice: 3000, quoteDate: '2026-10-16',
+  });
+  assert.equal(next.from, 'रायपुर · Raipur');
+  assert.equal(next.to, '');
+  assert.equal(next.comparisonMode, 'local');
+  assert.equal(next.cropId, 'beans');
+  assert.equal(next.sourceQuote, null);
+  assert.equal(next.locationOnly, true);
+  assert.equal(next.capacityKg, 1000);
+  assert.equal(next.quantityUnit, 'kg');
+  for (const field of ['quantity', 'packagingWeightKg', 'buyPrice', 'benchmarkPrice', 'distanceKm', 'journeyFactor', 'ratePerKm', 'quotePerTrip', 'minFare', 'tollPerTrip', 'loadingTotal', 'packingTotal', 'otherTotal', 'marketFeePercent', 'lossPercent']) assert.equal(next[field], '');
+  assert.equal(calculateDeliveryScenario(deliveryFormToInput(next)).valid, false);
+  assert.equal(previous.from, 'पुरानी खरीद मंडी');
+  const destination = prefillDeliveryForm(previous, { priceBasis: 'location-only', routeDirection: 'to', sellMandi: 'रायपुर' });
+  assert.equal(destination.from, '');
+  assert.equal(destination.to, 'रायपुर');
+  assert.equal(destination.comparisonMode, 'resale');
+});
+
+test('crop choices keep distinct source identities despite shared Hindi or English names', () => {
+  const crops = [
+    { id: 'beans', nameHi: 'सेम', name: 'Beans' },
+    { id: 'indian-beans', nameHi: 'सेम', name: 'Indian Beans(Seam)' },
+    { id: 'local-beans', nameHi: 'सेम', name: 'Beans' },
+    { id: 'wheat', nameHi: 'गेहूँ', name: 'Wheat' },
+  ];
+  const snapshot = JSON.stringify(crops);
+  const options = getDeliveryCropOptions(crops);
+  assert.equal(new Set(options.map(crop => crop.label)).size, 4);
+  assert.equal(options.find(crop => crop.id === 'indian-beans').label, 'सेम · Indian Beans(Seam)');
+  assert.equal(options.find(crop => crop.label === 'सेम · Beans · beans').id, 'beans');
+  assert.equal(options.find(crop => crop.label === 'सेम · Beans · local-beans').id, 'local-beans');
+  assert.equal(options.find(crop => crop.id === 'wheat').label, 'गेहूँ');
+  assert.equal(JSON.stringify(crops), snapshot);
 });
 
 test('a seller listing offers a purchase input, never a verified mandi or resale benchmark', () => {

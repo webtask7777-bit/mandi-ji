@@ -70,6 +70,7 @@ export default function DistrictsLayer({
     }) || null;
   }, [selectedDistrict, geoJson, districtMap]);
   const selectedGeometryName = selectedGeometry?.properties.districtName || null;
+  const [previousSelectedGeometryName, setPreviousSelectedGeometryName] = useState(selectedGeometryName);
   const styleFunc = useCallback(
     feature => districtStyle(feature, { districtMap, maxDistRecords, selectedCrop, selectedDistrict: selectedGeometryName }),
     [districtMap, maxDistRecords, selectedCrop, selectedGeometryName]
@@ -126,8 +127,16 @@ export default function DistrictsLayer({
     return () => cleanups.forEach(cleanup => cleanup());
   }, [geoJson, districtMap, selectedCrop, selectedGeometryName, onDistrictSelect, styleFunc]);
 
-  const popupInfo = popupData ? districtMap[popupData.districtName] : null;
-  const popupMandis = popupData ? mandisByDistrict[normalizeDistrictName(popupInfo?.name || popupData.districtName)] || [] : [];
+  // Hide a mismatched popup immediately, but only discard it after the selected
+  // geometry changes. A polygon click can set its popup before URL navigation
+  // commits the matching selection; keep that pending popup until then.
+  const activePopup = popupData && (!onDistrictSelect || popupData.districtName === selectedGeometryName) ? popupData : null;
+  if (previousSelectedGeometryName !== selectedGeometryName) {
+    setPreviousSelectedGeometryName(selectedGeometryName);
+    if (popupData && !activePopup) setPopupData(null);
+  }
+  const popupInfo = activePopup ? districtMap[activePopup.districtName] : null;
+  const popupMandis = activePopup ? mandisByDistrict[normalizeDistrictName(popupInfo?.name || activePopup.districtName)] || [] : [];
   const message = loading ? 'जिले की सीमाएँ लोड हो रही हैं…'
     : error ? 'इस राज्य की जिला सीमाएँ उपलब्ध नहीं। मंडी सूची से खोज जारी रखें।'
       : selectedDistrict && geoJson && !selectedGeometry ? 'चुने जिले की सीमा उपलब्ध नहीं; उसकी मंडी सूची देख सकते हैं।' : null;
@@ -136,14 +145,14 @@ export default function DistrictsLayer({
     <>
       {message && <div role="status" className="sb-atlas-map-status pointer-events-none absolute left-3 right-14 top-3 z-[450] max-w-sm rounded-xl border border-[#dbe3d1] bg-[#fffef4]/95 px-3 py-2 text-xs leading-relaxed text-[#425841] shadow-sm">{message}</div>}
       {geoJson && <GeoJSON ref={geoRef} data={geoJson} style={styleFunc} />}
-      {popupData && geoJson && (
-        <Popup position={popupData.latlng} eventHandlers={{ remove: () => setPopupData(null) }} className="sb-atlas-popup" maxWidth={305}>
+      {activePopup && geoJson && (
+        <Popup key={activePopup.districtName} position={activePopup.latlng} eventHandlers={{ remove: () => setPopupData(current => current === activePopup ? null : current) }} className="sb-atlas-popup" maxWidth={305}>
           <MapPopup
-            districtName={popupData.districtName}
+            districtName={activePopup.districtName}
             info={popupInfo}
             mandis={popupMandis}
             selectedCrop={selectedCrop}
-            onSelect={onDistrictSelect ? () => { onDistrictSelect(popupInfo?.name || popupData.districtName); setPopupData(null); } : undefined}
+            onSelect={onDistrictSelect ? () => { onDistrictSelect(popupInfo?.name || activePopup.districtName); setPopupData(null); } : undefined}
           />
         </Popup>
       )}
