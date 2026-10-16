@@ -14,6 +14,8 @@ for (const post of posts) {
   if (!image.startsWith(path.join(root, 'public') + path.sep) || !(await stat(image).catch(() => null))?.isFile()) problems.push(`${post.slug}: thumbnail file missing`);
   if (!post.regionLabel?.trim()) problems.push(`${post.slug}: applicability/region label missing`);
   if (!post.coverCaption?.trim()) problems.push(`${post.slug}: image caption/disclosure missing`);
+  // A 'not a real weather event' disclosure only makes sense on an article about weather.
+  if (/मौसम घटना|हवामान घटने|હવામાન ઘટના/.test(post.coverCaption || '') && !/मौसम|बारिश|पाला|ओला|नमी/.test([post.category, ...(post.tags || [])].join(' '))) problems.push(`${post.slug}: caption mentions a weather event on a non-weather article`);
   for (const match of post.content.matchAll(/\]\(\/blog\/([^\s)#]+)(?:#[^)]*)?\)/g)) {
     if (!published.some(item => item.slug === match[1])) problems.push(`${post.slug}: missing article link ${match[1]}`);
   }

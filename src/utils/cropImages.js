@@ -20,7 +20,7 @@ export const CROP_IMAGES = Object.freeze({
   coconut: 'coconut', capsicum: 'capsicum',
   'cluster-beans': 'cluster-beans', clusterbean: 'cluster-beans',
   garlic: 'garlic', apple: 'apple', drumstick: 'drumstick',
-  'elephant-yamsuran-amorphophallus': 'elephant-yam',
+  'elephant-yamsuran-amorphophallus': 'elephant-yam', 'suvarna-gadde': 'elephant-yam',
   'arhartur-red-gramwhole': 'arhar-whole', arhar: 'arhar-whole', 'red-gram': 'arhar-whole',
   chikoossapota: 'chikoo', 'chow-chow': 'chayote', cotton: 'cotton',
   cowpeaveg: 'cowpea-pods',
@@ -50,7 +50,7 @@ export const CROP_IMAGES = Object.freeze({
   'apricotjardalu-khumani': 'apricot', giloy: 'giloy',
   'methi-seeds': 'fenugreek-seed', soanf: 'fennel-seed', ajwan: 'ajwain',
   'tube-rosedouble': 'tuberose-double', chrysanthemumloose: 'chrysanthemum-loose',
-  makhanafoxnut: 'makhana', 'chhappan-kaddu': 'summer-squash',
+  makhanafoxnut: 'makhana', 'chhappan-kaddu': 'summer-squash', 'squashchappal-kadoo': 'summer-squash',
   'berzizyphus-borehannu': 'ber', lakteora: 'grass-pea', tivda: 'grass-pea',
   behada: 'behada', 'neem-seed': 'neem-seed', rajgir: 'amaranth-grain',
   // The source names do not establish a specific flower/pulse identity.
@@ -75,7 +75,7 @@ export const CROP_IMAGES = Object.freeze({
   // Exact source aliases with matching form; no regional-name guesses.
   'red-gram-arhar-turwhole': 'arhar-whole',
   'sunflower-sunflower-seed': 'sunflower-seed',
-  'amranthas-red': 'amaranth', 'chilly-capsicum': 'capsicum',
+  'amranthas-red': 'amaranth',
   'ridge-gourdpermal-hybrid-gourd': 'ridge-gourd',
 });
 

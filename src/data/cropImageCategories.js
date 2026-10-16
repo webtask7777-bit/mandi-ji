@@ -3,6 +3,8 @@
 // These groups select clearly labelled CATEGORY artwork when exact artwork is
 // unavailable. Ambiguous regional IDs stay generic until their identity is verified.
 // Covers national/CG/state catalogs, tickers, price-detail records and existing aliases.
+// beans and chilly-capsicum (identity not confirmed), sugarcane (raw cane is not a processed
+// product), tobacco, rubber and tendu leaves (not fibre/fodder) use the neutral generic artwork.
 export const CROP_IMAGE_CATEGORY_IDS = Object.freeze({
   grain: Object.freeze([
     "bajrapearl-millet-cumbu", "barleyjau", "barnyard", "basmati-rice", "broken-rice",
@@ -31,9 +33,9 @@ export const CROP_IMAGE_CATEGORY_IDS = Object.freeze({
   ]),
   vegetable: Object.freeze([
     "amaranth", "amaranthus", "amranthas-red", "ash-gourd", "ashgourd", "asparagus", "baby-corn",
-    "balekai", "bamboo-shoot", "banana-green", "beans", "beetroot", "bhindiladies-finger",
+    "balekai", "bamboo-shoot", "banana-green", "beetroot", "bhindiladies-finger",
     "bitter-gourd", "bittergourd", "bottle-gourd", "bottlegourd", "brinjal", "bunch-beans", "cabbage",
-    "capsicum", "carrot", "cauliflower", "chhappan-kaddu", "chilly-capsicum", "chow-chow",
+    "capsicum", "carrot", "cauliflower", "chhappan-kaddu", "chow-chow",
     "cluster-beans", "clusterbean", "colacasia", "colocasia", "cowpeaveg", "cucumbarkheera", "cucumber",
     "drumstick", "eggplant", "elephant-yamsuran-amorphophallus", "french-beansfrasbean",
     "gram-rawchholia", "green-avarew", "green-banana", "green-peas", "indian-beansseam",
@@ -72,15 +74,15 @@ export const CROP_IMAGE_CATEGORY_IDS = Object.freeze({
   processed: Object.freeze([
     "beaten-rice", "cocoa", "coffee", "copra", "dried-mango", "dry-grapes", "ghee", "gurjaggery",
     "khandsaridesi-khand", "maida-atta", "makhanafoxnut", "mango-powder", "rab-liquid-jaggery-molasses",
-    "sabu-dan", "sugar", "sugarcane", "wheat-atta",
+    "sabu-dan", "sugar", "wheat-atta",
   ]),
   oil: Object.freeze([
     "coconut-oil", "ground-nut-oil", "mentha-oil", "mustard-oil",
   ]),
   fibre: Object.freeze([
     "ambady-mesta-patson", "bamboo", "broomstickflower-broom", "coconut-coir", "cotton", "dhaincha",
-    "dry-fodder", "firewood", "green-fodder", "jute", "lint", "rambansagave-century-plant", "rubber",
-    "sanai-sunhemp", "tendu-leaves-kendu-leaves-bidi-leaves", "tobacco", "wood",
+    "dry-fodder", "firewood", "green-fodder", "jute", "lint", "rambansagave-century-plant",
+    "sanai-sunhemp", "wood",
   ]),
   flower: Object.freeze([
     "anthorium", "astera", "carnation", "chrysanthemum", "chrysanthemumloose", "delha",
@@ -97,6 +99,7 @@ export const CROP_IMAGE_CATEGORY_IDS = Object.freeze({
     "fish", "prawn",
   ]),
   generic: Object.freeze([
+    "beans", "chilly-capsicum", "rubber", "sugarcane", "tendu-leaves-kendu-leaves-bidi-leaves", "tobacco",
     "kutki", "muesli", "coleus", "asalia", "sweet-saag",
     "alsandikai", "bop", "bullar", "buttery", "chapparad-avare", "cowpea", "duster-beans",
     "field-beananumulu", "guar", "gulli", "jaee", "jaffri", "javi", "kakada", "patti-calcutta", "peas",

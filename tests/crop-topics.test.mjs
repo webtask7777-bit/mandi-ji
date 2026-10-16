@@ -121,3 +121,9 @@ test('shared topic data cannot be mutated by API or browser consumers', () => {
   assert.throws(() => { topic.nameHi = 'wrong'; }, TypeError);
   assert.equal(getCropTopic('cow'), null);
 });
+
+test('processed forms are recognised so crop-growing guides are not offered on their pages', async () => {
+  const { isProcessedForm } = await import('../shared/cropTopics.js');
+  for (const id of ['wheat-atta', 'beaten-rice', 'rice', 'masur-dal', 'mustard-oil']) assert.equal(isProcessedForm(id), true, id);
+  for (const id of ['wheat', 'paddycommon', 'lentilmasurwhole', 'mustard']) assert.equal(isProcessedForm(id), false, id);
+});

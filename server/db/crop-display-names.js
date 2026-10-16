@@ -214,7 +214,7 @@ export const CROP_DISPLAY_NAMES = Object.freeze({
   'bamboo': 'बांस',
   'alasande-gram': 'लोबिया (अलसंदे)',
   'karamani': 'लोबिया (करामणी)',
-  'same-savi': 'सामा (कुटकी)',
+  'same-savi': 'कुटकी (सामे/सावी)',
   'hybrid-cumbu': 'बाजरा (हाइब्रिड)',
   't-v-cumbu': 'बाजरा (टी.वी.)',
   'chakotha': 'चकोतरा',
@@ -252,6 +252,9 @@ export const CROP_DISPLAY_NAMES = Object.freeze({
   'gulli': 'Gulli',
   'vadang': 'Vadang',
   'dhawai-flowers': 'धवई के फूल',
+  'beans': 'बीन्स',
+  'lime': 'कागज़ी नींबू (लाइम)',
+  'chow-chow': 'चाउ-चाउ',
 });
 
 export function withCropDisplayName(crop) {

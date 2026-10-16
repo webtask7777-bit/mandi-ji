@@ -195,6 +195,15 @@ for (const topic of CROP_TOPICS) {
 }
 
 /** Topic IDs only; useful when validating CMS metadata. */
+// Processed or milled forms share a topic for browsing, but the topic's guides are about
+// growing and handling the crop; these pages do not list them as if they applied.
+export const PROCESSED_FORM_IDS = Object.freeze(new Set([
+  'wheat-atta', 'rice', 'basmati-rice', 'broken-rice', 'beaten-rice', 'mustard-oil', 'ground-nut-oil',
+  'bengal-gram-dalchana-dal', 'arhar-daltur-dal', 'red-gram-split-arhar-dal-tur-dal', 'green-gram-dalmoong-dal',
+  'black-gram-dalurd-dal', 'masur-dal',
+]));
+export const isProcessedForm = id => PROCESSED_FORM_IDS.has(String(id || '').trim().toLowerCase());
+
 export function getTopicById(id) {
   return topicsById.get(normalizeId(id)) ?? null;
 }

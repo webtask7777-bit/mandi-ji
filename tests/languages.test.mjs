@@ -213,3 +213,12 @@ test('sitemap includes only search-ready language pages and pending languages ha
   const chooser = readFileSync(path.join(root, 'dist/languages.html'), 'utf8');
   for (const language of AVAILABLE_LANGUAGES) assert.ok(chooser.includes(`href="${languagePath(language.code)}"`), `${language.code}: visible chooser link`);
 });
+
+test('every translated crop name is keyed by a real catalogue ID', async () => {
+  const { readFileSync, readdirSync } = await import('node:fs');
+  const ids = new Set(JSON.parse(readFileSync(new URL('../server/db/data/india/crops.json', import.meta.url), 'utf8')).map(crop => crop.id));
+  const dir = new URL('../src/i18n/locales/', import.meta.url);
+  for (const file of readdirSync(dir).filter(name => name.endsWith('.crops.json'))) {
+    for (const id of Object.keys(JSON.parse(readFileSync(new URL(file, dir), 'utf8')))) assert.ok(ids.has(id), `${file}: ${id} is not a catalogue ID`);
+  }
+});

@@ -1,12 +1,13 @@
 import { useMemo, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { ArrowRight, BookOpen, Check, ChevronDown, CircleHelp, Globe2, MapPin, Search, ShieldCheck, Sprout, Truck } from 'lucide-react';
-import { AVAILABLE_LANGUAGES, getLanguage, languagePath } from '../../shared/languages';
+import { AVAILABLE_LANGUAGES, getLanguage, languagePath, LANGUAGE_STORAGE_KEY } from '../../shared/languages';
+import { useRememberedLanguage } from '../hooks/useLanguagePreference';
 import { getLanguageCopy, localizedCropName, formatLanguageNumber, formatLanguageDate } from '../i18n';
 import { useApi } from '../hooks/useApi';
 import SEO from '../components/SEO';
 import NotFoundPage from './NotFoundPage';
-import { getCropImage } from '../utils/cropImages';
+import CropImage from '../components/CropImage';
 import { cropDetailPath } from '../utils/cropUrls';
 import { buildLanguageToolsUrl, calculateDeliveryEstimate, latestPriceRecord } from '../utils/languageTools';
 import '../styles/languages.css';
@@ -20,13 +21,6 @@ const GUIDE_LINKS = [
   { code: 'gu', key: 'gujaratiGuides', path: '/blog/tameta-vechan-parivahan-kharch-gujarati' },
 ];
 
-function CropArtwork({ crop }) {
-  const artwork = getCropImage(crop.id);
-  return <span className="sb-language-crop-art" aria-hidden="true"><Sprout size={28} />
-    <img key={artwork.src} src={artwork.src} alt="" width="96" height="96" loading="lazy" decoding="async" onError={event => { event.currentTarget.hidden = true; }} />
-  </span>;
-}
-
 function LanguageTools({ language, copy: t }) {
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,7 +29,10 @@ function LanguageTools({ language, copy: t }) {
   const requestedCrop = query.get('crop');
   const [search, setSearch] = useState('');
   const [visibleCount, setVisibleCount] = useState(12);
-  const [remembered, setRemembered] = useState(false);
+  // The saved choice survives a reload: read it back instead of starting as "not saved".
+  const savedLanguage = useRememberedLanguage();
+  const [rememberedNow, setRemembered] = useState(false);
+  const remembered = rememberedNow || savedLanguage?.code === language.code;
   const [form, setForm] = useState(EMPTY_FORM);
   const [calculation, setCalculation] = useState(null);
   const [invalid, setInvalid] = useState(false);
@@ -68,12 +65,13 @@ function LanguageTools({ language, copy: t }) {
   };
   const rememberLanguage = () => {
     try {
-      window.localStorage.setItem('sahibhav_language', language.code);
+      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language.code);
       setRemembered(true);
     } catch { setRemembered(false); }
   };
   const changeForm = (key, value) => {
-    setForm(previous => key === 'vehicle' ? { ...previous, vehicle: value, capacity: '', rate: '' } : { ...previous, [key]: value });
+    // Choosing a vehicle only labels the trip; it never erases capacity or rate already entered.
+    setForm(previous => ({ ...previous, [key]: value }));
     setCalculation(null);
     setInvalid(false);
   };
@@ -122,7 +120,7 @@ function LanguageTools({ language, copy: t }) {
               <div className="sb-language-crop-list" role="group" aria-label={t.crop}>{filteredCrops.slice(0, visibleCount).map(crop => {
                 const name = localizedCropName(crop, language.code);
                 const english = crop.name || crop.nameEn || crop.id;
-                return <button type="button" key={crop.id} aria-pressed={selectedCrop?.id === crop.id} className={`sb-language-crop ${selectedCrop?.id === crop.id ? 'is-selected' : ''}`} onClick={() => setSelection(selectedState, crop.id)}><CropArtwork crop={crop} /><span className="sb-language-crop-name"><strong lang={name === english ? 'en' : language.code}>{name}</strong>{name !== english && <small lang="en">{english}</small>}</span>{selectedCrop?.id === crop.id && <Check size={15} aria-hidden="true" />}</button>;
+                return <button type="button" key={crop.id} aria-pressed={selectedCrop?.id === crop.id} className={`sb-language-crop ${selectedCrop?.id === crop.id ? 'is-selected' : ''}`} onClick={() => setSelection(selectedState, crop.id)}><CropImage id={crop.id} name={crop.nameHi || crop.name} size="sm" /><span className="sb-language-crop-name"><strong lang={name === english ? 'en' : language.code}>{name}</strong>{name !== english && <small lang="en">{english}</small>}</span>{selectedCrop?.id === crop.id && <Check size={15} aria-hidden="true" />}</button>;
               })}</div>
               {!filteredCrops.length && <p className="sb-language-status">{t.empty}</p>}
               {filteredCrops.length > visibleCount && <button className="sb-language-show-more" type="button" onClick={() => setVisibleCount(count => count + 12)}>{t.showMore}<ChevronDown size={16} aria-hidden="true" /></button>}
@@ -132,7 +130,7 @@ function LanguageTools({ language, copy: t }) {
           <div className="sb-language-price-side">
             <article className="sb-language-price-card" aria-live="polite" aria-atomic="true">
               <span className="sb-language-price-label">{t.updated}</span>
-              {selectedCrop && <div className="sb-language-price-crop"><div><h3 lang={cropName === sourceName ? 'en' : language.code}>{cropName}</h3>{cropName !== sourceName && <span lang="en">{sourceName}</span>}</div><CropArtwork crop={selectedCrop} /></div>}
+              {selectedCrop && <div className="sb-language-price-crop"><div><h3 lang={cropName === sourceName ? 'en' : language.code}>{cropName}</h3>{cropName !== sourceName && <span lang="en">{sourceName}</span>}</div><CropImage id={selectedCrop.id} name={selectedCrop.nameHi || selectedCrop.name} size="sm" /></div>}
               {priceRequest.loading || loadingCrops ? <p className="sb-language-price-status" role="status">{t.loading}</p> : priceRequest.error ? <div className="sb-language-price-status" role="alert"><p>{t.error}</p><button type="button" onClick={retry}>{t.retry}</button></div> : record ? <><p className="sb-language-price-value"><bdi>{currency(record.market)}</bdi><span>{t.perQuintal}</span></p><div className="sb-language-record-date"><span>{record.basis === 'daily' ? t.daily : t.monthly}</span><strong><span className="sb-language-sr">{t.recorded}: </span><time dateTime={record.date}>{recordDate}</time></strong></div></> : <p className="sb-language-price-status">{t.noPrice}</p>}
               {selectedCrop && <Link className="sb-language-history-link" to={cropDetailPath(selectedCrop.id, selectedState)}>{t.detailsHindi}<ArrowRight size={16} aria-hidden="true" /></Link>}
             </article>
