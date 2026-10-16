@@ -25,9 +25,17 @@
     {
       "month": "07",
       "date": "2026-07",
-      "market": 2400,
-      "volume": 3,
-      "days": 3,
+      "market": 2300,
+      "volume": 4,
+      "days": 4,
+      "mandis": 2
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 2200,
+      "volume": 1,
+      "days": 1,
       "mandis": 1
     }
   ],
@@ -87,6 +95,22 @@
       "mandis": 1,
       "minPrice": 2500,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-21",
+      "market": 2200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1600,
+      "maxPrice": 3100
+    },
+    {
+      "date": "2026-08-01",
+      "market": 2200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 2500
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -94,8 +118,8 @@
     {
       "district": "Yamuna Nagar",
       "nameHi": "Yamuna Nagar",
-      "avgPrice": 2033,
-      "records": 3
+      "avgPrice": 2075,
+      "records": 4
     },
     {
       "district": "Palwal",
@@ -107,6 +131,12 @@
       "district": "Hissar",
       "nameHi": "Hissar",
       "avgPrice": 1500,
+      "records": 1
+    },
+    {
+      "district": "Sonipat",
+      "nameHi": "Sonipat",
+      "avgPrice": 2200,
       "records": 1
     }
   ]

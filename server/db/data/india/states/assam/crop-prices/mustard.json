@@ -12,9 +12,27 @@
     {
       "month": "07",
       "date": "2026-07",
-      "market": 6833,
-      "volume": 2,
-      "days": 2,
+      "market": 6544,
+      "volume": 4,
+      "days": 4,
+      "mandis": 2,
+      "msp": 6200
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 7150,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1,
+      "msp": 6200
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 6200,
+      "volume": 1,
+      "days": 1,
       "mandis": 1,
       "msp": 6200
     }
@@ -35,6 +53,38 @@
       "mandis": 1,
       "minPrice": 6750,
       "maxPrice": 6875
+    },
+    {
+      "date": "2026-07-28",
+      "market": 6200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6125,
+      "maxPrice": 6250
+    },
+    {
+      "date": "2026-07-30",
+      "market": 7000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6850,
+      "maxPrice": 7125
+    },
+    {
+      "date": "2026-09-29",
+      "market": 7150,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 7125,
+      "maxPrice": 7250
+    },
+    {
+      "date": "2026-10-13",
+      "market": 6200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6125,
+      "maxPrice": 6250
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -42,8 +92,14 @@
     {
       "district": "Barpeta",
       "nameHi": "Barpeta",
-      "avgPrice": 6833,
-      "records": 2
+      "avgPrice": 6888,
+      "records": 3
+    },
+    {
+      "district": "Kamrup",
+      "nameHi": "Kamrup",
+      "avgPrice": 6517,
+      "records": 3
     }
   ]
 }

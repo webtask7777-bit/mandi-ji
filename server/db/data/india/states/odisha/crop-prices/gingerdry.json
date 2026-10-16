@@ -49,9 +49,17 @@
     {
       "month": "07",
       "date": "2026-07",
-      "market": 8667,
-      "volume": 6,
-      "days": 6,
+      "market": 8786,
+      "volume": 7,
+      "days": 7,
+      "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 15580,
+      "volume": 1,
+      "days": 1,
       "mandis": 1
     }
   ],
@@ -207,6 +215,22 @@
       "mandis": 1,
       "minPrice": 9000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-07-22",
+      "market": 9500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 9000,
+      "maxPrice": 10000
+    },
+    {
+      "date": "2026-08-24",
+      "market": 15580,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 15000,
+      "maxPrice": 16900
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -214,14 +238,20 @@
     {
       "district": "Bolangir",
       "nameHi": "Bolangir",
-      "avgPrice": 8814,
-      "records": 14
+      "avgPrice": 8860,
+      "records": 15
     },
     {
       "district": "Khurda",
       "nameHi": "Khurda",
       "avgPrice": 5300,
       "records": 5
+    },
+    {
+      "district": "Angul",
+      "nameHi": "Angul",
+      "avgPrice": 15580,
+      "records": 1
     }
   ]
 }

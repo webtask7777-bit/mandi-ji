@@ -21,6 +21,38 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 3163,
+      "volume": 6,
+      "days": 4,
+      "mandis": 3
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 6763,
+      "volume": 13,
+      "days": 10,
+      "mandis": 6
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 6750,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -55,15 +87,169 @@
       "mandis": 1,
       "minPrice": 5580,
       "maxPrice": 5580
+    },
+    {
+      "date": "2026-07-20",
+      "market": 3250,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-07-23",
+      "market": 3000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-24",
+      "market": 4375,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 3100,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-07-27",
+      "market": 2900,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2000,
+      "maxPrice": 3300
+    },
+    {
+      "date": "2026-08-02",
+      "market": 3100,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3200
+    },
+    {
+      "date": "2026-08-03",
+      "market": 3250,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-08-06",
+      "market": 2700,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-08-10",
+      "market": 17000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 15000,
+      "maxPrice": 25000
+    },
+    {
+      "date": "2026-08-20",
+      "market": 8850,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 6500,
+      "maxPrice": 11000
+    },
+    {
+      "date": "2026-08-21",
+      "market": 7000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6700,
+      "maxPrice": 7200
+    },
+    {
+      "date": "2026-08-24",
+      "market": 6200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 6500
+    },
+    {
+      "date": "2026-08-25",
+      "market": 13100,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 6000,
+      "maxPrice": 25000
+    },
+    {
+      "date": "2026-08-28",
+      "market": 7250,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 7000,
+      "maxPrice": 7500
+    },
+    {
+      "date": "2026-08-29",
+      "market": 13500,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 6000,
+      "maxPrice": 25000
+    },
+    {
+      "date": "2026-09-02",
+      "market": 7300,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 7000,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-09-30",
+      "market": 6200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 6500
+    },
+    {
+      "date": "2026-10-07",
+      "market": 5000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4000,
+      "maxPrice": 6000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
+      "district": "Sangrur",
+      "nameHi": "Sangrur",
+      "avgPrice": 4656,
+      "records": 8
+    },
+    {
       "district": "Patiala",
       "nameHi": "Patiala",
-      "avgPrice": 4540,
-      "records": 3
+      "avgPrice": 11131,
+      "records": 7
+    },
+    {
+      "district": "Fatehgarh",
+      "nameHi": "Fatehgarh",
+      "avgPrice": 5813,
+      "records": 4
+    },
+    {
+      "district": "Fazilka",
+      "nameHi": "Fazilka",
+      "avgPrice": 6525,
+      "records": 4
     },
     {
       "district": "Ludhiana",
@@ -78,9 +264,21 @@
       "records": 1
     },
     {
-      "district": "Fatehgarh",
-      "nameHi": "Fatehgarh",
-      "avgPrice": 6500,
+      "district": "Muktsar",
+      "nameHi": "Muktsar",
+      "avgPrice": 2600,
+      "records": 1
+    },
+    {
+      "district": "Nawanshahr",
+      "nameHi": "Nawanshahr",
+      "avgPrice": 2700,
+      "records": 1
+    },
+    {
+      "district": "Bhatinda",
+      "nameHi": "Bhatinda",
+      "avgPrice": 7000,
       "records": 1
     }
   ]

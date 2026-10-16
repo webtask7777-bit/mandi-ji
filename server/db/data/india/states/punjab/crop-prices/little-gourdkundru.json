@@ -17,8 +17,24 @@
     {
       "month": "07",
       "date": "2026-07",
-      "market": 5500,
+      "market": 5050,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 4400,
       "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5000,
+      "volume": 2,
       "days": 1,
       "mandis": 1
     }
@@ -39,20 +55,44 @@
       "mandis": 1,
       "minPrice": 5500,
       "maxPrice": 5500
+    },
+    {
+      "date": "2026-07-29",
+      "market": 4600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4600,
+      "maxPrice": 4600
+    },
+    {
+      "date": "2026-08-30",
+      "market": 4400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4400,
+      "maxPrice": 4400
+    },
+    {
+      "date": "2026-10-04",
+      "market": 5000,
+      "volume": 2,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 5000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
+      "district": "Mohali",
+      "nameHi": "Mohali",
+      "avgPrice": 4900,
+      "records": 5
+    },
+    {
       "district": "Jalandhar",
       "nameHi": "Jalandhar",
       "avgPrice": 2750,
-      "records": 1
-    },
-    {
-      "district": "Mohali",
-      "nameHi": "Mohali",
-      "avgPrice": 5500,
       "records": 1
     }
   ]

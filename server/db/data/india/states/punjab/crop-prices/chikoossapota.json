@@ -58,9 +58,17 @@
       "month": "07",
       "date": "2026-07",
       "market": 3500,
-      "volume": 20,
-      "days": 15,
+      "volume": 30,
+      "days": 24,
       "mandis": 3
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 2600,
+      "volume": 4,
+      "days": 4,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -817,12 +825,20 @@
       "maxPrice": 4000
     },
     {
-      "date": "2026-07-18",
+      "date": "2026-07-20",
+      "market": 3300,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2500,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-08-05",
       "market": 2600,
       "volume": 1,
       "mandis": 1,
-      "minPrice": 2400,
-      "maxPrice": 2800
+      "minPrice": 2500,
+      "maxPrice": 3000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -830,8 +846,8 @@
     {
       "district": "Patiala",
       "nameHi": "Patiala",
-      "avgPrice": 3591,
-      "records": 151
+      "avgPrice": 3585,
+      "records": 164
     },
     {
       "district": "Ludhiana",
@@ -866,8 +882,8 @@
     {
       "district": "Fatehgarh",
       "nameHi": "Fatehgarh",
-      "avgPrice": 4483,
-      "records": 41
+      "avgPrice": 4471,
+      "records": 42
     },
     {
       "district": "Fazilka",

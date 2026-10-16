@@ -21,6 +21,22 @@
       "volume": 4,
       "days": 3,
       "mandis": 3
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 27500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 5000,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -55,10 +71,32 @@
       "mandis": 2,
       "minPrice": 3000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-07-21",
+      "market": 27500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 25000,
+      "maxPrice": 30000
+    },
+    {
+      "date": "2026-08-06",
+      "market": 5000,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2000,
+      "maxPrice": 10000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Solapur",
+      "nameHi": "Solapur",
+      "avgPrice": 6250,
+      "records": 4
+    },
     {
       "district": "Pune",
       "nameHi": "Pune",
@@ -66,15 +104,15 @@
       "records": 3
     },
     {
-      "district": "Solapur",
-      "nameHi": "Solapur",
-      "avgPrice": 7500,
-      "records": 2
-    },
-    {
       "district": "Chattrapati Sambhajinagar",
       "nameHi": "Chattrapati Sambhajinagar",
       "avgPrice": 7750,
+      "records": 1
+    },
+    {
+      "district": "Mumbai",
+      "nameHi": "Mumbai",
+      "avgPrice": 27500,
       "records": 1
     }
   ]

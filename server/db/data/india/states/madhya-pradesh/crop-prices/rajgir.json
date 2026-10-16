@@ -9,9 +9,25 @@
     {
       "month": "07",
       "date": "2026-07",
-      "market": 6400,
-      "volume": 3,
-      "days": 3,
+      "market": 6500,
+      "volume": 4,
+      "days": 4,
+      "mandis": 3
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 6500,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 7950,
+      "volume": 2,
+      "days": 2,
       "mandis": 2
     }
   ],
@@ -39,6 +55,46 @@
       "mandis": 1,
       "minPrice": 6200,
       "maxPrice": 6300
+    },
+    {
+      "date": "2026-07-20",
+      "market": 9900,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 9900,
+      "maxPrice": 9900
+    },
+    {
+      "date": "2026-09-18",
+      "market": 5500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5500,
+      "maxPrice": 5500
+    },
+    {
+      "date": "2026-09-28",
+      "market": 7500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 7500,
+      "maxPrice": 7500
+    },
+    {
+      "date": "2026-10-05",
+      "market": 6000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-10-10",
+      "market": 9900,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 9900,
+      "maxPrice": 9900
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -46,13 +102,25 @@
     {
       "district": "Mandla",
       "nameHi": "Mandla",
-      "avgPrice": 6500,
-      "records": 2
+      "avgPrice": 6333,
+      "records": 3
     },
     {
       "district": "Chhindwara",
       "nameHi": "Chhindwara",
-      "avgPrice": 6300,
+      "avgPrice": 5900,
+      "records": 2
+    },
+    {
+      "district": "Indore",
+      "nameHi": "Indore",
+      "avgPrice": 9900,
+      "records": 2
+    },
+    {
+      "district": "Dhar",
+      "nameHi": "Dhar",
+      "avgPrice": 7500,
       "records": 1
     }
   ]

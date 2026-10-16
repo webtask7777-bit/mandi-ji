@@ -13,6 +13,14 @@
       "volume": 3,
       "days": 1,
       "mandis": 3
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 11500,
+      "volume": 8,
+      "days": 5,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -23,10 +31,62 @@
       "mandis": 3,
       "minPrice": 7000,
       "maxPrice": 15000
+    },
+    {
+      "date": "2026-07-20",
+      "market": 11500,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 10000,
+      "maxPrice": 18000
+    },
+    {
+      "date": "2026-07-21",
+      "market": 13250,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 10000,
+      "maxPrice": 16000
+    },
+    {
+      "date": "2026-07-22",
+      "market": 17500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 17000,
+      "maxPrice": 18000
+    },
+    {
+      "date": "2026-07-23",
+      "market": 15500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 14000,
+      "maxPrice": 16000
+    },
+    {
+      "date": "2026-07-24",
+      "market": 14500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 14000,
+      "maxPrice": 15000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Hamirpur",
+      "nameHi": "Hamirpur",
+      "avgPrice": 15667,
+      "records": 6
+    },
+    {
+      "district": "Kangra",
+      "nameHi": "Kangra",
+      "avgPrice": 11167,
+      "records": 3
+    },
     {
       "district": "Chamba",
       "nameHi": "Chamba",
@@ -37,12 +97,6 @@
       "district": "Bilaspur",
       "nameHi": "Bilaspur",
       "avgPrice": 8500,
-      "records": 1
-    },
-    {
-      "district": "Hamirpur",
-      "nameHi": "Hamirpur",
-      "avgPrice": 14500,
       "records": 1
     }
   ]

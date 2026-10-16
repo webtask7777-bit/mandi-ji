@@ -32,6 +32,42 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2075,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2,
+      "msp": 2150
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 1950,
+      "volume": 4,
+      "days": 4,
+      "mandis": 2,
+      "msp": 2150
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 2150,
+      "volume": 3,
+      "days": 3,
+      "mandis": 3,
+      "msp": 2150
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1500,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1,
+      "msp": 2150
     }
   ],
   "dailyHistory": [
@@ -66,10 +102,102 @@
       "mandis": 1,
       "minPrice": 2200,
       "maxPrice": 2200
+    },
+    {
+      "date": "2026-07-31",
+      "market": 2075,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2000,
+      "maxPrice": 2150
+    },
+    {
+      "date": "2026-08-05",
+      "market": 2000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-08-18",
+      "market": 2150,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2150,
+      "maxPrice": 2150
+    },
+    {
+      "date": "2026-08-27",
+      "market": 1500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-08-31",
+      "market": 2150,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2150,
+      "maxPrice": 2150
+    },
+    {
+      "date": "2026-09-09",
+      "market": 1500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-09-24",
+      "market": 2150,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2150,
+      "maxPrice": 2150
+    },
+    {
+      "date": "2026-09-30",
+      "market": 3100,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3100,
+      "maxPrice": 3100
+    },
+    {
+      "date": "2026-10-05",
+      "market": 1500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-10-09",
+      "market": 1500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 1500
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Koriya",
+      "nameHi": "Koriya",
+      "avgPrice": 1667,
+      "records": 6
+    },
+    {
+      "district": "Balrampur",
+      "nameHi": "Balrampur",
+      "avgPrice": 2150,
+      "records": 4
+    },
     {
       "district": "Raigarh",
       "nameHi": "Raigarh",
@@ -80,6 +208,12 @@
       "district": "Manendragarh Chirmiri Bhartpur",
       "nameHi": "Manendragarh Chirmiri Bhartpur",
       "avgPrice": 1500,
+      "records": 1
+    },
+    {
+      "district": "Raipur",
+      "nameHi": "Raipur",
+      "avgPrice": 3100,
       "records": 1
     }
   ]

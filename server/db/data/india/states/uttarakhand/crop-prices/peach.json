@@ -13,6 +13,30 @@
       "volume": 2,
       "days": 2,
       "mandis": 2
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 1000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 5500,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 4500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -31,10 +55,48 @@
       "mandis": 1,
       "minPrice": 2800,
       "maxPrice": 3400
+    },
+    {
+      "date": "2026-07-23",
+      "market": 1000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 800,
+      "maxPrice": 1200
+    },
+    {
+      "date": "2026-08-02",
+      "market": 5500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-08-03",
+      "market": 5500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-09-13",
+      "market": 4500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4500,
+      "maxPrice": 4500
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Nanital",
+      "nameHi": "Nanital",
+      "avgPrice": 3750,
+      "records": 4
+    },
     {
       "district": "Udhamsinghnagar",
       "nameHi": "Udhamsinghnagar",
@@ -42,9 +104,9 @@
       "records": 1
     },
     {
-      "district": "Nanital",
-      "nameHi": "Nanital",
-      "avgPrice": 3000,
+      "district": "Garhwal (Pauri)",
+      "nameHi": "Garhwal (Pauri)",
+      "avgPrice": 4500,
       "records": 1
     }
   ]

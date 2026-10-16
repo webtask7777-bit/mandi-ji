@@ -17,10 +17,34 @@
     {
       "month": "07",
       "date": "2026-07",
-      "market": 1925,
-      "volume": 3,
-      "days": 3,
+      "market": 1500,
+      "volume": 5,
+      "days": 5,
+      "mandis": 3
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 3701,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 2961,
+      "volume": 7,
+      "days": 6,
       "mandis": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3084,
+      "volume": 9,
+      "days": 6,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -55,6 +79,126 @@
       "mandis": 1,
       "minPrice": 1500,
       "maxPrice": 1500
+    },
+    {
+      "date": "2026-07-24",
+      "market": 2103,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2103,
+      "maxPrice": 2103
+    },
+    {
+      "date": "2026-07-26",
+      "market": 1400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1300,
+      "maxPrice": 1800
+    },
+    {
+      "date": "2026-08-17",
+      "market": 3701,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3701,
+      "maxPrice": 3701
+    },
+    {
+      "date": "2026-09-19",
+      "market": 3251,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3251,
+      "maxPrice": 3251
+    },
+    {
+      "date": "2026-09-23",
+      "market": 2541,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2541,
+      "maxPrice": 2541
+    },
+    {
+      "date": "2026-09-24",
+      "market": 2801,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2801,
+      "maxPrice": 2801
+    },
+    {
+      "date": "2026-09-28",
+      "market": 2651,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2651,
+      "maxPrice": 2651
+    },
+    {
+      "date": "2026-09-29",
+      "market": 3150,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2751,
+      "maxPrice": 3150
+    },
+    {
+      "date": "2026-09-30",
+      "market": 2989,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2906,
+      "maxPrice": 3071
+    },
+    {
+      "date": "2026-10-05",
+      "market": 2991,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 2414,
+      "maxPrice": 3249
+    },
+    {
+      "date": "2026-10-06",
+      "market": 3295,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2876,
+      "maxPrice": 3590
+    },
+    {
+      "date": "2026-10-08",
+      "market": 2880,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 2880
+    },
+    {
+      "date": "2026-10-09",
+      "market": 3000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-10-12",
+      "market": 2899,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2760,
+      "maxPrice": 2899
+    },
+    {
+      "date": "2026-10-15",
+      "market": 3132,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3132,
+      "maxPrice": 3132
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -62,8 +206,14 @@
     {
       "district": "Ratlam",
       "nameHi": "Ratlam",
-      "avgPrice": 2350,
-      "records": 2
+      "avgPrice": 2864,
+      "records": 14
+    },
+    {
+      "district": "Mandsaur",
+      "nameHi": "Mandsaur",
+      "avgPrice": 3082,
+      "records": 6
     },
     {
       "district": "Indore",
@@ -75,6 +225,12 @@
       "district": "Ujjain",
       "nameHi": "Ujjain",
       "avgPrice": 1500,
+      "records": 1
+    },
+    {
+      "district": "Dhar",
+      "nameHi": "Dhar",
+      "avgPrice": 1400,
       "records": 1
     }
   ]

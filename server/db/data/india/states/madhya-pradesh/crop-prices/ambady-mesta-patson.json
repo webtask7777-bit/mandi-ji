@@ -21,6 +21,14 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 6000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -39,20 +47,28 @@
       "mandis": 1,
       "minPrice": 7500,
       "maxPrice": 7500
+    },
+    {
+      "date": "2026-08-31",
+      "market": 6000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 6000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
+      "district": "Singroli",
+      "nameHi": "Singroli",
+      "avgPrice": 6750,
+      "records": 2
+    },
+    {
       "district": "Bhopal",
       "nameHi": "Bhopal",
       "avgPrice": 3260,
-      "records": 1
-    },
-    {
-      "district": "Singroli",
-      "nameHi": "Singroli",
-      "avgPrice": 7500,
       "records": 1
     }
   ]

@@ -16,6 +16,39 @@
       "volume": 2,
       "days": 1,
       "mandis": 2
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 6966,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 4436,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 7389,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5509,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1,
+      "msp": 8343
     }
   ],
   "dailyHistory": [
@@ -26,10 +59,56 @@
       "mandis": 2,
       "minPrice": 5200,
       "maxPrice": 6246
+    },
+    {
+      "date": "2026-07-28",
+      "market": 6966,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6966,
+      "maxPrice": 6966
+    },
+    {
+      "date": "2026-08-21",
+      "market": 4436,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4136,
+      "maxPrice": 4436
+    },
+    {
+      "date": "2026-09-03",
+      "market": 6922,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6922,
+      "maxPrice": 6922
+    },
+    {
+      "date": "2026-09-07",
+      "market": 7855,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 7855,
+      "maxPrice": 7855
+    },
+    {
+      "date": "2026-10-07",
+      "market": 5509,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2059,
+      "maxPrice": 5509
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Warangal",
+      "nameHi": "Warangal",
+      "avgPrice": 7248,
+      "records": 3
+    },
     {
       "district": "Sangareddy",
       "nameHi": "Sangareddy",
@@ -37,9 +116,21 @@
       "records": 1
     },
     {
-      "district": "Mahbubnagar",
-      "nameHi": "Mahbubnagar",
+      "district": "Narayanpet",
+      "nameHi": "Narayanpet",
       "avgPrice": 5200,
+      "records": 1
+    },
+    {
+      "district": "Nirmal",
+      "nameHi": "Nirmal",
+      "avgPrice": 4436,
+      "records": 1
+    },
+    {
+      "district": "Suryapet",
+      "nameHi": "Suryapet",
+      "avgPrice": 5509,
       "records": 1
     }
   ]

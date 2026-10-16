@@ -21,6 +21,14 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 68300,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -39,20 +47,36 @@
       "mandis": 1,
       "minPrice": 68000,
       "maxPrice": 68300
+    },
+    {
+      "date": "2026-08-08",
+      "market": 68400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 68000,
+      "maxPrice": 68500
+    },
+    {
+      "date": "2026-08-12",
+      "market": 68200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 68000,
+      "maxPrice": 68500
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
+      "district": "Pathanamthitta",
+      "nameHi": "Pathanamthitta",
+      "avgPrice": 68267,
+      "records": 3
+    },
+    {
       "district": "Malappuram",
       "nameHi": "Malappuram",
       "avgPrice": 65950,
-      "records": 1
-    },
-    {
-      "district": "Pathanamthitta",
-      "nameHi": "Pathanamthitta",
-      "avgPrice": 68200,
       "records": 1
     }
   ]

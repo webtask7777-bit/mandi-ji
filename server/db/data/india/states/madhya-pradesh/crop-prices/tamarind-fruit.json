@@ -29,6 +29,38 @@
       "volume": 4,
       "days": 4,
       "mandis": 3
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 9864,
+      "volume": 3,
+      "days": 2,
+      "mandis": 2
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 5362,
+      "volume": 8,
+      "days": 8,
+      "mandis": 5
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 4231,
+      "volume": 4,
+      "days": 3,
+      "mandis": 4
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 19280,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -167,10 +199,128 @@
       "mandis": 1,
       "minPrice": 7200,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-22",
+      "market": 9440,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2001,
+      "maxPrice": 16700
+    },
+    {
+      "date": "2026-07-30",
+      "market": 18395,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 18394.68,
+      "maxPrice": 18394.68
+    },
+    {
+      "date": "2026-08-03",
+      "market": 18000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 18000,
+      "maxPrice": 18000
+    },
+    {
+      "date": "2026-08-07",
+      "market": 4000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4000,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-08-08",
+      "market": 4000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4000,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-08-19",
+      "market": 5175,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5175,
+      "maxPrice": 5350
+    },
+    {
+      "date": "2026-08-21",
+      "market": 2500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-08-27",
+      "market": 5500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5105,
+      "maxPrice": 5500
+    },
+    {
+      "date": "2026-08-30",
+      "market": 16533,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 16533,
+      "maxPrice": 16533
+    },
+    {
+      "date": "2026-08-31",
+      "market": 5410,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5001,
+      "maxPrice": 5410
+    },
+    {
+      "date": "2026-09-07",
+      "market": 1400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1400,
+      "maxPrice": 1400
+    },
+    {
+      "date": "2026-09-16",
+      "market": 11666,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 3461,
+      "maxPrice": 19870
+    },
+    {
+      "date": "2026-09-24",
+      "market": 5000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4780,
+      "maxPrice": 5005
+    },
+    {
+      "date": "2026-10-08",
+      "market": 19280,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 19280.05,
+      "maxPrice": 19280.05
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Ujjain",
+      "nameHi": "Ujjain",
+      "avgPrice": 4809,
+      "records": 7
+    },
     {
       "district": "Rajgarh",
       "nameHi": "Rajgarh",
@@ -178,10 +328,10 @@
       "records": 6
     },
     {
-      "district": "Ujjain",
-      "nameHi": "Ujjain",
-      "avgPrice": 4395,
-      "records": 4
+      "district": "Bhopal",
+      "nameHi": "Bhopal",
+      "avgPrice": 18156,
+      "records": 5
     },
     {
       "district": "Shajapur",
@@ -204,14 +354,32 @@
     {
       "district": "Anupur",
       "nameHi": "Anupur",
-      "avgPrice": 3000,
-      "records": 1
+      "avgPrice": 3667,
+      "records": 3
     },
     {
       "district": "Ratlam",
       "nameHi": "Ratlam",
-      "avgPrice": 5150,
-      "records": 1
+      "avgPrice": 3275,
+      "records": 2
+    },
+    {
+      "district": "Indore",
+      "nameHi": "Indore",
+      "avgPrice": 13500,
+      "records": 2
+    },
+    {
+      "district": "Chhindwara",
+      "nameHi": "Chhindwara",
+      "avgPrice": 6500,
+      "records": 2
+    },
+    {
+      "district": "Dewas",
+      "nameHi": "Dewas",
+      "avgPrice": 2821,
+      "records": 2
     },
     {
       "district": "Seoni",
@@ -235,18 +403,6 @@
       "district": "Vidisha",
       "nameHi": "Vidisha",
       "avgPrice": 3500,
-      "records": 1
-    },
-    {
-      "district": "Indore",
-      "nameHi": "Indore",
-      "avgPrice": 9000,
-      "records": 1
-    },
-    {
-      "district": "Chhindwara",
-      "nameHi": "Chhindwara",
-      "avgPrice": 8000,
       "records": 1
     }
   ]

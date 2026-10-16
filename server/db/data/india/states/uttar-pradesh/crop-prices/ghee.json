@@ -17,10 +17,26 @@
     {
       "month": "07",
       "date": "2026-07",
-      "market": 59832,
+      "market": 91823,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 123801,
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 58439,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -39,6 +55,38 @@
       "mandis": 1,
       "minPrice": 46031.73,
       "maxPrice": 211428.5
+    },
+    {
+      "date": "2026-07-30",
+      "market": 123814,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 123814.4,
+      "maxPrice": 123814.4
+    },
+    {
+      "date": "2026-08-31",
+      "market": 123801,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 123800.99,
+      "maxPrice": 123800.99
+    },
+    {
+      "date": "2026-09-23",
+      "market": 6400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6400,
+      "maxPrice": 6400
+    },
+    {
+      "date": "2026-09-29",
+      "market": 110477,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 104758,
+      "maxPrice": 123822.2
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -46,13 +94,19 @@
     {
       "district": "Ghaziabad",
       "nameHi": "Ghaziabad",
-      "avgPrice": 84694,
-      "records": 1
+      "avgPrice": 110697,
+      "records": 4
     },
     {
       "district": "Lucknow",
       "nameHi": "Lucknow",
       "avgPrice": 59832,
+      "records": 1
+    },
+    {
+      "district": "Firozabad",
+      "nameHi": "Firozabad",
+      "avgPrice": 6400,
       "records": 1
     }
   ]

@@ -13,6 +13,14 @@
       "volume": 2,
       "days": 2,
       "mandis": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 6125,
+      "volume": 4,
+      "days": 3,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -31,6 +39,30 @@
       "mandis": 1,
       "minPrice": 8300,
       "maxPrice": 8700
+    },
+    {
+      "date": "2026-07-20",
+      "market": 9000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 8800,
+      "maxPrice": 9200
+    },
+    {
+      "date": "2026-07-21",
+      "market": 6500,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 3000,
+      "maxPrice": 9200
+    },
+    {
+      "date": "2026-07-23",
+      "market": 2500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 3000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -38,7 +70,13 @@
     {
       "district": "Ganganagar",
       "nameHi": "Ganganagar",
-      "avgPrice": 8250,
+      "avgPrice": 8625,
+      "records": 4
+    },
+    {
+      "district": "Jodhpur",
+      "nameHi": "Jodhpur",
+      "avgPrice": 3250,
       "records": 2
     }
   ]

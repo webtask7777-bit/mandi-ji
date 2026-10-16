@@ -13,6 +13,30 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2500,
+      "volume": 3,
+      "days": 3,
+      "mandis": 3
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 2400,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2600,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -23,14 +47,92 @@
       "mandis": 1,
       "minPrice": 2450,
       "maxPrice": 2450
+    },
+    {
+      "date": "2026-07-25",
+      "market": 2430,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2430,
+      "maxPrice": 2430
+    },
+    {
+      "date": "2026-07-26",
+      "market": 2520,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2520,
+      "maxPrice": 2520
+    },
+    {
+      "date": "2026-07-30",
+      "market": 2500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-08-16",
+      "market": 2400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2400,
+      "maxPrice": 2400
+    },
+    {
+      "date": "2026-10-02",
+      "market": 2600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2600,
+      "maxPrice": 2600
+    },
+    {
+      "date": "2026-10-07",
+      "market": 2600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2600,
+      "maxPrice": 2600
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
+      "district": "Kanpur Dehat",
+      "nameHi": "Kanpur Dehat",
+      "avgPrice": 2550,
+      "records": 2
+    },
+    {
       "district": "Unnao",
       "nameHi": "Unnao",
       "avgPrice": 2450,
+      "records": 1
+    },
+    {
+      "district": "Hamirpur",
+      "nameHi": "Hamirpur",
+      "avgPrice": 2430,
+      "records": 1
+    },
+    {
+      "district": "Bulandshahar",
+      "nameHi": "Bulandshahar",
+      "avgPrice": 2520,
+      "records": 1
+    },
+    {
+      "district": "Lalitpur",
+      "nameHi": "Lalitpur",
+      "avgPrice": 2400,
+      "records": 1
+    },
+    {
+      "district": "Sitapur",
+      "nameHi": "Sitapur",
+      "avgPrice": 2600,
       "records": 1
     }
   ]

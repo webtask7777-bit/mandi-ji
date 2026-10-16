@@ -137,7 +137,7 @@ const TOPIC_ROWS = [
   ["cardamom", "इलायची", "Cardamom", "spice", "cardamoms"],
   ["cinnamon", "दालचीनी", "Cinnamon", "spice", "cinamondalchini"],
   ["clove", "लौंग", "Clove", "spice", "cloves"],
-  ["nutmeg", "जायफल", "Nutmeg", "spice", "nutmeg"],
+  ["nutmeg", "जायफल", "Nutmeg", "spice", "nutmeg mace"],
   ["bay-leaf", "तेजपत्ता", "Bay leaf", "spice", "bay-leaftejpatta"],
   ["nigella", "कलौंजी", "Nigella", "spice", "nigella nigella-seeds"],
   ["dill", "सोया बीज", "Dill seed", "spice", "suvadill-seed"],

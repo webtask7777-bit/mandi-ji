@@ -25,9 +25,33 @@
     {
       "month": "07",
       "date": "2026-07",
-      "market": 2750,
-      "volume": 3,
-      "days": 3,
+      "market": 2600,
+      "volume": 4,
+      "days": 4,
+      "mandis": 2
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 5200,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 3500,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5350,
+      "volume": 4,
+      "days": 4,
       "mandis": 2
     }
   ],
@@ -87,27 +111,91 @@
       "mandis": 1,
       "minPrice": 2500,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-20",
+      "market": 2000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-08-21",
+      "market": 5200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 5500
+    },
+    {
+      "date": "2026-09-22",
+      "market": 3500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3500,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-09-23",
+      "market": 3500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3500,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-10-05",
+      "market": 4500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4500,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-10-08",
+      "market": 4500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4500,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-10-12",
+      "market": 6200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 6500
+    },
+    {
+      "date": "2026-10-14",
+      "market": 6200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 6500
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
-      "district": "Mandi",
-      "nameHi": "Mandi",
-      "avgPrice": 1783,
-      "records": 3
+      "district": "Shimla",
+      "nameHi": "Shimla",
+      "avgPrice": 4475,
+      "records": 8
     },
     {
       "district": "Kullu",
       "nameHi": "Kullu",
-      "avgPrice": 2800,
-      "records": 3
+      "avgPrice": 2600,
+      "records": 4
     },
     {
-      "district": "Shimla",
-      "nameHi": "Shimla",
-      "avgPrice": 2200,
-      "records": 1
+      "district": "Mandi",
+      "nameHi": "Mandi",
+      "avgPrice": 1783,
+      "records": 3
     }
   ]
 }

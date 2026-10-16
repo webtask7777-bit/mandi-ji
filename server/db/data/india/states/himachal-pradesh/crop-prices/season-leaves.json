@@ -9,10 +9,34 @@
     {
       "month": "07",
       "date": "2026-07",
+      "market": 2700,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
       "market": 3200,
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 2800,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2036,
+      "volume": 12,
+      "days": 11,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -23,14 +47,138 @@
       "mandis": 1,
       "minPrice": 3000,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-07-27",
+      "market": 2200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-08-17",
+      "market": 3200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-09-30",
+      "market": 2800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 3200
+    },
+    {
+      "date": "2026-10-02",
+      "market": 1800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-10-03",
+      "market": 3000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-10-06",
+      "market": 1500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-10-07",
+      "market": 1400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1200,
+      "maxPrice": 1600
+    },
+    {
+      "date": "2026-10-08",
+      "market": 1200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 800,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-10-09",
+      "market": 1250,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1000,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-10-10",
+      "market": 1400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1200,
+      "maxPrice": 1600
+    },
+    {
+      "date": "2026-10-12",
+      "market": 1400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1200,
+      "maxPrice": 1600
+    },
+    {
+      "date": "2026-10-13",
+      "market": 1250,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1000,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-10-14",
+      "market": 2000,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-10-15",
+      "market": 1600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1300,
+      "maxPrice": 1800
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
+      "district": "Una",
+      "nameHi": "Una",
+      "avgPrice": 1675,
+      "records": 12
+    },
+    {
       "district": "Shimla",
       "nameHi": "Shimla",
-      "avgPrice": 3200,
+      "avgPrice": 2867,
+      "records": 3
+    },
+    {
+      "district": "Hamirpur",
+      "nameHi": "Hamirpur",
+      "avgPrice": 2500,
       "records": 1
     }
   ]

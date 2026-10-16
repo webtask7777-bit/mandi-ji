@@ -9,10 +9,18 @@
     {
       "month": "07",
       "date": "2026-07",
-      "market": 2600,
-      "volume": 5,
-      "days": 5,
-      "mandis": 1
+      "market": 2031,
+      "volume": 10,
+      "days": 8,
+      "mandis": 2
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 2075,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -55,6 +63,46 @@
       "mandis": 1,
       "minPrice": 2500,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-22",
+      "market": 2000,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1500,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-28",
+      "market": 2000,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1500,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-29",
+      "market": 2500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-08-03",
+      "market": 1650,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1650,
+      "maxPrice": 1650
+    },
+    {
+      "date": "2026-08-05",
+      "market": 2500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 3500
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -62,8 +110,14 @@
     {
       "district": "Tumakuru",
       "nameHi": "Tumakuru",
-      "avgPrice": 2600,
-      "records": 5
+      "avgPrice": 2556,
+      "records": 9
+    },
+    {
+      "district": "Mandya",
+      "nameHi": "Mandya",
+      "avgPrice": 1550,
+      "records": 3
     }
   ]
 }

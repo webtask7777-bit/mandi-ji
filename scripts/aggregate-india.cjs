@@ -91,20 +91,28 @@ const COMMODITY_ALIASES = {
   'Cardamom': 'Cardamoms',
   'Ladies Finger': 'Bhindi(Ladies Finger)',
   'Sunflower Seed': 'Sunflower/Sunflower Seed',
+  // Regional names the source also files separately (data.gov.in variety-wise resource).
+  'Sajje': 'Bajra(Pearl Millet/Cumbu)',
+  'Gurellu': 'Niger Seed(Ramtil)',
+  'Marasebu': 'Pear(Marasebu)',
+  'Antawala': 'Soapnut(Antawala/Retha)',
+  'Thinai(Italian Millet)': 'Foxtail Millet(Navane)',
+  'Hippe Seed': 'Mahua Seed(Hippe seed)',
 };
 
-// Commodities the source reports per piece, bunch or nut (betelnut ₹4, lotus ₹8, flowers
-// ₹20–₹250): a per-quintal page would be false, so they are not published.
+// Commodities the source reports per piece, bunch, nut or animal (betelnut ₹4, lotus ₹8,
+// flowers ₹20–₹250, sheep and goats per head) or in another small unit (saffron ₹65,000,
+// a fraction of its per-kg price): a per-quintal page would be false, so they are not published.
 const NON_QUINTAL_COMMODITIES = new Set([
   'Betelnuts', 'Lotus', 'Chrysanthemum', 'Jarbara', 'Anthorium', 'Tube Rose(Single)',
-  'Tube Rose(Double)', 'BOP', 'Carnation', 'Orchid',
+  'Tube Rose(Double)', 'BOP', 'Carnation', 'Orchid', 'Ram', 'Sheep', 'She Goat', 'Saffron',
 ]);
 
-// Dry grains, pulses and oilseeds never trade below ₹1,000 a quintal (₹10/kg); a modal
+// Dry grains, pulses, oilseeds and dried produce never trade below ₹1,000 a quintal (₹10/kg); a modal
 // price under that (white peas ₹200–500 in a few Chhattisgarh mandis while Gujarat reports
 // ₹3,000–4,500) is a per-kg or typing error. Fresh forms (green peas, peas wet/cod) are
 // vegetables and keep their own range.
-const DRY_COMMODITY = /\b(white peas|peas\(dry\)|gram|arhar|tur|moong|urd|masur|lentil|wheat|paddy|maize|jowar|bajra|ragi|soyabean|mustard|groundnut|sesamum|kabuli|chana|barley)\b/i;
+const DRY_COMMODITY = /\b(white peas|peas\(dry\)|gram|arhar|tur|moong|urd|masur|lentil|wheat|paddy|maize|jowar|bajra|ragi|soyabean|mustard|groundnut|sesamum|kabuli|chana|barley|hippe seed|mahua seed|myrobolan)\b/i;
 const FRESH_FORM = /green peas|peas wet|peas cod|green chilli|gram raw|green gram leaves|chana sag|groundnut pods \(raw\)/i;
 const DRY_FLOOR = 1000;
 const belowDryFloor = r => r.modal_price > 0 && r.modal_price < DRY_FLOOR && DRY_COMMODITY.test(r.commodity) && !FRESH_FORM.test(r.commodity);
@@ -378,7 +386,9 @@ function main() {
       byKey.set(recordKey(rec), rec);
     }
   }
-  const dedupedRecords = [...byKey.values()].filter(r => !NON_QUINTAL_COMMODITIES.has(COMMODITY_ALIASES[r.commodity] || r.commodity));
+  // The dry floor runs before the unit check: otherwise impossible ₹200 rows set the
+  // commodity's typical price and the real ₹3,000+ series are excluded as another unit.
+  const dedupedRecords = [...byKey.values()].filter(r => !NON_QUINTAL_COMMODITIES.has(COMMODITY_ALIASES[r.commodity] || r.commodity) && !belowDryFloor(r));
 
   // Leave out series reported in another unit (per bunch, per nut): they are not ₹/quintal.
   const seriesKey = r => `${r.commodity}|${r.state}|${r.district}|${r.market}`;
@@ -386,7 +396,7 @@ function main() {
   const unitChecked = dedupedRecords.filter(r => !unitExcluded.has(seriesKey(r)));
   console.log(`Unit check: ${unitExcluded.size} series (${dedupedRecords.length - unitChecked.length} records) left out as not per quintal`);
   const sanity = priceSanity(unitChecked, r => r.commodity);
-  const allRecords = unitChecked.filter(r => sanity.keep(r) && !belowDryFloor(r)).map(r => sanity.clip(r));
+  const allRecords = unitChecked.filter(r => sanity.keep(r)).map(r => sanity.clip(r));
   console.log(`Price sanity: ${unitChecked.length - allRecords.length} records more than 20x from the commodity's typical price left out`);
 
   // "Recent" = the 7 days before the newest observation (UTC dates), not the newest file name.
