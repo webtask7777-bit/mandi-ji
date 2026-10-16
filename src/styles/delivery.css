@@ -221,3 +221,10 @@
 @media (prefers-reduced-motion: reduce) {
   .sb-delivery-vehicle, .sb-delivery-vehicle-scene .sb-vehicle-art { transition: none; }
 }
+
+.sb-delivery-jumpnav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px;padding:12px;background:#f1f5eb;border:1px solid #dfe7d8;border-radius:14px}
+.sb-delivery-jumpnav a{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:9px 13px;color:#315b3d;background:#fff;border:1px solid #dfe7d8;border-radius:9px;font-size:13px;font-weight:600;text-decoration:none;line-height:1.5}
+.sb-delivery-jumpnav a:hover{background:#e7efdf;border-color:#a6bd98}
+.sb-delivery-jumpnav a:focus-visible{outline:3px solid #91ad91;outline-offset:3px}
+#delivery-calculation{scroll-margin-top:100px}
+@media(max-width:500px){.sb-delivery-jumpnav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:9px}.sb-delivery-jumpnav a{padding:8px;font-size:12px}}
