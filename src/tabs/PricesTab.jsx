@@ -9,6 +9,7 @@ import TickerBoard from "../components/TickerBoard";
 import MandiCompare from "../components/MandiCompare";
 import ArbitrageList from "../components/ArbitrageList";
 import { getOutlierBounds, isOutlier } from "@/lib/outlier";
+import { comparableChange, gapNote } from "../utils/priceChange";
 import { getDataFreshness } from "../utils/dataFreshness";
 import { cropDetailPath } from "../utils/cropUrls";
 import "../styles/prices.css";
@@ -97,9 +98,10 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
   const heroRecord = latestDay || latestPrice;
   const previousRecord = latestDay ? dailyHistory.at(-2) : history.at(-2);
   const heroPrice = heroRecord?.market;
-  const hasPrevious = Number(previousRecord?.market) > 0;
-  const heroChange = hasPrevious ? heroPrice - previousRecord.market : null;
-  const heroChangePct = hasPrevious ? ((heroChange / previousRecord.market) * 100).toFixed(1) : null;
+  const heroComparison = comparableChange(heroRecord, previousRecord, { daily: Boolean(latestDay) });
+  const hasPrevious = heroComparison.status === 'ok';
+  const heroChange = hasPrevious ? heroComparison.change : null;
+  const heroChangePct = hasPrevious ? heroComparison.pct.toFixed(1) : null;
   const freshness = getDataFreshness(heroRecord?.date);
   const selectedTicker = ticker.find(item => item.id === activeCrop);
   const comparisons = !mandiLoading && Array.isArray(mandiCompareData) ? mandiCompareData : [];
@@ -185,6 +187,7 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
             <div className="sb-quote-hero__top"><span className="sb-eyebrow">उपलब्ध थोक भाव</span><span className={`sb-freshness sb-freshness--${freshness.status}`}><CalendarDays size={13} aria-hidden="true" />{freshness.isCurrent ? 'आज का रिकॉर्ड' : freshness.status === 'stale' ? 'पुराना रिकॉर्ड' : 'तारीख जाँचें'}</span></div>
             <div className="sb-quote-hero__main"><div><h3>{cropName}</h3><p className="sb-quote-date">{recordLabel(heroRecord) || 'भाव की तारीख उपलब्ध नहीं'}</p><div className="sb-hero-amount">₹{number(heroPrice)}</div><span className="sb-unit-label">प्रति क्विंटल · उपलब्ध रिकॉर्ड का औसत</span></div><CropImage id={activeCrop} name={cropName} size="hero" /></div>
             {hasPrevious && <div className="sb-hero-change"><span className={`sb-change ${heroChange > 0 ? 'sb-change--up' : heroChange < 0 ? 'sb-change--down' : 'sb-change--flat'}`}>{heroChange >= 0 ? <ArrowUpRight size={18} aria-hidden="true" /> : <ArrowDownRight size={18} aria-hidden="true" />}{heroChange > 0 ? '+' : ''}₹{number(heroChange)} ({heroChange > 0 ? '+' : ''}{heroChangePct}%)</span><small>{recordLabel(previousRecord) ? `${recordLabel(previousRecord)} के रिकॉर्ड से` : 'पिछले उपलब्ध रिकॉर्ड से'}</small></div>}
+            {heroComparison.status === 'gap' && <p className="sb-small-note">{gapNote(heroComparison)}।</p>}
             {Number(latestPrice?.msp) > 0 && <div className="sb-msp-line"><span>दर्ज MSP</span><strong>₹{number(latestPrice.msp)} <small>/ क्विंटल</small></strong></div>}
             {!freshness.isCurrent && <p className="sb-quote-notice"><Info size={15} aria-hidden="true" />{freshness.label}। सौदे से पहले मंडी से भाव की पुष्टि करें।</p>}
             {selectedTicker?.bestMandi && selectedTicker?.worstMandi && <div className="sb-quote-range">

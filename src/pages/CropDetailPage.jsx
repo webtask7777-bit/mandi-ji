@@ -8,6 +8,7 @@ import MiniChart from '../components/MiniChart';
 import MandiCompare from '../components/MandiCompare';
 import SEO, { SITE_URL } from '../components/SEO';
 import { getDataFreshness } from '../utils/dataFreshness';
+import { comparableChange, gapNote } from '../utils/priceChange';
 import { cropDetailPath } from '../utils/cropUrls';
 import '../styles/detail.css';
 
@@ -57,8 +58,9 @@ export default function CropDetailPage() {
   const heroRecord = latestDay || latestMonth;
   const previousRecord = latestDay ? dailyHistory.at(-2) : history.at(-2);
   const heroPrice = positive(heroRecord?.market) ? Number(heroRecord.market) : null;
-  const change = heroPrice !== null && positive(previousRecord?.market) ? heroPrice - Number(previousRecord.market) : null;
-  const changePct = change !== null ? change / Number(previousRecord.market) * 100 : null;
+  const comparison = heroPrice !== null ? comparableChange(heroRecord, previousRecord, { daily: Boolean(latestDay) }) : { status: 'none' };
+  const change = comparison.status === 'ok' ? comparison.change : null;
+  const changePct = change !== null ? comparison.pct : null;
   const freshness = getDataFreshness(latestDay?.date);
   const quoteLabel = latestDay ? freshness.dateLabel : latestMonth ? monthLabel(latestMonth) : 'भाव उपलब्ध नहीं';
   const priorLabel = previousRecord ? (latestDay ? getDataFreshness(previousRecord.date).dateLabel : monthLabel(previousRecord)) : null;
@@ -102,7 +104,7 @@ export default function CropDetailPage() {
                   {change > 0 ? <TrendingUp size={18} aria-hidden="true" /> : change < 0 ? <TrendingDown size={18} aria-hidden="true" /> : <Minus size={18} aria-hidden="true" />}
                   <strong>{change > 0 ? '+' : change < 0 ? '−' : ''}₹{money(Math.abs(change))} ({changePct > 0 ? '+' : ''}{changePct.toFixed(1)}%)</strong>
                   <span>{priorLabel} के रिकॉर्ड से</span>
-                </div> : <p className="sb-detail-small">बदलाव दिखाने के लिए पिछला रिकॉर्ड उपलब्ध नहीं है।</p>}
+                </div> : <p className="sb-detail-small">{comparison.status === 'gap' ? `${gapNote(comparison)}।` : 'बदलाव दिखाने के लिए पिछला रिकॉर्ड उपलब्ध नहीं है।'}</p>}
                 <div className={`sb-detail-freshness ${latestDay && freshness.isCurrent ? 'is-current' : ''}`}><Clock3 size={15} aria-hidden="true" /><span>{latestDay ? freshness.label : 'मासिक रिकॉर्ड · दैनिक भाव नहीं'}</span></div>
                 {updatedLabel && <p className="sb-detail-sync">डेटा अपडेट: {updatedLabel}</p>}
               </> : <div className="sb-detail-no-price"><strong>इस क्षेत्र के भाव उपलब्ध नहीं हैं</strong><p>दूसरे क्षेत्र के रिकॉर्ड मुख्य मंडी भाव पृष्ठ पर देखें।</p><Link to={dashboardPath}>क्षेत्र बदलें <ArrowRight size={16} aria-hidden="true" /></Link></div>}
