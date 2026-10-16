@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 5967,
       "volume": 3
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4025,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -784,9 +790,16 @@
       "volume": 1,
       "minPrice": 5700,
       "maxPrice": 5900
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4025,
+      "volume": 4,
+      "minPrice": 1500,
+      "maxPrice": 6500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Kolar",
@@ -843,21 +856,39 @@
       "records": 4
     },
     {
+      "district": "Bengaluru South",
+      "nameHi": "Bengaluru South",
+      "avgPrice": 7800,
+      "records": 2
+    },
+    {
       "district": "Belgaum",
       "nameHi": "Belgaum",
       "avgPrice": 3500,
       "records": 1
     },
     {
-      "district": "Bengaluru South",
-      "nameHi": "Bengaluru South",
-      "avgPrice": 9600,
-      "records": 1
-    },
-    {
       "district": "Mysuru",
       "nameHi": "Mysuru",
       "avgPrice": 5800,
+      "records": 1
+    },
+    {
+      "district": "Chikkaballapur",
+      "nameHi": "Chikkaballapur",
+      "avgPrice": 2000,
+      "records": 1
+    },
+    {
+      "district": "Bengaluru Rural",
+      "nameHi": "Bengaluru Rural",
+      "avgPrice": 2600,
+      "records": 1
+    },
+    {
+      "district": "Shivamogga",
+      "nameHi": "Shivamogga",
+      "avgPrice": 5500,
       "records": 1
     }
   ]

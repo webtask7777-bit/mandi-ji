@@ -190,17 +190,6 @@
   ],
   "apple": [
     {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 11518,
-      "recentPrice": null,
-      "minPrice": 7750,
-      "maxPrice": 20500,
-      "records": 56,
-      "topVariety": "Apple",
-      "grade": "Medium"
-    },
-    {
       "name": "Deesa(Deesa Veg Yard)",
       "district": "Banaskanth",
       "avgPrice": 10958,
@@ -236,13 +225,24 @@
     {
       "name": "Gondal(Veg.market Gondal)",
       "district": "Rajkot",
-      "avgPrice": 9444,
-      "recentPrice": null,
+      "avgPrice": 9423,
+      "recentPrice": 7500,
       "minPrice": 4500,
       "maxPrice": 17500,
-      "records": 91,
+      "records": 92,
       "topVariety": "Apple",
       "grade": "Local"
+    },
+    {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 11434,
+      "recentPrice": 6750,
+      "minPrice": 6750,
+      "maxPrice": 20500,
+      "records": 57,
+      "topVariety": "Apple",
+      "grade": "Medium"
     },
     {
       "name": "Bharuch",
@@ -955,6 +955,17 @@
       "grade": "Local"
     },
     {
+      "name": "Vadgam",
+      "district": "Banaskanth",
+      "avgPrice": 2255,
+      "recentPrice": 2555,
+      "minPrice": 1650,
+      "maxPrice": 2705,
+      "records": 79,
+      "topVariety": "Bold",
+      "grade": "FAQ"
+    },
+    {
       "name": "Talod",
       "district": "Sabarkantha",
       "avgPrice": 2518,
@@ -1219,17 +1230,6 @@
       "grade": "Local"
     },
     {
-      "name": "Vadgam",
-      "district": "Banaskanth",
-      "avgPrice": 2252,
-      "recentPrice": null,
-      "minPrice": 1650,
-      "maxPrice": 2705,
-      "records": 78,
-      "topVariety": "Bold",
-      "grade": "FAQ"
-    },
-    {
       "name": "Dhansura",
       "district": "Sabarkantha",
       "avgPrice": 2250,
@@ -1305,6 +1305,17 @@
       "records": 7,
       "topVariety": "Deshi",
       "grade": "FAQ"
+    },
+    {
+      "name": "Kalol",
+      "district": "Gandhinagar",
+      "avgPrice": 1930,
+      "recentPrice": 2200,
+      "minPrice": 1650,
+      "maxPrice": 2200,
+      "records": 79,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Prantij",
@@ -1483,6 +1494,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Dhrol",
+      "district": "Jamnagar",
+      "avgPrice": 1700,
+      "recentPrice": 1950,
+      "minPrice": 1450,
+      "maxPrice": 1950,
+      "records": 7,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Mehsana(Jornang)",
       "district": "Mehsana",
       "avgPrice": 1949,
@@ -1491,17 +1513,6 @@
       "maxPrice": 2650,
       "records": 83,
       "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
-      "name": "Kalol",
-      "district": "Gandhinagar",
-      "avgPrice": 1927,
-      "recentPrice": null,
-      "minPrice": 1650,
-      "maxPrice": 2150,
-      "records": 78,
-      "topVariety": null,
       "grade": "Local"
     },
     {
@@ -1518,11 +1529,11 @@
     {
       "name": "Morva Hafad",
       "district": "Panchmahals",
-      "avgPrice": 1875,
-      "recentPrice": null,
+      "avgPrice": 1880,
+      "recentPrice": 1900,
       "minPrice": 1875,
-      "maxPrice": 1875,
-      "records": 4,
+      "maxPrice": 1900,
+      "records": 5,
       "topVariety": "Deshi",
       "grade": "Local"
     },
@@ -1659,17 +1670,6 @@
       "grade": "Local"
     },
     {
-      "name": "Dhrol",
-      "district": "Jamnagar",
-      "avgPrice": 1658,
-      "recentPrice": null,
-      "minPrice": 1450,
-      "maxPrice": 1940,
-      "records": 6,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Jhalod",
       "district": "Dahod",
       "avgPrice": 1600,
@@ -1682,6 +1682,17 @@
     }
   ],
   "banana": [
+    {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 2316,
+      "recentPrice": 2750,
+      "minPrice": 1750,
+      "maxPrice": 3250,
+      "records": 68,
+      "topVariety": "Medium",
+      "grade": "Medium"
+    },
     {
       "name": "Deesa(Deesa Veg Yard)",
       "district": "Banaskanth",
@@ -1705,17 +1716,6 @@
       "grade": "Grade A"
     },
     {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 2310,
-      "recentPrice": null,
-      "minPrice": 1750,
-      "maxPrice": 3250,
-      "records": 67,
-      "topVariety": "Medium",
-      "grade": "Medium"
-    },
-    {
       "name": "Mehsana(Mehsana Veg)",
       "district": "Mehsana",
       "avgPrice": 2230,
@@ -1724,17 +1724,6 @@
       "maxPrice": 3250,
       "records": 83,
       "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 2157,
-      "recentPrice": null,
-      "minPrice": 1400,
-      "maxPrice": 3500,
-      "records": 100,
-      "topVariety": "Banana - Ripe",
       "grade": "Local"
     },
     {
@@ -1749,14 +1738,14 @@
       "grade": "Medium"
     },
     {
-      "name": "Khambhat(Veg Yard Khambhat)",
-      "district": "Anand",
-      "avgPrice": 2043,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 2500,
-      "records": 35,
-      "topVariety": "Amruthapani",
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 2156,
+      "recentPrice": 2000,
+      "minPrice": 1400,
+      "maxPrice": 3500,
+      "records": 101,
+      "topVariety": "Banana - Ripe",
       "grade": "Local"
     },
     {
@@ -1768,6 +1757,17 @@
       "maxPrice": 2375,
       "records": 99,
       "topVariety": "Banana - Ripe",
+      "grade": "Local"
+    },
+    {
+      "name": "Khambhat(Veg Yard Khambhat)",
+      "district": "Anand",
+      "avgPrice": 2033,
+      "recentPrice": 1700,
+      "minPrice": 1200,
+      "maxPrice": 2500,
+      "records": 36,
+      "topVariety": "Amruthapani",
       "grade": "Local"
     },
     {
@@ -1797,22 +1797,22 @@
     {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 1353,
-      "recentPrice": null,
+      "avgPrice": 1352,
+      "recentPrice": 1275,
       "minPrice": 750,
       "maxPrice": 2000,
-      "records": 98,
+      "records": 99,
       "topVariety": null,
       "grade": "FAQ"
     },
     {
       "name": "Vadhvan",
       "district": "Surendranagar",
-      "avgPrice": 1273,
-      "recentPrice": null,
+      "avgPrice": 1272,
+      "recentPrice": 1250,
       "minPrice": 1250,
       "maxPrice": 1750,
-      "records": 22,
+      "records": 23,
       "topVariety": "Banana - Green",
       "grade": "Medium"
     },
@@ -1887,6 +1887,17 @@
   ],
   "beetroot": [
     {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 1780,
+      "recentPrice": 2250,
+      "minPrice": 1250,
+      "maxPrice": 2750,
+      "records": 74,
+      "topVariety": "Beetroot",
+      "grade": "Medium"
+    },
+    {
       "name": "Vadodara(Sayajipura)",
       "district": "Vadodara(Baroda)",
       "avgPrice": 2013,
@@ -1898,15 +1909,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 1774,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 2750,
-      "records": 73,
-      "topVariety": "Beetroot",
-      "grade": "Medium"
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 1381,
+      "recentPrice": 1900,
+      "minPrice": 750,
+      "maxPrice": 2125,
+      "records": 102,
+      "topVariety": null,
+      "grade": "FAQ"
     },
     {
       "name": "Nadiyad(Piplag)",
@@ -1917,17 +1928,6 @@
       "maxPrice": 2850,
       "records": 65,
       "topVariety": "Beetroot",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 1376,
-      "recentPrice": null,
-      "minPrice": 750,
-      "maxPrice": 2125,
-      "records": 101,
-      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -1944,6 +1944,28 @@
   ],
   "bengal-gramgramwhole": [
     {
+      "name": "Jetpur(Dist.Rajkot)",
+      "district": "Rajkot",
+      "avgPrice": 5162,
+      "recentPrice": 7250,
+      "minPrice": 4655,
+      "maxPrice": 7250,
+      "records": 59,
+      "topVariety": "Desi (Whole)",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Sami",
+      "district": "Patan",
+      "avgPrice": 5273,
+      "recentPrice": 7000,
+      "minPrice": 4250,
+      "maxPrice": 7250,
+      "records": 38,
+      "topVariety": "Average (Whole)",
+      "grade": "Local"
+    },
+    {
       "name": "Rajkot",
       "district": "Rajkot",
       "avgPrice": 6643,
@@ -1953,6 +1975,28 @@
       "records": 132,
       "topVariety": "Desi (Whole)",
       "grade": "FAQ"
+    },
+    {
+      "name": "Jam Khambalia",
+      "district": "Devbhumi Dwarka",
+      "avgPrice": 5875,
+      "recentPrice": 6500,
+      "minPrice": 5250,
+      "maxPrice": 6500,
+      "records": 2,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Dhrol",
+      "district": "Jamnagar",
+      "avgPrice": 4978,
+      "recentPrice": 5950,
+      "minPrice": 4600,
+      "maxPrice": 5950,
+      "records": 17,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "APMC HALVAD",
@@ -2032,28 +2076,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Jam Khambalia",
-      "district": "Devbhumi Dwarka",
-      "avgPrice": 5250,
-      "recentPrice": null,
-      "minPrice": 5250,
-      "maxPrice": 5250,
-      "records": 1,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Sami",
-      "district": "Patan",
-      "avgPrice": 5226,
-      "recentPrice": null,
-      "minPrice": 4250,
-      "maxPrice": 7250,
-      "records": 37,
-      "topVariety": "Average (Whole)",
-      "grade": "Local"
-    },
-    {
       "name": "Nizar",
       "district": "Surat",
       "avgPrice": 5200,
@@ -2118,17 +2140,6 @@
       "records": 28,
       "topVariety": "Desi (Whole)",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Jetpur(Dist.Rajkot)",
-      "district": "Rajkot",
-      "avgPrice": 5126,
-      "recentPrice": null,
-      "minPrice": 4655,
-      "maxPrice": 5900,
-      "records": 58,
-      "topVariety": "Desi (Whole)",
-      "grade": "FAQ"
     },
     {
       "name": "Mandal",
@@ -2285,17 +2296,6 @@
       "grade": "Local"
     },
     {
-      "name": "Dhrol",
-      "district": "Jamnagar",
-      "avgPrice": 4917,
-      "recentPrice": null,
-      "minPrice": 4600,
-      "maxPrice": 5185,
-      "records": 16,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Morbi",
       "district": "Morbi",
       "avgPrice": 4905,
@@ -2410,39 +2410,6 @@
   ],
   "bhindiladies-finger": [
     {
-      "name": "Songadh(Umrada)",
-      "district": "Surat",
-      "avgPrice": 5312,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 8700,
-      "records": 85,
-      "topVariety": "Bhindi",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Songadh(Badarpada)",
-      "district": "Surat",
-      "avgPrice": 5295,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 8700,
-      "records": 83,
-      "topVariety": "Bhindi",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Songadh",
-      "district": "Surat",
-      "avgPrice": 5224,
-      "recentPrice": null,
-      "minPrice": 1820,
-      "maxPrice": 8700,
-      "records": 91,
-      "topVariety": "Bhindi",
-      "grade": "FAQ"
-    },
-    {
       "name": "Vyara(Paati)",
       "district": "Surat",
       "avgPrice": 5085,
@@ -2498,17 +2465,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 4551,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 6250,
-      "records": 79,
-      "topVariety": "Bhindi",
-      "grade": "Local"
-    },
-    {
       "name": "Navsari",
       "district": "Navsari",
       "avgPrice": 4393,
@@ -2520,15 +2476,15 @@
       "grade": "Local"
     },
     {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 4340,
-      "recentPrice": null,
-      "minPrice": 1625,
-      "maxPrice": 5750,
-      "records": 25,
-      "topVariety": null,
-      "grade": "FAQ"
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 4547,
+      "recentPrice": 4250,
+      "minPrice": 1250,
+      "maxPrice": 6250,
+      "records": 80,
+      "topVariety": "Bhindi",
+      "grade": "Local"
     },
     {
       "name": "Porbandar",
@@ -2542,48 +2498,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Khambhat(Veg Yard Khambhat)",
-      "district": "Anand",
-      "avgPrice": 4183,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 7000,
-      "records": 30,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 4067,
-      "recentPrice": null,
+      "avgPrice": 4066,
+      "recentPrice": 4000,
       "minPrice": 2000,
       "maxPrice": 6250,
-      "records": 98,
+      "records": 99,
       "topVariety": "Bhindi",
       "grade": "FAQ"
-    },
-    {
-      "name": "Rajkot(Veg.Sub Yard)",
-      "district": "Rajkot",
-      "avgPrice": 4015,
-      "recentPrice": null,
-      "minPrice": 615,
-      "maxPrice": 6050,
-      "records": 92,
-      "topVariety": "Bhindi",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Anand(Veg,Yard,Anand)",
-      "district": "Anand",
-      "avgPrice": 4003,
-      "recentPrice": null,
-      "minPrice": 875,
-      "maxPrice": 7500,
-      "records": 92,
-      "topVariety": "Bhindi",
-      "grade": "Grade B"
     },
     {
       "name": "Ankleshwar",
@@ -2630,17 +2553,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Kalol(Veg,Market,Kalol)",
-      "district": "Gandhinagar",
-      "avgPrice": 3691,
-      "recentPrice": null,
-      "minPrice": 1750,
-      "maxPrice": 5500,
-      "records": 69,
-      "topVariety": "Bhindi",
-      "grade": "Local"
-    },
-    {
       "name": "Kapadvanj",
       "district": "Kheda",
       "avgPrice": 3660,
@@ -2661,6 +2573,28 @@
       "records": 89,
       "topVariety": "Bhindi",
       "grade": "FAQ"
+    },
+    {
+      "name": "Bardoli(Kadod)",
+      "district": "Surat",
+      "avgPrice": 2466,
+      "recentPrice": 3300,
+      "minPrice": 1800,
+      "maxPrice": 3600,
+      "records": 93,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 3198,
+      "recentPrice": 3250,
+      "minPrice": 650,
+      "maxPrice": 5250,
+      "records": 112,
+      "topVariety": "Bhindi",
+      "grade": "Local"
     },
     {
       "name": "Vadodara(Sayajipura)",
@@ -2685,14 +2619,36 @@
       "grade": "Local"
     },
     {
-      "name": "Gondal(Veg.market Gondal)",
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 3200,
+      "recentPrice": 3200,
+      "minPrice": 3200,
+      "maxPrice": 3200,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Rajkot(Veg.Sub Yard)",
       "district": "Rajkot",
-      "avgPrice": 3197,
-      "recentPrice": null,
-      "minPrice": 650,
-      "maxPrice": 5250,
-      "records": 111,
+      "avgPrice": 4004,
+      "recentPrice": 3035,
+      "minPrice": 615,
+      "maxPrice": 6050,
+      "records": 93,
       "topVariety": "Bhindi",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Khambhat(Veg Yard Khambhat)",
+      "district": "Anand",
+      "avgPrice": 4145,
+      "recentPrice": 3000,
+      "minPrice": 2000,
+      "maxPrice": 7000,
+      "records": 31,
+      "topVariety": null,
       "grade": "Local"
     },
     {
@@ -2707,15 +2663,15 @@
       "grade": "Local"
     },
     {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 2886,
-      "recentPrice": null,
-      "minPrice": 1300,
-      "maxPrice": 4700,
-      "records": 112,
+      "name": "Anand(Veg,Yard,Anand)",
+      "district": "Anand",
+      "avgPrice": 3990,
+      "recentPrice": 2750,
+      "minPrice": 875,
+      "maxPrice": 7500,
+      "records": 93,
       "topVariety": "Bhindi",
-      "grade": "Local"
+      "grade": "Grade B"
     },
     {
       "name": "Talalagir",
@@ -2740,6 +2696,72 @@
       "grade": "FAQ"
     },
     {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 2882,
+      "recentPrice": 2500,
+      "minPrice": 1300,
+      "maxPrice": 4700,
+      "records": 113,
+      "topVariety": "Bhindi",
+      "grade": "Local"
+    },
+    {
+      "name": "Kalol(Veg,Market,Kalol)",
+      "district": "Gandhinagar",
+      "avgPrice": 3674,
+      "recentPrice": 2500,
+      "minPrice": 1750,
+      "maxPrice": 5500,
+      "records": 70,
+      "topVariety": "Bhindi",
+      "grade": "Local"
+    },
+    {
+      "name": "Songadh",
+      "district": "Surat",
+      "avgPrice": 5194,
+      "recentPrice": 2500,
+      "minPrice": 1820,
+      "maxPrice": 8700,
+      "records": 92,
+      "topVariety": "Bhindi",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Songadh(Badarpada)",
+      "district": "Surat",
+      "avgPrice": 5262,
+      "recentPrice": 2500,
+      "minPrice": 2500,
+      "maxPrice": 8700,
+      "records": 84,
+      "topVariety": "Bhindi",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Songadh(Umrada)",
+      "district": "Surat",
+      "avgPrice": 5279,
+      "recentPrice": 2500,
+      "minPrice": 2500,
+      "maxPrice": 8700,
+      "records": 86,
+      "topVariety": "Bhindi",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 4269,
+      "recentPrice": 2500,
+      "minPrice": 1625,
+      "maxPrice": 5750,
+      "records": 26,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Nadiyad(Piplag)",
       "district": "Kheda",
       "avgPrice": 2489,
@@ -2749,17 +2771,6 @@
       "records": 61,
       "topVariety": "Bhindi",
       "grade": "FAQ"
-    },
-    {
-      "name": "Bardoli(Kadod)",
-      "district": "Surat",
-      "avgPrice": 2457,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 3600,
-      "records": 92,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Vankaner",
@@ -2786,17 +2797,6 @@
   ],
   "bitter-gourd": [
     {
-      "name": "Anand(Veg,Yard,Anand)",
-      "district": "Anand",
-      "avgPrice": 5500,
-      "recentPrice": null,
-      "minPrice": 5500,
-      "maxPrice": 5500,
-      "records": 1,
-      "topVariety": "Bitter Gourd",
-      "grade": "Grade B"
-    },
-    {
       "name": "Vadodara(Sayajipura)",
       "district": "Vadodara(Baroda)",
       "avgPrice": 4887,
@@ -2805,17 +2805,6 @@
       "maxPrice": 5750,
       "records": 39,
       "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 4679,
-      "recentPrice": null,
-      "minPrice": 1900,
-      "maxPrice": 6500,
-      "records": 84,
-      "topVariety": "Bitter Gourd",
       "grade": "FAQ"
     },
     {
@@ -2828,50 +2817,6 @@
       "records": 64,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 4059,
-      "recentPrice": null,
-      "minPrice": 2750,
-      "maxPrice": 6250,
-      "records": 17,
-      "topVariety": "Bitter Gourd",
-      "grade": "Medium"
-    },
-    {
-      "name": "Chikli(Khorgam)",
-      "district": "Valsad",
-      "avgPrice": 3586,
-      "recentPrice": null,
-      "minPrice": 2250,
-      "maxPrice": 5000,
-      "records": 80,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 3450,
-      "recentPrice": null,
-      "minPrice": 3250,
-      "maxPrice": 3650,
-      "records": 2,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 3384,
-      "recentPrice": null,
-      "minPrice": 1750,
-      "maxPrice": 5500,
-      "records": 88,
-      "topVariety": "Bitter Gourd",
-      "grade": "Local"
     },
     {
       "name": "Morbi",
@@ -2896,17 +2841,6 @@
       "grade": "Local"
     },
     {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 3243,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 6000,
-      "records": 53,
-      "topVariety": "Bitter Gourd",
-      "grade": "Local"
-    },
-    {
       "name": "Ankleshwar",
       "district": "Bharuch",
       "avgPrice": 3233,
@@ -2916,6 +2850,17 @@
       "records": 6,
       "topVariety": "Bitter Gourd",
       "grade": "Grade A"
+    },
+    {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 3239,
+      "recentPrice": 3000,
+      "minPrice": 2000,
+      "maxPrice": 6000,
+      "records": 54,
+      "topVariety": "Bitter Gourd",
+      "grade": "Local"
     },
     {
       "name": "Vankaner",
@@ -2951,6 +2896,50 @@
       "grade": "FAQ"
     },
     {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 3374,
+      "recentPrice": 2500,
+      "minPrice": 1750,
+      "maxPrice": 5500,
+      "records": 89,
+      "topVariety": "Bitter Gourd",
+      "grade": "Local"
+    },
+    {
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 2400,
+      "recentPrice": 2400,
+      "minPrice": 2400,
+      "maxPrice": 2400,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 4650,
+      "recentPrice": 2250,
+      "minPrice": 1900,
+      "maxPrice": 6500,
+      "records": 85,
+      "topVariety": "Bitter Gourd",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 3958,
+      "recentPrice": 2250,
+      "minPrice": 2250,
+      "maxPrice": 6250,
+      "records": 18,
+      "topVariety": "Bitter Gourd",
+      "grade": "Medium"
+    },
+    {
       "name": "Mansa(Manas Veg Yard)",
       "district": "Gandhinagar",
       "avgPrice": 3167,
@@ -2971,9 +2960,75 @@
       "records": 21,
       "topVariety": "Bitter Gourd",
       "grade": "FAQ"
+    },
+    {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 2883,
+      "recentPrice": 1750,
+      "minPrice": 1750,
+      "maxPrice": 3650,
+      "records": 3,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Chikli(Khorgam)",
+      "district": "Valsad",
+      "avgPrice": 3559,
+      "recentPrice": 1375,
+      "minPrice": 1375,
+      "maxPrice": 5000,
+      "records": 81,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Anand(Veg,Yard,Anand)",
+      "district": "Anand",
+      "avgPrice": 3375,
+      "recentPrice": 1250,
+      "minPrice": 1250,
+      "maxPrice": 5500,
+      "records": 2,
+      "topVariety": "Bitter Gourd",
+      "grade": "Grade B"
     }
   ],
   "black-gramurd-beanswhole": [
+    {
+      "name": "Sami",
+      "district": "Patan",
+      "avgPrice": 6206,
+      "recentPrice": 10750,
+      "minPrice": 4750,
+      "maxPrice": 10750,
+      "records": 10,
+      "topVariety": "Black Gram (Whole)",
+      "grade": "Local"
+    },
+    {
+      "name": "Dhoraji",
+      "district": "Rajkot",
+      "avgPrice": 6160,
+      "recentPrice": 9130,
+      "minPrice": 5030,
+      "maxPrice": 9130,
+      "records": 29,
+      "topVariety": "Rajkot T-9",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Jetpur(Dist.Rajkot)",
+      "district": "Rajkot",
+      "avgPrice": 6440,
+      "recentPrice": 8750,
+      "minPrice": 5355,
+      "maxPrice": 8750,
+      "records": 52,
+      "topVariety": "Black Gram (Whole)",
+      "grade": "FAQ"
+    },
     {
       "name": "Veraval",
       "district": "Gir Somnath",
@@ -3162,17 +3217,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Jetpur(Dist.Rajkot)",
-      "district": "Rajkot",
-      "avgPrice": 6395,
-      "recentPrice": null,
-      "minPrice": 5355,
-      "maxPrice": 7255,
-      "records": 51,
-      "topVariety": "Black Gram (Whole)",
-      "grade": "FAQ"
-    },
-    {
       "name": "Himatnagar",
       "district": "Sabarkantha",
       "avgPrice": 6380,
@@ -3272,17 +3316,6 @@
       "grade": "Local"
     },
     {
-      "name": "Dhoraji",
-      "district": "Rajkot",
-      "avgPrice": 6054,
-      "recentPrice": null,
-      "minPrice": 5030,
-      "maxPrice": 7505,
-      "records": 28,
-      "topVariety": "Rajkot T-9",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Bhiloda",
       "district": "Sabarkantha",
       "avgPrice": 5906,
@@ -3379,17 +3412,6 @@
       "maxPrice": 7000,
       "records": 27,
       "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
-      "name": "Sami",
-      "district": "Patan",
-      "avgPrice": 5701,
-      "recentPrice": null,
-      "minPrice": 4750,
-      "maxPrice": 6500,
-      "records": 9,
-      "topVariety": "Black Gram (Whole)",
       "grade": "Local"
     },
     {
@@ -3527,14 +3549,25 @@
       "grade": "Local"
     },
     {
-      "name": "Surat",
+      "name": "Bardoli(Kadod)",
       "district": "Surat",
-      "avgPrice": 2795,
-      "recentPrice": null,
-      "minPrice": 1550,
-      "maxPrice": 5500,
-      "records": 100,
-      "topVariety": "Bottle Gourd",
+      "avgPrice": 2800,
+      "recentPrice": 2800,
+      "minPrice": 2800,
+      "maxPrice": 2800,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Chikli(Khorgam)",
+      "district": "Valsad",
+      "avgPrice": 1441,
+      "recentPrice": 1875,
+      "minPrice": 625,
+      "maxPrice": 2625,
+      "records": 108,
+      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -3549,14 +3582,14 @@
       "grade": "FAQ"
     },
     {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 1700,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 3500,
-      "records": 88,
-      "topVariety": null,
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 2785,
+      "recentPrice": 1750,
+      "minPrice": 1550,
+      "maxPrice": 5500,
+      "records": 101,
+      "topVariety": "Bottle Gourd",
       "grade": "FAQ"
     },
     {
@@ -3615,26 +3648,26 @@
       "grade": "Medium"
     },
     {
-      "name": "Chikli(Khorgam)",
-      "district": "Valsad",
-      "avgPrice": 1437,
-      "recentPrice": null,
-      "minPrice": 625,
-      "maxPrice": 2625,
-      "records": 107,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Khambhat(Veg Yard Khambhat)",
       "district": "Anand",
-      "avgPrice": 1398,
-      "recentPrice": null,
+      "avgPrice": 1399,
+      "recentPrice": 1500,
       "minPrice": 800,
       "maxPrice": 3000,
-      "records": 90,
+      "records": 91,
       "topVariety": "Bottle Gourd",
       "grade": "Local"
+    },
+    {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 1696,
+      "recentPrice": 1400,
+      "minPrice": 700,
+      "maxPrice": 3500,
+      "records": 89,
+      "topVariety": null,
+      "grade": "FAQ"
     },
     {
       "name": "Ankleshwar",
@@ -3703,37 +3736,15 @@
       "grade": "Local"
     },
     {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 1296,
-      "recentPrice": null,
-      "minPrice": 625,
-      "maxPrice": 3250,
-      "records": 78,
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 1250,
+      "recentPrice": 1250,
+      "minPrice": 1250,
+      "maxPrice": 1250,
+      "records": 1,
       "topVariety": "Bottle Gourd",
-      "grade": "Medium"
-    },
-    {
-      "name": "Anand(Veg,Yard,Anand)",
-      "district": "Anand",
-      "avgPrice": 1278,
-      "recentPrice": null,
-      "minPrice": 525,
-      "maxPrice": 2500,
-      "records": 92,
-      "topVariety": "Bottle Gourd",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Rajkot(Veg.Sub Yard)",
-      "district": "Rajkot",
-      "avgPrice": 1213,
-      "recentPrice": null,
-      "minPrice": 420,
-      "maxPrice": 2435,
-      "records": 92,
-      "topVariety": "Bottle Gourd",
-      "grade": "FAQ"
+      "grade": "Local"
     },
     {
       "name": "Morbi",
@@ -3747,13 +3758,24 @@
       "grade": "FAQ"
     },
     {
+      "name": "Anand(Veg,Yard,Anand)",
+      "district": "Anand",
+      "avgPrice": 1276,
+      "recentPrice": 1125,
+      "minPrice": 525,
+      "maxPrice": 2500,
+      "records": 93,
+      "topVariety": "Bottle Gourd",
+      "grade": "Grade B"
+    },
+    {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
-      "avgPrice": 1104,
-      "recentPrice": null,
+      "avgPrice": 1103,
+      "recentPrice": 1000,
       "minPrice": 400,
       "maxPrice": 2000,
-      "records": 123,
+      "records": 124,
       "topVariety": "Bottle Gourd",
       "grade": "Local"
     },
@@ -3769,6 +3791,17 @@
       "grade": "Local"
     },
     {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 1293,
+      "recentPrice": 1000,
+      "minPrice": 625,
+      "maxPrice": 3250,
+      "records": 79,
+      "topVariety": "Bottle Gourd",
+      "grade": "Medium"
+    },
+    {
       "name": "Vankaner",
       "district": "Morbi",
       "avgPrice": 1000,
@@ -3776,6 +3809,17 @@
       "minPrice": 1000,
       "maxPrice": 1000,
       "records": 1,
+      "topVariety": "Bottle Gourd",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Rajkot(Veg.Sub Yard)",
+      "district": "Rajkot",
+      "avgPrice": 1209,
+      "recentPrice": 875,
+      "minPrice": 420,
+      "maxPrice": 2435,
+      "records": 93,
       "topVariety": "Bottle Gourd",
       "grade": "FAQ"
     }
@@ -3793,6 +3837,28 @@
       "grade": "Local"
     },
     {
+      "name": "Khambhat(Veg Yard Khambhat)",
+      "district": "Anand",
+      "avgPrice": 1818,
+      "recentPrice": 4000,
+      "minPrice": 800,
+      "maxPrice": 6500,
+      "records": 74,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Bardoli(Kadod)",
+      "district": "Surat",
+      "avgPrice": 2460,
+      "recentPrice": 3600,
+      "minPrice": 1800,
+      "maxPrice": 3600,
+      "records": 81,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Talalagir",
       "district": "Gir Somnath",
       "avgPrice": 3595,
@@ -3800,6 +3866,17 @@
       "minPrice": 600,
       "maxPrice": 6000,
       "records": 70,
+      "topVariety": "Brinjal",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 2436,
+      "recentPrice": 3250,
+      "minPrice": 1075,
+      "maxPrice": 6250,
+      "records": 80,
       "topVariety": "Brinjal",
       "grade": "FAQ"
     },
@@ -3815,13 +3892,24 @@
       "grade": "FAQ"
     },
     {
+      "name": "Navsari",
+      "district": "Navsari",
+      "avgPrice": 2147,
+      "recentPrice": 2750,
+      "minPrice": 750,
+      "maxPrice": 5250,
+      "records": 94,
+      "topVariety": "Brinjal",
+      "grade": "Local"
+    },
+    {
       "name": "Vadhvan",
       "district": "Surendranagar",
-      "avgPrice": 2831,
-      "recentPrice": null,
+      "avgPrice": 2829,
+      "recentPrice": 2750,
       "minPrice": 750,
       "maxPrice": 7750,
-      "records": 59,
+      "records": 60,
       "topVariety": "Brinjal",
       "grade": "Local"
     },
@@ -3846,28 +3934,6 @@
       "records": 2,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Bardoli(Kadod)",
-      "district": "Surat",
-      "avgPrice": 2446,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 3200,
-      "records": 80,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 2425,
-      "recentPrice": null,
-      "minPrice": 1075,
-      "maxPrice": 6250,
-      "records": 79,
-      "topVariety": "Brinjal",
-      "grade": "FAQ"
     },
     {
       "name": "Morbi",
@@ -3925,28 +3991,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Navsari",
-      "district": "Navsari",
-      "avgPrice": 2141,
-      "recentPrice": null,
-      "minPrice": 750,
-      "maxPrice": 5250,
-      "records": 93,
-      "topVariety": "Brinjal",
-      "grade": "Local"
-    },
-    {
-      "name": "Rajkot(Veg.Sub Yard)",
-      "district": "Rajkot",
-      "avgPrice": 2079,
-      "recentPrice": null,
-      "minPrice": 725,
-      "maxPrice": 5710,
-      "records": 74,
-      "topVariety": "Brinjal",
-      "grade": "FAQ"
-    },
-    {
       "name": "Vijapur(veg)",
       "district": "Mehsana",
       "avgPrice": 2058,
@@ -3969,6 +4013,17 @@
       "grade": "Grade A"
     },
     {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 1271,
+      "recentPrice": 2000,
+      "minPrice": 500,
+      "maxPrice": 3500,
+      "records": 94,
+      "topVariety": "Brinjal",
+      "grade": "Local"
+    },
+    {
       "name": "Vadodara(Sayajipura)",
       "district": "Vadodara(Baroda)",
       "avgPrice": 1953,
@@ -3980,25 +4035,14 @@
       "grade": "FAQ"
     },
     {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 1931,
-      "recentPrice": null,
-      "minPrice": 525,
-      "maxPrice": 4500,
-      "records": 97,
-      "topVariety": "Brinjal",
-      "grade": "Local"
-    },
-    {
-      "name": "Khambhat(Veg Yard Khambhat)",
-      "district": "Anand",
-      "avgPrice": 1788,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 6500,
-      "records": 73,
-      "topVariety": null,
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 1900,
+      "recentPrice": 1900,
+      "minPrice": 1900,
+      "maxPrice": 1900,
+      "records": 1,
+      "topVariety": "Round",
       "grade": "Local"
     },
     {
@@ -4011,6 +4055,17 @@
       "records": 71,
       "topVariety": "Brinjal",
       "grade": "Medium"
+    },
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 1929,
+      "recentPrice": 1750,
+      "minPrice": 525,
+      "maxPrice": 4500,
+      "records": 98,
+      "topVariety": "Brinjal",
+      "grade": "Local"
     },
     {
       "name": "Vankaner",
@@ -4068,6 +4123,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 1443,
+      "recentPrice": 1500,
+      "minPrice": 625,
+      "maxPrice": 4500,
+      "records": 74,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Bharuch",
       "district": "Bharuch",
       "avgPrice": 1478,
@@ -4077,17 +4143,6 @@
       "records": 68,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 1442,
-      "recentPrice": null,
-      "minPrice": 625,
-      "maxPrice": 4500,
-      "records": 73,
-      "topVariety": null,
-      "grade": "FAQ"
     },
     {
       "name": "Anand(Veg,Yard,Anand)",
@@ -4101,18 +4156,29 @@
       "grade": "Grade B"
     },
     {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 1263,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 3500,
-      "records": 93,
+      "name": "Rajkot(Veg.Sub Yard)",
+      "district": "Rajkot",
+      "avgPrice": 2069,
+      "recentPrice": 1330,
+      "minPrice": 725,
+      "maxPrice": 5710,
+      "records": 75,
       "topVariety": "Brinjal",
-      "grade": "Local"
+      "grade": "FAQ"
     }
   ],
   "capsicum": [
+    {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 2838,
+      "recentPrice": 4000,
+      "minPrice": 1900,
+      "maxPrice": 4500,
+      "records": 89,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
     {
       "name": "Navsari",
       "district": "Navsari",
@@ -4123,17 +4189,6 @@
       "records": 88,
       "topVariety": "Capsicum",
       "grade": "Local"
-    },
-    {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 2824,
-      "recentPrice": null,
-      "minPrice": 1900,
-      "maxPrice": 4500,
-      "records": 88,
-      "topVariety": null,
-      "grade": "FAQ"
     },
     {
       "name": "Ahmedabad",
@@ -4193,17 +4248,6 @@
       "grade": "Local"
     },
     {
-      "name": "Navsari",
-      "district": "Navsari",
-      "avgPrice": 1633,
-      "recentPrice": null,
-      "minPrice": 1125,
-      "maxPrice": 2125,
-      "records": 91,
-      "topVariety": "Cabbage",
-      "grade": "Local"
-    },
-    {
       "name": "Nadiyad(Chaklasi)",
       "district": "Kheda",
       "avgPrice": 1417,
@@ -4211,17 +4255,6 @@
       "minPrice": 1200,
       "maxPrice": 1750,
       "records": 3,
-      "topVariety": "Cabbage",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 1397,
-      "recentPrice": null,
-      "minPrice": 850,
-      "maxPrice": 2050,
-      "records": 92,
       "topVariety": "Cabbage",
       "grade": "FAQ"
     },
@@ -4270,6 +4303,28 @@
       "grade": "FAQ"
     },
     {
+      "name": "Navsari",
+      "district": "Navsari",
+      "avgPrice": 1629,
+      "recentPrice": 1250,
+      "minPrice": 1125,
+      "maxPrice": 2125,
+      "records": 92,
+      "topVariety": "Cabbage",
+      "grade": "Local"
+    },
+    {
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 1200,
+      "recentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1200,
+      "records": 1,
+      "topVariety": "Cabbage",
+      "grade": "Local"
+    },
+    {
       "name": "Porbandar",
       "district": "Porbandar",
       "avgPrice": 1165,
@@ -4292,17 +4347,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Khambhat(Veg Yard Khambhat)",
-      "district": "Anand",
-      "avgPrice": 1124,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 3000,
-      "records": 71,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Ankleshwar",
       "district": "Bharuch",
       "avgPrice": 1070,
@@ -4314,6 +4358,17 @@
       "grade": "Grade A"
     },
     {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 1393,
+      "recentPrice": 1050,
+      "minPrice": 850,
+      "maxPrice": 2050,
+      "records": 93,
+      "topVariety": "Cabbage",
+      "grade": "FAQ"
+    },
+    {
       "name": "Bharuch",
       "district": "Bharuch",
       "avgPrice": 1005,
@@ -4322,6 +4377,17 @@
       "maxPrice": 1300,
       "records": 65,
       "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 929,
+      "recentPrice": 1000,
+      "minPrice": 500,
+      "maxPrice": 1500,
+      "records": 99,
+      "topVariety": "Cabbage",
       "grade": "Local"
     },
     {
@@ -4358,17 +4424,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 929,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 1500,
-      "records": 98,
-      "topVariety": "Cabbage",
-      "grade": "Local"
-    },
-    {
       "name": "Mehsana(Mehsana Veg)",
       "district": "Mehsana",
       "avgPrice": 927,
@@ -4402,15 +4457,15 @@
       "grade": "Local"
     },
     {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 845,
-      "recentPrice": null,
-      "minPrice": 275,
-      "maxPrice": 1625,
-      "records": 76,
+      "name": "Khambhat(Veg Yard Khambhat)",
+      "district": "Anand",
+      "avgPrice": 1119,
+      "recentPrice": 800,
+      "minPrice": 700,
+      "maxPrice": 3000,
+      "records": 72,
       "topVariety": null,
-      "grade": "FAQ"
+      "grade": "Local"
     },
     {
       "name": "Kapadvanj",
@@ -4435,29 +4490,62 @@
       "grade": "FAQ"
     },
     {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 746,
-      "recentPrice": null,
-      "minPrice": 450,
-      "maxPrice": 1950,
-      "records": 98,
-      "topVariety": "Cabbage",
-      "grade": "Local"
-    },
-    {
       "name": "Anand(Veg,Yard,Anand)",
       "district": "Anand",
-      "avgPrice": 705,
-      "recentPrice": null,
+      "avgPrice": 706,
+      "recentPrice": 750,
       "minPrice": 350,
       "maxPrice": 1375,
-      "records": 76,
+      "records": 77,
       "topVariety": "Cabbage",
       "grade": "Grade B"
+    },
+    {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 842,
+      "recentPrice": 625,
+      "minPrice": 275,
+      "maxPrice": 1625,
+      "records": 77,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 745,
+      "recentPrice": 600,
+      "minPrice": 450,
+      "maxPrice": 1950,
+      "records": 99,
+      "topVariety": "Cabbage",
+      "grade": "Local"
     }
   ],
   "castor-seed": [
+    {
+      "name": "Unava",
+      "district": "Mehsana",
+      "avgPrice": 6609,
+      "recentPrice": 8375,
+      "minPrice": 6210,
+      "maxPrice": 8375,
+      "records": 85,
+      "topVariety": "Castor seed",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kalol",
+      "district": "Gandhinagar",
+      "avgPrice": 6569,
+      "recentPrice": 8250,
+      "minPrice": 6250,
+      "maxPrice": 8250,
+      "records": 77,
+      "topVariety": null,
+      "grade": "Local"
+    },
     {
       "name": "Idar",
       "district": "Sabarkantha",
@@ -4569,17 +4657,6 @@
       "grade": "Local"
     },
     {
-      "name": "Unava",
-      "district": "Mehsana",
-      "avgPrice": 6588,
-      "recentPrice": null,
-      "minPrice": 6210,
-      "maxPrice": 7170,
-      "records": 84,
-      "topVariety": "Castor seed",
-      "grade": "FAQ"
-    },
-    {
       "name": "Mehsana",
       "district": "Mehsana",
       "avgPrice": 6584,
@@ -4643,17 +4720,6 @@
       "maxPrice": 8866.66,
       "records": 80,
       "topVariety": "Castor seed",
-      "grade": "Local"
-    },
-    {
-      "name": "Kalol",
-      "district": "Gandhinagar",
-      "avgPrice": 6547,
-      "recentPrice": null,
-      "minPrice": 6250,
-      "maxPrice": 7100,
-      "records": 76,
-      "topVariety": null,
       "grade": "Local"
     },
     {
@@ -5387,13 +5453,35 @@
     {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
-      "avgPrice": 1914,
-      "recentPrice": null,
+      "avgPrice": 1921,
+      "recentPrice": 2700,
       "minPrice": 1000,
       "maxPrice": 3000,
-      "records": 118,
+      "records": 119,
       "topVariety": "Carrot",
       "grade": "Local"
+    },
+    {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 1876,
+      "recentPrice": 2250,
+      "minPrice": 1250,
+      "maxPrice": 2750,
+      "records": 85,
+      "topVariety": "Carrot",
+      "grade": "Medium"
+    },
+    {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 1617,
+      "recentPrice": 2150,
+      "minPrice": 1150,
+      "maxPrice": 2150,
+      "records": 104,
+      "topVariety": "Carrot",
+      "grade": "FAQ"
     },
     {
       "name": "Navsari",
@@ -5407,15 +5495,15 @@
       "grade": "Local"
     },
     {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 1872,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 2750,
-      "records": 84,
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 1544,
+      "recentPrice": 1900,
+      "minPrice": 850,
+      "maxPrice": 2850,
+      "records": 115,
       "topVariety": "Carrot",
-      "grade": "Medium"
+      "grade": "Local"
     },
     {
       "name": "Nadiyad(Piplag)",
@@ -5437,28 +5525,6 @@
       "maxPrice": 2000,
       "records": 39,
       "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 1612,
-      "recentPrice": null,
-      "minPrice": 1150,
-      "maxPrice": 2150,
-      "records": 103,
-      "topVariety": "Carrot",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 1541,
-      "recentPrice": null,
-      "minPrice": 850,
-      "maxPrice": 2850,
-      "records": 114,
-      "topVariety": "Carrot",
       "grade": "Local"
     },
     {
@@ -5596,17 +5662,6 @@
       "grade": "Local"
     },
     {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 2760,
-      "recentPrice": null,
-      "minPrice": 1750,
-      "maxPrice": 5000,
-      "records": 86,
-      "topVariety": "Cauliflower",
-      "grade": "FAQ"
-    },
-    {
       "name": "Bardoli",
       "district": "Surat",
       "avgPrice": 2500,
@@ -5662,28 +5717,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 2061,
-      "recentPrice": null,
-      "minPrice": 950,
-      "maxPrice": 4500,
-      "records": 75,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 2011,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 3750,
-      "records": 66,
-      "topVariety": "Cauliflower",
-      "grade": "Medium"
-    },
-    {
       "name": "Ankleshwar",
       "district": "Bharuch",
       "avgPrice": 2008,
@@ -5697,23 +5730,12 @@
     {
       "name": "Khambhat(Veg Yard Khambhat)",
       "district": "Anand",
-      "avgPrice": 1922,
-      "recentPrice": null,
+      "avgPrice": 1923,
+      "recentPrice": 2000,
       "minPrice": 900,
       "maxPrice": 4500,
-      "records": 65,
+      "records": 66,
       "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 1792,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 3000,
-      "records": 95,
-      "topVariety": "Cauliflower",
       "grade": "Local"
     },
     {
@@ -5726,6 +5748,17 @@
       "records": 85,
       "topVariety": "Cauliflower",
       "grade": "FAQ"
+    },
+    {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 2007,
+      "recentPrice": 1750,
+      "minPrice": 1250,
+      "maxPrice": 3750,
+      "records": 67,
+      "topVariety": "Cauliflower",
+      "grade": "Medium"
     },
     {
       "name": "Nadiyad(Chaklasi)",
@@ -5759,6 +5792,17 @@
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 1139,
+      "recentPrice": 1575,
+      "minPrice": 550,
+      "maxPrice": 2000,
+      "records": 98,
+      "topVariety": "Cauliflower",
+      "grade": "Local"
     },
     {
       "name": "Anand(Veg,Yard,Anand)",
@@ -5805,6 +5849,28 @@
       "grade": "Medium"
     },
     {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 1789,
+      "recentPrice": 1500,
+      "minPrice": 700,
+      "maxPrice": 3000,
+      "records": 96,
+      "topVariety": "Cauliflower",
+      "grade": "Local"
+    },
+    {
+      "name": "Kalol(Veg,Market,Kalol)",
+      "district": "Gandhinagar",
+      "avgPrice": 1324,
+      "recentPrice": 1500,
+      "minPrice": 850,
+      "maxPrice": 2500,
+      "records": 62,
+      "topVariety": "Cauliflower",
+      "grade": "Local"
+    },
+    {
       "name": "Mehsana(Mehsana Veg)",
       "district": "Mehsana",
       "avgPrice": 1453,
@@ -5816,15 +5882,15 @@
       "grade": "Local"
     },
     {
-      "name": "Kalol(Veg,Market,Kalol)",
-      "district": "Gandhinagar",
-      "avgPrice": 1321,
-      "recentPrice": null,
-      "minPrice": 850,
-      "maxPrice": 2500,
-      "records": 61,
-      "topVariety": "Cauliflower",
-      "grade": "Local"
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 2053,
+      "recentPrice": 1400,
+      "minPrice": 950,
+      "maxPrice": 4500,
+      "records": 76,
+      "topVariety": null,
+      "grade": "FAQ"
     },
     {
       "name": "Vijapur(veg)",
@@ -5838,15 +5904,15 @@
       "grade": "Local"
     },
     {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 1135,
-      "recentPrice": null,
-      "minPrice": 550,
-      "maxPrice": 2000,
-      "records": 97,
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 2743,
+      "recentPrice": 1250,
+      "minPrice": 1250,
+      "maxPrice": 5000,
+      "records": 87,
       "topVariety": "Cauliflower",
-      "grade": "Local"
+      "grade": "FAQ"
     },
     {
       "name": "Mansa(Manas Veg Yard)",
@@ -5858,9 +5924,31 @@
       "records": 70,
       "topVariety": "Cauliflower",
       "grade": "Local"
+    },
+    {
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 1000,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "records": 1,
+      "topVariety": "Cauliflower",
+      "grade": "Local"
     }
   ],
   "chikoossapota": [
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 2769,
+      "recentPrice": 6500,
+      "minPrice": 1250,
+      "maxPrice": 6500,
+      "records": 93,
+      "topVariety": "Sapota",
+      "grade": "Local"
+    },
     {
       "name": "Chikhali",
       "district": "Navsari",
@@ -5902,17 +5990,6 @@
       "minPrice": 2000,
       "maxPrice": 6000,
       "records": 78,
-      "topVariety": "Sapota",
-      "grade": "Local"
-    },
-    {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 2729,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 5250,
-      "records": 92,
       "topVariety": "Sapota",
       "grade": "Local"
     },
@@ -6018,36 +6095,36 @@
       "grade": "FAQ"
     },
     {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 6683,
-      "recentPrice": null,
-      "minPrice": 2750,
-      "maxPrice": 10500,
-      "records": 92,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
-      "avgPrice": 6402,
-      "recentPrice": null,
+      "avgPrice": 6422,
+      "recentPrice": 8000,
       "minPrice": 2000,
       "maxPrice": 10000,
-      "records": 78,
+      "records": 79,
       "topVariety": "Cluster Beans",
       "grade": "Local"
     },
     {
-      "name": "Rajkot(Veg.Sub Yard)",
-      "district": "Rajkot",
-      "avgPrice": 6376,
-      "recentPrice": null,
-      "minPrice": 2225,
-      "maxPrice": 10450,
-      "records": 91,
-      "topVariety": "Cluster Beans",
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 6678,
+      "recentPrice": 6250,
+      "minPrice": 2750,
+      "maxPrice": 10500,
+      "records": 93,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 4709,
+      "recentPrice": 5500,
+      "minPrice": 1750,
+      "maxPrice": 6000,
+      "records": 33,
+      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -6073,14 +6150,14 @@
       "grade": "FAQ"
     },
     {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 4684,
-      "recentPrice": null,
-      "minPrice": 1750,
-      "maxPrice": 6000,
-      "records": 32,
-      "topVariety": null,
+      "name": "Rajkot(Veg.Sub Yard)",
+      "district": "Rajkot",
+      "avgPrice": 6359,
+      "recentPrice": 4835,
+      "minPrice": 2225,
+      "maxPrice": 10450,
+      "records": 92,
+      "topVariety": "Cluster Beans",
       "grade": "FAQ"
     },
     {
@@ -6097,13 +6174,24 @@
   ],
   "corriander-seed": [
     {
+      "name": "Jetpur(Dist.Rajkot)",
+      "district": "Rajkot",
+      "avgPrice": 10444,
+      "recentPrice": 15355,
+      "minPrice": 8500,
+      "maxPrice": 15355,
+      "records": 94,
+      "topVariety": "Coriander Seed",
+      "grade": "FAQ"
+    },
+    {
       "name": "Jam Khambalia",
       "district": "Devbhumi Dwarka",
-      "avgPrice": 14208,
-      "recentPrice": null,
+      "avgPrice": 14286,
+      "recentPrice": 14750,
       "minPrice": 14000,
-      "maxPrice": 14500,
-      "records": 6,
+      "maxPrice": 14750,
+      "records": 7,
       "topVariety": null,
       "grade": "Local"
     },
@@ -6148,17 +6236,6 @@
       "minPrice": 8625,
       "maxPrice": 15150,
       "records": 86,
-      "topVariety": "Coriander Seed",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Jetpur(Dist.Rajkot)",
-      "district": "Rajkot",
-      "avgPrice": 10391,
-      "recentPrice": null,
-      "minPrice": 8500,
-      "maxPrice": 14905,
-      "records": 93,
       "topVariety": "Coriander Seed",
       "grade": "FAQ"
     },
@@ -6519,24 +6596,13 @@
   ],
   "colacasia": [
     {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 4250,
-      "recentPrice": null,
-      "minPrice": 4250,
-      "maxPrice": 4250,
-      "records": 1,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
       "avgPrice": 3000,
-      "recentPrice": null,
+      "recentPrice": 3000,
       "minPrice": 2500,
       "maxPrice": 4000,
-      "records": 7,
+      "records": 8,
       "topVariety": "Colacasia",
       "grade": "Local"
     },
@@ -6561,6 +6627,17 @@
       "records": 13,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 3250,
+      "recentPrice": 2250,
+      "minPrice": 2250,
+      "maxPrice": 4250,
+      "records": 2,
+      "topVariety": null,
+      "grade": "FAQ"
     }
   ],
   "corianderleaves": [
@@ -6574,6 +6651,17 @@
       "records": 110,
       "topVariety": "Coriander",
       "grade": "Local"
+    },
+    {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 2746,
+      "recentPrice": 4250,
+      "minPrice": 750,
+      "maxPrice": 9000,
+      "records": 98,
+      "topVariety": null,
+      "grade": "FAQ"
     },
     {
       "name": "Porbandar",
@@ -6620,35 +6708,35 @@
       "grade": "FAQ"
     },
     {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 3104,
-      "recentPrice": null,
-      "minPrice": 750,
-      "maxPrice": 15250,
-      "records": 82,
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 2680,
+      "recentPrice": 3000,
+      "minPrice": 700,
+      "maxPrice": 15000,
+      "records": 119,
       "topVariety": "Coriander",
       "grade": "Local"
     },
     {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 2731,
-      "recentPrice": null,
-      "minPrice": 750,
-      "maxPrice": 9000,
-      "records": 97,
-      "topVariety": null,
+      "name": "Rajkot(Veg.Sub Yard)",
+      "district": "Rajkot",
+      "avgPrice": 2489,
+      "recentPrice": 2955,
+      "minPrice": 665,
+      "maxPrice": 16230,
+      "records": 100,
+      "topVariety": "Coriander",
       "grade": "FAQ"
     },
     {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 2677,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 15000,
-      "records": 118,
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 3099,
+      "recentPrice": 2750,
+      "minPrice": 750,
+      "maxPrice": 15250,
+      "records": 83,
       "topVariety": "Coriander",
       "grade": "Local"
     },
@@ -6660,17 +6748,6 @@
       "minPrice": 550,
       "maxPrice": 17000,
       "records": 75,
-      "topVariety": "Coriander",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Rajkot(Veg.Sub Yard)",
-      "district": "Rajkot",
-      "avgPrice": 2485,
-      "recentPrice": null,
-      "minPrice": 665,
-      "maxPrice": 16230,
-      "records": 99,
       "topVariety": "Coriander",
       "grade": "FAQ"
     },
@@ -6754,6 +6831,94 @@
   ],
   "cotton": [
     {
+      "name": "Dhoraji",
+      "district": "Rajkot",
+      "avgPrice": 7485,
+      "recentPrice": 9730,
+      "minPrice": 6880,
+      "maxPrice": 9730,
+      "records": 72,
+      "topVariety": "H.B (Unginned)",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Dhrol",
+      "district": "Jamnagar",
+      "avgPrice": 6910,
+      "recentPrice": 9630,
+      "minPrice": 6120,
+      "maxPrice": 9630,
+      "records": 23,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Babra",
+      "district": "Amreli",
+      "avgPrice": 7685,
+      "recentPrice": 9540,
+      "minPrice": 6915,
+      "maxPrice": 9540,
+      "records": 87,
+      "topVariety": "Shanker 6 (B) 30mm FIne",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jetpur(Dist.Rajkot)",
+      "district": "Rajkot",
+      "avgPrice": 7856,
+      "recentPrice": 9525,
+      "minPrice": 7055,
+      "maxPrice": 9525,
+      "records": 95,
+      "topVariety": "Cotton (Unginned)",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Dhandhuka",
+      "district": "Ahmedabad",
+      "avgPrice": 7388,
+      "recentPrice": 9500,
+      "minPrice": 6900,
+      "maxPrice": 9500,
+      "records": 81,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Una",
+      "district": "Gir Somnath",
+      "avgPrice": 7636,
+      "recentPrice": 9500,
+      "minPrice": 6975,
+      "maxPrice": 9500,
+      "records": 52,
+      "topVariety": "Shanker 4 31mm FIne",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Unava",
+      "district": "Mehsana",
+      "avgPrice": 7432,
+      "recentPrice": 9400,
+      "minPrice": 7205,
+      "maxPrice": 9400,
+      "records": 73,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jasdan(Vichhiya)",
+      "district": "Rajkot",
+      "avgPrice": 6869,
+      "recentPrice": 9350,
+      "minPrice": 5975,
+      "maxPrice": 9350,
+      "records": 63,
+      "topVariety": "Shanker 6 (B) 30mm FIne",
+      "grade": "FAQ"
+    },
+    {
       "name": "The Agricultural Produce Market Committee-Amreli",
       "district": "Amreli",
       "avgPrice": 9115,
@@ -6762,6 +6927,50 @@
       "maxPrice": 9275,
       "records": 17,
       "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Bodeliu",
+      "district": "Chhota Udaipur",
+      "avgPrice": 7904,
+      "recentPrice": 8851,
+      "minPrice": 6870,
+      "maxPrice": 9027,
+      "records": 110,
+      "topVariety": "Shanker 6 (B) 30mm FIne",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kalediya",
+      "district": "Chhota Udaipur",
+      "avgPrice": 7895,
+      "recentPrice": 8700,
+      "minPrice": 7200,
+      "maxPrice": 8700,
+      "records": 107,
+      "topVariety": "Shanker 6 (B) 30mm FIne",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Modasar",
+      "district": "Chhota Udaipur",
+      "avgPrice": 7898,
+      "recentPrice": 8700,
+      "minPrice": 7200,
+      "maxPrice": 8700,
+      "records": 104,
+      "topVariety": "Shanker 6 (B) 30mm FIne",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Hadad",
+      "district": "Chhota Udaipur",
+      "avgPrice": 7887,
+      "recentPrice": 8675,
+      "minPrice": 7200,
+      "maxPrice": 8675,
+      "records": 106,
+      "topVariety": "Shanker 6 (B) 30mm FIne",
       "grade": "FAQ"
     },
     {
@@ -6798,50 +7007,6 @@
       "grade": "Local"
     },
     {
-      "name": "Modasar",
-      "district": "Chhota Udaipur",
-      "avgPrice": 7890,
-      "recentPrice": null,
-      "minPrice": 7200,
-      "maxPrice": 8650,
-      "records": 103,
-      "topVariety": "Shanker 6 (B) 30mm FIne",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kalediya",
-      "district": "Chhota Udaipur",
-      "avgPrice": 7887,
-      "recentPrice": null,
-      "minPrice": 7200,
-      "maxPrice": 8250,
-      "records": 106,
-      "topVariety": "Shanker 6 (B) 30mm FIne",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Bodeliu",
-      "district": "Chhota Udaipur",
-      "avgPrice": 7886,
-      "recentPrice": null,
-      "minPrice": 6870,
-      "maxPrice": 8422,
-      "records": 108,
-      "topVariety": "Shanker 6 (B) 30mm FIne",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Hadad",
-      "district": "Chhota Udaipur",
-      "avgPrice": 7879,
-      "recentPrice": null,
-      "minPrice": 7200,
-      "maxPrice": 8175,
-      "records": 105,
-      "topVariety": "Shanker 6 (B) 30mm FIne",
-      "grade": "FAQ"
-    },
-    {
       "name": "Amreli",
       "district": "Amreli",
       "avgPrice": 7850,
@@ -6850,17 +7015,6 @@
       "maxPrice": 9450,
       "records": 44,
       "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Jetpur(Dist.Rajkot)",
-      "district": "Rajkot",
-      "avgPrice": 7838,
-      "recentPrice": null,
-      "minPrice": 7055,
-      "maxPrice": 9500,
-      "records": 94,
-      "topVariety": "Cotton (Unginned)",
       "grade": "FAQ"
     },
     {
@@ -6919,17 +7073,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Babra",
-      "district": "Amreli",
-      "avgPrice": 7663,
-      "recentPrice": null,
-      "minPrice": 6915,
-      "maxPrice": 9425,
-      "records": 86,
-      "topVariety": "Shanker 6 (B) 30mm FIne",
-      "grade": "FAQ"
-    },
-    {
       "name": "Mansa",
       "district": "Gandhinagar",
       "avgPrice": 7625,
@@ -6950,17 +7093,6 @@
       "records": 63,
       "topVariety": "Cotton (Unginned)",
       "grade": "Local"
-    },
-    {
-      "name": "Una",
-      "district": "Gir Somnath",
-      "avgPrice": 7599,
-      "recentPrice": null,
-      "minPrice": 6975,
-      "maxPrice": 8400,
-      "records": 51,
-      "topVariety": "Shanker 4 31mm FIne",
-      "grade": "FAQ"
     },
     {
       "name": "Jam Jodhpur",
@@ -7051,17 +7183,6 @@
       "grade": "Local"
     },
     {
-      "name": "Dhoraji",
-      "district": "Rajkot",
-      "avgPrice": 7454,
-      "recentPrice": null,
-      "minPrice": 6880,
-      "maxPrice": 8580,
-      "records": 71,
-      "topVariety": "H.B (Unginned)",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Amirgadh",
       "district": "Banaskanth",
       "avgPrice": 7444,
@@ -7084,17 +7205,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Unava",
-      "district": "Mehsana",
-      "avgPrice": 7405,
-      "recentPrice": null,
-      "minPrice": 7205,
-      "maxPrice": 7640,
-      "records": 72,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Jamnagar",
       "district": "Jamnagar",
       "avgPrice": 7392,
@@ -7115,17 +7225,6 @@
       "records": 80,
       "topVariety": "Narma BT Cotton",
       "grade": "Local"
-    },
-    {
-      "name": "Dhandhuka",
-      "district": "Ahmedabad",
-      "avgPrice": 7362,
-      "recentPrice": null,
-      "minPrice": 6900,
-      "maxPrice": 8000,
-      "records": 80,
-      "topVariety": null,
-      "grade": "FAQ"
     },
     {
       "name": "Bhanvad",
@@ -7381,28 +7480,6 @@
       "grade": "Local"
     },
     {
-      "name": "Jasdan(Vichhiya)",
-      "district": "Rajkot",
-      "avgPrice": 6829,
-      "recentPrice": null,
-      "minPrice": 5975,
-      "maxPrice": 8625,
-      "records": 62,
-      "topVariety": "Shanker 6 (B) 30mm FIne",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Dhrol",
-      "district": "Jamnagar",
-      "avgPrice": 6786,
-      "recentPrice": null,
-      "minPrice": 6120,
-      "maxPrice": 8170,
-      "records": 22,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Thara(Shihori)",
       "district": "Banaskanth",
       "avgPrice": 6784,
@@ -7594,25 +7671,25 @@
   ],
   "cowpeaveg": [
     {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 5915,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 8250,
-      "records": 73,
-      "topVariety": "Cowpea (Veg)",
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 4950,
+      "recentPrice": 5000,
+      "minPrice": 3000,
+      "maxPrice": 5750,
+      "records": 5,
+      "topVariety": null,
       "grade": "FAQ"
     },
     {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 4938,
-      "recentPrice": null,
-      "minPrice": 3000,
-      "maxPrice": 5750,
-      "records": 4,
-      "topVariety": null,
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 5899,
+      "recentPrice": 4750,
+      "minPrice": 3500,
+      "maxPrice": 8250,
+      "records": 74,
+      "topVariety": "Cowpea (Veg)",
       "grade": "FAQ"
     },
     {
@@ -7629,11 +7706,11 @@
     {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
-      "avgPrice": 2799,
-      "recentPrice": null,
+      "avgPrice": 2823,
+      "recentPrice": 4000,
       "minPrice": 1200,
       "maxPrice": 8500,
-      "records": 50,
+      "records": 51,
       "topVariety": "Cowpea (Veg)",
       "grade": "Local"
     },
@@ -7662,6 +7739,39 @@
       "grade": "FAQ"
     },
     {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 2269,
+      "recentPrice": 3250,
+      "minPrice": 1250,
+      "maxPrice": 3750,
+      "records": 67,
+      "topVariety": "Cucumbar",
+      "grade": "Local"
+    },
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 2194,
+      "recentPrice": 2950,
+      "minPrice": 1000,
+      "maxPrice": 3750,
+      "records": 105,
+      "topVariety": "Cucumbar",
+      "grade": "Local"
+    },
+    {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 1894,
+      "recentPrice": 2700,
+      "minPrice": 1000,
+      "maxPrice": 3000,
+      "records": 101,
+      "topVariety": "Cucumbar",
+      "grade": "Local"
+    },
+    {
       "name": "Ankleshwar",
       "district": "Bharuch",
       "avgPrice": 2413,
@@ -7673,47 +7783,25 @@
       "grade": "Grade A"
     },
     {
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 2300,
+      "recentPrice": 2300,
+      "minPrice": 2300,
+      "maxPrice": 2300,
+      "records": 1,
+      "topVariety": "Cucumbar",
+      "grade": "Local"
+    },
+    {
       "name": "Padra",
       "district": "Vadodara(Baroda)",
-      "avgPrice": 2403,
-      "recentPrice": null,
+      "avgPrice": 2401,
+      "recentPrice": 2250,
       "minPrice": 1250,
       "maxPrice": 4250,
-      "records": 77,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 2254,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 3750,
-      "records": 66,
-      "topVariety": "Cucumbar",
-      "grade": "Local"
-    },
-    {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 2187,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 3750,
-      "records": 104,
-      "topVariety": "Cucumbar",
-      "grade": "Local"
-    },
-    {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 2041,
-      "recentPrice": null,
-      "minPrice": 1300,
-      "maxPrice": 5250,
       "records": 78,
-      "topVariety": "Cucumbar",
+      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -7728,17 +7816,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 1886,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 3000,
-      "records": 100,
-      "topVariety": "Cucumbar",
-      "grade": "Local"
-    },
-    {
       "name": "Mansa(Manas Veg Yard)",
       "district": "Gandhinagar",
       "avgPrice": 1833,
@@ -7748,6 +7825,17 @@
       "records": 6,
       "topVariety": null,
       "grade": "Local"
+    },
+    {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 2037,
+      "recentPrice": 1750,
+      "minPrice": 1300,
+      "maxPrice": 5250,
+      "records": 79,
+      "topVariety": "Cucumbar",
+      "grade": "FAQ"
     },
     {
       "name": "Ahmedabad",
@@ -7807,6 +7895,39 @@
   ],
   "cummin-seedjeera": [
     {
+      "name": "Sami",
+      "district": "Patan",
+      "avgPrice": 20414,
+      "recentPrice": 25000,
+      "minPrice": 18750,
+      "maxPrice": 35454.9,
+      "records": 87,
+      "topVariety": "Cummin Seed(Jeera)",
+      "grade": "Local"
+    },
+    {
+      "name": "Jam Khambalia",
+      "district": "Devbhumi Dwarka",
+      "avgPrice": 19096,
+      "recentPrice": 25000,
+      "minPrice": 18250,
+      "maxPrice": 25000,
+      "records": 13,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Babra",
+      "district": "Amreli",
+      "avgPrice": 18258,
+      "recentPrice": 23785,
+      "minPrice": 15900,
+      "maxPrice": 23785,
+      "records": 90,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Anjar",
       "district": "Kachchh",
       "avgPrice": 20909,
@@ -7829,6 +7950,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Dhrol",
+      "district": "Jamnagar",
+      "avgPrice": 16374,
+      "recentPrice": 20615,
+      "minPrice": 14675,
+      "maxPrice": 20615,
+      "records": 33,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Gondal",
       "district": "Rajkot",
       "avgPrice": 20570,
@@ -7838,17 +7970,6 @@
       "records": 36,
       "topVariety": "Cummin Seed(Jeera)",
       "grade": "FAQ"
-    },
-    {
-      "name": "Sami",
-      "district": "Patan",
-      "avgPrice": 20361,
-      "recentPrice": null,
-      "minPrice": 18750,
-      "maxPrice": 35454.9,
-      "records": 86,
-      "topVariety": "Cummin Seed(Jeera)",
-      "grade": "Local"
     },
     {
       "name": "Rajkot",
@@ -8159,17 +8280,6 @@
       "grade": "Local"
     },
     {
-      "name": "Jam Khambalia",
-      "district": "Devbhumi Dwarka",
-      "avgPrice": 18604,
-      "recentPrice": null,
-      "minPrice": 18250,
-      "maxPrice": 19000,
-      "records": 12,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Chotila",
       "district": "Surendranagar",
       "avgPrice": 18550,
@@ -8244,17 +8354,6 @@
       "maxPrice": 21750,
       "records": 86,
       "topVariety": "Cummin Seed(Jeera)",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Babra",
-      "district": "Amreli",
-      "avgPrice": 18196,
-      "recentPrice": null,
-      "minPrice": 15900,
-      "maxPrice": 20575,
-      "records": 89,
-      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -8346,17 +8445,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Dhrol",
-      "district": "Jamnagar",
-      "avgPrice": 16242,
-      "recentPrice": null,
-      "minPrice": 14675,
-      "maxPrice": 18600,
-      "records": 32,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Dhari",
       "district": "Amreli",
       "avgPrice": 16000,
@@ -8381,17 +8469,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 6070,
-      "recentPrice": null,
-      "minPrice": 1600,
-      "maxPrice": 14000,
-      "records": 89,
-      "topVariety": "Drumstick",
-      "grade": "FAQ"
-    },
-    {
       "name": "Vadodara(Sayajipura)",
       "district": "Vadodara(Baroda)",
       "avgPrice": 5761,
@@ -8403,24 +8480,35 @@
       "grade": "FAQ"
     },
     {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 6061,
+      "recentPrice": 5250,
+      "minPrice": 1600,
+      "maxPrice": 14000,
+      "records": 90,
+      "topVariety": "Drumstick",
+      "grade": "FAQ"
+    },
+    {
       "name": "Vadhvan",
       "district": "Surendranagar",
-      "avgPrice": 5611,
-      "recentPrice": null,
+      "avgPrice": 5594,
+      "recentPrice": 4500,
       "minPrice": 750,
       "maxPrice": 9750,
-      "records": 63,
+      "records": 64,
       "topVariety": "Drumstick",
       "grade": "Local"
     },
     {
       "name": "Padra",
       "district": "Vadodara(Baroda)",
-      "avgPrice": 3942,
-      "recentPrice": null,
+      "avgPrice": 3951,
+      "recentPrice": 4500,
       "minPrice": 1500,
       "maxPrice": 7000,
-      "records": 61,
+      "records": 62,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -8508,24 +8596,13 @@
     {
       "name": "Vadhvan",
       "district": "Surendranagar",
-      "avgPrice": 4070,
-      "recentPrice": null,
+      "avgPrice": 4081,
+      "recentPrice": 4750,
       "minPrice": 3750,
       "maxPrice": 4750,
-      "records": 61,
+      "records": 62,
       "topVariety": "Elephant Yam (Suran)",
       "grade": "Medium"
-    },
-    {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 4056,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 5000,
-      "records": 55,
-      "topVariety": "Elephant Yam (Suran)",
-      "grade": "Local"
     },
     {
       "name": "Padra",
@@ -8550,15 +8627,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 3001,
-      "recentPrice": null,
-      "minPrice": 1900,
-      "maxPrice": 3700,
-      "records": 86,
-      "topVariety": null,
-      "grade": "FAQ"
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 4038,
+      "recentPrice": 3000,
+      "minPrice": 3000,
+      "maxPrice": 5000,
+      "records": 56,
+      "topVariety": "Elephant Yam (Suran)",
+      "grade": "Local"
     },
     {
       "name": "Vadodara(Sayajipura)",
@@ -8570,20 +8647,20 @@
       "records": 35,
       "topVariety": null,
       "grade": "FAQ"
-    }
-  ],
-  "french-beansfrasbean": [
+    },
     {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 3954,
-      "recentPrice": null,
-      "minPrice": 1600,
-      "maxPrice": 10000,
-      "records": 101,
+      "avgPrice": 2993,
+      "recentPrice": 2275,
+      "minPrice": 1900,
+      "maxPrice": 3700,
+      "records": 87,
       "topVariety": null,
       "grade": "FAQ"
-    },
+    }
+  ],
+  "french-beansfrasbean": [
     {
       "name": "Vadodara(Sayajipura)",
       "district": "Vadodara(Baroda)",
@@ -8607,6 +8684,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 2380,
+      "recentPrice": 3500,
+      "minPrice": 1250,
+      "maxPrice": 4250,
+      "records": 50,
+      "topVariety": "French Beans (Frasbean)",
+      "grade": "Medium"
+    },
+    {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
       "avgPrice": 3439,
@@ -8618,26 +8706,26 @@
       "grade": "Local"
     },
     {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 2357,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 4250,
-      "records": 49,
-      "topVariety": "French Beans (Frasbean)",
-      "grade": "Medium"
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 3947,
+      "recentPrice": 3250,
+      "minPrice": 1600,
+      "maxPrice": 10000,
+      "records": 102,
+      "topVariety": null,
+      "grade": "FAQ"
     }
   ],
   "garlic": [
     {
       "name": "Vadhvan",
       "district": "Surendranagar",
-      "avgPrice": 11288,
-      "recentPrice": null,
+      "avgPrice": 11363,
+      "recentPrice": 15250,
       "minPrice": 7250,
       "maxPrice": 18750,
-      "records": 52,
+      "records": 53,
       "topVariety": "Garlic",
       "grade": "FAQ"
     },
@@ -8655,11 +8743,11 @@
     {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
-      "avgPrice": 9215,
-      "recentPrice": null,
+      "avgPrice": 9233,
+      "recentPrice": 11000,
       "minPrice": 4000,
       "maxPrice": 15000,
-      "records": 95,
+      "records": 96,
       "topVariety": "Garlic",
       "grade": "Local"
     },
@@ -8732,11 +8820,11 @@
     {
       "name": "Jetpur(Dist.Rajkot)",
       "district": "Rajkot",
-      "avgPrice": 5897,
-      "recentPrice": null,
+      "avgPrice": 5908,
+      "recentPrice": 6705,
       "minPrice": 4000,
       "maxPrice": 9500,
-      "records": 70,
+      "records": 71,
       "topVariety": "Garlic",
       "grade": "FAQ"
     },
@@ -8787,6 +8875,50 @@
   ],
   "gingergreen": [
     {
+      "name": "Rajkot(Veg.Sub Yard)",
+      "district": "Rajkot",
+      "avgPrice": 6702,
+      "recentPrice": 10600,
+      "minPrice": 4585,
+      "maxPrice": 15025,
+      "records": 98,
+      "topVariety": "Green Ginger",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 6018,
+      "recentPrice": 9000,
+      "minPrice": 3750,
+      "maxPrice": 14500,
+      "records": 93,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 5278,
+      "recentPrice": 8750,
+      "minPrice": 2750,
+      "maxPrice": 12000,
+      "records": 107,
+      "topVariety": "Green Ginger",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Anand(Veg,Yard,Anand)",
+      "district": "Anand",
+      "avgPrice": 7756,
+      "recentPrice": 8750,
+      "minPrice": 3500,
+      "maxPrice": 12250,
+      "records": 41,
+      "topVariety": "Green Ginger",
+      "grade": "Grade B"
+    },
+    {
       "name": "Damnagar",
       "district": "Amreli",
       "avgPrice": 6043,
@@ -8796,17 +8928,6 @@
       "records": 113,
       "topVariety": "Green Ginger",
       "grade": "Local"
-    },
-    {
-      "name": "Anand(Veg,Yard,Anand)",
-      "district": "Anand",
-      "avgPrice": 7731,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 12250,
-      "records": 40,
-      "topVariety": "Green Ginger",
-      "grade": "Grade B"
     },
     {
       "name": "Ahmedabad",
@@ -8842,15 +8963,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Rajkot(Veg.Sub Yard)",
-      "district": "Rajkot",
-      "avgPrice": 6662,
-      "recentPrice": null,
-      "minPrice": 4585,
-      "maxPrice": 15025,
-      "records": 97,
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 6442,
+      "recentPrice": 7000,
+      "minPrice": 4000,
+      "maxPrice": 15000,
+      "records": 121,
       "topVariety": "Green Ginger",
-      "grade": "FAQ"
+      "grade": "Local"
     },
     {
       "name": "Vadodara(Sayajipura)",
@@ -8860,28 +8981,6 @@
       "minPrice": 4300,
       "maxPrice": 14300,
       "records": 46,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 6438,
-      "recentPrice": null,
-      "minPrice": 4000,
-      "maxPrice": 15000,
-      "records": 120,
-      "topVariety": "Green Ginger",
-      "grade": "Local"
-    },
-    {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 5986,
-      "recentPrice": null,
-      "minPrice": 3750,
-      "maxPrice": 14500,
-      "records": 92,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -8904,17 +9003,6 @@
       "minPrice": 3850,
       "maxPrice": 6900,
       "records": 89,
-      "topVariety": "Green Ginger",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 5245,
-      "recentPrice": null,
-      "minPrice": 2750,
-      "maxPrice": 12000,
-      "records": 106,
       "topVariety": "Green Ginger",
       "grade": "FAQ"
     },
@@ -8963,6 +9051,17 @@
       "records": 23,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 3700,
+      "recentPrice": 3700,
+      "minPrice": 3700,
+      "maxPrice": 3700,
+      "records": 1,
+      "topVariety": "Gram Raw(Chholia)",
+      "grade": "Local"
     }
   ],
   "barleyjau": [
@@ -9288,6 +9387,50 @@
   ],
   "wheat": [
     {
+      "name": "Jetpur(Dist.Rajkot)",
+      "district": "Rajkot",
+      "avgPrice": 2480,
+      "recentPrice": 2850,
+      "minPrice": 2200,
+      "maxPrice": 2900,
+      "records": 32,
+      "topVariety": "Lokwan",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kalol",
+      "district": "Gandhinagar",
+      "avgPrice": 2556,
+      "recentPrice": 2825,
+      "minPrice": 2250,
+      "maxPrice": 2825,
+      "records": 20,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Dhrol",
+      "district": "Jamnagar",
+      "avgPrice": 2180,
+      "recentPrice": 2820,
+      "minPrice": 1910,
+      "maxPrice": 2820,
+      "records": 20,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Babra",
+      "district": "Amreli",
+      "avgPrice": 2504,
+      "recentPrice": 2745,
+      "minPrice": 2275,
+      "maxPrice": 2745,
+      "records": 20,
+      "topVariety": "Medium",
+      "grade": "FAQ"
+    },
+    {
       "name": "Dahod",
       "district": "Dahod",
       "avgPrice": 2719,
@@ -9330,6 +9473,17 @@
       "records": 11,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Dhoraji",
+      "district": "Rajkot",
+      "avgPrice": 2297,
+      "recentPrice": 2630,
+      "minPrice": 2080,
+      "maxPrice": 2630,
+      "records": 23,
+      "topVariety": "Milbar",
+      "grade": "Non-FAQ"
     },
     {
       "name": "Harij",
@@ -9464,6 +9618,17 @@
       "grade": "Grade Range-1"
     },
     {
+      "name": "Jam Khambalia",
+      "district": "Devbhumi Dwarka",
+      "avgPrice": 2243,
+      "recentPrice": 2550,
+      "minPrice": 2150,
+      "maxPrice": 2550,
+      "records": 12,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Vijapur(Kukarvada)",
       "district": "Mehsana",
       "avgPrice": 2550,
@@ -9473,17 +9638,6 @@
       "records": 1,
       "topVariety": null,
       "grade": "Grade Range-1"
-    },
-    {
-      "name": "Kalol",
-      "district": "Gandhinagar",
-      "avgPrice": 2542,
-      "recentPrice": null,
-      "minPrice": 2250,
-      "maxPrice": 2650,
-      "records": 19,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Palanpur",
@@ -9605,17 +9759,6 @@
       "records": 9,
       "topVariety": "Lokwan Gujrat",
       "grade": "Grade Range-2"
-    },
-    {
-      "name": "Babra",
-      "district": "Amreli",
-      "avgPrice": 2492,
-      "recentPrice": null,
-      "minPrice": 2275,
-      "maxPrice": 2575,
-      "records": 19,
-      "topVariety": "Medium",
-      "grade": "FAQ"
     },
     {
       "name": "Bhavnagar",
@@ -9750,17 +9893,6 @@
       "grade": "Local"
     },
     {
-      "name": "Jetpur(Dist.Rajkot)",
-      "district": "Rajkot",
-      "avgPrice": 2456,
-      "recentPrice": null,
-      "minPrice": 2200,
-      "maxPrice": 2575,
-      "records": 30,
-      "topVariety": "Lokwan",
-      "grade": "FAQ"
-    },
-    {
       "name": "Mehsana",
       "district": "Mehsana",
       "avgPrice": 2452,
@@ -9781,6 +9913,17 @@
       "records": 18,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Morva Hafad",
+      "district": "Panchmahals",
+      "avgPrice": 2305,
+      "recentPrice": 2450,
+      "minPrice": 2175,
+      "maxPrice": 2450,
+      "records": 11,
+      "topVariety": "Deshi",
+      "grade": "Local"
     },
     {
       "name": "Kadi",
@@ -10124,17 +10267,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Morva Hafad",
-      "district": "Panchmahals",
-      "avgPrice": 2290,
-      "recentPrice": null,
-      "minPrice": 2175,
-      "maxPrice": 2450,
-      "records": 10,
-      "topVariety": "Deshi",
-      "grade": "Local"
-    },
-    {
       "name": "Godhra",
       "district": "Panchmahals",
       "avgPrice": 2290,
@@ -10190,17 +10322,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Dhoraji",
-      "district": "Rajkot",
-      "avgPrice": 2282,
-      "recentPrice": null,
-      "minPrice": 2080,
-      "maxPrice": 2470,
-      "records": 22,
-      "topVariety": "Milbar",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Khambhat(Grain Market)",
       "district": "Anand",
       "avgPrice": 2273,
@@ -10253,17 +10374,6 @@
       "maxPrice": 2250,
       "records": 3,
       "topVariety": "Lokwan",
-      "grade": "Local"
-    },
-    {
-      "name": "Jam Khambalia",
-      "district": "Devbhumi Dwarka",
-      "avgPrice": 2215,
-      "recentPrice": null,
-      "minPrice": 2150,
-      "maxPrice": 2350,
-      "records": 11,
-      "topVariety": null,
       "grade": "Local"
     },
     {
@@ -10344,17 +10454,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Dhrol",
-      "district": "Jamnagar",
-      "avgPrice": 2146,
-      "recentPrice": null,
-      "minPrice": 1910,
-      "maxPrice": 2315,
-      "records": 19,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Umreth",
       "district": "Anand",
       "avgPrice": 2120,
@@ -10412,6 +10511,17 @@
   ],
   "paddycommon": [
     {
+      "name": "Kalol",
+      "district": "Gandhinagar",
+      "avgPrice": 2403,
+      "recentPrice": 2655,
+      "minPrice": 2150,
+      "maxPrice": 2655,
+      "records": 2,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Khambhat(Grain Market)",
       "district": "Anand",
       "avgPrice": 2650,
@@ -10467,6 +10577,39 @@
       "grade": "Grade Range-2"
     },
     {
+      "name": "Bardoli(Madhi)",
+      "district": "Surat",
+      "avgPrice": 2200,
+      "recentPrice": 2250,
+      "minPrice": 2150,
+      "maxPrice": 2250,
+      "records": 2,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Uchhal",
+      "district": "Surat",
+      "avgPrice": 2250,
+      "recentPrice": 2250,
+      "minPrice": 2250,
+      "maxPrice": 2250,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Morva Hafad",
+      "district": "Panchmahals",
+      "avgPrice": 1910,
+      "recentPrice": 2225,
+      "minPrice": 1750,
+      "maxPrice": 2225,
+      "records": 5,
+      "topVariety": "Paddy",
+      "grade": "Local"
+    },
+    {
       "name": "Prantij",
       "district": "Sabarkantha",
       "avgPrice": 2213,
@@ -10489,28 +10632,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Bardoli(Madhi)",
-      "district": "Surat",
-      "avgPrice": 2150,
-      "recentPrice": null,
-      "minPrice": 2150,
-      "maxPrice": 2150,
-      "records": 1,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Kalol",
-      "district": "Gandhinagar",
-      "avgPrice": 2150,
-      "recentPrice": null,
-      "minPrice": 2150,
-      "maxPrice": 2150,
-      "records": 1,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Dehgam(Rekhiyal)",
       "district": "Gandhinagar",
       "avgPrice": 2127,
@@ -10520,6 +10641,17 @@
       "records": 6,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Ahwa-Dang",
+      "district": "The Dangs",
+      "avgPrice": 2100,
+      "recentPrice": 2100,
+      "minPrice": 2100,
+      "maxPrice": 2100,
+      "records": 1,
+      "topVariety": "Paddy",
+      "grade": "Non-FAQ"
     },
     {
       "name": "Talod",
@@ -10610,17 +10742,6 @@
       "grade": "Local"
     },
     {
-      "name": "Morva Hafad",
-      "district": "Panchmahals",
-      "avgPrice": 1831,
-      "recentPrice": null,
-      "minPrice": 1750,
-      "maxPrice": 2000,
-      "records": 4,
-      "topVariety": "Paddy",
-      "grade": "Local"
-    },
-    {
       "name": "Mandvi",
       "district": "Surat",
       "avgPrice": 1800,
@@ -10645,22 +10766,22 @@
     {
       "name": "Devgadhbaria",
       "district": "Dahod",
-      "avgPrice": 1292,
-      "recentPrice": null,
+      "avgPrice": 1325,
+      "recentPrice": 1650,
       "minPrice": 1265,
-      "maxPrice": 1340,
-      "records": 10,
+      "maxPrice": 1650,
+      "records": 11,
       "topVariety": "Common",
       "grade": "Non-FAQ"
     },
     {
       "name": "Davgadbaria(Piplod)",
       "district": "Dahod",
-      "avgPrice": 1274,
-      "recentPrice": null,
+      "avgPrice": 1306,
+      "recentPrice": 1630,
       "minPrice": 1260,
-      "maxPrice": 1330,
-      "records": 10,
+      "maxPrice": 1630,
+      "records": 11,
       "topVariety": "Common",
       "grade": "Non-FAQ"
     }
@@ -10678,6 +10799,50 @@
       "grade": "Local"
     },
     {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 4906,
+      "recentPrice": 8250,
+      "minPrice": 3500,
+      "maxPrice": 8250,
+      "records": 8,
+      "topVariety": "Gwar",
+      "grade": "Local"
+    },
+    {
+      "name": "Songadh(Badarpada)",
+      "district": "Surat",
+      "avgPrice": 6930,
+      "recentPrice": 7500,
+      "minPrice": 4500,
+      "maxPrice": 8500,
+      "records": 10,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Songadh(Umrada)",
+      "district": "Surat",
+      "avgPrice": 6369,
+      "recentPrice": 7500,
+      "minPrice": 3500,
+      "maxPrice": 8627,
+      "records": 12,
+      "topVariety": "Guaar",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Songadh",
+      "district": "Surat",
+      "avgPrice": 6411,
+      "recentPrice": 7500,
+      "minPrice": 4500,
+      "maxPrice": 8500,
+      "records": 9,
+      "topVariety": "Gwar",
+      "grade": "FAQ"
+    },
+    {
       "name": "Mansa(Manas Veg Yard)",
       "district": "Gandhinagar",
       "avgPrice": 3962,
@@ -10689,46 +10854,13 @@
       "grade": "Local"
     },
     {
-      "name": "Songadh(Badarpada)",
-      "district": "Surat",
-      "avgPrice": 6867,
-      "recentPrice": null,
-      "minPrice": 4500,
-      "maxPrice": 8500,
-      "records": 9,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Songadh",
-      "district": "Surat",
-      "avgPrice": 6275,
-      "recentPrice": null,
-      "minPrice": 4500,
-      "maxPrice": 8500,
-      "records": 8,
-      "topVariety": "Gwar",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Songadh(Umrada)",
-      "district": "Surat",
-      "avgPrice": 6266,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 8627,
-      "records": 11,
-      "topVariety": "Guaar",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 4429,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 6750,
-      "records": 7,
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 6800,
+      "recentPrice": 6800,
+      "minPrice": 6800,
+      "maxPrice": 6800,
+      "records": 1,
       "topVariety": "Gwar",
       "grade": "Local"
     },
@@ -10768,11 +10900,11 @@
     {
       "name": "Gondal(Veg.market Gondal)",
       "district": "Rajkot",
-      "avgPrice": 3783,
-      "recentPrice": null,
+      "avgPrice": 3800,
+      "recentPrice": 4000,
       "minPrice": 1500,
       "maxPrice": 6500,
-      "records": 12,
+      "records": 13,
       "topVariety": "Gwar",
       "grade": "Local"
     },
@@ -10856,6 +10988,17 @@
       "grade": "Local"
     },
     {
+      "name": "Babra",
+      "district": "Amreli",
+      "avgPrice": 6717,
+      "recentPrice": 7705,
+      "minPrice": 6400,
+      "maxPrice": 7705,
+      "records": 9,
+      "topVariety": "G20",
+      "grade": "FAQ"
+    },
+    {
       "name": "Jamnagar",
       "district": "Jamnagar",
       "avgPrice": 7525,
@@ -10878,6 +11021,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Dhoraji",
+      "district": "Rajkot",
+      "avgPrice": 6718,
+      "recentPrice": 7380,
+      "minPrice": 6055,
+      "maxPrice": 7380,
+      "records": 4,
+      "topVariety": "Local",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Vadgam",
       "district": "Banaskanth",
       "avgPrice": 7355,
@@ -10887,6 +11041,17 @@
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Dhrol",
+      "district": "Jamnagar",
+      "avgPrice": 6695,
+      "recentPrice": 7285,
+      "minPrice": 5875,
+      "maxPrice": 7285,
+      "records": 7,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Amreli",
@@ -10977,17 +11142,6 @@
       "grade": "Local"
     },
     {
-      "name": "Jetpur(Dist.Rajkot)",
-      "district": "Rajkot",
-      "avgPrice": 6691,
-      "recentPrice": null,
-      "minPrice": 6405,
-      "maxPrice": 7155,
-      "records": 8,
-      "topVariety": "Bold",
-      "grade": "FAQ"
-    },
-    {
       "name": "Dhari",
       "district": "Amreli",
       "avgPrice": 6675,
@@ -10999,26 +11153,26 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Dhrol",
-      "district": "Jamnagar",
-      "avgPrice": 6597,
-      "recentPrice": null,
-      "minPrice": 5875,
-      "maxPrice": 7125,
-      "records": 6,
-      "topVariety": null,
-      "grade": "Local"
+      "name": "Jetpur(Dist.Rajkot)",
+      "district": "Rajkot",
+      "avgPrice": 6674,
+      "recentPrice": 6605,
+      "minPrice": 6405,
+      "maxPrice": 7155,
+      "records": 10,
+      "topVariety": "Bold",
+      "grade": "FAQ"
     },
     {
-      "name": "Babra",
-      "district": "Amreli",
-      "avgPrice": 6594,
-      "recentPrice": null,
-      "minPrice": 6400,
-      "maxPrice": 6800,
-      "records": 8,
-      "topVariety": "G20",
-      "grade": "FAQ"
+      "name": "Jam Khambalia",
+      "district": "Devbhumi Dwarka",
+      "avgPrice": 5867,
+      "recentPrice": 6600,
+      "minPrice": 5500,
+      "maxPrice": 6600,
+      "records": 3,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Jasdan",
@@ -11052,17 +11206,6 @@
       "records": 3,
       "topVariety": "G20",
       "grade": "Local"
-    },
-    {
-      "name": "Dhoraji",
-      "district": "Rajkot",
-      "avgPrice": 6497,
-      "recentPrice": null,
-      "minPrice": 6055,
-      "maxPrice": 6880,
-      "records": 3,
-      "topVariety": "Hybrid",
-      "grade": "Non-FAQ"
     },
     {
       "name": "Kalawad",
@@ -11186,17 +11329,6 @@
       "grade": "Local"
     },
     {
-      "name": "Jam Khambalia",
-      "district": "Devbhumi Dwarka",
-      "avgPrice": 5500,
-      "recentPrice": null,
-      "minPrice": 5500,
-      "maxPrice": 5500,
-      "records": 2,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Bhesan",
       "district": "Junagarh",
       "avgPrice": 5500,
@@ -11230,6 +11362,17 @@
       "records": 10,
       "topVariety": "Ground Nut Seed",
       "grade": "FAQ"
+    },
+    {
+      "name": "Jam Khambalia",
+      "district": "Devbhumi Dwarka",
+      "avgPrice": 9000,
+      "recentPrice": 9000,
+      "minPrice": 9000,
+      "maxPrice": 9000,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Dhari",
@@ -11333,6 +11476,17 @@
       "grade": "Medium"
     },
     {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 2285,
+      "recentPrice": 3150,
+      "minPrice": 1500,
+      "maxPrice": 3150,
+      "records": 29,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Ahmedabad",
       "district": "Ahmedabad",
       "avgPrice": 2738,
@@ -11344,15 +11498,26 @@
       "grade": "FAQ"
     },
     {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 2254,
-      "recentPrice": null,
-      "minPrice": 1500,
-      "maxPrice": 3000,
-      "records": 28,
-      "topVariety": null,
-      "grade": "FAQ"
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 1713,
+      "recentPrice": 2700,
+      "minPrice": 1000,
+      "maxPrice": 2700,
+      "records": 8,
+      "topVariety": "Sweet Potato",
+      "grade": "Local"
+    },
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 1762,
+      "recentPrice": 2250,
+      "minPrice": 850,
+      "maxPrice": 3250,
+      "records": 21,
+      "topVariety": "Sweet Potato",
+      "grade": "Local"
     },
     {
       "name": "Vadodara(Sayajipura)",
@@ -11364,28 +11529,6 @@
       "records": 6,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 1738,
-      "recentPrice": null,
-      "minPrice": 850,
-      "maxPrice": 3250,
-      "records": 20,
-      "topVariety": "Sweet Potato",
-      "grade": "Local"
-    },
-    {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 1571,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2000,
-      "records": 7,
-      "topVariety": "Sweet Potato",
-      "grade": "Local"
     }
   ],
   "lemon": [
@@ -11403,11 +11546,11 @@
     {
       "name": "Rajkot(Veg.Sub Yard)",
       "district": "Rajkot",
-      "avgPrice": 13081,
-      "recentPrice": null,
+      "avgPrice": 13073,
+      "recentPrice": 12980,
       "minPrice": 9875,
       "maxPrice": 17440,
-      "records": 12,
+      "records": 13,
       "topVariety": "Lemon",
       "grade": "FAQ"
     },
@@ -11436,35 +11579,35 @@
     {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
-      "avgPrice": 10909,
-      "recentPrice": null,
+      "avgPrice": 10833,
+      "recentPrice": 10000,
       "minPrice": 9000,
       "maxPrice": 15000,
-      "records": 11,
+      "records": 12,
       "topVariety": "Lemon",
       "grade": "Local"
     },
     {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 10750,
-      "recentPrice": null,
-      "minPrice": 8000,
-      "maxPrice": 13750,
-      "records": 6,
-      "topVariety": "Lemon",
-      "grade": "Local"
-    },
-    {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 9393,
-      "recentPrice": null,
-      "minPrice": 4000,
-      "maxPrice": 15000,
-      "records": 7,
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 9800,
+      "recentPrice": 9800,
+      "minPrice": 9800,
+      "maxPrice": 9800,
+      "records": 1,
       "topVariety": null,
-      "grade": "FAQ"
+      "grade": "Local"
+    },
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 7921,
+      "recentPrice": 9500,
+      "minPrice": 4000,
+      "maxPrice": 10550,
+      "records": 12,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Mehsana(Mehsana Veg)",
@@ -11500,13 +11643,24 @@
       "grade": "Local"
     },
     {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 10464,
+      "recentPrice": 8750,
+      "minPrice": 8000,
+      "maxPrice": 13750,
+      "records": 7,
+      "topVariety": "Lemon",
+      "grade": "Local"
+    },
+    {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 7795,
-      "recentPrice": null,
+      "avgPrice": 7813,
+      "recentPrice": 8000,
       "minPrice": 4000,
       "maxPrice": 10000,
-      "records": 11,
+      "records": 12,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -11522,15 +11676,26 @@
       "grade": "Grade A"
     },
     {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 7777,
-      "recentPrice": null,
+      "name": "Anand(Veg,Yard,Anand)",
+      "district": "Anand",
+      "avgPrice": 6625,
+      "recentPrice": 7750,
+      "minPrice": 5500,
+      "maxPrice": 11000,
+      "records": 10,
+      "topVariety": "Lemon",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 9156,
+      "recentPrice": 7500,
       "minPrice": 4000,
-      "maxPrice": 10550,
-      "records": 11,
+      "maxPrice": 15000,
+      "records": 8,
       "topVariety": null,
-      "grade": "Local"
+      "grade": "FAQ"
     },
     {
       "name": "Morbi",
@@ -11566,17 +11731,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Kalol(Veg,Market,Kalol)",
-      "district": "Gandhinagar",
-      "avgPrice": 6929,
-      "recentPrice": null,
-      "minPrice": 4000,
-      "maxPrice": 9000,
-      "records": 7,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Mansa(Manas Veg Yard)",
       "district": "Gandhinagar",
       "avgPrice": 6667,
@@ -11588,15 +11742,15 @@
       "grade": "Local"
     },
     {
-      "name": "Anand(Veg,Yard,Anand)",
-      "district": "Anand",
-      "avgPrice": 6500,
-      "recentPrice": null,
-      "minPrice": 5500,
-      "maxPrice": 11000,
-      "records": 9,
-      "topVariety": "Lemon",
-      "grade": "Grade B"
+      "name": "Kalol(Veg,Market,Kalol)",
+      "district": "Gandhinagar",
+      "avgPrice": 6813,
+      "recentPrice": 6000,
+      "minPrice": 4000,
+      "maxPrice": 9000,
+      "records": 8,
+      "topVariety": null,
+      "grade": "Local"
     }
   ],
   "maize": [
@@ -11623,6 +11777,28 @@
       "grade": "Local"
     },
     {
+      "name": "Uchhal",
+      "district": "Surat",
+      "avgPrice": 1898,
+      "recentPrice": 2400,
+      "minPrice": 1720,
+      "maxPrice": 2400,
+      "records": 4,
+      "topVariety": null,
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Vadgam",
+      "district": "Banaskanth",
+      "avgPrice": 2400,
+      "recentPrice": 2400,
+      "minPrice": 2400,
+      "maxPrice": 2400,
+      "records": 1,
+      "topVariety": "Deshi Red",
+      "grade": "FAQ"
+    },
+    {
       "name": "Garudeshwal",
       "district": "Narmada",
       "avgPrice": 2370,
@@ -11631,6 +11807,17 @@
       "maxPrice": 2370,
       "records": 1,
       "topVariety": "Deshi Red",
+      "grade": "Local"
+    },
+    {
+      "name": "Morva Hafad",
+      "district": "Panchmahals",
+      "avgPrice": 2088,
+      "recentPrice": 2250,
+      "minPrice": 1925,
+      "maxPrice": 2250,
+      "records": 4,
+      "topVariety": "Deshi White",
       "grade": "Local"
     },
     {
@@ -11709,17 +11896,6 @@
       "records": 2,
       "topVariety": "Hybrid",
       "grade": "Grade Range-2"
-    },
-    {
-      "name": "Morva Hafad",
-      "district": "Panchmahals",
-      "avgPrice": 2033,
-      "recentPrice": null,
-      "minPrice": 1925,
-      "maxPrice": 2250,
-      "records": 3,
-      "topVariety": "Deshi White",
-      "grade": "Local"
     },
     {
       "name": "Palanpur",
@@ -11898,17 +12074,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Uchhal",
-      "district": "Surat",
-      "avgPrice": 1730,
-      "recentPrice": null,
-      "minPrice": 1720,
-      "maxPrice": 1740,
-      "records": 3,
-      "topVariety": null,
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Limkheda",
       "district": "Dahod",
       "avgPrice": 1725,
@@ -11966,37 +12131,37 @@
   ],
   "tinda": [
     {
-      "name": "Khambhat(Veg Yard Khambhat)",
-      "district": "Anand",
-      "avgPrice": 4333,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 6000,
-      "records": 6,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Vadhvan",
       "district": "Surendranagar",
-      "avgPrice": 3875,
-      "recentPrice": null,
+      "avgPrice": 3861,
+      "recentPrice": 3750,
       "minPrice": 3000,
       "maxPrice": 5250,
-      "records": 8,
+      "records": 9,
       "topVariety": "Tinda",
       "grade": "Medium"
     },
     {
       "name": "Chikli(Khorgam)",
       "district": "Valsad",
-      "avgPrice": 3433,
-      "recentPrice": null,
+      "avgPrice": 3402,
+      "recentPrice": 3000,
       "minPrice": 2750,
       "maxPrice": 5250,
-      "records": 13,
+      "records": 14,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Khambhat(Veg Yard Khambhat)",
+      "district": "Anand",
+      "avgPrice": 4143,
+      "recentPrice": 3000,
+      "minPrice": 3000,
+      "maxPrice": 6000,
+      "records": 7,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Dahod(Veg. Market)",
@@ -12006,6 +12171,17 @@
       "minPrice": 2000,
       "maxPrice": 2700,
       "records": 6,
+      "topVariety": "Tinda",
+      "grade": "Local"
+    },
+    {
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 2200,
+      "recentPrice": 2200,
+      "minPrice": 2200,
+      "maxPrice": 2200,
+      "records": 1,
       "topVariety": "Tinda",
       "grade": "Local"
     },
@@ -12022,6 +12198,17 @@
     }
   ],
   "soyabean": [
+    {
+      "name": "Dhoraji",
+      "district": "Rajkot",
+      "avgPrice": 6375,
+      "recentPrice": 7155,
+      "minPrice": 5020,
+      "maxPrice": 7155,
+      "records": 21,
+      "topVariety": "Yellow",
+      "grade": "Non-FAQ"
+    },
     {
       "name": "The Agricultural Produce Market Committee-Amreli",
       "district": "Amreli",
@@ -12067,6 +12254,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Jetpur(Dist.Rajkot)",
+      "district": "Rajkot",
+      "avgPrice": 6704,
+      "recentPrice": 6905,
+      "minPrice": 5400,
+      "maxPrice": 7250,
+      "records": 19,
+      "topVariety": "Soyabeen",
+      "grade": "FAQ"
+    },
+    {
       "name": "Jasdan",
       "district": "Rajkot",
       "avgPrice": 6738,
@@ -12087,17 +12285,6 @@
       "records": 17,
       "topVariety": "Yellow",
       "grade": "Local"
-    },
-    {
-      "name": "Jetpur(Dist.Rajkot)",
-      "district": "Rajkot",
-      "avgPrice": 6693,
-      "recentPrice": null,
-      "minPrice": 5400,
-      "maxPrice": 7250,
-      "records": 18,
-      "topVariety": "Soyabeen",
-      "grade": "FAQ"
     },
     {
       "name": "Junagadh",
@@ -12188,6 +12375,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Uchhal",
+      "district": "Surat",
+      "avgPrice": 6400,
+      "recentPrice": 6400,
+      "minPrice": 6400,
+      "maxPrice": 6400,
+      "records": 1,
+      "topVariety": "Soyabeen",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Jam Jodhpur",
       "district": "Jamnagar",
       "avgPrice": 6383,
@@ -12197,17 +12395,6 @@
       "records": 3,
       "topVariety": "Soyabeen",
       "grade": "Local"
-    },
-    {
-      "name": "Dhoraji",
-      "district": "Rajkot",
-      "avgPrice": 6336,
-      "recentPrice": null,
-      "minPrice": 5020,
-      "maxPrice": 7130,
-      "records": 20,
-      "topVariety": "Yellow",
-      "grade": "Non-FAQ"
     },
     {
       "name": "APMCKHEDBRAHMA",
@@ -12274,6 +12461,17 @@
       "records": 3,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Jam Khambalia",
+      "district": "Devbhumi Dwarka",
+      "avgPrice": 5900,
+      "recentPrice": 5900,
+      "minPrice": 5900,
+      "maxPrice": 5900,
+      "records": 1,
+      "topVariety": "Black",
+      "grade": "Local"
     },
     {
       "name": "Amreli",
@@ -12366,28 +12564,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Khambhat(Veg Yard Khambhat)",
-      "district": "Anand",
-      "avgPrice": 3056,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 4000,
-      "records": 18,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Kalol(Veg,Market,Kalol)",
-      "district": "Gandhinagar",
-      "avgPrice": 3000,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 4250,
-      "records": 17,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Ahmedabad",
       "district": "Ahmedabad",
       "avgPrice": 2645,
@@ -12395,28 +12571,6 @@
       "minPrice": 650,
       "maxPrice": 3350,
       "records": 19,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 2552,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 4000,
-      "records": 29,
-      "topVariety": "Tomato",
-      "grade": "Local"
-    },
-    {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 2502,
-      "recentPrice": null,
-      "minPrice": 750,
-      "maxPrice": 3750,
-      "records": 27,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -12465,28 +12619,6 @@
       "grade": "Local"
     },
     {
-      "name": "Rajkot(Veg.Sub Yard)",
-      "district": "Rajkot",
-      "avgPrice": 2376,
-      "recentPrice": null,
-      "minPrice": 935,
-      "maxPrice": 3185,
-      "records": 21,
-      "topVariety": "Tomato",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 2288,
-      "recentPrice": null,
-      "minPrice": 375,
-      "maxPrice": 3250,
-      "records": 23,
-      "topVariety": "Tomato",
-      "grade": "Medium"
-    },
-    {
       "name": "Kapadvanj",
       "district": "Kheda",
       "avgPrice": 2278,
@@ -12509,37 +12641,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Navsari",
-      "district": "Navsari",
-      "avgPrice": 2163,
-      "recentPrice": null,
-      "minPrice": 875,
-      "maxPrice": 3500,
-      "records": 30,
-      "topVariety": "Tomato",
-      "grade": "Grade A"
-    },
-    {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 2156,
-      "recentPrice": null,
-      "minPrice": 850,
-      "maxPrice": 2775,
-      "records": 26,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Anand(Veg,Yard,Anand)",
+      "name": "Khambhat(Veg Yard Khambhat)",
       "district": "Anand",
-      "avgPrice": 2153,
-      "recentPrice": null,
-      "minPrice": 550,
-      "maxPrice": 3500,
-      "records": 23,
-      "topVariety": "Tomato",
-      "grade": "Grade B"
+      "avgPrice": 3011,
+      "recentPrice": 2200,
+      "minPrice": 700,
+      "maxPrice": 4000,
+      "records": 19,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Nadiad",
@@ -12551,6 +12661,17 @@
       "records": 24,
       "topVariety": "Tomato",
       "grade": "FAQ"
+    },
+    {
+      "name": "Kalol(Veg,Market,Kalol)",
+      "district": "Gandhinagar",
+      "avgPrice": 2944,
+      "recentPrice": 2000,
+      "minPrice": 1250,
+      "maxPrice": 4250,
+      "records": 18,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Talalagir",
@@ -12586,17 +12707,6 @@
       "grade": "Local"
     },
     {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 1887,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 3000,
-      "records": 34,
-      "topVariety": "Tomato",
-      "grade": "Local"
-    },
-    {
       "name": "Nadiyad(Piplag)",
       "district": "Kheda",
       "avgPrice": 1877,
@@ -12619,6 +12729,39 @@
       "grade": "FAQ"
     },
     {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 2266,
+      "recentPrice": 1750,
+      "minPrice": 375,
+      "maxPrice": 3250,
+      "records": 24,
+      "topVariety": "Tomato",
+      "grade": "Medium"
+    },
+    {
+      "name": "Rajkot(Veg.Sub Yard)",
+      "district": "Rajkot",
+      "avgPrice": 2341,
+      "recentPrice": 1605,
+      "minPrice": 935,
+      "maxPrice": 3185,
+      "records": 22,
+      "topVariety": "Tomato",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 1876,
+      "recentPrice": 1500,
+      "minPrice": 700,
+      "maxPrice": 3000,
+      "records": 35,
+      "topVariety": "Tomato",
+      "grade": "Local"
+    },
+    {
       "name": "Mansa(Manas Veg Yard)",
       "district": "Gandhinagar",
       "avgPrice": 2535,
@@ -12626,6 +12769,72 @@
       "minPrice": 800,
       "maxPrice": 3500,
       "records": 26,
+      "topVariety": "Tomato",
+      "grade": "Local"
+    },
+    {
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 1400,
+      "recentPrice": 1400,
+      "minPrice": 1400,
+      "maxPrice": 1400,
+      "records": 1,
+      "topVariety": "Tomato",
+      "grade": "Local"
+    },
+    {
+      "name": "Navsari",
+      "district": "Navsari",
+      "avgPrice": 2138,
+      "recentPrice": 1375,
+      "minPrice": 875,
+      "maxPrice": 3500,
+      "records": 31,
+      "topVariety": "Tomato",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 2123,
+      "recentPrice": 1275,
+      "minPrice": 850,
+      "maxPrice": 2775,
+      "records": 27,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Anand(Veg,Yard,Anand)",
+      "district": "Anand",
+      "avgPrice": 2116,
+      "recentPrice": 1250,
+      "minPrice": 550,
+      "maxPrice": 3500,
+      "records": 24,
+      "topVariety": "Tomato",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 2454,
+      "recentPrice": 1150,
+      "minPrice": 750,
+      "maxPrice": 3750,
+      "records": 28,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 2503,
+      "recentPrice": 1100,
+      "minPrice": 600,
+      "maxPrice": 4000,
+      "records": 30,
       "topVariety": "Tomato",
       "grade": "Local"
     },
@@ -12687,37 +12896,37 @@
       "grade": "FAQ"
     },
     {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 3893,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 5000,
-      "records": 15,
-      "topVariety": "Green Chilly",
+      "name": "Khambhat(Veg Yard Khambhat)",
+      "district": "Anand",
+      "avgPrice": 3125,
+      "recentPrice": 4000,
+      "minPrice": 2000,
+      "maxPrice": 4500,
+      "records": 8,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Bardoli(Kadod)",
+      "district": "Surat",
+      "avgPrice": 3033,
+      "recentPrice": 3700,
+      "minPrice": 2600,
+      "maxPrice": 3700,
+      "records": 6,
+      "topVariety": null,
       "grade": "Local"
     },
     {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 3825,
-      "recentPrice": null,
+      "avgPrice": 3795,
+      "recentPrice": 3500,
       "minPrice": 3250,
       "maxPrice": 4250,
-      "records": 10,
-      "topVariety": "Green Chilly",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 3745,
-      "recentPrice": null,
-      "minPrice": 3000,
-      "maxPrice": 5250,
       "records": 11,
       "topVariety": "Green Chilly",
-      "grade": "Local"
+      "grade": "FAQ"
     },
     {
       "name": "Porbandar",
@@ -12729,6 +12938,28 @@
       "records": 11,
       "topVariety": "Green Chilly",
       "grade": "Local"
+    },
+    {
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 3350,
+      "recentPrice": 3350,
+      "minPrice": 3350,
+      "maxPrice": 3350,
+      "records": 1,
+      "topVariety": "Green Chilly",
+      "grade": "Local"
+    },
+    {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 2530,
+      "recentPrice": 3250,
+      "minPrice": 2000,
+      "maxPrice": 3250,
+      "records": 10,
+      "topVariety": "Green Chilly",
+      "grade": "FAQ"
     },
     {
       "name": "Morbi",
@@ -12753,14 +12984,14 @@
       "grade": "Grade A"
     },
     {
-      "name": "Khambhat(Veg Yard Khambhat)",
-      "district": "Anand",
-      "avgPrice": 3000,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 4500,
-      "records": 7,
-      "topVariety": null,
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 3838,
+      "recentPrice": 3000,
+      "minPrice": 2500,
+      "maxPrice": 5000,
+      "records": 16,
+      "topVariety": "Green Chilly",
       "grade": "Local"
     },
     {
@@ -12786,6 +13017,17 @@
       "grade": "Local"
     },
     {
+      "name": "Kalol(Veg,Market,Kalol)",
+      "district": "Gandhinagar",
+      "avgPrice": 2667,
+      "recentPrice": 3000,
+      "minPrice": 2000,
+      "maxPrice": 3000,
+      "records": 3,
+      "topVariety": "Green Chilly",
+      "grade": "Local"
+    },
+    {
       "name": "Ahmedabad",
       "district": "Ahmedabad",
       "avgPrice": 2900,
@@ -12795,28 +13037,6 @@
       "records": 3,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Bardoli(Kadod)",
-      "district": "Surat",
-      "avgPrice": 2900,
-      "recentPrice": null,
-      "minPrice": 2600,
-      "maxPrice": 3300,
-      "records": 5,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 2886,
-      "recentPrice": null,
-      "minPrice": 2250,
-      "maxPrice": 4750,
-      "records": 11,
-      "topVariety": "Green Chilly",
-      "grade": "Local"
     },
     {
       "name": "Mehsana(Mehsana Veg)",
@@ -12832,32 +13052,10 @@
     {
       "name": "Rajkot(Veg.Sub Yard)",
       "district": "Rajkot",
-      "avgPrice": 2668,
-      "recentPrice": null,
+      "avgPrice": 2667,
+      "recentPrice": 2655,
       "minPrice": 2500,
       "maxPrice": 3090,
-      "records": 8,
-      "topVariety": "Green Chilly",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kalol(Veg,Market,Kalol)",
-      "district": "Gandhinagar",
-      "avgPrice": 2500,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 3000,
-      "records": 2,
-      "topVariety": "Green Chilly",
-      "grade": "Local"
-    },
-    {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 2450,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 3000,
       "records": 9,
       "topVariety": "Green Chilly",
       "grade": "FAQ"
@@ -12865,13 +13063,24 @@
     {
       "name": "Anand(Veg,Yard,Anand)",
       "district": "Anand",
-      "avgPrice": 2188,
-      "recentPrice": null,
+      "avgPrice": 2222,
+      "recentPrice": 2500,
       "minPrice": 1500,
       "maxPrice": 2500,
-      "records": 8,
+      "records": 9,
       "topVariety": "Green Chilly",
       "grade": "Grade B"
+    },
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 3621,
+      "recentPrice": 2250,
+      "minPrice": 2250,
+      "maxPrice": 5250,
+      "records": 12,
+      "topVariety": "Green Chilly",
+      "grade": "Local"
     },
     {
       "name": "Deesa(Deesa Veg Yard)",
@@ -12894,6 +13103,17 @@
       "records": 2,
       "topVariety": null,
       "grade": "Grade A"
+    },
+    {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 2708,
+      "recentPrice": 750,
+      "minPrice": 750,
+      "maxPrice": 4750,
+      "records": 12,
+      "topVariety": "Green Chilly",
+      "grade": "Medium"
     }
   ],
   "mustard": [
@@ -13850,11 +14070,11 @@
     {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
-      "avgPrice": 2713,
-      "recentPrice": null,
+      "avgPrice": 2919,
+      "recentPrice": 6000,
       "minPrice": 2000,
-      "maxPrice": 4000,
-      "records": 15,
+      "maxPrice": 6000,
+      "records": 16,
       "topVariety": "Mint(Pudina)",
       "grade": "Local"
     },
@@ -13872,24 +14092,13 @@
   ],
   "pegeon-peaarhar-fali": [
     {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 8063,
-      "recentPrice": null,
-      "minPrice": 7000,
-      "maxPrice": 11500,
-      "records": 8,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Padra",
       "district": "Vadodara(Baroda)",
-      "avgPrice": 7972,
-      "recentPrice": null,
+      "avgPrice": 8225,
+      "recentPrice": 10500,
       "minPrice": 5000,
-      "maxPrice": 10250,
-      "records": 9,
+      "maxPrice": 10500,
+      "records": 10,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -13905,6 +14114,17 @@
       "grade": "Local"
     },
     {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 4850,
+      "recentPrice": 6000,
+      "minPrice": 3700,
+      "maxPrice": 6000,
+      "records": 2,
+      "topVariety": "Pigeon Pea (Arhar Fali)",
+      "grade": "Local"
+    },
+    {
       "name": "Nadiyad(Piplag)",
       "district": "Kheda",
       "avgPrice": 4471,
@@ -13916,18 +14136,29 @@
       "grade": "FAQ"
     },
     {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 3700,
-      "recentPrice": null,
-      "minPrice": 3700,
-      "maxPrice": 3700,
-      "records": 1,
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 7639,
+      "recentPrice": 4250,
+      "minPrice": 4250,
+      "maxPrice": 11500,
+      "records": 9,
       "topVariety": null,
-      "grade": "Local"
+      "grade": "FAQ"
     }
   ],
   "spinach": [
+    {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 1594,
+      "recentPrice": 2500,
+      "minPrice": 1000,
+      "maxPrice": 2500,
+      "records": 16,
+      "topVariety": "Spinach",
+      "grade": "Local"
+    },
     {
       "name": "Mansa(Manas Veg Yard)",
       "district": "Gandhinagar",
@@ -13951,28 +14182,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 1656,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 2750,
-      "records": 8,
-      "topVariety": "Spinach",
-      "grade": "Medium"
-    },
-    {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 1533,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2300,
-      "records": 15,
-      "topVariety": "Spinach",
-      "grade": "Local"
-    },
-    {
       "name": "Anand(Veg,Yard,Anand)",
       "district": "Anand",
       "avgPrice": 1500,
@@ -13984,13 +14193,24 @@
       "grade": "Grade B"
     },
     {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 1611,
+      "recentPrice": 1250,
+      "minPrice": 1250,
+      "maxPrice": 2750,
+      "records": 9,
+      "topVariety": "Spinach",
+      "grade": "Medium"
+    },
+    {
       "name": "Padra",
       "district": "Vadodara(Baroda)",
       "avgPrice": 944,
-      "recentPrice": null,
+      "recentPrice": 950,
       "minPrice": 550,
       "maxPrice": 1350,
-      "records": 8,
+      "records": 9,
       "topVariety": "Spinach",
       "grade": "FAQ"
     }
@@ -14087,13 +14307,24 @@
       "grade": "FAQ"
     },
     {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 1486,
+      "recentPrice": 2500,
+      "minPrice": 1000,
+      "maxPrice": 2500,
+      "records": 7,
+      "topVariety": "Onion Green",
+      "grade": "Local"
+    },
+    {
       "name": "Vadhvan",
       "district": "Surendranagar",
-      "avgPrice": 2150,
-      "recentPrice": null,
+      "avgPrice": 2136,
+      "recentPrice": 2000,
       "minPrice": 1250,
       "maxPrice": 6250,
-      "records": 10,
+      "records": 11,
       "topVariety": "Onion Green",
       "grade": "Local"
     },
@@ -14107,17 +14338,6 @@
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 1317,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 1700,
-      "records": 6,
-      "topVariety": "Onion Green",
-      "grade": "Local"
     }
   ],
   "papaya": [
@@ -14212,17 +14432,6 @@
       "grade": "Grade A"
     },
     {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 3706,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 6000,
-      "records": 17,
-      "topVariety": "Mousambi",
-      "grade": "Local"
-    },
-    {
       "name": "Navsari",
       "district": "Navsari",
       "avgPrice": 3650,
@@ -14232,6 +14441,17 @@
       "records": 10,
       "topVariety": "Mousambi",
       "grade": "Grade A"
+    },
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 3647,
+      "recentPrice": 2650,
+      "minPrice": 2500,
+      "maxPrice": 6000,
+      "records": 18,
+      "topVariety": "Mousambi",
+      "grade": "Local"
     }
   ],
   "pineapple": [
@@ -14260,15 +14480,59 @@
   ],
   "sesamumsesame-gingelly-til": [
     {
+      "name": "Una",
+      "district": "Gir Somnath",
+      "avgPrice": 17600,
+      "recentPrice": 17600,
+      "minPrice": 17600,
+      "maxPrice": 17600,
+      "records": 1,
+      "topVariety": "Black",
+      "grade": "FAQ"
+    },
+    {
       "name": "Vyra",
       "district": "Surat",
-      "avgPrice": 14982,
-      "recentPrice": null,
+      "avgPrice": 15256,
+      "recentPrice": 17175,
       "minPrice": 12950,
       "maxPrice": 18000,
-      "records": 7,
+      "records": 8,
       "topVariety": "Sesame",
       "grade": "FAQ"
+    },
+    {
+      "name": "Babra",
+      "district": "Amreli",
+      "avgPrice": 13592,
+      "recentPrice": 17113,
+      "minPrice": 9300,
+      "maxPrice": 19100,
+      "records": 13,
+      "topVariety": "Black",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jetpur(Dist.Rajkot)",
+      "district": "Rajkot",
+      "avgPrice": 10771,
+      "recentPrice": 15000,
+      "minPrice": 9125,
+      "maxPrice": 15000,
+      "records": 6,
+      "topVariety": "Sesame",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Dhrol",
+      "district": "Jamnagar",
+      "avgPrice": 9150,
+      "recentPrice": 14265,
+      "minPrice": 5185,
+      "maxPrice": 14265,
+      "records": 4,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Veraval",
@@ -14289,17 +14553,6 @@
       "minPrice": 10000,
       "maxPrice": 14500,
       "records": 4,
-      "topVariety": "Black",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Babra",
-      "district": "Amreli",
-      "avgPrice": 12952,
-      "recentPrice": null,
-      "minPrice": 9300,
-      "maxPrice": 16875,
-      "records": 11,
       "topVariety": "Black",
       "grade": "FAQ"
     },
@@ -14502,17 +14755,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Jetpur(Dist.Rajkot)",
-      "district": "Rajkot",
-      "avgPrice": 9925,
-      "recentPrice": null,
-      "minPrice": 9125,
-      "maxPrice": 11250,
-      "records": 5,
-      "topVariety": "Sesame",
-      "grade": "FAQ"
-    },
-    {
       "name": "Morbi",
       "district": "Morbi",
       "avgPrice": 9895,
@@ -14653,17 +14895,6 @@
       "maxPrice": 7500,
       "records": 1,
       "topVariety": "White",
-      "grade": "Local"
-    },
-    {
-      "name": "Dhrol",
-      "district": "Jamnagar",
-      "avgPrice": 7445,
-      "recentPrice": null,
-      "minPrice": 5185,
-      "maxPrice": 9650,
-      "records": 3,
-      "topVariety": null,
       "grade": "Local"
     }
   ],
@@ -14970,17 +15201,6 @@
   ],
   "orange": [
     {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 9535,
-      "recentPrice": null,
-      "minPrice": 7325,
-      "maxPrice": 13000,
-      "records": 10,
-      "topVariety": "Orange",
-      "grade": "Local"
-    },
-    {
       "name": "Deesa(Deesa Veg Yard)",
       "district": "Banaskanth",
       "avgPrice": 9088,
@@ -14990,6 +15210,17 @@
       "records": 4,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 9418,
+      "recentPrice": 8250,
+      "minPrice": 7325,
+      "maxPrice": 13000,
+      "records": 11,
+      "topVariety": "Orange",
+      "grade": "Local"
     },
     {
       "name": "Porbandar",
@@ -15016,6 +15247,105 @@
   ],
   "onion": [
     {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 1927,
+      "recentPrice": 5000,
+      "minPrice": 1400,
+      "maxPrice": 5000,
+      "records": 11,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 4500,
+      "recentPrice": 4500,
+      "minPrice": 4500,
+      "maxPrice": 4500,
+      "records": 1,
+      "topVariety": "Onion",
+      "grade": "Local"
+    },
+    {
+      "name": "Khambhat(Veg Yard Khambhat)",
+      "district": "Anand",
+      "avgPrice": 2071,
+      "recentPrice": 4400,
+      "minPrice": 1200,
+      "maxPrice": 4400,
+      "records": 7,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 1558,
+      "recentPrice": 4000,
+      "minPrice": 1000,
+      "maxPrice": 4000,
+      "records": 12,
+      "topVariety": "Onion",
+      "grade": "Local"
+    },
+    {
+      "name": "Navsari",
+      "district": "Navsari",
+      "avgPrice": 1688,
+      "recentPrice": 3900,
+      "minPrice": 1125,
+      "maxPrice": 3900,
+      "records": 12,
+      "topVariety": "Onion",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Anand(Veg,Yard,Anand)",
+      "district": "Anand",
+      "avgPrice": 1542,
+      "recentPrice": 3500,
+      "minPrice": 1250,
+      "maxPrice": 3500,
+      "records": 12,
+      "topVariety": "Onion",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 1346,
+      "recentPrice": 3350,
+      "minPrice": 1025,
+      "maxPrice": 3350,
+      "records": 15,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Rajkot(Veg.Sub Yard)",
+      "district": "Rajkot",
+      "avgPrice": 1164,
+      "recentPrice": 3055,
+      "minPrice": 775,
+      "maxPrice": 3055,
+      "records": 15,
+      "topVariety": "Onion",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jetpur(Dist.Rajkot)",
+      "district": "Rajkot",
+      "avgPrice": 1119,
+      "recentPrice": 2405,
+      "minPrice": 555,
+      "maxPrice": 2405,
+      "records": 7,
+      "topVariety": "Onion",
+      "grade": "FAQ"
+    },
+    {
       "name": "Vadodara(Sayajipura)",
       "district": "Vadodara(Baroda)",
       "avgPrice": 2050,
@@ -15038,28 +15368,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Khambhat(Veg Yard Khambhat)",
-      "district": "Anand",
-      "avgPrice": 1683,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 3000,
-      "records": 6,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 1620,
-      "recentPrice": null,
-      "minPrice": 1400,
-      "maxPrice": 2750,
-      "records": 10,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Bhuj",
       "district": "Kachchh",
       "avgPrice": 1533,
@@ -15071,28 +15379,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Navsari",
-      "district": "Navsari",
-      "avgPrice": 1486,
-      "recentPrice": null,
-      "minPrice": 1125,
-      "maxPrice": 2500,
-      "records": 11,
-      "topVariety": "Onion",
-      "grade": "Grade A"
-    },
-    {
-      "name": "Anand(Veg,Yard,Anand)",
-      "district": "Anand",
-      "avgPrice": 1364,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 2000,
-      "records": 11,
-      "topVariety": "Onion",
-      "grade": "Grade B"
-    },
-    {
       "name": "Ahmedabad(Chimanbhai Patal Market Vasana)",
       "district": "Ahmedabad",
       "avgPrice": 1355,
@@ -15102,17 +15388,6 @@
       "records": 19,
       "topVariety": "Local",
       "grade": "FAQ"
-    },
-    {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 1336,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2600,
-      "records": 11,
-      "topVariety": "Onion",
-      "grade": "Local"
     },
     {
       "name": "Bilimora",
@@ -15181,17 +15456,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 1203,
-      "recentPrice": null,
-      "minPrice": 1025,
-      "maxPrice": 2000,
-      "records": 14,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Jamnagar",
       "district": "Jamnagar",
       "avgPrice": 1155,
@@ -15233,28 +15497,6 @@
       "maxPrice": 1813,
       "records": 10,
       "topVariety": "Red",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Rajkot(Veg.Sub Yard)",
-      "district": "Rajkot",
-      "avgPrice": 1029,
-      "recentPrice": null,
-      "minPrice": 775,
-      "maxPrice": 1575,
-      "records": 14,
-      "topVariety": "Onion",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Jetpur(Dist.Rajkot)",
-      "district": "Rajkot",
-      "avgPrice": 905,
-      "recentPrice": null,
-      "minPrice": 555,
-      "maxPrice": 1905,
-      "records": 6,
-      "topVariety": "Onion",
       "grade": "FAQ"
     },
     {
@@ -15306,16 +15548,27 @@
     {
       "name": "Gondal(Veg.market Gondal)",
       "district": "Rajkot",
-      "avgPrice": 5125,
-      "recentPrice": null,
+      "avgPrice": 5500,
+      "recentPrice": 7750,
       "minPrice": 4250,
-      "maxPrice": 6250,
-      "records": 6,
+      "maxPrice": 7750,
+      "records": 7,
       "topVariety": "Pomogranate",
       "grade": "Local"
     }
   ],
   "methileaves": [
+    {
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 10700,
+      "recentPrice": 10700,
+      "minPrice": 10700,
+      "maxPrice": 10700,
+      "records": 1,
+      "topVariety": "Methi",
+      "grade": "Local"
+    },
     {
       "name": "Porbandar",
       "district": "Porbandar",
@@ -15325,6 +15578,28 @@
       "maxPrice": 12500,
       "records": 15,
       "topVariety": "Fenugreek-Organic",
+      "grade": "Local"
+    },
+    {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 6593,
+      "recentPrice": 9000,
+      "minPrice": 2500,
+      "maxPrice": 11000,
+      "records": 27,
+      "topVariety": "Methi",
+      "grade": "Local"
+    },
+    {
+      "name": "Khambhat(Veg Yard Khambhat)",
+      "district": "Anand",
+      "avgPrice": 6225,
+      "recentPrice": 9000,
+      "minPrice": 3000,
+      "maxPrice": 9000,
+      "records": 20,
+      "topVariety": "Methi",
       "grade": "Local"
     },
     {
@@ -15339,17 +15614,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 6500,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 11000,
-      "records": 26,
-      "topVariety": "Methi",
-      "grade": "Local"
-    },
-    {
       "name": "Ahmedabad",
       "district": "Ahmedabad",
       "avgPrice": 6441,
@@ -15361,28 +15625,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Khambhat(Veg Yard Khambhat)",
-      "district": "Anand",
-      "avgPrice": 6079,
-      "recentPrice": null,
-      "minPrice": 3000,
-      "maxPrice": 9000,
-      "records": 19,
-      "topVariety": "Methi",
-      "grade": "Local"
-    },
-    {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 5568,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 9750,
-      "records": 22,
-      "topVariety": "Methi",
-      "grade": "Medium"
-    },
-    {
       "name": "Navsari",
       "district": "Navsari",
       "avgPrice": 4109,
@@ -15392,6 +15634,17 @@
       "records": 16,
       "topVariety": "Methi",
       "grade": "Local"
+    },
+    {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 5489,
+      "recentPrice": 3750,
+      "minPrice": 1250,
+      "maxPrice": 9750,
+      "records": 23,
+      "topVariety": "Methi",
+      "grade": "Medium"
     },
     {
       "name": "Kalol(Veg,Market,Kalol)",
@@ -15440,6 +15693,28 @@
       "grade": "Medium"
     },
     {
+      "name": "Padra",
+      "district": "Vadodara(Baroda)",
+      "avgPrice": 1660,
+      "recentPrice": 1850,
+      "minPrice": 1400,
+      "maxPrice": 1850,
+      "records": 26,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 1598,
+      "recentPrice": 1750,
+      "minPrice": 1250,
+      "maxPrice": 1750,
+      "records": 23,
+      "topVariety": "Potato",
+      "grade": "Medium"
+    },
+    {
       "name": "Nadiad",
       "district": "Kheda",
       "avgPrice": 1693,
@@ -15449,28 +15724,6 @@
       "records": 23,
       "topVariety": "Potato",
       "grade": "FAQ"
-    },
-    {
-      "name": "Padra",
-      "district": "Vadodara(Baroda)",
-      "avgPrice": 1652,
-      "recentPrice": null,
-      "minPrice": 1400,
-      "maxPrice": 1850,
-      "records": 25,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 1591,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 1750,
-      "records": 22,
-      "topVariety": "Potato",
-      "grade": "Medium"
     },
     {
       "name": "Bilimora",
@@ -15495,6 +15748,28 @@
       "grade": "FAQ"
     },
     {
+      "name": "Khambhat(Veg Yard Khambhat)",
+      "district": "Anand",
+      "avgPrice": 1295,
+      "recentPrice": 1400,
+      "minPrice": 1000,
+      "maxPrice": 1500,
+      "records": 21,
+      "topVariety": "Desi",
+      "grade": "Local"
+    },
+    {
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 1400,
+      "recentPrice": 1400,
+      "minPrice": 1400,
+      "maxPrice": 1400,
+      "records": 1,
+      "topVariety": "Potato",
+      "grade": "Local"
+    },
+    {
       "name": "Bharuch",
       "district": "Bharuch",
       "avgPrice": 1372,
@@ -15504,6 +15779,17 @@
       "records": 18,
       "topVariety": null,
       "grade": "Local"
+    },
+    {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 1063,
+      "recentPrice": 1350,
+      "minPrice": 850,
+      "maxPrice": 1350,
+      "records": 27,
+      "topVariety": null,
+      "grade": "FAQ"
     },
     {
       "name": "Nadiyad(Chaklasi)",
@@ -15526,17 +15812,6 @@
       "records": 25,
       "topVariety": "Potato",
       "grade": "FAQ"
-    },
-    {
-      "name": "Khambhat(Veg Yard Khambhat)",
-      "district": "Anand",
-      "avgPrice": 1290,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 1500,
-      "records": 20,
-      "topVariety": "Desi",
-      "grade": "Local"
     },
     {
       "name": "Bhuj",
@@ -15563,11 +15838,11 @@
     {
       "name": "Navsari",
       "district": "Navsari",
-      "avgPrice": 1208,
-      "recentPrice": null,
+      "avgPrice": 1207,
+      "recentPrice": 1175,
       "minPrice": 1000,
       "maxPrice": 1375,
-      "records": 32,
+      "records": 33,
       "topVariety": "Potato",
       "grade": "Grade A"
     },
@@ -15583,35 +15858,13 @@
       "grade": "Grade A"
     },
     {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 1052,
-      "recentPrice": null,
-      "minPrice": 850,
-      "maxPrice": 1300,
-      "records": 26,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Gondal(Veg.market Gondal)",
       "district": "Rajkot",
       "avgPrice": 1036,
-      "recentPrice": null,
+      "recentPrice": 1050,
       "minPrice": 875,
       "maxPrice": 1200,
-      "records": 30,
-      "topVariety": "Potato",
-      "grade": "Local"
-    },
-    {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 1007,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 1200,
-      "records": 29,
+      "records": 31,
       "topVariety": "Potato",
       "grade": "Local"
     },
@@ -15624,6 +15877,28 @@
       "maxPrice": 1400,
       "records": 69,
       "topVariety": "Desi",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 1007,
+      "recentPrice": 1000,
+      "minPrice": 900,
+      "maxPrice": 1200,
+      "records": 30,
+      "topVariety": "Potato",
+      "grade": "Local"
+    },
+    {
+      "name": "Rajkot(Veg.Sub Yard)",
+      "district": "Rajkot",
+      "avgPrice": 935,
+      "recentPrice": 1000,
+      "minPrice": 855,
+      "maxPrice": 1000,
+      "records": 27,
+      "topVariety": "Potato",
       "grade": "FAQ"
     },
     {
@@ -15660,6 +15935,17 @@
       "grade": "Local"
     },
     {
+      "name": "Anand(Veg,Yard,Anand)",
+      "district": "Anand",
+      "avgPrice": 900,
+      "recentPrice": 950,
+      "minPrice": 600,
+      "maxPrice": 1750,
+      "records": 28,
+      "topVariety": "Potato",
+      "grade": "Grade B"
+    },
+    {
       "name": "Mansa(Manas Veg Yard)",
       "district": "Gandhinagar",
       "avgPrice": 950,
@@ -15669,28 +15955,6 @@
       "records": 2,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Rajkot(Veg.Sub Yard)",
-      "district": "Rajkot",
-      "avgPrice": 933,
-      "recentPrice": null,
-      "minPrice": 855,
-      "maxPrice": 975,
-      "records": 26,
-      "topVariety": "Potato",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Anand(Veg,Yard,Anand)",
-      "district": "Anand",
-      "avgPrice": 898,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 1750,
-      "records": 27,
-      "topVariety": "Potato",
-      "grade": "Grade B"
     },
     {
       "name": "Vijapur(veg)",
@@ -15719,49 +15983,38 @@
     {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 5238,
-      "recentPrice": null,
+      "avgPrice": 5219,
+      "recentPrice": 4750,
       "minPrice": 2000,
       "maxPrice": 8250,
-      "records": 25,
+      "records": 26,
       "topVariety": null,
       "grade": "FAQ"
     },
     {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
-      "avgPrice": 2997,
-      "recentPrice": null,
+      "avgPrice": 3011,
+      "recentPrice": 3500,
       "minPrice": 2000,
       "maxPrice": 4500,
-      "records": 35,
+      "records": 36,
       "topVariety": "Little gourd (Kundru)",
       "grade": "Local"
     },
     {
       "name": "Padra",
       "district": "Vadodara(Baroda)",
-      "avgPrice": 2390,
-      "recentPrice": null,
+      "avgPrice": 2344,
+      "recentPrice": 1250,
       "minPrice": 1200,
       "maxPrice": 3750,
-      "records": 24,
+      "records": 25,
       "topVariety": null,
       "grade": "FAQ"
     }
   ],
   "pointed-gourdparval": [
-    {
-      "name": "Dahod(Veg. Market)",
-      "district": "Dahod",
-      "avgPrice": 4552,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 6000,
-      "records": 29,
-      "topVariety": "Pointed gourd (Parval)",
-      "grade": "Local"
-    },
     {
       "name": "Deesa(Deesa Veg Yard)",
       "district": "Banaskanth",
@@ -15785,13 +16038,24 @@
       "grade": "FAQ"
     },
     {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 4540,
+      "recentPrice": 4200,
+      "minPrice": 2500,
+      "maxPrice": 6000,
+      "records": 30,
+      "topVariety": "Pointed gourd (Parval)",
+      "grade": "Local"
+    },
+    {
       "name": "Padra",
       "district": "Vadodara(Baroda)",
-      "avgPrice": 4149,
-      "recentPrice": null,
+      "avgPrice": 4148,
+      "recentPrice": 4125,
       "minPrice": 3250,
       "maxPrice": 5250,
-      "records": 23,
+      "records": 24,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -15807,6 +16071,17 @@
       "grade": "Local"
     },
     {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 3434,
+      "recentPrice": 3750,
+      "minPrice": 2000,
+      "maxPrice": 4500,
+      "records": 31,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Vadodara(Sayajipura)",
       "district": "Vadodara(Baroda)",
       "avgPrice": 3644,
@@ -15814,17 +16089,6 @@
       "minPrice": 3150,
       "maxPrice": 5800,
       "records": 8,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 3423,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 4500,
-      "records": 30,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -15840,15 +16104,15 @@
       "grade": "Grade A"
     },
     {
-      "name": "Chikli(Khorgam)",
-      "district": "Valsad",
-      "avgPrice": 2907,
-      "recentPrice": null,
-      "minPrice": 2125,
-      "maxPrice": 3750,
-      "records": 27,
+      "name": "Mahuva(Anaval)",
+      "district": "Surat",
+      "avgPrice": 2295,
+      "recentPrice": 2700,
+      "minPrice": 1200,
+      "maxPrice": 3500,
+      "records": 20,
       "topVariety": null,
-      "grade": "FAQ"
+      "grade": "Local"
     },
     {
       "name": "Bharuch",
@@ -15862,18 +16126,29 @@
       "grade": "Local"
     },
     {
-      "name": "Mahuva(Anaval)",
-      "district": "Surat",
-      "avgPrice": 2274,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 3500,
-      "records": 19,
+      "name": "Chikli(Khorgam)",
+      "district": "Valsad",
+      "avgPrice": 2884,
+      "recentPrice": 2250,
+      "minPrice": 2125,
+      "maxPrice": 3750,
+      "records": 28,
       "topVariety": null,
-      "grade": "Local"
+      "grade": "FAQ"
     }
   ],
   "guava": [
+    {
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 3952,
+      "recentPrice": 6500,
+      "minPrice": 2500,
+      "maxPrice": 6500,
+      "records": 21,
+      "topVariety": "Guava",
+      "grade": "Local"
+    },
     {
       "name": "Mehsana(Mehsana Veg)",
       "district": "Mehsana",
@@ -15906,17 +16181,6 @@
       "records": 4,
       "topVariety": "Guava",
       "grade": "Grade A"
-    },
-    {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 3825,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 6000,
-      "records": 20,
-      "topVariety": "Guava",
-      "grade": "Local"
     },
     {
       "name": "Navsari",
@@ -15969,11 +16233,11 @@
     {
       "name": "Gondal(Veg.market Gondal)",
       "district": "Rajkot",
-      "avgPrice": 13431,
-      "recentPrice": null,
+      "avgPrice": 13939,
+      "recentPrice": 18000,
       "minPrice": 7000,
       "maxPrice": 25000,
-      "records": 8,
+      "records": 9,
       "topVariety": "Green",
       "grade": "Local"
     },
@@ -16002,37 +16266,37 @@
   ],
   "pumpkin": [
     {
-      "name": "Gondal(Veg.market Gondal)",
-      "district": "Rajkot",
-      "avgPrice": 1738,
-      "recentPrice": null,
-      "minPrice": 1150,
-      "maxPrice": 2500,
-      "records": 8,
-      "topVariety": "Pumpkin",
-      "grade": "Local"
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 1344,
+      "recentPrice": 1650,
+      "minPrice": 1050,
+      "maxPrice": 1650,
+      "records": 31,
+      "topVariety": null,
+      "grade": "FAQ"
     },
     {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
-      "avgPrice": 1442,
-      "recentPrice": null,
+      "avgPrice": 1444,
+      "recentPrice": 1500,
       "minPrice": 1000,
       "maxPrice": 1800,
-      "records": 31,
+      "records": 32,
       "topVariety": "Pumpkin",
       "grade": "Local"
     },
     {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 1333,
-      "recentPrice": null,
-      "minPrice": 1050,
-      "maxPrice": 1550,
-      "records": 30,
-      "topVariety": null,
-      "grade": "FAQ"
+      "name": "Gondal(Veg.market Gondal)",
+      "district": "Rajkot",
+      "avgPrice": 1672,
+      "recentPrice": 1150,
+      "minPrice": 1150,
+      "maxPrice": 2500,
+      "records": 9,
+      "topVariety": "Pumpkin",
+      "grade": "Local"
     },
     {
       "name": "Padra",
@@ -16070,17 +16334,6 @@
   ],
   "ridgeguardtori": [
     {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 3893,
-      "recentPrice": null,
-      "minPrice": 2750,
-      "maxPrice": 5000,
-      "records": 27,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Mansa(Manas Veg Yard)",
       "district": "Gandhinagar",
       "avgPrice": 3500,
@@ -16092,17 +16345,6 @@
       "grade": "Local"
     },
     {
-      "name": "Vadhvan",
-      "district": "Surendranagar",
-      "avgPrice": 3033,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 4750,
-      "records": 23,
-      "topVariety": "Ridgeguard(Tori)",
-      "grade": "Medium"
-    },
-    {
       "name": "Vadodara(Sayajipura)",
       "district": "Vadodara(Baroda)",
       "avgPrice": 3025,
@@ -16112,6 +16354,17 @@
       "records": 7,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Himatnagar(Veg.Market Himatnagar)",
+      "district": "Sabarkantha",
+      "avgPrice": 2700,
+      "recentPrice": 2700,
+      "minPrice": 2700,
+      "maxPrice": 2700,
+      "records": 1,
+      "topVariety": "Ridgeguard(Tori)",
+      "grade": "Local"
     },
     {
       "name": "Dahod(Veg. Market)",
@@ -16134,6 +16387,28 @@
       "records": 15,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 3825,
+      "recentPrice": 2000,
+      "minPrice": 2000,
+      "maxPrice": 5000,
+      "records": 28,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 2979,
+      "recentPrice": 1750,
+      "minPrice": 1250,
+      "maxPrice": 4750,
+      "records": 24,
+      "topVariety": "Ridgeguard(Tori)",
+      "grade": "Medium"
     }
   ],
   "sponge-gourd": [
@@ -16149,35 +16424,35 @@
       "grade": "FAQ"
     },
     {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 2479,
-      "recentPrice": null,
-      "minPrice": 1750,
-      "maxPrice": 4000,
-      "records": 26,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
-      "avgPrice": 1872,
-      "recentPrice": null,
+      "avgPrice": 1906,
+      "recentPrice": 3000,
       "minPrice": 1400,
       "maxPrice": 4200,
-      "records": 32,
+      "records": 33,
       "topVariety": "Sponge gourd",
       "grade": "Local"
     },
     {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 2452,
+      "recentPrice": 1750,
+      "minPrice": 1750,
+      "maxPrice": 4000,
+      "records": 27,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Padra",
       "district": "Vadodara(Baroda)",
-      "avgPrice": 1774,
-      "recentPrice": null,
+      "avgPrice": 1757,
+      "recentPrice": 1400,
       "minPrice": 1100,
       "maxPrice": 2750,
-      "records": 21,
+      "records": 22,
       "topVariety": null,
       "grade": "FAQ"
     }
@@ -16197,6 +16472,17 @@
   ],
   "mangoraw-ripe": [
     {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 3459,
+      "recentPrice": 9750,
+      "minPrice": 2000,
+      "maxPrice": 9750,
+      "records": 28,
+      "topVariety": "Mango - Raw-Ripe",
+      "grade": "FAQ"
+    },
+    {
       "name": "Khambhat(Veg Yard Khambhat)",
       "district": "Anand",
       "avgPrice": 4500,
@@ -16215,17 +16501,6 @@
       "minPrice": 2750,
       "maxPrice": 6750,
       "records": 11,
-      "topVariety": "Mango - Raw-Ripe",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 3226,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 6500,
-      "records": 27,
       "topVariety": "Mango - Raw-Ripe",
       "grade": "FAQ"
     },
@@ -16267,22 +16542,22 @@
     {
       "name": "Dahod(Veg. Market)",
       "district": "Dahod",
-      "avgPrice": 11089,
-      "recentPrice": null,
+      "avgPrice": 11185,
+      "recentPrice": 13000,
       "minPrice": 5000,
       "maxPrice": 15000,
-      "records": 19,
+      "records": 20,
       "topVariety": "Peas cod",
       "grade": "Local"
     },
     {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 9115,
-      "recentPrice": null,
+      "avgPrice": 9131,
+      "recentPrice": 9500,
       "minPrice": 5000,
       "maxPrice": 11750,
-      "records": 24,
+      "records": 25,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -16759,6 +17034,17 @@
       "grade": "Local"
     },
     {
+      "name": "Kalol",
+      "district": "Gandhinagar",
+      "avgPrice": 5190,
+      "recentPrice": 6250,
+      "minPrice": 4500,
+      "maxPrice": 6250,
+      "records": 5,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Visnagar",
       "district": "Mehsana",
       "avgPrice": 5509,
@@ -16779,17 +17065,6 @@
       "records": 7,
       "topVariety": "Jowar ( White)",
       "grade": "FAQ"
-    },
-    {
-      "name": "Kalol",
-      "district": "Gandhinagar",
-      "avgPrice": 4925,
-      "recentPrice": null,
-      "minPrice": 4500,
-      "maxPrice": 5750,
-      "records": 4,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Jam Jodhpur",
@@ -17315,11 +17590,11 @@
     {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 5033,
-      "recentPrice": null,
+      "avgPrice": 5007,
+      "recentPrice": 4250,
       "minPrice": 2650,
       "maxPrice": 8750,
-      "records": 29,
+      "records": 30,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -17339,11 +17614,11 @@
     {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 4350,
-      "recentPrice": null,
+      "avgPrice": 4317,
+      "recentPrice": 3500,
       "minPrice": 3250,
       "maxPrice": 4750,
-      "records": 25,
+      "records": 26,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -17374,11 +17649,11 @@
     {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 1033,
-      "recentPrice": null,
+      "avgPrice": 1034,
+      "recentPrice": 1075,
       "minPrice": 750,
       "maxPrice": 1350,
-      "records": 29,
+      "records": 30,
       "topVariety": null,
       "grade": "FAQ"
     }
@@ -17602,16 +17877,38 @@
     {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 5287,
-      "recentPrice": null,
-      "minPrice": 4000,
+      "avgPrice": 5232,
+      "recentPrice": 3750,
+      "minPrice": 3750,
       "maxPrice": 6250,
-      "records": 27,
+      "records": 28,
       "topVariety": null,
       "grade": "FAQ"
     }
   ],
   "yamratalu": [
+    {
+      "name": "Surat",
+      "district": "Surat",
+      "avgPrice": 6367,
+      "recentPrice": 8750,
+      "minPrice": 5000,
+      "maxPrice": 8750,
+      "records": 15,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 8000,
+      "recentPrice": 8000,
+      "minPrice": 8000,
+      "maxPrice": 8000,
+      "records": 1,
+      "topVariety": "Yam (Ratalu)",
+      "grade": "Local"
+    },
     {
       "name": "Ahmedabad",
       "district": "Ahmedabad",
@@ -17622,30 +17919,41 @@
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Surat",
-      "district": "Surat",
-      "avgPrice": 6196,
-      "recentPrice": null,
-      "minPrice": 5000,
-      "maxPrice": 8250,
-      "records": 14,
-      "topVariety": null,
-      "grade": "FAQ"
     }
   ],
   "raddish": [
     {
       "name": "Gondal(Veg.market Gondal)",
       "district": "Rajkot",
-      "avgPrice": 1625,
-      "recentPrice": null,
+      "avgPrice": 1679,
+      "recentPrice": 2000,
       "minPrice": 1000,
       "maxPrice": 2000,
-      "records": 6,
+      "records": 7,
       "topVariety": "Raddish",
       "grade": "Local"
+    },
+    {
+      "name": "Dahod(Veg. Market)",
+      "district": "Dahod",
+      "avgPrice": 1700,
+      "recentPrice": 1700,
+      "minPrice": 1700,
+      "maxPrice": 1700,
+      "records": 1,
+      "topVariety": "Raddish",
+      "grade": "Local"
+    },
+    {
+      "name": "Vadhvan",
+      "district": "Surendranagar",
+      "avgPrice": 1500,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "records": 1,
+      "topVariety": "Raddish",
+      "grade": "Medium"
     },
     {
       "name": "Ahmedabad",
@@ -17940,11 +18248,11 @@
     {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 6490,
-      "recentPrice": null,
+      "avgPrice": 6536,
+      "recentPrice": 7000,
       "minPrice": 6000,
       "maxPrice": 7500,
-      "records": 10,
+      "records": 11,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -18010,11 +18318,11 @@
     {
       "name": "Vadhvan",
       "district": "Surendranagar",
-      "avgPrice": 9650,
-      "recentPrice": null,
+      "avgPrice": 9917,
+      "recentPrice": 11250,
       "minPrice": 7750,
       "maxPrice": 12750,
-      "records": 5,
+      "records": 6,
       "topVariety": "Peas Wet",
       "grade": "Medium"
     },
@@ -18349,11 +18657,11 @@
     {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 2500,
-      "recentPrice": null,
-      "minPrice": 2500,
+      "avgPrice": 1725,
+      "recentPrice": 950,
+      "minPrice": 950,
       "maxPrice": 2500,
-      "records": 1,
+      "records": 2,
       "topVariety": null,
       "grade": "FAQ"
     }
@@ -18473,11 +18781,11 @@
     {
       "name": "Surat",
       "district": "Surat",
-      "avgPrice": 11833,
-      "recentPrice": null,
-      "minPrice": 11500,
+      "avgPrice": 10125,
+      "recentPrice": 5000,
+      "minPrice": 5000,
       "maxPrice": 12500,
-      "records": 3,
+      "records": 4,
       "topVariety": null,
       "grade": "FAQ"
     }

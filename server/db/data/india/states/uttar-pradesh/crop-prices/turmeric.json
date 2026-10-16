@@ -23,6 +23,12 @@
       "date": "2026-06",
       "market": 1000,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 10500,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -74,15 +80,22 @@
       "volume": 1,
       "minPrice": 1000,
       "maxPrice": 1000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 10500,
+      "volume": 1,
+      "minPrice": 10500,
+      "maxPrice": 10500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Kanpur",
       "nameHi": "Kanpur",
-      "avgPrice": 13695,
-      "records": 4
+      "avgPrice": 13056,
+      "records": 5
     },
     {
       "district": "Lucknow",

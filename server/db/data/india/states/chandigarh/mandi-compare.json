@@ -1,6 +1,17 @@
 {
   "apple": [
     {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 15000,
+      "recentPrice": 15000,
+      "minPrice": 15000,
+      "maxPrice": 15000,
+      "records": 1,
+      "topVariety": "Apple",
+      "grade": "Medium"
+    },
+    {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
       "avgPrice": 11000,
@@ -27,11 +38,11 @@
     {
       "name": "Chandigarh (Grain/F&V)",
       "district": "Chandigarh",
-      "avgPrice": 1506,
-      "recentPrice": null,
+      "avgPrice": 1494,
+      "recentPrice": 1300,
       "minPrice": 1200,
       "maxPrice": 1800,
-      "records": 16,
+      "records": 17,
       "topVariety": "Bhindi",
       "grade": "Local"
     }
@@ -51,11 +62,11 @@
     {
       "name": "Chandigarh (Grain/F&V)",
       "district": "Chandigarh",
-      "avgPrice": 1300,
-      "recentPrice": null,
+      "avgPrice": 1350,
+      "recentPrice": 1400,
       "minPrice": 1300,
-      "maxPrice": 1300,
-      "records": 1,
+      "maxPrice": 1400,
+      "records": 2,
       "topVariety": "Bitter Gourd",
       "grade": "Local"
     }
@@ -76,26 +87,15 @@
       "name": "Chandigarh (Grain/F&V)",
       "district": "Chandigarh",
       "avgPrice": 1006,
-      "recentPrice": null,
+      "recentPrice": 1000,
       "minPrice": 1000,
       "maxPrice": 1100,
-      "records": 17,
+      "records": 18,
       "topVariety": "Bottle Gourd",
       "grade": "Local"
     }
   ],
   "brinjal": [
-    {
-      "name": "Chandigarh (Grain/F&V)",
-      "district": "Chandigarh",
-      "avgPrice": 1800,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 1800,
-      "records": 1,
-      "topVariety": "Brinjal",
-      "grade": "Local"
-    },
     {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
@@ -106,9 +106,31 @@
       "records": 80,
       "topVariety": "Brinjal",
       "grade": "FAQ"
+    },
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 1500,
+      "recentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1800,
+      "records": 2,
+      "topVariety": "Brinjal",
+      "grade": "Local"
     }
   ],
   "capsicum": [
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 3500,
+      "recentPrice": 3500,
+      "minPrice": 3500,
+      "maxPrice": 3500,
+      "records": 1,
+      "topVariety": "Capsicum",
+      "grade": "FAQ"
+    },
     {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
@@ -122,6 +144,17 @@
     }
   ],
   "cabbage": [
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 1000,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "records": 1,
+      "topVariety": "Cabbage",
+      "grade": "FAQ"
+    },
     {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
@@ -138,11 +171,11 @@
     {
       "name": "Chandigarh (Grain/F&V)",
       "district": "Chandigarh",
-      "avgPrice": 2811,
-      "recentPrice": null,
-      "minPrice": 2000,
+      "avgPrice": 2732,
+      "recentPrice": 1300,
+      "minPrice": 1300,
       "maxPrice": 3500,
-      "records": 18,
+      "records": 19,
       "topVariety": "Carrot",
       "grade": "FAQ"
     },
@@ -159,6 +192,17 @@
     }
   ],
   "cauliflower": [
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 1500,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "records": 1,
+      "topVariety": "Cauliflower",
+      "grade": "FAQ"
+    },
     {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
@@ -195,20 +239,20 @@
       "records": 81,
       "topVariety": "Cucumbar",
       "grade": "FAQ"
-    }
-  ],
-  "gingergreen": [
+    },
     {
       "name": "Chandigarh (Grain/F&V)",
       "district": "Chandigarh",
-      "avgPrice": 9059,
-      "recentPrice": null,
-      "minPrice": 7000,
-      "maxPrice": 12000,
-      "records": 17,
-      "topVariety": "Green Ginger",
+      "avgPrice": 1300,
+      "recentPrice": 1300,
+      "minPrice": 1300,
+      "maxPrice": 1300,
+      "records": 1,
+      "topVariety": "Cucumbar",
       "grade": "FAQ"
-    },
+    }
+  ],
+  "gingergreen": [
     {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
@@ -217,6 +261,17 @@
       "minPrice": 3000,
       "maxPrice": 6000,
       "records": 87,
+      "topVariety": "Green Ginger",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 8750,
+      "recentPrice": 3500,
+      "minPrice": 3500,
+      "maxPrice": 12000,
+      "records": 18,
       "topVariety": "Green Ginger",
       "grade": "FAQ"
     }
@@ -236,6 +291,17 @@
   ],
   "peas-wet": [
     {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 7000,
+      "recentPrice": 7000,
+      "minPrice": 7000,
+      "maxPrice": 7000,
+      "records": 1,
+      "topVariety": "Peas Wet",
+      "grade": "FAQ"
+    },
+    {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
       "avgPrice": 3144,
@@ -251,11 +317,11 @@
     {
       "name": "Chandigarh (Grain/F&V)",
       "district": "Chandigarh",
-      "avgPrice": 1929,
-      "recentPrice": null,
+      "avgPrice": 1933,
+      "recentPrice": 2000,
       "minPrice": 1200,
       "maxPrice": 2800,
-      "records": 17,
+      "records": 18,
       "topVariety": "Tomato",
       "grade": "FAQ"
     },
@@ -273,6 +339,17 @@
   ],
   "pumpkin": [
     {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 847,
+      "recentPrice": 1300,
+      "minPrice": 600,
+      "maxPrice": 1300,
+      "records": 19,
+      "topVariety": "Pumpkin",
+      "grade": "Local"
+    },
+    {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
       "avgPrice": 1133,
@@ -282,28 +359,17 @@
       "records": 9,
       "topVariety": "Pumpkin",
       "grade": "FAQ"
-    },
-    {
-      "name": "Chandigarh (Grain/F&V)",
-      "district": "Chandigarh",
-      "avgPrice": 822,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 1000,
-      "records": 18,
-      "topVariety": "Pumpkin",
-      "grade": "Local"
     }
   ],
   "potato": [
     {
       "name": "Chandigarh (Grain/F&V)",
       "district": "Chandigarh",
-      "avgPrice": 800,
-      "recentPrice": null,
+      "avgPrice": 842,
+      "recentPrice": 1600,
       "minPrice": 800,
-      "maxPrice": 800,
-      "records": 18,
+      "maxPrice": 1600,
+      "records": 19,
       "topVariety": "Potato",
       "grade": "FAQ"
     },
@@ -330,9 +396,31 @@
       "records": 4,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 7000,
+      "recentPrice": 7000,
+      "minPrice": 7000,
+      "maxPrice": 7000,
+      "records": 1,
+      "topVariety": null,
+      "grade": "FAQ"
     }
   ],
   "green-chilli": [
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 3367,
+      "recentPrice": 5000,
+      "minPrice": 1600,
+      "maxPrice": 5000,
+      "records": 3,
+      "topVariety": "Green Chilly",
+      "grade": "FAQ"
+    },
     {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
@@ -343,28 +431,17 @@
       "records": 5,
       "topVariety": "Green Chilly",
       "grade": "FAQ"
-    },
-    {
-      "name": "Chandigarh (Grain/F&V)",
-      "district": "Chandigarh",
-      "avgPrice": 2550,
-      "recentPrice": null,
-      "minPrice": 1600,
-      "maxPrice": 3500,
-      "records": 2,
-      "topVariety": "Green Chilly",
-      "grade": "Local"
     }
   ],
   "onion": [
     {
       "name": "Chandigarh (Grain/F&V)",
       "district": "Chandigarh",
-      "avgPrice": 2000,
-      "recentPrice": null,
+      "avgPrice": 2750,
+      "recentPrice": 3500,
       "minPrice": 2000,
-      "maxPrice": 2000,
-      "records": 1,
+      "maxPrice": 3500,
+      "records": 2,
       "topVariety": "Onion",
       "grade": "FAQ"
     },
@@ -408,11 +485,11 @@
     {
       "name": "Chandigarh (Grain/F&V)",
       "district": "Chandigarh",
-      "avgPrice": 1150,
-      "recentPrice": null,
+      "avgPrice": 1500,
+      "recentPrice": 2200,
       "minPrice": 800,
-      "maxPrice": 1500,
-      "records": 2,
+      "maxPrice": 2200,
+      "records": 3,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -429,6 +506,17 @@
     }
   ],
   "pomegranate": [
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 17000,
+      "recentPrice": 17000,
+      "minPrice": 17000,
+      "maxPrice": 17000,
+      "records": 1,
+      "topVariety": "Pomogranate",
+      "grade": "Medium"
+    },
     {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
@@ -458,12 +546,25 @@
     {
       "name": "Chandigarh (Grain/F&V)",
       "district": "Chandigarh",
-      "avgPrice": 7500,
-      "recentPrice": null,
-      "minPrice": 5500,
+      "avgPrice": 7294,
+      "recentPrice": 4000,
+      "minPrice": 4000,
       "maxPrice": 8000,
-      "records": 16,
+      "records": 17,
       "topVariety": "Mousambi",
+      "grade": "Medium"
+    }
+  ],
+  "orange": [
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 9000,
+      "recentPrice": 9000,
+      "minPrice": 9000,
+      "maxPrice": 9000,
+      "records": 1,
+      "topVariety": "Orange",
       "grade": "Medium"
     }
   ]

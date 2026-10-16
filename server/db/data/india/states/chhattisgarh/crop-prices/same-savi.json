@@ -11,6 +11,12 @@
       "date": "2026-03",
       "market": 1200,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1300,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -20,14 +26,27 @@
       "volume": 1,
       "minPrice": 1200,
       "maxPrice": 1200
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1300,
+      "volume": 1,
+      "minPrice": 1300,
+      "maxPrice": 1300
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Balrampur",
       "nameHi": "Balrampur",
       "avgPrice": 1200,
+      "records": 1
+    },
+    {
+      "district": "Surajpur",
+      "nameHi": "Surajpur",
+      "avgPrice": 1300,
       "records": 1
     }
   ]

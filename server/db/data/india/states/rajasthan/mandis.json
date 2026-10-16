@@ -31,27 +31,27 @@
     "name": "Jaipur",
     "originalName": "Jaipur (F&V) APMC",
     "district": "Jaipur",
-    "totalRecords": 1532,
+    "totalRecords": 1569,
     "topCrops": [
       {
         "name": "सेब",
-        "count": 89
+        "count": 90
       },
       {
         "name": "गाजर",
-        "count": 81
+        "count": 82
+      },
+      {
+        "name": "भिंडी",
+        "count": 78
       },
       {
         "name": "सोंठ",
         "count": 78
       },
       {
-        "name": "भिंडी",
-        "count": 77
-      },
-      {
         "name": "केला",
-        "count": 72
+        "count": 73
       }
     ]
   },
@@ -87,7 +87,7 @@
     "name": "Jodhpur",
     "originalName": "Jodhpur (F&V) APMC",
     "district": "Jodhpur",
-    "totalRecords": 1028,
+    "totalRecords": 1039,
     "topCrops": [
       {
         "name": "भिंडी",
@@ -308,6 +308,34 @@
     ]
   },
   {
+    "name": "Bassi",
+    "originalName": "Bassi APMC",
+    "district": "Jaipur Rural",
+    "totalRecords": 330,
+    "topCrops": [
+      {
+        "name": "बाजरा",
+        "count": 90
+      },
+      {
+        "name": "Barley(Jau)",
+        "count": 45
+      },
+      {
+        "name": "चना",
+        "count": 44
+      },
+      {
+        "name": "Dhaincha",
+        "count": 24
+      },
+      {
+        "name": "टमाटर",
+        "count": 23
+      }
+    ]
+  },
+  {
     "name": "Ramganjmandi",
     "originalName": "Ramganjmandi APMC",
     "district": "Kota",
@@ -332,34 +360,6 @@
       {
         "name": "मेथी दाना",
         "count": 20
-      }
-    ]
-  },
-  {
-    "name": "Bassi",
-    "originalName": "Bassi APMC",
-    "district": "Jaipur Rural",
-    "totalRecords": 327,
-    "topCrops": [
-      {
-        "name": "बाजरा",
-        "count": 90
-      },
-      {
-        "name": "Barley(Jau)",
-        "count": 45
-      },
-      {
-        "name": "चना",
-        "count": 44
-      },
-      {
-        "name": "Dhaincha",
-        "count": 24
-      },
-      {
-        "name": "सरसों",
-        "count": 23
       }
     ]
   },
@@ -1144,6 +1144,34 @@
     ]
   },
   {
+    "name": "Suratgarh",
+    "originalName": "Suratgarh APMC",
+    "district": "Ganganagar",
+    "totalRecords": 154,
+    "topCrops": [
+      {
+        "name": "कपास",
+        "count": 75
+      },
+      {
+        "name": "बाजरा",
+        "count": 22
+      },
+      {
+        "name": "सरसों",
+        "count": 22
+      },
+      {
+        "name": "गेहूँ",
+        "count": 12
+      },
+      {
+        "name": "Barley(Jau)",
+        "count": 8
+      }
+    ]
+  },
+  {
     "name": "Khairthal",
     "originalName": "Khairthal APMC",
     "district": "Khairthal Tijara",
@@ -1168,34 +1196,6 @@
       {
         "name": "गेहूँ",
         "count": 11
-      }
-    ]
-  },
-  {
-    "name": "Suratgarh",
-    "originalName": "Suratgarh APMC",
-    "district": "Ganganagar",
-    "totalRecords": 149,
-    "topCrops": [
-      {
-        "name": "कपास",
-        "count": 73
-      },
-      {
-        "name": "सरसों",
-        "count": 22
-      },
-      {
-        "name": "बाजरा",
-        "count": 21
-      },
-      {
-        "name": "गेहूँ",
-        "count": 12
-      },
-      {
-        "name": "Barley(Jau)",
-        "count": 8
       }
     ]
   },
@@ -1399,27 +1399,27 @@
     "name": "Sikar",
     "originalName": "Sikar APMC",
     "district": "Sikar",
-    "totalRecords": 131,
+    "totalRecords": 135,
     "topCrops": [
       {
         "name": "खीरा",
-        "count": 65
+        "count": 66
+      },
+      {
+        "name": "आलू",
+        "count": 22
       },
       {
         "name": "लहसुन",
         "count": 21
       },
       {
-        "name": "आलू",
-        "count": 21
-      },
-      {
         "name": "टमाटर",
-        "count": 18
+        "count": 19
       },
       {
         "name": "प्याज",
-        "count": 6
+        "count": 7
       }
     ]
   },
@@ -1427,7 +1427,7 @@
     "name": "Bayana",
     "originalName": "Bayana APMC",
     "district": "Bharatpur",
-    "totalRecords": 131,
+    "totalRecords": 134,
     "topCrops": [
       {
         "name": "लहसुन",
@@ -1439,14 +1439,14 @@
       },
       {
         "name": "टमाटर",
-        "count": 26
+        "count": 27
       },
       {
         "name": "आलू",
-        "count": 24
+        "count": 25
       },
       {
-        "name": "सरसों",
+        "name": "प्याज",
         "count": 5
       }
     ]
@@ -1668,6 +1668,34 @@
     ]
   },
   {
+    "name": "Sangriya",
+    "originalName": "Sangriya APMC",
+    "district": "Hanumangarh",
+    "totalRecords": 114,
+    "topCrops": [
+      {
+        "name": "बाजरा",
+        "count": 30
+      },
+      {
+        "name": "आलू",
+        "count": 28
+      },
+      {
+        "name": "कपास",
+        "count": 16
+      },
+      {
+        "name": "सरसों",
+        "count": 15
+      },
+      {
+        "name": "प्याज",
+        "count": 12
+      }
+    ]
+  },
+  {
     "name": "Merta City",
     "originalName": "Merta City APMC",
     "district": "Nagaur",
@@ -1692,34 +1720,6 @@
       {
         "name": "चना",
         "count": 9
-      }
-    ]
-  },
-  {
-    "name": "Sangriya",
-    "originalName": "Sangriya APMC",
-    "district": "Hanumangarh",
-    "totalRecords": 112,
-    "topCrops": [
-      {
-        "name": "बाजरा",
-        "count": 30
-      },
-      {
-        "name": "आलू",
-        "count": 27
-      },
-      {
-        "name": "कपास",
-        "count": 16
-      },
-      {
-        "name": "सरसों",
-        "count": 15
-      },
-      {
-        "name": "सेम",
-        "count": 12
       }
     ]
   },
@@ -3312,6 +3312,22 @@
     ]
   },
   {
+    "name": "Dungarpur",
+    "originalName": "Dungarpur APMC",
+    "district": "Dungarpur",
+    "totalRecords": 46,
+    "topCrops": [
+      {
+        "name": "धनिया",
+        "count": 27
+      },
+      {
+        "name": "पत्तागोभी",
+        "count": 19
+      }
+    ]
+  },
+  {
     "name": "Chomu (Grain)",
     "originalName": "Chomu (Grain) APMC",
     "district": "Jaipur Rural",
@@ -3388,18 +3404,30 @@
     ]
   },
   {
-    "name": "Dungarpur",
-    "originalName": "Dungarpur APMC",
-    "district": "Dungarpur",
-    "totalRecords": 45,
+    "name": "Sadulpur",
+    "originalName": "Sadulpur APMC",
+    "district": "Churu",
+    "totalRecords": 40,
     "topCrops": [
       {
-        "name": "धनिया",
-        "count": 26
+        "name": "बाजरा",
+        "count": 20
       },
       {
-        "name": "पत्तागोभी",
-        "count": 19
+        "name": "चना",
+        "count": 7
+      },
+      {
+        "name": "मूंग",
+        "count": 4
+      },
+      {
+        "name": "Moath Dal",
+        "count": 4
+      },
+      {
+        "name": "Cowpea(Lobia/Karamani)",
+        "count": 4
       }
     ]
   },
@@ -3440,34 +3468,6 @@
       {
         "name": "सरसों",
         "count": 2
-      }
-    ]
-  },
-  {
-    "name": "Sadulpur",
-    "originalName": "Sadulpur APMC",
-    "district": "Churu",
-    "totalRecords": 37,
-    "topCrops": [
-      {
-        "name": "बाजरा",
-        "count": 19
-      },
-      {
-        "name": "चना",
-        "count": 7
-      },
-      {
-        "name": "Moath Dal",
-        "count": 4
-      },
-      {
-        "name": "Cowpea(Lobia/Karamani)",
-        "count": 4
-      },
-      {
-        "name": "मूंग",
-        "count": 3
       }
     ]
   },
@@ -3616,6 +3616,22 @@
     ]
   },
   {
+    "name": "Sikri",
+    "originalName": "Sikri APMC",
+    "district": "Deeg",
+    "totalRecords": 32,
+    "topCrops": [
+      {
+        "name": "सरसों",
+        "count": 26
+      },
+      {
+        "name": "बाजरा",
+        "count": 6
+      }
+    ]
+  },
+  {
     "name": "Mahuwa",
     "originalName": "Mahuwa APMC",
     "district": "Dausa",
@@ -3668,22 +3684,6 @@
     ]
   },
   {
-    "name": "Sikri",
-    "originalName": "Sikri APMC",
-    "district": "Deeg",
-    "totalRecords": 30,
-    "topCrops": [
-      {
-        "name": "सरसों",
-        "count": 25
-      },
-      {
-        "name": "बाजरा",
-        "count": 5
-      }
-    ]
-  },
-  {
     "name": "Bansoor",
     "originalName": "Bansoor APMC",
     "district": "Kotputli- Behror",
@@ -3700,6 +3700,30 @@
       {
         "name": "गेहूँ",
         "count": 3
+      }
+    ]
+  },
+  {
+    "name": "Pugal Road Grain",
+    "originalName": "Pugal Road Grain APMC",
+    "district": "Bikaner",
+    "totalRecords": 28,
+    "topCrops": [
+      {
+        "name": "सेम",
+        "count": 14
+      },
+      {
+        "name": "गेहूँ",
+        "count": 9
+      },
+      {
+        "name": "सरसों",
+        "count": 3
+      },
+      {
+        "name": "मूंग",
+        "count": 2
       }
     ]
   },
@@ -3728,26 +3752,6 @@
       {
         "name": "Soanf",
         "count": 4
-      }
-    ]
-  },
-  {
-    "name": "Pugal Road Grain",
-    "originalName": "Pugal Road Grain APMC",
-    "district": "Bikaner",
-    "totalRecords": 26,
-    "topCrops": [
-      {
-        "name": "सेम",
-        "count": 14
-      },
-      {
-        "name": "गेहूँ",
-        "count": 9
-      },
-      {
-        "name": "सरसों",
-        "count": 3
       }
     ]
   },
@@ -3891,7 +3895,7 @@
     "name": "Sridungargarh",
     "originalName": "Sridungargarh APMC",
     "district": "Bikaner",
-    "totalRecords": 21,
+    "totalRecords": 22,
     "topCrops": [
       {
         "name": "गेहूँ",
@@ -3907,6 +3911,30 @@
       },
       {
         "name": "सेम",
+        "count": 1
+      },
+      {
+        "name": "मूँगफली",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "Govindgarh",
+    "originalName": "Govindgarh APMC",
+    "district": "Alwar",
+    "totalRecords": 21,
+    "topCrops": [
+      {
+        "name": "सरसों",
+        "count": 14
+      },
+      {
+        "name": "बाजरा",
+        "count": 6
+      },
+      {
+        "name": "कपास",
         "count": 1
       }
     ]
@@ -3956,26 +3984,10 @@
     ]
   },
   {
-    "name": "Govindgarh",
-    "originalName": "Govindgarh APMC",
-    "district": "Alwar",
-    "totalRecords": 19,
-    "topCrops": [
-      {
-        "name": "सरसों",
-        "count": 14
-      },
-      {
-        "name": "बाजरा",
-        "count": 5
-      }
-    ]
-  },
-  {
     "name": "Begu",
     "originalName": "Begu APMC",
     "district": "Chittorgarh",
-    "totalRecords": 17,
+    "totalRecords": 18,
     "topCrops": [
       {
         "name": "सरसों",
@@ -3983,7 +3995,7 @@
       },
       {
         "name": "मक्का",
-        "count": 5
+        "count": 6
       },
       {
         "name": "गेहूँ",
@@ -4027,11 +4039,11 @@
     "name": "Beawar",
     "originalName": "Beawar APMC",
     "district": "Beawar",
-    "totalRecords": 11,
+    "totalRecords": 13,
     "topCrops": [
       {
         "name": "बाजरा",
-        "count": 4
+        "count": 5
       },
       {
         "name": "Barley(Jau)",
@@ -4042,11 +4054,35 @@
         "count": 2
       },
       {
+        "name": "मक्का",
+        "count": 2
+      },
+      {
         "name": "Taramira",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "Mohangarh",
+    "originalName": "Mohangarh APMC",
+    "district": "Jaisalmer",
+    "totalRecords": 11,
+    "topCrops": [
+      {
+        "name": "Cummin Seed(Jeera)",
+        "count": 5
+      },
+      {
+        "name": "सेम",
+        "count": 4
+      },
+      {
+        "name": "मूँगफली",
         "count": 1
       },
       {
-        "name": "मक्का",
+        "name": "सरसों",
         "count": 1
       }
     ]
@@ -4116,26 +4152,22 @@
     ]
   },
   {
-    "name": "Mohangarh",
-    "originalName": "Mohangarh APMC",
-    "district": "Jaisalmer",
-    "totalRecords": 10,
+    "name": "Fatehpur",
+    "originalName": "Fatehpur APMC",
+    "district": "Sikar",
+    "totalRecords": 9,
     "topCrops": [
       {
-        "name": "Cummin Seed(Jeera)",
-        "count": 5
-      },
-      {
-        "name": "सेम",
+        "name": "Cowpea(Lobia/Karamani)",
         "count": 3
       },
       {
-        "name": "मूँगफली",
-        "count": 1
+        "name": "सरसों",
+        "count": 3
       },
       {
-        "name": "सरसों",
-        "count": 1
+        "name": "Barley(Jau)",
+        "count": 3
       }
     ]
   },
@@ -4160,22 +4192,22 @@
     ]
   },
   {
-    "name": "Fatehpur",
-    "originalName": "Fatehpur APMC",
-    "district": "Sikar",
-    "totalRecords": 8,
+    "name": "Jaisalmer",
+    "originalName": "Jaisalmer APMC",
+    "district": "Jaisalmer",
+    "totalRecords": 9,
     "topCrops": [
       {
-        "name": "सरसों",
+        "name": "आलू",
+        "count": 5
+      },
+      {
+        "name": "प्याज",
         "count": 3
       },
       {
-        "name": "Barley(Jau)",
-        "count": 3
-      },
-      {
-        "name": "Cowpea(Lobia/Karamani)",
-        "count": 2
+        "name": "पालक",
+        "count": 1
       }
     ]
   },
@@ -4192,26 +4224,6 @@
       {
         "name": "गेहूँ",
         "count": 2
-      }
-    ]
-  },
-  {
-    "name": "Jaisalmer",
-    "originalName": "Jaisalmer APMC",
-    "district": "Jaisalmer",
-    "totalRecords": 8,
-    "topCrops": [
-      {
-        "name": "आलू",
-        "count": 5
-      },
-      {
-        "name": "प्याज",
-        "count": 2
-      },
-      {
-        "name": "पालक",
-        "count": 1
       }
     ]
   },

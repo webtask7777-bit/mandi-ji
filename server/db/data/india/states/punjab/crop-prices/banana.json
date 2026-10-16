@@ -53,6 +53,12 @@
       "date": "2026-07",
       "market": 2914,
       "volume": 496
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2705,
+      "volume": 15
     }
   ],
   "dailyHistory": [
@@ -944,9 +950,16 @@
       "volume": 4,
       "minPrice": 30.5,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2705,
+      "volume": 15,
+      "minPrice": 0.12,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bhatinda",
@@ -958,36 +971,36 @@
       "district": "Hoshiarpur",
       "nameHi": "Hoshiarpur",
       "avgPrice": 2656,
-      "records": 312
+      "records": 313
     },
     {
       "district": "Patiala",
       "nameHi": "Patiala",
-      "avgPrice": 2417,
-      "records": 304
+      "avgPrice": 2418,
+      "records": 307
     },
     {
       "district": "Sangrur",
       "nameHi": "Sangrur",
-      "avgPrice": 2584,
-      "records": 298
+      "avgPrice": 2585,
+      "records": 301
     },
     {
       "district": "Fazilka",
       "nameHi": "Fazilka",
-      "avgPrice": 3010,
-      "records": 160
+      "avgPrice": 3016,
+      "records": 162
+    },
+    {
+      "district": "Gurdaspur",
+      "nameHi": "Gurdaspur",
+      "avgPrice": 3174,
+      "records": 114
     },
     {
       "district": "Mansa",
       "nameHi": "Mansa",
       "avgPrice": 1971,
-      "records": 112
-    },
-    {
-      "district": "Gurdaspur",
-      "nameHi": "Gurdaspur",
-      "avgPrice": 3167,
       "records": 112
     },
     {
@@ -1011,8 +1024,8 @@
     {
       "district": "Ludhiana",
       "nameHi": "Ludhiana",
-      "avgPrice": 1977,
-      "records": 84
+      "avgPrice": 1981,
+      "records": 86
     },
     {
       "district": "Moga",
@@ -1035,8 +1048,8 @@
     {
       "district": "Tarntaran",
       "nameHi": "Tarntaran",
-      "avgPrice": 1258,
-      "records": 33
+      "avgPrice": 1221,
+      "records": 34
     }
   ]
 }

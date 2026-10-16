@@ -33,8 +33,8 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 4000,
-      "volume": 2
+      "market": 3073,
+      "volume": 13
     }
   ],
   "dailyHistory": [
@@ -250,14 +250,20 @@
     },
     {
       "date": "2026-10-16",
-      "market": 4000,
-      "volume": 2,
-      "minPrice": 3000,
+      "market": 3073,
+      "volume": 13,
+      "minPrice": 500,
       "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Rajkot",
+      "nameHi": "Rajkot",
+      "avgPrice": 3212,
+      "records": 21
+    },
     {
       "district": "Navsari",
       "nameHi": "Navsari",
@@ -265,33 +271,27 @@
       "records": 20
     },
     {
-      "district": "Rajkot",
-      "nameHi": "Rajkot",
-      "avgPrice": 3292,
-      "records": 19
+      "district": "Anand",
+      "nameHi": "Anand",
+      "avgPrice": 2647,
+      "records": 17
+    },
+    {
+      "district": "Surat",
+      "nameHi": "Surat",
+      "avgPrice": 3526,
+      "records": 17
+    },
+    {
+      "district": "Dahod",
+      "nameHi": "Dahod",
+      "avgPrice": 3838,
+      "records": 16
     },
     {
       "district": "Amreli",
       "nameHi": "Amreli",
       "avgPrice": 4267,
-      "records": 15
-    },
-    {
-      "district": "Dahod",
-      "nameHi": "Dahod",
-      "avgPrice": 3893,
-      "records": 15
-    },
-    {
-      "district": "Anand",
-      "nameHi": "Anand",
-      "avgPrice": 2567,
-      "records": 15
-    },
-    {
-      "district": "Surat",
-      "nameHi": "Surat",
-      "avgPrice": 3517,
       "records": 15
     },
     {
@@ -301,33 +301,33 @@
       "records": 13
     },
     {
+      "district": "Surendranagar",
+      "nameHi": "Surendranagar",
+      "avgPrice": 2708,
+      "records": 12
+    },
+    {
       "district": "Porbandar",
       "nameHi": "Porbandar",
       "avgPrice": 3386,
       "records": 11
     },
     {
-      "district": "Surendranagar",
-      "nameHi": "Surendranagar",
-      "avgPrice": 2886,
-      "records": 11
-    },
-    {
       "district": "Vadodara(Baroda)",
       "nameHi": "Vadodara(Baroda)",
-      "avgPrice": 2450,
-      "records": 9
-    },
-    {
-      "district": "Bharuch",
-      "nameHi": "Bharuch",
-      "avgPrice": 3056,
-      "records": 9
+      "avgPrice": 2530,
+      "records": 10
     },
     {
       "district": "Gandhinagar",
       "nameHi": "Gandhinagar",
       "avgPrice": 3000,
+      "records": 10
+    },
+    {
+      "district": "Bharuch",
+      "nameHi": "Bharuch",
+      "avgPrice": 3056,
       "records": 9
     },
     {

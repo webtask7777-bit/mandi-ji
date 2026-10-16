@@ -53,6 +53,12 @@
       "date": "2026-07",
       "market": 2100,
       "volume": 3
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1500,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -832,9 +838,16 @@
       "volume": 3,
       "minPrice": 500,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1500,
+      "volume": 1,
+      "minPrice": 1000,
+      "maxPrice": 2000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Udaipur",
@@ -851,8 +864,8 @@
     {
       "district": "Jaipur",
       "nameHi": "Jaipur",
-      "avgPrice": 1543,
-      "records": 65
+      "avgPrice": 1542,
+      "records": 66
     },
     {
       "district": "Ajmer",

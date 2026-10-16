@@ -34,6 +34,13 @@
       "market": 1700,
       "volume": 1,
       "msp": 2090
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2410,
+      "volume": 1,
+      "msp": 2090
     }
   ],
   "dailyHistory": [
@@ -78,21 +85,28 @@
       "volume": 1,
       "minPrice": 1600,
       "maxPrice": 1800
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2410,
+      "volume": 1,
+      "minPrice": 2410,
+      "maxPrice": 2410
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Balrampur",
+      "nameHi": "Balrampur",
+      "avgPrice": 2410,
+      "records": 2
+    },
     {
       "district": "Kanker",
       "nameHi": "Kanker",
       "avgPrice": 1650,
       "records": 2
-    },
-    {
-      "district": "Balrampur",
-      "nameHi": "Balrampur",
-      "avgPrice": 2410,
-      "records": 1
     },
     {
       "district": "Koria",

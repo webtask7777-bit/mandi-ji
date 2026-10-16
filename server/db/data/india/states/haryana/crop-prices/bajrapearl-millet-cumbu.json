@@ -41,6 +41,13 @@
       "market": 2093,
       "volume": 4,
       "msp": 2625
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2300,
+      "volume": 1,
+      "msp": 2625
     }
   ],
   "dailyHistory": [
@@ -554,9 +561,16 @@
       "volume": 2,
       "minPrice": 2020,
       "maxPrice": 2100
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2300,
+      "volume": 1,
+      "minPrice": 2300,
+      "maxPrice": 2300
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Mahendragarh-Narnaul",
@@ -598,6 +612,12 @@
       "district": "Mewat",
       "nameHi": "Mewat",
       "avgPrice": 1775,
+      "records": 1
+    },
+    {
+      "district": "Rohtak",
+      "nameHi": "Rohtak",
+      "avgPrice": 2300,
       "records": 1
     }
   ]

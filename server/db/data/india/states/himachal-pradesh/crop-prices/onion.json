@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 3179,
       "volume": 21
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4575,
+      "volume": 16
     }
   ],
   "dailyHistory": [
@@ -212,21 +218,28 @@
       "volume": 2,
       "minPrice": 2500,
       "maxPrice": 3400
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4575,
+      "volume": 16,
+      "minPrice": 3000,
+      "maxPrice": 5300
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Kangra",
       "nameHi": "Kangra",
-      "avgPrice": 2152,
-      "records": 64
+      "avgPrice": 2372,
+      "records": 70
     },
     {
       "district": "Mandi",
       "nameHi": "Mandi",
-      "avgPrice": 1926,
-      "records": 33
+      "avgPrice": 1996,
+      "records": 34
     },
     {
       "district": "Una",
@@ -237,38 +250,44 @@
     {
       "district": "Solan",
       "nameHi": "Solan",
-      "avgPrice": 1730,
-      "records": 20
+      "avgPrice": 1927,
+      "records": 22
     },
     {
       "district": "Hamirpur",
       "nameHi": "Hamirpur",
-      "avgPrice": 2153,
-      "records": 19
+      "avgPrice": 2280,
+      "records": 20
     },
     {
       "district": "Kullu",
       "nameHi": "Kullu",
-      "avgPrice": 2315,
-      "records": 10
+      "avgPrice": 2527,
+      "records": 11
     },
     {
       "district": "Chamba",
       "nameHi": "Chamba",
-      "avgPrice": 2088,
-      "records": 8
+      "avgPrice": 2383,
+      "records": 9
     },
     {
       "district": "Shimla",
       "nameHi": "Shimla",
-      "avgPrice": 2250,
-      "records": 7
+      "avgPrice": 2613,
+      "records": 8
     },
     {
       "district": "Bilaspur",
       "nameHi": "Bilaspur",
-      "avgPrice": 2200,
-      "records": 5
+      "avgPrice": 2583,
+      "records": 6
+    },
+    {
+      "district": "Sirmore",
+      "nameHi": "Sirmore",
+      "avgPrice": 4500,
+      "records": 2
     }
   ]
 }

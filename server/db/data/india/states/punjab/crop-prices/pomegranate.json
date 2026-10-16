@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 13040,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 11088,
+      "volume": 9
     }
   ],
   "dailyHistory": [
@@ -192,38 +198,51 @@
       "volume": 1,
       "minPrice": 16580,
       "maxPrice": 16580
+    },
+    {
+      "date": "2026-10-16",
+      "market": 11088,
+      "volume": 9,
+      "minPrice": 2000,
+      "maxPrice": 16000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Ludhiana",
       "nameHi": "Ludhiana",
-      "avgPrice": 6167,
-      "records": 24
+      "avgPrice": 6154,
+      "records": 26
     },
     {
       "district": "Patiala",
       "nameHi": "Patiala",
-      "avgPrice": 10891,
-      "records": 21
+      "avgPrice": 11123,
+      "records": 22
     },
     {
       "district": "Hoshiarpur",
       "nameHi": "Hoshiarpur",
-      "avgPrice": 9607,
-      "records": 14
+      "avgPrice": 9767,
+      "records": 15
     },
     {
       "district": "Fazilka",
       "nameHi": "Fazilka",
-      "avgPrice": 15583,
-      "records": 6
+      "avgPrice": 15214,
+      "records": 7
     },
     {
       "district": "Gurdaspur",
       "nameHi": "Gurdaspur",
-      "avgPrice": 10700,
+      "avgPrice": 11000,
+      "records": 6
+    },
+    {
+      "district": "Sangrur",
+      "nameHi": "Sangrur",
+      "avgPrice": 12700,
       "records": 5
     },
     {
@@ -239,10 +258,10 @@
       "records": 3
     },
     {
-      "district": "Sangrur",
-      "nameHi": "Sangrur",
-      "avgPrice": 13333,
-      "records": 3
+      "district": "Pathankot",
+      "nameHi": "Pathankot",
+      "avgPrice": 10200,
+      "records": 2
     },
     {
       "district": "Muktsar",
@@ -272,12 +291,6 @@
       "district": "Jalandhar",
       "nameHi": "Jalandhar",
       "avgPrice": 5000,
-      "records": 1
-    },
-    {
-      "district": "Pathankot",
-      "nameHi": "Pathankot",
-      "avgPrice": 9600,
       "records": 1
     },
     {

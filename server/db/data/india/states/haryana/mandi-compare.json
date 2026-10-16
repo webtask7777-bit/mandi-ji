@@ -1,6 +1,17 @@
 {
   "apple": [
     {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 5978,
+      "recentPrice": 14000,
+      "minPrice": 4800,
+      "maxPrice": 14000,
+      "records": 87,
+      "topVariety": "Apple",
+      "grade": "Medium"
+    },
+    {
       "name": "Chhachrauli",
       "district": "Yamuna Nagar",
       "avgPrice": 12375,
@@ -8,6 +19,17 @@
       "minPrice": 9000,
       "maxPrice": 16000,
       "records": 16,
+      "topVariety": "Apple",
+      "grade": "Medium"
+    },
+    {
+      "name": "Rewari",
+      "district": "Rewari",
+      "avgPrice": 9487,
+      "recentPrice": 12000,
+      "minPrice": 8000,
+      "maxPrice": 14000,
+      "records": 87,
       "topVariety": "Apple",
       "grade": "Medium"
     },
@@ -45,17 +67,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Panipat",
-      "district": "Panipat",
-      "avgPrice": 10723,
-      "recentPrice": null,
-      "minPrice": 6000,
-      "maxPrice": 18000,
-      "records": 74,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Thanesar",
       "district": "Kurukshetra",
       "avgPrice": 10708,
@@ -78,17 +89,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Jhajjar",
-      "district": "Jhajar",
-      "avgPrice": 9947,
-      "recentPrice": null,
-      "minPrice": 3000,
-      "maxPrice": 15000,
-      "records": 38,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Sonepat(Kharkhoda)",
       "district": "Sonipat",
       "avgPrice": 9619,
@@ -98,17 +98,6 @@
       "records": 88,
       "topVariety": null,
       "grade": "Grade A"
-    },
-    {
-      "name": "Rewari",
-      "district": "Rewari",
-      "avgPrice": 9458,
-      "recentPrice": null,
-      "minPrice": 8000,
-      "maxPrice": 14000,
-      "records": 86,
-      "topVariety": "Apple",
-      "grade": "Medium"
     },
     {
       "name": "Yamuna Nagar",
@@ -144,17 +133,6 @@
       "grade": "Grade A"
     },
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 8951,
-      "recentPrice": null,
-      "minPrice": 7000,
-      "maxPrice": 15000,
-      "records": 81,
-      "topVariety": null,
-      "grade": "Grade B"
-    },
-    {
       "name": "Faridabad",
       "district": "Faridabad",
       "avgPrice": 8820,
@@ -164,17 +142,6 @@
       "records": 75,
       "topVariety": "Apple",
       "grade": "Grade B"
-    },
-    {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 8796,
-      "recentPrice": null,
-      "minPrice": 7000,
-      "maxPrice": 13000,
-      "records": 77,
-      "topVariety": "Apple",
-      "grade": "Medium"
     },
     {
       "name": "Bhiwani",
@@ -221,37 +188,59 @@
       "grade": "Grade B"
     },
     {
-      "name": "Ratia",
-      "district": "Fatehabad",
-      "avgPrice": 8460,
-      "recentPrice": null,
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 8129,
+      "recentPrice": 8000,
       "minPrice": 4500,
+      "maxPrice": 14500,
+      "records": 84,
+      "topVariety": "Apple",
+      "grade": "Local"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 8939,
+      "recentPrice": 8000,
+      "minPrice": 7000,
       "maxPrice": 15000,
-      "records": 80,
+      "records": 82,
       "topVariety": null,
-      "grade": "Grade A"
+      "grade": "Grade B"
+    },
+    {
+      "name": "Jhajjar",
+      "district": "Jhajar",
+      "avgPrice": 9897,
+      "recentPrice": 8000,
+      "minPrice": 3000,
+      "maxPrice": 15000,
+      "records": 39,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Sonepat",
       "district": "Sonipat",
-      "avgPrice": 8383,
-      "recentPrice": null,
+      "avgPrice": 8378,
+      "recentPrice": 8000,
       "minPrice": 3000,
       "maxPrice": 12000,
-      "records": 78,
+      "records": 79,
       "topVariety": "Apple",
       "grade": "Medium"
     },
     {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 8130,
-      "recentPrice": null,
-      "minPrice": 4500,
-      "maxPrice": 14500,
-      "records": 83,
-      "topVariety": "Apple",
-      "grade": "Local"
+      "name": "Rohtak",
+      "district": "Rohtak",
+      "avgPrice": 7167,
+      "recentPrice": 8000,
+      "minPrice": 5000,
+      "maxPrice": 10000,
+      "records": 54,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Sirsa",
@@ -311,11 +300,11 @@
     {
       "name": "Dhand",
       "district": "Kaithal",
-      "avgPrice": 7540,
-      "recentPrice": null,
+      "avgPrice": 7539,
+      "recentPrice": 7500,
       "minPrice": 5300,
       "maxPrice": 11600,
-      "records": 91,
+      "records": 92,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -323,10 +312,10 @@
       "name": "Narnaul",
       "district": "Mahendragarh-Narnaul",
       "avgPrice": 7500,
-      "recentPrice": null,
+      "recentPrice": 7500,
       "minPrice": 5000,
       "maxPrice": 16000,
-      "records": 96,
+      "records": 97,
       "topVariety": "Apple",
       "grade": "Medium"
     },
@@ -353,28 +342,6 @@
       "grade": "Grade A"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 7299,
-      "recentPrice": null,
-      "minPrice": 4500,
-      "maxPrice": 12500,
-      "records": 89,
-      "topVariety": "Apple",
-      "grade": "Medium"
-    },
-    {
-      "name": "Rohtak",
-      "district": "Rohtak",
-      "avgPrice": 7151,
-      "recentPrice": null,
-      "minPrice": 5000,
-      "maxPrice": 10000,
-      "records": 53,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Sampla",
       "district": "Rohtak",
       "avgPrice": 7138,
@@ -397,6 +364,39 @@
       "grade": "Grade B"
     },
     {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 6556,
+      "recentPrice": 7000,
+      "minPrice": 4500,
+      "maxPrice": 9000,
+      "records": 80,
+      "topVariety": "Apple",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 8773,
+      "recentPrice": 7000,
+      "minPrice": 7000,
+      "maxPrice": 13000,
+      "records": 78,
+      "topVariety": "Apple",
+      "grade": "Medium"
+    },
+    {
+      "name": "Sadhaura",
+      "district": "Yamuna Nagar",
+      "avgPrice": 6242,
+      "recentPrice": 7000,
+      "minPrice": 2500,
+      "maxPrice": 10000,
+      "records": 31,
+      "topVariety": "Apple",
+      "grade": "Local"
+    },
+    {
       "name": "Radaur",
       "district": "Yamuna Nagar",
       "avgPrice": 6991,
@@ -408,17 +408,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 6551,
-      "recentPrice": null,
-      "minPrice": 4500,
-      "maxPrice": 9000,
-      "records": 79,
-      "topVariety": "Apple",
-      "grade": "Medium"
-    },
-    {
       "name": "Safidon",
       "district": "Jind",
       "avgPrice": 6523,
@@ -426,17 +415,6 @@
       "minPrice": 6000,
       "maxPrice": 8000,
       "records": 66,
-      "topVariety": "Apple",
-      "grade": "Medium"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 6458,
-      "recentPrice": null,
-      "minPrice": 2800,
-      "maxPrice": 10000,
-      "records": 60,
       "topVariety": "Apple",
       "grade": "Medium"
     },
@@ -463,28 +441,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Sadhaura",
-      "district": "Yamuna Nagar",
-      "avgPrice": 6217,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 10000,
-      "records": 30,
-      "topVariety": "Apple",
-      "grade": "Local"
-    },
-    {
-      "name": "Tarori",
-      "district": "Karnal",
-      "avgPrice": 6194,
-      "recentPrice": null,
-      "minPrice": 5500,
-      "maxPrice": 7000,
-      "records": 54,
-      "topVariety": "Apple",
-      "grade": "Grade A"
-    },
-    {
       "name": "Meham",
       "district": "Rohtak",
       "avgPrice": 6088,
@@ -494,6 +450,17 @@
       "records": 50,
       "topVariety": "Apple",
       "grade": "Medium"
+    },
+    {
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 8430,
+      "recentPrice": 6000,
+      "minPrice": 4500,
+      "maxPrice": 15000,
+      "records": 81,
+      "topVariety": null,
+      "grade": "Grade A"
     },
     {
       "name": "Gurgaon",
@@ -516,17 +483,6 @@
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
-    },
-    {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 5885,
-      "recentPrice": null,
-      "minPrice": 4800,
-      "maxPrice": 7800,
-      "records": 86,
-      "topVariety": "Apple",
-      "grade": "Medium"
     },
     {
       "name": "Uklana",
@@ -584,6 +540,28 @@
       "grade": "Grade A"
     },
     {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 7274,
+      "recentPrice": 5000,
+      "minPrice": 4500,
+      "maxPrice": 12500,
+      "records": 90,
+      "topVariety": "Apple",
+      "grade": "Medium"
+    },
+    {
+      "name": "Panipat",
+      "district": "Panipat",
+      "avgPrice": 10647,
+      "recentPrice": 5000,
+      "minPrice": 5000,
+      "maxPrice": 18000,
+      "records": 75,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Bahadurgarh",
       "district": "Jhajar",
       "avgPrice": 4969,
@@ -593,20 +571,31 @@
       "records": 16,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 6418,
+      "recentPrice": 4000,
+      "minPrice": 2800,
+      "maxPrice": 10000,
+      "records": 61,
+      "topVariety": "Apple",
+      "grade": "Medium"
+    },
+    {
+      "name": "Tarori",
+      "district": "Karnal",
+      "avgPrice": 6155,
+      "recentPrice": 4000,
+      "minPrice": 4000,
+      "maxPrice": 7000,
+      "records": 55,
+      "topVariety": "Apple",
+      "grade": "Grade A"
     }
   ],
   "banana": [
-    {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 4943,
-      "recentPrice": null,
-      "minPrice": 3800,
-      "maxPrice": 5000,
-      "records": 21,
-      "topVariety": "Banana - Ripe",
-      "grade": "Medium"
-    },
     {
       "name": "Bhiwani",
       "district": "Bhiwani",
@@ -619,6 +608,28 @@
       "grade": "Grade B"
     },
     {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 4923,
+      "recentPrice": 4500,
+      "minPrice": 3800,
+      "maxPrice": 5000,
+      "records": 22,
+      "topVariety": "Banana - Ripe",
+      "grade": "Medium"
+    },
+    {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 2714,
+      "recentPrice": 4000,
+      "minPrice": 2100,
+      "maxPrice": 4000,
+      "records": 91,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Chhachrauli",
       "district": "Yamuna Nagar",
       "avgPrice": 3818,
@@ -627,6 +638,50 @@
       "maxPrice": 5000,
       "records": 17,
       "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Dhand",
+      "district": "Kaithal",
+      "avgPrice": 3301,
+      "recentPrice": 3500,
+      "minPrice": 2500,
+      "maxPrice": 4400,
+      "records": 94,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 2823,
+      "recentPrice": 3500,
+      "minPrice": 2200,
+      "maxPrice": 3600,
+      "records": 93,
+      "topVariety": "Medium",
+      "grade": "Medium"
+    },
+    {
+      "name": "Rewari",
+      "district": "Rewari",
+      "avgPrice": 2647,
+      "recentPrice": 3500,
+      "minPrice": 2200,
+      "maxPrice": 5000,
+      "records": 102,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 2956,
+      "recentPrice": 3500,
+      "minPrice": 2800,
+      "maxPrice": 3500,
+      "records": 94,
+      "topVariety": "Banana - Ripe",
       "grade": "Medium"
     },
     {
@@ -663,17 +718,6 @@
       "grade": "Grade A"
     },
     {
-      "name": "Dhand",
-      "district": "Kaithal",
-      "avgPrice": 3299,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 4400,
-      "records": 93,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Thanesar",
       "district": "Kurukshetra",
       "avgPrice": 3239,
@@ -696,6 +740,28 @@
       "grade": "Grade A"
     },
     {
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 2494,
+      "recentPrice": 3000,
+      "minPrice": 2000,
+      "maxPrice": 3100,
+      "records": 72,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 2895,
+      "recentPrice": 3000,
+      "minPrice": 1800,
+      "maxPrice": 4500,
+      "records": 69,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Safidon",
       "district": "Jind",
       "avgPrice": 3000,
@@ -705,28 +771,6 @@
       "records": 85,
       "topVariety": "Banana - Ripe",
       "grade": "Medium"
-    },
-    {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 2951,
-      "recentPrice": null,
-      "minPrice": 2800,
-      "maxPrice": 3500,
-      "records": 93,
-      "topVariety": "Banana - Ripe",
-      "grade": "Medium"
-    },
-    {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 2893,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 4500,
-      "records": 68,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Shahzadpur",
@@ -740,24 +784,13 @@
       "grade": "Medium"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 2816,
-      "recentPrice": null,
-      "minPrice": 2200,
-      "maxPrice": 3600,
-      "records": 92,
-      "topVariety": "Medium",
-      "grade": "Medium"
-    },
-    {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 2700,
-      "recentPrice": null,
-      "minPrice": 2100,
-      "maxPrice": 3600,
-      "records": 90,
+      "name": "Jhajjar",
+      "district": "Jhajar",
+      "avgPrice": 2573,
+      "recentPrice": 2800,
+      "minPrice": 2500,
+      "maxPrice": 3000,
+      "records": 30,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -784,26 +817,15 @@
       "grade": "Local"
     },
     {
-      "name": "Rewari",
-      "district": "Rewari",
-      "avgPrice": 2639,
-      "recentPrice": null,
-      "minPrice": 2200,
-      "maxPrice": 5000,
-      "records": 101,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Jhajjar",
-      "district": "Jhajar",
-      "avgPrice": 2566,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 3000,
-      "records": 29,
-      "topVariety": null,
-      "grade": "Medium"
+      "name": "Sadhaura",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1716,
+      "recentPrice": 2600,
+      "minPrice": 1000,
+      "maxPrice": 6000,
+      "records": 63,
+      "topVariety": "Banana - Ripe",
+      "grade": "Local"
     },
     {
       "name": "Sonepat(Kharkhoda)",
@@ -815,6 +837,17 @@
       "records": 90,
       "topVariety": null,
       "grade": "Grade A"
+    },
+    {
+      "name": "Tauru",
+      "district": "Mewat",
+      "avgPrice": 2243,
+      "recentPrice": 2500,
+      "minPrice": 2000,
+      "maxPrice": 3000,
+      "records": 68,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Sampla",
@@ -839,15 +872,15 @@
       "grade": "Grade B"
     },
     {
-      "name": "Ratia",
-      "district": "Fatehabad",
-      "avgPrice": 2487,
-      "recentPrice": null,
+      "name": "Panipat",
+      "district": "Panipat",
+      "avgPrice": 2336,
+      "recentPrice": 2500,
       "minPrice": 2000,
-      "maxPrice": 3100,
-      "records": 71,
-      "topVariety": null,
-      "grade": "Grade A"
+      "maxPrice": 2800,
+      "records": 76,
+      "topVariety": "Banana - Ripe",
+      "grade": "Local"
     },
     {
       "name": "Indri",
@@ -894,39 +927,6 @@
       "grade": "Grade B"
     },
     {
-      "name": "Panipat",
-      "district": "Panipat",
-      "avgPrice": 2334,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 2800,
-      "records": 75,
-      "topVariety": "Banana - Ripe",
-      "grade": "Local"
-    },
-    {
-      "name": "Tauru",
-      "district": "Mewat",
-      "avgPrice": 2239,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 3000,
-      "records": 67,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 2186,
-      "recentPrice": null,
-      "minPrice": 1450,
-      "maxPrice": 3400,
-      "records": 93,
-      "topVariety": "Banana - Ripe",
-      "grade": "Medium"
-    },
-    {
       "name": "Mohindergarh",
       "district": "Mahendragarh-Narnaul",
       "avgPrice": 2180,
@@ -960,14 +960,14 @@
       "grade": "Local"
     },
     {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 2089,
-      "recentPrice": null,
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 2185,
+      "recentPrice": 2100,
       "minPrice": 1450,
-      "maxPrice": 3100,
-      "records": 59,
-      "topVariety": null,
+      "maxPrice": 3400,
+      "records": 94,
+      "topVariety": "Banana - Ripe",
       "grade": "Medium"
     },
     {
@@ -980,6 +980,17 @@
       "records": 10,
       "topVariety": null,
       "grade": "Grade B"
+    },
+    {
+      "name": "Tarori",
+      "district": "Karnal",
+      "avgPrice": 1952,
+      "recentPrice": 2000,
+      "minPrice": 1800,
+      "maxPrice": 2200,
+      "records": 84,
+      "topVariety": null,
+      "grade": "Grade A"
     },
     {
       "name": "Kosli",
@@ -996,10 +1007,10 @@
       "name": "Rohtak",
       "district": "Rohtak",
       "avgPrice": 2000,
-      "recentPrice": null,
+      "recentPrice": 2000,
       "minPrice": 2000,
       "maxPrice": 2000,
-      "records": 56,
+      "records": 57,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -1008,6 +1019,17 @@
       "district": "Mewat",
       "avgPrice": 2000,
       "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "KALANWALI",
+      "district": "Sirsa",
+      "avgPrice": 2000,
+      "recentPrice": 2000,
       "minPrice": 2000,
       "maxPrice": 2000,
       "records": 1,
@@ -1024,17 +1046,6 @@
       "records": 46,
       "topVariety": null,
       "grade": "Medium"
-    },
-    {
-      "name": "Tarori",
-      "district": "Karnal",
-      "avgPrice": 1952,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 2200,
-      "records": 83,
-      "topVariety": null,
-      "grade": "Grade A"
     },
     {
       "name": "Hassanpur",
@@ -1081,17 +1092,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Sadhaura",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1702,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 6000,
-      "records": 62,
-      "topVariety": "Banana - Ripe",
-      "grade": "Local"
-    },
-    {
       "name": "Bahadurgarh",
       "district": "Jhajar",
       "avgPrice": 1693,
@@ -1125,6 +1125,17 @@
       "grade": "Local"
     },
     {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 2081,
+      "recentPrice": 1600,
+      "minPrice": 1450,
+      "maxPrice": 3100,
+      "records": 60,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Fatehabad",
       "district": "Fatehabad",
       "avgPrice": 1578,
@@ -1136,17 +1147,6 @@
       "grade": "Local"
     },
     {
-      "name": "Punhana",
-      "district": "Mewat",
-      "avgPrice": 1563,
-      "recentPrice": null,
-      "minPrice": 1500,
-      "maxPrice": 2000,
-      "records": 8,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Hissar",
       "district": "Hissar",
       "avgPrice": 1556,
@@ -1156,17 +1156,28 @@
       "records": 43,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Punhana",
+      "district": "Mewat",
+      "avgPrice": 1556,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 2000,
+      "records": 9,
+      "topVariety": null,
+      "grade": "Medium"
     }
   ],
   "beetroot": [
     {
       "name": "Hansi",
       "district": "Hissar",
-      "avgPrice": 3584,
-      "recentPrice": null,
+      "avgPrice": 3597,
+      "recentPrice": 4500,
       "minPrice": 2250,
       "maxPrice": 6500,
-      "records": 68,
+      "records": 69,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -1485,17 +1496,6 @@
   ],
   "bhindiladies-finger": [
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 6904,
-      "recentPrice": null,
-      "minPrice": 1750,
-      "maxPrice": 10000,
-      "records": 94,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Bahadurgarh",
       "district": "Jhajar",
       "avgPrice": 5744,
@@ -1504,17 +1504,6 @@
       "maxPrice": 9500,
       "records": 53,
       "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 5577,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 9000,
-      "records": 64,
-      "topVariety": "Bhindi",
       "grade": "Medium"
     },
     {
@@ -1551,6 +1540,17 @@
       "grade": "Grade B"
     },
     {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 4171,
+      "recentPrice": 5000,
+      "minPrice": 1500,
+      "maxPrice": 10000,
+      "records": 41,
+      "topVariety": "Bhindi",
+      "grade": "Medium"
+    },
+    {
       "name": "Ch. Dadri",
       "district": "Bhiwani",
       "avgPrice": 4822,
@@ -1571,39 +1571,6 @@
       "records": 26,
       "topVariety": "Bhindi",
       "grade": "FAQ"
-    },
-    {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 4456,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 5500,
-      "records": 82,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 4322,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 9000,
-      "records": 32,
-      "topVariety": "Bhindi",
-      "grade": "Medium"
-    },
-    {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 4150,
-      "recentPrice": null,
-      "minPrice": 1500,
-      "maxPrice": 10000,
-      "records": 40,
-      "topVariety": "Bhindi",
-      "grade": "Medium"
     },
     {
       "name": "Narwana",
@@ -1639,17 +1606,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 3688,
-      "recentPrice": null,
-      "minPrice": 1300,
-      "maxPrice": 7500,
-      "records": 25,
-      "topVariety": "Bhindi",
-      "grade": "Local"
-    },
-    {
       "name": "Ladwa",
       "district": "Kurukshetra",
       "avgPrice": 3472,
@@ -1659,6 +1615,28 @@
       "records": 18,
       "topVariety": "Bhindi",
       "grade": "Medium"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 2750,
+      "recentPrice": 3300,
+      "minPrice": 2200,
+      "maxPrice": 3300,
+      "records": 2,
+      "topVariety": "Bhindi",
+      "grade": "Medium"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 6865,
+      "recentPrice": 3250,
+      "minPrice": 1750,
+      "maxPrice": 10000,
+      "records": 95,
+      "topVariety": null,
+      "grade": "FAQ"
     },
     {
       "name": "Thanesar",
@@ -1672,15 +1650,15 @@
       "grade": "Local"
     },
     {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 3074,
-      "recentPrice": null,
-      "minPrice": 1100,
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 3662,
+      "recentPrice": 3000,
+      "minPrice": 1300,
       "maxPrice": 7500,
-      "records": 29,
+      "records": 26,
       "topVariety": "Bhindi",
-      "grade": "Medium"
+      "grade": "Local"
     },
     {
       "name": "Ballabhgarh",
@@ -1705,6 +1683,28 @@
       "grade": "FAQ"
     },
     {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 4276,
+      "recentPrice": 2800,
+      "minPrice": 1800,
+      "maxPrice": 9000,
+      "records": 33,
+      "topVariety": "Bhindi",
+      "grade": "Medium"
+    },
+    {
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 1950,
+      "recentPrice": 2700,
+      "minPrice": 1200,
+      "maxPrice": 2700,
+      "records": 2,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
       "name": "Raipur Rai",
       "district": "Panchkula",
       "avgPrice": 2538,
@@ -1716,6 +1716,17 @@
       "grade": "Local"
     },
     {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 2468,
+      "recentPrice": 2500,
+      "minPrice": 1200,
+      "maxPrice": 4000,
+      "records": 22,
+      "topVariety": "Bhindi",
+      "grade": "FAQ"
+    },
+    {
       "name": "Sampla",
       "district": "Rohtak",
       "avgPrice": 2483,
@@ -1725,17 +1736,6 @@
       "records": 12,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 2467,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 4000,
-      "records": 21,
-      "topVariety": "Bhindi",
-      "grade": "FAQ"
     },
     {
       "name": "Sohna",
@@ -1780,17 +1780,6 @@
       "records": 4,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 2200,
-      "recentPrice": null,
-      "minPrice": 2200,
-      "maxPrice": 2200,
-      "records": 1,
-      "topVariety": "Bhindi",
-      "grade": "Medium"
     },
     {
       "name": "Kosli",
@@ -1903,6 +1892,28 @@
       "grade": "FAQ"
     },
     {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 5515,
+      "recentPrice": 1600,
+      "minPrice": 1200,
+      "maxPrice": 9000,
+      "records": 65,
+      "topVariety": "Bhindi",
+      "grade": "Medium"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 3025,
+      "recentPrice": 1600,
+      "minPrice": 1100,
+      "maxPrice": 7500,
+      "records": 30,
+      "topVariety": "Bhindi",
+      "grade": "Medium"
+    },
+    {
       "name": "Barara",
       "district": "Ambala",
       "avgPrice": 1580,
@@ -1925,13 +1936,24 @@
       "grade": "Medium"
     },
     {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 4420,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 5500,
+      "records": 83,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Sadhaura",
       "district": "Yamuna Nagar",
-      "avgPrice": 1521,
-      "recentPrice": null,
+      "avgPrice": 1520,
+      "recentPrice": 1500,
       "minPrice": 1000,
       "maxPrice": 3000,
-      "records": 19,
+      "records": 20,
       "topVariety": "Bhindi",
       "grade": "Local"
     },
@@ -2002,17 +2024,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Ratia",
-      "district": "Fatehabad",
-      "avgPrice": 1200,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 1200,
-      "records": 1,
-      "topVariety": null,
-      "grade": "Grade A"
-    },
-    {
       "name": "Hodal",
       "district": "Palwal",
       "avgPrice": 1100,
@@ -2025,28 +2036,6 @@
     }
   ],
   "bitter-gourd": [
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 5667,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 7000,
-      "records": 24,
-      "topVariety": "Bitter Gourd",
-      "grade": "Medium"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 5360,
-      "recentPrice": null,
-      "minPrice": 1350,
-      "maxPrice": 7000,
-      "records": 94,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
     {
       "name": "Bahadurgarh",
       "district": "Jhajar",
@@ -2067,17 +2056,6 @@
       "maxPrice": 8000,
       "records": 14,
       "topVariety": "Bitter Gourd",
-      "grade": "Medium"
-    },
-    {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 4832,
-      "recentPrice": null,
-      "minPrice": 1600,
-      "maxPrice": 5500,
-      "records": 63,
-      "topVariety": null,
       "grade": "Medium"
     },
     {
@@ -2103,17 +2081,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 3707,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 5200,
-      "records": 7,
-      "topVariety": "Bitter Gourd",
-      "grade": "Local"
-    },
-    {
       "name": "Ambala Cantt.",
       "district": "Ambala",
       "avgPrice": 3540,
@@ -2125,14 +2092,14 @@
       "grade": "Grade B"
     },
     {
-      "name": "Ganaur",
+      "name": "Gohana",
       "district": "Sonipat",
-      "avgPrice": 3400,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 7800,
-      "records": 10,
-      "topVariety": "Bitter Gourd",
+      "avgPrice": 4811,
+      "recentPrice": 3500,
+      "minPrice": 1600,
+      "maxPrice": 5500,
+      "records": 64,
+      "topVariety": null,
       "grade": "Medium"
     },
     {
@@ -2143,6 +2110,28 @@
       "minPrice": 2100,
       "maxPrice": 4500,
       "records": 16,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 5572,
+      "recentPrice": 3300,
+      "minPrice": 900,
+      "maxPrice": 7000,
+      "records": 25,
+      "topVariety": "Bitter Gourd",
+      "grade": "Medium"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 5338,
+      "recentPrice": 3250,
+      "minPrice": 1350,
+      "maxPrice": 7000,
+      "records": 95,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -2169,13 +2158,24 @@
       "grade": "Local"
     },
     {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 2842,
-      "recentPrice": null,
-      "minPrice": 850,
-      "maxPrice": 5000,
-      "records": 13,
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 3594,
+      "recentPrice": 2800,
+      "minPrice": 1800,
+      "maxPrice": 5200,
+      "records": 8,
+      "topVariety": "Bitter Gourd",
+      "grade": "Local"
+    },
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 3345,
+      "recentPrice": 2800,
+      "minPrice": 1800,
+      "maxPrice": 7800,
+      "records": 11,
       "topVariety": "Bitter Gourd",
       "grade": "Medium"
     },
@@ -2290,6 +2290,28 @@
       "grade": "FAQ"
     },
     {
+      "name": "Jakhal",
+      "district": "Fatehabad",
+      "avgPrice": 1600,
+      "recentPrice": 1600,
+      "minPrice": 1600,
+      "maxPrice": 1600,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 2746,
+      "recentPrice": 1500,
+      "minPrice": 850,
+      "maxPrice": 5000,
+      "records": 14,
+      "topVariety": "Bitter Gourd",
+      "grade": "Medium"
+    },
+    {
       "name": "Tauru",
       "district": "Mewat",
       "avgPrice": 1500,
@@ -2358,6 +2380,28 @@
   ],
   "bottle-gourd": [
     {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 1350,
+      "recentPrice": 2800,
+      "minPrice": 800,
+      "maxPrice": 2800,
+      "records": 32,
+      "topVariety": "Bottle Gourd",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 1733,
+      "recentPrice": 2500,
+      "minPrice": 500,
+      "maxPrice": 3400,
+      "records": 53,
+      "topVariety": "Bottle Gourd",
+      "grade": "Local"
+    },
+    {
       "name": "Ladwa",
       "district": "Kurukshetra",
       "avgPrice": 2380,
@@ -2389,17 +2433,6 @@
       "records": 65,
       "topVariety": "Bottle Gourd",
       "grade": "Local"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 2004,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 3200,
-      "records": 93,
-      "topVariety": "Bottle Gourd",
-      "grade": "Medium"
     },
     {
       "name": "Barwala",
@@ -2446,39 +2479,6 @@
       "grade": "Local"
     },
     {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1791,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 3000,
-      "records": 88,
-      "topVariety": "Bottle Gourd",
-      "grade": "Medium"
-    },
-    {
-      "name": "Jhajjar",
-      "district": "Jhajar",
-      "avgPrice": 1783,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2500,
-      "records": 24,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 1718,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 3400,
-      "records": 52,
-      "topVariety": "Bottle Gourd",
-      "grade": "Local"
-    },
-    {
       "name": "New Grain Market(main), Karnal",
       "district": "Karnal",
       "avgPrice": 1688,
@@ -2488,17 +2488,6 @@
       "records": 61,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 1646,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 3500,
-      "records": 61,
-      "topVariety": "Bottle Gourd",
-      "grade": "Medium"
     },
     {
       "name": "Chhachrauli",
@@ -2521,17 +2510,6 @@
       "records": 82,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 1617,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 3500,
-      "records": 65,
-      "topVariety": "Bottle Gourd",
-      "grade": "Medium"
     },
     {
       "name": "Sohna",
@@ -2600,6 +2578,28 @@
       "grade": "FAQ"
     },
     {
+      "name": "Jhajjar",
+      "district": "Jhajar",
+      "avgPrice": 1772,
+      "recentPrice": 1500,
+      "minPrice": 1000,
+      "maxPrice": 2500,
+      "records": 25,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 1615,
+      "recentPrice": 1500,
+      "minPrice": 700,
+      "maxPrice": 3500,
+      "records": 66,
+      "topVariety": "Bottle Gourd",
+      "grade": "Medium"
+    },
+    {
       "name": "Raipur Rai",
       "district": "Panchkula",
       "avgPrice": 1496,
@@ -2609,28 +2609,6 @@
       "records": 95,
       "topVariety": "Bottle Gourd",
       "grade": "Local"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 1492,
-      "recentPrice": null,
-      "minPrice": 750,
-      "maxPrice": 2000,
-      "records": 104,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 1449,
-      "recentPrice": null,
-      "minPrice": 400,
-      "maxPrice": 2500,
-      "records": 75,
-      "topVariety": "Bottle Gourd",
-      "grade": "Medium"
     },
     {
       "name": "Ballabhgarh",
@@ -2653,6 +2631,28 @@
       "records": 57,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Jakhal",
+      "district": "Fatehabad",
+      "avgPrice": 1000,
+      "recentPrice": 1400,
+      "minPrice": 500,
+      "maxPrice": 1500,
+      "records": 6,
+      "topVariety": "Bottle Gourd",
+      "grade": "Local"
+    },
+    {
+      "name": "Mustafabad",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1310,
+      "recentPrice": 1400,
+      "minPrice": 1000,
+      "maxPrice": 1600,
+      "records": 21,
+      "topVariety": "Bottle Gourd",
+      "grade": "FAQ"
     },
     {
       "name": "Siwan",
@@ -2721,26 +2721,15 @@
       "grade": "Grade B"
     },
     {
-      "name": "Mustafabad",
+      "name": "Sadhaura",
       "district": "Yamuna Nagar",
-      "avgPrice": 1305,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 1600,
-      "records": 20,
+      "avgPrice": 1141,
+      "recentPrice": 1300,
+      "minPrice": 250,
+      "maxPrice": 2200,
+      "records": 37,
       "topVariety": "Bottle Gourd",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 1303,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 2300,
-      "records": 31,
-      "topVariety": "Bottle Gourd",
-      "grade": "FAQ"
+      "grade": "Local"
     },
     {
       "name": "Uklana",
@@ -2776,26 +2765,48 @@
       "grade": "FAQ"
     },
     {
-      "name": "Tauru",
-      "district": "Mewat",
-      "avgPrice": 1253,
-      "recentPrice": null,
-      "minPrice": 700,
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 1490,
+      "recentPrice": 1250,
+      "minPrice": 750,
       "maxPrice": 2000,
-      "records": 32,
+      "records": 105,
       "topVariety": null,
-      "grade": "Local"
+      "grade": "FAQ"
     },
     {
-      "name": "FerozpurZirkha(Nagina)",
-      "district": "Mewat",
-      "avgPrice": 1231,
-      "recentPrice": null,
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 1996,
+      "recentPrice": 1200,
       "minPrice": 700,
-      "maxPrice": 1800,
-      "records": 55,
-      "topVariety": null,
-      "grade": "Local"
+      "maxPrice": 3200,
+      "records": 94,
+      "topVariety": "Bottle Gourd",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1784,
+      "recentPrice": 1200,
+      "minPrice": 700,
+      "maxPrice": 3000,
+      "records": 89,
+      "topVariety": "Bottle Gourd",
+      "grade": "Medium"
+    },
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 1639,
+      "recentPrice": 1200,
+      "minPrice": 800,
+      "maxPrice": 3500,
+      "records": 62,
+      "topVariety": "Bottle Gourd",
+      "grade": "Medium"
     },
     {
       "name": "Punhana",
@@ -2806,28 +2817,6 @@
       "maxPrice": 1500,
       "records": 28,
       "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Panipat",
-      "district": "Panipat",
-      "avgPrice": 1179,
-      "recentPrice": null,
-      "minPrice": 550,
-      "maxPrice": 1750,
-      "records": 85,
-      "topVariety": "Bottle Gourd",
-      "grade": "Local"
-    },
-    {
-      "name": "Sadhaura",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1136,
-      "recentPrice": null,
-      "minPrice": 250,
-      "maxPrice": 2200,
-      "records": 36,
-      "topVariety": "Bottle Gourd",
       "grade": "Local"
     },
     {
@@ -2864,6 +2853,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 1443,
+      "recentPrice": 1000,
+      "minPrice": 400,
+      "maxPrice": 2500,
+      "records": 76,
+      "topVariety": "Bottle Gourd",
+      "grade": "Medium"
+    },
+    {
       "name": "Gurgaon",
       "district": "Gurgaon",
       "avgPrice": 1089,
@@ -2875,6 +2875,28 @@
       "grade": "Grade B"
     },
     {
+      "name": "FerozpurZirkha(Nagina)",
+      "district": "Mewat",
+      "avgPrice": 1227,
+      "recentPrice": 1000,
+      "minPrice": 700,
+      "maxPrice": 1800,
+      "records": 56,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Panipat",
+      "district": "Panipat",
+      "avgPrice": 1177,
+      "recentPrice": 1000,
+      "minPrice": 550,
+      "maxPrice": 1750,
+      "records": 86,
+      "topVariety": "Bottle Gourd",
+      "grade": "Local"
+    },
+    {
       "name": "Kosli",
       "district": "Rewari",
       "avgPrice": 1697,
@@ -2884,17 +2906,6 @@
       "records": 33,
       "topVariety": "Bottle Gourd",
       "grade": "FAQ"
-    },
-    {
-      "name": "Jakhal",
-      "district": "Fatehabad",
-      "avgPrice": 920,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 1500,
-      "records": 5,
-      "topVariety": "Bottle Gourd",
-      "grade": "Local"
     },
     {
       "name": "Meham",
@@ -2917,6 +2928,17 @@
       "records": 17,
       "topVariety": "Bottle Gourd",
       "grade": "Medium"
+    },
+    {
+      "name": "Tauru",
+      "district": "Mewat",
+      "avgPrice": 1239,
+      "recentPrice": 800,
+      "minPrice": 700,
+      "maxPrice": 2000,
+      "records": 33,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Hassanpur",
@@ -2945,13 +2967,24 @@
     {
       "name": "Gohana",
       "district": "Sonipat",
-      "avgPrice": 2582,
-      "recentPrice": null,
+      "avgPrice": 2581,
+      "recentPrice": 2500,
       "minPrice": 1600,
       "maxPrice": 3500,
-      "records": 82,
+      "records": 83,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 1543,
+      "recentPrice": 2200,
+      "minPrice": 1000,
+      "maxPrice": 2600,
+      "records": 30,
+      "topVariety": "Brinjal",
+      "grade": "FAQ"
     },
     {
       "name": "Ganaur",
@@ -3009,17 +3042,6 @@
       "grade": "Local"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 1991,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2700,
-      "records": 82,
-      "topVariety": "Brinjal",
-      "grade": "Medium"
-    },
-    {
       "name": "Sohna",
       "district": "Gurgaon",
       "avgPrice": 1913,
@@ -3062,17 +3084,6 @@
       "records": 3,
       "topVariety": "Brinjal",
       "grade": "Grade A"
-    },
-    {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 1860,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 2500,
-      "records": 72,
-      "topVariety": "Brinjal",
-      "grade": "Medium"
     },
     {
       "name": "Bhiwani",
@@ -3141,26 +3152,15 @@
       "grade": "Grade B"
     },
     {
-      "name": "Jhajjar",
-      "district": "Jhajar",
-      "avgPrice": 1715,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2500,
-      "records": 33,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1711,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 2300,
-      "records": 57,
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 1285,
+      "recentPrice": 1700,
+      "minPrice": 900,
+      "maxPrice": 1900,
+      "records": 76,
       "topVariety": "Brinjal",
-      "grade": "Medium"
+      "grade": "Local"
     },
     {
       "name": "Sirsa",
@@ -3218,15 +3218,26 @@
       "grade": "Medium"
     },
     {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 1521,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2600,
-      "records": 29,
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 1855,
+      "recentPrice": 1500,
+      "minPrice": 900,
+      "maxPrice": 2500,
+      "records": 73,
       "topVariety": "Brinjal",
-      "grade": "FAQ"
+      "grade": "Medium"
+    },
+    {
+      "name": "Jhajjar",
+      "district": "Jhajar",
+      "avgPrice": 1709,
+      "recentPrice": 1500,
+      "minPrice": 1000,
+      "maxPrice": 2500,
+      "records": 34,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Bahadurgarh",
@@ -3262,17 +3273,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Mustafabad",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1460,
-      "recentPrice": null,
-      "minPrice": 1400,
-      "maxPrice": 1500,
-      "records": 5,
-      "topVariety": "Round",
-      "grade": "FAQ"
-    },
-    {
       "name": "Pundri",
       "district": "Kaithal",
       "avgPrice": 1450,
@@ -3282,17 +3282,6 @@
       "records": 9,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 1414,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 2000,
-      "records": 80,
-      "topVariety": "Brinjal",
-      "grade": "Medium"
     },
     {
       "name": "Raipur Rai",
@@ -3320,12 +3309,34 @@
       "name": "FerozpurZirkha(Nagina)",
       "district": "Mewat",
       "avgPrice": 1388,
-      "recentPrice": null,
+      "recentPrice": 1400,
       "minPrice": 900,
       "maxPrice": 2000,
-      "records": 59,
+      "records": 60,
       "topVariety": null,
       "grade": "Local"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1706,
+      "recentPrice": 1400,
+      "minPrice": 1200,
+      "maxPrice": 2300,
+      "records": 58,
+      "topVariety": "Brinjal",
+      "grade": "Medium"
+    },
+    {
+      "name": "Mustafabad",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1450,
+      "recentPrice": 1400,
+      "minPrice": 1400,
+      "maxPrice": 1500,
+      "records": 6,
+      "topVariety": "Round",
+      "grade": "FAQ"
     },
     {
       "name": "Ballabhgarh",
@@ -3337,28 +3348,6 @@
       "records": 77,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 1333,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 1800,
-      "records": 101,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Ratia",
-      "district": "Fatehabad",
-      "avgPrice": 1313,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 1500,
-      "records": 4,
-      "topVariety": null,
-      "grade": "Grade A"
     },
     {
       "name": "Radaur",
@@ -3383,26 +3372,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 1279,
-      "recentPrice": null,
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 1310,
+      "recentPrice": 1300,
       "minPrice": 900,
-      "maxPrice": 1900,
-      "records": 75,
-      "topVariety": "Brinjal",
-      "grade": "Local"
-    },
-    {
-      "name": "Panipat",
-      "district": "Panipat",
-      "avgPrice": 1265,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 2000,
-      "records": 68,
+      "maxPrice": 1500,
+      "records": 5,
       "topVariety": null,
-      "grade": "Local"
+      "grade": "Grade A"
     },
     {
       "name": "Samalkha",
@@ -3458,6 +3436,39 @@
       "records": 33,
       "topVariety": "Brinjal",
       "grade": "Grade B"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 1411,
+      "recentPrice": 1200,
+      "minPrice": 900,
+      "maxPrice": 2000,
+      "records": 81,
+      "topVariety": "Brinjal",
+      "grade": "Medium"
+    },
+    {
+      "name": "Panipat",
+      "district": "Panipat",
+      "avgPrice": 1264,
+      "recentPrice": 1200,
+      "minPrice": 600,
+      "maxPrice": 2000,
+      "records": 69,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 1330,
+      "recentPrice": 1100,
+      "minPrice": 1000,
+      "maxPrice": 1800,
+      "records": 102,
+      "topVariety": null,
+      "grade": "FAQ"
     },
     {
       "name": "Nuh",
@@ -3526,6 +3537,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 1980,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 2700,
+      "records": 83,
+      "topVariety": "Brinjal",
+      "grade": "Medium"
+    },
+    {
       "name": "Hassanpur",
       "district": "Palwal",
       "avgPrice": 909,
@@ -3550,6 +3572,61 @@
   ],
   "capsicum": [
     {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 3488,
+      "recentPrice": 6250,
+      "minPrice": 1100,
+      "maxPrice": 6250,
+      "records": 90,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 2911,
+      "recentPrice": 6000,
+      "minPrice": 600,
+      "maxPrice": 6000,
+      "records": 57,
+      "topVariety": "Capsicum",
+      "grade": "Local"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 3068,
+      "recentPrice": 6000,
+      "minPrice": 500,
+      "maxPrice": 6000,
+      "records": 84,
+      "topVariety": "Capsicum",
+      "grade": "Medium"
+    },
+    {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 3505,
+      "recentPrice": 5500,
+      "minPrice": 1500,
+      "maxPrice": 6000,
+      "records": 22,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 3488,
+      "recentPrice": 5500,
+      "minPrice": 2200,
+      "maxPrice": 5500,
+      "records": 97,
+      "topVariety": "Capsicum",
+      "grade": "Medium"
+    },
+    {
       "name": "Chhachrauli",
       "district": "Yamuna Nagar",
       "avgPrice": 5125,
@@ -3557,6 +3634,17 @@
       "minPrice": 3000,
       "maxPrice": 7000,
       "records": 16,
+      "topVariety": "Capsicum",
+      "grade": "Medium"
+    },
+    {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 3817,
+      "recentPrice": 5000,
+      "minPrice": 1000,
+      "maxPrice": 6000,
+      "records": 48,
       "topVariety": "Capsicum",
       "grade": "Medium"
     },
@@ -3583,13 +3671,24 @@
       "grade": "Medium"
     },
     {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 3791,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 6000,
-      "records": 47,
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 4300,
+      "recentPrice": 4300,
+      "minPrice": 4300,
+      "maxPrice": 4300,
+      "records": 1,
+      "topVariety": "Capsicum",
+      "grade": "Medium"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 2587,
+      "recentPrice": 4000,
+      "minPrice": 750,
+      "maxPrice": 5000,
+      "records": 84,
       "topVariety": "Capsicum",
       "grade": "Medium"
     },
@@ -3627,50 +3726,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 3467,
-      "recentPrice": null,
-      "minPrice": 2200,
-      "maxPrice": 4800,
-      "records": 96,
-      "topVariety": "Capsicum",
-      "grade": "Medium"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 3457,
-      "recentPrice": null,
-      "minPrice": 1100,
-      "maxPrice": 5500,
-      "records": 89,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 3410,
-      "recentPrice": null,
-      "minPrice": 1500,
-      "maxPrice": 6000,
-      "records": 21,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 3033,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 5000,
-      "records": 83,
-      "topVariety": "Capsicum",
-      "grade": "Medium"
-    },
-    {
       "name": "Rania",
       "district": "Sirsa",
       "avgPrice": 2900,
@@ -3680,17 +3735,6 @@
       "records": 3,
       "topVariety": "Capsicum",
       "grade": "FAQ"
-    },
-    {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 2856,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 4250,
-      "records": 56,
-      "topVariety": "Capsicum",
-      "grade": "Local"
     },
     {
       "name": "Bahadurgarh",
@@ -3735,17 +3779,6 @@
       "records": 56,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 2570,
-      "recentPrice": null,
-      "minPrice": 750,
-      "maxPrice": 5000,
-      "records": 83,
-      "topVariety": "Capsicum",
-      "grade": "Medium"
     },
     {
       "name": "Palwal",
@@ -3926,6 +3959,50 @@
   ],
   "cabbage": [
     {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 968,
+      "recentPrice": 2800,
+      "minPrice": 600,
+      "maxPrice": 2800,
+      "records": 90,
+      "topVariety": "Cabbage",
+      "grade": "Medium"
+    },
+    {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 737,
+      "recentPrice": 2250,
+      "minPrice": 350,
+      "maxPrice": 2250,
+      "records": 93,
+      "topVariety": "Cabbage",
+      "grade": "Local"
+    },
+    {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 859,
+      "recentPrice": 2200,
+      "minPrice": 500,
+      "maxPrice": 2200,
+      "records": 85,
+      "topVariety": "Cabbage",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 763,
+      "recentPrice": 2100,
+      "minPrice": 450,
+      "maxPrice": 2100,
+      "records": 96,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Kosli",
       "district": "Rewari",
       "avgPrice": 1818,
@@ -3935,6 +4012,17 @@
       "records": 60,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Tauru",
+      "district": "Mewat",
+      "avgPrice": 1089,
+      "recentPrice": 2000,
+      "minPrice": 600,
+      "maxPrice": 2000,
+      "records": 38,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Kaithal",
@@ -3959,6 +4047,17 @@
       "grade": "Grade B"
     },
     {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 929,
+      "recentPrice": 1500,
+      "minPrice": 600,
+      "maxPrice": 1500,
+      "records": 97,
+      "topVariety": "Cabbage",
+      "grade": "Medium"
+    },
+    {
       "name": "Cheeka",
       "district": "Kaithal",
       "avgPrice": 1392,
@@ -3981,6 +4080,28 @@
       "grade": "Local"
     },
     {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 653,
+      "recentPrice": 1300,
+      "minPrice": 400,
+      "maxPrice": 1300,
+      "records": 88,
+      "topVariety": "Cabbage",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 625,
+      "recentPrice": 1300,
+      "minPrice": 400,
+      "maxPrice": 1300,
+      "records": 77,
+      "topVariety": "Cabbage",
+      "grade": "Medium"
+    },
+    {
       "name": "kalanwali",
       "district": "Sirsa",
       "avgPrice": 1233,
@@ -4001,6 +4122,28 @@
       "records": 48,
       "topVariety": "Cabbage",
       "grade": "Medium"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 590,
+      "recentPrice": 1200,
+      "minPrice": 300,
+      "maxPrice": 1500,
+      "records": 78,
+      "topVariety": "Cabbage",
+      "grade": "Medium"
+    },
+    {
+      "name": "Panipat",
+      "district": "Panipat",
+      "avgPrice": 845,
+      "recentPrice": 1200,
+      "minPrice": 500,
+      "maxPrice": 1400,
+      "records": 69,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Raipur Rai",
@@ -4067,17 +4210,6 @@
       "records": 29,
       "topVariety": "Cabbage",
       "grade": "Medium"
-    },
-    {
-      "name": "Tauru",
-      "district": "Mewat",
-      "avgPrice": 1065,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 1500,
-      "records": 37,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "FerozpurZirkha(Nagina)",
@@ -4157,17 +4289,6 @@
       "grade": "Local"
     },
     {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 947,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 2200,
-      "records": 89,
-      "topVariety": "Cabbage",
-      "grade": "Medium"
-    },
-    {
       "name": "Shahzadpur",
       "district": "Ambala",
       "avgPrice": 924,
@@ -4177,17 +4298,6 @@
       "records": 17,
       "topVariety": "Cabbage",
       "grade": "FAQ"
-    },
-    {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 923,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 1500,
-      "records": 96,
-      "topVariety": "Cabbage",
-      "grade": "Medium"
     },
     {
       "name": "Palwal",
@@ -4256,17 +4366,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 843,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 1200,
-      "records": 84,
-      "topVariety": "Cabbage",
-      "grade": "FAQ"
-    },
-    {
       "name": "Bahadurgarh",
       "district": "Jhajar",
       "avgPrice": 842,
@@ -4276,17 +4375,6 @@
       "records": 64,
       "topVariety": null,
       "grade": "Medium"
-    },
-    {
-      "name": "Panipat",
-      "district": "Panipat",
-      "avgPrice": 840,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 1400,
-      "records": 68,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Pehowa",
@@ -4333,28 +4421,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 748,
-      "recentPrice": null,
-      "minPrice": 450,
-      "maxPrice": 2000,
-      "records": 95,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 721,
-      "recentPrice": null,
-      "minPrice": 350,
-      "maxPrice": 1600,
-      "records": 92,
-      "topVariety": "Cabbage",
-      "grade": "Local"
-    },
-    {
       "name": "Safidon",
       "district": "Jind",
       "avgPrice": 705,
@@ -4377,28 +4443,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 646,
-      "recentPrice": null,
-      "minPrice": 400,
-      "maxPrice": 1200,
-      "records": 87,
-      "topVariety": "Cabbage",
-      "grade": "Medium"
-    },
-    {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 616,
-      "recentPrice": null,
-      "minPrice": 400,
-      "maxPrice": 1000,
-      "records": 76,
-      "topVariety": "Cabbage",
-      "grade": "Medium"
-    },
-    {
       "name": "Thanesar",
       "district": "Kurukshetra",
       "avgPrice": 603,
@@ -4408,17 +4452,6 @@
       "records": 76,
       "topVariety": "Cabbage",
       "grade": "Local"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 582,
-      "recentPrice": null,
-      "minPrice": 300,
-      "maxPrice": 1500,
-      "records": 77,
-      "topVariety": "Cabbage",
-      "grade": "Medium"
     },
     {
       "name": "Barara",
@@ -4499,6 +4532,72 @@
     }
   ],
   "carrot": [
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 950,
+      "recentPrice": 8000,
+      "minPrice": 600,
+      "maxPrice": 8000,
+      "records": 78,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 969,
+      "recentPrice": 5500,
+      "minPrice": 700,
+      "maxPrice": 5500,
+      "records": 90,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 1143,
+      "recentPrice": 5500,
+      "minPrice": 700,
+      "maxPrice": 5500,
+      "records": 76,
+      "topVariety": "Carrot",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 1286,
+      "recentPrice": 4500,
+      "minPrice": 700,
+      "maxPrice": 5000,
+      "records": 86,
+      "topVariety": "Carrot",
+      "grade": "Medium"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 1275,
+      "recentPrice": 3100,
+      "minPrice": 600,
+      "maxPrice": 3100,
+      "records": 101,
+      "topVariety": "Carrot",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1131,
+      "recentPrice": 2300,
+      "minPrice": 600,
+      "maxPrice": 2500,
+      "records": 89,
+      "topVariety": null,
+      "grade": "Medium"
+    },
     {
       "name": "Palwal",
       "district": "Palwal",
@@ -4588,28 +4687,6 @@
       "grade": "Grade A"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 1257,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 2500,
-      "records": 100,
-      "topVariety": "Carrot",
-      "grade": "Medium"
-    },
-    {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 1248,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 5000,
-      "records": 85,
-      "topVariety": "Carrot",
-      "grade": "Medium"
-    },
-    {
       "name": "Hassanpur",
       "district": "Palwal",
       "avgPrice": 1245,
@@ -4696,28 +4773,6 @@
       "records": 19,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1117,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 2500,
-      "records": 88,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 1085,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 3000,
-      "records": 75,
-      "topVariety": "Carrot",
-      "grade": "FAQ"
     },
     {
       "name": "Bhiwani",
@@ -4918,17 +4973,6 @@
       "grade": "Local"
     },
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 919,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 1500,
-      "records": 89,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Narnaul",
       "district": "Mahendragarh-Narnaul",
       "avgPrice": 901,
@@ -4960,17 +5004,6 @@
       "records": 64,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 858,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 1500,
-      "records": 77,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Radaur",
@@ -5129,6 +5162,83 @@
   ],
   "cauliflower": [
     {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 1380,
+      "recentPrice": 4500,
+      "minPrice": 800,
+      "maxPrice": 4500,
+      "records": 86,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Sadhaura",
+      "district": "Yamuna Nagar",
+      "avgPrice": 803,
+      "recentPrice": 3800,
+      "minPrice": 250,
+      "maxPrice": 3800,
+      "records": 76,
+      "topVariety": "Cauliflower",
+      "grade": "Local"
+    },
+    {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 927,
+      "recentPrice": 3000,
+      "minPrice": 450,
+      "maxPrice": 3000,
+      "records": 82,
+      "topVariety": "Cauliflower",
+      "grade": "Local"
+    },
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 1314,
+      "recentPrice": 3000,
+      "minPrice": 550,
+      "maxPrice": 7000,
+      "records": 73,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 895,
+      "recentPrice": 2800,
+      "minPrice": 450,
+      "maxPrice": 2800,
+      "records": 70,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 1213,
+      "recentPrice": 2200,
+      "minPrice": 600,
+      "maxPrice": 3000,
+      "records": 82,
+      "topVariety": "Cauliflower",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jakhal",
+      "district": "Fatehabad",
+      "avgPrice": 961,
+      "recentPrice": 2000,
+      "minPrice": 500,
+      "maxPrice": 4000,
+      "records": 64,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Gurgaon",
       "district": "Gurgaon",
       "avgPrice": 1300,
@@ -5138,6 +5248,28 @@
       "records": 11,
       "topVariety": null,
       "grade": "Grade A"
+    },
+    {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 1202,
+      "recentPrice": 2000,
+      "minPrice": 800,
+      "maxPrice": 2000,
+      "records": 97,
+      "topVariety": "Cauliflower",
+      "grade": "Medium"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 797,
+      "recentPrice": 2000,
+      "minPrice": 200,
+      "maxPrice": 3500,
+      "records": 58,
+      "topVariety": "Cauliflower",
+      "grade": "Medium"
     },
     {
       "name": "Kosli",
@@ -5162,6 +5294,39 @@
       "grade": "Grade B"
     },
     {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 774,
+      "recentPrice": 1800,
+      "minPrice": 350,
+      "maxPrice": 1800,
+      "records": 87,
+      "topVariety": "Cauliflower",
+      "grade": "Medium"
+    },
+    {
+      "name": "FerozpurZirkha(Nagina)",
+      "district": "Mewat",
+      "avgPrice": 1354,
+      "recentPrice": 1800,
+      "minPrice": 900,
+      "maxPrice": 2400,
+      "records": 69,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 988,
+      "recentPrice": 1750,
+      "minPrice": 400,
+      "maxPrice": 4000,
+      "records": 73,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Hissar",
       "district": "Hissar",
       "avgPrice": 1633,
@@ -5171,6 +5336,17 @@
       "records": 3,
       "topVariety": "African Sarson",
       "grade": "Local"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1097,
+      "recentPrice": 1500,
+      "minPrice": 300,
+      "maxPrice": 2500,
+      "records": 64,
+      "topVariety": "Cauliflower",
+      "grade": "Medium"
     },
     {
       "name": "Sohna",
@@ -5195,28 +5371,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "FerozpurZirkha(Nagina)",
-      "district": "Mewat",
-      "avgPrice": 1347,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 2400,
-      "records": 68,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 1344,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 4500,
-      "records": 85,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Faridabad",
       "district": "Faridabad",
       "avgPrice": 1308,
@@ -5237,17 +5391,6 @@
       "records": 21,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 1291,
-      "recentPrice": null,
-      "minPrice": 550,
-      "maxPrice": 7000,
-      "records": 72,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Cheeka",
@@ -5294,17 +5437,6 @@
       "grade": "Local"
     },
     {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 1201,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 3000,
-      "records": 81,
-      "topVariety": "Cauliflower",
-      "grade": "FAQ"
-    },
-    {
       "name": "Palwal",
       "district": "Palwal",
       "avgPrice": 1195,
@@ -5312,17 +5444,6 @@
       "minPrice": 1000,
       "maxPrice": 1800,
       "records": 46,
-      "topVariety": "Cauliflower",
-      "grade": "Medium"
-    },
-    {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 1194,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 2000,
-      "records": 96,
       "topVariety": "Cauliflower",
       "grade": "Medium"
     },
@@ -5347,17 +5468,6 @@
       "records": 68,
       "topVariety": "Local",
       "grade": "FAQ"
-    },
-    {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1091,
-      "recentPrice": null,
-      "minPrice": 300,
-      "maxPrice": 2500,
-      "records": 63,
-      "topVariety": "Cauliflower",
-      "grade": "Medium"
     },
     {
       "name": "Punhana",
@@ -5492,17 +5602,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 978,
-      "recentPrice": null,
-      "minPrice": 400,
-      "maxPrice": 4000,
-      "records": 72,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Shahzadpur",
       "district": "Ambala",
       "avgPrice": 962,
@@ -5523,28 +5622,6 @@
       "records": 51,
       "topVariety": "Cauliflower",
       "grade": "FAQ"
-    },
-    {
-      "name": "Jakhal",
-      "district": "Fatehabad",
-      "avgPrice": 944,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 4000,
-      "records": 63,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 902,
-      "recentPrice": null,
-      "minPrice": 450,
-      "maxPrice": 1800,
-      "records": 81,
-      "topVariety": "Cauliflower",
-      "grade": "Local"
     },
     {
       "name": "Pundri",
@@ -5598,50 +5675,6 @@
       "minPrice": 400,
       "maxPrice": 1800,
       "records": 78,
-      "topVariety": "Cauliflower",
-      "grade": "Medium"
-    },
-    {
-      "name": "Ratia",
-      "district": "Fatehabad",
-      "avgPrice": 868,
-      "recentPrice": null,
-      "minPrice": 450,
-      "maxPrice": 1650,
-      "records": 69,
-      "topVariety": null,
-      "grade": "Grade A"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 775,
-      "recentPrice": null,
-      "minPrice": 200,
-      "maxPrice": 3500,
-      "records": 57,
-      "topVariety": "Cauliflower",
-      "grade": "Medium"
-    },
-    {
-      "name": "Sadhaura",
-      "district": "Yamuna Nagar",
-      "avgPrice": 763,
-      "recentPrice": null,
-      "minPrice": 250,
-      "maxPrice": 2400,
-      "records": 75,
-      "topVariety": "Cauliflower",
-      "grade": "Local"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 762,
-      "recentPrice": null,
-      "minPrice": 350,
-      "maxPrice": 1800,
-      "records": 86,
       "topVariety": "Cauliflower",
       "grade": "Medium"
     },
@@ -5782,6 +5815,50 @@
   ],
   "chikoossapota": [
     {
+      "name": "Tauru",
+      "district": "Mewat",
+      "avgPrice": 4141,
+      "recentPrice": 10000,
+      "minPrice": 3000,
+      "maxPrice": 10000,
+      "records": 32,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 4475,
+      "recentPrice": 8000,
+      "minPrice": 2800,
+      "maxPrice": 8000,
+      "records": 71,
+      "topVariety": "Sapota",
+      "grade": "Local"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 4393,
+      "recentPrice": 7000,
+      "minPrice": 3000,
+      "maxPrice": 9000,
+      "records": 96,
+      "topVariety": null,
+      "grade": "Grade B"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 4103,
+      "recentPrice": 7000,
+      "minPrice": 2200,
+      "maxPrice": 7000,
+      "records": 77,
+      "topVariety": "Sapota",
+      "grade": "Medium"
+    },
+    {
       "name": "Chhachrauli",
       "district": "Yamuna Nagar",
       "avgPrice": 6500,
@@ -5881,28 +5958,6 @@
       "grade": "Grade B"
     },
     {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 4424,
-      "recentPrice": null,
-      "minPrice": 2800,
-      "maxPrice": 5000,
-      "records": 70,
-      "topVariety": "Sapota",
-      "grade": "Local"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 4366,
-      "recentPrice": null,
-      "minPrice": 3000,
-      "maxPrice": 9000,
-      "records": 95,
-      "topVariety": null,
-      "grade": "Grade B"
-    },
-    {
       "name": "Thanesar",
       "district": "Kurukshetra",
       "avgPrice": 4285,
@@ -5980,17 +6035,6 @@
       "grade": "Grade B"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 4065,
-      "recentPrice": null,
-      "minPrice": 2200,
-      "maxPrice": 4500,
-      "records": 76,
-      "topVariety": "Sapota",
-      "grade": "Medium"
-    },
-    {
       "name": "Sampla",
       "district": "Rohtak",
       "avgPrice": 4031,
@@ -6011,17 +6055,6 @@
       "records": 1,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Tauru",
-      "district": "Mewat",
-      "avgPrice": 3952,
-      "recentPrice": null,
-      "minPrice": 3000,
-      "maxPrice": 4000,
-      "records": 31,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Ballabhgarh",
@@ -6180,6 +6213,17 @@
   ],
   "colacasia": [
     {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 2583,
+      "recentPrice": 3250,
+      "minPrice": 2250,
+      "maxPrice": 3250,
+      "records": 18,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Ladwa",
       "district": "Kurukshetra",
       "avgPrice": 3025,
@@ -6202,6 +6246,17 @@
       "grade": "Medium"
     },
     {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 2378,
+      "recentPrice": 3000,
+      "minPrice": 2000,
+      "maxPrice": 3500,
+      "records": 23,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Samalkha",
       "district": "Panipat",
       "avgPrice": 3000,
@@ -6211,28 +6266,6 @@
       "records": 3,
       "topVariety": "Arabi",
       "grade": "FAQ"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 2544,
-      "recentPrice": null,
-      "minPrice": 2250,
-      "maxPrice": 2750,
-      "records": 17,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 2350,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 3500,
-      "records": 22,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Ambala Cantt.",
@@ -6325,6 +6358,28 @@
   ],
   "corianderleaves": [
     {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 1933,
+      "recentPrice": 6000,
+      "minPrice": 900,
+      "maxPrice": 6000,
+      "records": 95,
+      "topVariety": "Coriander",
+      "grade": "Medium"
+    },
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 2348,
+      "recentPrice": 5500,
+      "minPrice": 800,
+      "maxPrice": 6000,
+      "records": 111,
+      "topVariety": "Coriander",
+      "grade": "Medium"
+    },
+    {
       "name": "Narwana",
       "district": "Jind",
       "avgPrice": 3111,
@@ -6369,17 +6424,6 @@
       "grade": "Local"
     },
     {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 2319,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 6000,
-      "records": 110,
-      "topVariety": "Coriander",
-      "grade": "Medium"
-    },
-    {
       "name": "Barwala(Hisar)",
       "district": "Hissar",
       "avgPrice": 1899,
@@ -6389,17 +6433,6 @@
       "records": 38,
       "topVariety": "Coriander",
       "grade": "Local"
-    },
-    {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 1889,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 6000,
-      "records": 94,
-      "topVariety": "Coriander",
-      "grade": "Medium"
     },
     {
       "name": "Mustafabad",
@@ -6813,6 +6846,28 @@
   ],
   "cucumbarkheera": [
     {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 1765,
+      "recentPrice": 3500,
+      "minPrice": 800,
+      "maxPrice": 3500,
+      "records": 87,
+      "topVariety": "Cucumbar",
+      "grade": "Local"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 1945,
+      "recentPrice": 3250,
+      "minPrice": 800,
+      "maxPrice": 3250,
+      "records": 95,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Ladwa",
       "district": "Kurukshetra",
       "avgPrice": 3202,
@@ -6835,15 +6890,81 @@
       "grade": "FAQ"
     },
     {
-      "name": "Gohana",
+      "name": "Ganaur",
       "district": "Sonipat",
-      "avgPrice": 2551,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 5000,
-      "records": 65,
+      "avgPrice": 2211,
+      "recentPrice": 2800,
+      "minPrice": 1000,
+      "maxPrice": 3200,
+      "records": 93,
+      "topVariety": "Cucumbar",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1957,
+      "recentPrice": 2600,
+      "minPrice": 900,
+      "maxPrice": 3300,
+      "records": 51,
+      "topVariety": "Cucumbar",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jhajjar",
+      "district": "Jhajar",
+      "avgPrice": 2109,
+      "recentPrice": 2500,
+      "minPrice": 1000,
+      "maxPrice": 3000,
+      "records": 32,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 1947,
+      "recentPrice": 2500,
+      "minPrice": 400,
+      "maxPrice": 3200,
+      "records": 81,
+      "topVariety": "Cucumbar",
+      "grade": "Medium"
+    },
+    {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 1800,
+      "recentPrice": 2500,
+      "minPrice": 1000,
+      "maxPrice": 2500,
+      "records": 88,
+      "topVariety": "Cucumbar",
+      "grade": "Medium"
+    },
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 2550,
+      "recentPrice": 2500,
+      "minPrice": 1200,
+      "maxPrice": 5000,
+      "records": 66,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 1429,
+      "recentPrice": 2500,
+      "minPrice": 1000,
+      "maxPrice": 2500,
+      "records": 14,
+      "topVariety": "Cucumbar",
+      "grade": "FAQ"
     },
     {
       "name": "Radaur",
@@ -6868,15 +6989,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 2204,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 3200,
-      "records": 92,
+      "name": "FerozpurZirkha(Nagina)",
+      "district": "Mewat",
+      "avgPrice": 1856,
+      "recentPrice": 2200,
+      "minPrice": 1200,
+      "maxPrice": 2400,
+      "records": 18,
       "topVariety": "Cucumbar",
-      "grade": "Medium"
+      "grade": "Local"
     },
     {
       "name": "Sirsa",
@@ -6910,17 +7031,6 @@
       "records": 24,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Jhajjar",
-      "district": "Jhajar",
-      "avgPrice": 2097,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 3000,
-      "records": 31,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Ch. Dadri",
@@ -6967,6 +7077,28 @@
       "grade": "FAQ"
     },
     {
+      "name": "Tauru",
+      "district": "Mewat",
+      "avgPrice": 1968,
+      "recentPrice": 2000,
+      "minPrice": 1000,
+      "maxPrice": 3000,
+      "records": 50,
+      "topVariety": "Cucumbar",
+      "grade": "Medium"
+    },
+    {
+      "name": "Sadhaura",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1381,
+      "recentPrice": 2000,
+      "minPrice": 350,
+      "maxPrice": 2200,
+      "records": 74,
+      "topVariety": "Cucumbar",
+      "grade": "Local"
+    },
+    {
       "name": "Fatehabad",
       "district": "Fatehabad",
       "avgPrice": 1996,
@@ -6976,17 +7108,6 @@
       "records": 23,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Tauru",
-      "district": "Mewat",
-      "avgPrice": 1967,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 3000,
-      "records": 49,
-      "topVariety": "Cucumbar",
-      "grade": "Medium"
     },
     {
       "name": "Ambala Cantt.",
@@ -7000,28 +7121,6 @@
       "grade": "Grade B"
     },
     {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1944,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 3300,
-      "records": 50,
-      "topVariety": "Cucumbar",
-      "grade": "Medium"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 1940,
-      "recentPrice": null,
-      "minPrice": 400,
-      "maxPrice": 3200,
-      "records": 80,
-      "topVariety": "Cucumbar",
-      "grade": "Medium"
-    },
-    {
       "name": "Sohna",
       "district": "Gurgaon",
       "avgPrice": 1936,
@@ -7031,17 +7130,6 @@
       "records": 53,
       "topVariety": "Cucumbar",
       "grade": "Local"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 1931,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 2300,
-      "records": 94,
-      "topVariety": null,
-      "grade": "FAQ"
     },
     {
       "name": "Sampla",
@@ -7077,28 +7165,6 @@
       "grade": "Local"
     },
     {
-      "name": "FerozpurZirkha(Nagina)",
-      "district": "Mewat",
-      "avgPrice": 1835,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 2400,
-      "records": 17,
-      "topVariety": "Cucumbar",
-      "grade": "Local"
-    },
-    {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 1792,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2500,
-      "records": 87,
-      "topVariety": "Cucumbar",
-      "grade": "Medium"
-    },
-    {
       "name": "Shahzadpur",
       "district": "Ambala",
       "avgPrice": 1762,
@@ -7132,17 +7198,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 1745,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 3300,
-      "records": 86,
-      "topVariety": "Cucumbar",
-      "grade": "Local"
-    },
-    {
       "name": "Faridabad",
       "district": "Faridabad",
       "avgPrice": 1739,
@@ -7163,6 +7218,17 @@
       "records": 63,
       "topVariety": "Cucumbar",
       "grade": "FAQ"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 1611,
+      "recentPrice": 1700,
+      "minPrice": 500,
+      "maxPrice": 3000,
+      "records": 83,
+      "topVariety": "Cucumbar",
+      "grade": "Medium"
     },
     {
       "name": "Rania",
@@ -7198,15 +7264,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 1610,
-      "recentPrice": null,
+      "name": "Panipat",
+      "district": "Panipat",
+      "avgPrice": 1291,
+      "recentPrice": 1600,
       "minPrice": 500,
-      "maxPrice": 3000,
-      "records": 82,
-      "topVariety": "Cucumbar",
-      "grade": "Medium"
+      "maxPrice": 1800,
+      "records": 64,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Raipur Rai",
@@ -7286,28 +7352,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Sadhaura",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1373,
-      "recentPrice": null,
-      "minPrice": 350,
-      "maxPrice": 2200,
-      "records": 73,
-      "topVariety": "Cucumbar",
-      "grade": "Local"
-    },
-    {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 1346,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2000,
-      "records": 13,
-      "topVariety": "Cucumbar",
-      "grade": "FAQ"
-    },
-    {
       "name": "Jakhal",
       "district": "Fatehabad",
       "avgPrice": 1331,
@@ -7328,17 +7372,6 @@
       "records": 72,
       "topVariety": "Cucumbar",
       "grade": "FAQ"
-    },
-    {
-      "name": "Panipat",
-      "district": "Panipat",
-      "avgPrice": 1286,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 1800,
-      "records": 63,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Hassanpur",
@@ -7479,6 +7512,28 @@
   ],
   "garlic": [
     {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 9188,
+      "recentPrice": 17500,
+      "minPrice": 5000,
+      "maxPrice": 17500,
+      "records": 77,
+      "topVariety": "Garlic",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 10665,
+      "recentPrice": 15000,
+      "minPrice": 5500,
+      "maxPrice": 15000,
+      "records": 79,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Ganaur",
       "district": "Sonipat",
       "avgPrice": 12339,
@@ -7501,15 +7556,15 @@
       "grade": "Local"
     },
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 10609,
-      "recentPrice": null,
-      "minPrice": 5500,
-      "maxPrice": 12000,
-      "records": 78,
-      "topVariety": null,
-      "grade": "FAQ"
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 8018,
+      "recentPrice": 11400,
+      "minPrice": 3600,
+      "maxPrice": 15000,
+      "records": 66,
+      "topVariety": "Garlic",
+      "grade": "Local"
     },
     {
       "name": "Barwala(Hisar)",
@@ -7556,17 +7611,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 9079,
-      "recentPrice": null,
-      "minPrice": 5000,
-      "maxPrice": 14000,
-      "records": 76,
-      "topVariety": "Garlic",
-      "grade": "FAQ"
-    },
-    {
       "name": "Bahadurgarh",
       "district": "Jhajar",
       "avgPrice": 8000,
@@ -7585,17 +7629,6 @@
       "minPrice": 8000,
       "maxPrice": 8000,
       "records": 1,
-      "topVariety": "Garlic",
-      "grade": "Local"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 7966,
-      "recentPrice": null,
-      "minPrice": 3600,
-      "maxPrice": 15000,
-      "records": 65,
       "topVariety": "Garlic",
       "grade": "Local"
     },
@@ -7712,26 +7745,26 @@
   ],
   "gingerdry": [
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 7401,
-      "recentPrice": null,
-      "minPrice": 5000,
-      "maxPrice": 15000,
-      "records": 93,
-      "topVariety": "Vegitable-fresh",
-      "grade": "Local"
-    },
-    {
       "name": "Hansi",
       "district": "Hissar",
-      "avgPrice": 6476,
-      "recentPrice": null,
+      "avgPrice": 6481,
+      "recentPrice": 7000,
       "minPrice": 5500,
       "maxPrice": 13500,
-      "records": 104,
+      "records": 105,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 7391,
+      "recentPrice": 6500,
+      "minPrice": 5000,
+      "maxPrice": 15000,
+      "records": 94,
+      "topVariety": "Vegitable-fresh",
+      "grade": "Local"
     },
     {
       "name": "Thanesar",
@@ -7746,6 +7779,28 @@
     }
   ],
   "gingergreen": [
+    {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 6330,
+      "recentPrice": 10000,
+      "minPrice": 5000,
+      "maxPrice": 10000,
+      "records": 69,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 8095,
+      "recentPrice": 10000,
+      "minPrice": 6500,
+      "maxPrice": 15000,
+      "records": 111,
+      "topVariety": "Green Ginger",
+      "grade": "Medium"
+    },
     {
       "name": "Sohna",
       "district": "Gurgaon",
@@ -7769,15 +7824,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 8078,
-      "recentPrice": null,
-      "minPrice": 6500,
-      "maxPrice": 15000,
-      "records": 110,
-      "topVariety": "Green Ginger",
-      "grade": "Medium"
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 9000,
+      "recentPrice": 9000,
+      "minPrice": 9000,
+      "maxPrice": 9000,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Grade A"
     },
     {
       "name": "Sadhaura",
@@ -7813,17 +7868,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Tauru",
-      "district": "Mewat",
-      "avgPrice": 7243,
-      "recentPrice": null,
-      "minPrice": 6000,
-      "maxPrice": 16000,
-      "records": 63,
-      "topVariety": "Green Ginger",
-      "grade": "Medium"
-    },
-    {
       "name": "Samalkha",
       "district": "Panipat",
       "avgPrice": 7027,
@@ -7833,6 +7877,17 @@
       "records": 74,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Tauru",
+      "district": "Mewat",
+      "avgPrice": 7239,
+      "recentPrice": 7000,
+      "minPrice": 6000,
+      "maxPrice": 16000,
+      "records": 64,
+      "topVariety": "Green Ginger",
+      "grade": "Medium"
     },
     {
       "name": "New Grain Market(main), Karnal",
@@ -7846,17 +7901,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 6568,
-      "recentPrice": null,
-      "minPrice": 4000,
-      "maxPrice": 16000,
-      "records": 103,
-      "topVariety": "Green Ginger",
-      "grade": "Medium"
-    },
-    {
       "name": "Bahadurgarh",
       "district": "Jhajar",
       "avgPrice": 6563,
@@ -7865,17 +7909,6 @@
       "maxPrice": 9000,
       "records": 71,
       "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 6537,
-      "recentPrice": null,
-      "minPrice": 5000,
-      "maxPrice": 15000,
-      "records": 94,
-      "topVariety": "Green Ginger",
       "grade": "Medium"
     },
     {
@@ -7899,17 +7932,6 @@
       "records": 13,
       "topVariety": "Green Ginger",
       "grade": "Grade B"
-    },
-    {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 6276,
-      "recentPrice": null,
-      "minPrice": 5000,
-      "maxPrice": 9000,
-      "records": 68,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Radaur",
@@ -7989,6 +8011,17 @@
       "grade": "Local"
     },
     {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 6553,
+      "recentPrice": 5000,
+      "minPrice": 4000,
+      "maxPrice": 16000,
+      "records": 104,
+      "topVariety": "Green Ginger",
+      "grade": "Medium"
+    },
+    {
       "name": "Gurgaon",
       "district": "Gurgaon",
       "avgPrice": 5000,
@@ -7998,17 +8031,6 @@
       "records": 1,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 4963,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 10000,
-      "records": 101,
-      "topVariety": "Green Ginger",
-      "grade": "Medium"
     },
     {
       "name": "Shahzadpur",
@@ -8077,6 +8099,28 @@
       "grade": "Local"
     },
     {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 4949,
+      "recentPrice": 3500,
+      "minPrice": 3500,
+      "maxPrice": 10000,
+      "records": 102,
+      "topVariety": "Green Ginger",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 6503,
+      "recentPrice": 3300,
+      "minPrice": 3300,
+      "maxPrice": 15000,
+      "records": 95,
+      "topVariety": "Green Ginger",
+      "grade": "Medium"
+    },
+    {
       "name": "Barara",
       "district": "Ambala",
       "avgPrice": 2444,
@@ -8098,6 +8142,17 @@
       "maxPrice": 3800,
       "records": 1,
       "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
+      "name": "Rohtak(Kalanaur)",
+      "district": "Rohtak",
+      "avgPrice": 2300,
+      "recentPrice": 2300,
+      "minPrice": 2300,
+      "maxPrice": 2300,
+      "records": 1,
+      "topVariety": null,
       "grade": "Local"
     },
     {
@@ -8248,22 +8303,22 @@
     {
       "name": "Shahabad",
       "district": "Kurukshetra",
-      "avgPrice": 3689,
-      "recentPrice": null,
+      "avgPrice": 3697,
+      "recentPrice": 4200,
       "minPrice": 3000,
       "maxPrice": 6500,
-      "records": 65,
+      "records": 66,
       "topVariety": "Cluster Beans",
       "grade": "Medium"
     },
     {
       "name": "Narnaul",
       "district": "Mahendragarh-Narnaul",
-      "avgPrice": 3452,
-      "recentPrice": null,
+      "avgPrice": 3477,
+      "recentPrice": 4000,
       "minPrice": 2000,
       "maxPrice": 8000,
-      "records": 21,
+      "records": 22,
       "topVariety": "Cluster Beans",
       "grade": "Medium"
     },
@@ -8281,17 +8336,6 @@
   ],
   "french-beansfrasbean": [
     {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 3079,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 4700,
-      "records": 43,
-      "topVariety": "French Beans (Frasbean)",
-      "grade": "Medium"
-    },
-    {
       "name": "Ballabhgarh",
       "district": "Faridabad",
       "avgPrice": 3000,
@@ -8301,6 +8345,17 @@
       "records": 1,
       "topVariety": "French Beans (Frasbean)",
       "grade": "FAQ"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 3066,
+      "recentPrice": 2500,
+      "minPrice": 2000,
+      "maxPrice": 4700,
+      "records": 44,
+      "topVariety": "French Beans (Frasbean)",
+      "grade": "Medium"
     },
     {
       "name": "Ambala Cantt.",
@@ -8375,6 +8430,17 @@
   ],
   "tomato": [
     {
+      "name": "Tarori",
+      "district": "Karnal",
+      "avgPrice": 2550,
+      "recentPrice": 4000,
+      "minPrice": 1500,
+      "maxPrice": 4000,
+      "records": 6,
+      "topVariety": "Deshi",
+      "grade": "Grade A"
+    },
+    {
       "name": "Ladwa",
       "district": "Kurukshetra",
       "avgPrice": 3739,
@@ -8397,28 +8463,6 @@
       "grade": "Local"
     },
     {
-      "name": "Jhajjar",
-      "district": "Jhajar",
-      "avgPrice": 3305,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 5000,
-      "records": 22,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Farukh Nagar",
-      "district": "Gurgaon",
-      "avgPrice": 3225,
-      "recentPrice": null,
-      "minPrice": 2100,
-      "maxPrice": 4800,
-      "records": 20,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Gharaunda",
       "district": "Karnal",
       "avgPrice": 3067,
@@ -8428,6 +8472,72 @@
       "records": 18,
       "topVariety": null,
       "grade": "Local"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 2403,
+      "recentPrice": 3000,
+      "minPrice": 1000,
+      "maxPrice": 4000,
+      "records": 30,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jhajjar",
+      "district": "Jhajar",
+      "avgPrice": 3291,
+      "recentPrice": 3000,
+      "minPrice": 1200,
+      "maxPrice": 5000,
+      "records": 23,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 2500,
+      "recentPrice": 3000,
+      "minPrice": 900,
+      "maxPrice": 4000,
+      "records": 21,
+      "topVariety": "Local",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 2600,
+      "recentPrice": 3000,
+      "minPrice": 900,
+      "maxPrice": 4000,
+      "records": 24,
+      "topVariety": "Tomato",
+      "grade": "Medium"
+    },
+    {
+      "name": "Tauru",
+      "district": "Mewat",
+      "avgPrice": 2714,
+      "recentPrice": 3000,
+      "minPrice": 1000,
+      "maxPrice": 3500,
+      "records": 14,
+      "topVariety": "Hybrid",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 2624,
+      "recentPrice": 2800,
+      "minPrice": 1000,
+      "maxPrice": 3500,
+      "records": 33,
+      "topVariety": "Tomato",
+      "grade": "FAQ"
     },
     {
       "name": "Ch. Dadri",
@@ -8441,37 +8551,15 @@
       "grade": "Medium"
     },
     {
-      "name": "Tauru",
+      "name": "FerozpurZirkha(Nagina)",
       "district": "Mewat",
-      "avgPrice": 2692,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 3500,
-      "records": 13,
-      "topVariety": "Hybrid",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 2619,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 3500,
-      "records": 32,
-      "topVariety": "Tomato",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 2583,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 4000,
-      "records": 23,
-      "topVariety": "Tomato",
-      "grade": "Medium"
+      "avgPrice": 2068,
+      "recentPrice": 2600,
+      "minPrice": 600,
+      "maxPrice": 2600,
+      "records": 25,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Pataudi",
@@ -8529,15 +8617,26 @@
       "grade": "FAQ"
     },
     {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 2475,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 4000,
-      "records": 20,
-      "topVariety": "Local",
-      "grade": "FAQ"
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 2343,
+      "recentPrice": 2500,
+      "minPrice": 1000,
+      "maxPrice": 3500,
+      "records": 28,
+      "topVariety": "Tomato",
+      "grade": "Medium"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 1877,
+      "recentPrice": 2500,
+      "minPrice": 700,
+      "maxPrice": 2700,
+      "records": 26,
+      "topVariety": "Tomato",
+      "grade": "Medium"
     },
     {
       "name": "Radaur",
@@ -8562,6 +8661,17 @@
       "grade": "Local"
     },
     {
+      "name": "Dhand",
+      "district": "Kaithal",
+      "avgPrice": 2240,
+      "recentPrice": 2400,
+      "minPrice": 1300,
+      "maxPrice": 3600,
+      "records": 25,
+      "topVariety": "Deshi",
+      "grade": "Medium"
+    },
+    {
       "name": "New Grain Market , Panchkula",
       "district": "Panchkula",
       "avgPrice": 2400,
@@ -8573,15 +8683,15 @@
       "grade": "Grade A"
     },
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 2383,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 4000,
-      "records": 29,
+      "name": "Farukh Nagar",
+      "district": "Gurgaon",
+      "avgPrice": 3186,
+      "recentPrice": 2400,
+      "minPrice": 2100,
+      "maxPrice": 4800,
+      "records": 21,
       "topVariety": null,
-      "grade": "FAQ"
+      "grade": "Medium"
     },
     {
       "name": "Raipur Rai",
@@ -8628,17 +8738,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 2337,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 3500,
-      "records": 27,
-      "topVariety": "Tomato",
-      "grade": "Medium"
-    },
-    {
       "name": "Siwan",
       "district": "Kaithal",
       "avgPrice": 2331,
@@ -8647,6 +8746,17 @@
       "maxPrice": 2700,
       "records": 24,
       "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1780,
+      "recentPrice": 2300,
+      "minPrice": 1000,
+      "maxPrice": 3000,
+      "records": 26,
+      "topVariety": "Tomato",
       "grade": "FAQ"
     },
     {
@@ -8672,26 +8782,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Tarori",
-      "district": "Karnal",
-      "avgPrice": 2260,
-      "recentPrice": null,
-      "minPrice": 1500,
-      "maxPrice": 3000,
-      "records": 5,
-      "topVariety": "Deshi",
-      "grade": "Grade A"
-    },
-    {
-      "name": "Dhand",
-      "district": "Kaithal",
-      "avgPrice": 2233,
-      "recentPrice": null,
-      "minPrice": 1300,
-      "maxPrice": 3600,
-      "records": 24,
-      "topVariety": "Deshi",
-      "grade": "Medium"
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 2194,
+      "recentPrice": 2250,
+      "minPrice": 500,
+      "maxPrice": 4000,
+      "records": 25,
+      "topVariety": "Tomato",
+      "grade": "Local"
     },
     {
       "name": "Barwala",
@@ -8702,17 +8801,6 @@
       "maxPrice": 2750,
       "records": 23,
       "topVariety": "Local",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Mustafabad",
-      "district": "Yamuna Nagar",
-      "avgPrice": 2224,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 3500,
-      "records": 21,
-      "topVariety": "Deshi",
       "grade": "FAQ"
     },
     {
@@ -8749,15 +8837,26 @@
       "grade": "Local"
     },
     {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 2192,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 4000,
-      "records": 24,
-      "topVariety": "Tomato",
-      "grade": "Local"
+      "name": "Mustafabad",
+      "district": "Yamuna Nagar",
+      "avgPrice": 2223,
+      "recentPrice": 2200,
+      "minPrice": 700,
+      "maxPrice": 3500,
+      "records": 22,
+      "topVariety": "Deshi",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 1725,
+      "recentPrice": 2200,
+      "minPrice": 1250,
+      "maxPrice": 2200,
+      "records": 2,
+      "topVariety": null,
+      "grade": "Grade A"
     },
     {
       "name": "Madlauda",
@@ -8793,6 +8892,17 @@
       "grade": "Local"
     },
     {
+      "name": "Sadhaura",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1608,
+      "recentPrice": 2100,
+      "minPrice": 600,
+      "maxPrice": 2300,
+      "records": 24,
+      "topVariety": "Tomato",
+      "grade": "Local"
+    },
+    {
       "name": "Narwana",
       "district": "Jind",
       "avgPrice": 2098,
@@ -8802,17 +8912,6 @@
       "records": 24,
       "topVariety": "Tomato",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "FerozpurZirkha(Nagina)",
-      "district": "Mewat",
-      "avgPrice": 2046,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 2600,
-      "records": 24,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Hodal",
@@ -8835,6 +8934,28 @@
       "records": 12,
       "topVariety": "Local",
       "grade": "Local"
+    },
+    {
+      "name": "Rohtak",
+      "district": "Rohtak",
+      "avgPrice": 1362,
+      "recentPrice": 2000,
+      "minPrice": 700,
+      "maxPrice": 2000,
+      "records": 13,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Jakhal",
+      "district": "Fatehabad",
+      "avgPrice": 1842,
+      "recentPrice": 2000,
+      "minPrice": 1200,
+      "maxPrice": 2500,
+      "records": 19,
+      "topVariety": "Tomato",
+      "grade": "Non-FAQ"
     },
     {
       "name": "Pehowa",
@@ -8870,17 +8991,6 @@
       "grade": "Local"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 1852,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 2700,
-      "records": 25,
-      "topVariety": "Tomato",
-      "grade": "Medium"
-    },
-    {
       "name": "Safidon",
       "district": "Jind",
       "avgPrice": 1840,
@@ -8903,15 +9013,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Jakhal",
-      "district": "Fatehabad",
-      "avgPrice": 1833,
-      "recentPrice": null,
-      "minPrice": 1200,
+      "name": "Panipat",
+      "district": "Panipat",
+      "avgPrice": 1539,
+      "recentPrice": 1800,
+      "minPrice": 600,
       "maxPrice": 2500,
-      "records": 18,
-      "topVariety": "Tomato",
-      "grade": "Non-FAQ"
+      "records": 27,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Punhana",
@@ -8936,17 +9046,6 @@
       "grade": "Local"
     },
     {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1759,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 3000,
-      "records": 25,
-      "topVariety": "Tomato",
-      "grade": "FAQ"
-    },
-    {
       "name": "Pundri",
       "district": "Kaithal",
       "avgPrice": 1705,
@@ -8969,17 +9068,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Rewari",
-      "district": "Rewari",
-      "avgPrice": 1647,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 2500,
-      "records": 34,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Ambala Cantt.",
       "district": "Ambala",
       "avgPrice": 1620,
@@ -8991,26 +9079,15 @@
       "grade": "Grade B"
     },
     {
-      "name": "Sadhaura",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1587,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 2300,
-      "records": 23,
-      "topVariety": "Tomato",
-      "grade": "Local"
-    },
-    {
-      "name": "Panipat",
-      "district": "Panipat",
-      "avgPrice": 1529,
-      "recentPrice": null,
-      "minPrice": 600,
+      "name": "Rewari",
+      "district": "Rewari",
+      "avgPrice": 1643,
+      "recentPrice": 1500,
+      "minPrice": 800,
       "maxPrice": 2500,
-      "records": 26,
+      "records": 35,
       "topVariety": null,
-      "grade": "Local"
+      "grade": "Medium"
     },
     {
       "name": "Gurgaon",
@@ -9038,10 +9115,10 @@
       "name": "Naraingarh",
       "district": "Ambala",
       "avgPrice": 1404,
-      "recentPrice": null,
+      "recentPrice": 1400,
       "minPrice": 650,
       "maxPrice": 3000,
-      "records": 25,
+      "records": 26,
       "topVariety": "Tomato",
       "grade": "Medium"
     },
@@ -9055,28 +9132,6 @@
       "records": 21,
       "topVariety": "Tomato",
       "grade": "FAQ"
-    },
-    {
-      "name": "Rohtak",
-      "district": "Rohtak",
-      "avgPrice": 1308,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 2000,
-      "records": 12,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Ratia",
-      "district": "Fatehabad",
-      "avgPrice": 1250,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 1250,
-      "records": 1,
-      "topVariety": null,
-      "grade": "Grade A"
     },
     {
       "name": "Nuh",
@@ -9147,26 +9202,26 @@
   ],
   "orange": [
     {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 9300,
+      "recentPrice": 11000,
+      "minPrice": 5500,
+      "maxPrice": 15000,
+      "records": 5,
+      "topVariety": null,
+      "grade": "Grade B"
+    },
+    {
       "name": "Barwala(Hisar)",
       "district": "Hissar",
       "avgPrice": 9000,
-      "recentPrice": null,
+      "recentPrice": 9000,
       "minPrice": 9000,
       "maxPrice": 9000,
-      "records": 1,
+      "records": 2,
       "topVariety": "Orange",
       "grade": "Local"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 8875,
-      "recentPrice": null,
-      "minPrice": 5500,
-      "maxPrice": 15000,
-      "records": 4,
-      "topVariety": null,
-      "grade": "Grade B"
     },
     {
       "name": "Narnaul",
@@ -9176,6 +9231,17 @@
       "minPrice": 7500,
       "maxPrice": 10000,
       "records": 7,
+      "topVariety": "Orange",
+      "grade": "Medium"
+    },
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 7500,
+      "recentPrice": 8000,
+      "minPrice": 7000,
+      "maxPrice": 8000,
+      "records": 2,
       "topVariety": "Orange",
       "grade": "Medium"
     },
@@ -9202,24 +9268,13 @@
       "grade": "Medium"
     },
     {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 7000,
-      "recentPrice": null,
-      "minPrice": 7000,
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 5780,
+      "recentPrice": 6400,
+      "minPrice": 5000,
       "maxPrice": 7000,
-      "records": 1,
-      "topVariety": "Orange",
-      "grade": "Medium"
-    },
-    {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 6500,
-      "recentPrice": null,
-      "minPrice": 5500,
-      "maxPrice": 7000,
-      "records": 3,
+      "records": 5,
       "topVariety": "Orange",
       "grade": "Medium"
     },
@@ -9227,10 +9282,10 @@
       "name": "Tauru",
       "district": "Mewat",
       "avgPrice": 6000,
-      "recentPrice": null,
+      "recentPrice": 6000,
       "minPrice": 6000,
       "maxPrice": 6000,
-      "records": 1,
+      "records": 2,
       "topVariety": "Medium",
       "grade": "Medium"
     },
@@ -9268,15 +9323,15 @@
       "grade": "Grade C"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 5625,
-      "recentPrice": null,
-      "minPrice": 5000,
-      "maxPrice": 7000,
-      "records": 4,
-      "topVariety": "Orange",
-      "grade": "Medium"
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 6000,
+      "recentPrice": 6000,
+      "minPrice": 6000,
+      "maxPrice": 6000,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Grade A"
     },
     {
       "name": "Panipat",
@@ -9297,6 +9352,17 @@
       "minPrice": 5000,
       "maxPrice": 5000,
       "records": 1,
+      "topVariety": "Orange",
+      "grade": "Medium"
+    },
+    {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 6000,
+      "recentPrice": 4500,
+      "minPrice": 4500,
+      "maxPrice": 7000,
+      "records": 4,
       "topVariety": "Orange",
       "grade": "Medium"
     },
@@ -9347,6 +9413,28 @@
       "grade": "Medium"
     },
     {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 15375,
+      "recentPrice": 18000,
+      "minPrice": 14500,
+      "maxPrice": 18000,
+      "records": 4,
+      "topVariety": "Pomogranate",
+      "grade": "Local"
+    },
+    {
+      "name": "Jhajjar",
+      "district": "Jhajar",
+      "avgPrice": 16000,
+      "recentPrice": 17000,
+      "minPrice": 15000,
+      "maxPrice": 17000,
+      "records": 2,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Narwana",
       "district": "Jind",
       "avgPrice": 15375,
@@ -9358,14 +9446,14 @@
       "grade": "Local"
     },
     {
-      "name": "Jhajjar",
-      "district": "Jhajar",
-      "avgPrice": 15000,
-      "recentPrice": null,
-      "minPrice": 15000,
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 12313,
+      "recentPrice": 15000,
+      "minPrice": 9000,
       "maxPrice": 15000,
-      "records": 1,
-      "topVariety": null,
+      "records": 8,
+      "topVariety": "Pomogranate",
       "grade": "Medium"
     },
     {
@@ -9380,15 +9468,26 @@
       "grade": "Grade B"
     },
     {
-      "name": "Barwala(Hisar)",
+      "name": "Hansi",
       "district": "Hissar",
-      "avgPrice": 14500,
-      "recentPrice": null,
-      "minPrice": 14500,
-      "maxPrice": 14500,
-      "records": 3,
+      "avgPrice": 9429,
+      "recentPrice": 14000,
+      "minPrice": 8000,
+      "maxPrice": 14000,
+      "records": 7,
+      "topVariety": null,
+      "grade": "Grade B"
+    },
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 11667,
+      "recentPrice": 14000,
+      "minPrice": 11000,
+      "maxPrice": 14000,
+      "records": 6,
       "topVariety": "Pomogranate",
-      "grade": "Local"
+      "grade": "Medium"
     },
     {
       "name": "Thanesar",
@@ -9413,23 +9512,45 @@
       "grade": "Local"
     },
     {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 11929,
-      "recentPrice": null,
-      "minPrice": 9000,
-      "maxPrice": 15000,
-      "records": 7,
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 10000,
+      "recentPrice": 12500,
+      "minPrice": 8000,
+      "maxPrice": 12500,
+      "records": 6,
       "topVariety": "Pomogranate",
       "grade": "Medium"
     },
     {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 11200,
-      "recentPrice": null,
-      "minPrice": 11000,
+      "name": "Punhana",
+      "district": "Mewat",
+      "avgPrice": 12000,
+      "recentPrice": 12000,
+      "minPrice": 12000,
       "maxPrice": 12000,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 10500,
+      "recentPrice": 11000,
+      "minPrice": 10000,
+      "maxPrice": 11000,
+      "records": 2,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 10000,
+      "recentPrice": 11000,
+      "minPrice": 7500,
+      "maxPrice": 11000,
       "records": 5,
       "topVariety": "Pomogranate",
       "grade": "Medium"
@@ -9468,46 +9589,13 @@
       "grade": "Grade B"
     },
     {
-      "name": "Ratia",
-      "district": "Fatehabad",
-      "avgPrice": 10000,
-      "recentPrice": null,
-      "minPrice": 10000,
-      "maxPrice": 10000,
-      "records": 1,
-      "topVariety": null,
-      "grade": "Grade A"
-    },
-    {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 9750,
-      "recentPrice": null,
-      "minPrice": 7500,
-      "maxPrice": 11000,
-      "records": 4,
-      "topVariety": "Pomogranate",
-      "grade": "Medium"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 9500,
-      "recentPrice": null,
-      "minPrice": 8000,
-      "maxPrice": 12500,
-      "records": 5,
-      "topVariety": "Pomogranate",
-      "grade": "Medium"
-    },
-    {
       "name": "Naraingarh",
       "district": "Ambala",
-      "avgPrice": 9071,
-      "recentPrice": null,
+      "avgPrice": 9125,
+      "recentPrice": 9500,
       "minPrice": 6500,
       "maxPrice": 10000,
-      "records": 7,
+      "records": 8,
       "topVariety": "Pomogranate",
       "grade": "Medium"
     },
@@ -9534,24 +9622,13 @@
       "grade": "Medium"
     },
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 8667,
-      "recentPrice": null,
-      "minPrice": 8000,
-      "maxPrice": 10000,
-      "records": 6,
-      "topVariety": null,
-      "grade": "Grade B"
-    },
-    {
       "name": "Sonepat",
       "district": "Sonipat",
-      "avgPrice": 8167,
-      "recentPrice": null,
+      "avgPrice": 8375,
+      "recentPrice": 9000,
       "minPrice": 7500,
       "maxPrice": 9000,
-      "records": 3,
+      "records": 4,
       "topVariety": "Pomogranate",
       "grade": "Medium"
     },
@@ -9567,17 +9644,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Panipat",
-      "district": "Panipat",
-      "avgPrice": 7650,
-      "recentPrice": null,
-      "minPrice": 7000,
-      "maxPrice": 8500,
-      "records": 10,
-      "topVariety": "Pomogranate",
-      "grade": "Local"
-    },
-    {
       "name": "Mohindergarh",
       "district": "Mahendragarh-Narnaul",
       "avgPrice": 7500,
@@ -9587,6 +9653,17 @@
       "records": 4,
       "topVariety": "Pomogranate",
       "grade": "Medium"
+    },
+    {
+      "name": "Panipat",
+      "district": "Panipat",
+      "avgPrice": 7500,
+      "recentPrice": 6000,
+      "minPrice": 6000,
+      "maxPrice": 8500,
+      "records": 11,
+      "topVariety": "Pomogranate",
+      "grade": "Local"
     }
   ],
   "mousambisweet-lime": [
@@ -9624,17 +9701,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 5288,
-      "recentPrice": null,
-      "minPrice": 3200,
-      "maxPrice": 7000,
-      "records": 24,
-      "topVariety": "Mousambi",
-      "grade": "Medium"
-    },
-    {
       "name": "Ladwa",
       "district": "Kurukshetra",
       "avgPrice": 5260,
@@ -9668,17 +9734,6 @@
       "grade": "Local"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 4606,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 6000,
-      "records": 23,
-      "topVariety": "Mousambi",
-      "grade": "Medium"
-    },
-    {
       "name": "Thanesar",
       "district": "Kurukshetra",
       "avgPrice": 4600,
@@ -9690,13 +9745,13 @@
       "grade": "Medium"
     },
     {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 4462,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 6000,
-      "records": 26,
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 5256,
+      "recentPrice": 4500,
+      "minPrice": 3200,
+      "maxPrice": 7000,
+      "records": 25,
       "topVariety": "Mousambi",
       "grade": "Medium"
     },
@@ -9734,17 +9789,6 @@
       "grade": "Local"
     },
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 4188,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 5500,
-      "records": 25,
-      "topVariety": null,
-      "grade": "Grade B"
-    },
-    {
       "name": "Meham",
       "district": "Rohtak",
       "avgPrice": 4105,
@@ -9752,17 +9796,6 @@
       "minPrice": 3500,
       "maxPrice": 5000,
       "records": 20,
-      "topVariety": "Mousambi",
-      "grade": "Medium"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 4083,
-      "recentPrice": null,
-      "minPrice": 3000,
-      "maxPrice": 5000,
-      "records": 21,
       "topVariety": "Mousambi",
       "grade": "Medium"
     },
@@ -9800,17 +9833,6 @@
       "grade": "Grade B"
     },
     {
-      "name": "Rohtak",
-      "district": "Rohtak",
-      "avgPrice": 3750,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 5000,
-      "records": 2,
-      "topVariety": "Mousambi",
-      "grade": "Medium"
-    },
-    {
       "name": "Ch. Dadri",
       "district": "Bhiwani",
       "avgPrice": 3719,
@@ -9822,13 +9844,24 @@
       "grade": "Grade A"
     },
     {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 4162,
+      "recentPrice": 3500,
+      "minPrice": 3500,
+      "maxPrice": 5500,
+      "records": 26,
+      "topVariety": null,
+      "grade": "Grade B"
+    },
+    {
       "name": "Tauru",
       "district": "Mewat",
       "avgPrice": 3500,
-      "recentPrice": null,
+      "recentPrice": 3500,
       "minPrice": 3000,
       "maxPrice": 5000,
-      "records": 11,
+      "records": 12,
       "topVariety": "Mousambi",
       "grade": "Medium"
     },
@@ -9844,13 +9877,13 @@
       "grade": "Grade B"
     },
     {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 3289,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 4800,
-      "records": 18,
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 4559,
+      "recentPrice": 3480,
+      "minPrice": 3480,
+      "maxPrice": 6000,
+      "records": 24,
       "topVariety": "Mousambi",
       "grade": "Medium"
     },
@@ -9866,6 +9899,28 @@
       "grade": "Grade B"
     },
     {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 4415,
+      "recentPrice": 3200,
+      "minPrice": 3200,
+      "maxPrice": 6000,
+      "records": 27,
+      "topVariety": "Mousambi",
+      "grade": "Medium"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 4039,
+      "recentPrice": 3100,
+      "minPrice": 3000,
+      "maxPrice": 5000,
+      "records": 22,
+      "topVariety": "Mousambi",
+      "grade": "Medium"
+    },
+    {
       "name": "Barara",
       "district": "Ambala",
       "avgPrice": 3100,
@@ -9877,14 +9932,14 @@
       "grade": "Medium"
     },
     {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 3044,
-      "recentPrice": null,
-      "minPrice": 2600,
-      "maxPrice": 3500,
-      "records": 18,
-      "topVariety": "Mousambi",
+      "name": "Punhana",
+      "district": "Mewat",
+      "avgPrice": 2888,
+      "recentPrice": 3000,
+      "minPrice": 2500,
+      "maxPrice": 4000,
+      "records": 17,
+      "topVariety": null,
       "grade": "Medium"
     },
     {
@@ -9899,6 +9954,17 @@
       "grade": "Medium"
     },
     {
+      "name": "Rohtak",
+      "district": "Rohtak",
+      "avgPrice": 3500,
+      "recentPrice": 3000,
+      "minPrice": 2500,
+      "maxPrice": 5000,
+      "records": 3,
+      "topVariety": "Mousambi",
+      "grade": "Medium"
+    },
+    {
       "name": "Radaur",
       "district": "Yamuna Nagar",
       "avgPrice": 2976,
@@ -9910,17 +9976,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Punhana",
-      "district": "Mewat",
-      "avgPrice": 2881,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 4000,
-      "records": 16,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Mohindergarh",
       "district": "Mahendragarh-Narnaul",
       "avgPrice": 2875,
@@ -9928,6 +9983,28 @@
       "minPrice": 2500,
       "maxPrice": 3000,
       "records": 16,
+      "topVariety": "Mousambi",
+      "grade": "Medium"
+    },
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 3032,
+      "recentPrice": 2800,
+      "minPrice": 2600,
+      "maxPrice": 3500,
+      "records": 19,
+      "topVariety": "Mousambi",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 3242,
+      "recentPrice": 2400,
+      "minPrice": 2400,
+      "maxPrice": 4800,
+      "records": 19,
       "topVariety": "Mousambi",
       "grade": "Medium"
     }
@@ -9943,6 +10020,28 @@
       "records": 19,
       "topVariety": "Potato",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Tarori",
+      "district": "Karnal",
+      "avgPrice": 965,
+      "recentPrice": 1200,
+      "minPrice": 800,
+      "maxPrice": 1200,
+      "records": 23,
+      "topVariety": "Desi",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 1071,
+      "recentPrice": 1200,
+      "minPrice": 800,
+      "maxPrice": 1200,
+      "records": 28,
+      "topVariety": "Potato",
+      "grade": "FAQ"
     },
     {
       "name": "FerozpurZirkha(Nagina)",
@@ -10000,57 +10099,13 @@
       "grade": "Local"
     },
     {
-      "name": "Farukh Nagar",
-      "district": "Gurgaon",
-      "avgPrice": 1090,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 1400,
-      "records": 21,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 1081,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 1500,
-      "records": 26,
-      "topVariety": "Desi",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 1067,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 1200,
-      "records": 27,
-      "topVariety": "Potato",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 1062,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 1200,
-      "records": 21,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Rewari",
-      "district": "Rewari",
-      "avgPrice": 1042,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 1500,
-      "records": 30,
+      "name": "Jhajjar",
+      "district": "Jhajar",
+      "avgPrice": 970,
+      "recentPrice": 1100,
+      "minPrice": 600,
+      "maxPrice": 1100,
+      "records": 23,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -10066,15 +10121,15 @@
       "grade": "Local"
     },
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 1030,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 1200,
-      "records": 27,
+      "name": "Rewari",
+      "district": "Rewari",
+      "avgPrice": 1040,
+      "recentPrice": 1000,
+      "minPrice": 700,
+      "maxPrice": 1500,
+      "records": 31,
       "topVariety": null,
-      "grade": "FAQ"
+      "grade": "Medium"
     },
     {
       "name": "Kosli",
@@ -10084,6 +10139,17 @@
       "minPrice": 1000,
       "maxPrice": 1100,
       "records": 20,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 1029,
+      "recentPrice": 1000,
+      "minPrice": 600,
+      "maxPrice": 1200,
+      "records": 28,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -10101,13 +10167,24 @@
     {
       "name": "Tauru",
       "district": "Mewat",
-      "avgPrice": 990,
-      "recentPrice": null,
+      "avgPrice": 991,
+      "recentPrice": 1000,
       "minPrice": 700,
       "maxPrice": 1500,
-      "records": 10,
+      "records": 11,
       "topVariety": "Potato",
       "grade": "FAQ"
+    },
+    {
+      "name": "Farukh Nagar",
+      "district": "Gurgaon",
+      "avgPrice": 1086,
+      "recentPrice": 1000,
+      "minPrice": 900,
+      "maxPrice": 1400,
+      "records": 22,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Hissar",
@@ -10119,28 +10196,6 @@
       "records": 13,
       "topVariety": "Local",
       "grade": "Local"
-    },
-    {
-      "name": "Jhajjar",
-      "district": "Jhajar",
-      "avgPrice": 964,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 1100,
-      "records": 22,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Tarori",
-      "district": "Karnal",
-      "avgPrice": 955,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 1200,
-      "records": 22,
-      "topVariety": "Desi",
-      "grade": "Grade A"
     },
     {
       "name": "Cheeka",
@@ -10165,6 +10220,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Dhand",
+      "district": "Kaithal",
+      "avgPrice": 938,
+      "recentPrice": 950,
+      "minPrice": 700,
+      "maxPrice": 1140,
+      "records": 27,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "New Grain Market , Panchkula",
       "district": "Panchkula",
       "avgPrice": 950,
@@ -10184,28 +10250,6 @@
       "maxPrice": 1100,
       "records": 19,
       "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Dhand",
-      "district": "Kaithal",
-      "avgPrice": 937,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 1140,
-      "records": 26,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 919,
-      "recentPrice": null,
-      "minPrice": 750,
-      "maxPrice": 1000,
-      "records": 27,
-      "topVariety": "Potato",
       "grade": "Medium"
     },
     {
@@ -10253,6 +10297,39 @@
       "grade": "Grade B"
     },
     {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 825,
+      "recentPrice": 900,
+      "minPrice": 600,
+      "maxPrice": 1000,
+      "records": 32,
+      "topVariety": "Potato",
+      "grade": "Local"
+    },
+    {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 918,
+      "recentPrice": 900,
+      "minPrice": 750,
+      "maxPrice": 1000,
+      "records": 28,
+      "topVariety": "Potato",
+      "grade": "Medium"
+    },
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 1055,
+      "recentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 1200,
+      "records": 22,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Safidon",
       "district": "Jind",
       "avgPrice": 900,
@@ -10272,17 +10349,6 @@
       "maxPrice": 1000,
       "records": 9,
       "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Mustafabad",
-      "district": "Yamuna Nagar",
-      "avgPrice": 875,
-      "recentPrice": null,
-      "minPrice": 250,
-      "maxPrice": 1000,
-      "records": 24,
-      "topVariety": "Potato",
       "grade": "FAQ"
     },
     {
@@ -10319,6 +10385,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Sadhaura",
+      "district": "Yamuna Nagar",
+      "avgPrice": 753,
+      "recentPrice": 850,
+      "minPrice": 320,
+      "maxPrice": 1000,
+      "records": 22,
+      "topVariety": "Potato",
+      "grade": "Local"
+    },
+    {
       "name": "Ambala Cantt.",
       "district": "Ambala",
       "avgPrice": 850,
@@ -10352,17 +10429,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 823,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 1000,
-      "records": 31,
-      "topVariety": "Potato",
-      "grade": "Local"
-    },
-    {
       "name": "New Grain Market , Faridabad",
       "district": "Faridabad",
       "avgPrice": 819,
@@ -10382,6 +10448,39 @@
       "maxPrice": 1000,
       "records": 21,
       "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 698,
+      "recentPrice": 800,
+      "minPrice": 610,
+      "maxPrice": 800,
+      "records": 23,
+      "topVariety": "Potato",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Mustafabad",
+      "district": "Yamuna Nagar",
+      "avgPrice": 872,
+      "recentPrice": 800,
+      "minPrice": 250,
+      "maxPrice": 1000,
+      "records": 25,
+      "topVariety": "Potato",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 1070,
+      "recentPrice": 800,
+      "minPrice": 700,
+      "maxPrice": 1500,
+      "records": 27,
+      "topVariety": "Desi",
       "grade": "FAQ"
     },
     {
@@ -10473,17 +10572,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Sadhaura",
-      "district": "Yamuna Nagar",
-      "avgPrice": 749,
-      "recentPrice": null,
-      "minPrice": 320,
-      "maxPrice": 1000,
-      "records": 21,
-      "topVariety": "Potato",
-      "grade": "Local"
-    },
-    {
       "name": "Indri",
       "district": "Karnal",
       "avgPrice": 747,
@@ -10539,17 +10627,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 693,
-      "recentPrice": null,
-      "minPrice": 610,
-      "maxPrice": 800,
-      "records": 22,
-      "topVariety": "Potato",
-      "grade": "FAQ"
-    },
-    {
       "name": "Hodal",
       "district": "Palwal",
       "avgPrice": 690,
@@ -10594,28 +10671,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 654,
-      "recentPrice": null,
-      "minPrice": 260,
-      "maxPrice": 800,
-      "records": 25,
-      "topVariety": "Potato",
-      "grade": "Medium"
-    },
-    {
-      "name": "Rohtak",
-      "district": "Rohtak",
-      "avgPrice": 647,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 800,
-      "records": 15,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Sirsa",
       "district": "Sirsa",
       "avgPrice": 631,
@@ -10625,6 +10680,28 @@
       "records": 20,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 652,
+      "recentPrice": 600,
+      "minPrice": 260,
+      "maxPrice": 800,
+      "records": 26,
+      "topVariety": "Potato",
+      "grade": "Medium"
+    },
+    {
+      "name": "Rohtak",
+      "district": "Rohtak",
+      "avgPrice": 644,
+      "recentPrice": 600,
+      "minPrice": 500,
+      "maxPrice": 800,
+      "records": 16,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Dabwali",
@@ -10649,15 +10726,15 @@
       "grade": "Medium"
     },
     {
-      "name": "Jakhal",
+      "name": "Ratia",
       "district": "Fatehabad",
-      "avgPrice": 588,
-      "recentPrice": null,
-      "minPrice": 400,
-      "maxPrice": 800,
-      "records": 16,
+      "avgPrice": 400,
+      "recentPrice": 525,
+      "minPrice": 300,
+      "maxPrice": 525,
+      "records": 4,
       "topVariety": null,
-      "grade": "Non-FAQ"
+      "grade": "Grade A"
     },
     {
       "name": "Yamuna Nagar",
@@ -10682,15 +10759,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Ratia",
+      "name": "Jakhal",
       "district": "Fatehabad",
-      "avgPrice": 358,
-      "recentPrice": null,
-      "minPrice": 300,
-      "maxPrice": 450,
-      "records": 3,
+      "avgPrice": 576,
+      "recentPrice": 400,
+      "minPrice": 400,
+      "maxPrice": 800,
+      "records": 17,
       "topVariety": null,
-      "grade": "Grade A"
+      "grade": "Non-FAQ"
     },
     {
       "name": "Barara",
@@ -10739,26 +10816,26 @@
   ],
   "spinach": [
     {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 1600,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 2500,
-      "records": 11,
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 1583,
+      "recentPrice": 2800,
+      "minPrice": 1000,
+      "maxPrice": 2800,
+      "records": 12,
       "topVariety": "Spinach",
       "grade": "Medium"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 1520,
-      "recentPrice": null,
-      "minPrice": 1100,
-      "maxPrice": 2000,
-      "records": 5,
-      "topVariety": "Spinach",
-      "grade": "Medium"
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 1233,
+      "recentPrice": 2250,
+      "minPrice": 1000,
+      "maxPrice": 2250,
+      "records": 9,
+      "topVariety": null,
+      "grade": "FAQ"
     },
     {
       "name": "Chhachrauli",
@@ -10772,15 +10849,15 @@
       "grade": "Medium"
     },
     {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 1473,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2200,
-      "records": 11,
+      "name": "Sadhaura",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1500,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "records": 1,
       "topVariety": "Spinach",
-      "grade": "Medium"
+      "grade": "Local"
     },
     {
       "name": "Thanesar",
@@ -10792,6 +10869,28 @@
       "records": 7,
       "topVariety": "Spinach",
       "grade": "Local"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 1050,
+      "recentPrice": 1300,
+      "minPrice": 950,
+      "maxPrice": 1300,
+      "records": 14,
+      "topVariety": "Spinach",
+      "grade": "Medium"
+    },
+    {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 1567,
+      "recentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 2500,
+      "records": 12,
+      "topVariety": "Spinach",
+      "grade": "Medium"
     },
     {
       "name": "Ballabhgarh",
@@ -10813,17 +10912,6 @@
       "maxPrice": 1500,
       "records": 3,
       "topVariety": "Spinach",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 1106,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 1350,
-      "records": 8,
-      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -10849,13 +10937,13 @@
       "grade": "Medium"
     },
     {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 1031,
-      "recentPrice": null,
-      "minPrice": 950,
-      "maxPrice": 1200,
-      "records": 13,
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 1433,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 2000,
+      "records": 6,
       "topVariety": "Spinach",
       "grade": "Medium"
     },
@@ -10985,6 +11073,61 @@
   ],
   "onion": [
     {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 1825,
+      "recentPrice": 5000,
+      "minPrice": 1000,
+      "maxPrice": 5000,
+      "records": 12,
+      "topVariety": "Onion",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Dhand",
+      "district": "Kaithal",
+      "avgPrice": 2250,
+      "recentPrice": 4800,
+      "minPrice": 1270,
+      "maxPrice": 4800,
+      "records": 11,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 2379,
+      "recentPrice": 4500,
+      "minPrice": 1800,
+      "maxPrice": 4500,
+      "records": 14,
+      "topVariety": "Onion",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Farukh Nagar",
+      "district": "Gurgaon",
+      "avgPrice": 2563,
+      "recentPrice": 4500,
+      "minPrice": 1750,
+      "maxPrice": 4500,
+      "records": 4,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Mustafabad",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1818,
+      "recentPrice": 4300,
+      "minPrice": 1400,
+      "maxPrice": 4300,
+      "records": 11,
+      "topVariety": "Onion",
+      "grade": "FAQ"
+    },
+    {
       "name": "Gurgaon",
       "district": "Gurgaon",
       "avgPrice": 1730,
@@ -10996,15 +11139,147 @@
       "grade": "Grade B"
     },
     {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 1712,
+      "recentPrice": 4250,
+      "minPrice": 1200,
+      "maxPrice": 4250,
+      "records": 13,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 1600,
+      "recentPrice": 4200,
+      "minPrice": 1000,
+      "maxPrice": 4200,
+      "records": 9,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 1825,
+      "recentPrice": 4200,
+      "minPrice": 1000,
+      "maxPrice": 4200,
+      "records": 4,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 1825,
+      "recentPrice": 4200,
+      "minPrice": 900,
+      "maxPrice": 4200,
+      "records": 11,
+      "topVariety": "Onion",
+      "grade": "Medium"
+    },
+    {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 1423,
+      "recentPrice": 4000,
+      "minPrice": 900,
+      "maxPrice": 4000,
+      "records": 11,
+      "topVariety": "Onion",
+      "grade": "Local"
+    },
+    {
+      "name": "Jhajjar",
+      "district": "Jhajar",
+      "avgPrice": 1227,
+      "recentPrice": 4000,
+      "minPrice": 800,
+      "maxPrice": 4000,
+      "records": 11,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Rewari",
+      "district": "Rewari",
+      "avgPrice": 1512,
+      "recentPrice": 4000,
+      "minPrice": 1000,
+      "maxPrice": 4000,
+      "records": 13,
+      "topVariety": "Medium",
+      "grade": "Medium"
+    },
+    {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 1475,
+      "recentPrice": 4000,
+      "minPrice": 1000,
+      "maxPrice": 4000,
+      "records": 12,
+      "topVariety": "Onion",
+      "grade": "Medium"
+    },
+    {
       "name": "Tarori",
       "district": "Karnal",
-      "avgPrice": 2960,
-      "recentPrice": null,
+      "avgPrice": 3133,
+      "recentPrice": 4000,
       "minPrice": 2000,
-      "maxPrice": 3500,
-      "records": 5,
+      "maxPrice": 4000,
+      "records": 6,
       "topVariety": "Nasik",
       "grade": "Grade A"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1942,
+      "recentPrice": 3400,
+      "minPrice": 1428.33,
+      "maxPrice": 3400,
+      "records": 5,
+      "topVariety": "Local",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Panipat",
+      "district": "Panipat",
+      "avgPrice": 1033,
+      "recentPrice": 3000,
+      "minPrice": 650,
+      "maxPrice": 3000,
+      "records": 15,
+      "topVariety": "Onion",
+      "grade": "Local"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 1446,
+      "recentPrice": 3000,
+      "minPrice": 900,
+      "maxPrice": 3000,
+      "records": 12,
+      "topVariety": "Onion",
+      "grade": "Medium"
+    },
+    {
+      "name": "Rohtak",
+      "district": "Rohtak",
+      "avgPrice": 1300,
+      "recentPrice": 3000,
+      "minPrice": 800,
+      "maxPrice": 3000,
+      "records": 11,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Ladwa",
@@ -11027,6 +11302,17 @@
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Sadhaura",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1511,
+      "recentPrice": 2800,
+      "minPrice": 1100,
+      "maxPrice": 2800,
+      "records": 9,
+      "topVariety": "Onion",
+      "grade": "Local"
     },
     {
       "name": "New Grain Market , Panchkula",
@@ -11062,17 +11348,6 @@
       "grade": "Local"
     },
     {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 2215,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 3500,
-      "records": 13,
-      "topVariety": "Onion",
-      "grade": "FAQ"
-    },
-    {
       "name": "Kosli",
       "district": "Rewari",
       "avgPrice": 2057,
@@ -11082,28 +11357,6 @@
       "records": 7,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Dhand",
-      "district": "Kaithal",
-      "avgPrice": 1995,
-      "recentPrice": null,
-      "minPrice": 1270,
-      "maxPrice": 2500,
-      "records": 10,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Farukh Nagar",
-      "district": "Gurgaon",
-      "avgPrice": 1917,
-      "recentPrice": null,
-      "minPrice": 1750,
-      "maxPrice": 2100,
-      "records": 3,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Siwan",
@@ -11260,28 +11513,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 1588,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 2500,
-      "records": 10,
-      "topVariety": "Onion",
-      "grade": "Medium"
-    },
-    {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1577,
-      "recentPrice": null,
-      "minPrice": 1428.33,
-      "maxPrice": 2000,
-      "records": 4,
-      "topVariety": "Local",
-      "grade": "FAQ"
-    },
-    {
       "name": "Tauru",
       "district": "Mewat",
       "avgPrice": 1575,
@@ -11293,28 +11524,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Mustafabad",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1570,
-      "recentPrice": null,
-      "minPrice": 1400,
-      "maxPrice": 2800,
-      "records": 10,
-      "topVariety": "Onion",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Sonepat",
-      "district": "Sonipat",
-      "avgPrice": 1536,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 3200,
-      "records": 11,
-      "topVariety": "Onion",
-      "grade": "FAQ"
-    },
-    {
       "name": "Sonepat(Kharkhoda)",
       "district": "Sonipat",
       "avgPrice": 1510,
@@ -11322,17 +11531,6 @@
       "minPrice": 1320,
       "maxPrice": 2000,
       "records": 7,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 1500,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 2750,
-      "records": 12,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -11469,61 +11667,6 @@
       "grade": "Grade B"
     },
     {
-      "name": "Sadhaura",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1350,
-      "recentPrice": null,
-      "minPrice": 1100,
-      "maxPrice": 2100,
-      "records": 8,
-      "topVariety": "Onion",
-      "grade": "Local"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 1305,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 2100,
-      "records": 11,
-      "topVariety": "Onion",
-      "grade": "Medium"
-    },
-    {
-      "name": "Rewari",
-      "district": "Rewari",
-      "avgPrice": 1304,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2500,
-      "records": 12,
-      "topVariety": "Medium",
-      "grade": "Medium"
-    },
-    {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 1275,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2500,
-      "records": 8,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 1245,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2500,
-      "records": 11,
-      "topVariety": "Onion",
-      "grade": "Medium"
-    },
-    {
       "name": "Bahadurgarh",
       "district": "Jhajar",
       "avgPrice": 1233,
@@ -11533,17 +11676,6 @@
       "records": 6,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 1165,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 2800,
-      "records": 10,
-      "topVariety": "Onion",
-      "grade": "Local"
     },
     {
       "name": "Kaithal",
@@ -11568,17 +11700,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Rohtak",
-      "district": "Rohtak",
-      "avgPrice": 1130,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 2000,
-      "records": 10,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Shahzadpur",
       "district": "Ambala",
       "avgPrice": 1100,
@@ -11601,17 +11722,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Ratia",
-      "district": "Fatehabad",
-      "avgPrice": 1033,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 1100,
-      "records": 3,
-      "topVariety": null,
-      "grade": "Grade A"
-    },
-    {
       "name": "Palwal",
       "district": "Palwal",
       "avgPrice": 1000,
@@ -11621,28 +11731,6 @@
       "records": 1,
       "topVariety": "Onion",
       "grade": "Medium"
-    },
-    {
-      "name": "Jhajjar",
-      "district": "Jhajar",
-      "avgPrice": 950,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 1500,
-      "records": 10,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Panipat",
-      "district": "Panipat",
-      "avgPrice": 893,
-      "recentPrice": null,
-      "minPrice": 650,
-      "maxPrice": 1400,
-      "records": 14,
-      "topVariety": "Onion",
-      "grade": "Local"
     },
     {
       "name": "Mohindergarh",
@@ -11702,6 +11790,28 @@
       "grade": "Medium"
     },
     {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 5692,
+      "recentPrice": 6500,
+      "minPrice": 5000,
+      "maxPrice": 6500,
+      "records": 26,
+      "topVariety": null,
+      "grade": "Grade B"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 6339,
+      "recentPrice": 6500,
+      "minPrice": 5000,
+      "maxPrice": 7000,
+      "records": 24,
+      "topVariety": "Guava",
+      "grade": "Medium"
+    },
+    {
       "name": "Narwana",
       "district": "Jind",
       "avgPrice": 6500,
@@ -11711,28 +11821,6 @@
       "records": 2,
       "topVariety": "Guava",
       "grade": "Local"
-    },
-    {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 6450,
-      "recentPrice": null,
-      "minPrice": 4000,
-      "maxPrice": 9500,
-      "records": 10,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 6332,
-      "recentPrice": null,
-      "minPrice": 5000,
-      "maxPrice": 7000,
-      "records": 23,
-      "topVariety": "Guava",
-      "grade": "Medium"
     },
     {
       "name": "New Grain Market(main), Karnal",
@@ -11757,15 +11845,15 @@
       "grade": "Grade B"
     },
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 5660,
-      "recentPrice": null,
-      "minPrice": 5000,
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 4856,
+      "recentPrice": 5000,
+      "minPrice": 4000,
       "maxPrice": 6000,
-      "records": 25,
-      "topVariety": null,
-      "grade": "Grade B"
+      "records": 9,
+      "topVariety": "Guava",
+      "grade": "Medium"
     },
     {
       "name": "Jagadhri",
@@ -11776,17 +11864,6 @@
       "maxPrice": 6000,
       "records": 4,
       "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 4838,
-      "recentPrice": null,
-      "minPrice": 4000,
-      "maxPrice": 6000,
-      "records": 8,
-      "topVariety": "Guava",
       "grade": "Medium"
     },
     {
@@ -11823,6 +11900,17 @@
       "grade": "Grade B"
     },
     {
+      "name": "Sonepat",
+      "district": "Sonipat",
+      "avgPrice": 3720,
+      "recentPrice": 4000,
+      "minPrice": 2500,
+      "maxPrice": 4600,
+      "records": 5,
+      "topVariety": "Guava",
+      "grade": "Medium"
+    },
+    {
       "name": "Jhajjar",
       "district": "Jhajar",
       "avgPrice": 4000,
@@ -11834,14 +11922,14 @@
       "grade": "Medium"
     },
     {
-      "name": "Sonepat",
+      "name": "Gohana",
       "district": "Sonipat",
-      "avgPrice": 3650,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 4600,
-      "records": 4,
-      "topVariety": "Guava",
+      "avgPrice": 6136,
+      "recentPrice": 3000,
+      "minPrice": 3000,
+      "maxPrice": 9500,
+      "records": 11,
+      "topVariety": null,
       "grade": "Medium"
     },
     {
@@ -11867,6 +11955,17 @@
       "grade": "Local"
     },
     {
+      "name": "Rohtak",
+      "district": "Rohtak",
+      "avgPrice": 2500,
+      "recentPrice": 2500,
+      "minPrice": 2500,
+      "maxPrice": 2500,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Fatehabad",
       "district": "Fatehabad",
       "avgPrice": 2250,
@@ -11880,6 +11979,39 @@
   ],
   "tinda": [
     {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 2036,
+      "recentPrice": 6000,
+      "minPrice": 1200,
+      "maxPrice": 6000,
+      "records": 11,
+      "topVariety": "Tinda",
+      "grade": "Medium"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 1964,
+      "recentPrice": 5500,
+      "minPrice": 300,
+      "maxPrice": 5500,
+      "records": 7,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 3320,
+      "recentPrice": 5000,
+      "minPrice": 2500,
+      "maxPrice": 5000,
+      "records": 5,
+      "topVariety": "Tinda",
+      "grade": "Medium"
+    },
+    {
       "name": "Naraingarh",
       "district": "Ambala",
       "avgPrice": 3200,
@@ -11887,17 +12019,6 @@
       "minPrice": 3200,
       "maxPrice": 3200,
       "records": 1,
-      "topVariety": "Tinda",
-      "grade": "Medium"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 2900,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 3700,
-      "records": 4,
       "topVariety": "Tinda",
       "grade": "Medium"
     },
@@ -12001,17 +12122,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 1640,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 2000,
-      "records": 10,
-      "topVariety": "Tinda",
-      "grade": "Medium"
-    },
-    {
       "name": "Ganaur",
       "district": "Sonipat",
       "avgPrice": 1614,
@@ -12053,17 +12163,6 @@
       "maxPrice": 1500,
       "records": 2,
       "topVariety": "Tinda",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 1375,
-      "recentPrice": null,
-      "minPrice": 300,
-      "maxPrice": 2500,
-      "records": 6,
-      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -12113,6 +12212,17 @@
       "grade": "Medium"
     },
     {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 1300,
+      "recentPrice": 2000,
+      "minPrice": 700,
+      "maxPrice": 2000,
+      "records": 7,
+      "topVariety": "Water Melon",
+      "grade": "Medium"
+    },
+    {
       "name": "Barwala(Hisar)",
       "district": "Hissar",
       "avgPrice": 1906,
@@ -12144,6 +12254,17 @@
       "records": 6,
       "topVariety": "Water Melon",
       "grade": "Local"
+    },
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 1438,
+      "recentPrice": 1800,
+      "minPrice": 1000,
+      "maxPrice": 1800,
+      "records": 8,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Punhana",
@@ -12234,17 +12355,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 1386,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 1800,
-      "records": 7,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Jhajjar",
       "district": "Jhajar",
       "avgPrice": 1375,
@@ -12320,17 +12430,6 @@
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 1183,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 2000,
-      "records": 6,
-      "topVariety": "Water Melon",
-      "grade": "Medium"
     },
     {
       "name": "Bahadurgarh",
@@ -12480,11 +12579,11 @@
     {
       "name": "Ganaur",
       "district": "Sonipat",
-      "avgPrice": 2314,
-      "recentPrice": null,
+      "avgPrice": 2323,
+      "recentPrice": 2500,
       "minPrice": 1000,
       "maxPrice": 3500,
-      "records": 21,
+      "records": 22,
       "topVariety": "Raddish",
       "grade": "Medium"
     },
@@ -12500,15 +12599,26 @@
       "grade": "Medium"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 2050,
-      "recentPrice": null,
-      "minPrice": 1500,
-      "maxPrice": 3200,
-      "records": 20,
+      "name": "Jakhal",
+      "district": "Fatehabad",
+      "avgPrice": 2000,
+      "recentPrice": 2000,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 2000,
+      "recentPrice": 2000,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "records": 1,
       "topVariety": "Raddish",
-      "grade": "Medium"
+      "grade": "Local"
     },
     {
       "name": "Narwana",
@@ -12522,17 +12632,6 @@
       "grade": "Local"
     },
     {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1847,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 3000,
-      "records": 14,
-      "topVariety": "Raddish",
-      "grade": "Medium"
-    },
-    {
       "name": "Thanesar",
       "district": "Kurukshetra",
       "avgPrice": 1832,
@@ -12540,6 +12639,28 @@
       "minPrice": 900,
       "maxPrice": 2250,
       "records": 17,
+      "topVariety": "Raddish",
+      "grade": "Local"
+    },
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 1425,
+      "recentPrice": 1750,
+      "minPrice": 1100,
+      "maxPrice": 1750,
+      "records": 4,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Sadhaura",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1392,
+      "recentPrice": 1700,
+      "minPrice": 750,
+      "maxPrice": 2000,
+      "records": 6,
       "topVariety": "Raddish",
       "grade": "Local"
     },
@@ -12557,11 +12678,33 @@
     {
       "name": "Narnaul",
       "district": "Mahendragarh-Narnaul",
-      "avgPrice": 1640,
-      "recentPrice": null,
+      "avgPrice": 1617,
+      "recentPrice": 1500,
       "minPrice": 1200,
       "maxPrice": 2000,
-      "records": 5,
+      "records": 6,
+      "topVariety": "Raddish",
+      "grade": "Medium"
+    },
+    {
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 1250,
+      "recentPrice": 1500,
+      "minPrice": 1000,
+      "maxPrice": 1500,
+      "records": 2,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1824,
+      "recentPrice": 1500,
+      "minPrice": 1000,
+      "maxPrice": 3000,
+      "records": 15,
       "topVariety": "Raddish",
       "grade": "Medium"
     },
@@ -12577,28 +12720,6 @@
       "grade": "Local"
     },
     {
-      "name": "Sadhaura",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1330,
-      "recentPrice": null,
-      "minPrice": 750,
-      "maxPrice": 2000,
-      "records": 5,
-      "topVariety": "Raddish",
-      "grade": "Local"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 1317,
-      "recentPrice": null,
-      "minPrice": 1100,
-      "maxPrice": 1750,
-      "records": 3,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Bahadurgarh",
       "district": "Jhajar",
       "avgPrice": 1267,
@@ -12606,6 +12727,17 @@
       "minPrice": 900,
       "maxPrice": 1450,
       "records": 3,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 1100,
+      "recentPrice": 1200,
+      "minPrice": 1000,
+      "maxPrice": 1200,
+      "records": 4,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -12621,17 +12753,6 @@
       "grade": "Local"
     },
     {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 1067,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 1200,
-      "records": 3,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Samalkha",
       "district": "Panipat",
       "avgPrice": 1047,
@@ -12643,15 +12764,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Ratia",
-      "district": "Fatehabad",
-      "avgPrice": 1000,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 1000,
-      "records": 1,
-      "topVariety": null,
-      "grade": "Grade A"
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 973,
+      "recentPrice": 1000,
+      "minPrice": 500,
+      "maxPrice": 1500,
+      "records": 18,
+      "topVariety": "Raddish",
+      "grade": "Medium"
     },
     {
       "name": "Shahzadpur",
@@ -12674,17 +12795,6 @@
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 972,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 1500,
-      "records": 17,
-      "topVariety": "Raddish",
-      "grade": "Medium"
     },
     {
       "name": "Radaur",
@@ -12723,10 +12833,10 @@
       "name": "Tauru",
       "district": "Mewat",
       "avgPrice": 800,
-      "recentPrice": null,
+      "recentPrice": 800,
       "minPrice": 800,
       "maxPrice": 800,
-      "records": 1,
+      "records": 2,
       "topVariety": null,
       "grade": "Local"
     },
@@ -12740,6 +12850,17 @@
       "records": 2,
       "topVariety": "Raddish",
       "grade": "FAQ"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 1986,
+      "recentPrice": 700,
+      "minPrice": 700,
+      "maxPrice": 3200,
+      "records": 21,
+      "topVariety": "Raddish",
+      "grade": "Medium"
     },
     {
       "name": "Sonepat",
@@ -12810,17 +12931,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 4200,
-      "recentPrice": null,
-      "minPrice": 4200,
-      "maxPrice": 4200,
-      "records": 1,
-      "topVariety": "Kinnow",
-      "grade": "Medium"
-    },
-    {
       "name": "Barwala(Hisar)",
       "district": "Hissar",
       "avgPrice": 4150,
@@ -12840,17 +12950,6 @@
       "maxPrice": 3500,
       "records": 1,
       "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 3167,
-      "recentPrice": null,
-      "minPrice": 3000,
-      "maxPrice": 3500,
-      "records": 3,
-      "topVariety": "Kinnow",
       "grade": "Medium"
     },
     {
@@ -12909,6 +13008,17 @@
       "grade": "Local"
     },
     {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 3220,
+      "recentPrice": 2240,
+      "minPrice": 2240,
+      "maxPrice": 4200,
+      "records": 2,
+      "topVariety": "Kinnow",
+      "grade": "Medium"
+    },
+    {
       "name": "Cheeka",
       "district": "Kaithal",
       "avgPrice": 2100,
@@ -12918,22 +13028,44 @@
       "records": 1,
       "topVariety": "Kinnow",
       "grade": "Medium"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 2775,
+      "recentPrice": 1600,
+      "minPrice": 1600,
+      "maxPrice": 3500,
+      "records": 4,
+      "topVariety": "Kinnow",
+      "grade": "Medium"
     }
   ],
   "round-gourd": [
     {
       "name": "Barwala(Hisar)",
       "district": "Hissar",
-      "avgPrice": 1138,
-      "recentPrice": null,
+      "avgPrice": 1211,
+      "recentPrice": 1800,
       "minPrice": 500,
       "maxPrice": 1900,
-      "records": 8,
+      "records": 9,
       "topVariety": null,
       "grade": "Local"
     }
   ],
   "pumpkin": [
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 1363,
+      "recentPrice": 2800,
+      "minPrice": 1000,
+      "maxPrice": 2800,
+      "records": 32,
+      "topVariety": "Pumpkin",
+      "grade": "Medium"
+    },
     {
       "name": "Ladwa",
       "district": "Kurukshetra",
@@ -12957,6 +13089,17 @@
       "grade": "Local"
     },
     {
+      "name": "Sadhaura",
+      "district": "Yamuna Nagar",
+      "avgPrice": 763,
+      "recentPrice": 1500,
+      "minPrice": 200,
+      "maxPrice": 1500,
+      "records": 24,
+      "topVariety": "Pumpkin",
+      "grade": "Local"
+    },
+    {
       "name": "Raipur Rai",
       "district": "Panchkula",
       "avgPrice": 1415,
@@ -12968,17 +13111,6 @@
       "grade": "Local"
     },
     {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 1316,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 1800,
-      "records": 31,
-      "topVariety": "Pumpkin",
-      "grade": "Medium"
-    },
-    {
       "name": "Bahadurgarh",
       "district": "Jhajar",
       "avgPrice": 1307,
@@ -12987,6 +13119,28 @@
       "maxPrice": 1550,
       "records": 7,
       "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 728,
+      "recentPrice": 1300,
+      "minPrice": 150,
+      "maxPrice": 1400,
+      "records": 23,
+      "topVariety": "Pumpkin",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 1168,
+      "recentPrice": 1300,
+      "minPrice": 900,
+      "maxPrice": 2000,
+      "records": 19,
+      "topVariety": "Pumpkin",
       "grade": "Medium"
     },
     {
@@ -13012,6 +13166,17 @@
       "grade": "Local"
     },
     {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 1009,
+      "recentPrice": 1250,
+      "minPrice": 750,
+      "maxPrice": 1300,
+      "records": 27,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Ballabhgarh",
       "district": "Faridabad",
       "avgPrice": 1175,
@@ -13032,17 +13197,6 @@
       "records": 3,
       "topVariety": "Pumpkin",
       "grade": "Local"
-    },
-    {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 1161,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 2000,
-      "records": 18,
-      "topVariety": "Pumpkin",
-      "grade": "Medium"
     },
     {
       "name": "Thanesar",
@@ -13100,15 +13254,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 1000,
-      "recentPrice": null,
-      "minPrice": 750,
-      "maxPrice": 1300,
-      "records": 26,
-      "topVariety": null,
-      "grade": "FAQ"
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 918,
+      "recentPrice": 1000,
+      "minPrice": 600,
+      "maxPrice": 1500,
+      "records": 28,
+      "topVariety": "Pumpkin",
+      "grade": "Medium"
     },
     {
       "name": "Punhana",
@@ -13177,13 +13331,13 @@
       "grade": "Local"
     },
     {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 915,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 1500,
-      "records": 27,
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 696,
+      "recentPrice": 900,
+      "minPrice": 300,
+      "maxPrice": 1200,
+      "records": 28,
       "topVariety": "Pumpkin",
       "grade": "Medium"
     },
@@ -13232,28 +13386,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Sadhaura",
-      "district": "Yamuna Nagar",
-      "avgPrice": 730,
-      "recentPrice": null,
-      "minPrice": 200,
-      "maxPrice": 1500,
-      "records": 23,
-      "topVariety": "Pumpkin",
-      "grade": "Local"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 702,
-      "recentPrice": null,
-      "minPrice": 150,
-      "maxPrice": 1400,
-      "records": 22,
-      "topVariety": "Pumpkin",
-      "grade": "Medium"
-    },
-    {
       "name": "Hodal",
       "district": "Palwal",
       "avgPrice": 700,
@@ -13274,17 +13406,6 @@
       "records": 1,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 689,
-      "recentPrice": null,
-      "minPrice": 300,
-      "maxPrice": 1200,
-      "records": 27,
-      "topVariety": "Pumpkin",
-      "grade": "Medium"
     },
     {
       "name": "Faridabad",
@@ -13311,13 +13432,68 @@
   ],
   "peas-wet": [
     {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 5142,
+      "recentPrice": 13500,
+      "minPrice": 1350,
+      "maxPrice": 13500,
+      "records": 6,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 4850,
+      "recentPrice": 12000,
+      "minPrice": 1800,
+      "maxPrice": 12000,
+      "records": 6,
+      "topVariety": "Peas Wet",
+      "grade": "Medium"
+    },
+    {
       "name": "Shahabad",
       "district": "Kurukshetra",
-      "avgPrice": 4300,
-      "recentPrice": null,
+      "avgPrice": 4727,
+      "recentPrice": 9000,
       "minPrice": 2000,
-      "maxPrice": 8500,
+      "maxPrice": 9000,
+      "records": 11,
+      "topVariety": "Peas Wet",
+      "grade": "Medium"
+    },
+    {
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 9000,
+      "recentPrice": 9000,
+      "minPrice": 9000,
+      "maxPrice": 9000,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 3295,
+      "recentPrice": 6850,
+      "minPrice": 2000,
+      "maxPrice": 6850,
       "records": 10,
+      "topVariety": "Peas Wet",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 3575,
+      "recentPrice": 5800,
+      "minPrice": 2500,
+      "maxPrice": 5800,
+      "records": 4,
       "topVariety": "Peas Wet",
       "grade": "Medium"
     },
@@ -13350,50 +13526,6 @@
       "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 4000,
-      "records": 3,
-      "topVariety": "Peas Wet",
-      "grade": "Medium"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 3470,
-      "recentPrice": null,
-      "minPrice": 1350,
-      "maxPrice": 6000,
-      "records": 5,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 3420,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 5500,
-      "records": 5,
-      "topVariety": "Peas Wet",
-      "grade": "Medium"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 2900,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 5000,
-      "records": 9,
-      "topVariety": "Peas Wet",
-      "grade": "Medium"
-    },
-    {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 2833,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 3000,
       "records": 3,
       "topVariety": "Peas Wet",
       "grade": "Medium"
@@ -13533,6 +13665,28 @@
       "grade": "Grade A"
     },
     {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 9583,
+      "recentPrice": 17500,
+      "minPrice": 8000,
+      "maxPrice": 17500,
+      "records": 6,
+      "topVariety": null,
+      "grade": "Grade B"
+    },
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 9500,
+      "recentPrice": 14000,
+      "minPrice": 7000,
+      "maxPrice": 14000,
+      "records": 8,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Ladwa",
       "district": "Kurukshetra",
       "avgPrice": 12286,
@@ -13564,6 +13718,17 @@
       "records": 6,
       "topVariety": "Indian",
       "grade": "Local"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 8621,
+      "recentPrice": 11000,
+      "minPrice": 6500,
+      "maxPrice": 11000,
+      "records": 8,
+      "topVariety": "Green",
+      "grade": "Medium"
     },
     {
       "name": "Thanesar",
@@ -13643,17 +13808,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 8857,
-      "recentPrice": null,
-      "minPrice": 7000,
-      "maxPrice": 14000,
-      "records": 7,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Bhiwani",
       "district": "Bhiwani",
       "avgPrice": 8780,
@@ -13663,17 +13817,6 @@
       "records": 1,
       "topVariety": "Green",
       "grade": "Grade B"
-    },
-    {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 8281,
-      "recentPrice": null,
-      "minPrice": 6500,
-      "maxPrice": 11000,
-      "records": 7,
-      "topVariety": "Green",
-      "grade": "Medium"
     },
     {
       "name": "Rohtak",
@@ -13696,17 +13839,6 @@
       "records": 5,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 8000,
-      "recentPrice": null,
-      "minPrice": 8000,
-      "maxPrice": 8000,
-      "records": 5,
-      "topVariety": null,
-      "grade": "Grade Range-2"
     },
     {
       "name": "Safidon",
@@ -13887,6 +14019,17 @@
   ],
   "lemon": [
     {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 10855,
+      "recentPrice": 14000,
+      "minPrice": 6800,
+      "maxPrice": 18000,
+      "records": 11,
+      "topVariety": "Lemon",
+      "grade": "Medium"
+    },
+    {
       "name": "Ladwa",
       "district": "Kurukshetra",
       "avgPrice": 12500,
@@ -13931,57 +14074,24 @@
       "grade": "Medium"
     },
     {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 10833,
-      "recentPrice": null,
-      "minPrice": 5500,
-      "maxPrice": 14000,
-      "records": 9,
-      "topVariety": "Lemon",
-      "grade": "Medium"
-    },
-    {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 10540,
-      "recentPrice": null,
-      "minPrice": 6800,
-      "maxPrice": 18000,
-      "records": 10,
-      "topVariety": "Lemon",
-      "grade": "Medium"
-    },
-    {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 9620,
-      "recentPrice": null,
-      "minPrice": 7800,
-      "maxPrice": 13000,
-      "records": 5,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Hansi",
       "district": "Hissar",
-      "avgPrice": 8462,
-      "recentPrice": null,
+      "avgPrice": 8571,
+      "recentPrice": 10000,
       "minPrice": 7000,
       "maxPrice": 12000,
-      "records": 13,
+      "records": 14,
       "topVariety": null,
       "grade": "FAQ"
     },
     {
       "name": "Shahabad",
       "district": "Kurukshetra",
-      "avgPrice": 8300,
-      "recentPrice": null,
+      "avgPrice": 8400,
+      "recentPrice": 9000,
       "minPrice": 5300,
       "maxPrice": 12500,
-      "records": 6,
+      "records": 7,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -14019,6 +14129,17 @@
       "grade": "Medium"
     },
     {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 9250,
+      "recentPrice": 7400,
+      "minPrice": 7400,
+      "maxPrice": 13000,
+      "records": 6,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "New Grain Market , Panchkula",
       "district": "Panchkula",
       "avgPrice": 7000,
@@ -14041,17 +14162,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Barwala(Hisar)",
-      "district": "Hissar",
-      "avgPrice": 5825,
-      "recentPrice": null,
-      "minPrice": 2800,
-      "maxPrice": 7500,
-      "records": 4,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Fatehabad",
       "district": "Fatehabad",
       "avgPrice": 5750,
@@ -14072,6 +14182,28 @@
       "records": 3,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 10250,
+      "recentPrice": 5000,
+      "minPrice": 5000,
+      "maxPrice": 14000,
+      "records": 10,
+      "topVariety": "Lemon",
+      "grade": "Medium"
+    },
+    {
+      "name": "Barwala(Hisar)",
+      "district": "Hissar",
+      "avgPrice": 5460,
+      "recentPrice": 4000,
+      "minPrice": 2800,
+      "maxPrice": 7500,
+      "records": 5,
+      "topVariety": null,
+      "grade": "Local"
     }
   ],
   "green-fodder": [
@@ -14100,6 +14232,17 @@
   ],
   "green-chilli": [
     {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 5500,
+      "recentPrice": 7000,
+      "minPrice": 4000,
+      "maxPrice": 7000,
+      "records": 6,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Ladwa",
       "district": "Kurukshetra",
       "avgPrice": 6375,
@@ -14107,6 +14250,28 @@
       "minPrice": 3000,
       "maxPrice": 9000,
       "records": 8,
+      "topVariety": "Green Chilly",
+      "grade": "Medium"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 4000,
+      "recentPrice": 6000,
+      "minPrice": 2000,
+      "maxPrice": 6000,
+      "records": 8,
+      "topVariety": "Green Chilly",
+      "grade": "Medium"
+    },
+    {
+      "name": "Ganaur",
+      "district": "Sonipat",
+      "avgPrice": 5050,
+      "recentPrice": 5500,
+      "minPrice": 2800,
+      "maxPrice": 7800,
+      "records": 10,
       "topVariety": "Green Chilly",
       "grade": "Medium"
     },
@@ -14122,24 +14287,24 @@
       "grade": "Medium"
     },
     {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 5200,
-      "recentPrice": null,
-      "minPrice": 4000,
-      "maxPrice": 7000,
-      "records": 5,
-      "topVariety": null,
+      "name": "Narnaul",
+      "district": "Mahendragarh-Narnaul",
+      "avgPrice": 3600,
+      "recentPrice": 5000,
+      "minPrice": 1500,
+      "maxPrice": 5000,
+      "records": 10,
+      "topVariety": "Green Chilly",
       "grade": "Medium"
     },
     {
-      "name": "Ganaur",
-      "district": "Sonipat",
-      "avgPrice": 5000,
-      "recentPrice": null,
-      "minPrice": 2800,
-      "maxPrice": 7800,
-      "records": 9,
+      "name": "Tauru",
+      "district": "Mewat",
+      "avgPrice": 2840,
+      "recentPrice": 5000,
+      "minPrice": 1500,
+      "maxPrice": 5000,
+      "records": 5,
       "topVariety": "Green Chilly",
       "grade": "Medium"
     },
@@ -14151,6 +14316,17 @@
       "minPrice": 4800,
       "maxPrice": 4800,
       "records": 1,
+      "topVariety": "Green Chilly",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jagadhri",
+      "district": "Yamuna Nagar",
+      "avgPrice": 3129,
+      "recentPrice": 4500,
+      "minPrice": 1900,
+      "maxPrice": 4500,
+      "records": 7,
       "topVariety": "Green Chilly",
       "grade": "Medium"
     },
@@ -14177,6 +14353,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Ratia",
+      "district": "Fatehabad",
+      "avgPrice": 4000,
+      "recentPrice": 4000,
+      "minPrice": 4000,
+      "maxPrice": 4000,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
       "name": "Siwan",
       "district": "Kaithal",
       "avgPrice": 3900,
@@ -14188,28 +14375,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Shahabad",
-      "district": "Kurukshetra",
-      "avgPrice": 3714,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 5000,
-      "records": 7,
-      "topVariety": "Green Chilly",
-      "grade": "Medium"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 3513,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 4500,
-      "records": 8,
-      "topVariety": "Green Chilly",
-      "grade": "Medium"
-    },
-    {
       "name": "Gurgaon",
       "district": "Gurgaon",
       "avgPrice": 3500,
@@ -14219,17 +14384,6 @@
       "records": 1,
       "topVariety": "Green Chilly",
       "grade": "Grade B"
-    },
-    {
-      "name": "Narnaul",
-      "district": "Mahendragarh-Narnaul",
-      "avgPrice": 3444,
-      "recentPrice": null,
-      "minPrice": 1500,
-      "maxPrice": 5000,
-      "records": 9,
-      "topVariety": "Green Chilly",
-      "grade": "Medium"
     },
     {
       "name": "Thanesar",
@@ -14278,22 +14432,22 @@
     {
       "name": "Sadhaura",
       "district": "Yamuna Nagar",
-      "avgPrice": 2917,
-      "recentPrice": null,
+      "avgPrice": 2929,
+      "recentPrice": 3000,
       "minPrice": 1500,
       "maxPrice": 6000,
-      "records": 6,
+      "records": 7,
       "topVariety": "Green Chilly",
       "grade": "Local"
     },
     {
-      "name": "Jagadhri",
-      "district": "Yamuna Nagar",
-      "avgPrice": 2900,
-      "recentPrice": null,
-      "minPrice": 1900,
-      "maxPrice": 4200,
-      "records": 6,
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 3433,
+      "recentPrice": 2800,
+      "minPrice": 2000,
+      "maxPrice": 4500,
+      "records": 9,
       "topVariety": "Green Chilly",
       "grade": "Medium"
     },
@@ -14318,17 +14472,6 @@
       "records": 2,
       "topVariety": "Green Chilly",
       "grade": "FAQ"
-    },
-    {
-      "name": "Tauru",
-      "district": "Mewat",
-      "avgPrice": 2300,
-      "recentPrice": null,
-      "minPrice": 1500,
-      "maxPrice": 3000,
-      "records": 4,
-      "topVariety": "Green Chilly",
-      "grade": "Medium"
     },
     {
       "name": "Ballabhgarh",
@@ -14667,6 +14810,17 @@
   ],
   "pineapple": [
     {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 4002,
+      "recentPrice": 5000,
+      "minPrice": 3300,
+      "maxPrice": 5000,
+      "records": 25,
+      "topVariety": null,
+      "grade": "Grade B"
+    },
+    {
       "name": "Thanesar",
       "district": "Kurukshetra",
       "avgPrice": 4250,
@@ -14698,17 +14852,6 @@
       "records": 2,
       "topVariety": "Pine Apple",
       "grade": "Medium"
-    },
-    {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 3960,
-      "recentPrice": null,
-      "minPrice": 3300,
-      "maxPrice": 5000,
-      "records": 24,
-      "topVariety": null,
-      "grade": "Grade B"
     },
     {
       "name": "Barara",
@@ -14748,11 +14891,11 @@
     {
       "name": "Ganaur",
       "district": "Sonipat",
-      "avgPrice": 2959,
-      "recentPrice": null,
+      "avgPrice": 2952,
+      "recentPrice": 2800,
       "minPrice": 1800,
       "maxPrice": 4200,
-      "records": 22,
+      "records": 23,
       "topVariety": "Ridgeguard(Tori)",
       "grade": "Medium"
     },
@@ -14799,17 +14942,6 @@
       "records": 10,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Jakhal",
-      "district": "Fatehabad",
-      "avgPrice": 2033,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 2200,
-      "records": 3,
-      "topVariety": "Ridgeguard(Tori)",
-      "grade": "Local"
     },
     {
       "name": "Siwan",
@@ -14867,17 +14999,6 @@
       "grade": "Local"
     },
     {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 1650,
-      "recentPrice": null,
-      "minPrice": 1300,
-      "maxPrice": 2400,
-      "records": 19,
-      "topVariety": "Ridgeguard(Tori)",
-      "grade": "Medium"
-    },
-    {
       "name": "Barwala(Hisar)",
       "district": "Hissar",
       "avgPrice": 1650,
@@ -14898,6 +15019,17 @@
       "records": 9,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Jakhal",
+      "district": "Fatehabad",
+      "avgPrice": 1925,
+      "recentPrice": 1600,
+      "minPrice": 1600,
+      "maxPrice": 2200,
+      "records": 4,
+      "topVariety": "Ridgeguard(Tori)",
+      "grade": "Local"
     },
     {
       "name": "FerozpurZirkha(Nagina)",
@@ -15010,6 +15142,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 1628,
+      "recentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 2400,
+      "records": 20,
+      "topVariety": "Ridgeguard(Tori)",
+      "grade": "Medium"
+    },
+    {
       "name": "Radaur",
       "district": "Yamuna Nagar",
       "avgPrice": 1100,
@@ -15025,11 +15168,11 @@
     {
       "name": "Narnaul",
       "district": "Mahendragarh-Narnaul",
-      "avgPrice": 5208,
-      "recentPrice": null,
+      "avgPrice": 5231,
+      "recentPrice": 5500,
       "minPrice": 4500,
       "maxPrice": 6000,
-      "records": 12,
+      "records": 13,
       "topVariety": "Tender Coconut",
       "grade": "Medium"
     },
@@ -15172,6 +15315,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 7036,
+      "recentPrice": 9000,
+      "minPrice": 2500,
+      "maxPrice": 9000,
+      "records": 14,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Barwala(Hisar)",
       "district": "Hissar",
       "avgPrice": 8657,
@@ -15201,17 +15355,6 @@
       "minPrice": 2000,
       "maxPrice": 9500,
       "records": 15,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 6885,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 9000,
-      "records": 13,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -15250,6 +15393,28 @@
     }
   ],
   "mango": [
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 5823,
+      "recentPrice": 20000,
+      "minPrice": 3000,
+      "maxPrice": 20000,
+      "records": 31,
+      "topVariety": null,
+      "grade": "Grade B"
+    },
+    {
+      "name": "Gohana",
+      "district": "Sonipat",
+      "avgPrice": 5476,
+      "recentPrice": 9000,
+      "minPrice": 3000,
+      "maxPrice": 19000,
+      "records": 21,
+      "topVariety": null,
+      "grade": "Medium"
+    },
     {
       "name": "Fatehabad",
       "district": "Fatehabad",
@@ -15350,17 +15515,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Hansi",
-      "district": "Hissar",
-      "avgPrice": 5350,
-      "recentPrice": null,
-      "minPrice": 3000,
-      "maxPrice": 9000,
-      "records": 30,
-      "topVariety": null,
-      "grade": "Grade B"
-    },
-    {
       "name": "Faridabad",
       "district": "Faridabad",
       "avgPrice": 5344,
@@ -15370,17 +15524,6 @@
       "records": 16,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "Gohana",
-      "district": "Sonipat",
-      "avgPrice": 5300,
-      "recentPrice": null,
-      "minPrice": 3000,
-      "maxPrice": 19000,
-      "records": 20,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Ganaur",
@@ -15750,11 +15893,11 @@
     {
       "name": "Hansi",
       "district": "Hissar",
-      "avgPrice": 6417,
-      "recentPrice": null,
+      "avgPrice": 6286,
+      "recentPrice": 5500,
       "minPrice": 5000,
       "maxPrice": 7000,
-      "records": 6,
+      "records": 7,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -15897,11 +16040,11 @@
     {
       "name": "Naraingarh",
       "district": "Ambala",
-      "avgPrice": 2900,
-      "recentPrice": null,
+      "avgPrice": 2880,
+      "recentPrice": 2800,
       "minPrice": 2800,
       "maxPrice": 3200,
-      "records": 4,
+      "records": 5,
       "topVariety": "Papaya",
       "grade": "Medium"
     },
@@ -16330,11 +16473,11 @@
     {
       "name": "Narnaul",
       "district": "Mahendragarh-Narnaul",
-      "avgPrice": 3962,
-      "recentPrice": null,
+      "avgPrice": 3963,
+      "recentPrice": 4000,
       "minPrice": 1500,
       "maxPrice": 6000,
-      "records": 26,
+      "records": 27,
       "topVariety": "Sponge gourd",
       "grade": "Medium"
     },
@@ -16474,6 +16617,17 @@
       "maxPrice": 4450,
       "records": 1,
       "topVariety": "1121",
+      "grade": "Local"
+    },
+    {
+      "name": "Panipat(Babarpur)",
+      "district": "Panipat",
+      "avgPrice": 3900,
+      "recentPrice": 3900,
+      "minPrice": 3900,
+      "maxPrice": 3900,
+      "records": 1,
+      "topVariety": "Basmati 1509",
       "grade": "Local"
     }
   ],
@@ -16830,11 +16984,11 @@
     {
       "name": "Ganaur",
       "district": "Sonipat",
-      "avgPrice": 3267,
-      "recentPrice": null,
+      "avgPrice": 3200,
+      "recentPrice": 2800,
       "minPrice": 2200,
       "maxPrice": 4800,
-      "records": 6,
+      "records": 7,
       "topVariety": "Yam (Ratalu)",
       "grade": "Medium"
     }
@@ -16898,6 +17052,17 @@
   ],
   "pointed-gourdparval": [
     {
+      "name": "Naraingarh",
+      "district": "Ambala",
+      "avgPrice": 2272,
+      "recentPrice": 2500,
+      "minPrice": 2000,
+      "maxPrice": 2500,
+      "records": 16,
+      "topVariety": "Pointed gourd (Parval)",
+      "grade": "Medium"
+    },
+    {
       "name": "Faridabad",
       "district": "Faridabad",
       "avgPrice": 2444,
@@ -16907,17 +17072,6 @@
       "records": 9,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Naraingarh",
-      "district": "Ambala",
-      "avgPrice": 2257,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 2500,
-      "records": 15,
-      "topVariety": "Pointed gourd (Parval)",
-      "grade": "Medium"
     },
     {
       "name": "Narnaul",
@@ -17266,6 +17420,54 @@
       "records": 1,
       "topVariety": "Taro (Arvi) Stem",
       "grade": "Grade A"
+    }
+  ],
+  "sweet-potato": [
+    {
+      "name": "Hansi",
+      "district": "Hissar",
+      "avgPrice": 4500,
+      "recentPrice": 4500,
+      "minPrice": 4500,
+      "maxPrice": 4500,
+      "records": 1,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Tauru",
+      "district": "Mewat",
+      "avgPrice": 4000,
+      "recentPrice": 4000,
+      "minPrice": 4000,
+      "maxPrice": 4000,
+      "records": 1,
+      "topVariety": "Sweet Potato",
+      "grade": "Medium"
+    },
+    {
+      "name": "Shahabad",
+      "district": "Kurukshetra",
+      "avgPrice": 3500,
+      "recentPrice": 3500,
+      "minPrice": 3500,
+      "maxPrice": 3500,
+      "records": 1,
+      "topVariety": "Sweet Potato",
+      "grade": "Medium"
+    }
+  ],
+  "paddycommon": [
+    {
+      "name": "Panipat",
+      "district": "Panipat",
+      "avgPrice": 4161,
+      "recentPrice": 4161,
+      "minPrice": 4161,
+      "maxPrice": 4161,
+      "records": 1,
+      "topVariety": "Basmati 1509",
+      "grade": "Local"
     }
   ]
 }

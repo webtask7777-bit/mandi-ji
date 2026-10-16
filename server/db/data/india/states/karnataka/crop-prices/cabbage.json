@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 1000,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 810,
+      "volume": 5
     }
   ],
   "dailyHistory": [
@@ -812,9 +818,16 @@
       "volume": 1,
       "minPrice": 900,
       "maxPrice": 1200
+    },
+    {
+      "date": "2026-10-16",
+      "market": 810,
+      "volume": 5,
+      "minPrice": 400,
+      "maxPrice": 1600
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bangalore",
@@ -831,8 +844,8 @@
     {
       "district": "Davangere",
       "nameHi": "Davangere",
-      "avgPrice": 1040,
-      "records": 92
+      "avgPrice": 1035,
+      "records": 93
     },
     {
       "district": "Chamrajnagar",
@@ -887,6 +900,24 @@
       "nameHi": "Mandya",
       "avgPrice": 700,
       "records": 4
+    },
+    {
+      "district": "Bengaluru Rural",
+      "nameHi": "Bengaluru Rural",
+      "avgPrice": 1000,
+      "records": 1
+    },
+    {
+      "district": "Chikkaballapur",
+      "nameHi": "Chikkaballapur",
+      "avgPrice": 800,
+      "records": 1
+    },
+    {
+      "district": "Shivamogga",
+      "nameHi": "Shivamogga",
+      "avgPrice": 500,
+      "records": 1
     }
   ]
 }

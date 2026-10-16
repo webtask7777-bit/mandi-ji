@@ -17,6 +17,12 @@
       "date": "2026-06",
       "market": 9750,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 13700,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -33,20 +39,27 @@
       "volume": 2,
       "minPrice": 5000,
       "maxPrice": 16500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 13700,
+      "volume": 4,
+      "minPrice": 6000,
+      "maxPrice": 18500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Sri Sathya Sai",
+      "nameHi": "Sri Sathya Sai",
+      "avgPrice": 12383,
+      "records": 6
+    },
     {
       "district": "Anantapur",
       "nameHi": "Anantapur",
       "avgPrice": 10900,
-      "records": 2
-    },
-    {
-      "district": "Sri Sathya Sai",
-      "nameHi": "Sri Sathya Sai",
-      "avgPrice": 9750,
       "records": 2
     }
   ]

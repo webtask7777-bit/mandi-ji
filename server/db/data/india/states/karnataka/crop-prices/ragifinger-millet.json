@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 3508,
       "volume": 4
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3316,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -170,15 +176,22 @@
       "volume": 4,
       "minPrice": 2000,
       "maxPrice": 5200
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3316,
+      "volume": 2,
+      "minPrice": 3000,
+      "maxPrice": 3600
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Davangere",
       "nameHi": "Davangere",
-      "avgPrice": 3043,
-      "records": 13
+      "avgPrice": 3078,
+      "records": 14
     },
     {
       "district": "Chamrajnagar",
@@ -208,6 +221,12 @@
       "district": "Kolar",
       "nameHi": "Kolar",
       "avgPrice": 3733,
+      "records": 2
+    },
+    {
+      "district": "Mysuru",
+      "nameHi": "Mysuru",
+      "avgPrice": 3150,
       "records": 2
     },
     {
@@ -244,12 +263,6 @@
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
       "avgPrice": 5000,
-      "records": 1
-    },
-    {
-      "district": "Mysuru",
-      "nameHi": "Mysuru",
-      "avgPrice": 3200,
       "records": 1
     }
   ]

@@ -41,8 +41,8 @@
     "name": "Paddy(Common)",
     "nameHi": "धान",
     "emoji": "🌾",
-    "totalRecords": 114,
-    "avgPrice": 1991,
+    "totalRecords": 116,
+    "avgPrice": 1994,
     "minPrice": 1600,
     "maxPrice": 2525,
     "varieties": [
@@ -82,7 +82,7 @@
     "name": "Wheat",
     "nameHi": "गेहूँ",
     "emoji": "🌿",
-    "totalRecords": 100,
+    "totalRecords": 101,
     "avgPrice": 2377,
     "minPrice": 1700,
     "maxPrice": 3200,
@@ -572,8 +572,8 @@
     "name": "Soyabean",
     "nameHi": "सोयाबीन",
     "emoji": "🟤",
-    "totalRecords": 20,
-    "avgPrice": 5742,
+    "totalRecords": 21,
+    "avgPrice": 5706,
     "minPrice": 2500,
     "maxPrice": 7273,
     "varieties": [
@@ -603,8 +603,8 @@
     "name": "Mustard",
     "nameHi": "सरसों",
     "emoji": "🌻",
-    "totalRecords": 19,
-    "avgPrice": 6374,
+    "totalRecords": 20,
+    "avgPrice": 6365,
     "minPrice": 4000,
     "maxPrice": 6762,
     "varieties": [
@@ -991,6 +991,19 @@
     ]
   },
   {
+    "id": "white-peas",
+    "name": "White Peas",
+    "nameHi": "White Peas",
+    "emoji": "🟢",
+    "totalRecords": 11,
+    "avgPrice": 350,
+    "minPrice": 200,
+    "maxPrice": 500,
+    "varieties": [
+      "Gota"
+    ]
+  },
+  {
     "id": "tamarind-fruit",
     "name": "Tamarind Fruit",
     "nameHi": "इमली",
@@ -1057,19 +1070,6 @@
     "maxPrice": 2200,
     "varieties": [
       "Water Melon"
-    ]
-  },
-  {
-    "id": "white-peas",
-    "name": "White Peas",
-    "nameHi": "White Peas",
-    "emoji": "🟢",
-    "totalRecords": 10,
-    "avgPrice": 360,
-    "minPrice": 200,
-    "maxPrice": 500,
-    "varieties": [
-      "Gota"
     ]
   },
   {
@@ -1148,8 +1148,8 @@
     "name": "Maize",
     "nameHi": "मक्का",
     "emoji": "🌽",
-    "totalRecords": 8,
-    "avgPrice": 1867,
+    "totalRecords": 9,
+    "avgPrice": 1927,
     "minPrice": 1500,
     "maxPrice": 2410,
     "varieties": [
@@ -1458,6 +1458,20 @@
     ]
   },
   {
+    "id": "same-savi",
+    "name": "Same/Savi",
+    "nameHi": "Same/Savi",
+    "emoji": "🌱",
+    "totalRecords": 2,
+    "avgPrice": 1250,
+    "minPrice": 1200,
+    "maxPrice": 1300,
+    "varieties": [
+      "Local",
+      "Savo Others"
+    ]
+  },
+  {
     "id": "other-pulses",
     "name": "Other Pulses",
     "nameHi": "Other Pulses",
@@ -1480,19 +1494,6 @@
     "avgPrice": 2200,
     "minPrice": 2200,
     "maxPrice": 2200,
-    "varieties": [
-      "Local"
-    ]
-  },
-  {
-    "id": "same-savi",
-    "name": "Same/Savi",
-    "nameHi": "Same/Savi",
-    "emoji": "🌱",
-    "totalRecords": 1,
-    "avgPrice": 1200,
-    "minPrice": 1200,
-    "maxPrice": 1200,
     "varieties": [
       "Local"
     ]
@@ -1573,6 +1574,19 @@
     "maxPrice": 10300,
     "varieties": [
       "Dry"
+    ]
+  },
+  {
+    "id": "bamboo",
+    "name": "Bamboo",
+    "nameHi": "Bamboo",
+    "emoji": "🌱",
+    "totalRecords": 1,
+    "avgPrice": 225,
+    "minPrice": 225,
+    "maxPrice": 225,
+    "varieties": [
+      "Bamboo"
     ]
   }
 ]

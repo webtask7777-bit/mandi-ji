@@ -34,6 +34,13 @@
       "market": 2060,
       "volume": 8,
       "msp": 2300
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2109,
+      "volume": 7,
+      "msp": 2300
     }
   ],
   "dailyHistory": [
@@ -218,21 +225,28 @@
       "volume": 1,
       "minPrice": 2325,
       "maxPrice": 2325
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2109,
+      "volume": 7,
+      "minPrice": 1500,
+      "maxPrice": 3175
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Dahod",
       "nameHi": "Dahod",
-      "avgPrice": 1725,
-      "records": 46
+      "avgPrice": 1721,
+      "records": 48
     },
     {
       "district": "Gandhinagar",
       "nameHi": "Gandhinagar",
-      "avgPrice": 2165,
-      "records": 17
+      "avgPrice": 2192,
+      "records": 18
     },
     {
       "district": "Ahmedabad",
@@ -243,20 +257,20 @@
     {
       "district": "Panchmahals",
       "nameHi": "Panchmahals",
-      "avgPrice": 1824,
-      "records": 8
+      "avgPrice": 1868,
+      "records": 9
+    },
+    {
+      "district": "Surat",
+      "nameHi": "Surat",
+      "avgPrice": 2011,
+      "records": 7
     },
     {
       "district": "Mehsana",
       "nameHi": "Mehsana",
       "avgPrice": 2007,
       "records": 7
-    },
-    {
-      "district": "Surat",
-      "nameHi": "Surat",
-      "avgPrice": 1915,
-      "records": 5
     },
     {
       "district": "Anand",
@@ -269,6 +283,12 @@
       "nameHi": "Sabarkantha",
       "avgPrice": 2160,
       "records": 3
+    },
+    {
+      "district": "The Dangs",
+      "nameHi": "The Dangs",
+      "avgPrice": 2100,
+      "records": 1
     }
   ]
 }

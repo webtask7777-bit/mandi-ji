@@ -17,6 +17,12 @@
       "date": "2026-04",
       "market": 1563,
       "volume": 4
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1733,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -68,20 +74,39 @@
       "volume": 1,
       "minPrice": 750,
       "maxPrice": 1250
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1733,
+      "volume": 3,
+      "minPrice": 1000,
+      "maxPrice": 2500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Rajkot",
       "nameHi": "Rajkot",
-      "avgPrice": 1625,
-      "records": 6
+      "avgPrice": 1679,
+      "records": 7
     },
     {
       "district": "Ahmedabad",
       "nameHi": "Ahmedabad",
       "avgPrice": 500,
+      "records": 1
+    },
+    {
+      "district": "Dahod",
+      "nameHi": "Dahod",
+      "avgPrice": 1700,
+      "records": 1
+    },
+    {
+      "district": "Surendranagar",
+      "nameHi": "Surendranagar",
+      "avgPrice": 1500,
       "records": 1
     }
   ]

@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 14680,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 12150,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -546,9 +552,16 @@
       "volume": 1,
       "minPrice": 14613,
       "maxPrice": 14743
+    },
+    {
+      "date": "2026-10-16",
+      "market": 12150,
+      "volume": 1,
+      "minPrice": 11941,
+      "maxPrice": 12150
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Dharwad",
@@ -611,6 +624,12 @@
       "records": 2
     },
     {
+      "district": "Bengaluru Rural",
+      "nameHi": "Bengaluru Rural",
+      "avgPrice": 13415,
+      "records": 2
+    },
+    {
       "district": "Bijapur",
       "nameHi": "Bijapur",
       "avgPrice": 8600,
@@ -626,12 +645,6 @@
       "district": "Bangalore",
       "nameHi": "Bangalore",
       "avgPrice": 12454,
-      "records": 1
-    },
-    {
-      "district": "Bengaluru Rural",
-      "nameHi": "Bengaluru Rural",
-      "avgPrice": 14680,
       "records": 1
     }
   ]

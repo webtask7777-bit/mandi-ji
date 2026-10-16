@@ -41,6 +41,13 @@
       "market": 1950,
       "volume": 2,
       "msp": 2090
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2218,
+      "volume": 9,
+      "msp": 2090
     }
   ],
   "dailyHistory": [
@@ -232,9 +239,16 @@
       "volume": 2,
       "minPrice": 1900,
       "maxPrice": 2006
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2218,
+      "volume": 9,
+      "minPrice": 1800,
+      "maxPrice": 2400
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bahraich",
@@ -257,8 +271,8 @@
     {
       "district": "Hardoi",
       "nameHi": "Hardoi",
-      "avgPrice": 1839,
-      "records": 9
+      "avgPrice": 1875,
+      "records": 10
     },
     {
       "district": "Farukhabad",
@@ -267,15 +281,21 @@
       "records": 8
     },
     {
+      "district": "Shahjahanpur",
+      "nameHi": "Shahjahanpur",
+      "avgPrice": 1932,
+      "records": 6
+    },
+    {
       "district": "Hathras",
       "nameHi": "Hathras",
       "avgPrice": 1831,
       "records": 6
     },
     {
-      "district": "Shahjahanpur",
-      "nameHi": "Shahjahanpur",
-      "avgPrice": 1890,
+      "district": "Kanpur Dehat",
+      "nameHi": "Kanpur Dehat",
+      "avgPrice": 2065,
       "records": 5
     },
     {
@@ -285,16 +305,16 @@
       "records": 5
     },
     {
+      "district": "Kasganj",
+      "nameHi": "Kasganj",
+      "avgPrice": 2029,
+      "records": 5
+    },
+    {
       "district": "Etah",
       "nameHi": "Etah",
       "avgPrice": 1774,
       "records": 4
-    },
-    {
-      "district": "Kanpur Dehat",
-      "nameHi": "Kanpur Dehat",
-      "avgPrice": 1975,
-      "records": 3
     },
     {
       "district": "Fatehpur",
@@ -306,12 +326,6 @@
       "district": "Kanpur",
       "nameHi": "Kanpur",
       "avgPrice": 1817,
-      "records": 3
-    },
-    {
-      "district": "Kasganj",
-      "nameHi": "Kasganj",
-      "avgPrice": 1848,
       "records": 3
     },
     {

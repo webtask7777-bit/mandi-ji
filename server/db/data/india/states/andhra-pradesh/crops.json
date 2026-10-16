@@ -4,7 +4,7 @@
     "name": "Banana",
     "nameHi": "केला",
     "emoji": "🍌",
-    "totalRecords": 658,
+    "totalRecords": 667,
     "avgPrice": 2677,
     "minPrice": 800,
     "maxPrice": 4900,
@@ -15,7 +15,8 @@
       "Chakkarakeli(Red)",
       "Chakkarakeli(White)",
       "Karpura",
-      "Desi(Bontha)"
+      "Desi(Bontha)",
+      "Medium"
     ],
     "sowingMonths": [
       1,
@@ -50,8 +51,8 @@
     "name": "Dry Chillies",
     "nameHi": "सूखी मिर्च",
     "emoji": "🌶️",
-    "totalRecords": 383,
-    "avgPrice": 16140,
+    "totalRecords": 385,
+    "avgPrice": 16160,
     "minPrice": 1099,
     "maxPrice": 40131,
     "varieties": [
@@ -72,8 +73,8 @@
     "name": "Tomato",
     "nameHi": "टमाटर",
     "emoji": "🍅",
-    "totalRecords": 260,
-    "avgPrice": 1479,
+    "totalRecords": 271,
+    "avgPrice": 1484,
     "minPrice": 700,
     "maxPrice": 3400,
     "varieties": [
@@ -143,8 +144,8 @@
     "name": "Mango",
     "nameHi": "आम",
     "emoji": "🥭",
-    "totalRecords": 138,
-    "avgPrice": 1910,
+    "totalRecords": 140,
+    "avgPrice": 1899,
     "minPrice": 300,
     "maxPrice": 6000,
     "varieties": [
@@ -176,13 +177,15 @@
     "name": "Arhar(Tur/Red Gram)(Whole)",
     "nameHi": "अरहर",
     "emoji": "🫘",
-    "totalRecords": 117,
-    "avgPrice": 7101,
+    "totalRecords": 121,
+    "avgPrice": 7148,
     "minPrice": 1669,
     "maxPrice": 9500,
     "varieties": [
       "Local",
-      "Other"
+      "Other",
+      "Arhar (Whole)",
+      "(Whole)"
     ],
     "msp": 7550,
     "sowingMonths": [
@@ -206,182 +209,12 @@
     ]
   },
   {
-    "id": "cotton",
-    "name": "Cotton",
-    "nameHi": "कपास",
-    "emoji": "☁️",
-    "totalRecords": 106,
-    "avgPrice": 7908,
-    "minPrice": 3000,
-    "maxPrice": 10331,
-    "varieties": [
-      "Bramha",
-      "Bunny",
-      "Other",
-      "Cotton (Unginned)",
-      "Desi",
-      "Local"
-    ],
-    "msp": 7121,
-    "sowingMonths": [
-      4,
-      5
-    ],
-    "growingMonths": [
-      6,
-      7,
-      8,
-      9
-    ],
-    "harvestMonths": [
-      10,
-      11,
-      0
-    ],
-    "peakMonths": [
-      11,
-      0,
-      1
-    ]
-  },
-  {
-    "id": "black-gramurd-beanswhole",
-    "name": "Black Gram(Urd Beans)(Whole)",
-    "nameHi": "सेम",
-    "emoji": "🫘",
-    "totalRecords": 86,
-    "avgPrice": 7717,
-    "minPrice": 1000,
-    "maxPrice": 8700,
-    "varieties": [
-      "Black Gram (Whole)",
-      "Local",
-      "Desi"
-    ]
-  },
-  {
-    "id": "cluster-beans",
-    "name": "Cluster beans",
-    "nameHi": "ग्वारफली",
-    "emoji": "🌱",
-    "totalRecords": 81,
-    "avgPrice": 4172,
-    "minPrice": 1200,
-    "maxPrice": 12000,
-    "varieties": [
-      "Cluster Beans"
-    ]
-  },
-  {
-    "id": "brinjal",
-    "name": "Brinjal",
-    "nameHi": "बैंगन",
-    "emoji": "🍆",
-    "totalRecords": 73,
-    "avgPrice": 2079,
-    "minPrice": 600,
-    "maxPrice": 4500,
-    "varieties": [
-      "Brinjal"
-    ],
-    "sowingMonths": [
-      5,
-      6,
-      9,
-      10
-    ],
-    "growingMonths": [
-      7,
-      8,
-      11,
-      0
-    ],
-    "harvestMonths": [
-      8,
-      9,
-      1,
-      2
-    ],
-    "peakMonths": [
-      9,
-      10,
-      1,
-      2
-    ]
-  },
-  {
-    "id": "bengal-gramgramwhole",
-    "name": "Bengal Gram(Gram)(Whole)",
-    "nameHi": "चना",
-    "emoji": "🫘",
-    "totalRecords": 70,
-    "avgPrice": 5249,
-    "minPrice": 1500,
-    "maxPrice": 7500,
-    "varieties": [
-      "Desi (Whole)",
-      "Jawari/Local",
-      "Bengal Gram (Split)",
-      "Other",
-      "Gulabi"
-    ],
-    "msp": 5440,
-    "sowingMonths": [
-      9,
-      10
-    ],
-    "growingMonths": [
-      11,
-      0
-    ],
-    "harvestMonths": [
-      2,
-      3
-    ],
-    "peakMonths": [
-      3,
-      4
-    ]
-  },
-  {
-    "id": "cabbage",
-    "name": "Cabbage",
-    "nameHi": "पत्तागोभी",
-    "emoji": "🥬",
-    "totalRecords": 66,
-    "avgPrice": 974,
-    "minPrice": 500,
-    "maxPrice": 2000,
-    "varieties": [
-      "Cabbage"
-    ],
-    "sowingMonths": [
-      8,
-      9
-    ],
-    "growingMonths": [
-      10,
-      11,
-      0
-    ],
-    "harvestMonths": [
-      0,
-      1,
-      2
-    ],
-    "peakMonths": [
-      11,
-      0,
-      1
-    ]
-  },
-  {
     "id": "paddycommon",
     "name": "Paddy(Common)",
     "nameHi": "धान",
     "emoji": "🌾",
-    "totalRecords": 65,
-    "avgPrice": 2508,
+    "totalRecords": 121,
+    "avgPrice": 2491,
     "minPrice": 1900,
     "maxPrice": 3950,
     "varieties": [
@@ -417,12 +250,184 @@
     ]
   },
   {
+    "id": "cotton",
+    "name": "Cotton",
+    "nameHi": "कपास",
+    "emoji": "☁️",
+    "totalRecords": 111,
+    "avgPrice": 7927,
+    "minPrice": 3000,
+    "maxPrice": 10331,
+    "varieties": [
+      "Bramha",
+      "Bunny",
+      "Other",
+      "Cotton (Unginned)",
+      "Desi",
+      "Local",
+      "170-C2 (Ginned)"
+    ],
+    "msp": 7121,
+    "sowingMonths": [
+      4,
+      5
+    ],
+    "growingMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      10,
+      11,
+      0
+    ],
+    "peakMonths": [
+      11,
+      0,
+      1
+    ]
+  },
+  {
+    "id": "black-gramurd-beanswhole",
+    "name": "Black Gram(Urd Beans)(Whole)",
+    "nameHi": "सेम",
+    "emoji": "🫘",
+    "totalRecords": 95,
+    "avgPrice": 7829,
+    "minPrice": 1000,
+    "maxPrice": 10000,
+    "varieties": [
+      "Black Gram (Whole)",
+      "Local",
+      "Desi"
+    ]
+  },
+  {
+    "id": "cluster-beans",
+    "name": "Cluster beans",
+    "nameHi": "ग्वारफली",
+    "emoji": "🌱",
+    "totalRecords": 82,
+    "avgPrice": 4176,
+    "minPrice": 1200,
+    "maxPrice": 12000,
+    "varieties": [
+      "Cluster Beans"
+    ]
+  },
+  {
+    "id": "bengal-gramgramwhole",
+    "name": "Bengal Gram(Gram)(Whole)",
+    "nameHi": "चना",
+    "emoji": "🫘",
+    "totalRecords": 77,
+    "avgPrice": 5374,
+    "minPrice": 1500,
+    "maxPrice": 7800,
+    "varieties": [
+      "Desi (Whole)",
+      "Jawari/Local",
+      "Bengal Gram (Split)",
+      "Other",
+      "Gulabi",
+      "Average (Whole)"
+    ],
+    "msp": 5440,
+    "sowingMonths": [
+      9,
+      10
+    ],
+    "growingMonths": [
+      11,
+      0
+    ],
+    "harvestMonths": [
+      2,
+      3
+    ],
+    "peakMonths": [
+      3,
+      4
+    ]
+  },
+  {
+    "id": "brinjal",
+    "name": "Brinjal",
+    "nameHi": "बैंगन",
+    "emoji": "🍆",
+    "totalRecords": 74,
+    "avgPrice": 2078,
+    "minPrice": 600,
+    "maxPrice": 4500,
+    "varieties": [
+      "Brinjal"
+    ],
+    "sowingMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "growingMonths": [
+      7,
+      8,
+      11,
+      0
+    ],
+    "harvestMonths": [
+      8,
+      9,
+      1,
+      2
+    ],
+    "peakMonths": [
+      9,
+      10,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "cabbage",
+    "name": "Cabbage",
+    "nameHi": "पत्तागोभी",
+    "emoji": "🥬",
+    "totalRecords": 67,
+    "avgPrice": 971,
+    "minPrice": 500,
+    "maxPrice": 2000,
+    "varieties": [
+      "Cabbage"
+    ],
+    "sowingMonths": [
+      8,
+      9
+    ],
+    "growingMonths": [
+      10,
+      11,
+      0
+    ],
+    "harvestMonths": [
+      0,
+      1,
+      2
+    ],
+    "peakMonths": [
+      11,
+      0,
+      1
+    ]
+  },
+  {
     "id": "cauliflower",
     "name": "Cauliflower",
     "nameHi": "फूलगोभी",
     "emoji": "🥦",
-    "totalRecords": 61,
-    "avgPrice": 1198,
+    "totalRecords": 62,
+    "avgPrice": 1208,
     "minPrice": 500,
     "maxPrice": 2800,
     "varieties": [
@@ -495,12 +500,48 @@
     ]
   },
   {
+    "id": "maize",
+    "name": "Maize",
+    "nameHi": "मक्का",
+    "emoji": "🌽",
+    "totalRecords": 52,
+    "avgPrice": 2384,
+    "minPrice": 1300,
+    "maxPrice": 4800,
+    "varieties": [
+      "Local",
+      "Hybrid/Local",
+      "Hybrid",
+      "Deshi White",
+      "Fine",
+      "Medium",
+      "Other"
+    ],
+    "msp": 2090,
+    "sowingMonths": [
+      5,
+      6
+    ],
+    "growingMonths": [
+      7,
+      8
+    ],
+    "harvestMonths": [
+      9,
+      10
+    ],
+    "peakMonths": [
+      10,
+      11
+    ]
+  },
+  {
     "id": "mousambisweet-lime",
     "name": "Mousambi(Sweet Lime)",
     "nameHi": "मौसम्बी",
     "emoji": "🌱",
-    "totalRecords": 39,
-    "avgPrice": 1729,
+    "totalRecords": 41,
+    "avgPrice": 1715,
     "minPrice": 600,
     "maxPrice": 5400,
     "varieties": [
@@ -513,13 +554,29 @@
     "name": "Lime",
     "nameHi": "नीबू",
     "emoji": "🌱",
-    "totalRecords": 37,
-    "avgPrice": 3403,
+    "totalRecords": 38,
+    "avgPrice": 3511,
     "minPrice": 1200,
     "maxPrice": 17000,
     "varieties": [
       "Lime",
       "Other"
+    ]
+  },
+  {
+    "id": "gurjaggery",
+    "name": "Gur(Jaggery)",
+    "nameHi": "Gur(Jaggery)",
+    "emoji": "🌱",
+    "totalRecords": 37,
+    "avgPrice": 3711,
+    "minPrice": 1400,
+    "maxPrice": 5540,
+    "varieties": [
+      "Anakapalli",
+      "NO 2",
+      "Black",
+      "NO 3"
     ]
   },
   {
@@ -537,35 +594,20 @@
     ]
   },
   {
-    "id": "gurjaggery",
-    "name": "Gur(Jaggery)",
-    "nameHi": "Gur(Jaggery)",
-    "emoji": "🌱",
-    "totalRecords": 35,
-    "avgPrice": 3774,
-    "minPrice": 1400,
-    "maxPrice": 5540,
-    "varieties": [
-      "Anakapalli",
-      "NO 2",
-      "Black",
-      "NO 3"
-    ]
-  },
-  {
     "id": "groundnut",
     "name": "Groundnut",
     "nameHi": "मूँगफली",
     "emoji": "🥜",
-    "totalRecords": 29,
-    "avgPrice": 6916,
+    "totalRecords": 35,
+    "avgPrice": 6954,
     "minPrice": 2299,
     "maxPrice": 9000,
     "varieties": [
       "Bold Kernel",
       "Local",
       "Big (With Shell)",
-      "F.A.Q"
+      "F.A.Q",
+      "Balli/Habbu"
     ],
     "msp": 6783,
     "sowingMonths": [
@@ -591,7 +633,7 @@
     "name": "Potato",
     "nameHi": "आलू",
     "emoji": "🥔",
-    "totalRecords": 25,
+    "totalRecords": 26,
     "avgPrice": 1512,
     "minPrice": 1000,
     "maxPrice": 2000,
@@ -623,8 +665,8 @@
     "name": "Ridgeguard(Tori)",
     "nameHi": "तोरई",
     "emoji": "🌱",
-    "totalRecords": 25,
-    "avgPrice": 3036,
+    "totalRecords": 26,
+    "avgPrice": 3015,
     "minPrice": 1500,
     "maxPrice": 5000,
     "varieties": [
@@ -632,44 +674,12 @@
     ]
   },
   {
-    "id": "maize",
-    "name": "Maize",
-    "nameHi": "मक्का",
-    "emoji": "🌽",
-    "totalRecords": 24,
-    "avgPrice": 2180,
-    "minPrice": 1300,
-    "maxPrice": 4800,
-    "varieties": [
-      "Local",
-      "Hybrid/Local",
-      "Hybrid"
-    ],
-    "msp": 2090,
-    "sowingMonths": [
-      5,
-      6
-    ],
-    "growingMonths": [
-      7,
-      8
-    ],
-    "harvestMonths": [
-      9,
-      10
-    ],
-    "peakMonths": [
-      10,
-      11
-    ]
-  },
-  {
     "id": "lemon",
     "name": "Lemon",
     "nameHi": "नींबू",
     "emoji": "🍋",
-    "totalRecords": 20,
-    "avgPrice": 8795,
+    "totalRecords": 22,
+    "avgPrice": 8827,
     "minPrice": 1400,
     "maxPrice": 29200,
     "varieties": [
@@ -682,12 +692,13 @@
     "name": "Rice",
     "nameHi": "चावल",
     "emoji": "🌾",
-    "totalRecords": 17,
-    "avgPrice": 4618,
+    "totalRecords": 19,
+    "avgPrice": 4816,
     "minPrice": 4600,
-    "maxPrice": 4700,
+    "maxPrice": 6500,
     "varieties": [
-      "Sona"
+      "Sona",
+      "B P T"
     ],
     "msp": 2300,
     "sowingMonths": [
@@ -709,27 +720,14 @@
     ]
   },
   {
-    "id": "bengal-gram-dalchana-dal",
-    "name": "Bengal Gram Dal(Chana Dal)",
-    "nameHi": "Bengal Gram Dal(Chana Dal)",
-    "emoji": "🫘",
-    "totalRecords": 11,
-    "avgPrice": 4912,
-    "minPrice": 3070,
-    "maxPrice": 5370,
-    "varieties": [
-      "Bengal Gram Dal"
-    ]
-  },
-  {
     "id": "coconut",
     "name": "Coconut",
     "nameHi": "नारियल",
     "emoji": "🥥",
-    "totalRecords": 11,
-    "avgPrice": 15245,
+    "totalRecords": 13,
+    "avgPrice": 15438,
     "minPrice": 14500,
-    "maxPrice": 16000,
+    "maxPrice": 18000,
     "varieties": [
       "Medium"
     ],
@@ -778,12 +776,25 @@
     ]
   },
   {
+    "id": "bengal-gram-dalchana-dal",
+    "name": "Bengal Gram Dal(Chana Dal)",
+    "nameHi": "Bengal Gram Dal(Chana Dal)",
+    "emoji": "🫘",
+    "totalRecords": 11,
+    "avgPrice": 4912,
+    "minPrice": 3070,
+    "maxPrice": 5370,
+    "varieties": [
+      "Bengal Gram Dal"
+    ]
+  },
+  {
     "id": "green-chilli",
     "name": "Green Chilli",
     "nameHi": "हरी मिर्च",
     "emoji": "🌶️",
-    "totalRecords": 10,
-    "avgPrice": 3420,
+    "totalRecords": 11,
+    "avgPrice": 3473,
     "minPrice": 1700,
     "maxPrice": 5000,
     "varieties": [
@@ -815,6 +826,38 @@
     ]
   },
   {
+    "id": "tamarind-fruit",
+    "name": "Tamarind Fruit",
+    "nameHi": "इमली",
+    "emoji": "🌱",
+    "totalRecords": 8,
+    "avgPrice": 12013,
+    "minPrice": 5000,
+    "maxPrice": 18500,
+    "varieties": [
+      "Non A/c Fine",
+      "Non A/c Flower",
+      "Other",
+      "Flower A/c",
+      "Karpuli A/c Fine"
+    ]
+  },
+  {
+    "id": "black-gram-dalurd-dal",
+    "name": "Black Gram Dal(Urd Dal)",
+    "nameHi": "उड़द दाल",
+    "emoji": "🫘",
+    "totalRecords": 6,
+    "avgPrice": 8767,
+    "minPrice": 7000,
+    "maxPrice": 9700,
+    "varieties": [
+      "Black Gram Dal",
+      "Local"
+    ],
+    "msp": 6950
+  },
+  {
     "id": "turmeric",
     "name": "Turmeric",
     "nameHi": "कच्ची हल्दी",
@@ -826,20 +869,6 @@
     "varieties": [
       "Finger",
       "Bulb"
-    ]
-  },
-  {
-    "id": "tamarind-fruit",
-    "name": "Tamarind Fruit",
-    "nameHi": "इमली",
-    "emoji": "🌱",
-    "totalRecords": 4,
-    "avgPrice": 10325,
-    "minPrice": 5000,
-    "maxPrice": 16500,
-    "varieties": [
-      "Non A/c Fine",
-      "Non A/c Flower"
     ]
   },
   {
@@ -875,6 +904,33 @@
     ]
   },
   {
+    "id": "sunflower-sunflower-seed",
+    "name": "Sunflower/Sunflower Seed",
+    "nameHi": "Sunflower/Sunflower Seed",
+    "emoji": "🌱",
+    "totalRecords": 4,
+    "avgPrice": 6560,
+    "minPrice": 3000,
+    "maxPrice": 8150,
+    "varieties": [
+      "Sunflower Seed",
+      "Local"
+    ]
+  },
+  {
+    "id": "ragifinger-millet",
+    "name": "Ragi(Finger Millet)",
+    "nameHi": "Ragi(Finger Millet)",
+    "emoji": "🌱",
+    "totalRecords": 4,
+    "avgPrice": 4833,
+    "minPrice": 4200,
+    "maxPrice": 5230,
+    "varieties": [
+      "Local"
+    ]
+  },
+  {
     "id": "gingerdry",
     "name": "Ginger(Dry)",
     "nameHi": "सोंठ",
@@ -888,44 +944,60 @@
     ]
   },
   {
-    "id": "black-gram-dalurd-dal",
-    "name": "Black Gram Dal(Urd Dal)",
-    "nameHi": "उड़द दाल",
-    "emoji": "🫘",
-    "totalRecords": 3,
-    "avgPrice": 8133,
-    "minPrice": 7000,
-    "maxPrice": 8900,
+    "id": "wood",
+    "name": "Wood",
+    "nameHi": "लकड़ी",
+    "emoji": "🌱",
+    "totalRecords": 4,
+    "avgPrice": 1850,
+    "minPrice": 510,
+    "maxPrice": 6000,
     "varieties": [
-      "Black Gram Dal"
-    ],
-    "msp": 6950
+      "Subabul",
+      "Casuarina"
+    ]
   },
   {
-    "id": "sunflower-sunflower-seed",
-    "name": "Sunflower/Sunflower Seed",
-    "nameHi": "Sunflower/Sunflower Seed",
+    "id": "cashewnuts",
+    "name": "Cashewnuts",
+    "nameHi": "Cashewnuts",
     "emoji": "🌱",
-    "totalRecords": 3,
-    "avgPrice": 6033,
-    "minPrice": 5451,
-    "maxPrice": 6459,
+    "totalRecords": 4,
+    "avgPrice": 11750,
+    "minPrice": 8000,
+    "maxPrice": 14000,
     "varieties": [
-      "Sunflower Seed",
+      "320 Counts",
+      "Local(Raw)",
       "Local"
     ]
   },
   {
-    "id": "ragifinger-millet",
-    "name": "Ragi(Finger Millet)",
-    "nameHi": "Ragi(Finger Millet)",
-    "emoji": "🌱",
+    "id": "jowarsorghum",
+    "name": "Jowar(Sorghum)",
+    "nameHi": "Jowar(Sorghum)",
+    "emoji": "🌾",
     "totalRecords": 3,
-    "avgPrice": 4700,
-    "minPrice": 4200,
-    "maxPrice": 5000,
+    "avgPrice": 3308,
+    "minPrice": 2600,
+    "maxPrice": 4025,
     "varieties": [
+      "Jowar ( White)",
+      "Hybrid",
       "Local"
+    ]
+  },
+  {
+    "id": "papaya",
+    "name": "Papaya",
+    "nameHi": "पपीता",
+    "emoji": "🍏",
+    "totalRecords": 3,
+    "avgPrice": 1483,
+    "minPrice": 1300,
+    "maxPrice": 1600,
+    "varieties": [
+      "Papaya"
     ]
   },
   {
@@ -942,31 +1014,60 @@
     ]
   },
   {
-    "id": "cashewnuts",
-    "name": "Cashewnuts",
-    "nameHi": "Cashewnuts",
-    "emoji": "🌱",
+    "id": "fish",
+    "name": "Fish",
+    "nameHi": "मछली",
+    "emoji": "🐟",
     "totalRecords": 2,
-    "avgPrice": 13500,
-    "minPrice": 13000,
-    "maxPrice": 14000,
+    "avgPrice": 9900,
+    "minPrice": 9500,
+    "maxPrice": 10000,
     "varieties": [
-      "320 Counts",
-      "Local(Raw)"
+      "Katla (Small)"
     ]
   },
   {
-    "id": "jowarsorghum",
-    "name": "Jowar(Sorghum)",
-    "nameHi": "Jowar(Sorghum)",
-    "emoji": "🌾",
+    "id": "ground-nut-seed",
+    "name": "Ground Nut Seed",
+    "nameHi": "Ground Nut Seed",
+    "emoji": "🌱",
     "totalRecords": 2,
-    "avgPrice": 3613,
-    "minPrice": 3100,
-    "maxPrice": 4025,
+    "avgPrice": 11050,
+    "minPrice": 10000,
+    "maxPrice": 12000,
     "varieties": [
-      "Jowar ( White)",
-      "Hybrid"
+      "Ground Nut Seed"
+    ]
+  },
+  {
+    "id": "green-grammoongwhole",
+    "name": "Green Gram(Moong)(Whole)",
+    "nameHi": "मूंग",
+    "emoji": "🫘",
+    "totalRecords": 2,
+    "avgPrice": 7500,
+    "minPrice": 7000,
+    "maxPrice": 8000,
+    "varieties": [
+      "Green (Whole)",
+      "Local (Whole)"
+    ],
+    "msp": 8682,
+    "sowingMonths": [
+      6,
+      7
+    ],
+    "growingMonths": [
+      8,
+      9
+    ],
+    "harvestMonths": [
+      9,
+      10
+    ],
+    "peakMonths": [
+      10,
+      11
     ]
   },
   {
@@ -1000,32 +1101,6 @@
     ]
   },
   {
-    "id": "fish",
-    "name": "Fish",
-    "nameHi": "मछली",
-    "emoji": "🐟",
-    "totalRecords": 1,
-    "avgPrice": 9900,
-    "minPrice": 9500,
-    "maxPrice": 10000,
-    "varieties": [
-      "Katla (Small)"
-    ]
-  },
-  {
-    "id": "wood",
-    "name": "Wood",
-    "nameHi": "लकड़ी",
-    "emoji": "🌱",
-    "totalRecords": 1,
-    "avgPrice": 540,
-    "minPrice": 540,
-    "maxPrice": 540,
-    "varieties": [
-      "Subabul"
-    ]
-  },
-  {
     "id": "arhar-daltur-dal",
     "name": "Arhar Dal(Tur Dal)",
     "nameHi": "Arhar Dal(Tur Dal)",
@@ -1039,16 +1114,42 @@
     ]
   },
   {
-    "id": "ground-nut-seed",
-    "name": "Ground Nut Seed",
-    "nameHi": "Ground Nut Seed",
+    "id": "prawn",
+    "name": "Prawn",
+    "nameHi": "Prawn",
     "emoji": "🌱",
     "totalRecords": 1,
-    "avgPrice": 11000,
-    "minPrice": 10000,
-    "maxPrice": 12000,
+    "avgPrice": 20000,
+    "minPrice": 20000,
+    "maxPrice": 21000,
     "varieties": [
-      "Ground Nut Seed"
+      "Prawn-White Prawn"
+    ]
+  },
+  {
+    "id": "ghee",
+    "name": "Ghee",
+    "nameHi": "Ghee",
+    "emoji": "🌱",
+    "totalRecords": 1,
+    "avgPrice": 58300,
+    "minPrice": 58300,
+    "maxPrice": 58300,
+    "varieties": [
+      "Other"
+    ]
+  },
+  {
+    "id": "sesamumsesame-gingelly-til",
+    "name": "Sesamum(Sesame,Gingelly,Til)",
+    "nameHi": "Sesamum(Sesame,Gingelly,Til)",
+    "emoji": "🌱",
+    "totalRecords": 1,
+    "avgPrice": 8550,
+    "minPrice": 8550,
+    "maxPrice": 8550,
+    "varieties": [
+      "Black"
     ]
   }
 ]

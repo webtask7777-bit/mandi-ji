@@ -39,8 +39,8 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 5100,
-      "volume": 33
+      "market": 4306,
+      "volume": 85
     }
   ],
   "dailyHistory": [
@@ -424,14 +424,20 @@
     },
     {
       "date": "2026-10-16",
-      "market": 5100,
-      "volume": 33,
-      "minPrice": 2500,
+      "market": 4306,
+      "volume": 85,
+      "minPrice": 800,
       "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Kangra (हिमाचल प्रदेश)",
+      "nameHi": "Kangra (हिमाचल प्रदेश)",
+      "avgPrice": 7201,
+      "records": 131
+    },
     {
       "district": "Salem (तमिल नाडु)",
       "nameHi": "Salem (तमिल नाडु)",
@@ -439,28 +445,22 @@
       "records": 130
     },
     {
-      "district": "Kangra (हिमाचल प्रदेश)",
-      "nameHi": "Kangra (हिमाचल प्रदेश)",
-      "avgPrice": 7296,
-      "records": 126
-    },
-    {
       "district": "Madurai (तमिल नाडु)",
       "nameHi": "Madurai (तमिल नाडु)",
-      "avgPrice": 8566,
-      "records": 102
-    },
-    {
-      "district": "Hissar (हरियाणा)",
-      "nameHi": "Hissar (हरियाणा)",
-      "avgPrice": 4804,
-      "records": 76
+      "avgPrice": 8541,
+      "records": 103
     },
     {
       "district": "Patiala (पंजाब)",
       "nameHi": "Patiala (पंजाब)",
-      "avgPrice": 3066,
-      "records": 75
+      "avgPrice": 3063,
+      "records": 77
+    },
+    {
+      "district": "Hissar (हरियाणा)",
+      "nameHi": "Hissar (हरियाणा)",
+      "avgPrice": 4787,
+      "records": 77
     },
     {
       "district": "Chengalpattu (तमिल नाडु)",
@@ -483,14 +483,14 @@
     {
       "district": "Kurukshetra (हरियाणा)",
       "nameHi": "Kurukshetra (हरियाणा)",
-      "avgPrice": 4845,
-      "records": 68
+      "avgPrice": 4825,
+      "records": 69
     },
     {
       "district": "Ludhiana (पंजाब)",
       "nameHi": "Ludhiana (पंजाब)",
-      "avgPrice": 4729,
-      "records": 64
+      "avgPrice": 4677,
+      "records": 66
     },
     {
       "district": "Thiruvannamalai (तमिल नाडु)",
@@ -501,26 +501,26 @@
     {
       "district": "Vellore (तमिल नाडु)",
       "nameHi": "Vellore (तमिल नाडु)",
-      "avgPrice": 7880,
-      "records": 46
+      "avgPrice": 7851,
+      "records": 47
     },
     {
       "district": "Udhamsinghnagar (उत्तराखण्ड)",
       "nameHi": "Udhamsinghnagar (उत्तराखण्ड)",
-      "avgPrice": 4323,
-      "records": 44
+      "avgPrice": 4260,
+      "records": 45
     },
     {
       "district": "Sonipat (हरियाणा)",
       "nameHi": "Sonipat (हरियाणा)",
-      "avgPrice": 4326,
-      "records": 42
+      "avgPrice": 4295,
+      "records": 44
     },
     {
       "district": "Mahendragarh-Narnaul (हरियाणा)",
       "nameHi": "Mahendragarh-Narnaul (हरियाणा)",
-      "avgPrice": 3857,
-      "records": 42
+      "avgPrice": 3842,
+      "records": 43
     }
   ]
 }

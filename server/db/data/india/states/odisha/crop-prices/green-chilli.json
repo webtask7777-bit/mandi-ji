@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 7580,
       "volume": 5
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 7683,
+      "volume": 6
     }
   ],
   "dailyHistory": [
@@ -171,21 +177,28 @@
       "volume": 1,
       "minPrice": 7000,
       "maxPrice": 7000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 7683,
+      "volume": 6,
+      "minPrice": 6000,
+      "maxPrice": 9000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Dhenkanal",
       "nameHi": "Dhenkanal",
-      "avgPrice": 8892,
-      "records": 12
+      "avgPrice": 8836,
+      "records": 14
     },
     {
       "district": "Sundergarh",
       "nameHi": "Sundergarh",
-      "avgPrice": 5965,
-      "records": 10
+      "avgPrice": 5986,
+      "records": 11
     },
     {
       "district": "Rayagada",
@@ -194,15 +207,15 @@
       "records": 9
     },
     {
+      "district": "Bolangir",
+      "nameHi": "Bolangir",
+      "avgPrice": 6538,
+      "records": 8
+    },
+    {
       "district": "Balasore",
       "nameHi": "Balasore",
       "avgPrice": 7117,
-      "records": 6
-    },
-    {
-      "district": "Bolangir",
-      "nameHi": "Bolangir",
-      "avgPrice": 5917,
       "records": 6
     },
     {
@@ -239,6 +252,12 @@
       "district": "Deogarh",
       "nameHi": "Deogarh",
       "avgPrice": 5200,
+      "records": 1
+    },
+    {
+      "district": "Ganjam",
+      "nameHi": "Ganjam",
+      "avgPrice": 6100,
       "records": 1
     }
   ]

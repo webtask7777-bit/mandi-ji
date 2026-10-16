@@ -34,6 +34,13 @@
       "market": 2382,
       "volume": 7,
       "msp": 2300
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4102,
+      "volume": 8,
+      "msp": 2300
     }
   ],
   "dailyHistory": [
@@ -176,10 +183,23 @@
       "volume": 1,
       "minPrice": 1750,
       "maxPrice": 2205
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4102,
+      "volume": 8,
+      "minPrice": 1500,
+      "maxPrice": 7650
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Raichur",
+      "nameHi": "Raichur",
+      "avgPrice": 2912,
+      "records": 10
+    },
     {
       "district": "Davangere",
       "nameHi": "Davangere",
@@ -193,16 +213,16 @@
       "records": 9
     },
     {
-      "district": "Raichur",
-      "nameHi": "Raichur",
-      "avgPrice": 2385,
-      "records": 9
-    },
-    {
       "district": "Shimoga",
       "nameHi": "Shimoga",
       "avgPrice": 2575,
       "records": 8
+    },
+    {
+      "district": "Koppal",
+      "nameHi": "Koppal",
+      "avgPrice": 3618,
+      "records": 6
     },
     {
       "district": "Mandya",
@@ -217,15 +237,15 @@
       "records": 5
     },
     {
+      "district": "Haveri",
+      "nameHi": "Haveri",
+      "avgPrice": 2822,
+      "records": 5
+    },
+    {
       "district": "Kolar",
       "nameHi": "Kolar",
       "avgPrice": 2195,
-      "records": 4
-    },
-    {
-      "district": "Haveri",
-      "nameHi": "Haveri",
-      "avgPrice": 2728,
       "records": 4
     },
     {
@@ -238,6 +258,12 @@
       "district": "Hassan",
       "nameHi": "Hassan",
       "avgPrice": 2160,
+      "records": 3
+    },
+    {
+      "district": "Shivamogga",
+      "nameHi": "Shivamogga",
+      "avgPrice": 2459,
       "records": 3
     },
     {
@@ -257,18 +283,6 @@
       "nameHi": "Chamarajanagar",
       "avgPrice": 2050,
       "records": 2
-    },
-    {
-      "district": "Shivamogga",
-      "nameHi": "Shivamogga",
-      "avgPrice": 2458,
-      "records": 2
-    },
-    {
-      "district": "Koppal",
-      "nameHi": "Koppal",
-      "avgPrice": 2200,
-      "records": 1
     }
   ]
 }

@@ -53,6 +53,12 @@
       "date": "2026-07",
       "market": 2432,
       "volume": 15
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1600,
+      "volume": 8
     }
   ],
   "dailyHistory": [
@@ -860,9 +866,16 @@
       "volume": 3,
       "minPrice": 1500,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1600,
+      "volume": 8,
+      "minPrice": 600,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bangalore",
@@ -891,8 +904,8 @@
     {
       "district": "Davangere",
       "nameHi": "Davangere",
-      "avgPrice": 1302,
-      "records": 87
+      "avgPrice": 1299,
+      "records": 88
     },
     {
       "district": "Kalburgi",
@@ -925,16 +938,16 @@
       "records": 13
     },
     {
+      "district": "Bengaluru South",
+      "nameHi": "Bengaluru South",
+      "avgPrice": 3158,
+      "records": 12
+    },
+    {
       "district": "Hassan",
       "nameHi": "Hassan",
       "avgPrice": 2490,
       "records": 10
-    },
-    {
-      "district": "Bengaluru South",
-      "nameHi": "Bengaluru South",
-      "avgPrice": 3456,
-      "records": 9
     },
     {
       "district": "Chamarajanagar",
@@ -943,15 +956,15 @@
       "records": 5
     },
     {
+      "district": "Chikkaballapur",
+      "nameHi": "Chikkaballapur",
+      "avgPrice": 1620,
+      "records": 5
+    },
+    {
       "district": "Mandya",
       "nameHi": "Mandya",
       "avgPrice": 700,
-      "records": 3
-    },
-    {
-      "district": "Chikkaballapur",
-      "nameHi": "Chikkaballapur",
-      "avgPrice": 1933,
       "records": 3
     }
   ]

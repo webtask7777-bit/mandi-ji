@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 3125,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3250,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -122,9 +128,16 @@
       "volume": 1,
       "minPrice": 2500,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3250,
+      "volume": 2,
+      "minPrice": 2500,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Kolar",
@@ -151,21 +164,21 @@
       "records": 2
     },
     {
-      "district": "Mysore",
-      "nameHi": "Mysore",
-      "avgPrice": 1400,
-      "records": 1
-    },
-    {
       "district": "Shivamogga",
       "nameHi": "Shivamogga",
-      "avgPrice": 3250,
-      "records": 1
+      "avgPrice": 3375,
+      "records": 2
     },
     {
       "district": "Chikkaballapur",
       "nameHi": "Chikkaballapur",
       "avgPrice": 3000,
+      "records": 2
+    },
+    {
+      "district": "Mysore",
+      "nameHi": "Mysore",
+      "avgPrice": 1400,
       "records": 1
     }
   ]

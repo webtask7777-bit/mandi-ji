@@ -17,6 +17,12 @@
       "date": "2026-07",
       "market": 3776,
       "volume": 56
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3265,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -159,15 +165,22 @@
       "volume": 5,
       "minPrice": 2500,
       "maxPrice": 4900
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3265,
+      "volume": 4,
+      "minPrice": 3000,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Madhubani",
       "nameHi": "Madhubani",
-      "avgPrice": 3760,
-      "records": 31
+      "avgPrice": 3749,
+      "records": 32
     },
     {
       "district": "Khagaria",
@@ -188,15 +201,15 @@
       "records": 4
     },
     {
+      "district": "Gaya",
+      "nameHi": "Gaya",
+      "avgPrice": 3713,
+      "records": 4
+    },
+    {
       "district": "Begusarai",
       "nameHi": "Begusarai",
       "avgPrice": 3583,
-      "records": 3
-    },
-    {
-      "district": "Gaya",
-      "nameHi": "Gaya",
-      "avgPrice": 3950,
       "records": 3
     },
     {
@@ -209,6 +222,18 @@
       "district": "Chhapra",
       "nameHi": "Chhapra",
       "avgPrice": 3000,
+      "records": 1
+    },
+    {
+      "district": "Kishanganj",
+      "nameHi": "Kishanganj",
+      "avgPrice": 3350,
+      "records": 1
+    },
+    {
+      "district": "Gopalgang",
+      "nameHi": "Gopalgang",
+      "avgPrice": 3310,
       "records": 1
     }
   ]

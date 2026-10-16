@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 10263,
       "volume": 8
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 9450,
+      "volume": 5
     }
   ],
   "dailyHistory": [
@@ -178,15 +184,22 @@
       "volume": 3,
       "minPrice": 2000,
       "maxPrice": 15000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 9450,
+      "volume": 5,
+      "minPrice": 250,
+      "maxPrice": 32500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 12200,
-      "records": 10
+      "avgPrice": 11583,
+      "records": 12
     },
     {
       "district": "Sholapur",
@@ -207,15 +220,21 @@
       "records": 5
     },
     {
-      "district": "Ahmednagar",
-      "nameHi": "Ahmednagar",
-      "avgPrice": 6667,
+      "district": "Nagpur",
+      "nameHi": "Nagpur",
+      "avgPrice": 4938,
+      "records": 4
+    },
+    {
+      "district": "Nashik",
+      "nameHi": "Nashik",
+      "avgPrice": 7700,
       "records": 3
     },
     {
-      "district": "Nagpur",
-      "nameHi": "Nagpur",
-      "avgPrice": 4917,
+      "district": "Ahmednagar",
+      "nameHi": "Ahmednagar",
+      "avgPrice": 6667,
       "records": 3
     },
     {
@@ -223,12 +242,6 @@
       "nameHi": "Sangli",
       "avgPrice": 10000,
       "records": 3
-    },
-    {
-      "district": "Nashik",
-      "nameHi": "Nashik",
-      "avgPrice": 7550,
-      "records": 2
     },
     {
       "district": "Jalgaon",
@@ -252,6 +265,12 @@
       "district": "Solapur",
       "nameHi": "Solapur",
       "avgPrice": 17500,
+      "records": 1
+    },
+    {
+      "district": "Ahilyanagar",
+      "nameHi": "Ahilyanagar",
+      "avgPrice": 17250,
       "records": 1
     }
   ]

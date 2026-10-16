@@ -11,6 +11,12 @@
       "date": "2026-06",
       "market": 1750,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3361,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -20,14 +26,33 @@
       "volume": 1,
       "minPrice": 1650,
       "maxPrice": 1850
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3361,
+      "volume": 3,
+      "minPrice": 2749.999725,
+      "maxPrice": 3750
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Kishanganj",
       "nameHi": "Kishanganj",
-      "avgPrice": 1750,
+      "avgPrice": 2700,
+      "records": 2
+    },
+    {
+      "district": "Khagaria",
+      "nameHi": "Khagaria",
+      "avgPrice": 2833,
+      "records": 1
+    },
+    {
+      "district": "Gaya",
+      "nameHi": "Gaya",
+      "avgPrice": 3600,
       "records": 1
     }
   ]

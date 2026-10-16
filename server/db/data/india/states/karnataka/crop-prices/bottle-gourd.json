@@ -53,6 +53,12 @@
       "date": "2026-07",
       "market": 1655,
       "volume": 91
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1500,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -909,9 +915,16 @@
       "volume": 1,
       "minPrice": 1200,
       "maxPrice": 1600
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1500,
+      "volume": 3,
+      "minPrice": 800,
+      "maxPrice": 2500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bangalore",
@@ -934,8 +947,8 @@
     {
       "district": "Chikkaballapur",
       "nameHi": "Chikkaballapur",
-      "avgPrice": 2278,
-      "records": 29
+      "avgPrice": 2268,
+      "records": 30
     },
     {
       "district": "Mysore",
@@ -946,8 +959,8 @@
     {
       "district": "Bengaluru South",
       "nameHi": "Bengaluru South",
-      "avgPrice": 1330,
-      "records": 20
+      "avgPrice": 1314,
+      "records": 21
     },
     {
       "district": "Mysuru",
@@ -982,8 +995,8 @@
     {
       "district": "Bengaluru Rural",
       "nameHi": "Bengaluru Rural",
-      "avgPrice": 2000,
-      "records": 1
+      "avgPrice": 1750,
+      "records": 2
     }
   ]
 }

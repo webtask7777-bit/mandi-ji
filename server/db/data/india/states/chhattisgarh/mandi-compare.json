@@ -532,6 +532,17 @@
   ],
   "paddycommon": [
     {
+      "name": "Ramanujganj",
+      "district": "Balrampur",
+      "avgPrice": 2410,
+      "recentPrice": 2410,
+      "minPrice": 2410,
+      "maxPrice": 2410,
+      "records": 1,
+      "topVariety": "Paddy Coarse",
+      "grade": "FAQ"
+    },
+    {
       "name": "Manendragarh",
       "district": "Koria",
       "avgPrice": 2400,
@@ -807,6 +818,17 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Baikunthpur",
+      "district": "Koria",
+      "avgPrice": 1950,
+      "recentPrice": 2000,
+      "minPrice": 1800,
+      "maxPrice": 2000,
+      "records": 4,
+      "topVariety": "I.R. 36",
+      "grade": "FAQ"
+    },
+    {
       "name": "Keshkal",
       "district": "Kondagaon",
       "avgPrice": 2000,
@@ -904,17 +926,6 @@
       "records": 3,
       "topVariety": "D.B.",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Baikunthpur",
-      "district": "Koria",
-      "avgPrice": 1933,
-      "recentPrice": null,
-      "minPrice": 1800,
-      "maxPrice": 2000,
-      "records": 3,
-      "topVariety": "I.R. 36",
-      "grade": "FAQ"
     },
     {
       "name": "Bastar",
@@ -1854,10 +1865,10 @@
       "name": "Kheragarh",
       "district": "Rajnandgaon",
       "avgPrice": 5000,
-      "recentPrice": null,
+      "recentPrice": 5000,
       "minPrice": 5000,
       "maxPrice": 5000,
-      "records": 1,
+      "records": 2,
       "topVariety": "Soyabeen",
       "grade": "Non-FAQ"
     },
@@ -1874,6 +1885,17 @@
     }
   ],
   "same-savi": [
+    {
+      "name": "Surajpur",
+      "district": "Surajpur",
+      "avgPrice": 1300,
+      "recentPrice": 1300,
+      "minPrice": 1300,
+      "maxPrice": 1300,
+      "records": 1,
+      "topVariety": "Savo Others",
+      "grade": "Non-FAQ"
+    },
     {
       "name": "Ramanujganj",
       "district": "Balrampur",
@@ -2617,11 +2639,11 @@
     {
       "name": "Manendragarh",
       "district": "Koria",
-      "avgPrice": 300,
-      "recentPrice": null,
-      "minPrice": 300,
+      "avgPrice": 288,
+      "recentPrice": 250,
+      "minPrice": 250,
       "maxPrice": 300,
-      "records": 3,
+      "records": 4,
       "topVariety": "Gota",
       "grade": "Non-FAQ"
     },
@@ -2664,10 +2686,10 @@
       "name": "Ramanujganj",
       "district": "Balrampur",
       "avgPrice": 6210,
-      "recentPrice": null,
+      "recentPrice": 6210,
       "minPrice": 6210,
       "maxPrice": 6210,
-      "records": 1,
+      "records": 2,
       "topVariety": "Mustard",
       "grade": "FAQ"
     },
@@ -2699,10 +2721,10 @@
       "name": "Ramanujganj",
       "district": "Balrampur",
       "avgPrice": 2410,
-      "recentPrice": null,
+      "recentPrice": 2410,
       "minPrice": 2410,
       "maxPrice": 2410,
-      "records": 1,
+      "records": 2,
       "topVariety": "Local",
       "grade": "FAQ"
     },
@@ -3535,17 +3557,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Manendragarh",
-      "district": "Koria",
-      "avgPrice": 2412,
-      "recentPrice": null,
-      "minPrice": 2300,
-      "maxPrice": 2500,
-      "records": 3,
-      "topVariety": "Local",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Mungeli",
       "district": "Mungeli",
       "avgPrice": 2401,
@@ -3555,6 +3566,17 @@
       "records": 12,
       "topVariety": "Local",
       "grade": "FAQ"
+    },
+    {
+      "name": "Manendragarh",
+      "district": "Koria",
+      "avgPrice": 2409,
+      "recentPrice": 2400,
+      "minPrice": 2300,
+      "maxPrice": 2500,
+      "records": 4,
+      "topVariety": "Local",
+      "grade": "Non-FAQ"
     },
     {
       "name": "Kusmee",
@@ -4038,6 +4060,19 @@
       "records": 1,
       "topVariety": "Dry",
       "grade": "FAQ"
+    }
+  ],
+  "bamboo": [
+    {
+      "name": "Pakhanjur",
+      "district": "Kanker",
+      "avgPrice": 225,
+      "recentPrice": 225,
+      "minPrice": 225,
+      "maxPrice": 225,
+      "records": 1,
+      "topVariety": "Bamboo",
+      "grade": "Non-FAQ"
     }
   ]
 }

@@ -23,6 +23,12 @@
       "date": "2026-07",
       "market": 2394,
       "volume": 9
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5500,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -81,9 +87,16 @@
       "volume": 2,
       "minPrice": 2900,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 5500,
+      "volume": 1,
+      "minPrice": 5000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "North Tripura",
@@ -95,6 +108,12 @@
       "district": "Gomati",
       "nameHi": "Gomati",
       "avgPrice": 4900,
+      "records": 1
+    },
+    {
+      "district": "South Tripura",
+      "nameHi": "South Tripura",
+      "avgPrice": 5500,
       "records": 1
     }
   ]

@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 3951,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4720,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -178,15 +184,28 @@
       "volume": 1,
       "minPrice": 4200,
       "maxPrice": 4700
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4720,
+      "volume": 4,
+      "minPrice": 3500,
+      "maxPrice": 5700.8
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Maharajganj",
       "nameHi": "Maharajganj",
       "avgPrice": 3516,
       "records": 12
+    },
+    {
+      "district": "Bijnor",
+      "nameHi": "Bijnor",
+      "avgPrice": 4232,
+      "records": 10
     },
     {
       "district": "Sitapur",
@@ -201,15 +220,15 @@
       "records": 8
     },
     {
-      "district": "Bijnor",
-      "nameHi": "Bijnor",
-      "avgPrice": 4015,
-      "records": 8
-    },
-    {
       "district": "Kanpur Dehat",
       "nameHi": "Kanpur Dehat",
       "avgPrice": 4344,
+      "records": 6
+    },
+    {
+      "district": "Muzaffarnagar",
+      "nameHi": "Muzaffarnagar",
+      "avgPrice": 4070,
       "records": 6
     },
     {
@@ -222,12 +241,6 @@
       "district": "Amroha",
       "nameHi": "Amroha",
       "avgPrice": 3600,
-      "records": 5
-    },
-    {
-      "district": "Muzaffarnagar",
-      "nameHi": "Muzaffarnagar",
-      "avgPrice": 3848,
       "records": 5
     },
     {
@@ -249,6 +262,12 @@
       "records": 3
     },
     {
+      "district": "Kushinagar",
+      "nameHi": "Kushinagar",
+      "avgPrice": 3177,
+      "records": 3
+    },
+    {
       "district": "Saharanpur",
       "nameHi": "Saharanpur",
       "avgPrice": 2837,
@@ -264,12 +283,6 @@
       "district": "Shamli",
       "nameHi": "Shamli",
       "avgPrice": 3030,
-      "records": 2
-    },
-    {
-      "district": "Kushinagar",
-      "nameHi": "Kushinagar",
-      "avgPrice": 3015,
       "records": 2
     }
   ]

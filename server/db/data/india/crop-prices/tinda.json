@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 1750,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3722,
+      "volume": 9
     }
   ],
   "dailyHistory": [
@@ -268,9 +274,16 @@
       "volume": 1,
       "minPrice": 1500,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3722,
+      "volume": 9,
+      "minPrice": 1500,
+      "maxPrice": 6500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Kangra (हिमाचल प्रदेश)",
@@ -287,20 +300,20 @@
     {
       "district": "Mahendragarh-Narnaul (हरियाणा)",
       "nameHi": "Mahendragarh-Narnaul (हरियाणा)",
-      "avgPrice": 1543,
-      "records": 14
+      "avgPrice": 1840,
+      "records": 15
     },
     {
       "district": "Jaipur (राजस्थान)",
       "nameHi": "Jaipur (राजस्थान)",
-      "avgPrice": 2369,
-      "records": 13
+      "avgPrice": 2432,
+      "records": 14
     },
     {
       "district": "Valsad (गुजरात)",
       "nameHi": "Valsad (गुजरात)",
-      "avgPrice": 3433,
-      "records": 13
+      "avgPrice": 3402,
+      "records": 14
     },
     {
       "district": "Delhi (दिल्ली)",
@@ -315,33 +328,39 @@
       "records": 9
     },
     {
+      "district": "Surendranagar (गुजरात)",
+      "nameHi": "Surendranagar (गुजरात)",
+      "avgPrice": 3861,
+      "records": 9
+    },
+    {
+      "district": "Hissar (हरियाणा)",
+      "nameHi": "Hissar (हरियाणा)",
+      "avgPrice": 1978,
+      "records": 9
+    },
+    {
+      "district": "Kurukshetra (हरियाणा)",
+      "nameHi": "Kurukshetra (हरियाणा)",
+      "avgPrice": 2711,
+      "records": 9
+    },
+    {
       "district": "Jalandhar (पंजाब)",
       "nameHi": "Jalandhar (पंजाब)",
       "avgPrice": 2313,
       "records": 8
     },
     {
-      "district": "Surendranagar (गुजरात)",
-      "nameHi": "Surendranagar (गुजरात)",
-      "avgPrice": 3875,
-      "records": 8
-    },
-    {
-      "district": "Hissar (हरियाणा)",
-      "nameHi": "Hissar (हरियाणा)",
-      "avgPrice": 1538,
-      "records": 8
-    },
-    {
-      "district": "Kurukshetra (हरियाणा)",
-      "nameHi": "Kurukshetra (हरियाणा)",
-      "avgPrice": 2425,
-      "records": 8
-    },
-    {
       "district": "Ludhiana (पंजाब)",
       "nameHi": "Ludhiana (पंजाब)",
       "avgPrice": 3386,
+      "records": 7
+    },
+    {
+      "district": "Anand (गुजरात)",
+      "nameHi": "Anand (गुजरात)",
+      "avgPrice": 4143,
       "records": 7
     },
     {
@@ -355,12 +374,6 @@
       "nameHi": "Sonipat (हरियाणा)",
       "avgPrice": 1614,
       "records": 7
-    },
-    {
-      "district": "Sangrur (पंजाब)",
-      "nameHi": "Sangrur (पंजाब)",
-      "avgPrice": 1633,
-      "records": 6
     }
   ]
 }

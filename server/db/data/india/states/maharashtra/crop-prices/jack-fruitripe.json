@@ -29,6 +29,12 @@
       "date": "2026-07",
       "market": 1983,
       "volume": 22
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -185,15 +191,22 @@
       "volume": 1,
       "minPrice": 3000,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 1000,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 1837,
-      "records": 19
+      "avgPrice": 1845,
+      "records": 20
     },
     {
       "district": "Nagpur",

@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 2216,
       "volume": 17
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3307,
+      "volume": 7
     }
   ],
   "dailyHistory": [
@@ -247,21 +253,28 @@
       "volume": 2,
       "minPrice": 2000,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3307,
+      "volume": 7,
+      "minPrice": 1500,
+      "maxPrice": 5400
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Hanumangarh",
       "nameHi": "Hanumangarh",
-      "avgPrice": 1402,
-      "records": 34
+      "avgPrice": 1451,
+      "records": 35
     },
     {
       "district": "Jaipur",
       "nameHi": "Jaipur",
-      "avgPrice": 1550,
-      "records": 20
+      "avgPrice": 1793,
+      "records": 22
     },
     {
       "district": "Ganganagar",
@@ -290,8 +303,14 @@
     {
       "district": "Sikar",
       "nameHi": "Sikar",
-      "avgPrice": 667,
-      "records": 6
+      "avgPrice": 936,
+      "records": 7
+    },
+    {
+      "district": "Bharatpur",
+      "nameHi": "Bharatpur",
+      "avgPrice": 1860,
+      "records": 5
     },
     {
       "district": "Jhunjhunu",
@@ -300,9 +319,9 @@
       "records": 5
     },
     {
-      "district": "Bharatpur",
-      "nameHi": "Bharatpur",
-      "avgPrice": 1625,
+      "district": "Jodhpur",
+      "nameHi": "Jodhpur",
+      "avgPrice": 1263,
       "records": 4
     },
     {
@@ -312,15 +331,15 @@
       "records": 3
     },
     {
-      "district": "Jodhpur",
-      "nameHi": "Jodhpur",
-      "avgPrice": 767,
-      "records": 3
-    },
-    {
       "district": "Ajmer",
       "nameHi": "Ajmer",
       "avgPrice": 1200,
+      "records": 3
+    },
+    {
+      "district": "Jaisalmer",
+      "nameHi": "Jaisalmer",
+      "avgPrice": 2067,
       "records": 3
     },
     {
@@ -328,12 +347,6 @@
       "nameHi": "Baran",
       "avgPrice": 700,
       "records": 3
-    },
-    {
-      "district": "Jaisalmer",
-      "nameHi": "Jaisalmer",
-      "avgPrice": 1350,
-      "records": 2
     },
     {
       "district": "Bhilwara",

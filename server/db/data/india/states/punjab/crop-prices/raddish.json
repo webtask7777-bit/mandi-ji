@@ -39,8 +39,8 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 1877,
-      "volume": 3
+      "market": 1720,
+      "volume": 25
     }
   ],
   "dailyHistory": [
@@ -354,37 +354,49 @@
     },
     {
       "date": "2026-10-16",
-      "market": 1877,
-      "volume": 3,
-      "minPrice": 1700,
-      "maxPrice": 2030
+      "market": 1720,
+      "volume": 25,
+      "minPrice": 1.01,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Patiala",
       "nameHi": "Patiala",
-      "avgPrice": 1523,
-      "records": 48
+      "avgPrice": 1526,
+      "records": 50
     },
     {
       "district": "Ludhiana",
       "nameHi": "Ludhiana",
-      "avgPrice": 780,
-      "records": 30
+      "avgPrice": 856,
+      "records": 34
     },
     {
       "district": "Gurdaspur",
       "nameHi": "Gurdaspur",
-      "avgPrice": 1182,
-      "records": 28
+      "avgPrice": 1233,
+      "records": 30
     },
     {
       "district": "Jalandhar",
       "nameHi": "Jalandhar",
-      "avgPrice": 1328,
-      "records": 18
+      "avgPrice": 1390,
+      "records": 20
+    },
+    {
+      "district": "Fazilka",
+      "nameHi": "Fazilka",
+      "avgPrice": 1258,
+      "records": 12
+    },
+    {
+      "district": "Pathankot",
+      "nameHi": "Pathankot",
+      "avgPrice": 1445,
+      "records": 12
     },
     {
       "district": "Kapurthala",
@@ -393,15 +405,9 @@
       "records": 12
     },
     {
-      "district": "Pathankot",
-      "nameHi": "Pathankot",
-      "avgPrice": 1422,
-      "records": 11
-    },
-    {
-      "district": "Fazilka",
-      "nameHi": "Fazilka",
-      "avgPrice": 1180,
+      "district": "Amritsar",
+      "nameHi": "Amritsar",
+      "avgPrice": 1171,
       "records": 10
     },
     {
@@ -409,12 +415,6 @@
       "nameHi": "Nawanshahr",
       "avgPrice": 1490,
       "records": 10
-    },
-    {
-      "district": "Amritsar",
-      "nameHi": "Amritsar",
-      "avgPrice": 968,
-      "records": 9
     },
     {
       "district": "Ropar (Rupnagar)",
@@ -429,6 +429,18 @@
       "records": 8
     },
     {
+      "district": "Hoshiarpur",
+      "nameHi": "Hoshiarpur",
+      "avgPrice": 1457,
+      "records": 7
+    },
+    {
+      "district": "Sangrur",
+      "nameHi": "Sangrur",
+      "avgPrice": 1671,
+      "records": 7
+    },
+    {
       "district": "Moga",
       "nameHi": "Moga",
       "avgPrice": 933,
@@ -437,20 +449,8 @@
     {
       "district": "Tarntaran",
       "nameHi": "Tarntaran",
-      "avgPrice": 880,
-      "records": 5
-    },
-    {
-      "district": "Hoshiarpur",
-      "nameHi": "Hoshiarpur",
-      "avgPrice": 1360,
-      "records": 5
-    },
-    {
-      "district": "Sangrur",
-      "nameHi": "Sangrur",
-      "avgPrice": 1500,
-      "records": 4
+      "avgPrice": 734,
+      "records": 6
     }
   ]
 }

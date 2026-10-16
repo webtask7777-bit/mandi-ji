@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 4500,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -784,20 +790,27 @@
       "volume": 1,
       "minPrice": 2500,
       "maxPrice": 6500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Surat",
+      "nameHi": "Surat",
+      "avgPrice": 2838,
+      "records": 89
+    },
     {
       "district": "Navsari",
       "nameHi": "Navsari",
       "avgPrice": 3104,
-      "records": 88
-    },
-    {
-      "district": "Surat",
-      "nameHi": "Surat",
-      "avgPrice": 2824,
       "records": 88
     },
     {

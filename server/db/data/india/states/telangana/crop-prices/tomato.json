@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 1986,
       "volume": 332
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2255,
+      "volume": 11
     }
   ],
   "dailyHistory": [
@@ -373,27 +379,40 @@
       "volume": 3,
       "minPrice": 600,
       "maxPrice": 1600
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2255,
+      "volume": 11,
+      "minPrice": 250,
+      "maxPrice": 3800
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Hyderabad",
       "nameHi": "Hyderabad",
-      "avgPrice": 1264,
-      "records": 80
+      "avgPrice": 1277,
+      "records": 81
     },
     {
       "district": "Ranga Reddy",
       "nameHi": "Ranga Reddy",
-      "avgPrice": 1885,
-      "records": 77
+      "avgPrice": 1871,
+      "records": 80
     },
     {
       "district": "Nalgonda",
       "nameHi": "Nalgonda",
-      "avgPrice": 1978,
-      "records": 40
+      "avgPrice": 1966,
+      "records": 41
+    },
+    {
+      "district": "Khammam",
+      "nameHi": "Khammam",
+      "avgPrice": 2603,
+      "records": 37
     },
     {
       "district": "Warangal",
@@ -402,16 +421,10 @@
       "records": 35
     },
     {
-      "district": "Khammam",
-      "nameHi": "Khammam",
-      "avgPrice": 2569,
-      "records": 35
-    },
-    {
       "district": "Mahbubnagar",
       "nameHi": "Mahbubnagar",
-      "avgPrice": 2352,
-      "records": 29
+      "avgPrice": 2373,
+      "records": 30
     },
     {
       "district": "Karimnagar",
@@ -422,8 +435,14 @@
     {
       "district": "Medchal Malkajgiri",
       "nameHi": "Medchal Malkajgiri",
-      "avgPrice": 1274,
-      "records": 19
+      "avgPrice": 1325,
+      "records": 20
+    },
+    {
+      "district": "Sangareddy",
+      "nameHi": "Sangareddy",
+      "avgPrice": 1660,
+      "records": 20
     },
     {
       "district": "Nagarkurnool",
@@ -432,21 +451,15 @@
       "records": 19
     },
     {
-      "district": "Sangareddy",
-      "nameHi": "Sangareddy",
-      "avgPrice": 1653,
+      "district": "Siddipet",
+      "nameHi": "Siddipet",
+      "avgPrice": 2789,
       "records": 19
     },
     {
       "district": "Adilabad",
       "nameHi": "Adilabad",
       "avgPrice": 3472,
-      "records": 18
-    },
-    {
-      "district": "Siddipet",
-      "nameHi": "Siddipet",
-      "avgPrice": 2778,
       "records": 18
     },
     {

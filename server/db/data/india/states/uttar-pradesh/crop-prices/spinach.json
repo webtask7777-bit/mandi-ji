@@ -23,6 +23,12 @@
       "date": "2026-05",
       "market": 1200,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1350,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -74,15 +80,28 @@
       "volume": 1,
       "minPrice": 1100,
       "maxPrice": 1300
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1350,
+      "volume": 2,
+      "minPrice": 1100,
+      "maxPrice": 1520
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Saharanpur",
       "nameHi": "Saharanpur",
-      "avgPrice": 929,
-      "records": 7
+      "avgPrice": 963,
+      "records": 8
+    },
+    {
+      "district": "Amroha",
+      "nameHi": "Amroha",
+      "avgPrice": 1500,
+      "records": 1
     }
   ]
 }

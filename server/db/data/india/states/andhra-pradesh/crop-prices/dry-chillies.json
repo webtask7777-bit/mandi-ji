@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 17050,
       "volume": 4
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 20050,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -630,9 +636,16 @@
       "volume": 1,
       "minPrice": 20100,
       "maxPrice": 20100
+    },
+    {
+      "date": "2026-10-16",
+      "market": 20050,
+      "volume": 2,
+      "minPrice": 8000,
+      "maxPrice": 30000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Guntur",
@@ -655,8 +668,14 @@
     {
       "district": "NTR",
       "nameHi": "NTR",
-      "avgPrice": 20100,
-      "records": 3
+      "avgPrice": 20475,
+      "records": 4
+    },
+    {
+      "district": "Sri Sathya Sai",
+      "nameHi": "Sri Sathya Sai",
+      "avgPrice": 18500,
+      "records": 1
     }
   ]
 }

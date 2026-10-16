@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 10500,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 17000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -637,9 +643,16 @@
       "volume": 1,
       "minPrice": 10000,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 17000,
+      "volume": 1,
+      "minPrice": 10000,
+      "maxPrice": 24000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Kolar",
@@ -699,6 +712,12 @@
       "district": "Chikmagalur",
       "nameHi": "Chikmagalur",
       "avgPrice": 9000,
+      "records": 1
+    },
+    {
+      "district": "Shivamogga",
+      "nameHi": "Shivamogga",
+      "avgPrice": 17000,
       "records": 1
     }
   ]

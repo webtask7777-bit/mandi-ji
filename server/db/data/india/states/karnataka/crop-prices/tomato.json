@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 1516,
       "volume": 361
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1686,
+      "volume": 7
     }
   ],
   "dailyHistory": [
@@ -352,9 +358,16 @@
       "volume": 2,
       "minPrice": 1000,
       "maxPrice": 1700
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1686,
+      "volume": 7,
+      "minPrice": 230,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Kolar",
@@ -365,26 +378,26 @@
     {
       "district": "Chikkaballapur",
       "nameHi": "Chikkaballapur",
-      "avgPrice": 1369,
-      "records": 51
+      "avgPrice": 1393,
+      "records": 53
     },
     {
       "district": "Bengaluru South",
       "nameHi": "Bengaluru South",
-      "avgPrice": 1558,
-      "records": 39
+      "avgPrice": 1557,
+      "records": 41
+    },
+    {
+      "district": "Chamarajanagar",
+      "nameHi": "Chamarajanagar",
+      "avgPrice": 1207,
+      "records": 34
     },
     {
       "district": "Mysuru",
       "nameHi": "Mysuru",
       "avgPrice": 2658,
       "records": 34
-    },
-    {
-      "district": "Chamarajanagar",
-      "nameHi": "Chamarajanagar",
-      "avgPrice": 1192,
-      "records": 33
     },
     {
       "district": "Chikkamagaluru",
@@ -417,6 +430,12 @@
       "records": 17
     },
     {
+      "district": "Shivamogga",
+      "nameHi": "Shivamogga",
+      "avgPrice": 1100,
+      "records": 16
+    },
+    {
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
       "avgPrice": 1913,
@@ -429,12 +448,6 @@
       "records": 15
     },
     {
-      "district": "Shivamogga",
-      "nameHi": "Shivamogga",
-      "avgPrice": 1087,
-      "records": 15
-    },
-    {
       "district": "Vijayanagara",
       "nameHi": "Vijayanagara",
       "avgPrice": 1523,
@@ -443,8 +456,8 @@
     {
       "district": "Bengaluru Rural",
       "nameHi": "Bengaluru Rural",
-      "avgPrice": 1423,
-      "records": 13
+      "avgPrice": 1443,
+      "records": 14
     }
   ]
 }

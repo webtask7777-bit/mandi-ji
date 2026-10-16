@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 5967,
       "volume": 3
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 6500,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -770,9 +776,16 @@
       "volume": 1,
       "minPrice": 3800,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 6500,
+      "volume": 2,
+      "minPrice": 5000,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bangalore",
@@ -817,21 +830,21 @@
       "records": 2
     },
     {
-      "district": "Chikmagalur",
-      "nameHi": "Chikmagalur",
-      "avgPrice": 8330,
-      "records": 1
-    },
-    {
       "district": "Shivamogga",
       "nameHi": "Shivamogga",
       "avgPrice": 7000,
-      "records": 1
+      "records": 2
     },
     {
       "district": "Bengaluru South",
       "nameHi": "Bengaluru South",
-      "avgPrice": 7000,
+      "avgPrice": 6500,
+      "records": 2
+    },
+    {
+      "district": "Chikmagalur",
+      "nameHi": "Chikmagalur",
+      "avgPrice": 8330,
       "records": 1
     },
     {

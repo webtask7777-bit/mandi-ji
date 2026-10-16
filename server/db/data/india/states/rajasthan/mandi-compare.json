@@ -84,11 +84,11 @@
     {
       "name": "Jaipur",
       "district": "Jaipur",
-      "avgPrice": 12466,
-      "recentPrice": null,
-      "minPrice": 11500,
+      "avgPrice": 12438,
+      "recentPrice": 10500,
+      "minPrice": 10500,
       "maxPrice": 15000,
-      "records": 67,
+      "records": 68,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -126,17 +126,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Jodhpur",
-      "district": "Jodhpur",
-      "avgPrice": 7275,
-      "recentPrice": null,
-      "minPrice": 4000,
-      "maxPrice": 9000,
-      "records": 40,
-      "topVariety": "Apple",
-      "grade": "Medium"
-    },
-    {
       "name": "Pali",
       "district": "Pali",
       "avgPrice": 6908,
@@ -155,6 +144,17 @@
       "minPrice": 5500,
       "maxPrice": 7500,
       "records": 62,
+      "topVariety": "Apple",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jodhpur",
+      "district": "Jodhpur",
+      "avgPrice": 7244,
+      "recentPrice": 6000,
+      "minPrice": 4000,
+      "maxPrice": 9000,
+      "records": 41,
       "topVariety": "Apple",
       "grade": "Medium"
     },
@@ -999,6 +999,17 @@
       "grade": "Local"
     },
     {
+      "name": "Suratgarh",
+      "district": "Ganganagar",
+      "avgPrice": 2170,
+      "recentPrice": 2600,
+      "minPrice": 2053,
+      "maxPrice": 2600,
+      "records": 22,
+      "topVariety": "Bold",
+      "grade": "FAQ"
+    },
+    {
       "name": "Gangapur City",
       "district": "Gangapur City",
       "avgPrice": 2508,
@@ -1043,6 +1054,17 @@
       "grade": "FAQ"
     },
     {
+      "name": "Beawar",
+      "district": "Beawar",
+      "avgPrice": 2270,
+      "recentPrice": 2450,
+      "minPrice": 2100,
+      "maxPrice": 2450,
+      "records": 5,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
       "name": "Bijaynagar",
       "district": "Beawar",
       "avgPrice": 2400,
@@ -1076,17 +1098,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Govindgarh",
-      "district": "Alwar",
-      "avgPrice": 2290,
-      "recentPrice": null,
-      "minPrice": 1790,
-      "maxPrice": 3960,
-      "records": 5,
-      "topVariety": "Deshi",
-      "grade": "FAQ"
-    },
-    {
       "name": "Phalodi",
       "district": "Phalodi",
       "avgPrice": 2267,
@@ -1096,6 +1107,28 @@
       "records": 34,
       "topVariety": null,
       "grade": "Local"
+    },
+    {
+      "name": "Govindgarh",
+      "district": "Alwar",
+      "avgPrice": 2285,
+      "recentPrice": 2258,
+      "minPrice": 1790,
+      "maxPrice": 3960,
+      "records": 6,
+      "topVariety": "Deshi",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Sikri",
+      "district": "Deeg",
+      "avgPrice": 1823,
+      "recentPrice": 2240,
+      "minPrice": 1700,
+      "maxPrice": 2240,
+      "records": 6,
+      "topVariety": "Local",
+      "grade": "Non-FAQ"
     },
     {
       "name": "Rajdhanai Mandi (KukarKheda)",
@@ -1118,17 +1151,6 @@
       "records": 16,
       "topVariety": null,
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Beawar",
-      "district": "Beawar",
-      "avgPrice": 2225,
-      "recentPrice": null,
-      "minPrice": 2100,
-      "maxPrice": 2350,
-      "records": 4,
-      "topVariety": "Local",
-      "grade": "Local"
     },
     {
       "name": "Mandawari",
@@ -1230,15 +1252,15 @@
       "grade": "Local"
     },
     {
-      "name": "Suratgarh",
-      "district": "Ganganagar",
-      "avgPrice": 2149,
-      "recentPrice": null,
-      "minPrice": 2053,
-      "maxPrice": 2209,
-      "records": 21,
-      "topVariety": "Bold",
-      "grade": "FAQ"
+      "name": "Sadulpur",
+      "district": "Churu",
+      "avgPrice": 2013,
+      "recentPrice": 2150,
+      "minPrice": 1750,
+      "maxPrice": 2200,
+      "records": 20,
+      "topVariety": "Local",
+      "grade": "Local"
     },
     {
       "name": "Bassi",
@@ -1624,17 +1646,6 @@
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Sadulpur",
-      "district": "Churu",
-      "avgPrice": 2005,
-      "recentPrice": null,
-      "minPrice": 1750,
-      "maxPrice": 2200,
-      "records": 19,
-      "topVariety": "Local",
-      "grade": "Local"
     },
     {
       "name": "Jaipur (Grain)",
@@ -2042,17 +2053,6 @@
       "records": 27,
       "topVariety": "Bold",
       "grade": "Local"
-    },
-    {
-      "name": "Sikri",
-      "district": "Deeg",
-      "avgPrice": 1740,
-      "recentPrice": null,
-      "minPrice": 1700,
-      "maxPrice": 1800,
-      "records": 5,
-      "topVariety": "Local",
-      "grade": "Non-FAQ"
     }
   ],
   "banana": [
@@ -2076,6 +2076,17 @@
       "maxPrice": 3000,
       "records": 41,
       "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 1856,
+      "recentPrice": 2500,
+      "minPrice": 1100,
+      "maxPrice": 2750,
+      "records": 73,
+      "topVariety": "Medium",
       "grade": "Medium"
     },
     {
@@ -2131,17 +2142,6 @@
       "maxPrice": 2600,
       "records": 58,
       "topVariety": "Banana - Ripe",
-      "grade": "Medium"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 1847,
-      "recentPrice": null,
-      "minPrice": 1100,
-      "maxPrice": 2750,
-      "records": 72,
-      "topVariety": "Medium",
       "grade": "Medium"
     },
     {
@@ -2215,6 +2215,17 @@
   ],
   "beetroot": [
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 1577,
+      "recentPrice": 2350,
+      "minPrice": 900,
+      "maxPrice": 2550,
+      "records": 64,
+      "topVariety": "Beetroot",
+      "grade": "FAQ"
+    },
+    {
       "name": "Sriganganagar",
       "district": "Ganganagar",
       "avgPrice": 2167,
@@ -2268,17 +2279,6 @@
       "records": 94,
       "topVariety": "Beetroot",
       "grade": "Medium"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 1565,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 2550,
-      "records": 63,
-      "topVariety": "Beetroot",
-      "grade": "FAQ"
     },
     {
       "name": "Pali",
@@ -3266,17 +3266,6 @@
       "grade": "Grade A"
     },
     {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 4728,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 8000,
-      "records": 77,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Bikaner",
       "district": "Bikaner",
       "avgPrice": 4598,
@@ -3365,6 +3354,17 @@
       "grade": "Local"
     },
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 4692,
+      "recentPrice": 1900,
+      "minPrice": 1250,
+      "maxPrice": 8000,
+      "records": 78,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Chittorgarh",
       "district": "Chittorgarh",
       "avgPrice": 1500,
@@ -3398,17 +3398,6 @@
       "records": 10,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 4432,
-      "recentPrice": null,
-      "minPrice": 1150,
-      "maxPrice": 5250,
-      "records": 63,
-      "topVariety": "Bitter Gourd",
-      "grade": "FAQ"
     },
     {
       "name": "Udaipur",
@@ -3453,6 +3442,17 @@
       "records": 47,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 4405,
+      "recentPrice": 2750,
+      "minPrice": 1150,
+      "maxPrice": 5250,
+      "records": 64,
+      "topVariety": "Bitter Gourd",
+      "grade": "FAQ"
     },
     {
       "name": "Chittorgarh",
@@ -3910,17 +3910,6 @@
       "grade": "Grade A"
     },
     {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 1583,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 2500,
-      "records": 72,
-      "topVariety": "Bottle Gourd",
-      "grade": "FAQ"
-    },
-    {
       "name": "Alwar",
       "district": "Alwar",
       "avgPrice": 1550,
@@ -3930,6 +3919,17 @@
       "records": 1,
       "topVariety": null,
       "grade": "Local"
+    },
+    {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 1580,
+      "recentPrice": 1400,
+      "minPrice": 600,
+      "maxPrice": 2500,
+      "records": 73,
+      "topVariety": "Bottle Gourd",
+      "grade": "FAQ"
     },
     {
       "name": "Kota",
@@ -4057,11 +4057,11 @@
     {
       "name": "Jaipur",
       "district": "Jaipur",
-      "avgPrice": 1543,
-      "recentPrice": null,
+      "avgPrice": 1542,
+      "recentPrice": 1500,
       "minPrice": 1100,
       "maxPrice": 2500,
-      "records": 65,
+      "records": 66,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -4111,6 +4111,17 @@
     }
   ],
   "capsicum": [
+    {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 2579,
+      "recentPrice": 5250,
+      "minPrice": 1100,
+      "maxPrice": 5250,
+      "records": 63,
+      "topVariety": "Capsicum",
+      "grade": "FAQ"
+    },
     {
       "name": "Bikaner",
       "district": "Bikaner",
@@ -4165,17 +4176,6 @@
       "records": 64,
       "topVariety": null,
       "grade": "Medium"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 2536,
-      "recentPrice": null,
-      "minPrice": 1100,
-      "maxPrice": 4750,
-      "records": 62,
-      "topVariety": "Capsicum",
-      "grade": "FAQ"
     },
     {
       "name": "Udaipur",
@@ -4233,6 +4233,17 @@
       "records": 46,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 743,
+      "recentPrice": 1100,
+      "minPrice": 500,
+      "maxPrice": 1100,
+      "records": 67,
+      "topVariety": "Cabbage",
+      "grade": "FAQ"
     },
     {
       "name": "Jalore",
@@ -4310,17 +4321,6 @@
       "records": 39,
       "topVariety": "Cabbage",
       "grade": "Local"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 738,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 1100,
-      "records": 66,
-      "topVariety": "Cabbage",
-      "grade": "FAQ"
     },
     {
       "name": "Kota",
@@ -4470,6 +4470,17 @@
   ],
   "carrot": [
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 1408,
+      "recentPrice": 3200,
+      "minPrice": 850,
+      "maxPrice": 3200,
+      "records": 82,
+      "topVariety": "Carrot",
+      "grade": "FAQ"
+    },
+    {
       "name": "Sriganganagar",
       "district": "Ganganagar",
       "avgPrice": 1684,
@@ -4479,17 +4490,6 @@
       "records": 56,
       "topVariety": "Carrot",
       "grade": "Local"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 1386,
-      "recentPrice": null,
-      "minPrice": 850,
-      "maxPrice": 2750,
-      "records": 81,
-      "topVariety": "Carrot",
-      "grade": "FAQ"
     },
     {
       "name": "Jalore",
@@ -4604,6 +4604,17 @@
       "grade": "Medium"
     },
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 1165,
+      "recentPrice": 1650,
+      "minPrice": 650,
+      "maxPrice": 3750,
+      "records": 60,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Chomu",
       "district": "Jaipur Rural",
       "avgPrice": 1595,
@@ -4659,17 +4670,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 1157,
-      "recentPrice": null,
-      "minPrice": 650,
-      "maxPrice": 3750,
-      "records": 59,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Bikaner",
       "district": "Bikaner",
       "avgPrice": 1100,
@@ -4705,6 +4705,17 @@
       "grade": "Medium"
     },
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 3497,
+      "recentPrice": 6250,
+      "minPrice": 2000,
+      "maxPrice": 6250,
+      "records": 62,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Sriganganagar",
       "district": "Ganganagar",
       "avgPrice": 3488,
@@ -4714,17 +4725,6 @@
       "records": 32,
       "topVariety": "Sapota",
       "grade": "Grade A"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 3452,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 4100,
-      "records": 61,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Bikaner",
@@ -4784,17 +4784,6 @@
   ],
   "cluster-beans": [
     {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 7209,
-      "recentPrice": null,
-      "minPrice": 1650,
-      "maxPrice": 10500,
-      "records": 52,
-      "topVariety": "Cluster Beans",
-      "grade": "FAQ"
-    },
-    {
       "name": "Jodhpur",
       "district": "Jodhpur",
       "avgPrice": 5940,
@@ -4837,6 +4826,17 @@
       "records": 23,
       "topVariety": "Cluster Beans",
       "grade": "Grade A"
+    },
+    {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 7162,
+      "recentPrice": 4750,
+      "minPrice": 1650,
+      "maxPrice": 10500,
+      "records": 53,
+      "topVariety": "Cluster Beans",
+      "grade": "FAQ"
     },
     {
       "name": "Alwar",
@@ -5107,6 +5107,17 @@
   ],
   "cowpealobia-karamani": [
     {
+      "name": "Fatehpur",
+      "district": "Sikar",
+      "avgPrice": 6033,
+      "recentPrice": 9200,
+      "minPrice": 4400,
+      "maxPrice": 9200,
+      "records": 3,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Sadulpur",
       "district": "Churu",
       "avgPrice": 6375,
@@ -5195,17 +5206,6 @@
       "grade": "Local"
     },
     {
-      "name": "Fatehpur",
-      "district": "Sikar",
-      "avgPrice": 4450,
-      "recentPrice": null,
-      "minPrice": 4400,
-      "maxPrice": 4500,
-      "records": 2,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Jhunjhunu",
       "district": "Jhunjhunu",
       "avgPrice": 4264,
@@ -5254,11 +5254,11 @@
     {
       "name": "Jaipur",
       "district": "Jaipur",
-      "avgPrice": 2045,
-      "recentPrice": null,
+      "avgPrice": 2048,
+      "recentPrice": 2100,
       "minPrice": 1550,
       "maxPrice": 4250,
-      "records": 20,
+      "records": 21,
       "topVariety": "Colacasia",
       "grade": "FAQ"
     },
@@ -5300,24 +5300,13 @@
     {
       "name": "Jaipur",
       "district": "Jaipur",
-      "avgPrice": 2517,
-      "recentPrice": null,
+      "avgPrice": 2513,
+      "recentPrice": 2250,
       "minPrice": 550,
       "maxPrice": 14000,
-      "records": 71,
+      "records": 72,
       "topVariety": "Coriander",
       "grade": "FAQ"
-    },
-    {
-      "name": "Dungarpur",
-      "district": "Dungarpur",
-      "avgPrice": 2277,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 2800,
-      "records": 26,
-      "topVariety": "Coriander",
-      "grade": "Medium"
     },
     {
       "name": "Sriganganagar",
@@ -5329,6 +5318,17 @@
       "records": 57,
       "topVariety": "Coriander",
       "grade": "Local"
+    },
+    {
+      "name": "Dungarpur",
+      "district": "Dungarpur",
+      "avgPrice": 2267,
+      "recentPrice": 2000,
+      "minPrice": 2000,
+      "maxPrice": 2800,
+      "records": 27,
+      "topVariety": "Coriander",
+      "grade": "Medium"
     },
     {
       "name": "Jalore",
@@ -5354,6 +5354,28 @@
     }
   ],
   "cotton": [
+    {
+      "name": "Suratgarh",
+      "district": "Ganganagar",
+      "avgPrice": 7445,
+      "recentPrice": 9053,
+      "minPrice": 5018,
+      "maxPrice": 9080,
+      "records": 75,
+      "topVariety": "American",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Govindgarh",
+      "district": "Alwar",
+      "avgPrice": 8425,
+      "recentPrice": 8425,
+      "minPrice": 8425,
+      "maxPrice": 8425,
+      "records": 1,
+      "topVariety": "Cotton (Ginned)",
+      "grade": "FAQ"
+    },
     {
       "name": "Khajuwala",
       "district": "Bikaner",
@@ -5419,17 +5441,6 @@
       "records": 61,
       "topVariety": "American",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Suratgarh",
-      "district": "Ganganagar",
-      "avgPrice": 7401,
-      "recentPrice": null,
-      "minPrice": 5018,
-      "maxPrice": 7860,
-      "records": 73,
-      "topVariety": "American",
-      "grade": "FAQ"
     },
     {
       "name": "Sumerpur",
@@ -5764,6 +5775,17 @@
       "grade": "Local"
     },
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 1857,
+      "recentPrice": 2000,
+      "minPrice": 850,
+      "maxPrice": 3100,
+      "records": 67,
+      "topVariety": "Cucumbar",
+      "grade": "FAQ"
+    },
+    {
       "name": "Bikaner",
       "district": "Bikaner",
       "avgPrice": 1926,
@@ -5775,17 +5797,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 1855,
-      "recentPrice": null,
-      "minPrice": 850,
-      "maxPrice": 3100,
-      "records": 66,
-      "topVariety": "Cucumbar",
-      "grade": "FAQ"
-    },
-    {
       "name": "Sriganganagar",
       "district": "Ganganagar",
       "avgPrice": 1826,
@@ -5795,6 +5806,17 @@
       "records": 42,
       "topVariety": "Cucumbar",
       "grade": "Medium"
+    },
+    {
+      "name": "Sikar",
+      "district": "Sikar",
+      "avgPrice": 1449,
+      "recentPrice": 1800,
+      "minPrice": 900,
+      "maxPrice": 2100,
+      "records": 66,
+      "topVariety": "Cucumbar",
+      "grade": "FAQ"
     },
     {
       "name": "Udaipur",
@@ -5839,17 +5861,6 @@
       "records": 63,
       "topVariety": null,
       "grade": "Medium"
-    },
-    {
-      "name": "Sikar",
-      "district": "Sikar",
-      "avgPrice": 1444,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 2100,
-      "records": 65,
-      "topVariety": "Cucumbar",
-      "grade": "FAQ"
     },
     {
       "name": "Jodhpur",
@@ -5900,11 +5911,11 @@
     {
       "name": "Jodhpur",
       "district": "Jodhpur",
-      "avgPrice": 2500,
-      "recentPrice": null,
-      "minPrice": 2500,
+      "avgPrice": 2250,
+      "recentPrice": 2000,
+      "minPrice": 2000,
       "maxPrice": 2500,
-      "records": 1,
+      "records": 2,
       "topVariety": null,
       "grade": "Medium"
     }
@@ -6278,6 +6289,17 @@
       "grade": "Grade Range-1"
     },
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 7385,
+      "recentPrice": 10000,
+      "minPrice": 5000,
+      "maxPrice": 10500,
+      "records": 63,
+      "topVariety": "Average",
+      "grade": "FAQ"
+    },
+    {
       "name": "Baran",
       "district": "Baran",
       "avgPrice": 9353,
@@ -6307,6 +6329,17 @@
       "minPrice": 9250,
       "maxPrice": 9250,
       "records": 1,
+      "topVariety": "Garlic",
+      "grade": "Local"
+    },
+    {
+      "name": "Jodhpur",
+      "district": "Jodhpur",
+      "avgPrice": 6443,
+      "recentPrice": 9000,
+      "minPrice": 5000,
+      "maxPrice": 10000,
+      "records": 40,
       "topVariety": "Garlic",
       "grade": "Local"
     },
@@ -6342,17 +6375,6 @@
       "records": 33,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 7343,
-      "recentPrice": null,
-      "minPrice": 5000,
-      "maxPrice": 10500,
-      "records": 62,
-      "topVariety": "Average",
-      "grade": "FAQ"
     },
     {
       "name": "Pratapgarh",
@@ -6429,17 +6451,6 @@
       "maxPrice": 7500,
       "records": 2,
       "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Jodhpur",
-      "district": "Jodhpur",
-      "avgPrice": 6377,
-      "recentPrice": null,
-      "minPrice": 5000,
-      "maxPrice": 10000,
-      "records": 39,
-      "topVariety": "Garlic",
       "grade": "Local"
     },
     {
@@ -6566,6 +6577,17 @@
       "records": 56,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 5250,
+      "recentPrice": 5250,
+      "minPrice": 5250,
+      "maxPrice": 5250,
+      "records": 1,
+      "topVariety": "Green Ginger",
+      "grade": "FAQ"
     },
     {
       "name": "Ajmer",
@@ -8038,6 +8060,17 @@
   ],
   "pomegranate": [
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 13389,
+      "recentPrice": 16000,
+      "minPrice": 11500,
+      "maxPrice": 18500,
+      "records": 9,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Sriganganagar",
       "district": "Ganganagar",
       "avgPrice": 14500,
@@ -8049,13 +8082,13 @@
       "grade": "Medium"
     },
     {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 13063,
-      "recentPrice": null,
-      "minPrice": 11500,
-      "maxPrice": 18500,
-      "records": 8,
+      "name": "Jodhpur",
+      "district": "Jodhpur",
+      "avgPrice": 7917,
+      "recentPrice": 9000,
+      "minPrice": 7000,
+      "maxPrice": 9000,
+      "records": 6,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -8082,17 +8115,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Jodhpur",
-      "district": "Jodhpur",
-      "avgPrice": 7700,
-      "recentPrice": null,
-      "minPrice": 7000,
-      "maxPrice": 8000,
-      "records": 5,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Udaipur",
       "district": "Udaipur",
       "avgPrice": 4643,
@@ -8106,6 +8128,17 @@
   ],
   "tinda": [
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 2432,
+      "recentPrice": 3250,
+      "minPrice": 1750,
+      "maxPrice": 3500,
+      "records": 14,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Sriganganagar",
       "district": "Ganganagar",
       "avgPrice": 2459,
@@ -8115,17 +8148,6 @@
       "records": 17,
       "topVariety": "Tinda",
       "grade": "Local"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 2369,
-      "recentPrice": null,
-      "minPrice": 1750,
-      "maxPrice": 3500,
-      "records": 13,
-      "topVariety": null,
-      "grade": "FAQ"
     },
     {
       "name": "Ajmer",
@@ -8165,11 +8187,11 @@
     {
       "name": "Bassi",
       "district": "Jaipur",
-      "avgPrice": 1945,
-      "recentPrice": null,
+      "avgPrice": 1940,
+      "recentPrice": 1850,
       "minPrice": 1700,
       "maxPrice": 2200,
-      "records": 20,
+      "records": 21,
       "topVariety": null,
       "grade": "Local"
     },
@@ -8196,17 +8218,6 @@
       "grade": "Grade A"
     },
     {
-      "name": "Sangriya",
-      "district": "Hanumangarh",
-      "avgPrice": 1178,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 1500,
-      "records": 27,
-      "topVariety": "Potato",
-      "grade": "Local"
-    },
-    {
       "name": "Jalore",
       "district": "Jalore",
       "avgPrice": 1111,
@@ -8227,6 +8238,17 @@
       "records": 17,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Sangriya",
+      "district": "Hanumangarh",
+      "avgPrice": 1171,
+      "recentPrice": 1000,
+      "minPrice": 900,
+      "maxPrice": 1500,
+      "records": 28,
+      "topVariety": "Potato",
+      "grade": "Local"
     },
     {
       "name": "Bikaner",
@@ -8291,6 +8313,17 @@
       "minPrice": 850,
       "maxPrice": 1000,
       "records": 15,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Bayana",
+      "district": "Bharatpur",
+      "avgPrice": 760,
+      "recentPrice": 900,
+      "minPrice": 500,
+      "maxPrice": 1000,
+      "records": 25,
       "topVariety": null,
       "grade": "Local"
     },
@@ -8383,17 +8416,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Bayana",
-      "district": "Bharatpur",
-      "avgPrice": 754,
-      "recentPrice": null,
-      "minPrice": 500,
-      "maxPrice": 1000,
-      "records": 24,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Goluwala",
       "district": "Hanumangarh",
       "avgPrice": 740,
@@ -8408,10 +8430,10 @@
       "name": "Sikar",
       "district": "Sikar",
       "avgPrice": 714,
-      "recentPrice": null,
+      "recentPrice": 700,
       "minPrice": 450,
       "maxPrice": 750,
-      "records": 21,
+      "records": 22,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -8424,6 +8446,17 @@
       "maxPrice": 900,
       "records": 32,
       "topVariety": "Red Nanital",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 620,
+      "recentPrice": 650,
+      "minPrice": 550,
+      "maxPrice": 650,
+      "records": 23,
+      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -8451,24 +8484,13 @@
     {
       "name": "Jodhpur",
       "district": "Jodhpur",
-      "avgPrice": 629,
-      "recentPrice": null,
+      "avgPrice": 627,
+      "recentPrice": 600,
       "minPrice": 450,
       "maxPrice": 750,
-      "records": 21,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 618,
-      "recentPrice": null,
-      "minPrice": 550,
-      "maxPrice": 650,
       "records": 22,
-      "topVariety": null,
-      "grade": "FAQ"
+      "topVariety": "Potato",
+      "grade": "Medium"
     },
     {
       "name": "Bijaynagar",
@@ -8507,6 +8529,17 @@
     }
   ],
   "groundnut": [
+    {
+      "name": "Sridungargarh",
+      "district": "Bikaner",
+      "avgPrice": 7902,
+      "recentPrice": 7902,
+      "minPrice": 7902,
+      "maxPrice": 7902,
+      "records": 1,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
     {
       "name": "Nimbahera",
       "district": "Chittorgarh",
@@ -8556,11 +8589,11 @@
     {
       "name": "Jaipur",
       "district": "Jaipur",
-      "avgPrice": 7071,
-      "recentPrice": null,
-      "minPrice": 6000,
+      "avgPrice": 6875,
+      "recentPrice": 5500,
+      "minPrice": 5500,
       "maxPrice": 9000,
-      "records": 7,
+      "records": 8,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -8692,6 +8725,50 @@
   ],
   "onion": [
     {
+      "name": "Bassi",
+      "district": "Jaipur",
+      "avgPrice": 2188,
+      "recentPrice": 5200,
+      "minPrice": 1600,
+      "maxPrice": 5200,
+      "records": 12,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Jaisalmer",
+      "district": "Jaisalmer",
+      "avgPrice": 2067,
+      "recentPrice": 3500,
+      "minPrice": 1300,
+      "maxPrice": 3500,
+      "records": 3,
+      "topVariety": "Onion",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 1320,
+      "recentPrice": 3250,
+      "minPrice": 1050,
+      "maxPrice": 3250,
+      "records": 10,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Sangriya",
+      "district": "Hanumangarh",
+      "avgPrice": 1667,
+      "recentPrice": 3100,
+      "minPrice": 1000,
+      "maxPrice": 3100,
+      "records": 12,
+      "topVariety": "Onion",
+      "grade": "Local"
+    },
+    {
       "name": "Bhilwara",
       "district": "Bhilwara",
       "avgPrice": 3000,
@@ -8700,6 +8777,39 @@
       "maxPrice": 3000,
       "records": 2,
       "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Bayana",
+      "district": "Bharatpur",
+      "avgPrice": 1860,
+      "recentPrice": 2800,
+      "minPrice": 1200,
+      "maxPrice": 2800,
+      "records": 5,
+      "topVariety": "Onion",
+      "grade": "Local"
+    },
+    {
+      "name": "Jodhpur",
+      "district": "Jodhpur",
+      "avgPrice": 1263,
+      "recentPrice": 2750,
+      "minPrice": 600,
+      "maxPrice": 2750,
+      "records": 4,
+      "topVariety": "Red",
+      "grade": "Medium"
+    },
+    {
+      "name": "Sikar",
+      "district": "Sikar",
+      "avgPrice": 936,
+      "recentPrice": 2550,
+      "minPrice": 550,
+      "maxPrice": 2550,
+      "records": 7,
+      "topVariety": "Onion",
       "grade": "FAQ"
     },
     {
@@ -8712,17 +8822,6 @@
       "records": 1,
       "topVariety": null,
       "grade": "Medium"
-    },
-    {
-      "name": "Bassi",
-      "district": "Jaipur",
-      "avgPrice": 1914,
-      "recentPrice": null,
-      "minPrice": 1600,
-      "maxPrice": 2400,
-      "records": 11,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Dablirathan",
@@ -8756,39 +8855,6 @@
       "records": 8,
       "topVariety": "Onion",
       "grade": "FAQ"
-    },
-    {
-      "name": "Bayana",
-      "district": "Bharatpur",
-      "avgPrice": 1625,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 2000,
-      "records": 4,
-      "topVariety": "Onion",
-      "grade": "Local"
-    },
-    {
-      "name": "Sangriya",
-      "district": "Hanumangarh",
-      "avgPrice": 1536,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2400,
-      "records": 11,
-      "topVariety": "Onion",
-      "grade": "Local"
-    },
-    {
-      "name": "Jaisalmer",
-      "district": "Jaisalmer",
-      "avgPrice": 1350,
-      "recentPrice": null,
-      "minPrice": 1300,
-      "maxPrice": 1400,
-      "records": 2,
-      "topVariety": "Onion",
-      "grade": "Grade A"
     },
     {
       "name": "Goluwala",
@@ -8857,17 +8923,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 1106,
-      "recentPrice": null,
-      "minPrice": 1050,
-      "maxPrice": 1200,
-      "records": 9,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Jalore",
       "district": "Jalore",
       "avgPrice": 1000,
@@ -8912,17 +8967,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Jodhpur",
-      "district": "Jodhpur",
-      "avgPrice": 767,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 900,
-      "records": 3,
-      "topVariety": "Red",
-      "grade": "Medium"
-    },
-    {
       "name": "Baran",
       "district": "Baran",
       "avgPrice": 700,
@@ -8932,17 +8976,6 @@
       "records": 3,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Sikar",
-      "district": "Sikar",
-      "avgPrice": 667,
-      "recentPrice": null,
-      "minPrice": 550,
-      "maxPrice": 900,
-      "records": 6,
-      "topVariety": "Onion",
-      "grade": "FAQ"
     },
     {
       "name": "Bijaynagar",
@@ -8957,6 +8990,17 @@
     }
   ],
   "mustard": [
+    {
+      "name": "Sikri",
+      "district": "Deeg",
+      "avgPrice": 7075,
+      "recentPrice": 8200,
+      "minPrice": 5830,
+      "maxPrice": 8200,
+      "records": 26,
+      "topVariety": "Mustard",
+      "grade": "Non-FAQ"
+    },
     {
       "name": "Chaksu",
       "district": "Jaipur",
@@ -9904,17 +9948,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Sikri",
-      "district": "Deeg",
-      "avgPrice": 7030,
-      "recentPrice": null,
-      "minPrice": 5830,
-      "maxPrice": 7480,
-      "records": 25,
-      "topVariety": "Mustard",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Begu",
       "district": "Chittorgarh",
       "avgPrice": 7015,
@@ -10401,6 +10434,17 @@
   ],
   "guar-seedcluster-beans-seed": [
     {
+      "name": "Mohangarh",
+      "district": "Jaisalmer",
+      "avgPrice": 5375,
+      "recentPrice": 6300,
+      "minPrice": 4600,
+      "maxPrice": 6300,
+      "records": 4,
+      "topVariety": null,
+      "grade": "Grade Range-1"
+    },
+    {
       "name": "Sardar Shahar",
       "district": "Churu",
       "avgPrice": 5926,
@@ -10753,17 +10797,6 @@
       "grade": "Local"
     },
     {
-      "name": "Mohangarh",
-      "district": "Jaisalmer",
-      "avgPrice": 5067,
-      "recentPrice": null,
-      "minPrice": 4600,
-      "maxPrice": 6000,
-      "records": 3,
-      "topVariety": null,
-      "grade": "Grade Range-1"
-    },
-    {
       "name": "Malpura",
       "district": "Tonk",
       "avgPrice": 5010,
@@ -10810,6 +10843,17 @@
   ],
   "green-grammoongwhole": [
     {
+      "name": "Pugal Road Grain",
+      "district": "Bikaner",
+      "avgPrice": 8676,
+      "recentPrice": 8676,
+      "minPrice": 8676,
+      "maxPrice": 8676,
+      "records": 2,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Boli",
       "district": "Kota",
       "avgPrice": 8537,
@@ -10819,6 +10863,17 @@
       "records": 1,
       "topVariety": "D. Horse Indoor",
       "grade": "Grade Range-1"
+    },
+    {
+      "name": "Suratgarh",
+      "district": "Ganganagar",
+      "avgPrice": 8315,
+      "recentPrice": 8315,
+      "minPrice": 8315,
+      "maxPrice": 8315,
+      "records": 1,
+      "topVariety": null,
+      "grade": "FAQ"
     },
     {
       "name": "Gharsana",
@@ -10841,6 +10896,17 @@
       "records": 1,
       "topVariety": "Local",
       "grade": "Grade Range-1"
+    },
+    {
+      "name": "Sadulpur",
+      "district": "Churu",
+      "avgPrice": 5250,
+      "recentPrice": 7150,
+      "minPrice": 4500,
+      "maxPrice": 7150,
+      "records": 4,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Nahargarh",
@@ -10973,20 +11039,20 @@
       "records": 1,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Sadulpur",
-      "district": "Churu",
-      "avgPrice": 4617,
-      "recentPrice": null,
-      "minPrice": 4500,
-      "maxPrice": 4700,
-      "records": 3,
-      "topVariety": null,
-      "grade": "Local"
     }
   ],
   "guar": [
+    {
+      "name": "Suratgarh",
+      "district": "Ganganagar",
+      "avgPrice": 5738,
+      "recentPrice": 8075,
+      "minPrice": 5178,
+      "maxPrice": 8075,
+      "records": 7,
+      "topVariety": "Gwar",
+      "grade": "FAQ"
+    },
     {
       "name": "Bikaner",
       "district": "Bikaner",
@@ -11010,15 +11076,15 @@
       "grade": "FAQ"
     },
     {
-      "name": "Suratgarh",
-      "district": "Ganganagar",
-      "avgPrice": 5349,
-      "recentPrice": null,
-      "minPrice": 5178,
-      "maxPrice": 5498,
-      "records": 6,
+      "name": "Sadulpur",
+      "district": "Churu",
+      "avgPrice": 5200,
+      "recentPrice": 5200,
+      "minPrice": 5200,
+      "maxPrice": 5200,
+      "records": 1,
       "topVariety": "Gwar",
-      "grade": "FAQ"
+      "grade": "Local"
     },
     {
       "name": "Padampur",
@@ -11047,11 +11113,11 @@
     {
       "name": "Bassi",
       "district": "Jaipur",
-      "avgPrice": 3782,
-      "recentPrice": null,
+      "avgPrice": 3809,
+      "recentPrice": 4400,
       "minPrice": 1300,
       "maxPrice": 5800,
-      "records": 22,
+      "records": 23,
       "topVariety": "Deshi",
       "grade": "Local"
     },
@@ -11166,17 +11232,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 2311,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 3150,
-      "records": 23,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Bhinmal",
       "district": "Jalore",
       "avgPrice": 2232,
@@ -11210,6 +11265,28 @@
       "grade": "Medium"
     },
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 2302,
+      "recentPrice": 2100,
+      "minPrice": 800,
+      "maxPrice": 3150,
+      "records": 24,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Bayana",
+      "district": "Bharatpur",
+      "avgPrice": 1837,
+      "recentPrice": 2000,
+      "minPrice": 1200,
+      "maxPrice": 2500,
+      "records": 27,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Bikaner",
       "district": "Bikaner",
       "avgPrice": 1967,
@@ -11228,17 +11305,6 @@
       "minPrice": 1500,
       "maxPrice": 2500,
       "records": 15,
-      "topVariety": "Deshi",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Sikar",
-      "district": "Sikar",
-      "avgPrice": 1928,
-      "recentPrice": null,
-      "minPrice": 750,
-      "maxPrice": 2750,
-      "records": 18,
       "topVariety": "Deshi",
       "grade": "FAQ"
     },
@@ -11262,17 +11328,6 @@
       "maxPrice": 2000,
       "records": 14,
       "topVariety": "Deshi",
-      "grade": "Local"
-    },
-    {
-      "name": "Bayana",
-      "district": "Bharatpur",
-      "avgPrice": 1831,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 2500,
-      "records": 26,
-      "topVariety": null,
       "grade": "Local"
     },
     {
@@ -11353,6 +11408,17 @@
       "grade": "Local"
     },
     {
+      "name": "Sikar",
+      "district": "Sikar",
+      "avgPrice": 1884,
+      "recentPrice": 1100,
+      "minPrice": 750,
+      "maxPrice": 2750,
+      "records": 19,
+      "topVariety": "Deshi",
+      "grade": "FAQ"
+    },
+    {
       "name": "Bijaynagar",
       "district": "Beawar",
       "avgPrice": 1000,
@@ -11377,6 +11443,17 @@
   ],
   "maize": [
     {
+      "name": "Beawar",
+      "district": "Beawar",
+      "avgPrice": 3000,
+      "recentPrice": 3700,
+      "minPrice": 2300,
+      "maxPrice": 3700,
+      "records": 2,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
       "name": "Bijolia",
       "district": "Bhilwara",
       "avgPrice": 3410,
@@ -11388,14 +11465,14 @@
       "grade": "Local"
     },
     {
-      "name": "Beawar",
-      "district": "Beawar",
-      "avgPrice": 2300,
-      "recentPrice": null,
-      "minPrice": 2300,
-      "maxPrice": 2300,
-      "records": 1,
-      "topVariety": "Local",
+      "name": "Begu",
+      "district": "Chittorgarh",
+      "avgPrice": 1987,
+      "recentPrice": 2450,
+      "minPrice": 1700,
+      "maxPrice": 2450,
+      "records": 6,
+      "topVariety": null,
       "grade": "Local"
     },
     {
@@ -11430,17 +11507,6 @@
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Begu",
-      "district": "Chittorgarh",
-      "avgPrice": 1894,
-      "recentPrice": null,
-      "minPrice": 1700,
-      "maxPrice": 2250,
-      "records": 5,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Dooni",
@@ -11722,6 +11788,17 @@
       "grade": "Local"
     },
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 844,
+      "recentPrice": 1100,
+      "minPrice": 300,
+      "maxPrice": 1250,
+      "records": 16,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Kota",
       "district": "Kota",
       "avgPrice": 1092,
@@ -11753,17 +11830,6 @@
       "records": 26,
       "topVariety": null,
       "grade": "Medium"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 827,
-      "recentPrice": null,
-      "minPrice": 300,
-      "maxPrice": 1250,
-      "records": 15,
-      "topVariety": null,
-      "grade": "FAQ"
     },
     {
       "name": "Jodhpur",
@@ -11847,6 +11913,17 @@
   ],
   "guava": [
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 3233,
+      "recentPrice": 7250,
+      "minPrice": 2250,
+      "maxPrice": 7250,
+      "records": 23,
+      "topVariety": "Guava",
+      "grade": "Medium"
+    },
+    {
       "name": "Sriganganagar",
       "district": "Ganganagar",
       "avgPrice": 6833,
@@ -11858,6 +11935,17 @@
       "grade": "Grade A"
     },
     {
+      "name": "Jodhpur",
+      "district": "Jodhpur",
+      "avgPrice": 5000,
+      "recentPrice": 5000,
+      "minPrice": 5000,
+      "maxPrice": 5000,
+      "records": 1,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Ajmer",
       "district": "Ajmer",
       "avgPrice": 4188,
@@ -11866,17 +11954,6 @@
       "maxPrice": 5000,
       "records": 8,
       "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 3050,
-      "recentPrice": null,
-      "minPrice": 2250,
-      "maxPrice": 4750,
-      "records": 22,
-      "topVariety": "Guava",
       "grade": "Medium"
     },
     {
@@ -11937,6 +12014,17 @@
       "grade": "Medium"
     },
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 3970,
+      "recentPrice": 4500,
+      "minPrice": 3100,
+      "maxPrice": 4750,
+      "records": 22,
+      "topVariety": "Pine Apple",
+      "grade": "Medium"
+    },
+    {
       "name": "Kota",
       "district": "Kota",
       "avgPrice": 4125,
@@ -11945,17 +12033,6 @@
       "maxPrice": 4500,
       "records": 8,
       "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 3945,
-      "recentPrice": null,
-      "minPrice": 3100,
-      "maxPrice": 4750,
-      "records": 21,
-      "topVariety": "Pine Apple",
       "grade": "Medium"
     },
     {
@@ -11972,11 +12049,11 @@
     {
       "name": "Jodhpur",
       "district": "Jodhpur",
-      "avgPrice": 2150,
-      "recentPrice": null,
+      "avgPrice": 2143,
+      "recentPrice": 2000,
       "minPrice": 1700,
       "maxPrice": 2500,
-      "records": 19,
+      "records": 20,
       "topVariety": "Pine Apple",
       "grade": "Medium"
     }
@@ -12438,17 +12515,6 @@
       "grade": "Grade C"
     },
     {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 3169,
-      "recentPrice": null,
-      "minPrice": 2500,
-      "maxPrice": 5000,
-      "records": 18,
-      "topVariety": "Mousambi",
-      "grade": "Medium"
-    },
-    {
       "name": "Udaipur",
       "district": "Udaipur",
       "avgPrice": 3120,
@@ -12460,13 +12526,24 @@
       "grade": "Medium"
     },
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 3121,
+      "recentPrice": 2250,
+      "minPrice": 2250,
+      "maxPrice": 5000,
+      "records": 19,
+      "topVariety": "Mousambi",
+      "grade": "Medium"
+    },
+    {
       "name": "Jodhpur",
       "district": "Jodhpur",
-      "avgPrice": 2412,
-      "recentPrice": null,
-      "minPrice": 2000,
+      "avgPrice": 2361,
+      "recentPrice": 1500,
+      "minPrice": 1500,
       "maxPrice": 3500,
-      "records": 17,
+      "records": 18,
       "topVariety": "Mousambi",
       "grade": "Medium"
     }
@@ -12508,11 +12585,11 @@
     {
       "name": "Jaipur",
       "district": "Jaipur",
-      "avgPrice": 2485,
-      "recentPrice": null,
+      "avgPrice": 2506,
+      "recentPrice": 3000,
       "minPrice": 1850,
       "maxPrice": 3250,
-      "records": 23,
+      "records": 24,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -12552,11 +12629,11 @@
     {
       "name": "Jodhpur",
       "district": "Jodhpur",
-      "avgPrice": 1519,
-      "recentPrice": null,
+      "avgPrice": 1518,
+      "recentPrice": 1500,
       "minPrice": 1300,
       "maxPrice": 1700,
-      "records": 21,
+      "records": 22,
       "topVariety": "Papaya",
       "grade": "Medium"
     }
@@ -12653,6 +12730,17 @@
   ],
   "mintpudina": [
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 1781,
+      "recentPrice": 3000,
+      "minPrice": 800,
+      "maxPrice": 3000,
+      "records": 8,
+      "topVariety": "Mint(Pudina)",
+      "grade": "FAQ"
+    },
+    {
       "name": "Bikaner",
       "district": "Bikaner",
       "avgPrice": 3000,
@@ -12673,17 +12761,6 @@
       "records": 3,
       "topVariety": null,
       "grade": "Medium"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 1607,
-      "recentPrice": null,
-      "minPrice": 800,
-      "maxPrice": 3000,
-      "records": 7,
-      "topVariety": "Mint(Pudina)",
-      "grade": "FAQ"
     },
     {
       "name": "Udaipur",
@@ -12824,11 +12901,11 @@
     {
       "name": "Jaipur",
       "district": "Jaipur",
-      "avgPrice": 9544,
-      "recentPrice": null,
+      "avgPrice": 9440,
+      "recentPrice": 8500,
       "minPrice": 6250,
       "maxPrice": 15500,
-      "records": 9,
+      "records": 10,
       "topVariety": "Lemon",
       "grade": "FAQ"
     },
@@ -12971,16 +13048,27 @@
     {
       "name": "Jaipur",
       "district": "Jaipur",
-      "avgPrice": 1500,
-      "recentPrice": null,
+      "avgPrice": 1515,
+      "recentPrice": 1750,
       "minPrice": 1100,
       "maxPrice": 2100,
-      "records": 16,
+      "records": 17,
       "topVariety": "Ridgeguard(Tori)",
       "grade": "FAQ"
     }
   ],
   "spinach": [
+    {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 1055,
+      "recentPrice": 1750,
+      "minPrice": 750,
+      "maxPrice": 1750,
+      "records": 10,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
     {
       "name": "Sriganganagar",
       "district": "Ganganagar",
@@ -13013,17 +13101,6 @@
       "records": 1,
       "topVariety": "Organic",
       "grade": "Grade A"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 978,
-      "recentPrice": null,
-      "minPrice": 750,
-      "maxPrice": 1150,
-      "records": 9,
-      "topVariety": null,
-      "grade": "FAQ"
     }
   ],
   "methi-seeds": [
@@ -13239,6 +13316,17 @@
   ],
   "green-chilli": [
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 2463,
+      "recentPrice": 3750,
+      "minPrice": 1250,
+      "maxPrice": 4250,
+      "records": 8,
+      "topVariety": "Green Chilly",
+      "grade": "FAQ"
+    },
+    {
       "name": "Sriganganagar",
       "district": "Ganganagar",
       "avgPrice": 3386,
@@ -13270,17 +13358,6 @@
       "records": 7,
       "topVariety": null,
       "grade": "Medium"
-    },
-    {
-      "name": "Jaipur",
-      "district": "Jaipur",
-      "avgPrice": 2279,
-      "recentPrice": null,
-      "minPrice": 1250,
-      "maxPrice": 4250,
-      "records": 7,
-      "topVariety": "Green Chilly",
-      "grade": "FAQ"
     },
     {
       "name": "Jodhpur",
@@ -13434,6 +13511,17 @@
   ],
   "raddish": [
     {
+      "name": "Jaipur",
+      "district": "Jaipur",
+      "avgPrice": 1750,
+      "recentPrice": 1750,
+      "minPrice": 1750,
+      "maxPrice": 1750,
+      "records": 1,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Sriganganagar",
       "district": "Ganganagar",
       "avgPrice": 1667,
@@ -13473,12 +13561,23 @@
     {
       "name": "Jaipur",
       "district": "Jaipur",
-      "avgPrice": 4567,
-      "recentPrice": null,
+      "avgPrice": 4557,
+      "recentPrice": 4500,
       "minPrice": 4000,
       "maxPrice": 5000,
-      "records": 6,
+      "records": 7,
       "topVariety": "Tender Coconut",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jodhpur",
+      "district": "Jodhpur",
+      "avgPrice": 3000,
+      "recentPrice": 3000,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "records": 1,
+      "topVariety": null,
       "grade": "Medium"
     },
     {
@@ -14269,11 +14368,11 @@
     {
       "name": "Jaipur",
       "district": "Jaipur",
-      "avgPrice": 2844,
-      "recentPrice": null,
+      "avgPrice": 2853,
+      "recentPrice": 3000,
       "minPrice": 1900,
       "maxPrice": 3250,
-      "records": 17,
+      "records": 18,
       "topVariety": "Pointed gourd (Parval)",
       "grade": "FAQ"
     },

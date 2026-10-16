@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 2133,
       "volume": 12
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4175,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -177,9 +183,16 @@
       "volume": 1,
       "minPrice": 1200,
       "maxPrice": 1400
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4175,
+      "volume": 4,
+      "minPrice": 2000,
+      "maxPrice": 6200
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bangalore",
@@ -194,16 +207,16 @@
       "records": 15
     },
     {
+      "district": "Udupi",
+      "nameHi": "Udupi",
+      "avgPrice": 1960,
+      "records": 5
+    },
+    {
       "district": "Shimoga",
       "nameHi": "Shimoga",
       "avgPrice": 1730,
       "records": 5
-    },
-    {
-      "district": "Udupi",
-      "nameHi": "Udupi",
-      "avgPrice": 1700,
-      "records": 4
     },
     {
       "district": "Bengaluru",
@@ -215,6 +228,12 @@
       "district": "Davangere",
       "nameHi": "Davangere",
       "avgPrice": 1333,
+      "records": 3
+    },
+    {
+      "district": "Bengaluru Rural",
+      "nameHi": "Bengaluru Rural",
+      "avgPrice": 2617,
       "records": 3
     },
     {
@@ -248,9 +267,9 @@
       "records": 2
     },
     {
-      "district": "Bengaluru Rural",
-      "nameHi": "Bengaluru Rural",
-      "avgPrice": 1725,
+      "district": "Shivamogga",
+      "nameHi": "Shivamogga",
+      "avgPrice": 3750,
       "records": 2
     },
     {
@@ -263,12 +282,6 @@
       "district": "Raichur",
       "nameHi": "Raichur",
       "avgPrice": 755,
-      "records": 1
-    },
-    {
-      "district": "Tumkur",
-      "nameHi": "Tumkur",
-      "avgPrice": 1200,
       "records": 1
     }
   ]

@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 2136,
       "volume": 25
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3790,
+      "volume": 9
     }
   ],
   "dailyHistory": [
@@ -254,14 +260,27 @@
       "volume": 1,
       "minPrice": 2000,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3790,
+      "volume": 9,
+      "minPrice": 505,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Navsari",
       "nameHi": "Navsari",
-      "avgPrice": 1411,
+      "avgPrice": 1520,
+      "records": 23
+    },
+    {
+      "district": "Rajkot",
+      "nameHi": "Rajkot",
+      "avgPrice": 1150,
       "records": 22
     },
     {
@@ -271,10 +290,10 @@
       "records": 20
     },
     {
-      "district": "Rajkot",
-      "nameHi": "Rajkot",
-      "avgPrice": 992,
-      "records": 20
+      "district": "Anand",
+      "nameHi": "Anand",
+      "avgPrice": 1737,
+      "records": 19
     },
     {
       "district": "Ahmedabad",
@@ -283,16 +302,10 @@
       "records": 19
     },
     {
-      "district": "Anand",
-      "nameHi": "Anand",
-      "avgPrice": 1476,
-      "records": 17
-    },
-    {
       "district": "Surat",
       "nameHi": "Surat",
-      "avgPrice": 1203,
-      "records": 14
+      "avgPrice": 1346,
+      "records": 15
     },
     {
       "district": "Mehsana",
@@ -309,14 +322,14 @@
     {
       "district": "Vadodara(Baroda)",
       "nameHi": "Vadodara(Baroda)",
-      "avgPrice": 1659,
-      "records": 11
+      "avgPrice": 1938,
+      "records": 12
     },
     {
       "district": "Dahod",
       "nameHi": "Dahod",
-      "avgPrice": 1336,
-      "records": 11
+      "avgPrice": 1558,
+      "records": 12
     },
     {
       "district": "Bharuch",

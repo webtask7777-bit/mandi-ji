@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 2573,
       "volume": 10
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3906,
+      "volume": 8
     }
   ],
   "dailyHistory": [
@@ -192,9 +198,16 @@
       "volume": 4,
       "minPrice": 1600,
       "maxPrice": 4500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3906,
+      "volume": 8,
+      "minPrice": 2000,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bangalore",
@@ -215,16 +228,22 @@
       "records": 11
     },
     {
+      "district": "Davangere",
+      "nameHi": "Davangere",
+      "avgPrice": 3421,
+      "records": 7
+    },
+    {
       "district": "Shimoga",
       "nameHi": "Shimoga",
       "avgPrice": 3600,
       "records": 7
     },
     {
-      "district": "Davangere",
-      "nameHi": "Davangere",
-      "avgPrice": 3350,
-      "records": 6
+      "district": "Bengaluru South",
+      "nameHi": "Bengaluru South",
+      "avgPrice": 4525,
+      "records": 4
     },
     {
       "district": "Kalburgi",
@@ -235,19 +254,25 @@
     {
       "district": "Chamarajanagar",
       "nameHi": "Chamarajanagar",
-      "avgPrice": 2200,
-      "records": 2
+      "avgPrice": 2633,
+      "records": 3
     },
     {
-      "district": "Bengaluru South",
-      "nameHi": "Bengaluru South",
-      "avgPrice": 4150,
+      "district": "Bengaluru Rural",
+      "nameHi": "Bengaluru Rural",
+      "avgPrice": 3600,
       "records": 2
     },
     {
       "district": "Chikkamagaluru",
       "nameHi": "Chikkamagaluru",
       "avgPrice": 1765,
+      "records": 2
+    },
+    {
+      "district": "Chikkaballapur",
+      "nameHi": "Chikkaballapur",
+      "avgPrice": 3750,
       "records": 2
     },
     {
@@ -272,18 +297,6 @@
       "district": "Mysore",
       "nameHi": "Mysore",
       "avgPrice": 2200,
-      "records": 1
-    },
-    {
-      "district": "Hassan",
-      "nameHi": "Hassan",
-      "avgPrice": 2500,
-      "records": 1
-    },
-    {
-      "district": "Bellary",
-      "nameHi": "Bellary",
-      "avgPrice": 3000,
       "records": 1
     }
   ]

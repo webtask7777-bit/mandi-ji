@@ -34,6 +34,13 @@
       "market": 2396,
       "volume": 24,
       "msp": 2300
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2563,
+      "volume": 101,
+      "msp": 2300
     }
   ],
   "dailyHistory": [
@@ -246,9 +253,16 @@
       "volume": 14,
       "minPrice": 1850,
       "maxPrice": 3851
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2563,
+      "volume": 101,
+      "minPrice": 1750,
+      "maxPrice": 4100
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Raebarelli",
@@ -257,16 +271,40 @@
       "records": 26
     },
     {
-      "district": "Prayagraj",
-      "nameHi": "Prayagraj",
-      "avgPrice": 2273,
-      "records": 18
+      "district": "Barabanki",
+      "nameHi": "Barabanki",
+      "avgPrice": 2194,
+      "records": 23
     },
     {
       "district": "Sitapur",
       "nameHi": "Sitapur",
-      "avgPrice": 1848,
+      "avgPrice": 1894,
+      "records": 22
+    },
+    {
+      "district": "Prayagraj",
+      "nameHi": "Prayagraj",
+      "avgPrice": 2270,
+      "records": 20
+    },
+    {
+      "district": "Shahjahanpur",
+      "nameHi": "Shahjahanpur",
+      "avgPrice": 2187,
+      "records": 19
+    },
+    {
+      "district": "Badaun",
+      "nameHi": "Badaun",
+      "avgPrice": 2786,
       "records": 18
+    },
+    {
+      "district": "Hardoi",
+      "nameHi": "Hardoi",
+      "avgPrice": 2222,
+      "records": 17
     },
     {
       "district": "Balrampur",
@@ -275,70 +313,46 @@
       "records": 15
     },
     {
-      "district": "Barabanki",
-      "nameHi": "Barabanki",
-      "avgPrice": 2118,
-      "records": 15
-    },
-    {
-      "district": "Shahjahanpur",
-      "nameHi": "Shahjahanpur",
-      "avgPrice": 2300,
-      "records": 14
-    },
-    {
-      "district": "Badaun",
-      "nameHi": "Badaun",
-      "avgPrice": 2720,
-      "records": 12
-    },
-    {
       "district": "Fatehpur",
       "nameHi": "Fatehpur",
-      "avgPrice": 2215,
-      "records": 11
-    },
-    {
-      "district": "Hardoi",
-      "nameHi": "Hardoi",
-      "avgPrice": 2371,
-      "records": 11
-    },
-    {
-      "district": "Unnao",
-      "nameHi": "Unnao",
-      "avgPrice": 2503,
-      "records": 10
+      "avgPrice": 2235,
+      "records": 15
     },
     {
       "district": "Kanpur",
       "nameHi": "Kanpur",
-      "avgPrice": 2052,
+      "avgPrice": 2089,
+      "records": 12
+    },
+    {
+      "district": "Unnao",
+      "nameHi": "Unnao",
+      "avgPrice": 2614,
+      "records": 11
+    },
+    {
+      "district": "Bulandshahar",
+      "nameHi": "Bulandshahar",
+      "avgPrice": 3457,
+      "records": 10
+    },
+    {
+      "district": "Bareilly",
+      "nameHi": "Bareilly",
+      "avgPrice": 2840,
       "records": 10
     },
     {
       "district": "Maharajganj",
       "nameHi": "Maharajganj",
-      "avgPrice": 2200,
-      "records": 8
+      "avgPrice": 2210,
+      "records": 10
     },
     {
-      "district": "Jaunpur",
-      "nameHi": "Jaunpur",
-      "avgPrice": 2125,
+      "district": "Lakhimpur",
+      "nameHi": "Lakhimpur",
+      "avgPrice": 1949,
       "records": 8
-    },
-    {
-      "district": "Gonda",
-      "nameHi": "Gonda",
-      "avgPrice": 2179,
-      "records": 8
-    },
-    {
-      "district": "Bulandshahar",
-      "nameHi": "Bulandshahar",
-      "avgPrice": 3481,
-      "records": 7
     }
   ]
 }

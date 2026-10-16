@@ -17,6 +17,12 @@
       "date": "2026-07",
       "market": 3500,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3350,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -33,14 +39,27 @@
       "volume": 1,
       "minPrice": 2500,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3350,
+      "volume": 2,
+      "minPrice": 3000,
+      "maxPrice": 3800
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Shimla",
       "nameHi": "Shimla",
       "avgPrice": 2600,
+      "records": 2
+    },
+    {
+      "district": "Kangra",
+      "nameHi": "Kangra",
+      "avgPrice": 3350,
       "records": 2
     }
   ]

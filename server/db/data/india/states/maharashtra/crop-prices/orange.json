@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 7625,
       "volume": 4
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5183,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -142,15 +148,22 @@
       "volume": 2,
       "minPrice": 4000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 5183,
+      "volume": 3,
+      "minPrice": 1200,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 6692,
-      "records": 13
+      "avgPrice": 6667,
+      "records": 15
     },
     {
       "district": "Mumbai",
@@ -174,6 +187,12 @@
       "district": "Sangli",
       "nameHi": "Sangli",
       "avgPrice": 8500,
+      "records": 1
+    },
+    {
+      "district": "Nagpur",
+      "nameHi": "Nagpur",
+      "avgPrice": 2550,
       "records": 1
     }
   ]

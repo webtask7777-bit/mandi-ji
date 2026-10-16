@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 1910,
       "volume": 10
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3513,
+      "volume": 8
     }
   ],
   "dailyHistory": [
@@ -233,39 +239,52 @@
       "volume": 3,
       "minPrice": 900,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3513,
+      "volume": 8,
+      "minPrice": 1500,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Haridwar",
       "nameHi": "Haridwar",
-      "avgPrice": 2225,
-      "records": 36
+      "avgPrice": 2318,
+      "records": 38
     },
     {
       "district": "Udhamsinghnagar",
       "nameHi": "Udhamsinghnagar",
-      "avgPrice": 1286,
-      "records": 21
+      "avgPrice": 1409,
+      "records": 22
     },
     {
       "district": "Nanital",
       "nameHi": "Nanital",
-      "avgPrice": 1265,
-      "records": 17
+      "avgPrice": 1495,
+      "records": 19
     },
     {
       "district": "Dehradoon",
       "nameHi": "Dehradoon",
-      "avgPrice": 1481,
-      "records": 16
+      "avgPrice": 1661,
+      "records": 18
     },
     {
       "district": "Garhwal (Pauri)",
       "nameHi": "Garhwal (Pauri)",
       "avgPrice": 1530,
       "records": 10
+    },
+    {
+      "district": "Chamoli (Gopeshwar)",
+      "nameHi": "Chamoli (Gopeshwar)",
+      "avgPrice": 3000,
+      "records": 1
     }
   ]
 }

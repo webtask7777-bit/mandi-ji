@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 2200,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2730,
+      "volume": 5
     }
   ],
   "dailyHistory": [
@@ -798,9 +804,16 @@
       "volume": 1,
       "minPrice": 1000,
       "maxPrice": 1500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2730,
+      "volume": 5,
+      "minPrice": 1000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bangalore",
@@ -815,16 +828,16 @@
       "records": 164
     },
     {
+      "district": "Davangere",
+      "nameHi": "Davangere",
+      "avgPrice": 1771,
+      "records": 54
+    },
+    {
       "district": "Chikmagalur",
       "nameHi": "Chikmagalur",
       "avgPrice": 1710,
       "records": 54
-    },
-    {
-      "district": "Davangere",
-      "nameHi": "Davangere",
-      "avgPrice": 1716,
-      "records": 53
     },
     {
       "district": "Shimoga",
@@ -865,7 +878,25 @@
     {
       "district": "Bengaluru Rural",
       "nameHi": "Bengaluru Rural",
-      "avgPrice": 1200,
+      "avgPrice": 1450,
+      "records": 2
+    },
+    {
+      "district": "Shivamogga",
+      "nameHi": "Shivamogga",
+      "avgPrice": 1750,
+      "records": 1
+    },
+    {
+      "district": "Bengaluru South",
+      "nameHi": "Bengaluru South",
+      "avgPrice": 4000,
+      "records": 1
+    },
+    {
+      "district": "Chikkaballapur",
+      "nameHi": "Chikkaballapur",
+      "avgPrice": 1500,
       "records": 1
     }
   ]

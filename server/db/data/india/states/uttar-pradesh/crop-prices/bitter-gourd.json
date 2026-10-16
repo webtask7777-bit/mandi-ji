@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 1450,
       "volume": 4
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1803,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -826,20 +832,27 @@
       "volume": 2,
       "minPrice": 400,
       "maxPrice": 1300
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1803,
+      "volume": 3,
+      "minPrice": 1400,
+      "maxPrice": 2460
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Amroha",
+      "nameHi": "Amroha",
+      "avgPrice": 1591,
+      "records": 83
+    },
     {
       "district": "Barabanki",
       "nameHi": "Barabanki",
       "avgPrice": 2604,
-      "records": 82
-    },
-    {
-      "district": "Amroha",
-      "nameHi": "Amroha",
-      "avgPrice": 1592,
       "records": 82
     },
     {
@@ -885,6 +898,12 @@
       "records": 21
     },
     {
+      "district": "Raebarelli",
+      "nameHi": "Raebarelli",
+      "avgPrice": 2611,
+      "records": 16
+    },
+    {
       "district": "Bulandshahar",
       "nameHi": "Bulandshahar",
       "avgPrice": 3281,
@@ -895,12 +914,6 @@
       "nameHi": "Saharanpur",
       "avgPrice": 1803,
       "records": 16
-    },
-    {
-      "district": "Raebarelli",
-      "nameHi": "Raebarelli",
-      "avgPrice": 2685,
-      "records": 15
     },
     {
       "district": "Jalaun (Orai)",

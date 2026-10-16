@@ -11,6 +11,12 @@
       "date": "2026-05",
       "market": 2000,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2350,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -20,14 +26,33 @@
       "volume": 1,
       "minPrice": 1500,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2350,
+      "volume": 2,
+      "minPrice": 2000,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Shimla",
       "nameHi": "Shimla",
       "avgPrice": 2000,
+      "records": 1
+    },
+    {
+      "district": "Sirmore",
+      "nameHi": "Sirmore",
+      "avgPrice": 2200,
+      "records": 1
+    },
+    {
+      "district": "Hamirpur",
+      "nameHi": "Hamirpur",
+      "avgPrice": 2500,
       "records": 1
     }
   ]

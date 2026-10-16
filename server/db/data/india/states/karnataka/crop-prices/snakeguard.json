@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 1900,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2350,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -108,9 +114,16 @@
       "volume": 1,
       "minPrice": 1800,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2350,
+      "volume": 2,
+      "minPrice": 1500,
+      "maxPrice": 3600
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bangalore",
@@ -134,6 +147,18 @@
       "district": "Mysuru",
       "nameHi": "Mysuru",
       "avgPrice": 1900,
+      "records": 1
+    },
+    {
+      "district": "Bengaluru Rural",
+      "nameHi": "Bengaluru Rural",
+      "avgPrice": 1700,
+      "records": 1
+    },
+    {
+      "district": "Bengaluru South",
+      "nameHi": "Bengaluru South",
+      "avgPrice": 3000,
       "records": 1
     }
   ]

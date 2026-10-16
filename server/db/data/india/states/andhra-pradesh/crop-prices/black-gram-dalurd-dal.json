@@ -13,6 +13,13 @@
       "market": 8133,
       "volume": 3,
       "msp": 6950
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 9400,
+      "volume": 3,
+      "msp": 6950
     }
   ],
   "dailyHistory": [
@@ -36,14 +43,27 @@
       "volume": 1,
       "minPrice": 8900,
       "maxPrice": 8900
+    },
+    {
+      "date": "2026-10-16",
+      "market": 9400,
+      "volume": 3,
+      "minPrice": 9000,
+      "maxPrice": 9700
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Kurnool",
       "nameHi": "Kurnool",
       "avgPrice": 8133,
+      "records": 3
+    },
+    {
+      "district": "Krishna",
+      "nameHi": "Krishna",
+      "avgPrice": 9400,
       "records": 3
     }
   ]

@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 17833,
       "volume": 3
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 13404,
+      "volume": 13
     }
   ],
   "dailyHistory": [
@@ -171,21 +177,28 @@
       "volume": 3,
       "minPrice": 15000,
       "maxPrice": 21000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 13404,
+      "volume": 13,
+      "minPrice": 3000,
+      "maxPrice": 22500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Kangra",
       "nameHi": "Kangra",
-      "avgPrice": 13846,
-      "records": 47
+      "avgPrice": 13913,
+      "records": 52
     },
     {
       "district": "Mandi",
       "nameHi": "Mandi",
-      "avgPrice": 14179,
-      "records": 14
+      "avgPrice": 13700,
+      "records": 15
     },
     {
       "district": "Una",
@@ -202,14 +215,14 @@
     {
       "district": "Solan",
       "nameHi": "Solan",
-      "avgPrice": 13200,
-      "records": 5
+      "avgPrice": 13167,
+      "records": 6
     },
     {
       "district": "Shimla",
       "nameHi": "Shimla",
-      "avgPrice": 14400,
-      "records": 5
+      "avgPrice": 14167,
+      "records": 6
     },
     {
       "district": "Chamba",
@@ -221,13 +234,19 @@
       "district": "Bilaspur",
       "nameHi": "Bilaspur",
       "avgPrice": 18000,
-      "records": 2
+      "records": 3
     },
     {
       "district": "Kullu",
       "nameHi": "Kullu",
-      "avgPrice": 14500,
-      "records": 1
+      "avgPrice": 11667,
+      "records": 3
+    },
+    {
+      "district": "Sirmore",
+      "nameHi": "Sirmore",
+      "avgPrice": 15000,
+      "records": 2
     }
   ]
 }

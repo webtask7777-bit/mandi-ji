@@ -23,6 +23,12 @@
       "date": "2026-05",
       "market": 2467,
       "volume": 3
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4367,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -130,9 +136,16 @@
       "volume": 1,
       "minPrice": 2200,
       "maxPrice": 2200
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4367,
+      "volume": 3,
+      "minPrice": 3000,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Garhwal (Pauri)",
@@ -155,7 +168,13 @@
     {
       "district": "Nanital",
       "nameHi": "Nanital",
-      "avgPrice": 2200,
+      "avgPrice": 2800,
+      "records": 3
+    },
+    {
+      "district": "Haridwar",
+      "nameHi": "Haridwar",
+      "avgPrice": 4550,
       "records": 2
     }
   ]

@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 4750,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3750,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -184,9 +190,16 @@
       "volume": 2,
       "minPrice": 2000,
       "maxPrice": 6200
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3750,
+      "volume": 2,
+      "minPrice": 2000,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Ganganagar",
@@ -203,8 +216,14 @@
     {
       "district": "Jaipur",
       "nameHi": "Jaipur",
-      "avgPrice": 4567,
-      "records": 6
+      "avgPrice": 4557,
+      "records": 7
+    },
+    {
+      "district": "Jodhpur",
+      "nameHi": "Jodhpur",
+      "avgPrice": 3000,
+      "records": 1
     }
   ]
 }

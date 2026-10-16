@@ -41,6 +41,12 @@
       "date": "2026-05",
       "market": 10000,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 11400,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -491,15 +497,22 @@
       "volume": 1,
       "minPrice": 8000,
       "maxPrice": 11000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 11400,
+      "volume": 1,
+      "minPrice": 8000,
+      "maxPrice": 13500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Mumbai",
       "nameHi": "Mumbai",
-      "avgPrice": 10000,
-      "records": 64
+      "avgPrice": 10022,
+      "records": 65
     },
     {
       "district": "Dharashiv(Usmanabad)",

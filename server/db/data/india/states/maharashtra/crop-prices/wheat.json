@@ -41,6 +41,13 @@
       "market": 2511,
       "volume": 1303,
       "msp": 2275
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3087,
+      "volume": 9,
+      "msp": 2275
     }
   ],
   "dailyHistory": [
@@ -337,21 +344,28 @@
       "volume": 6,
       "minPrice": 2301,
       "maxPrice": 2751
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3087,
+      "volume": 9,
+      "minPrice": 2305,
+      "maxPrice": 6600
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Ahilyanagar",
+      "nameHi": "Ahilyanagar",
+      "avgPrice": 2444,
+      "records": 127
+    },
     {
       "district": "Nashik",
       "nameHi": "Nashik",
       "avgPrice": 2550,
       "records": 126
-    },
-    {
-      "district": "Ahilyanagar",
-      "nameHi": "Ahilyanagar",
-      "avgPrice": 2441,
-      "records": 125
     },
     {
       "district": "Buldhana",
@@ -378,16 +392,16 @@
       "records": 84
     },
     {
+      "district": "Nagpur",
+      "nameHi": "Nagpur",
+      "avgPrice": 2690,
+      "records": 78
+    },
+    {
       "district": "Beed",
       "nameHi": "Beed",
       "avgPrice": 2497,
       "records": 77
-    },
-    {
-      "district": "Nagpur",
-      "nameHi": "Nagpur",
-      "avgPrice": 2681,
-      "records": 75
     },
     {
       "district": "Yavatmal",
@@ -410,8 +424,8 @@
     {
       "district": "Washim",
       "nameHi": "Washim",
-      "avgPrice": 2429,
-      "records": 55
+      "avgPrice": 2435,
+      "records": 57
     },
     {
       "district": "Dhule",

@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 885,
       "volume": 469
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 797,
+      "volume": 8
     }
   ],
   "dailyHistory": [
@@ -324,21 +330,28 @@
       "volume": 4,
       "minPrice": 200,
       "maxPrice": 1400
+    },
+    {
+      "date": "2026-10-16",
+      "market": 797,
+      "volume": 8,
+      "minPrice": 200,
+      "maxPrice": 1400
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Morena",
       "nameHi": "Morena",
-      "avgPrice": 503,
-      "records": 86
+      "avgPrice": 499,
+      "records": 87
     },
     {
       "district": "Dhar",
       "nameHi": "Dhar",
-      "avgPrice": 1008,
-      "records": 57
+      "avgPrice": 1011,
+      "records": 58
     },
     {
       "district": "Indore",
@@ -349,8 +362,8 @@
     {
       "district": "Shivpuri",
       "nameHi": "Shivpuri",
-      "avgPrice": 853,
-      "records": 41
+      "avgPrice": 849,
+      "records": 42
     },
     {
       "district": "Sagar",
@@ -391,14 +404,20 @@
     {
       "district": "Burhanpur",
       "nameHi": "Burhanpur",
-      "avgPrice": 1274,
-      "records": 19
+      "avgPrice": 1253,
+      "records": 20
     },
     {
       "district": "Jabalpur",
       "nameHi": "Jabalpur",
       "avgPrice": 1200,
       "records": 17
+    },
+    {
+      "district": "Khandwa",
+      "nameHi": "Khandwa",
+      "avgPrice": 528,
+      "records": 16
     },
     {
       "district": "Gwalior",
@@ -411,12 +430,6 @@
       "nameHi": "Jhabua",
       "avgPrice": 1000,
       "records": 16
-    },
-    {
-      "district": "Khandwa",
-      "nameHi": "Khandwa",
-      "avgPrice": 537,
-      "records": 15
     }
   ]
 }

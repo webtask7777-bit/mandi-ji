@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 3509,
       "volume": 49
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2150,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -268,21 +274,28 @@
       "volume": 2,
       "minPrice": 2000,
       "maxPrice": 7000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2150,
+      "volume": 3,
+      "minPrice": 1000,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Surat",
       "nameHi": "Surat",
-      "avgPrice": 3893,
-      "records": 27
+      "avgPrice": 3825,
+      "records": 28
     },
     {
       "district": "Surendranagar",
       "nameHi": "Surendranagar",
-      "avgPrice": 3033,
-      "records": 23
+      "avgPrice": 2979,
+      "records": 24
     },
     {
       "district": "Banaskanth",
@@ -307,6 +320,12 @@
       "nameHi": "Gandhinagar",
       "avgPrice": 3500,
       "records": 2
+    },
+    {
+      "district": "Sabarkantha",
+      "nameHi": "Sabarkantha",
+      "avgPrice": 2700,
+      "records": 1
     }
   ]
 }

@@ -23,6 +23,12 @@
       "date": "2026-05",
       "market": 2100,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3143,
+      "volume": 38
     }
   ],
   "dailyHistory": [
@@ -60,26 +66,105 @@
       "volume": 1,
       "minPrice": 2100,
       "maxPrice": 2100
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3143,
+      "volume": 38,
+      "minPrice": 1800,
+      "maxPrice": 4600
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bulandshahar",
       "nameHi": "Bulandshahar",
-      "avgPrice": 2550,
+      "avgPrice": 2910,
+      "records": 5
+    },
+    {
+      "district": "Aligarh",
+      "nameHi": "Aligarh",
+      "avgPrice": 3510,
+      "records": 3
+    },
+    {
+      "district": "Mainpuri",
+      "nameHi": "Mainpuri",
+      "avgPrice": 2983,
+      "records": 3
+    },
+    {
+      "district": "Barabanki",
+      "nameHi": "Barabanki",
+      "avgPrice": 2495,
       "records": 3
     },
     {
       "district": "Badaun",
       "nameHi": "Badaun",
-      "avgPrice": 2400,
-      "records": 1
+      "avgPrice": 2495,
+      "records": 2
+    },
+    {
+      "district": "Auraiya",
+      "nameHi": "Auraiya",
+      "avgPrice": 2911,
+      "records": 2
+    },
+    {
+      "district": "Jalaun (Orai)",
+      "nameHi": "Jalaun (Orai)",
+      "avgPrice": 3301,
+      "records": 2
+    },
+    {
+      "district": "Unnao",
+      "nameHi": "Unnao",
+      "avgPrice": 2900,
+      "records": 2
+    },
+    {
+      "district": "Etawah",
+      "nameHi": "Etawah",
+      "avgPrice": 3263,
+      "records": 2
+    },
+    {
+      "district": "Mathura",
+      "nameHi": "Mathura",
+      "avgPrice": 3649,
+      "records": 2
+    },
+    {
+      "district": "Prayagraj",
+      "nameHi": "Prayagraj",
+      "avgPrice": 2439,
+      "records": 2
+    },
+    {
+      "district": "Gautam Budh Nagar",
+      "nameHi": "Gautam Budh Nagar",
+      "avgPrice": 3640,
+      "records": 2
+    },
+    {
+      "district": "Agra",
+      "nameHi": "Agra",
+      "avgPrice": 3089,
+      "records": 2
     },
     {
       "district": "Farukhabad",
       "nameHi": "Farukhabad",
       "avgPrice": 2100,
+      "records": 1
+    },
+    {
+      "district": "Bareilly",
+      "nameHi": "Bareilly",
+      "avgPrice": 2800,
       "records": 1
     }
   ]

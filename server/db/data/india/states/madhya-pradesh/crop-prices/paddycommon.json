@@ -34,6 +34,13 @@
       "market": 2519,
       "volume": 7,
       "msp": 2300
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3607,
+      "volume": 9,
+      "msp": 2300
     }
   ],
   "dailyHistory": [
@@ -232,9 +239,16 @@
       "volume": 3,
       "minPrice": 1710,
       "maxPrice": 3550
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3607,
+      "volume": 9,
+      "minPrice": 32.75,
+      "maxPrice": 4112
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Mandla",
@@ -251,8 +265,8 @@
     {
       "district": "Raisen",
       "nameHi": "Raisen",
-      "avgPrice": 4004,
-      "records": 21
+      "avgPrice": 3987,
+      "records": 22
     },
     {
       "district": "Hoshangabad",
@@ -297,6 +311,12 @@
       "records": 5
     },
     {
+      "district": "Narsinghpur",
+      "nameHi": "Narsinghpur",
+      "avgPrice": 3915,
+      "records": 5
+    },
+    {
       "district": "Rewa",
       "nameHi": "Rewa",
       "avgPrice": 2743,
@@ -309,21 +329,15 @@
       "records": 4
     },
     {
-      "district": "Narsinghpur",
-      "nameHi": "Narsinghpur",
-      "avgPrice": 3775,
-      "records": 2
+      "district": "Gwalior",
+      "nameHi": "Gwalior",
+      "avgPrice": 3630,
+      "records": 3
     },
     {
       "district": "Shehdol",
       "nameHi": "Shehdol",
       "avgPrice": 1700,
-      "records": 2
-    },
-    {
-      "district": "Jabalpur",
-      "nameHi": "Jabalpur",
-      "avgPrice": 1643,
       "records": 2
     }
   ]

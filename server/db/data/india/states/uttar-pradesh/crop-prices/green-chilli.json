@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 2342,
       "volume": 21
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3005,
+      "volume": 13
     }
   ],
   "dailyHistory": [
@@ -241,21 +247,28 @@
       "volume": 9,
       "minPrice": 1200,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3005,
+      "volume": 13,
+      "minPrice": 1500,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bulandshahar",
       "nameHi": "Bulandshahar",
-      "avgPrice": 3250,
-      "records": 29
+      "avgPrice": 3312,
+      "records": 31
     },
     {
       "district": "Shamli",
       "nameHi": "Shamli",
-      "avgPrice": 2834,
-      "records": 21
+      "avgPrice": 2842,
+      "records": 22
     },
     {
       "district": "Aligarh",
@@ -278,14 +291,14 @@
     {
       "district": "Agra",
       "nameHi": "Agra",
-      "avgPrice": 2572,
-      "records": 14
+      "avgPrice": 2598,
+      "records": 16
     },
     {
       "district": "Ghazipur",
       "nameHi": "Ghazipur",
-      "avgPrice": 1563,
-      "records": 12
+      "avgPrice": 1558,
+      "records": 13
     },
     {
       "district": "Badaun",
@@ -296,8 +309,8 @@
     {
       "district": "Amroha",
       "nameHi": "Amroha",
-      "avgPrice": 2145,
-      "records": 8
+      "avgPrice": 2130,
+      "records": 9
     },
     {
       "district": "Bijnor",
@@ -324,15 +337,15 @@
       "records": 7
     },
     {
+      "district": "Ghaziabad",
+      "nameHi": "Ghaziabad",
+      "avgPrice": 3058,
+      "records": 7
+    },
+    {
       "district": "Baghpat",
       "nameHi": "Baghpat",
       "avgPrice": 2583,
-      "records": 6
-    },
-    {
-      "district": "Etawah",
-      "nameHi": "Etawah",
-      "avgPrice": 3128,
       "records": 6
     }
   ]

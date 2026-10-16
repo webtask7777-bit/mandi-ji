@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 2218,
       "volume": 7
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2533,
+      "volume": 6
     }
   ],
   "dailyHistory": [
@@ -875,27 +881,34 @@
       "volume": 3,
       "minPrice": 1000,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2533,
+      "volume": 6,
+      "minPrice": 900,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Vadodara(Baroda)",
       "nameHi": "Vadodara(Baroda)",
-      "avgPrice": 2094,
-      "records": 115
+      "avgPrice": 2095,
+      "records": 116
     },
     {
       "district": "Rajkot",
       "nameHi": "Rajkot",
-      "avgPrice": 2187,
-      "records": 104
+      "avgPrice": 2194,
+      "records": 105
     },
     {
       "district": "Dahod",
       "nameHi": "Dahod",
-      "avgPrice": 1886,
-      "records": 100
+      "avgPrice": 1894,
+      "records": 101
     },
     {
       "district": "Morbi",
@@ -906,14 +919,14 @@
     {
       "district": "Surat",
       "nameHi": "Surat",
-      "avgPrice": 2041,
-      "records": 78
+      "avgPrice": 2037,
+      "records": 79
     },
     {
       "district": "Surendranagar",
       "nameHi": "Surendranagar",
-      "avgPrice": 2254,
-      "records": 66
+      "avgPrice": 2269,
+      "records": 67
     },
     {
       "district": "Ahmedabad",
@@ -944,6 +957,12 @@
       "nameHi": "Anand",
       "avgPrice": 1250,
       "records": 2
+    },
+    {
+      "district": "Sabarkantha",
+      "nameHi": "Sabarkantha",
+      "avgPrice": 2300,
+      "records": 1
     }
   ]
 }

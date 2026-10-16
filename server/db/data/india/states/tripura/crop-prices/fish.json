@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 27400,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 20000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -840,9 +846,16 @@
       "volume": 1,
       "minPrice": 22500,
       "maxPrice": 23000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 20000,
+      "volume": 1,
+      "minPrice": 19000,
+      "maxPrice": 21000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Sepahijala",
@@ -875,16 +888,16 @@
       "records": 6
     },
     {
+      "district": "South Tripura",
+      "nameHi": "South Tripura",
+      "avgPrice": 35000,
+      "records": 2
+    },
+    {
       "district": "North Tripura",
       "nameHi": "North Tripura",
       "avgPrice": 26950,
       "records": 2
-    },
-    {
-      "district": "South Tripura",
-      "nameHi": "South Tripura",
-      "avgPrice": 50000,
-      "records": 1
     }
   ]
 }

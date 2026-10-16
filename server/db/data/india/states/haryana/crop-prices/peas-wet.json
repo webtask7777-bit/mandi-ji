@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 8500,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 9358,
+      "volume": 6
     }
   ],
   "dailyHistory": [
@@ -192,38 +198,51 @@
       "volume": 1,
       "minPrice": 8000,
       "maxPrice": 9000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 9358,
+      "volume": 6,
+      "minPrice": 5000,
+      "maxPrice": 15000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Kurukshetra",
       "nameHi": "Kurukshetra",
-      "avgPrice": 4028,
-      "records": 18
+      "avgPrice": 4289,
+      "records": 19
     },
     {
       "district": "Ambala",
       "nameHi": "Ambala",
-      "avgPrice": 2758,
-      "records": 12
+      "avgPrice": 3073,
+      "records": 13
     },
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 3208,
-      "records": 6
+      "avgPrice": 4679,
+      "records": 7
     },
     {
       "district": "Yamuna Nagar",
       "nameHi": "Yamuna Nagar",
-      "avgPrice": 2600,
-      "records": 6
+      "avgPrice": 3057,
+      "records": 7
     },
     {
       "district": "Panipat",
       "nameHi": "Panipat",
       "avgPrice": 2083,
+      "records": 6
+    },
+    {
+      "district": "Sonipat",
+      "nameHi": "Sonipat",
+      "avgPrice": 4850,
       "records": 6
     },
     {
@@ -233,16 +252,16 @@
       "records": 5
     },
     {
-      "district": "Sonipat",
-      "nameHi": "Sonipat",
-      "avgPrice": 3420,
-      "records": 5
-    },
-    {
       "district": "Jind",
       "nameHi": "Jind",
       "avgPrice": 3675,
       "records": 4
+    },
+    {
+      "district": "Fatehabad",
+      "nameHi": "Fatehabad",
+      "avgPrice": 5100,
+      "records": 2
     },
     {
       "district": "Mahendragarh-Narnaul",
@@ -260,12 +279,6 @@
       "district": "Mewat",
       "nameHi": "Mewat",
       "avgPrice": 2000,
-      "records": 1
-    },
-    {
-      "district": "Fatehabad",
-      "nameHi": "Fatehabad",
-      "avgPrice": 1200,
       "records": 1
     }
   ]

@@ -17,6 +17,12 @@
       "date": "2026-06",
       "market": 5000,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 7600,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -47,14 +53,27 @@
       "volume": 1,
       "minPrice": 4800,
       "maxPrice": 5300
+    },
+    {
+      "date": "2026-10-16",
+      "market": 7600,
+      "volume": 2,
+      "minPrice": 7100,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bijapur",
       "nameHi": "Bijapur",
       "avgPrice": 6227,
+      "records": 2
+    },
+    {
+      "district": "Raichur",
+      "nameHi": "Raichur",
+      "avgPrice": 7600,
       "records": 2
     },
     {

@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 1000,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 825,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -191,21 +197,28 @@
       "volume": 1,
       "minPrice": 1000,
       "maxPrice": 1000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 825,
+      "volume": 2,
+      "minPrice": 500,
+      "maxPrice": 1000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Indore",
       "nameHi": "Indore",
-      "avgPrice": 708,
-      "records": 12
+      "avgPrice": 715,
+      "records": 13
     },
     {
       "district": "Burhanpur",
       "nameHi": "Burhanpur",
-      "avgPrice": 883,
-      "records": 6
+      "avgPrice": 879,
+      "records": 7
     },
     {
       "district": "Morena",

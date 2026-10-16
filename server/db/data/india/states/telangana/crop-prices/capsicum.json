@@ -53,6 +53,12 @@
       "date": "2026-07",
       "market": 5000,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -832,9 +838,16 @@
       "volume": 1,
       "minPrice": 5000,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 3500,
+      "maxPrice": 4500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Hyderabad",
@@ -870,6 +883,12 @@
       "district": "Medchal Malkajgiri",
       "nameHi": "Medchal Malkajgiri",
       "avgPrice": 5000,
+      "records": 1
+    },
+    {
+      "district": "Siddipet",
+      "nameHi": "Siddipet",
+      "avgPrice": 4000,
       "records": 1
     }
   ]

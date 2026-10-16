@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 1500,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2500,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -777,9 +783,16 @@
       "volume": 1,
       "minPrice": 1200,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2500,
+      "volume": 3,
+      "minPrice": 1500,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Udhamsinghnagar",
@@ -802,14 +815,14 @@
     {
       "district": "Haridwar",
       "nameHi": "Haridwar",
-      "avgPrice": 2161,
-      "records": 44
+      "avgPrice": 2153,
+      "records": 45
     },
     {
       "district": "Nanital",
       "nameHi": "Nanital",
-      "avgPrice": 2825,
-      "records": 40
+      "avgPrice": 2826,
+      "records": 42
     }
   ]
 }

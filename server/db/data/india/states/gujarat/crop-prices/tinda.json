@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 3583,
       "volume": 3
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2988,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -178,27 +184,34 @@
       "volume": 1,
       "minPrice": 3500,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2988,
+      "volume": 4,
+      "minPrice": 1500,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Valsad",
       "nameHi": "Valsad",
-      "avgPrice": 3433,
-      "records": 13
+      "avgPrice": 3402,
+      "records": 14
     },
     {
       "district": "Surendranagar",
       "nameHi": "Surendranagar",
-      "avgPrice": 3875,
-      "records": 8
+      "avgPrice": 3861,
+      "records": 9
     },
     {
       "district": "Anand",
       "nameHi": "Anand",
-      "avgPrice": 4333,
-      "records": 6
+      "avgPrice": 4143,
+      "records": 7
     },
     {
       "district": "Kheda",
@@ -211,6 +224,12 @@
       "nameHi": "Dahod",
       "avgPrice": 2350,
       "records": 6
+    },
+    {
+      "district": "Sabarkantha",
+      "nameHi": "Sabarkantha",
+      "avgPrice": 2200,
+      "records": 1
     }
   ]
 }

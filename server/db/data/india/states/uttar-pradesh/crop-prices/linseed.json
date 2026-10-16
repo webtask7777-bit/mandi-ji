@@ -29,6 +29,12 @@
       "date": "2026-07",
       "market": 10420,
       "volume": 20
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 10000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -122,9 +128,16 @@
       "volume": 5,
       "minPrice": 5825.05,
       "maxPrice": 12067
+    },
+    {
+      "date": "2026-10-16",
+      "market": 10000,
+      "volume": 1,
+      "minPrice": 10000,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Ghaziabad",
@@ -172,6 +185,12 @@
       "district": "Prayagraj",
       "nameHi": "Prayagraj",
       "avgPrice": 6432,
+      "records": 1
+    },
+    {
+      "district": "Barabanki",
+      "nameHi": "Barabanki",
+      "avgPrice": 10000,
       "records": 1
     }
   ]

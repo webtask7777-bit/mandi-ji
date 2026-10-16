@@ -33,8 +33,8 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 7000,
-      "volume": 3
+      "market": 6196,
+      "volume": 18
     }
   ],
   "dailyHistory": [
@@ -257,25 +257,31 @@
     },
     {
       "date": "2026-10-16",
-      "market": 7000,
-      "volume": 3,
-      "minPrice": 4000,
+      "market": 6196,
+      "volume": 18,
+      "minPrice": 2000,
       "maxPrice": 8500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Surat (गुजरात)",
       "nameHi": "Surat (गुजरात)",
-      "avgPrice": 6462,
-      "records": 28
+      "avgPrice": 6562,
+      "records": 31
     },
     {
       "district": "Pune (महाराष्ट्र)",
       "nameHi": "Pune (महाराष्ट्र)",
-      "avgPrice": 4613,
-      "records": 26
+      "avgPrice": 4641,
+      "records": 28
+    },
+    {
+      "district": "Rajkot (गुजरात)",
+      "nameHi": "Rajkot (गुजरात)",
+      "avgPrice": 3800,
+      "records": 13
     },
     {
       "district": "Gandhinagar (गुजरात)",
@@ -284,16 +290,10 @@
       "records": 13
     },
     {
-      "district": "Rajkot (गुजरात)",
-      "nameHi": "Rajkot (गुजरात)",
-      "avgPrice": 3783,
-      "records": 12
-    },
-    {
       "district": "Mumbai (महाराष्ट्र)",
       "nameHi": "Mumbai (महाराष्ट्र)",
-      "avgPrice": 4830,
-      "records": 10
+      "avgPrice": 4891,
+      "records": 11
     },
     {
       "district": "Ratnagiri (महाराष्ट्र)",
@@ -320,9 +320,21 @@
       "records": 10
     },
     {
+      "district": "Ganganagar (राजस्थान)",
+      "nameHi": "Ganganagar (राजस्थान)",
+      "avgPrice": 5648,
+      "records": 8
+    },
+    {
       "district": "Porbandar (गुजरात)",
       "nameHi": "Porbandar (गुजरात)",
       "avgPrice": 3125,
+      "records": 8
+    },
+    {
+      "district": "Surendranagar (गुजरात)",
+      "nameHi": "Surendranagar (गुजरात)",
+      "avgPrice": 4906,
       "records": 8
     },
     {
@@ -332,28 +344,16 @@
       "records": 7
     },
     {
-      "district": "Ganganagar (राजस्थान)",
-      "nameHi": "Ganganagar (राजस्थान)",
-      "avgPrice": 5301,
-      "records": 7
-    },
-    {
-      "district": "Surendranagar (गुजरात)",
-      "nameHi": "Surendranagar (गुजरात)",
-      "avgPrice": 4429,
-      "records": 7
-    },
-    {
       "district": "Kheda (गुजरात)",
       "nameHi": "Kheda (गुजरात)",
       "avgPrice": 2157,
       "records": 7
     },
     {
-      "district": "Raigad (महाराष्ट्र)",
-      "nameHi": "Raigad (महाराष्ट्र)",
-      "avgPrice": 8000,
-      "records": 6
+      "district": "Hissar (हरियाणा)",
+      "nameHi": "Hissar (हरियाणा)",
+      "avgPrice": 6286,
+      "records": 7
     }
   ]
 }

@@ -45,8 +45,8 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 1075,
-      "volume": 1
+      "market": 1248,
+      "volume": 10
     }
   ],
   "dailyHistory": [
@@ -556,30 +556,36 @@
     },
     {
       "date": "2026-10-16",
-      "market": 1075,
-      "volume": 1,
-      "minPrice": 1025,
-      "maxPrice": 1150
+      "market": 1248,
+      "volume": 10,
+      "minPrice": 400,
+      "maxPrice": 2000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Badwani",
       "nameHi": "Badwani",
-      "avgPrice": 1380,
-      "records": 86
+      "avgPrice": 1375,
+      "records": 87
     },
     {
       "district": "Dhar",
       "nameHi": "Dhar",
-      "avgPrice": 1217,
-      "records": 81
+      "avgPrice": 1218,
+      "records": 82
     },
     {
       "district": "Indore",
       "nameHi": "Indore",
-      "avgPrice": 764,
+      "avgPrice": 765,
+      "records": 70
+    },
+    {
+      "district": "Khandwa",
+      "nameHi": "Khandwa",
+      "avgPrice": 1356,
       "records": 69
     },
     {
@@ -589,16 +595,10 @@
       "records": 68
     },
     {
-      "district": "Khandwa",
-      "nameHi": "Khandwa",
-      "avgPrice": 1361,
-      "records": 68
-    },
-    {
       "district": "Shivpuri",
       "nameHi": "Shivpuri",
-      "avgPrice": 1336,
-      "records": 59
+      "avgPrice": 1340,
+      "records": 60
     },
     {
       "district": "Harda",
@@ -643,15 +643,15 @@
       "records": 26
     },
     {
+      "district": "Burhanpur",
+      "nameHi": "Burhanpur",
+      "avgPrice": 1537,
+      "records": 26
+    },
+    {
       "district": "Hoshangabad",
       "nameHi": "Hoshangabad",
       "avgPrice": 1040,
-      "records": 25
-    },
-    {
-      "district": "Burhanpur",
-      "nameHi": "Burhanpur",
-      "avgPrice": 1526,
       "records": 25
     }
   ]

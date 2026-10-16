@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 1435,
       "volume": 189
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1605,
+      "volume": 11
     }
   ],
   "dailyHistory": [
@@ -345,21 +351,34 @@
       "volume": 9,
       "minPrice": 900,
       "maxPrice": 1800
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1605,
+      "volume": 11,
+      "minPrice": 900,
+      "maxPrice": 2200
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Annamayya",
       "nameHi": "Annamayya",
-      "avgPrice": 1485,
-      "records": 174
+      "avgPrice": 1491,
+      "records": 181
     },
     {
       "district": "Chittor",
       "nameHi": "Chittor",
-      "avgPrice": 1465,
-      "records": 86
+      "avgPrice": 1466,
+      "records": 89
+    },
+    {
+      "district": "Kurnool",
+      "nameHi": "Kurnool",
+      "avgPrice": 1800,
+      "records": 1
     }
   ]
 }

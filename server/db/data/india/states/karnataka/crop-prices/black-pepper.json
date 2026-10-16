@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 71998,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 53414,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -693,9 +699,16 @@
       "volume": 1,
       "minPrice": 71998,
       "maxPrice": 71998
+    },
+    {
+      "date": "2026-10-16",
+      "market": 53414,
+      "volume": 2,
+      "minPrice": 35000,
+      "maxPrice": 71600
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Mangalore(Dakshin Kannad)",
@@ -746,15 +759,21 @@
       "records": 2
     },
     {
+      "district": "Bengaluru Rural",
+      "nameHi": "Bengaluru Rural",
+      "avgPrice": 71799,
+      "records": 2
+    },
+    {
       "district": "Bangalore",
       "nameHi": "Bangalore",
       "avgPrice": 65041,
       "records": 1
     },
     {
-      "district": "Bengaluru Rural",
-      "nameHi": "Bengaluru Rural",
-      "avgPrice": 71998,
+      "district": "Kodagu",
+      "nameHi": "Kodagu",
+      "avgPrice": 35227,
       "records": 1
     }
   ]

@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 13000,
       "volume": 5
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 10500,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -784,15 +790,22 @@
       "volume": 1,
       "minPrice": 11000,
       "maxPrice": 19000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 10500,
+      "volume": 3,
+      "minPrice": 5000,
+      "maxPrice": 22000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 8950,
-      "records": 152
+      "avgPrice": 8974,
+      "records": 154
     },
     {
       "district": "Ahmednagar",
@@ -869,8 +882,8 @@
     {
       "district": "Ahilyanagar",
       "nameHi": "Ahilyanagar",
-      "avgPrice": 4550,
-      "records": 1
+      "avgPrice": 7275,
+      "records": 2
     }
   ]
 }

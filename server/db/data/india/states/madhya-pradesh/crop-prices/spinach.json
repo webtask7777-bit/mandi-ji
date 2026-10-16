@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 750,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1088,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -171,32 +177,39 @@
       "volume": 1,
       "minPrice": 800,
       "maxPrice": 1300
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1088,
+      "volume": 4,
+      "minPrice": 400,
+      "maxPrice": 1500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Indore",
       "nameHi": "Indore",
-      "avgPrice": 688,
-      "records": 16
+      "avgPrice": 694,
+      "records": 17
     },
     {
       "district": "Khandwa",
       "nameHi": "Khandwa",
-      "avgPrice": 500,
-      "records": 3
+      "avgPrice": 575,
+      "records": 4
+    },
+    {
+      "district": "Dhar",
+      "nameHi": "Dhar",
+      "avgPrice": 963,
+      "records": 4
     },
     {
       "district": "Ujjain",
       "nameHi": "Ujjain",
       "avgPrice": 816,
-      "records": 3
-    },
-    {
-      "district": "Dhar",
-      "nameHi": "Dhar",
-      "avgPrice": 867,
       "records": 3
     },
     {
@@ -233,6 +246,12 @@
       "district": "Sheopur",
       "nameHi": "Sheopur",
       "avgPrice": 1100,
+      "records": 1
+    },
+    {
+      "district": "Morena",
+      "nameHi": "Morena",
+      "avgPrice": 1500,
       "records": 1
     }
   ]

@@ -23,6 +23,12 @@
       "date": "2026-05",
       "market": 2888,
       "volume": 13
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 6750,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -95,15 +101,28 @@
       "volume": 1,
       "minPrice": 3000,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 6750,
+      "volume": 1,
+      "minPrice": 6500,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Bishnupur",
       "nameHi": "Bishnupur",
       "avgPrice": 3000,
       "records": 8
+    },
+    {
+      "district": "Imphal East",
+      "nameHi": "Imphal East",
+      "avgPrice": 4000,
+      "records": 4
     },
     {
       "district": "Imphal West",
@@ -116,12 +135,6 @@
       "nameHi": "Thoubal",
       "avgPrice": 3000,
       "records": 4
-    },
-    {
-      "district": "Imphal East",
-      "nameHi": "Imphal East",
-      "avgPrice": 3083,
-      "records": 3
     },
     {
       "district": "Kakching",

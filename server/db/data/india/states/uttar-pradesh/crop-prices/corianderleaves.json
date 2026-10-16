@@ -29,6 +29,12 @@
       "date": "2026-07",
       "market": 12687,
       "volume": 72
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 6980,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -206,21 +212,28 @@
       "volume": 8,
       "minPrice": 9800,
       "maxPrice": 23333
+    },
+    {
+      "date": "2026-10-16",
+      "market": 6980,
+      "volume": 1,
+      "minPrice": 6980,
+      "maxPrice": 6980
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Lucknow",
+      "nameHi": "Lucknow",
+      "avgPrice": 12585,
+      "records": 19
+    },
     {
       "district": "Ghaziabad",
       "nameHi": "Ghaziabad",
       "avgPrice": 14445,
       "records": 19
-    },
-    {
-      "district": "Lucknow",
-      "nameHi": "Lucknow",
-      "avgPrice": 12896,
-      "records": 18
     },
     {
       "district": "Kanpur",

@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 439,
       "volume": 20
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 453,
+      "volume": 27
     }
   ],
   "dailyHistory": [
@@ -714,27 +720,46 @@
       "volume": 11,
       "minPrice": 320,
       "maxPrice": 700
+    },
+    {
+      "date": "2026-10-16",
+      "market": 453,
+      "volume": 27,
+      "minPrice": 250,
+      "maxPrice": 600
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Sitapur",
       "nameHi": "Sitapur",
-      "avgPrice": 325,
-      "records": 112
+      "avgPrice": 327,
+      "records": 114
     },
     {
       "district": "Gonda",
       "nameHi": "Gonda",
-      "avgPrice": 413,
-      "records": 37
+      "avgPrice": 409,
+      "records": 38
     },
     {
       "district": "Jhansi",
       "nameHi": "Jhansi",
-      "avgPrice": 469,
-      "records": 27
+      "avgPrice": 474,
+      "records": 30
+    },
+    {
+      "district": "Prayagraj",
+      "nameHi": "Prayagraj",
+      "avgPrice": 397,
+      "records": 15
+    },
+    {
+      "district": "Mahoba",
+      "nameHi": "Mahoba",
+      "avgPrice": 412,
+      "records": 15
     },
     {
       "district": "Rampur",
@@ -743,33 +768,27 @@
       "records": 15
     },
     {
-      "district": "Prayagraj",
-      "nameHi": "Prayagraj",
-      "avgPrice": 397,
-      "records": 14
-    },
-    {
-      "district": "Mahoba",
-      "nameHi": "Mahoba",
-      "avgPrice": 413,
-      "records": 14
-    },
-    {
       "district": "Hamirpur",
       "nameHi": "Hamirpur",
       "avgPrice": 408,
-      "records": 13
+      "records": 14
     },
     {
       "district": "Jalaun (Orai)",
       "nameHi": "Jalaun (Orai)",
-      "avgPrice": 488,
-      "records": 12
+      "avgPrice": 497,
+      "records": 13
     },
     {
       "district": "Amethi",
       "nameHi": "Amethi",
-      "avgPrice": 412,
+      "avgPrice": 411,
+      "records": 11
+    },
+    {
+      "district": "Bareilly",
+      "nameHi": "Bareilly",
+      "avgPrice": 404,
       "records": 10
     },
     {
@@ -779,10 +798,10 @@
       "records": 10
     },
     {
-      "district": "Bareilly",
-      "nameHi": "Bareilly",
-      "avgPrice": 401,
-      "records": 9
+      "district": "Banda",
+      "nameHi": "Banda",
+      "avgPrice": 440,
+      "records": 8
     },
     {
       "district": "Jaunpur",
@@ -791,21 +810,15 @@
       "records": 8
     },
     {
-      "district": "Banda",
-      "nameHi": "Banda",
-      "avgPrice": 439,
-      "records": 7
-    },
-    {
-      "district": "Bijnor",
-      "nameHi": "Bijnor",
-      "avgPrice": 462,
-      "records": 7
-    },
-    {
       "district": "Pratapgarh",
       "nameHi": "Pratapgarh",
-      "avgPrice": 376,
+      "avgPrice": 379,
+      "records": 8
+    },
+    {
+      "district": "Bahraich",
+      "nameHi": "Bahraich",
+      "avgPrice": 462,
       "records": 7
     }
   ]

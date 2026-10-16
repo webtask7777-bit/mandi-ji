@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 6457,
       "volume": 7
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5050,
+      "volume": 6
     }
   ],
   "dailyHistory": [
@@ -840,9 +846,16 @@
       "volume": 3,
       "minPrice": 1500,
       "maxPrice": 6500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 5050,
+      "volume": 6,
+      "minPrice": 2500,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Kolar",
@@ -883,8 +896,8 @@
     {
       "district": "Davangere",
       "nameHi": "Davangere",
-      "avgPrice": 2859,
-      "records": 56
+      "avgPrice": 2884,
+      "records": 57
     },
     {
       "district": "Shimoga",
@@ -905,16 +918,22 @@
       "records": 10
     },
     {
+      "district": "Chikkaballapur",
+      "nameHi": "Chikkaballapur",
+      "avgPrice": 4333,
+      "records": 3
+    },
+    {
       "district": "Shivamogga",
       "nameHi": "Shivamogga",
-      "avgPrice": 8000,
-      "records": 1
+      "avgPrice": 7000,
+      "records": 2
     },
     {
       "district": "Bengaluru South",
       "nameHi": "Bengaluru South",
-      "avgPrice": 9000,
-      "records": 1
+      "avgPrice": 7000,
+      "records": 2
     },
     {
       "district": "Chamarajanagar",
@@ -926,12 +945,6 @@
       "district": "Haveri",
       "nameHi": "Haveri",
       "avgPrice": 2800,
-      "records": 1
-    },
-    {
-      "district": "Mysuru",
-      "nameHi": "Mysuru",
-      "avgPrice": 6400,
       "records": 1
     }
   ]

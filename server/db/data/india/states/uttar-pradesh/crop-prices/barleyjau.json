@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 2030,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2400,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -665,15 +671,28 @@
       "volume": 1,
       "minPrice": 1860,
       "maxPrice": 1860
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2400,
+      "volume": 1,
+      "minPrice": 2400,
+      "maxPrice": 2400
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Chitrakut",
       "nameHi": "Chitrakut",
       "avgPrice": 2254,
       "records": 54
+    },
+    {
+      "district": "Mahoba",
+      "nameHi": "Mahoba",
+      "avgPrice": 2233,
+      "records": 49
     },
     {
       "district": "Ballia",
@@ -685,12 +704,6 @@
       "district": "Lalitpur",
       "nameHi": "Lalitpur",
       "avgPrice": 2205,
-      "records": 48
-    },
-    {
-      "district": "Mahoba",
-      "nameHi": "Mahoba",
-      "avgPrice": 2230,
       "records": 48
     },
     {

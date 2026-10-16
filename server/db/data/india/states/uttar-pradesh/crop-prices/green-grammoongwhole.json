@@ -27,6 +27,13 @@
       "market": 6850,
       "volume": 6,
       "msp": 8682
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 6934,
+      "volume": 2,
+      "msp": 8682
     }
   ],
   "dailyHistory": [
@@ -99,9 +106,16 @@
       "volume": 4,
       "minPrice": 5000,
       "maxPrice": 9100
+    },
+    {
+      "date": "2026-10-16",
+      "market": 6934,
+      "volume": 2,
+      "minPrice": 5100,
+      "maxPrice": 8768
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Jalaun (Orai)",
@@ -113,6 +127,12 @@
       "district": "Varanasi",
       "nameHi": "Varanasi",
       "avgPrice": 9243,
+      "records": 2
+    },
+    {
+      "district": "Jhansi",
+      "nameHi": "Jhansi",
+      "avgPrice": 5950,
       "records": 2
     },
     {
@@ -137,12 +157,6 @@
       "district": "Lucknow",
       "nameHi": "Lucknow",
       "avgPrice": 9900,
-      "records": 1
-    },
-    {
-      "district": "Jhansi",
-      "nameHi": "Jhansi",
-      "avgPrice": 6800,
       "records": 1
     },
     {
@@ -179,6 +193,12 @@
       "district": "Gorakhpur",
       "nameHi": "Gorakhpur",
       "avgPrice": 9100,
+      "records": 1
+    },
+    {
+      "district": "Kanpur Dehat",
+      "nameHi": "Kanpur Dehat",
+      "avgPrice": 8768,
       "records": 1
     }
   ]

@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 1900,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 9150,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -122,9 +128,16 @@
       "volume": 1,
       "minPrice": 1400,
       "maxPrice": 4700
+    },
+    {
+      "date": "2026-10-16",
+      "market": 9150,
+      "volume": 2,
+      "minPrice": 6000,
+      "maxPrice": 19400
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "West Godavari",
@@ -141,8 +154,8 @@
     {
       "district": "Eluru",
       "nameHi": "Eluru",
-      "avgPrice": 1900,
-      "records": 1
+      "avgPrice": 6733,
+      "records": 3
     }
   ]
 }

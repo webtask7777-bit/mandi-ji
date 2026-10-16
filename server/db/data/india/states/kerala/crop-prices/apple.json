@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 25680,
       "volume": 5
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 16750,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -826,15 +832,22 @@
       "volume": 2,
       "minPrice": 26000,
       "maxPrice": 30000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 16750,
+      "volume": 4,
+      "minPrice": 11000,
+      "maxPrice": 23000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Thiruvananthapuram",
       "nameHi": "Thiruvananthapuram",
-      "avgPrice": 17215,
-      "records": 151
+      "avgPrice": 17218,
+      "records": 154
     },
     {
       "district": "Malappuram",
@@ -843,15 +856,15 @@
       "records": 95
     },
     {
+      "district": "Kozhikode(Calicut)",
+      "nameHi": "Kozhikode(Calicut)",
+      "avgPrice": 19022,
+      "records": 86
+    },
+    {
       "district": "Idukki",
       "nameHi": "Idukki",
       "avgPrice": 16520,
-      "records": 85
-    },
-    {
-      "district": "Kozhikode(Calicut)",
-      "nameHi": "Kozhikode(Calicut)",
-      "avgPrice": 19069,
       "records": 85
     }
   ]

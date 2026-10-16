@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 8000,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 8233,
+      "volume": 6
     }
   ],
   "dailyHistory": [
@@ -219,21 +225,34 @@
       "volume": 1,
       "minPrice": 6000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 8233,
+      "volume": 6,
+      "minPrice": 4000,
+      "maxPrice": 15000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 7841,
-      "records": 17
+      "avgPrice": 7753,
+      "records": 19
     },
     {
       "district": "Kurukshetra",
       "nameHi": "Kurukshetra",
-      "avgPrice": 10523,
-      "records": 13
+      "avgPrice": 10414,
+      "records": 14
+    },
+    {
+      "district": "Sonipat",
+      "nameHi": "Sonipat",
+      "avgPrice": 10855,
+      "records": 11
     },
     {
       "district": "Panipat",
@@ -242,22 +261,16 @@
       "records": 10
     },
     {
-      "district": "Sonipat",
-      "nameHi": "Sonipat",
-      "avgPrice": 10540,
-      "records": 10
-    },
-    {
       "district": "Mahendragarh-Narnaul",
       "nameHi": "Mahendragarh-Narnaul",
-      "avgPrice": 10833,
-      "records": 9
+      "avgPrice": 10250,
+      "records": 10
     },
     {
       "district": "Yamuna Nagar",
       "nameHi": "Yamuna Nagar",
-      "avgPrice": 8075,
-      "records": 8
+      "avgPrice": 8000,
+      "records": 9
     },
     {
       "district": "Ambala",

@@ -23,6 +23,12 @@
       "date": "2026-06",
       "market": 10067,
       "volume": 3
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 14500,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -53,9 +59,16 @@
       "volume": 1,
       "minPrice": 10050,
       "maxPrice": 10100
+    },
+    {
+      "date": "2026-10-16",
+      "market": 14500,
+      "volume": 1,
+      "minPrice": 14500,
+      "maxPrice": 14550
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Chhatarpur",
@@ -85,6 +98,12 @@
       "district": "Shivpuri",
       "nameHi": "Shivpuri",
       "avgPrice": 10100,
+      "records": 1
+    },
+    {
+      "district": "Sheopur",
+      "nameHi": "Sheopur",
+      "avgPrice": 14500,
       "records": 1
     }
   ]

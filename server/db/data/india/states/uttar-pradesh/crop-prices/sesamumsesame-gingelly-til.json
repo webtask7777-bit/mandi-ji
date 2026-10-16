@@ -23,6 +23,12 @@
       "date": "2026-06",
       "market": 24958,
       "volume": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 11384,
+      "volume": 5
     }
   ],
   "dailyHistory": [
@@ -60,14 +66,33 @@
       "volume": 1,
       "minPrice": 28428.11,
       "maxPrice": 28428.11
+    },
+    {
+      "date": "2026-10-16",
+      "market": 11384,
+      "volume": 5,
+      "minPrice": 7500,
+      "maxPrice": 13000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Lucknow",
       "nameHi": "Lucknow",
       "avgPrice": 18994,
+      "records": 2
+    },
+    {
+      "district": "Hamirpur",
+      "nameHi": "Hamirpur",
+      "avgPrice": 13000,
+      "records": 2
+    },
+    {
+      "district": "Jalaun (Orai)",
+      "nameHi": "Jalaun (Orai)",
+      "avgPrice": 11500,
       "records": 2
     },
     {
@@ -86,6 +111,12 @@
       "district": "Ghaziabad",
       "nameHi": "Ghaziabad",
       "avgPrice": 28428,
+      "records": 1
+    },
+    {
+      "district": "Kanpur",
+      "nameHi": "Kanpur",
+      "avgPrice": 7919,
       "records": 1
     }
   ]

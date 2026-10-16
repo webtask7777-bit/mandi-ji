@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 2384,
       "volume": 11
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4250,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -177,21 +183,28 @@
       "volume": 1,
       "minPrice": 600,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4250,
+      "volume": 4,
+      "minPrice": 4000,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Hyderabad",
       "nameHi": "Hyderabad",
-      "avgPrice": 1052,
-      "records": 24
+      "avgPrice": 1170,
+      "records": 25
     },
     {
       "district": "Ranga Reddy",
       "nameHi": "Ranga Reddy",
-      "avgPrice": 833,
-      "records": 9
+      "avgPrice": 1150,
+      "records": 10
     },
     {
       "district": "Medak",
@@ -208,7 +221,13 @@
     {
       "district": "Medchal Malkajgiri",
       "nameHi": "Medchal Malkajgiri",
-      "avgPrice": 1525,
+      "avgPrice": 2350,
+      "records": 3
+    },
+    {
+      "district": "Siddipet",
+      "nameHi": "Siddipet",
+      "avgPrice": 4000,
       "records": 2
     },
     {
@@ -233,12 +252,6 @@
       "district": "Nalgonda",
       "nameHi": "Nalgonda",
       "avgPrice": 3500,
-      "records": 1
-    },
-    {
-      "district": "Siddipet",
-      "nameHi": "Siddipet",
-      "avgPrice": 3000,
       "records": 1
     }
   ]

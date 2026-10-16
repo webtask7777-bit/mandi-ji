@@ -23,6 +23,12 @@
       "date": "2026-07",
       "market": 2713,
       "volume": 8
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2850,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -116,9 +122,16 @@
       "volume": 1,
       "minPrice": 2500,
       "maxPrice": 2800
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2850,
+      "volume": 2,
+      "minPrice": 2000,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Patiala",
@@ -136,6 +149,18 @@
       "district": "Kapurthala",
       "nameHi": "Kapurthala",
       "avgPrice": 2700,
+      "records": 1
+    },
+    {
+      "district": "Hoshiarpur",
+      "nameHi": "Hoshiarpur",
+      "avgPrice": 3500,
+      "records": 1
+    },
+    {
+      "district": "Sangrur",
+      "nameHi": "Sangrur",
+      "avgPrice": 2200,
       "records": 1
     }
   ]

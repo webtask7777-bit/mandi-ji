@@ -11,6 +11,12 @@
       "date": "2026-03",
       "market": 4450,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3900,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -20,14 +26,27 @@
       "volume": 1,
       "minPrice": 4450,
       "maxPrice": 4450
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3900,
+      "volume": 1,
+      "minPrice": 3800,
+      "maxPrice": 3925
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Hissar",
       "nameHi": "Hissar",
       "avgPrice": 4450,
+      "records": 1
+    },
+    {
+      "district": "Panipat",
+      "nameHi": "Panipat",
+      "avgPrice": 3900,
       "records": 1
     }
   ]

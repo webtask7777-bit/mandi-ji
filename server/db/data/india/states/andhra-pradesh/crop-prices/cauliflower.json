@@ -47,6 +47,12 @@
       "date": "2026-06",
       "market": 1100,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1800,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -476,15 +482,22 @@
       "volume": 1,
       "minPrice": 900,
       "maxPrice": 1500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1800,
+      "volume": 1,
+      "minPrice": 1400,
+      "maxPrice": 2200
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Chittor",
       "nameHi": "Chittor",
-      "avgPrice": 1198,
-      "records": 61
+      "avgPrice": 1208,
+      "records": 62
     }
   ]
 }

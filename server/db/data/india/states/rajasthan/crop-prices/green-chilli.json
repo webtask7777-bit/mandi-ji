@@ -29,6 +29,12 @@
       "date": "2026-06",
       "market": 1750,
       "volume": 4
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3750,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -185,15 +191,28 @@
       "volume": 1,
       "minPrice": 1500,
       "maxPrice": 1900
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3750,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Ganganagar",
       "nameHi": "Ganganagar",
       "avgPrice": 3386,
       "records": 14
+    },
+    {
+      "district": "Jaipur",
+      "nameHi": "Jaipur",
+      "avgPrice": 2463,
+      "records": 8
     },
     {
       "district": "Jalore",
@@ -205,12 +224,6 @@
       "district": "Udaipur",
       "nameHi": "Udaipur",
       "avgPrice": 2293,
-      "records": 7
-    },
-    {
-      "district": "Jaipur",
-      "nameHi": "Jaipur",
-      "avgPrice": 2279,
       "records": 7
     },
     {

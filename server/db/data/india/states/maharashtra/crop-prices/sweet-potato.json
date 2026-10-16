@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 2787,
       "volume": 47
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2388,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -310,21 +316,28 @@
       "volume": 3,
       "minPrice": 2000,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2388,
+      "volume": 4,
+      "minPrice": 1500,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 2724,
-      "records": 38
+      "avgPrice": 2713,
+      "records": 40
     },
     {
       "district": "Mumbai",
       "nameHi": "Mumbai",
-      "avgPrice": 2157,
-      "records": 23
+      "avgPrice": 2163,
+      "records": 24
     },
     {
       "district": "Jalgaon",
@@ -339,15 +352,15 @@
       "records": 4
     },
     {
+      "district": "Ahilyanagar",
+      "nameHi": "Ahilyanagar",
+      "avgPrice": 2375,
+      "records": 2
+    },
+    {
       "district": "Chattrapati Sambhajinagar",
       "nameHi": "Chattrapati Sambhajinagar",
       "avgPrice": 3250,
-      "records": 1
-    },
-    {
-      "district": "Ahilyanagar",
-      "nameHi": "Ahilyanagar",
-      "avgPrice": 2500,
       "records": 1
     }
   ]

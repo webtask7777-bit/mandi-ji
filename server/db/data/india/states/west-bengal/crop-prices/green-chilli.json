@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 7300,
       "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 6225,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -240,9 +246,16 @@
       "volume": 1,
       "minPrice": 7100,
       "maxPrice": 7400
+    },
+    {
+      "date": "2026-10-16",
+      "market": 6225,
+      "volume": 4,
+      "minPrice": 4600,
+      "maxPrice": 8500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Nadia",
@@ -275,16 +288,16 @@
       "records": 16
     },
     {
+      "district": "Darjeeling",
+      "nameHi": "Darjeeling",
+      "avgPrice": 5020,
+      "records": 15
+    },
+    {
       "district": "Birbhum",
       "nameHi": "Birbhum",
       "avgPrice": 7307,
       "records": 15
-    },
-    {
-      "district": "Darjeeling",
-      "nameHi": "Darjeeling",
-      "avgPrice": 4793,
-      "records": 14
     },
     {
       "district": "Uttar Dinajpur",
@@ -311,6 +324,12 @@
       "records": 8
     },
     {
+      "district": "Medinipur(E)",
+      "nameHi": "Medinipur(E)",
+      "avgPrice": 4886,
+      "records": 7
+    },
+    {
       "district": "Howrah",
       "nameHi": "Howrah",
       "avgPrice": 8143,
@@ -326,12 +345,6 @@
       "district": "Purba Bardhaman",
       "nameHi": "Purba Bardhaman",
       "avgPrice": 5367,
-      "records": 6
-    },
-    {
-      "district": "Medinipur(E)",
-      "nameHi": "Medinipur(E)",
-      "avgPrice": 4917,
       "records": 6
     }
   ]

@@ -53,6 +53,12 @@
       "date": "2026-07",
       "market": 12480,
       "volume": 25
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 6750,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -916,21 +922,28 @@
       "volume": 2,
       "minPrice": 10000,
       "maxPrice": 15000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 6750,
+      "volume": 2,
+      "minPrice": 4000,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 6476,
-      "records": 104
+      "avgPrice": 6481,
+      "records": 105
     },
     {
       "district": "Kurukshetra",
       "nameHi": "Kurukshetra",
-      "avgPrice": 7386,
-      "records": 94
+      "avgPrice": 7377,
+      "records": 95
     }
   ]
 }

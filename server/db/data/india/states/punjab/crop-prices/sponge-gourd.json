@@ -35,6 +35,12 @@
       "date": "2026-07",
       "market": 1535,
       "volume": 10
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2200,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -142,9 +148,16 @@
       "volume": 1,
       "minPrice": 1550,
       "maxPrice": 1550
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2200,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 2500
     }
   ],
-  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
       "district": "Nawanshahr",
@@ -168,6 +181,12 @@
       "district": "Jalandhar",
       "nameHi": "Jalandhar",
       "avgPrice": 1550,
+      "records": 1
+    },
+    {
+      "district": "Sangrur",
+      "nameHi": "Sangrur",
+      "avgPrice": 2200,
       "records": 1
     }
   ]
