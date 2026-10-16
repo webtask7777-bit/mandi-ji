@@ -5,6 +5,7 @@ import DeliveryCalculatorTab from '../tabs/DeliveryCalculatorTab';
 import SEO from '../components/SEO';
 import Brand from '../components/Brand';
 import Footer from '../components/Footer';
+import { CropImageLegend } from '../components/CropImage';
 import '../styles/dashboard.css';
 
 export default function TransportPage() {
@@ -20,6 +21,7 @@ export default function TransportPage() {
       </header>
       <main id="delivery-main" className="sb-main">
         <div className="sb-calculator-page-heading"><span className="sb-eyebrow"><Truck size={16} aria-hidden="true" />सही भाव · हिसाब और तैयारी</span><h1>मंडी डिलीवरी कैलकुलेटर और गाइड</h1></div>
+        <CropImageLegend />
         <DeliveryCalculatorTab initialScenario={scenario} onScenarioConsumed={() => setScenario(null)} />
         <Footer />
       </main>

@@ -14,6 +14,7 @@ import FloatingActionButton from "./components/marketplace/FloatingActionButton"
 import SEO from "./components/SEO";
 import Footer from "./components/Footer";
 import Brand from "./components/Brand";
+import { CropImageLegend } from "./components/CropImage";
 import "./styles/dashboard.css";
 
 // The map and marketplace should not delay the first price screen.
@@ -325,6 +326,7 @@ export default function MandiJiDashboard() {
             <h1>{TAB_ITEMS.find(tab => tab.value === activeTab)?.label}</h1>
           </div>
         )}
+        <CropImageLegend />
         <AnimatePresence mode="wait">
           <Motion.div key={activeTab === 'delivery' || activeTab === 'naksha' ? activeTab : `${activeTab}-${stateParam}`} variants={tabVariants}
             id={`panel-${activeTab}`} role="tabpanel" aria-labelledby={`tab-${activeTab}`} className={`sb-tab-panel sb-panel-${activeTab}`}

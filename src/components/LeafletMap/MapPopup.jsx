@@ -1,4 +1,5 @@
 import { districtCropMatch } from './mapStyles';
+import CropImage, { CropImageLegend } from '../CropImage';
 
 export default function MapPopup({ districtName, info, mandis = [], selectedCrop, onSelect }) {
   const topCrops = info?.topCrops?.slice(0, 5) || [];
@@ -45,14 +46,15 @@ export default function MapPopup({ districtName, info, mandis = [], selectedCrop
           <div className="mb-1.5 text-xs font-bold text-[#52664c]">रिकॉर्ड में प्रमुख फसलें</div>
           <div className="flex flex-wrap gap-1">
             {topCrops.map((crop, index) => (
-              <span key={crop.id || crop.cropId || `${crop.name}-${index}`} className="rounded-md bg-[#eaf2df] px-2 py-1 text-xs text-[#244a35]">
-                {crop.emoji || '🌱'} {crop.nameHi || crop.name || crop.id}
+              <span key={crop.id || crop.cropId || `${crop.name}-${index}`} className="inline-flex items-center gap-1.5 rounded-md bg-[#eaf2df] px-2 py-1 text-xs text-[#244a35]">
+                <CropImage id={crop.id || crop.cropId} name={crop.nameHi || crop.name || crop.id} size="xs" />{crop.nameHi || crop.name || crop.id}
               </span>
             ))}
           </div>
         </div>
       )}
 
+      {topCrops.length > 0 && <CropImageLegend />}
       <p className="mb-3 text-[11px] leading-relaxed text-[#687461]">रिकॉर्ड की गिनती आज के भाव या आज खुली मंडियों की पुष्टि नहीं है।</p>
       {onSelect && (
         <button type="button" onClick={onSelect} className="w-full rounded-lg bg-[#174c3c] px-3 py-2.5 text-xs font-semibold text-[#ffffff] hover:bg-[#255f48] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#174c3c]">

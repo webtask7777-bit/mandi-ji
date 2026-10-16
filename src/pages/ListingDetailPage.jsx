@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, MapPin, Clock3, Calculator, Phone, UserRound, Pa
 import { useAuth } from '@/context/AuthContext';
 import { apiFetch } from '@/api/client';
 import Brand from '@/components/Brand';
-import CropImage from '@/components/CropImage';
+import CropImage, { CropImageLegend } from '@/components/CropImage';
 import SEO from '@/components/SEO';
 import '../styles/listing-detail.css';
 
@@ -97,7 +97,8 @@ export default function ListingDetailPage() {
     <div className="sb-listing-layout">
       <div className="sb-listing-content">
         <section className="sb-listing-offer" aria-labelledby="listing-title">
-          <div className="sb-listing-offer-heading"><div><div className="sb-listing-badges"><span className={isSell ? 'is-sell' : 'is-buy'}>{isSell ? 'बिक्री का प्रस्ताव' : 'खरीद की माँग'}</span><span className={isActive ? 'is-active' : 'is-inactive'}>{isActive ? 'सक्रिय लिस्टिंग' : isExpired ? 'अवधि समाप्त' : 'निष्क्रिय'}</span></div><h1 id="listing-title">{displayName}</h1><p><MapPin size={16} aria-hidden="true" />{location || 'स्थान उपलब्ध नहीं'}</p></div><CropImage id={listing.cropId} name={displayName} size="hero" /></div>
+          <div className="sb-listing-offer-heading"><div><div className="sb-listing-badges"><span className={isSell ? 'is-sell' : 'is-buy'}>{isSell ? 'बिक्री का प्रस्ताव' : 'खरीद की माँग'}</span><span className={isActive ? 'is-active' : 'is-inactive'}>{isActive ? 'सक्रिय लिस्टिंग' : isExpired ? 'अवधि समाप्त' : 'निष्क्रिय'}</span></div><h1 id="listing-title">{displayName}</h1><p><MapPin size={16} aria-hidden="true" />{location || 'स्थान उपलब्ध नहीं'}</p></div><CropImage id={listing.cropId || listing.cropName} name={displayName} size="hero" /></div>
+          <CropImageLegend />
           <dl className="sb-listing-price-grid"><div><dt>{isSell ? 'विक्रेता का माँगा गया भाव' : 'खरीदार का प्रस्तावित भाव'}</dt><dd>{price === null ? 'भाव उपलब्ध नहीं' : `₹${number(price)}`}<small> / {unitLabel}</small></dd></div><div><dt>{isSell ? 'दर्ज उपलब्ध मात्रा' : 'दर्ज माँग'}</dt><dd>{positiveNumber(listing.quantity) ? number(listing.quantity) : '—'}<small> {unitLabel}</small></dd></div></dl>
           <p className="sb-listing-offer-note"><Info size={16} aria-hidden="true" />यह उपयोगकर्ता का दिया हुआ प्रस्ताव है। यह सत्यापित सौदा या सरकारी मंडी भाव नहीं है।</p>
         </section>

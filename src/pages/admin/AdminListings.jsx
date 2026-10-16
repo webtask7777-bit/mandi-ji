@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Trash2, Search } from 'lucide-react';
+import CropImage from '../../components/CropImage';
 import { apiFetchAuth, apiDelete } from '../../api/client';
 import { useToast } from '../../context/ToastContext';
 import { useConfirm } from '../../components/ui/ConfirmDialog';
@@ -159,7 +160,7 @@ export default function AdminListings() {
             <div className="flex items-start justify-between gap-2">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-sm">{listing.cropEmoji}</span>
+                  <CropImage id={listing.cropId || listing.cropName} name={listing.cropName} size="xs" />
                   <span className="text-sm font-semibold text-foreground">{listing.cropName}</span>
                   <span className={`px-1.5 py-0.5 rounded text-[9px] font-bold ${
                     listing.type === 'sell'

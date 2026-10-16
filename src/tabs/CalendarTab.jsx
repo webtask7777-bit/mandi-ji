@@ -25,7 +25,7 @@ export default function CalendarTab({ selectedMonth, crops = [], seasons }) {
     <div className="sb-secondary-tab sb-calendar-tab flex flex-col">
       <div className="sb-secondary-heading">
         <div><span className="sb-secondary-eyebrow">फसल योजना</span><h2>हर मौसम की तैयारी</h2><p>महीना चुनें। बुवाई, कटाई और मुख्य आवक का उपलब्ध कैलेंडर देखें।</p></div>
-        <img src="/visuals/crop-paddy.webp" alt="" width="96" height="96" />
+        <CropImage id="paddy" name="धान" size="lg" />
       </div>
 
       <section className="sb-calendar-controls" aria-label="कैलेंडर का महीना चुनें">

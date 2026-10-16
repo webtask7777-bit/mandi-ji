@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, TrendingUp, TrendingDown, Minus, MapPin, Clock3,
 import { useApi } from '../hooks/useApi';
 import { STATE_NAMES } from '../context/StateContext';
 import Brand from '../components/Brand';
-import CropImage from '../components/CropImage';
+import CropImage, { CropImageLegend } from '../components/CropImage';
 import MiniChart from '../components/MiniChart';
 import MandiCompare from '../components/MandiCompare';
 import SEO, { SITE_URL } from '../components/SEO';
@@ -98,6 +98,7 @@ export default function CropDetailPage() {
           <div className="sb-crop-detail-grid">
             <section className="sb-crop-quote" aria-label={`${cropName} का उपलब्ध भाव`}>
               <div className="sb-crop-quote__identity"><div><span className="sb-detail-kicker">{latestDay ? 'दैनिक रिकॉर्ड का भाव' : latestMonth ? 'महीने का मध्य भाव' : 'उपलब्ध मंडी भाव'}</span><h2>{cropName}</h2><p>{quoteLabel}</p></div><CropImage id={cropId} name={cropName} size="hero" /></div>
+              <CropImageLegend />
               {heroPrice !== null ? <>
                 <div className="sb-crop-quote__value"><strong>₹{money(heroPrice)}</strong><span>/ क्विंटल</span></div>
                 {change !== null ? <div className={`sb-detail-change ${change > 0 ? 'is-up' : change < 0 ? 'is-down' : 'is-flat'}`}>

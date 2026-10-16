@@ -1,5 +1,6 @@
 import { X } from "lucide-react";
-import { motion } from "framer-motion";
+import CropImage from "./CropImage";
+import { motion as Motion } from "framer-motion";
 import { REGION_COLORS } from "../data/constants";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,7 +11,7 @@ export default function DistrictPopup({ district, mandis, onClose }) {
   const regionColor = REGION_COLORS[district.region] || "#22c55e";
 
   return (
-    <motion.div
+    <Motion.div
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: 100, opacity: 0 }}
@@ -59,8 +60,8 @@ export default function DistrictPopup({ district, mandis, onClose }) {
           <div className="text-[11px] text-green-500 tracking-widest font-semibold mb-1.5">TOP CROPS</div>
           <div className="flex gap-1.5 flex-wrap">
             {district.topCrops.slice(0, 5).map((c, i) => (
-              <Badge key={i} variant="outline" className="text-[10px] border-zinc-700 text-muted-foreground">
-                {c.emoji || ''} {c.nameHi} ({c.records})
+              <Badge key={i} variant="outline" className="h-auto text-xs border-zinc-700 text-muted-foreground">
+                <CropImage id={c.id || c.cropId} name={c.nameHi || c.name} size="xs" /> {c.nameHi || c.name || c.id} ({c.records})
               </Badge>
             ))}
           </div>
@@ -85,6 +86,6 @@ export default function DistrictPopup({ district, mandis, onClose }) {
           </Card>
         ))}
       </div>
-    </motion.div>
+    </Motion.div>
   );
 }
