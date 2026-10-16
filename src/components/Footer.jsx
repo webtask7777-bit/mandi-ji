@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
 import Brand from './Brand';
 
 export default function Footer() {
@@ -15,7 +14,6 @@ export default function Footer() {
           <FooterLink to="/contact">संपर्क करें</FooterLink>
           <FooterLink to="/blog">खेती की जानकारी</FooterLink>
           <FooterLink to="/delivery-calculator">डिलीवरी कैलकुलेटर</FooterLink>
-          <FooterLink to="/pricing">Pro प्लान <ArrowUpRight size={13} aria-hidden="true" /></FooterLink>
           <FooterLink to="/privacy">गोपनीयता नीति</FooterLink>
           <FooterLink to="/terms">नियम और शर्तें</FooterLink>
         </nav>

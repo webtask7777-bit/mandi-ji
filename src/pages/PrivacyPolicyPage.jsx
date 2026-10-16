@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { ArrowLeft, Shield } from 'lucide-react';
 import { fadeInUp } from '@/utils/animations';
 import SEO from '@/components/SEO';
@@ -20,8 +20,8 @@ export default function PrivacyPolicyPage() {
         </div>
       </header>
 
-      <motion.div {...fadeInUp} className="flex-1 px-4 py-6 space-y-6">
-        <p className="text-xs text-zinc-500">अंतिम अपडेट: मार्च 2026</p>
+      <Motion.div {...fadeInUp} className="flex-1 px-4 py-6 space-y-6">
+        <p className="text-xs text-zinc-500">अंतिम अपडेट: 16 अक्टूबर 2026</p>
 
         <Section title="1. हम कौन हैं">
           सही भाव (SahiBhav) एक कृषि मंडी भाव डैशबोर्ड है जो भारतीय किसानों को ताज़ा मंडी भाव, फसल तुलना, और बाज़ार जानकारी प्रदान करता है।
@@ -48,7 +48,6 @@ export default function PrivacyPolicyPage() {
         <Section title="4. डेटा शेयरिंग">
           हम आपका व्यक्तिगत डेटा किसी तीसरे पक्ष को नहीं बेचते। केवल निम्न स्थितियों में डेटा शेयर हो सकता है:
           <ul className="list-disc list-inside space-y-1 text-zinc-400 mt-2">
-            <li>भुगतान प्रक्रिया के लिए Razorpay को</li>
             <li>कानूनी आवश्यकता पर सरकारी अधिकारियों को</li>
             <li>Analytics के लिए (बिना पहचान वाला डेटा)</li>
           </ul>
@@ -75,7 +74,7 @@ export default function PrivacyPolicyPage() {
           गोपनीयता से जुड़े किसी भी प्रश्न के लिए हमसे संपर्क करें:
           <div className="mt-2 text-green-500 font-semibold">privacy@mandiji.in</div>
         </Section>
-      </motion.div>
+      </Motion.div>
     </div>
   );
 }

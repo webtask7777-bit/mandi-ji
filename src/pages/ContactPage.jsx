@@ -1,7 +1,7 @@
 import '@/styles/secondary.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { ArrowLeft, Mail, Phone, MessageCircle, Send } from 'lucide-react';
 import { fadeInUp } from '@/utils/animations';
 import SEO from '@/components/SEO';
@@ -34,7 +34,7 @@ export default function ContactPage() {
         </div>
       </header>
 
-      <motion.div {...fadeInUp} className="sb-page-content flex-1 px-4 py-6 space-y-6">
+      <Motion.div {...fadeInUp} className="sb-page-content flex-1 px-4 py-6 space-y-6">
         {/* Contact Info Cards */}
         <div className="grid grid-cols-2 gap-2">
           <Card className="bg-zinc-900 border-zinc-800 p-3">
@@ -103,10 +103,10 @@ export default function ContactPage() {
         <div className="space-y-3">
           <h3 className="text-sm font-bold text-foreground">अक्सर पूछे जाने वाले सवाल</h3>
           <FAQ q="मंडी भाव कहां से आते हैं?" a="सरकारी स्रोतों से — data.gov.in (AgMarkNet) और राज्य कृषि विभाग की वेबसाइटों से।" />
-          <FAQ q="क्या ऐप फ्री है?" a="हां, बुनियादी सुविधाएं मुफ्त हैं। Pro प्लान में एडवांस्ड फीचर्स मिलते हैं।" />
-          <FAQ q="भाव कितनी बार अपडेट होते हैं?" a="रोज़ाना — जैसे ही सरकारी डेटा अपडेट होता है।" />
+          <FAQ q="क्या ऐप फ्री है?" a="हां, सही भाव की सभी सुविधाएं मुफ्त हैं। ऐप इस्तेमाल करने के लिए कोई सब्सक्रिप्शन या भुगतान नहीं चाहिए।" />
+          <FAQ q="भाव कितनी बार अपडेट होते हैं?" a="भाव उपलब्ध स्रोत रिकॉर्ड के अनुसार दिखते हैं। हर मंडी और फसल के रिकॉर्ड की तारीख अलग हो सकती है। दिखाए गए भाव की तारीख देखें और सौदे से पहले मंडी से पुष्टि करें।" />
         </div>
-      </motion.div>
+      </Motion.div>
     </div>
   );
 }

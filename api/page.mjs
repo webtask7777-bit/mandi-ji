@@ -18,6 +18,10 @@ export default function page(req, res) {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', 'no-store');
   res.setHeader('X-Robots-Tag', 'noindex, follow');
+  if (requested === '/pricing') {
+    res.setHeader('Location', '/');
+    return res.status(308).send('');
+  }
   if (PRIVATE_PATH.test(requested)) return res.status(200).send(shell());
   const listing = requested.match(/^\/listing\/([^/]+)$/);
   if (listing) {

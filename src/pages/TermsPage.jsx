@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { ArrowLeft, FileText } from 'lucide-react';
 import { fadeInUp } from '@/utils/animations';
 import SEO from '@/components/SEO';
@@ -20,8 +20,8 @@ export default function TermsPage() {
         </div>
       </header>
 
-      <motion.div {...fadeInUp} className="flex-1 px-4 py-6 space-y-6">
-        <p className="text-xs text-zinc-500">अंतिम अपडेट: मार्च 2026</p>
+      <Motion.div {...fadeInUp} className="flex-1 px-4 py-6 space-y-6">
+        <p className="text-xs text-zinc-500">अंतिम अपडेट: 16 अक्टूबर 2026</p>
 
         <Section title="1. सेवा का विवरण">
           सही भाव (SahiBhav) एक कृषि मंडी भाव सूचना प्लेटफ़ॉर्म है। हम सरकारी स्रोतों से मंडी भाव एकत्र करके आपको दिखाते हैं।
@@ -54,12 +54,11 @@ export default function TermsPage() {
           </ul>
         </Section>
 
-        <Section title="5. Pro सब्सक्रिप्शन">
+        <Section title="5. मुफ्त उपयोग">
           <ul className="list-disc list-inside space-y-1 text-zinc-400">
-            <li>भुगतान Razorpay के माध्यम से होता है</li>
-            <li>सब्सक्रिप्शन अवधि समाप्त होने पर ऑटो-रिन्यू हो सकता है</li>
-            <li>रिफंड नीति: 7 दिन के भीतर रिफंड का अनुरोध कर सकते हैं</li>
-            <li>Pro फीचर्स बिना पूर्व सूचना के बदल सकते हैं</li>
+            <li>सही भाव की सभी सुविधाएं मुफ्त हैं; ऐप उपयोग के लिए कोई सब्सक्रिप्शन या शुल्क नहीं है</li>
+            <li>उपलब्ध जानकारी और भाव रिकॉर्ड स्रोत डेटा की उपलब्धता पर निर्भर करते हैं</li>
+            <li>फसल की खरीद-बिक्री और वास्तविक डिलीवरी के खर्च संबंधित पक्षों के बीच तय होते हैं; कैलकुलेटर केवल अनुमान देता है</li>
           </ul>
         </Section>
 
@@ -81,7 +80,7 @@ export default function TermsPage() {
           इन शर्तों से जुड़े किसी भी प्रश्न के लिए:
           <div className="mt-2 text-green-500 font-semibold">legal@mandiji.in</div>
         </Section>
-      </motion.div>
+      </Motion.div>
     </div>
   );
 }

@@ -45,6 +45,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/pricing",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/transport",
       "destination": "/delivery-calculator",
       "permanent": true

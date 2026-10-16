@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
-import { ChevronDown, X, Search, MapPin, User, LogIn, Crown, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe } from "lucide-react";
+import { ChevronDown, X, Search, MapPin, User, LogIn, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe } from "lucide-react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useApi } from "./hooks/useApi";
 import { useStateContext } from "./context/StateContext";
@@ -181,15 +181,6 @@ export default function MandiJiDashboard() {
                 {selectedState ? stateNameHi : "भारत"}
               </span>
               <ChevronDown size={12} className="text-muted-foreground" />
-            </button>
-            {/* Pro button */}
-            <button
-              onClick={() => navigate('/pricing')}
-              className="sb-pro-button"
-              aria-label="Pro प्लान देखें"
-            >
-              <Crown size={11} />
-              <span className="sb-pro-label">Pro</span>
             </button>
             {/* Notification bell */}
             {notifications?.length > 0 && (

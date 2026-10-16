@@ -23,7 +23,6 @@ const EwayBillPage = lazy(() => import('./pages/EwayBillPage'));
 const MyEwayBills = lazy(() => import('./components/eway/MyEwayBills'));
 const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
 const CropDetailPage = lazy(() => import('./pages/CropDetailPage'));
-const PricingPage = lazy(() => import('./pages/PricingPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -72,7 +71,7 @@ function App({ prerender = false, initialPage }) {
                 <Route path="/transport" element={<Navigate to="/delivery-calculator" replace />} />
                 <Route path="/eway-bill/new" element={<ProtectedRoute><EwayBillPage /></ProtectedRoute>} />
                 <Route path="/my-eway-bills" element={<ProtectedRoute><MyEwayBills /></ProtectedRoute>} />
-                <Route path="/pricing" element={<PricingPage />} />
+                <Route path="/pricing" element={<Navigate to="/" replace />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/privacy" element={<PrivacyPolicyPage />} />

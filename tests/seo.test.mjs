@@ -118,7 +118,7 @@ test('every sitemap URL resolves to indexable HTML with unique metadata and safe
     assert.equal(url.protocol, 'https:');
     assert.equal(url.search, '', 'query permutations stay outside sitemap');
     assert.equal(url.hash, '');
-    assert.ok(!/^\/(?:api|admin|login|register|listing|my-listings|my-eway-bills|eway-bill|transport)(?:\/|$)/.test(url.pathname), `${entry}: not a private, user listing, or redirect route`);
+    assert.ok(!/^\/(?:api|admin|login|register|listing|my-listings|my-eway-bills|eway-bill|transport|pricing)(?:\/|$)/.test(url.pathname), `${entry}: not a private, user listing, or redirect route`);
     if (/^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(url.pathname)) assert.ok(!blockedCommodities.has(decodeURIComponent(url.pathname.split('/').at(-1))), `${entry}: non-crop unit excluded`);
     const html = htmlFor(url.pathname);
     const metadata = headMetadata(html, entry);
@@ -153,6 +153,29 @@ function callGuard(url, query = {}) {
   page({ url, query }, response);
   return result;
 }
+
+test('retired pricing URLs permanently redirect to the free app without checkout content', () => {
+  const config = JSON.parse(read(path.join(root, 'vercel.json')));
+  assert.ok(config.redirects.some(rule => rule.source === '/pricing' && rule.destination === '/' && rule.permanent === true));
+  for (const [url, query] of [['/pricing', {}], ['/pricing?plan=pro_yearly', {}], ['/api/page', { path: 'pricing' }]]) {
+    const response = callGuard(url, query);
+    assert.equal(response.statusCode, 308);
+    assert.equal(response.headers.location, '/');
+    assert.equal(response.body, '');
+  }
+});
+
+test('public pages advertise free access and never include retired paid-plan promotions', artifactOptions, () => {
+  const routes = JSON.parse(read(path.join(generated, 'routes.json'))).routes;
+  assert.ok(!routes.includes('/pricing'));
+  assert.doesNotMatch(read(path.join(dist, 'sitemap.xml')), /\/pricing(?:<|[/?#])/);
+  assert.equal(existsSync(path.join(dist, 'pricing.html')), false);
+  for (const route of ['/', '/contact', '/terms', '/privacy', '/delivery-calculator']) {
+    assert.doesNotMatch(htmlFor(route), /Pro प्लान|प्रो में अपग्रेड|Pro सब्सक्रिप्शन|checkout\.razorpay\.com|href="\/pricing"/, route);
+  }
+  assert.match(plainText(htmlFor('/contact')), /सभी सुविधाएं मुफ्त/);
+  assert.match(plainText(htmlFor('/terms')), /मुफ्त/);
+});
 
 test('missing public pages and listings return real 404 responses with noindex', artifactOptions, () => {
   const expected = read(path.join(generated, '404.html'));
