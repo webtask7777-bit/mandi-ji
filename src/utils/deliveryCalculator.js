@@ -67,7 +67,17 @@ export function deliveryFormToInput(form) {
   };
 }
 
-/** A new route does not inherit the previous route's distance or freight quote. */
+/** Farmer-facing name of a price basis code; unknown codes are not shown raw. */
+export function priceBasisLabel(basis) {
+  return ({
+    'daily-average': 'उस दिन के दर्ज भावों का औसत',
+    recent: 'हाल के 7 दिनों के दर्ज भावों का औसत',
+    historical: 'पुराने दर्ज भावों का औसत',
+    'listing-offer': 'विक्रेता का माँगा हुआ भाव',
+  })[basis] || '';
+}
+
+/** A new route does not inherit the previous route's distance, freight quote or route places. */
 export function prefillDeliveryForm(previous, scenario) {
   if (scenario.priceBasis === 'location-only') {
     const isOrigin = scenario.routeDirection === 'from';
@@ -80,6 +90,7 @@ export function prefillDeliveryForm(previous, scenario) {
       ratePerKm: '', quotePerTrip: '', minFare: '', tollPerTrip: '',
       loadingTotal: '', packingTotal: '', otherTotal: '', marketFeePercent: '',
       comparisonMode: isOrigin ? 'local' : 'resale', example: false, sourceQuote: null, locationOnly: true,
+      fromPlace: isOrigin ? null : previous.fromPlace ?? null, toPlace: isOrigin ? previous.toPlace ?? null : null,
     };
   }
   const isListingOffer = scenario.priceBasis === 'listing-offer';
@@ -90,6 +101,8 @@ export function prefillDeliveryForm(previous, scenario) {
     benchmarkPrice: !isListingOffer && Number(scenario.sellPrice) > 0 ? scenario.sellPrice : '',
     distanceKm: '', ratePerKm: '', quotePerTrip: '', minFare: '', tollPerTrip: '',
     comparisonMode: isListingOffer ? 'local' : 'resale', example: false, locationOnly: false,
+    // A new buy mandi needs its own place; "your place" stays unless the sale end changed.
+    fromPlace: null, toPlace: scenario.sellMandi ? null : previous.toPlace ?? null,
     sourceQuote: {
       date: scenario.quoteDate || null, basis: scenario.priceBasis || '',
       variety: scenario.variety || '', grade: scenario.grade || '',
@@ -115,8 +128,10 @@ function normalizeInput(input) {
   const errors = {};
   const missingFields = [];
   const normalized = {};
+  // With a per-trip quote the distance does not change the cost, so it is optional there.
+  const distanceOptional = input.freightMode === 'quote' && isBlank(input.distanceKm);
   const fields = [
-    'quantityKg', 'packagingWeightKg', 'capacityKg', 'distanceKm', 'journeyFactor', 'tollPerTrip',
+    'quantityKg', 'packagingWeightKg', 'capacityKg', ...(distanceOptional ? [] : ['distanceKm']), 'journeyFactor', 'tollPerTrip',
     'loadingTotal', 'packingTotal', 'otherTotal', 'marketFeePercent',
     'buyPricePerKg', 'benchmarkPricePerKg', 'lossPercent',
     ...(input.freightMode === 'rate' ? ['ratePerKm', 'minFare'] : input.freightMode === 'quote' ? ['quotePerTrip'] : []),
@@ -144,6 +159,7 @@ function normalizeInput(input) {
     if (!allowed.includes(input[field])) errors[field] = message;
     else normalized[field] = input[field];
   }
+  if (distanceOptional) normalized.distanceKm = null;
   return { errors, missingFields, normalized };
 }
 
@@ -159,7 +175,7 @@ export function calculateDeliveryScenario(input = {}) {
 
   const loadedWeightKg = n.quantityKg + n.packagingWeightKg;
   const trips = getDeliveryTrips(loadedWeightKg, n.capacityKg);
-  const billedKm = n.distanceKm * n.journeyFactor;
+  const billedKm = n.distanceKm === null ? null : n.distanceKm * n.journeyFactor;
   const freightPerTrip = n.freightMode === 'rate'
     ? Math.max(n.minFare, billedKm * n.ratePerKm) : n.quotePerTrip;
   const freightTotal = trips * freightPerTrip;
@@ -178,14 +194,15 @@ export function calculateDeliveryScenario(input = {}) {
   const occupancyPercent = Math.min(100, (loadedWeightKg / (trips * n.capacityKg)) * 100);
   const remainingCapacityKg = Math.max(0, trips * n.capacityKg - loadedWeightKg);
   const marginPercent = (benefit / totalLandCost) * 100;
-  const totalBilledKm = billedKm * trips;
+  const totalBilledKm = billedKm === null ? null : billedKm * trips;
 
   const values = {
-    loadedWeightKg, trips, billedKm, totalBilledKm, freightPerTrip, freightTotal, tollsTotal, transportTotal,
+    loadedWeightKg, trips, freightPerTrip, freightTotal, tollsTotal, transportTotal,
     purchase, fees, nonTransportCost, totalLandCost, usableKg, landedPricePerKg, landedPricePerQuintal,
     benchmarkValue, benefit, maxAffordableTransport, occupancyPercent, remainingCapacityKg, marginPercent,
   };
   if (!Object.values(values).every(isSafeAmount) || usableKg <= 0 || !Number.isSafeInteger(trips)) return overflowResult();
+  Object.assign(values, { billedKm, totalBilledKm });
 
   let breakEvenDistanceKm = null;
   let breakEvenDistanceStatus = 'quote';
@@ -263,7 +280,7 @@ export function getDeliverySummaryText(input, result = calculateDeliveryScenario
     `मात्रा: ${number(n.quantityKg)} किलो · उपयोग योग्य: ${number(result.usableKg)} किलो`,
     `पैकिंग का वजन: ${number(n.packagingWeightKg)} किलो · कुल ढुलाई वजन: ${number(result.loadedWeightKg)} किलो`,
     `गाड़ी की योजना क्षमता: ${number(n.capacityKg)} किलो · फेरे: ${result.trips}`,
-    `एक तरफ दूरी: ${number(n.distanceKm)} किमी · भाड़े की दूरी/फेरा: ${number(result.billedKm)} किमी`,
+    n.distanceKm === null ? 'दूरी: दर्ज नहीं (प्रति फेरे के कोट में ज़रूरी नहीं)' : `एक तरफ दूरी: ${number(n.distanceKm)} किमी · भाड़े की दूरी/फेरा: ${number(result.billedKm)} किमी`,
     n.freightMode === 'rate'
       ? `भाड़े की दर: ${rupees(n.ratePerKm)}/किमी · न्यूनतम: ${rupees(n.minFare)}/फेरा`
       : `दर्ज भाड़ा: ${rupees(n.quotePerTrip)}/फेरा (टोल और अन्य खर्च अलग दर्ज हैं)`,
