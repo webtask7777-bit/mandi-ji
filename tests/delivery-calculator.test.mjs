@@ -311,3 +311,34 @@ test('vehicle-specific tolls are charged per trip and unknown tolls block a comp
   assert.equal(rows[1].scenario.tollsTotal, 60);
   assert.equal(rows[2].scenario.tollsTotal, 200);
 });
+
+test('a per-trip quote does not need a distance; a per-km rate does', async () => {
+  const { calculateDeliveryScenario } = await import('../src/utils/deliveryCalculator.js');
+  const base = { quantityKg: 1000, packagingWeightKg: 0, capacityKg: 1000, journeyFactor: 1, tollPerTrip: 0, loadingTotal: 0, packingTotal: 0, otherTotal: 0, marketFeePercent: 0, buyPricePerKg: 20, benchmarkPricePerKg: 25, lossPercent: 0, comparisonMode: 'local' };
+  const quote = calculateDeliveryScenario({ ...base, freightMode: 'quote', quotePerTrip: 1500, distanceKm: '' });
+  assert.equal(quote.valid, true);
+  assert.equal(quote.billedKm, null);
+  assert.equal(quote.transportTotal, 1500);
+  const rate = calculateDeliveryScenario({ ...base, freightMode: 'rate', ratePerKm: 20, minFare: 0, distanceKm: '' });
+  assert.equal(rate.valid, false);
+  assert.ok(rate.missingFields.includes('distanceKm'));
+});
+
+test('price basis codes are shown in Hindi, unknown codes are not shown raw', async () => {
+  const { priceBasisLabel } = await import('../src/utils/deliveryCalculator.js');
+  assert.equal(priceBasisLabel('daily-average'), 'उस दिन के दर्ज भावों का औसत');
+  assert.match(priceBasisLabel('recent'), /हाल के/);
+  assert.equal(priceBasisLabel('something-new'), '');
+});
+
+test('a new route clears the old buy-mandi place but keeps the farmer place for a buy route', async () => {
+  const { prefillDeliveryForm } = await import('../src/utils/deliveryCalculator.js');
+  const mine = { stateId: 'chhattisgarh', district: 'Raipur', lat: 21.3, lng: 81.8 };
+  const previous = { fromPlace: { stateId: 'chhattisgarh', district: 'Durg', lat: 21.2, lng: 81.4 }, toPlace: mine };
+  const buyOnly = prefillDeliveryForm(previous, { priceBasis: 'location-only', routeDirection: 'from', buyMandi: 'Dhamtari' });
+  assert.equal(buyOnly.fromPlace, null);
+  assert.deepEqual(buyOnly.toPlace, mine);
+  const pair = prefillDeliveryForm(previous, { buyMandi: 'A', sellMandi: 'B', buyPrice: 2000, sellPrice: 2300, priceBasis: 'recent' });
+  assert.equal(pair.fromPlace, null);
+  assert.equal(pair.toPlace, null);
+});
