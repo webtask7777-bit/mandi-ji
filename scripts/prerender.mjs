@@ -67,7 +67,11 @@ async function render(route) {
   const nativeHead = rendered.html.match(/^(?:(?:<title\b[^>]*>[\s\S]*?<\/title>)|(?:<(?:meta|link)\b[^>]*\/?>))+/)?.[0] || '';
   const body = rendered.html.slice(nativeHead.length);
   const head = (nativeHead + rendered.head).replace(/<(title|meta|link)\b/g, '<$1 data-sb-seo="true"');
-  return template.replace('</head>', `${head}${routeAssets(route)}\n</head>`)
+  // React 19 hoists metadata but Helmet applies <html> attributes only on the client.
+  // Derive the static document language from the same SEO locale output.
+  const localeMeta = head.match(/<meta\b[^>]*property="og:locale"[^>]*>/)?.[0] || '';
+  const documentLanguage = localeMeta.match(/content="(hi|mr|gu)_IN"/)?.[1] || rendered.htmlAttributes?.match(/\blang="(hi|mr|gu)"/)?.[1] || 'hi';
+  return template.replace(/<html\b[^>]*>/, `<html lang="${documentLanguage}">`).replace('</head>', `${head}${routeAssets(route)}\n</head>`)
     .replace('<div id="root"></div>', `<div id="root">${body.replaceAll('आज का उपलब्ध रिकॉर्ड', 'उपलब्ध दर्ज रिकॉर्ड').replace(/\d+ दिन पुराना रिकॉर्ड/g, 'पुराना रिकॉर्ड · तारीख देखें')}</div><script id="sahibhav-public-data" type="application/json">${escapeJson(pageResponses)}</script>`);
 }
 function hasPrice(detail) {

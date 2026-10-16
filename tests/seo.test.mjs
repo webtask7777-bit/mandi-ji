@@ -109,7 +109,7 @@ test('every sitemap URL resolves to indexable HTML with unique metadata and safe
   const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => decodeEntities(match[1]));
   assert.ok(urls.length > 20, 'sitemap contains substantive public coverage');
   assert.equal(new Set(urls).size, urls.length, 'no duplicate sitemap URLs');
-  assert.ok(!/<lastmod\b/i.test(xml), 'unknown modification dates must not be replaced with deployment dates');
+  const modificationDates = new Map([...xml.matchAll(/<url><loc>([^<]+)<\/loc><lastmod>([^<]+)<\/lastmod><\/url>/g)].map(([, url, date]) => [decodeEntities(url), date]));
   const blockedCommodities = new Set(['cow', 'bull', 'calf', 'goat', 'cock', 'duck', 'he-buffalo', 'she-buffalo', 'pigs', 'fish', 'egg']);
   const origin = new URL(urls[0]).origin;
   for (const entry of urls) {
@@ -125,7 +125,18 @@ test('every sitemap URL resolves to indexable HTML with unique metadata and safe
     assert.equal(metadata.canonical, entry, `${entry}: self-canonical matches sitemap`);
     assert.match(metadata.robots, /(?:^|,\s*)index(?:,|$)/, `${entry}: indexable document`);
     assert.doesNotMatch(metadata.robots, /noindex/);
-    validatePublicSnapshot(html, entry);
+    const snapshot = validatePublicSnapshot(html, entry);
+    if (modificationDates.has(entry)) {
+      const date = modificationDates.get(entry);
+      const article = Object.values(snapshot).map(item => item.data).find(data => data?.slug && data?.content);
+      const prices = Object.entries(snapshot).find(([request]) => request.startsWith('/prices/'))?.[1]?.data;
+      if (article) assert.equal(date, String(article.updatedAt || article.publishedAt).slice(0, 10), 'article lastmod uses actual editorial date');
+      else if (prices) {
+        const daily = (prices.dailyHistory || []).filter(row => Number(row.market) > 0).map(row => String(row.date)).sort().at(-1);
+        const monthly = (prices.history || []).filter(row => Number(row.market) > 0).map(row => `${row.date}-28`).sort().at(-1);
+        assert.equal(date, (daily || monthly).slice(0, 10), 'price lastmod uses observed record date');
+      } else assert.fail(`${entry}: unknown modification date must not be replaced with deployment date`);
+    }
   }
 });
 
@@ -138,9 +149,10 @@ test('raw home and state pages contain navigable crop links and the blog index e
   const regionalCrop = htmlFor('/mandi-bhav/chhattisgarh/bhindiladies-finger');
   assert.match(regionalCrop, /href="\/mandi-bhav\/chhattisgarh\/bhindiladies-finger"/, 'comparison detail link retains the regional source ID and scope');
   assert.doesNotMatch(regionalCrop, /href="\/crop\/ladyfinger(?:[?"#])/, 'regional comparison must not link to the nonexistent national crop ID');
-  const published = JSON.parse(read(path.join(root, 'server/db/data/blog-posts.json'))).filter(post => post.status === 'published' && post.slug && post.content?.trim());
   const blog = htmlFor('/blog');
-  for (const post of published.slice(0, 10)) assert.ok(blog.includes(`href="/blog/${encodeURIComponent(post.slug)}"`), 'published article is discoverable from blog HTML');
+  const listed = validatePublicSnapshot(blog, '/blog')['/cms/blog?page=1&limit=10'].data.posts;
+  assert.ok(listed.every(post => post.language === 'hi'), 'default index displays Hindi guides');
+  for (const post of listed) assert.ok(blog.includes(`href="/blog/${encodeURIComponent(post.slug)}"`), 'listed article is discoverable from blog HTML');
 });
 
 function callGuard(url, query = {}) {

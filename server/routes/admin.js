@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { readJSON, writeJSON, appendItem, updateItem, deleteItem, findById } from '../db/json-store.js';
 import { adminOnly } from '../middleware/auth.js';
 import { v4 as uuid } from 'uuid';
+import { prepareEditorialPost } from '../utils/editorial.js';
 
 const router = Router();
 
@@ -180,21 +181,8 @@ router.get('/blog', (req, res) => {
 // POST /api/admin/blog
 router.post('/blog', (req, res) => {
   try {
-    const { title, slug, content, excerpt, tags, status } = req.body;
-    if (!title) return res.status(400).json({ error: 'टाइटल ज़रूरी है' });
-    const post = {
-      id: uuid(),
-      title,
-      slug: slug || title.toLowerCase().replace(/[^a-z0-9\u0900-\u097F]+/g, '-').replace(/(^-|-$)/g, ''),
-      content: content || '',
-      excerpt: excerpt || '',
-      tags: tags || [],
-      status: status || 'draft',
-      author: req.user.name || 'Admin',
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-      publishedAt: status === 'published' ? new Date().toISOString() : null,
-    };
+    const { post, errors } = prepareEditorialPost(req.body, { posts: readJSON('blog-posts.json'), id: uuid() });
+    if (errors.length) return res.status(400).json({ error: errors.join(' '), details: errors });
     appendItem('blog-posts.json', post);
     res.json(post);
   } catch (err) {
@@ -205,13 +193,12 @@ router.post('/blog', (req, res) => {
 // PUT /api/admin/blog/:id
 router.put('/blog/:id', (req, res) => {
   try {
-    const existing = findById('blog-posts.json', req.params.id);
+    const posts = readJSON('blog-posts.json');
+    const existing = posts.find(post => post.id === req.params.id);
     if (!existing) return res.status(404).json({ error: 'पोस्ट नहीं मिली' });
-    const updates = { ...req.body, updatedAt: new Date().toISOString() };
-    if (req.body.status === 'published' && !existing.publishedAt) {
-      updates.publishedAt = new Date().toISOString();
-    }
-    const updated = updateItem('blog-posts.json', req.params.id, updates);
+    const { post, changed, errors } = prepareEditorialPost(req.body, { existing, posts });
+    if (errors.length) return res.status(400).json({ error: errors.join(' '), details: errors });
+    const updated = changed ? updateItem('blog-posts.json', req.params.id, post) : existing;
     res.json(updated);
   } catch (err) {
     res.status(500).json({ error: 'पोस्ट अपडेट करने में विफल' });

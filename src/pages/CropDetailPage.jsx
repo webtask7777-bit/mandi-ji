@@ -7,6 +7,7 @@ import CropImage, { CropImageLegend } from '../components/CropImage';
 import MiniChart from '../components/MiniChart';
 import MandiCompare from '../components/MandiCompare';
 import SEO, { SITE_URL } from '../components/SEO';
+import CropGuides from '../components/CropGuides';
 import { getDataFreshness } from '../utils/dataFreshness';
 import { comparableChange, gapNote } from '../utils/priceChange';
 import { cropDetailPath } from '../utils/cropUrls';
@@ -128,6 +129,7 @@ export default function CropDetailPage() {
             <div><dt>भाव की इकाई</dt><dd>₹ / क्विंटल</dd></div>
           </dl>{msp !== null && <p className="sb-detail-small">{crop.mspSource ? <>MSP FAQ (औसत अच्छी) गुणवत्ता के लिए है; सरकारी खरीद की पात्रता और केंद्र अलग से जाँचें। <a href={crop.mspSource} target="_blank" rel="noopener noreferrer">स्रोत: PIB</a></> : 'MSP का फसल वर्ष इस रिकॉर्ड में नहीं दिया गया है। वर्तमान फसल वर्ष का MSP अलग से जाँचें।'}</p>}<Link to="/blog" className="sb-detail-text-link">मंडी भाव समझने के लिए पढ़ें <ArrowRight size={16} aria-hidden="true" /></Link></section>
         </div>}
+        <CropGuides cropId={cropId} cropName={cropName} stateId={stateParam} />
         <footer className="sb-detail-footer"><Brand compact /><p>सही भाव। समझकर फ़ैसला।</p><Link to={dashboardPath}>मुख्य पृष्ठ पर जाएँ <ArrowRight size={15} aria-hidden="true" /></Link></footer>
       </main>
     </div>

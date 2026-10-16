@@ -1,0 +1,3968 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-16",
+  "purpose": "Editorial discovery taxonomy audit of every distinct source commodity ID. This is not a botanical certification, a price merge, or an instruction to publish a page for every topic.",
+  "sourceScope": "All crops.json and ticker.json plus crop-prices/*.json crop headers recursively under server/db/data (India, CG and individual states).",
+  "sourceFileCount": 2708,
+  "commodityCount": 392,
+  "topicCount": 169,
+  "statusCounts": {
+    "curated-crop-topic": 288,
+    "non-crop": 17,
+    "mixed-or-unspecified": 25,
+    "identity-review": 62
+  },
+  "policy": [
+    "Only exact normalized IDs are resolved; no substring, fuzzy, translated-name or botanical guessing.",
+    "Curated groups support article discovery. Each article must still specify applicable region, variety, crop form and stage.",
+    "Fresh/dried, grain/leaf, whole/split and processed commodities keep distinct IDs and prices even if they share an editorial topic.",
+    "No automatic article or indexable page is created from this report. Publish only substantively researched content.",
+    "Generic or ambiguous labels do not inherit crop-specific guidance until reviewed; do not fill gaps by guessing.",
+    "Medicinal, regulated and toxic crops require their own qualified editorial review before publishing use or cultivation advice.",
+    "Source Hindi labels are not used for identity matching; some legacy names are known to be inaccurate."
+  ],
+  "references": [
+    {
+      "id": "tnau-cumbu",
+      "url": "https://agritech.tnau.ac.in/agriculture/millets_cumbu.html",
+      "supports": "Cumbu is pearl millet; used only to group exact cumbu commodity labels with bajra."
+    },
+    {
+      "id": "tnau-karamani",
+      "url": "https://www.agritech.tnau.ac.in/expert_system/cattlebuffalo/Fodder%20Production.html",
+      "supports": "Cowpea / Lobia is also called Karamani; does not establish whether a market record is fresh or dry."
+    }
+  ],
+  "commodities": [
+    {
+      "commodityId": "absinthe",
+      "sourceNames": [
+        "Absinthe"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/absinthe.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Source name conflicts with observed Chirayta variety; establish crop identity before a species guide."
+    },
+    {
+      "commodityId": "ajwan",
+      "sourceNames": [
+        "Ajwan"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ajwan.json",
+      "status": "curated-crop-topic",
+      "topicId": "ajwain",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "alasande-gram",
+      "sourceNames": [
+        "Alasande Gram"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/alasande-gram.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "almondbadam",
+      "sourceNames": [
+        "Almond(Badam)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/almondbadam.json",
+      "status": "curated-crop-topic",
+      "topicId": "almond",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "alsandikai",
+      "sourceNames": [
+        "Alsandikai"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/alsandikai.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "amaranthus",
+      "sourceNames": [
+        "Amaranthus"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/amaranthus.json",
+      "status": "curated-crop-topic",
+      "topicId": "leaf-amaranth",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "ambady-mesta-patson",
+      "sourceNames": [
+        "Ambady/Mesta/Patson"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ambady-mesta-patson.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "The combined market label may cover more than one fibre crop; do not merge it into jute."
+    },
+    {
+      "commodityId": "ambrette-seed-muskmallow",
+      "sourceNames": [
+        "Ambrette Seed/Muskmallow"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ambrette-seed-muskmallow.json",
+      "status": "curated-crop-topic",
+      "topicId": "ambrette",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "amlanelli-kai",
+      "sourceNames": [
+        "Amla(Nelli Kai)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/amlanelli-kai.json",
+      "status": "curated-crop-topic",
+      "topicId": "amla",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "amranthas-red",
+      "sourceNames": [
+        "Amranthas Red"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/amranthas-red.json",
+      "status": "curated-crop-topic",
+      "topicId": "leaf-amaranth",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "anthorium",
+      "sourceNames": [
+        "Anthorium"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/anthorium.json",
+      "status": "curated-crop-topic",
+      "topicId": "anthurium",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "apple",
+      "sourceNames": [
+        "Apple"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/apple.json",
+      "status": "curated-crop-topic",
+      "topicId": "apple",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "apricotjardalu-khumani",
+      "sourceNames": [
+        "Apricot(Jardalu/Khumani)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/apricotjardalu-khumani.json",
+      "status": "curated-crop-topic",
+      "topicId": "apricot",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "arecanutbetelnut-supari",
+      "sourceNames": [
+        "Arecanut(Betelnut/Supari)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/arecanutbetelnut-supari.json",
+      "status": "curated-crop-topic",
+      "topicId": "arecanut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "arhar",
+      "sourceNames": [
+        "Arhar/Toor"
+      ],
+      "sourceExample": "server/db/data/crop-prices/arhar.json",
+      "status": "curated-crop-topic",
+      "topicId": "arhar",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "arhar-daltur-dal",
+      "sourceNames": [
+        "Arhar Dal(Tur Dal)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/arhar-daltur-dal.json",
+      "status": "curated-crop-topic",
+      "topicId": "arhar",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "arhartur-red-gramwhole",
+      "sourceNames": [
+        "Arhar(Tur/Red Gram)(Whole)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/arhartur-red-gramwhole.json",
+      "status": "curated-crop-topic",
+      "topicId": "arhar",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "asalia",
+      "sourceNames": [
+        "Asalia"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/asalia.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Unverified regional label; no botanical assignment."
+    },
+    {
+      "commodityId": "asgand",
+      "sourceNames": [
+        "Asgand"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/asgand.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "ashgourd",
+      "sourceNames": [
+        "Ashgourd"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ashgourd.json",
+      "status": "curated-crop-topic",
+      "topicId": "ashgourd",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "ashwagandha",
+      "sourceNames": [
+        "Ashwagandha"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ashwagandha.json",
+      "status": "curated-crop-topic",
+      "topicId": "ashwagandha",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "asparagus",
+      "sourceNames": [
+        "Asparagus"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/asparagus.json",
+      "status": "curated-crop-topic",
+      "topicId": "asparagus",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "astera",
+      "sourceNames": [
+        "Astera"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/astera.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "avare-dal",
+      "sourceNames": [
+        "Avare Dal"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/avare-dal.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "avocado",
+      "sourceNames": [
+        "Avocado"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/avocado.json",
+      "status": "curated-crop-topic",
+      "topicId": "avocado",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "baby-corn",
+      "sourceNames": [
+        "Baby Corn"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/baby-corn.json",
+      "status": "curated-crop-topic",
+      "topicId": "maize",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "bael",
+      "sourceNames": [
+        "Bael"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bael.json",
+      "status": "curated-crop-topic",
+      "topicId": "bael",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "bajrapearl-millet-cumbu",
+      "sourceNames": [
+        "Bajra(Pearl Millet/Cumbu)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bajrapearl-millet-cumbu.json",
+      "status": "curated-crop-topic",
+      "topicId": "bajra",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "balekai",
+      "sourceNames": [
+        "Balekai"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/balekai.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "bamboo",
+      "sourceNames": [
+        "Bamboo"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bamboo.json",
+      "status": "curated-crop-topic",
+      "topicId": "bamboo",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "bamboo-shoot",
+      "sourceNames": [
+        "Bamboo Shoot"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bamboo-shoot.json",
+      "status": "curated-crop-topic",
+      "topicId": "bamboo",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "banana",
+      "sourceNames": [
+        "Banana"
+      ],
+      "sourceExample": "server/db/data/crop-prices/banana.json",
+      "status": "curated-crop-topic",
+      "topicId": "banana",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "banana-green",
+      "sourceNames": [
+        "Banana - Green"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/banana-green.json",
+      "status": "curated-crop-topic",
+      "topicId": "banana",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "barleyjau",
+      "sourceNames": [
+        "Barley(Jau)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/barleyjau.json",
+      "status": "curated-crop-topic",
+      "topicId": "barley",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "barnyard",
+      "sourceNames": [
+        "Barnyard Millet"
+      ],
+      "sourceExample": "server/db/data/crop-prices/barnyard.json",
+      "status": "curated-crop-topic",
+      "topicId": "barnyard",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "basil",
+      "sourceNames": [
+        "basil"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/basil.json",
+      "status": "curated-crop-topic",
+      "topicId": "basil",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "basmati-rice",
+      "sourceNames": [
+        "Basmati Rice"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/basmati-rice.json",
+      "status": "curated-crop-topic",
+      "topicId": "paddy",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "bay-leaftejpatta",
+      "sourceNames": [
+        "Bay leaf(Tejpatta)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bay-leaftejpatta.json",
+      "status": "curated-crop-topic",
+      "topicId": "bay-leaf",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "beans",
+      "sourceNames": [
+        "Beans"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/beans.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Generic beans label does not identify a crop species or family of cultivation advice."
+    },
+    {
+      "commodityId": "beaten-rice",
+      "sourceNames": [
+        "Beaten Rice"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/beaten-rice.json",
+      "status": "curated-crop-topic",
+      "topicId": "paddy",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "beetroot",
+      "sourceNames": [
+        "Beetroot"
+      ],
+      "sourceExample": "server/db/data/crop-prices/beetroot.json",
+      "status": "curated-crop-topic",
+      "topicId": "beetroot",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "behada",
+      "sourceNames": [
+        "Behada"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/behada.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "bengal-gram-dalchana-dal",
+      "sourceNames": [
+        "Bengal Gram Dal(Chana Dal)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bengal-gram-dalchana-dal.json",
+      "status": "curated-crop-topic",
+      "topicId": "gram",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "bengal-gramgramwhole",
+      "sourceNames": [
+        "Bengal Gram(Gram)(Whole)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bengal-gramgramwhole.json",
+      "status": "curated-crop-topic",
+      "topicId": "gram",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "berzizyphus-borehannu",
+      "sourceNames": [
+        "Ber(Zizyphus/Borehannu)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/berzizyphus-borehannu.json",
+      "status": "curated-crop-topic",
+      "topicId": "ber",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "betal-leaves",
+      "sourceNames": [
+        "Betal Leaves"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/betal-leaves.json",
+      "status": "curated-crop-topic",
+      "topicId": "betel",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "betelnuts",
+      "sourceNames": [
+        "Betelnuts"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/betelnuts.json",
+      "status": "curated-crop-topic",
+      "topicId": "arecanut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "bhindiladies-finger",
+      "sourceNames": [
+        "Bhindi(Ladies Finger)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bhindiladies-finger.json",
+      "status": "curated-crop-topic",
+      "topicId": "okra",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "bhui-amlaya",
+      "sourceNames": [
+        "Bhui Amlaya"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bhui-amlaya.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "big-gram",
+      "sourceNames": [
+        "Big Gram"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/big-gram.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Generic market grade does not establish the underlying pulse."
+    },
+    {
+      "commodityId": "bitter-gourd",
+      "sourceNames": [
+        "Bitter gourd"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bitter-gourd.json",
+      "status": "curated-crop-topic",
+      "topicId": "bittergourd",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "bittergourd",
+      "sourceNames": [
+        "Bitter Gourd"
+      ],
+      "sourceExample": "server/db/data/crop-prices/bittergourd.json",
+      "status": "curated-crop-topic",
+      "topicId": "bittergourd",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "black-gram-dalurd-dal",
+      "sourceNames": [
+        "Black Gram Dal(Urd Dal)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/black-gram-dalurd-dal.json",
+      "status": "curated-crop-topic",
+      "topicId": "urad",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "black-gramurd-beanswhole",
+      "sourceNames": [
+        "Black Gram(Urd Beans)(Whole)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/black-gramurd-beanswhole.json",
+      "status": "curated-crop-topic",
+      "topicId": "urad",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "black-pepper",
+      "sourceNames": [
+        "Black pepper"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/black-pepper.json",
+      "status": "curated-crop-topic",
+      "topicId": "black-pepper",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "bop",
+      "sourceNames": [
+        "BOP"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bop.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "bottle-gourd",
+      "sourceNames": [
+        "Bottle gourd"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bottle-gourd.json",
+      "status": "curated-crop-topic",
+      "topicId": "bottlegourd",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "bottlegourd",
+      "sourceNames": [
+        "Bottle Gourd"
+      ],
+      "sourceExample": "server/db/data/crop-prices/bottlegourd.json",
+      "status": "curated-crop-topic",
+      "topicId": "bottlegourd",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "brahmi",
+      "sourceNames": [
+        "Brahmi"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/brahmi.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Common medicinal name can refer to different plants; verify identity before cultivation advice."
+    },
+    {
+      "commodityId": "brinjal",
+      "sourceNames": [
+        "Brinjal"
+      ],
+      "sourceExample": "server/db/data/crop-prices/brinjal.json",
+      "status": "curated-crop-topic",
+      "topicId": "brinjal",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "broken-rice",
+      "sourceNames": [
+        "Broken Rice"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/broken-rice.json",
+      "status": "curated-crop-topic",
+      "topicId": "paddy",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "broomstickflower-broom",
+      "sourceNames": [
+        "Broomstick(Flower Broom)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/broomstickflower-broom.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "A broom commodity does not establish the harvested plant species."
+    },
+    {
+      "commodityId": "bull",
+      "sourceNames": [
+        "Bull"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bull.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "bullar",
+      "sourceNames": [
+        "Bullar"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bullar.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "bunch-beans",
+      "sourceNames": [
+        "Bunch Beans"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bunch-beans.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Market growth/form label does not establish the underlying bean crop."
+    },
+    {
+      "commodityId": "buttery",
+      "sourceNames": [
+        "buttery"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/buttery.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "cabbage",
+      "sourceNames": [
+        "Cabbage"
+      ],
+      "sourceExample": "server/db/data/crop-prices/cabbage.json",
+      "status": "curated-crop-topic",
+      "topicId": "cabbage",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "calf",
+      "sourceNames": [
+        "Calf"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/calf.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "capsicum",
+      "sourceNames": [
+        "Capsicum"
+      ],
+      "sourceExample": "server/db/data/crop-prices/capsicum.json",
+      "status": "curated-crop-topic",
+      "topicId": "capsicum",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cardamom",
+      "sourceNames": [
+        "Cardamom"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cardamom.json",
+      "status": "curated-crop-topic",
+      "topicId": "cardamom",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cardamoms",
+      "sourceNames": [
+        "Cardamoms"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cardamoms.json",
+      "status": "curated-crop-topic",
+      "topicId": "cardamom",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "carnation",
+      "sourceNames": [
+        "Carnation"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/carnation.json",
+      "status": "curated-crop-topic",
+      "topicId": "carnation",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "carrot",
+      "sourceNames": [
+        "Carrot"
+      ],
+      "sourceExample": "server/db/data/crop-prices/carrot.json",
+      "status": "curated-crop-topic",
+      "topicId": "carrot",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cashewnuts",
+      "sourceNames": [
+        "Cashewnuts"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cashewnuts.json",
+      "status": "curated-crop-topic",
+      "topicId": "cashew",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "castor-seed",
+      "sourceNames": [
+        "Castor Seed"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/castor-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "castor",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cauliflower",
+      "sourceNames": [
+        "Cauliflower"
+      ],
+      "sourceExample": "server/db/data/crop-prices/cauliflower.json",
+      "status": "curated-crop-topic",
+      "topicId": "cauliflower",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "chakotha",
+      "sourceNames": [
+        "Chakotha"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chakotha.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "chandrashoor",
+      "sourceNames": [
+        "Chandrashoor"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chandrashoor.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "chapparad-avare",
+      "sourceNames": [
+        "Chapparad Avare"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chapparad-avare.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "chennangi-dal",
+      "sourceNames": [
+        "Chennangi Dal"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chennangi-dal.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "cherry",
+      "sourceNames": [
+        "Cherry"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cherry.json",
+      "status": "curated-crop-topic",
+      "topicId": "cherry",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "chhappan-kaddu",
+      "sourceNames": [
+        "Chhappan Kaddu"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chhappan-kaddu.json",
+      "status": "curated-crop-topic",
+      "topicId": "summer-squash",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "chicorychikori-kasni",
+      "sourceNames": [
+        "Chicory(Chikori/Kasni)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chicorychikori-kasni.json",
+      "status": "curated-crop-topic",
+      "topicId": "chicory",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "chikoossapota",
+      "sourceNames": [
+        "Chikoos(Sapota)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chikoossapota.json",
+      "status": "curated-crop-topic",
+      "topicId": "sapota",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "chili-red",
+      "sourceNames": [
+        "Chili Red"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chili-red.json",
+      "status": "curated-crop-topic",
+      "topicId": "chilli",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "chilli",
+      "sourceNames": [
+        "Chilli"
+      ],
+      "sourceExample": "server/db/data/crop-prices/chilli.json",
+      "status": "curated-crop-topic",
+      "topicId": "chilli",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "chilly-capsicum",
+      "sourceNames": [
+        "Chilly Capsicum"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chilly-capsicum.json",
+      "status": "curated-crop-topic",
+      "topicId": "capsicum",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "chow-chow",
+      "sourceNames": [
+        "Chow Chow"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chow-chow.json",
+      "status": "curated-crop-topic",
+      "topicId": "chayote",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "chrysanthemum",
+      "sourceNames": [
+        "Chrysanthemum"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chrysanthemum.json",
+      "status": "curated-crop-topic",
+      "topicId": "chrysanthemum",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "chrysanthemumloose",
+      "sourceNames": [
+        "Chrysanthemum(Loose)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chrysanthemumloose.json",
+      "status": "curated-crop-topic",
+      "topicId": "chrysanthemum",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cinamondalchini",
+      "sourceNames": [
+        "Cinamon(Dalchini)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cinamondalchini.json",
+      "status": "curated-crop-topic",
+      "topicId": "cinnamon",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cloves",
+      "sourceNames": [
+        "Cloves"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cloves.json",
+      "status": "curated-crop-topic",
+      "topicId": "clove",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cluster-beans",
+      "sourceNames": [
+        "Cluster beans"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cluster-beans.json",
+      "status": "curated-crop-topic",
+      "topicId": "clusterbean",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "clusterbean",
+      "sourceNames": [
+        "Cluster Bean"
+      ],
+      "sourceExample": "server/db/data/crop-prices/clusterbean.json",
+      "status": "curated-crop-topic",
+      "topicId": "clusterbean",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cock",
+      "sourceNames": [
+        "Cock"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cock.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "cocoa",
+      "sourceNames": [
+        "Cocoa"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cocoa.json",
+      "status": "curated-crop-topic",
+      "topicId": "cocoa",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "coconut",
+      "sourceNames": [
+        "Coconut"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/coconut.json",
+      "status": "curated-crop-topic",
+      "topicId": "coconut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "coconut-coir",
+      "sourceNames": [
+        "Coconut Coir"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/coconut-coir.json",
+      "status": "curated-crop-topic",
+      "topicId": "coconut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "coconut-oil",
+      "sourceNames": [
+        "Coconut Oil"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/coconut-oil.json",
+      "status": "curated-crop-topic",
+      "topicId": "coconut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "coconut-seed",
+      "sourceNames": [
+        "Coconut Seed"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/coconut-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "coconut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "coffee",
+      "sourceNames": [
+        "Coffee"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/coffee.json",
+      "status": "curated-crop-topic",
+      "topicId": "coffee",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "colacasia",
+      "sourceNames": [
+        "Colacasia"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/colacasia.json",
+      "status": "curated-crop-topic",
+      "topicId": "colocasia",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "coleus",
+      "sourceNames": [
+        "Coleus"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/coleus.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Genus/market label does not establish the medicinal or ornamental crop intended."
+    },
+    {
+      "commodityId": "colocasia",
+      "sourceNames": [
+        "Colocasia/Arbi"
+      ],
+      "sourceExample": "server/db/data/crop-prices/colocasia.json",
+      "status": "curated-crop-topic",
+      "topicId": "colocasia",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "copra",
+      "sourceNames": [
+        "Copra"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/copra.json",
+      "status": "curated-crop-topic",
+      "topicId": "coconut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "coriander",
+      "sourceNames": [
+        "Coriander"
+      ],
+      "sourceExample": "server/db/data/crop-prices/coriander.json",
+      "status": "curated-crop-topic",
+      "topicId": "coriander",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "corianderleaves",
+      "sourceNames": [
+        "Coriander(Leaves)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/corianderleaves.json",
+      "status": "curated-crop-topic",
+      "topicId": "coriander",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "corriander-seed",
+      "sourceNames": [
+        "Corriander seed"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/corriander-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "coriander",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cotton",
+      "sourceNames": [
+        "Cotton"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cotton.json",
+      "status": "curated-crop-topic",
+      "topicId": "cotton",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cotton-seed",
+      "sourceNames": [
+        "Cotton Seed"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cotton-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "cotton",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cow",
+      "sourceNames": [
+        "Cow"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cow.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "cowpea",
+      "sourceNames": [
+        "Cowpea/Barbati"
+      ],
+      "sourceExample": "server/db/data/crop-prices/cowpea.json",
+      "status": "curated-crop-topic",
+      "topicId": "cowpea",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cowpealobia-karamani",
+      "sourceNames": [
+        "Cowpea(Lobia/Karamani)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cowpealobia-karamani.json",
+      "status": "curated-crop-topic",
+      "topicId": "cowpea",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cowpeaveg",
+      "sourceNames": [
+        "Cowpea(Veg)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cowpeaveg.json",
+      "status": "curated-crop-topic",
+      "topicId": "cowpea",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cucumbarkheera",
+      "sourceNames": [
+        "Cucumbar(Kheera)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cucumbarkheera.json",
+      "status": "curated-crop-topic",
+      "topicId": "cucumber",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "cummin-seedjeera",
+      "sourceNames": [
+        "Cummin Seed(Jeera)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/cummin-seedjeera.json",
+      "status": "curated-crop-topic",
+      "topicId": "cumin",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "custard-applesharifa",
+      "sourceNames": [
+        "Custard Apple(Sharifa)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/custard-applesharifa.json",
+      "status": "curated-crop-topic",
+      "topicId": "custard-apple",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "dal-mix",
+      "sourceNames": [
+        "Dal Mix"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/dal-mix.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Mixed pulses have no single parent crop."
+    },
+    {
+      "commodityId": "dates",
+      "sourceNames": [
+        "Dates"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/dates.json",
+      "status": "curated-crop-topic",
+      "topicId": "dates",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "delha",
+      "sourceNames": [
+        "Delha"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/delha.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Unverified market label; do not infer Dahlia from spelling."
+    },
+    {
+      "commodityId": "dhaincha",
+      "sourceNames": [
+        "Dhaincha"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/dhaincha.json",
+      "status": "curated-crop-topic",
+      "topicId": "dhaincha",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "dhainchaseed",
+      "sourceNames": [
+        "Dhaincha(Seed)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/dhainchaseed.json",
+      "status": "curated-crop-topic",
+      "topicId": "dhaincha",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "dhawai-flowers",
+      "sourceNames": [
+        "dhawai flowers"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/dhawai-flowers.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "dried-mango",
+      "sourceNames": [
+        "dried mango"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/dried-mango.json",
+      "status": "curated-crop-topic",
+      "topicId": "mango",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "drumstick",
+      "sourceNames": [
+        "Drumstick"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/drumstick.json",
+      "status": "curated-crop-topic",
+      "topicId": "drumstick",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "dry-chillies",
+      "sourceNames": [
+        "Dry Chillies"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/dry-chillies.json",
+      "status": "curated-crop-topic",
+      "topicId": "chilli",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "dry-fodder",
+      "sourceNames": [
+        "Dry Fodder"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/dry-fodder.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Generic fodder may contain several crops or grasses."
+    },
+    {
+      "commodityId": "dry-grapes",
+      "sourceNames": [
+        "Dry Grapes"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/dry-grapes.json",
+      "status": "curated-crop-topic",
+      "topicId": "grapes",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "duck",
+      "sourceNames": [
+        "Duck"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/duck.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "duster-beans",
+      "sourceNames": [
+        "Duster Beans"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/duster-beans.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "egg",
+      "sourceNames": [
+        "Egg"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/egg.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "elephant-yamsuran-amorphophallus",
+      "sourceNames": [
+        "Elephant Yam(Suran)/Amorphophallus"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/elephant-yamsuran-amorphophallus.json",
+      "status": "curated-crop-topic",
+      "topicId": "suran",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "fenugreek",
+      "sourceNames": [
+        "Fenugreek"
+      ],
+      "sourceExample": "server/db/data/crop-prices/fenugreek.json",
+      "status": "curated-crop-topic",
+      "topicId": "fenugreek",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "field-beananumulu",
+      "sourceNames": [
+        "Field Bean(Anumulu)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/field-beananumulu.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "field-pea",
+      "sourceNames": [
+        "Field Pea"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/field-pea.json",
+      "status": "curated-crop-topic",
+      "topicId": "peas",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "figanjura-anjeer",
+      "sourceNames": [
+        "Fig(Anjura/Anjeer)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/figanjura-anjeer.json",
+      "status": "curated-crop-topic",
+      "topicId": "fig",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "firewood",
+      "sourceNames": [
+        "Firewood"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/firewood.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Wood product with no named source tree."
+    },
+    {
+      "commodityId": "fish",
+      "sourceNames": [
+        "Fish"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/fish.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "flax-seeds",
+      "sourceNames": [
+        "Flax seeds"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/flax-seeds.json",
+      "status": "curated-crop-topic",
+      "topicId": "linseed",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "flowers-others",
+      "sourceNames": [
+        "Flowers-Others"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/flowers-others.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Mixed/other flower category is not one flower crop."
+    },
+    {
+      "commodityId": "foxtail-milletnavane",
+      "sourceNames": [
+        "Foxtail Millet(Navane)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/foxtail-milletnavane.json",
+      "status": "curated-crop-topic",
+      "topicId": "foxtail-millet",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "french-beansfrasbean",
+      "sourceNames": [
+        "French Beans(Frasbean)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/french-beansfrasbean.json",
+      "status": "curated-crop-topic",
+      "topicId": "french-beans",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "galgallemon",
+      "sourceNames": [
+        "Galgal(Lemon)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/galgallemon.json",
+      "status": "curated-crop-topic",
+      "topicId": "lemon",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "garlic",
+      "sourceNames": [
+        "Garlic"
+      ],
+      "sourceExample": "server/db/data/crop-prices/garlic.json",
+      "status": "curated-crop-topic",
+      "topicId": "garlic",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "ghee",
+      "sourceNames": [
+        "Ghee"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ghee.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "giloy",
+      "sourceNames": [
+        "Giloy"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/giloy.json",
+      "status": "curated-crop-topic",
+      "topicId": "giloy",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "gingerdry",
+      "sourceNames": [
+        "Ginger(Dry)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/gingerdry.json",
+      "status": "curated-crop-topic",
+      "topicId": "ginger",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "gingergreen",
+      "sourceNames": [
+        "Ginger(Green)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/gingergreen.json",
+      "status": "curated-crop-topic",
+      "topicId": "ginger",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "gladiolus-cut-flower",
+      "sourceNames": [
+        "Gladiolus Cut Flower"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/gladiolus-cut-flower.json",
+      "status": "curated-crop-topic",
+      "topicId": "gladiolus",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "goat",
+      "sourceNames": [
+        "Goat"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/goat.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "gond",
+      "sourceNames": [
+        "Gond"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/gond.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Gum can come from different trees; source plant is not established."
+    },
+    {
+      "commodityId": "gram",
+      "sourceNames": [
+        "Gram"
+      ],
+      "sourceExample": "server/db/data/crop-prices/gram.json",
+      "status": "curated-crop-topic",
+      "topicId": "gram",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "gram-rawchholia",
+      "sourceNames": [
+        "Gram Raw(Chholia)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/gram-rawchholia.json",
+      "status": "curated-crop-topic",
+      "topicId": "gram",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "grapes",
+      "sourceNames": [
+        "Grapes"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/grapes.json",
+      "status": "curated-crop-topic",
+      "topicId": "grapes",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "green-avarew",
+      "sourceNames": [
+        "Green Avare(W)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/green-avarew.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "green-chilli",
+      "sourceNames": [
+        "Green Chilli"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/green-chilli.json",
+      "status": "curated-crop-topic",
+      "topicId": "chilli",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "green-fodder",
+      "sourceNames": [
+        "Green Fodder"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/green-fodder.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Generic fodder may contain several crops or grasses."
+    },
+    {
+      "commodityId": "green-gram-dalmoong-dal",
+      "sourceNames": [
+        "Green Gram Dal(Moong Dal)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/green-gram-dalmoong-dal.json",
+      "status": "curated-crop-topic",
+      "topicId": "moong",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "green-grammoongwhole",
+      "sourceNames": [
+        "Green Gram(Moong)(Whole)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/green-grammoongwhole.json",
+      "status": "curated-crop-topic",
+      "topicId": "moong",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "green-peas",
+      "sourceNames": [
+        "Green Peas"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/green-peas.json",
+      "status": "curated-crop-topic",
+      "topicId": "peas",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "greenchilli",
+      "sourceNames": [
+        "Green Chilli"
+      ],
+      "sourceExample": "server/db/data/crop-prices/greenchilli.json",
+      "status": "curated-crop-topic",
+      "topicId": "chilli",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "ground-nut-oil",
+      "sourceNames": [
+        "Ground Nut Oil"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ground-nut-oil.json",
+      "status": "curated-crop-topic",
+      "topicId": "groundnut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "ground-nut-seed",
+      "sourceNames": [
+        "Ground Nut Seed"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ground-nut-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "groundnut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "groundnut",
+      "sourceNames": [
+        "Groundnut"
+      ],
+      "sourceExample": "server/db/data/crop-prices/groundnut.json",
+      "status": "curated-crop-topic",
+      "topicId": "groundnut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "groundnut-podsraw",
+      "sourceNames": [
+        "Groundnut pods(raw)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/groundnut-podsraw.json",
+      "status": "curated-crop-topic",
+      "topicId": "groundnut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "groundnutsplit",
+      "sourceNames": [
+        "Groundnut(Split)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/groundnutsplit.json",
+      "status": "curated-crop-topic",
+      "topicId": "groundnut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "guar",
+      "sourceNames": [
+        "Guar"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/guar.json",
+      "status": "curated-crop-topic",
+      "topicId": "clusterbean",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "guar-seedcluster-beans-seed",
+      "sourceNames": [
+        "Guar Seed(Cluster Beans Seed)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/guar-seedcluster-beans-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "clusterbean",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "guava",
+      "sourceNames": [
+        "Guava"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/guava.json",
+      "status": "curated-crop-topic",
+      "topicId": "guava",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "gulli",
+      "sourceNames": [
+        "gulli"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/gulli.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "gurjaggery",
+      "sourceNames": [
+        "Gur(Jaggery)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/gurjaggery.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Jaggery source crop is not specified; do not assume sugarcane instead of palm sources."
+    },
+    {
+      "commodityId": "harrah",
+      "sourceNames": [
+        "Harrah"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/harrah.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "he-buffalo",
+      "sourceNames": [
+        "He Buffalo"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/he-buffalo.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "hen",
+      "sourceNames": [
+        "Hen"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/hen.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "honge-seed",
+      "sourceNames": [
+        "Honge seed"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/honge-seed.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "hybrid-cumbu",
+      "sourceNames": [
+        "Hybrid Cumbu"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/hybrid-cumbu.json",
+      "status": "curated-crop-topic",
+      "topicId": "bajra",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context.",
+      "referenceIds": [
+        "tnau-cumbu"
+      ]
+    },
+    {
+      "commodityId": "indian-beansseam",
+      "sourceNames": [
+        "Indian Beans(Seam)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/indian-beansseam.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "indian-colzasarson",
+      "sourceNames": [
+        "Indian Colza(Sarson)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/indian-colzasarson.json",
+      "status": "curated-crop-topic",
+      "topicId": "mustard",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "isabgulpsyllium",
+      "sourceNames": [
+        "Isabgul(Psyllium)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/isabgulpsyllium.json",
+      "status": "curated-crop-topic",
+      "topicId": "isabgol",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "jack-fruitripe",
+      "sourceNames": [
+        "Jack Fruit(Ripe)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/jack-fruitripe.json",
+      "status": "curated-crop-topic",
+      "topicId": "jackfruit",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "jackfruit-seed",
+      "sourceNames": [
+        "Jackfruit Seed"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/jackfruit-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "jackfruit",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "jackfruitgreen-raw-unripe",
+      "sourceNames": [
+        "Jackfruit(Green/Raw/Unripe)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/jackfruitgreen-raw-unripe.json",
+      "status": "curated-crop-topic",
+      "topicId": "jackfruit",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "jaee",
+      "sourceNames": [
+        "Jaee"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/jaee.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "jaffri",
+      "sourceNames": [
+        "Jaffri"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/jaffri.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "jamunnarale-hannu",
+      "sourceNames": [
+        "Jamun(Narale Hannu)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/jamunnarale-hannu.json",
+      "status": "curated-crop-topic",
+      "topicId": "jamun",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "jarbara",
+      "sourceNames": [
+        "Jarbara"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/jarbara.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "jasmine",
+      "sourceNames": [
+        "Jasmine"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/jasmine.json",
+      "status": "curated-crop-topic",
+      "topicId": "jasmine",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "javi",
+      "sourceNames": [
+        "Javi"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/javi.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "jowar",
+      "sourceNames": [
+        "Jowar/Sorghum"
+      ],
+      "sourceExample": "server/db/data/crop-prices/jowar.json",
+      "status": "curated-crop-topic",
+      "topicId": "jowar",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "jowarsorghum",
+      "sourceNames": [
+        "Jowar(Sorghum)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/jowarsorghum.json",
+      "status": "curated-crop-topic",
+      "topicId": "jowar",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "jute",
+      "sourceNames": [
+        "Jute"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/jute.json",
+      "status": "curated-crop-topic",
+      "topicId": "jute",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "kabuli-chanachickpeas-white",
+      "sourceNames": [
+        "Kabuli Chana(Chickpeas-White)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/kabuli-chanachickpeas-white.json",
+      "status": "curated-crop-topic",
+      "topicId": "gram",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "kakada",
+      "sourceNames": [
+        "Kakada"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/kakada.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "kalmegh",
+      "sourceNames": [
+        "Kalmegh"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/kalmegh.json",
+      "status": "curated-crop-topic",
+      "topicId": "kalmegh",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "kankambra",
+      "sourceNames": [
+        "Kankambra"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/kankambra.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "karamani",
+      "sourceNames": [
+        "Karamani"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/karamani.json",
+      "status": "curated-crop-topic",
+      "topicId": "cowpea",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context.",
+      "referenceIds": [
+        "tnau-karamani"
+      ]
+    },
+    {
+      "commodityId": "karanja-seeds",
+      "sourceNames": [
+        "karanja seeds"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/karanja-seeds.json",
+      "status": "curated-crop-topic",
+      "topicId": "karanja",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "karbujamusk-melon",
+      "sourceNames": [
+        "Karbuja(Musk Melon)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/karbujamusk-melon.json",
+      "status": "curated-crop-topic",
+      "topicId": "muskmelon",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "kartalikantola",
+      "sourceNames": [
+        "Kartali(Kantola)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/kartalikantola.json",
+      "status": "curated-crop-topic",
+      "topicId": "spiny-gourd",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "khandsaridesi-khand",
+      "sourceNames": [
+        "Khandsari(Desi Khand)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/khandsaridesi-khand.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Processed sugar product; confirm source/crop details before linking cultivation advice."
+    },
+    {
+      "commodityId": "kinnow",
+      "sourceNames": [
+        "Kinnow"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/kinnow.json",
+      "status": "curated-crop-topic",
+      "topicId": "kinnow",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "kiwi-fruit",
+      "sourceNames": [
+        "Kiwi Fruit"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/kiwi-fruit.json",
+      "status": "curated-crop-topic",
+      "topicId": "kiwi",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "knool-khol",
+      "sourceNames": [
+        "Knool Khol"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/knool-khol.json",
+      "status": "curated-crop-topic",
+      "topicId": "kohlrabi",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "kodo-milletvaragu",
+      "sourceNames": [
+        "Kodo Millet(Varagu)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/kodo-milletvaragu.json",
+      "status": "curated-crop-topic",
+      "topicId": "kodo-millet",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "kulthihorse-gram",
+      "sourceNames": [
+        "Kulthi(Horse Gram)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/kulthihorse-gram.json",
+      "status": "curated-crop-topic",
+      "topicId": "horse-gram",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "kundru",
+      "sourceNames": [
+        "Ivy Gourd"
+      ],
+      "sourceExample": "server/db/data/crop-prices/kundru.json",
+      "status": "curated-crop-topic",
+      "topicId": "kundru",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "kutki",
+      "sourceNames": [
+        "Kutki"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/kutki.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional label can refer to millet or medicinal material; source identity must be established."
+    },
+    {
+      "commodityId": "ladies-finger",
+      "sourceNames": [
+        "Ladies Finger"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ladies-finger.json",
+      "status": "curated-crop-topic",
+      "topicId": "okra",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "ladyfinger",
+      "sourceNames": [
+        "Lady Finger"
+      ],
+      "sourceExample": "server/db/data/crop-prices/ladyfinger.json",
+      "status": "curated-crop-topic",
+      "topicId": "okra",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "lakteora",
+      "sourceNames": [
+        "Lak(Teora)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/lakteora.json",
+      "status": "curated-crop-topic",
+      "topicId": "tivda",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "leafy-vegetable",
+      "sourceNames": [
+        "Leafy Vegetable"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/leafy-vegetable.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Mixed/unspecified leafy vegetables are not one crop."
+    },
+    {
+      "commodityId": "lemon",
+      "sourceNames": [
+        "Lemon"
+      ],
+      "sourceExample": "server/db/data/crop-prices/lemon.json",
+      "status": "curated-crop-topic",
+      "topicId": "lemon",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "lentilmasurwhole",
+      "sourceNames": [
+        "Lentil(Masur)(Whole)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/lentilmasurwhole.json",
+      "status": "curated-crop-topic",
+      "topicId": "masoor",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "lilly",
+      "sourceNames": [
+        "Lilly"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/lilly.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "lime",
+      "sourceNames": [
+        "Lime"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/lime.json",
+      "status": "curated-crop-topic",
+      "topicId": "lime",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "linseed",
+      "sourceNames": [
+        "Linseed"
+      ],
+      "sourceExample": "server/db/data/crop-prices/linseed.json",
+      "status": "curated-crop-topic",
+      "topicId": "linseed",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "lint",
+      "sourceNames": [
+        "Lint"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/lint.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Fibre product has no explicit source crop in the catalog name."
+    },
+    {
+      "commodityId": "litchi",
+      "sourceNames": [
+        "Litchi"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/litchi.json",
+      "status": "curated-crop-topic",
+      "topicId": "litchi",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "little-gourdkundru",
+      "sourceNames": [
+        "Little gourd(Kundru)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/little-gourdkundru.json",
+      "status": "curated-crop-topic",
+      "topicId": "kundru",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "long-melonkakri",
+      "sourceNames": [
+        "Long Melon(Kakri)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/long-melonkakri.json",
+      "status": "curated-crop-topic",
+      "topicId": "kakri",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "lotus",
+      "sourceNames": [
+        "Lotus"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/lotus.json",
+      "status": "curated-crop-topic",
+      "topicId": "lotus",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "lotus-sticks",
+      "sourceNames": [
+        "Lotus Sticks"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/lotus-sticks.json",
+      "status": "curated-crop-topic",
+      "topicId": "lotus",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "mahedi",
+      "sourceNames": [
+        "Mahedi"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/mahedi.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "mahua",
+      "sourceNames": [
+        "Mahua",
+        "Mahua Flower"
+      ],
+      "sourceExample": "server/db/data/crop-prices/mahua.json",
+      "status": "curated-crop-topic",
+      "topicId": "mahua",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "mahua-seedhippe-seed",
+      "sourceNames": [
+        "Mahua Seed(Hippe seed)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/mahua-seedhippe-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "mahua",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "maida-atta",
+      "sourceNames": [
+        "Maida Atta"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/maida-atta.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Processed flour label does not explicitly identify the cereal in this catalog."
+    },
+    {
+      "commodityId": "maize",
+      "sourceNames": [
+        "Maize"
+      ],
+      "sourceExample": "server/db/data/crop-prices/maize.json",
+      "status": "curated-crop-topic",
+      "topicId": "maize",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "makhanafoxnut",
+      "sourceNames": [
+        "Makhana(Foxnut)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/makhanafoxnut.json",
+      "status": "curated-crop-topic",
+      "topicId": "makhana",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "mango",
+      "sourceNames": [
+        "Mango"
+      ],
+      "sourceExample": "server/db/data/crop-prices/mango.json",
+      "status": "curated-crop-topic",
+      "topicId": "mango",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "mango-powder",
+      "sourceNames": [
+        "mango powder"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/mango-powder.json",
+      "status": "curated-crop-topic",
+      "topicId": "mango",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "mangoraw-ripe",
+      "sourceNames": [
+        "Mango(Raw-Ripe)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/mangoraw-ripe.json",
+      "status": "curated-crop-topic",
+      "topicId": "mango",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "marget",
+      "sourceNames": [
+        "Marget"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/marget.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Unverified market label; do not infer Marguerite, marigold or another flower species."
+    },
+    {
+      "commodityId": "marigoldcalcutta",
+      "sourceNames": [
+        "Marigold(Calcutta)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/marigoldcalcutta.json",
+      "status": "curated-crop-topic",
+      "topicId": "marigold",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "marigoldloose",
+      "sourceNames": [
+        "Marigold(loose)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/marigoldloose.json",
+      "status": "curated-crop-topic",
+      "topicId": "marigold",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "mashrooms",
+      "sourceNames": [
+        "Mashrooms"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/mashrooms.json",
+      "status": "curated-crop-topic",
+      "topicId": "mushroom",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "masoor",
+      "sourceNames": [
+        "Masoor"
+      ],
+      "sourceExample": "server/db/data/crop-prices/masoor.json",
+      "status": "curated-crop-topic",
+      "topicId": "masoor",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "masur-dal",
+      "sourceNames": [
+        "Masur Dal"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/masur-dal.json",
+      "status": "curated-crop-topic",
+      "topicId": "masoor",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "mataki",
+      "sourceNames": [
+        "Mataki"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/mataki.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "mentha-oil",
+      "sourceNames": [
+        "Mentha Oil"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/mentha-oil.json",
+      "status": "curated-crop-topic",
+      "topicId": "mentha",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "methi-seeds",
+      "sourceNames": [
+        "Methi Seeds"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/methi-seeds.json",
+      "status": "curated-crop-topic",
+      "topicId": "fenugreek",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "methileaves",
+      "sourceNames": [
+        "Methi(Leaves)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/methileaves.json",
+      "status": "curated-crop-topic",
+      "topicId": "fenugreek",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "millets",
+      "sourceNames": [
+        "Millets"
+      ],
+      "sourceExample": "server/db/data/crop-prices/millets.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Broad millet group is not a synonym for one millet or for the ambiguous kutki record."
+    },
+    {
+      "commodityId": "mintpudina",
+      "sourceNames": [
+        "Mint(Pudina)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/mintpudina.json",
+      "status": "curated-crop-topic",
+      "topicId": "mint",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "moath-dal",
+      "sourceNames": [
+        "Moath Dal"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/moath-dal.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "moong",
+      "sourceNames": [
+        "Moong"
+      ],
+      "sourceExample": "server/db/data/crop-prices/moong.json",
+      "status": "curated-crop-topic",
+      "topicId": "moong",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "mousambisweet-lime",
+      "sourceNames": [
+        "Mousambi(Sweet Lime)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/mousambisweet-lime.json",
+      "status": "curated-crop-topic",
+      "topicId": "sweet-lime",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "muesli",
+      "sourceNames": [
+        "Muesli"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/muesli.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Ambiguous market label; do not infer a cereal mixture or safed musli."
+    },
+    {
+      "commodityId": "muleti",
+      "sourceNames": [
+        "Muleti"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/muleti.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "mushroom",
+      "sourceNames": [
+        "Mushroom"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/mushroom.json",
+      "status": "curated-crop-topic",
+      "topicId": "mushroom",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "muskmelon-seeds",
+      "sourceNames": [
+        "Muskmelon Seeds"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/muskmelon-seeds.json",
+      "status": "curated-crop-topic",
+      "topicId": "muskmelon",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "mustard",
+      "sourceNames": [
+        "Mustard"
+      ],
+      "sourceExample": "server/db/data/crop-prices/mustard.json",
+      "status": "curated-crop-topic",
+      "topicId": "mustard",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "mustard-oil",
+      "sourceNames": [
+        "Mustard Oil"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/mustard-oil.json",
+      "status": "curated-crop-topic",
+      "topicId": "mustard",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "neem-seed",
+      "sourceNames": [
+        "Neem Seed"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/neem-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "neem",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "nigella",
+      "sourceNames": [
+        "nigella"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/nigella.json",
+      "status": "curated-crop-topic",
+      "topicId": "nigella",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "nigella-seeds",
+      "sourceNames": [
+        "nigella seeds"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/nigella-seeds.json",
+      "status": "curated-crop-topic",
+      "topicId": "nigella",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "niger-seedramtil",
+      "sourceNames": [
+        "Niger Seed(Ramtil)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/niger-seedramtil.json",
+      "status": "curated-crop-topic",
+      "topicId": "niger",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "nutmeg",
+      "sourceNames": [
+        "Nutmeg"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/nutmeg.json",
+      "status": "curated-crop-topic",
+      "topicId": "nutmeg",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "onion",
+      "sourceNames": [
+        "Onion"
+      ],
+      "sourceExample": "server/db/data/crop-prices/onion.json",
+      "status": "curated-crop-topic",
+      "topicId": "onion",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "onion-green",
+      "sourceNames": [
+        "Onion Green"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/onion-green.json",
+      "status": "curated-crop-topic",
+      "topicId": "onion",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "orange",
+      "sourceNames": [
+        "Orange"
+      ],
+      "sourceExample": "server/db/data/crop-prices/orange.json",
+      "status": "curated-crop-topic",
+      "topicId": "orange",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "orchid",
+      "sourceNames": [
+        "Orchid"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/orchid.json",
+      "status": "curated-crop-topic",
+      "topicId": "orchid",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "other-green-and-fresh-vegetables",
+      "sourceNames": [
+        "Other green and fresh vegetables"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/other-green-and-fresh-vegetables.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Mixed/other vegetable category is not one crop."
+    },
+    {
+      "commodityId": "other-pulses",
+      "sourceNames": [
+        "Other Pulses"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/other-pulses.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Mixed/other pulse category is not one pulse crop."
+    },
+    {
+      "commodityId": "otherveg",
+      "sourceNames": [
+        "Other Vegetables"
+      ],
+      "sourceExample": "server/db/data/crop-prices/otherveg.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Mixed/other vegetable category is not one crop."
+    },
+    {
+      "commodityId": "ox",
+      "sourceNames": [
+        "Ox"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ox.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "paddy",
+      "sourceNames": [
+        "Paddy"
+      ],
+      "sourceExample": "server/db/data/crop-prices/paddy.json",
+      "status": "curated-crop-topic",
+      "topicId": "paddy",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "paddybasmati",
+      "sourceNames": [
+        "Paddy(Basmati)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/paddybasmati.json",
+      "status": "curated-crop-topic",
+      "topicId": "paddy",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "paddycommon",
+      "sourceNames": [
+        "Paddy(Common)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/paddycommon.json",
+      "status": "curated-crop-topic",
+      "topicId": "paddy",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "palash-flowers",
+      "sourceNames": [
+        "Palash flowers"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/palash-flowers.json",
+      "status": "curated-crop-topic",
+      "topicId": "palash",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "papaya",
+      "sourceNames": [
+        "Papaya"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/papaya.json",
+      "status": "curated-crop-topic",
+      "topicId": "papaya",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "papayaraw",
+      "sourceNames": [
+        "Papaya(Raw)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/papayaraw.json",
+      "status": "curated-crop-topic",
+      "topicId": "papaya",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "parwal",
+      "sourceNames": [
+        "Pointed Gourd"
+      ],
+      "sourceExample": "server/db/data/crop-prices/parwal.json",
+      "status": "curated-crop-topic",
+      "topicId": "parwal",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "passion-fruit",
+      "sourceNames": [
+        "Passion Fruit"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/passion-fruit.json",
+      "status": "curated-crop-topic",
+      "topicId": "passion-fruit",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "patti-calcutta",
+      "sourceNames": [
+        "Patti Calcutta"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/patti-calcutta.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "pea-pod-pea-cod",
+      "sourceNames": [
+        "Pea Pod/Pea Cod/हरी मटर"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/pea-pod-pea-cod.json",
+      "status": "curated-crop-topic",
+      "topicId": "peas",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "peach",
+      "sourceNames": [
+        "Peach"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/peach.json",
+      "status": "curated-crop-topic",
+      "topicId": "peach",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "pearmarasebu",
+      "sourceNames": [
+        "Pear(Marasebu)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/pearmarasebu.json",
+      "status": "curated-crop-topic",
+      "topicId": "pear",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "peas",
+      "sourceNames": [
+        "Peas"
+      ],
+      "sourceExample": "server/db/data/crop-prices/peas.json",
+      "status": "curated-crop-topic",
+      "topicId": "peas",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "peas-wet",
+      "sourceNames": [
+        "Peas Wet"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/peas-wet.json",
+      "status": "curated-crop-topic",
+      "topicId": "peas",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "peasdry",
+      "sourceNames": [
+        "Peas(Dry)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/peasdry.json",
+      "status": "curated-crop-topic",
+      "topicId": "peas",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "pegeon-peaarhar-fali",
+      "sourceNames": [
+        "Pegeon Pea(Arhar Fali)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/pegeon-peaarhar-fali.json",
+      "status": "curated-crop-topic",
+      "topicId": "arhar",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "pepper-garbled",
+      "sourceNames": [
+        "Pepper garbled"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/pepper-garbled.json",
+      "status": "curated-crop-topic",
+      "topicId": "black-pepper",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "pepper-ungarbled",
+      "sourceNames": [
+        "Pepper ungarbled"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/pepper-ungarbled.json",
+      "status": "curated-crop-topic",
+      "topicId": "black-pepper",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "persimonjapani-fal",
+      "sourceNames": [
+        "Persimon(Japani Fal)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/persimonjapani-fal.json",
+      "status": "curated-crop-topic",
+      "topicId": "persimmon",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "pigs",
+      "sourceNames": [
+        "Pigs"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/pigs.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "pineapple",
+      "sourceNames": [
+        "Pineapple"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/pineapple.json",
+      "status": "curated-crop-topic",
+      "topicId": "pineapple",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "plum",
+      "sourceNames": [
+        "Plum"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/plum.json",
+      "status": "curated-crop-topic",
+      "topicId": "plum",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "pointed-gourdparval",
+      "sourceNames": [
+        "Pointed gourd(Parval)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/pointed-gourdparval.json",
+      "status": "curated-crop-topic",
+      "topicId": "parwal",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "pomegranate",
+      "sourceNames": [
+        "Pomegranate"
+      ],
+      "sourceExample": "server/db/data/crop-prices/pomegranate.json",
+      "status": "curated-crop-topic",
+      "topicId": "pomegranate",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "poppy-seeds",
+      "sourceNames": [
+        "poppy seeds"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/poppy-seeds.json",
+      "status": "curated-crop-topic",
+      "topicId": "poppy",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "potato",
+      "sourceNames": [
+        "Potato"
+      ],
+      "sourceExample": "server/db/data/crop-prices/potato.json",
+      "status": "curated-crop-topic",
+      "topicId": "potato",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "prawn",
+      "sourceNames": [
+        "Prawn"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/prawn.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "pumpkin",
+      "sourceNames": [
+        "Pumpkin"
+      ],
+      "sourceExample": "server/db/data/crop-prices/pumpkin.json",
+      "status": "curated-crop-topic",
+      "topicId": "pumpkin",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "pupadia",
+      "sourceNames": [
+        "Pupadia"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/pupadia.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "rab-liquid-jaggery-molasses",
+      "sourceNames": [
+        "Rab/Liquid Jaggery/Molasses"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/rab-liquid-jaggery-molasses.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Combined processed sugar product label; source plant is not established."
+    },
+    {
+      "commodityId": "raddish",
+      "sourceNames": [
+        "Raddish"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/raddish.json",
+      "status": "curated-crop-topic",
+      "topicId": "radish",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "radish",
+      "sourceNames": [
+        "Radish"
+      ],
+      "sourceExample": "server/db/data/crop-prices/radish.json",
+      "status": "curated-crop-topic",
+      "topicId": "radish",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "ragi",
+      "sourceNames": [
+        "Finger Millet"
+      ],
+      "sourceExample": "server/db/data/crop-prices/ragi.json",
+      "status": "curated-crop-topic",
+      "topicId": "ragi",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "ragifinger-millet",
+      "sourceNames": [
+        "Ragi(Finger Millet)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ragifinger-millet.json",
+      "status": "curated-crop-topic",
+      "topicId": "ragi",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "raibel",
+      "sourceNames": [
+        "Raibel"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/raibel.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "rajgir",
+      "sourceNames": [
+        "Rajgir"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/rajgir.json",
+      "status": "curated-crop-topic",
+      "topicId": "rajgir",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "rambansagave-century-plant",
+      "sourceNames": [
+        "Rambans(Agave /Century plant)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/rambansagave-century-plant.json",
+      "status": "curated-crop-topic",
+      "topicId": "agave",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "ramphal",
+      "sourceNames": [
+        "Ramphal"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ramphal.json",
+      "status": "curated-crop-topic",
+      "topicId": "ramphal",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "rat-tail-radishmogari",
+      "sourceNames": [
+        "Rat Tail Radish(Mogari)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/rat-tail-radishmogari.json",
+      "status": "curated-crop-topic",
+      "topicId": "radish",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "raya",
+      "sourceNames": [
+        "Raya"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/raya.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "rayee",
+      "sourceNames": [
+        "Rayee"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/rayee.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "red-gram",
+      "sourceNames": [
+        "Red Gram"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/red-gram.json",
+      "status": "curated-crop-topic",
+      "topicId": "arhar",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "red-gram-arhar-turwhole",
+      "sourceNames": [
+        "Red gram/Arhar/Tur(whole)"
+      ],
+      "sourceExample": "server/db/data/india/states/andhra-pradesh/crop-prices/red-gram-arhar-turwhole.json",
+      "status": "curated-crop-topic",
+      "topicId": "arhar",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "red-gram-split-arhar-dal-tur-dal",
+      "sourceNames": [
+        "Red gram split/Arhar dal/Tur dal"
+      ],
+      "sourceExample": "server/db/data/india/states/assam/crop-prices/red-gram-split-arhar-dal-tur-dal.json",
+      "status": "curated-crop-topic",
+      "topicId": "arhar",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "redcowpea",
+      "sourceNames": [
+        "Red Cowpea"
+      ],
+      "sourceExample": "server/db/data/crop-prices/redcowpea.json",
+      "status": "curated-crop-topic",
+      "topicId": "cowpea",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "rice",
+      "sourceNames": [
+        "Rice"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/rice.json",
+      "status": "curated-crop-topic",
+      "topicId": "paddy",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "ridge-gourdpermal-hybrid-gourd",
+      "sourceNames": [
+        "Ridge Gourd(Permal/Hybrid Gourd)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ridge-gourdpermal-hybrid-gourd.json",
+      "status": "curated-crop-topic",
+      "topicId": "ridgegourd",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "ridgegourd",
+      "sourceNames": [
+        "Ridge Gourd"
+      ],
+      "sourceExample": "server/db/data/crop-prices/ridgegourd.json",
+      "status": "curated-crop-topic",
+      "topicId": "ridgegourd",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "ridgeguardtori",
+      "sourceNames": [
+        "Ridgeguard(Tori)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ridgeguardtori.json",
+      "status": "curated-crop-topic",
+      "topicId": "ridgegourd",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "roselocal",
+      "sourceNames": [
+        "Rose(Local)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/roselocal.json",
+      "status": "curated-crop-topic",
+      "topicId": "rose",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "roseloose",
+      "sourceNames": [
+        "Rose(Loose))"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/roseloose.json",
+      "status": "curated-crop-topic",
+      "topicId": "rose",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "round-gourd",
+      "sourceNames": [
+        "Round gourd"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/round-gourd.json",
+      "status": "curated-crop-topic",
+      "topicId": "tinda",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "rubber",
+      "sourceNames": [
+        "Rubber"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/rubber.json",
+      "status": "curated-crop-topic",
+      "topicId": "rubber",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sabu-dan",
+      "sourceNames": [
+        "Sabu Dan"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sabu-dan.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Starch pearls are processed goods; verify the source starch before mapping to cassava."
+    },
+    {
+      "commodityId": "safflower",
+      "sourceNames": [
+        "Safflower"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/safflower.json",
+      "status": "curated-crop-topic",
+      "topicId": "safflower",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "same-savi",
+      "sourceNames": [
+        "Same/Savi"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/same-savi.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "sanai-sunhemp",
+      "sourceNames": [
+        "Sanai/Sunhemp"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sanai-sunhemp.json",
+      "status": "curated-crop-topic",
+      "topicId": "sunhemp",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "season-leaves",
+      "sourceNames": [
+        "Season Leaves"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/season-leaves.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Unspecified leaves cannot be assigned to a single crop."
+    },
+    {
+      "commodityId": "seemebadnekai",
+      "sourceNames": [
+        "Seemebadnekai"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/seemebadnekai.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "seetapal",
+      "sourceNames": [
+        "Seetapal"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/seetapal.json",
+      "status": "curated-crop-topic",
+      "topicId": "custard-apple",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sem",
+      "sourceNames": [
+        "Sem"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sem.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "sesame",
+      "sourceNames": [
+        "Sesame"
+      ],
+      "sourceExample": "server/db/data/crop-prices/sesame.json",
+      "status": "curated-crop-topic",
+      "topicId": "sesame",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sesamumsesame-gingelly-til",
+      "sourceNames": [
+        "Sesamum(Sesame,Gingelly,Til)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sesamumsesame-gingelly-til.json",
+      "status": "curated-crop-topic",
+      "topicId": "sesame",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "she-buffalo",
+      "sourceNames": [
+        "She Buffalo"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/she-buffalo.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "she-goat",
+      "sourceNames": [
+        "She Goat"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/she-goat.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "sheep",
+      "sourceNames": [
+        "Sheep"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sheep.json",
+      "status": "non-crop",
+      "topicId": null,
+      "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "snakeguard",
+      "sourceNames": [
+        "Snakeguard"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/snakeguard.json",
+      "status": "curated-crop-topic",
+      "topicId": "snake-gourd",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "snow-mountain-garlic",
+      "sourceNames": [
+        "Snow Mountain Garlic"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/snow-mountain-garlic.json",
+      "status": "curated-crop-topic",
+      "topicId": "garlic",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "soanf",
+      "sourceNames": [
+        "Soanf"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/soanf.json",
+      "status": "curated-crop-topic",
+      "topicId": "fennel",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "soapnutantawala-retha",
+      "sourceNames": [
+        "Soapnut(Antawala/Retha)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/soapnutantawala-retha.json",
+      "status": "curated-crop-topic",
+      "topicId": "soapnut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sompu",
+      "sourceNames": [
+        "Sompu"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sompu.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "soyabean",
+      "sourceNames": [
+        "Soyabean"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/soyabean.json",
+      "status": "curated-crop-topic",
+      "topicId": "soybean",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "soybean",
+      "sourceNames": [
+        "Soyabean"
+      ],
+      "sourceExample": "server/db/data/crop-prices/soybean.json",
+      "status": "curated-crop-topic",
+      "topicId": "soybean",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "spinach",
+      "sourceNames": [
+        "Spinach"
+      ],
+      "sourceExample": "server/db/data/crop-prices/spinach.json",
+      "status": "curated-crop-topic",
+      "topicId": "spinach",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "spiny-gourd-kartalikantola",
+      "sourceNames": [
+        "Spiny Gourd / Kartali(Kantola)"
+      ],
+      "sourceExample": "server/db/data/india/states/assam/crop-prices/spiny-gourd-kartalikantola.json",
+      "status": "curated-crop-topic",
+      "topicId": "spiny-gourd",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sponge-gourd",
+      "sourceNames": [
+        "Sponge gourd"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sponge-gourd.json",
+      "status": "curated-crop-topic",
+      "topicId": "sponge-gourd",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "squashchappal-kadoo",
+      "sourceNames": [
+        "Squash(Chappal Kadoo)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/squashchappal-kadoo.json",
+      "status": "curated-crop-topic",
+      "topicId": "summer-squash",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "stevia",
+      "sourceNames": [
+        "stevia"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/stevia.json",
+      "status": "curated-crop-topic",
+      "topicId": "stevia",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "strawberry",
+      "sourceNames": [
+        "Strawberry"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/strawberry.json",
+      "status": "curated-crop-topic",
+      "topicId": "strawberry",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sugar",
+      "sourceNames": [
+        "Sugar"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sugar.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Processed sugar does not establish sugarcane rather than another feedstock."
+    },
+    {
+      "commodityId": "sugarcane",
+      "sourceNames": [
+        "Sugarcane"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sugarcane.json",
+      "status": "curated-crop-topic",
+      "topicId": "sugarcane",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sunflower",
+      "sourceNames": [
+        "Sunflower"
+      ],
+      "sourceExample": "server/db/data/crop-prices/sunflower.json",
+      "status": "curated-crop-topic",
+      "topicId": "sunflower",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sunflower-seed",
+      "sourceNames": [
+        "Sunflower Seed"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sunflower-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "sunflower",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sunflower-sunflower-seed",
+      "sourceNames": [
+        "Sunflower/Sunflower Seed"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sunflower-sunflower-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "sunflower",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "surat-beanspapadi",
+      "sourceNames": [
+        "Surat Beans(Papadi)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/surat-beanspapadi.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "suvadill-seed",
+      "sourceNames": [
+        "Suva(Dill Seed)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/suvadill-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "dill",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "suvarna-gadde",
+      "sourceNames": [
+        "Suvarna Gadde"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/suvarna-gadde.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "sweet-corn",
+      "sourceNames": [
+        "Sweet Corn"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sweet-corn.json",
+      "status": "curated-crop-topic",
+      "topicId": "maize",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sweet-potato",
+      "sourceNames": [
+        "Sweet Potato"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sweet-potato.json",
+      "status": "curated-crop-topic",
+      "topicId": "sweet-potato",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sweet-pumpkin",
+      "sourceNames": [
+        "Sweet Pumpkin"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sweet-pumpkin.json",
+      "status": "curated-crop-topic",
+      "topicId": "pumpkin",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sweet-saag",
+      "sourceNames": [
+        "Sweet Saag"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sweet-saag.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Unverified regional leafy-crop label; no botanical assignment."
+    },
+    {
+      "commodityId": "t-v-cumbu",
+      "sourceNames": [
+        "T.V. Cumbu"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/t-v-cumbu.json",
+      "status": "curated-crop-topic",
+      "topicId": "bajra",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context.",
+      "referenceIds": [
+        "tnau-cumbu"
+      ]
+    },
+    {
+      "commodityId": "tamarind",
+      "sourceNames": [
+        "Tamarind"
+      ],
+      "sourceExample": "server/db/data/crop-prices/tamarind.json",
+      "status": "curated-crop-topic",
+      "topicId": "tamarind",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tamarind-fruit",
+      "sourceNames": [
+        "Tamarind Fruit"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tamarind-fruit.json",
+      "status": "curated-crop-topic",
+      "topicId": "tamarind",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tamarind-seed",
+      "sourceNames": [
+        "Tamarind Seed"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tamarind-seed.json",
+      "status": "curated-crop-topic",
+      "topicId": "tamarind",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tapioca",
+      "sourceNames": [
+        "Tapioca"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tapioca.json",
+      "status": "curated-crop-topic",
+      "topicId": "tapioca",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "taramira",
+      "sourceNames": [
+        "Taramira"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/taramira.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "taro-arvi-stem",
+      "sourceNames": [
+        "Taro (Arvi) Stem"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/taro-arvi-stem.json",
+      "status": "curated-crop-topic",
+      "topicId": "colocasia",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tender-coconut",
+      "sourceNames": [
+        "Tender Coconut"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tender-coconut.json",
+      "status": "curated-crop-topic",
+      "topicId": "coconut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tendu-leaves-kendu-leaves-bidi-leaves",
+      "sourceNames": [
+        "Tendu Leaves/Kendu leaves/Bidi Leaves"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tendu-leaves-kendu-leaves-bidi-leaves.json",
+      "status": "curated-crop-topic",
+      "topicId": "tendu",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "thogrikai",
+      "sourceNames": [
+        "Thogrikai"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/thogrikai.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "thondekai",
+      "sourceNames": [
+        "Thondekai"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/thondekai.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "tinda",
+      "sourceNames": [
+        "Tinda"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tinda.json",
+      "status": "curated-crop-topic",
+      "topicId": "tinda",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tivda",
+      "sourceNames": [
+        "Tivda/Lathyrus"
+      ],
+      "sourceExample": "server/db/data/crop-prices/tivda.json",
+      "status": "curated-crop-topic",
+      "topicId": "tivda",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tobacco",
+      "sourceNames": [
+        "Tobacco"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tobacco.json",
+      "status": "curated-crop-topic",
+      "topicId": "tobacco",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tomato",
+      "sourceNames": [
+        "Tomato"
+      ],
+      "sourceExample": "server/db/data/crop-prices/tomato.json",
+      "status": "curated-crop-topic",
+      "topicId": "tomato",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tube-flower",
+      "sourceNames": [
+        "Tube Flower"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tube-flower.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Broad flower label is not proof that the commodity is tuberose."
+    },
+    {
+      "commodityId": "tube-rosedouble",
+      "sourceNames": [
+        "Tube Rose(Double)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tube-rosedouble.json",
+      "status": "curated-crop-topic",
+      "topicId": "tuberose",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tube-roseloose",
+      "sourceNames": [
+        "Tube Rose(Loose)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tube-roseloose.json",
+      "status": "curated-crop-topic",
+      "topicId": "tuberose",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tube-rosesingle",
+      "sourceNames": [
+        "Tube Rose(Single)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tube-rosesingle.json",
+      "status": "curated-crop-topic",
+      "topicId": "tuberose",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tulip",
+      "sourceNames": [
+        "Tulip"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tulip.json",
+      "status": "curated-crop-topic",
+      "topicId": "tulip",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "turmeric",
+      "sourceNames": [
+        "Turmeric"
+      ],
+      "sourceExample": "server/db/data/crop-prices/turmeric.json",
+      "status": "curated-crop-topic",
+      "topicId": "turmeric",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "turmericraw",
+      "sourceNames": [
+        "Turmeric(raw)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/turmericraw.json",
+      "status": "curated-crop-topic",
+      "topicId": "turmeric",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "turnip",
+      "sourceNames": [
+        "Turnip"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/turnip.json",
+      "status": "curated-crop-topic",
+      "topicId": "turnip",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "urad",
+      "sourceNames": [
+        "Urad"
+      ],
+      "sourceExample": "server/db/data/crop-prices/urad.json",
+      "status": "curated-crop-topic",
+      "topicId": "urad",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "vadang",
+      "sourceNames": [
+        "vadang"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/vadang.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "water-chestnut",
+      "sourceNames": [
+        "Water chestnut"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/water-chestnut.json",
+      "status": "curated-crop-topic",
+      "topicId": "water-chestnut",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "water-melon",
+      "sourceNames": [
+        "Water Melon"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/water-melon.json",
+      "status": "curated-crop-topic",
+      "topicId": "watermelon",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "wheat",
+      "sourceNames": [
+        "Wheat"
+      ],
+      "sourceExample": "server/db/data/crop-prices/wheat.json",
+      "status": "curated-crop-topic",
+      "topicId": "wheat",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "wheat-atta",
+      "sourceNames": [
+        "Wheat Atta"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/wheat-atta.json",
+      "status": "curated-crop-topic",
+      "topicId": "wheat",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "white-muesli",
+      "sourceNames": [
+        "White Muesli"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/white-muesli.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "A safed-musli market label does not establish botanical species needed for cultivation advice."
+    },
+    {
+      "commodityId": "white-peas",
+      "sourceNames": [
+        "White Peas"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/white-peas.json",
+      "status": "curated-crop-topic",
+      "topicId": "peas",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "white-pumpkin",
+      "sourceNames": [
+        "White Pumpkin"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/white-pumpkin.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "May refer to ash gourd or a white pumpkin cultivar; keep separate until confirmed."
+    },
+    {
+      "commodityId": "wild-cucumber",
+      "sourceNames": [
+        "Wild Cucumber"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/wild-cucumber.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Wild-cucumber label can refer to distinct plants; do not map to cultivated cucumber."
+    },
+    {
+      "commodityId": "wood",
+      "sourceNames": [
+        "Wood"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/wood.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Wood product with no named source tree."
+    },
+    {
+      "commodityId": "yam",
+      "sourceNames": [
+        "Yam"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/yam.json",
+      "status": "curated-crop-topic",
+      "topicId": "yam",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "yamratalu",
+      "sourceNames": [
+        "Yam(Ratalu)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/yamratalu.json",
+      "status": "curated-crop-topic",
+      "topicId": "yam",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    }
+  ]
+}

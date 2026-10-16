@@ -21,6 +21,7 @@ export function renderPage(url, responses = {}) {
       if (failure) return reject(failure);
       const helmet = helmetContext.helmet;
       resolve({ html: Buffer.concat(chunks).toString(), requested: [...requested],
+        htmlAttributes: helmet?.htmlAttributes?.toString() || '',
         head: ['title', 'meta', 'link', 'script'].map(key => helmet?.[key]?.toString() || '').join('\n') });
     });
     const stream = renderToPipeableStream(
