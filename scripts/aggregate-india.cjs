@@ -7,7 +7,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { recordKey } = require('./lib/daily-store.cjs');
+const { recordKey, MIN_PLAUSIBLE_PRICE } = require('./lib/daily-store.cjs');
 
 const DATA_DIR = path.join(__dirname, '..', 'server', 'db', 'data');
 const DAILY_DIR = path.join(DATA_DIR, 'daily');
@@ -373,30 +373,30 @@ function main() {
       }
       const c = crops[cropSlug];
       c.records++;
-      if (rec.modal_price > 0) { c.totalModal += rec.modal_price; c.priceCount++; }
-      if (rec.min_price > 0) c.minPrice = Math.min(c.minPrice, rec.min_price);
-      if (rec.max_price > 0) c.maxPrice = Math.max(c.maxPrice, rec.max_price);
+      if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) { c.totalModal += rec.modal_price; c.priceCount++; }
+      if (rec.min_price >= MIN_PLAUSIBLE_PRICE) c.minPrice = Math.min(c.minPrice, rec.min_price);
+      if (rec.max_price >= MIN_PLAUSIBLE_PRICE) c.maxPrice = Math.max(c.maxPrice, rec.max_price);
       if (rec.variety) c.varieties.add(rec.variety);
 
       const month = parseDate(rec.arrival_date);
       if (month) {
         if (!c.byMonth[month]) c.byMonth[month] = { prices: [], count: 0 };
-        if (rec.modal_price > 0) c.byMonth[month].prices.push(rec.modal_price);
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) c.byMonth[month].prices.push(rec.modal_price);
         c.byMonth[month].count++;
       }
 
       const fullDate = parseDateFull(rec.arrival_date);
       if (fullDate) {
         if (!c.byDay[fullDate]) c.byDay[fullDate] = { prices: [], minPrices: [], maxPrices: [], count: 0 };
-        if (rec.modal_price > 0) c.byDay[fullDate].prices.push(rec.modal_price);
-        if (rec.min_price > 0) c.byDay[fullDate].minPrices.push(rec.min_price);
-        if (rec.max_price > 0) c.byDay[fullDate].maxPrices.push(rec.max_price);
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) c.byDay[fullDate].prices.push(rec.modal_price);
+        if (rec.min_price >= MIN_PLAUSIBLE_PRICE) c.byDay[fullDate].minPrices.push(rec.min_price);
+        if (rec.max_price >= MIN_PLAUSIBLE_PRICE) c.byDay[fullDate].maxPrices.push(rec.max_price);
         c.byDay[fullDate].count++;
       }
 
       if (rec.district) {
         if (!c.byDistrict[rec.district]) c.byDistrict[rec.district] = { prices: [], count: 0 };
-        if (rec.modal_price > 0) c.byDistrict[rec.district].prices.push(rec.modal_price);
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) c.byDistrict[rec.district].prices.push(rec.modal_price);
         c.byDistrict[rec.district].count++;
       }
 
@@ -405,19 +405,19 @@ function main() {
         allCrops[cropSlug] = { id: cropSlug, name: rec.commodity, emoji: getCropEmoji(rec.commodity), records: 0, priceCount: 0, totalModal: 0, byMonth: {}, byDay: {} };
       }
       allCrops[cropSlug].records++;
-      if (rec.modal_price > 0) { allCrops[cropSlug].totalModal += rec.modal_price; allCrops[cropSlug].priceCount++; }
+      if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) { allCrops[cropSlug].totalModal += rec.modal_price; allCrops[cropSlug].priceCount++; }
       const m2 = parseDate(rec.arrival_date);
       if (m2) {
         if (!allCrops[cropSlug].byMonth[m2]) allCrops[cropSlug].byMonth[m2] = { prices: [], count: 0 };
-        if (rec.modal_price > 0) allCrops[cropSlug].byMonth[m2].prices.push(rec.modal_price);
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) allCrops[cropSlug].byMonth[m2].prices.push(rec.modal_price);
         allCrops[cropSlug].byMonth[m2].count++;
       }
       const fullDate2 = parseDateFull(rec.arrival_date);
       if (fullDate2) {
         if (!allCrops[cropSlug].byDay[fullDate2]) allCrops[cropSlug].byDay[fullDate2] = { prices: [], minPrices: [], maxPrices: [], count: 0 };
-        if (rec.modal_price > 0) allCrops[cropSlug].byDay[fullDate2].prices.push(rec.modal_price);
-        if (rec.min_price > 0) allCrops[cropSlug].byDay[fullDate2].minPrices.push(rec.min_price);
-        if (rec.max_price > 0) allCrops[cropSlug].byDay[fullDate2].maxPrices.push(rec.max_price);
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) allCrops[cropSlug].byDay[fullDate2].prices.push(rec.modal_price);
+        if (rec.min_price >= MIN_PLAUSIBLE_PRICE) allCrops[cropSlug].byDay[fullDate2].minPrices.push(rec.min_price);
+        if (rec.max_price >= MIN_PLAUSIBLE_PRICE) allCrops[cropSlug].byDay[fullDate2].maxPrices.push(rec.max_price);
         allCrops[cropSlug].byDay[fullDate2].count++;
       }
 
@@ -426,7 +426,7 @@ function main() {
         if (!allCropDistricts[cropSlug]) allCropDistricts[cropSlug] = {};
         const distKey = `${rec.district} (${meta.nameHi})`;
         if (!allCropDistricts[cropSlug][distKey]) allCropDistricts[cropSlug][distKey] = { prices: [], count: 0 };
-        if (rec.modal_price > 0) allCropDistricts[cropSlug][distKey].prices.push(rec.modal_price);
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) allCropDistricts[cropSlug][distKey].prices.push(rec.modal_price);
         allCropDistricts[cropSlug][distKey].count++;
       }
     }
@@ -595,7 +595,7 @@ function main() {
     if (!allCropMandis[cropSlug][mandiName]) {
       allCropMandis[cropSlug][mandiName] = { name: mandiName, state: stateHi, stateId: stateInfo ? stateInfo.id : slugify(rec.state), stateCode: STATE_CODES[rec.state] || null, district: rec.district, prices: [], recentPrices: [], count: 0, varieties: {}, grades: {} };
     }
-    if (rec.modal_price > 0) {
+    if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) {
       allCropMandis[cropSlug][mandiName].prices.push(rec.modal_price);
       // Track recent prices (last 7 days) for accurate best/worst mandi
       const fullDate = parseDateFull(rec.arrival_date);
@@ -617,7 +617,7 @@ function main() {
       const mandiName = cleanMandiName(rec.market);
       if (!stateCropMandis[cropSlug]) stateCropMandis[cropSlug] = {};
       if (!stateCropMandis[cropSlug][mandiName]) stateCropMandis[cropSlug][mandiName] = { name: mandiName, district: rec.district, prices: [], recentPrices: [], count: 0, varieties: {}, grades: {} };
-      if (rec.modal_price > 0) {
+      if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) {
         stateCropMandis[cropSlug][mandiName].prices.push(rec.modal_price);
         const fullDate = parseDateFull(rec.arrival_date);
         if (fullDate && fullDate >= recentCutoff) {
@@ -711,11 +711,11 @@ function main() {
       const slug = slugify(rec.commodity);
       if (!stateCrops[slug]) stateCrops[slug] = { name: rec.commodity, emoji: getCropEmoji(rec.commodity), records: 0, priceCount: 0, totalModal: 0, byMonth: {} };
       stateCrops[slug].records++;
-      if (rec.modal_price > 0) { stateCrops[slug].totalModal += rec.modal_price; stateCrops[slug].priceCount++; }
+      if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) { stateCrops[slug].totalModal += rec.modal_price; stateCrops[slug].priceCount++; }
       const m = parseDate(rec.arrival_date);
       if (m) {
         if (!stateCrops[slug].byMonth[m]) stateCrops[slug].byMonth[m] = { prices: [], count: 0 };
-        if (rec.modal_price > 0) stateCrops[slug].byMonth[m].prices.push(rec.modal_price);
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) stateCrops[slug].byMonth[m].prices.push(rec.modal_price);
         stateCrops[slug].byMonth[m].count++;
       }
     }

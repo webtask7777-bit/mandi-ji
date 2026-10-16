@@ -190,7 +190,7 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
             {heroComparison.status === 'gap' && <p className="sb-small-note">{gapNote(heroComparison)}।</p>}
             {Number(latestPrice?.msp) > 0 && <div className="sb-msp-line"><span>दर्ज MSP</span><strong>₹{number(latestPrice.msp)} <small>/ क्विंटल</small></strong></div>}
             {!freshness.isCurrent && <p className="sb-quote-notice"><Info size={15} aria-hidden="true" />{freshness.label}। सौदे से पहले मंडी से भाव की पुष्टि करें।</p>}
-            {selectedTicker?.bestMandi && selectedTicker?.worstMandi && <div className="sb-quote-range">
+            {Number(selectedTicker?.bestMandi?.price) >= 1 && Number(selectedTicker?.worstMandi?.price) >= 1 && <div className="sb-quote-range">
               {[{ label: 'दर्ज अधिकतम', market: selectedTicker.bestMandi }, { label: 'दर्ज न्यूनतम', market: selectedTicker.worstMandi }].map(({ label, market }) => {
                 const details = comparisons.find(item => item.name === market.name);
                 const variety = [details?.topVariety, details?.grade && details.grade !== 'Local' ? details.grade : null].filter(Boolean).join(' · ');
