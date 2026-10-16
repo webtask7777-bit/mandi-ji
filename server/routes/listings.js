@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { v4 as uuid } from 'uuid';
 import { readJSON, appendItem, findById, updateItem, deleteItem } from '../db/json-store.js';
 import { authRequired } from '../middleware/auth.js';
+import { isCropPriceCommodity, UNSUPPORTED_COMMODITY_ERROR } from '../../src/utils/cropEligibility.js';
 
 const router = Router();
 
@@ -53,7 +54,7 @@ router.get('/', (req, res) => {
       limit: limitNum,
       totalPages: Math.ceil(total / limitNum),
     });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'लिस्टिंग लोड करने में विफल' });
   }
 });
@@ -66,6 +67,9 @@ router.post('/', authRequired, (req, res) => {
     if (!type || !cropName || !quantity || !pricePerUnit || !mandiName) {
       return res.status(400).json({ error: 'सभी आवश्यक फ़ील्ड भरें' });
     }
+    // Listings are priced per quintal; livestock and other non-crop items are not accepted.
+    const listingCropId = cropId || cropName.toLowerCase().replace(/\s+/g, '-');
+    if (!isCropPriceCommodity(listingCropId)) return res.status(422).json(UNSUPPORTED_COMMODITY_ERROR);
 
     // Mask phone: show first 4 and last 2
     const phone = req.user.phone || '';
@@ -82,7 +86,7 @@ router.post('/', authRequired, (req, res) => {
       userName: req.user.name,
       userPhone: maskedPhone,
       type,
-      cropId: cropId || cropName.toLowerCase().replace(/\s+/g, '-'),
+      cropId: listingCropId,
       cropName,
       cropEmoji: cropEmoji || '',
       quantity: Number(quantity),
@@ -99,7 +103,7 @@ router.post('/', authRequired, (req, res) => {
 
     appendItem('listings.json', listing);
     res.status(201).json(listing);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'लिस्टिंग बनाने में विफल' });
   }
 });
@@ -110,7 +114,7 @@ router.get('/:id', (req, res) => {
     const listing = findById('listings.json', req.params.id);
     if (!listing) return res.status(404).json({ error: 'लिस्टिंग नहीं मिली' });
     res.json(listing);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'लिस्टिंग लोड करने में विफल' });
   }
 });
@@ -133,7 +137,7 @@ router.put('/:id', authRequired, (req, res) => {
 
     const updated = updateItem('listings.json', req.params.id, updates);
     res.json(updated);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'लिस्टिंग अपडेट करने में विफल' });
   }
 });
@@ -149,7 +153,7 @@ router.delete('/:id', authRequired, (req, res) => {
 
     deleteItem('listings.json', req.params.id);
     res.json({ success: true, message: 'लिस्टिंग हटा दी गई' });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'लिस्टिंग हटाने में विफल' });
   }
 });

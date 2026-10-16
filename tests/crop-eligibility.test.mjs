@@ -14,15 +14,13 @@ import arbitrageRouter from '../server/routes/arbitrage.js';
 const rawCrops = JSON.parse(readFileSync(new URL('../server/db/data/india/crops.json', import.meta.url), 'utf8'));
 
 test('exact known non-crop IDs are excluded without excluding cowpea or lookalikes', () => {
-  assert.equal(NON_CROP_COMMODITY_IDS.length, 14);
-  for (const id of NON_CROP_COMMODITY_IDS) {
-    assert.ok(rawCrops.some(crop => crop.id === id), `${id} is an exact source ID`);
-    assert.equal(isCropPriceCommodity(id), false);
-  }
+  assert.equal(NON_CROP_COMMODITY_IDS.length, 16);
+  // sheep and she-goat are excluded before they ever appear in the source data.
+  for (const id of NON_CROP_COMMODITY_IDS) assert.equal(isCropPriceCommodity(id), false, id);
   for (const id of ['cowpeaveg', 'cowpealobia-karamani', 'bullar', 'eggplant', 'wheat', 'cow-unverified-variety']) assert.equal(isCropPriceCommodity(id), true, id);
   // The catalogue grows as new data arrives; exactly the known non-crop IDs are withheld.
   assert.ok(rawCrops.length >= 285);
-  assert.equal(rawCrops.filter(crop => isCropPriceCommodity(crop.id)).length, rawCrops.length - NON_CROP_COMMODITY_IDS.length);
+  assert.equal(rawCrops.filter(crop => isCropPriceCommodity(crop.id)).length, rawCrops.filter(crop => !NON_CROP_COMMODITY_IDS.includes(crop.id)).length);
 });
 
 test('price-gap candidates cannot offer livestock under quintal cost assumptions', () => {
@@ -54,7 +52,7 @@ test('served catalogs and direct price endpoints share the unit eligibility guar
       assert.ok(body.length > 0);
       assert.ok(body.every(crop => isCropPriceCommodity(crop.id)), `${kind}/${state}`);
       if (kind === 'crops' && state === 'all') {
-        assert.equal(body.length, rawCrops.length - NON_CROP_COMMODITY_IDS.length);
+        assert.equal(body.length, rawCrops.filter(crop => !NON_CROP_COMMODITY_IDS.includes(crop.id)).length);
         assert.ok(body.some(crop => crop.id === 'cowpeaveg'));
         assert.ok(body.some(crop => crop.id === 'cowpealobia-karamani'));
       }

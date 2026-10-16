@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen, Calculator } from 'lucide-react';
 import { useApi } from '../hooks/useApi';
-import { getCropTopic } from '../../shared/cropTopics.js';
+import { getCropTopic, isProcessedForm } from '../../shared/cropTopics.js';
 import EditorialImage from './EditorialImage';
 import '../styles/crop-guides.css';
 
 export default function CropGuides({ cropId, cropName, stateId = 'all' }) {
-  const topic = getCropTopic(cropId);
+  // A processed form (atta, poha, dal, oil) keeps its tools but not the crop's growing guides.
+  const topic = isProcessedForm(cropId) ? null : getCropTopic(cropId);
   const query = new URLSearchParams({ crop: topic?.id || '', state: stateId, language: 'hi', limit: '3' });
   const { data, loading, error } = useApi(topic ? `/cms/blog?${query}` : null);
   const posts = data?.posts || [];

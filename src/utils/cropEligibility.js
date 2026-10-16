@@ -3,7 +3,7 @@
 // Keep the source records intact; exclude only these known IDs from that UI.
 export const NON_CROP_COMMODITY_IDS = Object.freeze([
   'cow', 'bull', 'calf', 'goat', 'cock', 'duck',
-  'he-buffalo', 'she-buffalo', 'pigs', 'fish', 'egg', 'ox', 'hen', 'prawn',
+  'he-buffalo', 'she-buffalo', 'pigs', 'fish', 'egg', 'ox', 'hen', 'prawn', 'sheep', 'she-goat',
 ]);
 const excludedIds = new Set(NON_CROP_COMMODITY_IDS);
 
