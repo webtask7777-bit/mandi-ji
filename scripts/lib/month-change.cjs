@@ -1,22 +1,33 @@
 /**
  * Month-over-month change for the ticker. Compares the latest month with the previous
- * one only when they are consecutive calendar months. Across a gap (missing source months)
- * the reporting mandis change too, so no change, and no change-based signal, is produced.
+ * one only when they are consecutive calendar months and each has at least `minDays`
+ * reporting days. Across a gap (missing source months), or against a month with a day or
+ * two of data, the reporting mandis differ too much, so no change and no change-based
+ * signal is produced. Prices are the median of per-mandi averages (robust-price.cjs).
  *
- * @param {Array<[string, { prices: number[] }]>} months sorted [ 'YYYY-MM', bucket ] entries
- * @returns {{ price: number, prevPrice: number|null, change: number|null, changePct: number|null }}
+ * @param {Array<[string, object]>} months sorted [ 'YYYY-MM', bucket ] entries
  */
-function monthChange(months) {
-  const avg = (bucket) => (bucket && bucket.prices.length ? Math.round(bucket.prices.reduce((a, b) => a + b, 0) / bucket.prices.length) : 0);
+const { bucketPrice } = require('./robust-price.cjs');
+
+const MIN_DAYS = 3;
+
+function monthChange(months, { minDays = MIN_DAYS } = {}) {
   const latest = months.at(-1);
   const prev = months.at(-2);
-  const price = avg(latest?.[1]);
-  const prevPrice = avg(prev?.[1]);
-  if (!latest || !prev || !(price > 0) || !(prevPrice > 0) || !consecutive(prev[0], latest[0])) {
-    return { price, prevPrice: null, change: null, changePct: null };
+  const price = bucketPrice(latest?.[1]);
+  const prevPrice = bucketPrice(prev?.[1]);
+  const daysOf = bucket => (bucket?.days instanceof Set ? bucket.days.size : Infinity);
+  const meta = {
+    month: latest?.[0] || null,
+    days: latest?.[1]?.days instanceof Set ? latest[1].days.size : null,
+    mandis: latest?.[1]?.byMandi ? Object.keys(latest[1].byMandi).length : null,
+  };
+  if (!latest || !prev || !(price > 0) || !(prevPrice > 0) || !consecutive(prev[0], latest[0])
+    || daysOf(latest[1]) < minDays || daysOf(prev[1]) < minDays) {
+    return { price, prevPrice: null, change: null, changePct: null, ...meta };
   }
   const change = price - prevPrice;
-  return { price, prevPrice, change, changePct: parseFloat(((change / prevPrice) * 100).toFixed(1)) };
+  return { price, prevPrice, change, changePct: parseFloat(((change / prevPrice) * 100).toFixed(1)), ...meta };
 }
 
 function consecutive(earlier, later) {
@@ -25,7 +36,7 @@ function consecutive(earlier, later) {
   return Number.isFinite(gap) && gap === 1;
 }
 
-/** Change-based signal only when a change exists; MSP-based rules are applied by the caller. */
+/** Change-based signal only when a change exists. */
 function changeSignal(changePct) {
   if (changePct == null) return null;
   if (changePct > 5) return { signal: 'sell', signalHi: 'बेचें' };
@@ -33,4 +44,4 @@ function changeSignal(changePct) {
   return null;
 }
 
-module.exports = { monthChange, consecutive, changeSignal };
+module.exports = { monthChange, consecutive, changeSignal, MIN_DAYS };

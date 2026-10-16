@@ -79,7 +79,7 @@ function validatePublicSnapshot(html, label) {
 test('raw crop HTML contains source-dated public content in the correct geographic scope', artifactOptions, () => {
   for (const example of [
     { route: '/crop/tomato', scope: 'भारत', source: 'india/crop-prices/tomato.json', crop: 'टमाटर', request: '/prices/tomato?months=13&state=all' },
-    { route: '/mandi-bhav/chhattisgarh/ladyfinger', scope: 'छत्तीसगढ़', source: 'crop-prices/ladyfinger.json', crop: 'भिण्डी', request: '/prices/ladyfinger?months=13&state=chhattisgarh' },
+    { route: '/mandi-bhav/chhattisgarh/bhindiladies-finger', scope: 'छत्तीसगढ़', source: 'india/states/chhattisgarh/crop-prices/bhindiladies-finger.json', crop: 'भिंडी', request: '/prices/bhindiladies-finger?months=13&state=chhattisgarh' },
   ]) {
     const html = htmlFor(example.route);
     const metadata = headMetadata(html, example.route);
@@ -133,10 +133,10 @@ test('raw home and state pages contain navigable crop links and the blog index e
   const home = htmlFor('/');
   const state = htmlFor('/mandi-bhav/chhattisgarh');
   assert.match(home, /href="\/crop\/tomato"/, 'national crop landing is linked without JavaScript');
-  assert.match(state, /href="\/mandi-bhav\/chhattisgarh\/ladyfinger"/, 'state catalog keeps its own source ID and scope');
+  assert.match(state, /href="\/mandi-bhav\/chhattisgarh\/bhindiladies-finger"/, 'state catalog keeps its own source ID and scope');
   assert.doesNotMatch(state, /href="\/crop\/ladyfinger"/, 'CG-only ID must not be sent to the national dataset');
-  const regionalCrop = htmlFor('/mandi-bhav/chhattisgarh/ladyfinger');
-  assert.match(regionalCrop, /href="\/mandi-bhav\/chhattisgarh\/ladyfinger"/, 'comparison detail link retains the regional source ID and scope');
+  const regionalCrop = htmlFor('/mandi-bhav/chhattisgarh/bhindiladies-finger');
+  assert.match(regionalCrop, /href="\/mandi-bhav\/chhattisgarh\/bhindiladies-finger"/, 'comparison detail link retains the regional source ID and scope');
   assert.doesNotMatch(regionalCrop, /href="\/crop\/ladyfinger(?:[?"#])/, 'regional comparison must not link to the nonexistent national crop ID');
   const published = JSON.parse(read(path.join(root, 'server/db/data/blog-posts.json'))).filter(post => post.status === 'published' && post.slug && post.content?.trim());
   const blog = htmlFor('/blog');

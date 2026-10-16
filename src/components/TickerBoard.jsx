@@ -44,7 +44,7 @@ export default function TickerBoard({ data, onSelectCrop, selectedCrop }) {
                 <CropImage id={item.id} name={item.nameHi || item.name} size="sm" />
                 <span><strong>{item.nameHi || item.name}</strong><small>{item.mandiCount ? `${number(item.mandiCount)} मंडियाँ` : "रिकॉर्ड उपलब्ध"}</small></span>
               </button></th>
-              <td><strong className="sb-board__price">{Number(item.price) > 0 ? `₹${number(item.price)}` : "—"}</strong>{Number(item.msp) > 0 && <small>दर्ज MSP ₹{number(item.msp)}</small>}</td>
+              <td><strong className="sb-board__price">{Number(item.price) > 0 ? `₹${number(item.price)}` : "—"}</strong>{Number(item.msp) > 0 && <small>MSP{item.mspSeason ? ` ${item.mspSeason}` : ''} ₹{number(item.msp)}</small>}</td>
               <td><span className={`sb-change ${change > 0 ? "sb-change--up" : change < 0 ? "sb-change--down" : "sb-change--flat"}`}>
                 {changeKnown ? <><ChangeIcon size={15} aria-hidden="true" />{change > 0 ? "+" : ""}{change}%</> : "—"}
               </span></td>

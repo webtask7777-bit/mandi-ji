@@ -9,38 +9,50 @@
     {
       "month": "03",
       "date": "2026-03",
-      "market": 5650,
-      "volume": 12
+      "market": 4700,
+      "volume": 12,
+      "days": 5,
+      "mandis": 7
     },
     {
       "month": "04",
       "date": "2026-04",
-      "market": 4768,
-      "volume": 23
+      "market": 4650,
+      "volume": 23,
+      "days": 6,
+      "mandis": 10
     },
     {
       "month": "05",
       "date": "2026-05",
-      "market": 4396,
-      "volume": 17
+      "market": 5000,
+      "volume": 17,
+      "days": 7,
+      "mandis": 9
     },
     {
       "month": "06",
       "date": "2026-06",
-      "market": 4776,
-      "volume": 14
+      "market": 4530,
+      "volume": 14,
+      "days": 4,
+      "mandis": 12
     },
     {
       "month": "07",
       "date": "2026-07",
-      "market": 4669,
-      "volume": 159
+      "market": 4403,
+      "volume": 159,
+      "days": 17,
+      "mandis": 16
     },
     {
       "month": "10",
       "date": "2026-10",
-      "market": 5520,
-      "volume": 4
+      "market": 5100,
+      "volume": 4,
+      "days": 1,
+      "mandis": 4
     }
   ],
   "dailyHistory": [
@@ -48,6 +60,7 @@
       "date": "2026-03-17",
       "market": 6500,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 6500,
       "maxPrice": 6500
     },
@@ -55,13 +68,15 @@
       "date": "2026-03-26",
       "market": 4500,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 4000,
       "maxPrice": 5000
     },
     {
       "date": "2026-03-27",
-      "market": 5808,
+      "market": 5890,
       "volume": 5,
+      "mandis": 5,
       "minPrice": 4000,
       "maxPrice": 8000
     },
@@ -69,13 +84,15 @@
       "date": "2026-03-28",
       "market": 5375,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 4000,
       "maxPrice": 6500
     },
     {
       "date": "2026-03-30",
-      "market": 5672,
+      "market": 4500,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 3800,
       "maxPrice": 8515
     },
@@ -83,6 +100,7 @@
       "date": "2026-04-01",
       "market": 4850,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 4000,
       "maxPrice": 6000
     },
@@ -90,6 +108,7 @@
       "date": "2026-04-02",
       "market": 4500,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 4500,
       "maxPrice": 4500
     },
@@ -97,27 +116,31 @@
       "date": "2026-04-04",
       "market": 5487,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 4700,
       "maxPrice": 6273
     },
     {
       "date": "2026-04-06",
-      "market": 4754,
+      "market": 4950,
       "volume": 6,
+      "mandis": 6,
       "minPrice": 1000,
       "maxPrice": 6500
     },
     {
       "date": "2026-04-09",
-      "market": 5042,
+      "market": 4500,
       "volume": 5,
+      "mandis": 5,
       "minPrice": 4000,
       "maxPrice": 7000
     },
     {
       "date": "2026-04-21",
-      "market": 4394,
+      "market": 4560,
       "volume": 7,
+      "mandis": 7,
       "minPrice": 1400,
       "maxPrice": 5500
     },
@@ -125,6 +148,7 @@
       "date": "2026-05-05",
       "market": 4200,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 4200,
       "maxPrice": 4300
     },
@@ -132,6 +156,7 @@
       "date": "2026-05-08",
       "market": 5000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 5000,
       "maxPrice": 5000
     },
@@ -139,27 +164,31 @@
       "date": "2026-05-14",
       "market": 2300,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 1500,
       "maxPrice": 4800
     },
     {
       "date": "2026-05-15",
-      "market": 4833,
+      "market": 5200,
       "volume": 7,
+      "mandis": 7,
       "minPrice": 180,
       "maxPrice": 8000
     },
     {
       "date": "2026-05-18",
-      "market": 3767,
+      "market": 4200,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 1500,
       "maxPrice": 4500
     },
     {
       "date": "2026-05-19",
-      "market": 4633,
+      "market": 4500,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 4000,
       "maxPrice": 5200
     },
@@ -167,6 +196,7 @@
       "date": "2026-05-20",
       "market": 4200,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 4200,
       "maxPrice": 4200
     },
@@ -174,6 +204,7 @@
       "date": "2026-06-18",
       "market": 5250,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 2000,
       "maxPrice": 8000
     },
@@ -181,6 +212,7 @@
       "date": "2026-06-19",
       "market": 3500,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 3500,
       "maxPrice": 3500
     },
@@ -188,41 +220,47 @@
       "date": "2026-06-26",
       "market": 4780,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 4500,
       "maxPrice": 5500
     },
     {
       "date": "2026-06-30",
-      "market": 4811,
+      "market": 4500,
       "volume": 9,
+      "mandis": 9,
       "minPrice": 2000,
       "maxPrice": 9000
     },
     {
       "date": "2026-07-01",
-      "market": 4989,
+      "market": 4500,
       "volume": 11,
+      "mandis": 11,
       "minPrice": 2000,
       "maxPrice": 8500
     },
     {
       "date": "2026-07-02",
-      "market": 4908,
+      "market": 4800,
       "volume": 9,
+      "mandis": 9,
       "minPrice": 2092,
       "maxPrice": 9000
     },
     {
       "date": "2026-07-03",
-      "market": 4741,
+      "market": 4300,
       "volume": 10,
+      "mandis": 10,
       "minPrice": 2000,
       "maxPrice": 8500
     },
     {
       "date": "2026-07-04",
-      "market": 4355,
+      "market": 4300,
       "volume": 6,
+      "mandis": 6,
       "minPrice": 2030,
       "maxPrice": 7000
     },
@@ -230,97 +268,111 @@
       "date": "2026-07-05",
       "market": 6000,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 4500,
       "maxPrice": 8000
     },
     {
       "date": "2026-07-06",
-      "market": 4165,
+      "market": 4200,
       "volume": 11,
+      "mandis": 11,
       "minPrice": 2000,
       "maxPrice": 8500
     },
     {
       "date": "2026-07-07",
-      "market": 4631,
+      "market": 4200,
       "volume": 9,
+      "mandis": 9,
       "minPrice": 2000,
       "maxPrice": 8500
     },
     {
       "date": "2026-07-08",
-      "market": 4844,
+      "market": 4500,
       "volume": 12,
+      "mandis": 12,
       "minPrice": 2000,
       "maxPrice": 8500
     },
     {
       "date": "2026-07-09",
-      "market": 4898,
+      "market": 4450,
       "volume": 10,
+      "mandis": 10,
       "minPrice": 2100,
       "maxPrice": 8500
     },
     {
       "date": "2026-07-10",
-      "market": 4848,
+      "market": 4700,
       "volume": 10,
+      "mandis": 10,
       "minPrice": 2000,
       "maxPrice": 8500
     },
     {
       "date": "2026-07-11",
-      "market": 4929,
+      "market": 4400,
       "volume": 7,
+      "mandis": 7,
       "minPrice": 3500,
       "maxPrice": 7500
     },
     {
       "date": "2026-07-13",
-      "market": 4533,
+      "market": 4500,
       "volume": 11,
+      "mandis": 11,
       "minPrice": 2000,
       "maxPrice": 7400
     },
     {
       "date": "2026-07-14",
-      "market": 4570,
+      "market": 4550,
       "volume": 12,
+      "mandis": 12,
       "minPrice": 2075,
       "maxPrice": 7500
     },
     {
       "date": "2026-07-15",
-      "market": 4511,
+      "market": 4500,
       "volume": 11,
+      "mandis": 11,
       "minPrice": 1500,
       "maxPrice": 7500
     },
     {
       "date": "2026-07-16",
-      "market": 4474,
+      "market": 4800,
       "volume": 11,
+      "mandis": 11,
       "minPrice": 1800,
       "maxPrice": 7500
     },
     {
       "date": "2026-07-17",
-      "market": 4756,
+      "market": 4505,
       "volume": 10,
+      "mandis": 10,
       "minPrice": 2000,
       "maxPrice": 7500
     },
     {
       "date": "2026-07-18",
-      "market": 4147,
+      "market": 4200,
       "volume": 7,
+      "mandis": 7,
       "minPrice": 2030,
       "maxPrice": 7300
     },
     {
       "date": "2026-10-16",
-      "market": 5520,
+      "market": 5100,
       "volume": 4,
+      "mandis": 4,
       "minPrice": 4500,
       "maxPrice": 7280
     }

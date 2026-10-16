@@ -28,7 +28,7 @@ function dateLabel(record, formatMonth) {
   return record.month ? (formatMonth ? formatMonth(record.month) : record.month) : '';
 }
 
-export default function MiniChart({ data = [], dailyData = [], title = "भाव का इतिहास", formatMonth }) {
+export default function MiniChart({ data = [], dailyData = [], title = "भाव का इतिहास", formatMonth, mspSeason }) {
   const [range, setRange] = useState(7);
   const [preferredSource, setPreferredSource] = useState('daily');
   const instanceId = useId().replace(/[^a-zA-Z0-9_-]/g, '');
@@ -36,7 +36,11 @@ export default function MiniChart({ data = [], dailyData = [], title = "भा�
   const titleId = `price-title-${instanceId}`;
   const descriptionId = `price-description-${instanceId}`;
   const dailyRecords = useMemo(() => availableRecords(dailyData), [dailyData]);
-  const monthlyRecords = useMemo(() => availableRecords(data), [data]);
+  // A "month" built from one or two reporting days is not a monthly average; leave it out.
+  const MIN_MONTH_DAYS = 3;
+  const allMonthly = useMemo(() => availableRecords(data), [data]);
+  const monthlyRecords = useMemo(() => allMonthly.filter(record => record.days == null || record.days >= MIN_MONTH_DAYS), [allMonthly]);
+  const thinMonths = allMonthly.length - monthlyRecords.length;
   const source = preferredSource === 'daily'
     ? (dailyRecords.length ? 'daily' : 'monthly')
     : (monthlyRecords.length ? 'monthly' : 'daily');
@@ -98,7 +102,7 @@ export default function MiniChart({ data = [], dailyData = [], title = "भा�
       <div className="px-4 pt-4 pb-3" style={{ borderBottom: `1px solid ${COLORS.grid}` }}>
         <h3 className="text-sm font-semibold" style={{ color: COLORS.ink }}>{title}</h3>
         <p className="text-xs mt-1" style={{ color: COLORS.muted }}>
-          {isMonthly ? 'मासिक औसत' : 'दिनवार रिकॉर्ड'} · {chartData.length} उपलब्ध रिकॉर्ड · अंतिम तिथि: {lastDate}
+          {isMonthly ? 'मासिक औसत' : 'दिनवार रिकॉर्ड'} · {chartData.length} उपलब्ध रिकॉर्ड · अंतिम तिथि: {lastDate}{isMonthly && thinMonths > 0 ? ` · ${thinMonths} महीने 3 दिन से कम रिकॉर्ड के कारण नहीं दिखाए` : ''}
         </p>
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mt-3">
           <span className="text-2xl font-bold tabular-nums" style={{ color: COLORS.ink }}>₹{Number(last.market).toLocaleString('en-IN')}</span>
@@ -110,7 +114,7 @@ export default function MiniChart({ data = [], dailyData = [], title = "भा�
         {change !== null && <p className="text-xs mt-1" style={{ color: COLORS.muted }}>पिछले उपलब्ध रिकॉर्ड से बदलाव</p>}
         {comparison.status === 'gap' && <p className="text-xs mt-1" style={{ color: COLORS.muted }}>{gapNote(comparison)}।</p>}
         {positiveNumber(last.msp) && <p className="text-xs mt-2" style={{ color: COLORS.muted }}>
-          दर्ज MSP: ₹{Number(last.msp).toLocaleString('en-IN')}
+          {mspSeason ? `MSP ${mspSeason}` : 'दर्ज MSP'}: ₹{Number(last.msp).toLocaleString('en-IN')}
           <span className="ml-2" style={{ color: Number(last.market) < Number(last.msp) ? '#A54235' : COLORS.forest }}>
             {Number(last.market) === Number(last.msp) ? 'MSP के बराबर' : `MSP से ${Number(last.market) > Number(last.msp) ? 'ऊपर' : 'नीचे'}`}
           </span>
@@ -165,7 +169,7 @@ export default function MiniChart({ data = [], dailyData = [], title = "भा�
       <div className="px-4 pt-3 pb-4" style={{ borderTop: `1px solid ${COLORS.grid}` }}>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs" style={{ color: COLORS.muted }}>
           <span className="inline-flex items-center gap-1.5"><span style={{ width: 13, height: 3, background: COLORS.forest, borderRadius: 2 }} />बाज़ार भाव</span>
-          {hasMsp && <span className="inline-flex items-center gap-1.5"><span style={{ width: 13, borderTop: `2px dashed ${COLORS.gold}` }} />दर्ज MSP</span>}
+          {hasMsp && <span className="inline-flex items-center gap-1.5"><span style={{ width: 13, borderTop: `2px dashed ${COLORS.gold}` }} />{mspSeason ? `MSP ${mspSeason}` : 'दर्ज MSP'}</span>}
           {hasPriceRange && <span className="inline-flex items-center gap-1.5"><span style={{ width: 10, height: 10, background: COLORS.band, borderRadius: 2 }} />न्यूनतम–अधिकतम</span>}
           {hasVolume && <span className="inline-flex items-center gap-1.5"><span style={{ width: 10, height: 10, background: COLORS.volume, borderRadius: 2 }} />रिकॉर्ड की संख्या</span>}
         </div>

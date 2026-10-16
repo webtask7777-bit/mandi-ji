@@ -7,6 +7,8 @@
       "recentPrice": null,
       "minPrice": 10000,
       "maxPrice": 12000,
+      "rangeBasis": "all",
+      "lastDate": "2025-12-29",
       "records": 10,
       "topVariety": "777 New Ind",
       "grade": "FAQ"
@@ -20,6 +22,8 @@
       "recentPrice": null,
       "minPrice": 11000,
       "maxPrice": 12000,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-04",
       "records": 3,
       "topVariety": "777 New Ind",
       "grade": "FAQ"
@@ -27,23 +31,14 @@
   ],
   "potato": [
     {
-      "name": "Sheohar",
-      "district": "Sheohar",
-      "avgPrice": 1900,
-      "recentPrice": null,
-      "minPrice": 1900,
-      "maxPrice": 1900,
-      "records": 1,
-      "topVariety": "Red Nanital",
-      "grade": "FAQ"
-    },
-    {
       "name": "Birpur",
       "district": "Supaul",
       "avgPrice": 1800,
       "recentPrice": 1800,
       "minPrice": 1800,
       "maxPrice": 1800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Potato",
       "grade": "Grade A"
@@ -53,8 +48,10 @@
       "district": "Supaul",
       "avgPrice": 1400,
       "recentPrice": 1600,
-      "minPrice": 1200,
+      "minPrice": 1600,
       "maxPrice": 1600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 6,
       "topVariety": "Potato",
       "grade": "Grade A"
@@ -66,29 +63,9 @@
       "recentPrice": 1600,
       "minPrice": 1600,
       "maxPrice": 1600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
-      "topVariety": "Red Nanital",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Raniganj",
-      "district": "Araria",
-      "avgPrice": 1500,
-      "recentPrice": null,
-      "minPrice": 1500,
-      "maxPrice": 1500,
-      "records": 1,
-      "topVariety": "Red Nanital",
-      "grade": "Grade A"
-    },
-    {
-      "name": "Piro",
-      "district": "Bhojpur",
-      "avgPrice": 1500,
-      "recentPrice": null,
-      "minPrice": 1350,
-      "maxPrice": 1650,
-      "records": 2,
       "topVariety": "Red Nanital",
       "grade": "FAQ"
     },
@@ -98,7 +75,9 @@
       "avgPrice": 1511,
       "recentPrice": 1400,
       "minPrice": 1400,
-      "maxPrice": 1700,
+      "maxPrice": 1400,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 19,
       "topVariety": "Red Nanital",
       "grade": "Grade A"
@@ -110,31 +89,11 @@
       "recentPrice": 1400,
       "minPrice": 1400,
       "maxPrice": 1400,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Potato",
       "grade": "Local"
-    },
-    {
-      "name": "Khagaria",
-      "district": "Khagaria",
-      "avgPrice": 1331,
-      "recentPrice": null,
-      "minPrice": 1120,
-      "maxPrice": 2240,
-      "records": 11,
-      "topVariety": "Red",
-      "grade": "Grade A"
-    },
-    {
-      "name": "Chakia",
-      "district": "East Champaran/ Motihari",
-      "avgPrice": 1283,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 1400,
-      "records": 12,
-      "topVariety": "Red",
-      "grade": "Grade A"
     },
     {
       "name": "Arwal",
@@ -143,75 +102,11 @@
       "recentPrice": 1250,
       "minPrice": 1250,
       "maxPrice": 1250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Desi",
       "grade": "Medium"
-    },
-    {
-      "name": "Motihari",
-      "district": "East Champaran/ Motihari",
-      "avgPrice": 1228,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 1300,
-      "records": 18,
-      "topVariety": null,
-      "grade": "Grade A"
-    },
-    {
-      "name": "Benipatti",
-      "district": "Madhubani",
-      "avgPrice": 1221,
-      "recentPrice": null,
-      "minPrice": 1100,
-      "maxPrice": 1300,
-      "records": 21,
-      "topVariety": "Potato",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Chhapra",
-      "district": "Chhapra",
-      "avgPrice": 1211,
-      "recentPrice": null,
-      "minPrice": 1100,
-      "maxPrice": 1300,
-      "records": 20,
-      "topVariety": null,
-      "grade": "Grade A"
-    },
-    {
-      "name": "Kaswa",
-      "district": "Purnea",
-      "avgPrice": 1198,
-      "recentPrice": null,
-      "minPrice": 1110,
-      "maxPrice": 1280,
-      "records": 6,
-      "topVariety": "Jyoti",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Jainagar",
-      "district": "Madhubani",
-      "avgPrice": 1180,
-      "recentPrice": null,
-      "minPrice": 1020,
-      "maxPrice": 1350,
-      "records": 8,
-      "topVariety": "Desi",
-      "grade": "Grade A"
-    },
-    {
-      "name": "Jahajharpur",
-      "district": "Madhubani",
-      "avgPrice": 1133,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 1400,
-      "records": 12,
-      "topVariety": "Jyoti",
-      "grade": "FAQ"
     },
     {
       "name": "Bahadurganj",
@@ -220,30 +115,10 @@
       "recentPrice": 1125,
       "minPrice": 1125,
       "maxPrice": 1125,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Desi",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Buxur",
-      "district": "Buxar",
-      "avgPrice": 1100,
-      "recentPrice": null,
-      "minPrice": 1100,
-      "maxPrice": 1100,
-      "records": 1,
-      "topVariety": "Jyoti",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Natwar",
-      "district": "Rohtas",
-      "avgPrice": 1100,
-      "recentPrice": null,
-      "minPrice": 1100,
-      "maxPrice": 1100,
-      "records": 3,
-      "topVariety": "Jyoti",
       "grade": "FAQ"
     },
     {
@@ -251,8 +126,10 @@
       "district": "Begusarai",
       "avgPrice": 1123,
       "recentPrice": 1100,
-      "minPrice": 1000,
-      "maxPrice": 1400,
+      "minPrice": 1100,
+      "maxPrice": 1100,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 35,
       "topVariety": "Local",
       "grade": "Grade A"
@@ -262,8 +139,10 @@
       "district": "East Champaran/ Motihari",
       "avgPrice": 928,
       "recentPrice": 1100,
-      "minPrice": 600,
-      "maxPrice": 1300,
+      "minPrice": 1100,
+      "maxPrice": 1100,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 18,
       "topVariety": null,
       "grade": "FAQ"
@@ -274,21 +153,12 @@
       "avgPrice": 1225,
       "recentPrice": 1100,
       "minPrice": 1100,
-      "maxPrice": 1400,
+      "maxPrice": 1100,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 16,
       "topVariety": "Red",
       "grade": "FAQ"
-    },
-    {
-      "name": "Begusarai",
-      "district": "Begusarai",
-      "avgPrice": 1093,
-      "recentPrice": null,
-      "minPrice": 950,
-      "maxPrice": 1200,
-      "records": 7,
-      "topVariety": "Potato",
-      "grade": "Medium"
     },
     {
       "name": "Bhagwanpur Mandi",
@@ -296,7 +166,9 @@
       "avgPrice": 1093,
       "recentPrice": 1067,
       "minPrice": 1000,
-      "maxPrice": 1200,
+      "maxPrice": 1100,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 34,
       "topVariety": "Red Nanital",
       "grade": "Grade A"
@@ -307,7 +179,9 @@
       "avgPrice": 1075,
       "recentPrice": 1000,
       "minPrice": 1000,
-      "maxPrice": 1100,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 4,
       "topVariety": "Jyoti",
       "grade": "FAQ"
@@ -318,7 +192,9 @@
       "avgPrice": 1214,
       "recentPrice": 1000,
       "minPrice": 1000,
-      "maxPrice": 1250,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 18,
       "topVariety": "Desi",
       "grade": "Grade A"
@@ -330,6 +206,8 @@
       "recentPrice": 1000,
       "minPrice": 1000,
       "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Jyoti",
       "grade": "Local"
@@ -341,20 +219,11 @@
       "recentPrice": 1000,
       "minPrice": 1000,
       "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Red Nanital",
       "grade": "Local"
-    },
-    {
-      "name": "Jamui",
-      "district": "Jamui",
-      "avgPrice": 980,
-      "recentPrice": null,
-      "minPrice": 950,
-      "maxPrice": 1000,
-      "records": 4,
-      "topVariety": "Jyoti",
-      "grade": "Grade A"
     },
     {
       "name": "Gopalganj",
@@ -363,9 +232,206 @@
       "recentPrice": 980,
       "minPrice": 980,
       "maxPrice": 980,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Badshah",
       "grade": "Grade B"
+    },
+    {
+      "name": "Sheohar",
+      "district": "Sheohar",
+      "avgPrice": 1900,
+      "recentPrice": null,
+      "minPrice": 1900,
+      "maxPrice": 1900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
+      "records": 1,
+      "topVariety": "Red Nanital",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Raniganj",
+      "district": "Araria",
+      "avgPrice": 1500,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-11",
+      "records": 1,
+      "topVariety": "Red Nanital",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Piro",
+      "district": "Bhojpur",
+      "avgPrice": 1500,
+      "recentPrice": null,
+      "minPrice": 1350,
+      "maxPrice": 1650,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
+      "records": 2,
+      "topVariety": "Red Nanital",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Khagaria",
+      "district": "Khagaria",
+      "avgPrice": 1331,
+      "recentPrice": null,
+      "minPrice": 1120,
+      "maxPrice": 2240,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
+      "records": 11,
+      "topVariety": "Red",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Chakia",
+      "district": "East Champaran/ Motihari",
+      "avgPrice": 1283,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
+      "records": 12,
+      "topVariety": "Red",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Motihari",
+      "district": "East Champaran/ Motihari",
+      "avgPrice": 1228,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
+      "records": 18,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
+      "name": "Benipatti",
+      "district": "Madhubani",
+      "avgPrice": 1221,
+      "recentPrice": null,
+      "minPrice": 1100,
+      "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
+      "records": 21,
+      "topVariety": "Potato",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Chhapra",
+      "district": "Chhapra",
+      "avgPrice": 1211,
+      "recentPrice": null,
+      "minPrice": 1100,
+      "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
+      "records": 20,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
+      "name": "Kaswa",
+      "district": "Purnea",
+      "avgPrice": 1198,
+      "recentPrice": null,
+      "minPrice": 1110,
+      "maxPrice": 1280,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-05",
+      "records": 6,
+      "topVariety": "Jyoti",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jainagar",
+      "district": "Madhubani",
+      "avgPrice": 1180,
+      "recentPrice": null,
+      "minPrice": 1020,
+      "maxPrice": 1350,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
+      "records": 8,
+      "topVariety": "Desi",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Jahajharpur",
+      "district": "Madhubani",
+      "avgPrice": 1133,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
+      "records": 12,
+      "topVariety": "Jyoti",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Buxur",
+      "district": "Buxar",
+      "avgPrice": 1100,
+      "recentPrice": null,
+      "minPrice": 1100,
+      "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-27",
+      "records": 1,
+      "topVariety": "Jyoti",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Natwar",
+      "district": "Rohtas",
+      "avgPrice": 1100,
+      "recentPrice": null,
+      "minPrice": 1100,
+      "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-01",
+      "records": 3,
+      "topVariety": "Jyoti",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Begusarai",
+      "district": "Begusarai",
+      "avgPrice": 1093,
+      "recentPrice": null,
+      "minPrice": 950,
+      "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
+      "records": 7,
+      "topVariety": "Potato",
+      "grade": "Medium"
+    },
+    {
+      "name": "Jamui",
+      "district": "Jamui",
+      "avgPrice": 980,
+      "recentPrice": null,
+      "minPrice": 950,
+      "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
+      "records": 4,
+      "topVariety": "Jyoti",
+      "grade": "Grade A"
     },
     {
       "name": "Saharsa",
@@ -374,6 +440,8 @@
       "recentPrice": null,
       "minPrice": 850,
       "maxPrice": 900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 15,
       "topVariety": "Local",
       "grade": "FAQ"
@@ -385,6 +453,8 @@
       "recentPrice": null,
       "minPrice": 775,
       "maxPrice": 855,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-08",
       "records": 3,
       "topVariety": null,
       "grade": "Grade A"
@@ -398,6 +468,8 @@
       "recentPrice": null,
       "minPrice": 2370,
       "maxPrice": 2370,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-29",
       "records": 1,
       "topVariety": "Super Ponni",
       "grade": "FAQ"
@@ -409,6 +481,8 @@
       "recentPrice": null,
       "minPrice": 2370,
       "maxPrice": 2370,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-29",
       "records": 1,
       "topVariety": "Super Ponni",
       "grade": "FAQ"
@@ -420,6 +494,8 @@
       "recentPrice": null,
       "minPrice": 1975,
       "maxPrice": 1975,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-21",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -431,8 +507,10 @@
       "district": "Banka",
       "avgPrice": 3850,
       "recentPrice": 5500,
-      "minPrice": 2200,
+      "minPrice": 5500,
       "maxPrice": 5500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 2,
       "topVariety": "Medium",
       "grade": "FAQ"
@@ -444,6 +522,8 @@
       "recentPrice": 5030,
       "minPrice": 5030,
       "maxPrice": 5030,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Pusa-Red",
       "grade": "Grade B"
@@ -455,6 +535,8 @@
       "recentPrice": 5000,
       "minPrice": 5000,
       "maxPrice": 5000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -464,8 +546,10 @@
       "district": "Begusarai",
       "avgPrice": 3800,
       "recentPrice": 4900,
-      "minPrice": 2700,
+      "minPrice": 4900,
       "maxPrice": 4900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 6,
       "topVariety": "1st Sort",
       "grade": "Grade A"
@@ -477,6 +561,8 @@
       "recentPrice": 4800,
       "minPrice": 4800,
       "maxPrice": 4800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "1st Sort",
       "grade": "FAQ"
@@ -488,6 +574,8 @@
       "recentPrice": 4600,
       "minPrice": 4600,
       "maxPrice": 4600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Nasik",
       "grade": "FAQ"
@@ -499,6 +587,8 @@
       "recentPrice": 4450,
       "minPrice": 4450,
       "maxPrice": 4450,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -508,8 +598,10 @@
       "district": "East Champaran/ Motihari",
       "avgPrice": 2700,
       "recentPrice": 4200,
-      "minPrice": 1500,
+      "minPrice": 4200,
       "maxPrice": 4200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 3,
       "topVariety": "1st Sort",
       "grade": "FAQ"
@@ -519,8 +611,10 @@
       "district": "East Champaran/ Motihari",
       "avgPrice": 2560,
       "recentPrice": 4200,
-      "minPrice": 1600,
+      "minPrice": 4200,
       "maxPrice": 4200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 5,
       "topVariety": "1st Sort",
       "grade": "Grade A"
@@ -530,8 +624,10 @@
       "district": "Darbhanga",
       "avgPrice": 3183,
       "recentPrice": 4200,
-      "minPrice": 2650,
+      "minPrice": 4200,
       "maxPrice": 4200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 3,
       "topVariety": "Nasik",
       "grade": "Grade A"
@@ -541,8 +637,10 @@
       "district": "Khagaria",
       "avgPrice": 3345,
       "recentPrice": 4160,
-      "minPrice": 2530,
+      "minPrice": 4160,
       "maxPrice": 4160,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 2,
       "topVariety": "Red",
       "grade": "Grade A"
@@ -552,8 +650,10 @@
       "district": "Muzaffarpur",
       "avgPrice": 2807,
       "recentPrice": 4100,
-      "minPrice": 2550,
+      "minPrice": 4100,
       "maxPrice": 4100,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 7,
       "topVariety": "Medium",
       "grade": "Grade A"
@@ -565,6 +665,8 @@
       "recentPrice": 4100,
       "minPrice": 4100,
       "maxPrice": 4100,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "1st Sort",
       "grade": "Local"
@@ -576,6 +678,8 @@
       "recentPrice": 3700,
       "minPrice": 3700,
       "maxPrice": 3700,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Local",
       "grade": "Medium"
@@ -587,6 +691,8 @@
       "recentPrice": 3300,
       "minPrice": 3300,
       "maxPrice": 3300,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -598,6 +704,8 @@
       "recentPrice": null,
       "minPrice": 3200,
       "maxPrice": 3200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": "1st Sort",
       "grade": "FAQ"
@@ -609,6 +717,8 @@
       "recentPrice": null,
       "minPrice": 2900,
       "maxPrice": 2900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -620,6 +730,8 @@
       "recentPrice": null,
       "minPrice": 2850,
       "maxPrice": 2850,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": "1st Sort",
       "grade": "FAQ"
@@ -631,6 +743,8 @@
       "recentPrice": null,
       "minPrice": 2600,
       "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 2,
       "topVariety": null,
       "grade": "Grade A"
@@ -642,6 +756,8 @@
       "recentPrice": null,
       "minPrice": 2600,
       "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": "Medium",
       "grade": "Grade A"
@@ -653,6 +769,8 @@
       "recentPrice": null,
       "minPrice": 2600,
       "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 1,
       "topVariety": "1st Sort",
       "grade": "Grade A"
@@ -664,6 +782,8 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": "Onion",
       "grade": "Grade A"
@@ -675,6 +795,8 @@
       "recentPrice": null,
       "minPrice": 1510,
       "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 3,
       "topVariety": null,
       "grade": "Grade A"
@@ -686,6 +808,8 @@
       "recentPrice": null,
       "minPrice": 2230,
       "maxPrice": 2230,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-26",
       "records": 1,
       "topVariety": "1st Sort",
       "grade": "FAQ"
@@ -697,6 +821,8 @@
       "recentPrice": null,
       "minPrice": 1450,
       "maxPrice": 1450,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-21",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -708,10 +834,25 @@
       "district": "East Champaran/ Motihari",
       "avgPrice": 2311,
       "recentPrice": 4200,
-      "minPrice": 1800,
+      "minPrice": 4200,
       "maxPrice": 4200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 18,
       "topVariety": "Pointed gourd (Parval)",
+      "grade": "Local"
+    },
+    {
+      "name": "Bihpur",
+      "district": "Bhagalpur",
+      "avgPrice": 1624,
+      "recentPrice": 2500,
+      "minPrice": 2500,
+      "maxPrice": 2500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 21,
+      "topVariety": null,
       "grade": "Local"
     },
     {
@@ -721,6 +862,8 @@
       "recentPrice": null,
       "minPrice": 3200,
       "maxPrice": 5300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 12,
       "topVariety": null,
       "grade": "FAQ"
@@ -732,20 +875,11 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 3550,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 8,
       "topVariety": null,
       "grade": "Grade A"
-    },
-    {
-      "name": "Bihpur",
-      "district": "Bhagalpur",
-      "avgPrice": 1624,
-      "recentPrice": 2500,
-      "minPrice": 1000,
-      "maxPrice": 2800,
-      "records": 21,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Chakia",
@@ -754,6 +888,8 @@
       "recentPrice": null,
       "minPrice": 1900,
       "maxPrice": 2900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 8,
       "topVariety": null,
       "grade": "Grade A"
@@ -765,6 +901,8 @@
       "recentPrice": null,
       "minPrice": 1900,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 3,
       "topVariety": "Pointed gourd (Parval)",
       "grade": "FAQ"
@@ -776,6 +914,8 @@
       "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 1900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 14,
       "topVariety": null,
       "grade": "Grade A"
@@ -787,6 +927,8 @@
       "recentPrice": null,
       "minPrice": 1600,
       "maxPrice": 1600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -798,6 +940,8 @@
       "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 1580,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 7,
       "topVariety": "Pointed gourd (Parval)",
       "grade": "Medium"
@@ -809,6 +953,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-11",
       "records": 4,
       "topVariety": null,
       "grade": "Medium"
@@ -820,6 +966,8 @@
       "recentPrice": null,
       "minPrice": 650,
       "maxPrice": 1962.5,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 9,
       "topVariety": null,
       "grade": "Grade A"
@@ -831,6 +979,8 @@
       "recentPrice": null,
       "minPrice": 925,
       "maxPrice": 925,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-08",
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
@@ -842,6 +992,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 2,
       "topVariety": null,
       "grade": "Local"
@@ -849,12 +1001,27 @@
   ],
   "sponge-gourd": [
     {
+      "name": "Maharjganj",
+      "district": "Siwan",
+      "avgPrice": 2200,
+      "recentPrice": 2200,
+      "minPrice": 2200,
+      "maxPrice": 2200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Jainagar",
       "district": "Madhubani",
       "avgPrice": 2560,
       "recentPrice": null,
       "minPrice": 2560,
       "maxPrice": 2560,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
@@ -866,19 +1033,10 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 1,
       "topVariety": "Sponge gourd",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Maharjganj",
-      "district": "Siwan",
-      "avgPrice": 2200,
-      "recentPrice": 2200,
-      "minPrice": 2200,
-      "maxPrice": 2200,
-      "records": 1,
-      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -888,6 +1046,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 10,
       "topVariety": "Sponge gourd",
       "grade": "Local"
@@ -899,6 +1059,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-06",
       "records": 4,
       "topVariety": null,
       "grade": "FAQ"
@@ -910,6 +1072,8 @@
       "recentPrice": null,
       "minPrice": 680,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-03",
       "records": 2,
       "topVariety": "Sponge gourd",
       "grade": "Medium"
@@ -921,6 +1085,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 11,
       "topVariety": "Sponge gourd",
       "grade": "Grade A"
@@ -934,6 +1100,8 @@
       "recentPrice": 5000,
       "minPrice": 5000,
       "maxPrice": 5000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Arkasheela Mattigulla",
       "grade": "Local"
@@ -945,6 +1113,8 @@
       "recentPrice": 4125,
       "minPrice": 4125,
       "maxPrice": 4125,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Brinjal",
       "grade": "FAQ"
@@ -954,8 +1124,10 @@
       "district": "Madhubani",
       "avgPrice": 3200,
       "recentPrice": 3500,
-      "minPrice": 2900,
+      "minPrice": 3500,
       "maxPrice": 3500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 2,
       "topVariety": "Brinjal",
       "grade": "FAQ"
@@ -967,28 +1139,8 @@
       "recentPrice": 3000,
       "minPrice": 3000,
       "maxPrice": 3000,
-      "records": 1,
-      "topVariety": "Arkasheela Mattigulla",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Barbigha",
-      "district": "Sheikhpura",
-      "avgPrice": 2910,
-      "recentPrice": null,
-      "minPrice": 2910,
-      "maxPrice": 2910,
-      "records": 1,
-      "topVariety": "Arkasheela Mattigulla",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Shekhpura",
-      "district": "Sheikhpura",
-      "avgPrice": 2900,
-      "recentPrice": null,
-      "minPrice": 2900,
-      "maxPrice": 2900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Arkasheela Mattigulla",
       "grade": "FAQ"
@@ -1000,9 +1152,102 @@
       "recentPrice": 2900,
       "minPrice": 2900,
       "maxPrice": 2900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Brinjal",
       "grade": "Local"
+    },
+    {
+      "name": "Khagaria",
+      "district": "Khagaria",
+      "avgPrice": 2521,
+      "recentPrice": 2417,
+      "minPrice": 2416.666425,
+      "maxPrice": 2416.666425,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 2,
+      "topVariety": "Arkasheela Mattigulla",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Madhuban",
+      "district": "East Champaran/ Motihari",
+      "avgPrice": 1933,
+      "recentPrice": 2300,
+      "minPrice": 2300,
+      "maxPrice": 2300,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 3,
+      "topVariety": "Brinjal",
+      "grade": "Local"
+    },
+    {
+      "name": "Raxaul",
+      "district": "East Champaran/ Motihari",
+      "avgPrice": 1888,
+      "recentPrice": 2200,
+      "minPrice": 2200,
+      "maxPrice": 2200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 4,
+      "topVariety": "Arkasheela Mattigulla",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Bihpur",
+      "district": "Bhagalpur",
+      "avgPrice": 2500,
+      "recentPrice": 2200,
+      "minPrice": 2200,
+      "maxPrice": 2200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 3,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
+      "name": "Bhagwanpur Mandi",
+      "district": "Muzaffarpur",
+      "avgPrice": 1838,
+      "recentPrice": 1600,
+      "minPrice": 1600,
+      "maxPrice": 1600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 4,
+      "topVariety": "Arkasheela Mattigulla",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Barbigha",
+      "district": "Sheikhpura",
+      "avgPrice": 2910,
+      "recentPrice": null,
+      "minPrice": 2910,
+      "maxPrice": 2910,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
+      "records": 1,
+      "topVariety": "Arkasheela Mattigulla",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Shekhpura",
+      "district": "Sheikhpura",
+      "avgPrice": 2900,
+      "recentPrice": null,
+      "minPrice": 2900,
+      "maxPrice": 2900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
+      "records": 1,
+      "topVariety": "Arkasheela Mattigulla",
+      "grade": "FAQ"
     },
     {
       "name": "Gaya",
@@ -1011,6 +1256,8 @@
       "recentPrice": null,
       "minPrice": 2800,
       "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": "Arkasheela Mattigulla",
       "grade": "FAQ"
@@ -1022,6 +1269,8 @@
       "recentPrice": null,
       "minPrice": 2700,
       "maxPrice": 2700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": "Brinjal",
       "grade": "FAQ"
@@ -1033,19 +1282,10 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": "Brinjal",
-      "grade": "Grade A"
-    },
-    {
-      "name": "Khagaria",
-      "district": "Khagaria",
-      "avgPrice": 2521,
-      "recentPrice": 2417,
-      "minPrice": 2416.666425,
-      "maxPrice": 2625,
-      "records": 2,
-      "topVariety": "Arkasheela Mattigulla",
       "grade": "Grade A"
     },
     {
@@ -1055,6 +1295,8 @@
       "recentPrice": null,
       "minPrice": 2400,
       "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 2,
       "topVariety": "Arkasheela Mattigulla",
       "grade": "Grade A"
@@ -1066,42 +1308,11 @@
       "recentPrice": null,
       "minPrice": 2400,
       "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": "Arkasheela Mattigulla",
       "grade": "FAQ"
-    },
-    {
-      "name": "Madhuban",
-      "district": "East Champaran/ Motihari",
-      "avgPrice": 1933,
-      "recentPrice": 2300,
-      "minPrice": 1600,
-      "maxPrice": 2300,
-      "records": 3,
-      "topVariety": "Brinjal",
-      "grade": "Local"
-    },
-    {
-      "name": "Raxaul",
-      "district": "East Champaran/ Motihari",
-      "avgPrice": 1888,
-      "recentPrice": 2200,
-      "minPrice": 1600,
-      "maxPrice": 2200,
-      "records": 4,
-      "topVariety": "Arkasheela Mattigulla",
-      "grade": "Grade A"
-    },
-    {
-      "name": "Bihpur",
-      "district": "Bhagalpur",
-      "avgPrice": 2500,
-      "recentPrice": 2200,
-      "minPrice": 2200,
-      "maxPrice": 2800,
-      "records": 3,
-      "topVariety": null,
-      "grade": "Grade A"
     },
     {
       "name": "Teghra",
@@ -1110,20 +1321,11 @@
       "recentPrice": null,
       "minPrice": 1900,
       "maxPrice": 1900,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 1,
       "topVariety": "Brinjal",
       "grade": "Local"
-    },
-    {
-      "name": "Bhagwanpur Mandi",
-      "district": "Muzaffarpur",
-      "avgPrice": 1838,
-      "recentPrice": 1600,
-      "minPrice": 1600,
-      "maxPrice": 2000,
-      "records": 4,
-      "topVariety": "Arkasheela Mattigulla",
-      "grade": "Grade A"
     }
   ],
   "bitter-gourd": [
@@ -1134,6 +1336,8 @@
       "recentPrice": 2900,
       "minPrice": 2900,
       "maxPrice": 2900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Bitter Gourd",
       "grade": "Local"
@@ -1143,8 +1347,10 @@
       "district": "Khagaria",
       "avgPrice": 1975,
       "recentPrice": 2733,
-      "minPrice": 1216.666545,
+      "minPrice": 2733.33306,
       "maxPrice": 2733.33306,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 2,
       "topVariety": "Bitter Gourd",
       "grade": "Grade A"
@@ -1156,20 +1362,11 @@
       "recentPrice": 2500,
       "minPrice": 2500,
       "maxPrice": 2500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Bitter Gourd",
       "grade": "Local"
-    },
-    {
-      "name": "Kishanganj",
-      "district": "Kishanganj",
-      "avgPrice": 2125,
-      "recentPrice": null,
-      "minPrice": 2125,
-      "maxPrice": 2125,
-      "records": 1,
-      "topVariety": "Bitter Gourd",
-      "grade": "FAQ"
     },
     {
       "name": "Raxaul",
@@ -1178,9 +1375,24 @@
       "recentPrice": 1900,
       "minPrice": 1900,
       "maxPrice": 1900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Bitter Gourd",
       "grade": "Grade A"
+    },
+    {
+      "name": "Kishanganj",
+      "district": "Kishanganj",
+      "avgPrice": 2125,
+      "recentPrice": null,
+      "minPrice": 2125,
+      "maxPrice": 2125,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-26",
+      "records": 1,
+      "topVariety": "Bitter Gourd",
+      "grade": "FAQ"
     },
     {
       "name": "Tekari",
@@ -1189,6 +1401,8 @@
       "recentPrice": null,
       "minPrice": 1580,
       "maxPrice": 1580,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 1,
       "topVariety": "Bitter Gourd",
       "grade": "Medium"
@@ -1202,6 +1416,8 @@
       "recentPrice": 5600,
       "minPrice": 5600,
       "maxPrice": 5600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Cauliflower",
       "grade": "Medium"
@@ -1211,8 +1427,10 @@
       "district": "Khagaria",
       "avgPrice": 3983,
       "recentPrice": 5267,
-      "minPrice": 2699.99973,
+      "minPrice": 5266.66614,
       "maxPrice": 5266.66614,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 2,
       "topVariety": "African Sarson",
       "grade": "Grade A"
@@ -1224,6 +1442,8 @@
       "recentPrice": 5120,
       "minPrice": 5120,
       "maxPrice": 5120,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "African Sarson",
       "grade": "Grade C"
@@ -1235,6 +1455,8 @@
       "recentPrice": 4800,
       "minPrice": 4800,
       "maxPrice": 4800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "African Sarson",
       "grade": "FAQ"
@@ -1246,6 +1468,8 @@
       "recentPrice": 4300,
       "minPrice": 4300,
       "maxPrice": 4300,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Cauliflower",
       "grade": "FAQ"
@@ -1257,6 +1481,8 @@
       "recentPrice": 4000,
       "minPrice": 4000,
       "maxPrice": 4000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "African Sarson",
       "grade": "FAQ"
@@ -1268,6 +1494,8 @@
       "recentPrice": 3700,
       "minPrice": 3700,
       "maxPrice": 3700,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "African Sarson",
       "grade": "Grade A"
@@ -1275,78 +1503,14 @@
   ],
   "tomato": [
     {
-      "name": "Sheohar",
-      "district": "Sheohar",
-      "avgPrice": 5700,
-      "recentPrice": null,
-      "minPrice": 5700,
-      "maxPrice": 5700,
-      "records": 1,
-      "topVariety": "Deshi",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Gaya",
-      "district": "Gaya",
-      "avgPrice": 4700,
-      "recentPrice": null,
-      "minPrice": 4700,
-      "maxPrice": 4700,
-      "records": 1,
-      "topVariety": "Deshi",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Jahajharpur",
-      "district": "Madhubani",
-      "avgPrice": 4317,
-      "recentPrice": null,
-      "minPrice": 3900,
-      "maxPrice": 4800,
-      "records": 6,
-      "topVariety": "Hybrid",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Khagaria",
-      "district": "Khagaria",
-      "avgPrice": 4152,
-      "recentPrice": null,
-      "minPrice": 3166.67,
-      "maxPrice": 5166.67,
-      "records": 12,
-      "topVariety": "Deshi",
-      "grade": "Grade A"
-    },
-    {
-      "name": "Teghra",
-      "district": "Begusarai",
-      "avgPrice": 4100,
-      "recentPrice": null,
-      "minPrice": 4100,
-      "maxPrice": 4100,
-      "records": 1,
-      "topVariety": "Tomato",
-      "grade": "Local"
-    },
-    {
-      "name": "Benipatti",
-      "district": "Madhubani",
-      "avgPrice": 4000,
-      "recentPrice": null,
-      "minPrice": 4000,
-      "maxPrice": 4000,
-      "records": 3,
-      "topVariety": "Deshi",
-      "grade": "FAQ"
-    },
-    {
       "name": "Madhubani",
       "district": "Madhubani",
       "avgPrice": 3900,
       "recentPrice": 3400,
       "minPrice": 3400,
-      "maxPrice": 4100,
+      "maxPrice": 3400,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 16,
       "topVariety": "Tomato",
       "grade": "FAQ"
@@ -1358,7 +1522,113 @@
       "recentPrice": 3350,
       "minPrice": 3350,
       "maxPrice": 3350,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
+      "topVariety": "Deshi",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Gopalganj",
+      "district": "Gopalgang",
+      "avgPrice": 3310,
+      "recentPrice": 3310,
+      "minPrice": 3310,
+      "maxPrice": 3310,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "Tomato",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Tekari",
+      "district": "Gaya",
+      "avgPrice": 3383,
+      "recentPrice": 3000,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 3,
+      "topVariety": "Deshi",
+      "grade": "Medium"
+    },
+    {
+      "name": "Sheohar",
+      "district": "Sheohar",
+      "avgPrice": 5700,
+      "recentPrice": null,
+      "minPrice": 5700,
+      "maxPrice": 5700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
+      "records": 1,
+      "topVariety": "Deshi",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Gaya",
+      "district": "Gaya",
+      "avgPrice": 4700,
+      "recentPrice": null,
+      "minPrice": 4700,
+      "maxPrice": 4700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
+      "records": 1,
+      "topVariety": "Deshi",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jahajharpur",
+      "district": "Madhubani",
+      "avgPrice": 4317,
+      "recentPrice": null,
+      "minPrice": 3900,
+      "maxPrice": 4800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
+      "records": 6,
+      "topVariety": "Hybrid",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Khagaria",
+      "district": "Khagaria",
+      "avgPrice": 4152,
+      "recentPrice": null,
+      "minPrice": 3166.67,
+      "maxPrice": 5166.67,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
+      "records": 12,
+      "topVariety": "Deshi",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Teghra",
+      "district": "Begusarai",
+      "avgPrice": 4100,
+      "recentPrice": null,
+      "minPrice": 4100,
+      "maxPrice": 4100,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
+      "records": 1,
+      "topVariety": "Tomato",
+      "grade": "Local"
+    },
+    {
+      "name": "Benipatti",
+      "district": "Madhubani",
+      "avgPrice": 4000,
+      "recentPrice": null,
+      "minPrice": 4000,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
+      "records": 3,
       "topVariety": "Deshi",
       "grade": "FAQ"
     },
@@ -1369,20 +1639,11 @@
       "recentPrice": null,
       "minPrice": 3100,
       "maxPrice": 3550,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-10",
       "records": 2,
       "topVariety": "Deshi",
       "grade": "Medium"
-    },
-    {
-      "name": "Gopalganj",
-      "district": "Gopalgang",
-      "avgPrice": 3310,
-      "recentPrice": 3310,
-      "minPrice": 3310,
-      "maxPrice": 3310,
-      "records": 1,
-      "topVariety": "Tomato",
-      "grade": "Grade B"
     },
     {
       "name": "Chakia",
@@ -1391,20 +1652,11 @@
       "recentPrice": null,
       "minPrice": 2900,
       "maxPrice": 3400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-10",
       "records": 4,
       "topVariety": "Deshi",
       "grade": "Grade A"
-    },
-    {
-      "name": "Tekari",
-      "district": "Gaya",
-      "avgPrice": 3383,
-      "recentPrice": 3000,
-      "minPrice": 3000,
-      "maxPrice": 3800,
-      "records": 3,
-      "topVariety": "Deshi",
-      "grade": "Medium"
     },
     {
       "name": "Chhapra",
@@ -1413,6 +1665,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
@@ -1424,6 +1678,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 3550,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 7,
       "topVariety": "Deshi",
       "grade": "Grade A"
@@ -1435,6 +1691,8 @@
       "recentPrice": null,
       "minPrice": 2100,
       "maxPrice": 3400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 5,
       "topVariety": "Hybrid",
       "grade": "FAQ"
@@ -1442,26 +1700,43 @@
   ],
   "bottle-gourd": [
     {
-      "name": "Sheohar",
-      "district": "Sheohar",
-      "avgPrice": 2100,
-      "recentPrice": null,
-      "minPrice": 2100,
-      "maxPrice": 2100,
-      "records": 1,
-      "topVariety": "Bottle Gourd",
-      "grade": "Grade C"
-    },
-    {
       "name": "Daunagar",
       "district": "Aurangabad",
       "avgPrice": 2100,
       "recentPrice": 2100,
       "minPrice": 2100,
       "maxPrice": 2100,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Bottle Gourd",
       "grade": "Local"
+    },
+    {
+      "name": "Khagaria",
+      "district": "Khagaria",
+      "avgPrice": 945,
+      "recentPrice": 1700,
+      "minPrice": 1699.99983,
+      "maxPrice": 1699.99983,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 19,
+      "topVariety": "Bottle Gourd",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Sheohar",
+      "district": "Sheohar",
+      "avgPrice": 2100,
+      "recentPrice": null,
+      "minPrice": 2100,
+      "maxPrice": 2100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
+      "records": 1,
+      "topVariety": "Bottle Gourd",
+      "grade": "Grade C"
     },
     {
       "name": "Shekhpura",
@@ -1470,6 +1745,8 @@
       "recentPrice": null,
       "minPrice": 1900,
       "maxPrice": 2100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 18,
       "topVariety": "Bottle Gourd",
       "grade": "FAQ"
@@ -1481,6 +1758,8 @@
       "recentPrice": null,
       "minPrice": 1865,
       "maxPrice": 2050,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 17,
       "topVariety": "Bottle Gourd",
       "grade": "FAQ"
@@ -1492,20 +1771,11 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 11,
       "topVariety": "Bottle Gourd",
       "grade": "Local"
-    },
-    {
-      "name": "Khagaria",
-      "district": "Khagaria",
-      "avgPrice": 945,
-      "recentPrice": 1700,
-      "minPrice": 600,
-      "maxPrice": 1800,
-      "records": 19,
-      "topVariety": "Bottle Gourd",
-      "grade": "Grade A"
     },
     {
       "name": "Jainagar",
@@ -1514,6 +1784,8 @@
       "recentPrice": null,
       "minPrice": 1125,
       "maxPrice": 1125,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-08",
       "records": 1,
       "topVariety": "Bottle Gourd",
       "grade": "Grade A"
@@ -1525,6 +1797,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-04",
       "records": 2,
       "topVariety": "Bottle Gourd",
       "grade": "Grade A"
@@ -1536,6 +1810,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 7,
       "topVariety": "Bottle Gourd",
       "grade": "Medium"
@@ -1543,23 +1819,14 @@
   ],
   "bhindiladies-finger": [
     {
-      "name": "Kishanganj",
-      "district": "Kishanganj",
-      "avgPrice": 2650,
-      "recentPrice": null,
-      "minPrice": 2650,
-      "maxPrice": 2650,
-      "records": 1,
-      "topVariety": "Bhindi",
-      "grade": "FAQ"
-    },
-    {
       "name": "Supaul",
       "district": "Supaul",
       "avgPrice": 1850,
       "recentPrice": 2400,
-      "minPrice": 1200,
+      "minPrice": 2400,
       "maxPrice": 2400,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 4,
       "topVariety": "Bhindi",
       "grade": "Grade A"
@@ -1569,8 +1836,10 @@
       "district": "Banka",
       "avgPrice": 1291,
       "recentPrice": 2000,
-      "minPrice": 800,
+      "minPrice": 2000,
       "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 11,
       "topVariety": "Bhindi",
       "grade": "Local"
@@ -1582,6 +1851,8 @@
       "recentPrice": 1976,
       "minPrice": 1976,
       "maxPrice": 1976,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Bhindi",
       "grade": "Local"
@@ -1591,8 +1862,10 @@
       "district": "East Champaran/ Motihari",
       "avgPrice": 1139,
       "recentPrice": 1850,
-      "minPrice": 800,
+      "minPrice": 1850,
       "maxPrice": 1850,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 14,
       "topVariety": "Bhindi",
       "grade": "Grade A"
@@ -1602,8 +1875,10 @@
       "district": "Bhagalpur",
       "avgPrice": 841,
       "recentPrice": 1800,
-      "minPrice": 400,
+      "minPrice": 1800,
       "maxPrice": 1800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 17,
       "topVariety": "Bhindi",
       "grade": "Grade A"
@@ -1613,8 +1888,10 @@
       "district": "Muzaffarpur",
       "avgPrice": 1456,
       "recentPrice": 1800,
-      "minPrice": 900,
-      "maxPrice": 2100,
+      "minPrice": 1800,
+      "maxPrice": 1800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 27,
       "topVariety": "Bhindi",
       "grade": "Grade A"
@@ -1624,11 +1901,39 @@
       "district": "Banka",
       "avgPrice": 1325,
       "recentPrice": 1700,
-      "minPrice": 1200,
+      "minPrice": 1700,
       "maxPrice": 1700,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 4,
       "topVariety": "Bhindi",
       "grade": "Local"
+    },
+    {
+      "name": "Madhubani",
+      "district": "Madhubani",
+      "avgPrice": 1700,
+      "recentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 16,
+      "topVariety": "Bhindi",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kishanganj",
+      "district": "Kishanganj",
+      "avgPrice": 2650,
+      "recentPrice": null,
+      "minPrice": 2650,
+      "maxPrice": 2650,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-26",
+      "records": 1,
+      "topVariety": "Bhindi",
+      "grade": "FAQ"
     },
     {
       "name": "Sheohar",
@@ -1637,6 +1942,8 @@
       "recentPrice": null,
       "minPrice": 1700,
       "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 1,
       "topVariety": "Bhindi",
       "grade": "Grade B"
@@ -1648,6 +1955,8 @@
       "recentPrice": null,
       "minPrice": 620,
       "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 6,
       "topVariety": "Bhindi",
       "grade": "Grade A"
@@ -1659,6 +1968,8 @@
       "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 11,
       "topVariety": "Bhindi",
       "grade": "FAQ"
@@ -1670,6 +1981,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-11",
       "records": 1,
       "topVariety": "Bhindi",
       "grade": "Grade A"
@@ -1681,6 +1994,8 @@
       "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 4,
       "topVariety": "Bhindi",
       "grade": "Grade A"
@@ -1692,18 +2007,9 @@
       "recentPrice": null,
       "minPrice": 1350,
       "maxPrice": 1350,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 1,
-      "topVariety": "Bhindi",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Madhubani",
-      "district": "Madhubani",
-      "avgPrice": 1700,
-      "recentPrice": 1200,
-      "minPrice": 1200,
-      "maxPrice": 2600,
-      "records": 16,
       "topVariety": "Bhindi",
       "grade": "FAQ"
     },
@@ -1714,6 +2020,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 8,
       "topVariety": "Bhindi",
       "grade": "Grade A"
@@ -1725,6 +2033,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 13,
       "topVariety": "Bhindi",
       "grade": "FAQ"
@@ -1736,6 +2046,8 @@
       "recentPrice": null,
       "minPrice": 750,
       "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 6,
       "topVariety": "Bhindi",
       "grade": "Medium"
@@ -1747,6 +2059,8 @@
       "recentPrice": null,
       "minPrice": 850,
       "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 17,
       "topVariety": "Bhindi",
       "grade": "FAQ"
@@ -1758,6 +2072,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 7,
       "topVariety": "Bhindi",
       "grade": "Local"
@@ -1769,6 +2085,8 @@
       "recentPrice": null,
       "minPrice": 750,
       "maxPrice": 950,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 7,
       "topVariety": "Bhindi",
       "grade": "Medium"
@@ -1780,6 +2098,8 @@
       "recentPrice": null,
       "minPrice": 283.33,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 16,
       "topVariety": "Bhindi",
       "grade": "Grade A"
@@ -1793,6 +2113,8 @@
       "recentPrice": 3650,
       "minPrice": 3650,
       "maxPrice": 3650,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Cucumbar",
       "grade": "FAQ"
@@ -1804,6 +2126,8 @@
       "recentPrice": 3600,
       "minPrice": 3600,
       "maxPrice": 3600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Cucumbar",
       "grade": "Medium"
@@ -1815,6 +2139,8 @@
       "recentPrice": 2833,
       "minPrice": 2833.33305,
       "maxPrice": 2833.33305,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Cucumbar",
       "grade": "Grade A"
@@ -1826,6 +2152,8 @@
       "recentPrice": null,
       "minPrice": 1750,
       "maxPrice": 1750,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-26",
       "records": 1,
       "topVariety": "Cucumbar",
       "grade": "FAQ"
@@ -1833,26 +2161,30 @@
   ],
   "rice": [
     {
-      "name": "Bahadurganj",
-      "district": "Kishanganj",
-      "avgPrice": 5500,
-      "recentPrice": null,
-      "minPrice": 5500,
-      "maxPrice": 5500,
-      "records": 1,
-      "topVariety": "Medium",
-      "grade": "Grade Range-1"
-    },
-    {
       "name": "Aurangabad",
       "district": "Aurangabad",
       "avgPrice": 2800,
       "recentPrice": 2800,
       "minPrice": 2800,
       "maxPrice": 2800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Medium",
       "grade": "Local"
+    },
+    {
+      "name": "Bahadurganj",
+      "district": "Kishanganj",
+      "avgPrice": 5500,
+      "recentPrice": null,
+      "minPrice": 5500,
+      "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-30",
+      "records": 1,
+      "topVariety": "Medium",
+      "grade": "Grade Range-1"
     }
   ],
   "wheat": [
@@ -1863,6 +2195,8 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2550,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 14,
       "topVariety": "147 Average",
       "grade": "FAQ"
@@ -1874,6 +2208,8 @@
       "recentPrice": null,
       "minPrice": 2475,
       "maxPrice": 2550,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 14,
       "topVariety": "147 Average",
       "grade": "FAQ"
@@ -1887,6 +2223,8 @@
       "recentPrice": 5500,
       "minPrice": 5500,
       "maxPrice": 5500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Carrot",
       "grade": "Grade A"
@@ -1896,8 +2234,10 @@
       "district": "Khagaria",
       "avgPrice": 4845,
       "recentPrice": 4400,
-      "minPrice": 3416.67,
-      "maxPrice": 5666.67,
+      "minPrice": 4399.99956,
+      "maxPrice": 4399.99956,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 16,
       "topVariety": "Carrot",
       "grade": "Grade A"
@@ -1911,6 +2251,8 @@
       "recentPrice": null,
       "minPrice": 4150,
       "maxPrice": 4150,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-30",
       "records": 1,
       "topVariety": "Banana - Green",
       "grade": "Grade A"
@@ -1922,6 +2264,8 @@
       "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 4800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 2,
       "topVariety": "Banana - Green",
       "grade": "FAQ"
@@ -1935,6 +2279,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 21,
       "topVariety": "Pumpkin",
       "grade": "Grade A"
@@ -1946,6 +2292,8 @@
       "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-06",
       "records": 2,
       "topVariety": "Pumpkin",
       "grade": "FAQ"
@@ -1959,6 +2307,8 @@
       "recentPrice": null,
       "minPrice": 4500,
       "maxPrice": 6200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 12,
       "topVariety": null,
       "grade": "Grade A"
@@ -1970,6 +2320,8 @@
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 3,
       "topVariety": "Dusheri",
       "grade": "Grade A"
@@ -1983,6 +2335,8 @@
       "recentPrice": null,
       "minPrice": 2080,
       "maxPrice": 3400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 3,
       "topVariety": null,
       "grade": "Grade A"
@@ -1996,6 +2350,8 @@
       "recentPrice": null,
       "minPrice": 2300,
       "maxPrice": 2300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-09",
       "records": 1,
       "topVariety": null,
       "grade": "Medium"
@@ -2008,7 +2364,9 @@
       "avgPrice": 2026,
       "recentPrice": 1867,
       "minPrice": 1866.66648,
-      "maxPrice": 2112.5,
+      "maxPrice": 1866.66648,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 3,
       "topVariety": "Little gourd (Kundru)",
       "grade": "Grade A"
@@ -2022,6 +2380,8 @@
       "recentPrice": null,
       "minPrice": 4500,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 1,
       "topVariety": "Beetroot",
       "grade": "FAQ"
@@ -2035,6 +2395,8 @@
       "recentPrice": null,
       "minPrice": 6700,
       "maxPrice": 6700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 1,
       "topVariety": "French Beans (Frasbean)",
       "grade": "FAQ"
@@ -2048,6 +2410,8 @@
       "recentPrice": 10000,
       "minPrice": 10000,
       "maxPrice": 10000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Apple",
       "grade": "Medium"
@@ -2059,6 +2423,8 @@
       "recentPrice": 8960,
       "minPrice": 8960,
       "maxPrice": 8960,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Apple",
       "grade": "Grade C"
@@ -2070,6 +2436,8 @@
       "recentPrice": 8000,
       "minPrice": 8000,
       "maxPrice": 8000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": null,
       "grade": "Grade B"
@@ -2083,6 +2451,8 @@
       "recentPrice": 11000,
       "minPrice": 11000,
       "maxPrice": 11000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Average",
       "grade": "Local"
@@ -2096,6 +2466,8 @@
       "recentPrice": 2700,
       "minPrice": 2700,
       "maxPrice": 2700,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Cabbage",
       "grade": "Grade A"
@@ -2107,6 +2479,8 @@
       "recentPrice": 2650,
       "minPrice": 2649.999735,
       "maxPrice": 2649.999735,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Cabbage",
       "grade": "Grade A"
@@ -2118,6 +2492,8 @@
       "recentPrice": 2000,
       "minPrice": 2000,
       "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Cabbage",
       "grade": "Grade A"
@@ -2131,6 +2507,8 @@
       "recentPrice": 7560,
       "minPrice": 7560,
       "maxPrice": 7560,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Green Chilly",
       "grade": "Grade B"
@@ -2142,6 +2520,8 @@
       "recentPrice": 5500,
       "minPrice": 5500,
       "maxPrice": 5500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Green Chilly",
       "grade": "FAQ"
@@ -2153,6 +2533,8 @@
       "recentPrice": 4800,
       "minPrice": 4800,
       "maxPrice": 4800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Green Chilly",
       "grade": "Grade A"
@@ -2164,6 +2546,8 @@
       "recentPrice": 4250,
       "minPrice": 4249.999575,
       "maxPrice": 4249.999575,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Green Chilly",
       "grade": "Grade A"

@@ -112,7 +112,7 @@ export default function CropDetailPage() {
               <Link to={`/listing/new?type=sell&crop=${encodeURIComponent(cropId)}`} className={heroPrice !== null ? 'sb-detail-text-link' : 'sb-detail-primary'}><ShoppingCart size={18} aria-hidden="true" />यह फसल बेचें<ArrowRight size={16} aria-hidden="true" /></Link>
             </section>
             <section className="sb-crop-detail-trend" aria-label="भाव का इतिहास">
-              {history.length || dailyHistory.length ? <MiniChart data={history} dailyData={dailyHistory} title={`${cropName} का भाव इतिहास`} formatMonth={formatMonthHi} /> : <div className="sb-detail-status sb-detail-status--compact"><TrendingUp size={24} aria-hidden="true" /><h2>भाव का इतिहास उपलब्ध नहीं है</h2><p>इस फसल के रिकॉर्ड आने पर यहाँ ग्राफ़ दिखाई देगा।</p></div>}
+              {history.length || dailyHistory.length ? <MiniChart data={history} dailyData={dailyHistory} mspSeason={priceData?.crop?.mspSeason} title={`${cropName} का भाव इतिहास`} formatMonth={formatMonthHi} /> : <div className="sb-detail-status sb-detail-status--compact"><TrendingUp size={24} aria-hidden="true" /><h2>भाव का इतिहास उपलब्ध नहीं है</h2><p>इस फसल के रिकॉर्ड आने पर यहाँ ग्राफ़ दिखाई देगा।</p></div>}
               <p className="sb-detail-data-note"><Info size={16} aria-hidden="true" />भाव उपलब्ध रिकॉर्ड के आधार पर हैं। किस्म, गुणवत्ता, तारीख और मंडी बदलने पर बिक्री का भाव अलग हो सकता है।</p>
             </section>
           </div>

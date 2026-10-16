@@ -8,7 +8,7 @@ const bucket = (...prices) => ({ prices });
 
 test('consecutive months produce a change', () => {
   const r = monthChange([['2026-09', bucket(1000)], ['2026-10', bucket(1100)]]);
-  assert.deepEqual(r, { price: 1100, prevPrice: 1000, change: 100, changePct: 10 });
+  assert.deepEqual({ price: r.price, prevPrice: r.prevPrice, change: r.change, changePct: r.changePct, month: r.month }, { price: 1100, prevPrice: 1000, change: 100, changePct: 10, month: '2026-10' });
   assert.equal(consecutive('2025-12', '2026-01'), true);
 });
 
@@ -30,4 +30,12 @@ test('single month and empty buckets are safe', () => {
   assert.equal(monthChange([['2026-10', bucket(10)]]).change, null);
   assert.equal(monthChange([]).price, 0);
   assert.equal(monthChange([['2026-09', bucket()], ['2026-10', bucket(10)]]).change, null);
+});
+
+test('a month with fewer than three reporting days is not compared', () => {
+  const withDays = (price, n) => ({ prices: [price], byMandi: { m: [price] }, days: new Set(Array.from({ length: n }, (_, i) => `d${i}`)) });
+  const r = monthChange([['2026-09', withDays(1000, 20)], ['2026-10', withDays(1500, 1)]]);
+  assert.equal(r.change, null);
+  assert.equal(r.days, 1);
+  assert.equal(monthChange([['2026-09', withDays(1000, 20)], ['2026-10', withDays(1100, 3)]]).changePct, 10);
 });

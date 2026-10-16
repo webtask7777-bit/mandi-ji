@@ -4,7 +4,8 @@
     "name": "Groundnut",
     "nameHi": "मूँगफली",
     "emoji": "🥜",
-    "msp": 6783
+    "msp": 6783,
+    "mspSeason": "2024-25"
   },
   "history": [
     {
@@ -12,6 +13,8 @@
       "date": "2026-03",
       "market": 5740,
       "volume": 1,
+      "days": 1,
+      "mandis": 1,
       "msp": 6783
     },
     {
@@ -19,6 +22,8 @@
       "date": "2026-04",
       "market": 6377,
       "volume": 1,
+      "days": 1,
+      "mandis": 1,
       "msp": 6783
     },
     {
@@ -26,20 +31,26 @@
       "date": "2026-05",
       "market": 10105,
       "volume": 1,
+      "days": 1,
+      "mandis": 1,
       "msp": 6783
     },
     {
       "month": "06",
       "date": "2026-06",
-      "market": 8597,
+      "market": 9864,
       "volume": 3,
+      "days": 2,
+      "mandis": 2,
       "msp": 6783
     },
     {
       "month": "10",
       "date": "2026-10",
-      "market": 7392,
+      "market": 7800,
       "volume": 3,
+      "days": 1,
+      "mandis": 3,
       "msp": 6783
     }
   ],
@@ -48,6 +59,7 @@
       "date": "2026-03-28",
       "market": 5740,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 5500,
       "maxPrice": 5980
     },
@@ -55,6 +67,7 @@
       "date": "2026-04-09",
       "market": 6377,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 5864,
       "maxPrice": 6890
     },
@@ -62,6 +75,7 @@
       "date": "2026-05-05",
       "market": 10105,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 7200,
       "maxPrice": 14400
     },
@@ -69,6 +83,7 @@
       "date": "2026-06-21",
       "market": 6074,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 6020,
       "maxPrice": 6130
     },
@@ -76,13 +91,15 @@
       "date": "2026-06-29",
       "market": 9859,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 6000,
       "maxPrice": 13663
     },
     {
       "date": "2026-10-16",
-      "market": 7392,
+      "market": 7800,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 6000,
       "maxPrice": 8627
     }

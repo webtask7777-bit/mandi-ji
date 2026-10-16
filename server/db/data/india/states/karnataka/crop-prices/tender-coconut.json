@@ -9,32 +9,42 @@
     {
       "month": "03",
       "date": "2026-03",
-      "market": 20425,
-      "volume": 8
+      "market": 20600,
+      "volume": 8,
+      "days": 4,
+      "mandis": 5
     },
     {
       "month": "04",
       "date": "2026-04",
-      "market": 16311,
-      "volume": 8
+      "market": 20694,
+      "volume": 7,
+      "days": 5,
+      "mandis": 3
     },
     {
       "month": "05",
       "date": "2026-05",
-      "market": 22014,
-      "volume": 9
+      "market": 20783,
+      "volume": 9,
+      "days": 6,
+      "mandis": 3
     },
     {
       "month": "06",
       "date": "2026-06",
-      "market": 22633,
-      "volume": 3
+      "market": 23225,
+      "volume": 3,
+      "days": 3,
+      "mandis": 2
     },
     {
       "month": "07",
       "date": "2026-07",
-      "market": 20833,
-      "volume": 6
+      "market": 20000,
+      "volume": 6,
+      "days": 1,
+      "mandis": 6
     }
   ],
   "dailyHistory": [
@@ -42,13 +52,15 @@
       "date": "2026-03-26",
       "market": 21000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 20000,
       "maxPrice": 25000
     },
     {
       "date": "2026-03-27",
-      "market": 20280,
+      "market": 20400,
       "volume": 5,
+      "mandis": 5,
       "minPrice": 10000,
       "maxPrice": 40000
     },
@@ -56,6 +68,7 @@
       "date": "2026-03-28",
       "market": 20600,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 20000,
       "maxPrice": 23000
     },
@@ -63,6 +76,7 @@
       "date": "2026-03-30",
       "market": 20400,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 20000,
       "maxPrice": 23000
     },
@@ -70,6 +84,7 @@
       "date": "2026-04-01",
       "market": 20600,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 20000,
       "maxPrice": 23000
     },
@@ -77,6 +92,7 @@
       "date": "2026-04-02",
       "market": 11550,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 2000,
       "maxPrice": 23000
     },
@@ -84,6 +100,7 @@
       "date": "2026-04-06",
       "market": 20700,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 20000,
       "maxPrice": 23000
     },
@@ -91,20 +108,23 @@
       "date": "2026-04-09",
       "market": 22735,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 20000,
       "maxPrice": 26000
     },
     {
       "date": "2026-04-21",
-      "market": 10310,
-      "volume": 2,
-      "minPrice": 18,
+      "market": 20600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 20000,
       "maxPrice": 23000
     },
     {
       "date": "2026-05-04",
       "market": 20000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 20000,
       "maxPrice": 20000
     },
@@ -112,6 +132,7 @@
       "date": "2026-05-05",
       "market": 20330,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 20000,
       "maxPrice": 23000
     },
@@ -119,13 +140,15 @@
       "date": "2026-05-06",
       "market": 25000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 20000,
       "maxPrice": 25000
     },
     {
       "date": "2026-05-14",
-      "market": 21967,
+      "market": 20900,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 20000,
       "maxPrice": 25000
     },
@@ -133,6 +156,7 @@
       "date": "2026-05-18",
       "market": 22750,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 20000,
       "maxPrice": 25000
     },
@@ -140,6 +164,7 @@
       "date": "2026-05-19",
       "market": 21400,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 20000,
       "maxPrice": 23000
     },
@@ -147,6 +172,7 @@
       "date": "2026-06-18",
       "market": 25000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 24000,
       "maxPrice": 26000
     },
@@ -154,6 +180,7 @@
       "date": "2026-06-19",
       "market": 22000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 22000,
       "maxPrice": 22000
     },
@@ -161,13 +188,15 @@
       "date": "2026-06-29",
       "market": 20900,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 20000,
       "maxPrice": 23000
     },
     {
       "date": "2026-07-18",
-      "market": 20833,
+      "market": 20000,
       "volume": 6,
+      "mandis": 6,
       "minPrice": 10000,
       "maxPrice": 40500
     }
@@ -197,12 +226,6 @@
       "nameHi": "Chamarajanagar",
       "avgPrice": 20967,
       "records": 3
-    },
-    {
-      "district": "Tumkur",
-      "nameHi": "Tumkur",
-      "avgPrice": 19,
-      "records": 1
     },
     {
       "district": "Chikkamagaluru",

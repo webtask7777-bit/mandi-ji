@@ -7,6 +7,8 @@
       "recentPrice": 15000,
       "minPrice": 15000,
       "maxPrice": 15000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Apple",
       "grade": "Medium"
@@ -18,6 +20,8 @@
       "recentPrice": null,
       "minPrice": 10000,
       "maxPrice": 12000,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-14",
       "records": 14,
       "topVariety": "Apple",
       "grade": "Medium"
@@ -25,29 +29,46 @@
   ],
   "bhindiladies-finger": [
     {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 1494,
+      "recentPrice": 1300,
+      "minPrice": 1300,
+      "maxPrice": 1300,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 17,
+      "topVariety": "Bhindi",
+      "grade": "Local"
+    },
+    {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
       "avgPrice": 5125,
       "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 79,
       "topVariety": "Bhindi",
       "grade": "FAQ"
-    },
-    {
-      "name": "Chandigarh (Grain/F&V)",
-      "district": "Chandigarh",
-      "avgPrice": 1494,
-      "recentPrice": 1300,
-      "minPrice": 1200,
-      "maxPrice": 1800,
-      "records": 17,
-      "topVariety": "Bhindi",
-      "grade": "Local"
     }
   ],
   "bitter-gourd": [
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 1350,
+      "recentPrice": 1400,
+      "minPrice": 1400,
+      "maxPrice": 1400,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 2,
+      "topVariety": "Bitter Gourd",
+      "grade": "Local"
+    },
     {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
@@ -55,23 +76,27 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 82,
       "topVariety": "Bitter Gourd",
       "grade": "FAQ"
-    },
-    {
-      "name": "Chandigarh (Grain/F&V)",
-      "district": "Chandigarh",
-      "avgPrice": 1350,
-      "recentPrice": 1400,
-      "minPrice": 1300,
-      "maxPrice": 1400,
-      "records": 2,
-      "topVariety": "Bitter Gourd",
-      "grade": "Local"
     }
   ],
   "bottle-gourd": [
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 1006,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 18,
+      "topVariety": "Bottle Gourd",
+      "grade": "Local"
+    },
     {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
@@ -79,23 +104,27 @@
       "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 79,
       "topVariety": "Bottle Gourd",
       "grade": "FAQ"
-    },
-    {
-      "name": "Chandigarh (Grain/F&V)",
-      "district": "Chandigarh",
-      "avgPrice": 1006,
-      "recentPrice": 1000,
-      "minPrice": 1000,
-      "maxPrice": 1100,
-      "records": 18,
-      "topVariety": "Bottle Gourd",
-      "grade": "Local"
     }
   ],
   "brinjal": [
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 1500,
+      "recentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 2,
+      "topVariety": "Brinjal",
+      "grade": "Local"
+    },
     {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
@@ -103,20 +132,11 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 80,
       "topVariety": "Brinjal",
       "grade": "FAQ"
-    },
-    {
-      "name": "Chandigarh (Grain/F&V)",
-      "district": "Chandigarh",
-      "avgPrice": 1500,
-      "recentPrice": 1200,
-      "minPrice": 1200,
-      "maxPrice": 1800,
-      "records": 2,
-      "topVariety": "Brinjal",
-      "grade": "Local"
     }
   ],
   "capsicum": [
@@ -127,6 +147,8 @@
       "recentPrice": 3500,
       "minPrice": 3500,
       "maxPrice": 3500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Capsicum",
       "grade": "FAQ"
@@ -138,6 +160,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 85,
       "topVariety": "Capsicum",
       "grade": "FAQ"
@@ -151,6 +175,8 @@
       "recentPrice": 1000,
       "minPrice": 1000,
       "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Cabbage",
       "grade": "FAQ"
@@ -162,6 +188,8 @@
       "recentPrice": null,
       "minPrice": 250,
       "maxPrice": 800,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 82,
       "topVariety": "Cabbage",
       "grade": "FAQ"
@@ -174,7 +202,9 @@
       "avgPrice": 2732,
       "recentPrice": 1300,
       "minPrice": 1300,
-      "maxPrice": 3500,
+      "maxPrice": 1300,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 19,
       "topVariety": "Carrot",
       "grade": "FAQ"
@@ -186,6 +216,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1600,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 84,
       "topVariety": "Carrot",
       "grade": "FAQ"
@@ -199,6 +231,8 @@
       "recentPrice": 1500,
       "minPrice": 1500,
       "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Cauliflower",
       "grade": "FAQ"
@@ -210,6 +244,8 @@
       "recentPrice": null,
       "minPrice": 450,
       "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 62,
       "topVariety": "Cauliflower",
       "grade": "FAQ"
@@ -223,6 +259,8 @@
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-09",
       "records": 3,
       "topVariety": null,
       "grade": "Local"
@@ -230,29 +268,46 @@
   ],
   "cucumbarkheera": [
     {
-      "name": "Chandigarh(Grain/Fruit)",
-      "district": "Chandigarh",
-      "avgPrice": 1858,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 2800,
-      "records": 81,
-      "topVariety": "Cucumbar",
-      "grade": "FAQ"
-    },
-    {
       "name": "Chandigarh (Grain/F&V)",
       "district": "Chandigarh",
       "avgPrice": 1300,
       "recentPrice": 1300,
       "minPrice": 1300,
       "maxPrice": 1300,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
+      "topVariety": "Cucumbar",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Chandigarh(Grain/Fruit)",
+      "district": "Chandigarh",
+      "avgPrice": 1858,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
+      "records": 81,
       "topVariety": "Cucumbar",
       "grade": "FAQ"
     }
   ],
   "gingergreen": [
+    {
+      "name": "Chandigarh (Grain/F&V)",
+      "district": "Chandigarh",
+      "avgPrice": 8750,
+      "recentPrice": 3500,
+      "minPrice": 3500,
+      "maxPrice": 3500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 18,
+      "topVariety": "Green Ginger",
+      "grade": "FAQ"
+    },
     {
       "name": "Chandigarh(Grain/Fruit)",
       "district": "Chandigarh",
@@ -260,18 +315,9 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 87,
-      "topVariety": "Green Ginger",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Chandigarh (Grain/F&V)",
-      "district": "Chandigarh",
-      "avgPrice": 8750,
-      "recentPrice": 3500,
-      "minPrice": 3500,
-      "maxPrice": 12000,
-      "records": 18,
       "topVariety": "Green Ginger",
       "grade": "FAQ"
     }
@@ -284,6 +330,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2025-12-14",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -297,6 +345,8 @@
       "recentPrice": 7000,
       "minPrice": 7000,
       "maxPrice": 7000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Peas Wet",
       "grade": "FAQ"
@@ -308,6 +358,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 9,
       "topVariety": "Peas Wet",
       "grade": "FAQ"
@@ -319,8 +371,10 @@
       "district": "Chandigarh",
       "avgPrice": 1933,
       "recentPrice": 2000,
-      "minPrice": 1200,
-      "maxPrice": 2800,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 18,
       "topVariety": "Tomato",
       "grade": "FAQ"
@@ -332,6 +386,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 10,
       "topVariety": "Tomato",
       "grade": "FAQ"
@@ -343,8 +399,10 @@
       "district": "Chandigarh",
       "avgPrice": 847,
       "recentPrice": 1300,
-      "minPrice": 600,
+      "minPrice": 1300,
       "maxPrice": 1300,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 19,
       "topVariety": "Pumpkin",
       "grade": "Local"
@@ -356,6 +414,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 9,
       "topVariety": "Pumpkin",
       "grade": "FAQ"
@@ -367,8 +427,10 @@
       "district": "Chandigarh",
       "avgPrice": 842,
       "recentPrice": 1600,
-      "minPrice": 800,
+      "minPrice": 1600,
       "maxPrice": 1600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 19,
       "topVariety": "Potato",
       "grade": "FAQ"
@@ -380,6 +442,8 @@
       "recentPrice": null,
       "minPrice": 200,
       "maxPrice": 300,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 8,
       "topVariety": "Potato",
       "grade": "FAQ"
@@ -387,24 +451,28 @@
   ],
   "lemon": [
     {
-      "name": "Chandigarh(Grain/Fruit)",
-      "district": "Chandigarh",
-      "avgPrice": 9750,
-      "recentPrice": null,
-      "minPrice": 8000,
-      "maxPrice": 14000,
-      "records": 4,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Chandigarh (Grain/F&V)",
       "district": "Chandigarh",
       "avgPrice": 7000,
       "recentPrice": 7000,
       "minPrice": 7000,
       "maxPrice": 7000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Chandigarh(Grain/Fruit)",
+      "district": "Chandigarh",
+      "avgPrice": 9750,
+      "recentPrice": null,
+      "minPrice": 8000,
+      "maxPrice": 14000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
+      "records": 4,
       "topVariety": null,
       "grade": "FAQ"
     }
@@ -415,8 +483,10 @@
       "district": "Chandigarh",
       "avgPrice": 3367,
       "recentPrice": 5000,
-      "minPrice": 1600,
+      "minPrice": 5000,
       "maxPrice": 5000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 3,
       "topVariety": "Green Chilly",
       "grade": "FAQ"
@@ -428,6 +498,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 5,
       "topVariety": "Green Chilly",
       "grade": "FAQ"
@@ -439,8 +511,10 @@
       "district": "Chandigarh",
       "avgPrice": 2750,
       "recentPrice": 3500,
-      "minPrice": 2000,
+      "minPrice": 3500,
       "maxPrice": 3500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 2,
       "topVariety": "Onion",
       "grade": "FAQ"
@@ -452,6 +526,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 5,
       "topVariety": "Onion",
       "grade": "FAQ"
@@ -465,6 +541,8 @@
       "recentPrice": null,
       "minPrice": 9000,
       "maxPrice": 9000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 1,
       "topVariety": null,
       "grade": "Medium"
@@ -476,6 +554,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 19,
       "topVariety": null,
       "grade": "Medium"
@@ -487,8 +567,10 @@
       "district": "Chandigarh",
       "avgPrice": 1500,
       "recentPrice": 2200,
-      "minPrice": 800,
+      "minPrice": 2200,
       "maxPrice": 2200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 3,
       "topVariety": null,
       "grade": "Medium"
@@ -500,6 +582,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 1,
       "topVariety": null,
       "grade": "Medium"
@@ -513,6 +597,8 @@
       "recentPrice": 17000,
       "minPrice": 17000,
       "maxPrice": 17000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Pomogranate",
       "grade": "Medium"
@@ -524,6 +610,8 @@
       "recentPrice": null,
       "minPrice": 11000,
       "maxPrice": 11000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 1,
       "topVariety": "Pomogranate",
       "grade": "Medium"
@@ -537,6 +625,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 18,
       "topVariety": null,
       "grade": "Medium"
@@ -549,7 +639,9 @@
       "avgPrice": 7294,
       "recentPrice": 4000,
       "minPrice": 4000,
-      "maxPrice": 8000,
+      "maxPrice": 4000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 17,
       "topVariety": "Mousambi",
       "grade": "Medium"
@@ -563,6 +655,8 @@
       "recentPrice": 9000,
       "minPrice": 9000,
       "maxPrice": 9000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Orange",
       "grade": "Medium"

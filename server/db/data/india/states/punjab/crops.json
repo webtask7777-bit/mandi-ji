@@ -4,9 +4,9 @@
     "name": "Carrot",
     "nameHi": "गाजर",
     "emoji": "🥕",
-    "totalRecords": 4011,
-    "avgPrice": 1194,
-    "minPrice": 90,
+    "totalRecords": 4002,
+    "avgPrice": 1196,
+    "minPrice": 100,
     "maxPrice": 10000,
     "varieties": [
       "Carrot",
@@ -254,9 +254,9 @@
     "name": "Bhindi(Ladies Finger)",
     "nameHi": "भिंडी",
     "emoji": "🌱",
-    "totalRecords": 1808,
-    "avgPrice": 3318,
-    "minPrice": 4,
+    "totalRecords": 1786,
+    "avgPrice": 3349,
+    "minPrice": 358,
     "maxPrice": 11000,
     "varieties": [
       "Bhindi",
@@ -322,9 +322,9 @@
     "name": "Potato",
     "nameHi": "आलू",
     "emoji": "🥔",
-    "totalRecords": 1169,
-    "avgPrice": 690,
-    "minPrice": 1,
+    "totalRecords": 1148,
+    "avgPrice": 703,
+    "minPrice": 80,
     "maxPrice": 2000,
     "varieties": [
       "Potato",
@@ -358,9 +358,9 @@
     "name": "Tomato",
     "nameHi": "टमाटर",
     "emoji": "🍅",
-    "totalRecords": 1154,
-    "avgPrice": 2226,
-    "minPrice": 2.1,
+    "totalRecords": 1104,
+    "avgPrice": 2309,
+    "minPrice": 200,
     "maxPrice": 5000,
     "varieties": [
       "Tomato",
@@ -503,9 +503,9 @@
     "name": "Pumpkin",
     "nameHi": "कद्दू",
     "emoji": "🎃",
-    "totalRecords": 675,
-    "avgPrice": 1004,
-    "minPrice": 1,
+    "totalRecords": 658,
+    "avgPrice": 1028,
+    "minPrice": 100,
     "maxPrice": 5800,
     "varieties": [
       "Other",
@@ -583,9 +583,9 @@
     "name": "Ridgeguard(Tori)",
     "nameHi": "तोरई",
     "emoji": "🌱",
-    "totalRecords": 398,
-    "avgPrice": 1881,
-    "minPrice": 18.5,
+    "totalRecords": 389,
+    "avgPrice": 1921,
+    "minPrice": 700,
     "maxPrice": 5000,
     "varieties": [
       "Other",
@@ -631,13 +631,51 @@
     ]
   },
   {
+    "id": "cotton",
+    "name": "Cotton",
+    "nameHi": "कपास",
+    "emoji": "☁️",
+    "totalRecords": 341,
+    "avgPrice": 7375,
+    "minPrice": 4500,
+    "maxPrice": 7955,
+    "varieties": [
+      "American",
+      "Other",
+      "Kapas (Adoni)",
+      "Narma BT Cotton"
+    ],
+    "msp": 7121,
+    "mspSeason": "2024-25",
+    "sowingMonths": [
+      4,
+      5
+    ],
+    "growingMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      10,
+      11,
+      0
+    ],
+    "peakMonths": [
+      11,
+      0,
+      1
+    ]
+  },
+  {
     "id": "onion",
     "name": "Onion",
     "nameHi": "प्याज",
     "emoji": "🧅",
-    "totalRecords": 346,
-    "avgPrice": 1747,
-    "minPrice": 4.8,
+    "totalRecords": 340,
+    "avgPrice": 1771,
+    "minPrice": 400,
     "maxPrice": 5500,
     "varieties": [
       "Other",
@@ -669,43 +707,6 @@
     ]
   },
   {
-    "id": "cotton",
-    "name": "Cotton",
-    "nameHi": "कपास",
-    "emoji": "☁️",
-    "totalRecords": 341,
-    "avgPrice": 7375,
-    "minPrice": 4500,
-    "maxPrice": 7955,
-    "varieties": [
-      "American",
-      "Other",
-      "Kapas (Adoni)",
-      "Narma BT Cotton"
-    ],
-    "msp": 7121,
-    "sowingMonths": [
-      4,
-      5
-    ],
-    "growingMonths": [
-      6,
-      7,
-      8,
-      9
-    ],
-    "harvestMonths": [
-      10,
-      11,
-      0
-    ],
-    "peakMonths": [
-      11,
-      0,
-      1
-    ]
-  },
-  {
     "id": "mousambisweet-lime",
     "name": "Mousambi(Sweet Lime)",
     "nameHi": "मौसम्बी",
@@ -724,9 +725,9 @@
     "name": "Green Chilli",
     "nameHi": "हरी मिर्च",
     "emoji": "🌶️",
-    "totalRecords": 257,
-    "avgPrice": 3725,
-    "minPrice": 16.5,
+    "totalRecords": 253,
+    "avgPrice": 3755,
+    "minPrice": 300,
     "maxPrice": 11000,
     "varieties": [
       "Green Chilly",
@@ -758,20 +759,6 @@
     ]
   },
   {
-    "id": "raddish",
-    "name": "Raddish",
-    "nameHi": "मूली",
-    "emoji": "🌱",
-    "totalRecords": 234,
-    "avgPrice": 1336,
-    "minPrice": 1.01,
-    "maxPrice": 3100,
-    "varieties": [
-      "Raddish",
-      "Other"
-    ]
-  },
-  {
     "id": "beetroot",
     "name": "Beetroot",
     "nameHi": "चुकंदर",
@@ -782,6 +769,20 @@
     "maxPrice": 4500,
     "varieties": [
       "Beetroot",
+      "Other"
+    ]
+  },
+  {
+    "id": "raddish",
+    "name": "Raddish",
+    "nameHi": "मूली",
+    "emoji": "🌱",
+    "totalRecords": 233,
+    "avgPrice": 1341,
+    "minPrice": 200,
+    "maxPrice": 3100,
+    "varieties": [
+      "Raddish",
       "Other"
     ]
   },
@@ -816,21 +817,6 @@
     ]
   },
   {
-    "id": "colacasia",
-    "name": "Colacasia",
-    "nameHi": "अरबी",
-    "emoji": "🌱",
-    "totalRecords": 207,
-    "avgPrice": 2046,
-    "minPrice": 6.3,
-    "maxPrice": 6000,
-    "varieties": [
-      "Other",
-      "Colacasia",
-      "Arabi"
-    ]
-  },
-  {
     "id": "ashgourd",
     "name": "Ashgourd",
     "nameHi": "पेठा",
@@ -842,6 +828,21 @@
     "varieties": [
       "Other",
       "Ashgourd"
+    ]
+  },
+  {
+    "id": "colacasia",
+    "name": "Colacasia",
+    "nameHi": "अरबी",
+    "emoji": "🌱",
+    "totalRecords": 188,
+    "avgPrice": 2238,
+    "minPrice": 862,
+    "maxPrice": 6000,
+    "varieties": [
+      "Other",
+      "Colacasia",
+      "Arabi"
     ]
   },
   {
@@ -1208,6 +1209,7 @@
       "Medium"
     ],
     "msp": 2275,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       10,
       11
@@ -1501,6 +1503,7 @@
       "Common"
     ],
     "msp": 2300,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       5,
       6
@@ -1587,6 +1590,7 @@
       "Mustard"
     ],
     "msp": 5650,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       9,
       10
@@ -1657,6 +1661,7 @@
       "Other"
     ],
     "msp": 2090,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       5,
       6
@@ -1715,6 +1720,7 @@
       "Other"
     ],
     "msp": 5440,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       9,
       10
@@ -1771,6 +1777,7 @@
       "Other"
     ],
     "msp": 2625,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       6,
       7

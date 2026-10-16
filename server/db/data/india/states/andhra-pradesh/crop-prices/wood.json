@@ -10,13 +10,17 @@
       "month": "07",
       "date": "2026-07",
       "market": 540,
-      "volume": 1
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     },
     {
       "month": "10",
       "date": "2026-10",
-      "market": 2287,
-      "volume": 3
+      "market": 530,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -24,15 +28,17 @@
       "date": "2026-07-19",
       "market": 540,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 540,
       "maxPrice": 540
     },
     {
       "date": "2026-10-16",
-      "market": 2287,
-      "volume": 3,
+      "market": 530,
+      "volume": 2,
+      "mandis": 2,
       "minPrice": 510,
-      "maxPrice": 6000
+      "maxPrice": 550
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -42,12 +48,6 @@
       "nameHi": "NTR",
       "avgPrice": 533,
       "records": 3
-    },
-    {
-      "district": "SPSR Nellore",
-      "nameHi": "SPSR Nellore",
-      "avgPrice": 5800,
-      "records": 1
     }
   ]
 }

@@ -10,13 +10,17 @@
       "month": "06",
       "date": "2026-06",
       "market": 1750,
-      "volume": 1
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     },
     {
       "month": "10",
       "date": "2026-10",
-      "market": 3361,
-      "volume": 3
+      "market": 3600,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -24,13 +28,15 @@
       "date": "2026-06-26",
       "market": 1750,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 1650,
       "maxPrice": 1850
     },
     {
       "date": "2026-10-16",
-      "market": 3361,
+      "market": 3600,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 2749.999725,
       "maxPrice": 3750
     }

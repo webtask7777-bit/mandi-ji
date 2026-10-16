@@ -5,11 +5,91 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 4218,
       "recentPrice": 11000,
-      "minPrice": 3700,
+      "minPrice": 11000,
       "maxPrice": 11000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 57,
       "topVariety": "Delicious",
       "grade": "Medium"
+    },
+    {
+      "name": "Rudrapur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 6600,
+      "recentPrice": 9000,
+      "minPrice": 9000,
+      "maxPrice": 9000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 81,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Roorkee",
+      "district": "Haridwar",
+      "avgPrice": 5750,
+      "recentPrice": 8000,
+      "minPrice": 8000,
+      "maxPrice": 8000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 4,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Rishikesh",
+      "district": "Dehradoon",
+      "avgPrice": 5528,
+      "recentPrice": 5800,
+      "minPrice": 5800,
+      "maxPrice": 5800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 87,
+      "topVariety": "Kasmir/Shimla - II",
+      "grade": "Medium"
+    },
+    {
+      "name": "Haldwani",
+      "district": "Nanital",
+      "avgPrice": 5845,
+      "recentPrice": 5000,
+      "minPrice": 5000,
+      "maxPrice": 5000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 55,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
+      "name": "Manglaur",
+      "district": "Haridwar",
+      "avgPrice": 3314,
+      "recentPrice": 4500,
+      "minPrice": 4500,
+      "maxPrice": 4500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 7,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 7213,
+      "recentPrice": 3500,
+      "minPrice": 3500,
+      "maxPrice": 3500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 55,
+      "topVariety": null,
+      "grade": "Grade B"
     },
     {
       "name": "Sitarganj",
@@ -18,20 +98,11 @@
       "recentPrice": null,
       "minPrice": 8900,
       "maxPrice": 10500,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-01",
       "records": 10,
       "topVariety": "Simla",
       "grade": "Grade B"
-    },
-    {
-      "name": "Rudrapur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 6600,
-      "recentPrice": 9000,
-      "minPrice": 5000,
-      "maxPrice": 13000,
-      "records": 81,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Bazpur",
@@ -40,19 +111,10 @@
       "recentPrice": null,
       "minPrice": 8000,
       "maxPrice": 9000,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-11",
       "records": 3,
       "topVariety": "Apple",
-      "grade": "Medium"
-    },
-    {
-      "name": "Roorkee",
-      "district": "Haridwar",
-      "avgPrice": 5750,
-      "recentPrice": 8000,
-      "minPrice": 4000,
-      "maxPrice": 8000,
-      "records": 4,
-      "topVariety": null,
       "grade": "Medium"
     },
     {
@@ -62,20 +124,11 @@
       "recentPrice": null,
       "minPrice": 7000,
       "maxPrice": 8000,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-24",
       "records": 3,
       "topVariety": "Apple",
       "grade": "Grade A"
-    },
-    {
-      "name": "Rishikesh",
-      "district": "Dehradoon",
-      "avgPrice": 5528,
-      "recentPrice": 5800,
-      "minPrice": 3800,
-      "maxPrice": 9300,
-      "records": 87,
-      "topVariety": "Kasmir/Shimla - II",
-      "grade": "Medium"
     },
     {
       "name": "Dehradoon",
@@ -84,6 +137,8 @@
       "recentPrice": null,
       "minPrice": 4250,
       "maxPrice": 10000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 70,
       "topVariety": "Apple",
       "grade": "Grade B"
@@ -95,6 +150,8 @@
       "recentPrice": null,
       "minPrice": 5300,
       "maxPrice": 7500,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 12,
       "topVariety": "Apple",
       "grade": "Grade A"
@@ -106,6 +163,8 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-26",
       "records": 22,
       "topVariety": null,
       "grade": "Medium"
@@ -117,31 +176,11 @@
       "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 15000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 68,
       "topVariety": "Apple",
       "grade": "Local"
-    },
-    {
-      "name": "Haldwani",
-      "district": "Nanital",
-      "avgPrice": 5845,
-      "recentPrice": 5000,
-      "minPrice": 3800,
-      "maxPrice": 8000,
-      "records": 55,
-      "topVariety": null,
-      "grade": "Grade A"
-    },
-    {
-      "name": "Manglaur",
-      "district": "Haridwar",
-      "avgPrice": 3314,
-      "recentPrice": 4500,
-      "minPrice": 2400,
-      "maxPrice": 6000,
-      "records": 7,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Khateema",
@@ -150,18 +189,9 @@
       "recentPrice": null,
       "minPrice": 3800,
       "maxPrice": 10000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-05",
       "records": 40,
-      "topVariety": null,
-      "grade": "Grade B"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 7213,
-      "recentPrice": 3500,
-      "minPrice": 3500,
-      "maxPrice": 8500,
-      "records": 55,
       "topVariety": null,
       "grade": "Grade B"
     },
@@ -172,6 +202,8 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 3800,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-06",
       "records": 20,
       "topVariety": "Apple",
       "grade": "Medium"
@@ -183,10 +215,116 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 2584,
       "recentPrice": 3500,
-      "minPrice": 1500,
-      "maxPrice": 4000,
+      "minPrice": 3500,
+      "maxPrice": 3500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 76,
       "topVariety": "Banana - Ripe",
+      "grade": "Medium"
+    },
+    {
+      "name": "Sitarganj",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 2276,
+      "recentPrice": 2200,
+      "minPrice": 2200,
+      "maxPrice": 2200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 78,
+      "topVariety": "Banana - Ripe",
+      "grade": "Local"
+    },
+    {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 1155,
+      "recentPrice": 1600,
+      "minPrice": 1600,
+      "maxPrice": 1600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 61,
+      "topVariety": null,
+      "grade": "Grade C"
+    },
+    {
+      "name": "Rishikesh",
+      "district": "Dehradoon",
+      "avgPrice": 1490,
+      "recentPrice": 1550,
+      "minPrice": 1550,
+      "maxPrice": 1550,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 90,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Kicchha",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 834,
+      "recentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 76,
+      "topVariety": "Banana - Ripe",
+      "grade": "Local"
+    },
+    {
+      "name": "Manglaur",
+      "district": "Haridwar",
+      "avgPrice": 1077,
+      "recentPrice": 1100,
+      "minPrice": 1100,
+      "maxPrice": 1100,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 42,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Haldwani",
+      "district": "Nanital",
+      "avgPrice": 884,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 45,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
+      "name": "Roorkee",
+      "district": "Haridwar",
+      "avgPrice": 1000,
+      "recentPrice": 950,
+      "minPrice": 950,
+      "maxPrice": 950,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 112,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Vikasnagar",
+      "district": "Dehradoon",
+      "avgPrice": 819,
+      "recentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 8,
+      "topVariety": null,
       "grade": "Medium"
     },
     {
@@ -196,6 +334,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-27",
       "records": 1,
       "topVariety": "Banana - Ripe",
       "grade": "Grade A"
@@ -207,19 +347,10 @@
       "recentPrice": null,
       "minPrice": 2200,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 7,
       "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Sitarganj",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 2276,
-      "recentPrice": 2200,
-      "minPrice": 2100,
-      "maxPrice": 2500,
-      "records": 78,
-      "topVariety": "Banana - Ripe",
       "grade": "Local"
     },
     {
@@ -229,6 +360,8 @@
       "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 3550,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 81,
       "topVariety": null,
       "grade": "Local"
@@ -240,20 +373,11 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-28",
       "records": 2,
       "topVariety": null,
       "grade": "Small"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 1155,
-      "recentPrice": 1600,
-      "minPrice": 850,
-      "maxPrice": 1600,
-      "records": 61,
-      "topVariety": null,
-      "grade": "Grade C"
     },
     {
       "name": "Dehradoon",
@@ -262,20 +386,11 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 81,
       "topVariety": "Banana - Ripe",
       "grade": "Grade B"
-    },
-    {
-      "name": "Rishikesh",
-      "district": "Dehradoon",
-      "avgPrice": 1490,
-      "recentPrice": 1550,
-      "minPrice": 1000,
-      "maxPrice": 2000,
-      "records": 90,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Bazpur",
@@ -284,64 +399,11 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-11",
       "records": 3,
       "topVariety": null,
       "grade": "Grade A"
-    },
-    {
-      "name": "Kicchha",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 834,
-      "recentPrice": 1200,
-      "minPrice": 300,
-      "maxPrice": 1300,
-      "records": 76,
-      "topVariety": "Banana - Ripe",
-      "grade": "Local"
-    },
-    {
-      "name": "Manglaur",
-      "district": "Haridwar",
-      "avgPrice": 1077,
-      "recentPrice": 1100,
-      "minPrice": 850,
-      "maxPrice": 1200,
-      "records": 42,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Haldwani",
-      "district": "Nanital",
-      "avgPrice": 884,
-      "recentPrice": 1000,
-      "minPrice": 700,
-      "maxPrice": 1200,
-      "records": 45,
-      "topVariety": null,
-      "grade": "Grade A"
-    },
-    {
-      "name": "Roorkee",
-      "district": "Haridwar",
-      "avgPrice": 1000,
-      "recentPrice": 950,
-      "minPrice": 950,
-      "maxPrice": 1000,
-      "records": 112,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Vikasnagar",
-      "district": "Dehradoon",
-      "avgPrice": 819,
-      "recentPrice": 900,
-      "minPrice": 650,
-      "maxPrice": 1000,
-      "records": 8,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Bhagwanpur(Naveen Mandi Sthal)",
@@ -350,6 +412,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 1900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 48,
       "topVariety": "Bhushavali(Pacha)",
       "grade": "Grade B"
@@ -363,6 +427,8 @@
       "recentPrice": null,
       "minPrice": 9200,
       "maxPrice": 9200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -374,6 +440,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-20",
       "records": 29,
       "topVariety": null,
       "grade": "Local"
@@ -385,8 +453,10 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 1980,
       "recentPrice": 2500,
-      "minPrice": 1000,
-      "maxPrice": 4000,
+      "minPrice": 2500,
+      "maxPrice": 2500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 20,
       "topVariety": null,
       "grade": "Medium"
@@ -396,10 +466,64 @@
       "district": "Nanital",
       "avgPrice": 2400,
       "recentPrice": 2200,
-      "minPrice": 1900,
-      "maxPrice": 3000,
+      "minPrice": 2200,
+      "maxPrice": 2200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 4,
       "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Rishikesh",
+      "district": "Dehradoon",
+      "avgPrice": 1383,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 18,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Roorkee",
+      "district": "Haridwar",
+      "avgPrice": 906,
+      "recentPrice": 1300,
+      "minPrice": 1300,
+      "maxPrice": 1300,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 50,
+      "topVariety": "Bhindi",
+      "grade": "Local"
+    },
+    {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 1285,
+      "recentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 20,
+      "topVariety": "Bhindi",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Sitarganj",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 1406,
+      "recentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 8,
+      "topVariety": "Bhindi",
       "grade": "Local"
     },
     {
@@ -409,6 +533,8 @@
       "recentPrice": null,
       "minPrice": 1050,
       "maxPrice": 3200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 44,
       "topVariety": null,
       "grade": "Local"
@@ -420,6 +546,8 @@
       "recentPrice": null,
       "minPrice": 1050,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 18,
       "topVariety": "Bhindi",
       "grade": "FAQ"
@@ -431,6 +559,8 @@
       "recentPrice": null,
       "minPrice": 1050,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 53,
       "topVariety": null,
       "grade": "FAQ"
@@ -442,20 +572,11 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 26,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Rishikesh",
-      "district": "Dehradoon",
-      "avgPrice": 1383,
-      "recentPrice": 1500,
-      "minPrice": 1200,
-      "maxPrice": 2850,
-      "records": 18,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Bazpur",
@@ -464,6 +585,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 1,
       "topVariety": "Bhindi",
       "grade": "FAQ"
@@ -475,6 +598,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 23,
       "topVariety": null,
       "grade": "Medium"
@@ -486,20 +611,11 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 1600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
       "records": 9,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "Roorkee",
-      "district": "Haridwar",
-      "avgPrice": 906,
-      "recentPrice": 1300,
-      "minPrice": 600,
-      "maxPrice": 1300,
-      "records": 50,
-      "topVariety": "Bhindi",
-      "grade": "Local"
     },
     {
       "name": "Lakshar",
@@ -508,6 +624,8 @@
       "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -519,31 +637,11 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 21,
       "topVariety": "Bhindi",
       "grade": "FAQ"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 1285,
-      "recentPrice": 1200,
-      "minPrice": 600,
-      "maxPrice": 2000,
-      "records": 20,
-      "topVariety": "Bhindi",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Sitarganj",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 1406,
-      "recentPrice": 1200,
-      "minPrice": 1100,
-      "maxPrice": 1600,
-      "records": 8,
-      "topVariety": "Bhindi",
-      "grade": "Local"
     },
     {
       "name": "Bhagwanpur(Naveen Mandi Sthal)",
@@ -552,6 +650,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-13",
       "records": 2,
       "topVariety": null,
       "grade": "Grade A"
@@ -563,20 +663,11 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 10,
       "topVariety": "Bhindi",
       "grade": "Large"
-    },
-    {
-      "name": "Kicchha",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 454,
-      "recentPrice": null,
-      "minPrice": 240,
-      "maxPrice": 1100,
-      "records": 11,
-      "topVariety": "Bhindi",
-      "grade": "Local"
     }
   ],
   "bitter-gourd": [
@@ -585,11 +676,39 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 1433,
       "recentPrice": 2000,
-      "minPrice": 900,
-      "maxPrice": 2200,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 6,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Rishikesh",
+      "district": "Dehradoon",
+      "avgPrice": 1800,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 2,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Roorkee",
+      "district": "Haridwar",
+      "avgPrice": 738,
+      "recentPrice": 750,
+      "minPrice": 750,
+      "maxPrice": 750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 99,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Dehradoon",
@@ -598,6 +717,8 @@
       "recentPrice": null,
       "minPrice": 1150,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 55,
       "topVariety": "Bitter Gourd",
       "grade": "FAQ"
@@ -609,6 +730,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 36,
       "topVariety": null,
       "grade": "Local"
@@ -620,6 +743,8 @@
       "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 2,
       "topVariety": "Bitter Gourd",
       "grade": "FAQ"
@@ -631,6 +756,8 @@
       "recentPrice": null,
       "minPrice": 1700,
       "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 2,
       "topVariety": "Bitter Gourd",
       "grade": "Grade B"
@@ -642,20 +769,11 @@
       "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-03",
       "records": 15,
       "topVariety": "Bitter Gourd",
       "grade": "FAQ"
-    },
-    {
-      "name": "Rishikesh",
-      "district": "Dehradoon",
-      "avgPrice": 1800,
-      "recentPrice": 1500,
-      "minPrice": 1500,
-      "maxPrice": 2100,
-      "records": 2,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Kotadwara",
@@ -664,6 +782,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-04",
       "records": 9,
       "topVariety": "Bitter Gourd",
       "grade": "FAQ"
@@ -675,6 +795,8 @@
       "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 2100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 5,
       "topVariety": null,
       "grade": "Medium"
@@ -686,23 +808,118 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 900,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 2,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Roorkee",
-      "district": "Haridwar",
-      "avgPrice": 738,
-      "recentPrice": 750,
-      "minPrice": 700,
-      "maxPrice": 850,
-      "records": 99,
       "topVariety": null,
       "grade": "Local"
     }
   ],
   "bottle-gourd": [
+    {
+      "name": "Rudrapur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 1956,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 97,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Rishikesh",
+      "district": "Dehradoon",
+      "avgPrice": 1100,
+      "recentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 36,
+      "topVariety": "Bottle Gourd",
+      "grade": "Medium"
+    },
+    {
+      "name": "Vikasnagar",
+      "district": "Dehradoon",
+      "avgPrice": 1105,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 60,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 1112,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 82,
+      "topVariety": "Bottle Gourd",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Sitarganj",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 1307,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 46,
+      "topVariety": "Bottle Gourd",
+      "grade": "Local"
+    },
+    {
+      "name": "Haldwani",
+      "district": "Nanital",
+      "avgPrice": 1078,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 37,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kicchha",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 558,
+      "recentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 71,
+      "topVariety": "Bottle Gourd",
+      "grade": "Local"
+    },
+    {
+      "name": "Roorkee",
+      "district": "Haridwar",
+      "avgPrice": 705,
+      "recentPrice": 800,
+      "minPrice": 800,
+      "maxPrice": 800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 117,
+      "topVariety": null,
+      "grade": "Local"
+    },
     {
       "name": "Kashipur",
       "district": "Udhamsinghnagar",
@@ -710,20 +927,11 @@
       "recentPrice": null,
       "minPrice": 650,
       "maxPrice": 3100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 81,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Rudrapur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 1956,
-      "recentPrice": 1500,
-      "minPrice": 600,
-      "maxPrice": 3500,
-      "records": 97,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Ramnagar",
@@ -732,6 +940,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 25,
       "topVariety": null,
       "grade": "Local"
@@ -743,6 +953,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1960,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 86,
       "topVariety": null,
       "grade": "FAQ"
@@ -754,20 +966,11 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-05",
       "records": 3,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Rishikesh",
-      "district": "Dehradoon",
-      "avgPrice": 1100,
-      "recentPrice": 1200,
-      "minPrice": 700,
-      "maxPrice": 1650,
-      "records": 36,
-      "topVariety": "Bottle Gourd",
-      "grade": "Medium"
     },
     {
       "name": "Kotadwara",
@@ -776,6 +979,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 43,
       "topVariety": "Bottle Gourd",
       "grade": "FAQ"
@@ -787,63 +992,10 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 5,
       "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Vikasnagar",
-      "district": "Dehradoon",
-      "avgPrice": 1105,
-      "recentPrice": 1000,
-      "minPrice": 500,
-      "maxPrice": 2500,
-      "records": 60,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 1112,
-      "recentPrice": 1000,
-      "minPrice": 500,
-      "maxPrice": 2200,
-      "records": 82,
-      "topVariety": "Bottle Gourd",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Sitarganj",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 1307,
-      "recentPrice": 1000,
-      "minPrice": 600,
-      "maxPrice": 1800,
-      "records": 46,
-      "topVariety": "Bottle Gourd",
-      "grade": "Local"
-    },
-    {
-      "name": "Haldwani",
-      "district": "Nanital",
-      "avgPrice": 1078,
-      "recentPrice": 1000,
-      "minPrice": 700,
-      "maxPrice": 1800,
-      "records": 37,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kicchha",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 558,
-      "recentPrice": 900,
-      "minPrice": 250,
-      "maxPrice": 900,
-      "records": 71,
-      "topVariety": "Bottle Gourd",
       "grade": "Local"
     },
     {
@@ -853,20 +1005,11 @@
       "recentPrice": null,
       "minPrice": 650,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 60,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Roorkee",
-      "district": "Haridwar",
-      "avgPrice": 705,
-      "recentPrice": 800,
-      "minPrice": 650,
-      "maxPrice": 850,
-      "records": 117,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Khateema",
@@ -875,6 +1018,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 77,
       "topVariety": "Bottle Gourd",
       "grade": "Grade B"
@@ -886,6 +1031,8 @@
       "recentPrice": null,
       "minPrice": 450,
       "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 28,
       "topVariety": null,
       "grade": "Grade A"
@@ -897,6 +1044,8 @@
       "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 28,
       "topVariety": null,
       "grade": "Local"
@@ -908,9 +1057,76 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 1328,
       "recentPrice": 2000,
-      "minPrice": 800,
-      "maxPrice": 2500,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 81,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 726,
+      "recentPrice": 1100,
+      "minPrice": 1100,
+      "maxPrice": 1100,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 72,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Rishikesh",
+      "district": "Dehradoon",
+      "avgPrice": 1492,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 89,
+      "topVariety": "Brinjal",
+      "grade": "Medium"
+    },
+    {
+      "name": "Sitarganj",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 1087,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 53,
+      "topVariety": "Brinjal",
+      "grade": "Local"
+    },
+    {
+      "name": "Roorkee",
+      "district": "Haridwar",
+      "avgPrice": 567,
+      "recentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 103,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Vikasnagar",
+      "district": "Dehradoon",
+      "avgPrice": 1114,
+      "recentPrice": 800,
+      "minPrice": 800,
+      "maxPrice": 800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 49,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -921,6 +1137,8 @@
       "recentPrice": null,
       "minPrice": 825,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 69,
       "topVariety": "Brinjal",
       "grade": "FAQ"
@@ -932,6 +1150,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 10,
       "topVariety": null,
       "grade": "Local"
@@ -943,41 +1163,10 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 72,
       "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 726,
-      "recentPrice": 1100,
-      "minPrice": 500,
-      "maxPrice": 1100,
-      "records": 72,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Rishikesh",
-      "district": "Dehradoon",
-      "avgPrice": 1492,
-      "recentPrice": 1000,
-      "minPrice": 1000,
-      "maxPrice": 1850,
-      "records": 89,
-      "topVariety": "Brinjal",
-      "grade": "Medium"
-    },
-    {
-      "name": "Sitarganj",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 1087,
-      "recentPrice": 1000,
-      "minPrice": 800,
-      "maxPrice": 2000,
-      "records": 53,
-      "topVariety": "Brinjal",
       "grade": "Local"
     },
     {
@@ -987,6 +1176,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-11",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -998,6 +1189,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 63,
       "topVariety": "Brinjal",
       "grade": "FAQ"
@@ -1009,20 +1202,11 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 52,
       "topVariety": "Round",
       "grade": "FAQ"
-    },
-    {
-      "name": "Roorkee",
-      "district": "Haridwar",
-      "avgPrice": 567,
-      "recentPrice": 900,
-      "minPrice": 500,
-      "maxPrice": 900,
-      "records": 103,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Haldwani",
@@ -1031,20 +1215,11 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 1050,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 28,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Vikasnagar",
-      "district": "Dehradoon",
-      "avgPrice": 1114,
-      "recentPrice": 800,
-      "minPrice": 600,
-      "maxPrice": 2500,
-      "records": 49,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Khateema",
@@ -1053,6 +1228,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 55,
       "topVariety": null,
       "grade": "Grade B"
@@ -1064,6 +1241,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 800,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 11,
       "topVariety": "Round",
       "grade": "Local"
@@ -1075,6 +1254,8 @@
       "recentPrice": null,
       "minPrice": 560,
       "maxPrice": 800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 16,
       "topVariety": null,
       "grade": "Local"
@@ -1086,6 +1267,8 @@
       "recentPrice": null,
       "minPrice": 300,
       "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 90,
       "topVariety": null,
       "grade": "Grade A"
@@ -1097,22 +1280,13 @@
       "district": "Nanital",
       "avgPrice": 2841,
       "recentPrice": 3500,
-      "minPrice": 1500,
+      "minPrice": 3500,
       "maxPrice": 3500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 41,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Rudrapur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 3276,
-      "recentPrice": null,
-      "minPrice": 900,
-      "maxPrice": 5000,
-      "records": 66,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Haldwani",
@@ -1121,9 +1295,37 @@
       "recentPrice": 2200,
       "minPrice": 2200,
       "maxPrice": 2200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 2153,
+      "recentPrice": 1800,
+      "minPrice": 1800,
+      "maxPrice": 1800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 45,
+      "topVariety": "Capsicum",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Rudrapur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 3276,
+      "recentPrice": null,
+      "minPrice": 900,
+      "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
+      "records": 66,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Rishikesh",
@@ -1132,6 +1334,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-19",
       "records": 47,
       "topVariety": null,
       "grade": "Medium"
@@ -1143,20 +1347,11 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-05",
       "records": 8,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 2153,
-      "recentPrice": 1800,
-      "minPrice": 1000,
-      "maxPrice": 3200,
-      "records": 45,
-      "topVariety": "Capsicum",
-      "grade": "FAQ"
     },
     {
       "name": "Kotadwara",
@@ -1165,6 +1360,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 78,
       "topVariety": "Capsicum",
       "grade": "FAQ"
@@ -1176,6 +1373,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 13,
       "topVariety": "Capsicum",
       "grade": "Local"
@@ -1187,8 +1386,10 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 1212,
       "recentPrice": 2500,
-      "minPrice": 350,
+      "minPrice": 2500,
       "maxPrice": 2500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 73,
       "topVariety": null,
       "grade": "Medium"
@@ -1198,8 +1399,10 @@
       "district": "Haridwar",
       "avgPrice": 451,
       "recentPrice": 1500,
-      "minPrice": 250,
+      "minPrice": 1500,
       "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 73,
       "topVariety": null,
       "grade": "FAQ"
@@ -1209,10 +1412,25 @@
       "district": "Dehradoon",
       "avgPrice": 466,
       "recentPrice": 1200,
-      "minPrice": 250,
+      "minPrice": 1200,
       "maxPrice": 1200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 84,
       "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Vikasnagar",
+      "district": "Dehradoon",
+      "avgPrice": 675,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 4,
+      "topVariety": "Cabbage",
       "grade": "Medium"
     },
     {
@@ -1222,6 +1440,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 26,
       "topVariety": null,
       "grade": "Local"
@@ -1233,6 +1453,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 1600,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-05",
       "records": 15,
       "topVariety": null,
       "grade": "Local"
@@ -1244,6 +1466,8 @@
       "recentPrice": null,
       "minPrice": 560,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 46,
       "topVariety": "Cabbage",
       "grade": "FAQ"
@@ -1255,20 +1479,11 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-25",
       "records": 4,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Vikasnagar",
-      "district": "Dehradoon",
-      "avgPrice": 675,
-      "recentPrice": 1000,
-      "minPrice": 400,
-      "maxPrice": 1000,
-      "records": 4,
-      "topVariety": "Cabbage",
-      "grade": "Medium"
     },
     {
       "name": "Jaspur(UC)",
@@ -1277,6 +1492,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1600,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-27",
       "records": 15,
       "topVariety": "Cabbage",
       "grade": "FAQ"
@@ -1288,6 +1505,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-24",
       "records": 3,
       "topVariety": "Cabbage",
       "grade": "Local"
@@ -1299,6 +1518,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 43,
       "topVariety": "Cabbage",
       "grade": "FAQ"
@@ -1310,6 +1531,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-27",
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
@@ -1321,6 +1544,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-06",
       "records": 6,
       "topVariety": "Cabbage",
       "grade": "Local"
@@ -1332,6 +1557,8 @@
       "recentPrice": null,
       "minPrice": 450,
       "maxPrice": 950,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-01",
       "records": 13,
       "topVariety": null,
       "grade": "Large"
@@ -1345,6 +1572,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2700,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-11",
       "records": 77,
       "topVariety": null,
       "grade": "FAQ"
@@ -1356,6 +1585,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-28",
       "records": 74,
       "topVariety": "Carrot",
       "grade": "Local"
@@ -1367,6 +1598,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-20",
       "records": 74,
       "topVariety": null,
       "grade": "Medium"
@@ -1378,6 +1611,8 @@
       "recentPrice": null,
       "minPrice": 850,
       "maxPrice": 2700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-13",
       "records": 73,
       "topVariety": null,
       "grade": "Local"
@@ -1389,6 +1624,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 29,
       "topVariety": null,
       "grade": "FAQ"
@@ -1400,6 +1637,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-07",
       "records": 37,
       "topVariety": null,
       "grade": "Local"
@@ -1411,6 +1650,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 48,
       "topVariety": null,
       "grade": "FAQ"
@@ -1422,6 +1663,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1850,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-02",
       "records": 76,
       "topVariety": null,
       "grade": "Medium"
@@ -1433,6 +1676,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-27",
       "records": 2,
       "topVariety": "Carrot",
       "grade": "FAQ"
@@ -1444,6 +1689,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-02",
       "records": 74,
       "topVariety": "Carrot",
       "grade": "FAQ"
@@ -1455,6 +1702,8 @@
       "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 81,
       "topVariety": "Carrot",
       "grade": "Medium"
@@ -1466,6 +1715,8 @@
       "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-12",
       "records": 58,
       "topVariety": "Carrot",
       "grade": "Local"
@@ -1477,6 +1728,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-09",
       "records": 48,
       "topVariety": "Carrot",
       "grade": "Large"
@@ -1488,6 +1741,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 900,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-02",
       "records": 41,
       "topVariety": null,
       "grade": "Grade B"
@@ -1499,6 +1754,8 @@
       "recentPrice": null,
       "minPrice": 650,
       "maxPrice": 900,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-08",
       "records": 99,
       "topVariety": null,
       "grade": "Medium"
@@ -1510,6 +1767,8 @@
       "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-07",
       "records": 59,
       "topVariety": null,
       "grade": "FAQ"
@@ -1521,6 +1780,8 @@
       "recentPrice": null,
       "minPrice": 350,
       "maxPrice": 750,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-23",
       "records": 64,
       "topVariety": null,
       "grade": "Grade A"
@@ -1532,8 +1793,10 @@
       "district": "Nanital",
       "avgPrice": 1077,
       "recentPrice": 3600,
-      "minPrice": 700,
+      "minPrice": 3600,
       "maxPrice": 3600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 44,
       "topVariety": null,
       "grade": "Local"
@@ -1543,8 +1806,10 @@
       "district": "Haridwar",
       "avgPrice": 657,
       "recentPrice": 2500,
-      "minPrice": 400,
+      "minPrice": 2500,
       "maxPrice": 2500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 66,
       "topVariety": "Cauliflower",
       "grade": "FAQ"
@@ -1554,8 +1819,10 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 775,
       "recentPrice": 2300,
-      "minPrice": 400,
+      "minPrice": 2300,
       "maxPrice": 2300,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 65,
       "topVariety": "Cauliflower",
       "grade": "Local"
@@ -1565,8 +1832,10 @@
       "district": "Dehradoon",
       "avgPrice": 692,
       "recentPrice": 2250,
-      "minPrice": 350,
+      "minPrice": 2250,
       "maxPrice": 2250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 78,
       "topVariety": null,
       "grade": "Medium"
@@ -1576,8 +1845,10 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 782,
       "recentPrice": 2000,
-      "minPrice": 500,
+      "minPrice": 2000,
       "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 79,
       "topVariety": "Cauliflower",
       "grade": "Local"
@@ -1587,8 +1858,10 @@
       "district": "Haridwar",
       "avgPrice": 1006,
       "recentPrice": 1800,
-      "minPrice": 600,
+      "minPrice": 1800,
       "maxPrice": 1800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 69,
       "topVariety": null,
       "grade": "Local"
@@ -1598,8 +1871,10 @@
       "district": "Haridwar",
       "avgPrice": 544,
       "recentPrice": 1600,
-      "minPrice": 450,
+      "minPrice": 1600,
       "maxPrice": 1600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 99,
       "topVariety": null,
       "grade": "Local"
@@ -1611,6 +1886,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-04",
       "records": 79,
       "topVariety": null,
       "grade": "FAQ"
@@ -1622,6 +1899,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 23,
       "topVariety": null,
       "grade": "FAQ"
@@ -1633,6 +1912,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-10",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -1644,6 +1925,8 @@
       "recentPrice": null,
       "minPrice": 650,
       "maxPrice": 2850,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 74,
       "topVariety": null,
       "grade": "Local"
@@ -1655,6 +1938,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 75,
       "topVariety": null,
       "grade": "FAQ"
@@ -1666,6 +1951,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-02",
       "records": 57,
       "topVariety": null,
       "grade": "Grade B"
@@ -1677,6 +1964,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 81,
       "topVariety": null,
       "grade": "Medium"
@@ -1688,6 +1977,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1900,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 81,
       "topVariety": "Cauliflower",
       "grade": "FAQ"
@@ -1699,6 +1990,8 @@
       "recentPrice": null,
       "minPrice": 260,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-06",
       "records": 92,
       "topVariety": null,
       "grade": "Grade A"
@@ -1712,6 +2005,8 @@
       "recentPrice": null,
       "minPrice": 1700,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-01",
       "records": 57,
       "topVariety": null,
       "grade": "Local"
@@ -1723,6 +2018,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-05",
       "records": 54,
       "topVariety": null,
       "grade": "Medium"
@@ -1734,6 +2031,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 13,
       "topVariety": null,
       "grade": "Grade B"
@@ -1745,6 +2044,8 @@
       "recentPrice": null,
       "minPrice": 1600,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 2,
       "topVariety": null,
       "grade": "Medium"
@@ -1752,12 +2053,40 @@
   ],
   "colacasia": [
     {
+      "name": "Rudrapur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 1891,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 23,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Rishikesh",
+      "district": "Dehradoon",
+      "avgPrice": 1500,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Manglaur",
       "district": "Haridwar",
       "avgPrice": 2625,
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 4,
       "topVariety": "Colacasia",
       "grade": "Large"
@@ -1769,6 +2098,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 35,
       "topVariety": "Colacasia",
       "grade": "FAQ"
@@ -1780,6 +2111,8 @@
       "recentPrice": null,
       "minPrice": 1600,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 5,
       "topVariety": null,
       "grade": "Local"
@@ -1791,6 +2124,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 3100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 64,
       "topVariety": null,
       "grade": "Local"
@@ -1802,6 +2137,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 39,
       "topVariety": null,
       "grade": "Medium"
@@ -1813,6 +2150,8 @@
       "recentPrice": null,
       "minPrice": 1600,
       "maxPrice": 2100,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 15,
       "topVariety": null,
       "grade": "FAQ"
@@ -1824,31 +2163,11 @@
       "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-11",
       "records": 3,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Rudrapur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 1891,
-      "recentPrice": 1500,
-      "minPrice": 1500,
-      "maxPrice": 2500,
-      "records": 23,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Rishikesh",
-      "district": "Dehradoon",
-      "avgPrice": 1500,
-      "recentPrice": 1500,
-      "minPrice": 1500,
-      "maxPrice": 1500,
-      "records": 1,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Khateema",
@@ -1857,6 +2176,8 @@
       "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-06",
       "records": 4,
       "topVariety": null,
       "grade": "Grade B"
@@ -1868,6 +2189,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 37,
       "topVariety": null,
       "grade": "FAQ"
@@ -1879,8 +2202,10 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 1591,
       "recentPrice": 2500,
-      "minPrice": 900,
+      "minPrice": 2500,
       "maxPrice": 2500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 80,
       "topVariety": null,
       "grade": "Medium"
@@ -1890,8 +2215,10 @@
       "district": "Dehradoon",
       "avgPrice": 1371,
       "recentPrice": 2000,
-      "minPrice": 600,
+      "minPrice": 2000,
       "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 19,
       "topVariety": null,
       "grade": "Medium"
@@ -1901,8 +2228,10 @@
       "district": "Haridwar",
       "avgPrice": 1164,
       "recentPrice": 1600,
-      "minPrice": 500,
-      "maxPrice": 2400,
+      "minPrice": 1600,
+      "maxPrice": 1600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 28,
       "topVariety": "Cucumbar",
       "grade": "FAQ"
@@ -1912,10 +2241,51 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 1775,
       "recentPrice": 1600,
-      "minPrice": 800,
-      "maxPrice": 2400,
+      "minPrice": 1600,
+      "maxPrice": 1600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 24,
       "topVariety": "Cucumbar",
+      "grade": "Local"
+    },
+    {
+      "name": "Manglaur",
+      "district": "Haridwar",
+      "avgPrice": 809,
+      "recentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 11,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Vikasnagar",
+      "district": "Dehradoon",
+      "avgPrice": 1189,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 57,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Roorkee",
+      "district": "Haridwar",
+      "avgPrice": 641,
+      "recentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 94,
+      "topVariety": null,
       "grade": "Local"
     },
     {
@@ -1925,6 +2295,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 12,
       "topVariety": null,
       "grade": "FAQ"
@@ -1936,6 +2308,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 12,
       "topVariety": null,
       "grade": "Local"
@@ -1947,6 +2321,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-04",
       "records": 61,
       "topVariety": "Cucumbar",
       "grade": "FAQ"
@@ -1958,20 +2334,11 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 71,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Manglaur",
-      "district": "Haridwar",
-      "avgPrice": 809,
-      "recentPrice": 1200,
-      "minPrice": 600,
-      "maxPrice": 1200,
-      "records": 11,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Kotadwara",
@@ -1980,6 +2347,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 50,
       "topVariety": "Cucumbar",
       "grade": "FAQ"
@@ -1991,20 +2360,11 @@
       "recentPrice": null,
       "minPrice": 750,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 45,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Vikasnagar",
-      "district": "Dehradoon",
-      "avgPrice": 1189,
-      "recentPrice": 1000,
-      "minPrice": 700,
-      "maxPrice": 2000,
-      "records": 57,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Tanakpur",
@@ -2013,6 +2373,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-16",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -2024,20 +2386,11 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-28",
       "records": 23,
       "topVariety": "Cucumbar",
       "grade": "Grade B"
-    },
-    {
-      "name": "Roorkee",
-      "district": "Haridwar",
-      "avgPrice": 641,
-      "recentPrice": 900,
-      "minPrice": 500,
-      "maxPrice": 900,
-      "records": 94,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Bhagwanpur(Naveen Mandi Sthal)",
@@ -2046,6 +2399,8 @@
       "recentPrice": null,
       "minPrice": 300,
       "maxPrice": 800,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 62,
       "topVariety": null,
       "grade": "Grade A"
@@ -2057,8 +2412,10 @@
       "district": "Dehradoon",
       "avgPrice": 2094,
       "recentPrice": 3500,
-      "minPrice": 800,
+      "minPrice": 3500,
       "maxPrice": 3500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 71,
       "topVariety": "Field Pea",
       "grade": "Medium"
@@ -2070,6 +2427,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-07",
       "records": 34,
       "topVariety": null,
       "grade": "Local"
@@ -2081,6 +2440,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-29",
       "records": 74,
       "topVariety": null,
       "grade": "Medium"
@@ -2092,6 +2453,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-05",
       "records": 13,
       "topVariety": "Field Pea",
       "grade": "FAQ"
@@ -2103,6 +2466,8 @@
       "recentPrice": null,
       "minPrice": 1023,
       "maxPrice": 2042,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-01",
       "records": 50,
       "topVariety": null,
       "grade": "FAQ"
@@ -2110,12 +2475,27 @@
   ],
   "french-beansfrasbean": [
     {
+      "name": "Vikasnagar",
+      "district": "Dehradoon",
+      "avgPrice": 2365,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 51,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Bazpur",
       "district": "Udhamsinghnagar",
       "avgPrice": 4000,
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-31",
       "records": 1,
       "topVariety": "French Beans (Frasbean)",
       "grade": "FAQ"
@@ -2127,6 +2507,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 73,
       "topVariety": null,
       "grade": "Medium"
@@ -2138,6 +2520,8 @@
       "recentPrice": null,
       "minPrice": 1950,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 73,
       "topVariety": null,
       "grade": "Local"
@@ -2149,6 +2533,8 @@
       "recentPrice": null,
       "minPrice": 2300,
       "maxPrice": 2300,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-06",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -2160,6 +2546,8 @@
       "recentPrice": null,
       "minPrice": 1600,
       "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
       "records": 5,
       "topVariety": "French Beans (Frasbean)",
       "grade": "FAQ"
@@ -2171,6 +2559,8 @@
       "recentPrice": null,
       "minPrice": 1650,
       "maxPrice": 2850,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 76,
       "topVariety": null,
       "grade": "Medium"
@@ -2182,23 +2572,27 @@
       "recentPrice": null,
       "minPrice": 1050,
       "maxPrice": 3250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 31,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Vikasnagar",
-      "district": "Dehradoon",
-      "avgPrice": 2365,
-      "recentPrice": 1500,
-      "minPrice": 1000,
-      "maxPrice": 5500,
-      "records": 51,
-      "topVariety": null,
-      "grade": "Medium"
     }
   ],
   "garlic": [
+    {
+      "name": "Rudrapur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 8535,
+      "recentPrice": 9000,
+      "minPrice": 9000,
+      "maxPrice": 9000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 71,
+      "topVariety": "Average",
+      "grade": "Local"
+    },
     {
       "name": "Haridwar Union",
       "district": "Haridwar",
@@ -2206,6 +2600,8 @@
       "recentPrice": null,
       "minPrice": 8500,
       "maxPrice": 12000,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-05",
       "records": 10,
       "topVariety": "Average",
       "grade": "FAQ"
@@ -2217,20 +2613,11 @@
       "recentPrice": null,
       "minPrice": 9000,
       "maxPrice": 9880,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-02",
       "records": 2,
       "topVariety": null,
       "grade": "Grade Range-2"
-    },
-    {
-      "name": "Rudrapur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 8535,
-      "recentPrice": 9000,
-      "minPrice": 5500,
-      "maxPrice": 13000,
-      "records": 71,
-      "topVariety": "Average",
-      "grade": "Local"
     },
     {
       "name": "Ramnagar",
@@ -2239,6 +2626,8 @@
       "recentPrice": null,
       "minPrice": 6500,
       "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-05",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -2250,6 +2639,8 @@
       "recentPrice": null,
       "minPrice": 5500,
       "maxPrice": 8500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 13,
       "topVariety": null,
       "grade": "FAQ"
@@ -2261,6 +2652,8 @@
       "recentPrice": null,
       "minPrice": 2900,
       "maxPrice": 11000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 56,
       "topVariety": null,
       "grade": "Local"
@@ -2272,6 +2665,8 @@
       "recentPrice": null,
       "minPrice": 4250,
       "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-06",
       "records": 5,
       "topVariety": "Garlic",
       "grade": "FAQ"
@@ -2283,6 +2678,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2025-12-15",
       "records": 1,
       "topVariety": "Garlic",
       "grade": "FAQ"
@@ -2294,6 +2691,8 @@
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-18",
       "records": 2,
       "topVariety": "Garlic",
       "grade": "FAQ"
@@ -2305,6 +2704,8 @@
       "recentPrice": null,
       "minPrice": 4100,
       "maxPrice": 4100,
+      "rangeBasis": "all",
+      "lastDate": "2025-12-17",
       "records": 1,
       "topVariety": "Average",
       "grade": "FAQ"
@@ -2316,10 +2717,38 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 7049,
       "recentPrice": 6000,
-      "minPrice": 4500,
-      "maxPrice": 16000,
+      "minPrice": 6000,
+      "maxPrice": 6000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 92,
       "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 4731,
+      "recentPrice": 4200,
+      "minPrice": 4200,
+      "maxPrice": 4200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 54,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Vikasnagar",
+      "district": "Dehradoon",
+      "avgPrice": 2917,
+      "recentPrice": 2200,
+      "minPrice": 2200,
+      "maxPrice": 2200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 28,
+      "topVariety": "Green Ginger",
       "grade": "Medium"
     },
     {
@@ -2329,6 +2758,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 2,
       "topVariety": "Green Ginger",
       "grade": "FAQ"
@@ -2340,20 +2771,11 @@
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 5800,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 77,
       "topVariety": null,
       "grade": "Medium"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 4731,
-      "recentPrice": 4200,
-      "minPrice": 2600,
-      "maxPrice": 11000,
-      "records": 54,
-      "topVariety": null,
-      "grade": "FAQ"
     },
     {
       "name": "Bhagwanpur(Naveen Mandi Sthal)",
@@ -2362,6 +2784,8 @@
       "recentPrice": null,
       "minPrice": 4200,
       "maxPrice": 4200,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-27",
       "records": 1,
       "topVariety": "Green Ginger",
       "grade": "Grade A"
@@ -2373,6 +2797,8 @@
       "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-13",
       "records": 17,
       "topVariety": null,
       "grade": "FAQ"
@@ -2384,6 +2810,8 @@
       "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-20",
       "records": 2,
       "topVariety": null,
       "grade": "Local"
@@ -2395,6 +2823,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-07",
       "records": 15,
       "topVariety": null,
       "grade": "FAQ"
@@ -2406,6 +2836,8 @@
       "recentPrice": null,
       "minPrice": 2700,
       "maxPrice": 7450,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 90,
       "topVariety": null,
       "grade": "Local"
@@ -2417,6 +2849,8 @@
       "recentPrice": null,
       "minPrice": 3100,
       "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-07",
       "records": 16,
       "topVariety": null,
       "grade": "Grade B"
@@ -2428,20 +2862,11 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-24",
       "records": 9,
       "topVariety": "Green Ginger",
       "grade": "FAQ"
-    },
-    {
-      "name": "Vikasnagar",
-      "district": "Dehradoon",
-      "avgPrice": 2917,
-      "recentPrice": 2200,
-      "minPrice": 1500,
-      "maxPrice": 5500,
-      "records": 28,
-      "topVariety": "Green Ginger",
-      "grade": "Medium"
     },
     {
       "name": "Dehradoon",
@@ -2450,6 +2875,8 @@
       "recentPrice": null,
       "minPrice": 2200,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-31",
       "records": 1,
       "topVariety": "Green Ginger",
       "grade": "FAQ"
@@ -2463,6 +2890,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-07",
       "records": 16,
       "topVariety": null,
       "grade": "Local"
@@ -2474,6 +2903,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 34,
       "topVariety": null,
       "grade": "FAQ"
@@ -2485,6 +2916,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 51,
       "topVariety": null,
       "grade": "Grade B"
@@ -2496,6 +2929,8 @@
       "recentPrice": null,
       "minPrice": 690,
       "maxPrice": 720,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-24",
       "records": 3,
       "topVariety": null,
       "grade": "Grade A"
@@ -2509,6 +2944,8 @@
       "recentPrice": null,
       "minPrice": 3800,
       "maxPrice": 3800,
+      "rangeBasis": "all",
+      "lastDate": "2025-12-17",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -2522,6 +2959,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-02",
       "records": 2,
       "topVariety": null,
       "grade": "Grade A"
@@ -2535,6 +2974,8 @@
       "recentPrice": null,
       "minPrice": 4400,
       "maxPrice": 9000,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-26",
       "records": 11,
       "topVariety": "Pangass",
       "grade": "Grade Range-2"
@@ -2548,6 +2989,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-25",
       "records": 3,
       "topVariety": "Ber(Zizyphus)",
       "grade": "Grade B"
@@ -2559,6 +3002,8 @@
       "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 2050,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-11",
       "records": 13,
       "topVariety": "Ber(Zizyphus)",
       "grade": "Local"
@@ -2570,6 +3015,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-13",
       "records": 1,
       "topVariety": "Ber(Zizyphus)",
       "grade": "Medium"
@@ -2583,6 +3030,8 @@
       "recentPrice": null,
       "minPrice": 1600,
       "maxPrice": 1600,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-24",
       "records": 1,
       "topVariety": "Beetroot",
       "grade": "FAQ"
@@ -2596,6 +3045,8 @@
       "recentPrice": null,
       "minPrice": 10000,
       "maxPrice": 11510,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-30",
       "records": 2,
       "topVariety": null,
       "grade": "Local"
@@ -2607,6 +3058,8 @@
       "recentPrice": null,
       "minPrice": 7500,
       "maxPrice": 7800,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-30",
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
@@ -2620,6 +3073,8 @@
       "recentPrice": null,
       "minPrice": 42000,
       "maxPrice": 42000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 2,
       "topVariety": "Ghee",
       "grade": "Local"
@@ -2631,8 +3086,10 @@
       "district": "Haridwar",
       "avgPrice": 3079,
       "recentPrice": 4500,
-      "minPrice": 3000,
+      "minPrice": 4500,
       "maxPrice": 4500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 19,
       "topVariety": null,
       "grade": "Medium"
@@ -2642,8 +3099,10 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 1860,
       "recentPrice": 4000,
-      "minPrice": 1200,
+      "minPrice": 4000,
       "maxPrice": 4000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 10,
       "topVariety": null,
       "grade": "Medium"
@@ -2653,8 +3112,10 @@
       "district": "Dehradoon",
       "avgPrice": 1965,
       "recentPrice": 4000,
-      "minPrice": 1450,
+      "minPrice": 4000,
       "maxPrice": 4000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 10,
       "topVariety": null,
       "grade": "Medium"
@@ -2664,8 +3125,10 @@
       "district": "Haridwar",
       "avgPrice": 1430,
       "recentPrice": 3500,
-      "minPrice": 1000,
+      "minPrice": 3500,
       "maxPrice": 3500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 10,
       "topVariety": "Onion",
       "grade": "FAQ"
@@ -2675,8 +3138,10 @@
       "district": "Nanital",
       "avgPrice": 2375,
       "recentPrice": 3500,
-      "minPrice": 1700,
+      "minPrice": 3500,
       "maxPrice": 3500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 4,
       "topVariety": null,
       "grade": "Local"
@@ -2686,8 +3151,10 @@
       "district": "Nanital",
       "avgPrice": 1260,
       "recentPrice": 3400,
-      "minPrice": 650,
+      "minPrice": 3400,
       "maxPrice": 3400,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 15,
       "topVariety": null,
       "grade": "FAQ"
@@ -2699,6 +3166,8 @@
       "recentPrice": 3000,
       "minPrice": 3000,
       "maxPrice": 3000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -2708,8 +3177,10 @@
       "district": "Dehradoon",
       "avgPrice": 1200,
       "recentPrice": 2200,
-      "minPrice": 700,
+      "minPrice": 2200,
       "maxPrice": 2200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 6,
       "topVariety": null,
       "grade": "Medium"
@@ -2721,6 +3192,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 4,
       "topVariety": null,
       "grade": "Medium"
@@ -2732,6 +3205,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 1600,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 3,
       "topVariety": null,
       "grade": "Local"
@@ -2743,6 +3218,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 10,
       "topVariety": "Onion",
       "grade": "FAQ"
@@ -2754,6 +3231,8 @@
       "recentPrice": null,
       "minPrice": 1250,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 2,
       "topVariety": "Nasik",
       "grade": "FAQ"
@@ -2765,6 +3244,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 5,
       "topVariety": null,
       "grade": "Grade A"
@@ -2776,6 +3257,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 1,
       "topVariety": "Onion",
       "grade": "Local"
@@ -2787,6 +3270,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 4,
       "topVariety": null,
       "grade": "Grade A"
@@ -2798,6 +3283,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 4,
       "topVariety": "Nasik",
       "grade": "Non-FAQ"
@@ -2811,6 +3298,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1950,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 3,
       "topVariety": null,
       "grade": "Local"
@@ -2822,6 +3311,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 9,
       "topVariety": "Water Melon",
       "grade": "Medium"
@@ -2833,6 +3324,8 @@
       "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 1600,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 6,
       "topVariety": "Water Melon",
       "grade": "Grade C"
@@ -2844,6 +3337,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 3,
       "topVariety": "Water Melon",
       "grade": "Medium"
@@ -2855,6 +3350,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 4,
       "topVariety": null,
       "grade": "Local"
@@ -2866,6 +3363,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 3,
       "topVariety": "Water Melon",
       "grade": "Local"
@@ -2877,6 +3376,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 5,
       "topVariety": null,
       "grade": "Grade B"
@@ -2888,6 +3389,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 5,
       "topVariety": "Water Melon",
       "grade": "Grade B"
@@ -2899,6 +3402,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 5,
       "topVariety": null,
       "grade": "Medium"
@@ -2910,6 +3415,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 900,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 2,
       "topVariety": null,
       "grade": "Grade A"
@@ -2921,6 +3428,8 @@
       "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 2,
       "topVariety": null,
       "grade": "Medium"
@@ -2932,6 +3441,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 1050,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 5,
       "topVariety": null,
       "grade": "Medium"
@@ -2943,6 +3454,8 @@
       "recentPrice": null,
       "minPrice": 240,
       "maxPrice": 500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-20",
       "records": 4,
       "topVariety": "Water Melon",
       "grade": "Medium"
@@ -2950,56 +3463,14 @@
   ],
   "raddish": [
     {
-      "name": "Rudrapur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 1683,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 2200,
-      "records": 12,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Jaspur(UC)",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 1500,
-      "recentPrice": null,
-      "minPrice": 1500,
-      "maxPrice": 1500,
-      "records": 1,
-      "topVariety": "Raddish",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Ramnagar",
-      "district": "Nanital",
-      "avgPrice": 1367,
-      "recentPrice": null,
-      "minPrice": 1000,
-      "maxPrice": 1900,
-      "records": 3,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Roorkee",
-      "district": "Haridwar",
-      "avgPrice": 1300,
-      "recentPrice": null,
-      "minPrice": 1300,
-      "maxPrice": 1300,
-      "records": 1,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Sitarganj",
       "district": "Udhamsinghnagar",
       "avgPrice": 1220,
       "recentPrice": 1000,
-      "minPrice": 600,
-      "maxPrice": 1700,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 5,
       "topVariety": "Raddish",
       "grade": "Local"
@@ -3009,44 +3480,13 @@
       "district": "Dehradoon",
       "avgPrice": 842,
       "recentPrice": 1000,
-      "minPrice": 600,
-      "maxPrice": 1300,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 6,
       "topVariety": null,
       "grade": "Medium"
-    },
-    {
-      "name": "Kashipur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 975,
-      "recentPrice": null,
-      "minPrice": 400,
-      "maxPrice": 1350,
-      "records": 16,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Khateema",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 930,
-      "recentPrice": null,
-      "minPrice": 700,
-      "maxPrice": 1300,
-      "records": 10,
-      "topVariety": "Raddish",
-      "grade": "Grade A"
-    },
-    {
-      "name": "Kotadwara",
-      "district": "Garhwal (Pauri)",
-      "avgPrice": 880,
-      "recentPrice": null,
-      "minPrice": 600,
-      "maxPrice": 1100,
-      "records": 15,
-      "topVariety": "Raddish",
-      "grade": "FAQ"
     },
     {
       "name": "Vikasnagar",
@@ -3054,7 +3494,9 @@
       "avgPrice": 917,
       "recentPrice": 800,
       "minPrice": 800,
-      "maxPrice": 1400,
+      "maxPrice": 800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 6,
       "topVariety": null,
       "grade": "Medium"
@@ -3066,7 +3508,100 @@
       "recentPrice": 600,
       "minPrice": 600,
       "maxPrice": 600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
+      "topVariety": "Raddish",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Rudrapur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 1683,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
+      "records": 12,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Jaspur(UC)",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 1500,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
+      "records": 1,
+      "topVariety": "Raddish",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Ramnagar",
+      "district": "Nanital",
+      "avgPrice": 1367,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 1900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-06",
+      "records": 3,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Roorkee",
+      "district": "Haridwar",
+      "avgPrice": 1300,
+      "recentPrice": null,
+      "minPrice": 1300,
+      "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-10",
+      "records": 1,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Kashipur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 975,
+      "recentPrice": null,
+      "minPrice": 400,
+      "maxPrice": 1350,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
+      "records": 16,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Khateema",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 930,
+      "recentPrice": null,
+      "minPrice": 700,
+      "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
+      "records": 10,
+      "topVariety": "Raddish",
+      "grade": "Grade A"
+    },
+    {
+      "name": "Kotadwara",
+      "district": "Garhwal (Pauri)",
+      "avgPrice": 880,
+      "recentPrice": null,
+      "minPrice": 600,
+      "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
+      "records": 15,
       "topVariety": "Raddish",
       "grade": "FAQ"
     },
@@ -3077,6 +3612,8 @@
       "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-04",
       "records": 4,
       "topVariety": null,
       "grade": "FAQ"
@@ -3088,6 +3625,8 @@
       "recentPrice": null,
       "minPrice": 276.66,
       "maxPrice": 276.66,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-22",
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
@@ -3099,20 +3638,11 @@
       "district": "Nanital",
       "avgPrice": 1650,
       "recentPrice": 2600,
-      "minPrice": 800,
+      "minPrice": 2600,
       "maxPrice": 2600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 12,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Kashipur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 2333,
-      "recentPrice": null,
-      "minPrice": 1200,
-      "maxPrice": 3100,
-      "records": 20,
       "topVariety": null,
       "grade": "Local"
     },
@@ -3121,8 +3651,10 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 1295,
       "recentPrice": 2200,
-      "minPrice": 300,
+      "minPrice": 2200,
       "maxPrice": 2200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 25,
       "topVariety": "Hybrid",
       "grade": "Non-FAQ"
@@ -3132,8 +3664,10 @@
       "district": "Haridwar",
       "avgPrice": 1454,
       "recentPrice": 2000,
-      "minPrice": 1100,
+      "minPrice": 2000,
       "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 24,
       "topVariety": "Hybrid",
       "grade": "FAQ"
@@ -3143,8 +3677,10 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 2323,
       "recentPrice": 2000,
-      "minPrice": 900,
-      "maxPrice": 3000,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 22,
       "topVariety": "Tomato",
       "grade": "Medium"
@@ -3154,8 +3690,10 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 1845,
       "recentPrice": 1800,
-      "minPrice": 1100,
-      "maxPrice": 3200,
+      "minPrice": 1800,
+      "maxPrice": 1800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 11,
       "topVariety": "Tomato",
       "grade": "Local"
@@ -3165,11 +3703,65 @@
       "district": "Dehradoon",
       "avgPrice": 1719,
       "recentPrice": 1700,
-      "minPrice": 1200,
-      "maxPrice": 2550,
+      "minPrice": 1700,
+      "maxPrice": 1700,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 26,
       "topVariety": "Local",
       "grade": "Medium"
+    },
+    {
+      "name": "Roorkee",
+      "district": "Haridwar",
+      "avgPrice": 1594,
+      "recentPrice": 1600,
+      "minPrice": 1600,
+      "maxPrice": 1600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 31,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Manglaur",
+      "district": "Haridwar",
+      "avgPrice": 952,
+      "recentPrice": 1300,
+      "minPrice": 1300,
+      "maxPrice": 1300,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 21,
+      "topVariety": null,
+      "grade": "Large"
+    },
+    {
+      "name": "Haldwani",
+      "district": "Nanital",
+      "avgPrice": 1752,
+      "recentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1200,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 21,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kashipur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 2333,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 3100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
+      "records": 20,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Kotadwara",
@@ -3178,6 +3770,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 18,
       "topVariety": "Tomato",
       "grade": "FAQ"
@@ -3189,6 +3783,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 10,
       "topVariety": null,
       "grade": "Grade B"
@@ -3200,20 +3796,11 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 19,
       "topVariety": "Tomato",
       "grade": "FAQ"
-    },
-    {
-      "name": "Roorkee",
-      "district": "Haridwar",
-      "avgPrice": 1594,
-      "recentPrice": 1600,
-      "minPrice": 1500,
-      "maxPrice": 1600,
-      "records": 31,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Chakrata",
@@ -3222,6 +3809,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 13,
       "topVariety": "Local",
       "grade": "FAQ"
@@ -3233,20 +3822,11 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 22,
       "topVariety": "Local",
       "grade": "Medium"
-    },
-    {
-      "name": "Manglaur",
-      "district": "Haridwar",
-      "avgPrice": 952,
-      "recentPrice": 1300,
-      "minPrice": 750,
-      "maxPrice": 1500,
-      "records": 21,
-      "topVariety": null,
-      "grade": "Large"
     },
     {
       "name": "Dehradoon",
@@ -3255,18 +3835,9 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
       "records": 10,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Haldwani",
-      "district": "Nanital",
-      "avgPrice": 1752,
-      "recentPrice": 1200,
-      "minPrice": 700,
-      "maxPrice": 3200,
-      "records": 21,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -3277,6 +3848,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-04",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -3288,6 +3861,8 @@
       "recentPrice": null,
       "minPrice": 550,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 13,
       "topVariety": null,
       "grade": "Grade A"
@@ -3295,23 +3870,14 @@
   ],
   "pomegranate": [
     {
-      "name": "Kashipur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 8986,
-      "recentPrice": null,
-      "minPrice": 5300,
-      "maxPrice": 15000,
-      "records": 7,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Rudrapur",
       "district": "Udhamsinghnagar",
       "avgPrice": 8722,
       "recentPrice": 8000,
-      "minPrice": 6000,
-      "maxPrice": 14000,
+      "minPrice": 8000,
+      "maxPrice": 8000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 9,
       "topVariety": null,
       "grade": "Medium"
@@ -3321,11 +3887,39 @@
       "district": "Dehradoon",
       "avgPrice": 7673,
       "recentPrice": 7500,
-      "minPrice": 6100,
-      "maxPrice": 10500,
+      "minPrice": 7500,
+      "maxPrice": 7500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 11,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 6950,
+      "recentPrice": 7500,
+      "minPrice": 7500,
+      "maxPrice": 7500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 4,
+      "topVariety": "Pomogranate",
+      "grade": "Grade C"
+    },
+    {
+      "name": "Kashipur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 8986,
+      "recentPrice": null,
+      "minPrice": 5300,
+      "maxPrice": 15000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-05",
+      "records": 7,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Dehradoon",
@@ -3334,20 +3928,11 @@
       "recentPrice": null,
       "minPrice": 6500,
       "maxPrice": 8500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 5,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 6950,
-      "recentPrice": 7500,
-      "minPrice": 6000,
-      "maxPrice": 7500,
-      "records": 4,
-      "topVariety": "Pomogranate",
-      "grade": "Grade C"
     },
     {
       "name": "Vikasnagar",
@@ -3356,6 +3941,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-26",
       "records": 2,
       "topVariety": null,
       "grade": "Medium"
@@ -3367,6 +3954,8 @@
       "recentPrice": null,
       "minPrice": 3600,
       "maxPrice": 3600,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-28",
       "records": 1,
       "topVariety": null,
       "grade": "Small"
@@ -3380,9 +3969,128 @@
       "recentPrice": 1600,
       "minPrice": 1600,
       "maxPrice": 1600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Roorkee",
+      "district": "Haridwar",
+      "avgPrice": 998,
+      "recentPrice": 950,
+      "minPrice": 950,
+      "maxPrice": 950,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 32,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Rishikesh",
+      "district": "Dehradoon",
+      "avgPrice": 786,
+      "recentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 26,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Sitarganj",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 1282,
+      "recentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 22,
+      "topVariety": "Potato",
+      "grade": "Local"
+    },
+    {
+      "name": "Haldwani",
+      "district": "Nanital",
+      "avgPrice": 1037,
+      "recentPrice": 800,
+      "minPrice": 800,
+      "maxPrice": 800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 26,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Vikasnagar",
+      "district": "Dehradoon",
+      "avgPrice": 650,
+      "recentPrice": 800,
+      "minPrice": 800,
+      "maxPrice": 800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 15,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Kicchha",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 377,
+      "recentPrice": 800,
+      "minPrice": 800,
+      "maxPrice": 800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 21,
+      "topVariety": "Desi",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rudrapur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 620,
+      "recentPrice": 800,
+      "minPrice": 800,
+      "maxPrice": 800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 23,
+      "topVariety": "Kufri Giriraj",
+      "grade": "Medium"
+    },
+    {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 796,
+      "recentPrice": 700,
+      "minPrice": 700,
+      "maxPrice": 700,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 25,
+      "topVariety": "Potato",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Manglaur",
+      "district": "Haridwar",
+      "avgPrice": 667,
+      "recentPrice": 600,
+      "minPrice": 600,
+      "maxPrice": 600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 15,
+      "topVariety": null,
+      "grade": "Large"
     },
     {
       "name": "Tanakpur",
@@ -3391,6 +4099,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-12",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -3402,42 +4112,11 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 19,
       "topVariety": "Potato",
       "grade": "FAQ"
-    },
-    {
-      "name": "Roorkee",
-      "district": "Haridwar",
-      "avgPrice": 998,
-      "recentPrice": 950,
-      "minPrice": 950,
-      "maxPrice": 1000,
-      "records": 32,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Rishikesh",
-      "district": "Dehradoon",
-      "avgPrice": 786,
-      "recentPrice": 900,
-      "minPrice": 500,
-      "maxPrice": 900,
-      "records": 26,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Sitarganj",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 1282,
-      "recentPrice": 900,
-      "minPrice": 700,
-      "maxPrice": 2000,
-      "records": 22,
-      "topVariety": "Potato",
-      "grade": "Local"
     },
     {
       "name": "Ramnagar",
@@ -3446,64 +4125,11 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 8,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Haldwani",
-      "district": "Nanital",
-      "avgPrice": 1037,
-      "recentPrice": 800,
-      "minPrice": 600,
-      "maxPrice": 2200,
-      "records": 26,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Vikasnagar",
-      "district": "Dehradoon",
-      "avgPrice": 650,
-      "recentPrice": 800,
-      "minPrice": 400,
-      "maxPrice": 1200,
-      "records": 15,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Kicchha",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 377,
-      "recentPrice": 800,
-      "minPrice": 300,
-      "maxPrice": 800,
-      "records": 21,
-      "topVariety": "Desi",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Rudrapur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 620,
-      "recentPrice": 800,
-      "minPrice": 400,
-      "maxPrice": 800,
-      "records": 23,
-      "topVariety": "Kufri Giriraj",
-      "grade": "Medium"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 796,
-      "recentPrice": 700,
-      "minPrice": 500,
-      "maxPrice": 1000,
-      "records": 25,
-      "topVariety": "Potato",
-      "grade": "FAQ"
     },
     {
       "name": "Bazpur",
@@ -3512,20 +4138,11 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 615,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-01",
       "records": 4,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Manglaur",
-      "district": "Haridwar",
-      "avgPrice": 667,
-      "recentPrice": 600,
-      "minPrice": 550,
-      "maxPrice": 900,
-      "records": 15,
-      "topVariety": null,
-      "grade": "Large"
     },
     {
       "name": "Dehradoon",
@@ -3534,6 +4151,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 13,
       "topVariety": "Local",
       "grade": "FAQ"
@@ -3545,6 +4164,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 12,
       "topVariety": null,
       "grade": "Grade B"
@@ -3556,6 +4177,8 @@
       "recentPrice": null,
       "minPrice": 300,
       "maxPrice": 700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 13,
       "topVariety": null,
       "grade": "Local"
@@ -3567,6 +4190,8 @@
       "recentPrice": null,
       "minPrice": 450,
       "maxPrice": 600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 11,
       "topVariety": "Local",
       "grade": "FAQ"
@@ -3578,6 +4203,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 21,
       "topVariety": null,
       "grade": "Grade A"
@@ -3589,6 +4216,8 @@
       "recentPrice": null,
       "minPrice": 300,
       "maxPrice": 300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
       "records": 1,
       "topVariety": "Potato",
       "grade": "Small"
@@ -3600,11 +4229,104 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 1296,
       "recentPrice": 2000,
-      "minPrice": 600,
-      "maxPrice": 2200,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 24,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Rishikesh",
+      "district": "Dehradoon",
+      "avgPrice": 806,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 26,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Sitarganj",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 1117,
+      "recentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 21,
+      "topVariety": "Pumpkin",
+      "grade": "Local"
+    },
+    {
+      "name": "Kicchha",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 388,
+      "recentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 26,
+      "topVariety": "Pumpkin",
+      "grade": "Local"
+    },
+    {
+      "name": "Haldwani",
+      "district": "Nanital",
+      "avgPrice": 1029,
+      "recentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 7,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Manglaur",
+      "district": "Haridwar",
+      "avgPrice": 596,
+      "recentPrice": 850,
+      "minPrice": 850,
+      "maxPrice": 850,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 14,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Roorkee",
+      "district": "Haridwar",
+      "avgPrice": 588,
+      "recentPrice": 700,
+      "minPrice": 700,
+      "maxPrice": 700,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 8,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 622,
+      "recentPrice": 600,
+      "minPrice": 600,
+      "maxPrice": 600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 16,
+      "topVariety": "Pumpkin",
+      "grade": "FAQ"
     },
     {
       "name": "Jaspur(UC)",
@@ -3613,6 +4335,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 18,
       "topVariety": null,
       "grade": "FAQ"
@@ -3624,6 +4348,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 23,
       "topVariety": "Pumpkin",
       "grade": "FAQ"
@@ -3635,6 +4361,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 7,
       "topVariety": null,
       "grade": "Local"
@@ -3646,53 +4374,11 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 14,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "Rishikesh",
-      "district": "Dehradoon",
-      "avgPrice": 806,
-      "recentPrice": 1000,
-      "minPrice": 400,
-      "maxPrice": 1450,
-      "records": 26,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Sitarganj",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 1117,
-      "recentPrice": 1000,
-      "minPrice": 850,
-      "maxPrice": 1500,
-      "records": 21,
-      "topVariety": "Pumpkin",
-      "grade": "Local"
-    },
-    {
-      "name": "Kicchha",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 388,
-      "recentPrice": 900,
-      "minPrice": 250,
-      "maxPrice": 900,
-      "records": 26,
-      "topVariety": "Pumpkin",
-      "grade": "Local"
-    },
-    {
-      "name": "Haldwani",
-      "district": "Nanital",
-      "avgPrice": 1029,
-      "recentPrice": 900,
-      "minPrice": 900,
-      "maxPrice": 1400,
-      "records": 7,
-      "topVariety": null,
-      "grade": "FAQ"
     },
     {
       "name": "Dehradoon",
@@ -3701,6 +4387,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 7,
       "topVariety": null,
       "grade": "Grade B"
@@ -3712,20 +4400,11 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-11",
       "records": 2,
       "topVariety": "Pumpkin",
       "grade": "Medium"
-    },
-    {
-      "name": "Manglaur",
-      "district": "Haridwar",
-      "avgPrice": 596,
-      "recentPrice": 850,
-      "minPrice": 450,
-      "maxPrice": 850,
-      "records": 14,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Vikasnagar",
@@ -3734,6 +4413,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 19,
       "topVariety": "Pumpkin",
       "grade": "Medium"
@@ -3745,31 +4426,11 @@
       "recentPrice": null,
       "minPrice": 450,
       "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 21,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Roorkee",
-      "district": "Haridwar",
-      "avgPrice": 588,
-      "recentPrice": 700,
-      "minPrice": 550,
-      "maxPrice": 700,
-      "records": 8,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 622,
-      "recentPrice": 600,
-      "minPrice": 500,
-      "maxPrice": 800,
-      "records": 16,
-      "topVariety": "Pumpkin",
-      "grade": "FAQ"
     },
     {
       "name": "Bhagwanpur(Naveen Mandi Sthal)",
@@ -3778,6 +4439,8 @@
       "recentPrice": null,
       "minPrice": 350,
       "maxPrice": 750,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 19,
       "topVariety": null,
       "grade": "Grade A"
@@ -3789,8 +4452,10 @@
       "district": "Haridwar",
       "avgPrice": 2594,
       "recentPrice": 2600,
-      "minPrice": 2500,
+      "minPrice": 2600,
       "maxPrice": 2600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 25,
       "topVariety": "Deshi",
       "grade": "Local"
@@ -3802,6 +4467,8 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2585,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 8,
       "topVariety": null,
       "grade": "Local"
@@ -3813,6 +4480,8 @@
       "recentPrice": null,
       "minPrice": 2440,
       "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-11",
       "records": 6,
       "topVariety": null,
       "grade": "FAQ"
@@ -3824,6 +4493,8 @@
       "recentPrice": null,
       "minPrice": 2385,
       "maxPrice": 2585,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-08",
       "records": 13,
       "topVariety": null,
       "grade": "Local"
@@ -3835,6 +4506,8 @@
       "recentPrice": null,
       "minPrice": 2380,
       "maxPrice": 2585,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 3,
       "topVariety": "Local",
       "grade": "Local"
@@ -3848,6 +4521,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-28",
       "records": 3,
       "topVariety": null,
       "grade": "Medium"
@@ -3859,6 +4534,8 @@
       "recentPrice": null,
       "minPrice": 400,
       "maxPrice": 500,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 4,
       "topVariety": null,
       "grade": "Local"
@@ -3866,37 +4543,17 @@
   ],
   "orange": [
     {
-      "name": "Rudrapur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 5000,
-      "recentPrice": null,
-      "minPrice": 5000,
-      "maxPrice": 5000,
-      "records": 1,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Haridwar Union",
       "district": "Haridwar",
       "avgPrice": 4600,
       "recentPrice": 4600,
       "minPrice": 4600,
       "maxPrice": 4600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": null,
       "grade": "Grade C"
-    },
-    {
-      "name": "Kashipur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 4538,
-      "recentPrice": null,
-      "minPrice": 2800,
-      "maxPrice": 5900,
-      "records": 4,
-      "topVariety": "Orange",
-      "grade": "Local"
     },
     {
       "name": "Manglaur",
@@ -3905,18 +4562,9 @@
       "recentPrice": 4500,
       "minPrice": 4500,
       "maxPrice": 4500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Rishikesh",
-      "district": "Dehradoon",
-      "avgPrice": 4040,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 5000,
-      "records": 5,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -3925,11 +4573,52 @@
       "district": "Nanital",
       "avgPrice": 2800,
       "recentPrice": 4000,
-      "minPrice": 2200,
+      "minPrice": 4000,
       "maxPrice": 4000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 3,
       "topVariety": null,
       "grade": "Grade A"
+    },
+    {
+      "name": "Rudrapur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 5000,
+      "recentPrice": null,
+      "minPrice": 5000,
+      "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-13",
+      "records": 1,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Kashipur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 4538,
+      "recentPrice": null,
+      "minPrice": 2800,
+      "maxPrice": 5900,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
+      "records": 4,
+      "topVariety": "Orange",
+      "grade": "Local"
+    },
+    {
+      "name": "Rishikesh",
+      "district": "Dehradoon",
+      "avgPrice": 4040,
+      "recentPrice": null,
+      "minPrice": 3500,
+      "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
+      "records": 5,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Dehradoon",
@@ -3938,6 +4627,8 @@
       "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 3,
       "topVariety": "Orange",
       "grade": "Grade B"
@@ -3949,6 +4640,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 9,
       "topVariety": "Orange",
       "grade": "Medium"
@@ -3956,12 +4649,27 @@
   ],
   "rice": [
     {
+      "name": "Gadarpur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 3477,
+      "recentPrice": 2780,
+      "minPrice": 2780,
+      "maxPrice": 2780,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 29,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Bazpur",
       "district": "Udhamsinghnagar",
       "avgPrice": 3294,
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 4225,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 15,
       "topVariety": "Common",
       "grade": "FAQ"
@@ -3973,18 +4681,9 @@
       "recentPrice": null,
       "minPrice": 2800,
       "maxPrice": 3600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 8,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Gadarpur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 3477,
-      "recentPrice": 2780,
-      "minPrice": 2200,
-      "maxPrice": 5400,
-      "records": 29,
       "topVariety": null,
       "grade": "Local"
     }
@@ -3997,6 +4696,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 3200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-05",
       "records": 9,
       "topVariety": null,
       "grade": "FAQ"
@@ -4008,6 +4709,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-30",
       "records": 4,
       "topVariety": null,
       "grade": "FAQ"
@@ -4019,6 +4722,8 @@
       "recentPrice": null,
       "minPrice": 1600,
       "maxPrice": 1600,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-28",
       "records": 1,
       "topVariety": "Peas cod",
       "grade": "FAQ"
@@ -4032,6 +4737,8 @@
       "recentPrice": null,
       "minPrice": 6400,
       "maxPrice": 6400,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-22",
       "records": 1,
       "topVariety": "Mustard",
       "grade": "FAQ"
@@ -4043,8 +4750,10 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 4280,
       "recentPrice": 5000,
-      "minPrice": 2200,
-      "maxPrice": 6000,
+      "minPrice": 5000,
+      "maxPrice": 5000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 5,
       "topVariety": null,
       "grade": "Medium"
@@ -4054,10 +4763,77 @@
       "district": "Dehradoon",
       "avgPrice": 3963,
       "recentPrice": 4500,
-      "minPrice": 2000,
-      "maxPrice": 5000,
+      "minPrice": 4500,
+      "maxPrice": 4500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 8,
       "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 3389,
+      "recentPrice": 3000,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 9,
+      "topVariety": "Green Chilly",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kicchha",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 1200,
+      "recentPrice": 1700,
+      "minPrice": 1700,
+      "maxPrice": 1700,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 5,
+      "topVariety": "Green Chilly",
+      "grade": "Local"
+    },
+    {
+      "name": "Vikasnagar",
+      "district": "Dehradoon",
+      "avgPrice": 2000,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 6,
+      "topVariety": "Green Chilly",
+      "grade": "Medium"
+    },
+    {
+      "name": "Haldwani",
+      "district": "Nanital",
+      "avgPrice": 2120,
+      "recentPrice": 1400,
+      "minPrice": 1400,
+      "maxPrice": 1400,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 10,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Manglaur",
+      "district": "Haridwar",
+      "avgPrice": 1400,
+      "recentPrice": 1300,
+      "minPrice": 1300,
+      "maxPrice": 1300,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 2,
+      "topVariety": "Green Chilly",
       "grade": "Medium"
     },
     {
@@ -4067,6 +4843,8 @@
       "recentPrice": null,
       "minPrice": 3800,
       "maxPrice": 3800,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-28",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -4078,18 +4856,9 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-04",
       "records": 3,
-      "topVariety": "Green Chilly",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 3389,
-      "recentPrice": 3000,
-      "minPrice": 1200,
-      "maxPrice": 5000,
-      "records": 9,
       "topVariety": "Green Chilly",
       "grade": "FAQ"
     },
@@ -4100,6 +4869,8 @@
       "recentPrice": null,
       "minPrice": 1650,
       "maxPrice": 2450,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-05",
       "records": 5,
       "topVariety": "Green Chilly",
       "grade": "Local"
@@ -4111,6 +4882,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
@@ -4122,31 +4895,11 @@
       "recentPrice": null,
       "minPrice": 1700,
       "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-04",
       "records": 1,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "Kicchha",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 1200,
-      "recentPrice": 1700,
-      "minPrice": 1050,
-      "maxPrice": 1700,
-      "records": 5,
-      "topVariety": "Green Chilly",
-      "grade": "Local"
-    },
-    {
-      "name": "Vikasnagar",
-      "district": "Dehradoon",
-      "avgPrice": 2000,
-      "recentPrice": 1500,
-      "minPrice": 1500,
-      "maxPrice": 2800,
-      "records": 6,
-      "topVariety": "Green Chilly",
-      "grade": "Medium"
     },
     {
       "name": "Bazpur",
@@ -4155,31 +4908,11 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Haldwani",
-      "district": "Nanital",
-      "avgPrice": 2120,
-      "recentPrice": 1400,
-      "minPrice": 1100,
-      "maxPrice": 3200,
-      "records": 10,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Manglaur",
-      "district": "Haridwar",
-      "avgPrice": 1400,
-      "recentPrice": 1300,
-      "minPrice": 1300,
-      "maxPrice": 1500,
-      "records": 2,
-      "topVariety": "Green Chilly",
-      "grade": "Medium"
     }
   ],
   "grapes": [
@@ -4190,6 +4923,8 @@
       "recentPrice": null,
       "minPrice": 8000,
       "maxPrice": 8000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 1,
       "topVariety": null,
       "grade": "Medium"
@@ -4201,6 +4936,8 @@
       "recentPrice": null,
       "minPrice": 6500,
       "maxPrice": 6600,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-01",
       "records": 2,
       "topVariety": null,
       "grade": "Grade C"
@@ -4212,6 +4949,8 @@
       "recentPrice": null,
       "minPrice": 5500,
       "maxPrice": 7500,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 4,
       "topVariety": "Green",
       "grade": "Grade B"
@@ -4223,6 +4962,8 @@
       "recentPrice": null,
       "minPrice": 5500,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-05",
       "records": 2,
       "topVariety": null,
       "grade": "Medium"
@@ -4234,6 +4975,8 @@
       "recentPrice": null,
       "minPrice": 4050,
       "maxPrice": 5600,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 6,
       "topVariety": null,
       "grade": "Medium"
@@ -4245,6 +4988,8 @@
       "recentPrice": null,
       "minPrice": 3200,
       "maxPrice": 4200,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 5,
       "topVariety": null,
       "grade": "Medium"
@@ -4256,6 +5001,8 @@
       "recentPrice": null,
       "minPrice": 3600,
       "maxPrice": 3900,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 2,
       "topVariety": null,
       "grade": "Grade A"
@@ -4267,6 +5014,8 @@
       "recentPrice": null,
       "minPrice": 3700,
       "maxPrice": 3700,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-28",
       "records": 1,
       "topVariety": "Green",
       "grade": "Medium"
@@ -4278,6 +5027,8 @@
       "recentPrice": null,
       "minPrice": 3200,
       "maxPrice": 4200,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-29",
       "records": 4,
       "topVariety": null,
       "grade": "Grade A"
@@ -4289,8 +5040,10 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 2215,
       "recentPrice": 2410,
-      "minPrice": 1908,
+      "minPrice": 2410,
       "maxPrice": 2410,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 4,
       "topVariety": "Common",
       "grade": "FAQ"
@@ -4301,7 +5054,9 @@
       "avgPrice": 2575,
       "recentPrice": 1920,
       "minPrice": 1920,
-      "maxPrice": 3410,
+      "maxPrice": 1920,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 6,
       "topVariety": null,
       "grade": "Local"
@@ -4313,6 +5068,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-30",
       "records": 4,
       "topVariety": "Common",
       "grade": "Local"
@@ -4326,6 +5083,8 @@
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 7800,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 9,
       "topVariety": null,
       "grade": "Medium"
@@ -4337,11 +5096,52 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 3353,
       "recentPrice": 4000,
-      "minPrice": 2500,
-      "maxPrice": 5000,
+      "minPrice": 4000,
+      "maxPrice": 4000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 19,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Rishikesh",
+      "district": "Dehradoon",
+      "avgPrice": 2010,
+      "recentPrice": 2000,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 29,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Haldwani",
+      "district": "Nanital",
+      "avgPrice": 1544,
+      "recentPrice": 2000,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 9,
+      "topVariety": null,
+      "grade": "Grade A"
+    },
+    {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 1720,
+      "recentPrice": 1900,
+      "minPrice": 1900,
+      "maxPrice": 1900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 20,
+      "topVariety": null,
+      "grade": "Grade C"
     },
     {
       "name": "Lakshar",
@@ -4350,6 +5150,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-29",
       "records": 1,
       "topVariety": null,
       "grade": "Grade Range-2"
@@ -4361,6 +5163,8 @@
       "recentPrice": null,
       "minPrice": 2200,
       "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-13",
       "records": 3,
       "topVariety": null,
       "grade": "Grade B"
@@ -4372,31 +5176,11 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 2700,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 3,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "Rishikesh",
-      "district": "Dehradoon",
-      "avgPrice": 2010,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2050,
-      "records": 29,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Haldwani",
-      "district": "Nanital",
-      "avgPrice": 1544,
-      "recentPrice": 2000,
-      "minPrice": 1200,
-      "maxPrice": 2000,
-      "records": 9,
-      "topVariety": null,
-      "grade": "Grade A"
     },
     {
       "name": "Vikasnagar",
@@ -4405,6 +5189,8 @@
       "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 6,
       "topVariety": "Papaya",
       "grade": "Medium"
@@ -4416,20 +5202,11 @@
       "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 15,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 1720,
-      "recentPrice": 1900,
-      "minPrice": 1600,
-      "maxPrice": 2000,
-      "records": 20,
-      "topVariety": null,
-      "grade": "Grade C"
     },
     {
       "name": "Dehradoon",
@@ -4438,6 +5215,8 @@
       "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 21,
       "topVariety": null,
       "grade": "Grade B"
@@ -4449,6 +5228,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-12",
       "records": 4,
       "topVariety": null,
       "grade": "Medium"
@@ -4456,26 +5237,30 @@
   ],
   "pointed-gourdparval": [
     {
+      "name": "Rudrapur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 3400,
+      "recentPrice": 2500,
+      "minPrice": 2500,
+      "maxPrice": 2500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 24,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Kashipur",
       "district": "Udhamsinghnagar",
       "avgPrice": 2675,
       "recentPrice": null,
       "minPrice": 2200,
       "maxPrice": 2900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 14,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Rudrapur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 3400,
-      "recentPrice": 2500,
-      "minPrice": 2200,
-      "maxPrice": 7000,
-      "records": 24,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Sitarganj",
@@ -4484,6 +5269,8 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -4491,12 +5278,66 @@
   ],
   "mousambisweet-lime": [
     {
+      "name": "Haridwar Union",
+      "district": "Haridwar",
+      "avgPrice": 4047,
+      "recentPrice": 3600,
+      "minPrice": 3600,
+      "maxPrice": 3600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 17,
+      "topVariety": "Mousambi",
+      "grade": "Grade C"
+    },
+    {
+      "name": "Rishikesh",
+      "district": "Dehradoon",
+      "avgPrice": 3500,
+      "recentPrice": 2050,
+      "minPrice": 2050,
+      "maxPrice": 2050,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 23,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Rudrapur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 5474,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 19,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Manglaur",
+      "district": "Haridwar",
+      "avgPrice": 2750,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 2,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Haldwani",
       "district": "Nanital",
       "avgPrice": 7000,
       "recentPrice": null,
       "minPrice": 7000,
       "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
@@ -4508,6 +5349,8 @@
       "recentPrice": null,
       "minPrice": 6000,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-09",
       "records": 1,
       "topVariety": null,
       "grade": "Grade B"
@@ -4519,20 +5362,11 @@
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 17,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "Haridwar Union",
-      "district": "Haridwar",
-      "avgPrice": 4047,
-      "recentPrice": 3600,
-      "minPrice": 3000,
-      "maxPrice": 5000,
-      "records": 17,
-      "topVariety": "Mousambi",
-      "grade": "Grade C"
     },
     {
       "name": "Kashipur",
@@ -4541,6 +5375,8 @@
       "recentPrice": null,
       "minPrice": 1850,
       "maxPrice": 5600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 22,
       "topVariety": "Mousambi",
       "grade": "Local"
@@ -4552,6 +5388,8 @@
       "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-13",
       "records": 3,
       "topVariety": "Mousambi",
       "grade": "Medium"
@@ -4563,6 +5401,8 @@
       "recentPrice": null,
       "minPrice": 2400,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 3,
       "topVariety": null,
       "grade": "Medium"
@@ -4574,41 +5414,10 @@
       "recentPrice": null,
       "minPrice": 2200,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
       "records": 1,
       "topVariety": "Mousambi",
-      "grade": "Medium"
-    },
-    {
-      "name": "Rishikesh",
-      "district": "Dehradoon",
-      "avgPrice": 3500,
-      "recentPrice": 2050,
-      "minPrice": 2050,
-      "maxPrice": 5500,
-      "records": 23,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Rudrapur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 5474,
-      "recentPrice": 1500,
-      "minPrice": 1500,
-      "maxPrice": 8000,
-      "records": 19,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Manglaur",
-      "district": "Haridwar",
-      "avgPrice": 2750,
-      "recentPrice": 1500,
-      "minPrice": 1500,
-      "maxPrice": 4000,
-      "records": 2,
-      "topVariety": null,
       "grade": "Medium"
     }
   ],
@@ -4620,6 +5429,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 16,
       "topVariety": null,
       "grade": "FAQ"
@@ -4631,6 +5442,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -4642,6 +5455,8 @@
       "recentPrice": null,
       "minPrice": 1650,
       "maxPrice": 1650,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-07",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -4653,6 +5468,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 2700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 8,
       "topVariety": null,
       "grade": "FAQ"
@@ -4664,6 +5481,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-07",
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
@@ -4675,6 +5494,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 9,
       "topVariety": null,
       "grade": "Grade A"
@@ -4686,6 +5507,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-10",
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
@@ -4697,6 +5520,8 @@
       "recentPrice": null,
       "minPrice": 600,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 17,
       "topVariety": null,
       "grade": "Medium"
@@ -4710,6 +5535,8 @@
       "recentPrice": null,
       "minPrice": 2200,
       "maxPrice": 3400,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 8,
       "topVariety": "Karbhuja",
       "grade": "Local"
@@ -4721,6 +5548,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 5,
       "topVariety": "Karbhuja",
       "grade": "Medium"
@@ -4732,6 +5561,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 4,
       "topVariety": null,
       "grade": "Local"
@@ -4743,6 +5574,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 2,
       "topVariety": "Karbhuja",
       "grade": "Medium"
@@ -4754,6 +5587,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 5,
       "topVariety": "Karbhuja",
       "grade": "Grade B"
@@ -4765,6 +5600,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2650,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 3,
       "topVariety": null,
       "grade": "Medium"
@@ -4776,6 +5613,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 2150,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 2,
       "topVariety": "Karbhuja",
       "grade": "Grade C"
@@ -4787,6 +5626,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 2100,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 5,
       "topVariety": null,
       "grade": "Medium"
@@ -4798,6 +5639,8 @@
       "recentPrice": null,
       "minPrice": 1050,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-10",
       "records": 11,
       "topVariety": "Karbhuja",
       "grade": "Grade B"
@@ -4809,6 +5652,8 @@
       "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 1,
       "topVariety": null,
       "grade": "Medium"
@@ -4820,6 +5665,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 2,
       "topVariety": null,
       "grade": "Grade B"
@@ -4831,6 +5678,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-09",
       "records": 2,
       "topVariety": "Karbhuja",
       "grade": "Medium"
@@ -4844,6 +5693,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
       "records": 14,
       "topVariety": null,
       "grade": "Medium"
@@ -4855,6 +5706,8 @@
       "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 20,
       "topVariety": null,
       "grade": "Local"
@@ -4866,6 +5719,8 @@
       "recentPrice": null,
       "minPrice": 1300,
       "maxPrice": 2650,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-11",
       "records": 6,
       "topVariety": null,
       "grade": "Medium"
@@ -4877,6 +5732,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-13",
       "records": 1,
       "topVariety": null,
       "grade": "Medium"
@@ -4888,6 +5745,8 @@
       "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-02",
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
@@ -4899,6 +5758,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-12",
       "records": 1,
       "topVariety": null,
       "grade": "Grade B"
@@ -4910,6 +5771,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 900,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-05",
       "records": 1,
       "topVariety": null,
       "grade": "Grade B"
@@ -4917,12 +5780,27 @@
   ],
   "guava": [
     {
+      "name": "Manglaur",
+      "district": "Haridwar",
+      "avgPrice": 3000,
+      "recentPrice": 2000,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 3,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Kotadwara",
       "district": "Garhwal (Pauri)",
       "avgPrice": 4000,
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-27",
       "records": 1,
       "topVariety": "Guava",
       "grade": "Medium"
@@ -4934,6 +5812,8 @@
       "recentPrice": null,
       "minPrice": 2200,
       "maxPrice": 5100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 18,
       "topVariety": null,
       "grade": "Local"
@@ -4945,20 +5825,11 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 2,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "Manglaur",
-      "district": "Haridwar",
-      "avgPrice": 3000,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 3500,
-      "records": 3,
-      "topVariety": null,
-      "grade": "Medium"
     }
   ],
   "pineapple": [
@@ -4969,6 +5840,8 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 15,
       "topVariety": null,
       "grade": "Grade B"
@@ -4982,6 +5855,8 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 1,
       "topVariety": null,
       "grade": "Medium"
@@ -4993,6 +5868,8 @@
       "recentPrice": null,
       "minPrice": 2200,
       "maxPrice": 2700,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 2,
       "topVariety": null,
       "grade": "Local"
@@ -5000,26 +5877,30 @@
   ],
   "lemon": [
     {
+      "name": "Rudrapur",
+      "district": "Udhamsinghnagar",
+      "avgPrice": 12000,
+      "recentPrice": 7000,
+      "minPrice": 7000,
+      "maxPrice": 7000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 8,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Kashipur",
       "district": "Udhamsinghnagar",
       "avgPrice": 7175,
       "recentPrice": null,
       "minPrice": 3350,
       "maxPrice": 11000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-04",
       "records": 2,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "Rudrapur",
-      "district": "Udhamsinghnagar",
-      "avgPrice": 12000,
-      "recentPrice": 7000,
-      "minPrice": 7000,
-      "maxPrice": 18000,
-      "records": 8,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Haridwar Union",
@@ -5028,6 +5909,8 @@
       "recentPrice": null,
       "minPrice": 4500,
       "maxPrice": 8000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
@@ -5039,6 +5922,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-06",
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
@@ -5052,6 +5937,8 @@
       "recentPrice": null,
       "minPrice": 2400,
       "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-01",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -5063,11 +5950,26 @@
       "district": "Udhamsinghnagar",
       "avgPrice": 2314,
       "recentPrice": 2500,
-      "minPrice": 900,
-      "maxPrice": 3500,
+      "minPrice": 2500,
+      "maxPrice": 2500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 22,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Manglaur",
+      "district": "Haridwar",
+      "avgPrice": 863,
+      "recentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 8,
+      "topVariety": null,
+      "grade": "Large"
     },
     {
       "name": "Kashipur",
@@ -5076,6 +5978,8 @@
       "recentPrice": null,
       "minPrice": 550,
       "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 21,
       "topVariety": null,
       "grade": "Local"
@@ -5087,6 +5991,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 13,
       "topVariety": "Sponge gourd",
       "grade": "FAQ"
@@ -5098,6 +6004,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-07",
       "records": 3,
       "topVariety": null,
       "grade": "Grade B"
@@ -5109,20 +6017,11 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 13,
       "topVariety": null,
       "grade": "Medium"
-    },
-    {
-      "name": "Manglaur",
-      "district": "Haridwar",
-      "avgPrice": 863,
-      "recentPrice": 900,
-      "minPrice": 600,
-      "maxPrice": 1000,
-      "records": 8,
-      "topVariety": null,
-      "grade": "Large"
     },
     {
       "name": "Bhagwanpur(Naveen Mandi Sthal)",
@@ -5131,6 +6030,8 @@
       "recentPrice": null,
       "minPrice": 850,
       "maxPrice": 850,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
@@ -5142,6 +6043,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-03",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -5153,6 +6056,8 @@
       "recentPrice": null,
       "minPrice": 740,
       "maxPrice": 800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 20,
       "topVariety": "Sponge gourd",
       "grade": "Local"
@@ -5166,6 +6071,8 @@
       "recentPrice": null,
       "minPrice": 4500,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-06",
       "records": 1,
       "topVariety": null,
       "grade": "Grade B"
@@ -5179,6 +6086,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 17,
       "topVariety": null,
       "grade": "Medium"
@@ -5190,6 +6099,8 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 17,
       "topVariety": "Langra",
       "grade": "Medium"
@@ -5201,6 +6112,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 18,
       "topVariety": null,
       "grade": "Grade B"
@@ -5212,6 +6125,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 17,
       "topVariety": null,
       "grade": "Medium"
@@ -5223,6 +6138,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 8,
       "topVariety": null,
       "grade": "Local"
@@ -5234,6 +6151,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 60,
       "topVariety": "Dusheri",
       "grade": "Medium"
@@ -5245,6 +6164,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 9000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 30,
       "topVariety": "Dusheri",
       "grade": "Grade C"
@@ -5256,6 +6177,8 @@
       "recentPrice": null,
       "minPrice": 1450,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 15,
       "topVariety": null,
       "grade": "Local"
@@ -5267,6 +6190,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2452,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 17,
       "topVariety": null,
       "grade": "Grade A"
@@ -5278,6 +6203,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 15,
       "topVariety": null,
       "grade": "Grade A"
@@ -5289,6 +6216,8 @@
       "recentPrice": null,
       "minPrice": 1700,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 7,
       "topVariety": null,
       "grade": "Grade B"
@@ -5300,6 +6229,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 17,
       "topVariety": "Dusheri",
       "grade": "Local"
@@ -5311,6 +6242,8 @@
       "recentPrice": null,
       "minPrice": 1673,
       "maxPrice": 1960,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-11",
       "records": 3,
       "topVariety": null,
       "grade": "Grade A"
@@ -5322,6 +6255,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 12,
       "topVariety": null,
       "grade": "Medium"
@@ -5333,6 +6268,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 4100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 20,
       "topVariety": null,
       "grade": "Local"
@@ -5344,6 +6281,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 20,
       "topVariety": null,
       "grade": "Local"
@@ -5355,6 +6294,8 @@
       "recentPrice": null,
       "minPrice": 550,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 16,
       "topVariety": null,
       "grade": "Grade B"
@@ -5368,6 +6309,8 @@
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -5379,6 +6322,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-20",
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
@@ -5392,6 +6337,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 1,
       "topVariety": null,
       "grade": "Medium"
@@ -5403,6 +6350,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 1,
       "topVariety": "Litchi",
       "grade": "Medium"
@@ -5416,6 +6365,8 @@
       "recentPrice": null,
       "minPrice": 1200,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 1,
       "topVariety": null,
       "grade": "Medium"
@@ -5429,6 +6380,8 @@
       "recentPrice": null,
       "minPrice": 6500,
       "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-30",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -5442,6 +6395,8 @@
       "recentPrice": null,
       "minPrice": 9900,
       "maxPrice": 9900,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-30",
       "records": 1,
       "topVariety": null,
       "grade": "Local"
@@ -5453,6 +6408,8 @@
       "recentPrice": null,
       "minPrice": 7104,
       "maxPrice": 7104,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -5466,6 +6423,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-08",
       "records": 2,
       "topVariety": null,
       "grade": "Grade B"
@@ -5479,6 +6438,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
@@ -5492,6 +6453,8 @@
       "recentPrice": null,
       "minPrice": 6487,
       "maxPrice": 6487,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -5505,6 +6468,8 @@
       "recentPrice": null,
       "minPrice": 6700,
       "maxPrice": 6700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -5518,6 +6483,8 @@
       "recentPrice": null,
       "minPrice": 10980,
       "maxPrice": 10980,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-19",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -5531,6 +6498,8 @@
       "recentPrice": 3800,
       "minPrice": 3800,
       "maxPrice": 3800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Basmati",
       "grade": "Local"
