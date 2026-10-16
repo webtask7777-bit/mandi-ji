@@ -29,6 +29,30 @@
       "volume": 2,
       "days": 2,
       "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 2020,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 3300,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -119,6 +143,38 @@
       "mandis": 1,
       "minPrice": 1500,
       "maxPrice": 1500
+    },
+    {
+      "date": "2026-08-19",
+      "market": 2020,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2020,
+      "maxPrice": 2020
+    },
+    {
+      "date": "2026-09-01",
+      "market": 3200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3200,
+      "maxPrice": 3200
+    },
+    {
+      "date": "2026-09-28",
+      "market": 3400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2400,
+      "maxPrice": 4400
+    },
+    {
+      "date": "2026-10-15",
+      "market": 3500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2800,
+      "maxPrice": 4200
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -126,14 +182,26 @@
     {
       "district": "Patiala",
       "nameHi": "Patiala",
-      "avgPrice": 800,
-      "records": 9
+      "avgPrice": 922,
+      "records": 10
     },
     {
       "district": "Fazilka",
       "nameHi": "Fazilka",
       "avgPrice": 1429,
       "records": 7
+    },
+    {
+      "district": "Jalandhar",
+      "nameHi": "Jalandhar",
+      "avgPrice": 3450,
+      "records": 2
+    },
+    {
+      "district": "Bhatinda",
+      "nameHi": "Bhatinda",
+      "avgPrice": 3200,
+      "records": 1
     }
   ]
 }

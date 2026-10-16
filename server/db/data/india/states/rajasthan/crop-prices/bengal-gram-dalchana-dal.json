@@ -21,6 +21,14 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 5533,
+      "volume": 4,
+      "days": 4,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -39,15 +47,53 @@
       "mandis": 1,
       "minPrice": 4751,
       "maxPrice": 4751
+    },
+    {
+      "date": "2026-08-06",
+      "market": 5800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5500,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-08-11",
+      "market": 5800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5700,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-08-12",
+      "market": 4800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4600,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-08-23",
+      "market": 5600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5200,
+      "maxPrice": 5901
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
+      "district": "Nagaur",
+      "nameHi": "Nagaur",
+      "avgPrice": 5467,
+      "records": 3
+    },
+    {
       "district": "Ajmer",
       "nameHi": "Ajmer",
-      "avgPrice": 4875,
-      "records": 1
+      "avgPrice": 5238,
+      "records": 2
     },
     {
       "district": "Bikaner",

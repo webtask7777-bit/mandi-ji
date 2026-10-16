@@ -4,9 +4,9 @@
     "name": "Banana",
     "nameHi": "केला",
     "emoji": "🍌",
-    "totalRecords": 230,
-    "avgPrice": 5046,
-    "minPrice": 4500,
+    "totalRecords": 488,
+    "avgPrice": 5128,
+    "minPrice": 4000,
     "maxPrice": 11000,
     "varieties": [
       "Other",
@@ -41,16 +41,64 @@
     ]
   },
   {
-    "id": "gingergreen",
-    "name": "Ginger(Green)",
-    "nameHi": "अदरक",
-    "emoji": "🫐",
-    "totalRecords": 189,
-    "avgPrice": 5210,
-    "minPrice": 3500,
-    "maxPrice": 9000,
+    "id": "arhar-daltur-dal",
+    "name": "Arhar Dal(Tur Dal)",
+    "nameHi": "Arhar Dal(Tur Dal)",
+    "emoji": "🫘",
+    "totalRecords": 441,
+    "avgPrice": 14513,
+    "minPrice": 12500,
+    "maxPrice": 16000,
     "varieties": [
-      "Green Ginger"
+      "Arhar Dal(Tur)"
+    ]
+  },
+  {
+    "id": "dry-chillies",
+    "name": "Dry Chillies",
+    "nameHi": "सूखी मिर्च",
+    "emoji": "🌶️",
+    "totalRecords": 441,
+    "avgPrice": 24915,
+    "minPrice": 14000,
+    "maxPrice": 29000,
+    "varieties": [
+      "Dry Chillies",
+      "Other",
+      "Dry"
+    ]
+  },
+  {
+    "id": "bengal-gramgramwhole",
+    "name": "Bengal Gram(Gram)(Whole)",
+    "nameHi": "चना",
+    "emoji": "🫘",
+    "totalRecords": 405,
+    "avgPrice": 8596,
+    "minPrice": 500,
+    "maxPrice": 12000,
+    "varieties": [
+      "Desi (Whole)",
+      "Other"
+    ],
+    "msp": 5875,
+    "mspSeason": "रबी 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2173567",
+    "sowingMonths": [
+      9,
+      10
+    ],
+    "growingMonths": [
+      11,
+      0
+    ],
+    "harvestMonths": [
+      2,
+      3
+    ],
+    "peakMonths": [
+      3,
+      4
     ]
   },
   {
@@ -58,8 +106,8 @@
     "name": "Black Gram Dal(Urd Dal)",
     "nameHi": "उड़द दाल",
     "emoji": "🫘",
-    "totalRecords": 187,
-    "avgPrice": 13560,
+    "totalRecords": 393,
+    "avgPrice": 13594,
     "minPrice": 10500,
     "maxPrice": 140000,
     "varieties": [
@@ -68,31 +116,202 @@
     ]
   },
   {
-    "id": "dry-chillies",
-    "name": "Dry Chillies",
-    "nameHi": "सूखी मिर्च",
-    "emoji": "🌶️",
-    "totalRecords": 184,
-    "avgPrice": 23367,
-    "minPrice": 14000,
-    "maxPrice": 28000,
+    "id": "green-gram-dalmoong-dal",
+    "name": "Green Gram Dal(Moong Dal)",
+    "nameHi": "Green Gram Dal(Moong Dal)",
+    "emoji": "🫘",
+    "totalRecords": 345,
+    "avgPrice": 14367,
+    "minPrice": 12000,
+    "maxPrice": 15000,
     "varieties": [
-      "Dry Chillies",
-      "Other",
-      "Dry"
+      "Green Gram Dal"
     ]
   },
   {
-    "id": "arhar-daltur-dal",
-    "name": "Arhar Dal(Tur Dal)",
-    "nameHi": "Arhar Dal(Tur Dal)",
-    "emoji": "🫘",
-    "totalRecords": 183,
-    "avgPrice": 14322,
-    "minPrice": 12500,
-    "maxPrice": 16000,
+    "id": "rice",
+    "name": "Rice",
+    "nameHi": "चावल",
+    "emoji": "🌾",
+    "totalRecords": 343,
+    "avgPrice": 5100,
+    "minPrice": 5100,
+    "maxPrice": 5100,
     "varieties": [
-      "Arhar Dal(Tur)"
+      "Other",
+      "Masuri"
+    ],
+    "sowingMonths": [
+      5,
+      6
+    ],
+    "growingMonths": [
+      7,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      10,
+      11
+    ],
+    "peakMonths": [
+      11,
+      0
+    ]
+  },
+  {
+    "id": "potato",
+    "name": "Potato",
+    "nameHi": "आलू",
+    "emoji": "🥔",
+    "totalRecords": 341,
+    "avgPrice": 2711,
+    "minPrice": 1400,
+    "maxPrice": 5000,
+    "varieties": [
+      "Other"
+    ],
+    "sowingMonths": [
+      9,
+      10
+    ],
+    "growingMonths": [
+      11,
+      0,
+      1
+    ],
+    "harvestMonths": [
+      1,
+      2,
+      3
+    ],
+    "peakMonths": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "bengal-gram-dalchana-dal",
+    "name": "Bengal Gram Dal(Chana Dal)",
+    "nameHi": "Bengal Gram Dal(Chana Dal)",
+    "emoji": "🫘",
+    "totalRecords": 331,
+    "avgPrice": 11202,
+    "minPrice": 1050,
+    "maxPrice": 12000,
+    "varieties": [
+      "Bengal Gram Dal"
+    ]
+  },
+  {
+    "id": "gingergreen",
+    "name": "Ginger(Green)",
+    "nameHi": "अदरक",
+    "emoji": "🫐",
+    "totalRecords": 291,
+    "avgPrice": 6336,
+    "minPrice": 3500,
+    "maxPrice": 10000,
+    "varieties": [
+      "Green Ginger"
+    ]
+  },
+  {
+    "id": "masur-dal",
+    "name": "Masur Dal",
+    "nameHi": "मसूर दाल",
+    "emoji": "🌱",
+    "totalRecords": 287,
+    "avgPrice": 10636,
+    "minPrice": 9000,
+    "maxPrice": 12000,
+    "varieties": [
+      "Masur Dal",
+      "Other"
+    ]
+  },
+  {
+    "id": "onion",
+    "name": "Onion",
+    "nameHi": "प्याज",
+    "emoji": "🧅",
+    "totalRecords": 278,
+    "avgPrice": 5909,
+    "minPrice": 2300,
+    "maxPrice": 8000,
+    "varieties": [
+      "Onion",
+      "Other",
+      "Red",
+      "Big"
+    ],
+    "sowingMonths": [
+      10,
+      11
+    ],
+    "growingMonths": [
+      0,
+      1,
+      2
+    ],
+    "harvestMonths": [
+      3,
+      4,
+      5
+    ],
+    "peakMonths": [
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "paddycommon",
+    "name": "Paddy(Common)",
+    "nameHi": "धान",
+    "emoji": "🌾",
+    "totalRecords": 277,
+    "avgPrice": 2996,
+    "minPrice": 2875,
+    "maxPrice": 3000,
+    "varieties": [
+      "Other"
+    ],
+    "msp": 2441,
+    "mspSeason": "खरीफ 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
+    "sowingMonths": [
+      5,
+      6
+    ],
+    "growingMonths": [
+      7,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      10,
+      11
+    ],
+    "peakMonths": [
+      11,
+      0,
+      1
+    ]
+  },
+  {
+    "id": "pineapple",
+    "name": "Pineapple",
+    "nameHi": "अनानास",
+    "emoji": "🍎",
+    "totalRecords": 257,
+    "avgPrice": 2921,
+    "minPrice": 2000,
+    "maxPrice": 5000,
+    "varieties": [
+      "Pine Apple",
+      "Other"
     ]
   },
   {
@@ -100,10 +319,10 @@
     "name": "Cabbage",
     "nameHi": "पत्तागोभी",
     "emoji": "🥬",
-    "totalRecords": 171,
-    "avgPrice": 2575,
+    "totalRecords": 223,
+    "avgPrice": 2964,
     "minPrice": 1500,
-    "maxPrice": 4000,
+    "maxPrice": 6000,
     "varieties": [
       "Cabbage",
       "Other"
@@ -164,135 +383,13 @@
     ]
   },
   {
-    "id": "bengal-gramgramwhole",
-    "name": "Bengal Gram(Gram)(Whole)",
-    "nameHi": "चना",
-    "emoji": "🫘",
-    "totalRecords": 149,
-    "avgPrice": 8609,
-    "minPrice": 7000,
-    "maxPrice": 12000,
-    "varieties": [
-      "Desi (Whole)",
-      "Other"
-    ],
-    "msp": 5875,
-    "mspSeason": "रबी 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2173567",
-    "sowingMonths": [
-      9,
-      10
-    ],
-    "growingMonths": [
-      11,
-      0
-    ],
-    "harvestMonths": [
-      2,
-      3
-    ],
-    "peakMonths": [
-      3,
-      4
-    ]
-  },
-  {
-    "id": "bengal-gram-dalchana-dal",
-    "name": "Bengal Gram Dal(Chana Dal)",
-    "nameHi": "Bengal Gram Dal(Chana Dal)",
-    "emoji": "🫘",
-    "totalRecords": 126,
-    "avgPrice": 10883,
-    "minPrice": 1050,
-    "maxPrice": 12000,
-    "varieties": [
-      "Bengal Gram Dal"
-    ]
-  },
-  {
-    "id": "green-gram-dalmoong-dal",
-    "name": "Green Gram Dal(Moong Dal)",
-    "nameHi": "Green Gram Dal(Moong Dal)",
-    "emoji": "🫘",
-    "totalRecords": 89,
-    "avgPrice": 14143,
-    "minPrice": 12000,
-    "maxPrice": 15000,
-    "varieties": [
-      "Green Gram Dal"
-    ]
-  },
-  {
-    "id": "potato",
-    "name": "Potato",
-    "nameHi": "आलू",
-    "emoji": "🥔",
-    "totalRecords": 85,
-    "avgPrice": 2451,
-    "minPrice": 1500,
-    "maxPrice": 3000,
-    "varieties": [
-      "Other"
-    ],
-    "sowingMonths": [
-      9,
-      10
-    ],
-    "growingMonths": [
-      11,
-      0,
-      1
-    ],
-    "harvestMonths": [
-      1,
-      2,
-      3
-    ],
-    "peakMonths": [
-      2,
-      3,
-      4
-    ]
-  },
-  {
-    "id": "rice",
-    "name": "Rice",
-    "nameHi": "चावल",
-    "emoji": "🌾",
-    "totalRecords": 84,
-    "avgPrice": 5100,
-    "minPrice": 5100,
-    "maxPrice": 5100,
-    "varieties": [
-      "Other",
-      "Masuri"
-    ],
-    "sowingMonths": [
-      5,
-      6
-    ],
-    "growingMonths": [
-      7,
-      8,
-      9
-    ],
-    "harvestMonths": [
-      10,
-      11
-    ],
-    "peakMonths": [
-      11,
-      0
-    ]
-  },
-  {
     "id": "black-gramurd-beanswhole",
     "name": "Black Gram(Urd Beans)(Whole)",
     "nameHi": "सेम",
     "emoji": "🫘",
-    "totalRecords": 46,
-    "avgPrice": 13870,
-    "minPrice": 13000,
+    "totalRecords": 96,
+    "avgPrice": 14203,
+    "minPrice": 8500,
     "maxPrice": 15000,
     "varieties": [
       "Other",
@@ -303,108 +400,13 @@
     "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
   },
   {
-    "id": "pineapple",
-    "name": "Pineapple",
-    "nameHi": "अनानास",
-    "emoji": "🍎",
-    "totalRecords": 45,
-    "avgPrice": 2706,
-    "minPrice": 2000,
-    "maxPrice": 3500,
-    "varieties": [
-      "Pine Apple",
-      "Other"
-    ]
-  },
-  {
-    "id": "masur-dal",
-    "name": "Masur Dal",
-    "nameHi": "मसूर दाल",
-    "emoji": "🌱",
-    "totalRecords": 30,
-    "avgPrice": 10558,
-    "minPrice": 9000,
-    "maxPrice": 11000,
-    "varieties": [
-      "Masur Dal"
-    ]
-  },
-  {
-    "id": "onion",
-    "name": "Onion",
-    "nameHi": "प्याज",
-    "emoji": "🧅",
-    "totalRecords": 22,
-    "avgPrice": 3118,
-    "minPrice": 2300,
-    "maxPrice": 7000,
-    "varieties": [
-      "Onion",
-      "Other",
-      "Red"
-    ],
-    "sowingMonths": [
-      10,
-      11
-    ],
-    "growingMonths": [
-      0,
-      1,
-      2
-    ],
-    "harvestMonths": [
-      3,
-      4,
-      5
-    ],
-    "peakMonths": [
-      4,
-      5,
-      6
-    ]
-  },
-  {
-    "id": "paddycommon",
-    "name": "Paddy(Common)",
-    "nameHi": "धान",
-    "emoji": "🌾",
-    "totalRecords": 18,
-    "avgPrice": 2944,
-    "minPrice": 2875,
-    "maxPrice": 3000,
-    "varieties": [
-      "Other"
-    ],
-    "msp": 2441,
-    "mspSeason": "खरीफ 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
-    "sowingMonths": [
-      5,
-      6
-    ],
-    "growingMonths": [
-      7,
-      8,
-      9
-    ],
-    "harvestMonths": [
-      10,
-      11
-    ],
-    "peakMonths": [
-      11,
-      0,
-      1
-    ]
-  },
-  {
     "id": "orange",
     "name": "Orange",
     "nameHi": "संतरा",
     "emoji": "🍊",
-    "totalRecords": 13,
-    "avgPrice": 15808,
-    "minPrice": 15000,
+    "totalRecords": 14,
+    "avgPrice": 15018,
+    "minPrice": 4500,
     "maxPrice": 17000,
     "varieties": [
       "Other"
@@ -431,10 +433,10 @@
     "name": "Ginger(Dry)",
     "nameHi": "सोंठ",
     "emoji": "🫐",
-    "totalRecords": 3,
-    "avgPrice": 5417,
+    "totalRecords": 5,
+    "avgPrice": 6350,
     "minPrice": 4500,
-    "maxPrice": 7500,
+    "maxPrice": 8500,
     "varieties": [
       "Vegitable-fresh"
     ]

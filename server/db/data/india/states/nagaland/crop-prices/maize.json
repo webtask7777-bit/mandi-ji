@@ -1,0 +1,62 @@
+{
+  "crop": {
+    "id": "maize",
+    "name": "Maize",
+    "nameHi": "मक्का",
+    "emoji": "🌽",
+    "msp": 2410,
+    "mspSeason": "खरीफ 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
+  },
+  "history": [
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 3000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 2250,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    }
+  ],
+  "dailyHistory": [
+    {
+      "date": "2026-07-27",
+      "market": 3000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-09-09",
+      "market": 2250,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2250,
+      "maxPrice": 2250
+    }
+  ],
+  "lastUpdated": "2026-10-16T07:04:32.377Z",
+  "districtBreakdown": [
+    {
+      "district": "Tsemenyu",
+      "nameHi": "Tsemenyu",
+      "avgPrice": 3000,
+      "records": 1
+    },
+    {
+      "district": "Zunheboto",
+      "nameHi": "Zunheboto",
+      "avgPrice": 2250,
+      "records": 1
+    }
+  ]
+}

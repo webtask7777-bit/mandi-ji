@@ -34,6 +34,24 @@
       "days": 1,
       "mandis": 1,
       "msp": 2150
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2100,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1,
+      "msp": 2150
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2301,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1,
+      "msp": 2150
     }
   ],
   "dailyHistory": [
@@ -68,10 +86,32 @@
       "mandis": 1,
       "minPrice": 2182,
       "maxPrice": 2182
+    },
+    {
+      "date": "2026-07-21",
+      "market": 2100,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2100,
+      "maxPrice": 2100
+    },
+    {
+      "date": "2026-10-03",
+      "market": 2301,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2212,
+      "maxPrice": 2310
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Hissar",
+      "nameHi": "Hissar",
+      "avgPrice": 2161,
+      "records": 3
+    },
     {
       "district": "Bhiwani",
       "nameHi": "Bhiwani",
@@ -79,15 +119,15 @@
       "records": 2
     },
     {
-      "district": "Hissar",
-      "nameHi": "Hissar",
-      "avgPrice": 2091,
-      "records": 2
-    },
-    {
       "district": "Fatehabad",
       "nameHi": "Fatehabad",
       "avgPrice": 1900,
+      "records": 1
+    },
+    {
+      "district": "Gurgaon",
+      "nameHi": "Gurgaon",
+      "avgPrice": 2100,
       "records": 1
     }
   ]

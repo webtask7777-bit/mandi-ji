@@ -15,11 +15,19 @@
       "mandis": 1
     },
     {
+      "month": "08",
+      "date": "2026-08",
+      "market": 5450,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
       "month": "10",
       "date": "2026-10",
       "market": 2800,
-      "volume": 1,
-      "days": 1,
+      "volume": 2,
+      "days": 2,
       "mandis": 1
     }
   ],
@@ -33,6 +41,22 @@
       "maxPrice": 5500
     },
     {
+      "date": "2026-08-25",
+      "market": 5450,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4950,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-10-14",
+      "market": 2800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2600,
+      "maxPrice": 3000
+    },
+    {
       "date": "2026-10-16",
       "market": 2800,
       "volume": 1,
@@ -44,15 +68,21 @@
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
+      "district": "Aurangabad",
+      "nameHi": "Aurangabad",
+      "avgPrice": 2800,
+      "records": 2
+    },
+    {
       "district": "Kishanganj",
       "nameHi": "Kishanganj",
       "avgPrice": 5500,
       "records": 1
     },
     {
-      "district": "Aurangabad",
-      "nameHi": "Aurangabad",
-      "avgPrice": 2800,
+      "district": "Madhubani",
+      "nameHi": "Madhubani",
+      "avgPrice": 5450,
       "records": 1
     }
   ]

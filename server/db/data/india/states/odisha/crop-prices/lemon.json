@@ -13,6 +13,22 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 3500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 9000,
+      "volume": 3,
+      "days": 3,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -23,6 +39,38 @@
       "mandis": 1,
       "minPrice": 7000,
       "maxPrice": 7000
+    },
+    {
+      "date": "2026-08-11",
+      "market": 3500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3500,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-09-18",
+      "market": 5000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-09-25",
+      "market": 17400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 16500,
+      "maxPrice": 18200
+    },
+    {
+      "date": "2026-09-26",
+      "market": 8600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 8000,
+      "maxPrice": 9000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -30,8 +78,14 @@
     {
       "district": "Puri",
       "nameHi": "Puri",
-      "avgPrice": 7000,
-      "records": 1
+      "avgPrice": 5167,
+      "records": 3
+    },
+    {
+      "district": "Angul",
+      "nameHi": "Angul",
+      "avgPrice": 13000,
+      "records": 2
     }
   ]
 }

@@ -37,6 +37,22 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 5800,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 6000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -311,21 +327,49 @@
       "mandis": 1,
       "minPrice": 6022,
       "maxPrice": 6022
+    },
+    {
+      "date": "2026-08-01",
+      "market": 5800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5800,
+      "maxPrice": 5800
+    },
+    {
+      "date": "2026-09-18",
+      "market": 6000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 6000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
-      "district": "Karimnagar (तेलंगाना)",
-      "nameHi": "Karimnagar (तेलंगाना)",
-      "avgPrice": 5814,
-      "records": 34
+      "district": "Jagtial (तेलंगाना)",
+      "nameHi": "Jagtial (तेलंगाना)",
+      "avgPrice": 5983,
+      "records": 30
     },
     {
       "district": "Chikkaballapur (कर्नाटक)",
       "nameHi": "Chikkaballapur (कर्नाटक)",
       "avgPrice": 4228,
       "records": 9
+    },
+    {
+      "district": "Karimnagar (तेलंगाना)",
+      "nameHi": "Karimnagar (तेलंगाना)",
+      "avgPrice": 4547,
+      "records": 4
+    },
+    {
+      "district": "Hassan (कर्नाटक)",
+      "nameHi": "Hassan (कर्नाटक)",
+      "avgPrice": 5900,
+      "records": 2
     }
   ]
 }

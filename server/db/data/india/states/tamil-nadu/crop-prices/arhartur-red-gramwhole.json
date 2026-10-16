@@ -48,6 +48,15 @@
       "volume": 9,
       "days": 5,
       "mandis": 5
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5625,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2,
+      "msp": 8450
     }
   ],
   "dailyHistory": [
@@ -780,6 +789,14 @@
       "maxPrice": 8000
     },
     {
+      "date": "2026-03-16",
+      "market": 4400,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 4000,
+      "maxPrice": 5000
+    },
+    {
       "date": "2026-03-22",
       "market": 4750,
       "volume": 6,
@@ -804,12 +821,52 @@
       "maxPrice": 8000
     },
     {
+      "date": "2026-03-28",
+      "market": 6000,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 4500,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-03-29",
+      "market": 4500,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 4000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-03-30",
+      "market": 6000,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 4000,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-04-01",
+      "market": 4750,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 4000,
+      "maxPrice": 6000
+    },
+    {
       "date": "2026-04-09",
       "market": 4500,
       "volume": 3,
       "mandis": 3,
       "minPrice": 4000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-10-14",
+      "market": 5250,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 5500
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -865,8 +922,8 @@
     {
       "district": "Thirupathur",
       "nameHi": "Thirupathur",
-      "avgPrice": 5378,
-      "records": 94
+      "avgPrice": 5384,
+      "records": 95
     },
     {
       "district": "Coimbatore",
@@ -881,15 +938,27 @@
       "records": 10
     },
     {
+      "district": "Tiruvallur",
+      "nameHi": "Tiruvallur",
+      "avgPrice": 5000,
+      "records": 2
+    },
+    {
+      "district": "The Nilgiris",
+      "nameHi": "The Nilgiris",
+      "avgPrice": 4950,
+      "records": 2
+    },
+    {
       "district": "Virudhunagar",
       "nameHi": "Virudhunagar",
       "avgPrice": 5500,
       "records": 1
     },
     {
-      "district": "Tiruvallur",
-      "nameHi": "Tiruvallur",
-      "avgPrice": 5000,
+      "district": "Pudukkottai",
+      "nameHi": "Pudukkottai",
+      "avgPrice": 5500,
       "records": 1
     }
   ]

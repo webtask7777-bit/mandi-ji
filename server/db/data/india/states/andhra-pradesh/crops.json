@@ -1,13 +1,97 @@
 [
   {
+    "id": "paddycommon",
+    "name": "Paddy(Common)",
+    "nameHi": "धान",
+    "emoji": "🌾",
+    "totalRecords": 8257,
+    "avgPrice": 2464,
+    "minPrice": 244,
+    "maxPrice": 24500,
+    "varieties": [
+      "Nellore Sanna",
+      "Common",
+      "B P T",
+      "1001",
+      "MTU-1010",
+      "1121",
+      "Sona",
+      "Paddy",
+      "Other",
+      "Samba Masuri"
+    ],
+    "msp": 2441,
+    "mspSeason": "खरीफ 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
+    "sowingMonths": [
+      5,
+      6
+    ],
+    "growingMonths": [
+      7,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      10,
+      11
+    ],
+    "peakMonths": [
+      11,
+      0,
+      1
+    ]
+  },
+  {
+    "id": "maize",
+    "name": "Maize",
+    "nameHi": "मक्का",
+    "emoji": "🌽",
+    "totalRecords": 3261,
+    "avgPrice": 2556,
+    "minPrice": 800,
+    "maxPrice": 4820,
+    "varieties": [
+      "Local",
+      "Hybrid/Local",
+      "Hybrid",
+      "Fine",
+      "Other",
+      "Hybrid Red (Cattle Feed)",
+      "Medium",
+      "Deshi White",
+      "Deshi Red",
+      "H.Y.V."
+    ],
+    "msp": 2410,
+    "mspSeason": "खरीफ 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
+    "sowingMonths": [
+      5,
+      6
+    ],
+    "growingMonths": [
+      7,
+      8
+    ],
+    "harvestMonths": [
+      9,
+      10
+    ],
+    "peakMonths": [
+      10,
+      11
+    ]
+  },
+  {
     "id": "banana",
     "name": "Banana",
     "nameHi": "केला",
     "emoji": "🍌",
-    "totalRecords": 667,
-    "avgPrice": 2677,
-    "minPrice": 800,
-    "maxPrice": 4900,
+    "totalRecords": 1588,
+    "avgPrice": 2528,
+    "minPrice": 725,
+    "maxPrice": 5200,
     "varieties": [
       "Banana - Ripe",
       "Amruthapani",
@@ -47,25 +131,89 @@
     ]
   },
   {
-    "id": "dry-chillies",
-    "name": "Dry Chillies",
-    "nameHi": "सूखी मिर्च",
-    "emoji": "🌶️",
-    "totalRecords": 385,
-    "avgPrice": 16160,
-    "minPrice": 1099,
-    "maxPrice": 40131,
+    "id": "groundnut",
+    "name": "Groundnut",
+    "nameHi": "मूँगफली",
+    "emoji": "🥜",
+    "totalRecords": 1519,
+    "avgPrice": 7164,
+    "minPrice": 640,
+    "maxPrice": 15000,
     "varieties": [
-      "Guntur",
-      "Red",
-      "Red New",
-      "Red Top",
-      "White",
+      "Bold Kernel",
       "Local",
-      "Dry",
-      "1st Sort",
-      "Dry Chillies",
+      "Big (With Shell)",
+      "F.A.Q",
+      "M-13",
+      "Balli/Habbu",
+      "Bold",
+      "Groundnut seed",
       "Other"
+    ],
+    "msp": 7517,
+    "mspSeason": "खरीफ 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
+    "sowingMonths": [
+      5,
+      6
+    ],
+    "growingMonths": [
+      7,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      10,
+      11
+    ],
+    "peakMonths": [
+      11,
+      0
+    ]
+  },
+  {
+    "id": "cotton",
+    "name": "Cotton",
+    "nameHi": "कपास",
+    "emoji": "☁️",
+    "totalRecords": 1407,
+    "avgPrice": 8215,
+    "minPrice": 700,
+    "maxPrice": 22000,
+    "varieties": [
+      "Bramha",
+      "Bunny",
+      "Desi",
+      "170-C2 (Ginned)",
+      "MCU 5",
+      "Local",
+      "Cotton (Ginned)",
+      "Cotton (Unginned)",
+      "Other",
+      "MECH-1"
+    ],
+    "msp": 8267,
+    "mspSeason": "खरीफ 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
+    "sowingMonths": [
+      4,
+      5
+    ],
+    "growingMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      10,
+      11,
+      0
+    ],
+    "peakMonths": [
+      11,
+      0,
+      1
     ]
   },
   {
@@ -73,10 +221,10 @@
     "name": "Tomato",
     "nameHi": "टमाटर",
     "emoji": "🍅",
-    "totalRecords": 271,
-    "avgPrice": 1484,
-    "minPrice": 700,
-    "maxPrice": 3400,
+    "totalRecords": 1260,
+    "avgPrice": 1638,
+    "minPrice": 150,
+    "maxPrice": 15000,
     "varieties": [
       "Tomato",
       "Local",
@@ -111,16 +259,155 @@
     ]
   },
   {
-    "id": "castor-seed",
-    "name": "Castor Seed",
-    "nameHi": "Castor Seed",
-    "emoji": "🌱",
-    "totalRecords": 187,
-    "avgPrice": 6023,
-    "minPrice": 2891,
-    "maxPrice": 6330,
+    "id": "bengal-gramgramwhole",
+    "name": "Bengal Gram(Gram)(Whole)",
+    "nameHi": "चना",
+    "emoji": "🫘",
+    "totalRecords": 1153,
+    "avgPrice": 5966,
+    "minPrice": 600,
+    "maxPrice": 9000,
     "varieties": [
-      "Castor seed",
+      "Desi (Whole)",
+      "Jawari/Local",
+      "Gulabi",
+      "Average (Whole)",
+      "Other",
+      "Bengal Gram (Split)",
+      "Good (whole)"
+    ],
+    "msp": 5875,
+    "mspSeason": "रबी 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2173567",
+    "sowingMonths": [
+      9,
+      10
+    ],
+    "growingMonths": [
+      11,
+      0
+    ],
+    "harvestMonths": [
+      2,
+      3
+    ],
+    "peakMonths": [
+      3,
+      4
+    ]
+  },
+  {
+    "id": "dry-chillies",
+    "name": "Dry Chillies",
+    "nameHi": "सूखी मिर्च",
+    "emoji": "🌶️",
+    "totalRecords": 991,
+    "avgPrice": 19289,
+    "minPrice": 1099,
+    "maxPrice": 50000,
+    "varieties": [
+      "Guntur",
+      "Red",
+      "Red New",
+      "Red Top",
+      "White",
+      "Local",
+      "Dry",
+      "1st Sort",
+      "Dry Chillies",
+      "Other"
+    ]
+  },
+  {
+    "id": "black-gramurd-beanswhole",
+    "name": "Black Gram(Urd Beans)(Whole)",
+    "nameHi": "सेम",
+    "emoji": "🫘",
+    "totalRecords": 868,
+    "avgPrice": 8545,
+    "minPrice": 944,
+    "maxPrice": 11200,
+    "varieties": [
+      "Black Gram (Whole)",
+      "Local",
+      "Desi",
+      "Black Gram Dal"
+    ],
+    "msp": 8200,
+    "mspSeason": "खरीफ 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
+  },
+  {
+    "id": "arhartur-red-gramwhole",
+    "name": "Arhar(Tur/Red Gram)(Whole)",
+    "nameHi": "अरहर",
+    "emoji": "🫘",
+    "totalRecords": 720,
+    "avgPrice": 7522,
+    "minPrice": 1669,
+    "maxPrice": 9500,
+    "varieties": [
+      "Local",
+      "Other",
+      "Arhar (Whole)",
+      "(Whole)",
+      "Hybrid",
+      "F.A.Q. (Whole)",
+      "Desi(Whole)"
+    ],
+    "msp": 8450,
+    "mspSeason": "खरीफ 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
+    "sowingMonths": [
+      5,
+      6
+    ],
+    "growingMonths": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "harvestMonths": [
+      11,
+      0,
+      1
+    ],
+    "peakMonths": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": "gurjaggery",
+    "name": "Gur(Jaggery)",
+    "nameHi": "Gur(Jaggery)",
+    "emoji": "🌱",
+    "totalRecords": 637,
+    "avgPrice": 3580,
+    "minPrice": 1400,
+    "maxPrice": 12000,
+    "varieties": [
+      "Anakapalli",
+      "NO 2",
+      "NO 3",
+      "Black",
+      "Other"
+    ]
+  },
+  {
+    "id": "cashewnuts",
+    "name": "Cashewnuts",
+    "nameHi": "Cashewnuts",
+    "emoji": "🌱",
+    "totalRecords": 418,
+    "avgPrice": 11696,
+    "minPrice": 8000,
+    "maxPrice": 15500,
+    "varieties": [
+      "Local(Raw)",
+      "Local",
+      "320 Counts",
       "Other"
     ]
   },
@@ -129,10 +416,10 @@
     "name": "Chili Red",
     "nameHi": "लाल मिर्च",
     "emoji": "🌱",
-    "totalRecords": 147,
-    "avgPrice": 16652,
+    "totalRecords": 356,
+    "avgPrice": 19361,
     "minPrice": 7500,
-    "maxPrice": 28000,
+    "maxPrice": 28500,
     "varieties": [
       "Red",
       "Other",
@@ -144,8 +431,8 @@
     "name": "Mango",
     "nameHi": "आम",
     "emoji": "🥭",
-    "totalRecords": 140,
-    "avgPrice": 1899,
+    "totalRecords": 344,
+    "avgPrice": 1865,
     "minPrice": 300,
     "maxPrice": 6000,
     "varieties": [
@@ -173,297 +460,129 @@
     ]
   },
   {
-    "id": "arhartur-red-gramwhole",
-    "name": "Arhar(Tur/Red Gram)(Whole)",
-    "nameHi": "अरहर",
-    "emoji": "🫘",
-    "totalRecords": 121,
-    "avgPrice": 7148,
-    "minPrice": 1669,
-    "maxPrice": 9500,
-    "varieties": [
-      "Local",
-      "Other",
-      "Arhar (Whole)",
-      "(Whole)"
-    ],
-    "msp": 8450,
-    "mspSeason": "खरीफ 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
-    "sowingMonths": [
-      5,
-      6
-    ],
-    "growingMonths": [
-      7,
-      8,
-      9,
-      10
-    ],
-    "harvestMonths": [
-      11,
-      0,
-      1
-    ],
-    "peakMonths": [
-      0,
-      1
-    ]
-  },
-  {
-    "id": "paddycommon",
-    "name": "Paddy(Common)",
-    "nameHi": "धान",
+    "id": "jowarsorghum",
+    "name": "Jowar(Sorghum)",
+    "nameHi": "Jowar(Sorghum)",
     "emoji": "🌾",
-    "totalRecords": 121,
-    "avgPrice": 2491,
-    "minPrice": 1900,
-    "maxPrice": 3950,
+    "totalRecords": 316,
+    "avgPrice": 3291,
+    "minPrice": 2400,
+    "maxPrice": 4050,
     "varieties": [
-      "Nellore Sanna",
-      "Common",
-      "B P T",
-      "1001",
-      "Paddy",
-      "Sona",
-      "Paddy Medium",
-      "Sannalu",
-      "MTU-1001",
-      "1121"
+      "Hybrid",
+      "Jowar ( White)",
+      "Local"
     ],
-    "msp": 2441,
-    "mspSeason": "खरीफ 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
-    "sowingMonths": [
-      5,
-      6
-    ],
-    "growingMonths": [
-      7,
-      8,
-      9
-    ],
-    "harvestMonths": [
-      10,
-      11
-    ],
-    "peakMonths": [
-      11,
-      0,
-      1
-    ]
-  },
-  {
-    "id": "cotton",
-    "name": "Cotton",
-    "nameHi": "कपास",
-    "emoji": "☁️",
-    "totalRecords": 111,
-    "avgPrice": 7927,
-    "minPrice": 3000,
-    "maxPrice": 10331,
-    "varieties": [
-      "Bramha",
-      "Bunny",
-      "Other",
-      "Cotton (Unginned)",
-      "Desi",
-      "Local",
-      "170-C2 (Ginned)"
-    ],
-    "msp": 8267,
-    "mspSeason": "खरीफ 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
-    "sowingMonths": [
-      4,
-      5
-    ],
-    "growingMonths": [
-      6,
-      7,
-      8,
-      9
-    ],
-    "harvestMonths": [
-      10,
-      11,
-      0
-    ],
-    "peakMonths": [
-      11,
-      0,
-      1
-    ]
-  },
-  {
-    "id": "black-gramurd-beanswhole",
-    "name": "Black Gram(Urd Beans)(Whole)",
-    "nameHi": "सेम",
-    "emoji": "🫘",
-    "totalRecords": 95,
-    "avgPrice": 7829,
-    "minPrice": 1000,
-    "maxPrice": 10000,
-    "varieties": [
-      "Black Gram (Whole)",
-      "Local",
-      "Desi"
-    ],
-    "msp": 8200,
+    "msp": 4023,
     "mspSeason": "खरीफ 2026-27",
     "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
   },
   {
-    "id": "cluster-beans",
-    "name": "Cluster beans",
-    "nameHi": "ग्वारफली",
+    "id": "tamarind-fruit",
+    "name": "Tamarind Fruit",
+    "nameHi": "इमली",
     "emoji": "🌱",
-    "totalRecords": 82,
-    "avgPrice": 4176,
-    "minPrice": 1200,
-    "maxPrice": 12000,
+    "totalRecords": 305,
+    "avgPrice": 12698,
+    "minPrice": 5000,
+    "maxPrice": 25000,
     "varieties": [
-      "Cluster Beans"
-    ]
-  },
-  {
-    "id": "bengal-gramgramwhole",
-    "name": "Bengal Gram(Gram)(Whole)",
-    "nameHi": "चना",
-    "emoji": "🫘",
-    "totalRecords": 77,
-    "avgPrice": 5374,
-    "minPrice": 1500,
-    "maxPrice": 7800,
-    "varieties": [
-      "Desi (Whole)",
-      "Jawari/Local",
-      "Bengal Gram (Split)",
+      "Non A/c Fine",
+      "Non A/c Flower",
+      "Flower A/c",
+      "Karpuli A/c Fine",
       "Other",
-      "Gulabi",
-      "Average (Whole)"
-    ],
-    "msp": 5875,
-    "mspSeason": "रबी 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2173567",
-    "sowingMonths": [
-      9,
-      10
-    ],
-    "growingMonths": [
-      11,
-      0
-    ],
-    "harvestMonths": [
-      2,
-      3
-    ],
-    "peakMonths": [
-      3,
-      4
+      "Tamarind Fruit"
     ]
   },
   {
-    "id": "brinjal",
-    "name": "Brinjal",
-    "nameHi": "बैंगन",
-    "emoji": "🍆",
-    "totalRecords": 74,
-    "avgPrice": 2078,
-    "minPrice": 600,
-    "maxPrice": 4500,
+    "id": "black-gram-dalurd-dal",
+    "name": "Black Gram Dal(Urd Dal)",
+    "nameHi": "उड़द दाल",
+    "emoji": "🫘",
+    "totalRecords": 283,
+    "avgPrice": 8674,
+    "minPrice": 6000,
+    "maxPrice": 9700,
     "varieties": [
-      "Brinjal"
+      "Black Gram Dal",
+      "Local"
+    ]
+  },
+  {
+    "id": "rice",
+    "name": "Rice",
+    "nameHi": "चावल",
+    "emoji": "🌾",
+    "totalRecords": 276,
+    "avgPrice": 5532,
+    "minPrice": 3100,
+    "maxPrice": 6500,
+    "varieties": [
+      "Sona",
+      "B P T",
+      "ADT 39",
+      "Boiled Rice",
+      "Common"
     ],
     "sowingMonths": [
       5,
-      6,
-      9,
-      10
+      6
     ],
     "growingMonths": [
       7,
       8,
-      11,
-      0
-    ],
-    "harvestMonths": [
-      8,
-      9,
-      1,
-      2
-    ],
-    "peakMonths": [
-      9,
-      10,
-      1,
-      2
-    ]
-  },
-  {
-    "id": "cabbage",
-    "name": "Cabbage",
-    "nameHi": "पत्तागोभी",
-    "emoji": "🥬",
-    "totalRecords": 67,
-    "avgPrice": 971,
-    "minPrice": 500,
-    "maxPrice": 2000,
-    "varieties": [
-      "Cabbage"
-    ],
-    "sowingMonths": [
-      8,
       9
     ],
-    "growingMonths": [
-      10,
-      11,
-      0
-    ],
     "harvestMonths": [
-      0,
-      1,
-      2
-    ],
-    "peakMonths": [
-      11,
-      0,
-      1
-    ]
-  },
-  {
-    "id": "cauliflower",
-    "name": "Cauliflower",
-    "nameHi": "फूलगोभी",
-    "emoji": "🥦",
-    "totalRecords": 62,
-    "avgPrice": 1208,
-    "minPrice": 500,
-    "maxPrice": 2800,
-    "varieties": [
-      "Cauliflower"
-    ],
-    "sowingMonths": [
-      7,
-      8,
-      9
-    ],
-    "growingMonths": [
-      9,
       10,
       11
     ],
-    "harvestMonths": [
-      11,
-      0,
-      1,
-      2
-    ],
     "peakMonths": [
       11,
-      0,
-      1
+      0
+    ]
+  },
+  {
+    "id": "turmeric",
+    "name": "Turmeric",
+    "nameHi": "कच्ची हल्दी",
+    "emoji": "🟡",
+    "totalRecords": 237,
+    "avgPrice": 14021,
+    "minPrice": 1424.5,
+    "maxPrice": 18550,
+    "varieties": [
+      "Finger",
+      "Bulb",
+      "Local"
+    ]
+  },
+  {
+    "id": "papaya",
+    "name": "Papaya",
+    "nameHi": "पपीता",
+    "emoji": "🍏",
+    "totalRecords": 223,
+    "avgPrice": 1540,
+    "minPrice": 1200,
+    "maxPrice": 1800,
+    "varieties": [
+      "Papaya"
+    ]
+  },
+  {
+    "id": "lemon",
+    "name": "Lemon",
+    "nameHi": "नींबू",
+    "emoji": "🍋",
+    "totalRecords": 216,
+    "avgPrice": 9218,
+    "minPrice": 1400,
+    "maxPrice": 29200,
+    "varieties": [
+      "Lemon",
+      "Other"
     ]
   },
   {
@@ -471,13 +590,14 @@
     "name": "Bajra(Pearl Millet/Cumbu)",
     "nameHi": "बाजरा",
     "emoji": "🌾",
-    "totalRecords": 60,
-    "avgPrice": 2113,
+    "totalRecords": 210,
+    "avgPrice": 2529,
     "minPrice": 509,
-    "maxPrice": 2900,
+    "maxPrice": 3500,
     "varieties": [
       "Local",
-      "Bold"
+      "Bold",
+      "Other"
     ],
     "msp": 2900,
     "mspSeason": "खरीफ 2026-27",
@@ -500,239 +620,38 @@
     ]
   },
   {
-    "id": "foxtail-milletnavane",
-    "name": "Foxtail Millet(Navane)",
-    "nameHi": "Foxtail Millet(Navane)",
-    "emoji": "🌱",
-    "totalRecords": 54,
-    "avgPrice": 2340,
-    "minPrice": 1500,
-    "maxPrice": 3582,
-    "varieties": [
-      "Other"
-    ]
-  },
-  {
-    "id": "maize",
-    "name": "Maize",
-    "nameHi": "मक्का",
-    "emoji": "🌽",
-    "totalRecords": 52,
-    "avgPrice": 2384,
-    "minPrice": 1300,
-    "maxPrice": 4800,
-    "varieties": [
-      "Local",
-      "Hybrid/Local",
-      "Hybrid",
-      "Deshi White",
-      "Fine",
-      "Medium",
-      "Other"
-    ],
-    "msp": 2410,
-    "mspSeason": "खरीफ 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
-    "sowingMonths": [
-      5,
-      6
-    ],
-    "growingMonths": [
-      7,
-      8
-    ],
-    "harvestMonths": [
-      9,
-      10
-    ],
-    "peakMonths": [
-      10,
-      11
-    ]
-  },
-  {
-    "id": "mousambisweet-lime",
-    "name": "Mousambi(Sweet Lime)",
-    "nameHi": "मौसम्बी",
-    "emoji": "🌱",
-    "totalRecords": 41,
-    "avgPrice": 1715,
-    "minPrice": 600,
-    "maxPrice": 5400,
-    "varieties": [
-      "Mousambi",
-      "Other"
-    ]
-  },
-  {
-    "id": "lime",
-    "name": "Lime",
-    "nameHi": "नीबू",
-    "emoji": "🌱",
-    "totalRecords": 38,
-    "avgPrice": 3511,
-    "minPrice": 1200,
-    "maxPrice": 17000,
-    "varieties": [
-      "Lime",
-      "Other"
-    ]
-  },
-  {
-    "id": "gurjaggery",
-    "name": "Gur(Jaggery)",
-    "nameHi": "Gur(Jaggery)",
-    "emoji": "🌱",
-    "totalRecords": 37,
-    "avgPrice": 3711,
-    "minPrice": 1400,
-    "maxPrice": 5540,
-    "varieties": [
-      "Anakapalli",
-      "NO 2",
-      "Black",
-      "NO 3"
-    ]
-  },
-  {
-    "id": "ajwan",
-    "name": "Ajwan",
-    "nameHi": "Ajwan",
-    "emoji": "🌱",
-    "totalRecords": 35,
-    "avgPrice": 18018,
-    "minPrice": 1288,
-    "maxPrice": 30303,
-    "varieties": [
-      "Ajwan",
-      "Other"
-    ]
-  },
-  {
-    "id": "groundnut",
-    "name": "Groundnut",
-    "nameHi": "मूँगफली",
-    "emoji": "🥜",
-    "totalRecords": 35,
-    "avgPrice": 6954,
-    "minPrice": 2299,
+    "id": "green-grammoongwhole",
+    "name": "Green Gram(Moong)(Whole)",
+    "nameHi": "मूंग",
+    "emoji": "🫘",
+    "totalRecords": 208,
+    "avgPrice": 7507,
+    "minPrice": 6000,
     "maxPrice": 9000,
     "varieties": [
-      "Bold Kernel",
+      "Local (Whole)",
       "Local",
-      "Big (With Shell)",
-      "F.A.Q",
-      "Balli/Habbu"
+      "Green (Whole)",
+      "Hybrid"
     ],
-    "msp": 7517,
+    "msp": 8780,
     "mspSeason": "खरीफ 2026-27",
     "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
     "sowingMonths": [
-      5,
-      6
+      6,
+      7
     ],
     "growingMonths": [
-      7,
       8,
       9
     ],
     "harvestMonths": [
-      10,
-      11
-    ],
-    "peakMonths": [
-      11,
-      0
-    ]
-  },
-  {
-    "id": "potato",
-    "name": "Potato",
-    "nameHi": "आलू",
-    "emoji": "🥔",
-    "totalRecords": 26,
-    "avgPrice": 1512,
-    "minPrice": 1000,
-    "maxPrice": 2000,
-    "varieties": [
-      "Potato"
-    ],
-    "sowingMonths": [
       9,
       10
     ],
-    "growingMonths": [
-      11,
-      0,
-      1
-    ],
-    "harvestMonths": [
-      1,
-      2,
-      3
-    ],
     "peakMonths": [
-      2,
-      3,
-      4
-    ]
-  },
-  {
-    "id": "ridgeguardtori",
-    "name": "Ridgeguard(Tori)",
-    "nameHi": "तोरई",
-    "emoji": "🌱",
-    "totalRecords": 26,
-    "avgPrice": 3015,
-    "minPrice": 1500,
-    "maxPrice": 5000,
-    "varieties": [
-      "Ridgeguard(Tori)"
-    ]
-  },
-  {
-    "id": "lemon",
-    "name": "Lemon",
-    "nameHi": "नींबू",
-    "emoji": "🍋",
-    "totalRecords": 22,
-    "avgPrice": 8827,
-    "minPrice": 1400,
-    "maxPrice": 29200,
-    "varieties": [
-      "Lemon",
-      "Other"
-    ]
-  },
-  {
-    "id": "rice",
-    "name": "Rice",
-    "nameHi": "चावल",
-    "emoji": "🌾",
-    "totalRecords": 19,
-    "avgPrice": 4816,
-    "minPrice": 4600,
-    "maxPrice": 6500,
-    "varieties": [
-      "Sona",
-      "B P T"
-    ],
-    "sowingMonths": [
-      5,
-      6
-    ],
-    "growingMonths": [
-      7,
-      8,
-      9
-    ],
-    "harvestMonths": [
       10,
       11
-    ],
-    "peakMonths": [
-      11,
-      0
     ]
   },
   {
@@ -740,10 +659,10 @@
     "name": "Coconut",
     "nameHi": "नारियल",
     "emoji": "🥥",
-    "totalRecords": 13,
-    "avgPrice": 15438,
+    "totalRecords": 194,
+    "avgPrice": 16098,
     "minPrice": 14500,
-    "maxPrice": 18000,
+    "maxPrice": 21000,
     "varieties": [
       "Medium"
     ],
@@ -792,16 +711,295 @@
     ]
   },
   {
-    "id": "bengal-gram-dalchana-dal",
-    "name": "Bengal Gram Dal(Chana Dal)",
-    "nameHi": "Bengal Gram Dal(Chana Dal)",
-    "emoji": "🫘",
-    "totalRecords": 11,
-    "avgPrice": 4912,
-    "minPrice": 3070,
-    "maxPrice": 5370,
+    "id": "mousambisweet-lime",
+    "name": "Mousambi(Sweet Lime)",
+    "nameHi": "मौसम्बी",
+    "emoji": "🌱",
+    "totalRecords": 192,
+    "avgPrice": 1363,
+    "minPrice": 380,
+    "maxPrice": 5400,
     "varieties": [
-      "Bengal Gram Dal"
+      "Mousambi",
+      "Other"
+    ]
+  },
+  {
+    "id": "castor-seed",
+    "name": "Castor Seed",
+    "nameHi": "Castor Seed",
+    "emoji": "🌱",
+    "totalRecords": 187,
+    "avgPrice": 6023,
+    "minPrice": 2891,
+    "maxPrice": 6330,
+    "varieties": [
+      "Castor seed",
+      "Other"
+    ]
+  },
+  {
+    "id": "lime",
+    "name": "Lime",
+    "nameHi": "नीबू",
+    "emoji": "🌱",
+    "totalRecords": 170,
+    "avgPrice": 6661,
+    "minPrice": 800,
+    "maxPrice": 17000,
+    "varieties": [
+      "Lime",
+      "Other"
+    ]
+  },
+  {
+    "id": "wood",
+    "name": "Wood",
+    "nameHi": "लकड़ी",
+    "emoji": "🌱",
+    "totalRecords": 155,
+    "avgPrice": 560,
+    "minPrice": 500,
+    "maxPrice": 5500,
+    "varieties": [
+      "Subabul",
+      "Other"
+    ]
+  },
+  {
+    "id": "ragifinger-millet",
+    "name": "Ragi(Finger Millet)",
+    "nameHi": "Ragi(Finger Millet)",
+    "emoji": "🌱",
+    "totalRecords": 152,
+    "avgPrice": 5004,
+    "minPrice": 4200,
+    "maxPrice": 5300,
+    "varieties": [
+      "Local"
+    ],
+    "msp": 5205,
+    "mspSeason": "खरीफ 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
+  },
+  {
+    "id": "cluster-beans",
+    "name": "Cluster beans",
+    "nameHi": "ग्वारफली",
+    "emoji": "🌱",
+    "totalRecords": 150,
+    "avgPrice": 4906,
+    "minPrice": 1200,
+    "maxPrice": 12000,
+    "varieties": [
+      "Cluster Beans"
+    ]
+  },
+  {
+    "id": "brinjal",
+    "name": "Brinjal",
+    "nameHi": "बैंगन",
+    "emoji": "🍆",
+    "totalRecords": 143,
+    "avgPrice": 2262,
+    "minPrice": 600,
+    "maxPrice": 5000,
+    "varieties": [
+      "Brinjal"
+    ],
+    "sowingMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "growingMonths": [
+      7,
+      8,
+      11,
+      0
+    ],
+    "harvestMonths": [
+      8,
+      9,
+      1,
+      2
+    ],
+    "peakMonths": [
+      9,
+      10,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "ground-nut-seed",
+    "name": "Ground Nut Seed",
+    "nameHi": "Ground Nut Seed",
+    "emoji": "🌱",
+    "totalRecords": 143,
+    "avgPrice": 10826,
+    "minPrice": 9500,
+    "maxPrice": 12000,
+    "varieties": [
+      "Ground Nut Seed"
+    ]
+  },
+  {
+    "id": "onion",
+    "name": "Onion",
+    "nameHi": "प्याज",
+    "emoji": "🧅",
+    "totalRecords": 141,
+    "avgPrice": 3048,
+    "minPrice": 444,
+    "maxPrice": 5150,
+    "varieties": [
+      "Local"
+    ],
+    "sowingMonths": [
+      10,
+      11
+    ],
+    "growingMonths": [
+      0,
+      1,
+      2
+    ],
+    "harvestMonths": [
+      3,
+      4,
+      5
+    ],
+    "peakMonths": [
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "cabbage",
+    "name": "Cabbage",
+    "nameHi": "पत्तागोभी",
+    "emoji": "🥬",
+    "totalRecords": 135,
+    "avgPrice": 1027,
+    "minPrice": 500,
+    "maxPrice": 2300,
+    "varieties": [
+      "Cabbage"
+    ],
+    "sowingMonths": [
+      8,
+      9
+    ],
+    "growingMonths": [
+      10,
+      11,
+      0
+    ],
+    "harvestMonths": [
+      0,
+      1,
+      2
+    ],
+    "peakMonths": [
+      11,
+      0,
+      1
+    ]
+  },
+  {
+    "id": "cauliflower",
+    "name": "Cauliflower",
+    "nameHi": "फूलगोभी",
+    "emoji": "🥦",
+    "totalRecords": 129,
+    "avgPrice": 1256,
+    "minPrice": 500,
+    "maxPrice": 3000,
+    "varieties": [
+      "Cauliflower"
+    ],
+    "sowingMonths": [
+      7,
+      8,
+      9
+    ],
+    "growingMonths": [
+      9,
+      10,
+      11
+    ],
+    "harvestMonths": [
+      11,
+      0,
+      1,
+      2
+    ],
+    "peakMonths": [
+      11,
+      0,
+      1
+    ]
+  },
+  {
+    "id": "potato",
+    "name": "Potato",
+    "nameHi": "आलू",
+    "emoji": "🥔",
+    "totalRecords": 93,
+    "avgPrice": 1614,
+    "minPrice": 1000,
+    "maxPrice": 2500,
+    "varieties": [
+      "Potato",
+      "Red Nanital"
+    ],
+    "sowingMonths": [
+      9,
+      10
+    ],
+    "growingMonths": [
+      11,
+      0,
+      1
+    ],
+    "harvestMonths": [
+      1,
+      2,
+      3
+    ],
+    "peakMonths": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "ridgeguardtori",
+    "name": "Ridgeguard(Tori)",
+    "nameHi": "तोरई",
+    "emoji": "🌱",
+    "totalRecords": 90,
+    "avgPrice": 2351,
+    "minPrice": 1000,
+    "maxPrice": 5000,
+    "varieties": [
+      "Ridgeguard(Tori)"
+    ]
+  },
+  {
+    "id": "ghee",
+    "name": "Ghee",
+    "nameHi": "Ghee",
+    "emoji": "🌱",
+    "totalRecords": 80,
+    "avgPrice": 58297,
+    "minPrice": 58200,
+    "maxPrice": 58500,
+    "varieties": [
+      "Other"
     ]
   },
   {
@@ -809,10 +1007,10 @@
     "name": "Green Chilli",
     "nameHi": "हरी मिर्च",
     "emoji": "🌶️",
-    "totalRecords": 11,
-    "avgPrice": 3473,
+    "totalRecords": 78,
+    "avgPrice": 3723,
     "minPrice": 1700,
-    "maxPrice": 5000,
+    "maxPrice": 7000,
     "varieties": [
       "Green Chilly"
     ],
@@ -842,185 +1040,45 @@
     ]
   },
   {
-    "id": "tamarind-fruit",
-    "name": "Tamarind Fruit",
-    "nameHi": "इमली",
+    "id": "sesamumsesame-gingelly-til",
+    "name": "Sesamum(Sesame,Gingelly,Til)",
+    "nameHi": "Sesamum(Sesame,Gingelly,Til)",
     "emoji": "🌱",
-    "totalRecords": 8,
-    "avgPrice": 12013,
-    "minPrice": 5000,
-    "maxPrice": 18500,
+    "totalRecords": 71,
+    "avgPrice": 9354,
+    "minPrice": 8500,
+    "maxPrice": 10200,
     "varieties": [
-      "Non A/c Fine",
-      "Non A/c Flower",
-      "Other",
-      "Flower A/c",
-      "Karpuli A/c Fine"
+      "Black"
+    ],
+    "msp": 10346,
+    "mspSeason": "खरीफ 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
+  },
+  {
+    "id": "foxtail-milletnavane",
+    "name": "Foxtail Millet(Navane)",
+    "nameHi": "Foxtail Millet(Navane)",
+    "emoji": "🌱",
+    "totalRecords": 61,
+    "avgPrice": 2396,
+    "minPrice": 1500,
+    "maxPrice": 3582,
+    "varieties": [
+      "Other"
     ]
   },
   {
-    "id": "black-gram-dalurd-dal",
-    "name": "Black Gram Dal(Urd Dal)",
-    "nameHi": "उड़द दाल",
+    "id": "arhar-daltur-dal",
+    "name": "Arhar Dal(Tur Dal)",
+    "nameHi": "Arhar Dal(Tur Dal)",
     "emoji": "🫘",
-    "totalRecords": 6,
-    "avgPrice": 8767,
-    "minPrice": 7000,
-    "maxPrice": 9700,
-    "varieties": [
-      "Black Gram Dal",
-      "Local"
-    ]
-  },
-  {
-    "id": "sunflower-sunflower-seed",
-    "name": "Sunflower/Sunflower Seed",
-    "nameHi": "Sunflower/Sunflower Seed",
-    "emoji": "🌱",
-    "totalRecords": 6,
-    "avgPrice": 6381,
-    "minPrice": 3000,
-    "maxPrice": 8150,
-    "varieties": [
-      "Sunflower Seed",
-      "Local"
-    ],
-    "msp": 8343,
-    "mspSeason": "खरीफ 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
-  },
-  {
-    "id": "turmeric",
-    "name": "Turmeric",
-    "nameHi": "कच्ची हल्दी",
-    "emoji": "🟡",
-    "totalRecords": 6,
-    "avgPrice": 11487,
-    "minPrice": 5000,
-    "maxPrice": 13388,
-    "varieties": [
-      "Finger",
-      "Bulb"
-    ]
-  },
-  {
-    "id": "onion",
-    "name": "Onion",
-    "nameHi": "प्याज",
-    "emoji": "🧅",
-    "totalRecords": 4,
-    "avgPrice": 1456,
-    "minPrice": 444,
-    "maxPrice": 3400,
-    "varieties": [
-      "Local"
-    ],
-    "sowingMonths": [
-      10,
-      11
-    ],
-    "growingMonths": [
-      0,
-      1,
-      2
-    ],
-    "harvestMonths": [
-      3,
-      4,
-      5
-    ],
-    "peakMonths": [
-      4,
-      5,
-      6
-    ]
-  },
-  {
-    "id": "ragifinger-millet",
-    "name": "Ragi(Finger Millet)",
-    "nameHi": "Ragi(Finger Millet)",
-    "emoji": "🌱",
-    "totalRecords": 4,
-    "avgPrice": 4833,
-    "minPrice": 4200,
-    "maxPrice": 5230,
-    "varieties": [
-      "Local"
-    ],
-    "msp": 5205,
-    "mspSeason": "खरीफ 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
-  },
-  {
-    "id": "gingerdry",
-    "name": "Ginger(Dry)",
-    "nameHi": "सोंठ",
-    "emoji": "🫐",
-    "totalRecords": 4,
-    "avgPrice": 10500,
-    "minPrice": 10500,
-    "maxPrice": 10500,
-    "varieties": [
-      "Fresh Unbleached"
-    ]
-  },
-  {
-    "id": "cashewnuts",
-    "name": "Cashewnuts",
-    "nameHi": "Cashewnuts",
-    "emoji": "🌱",
-    "totalRecords": 4,
-    "avgPrice": 11750,
-    "minPrice": 8000,
+    "totalRecords": 59,
+    "avgPrice": 8336,
+    "minPrice": 820,
     "maxPrice": 14000,
     "varieties": [
-      "320 Counts",
-      "Local(Raw)",
-      "Local"
-    ]
-  },
-  {
-    "id": "wood",
-    "name": "Wood",
-    "nameHi": "लकड़ी",
-    "emoji": "🌱",
-    "totalRecords": 3,
-    "avgPrice": 533,
-    "minPrice": 510,
-    "maxPrice": 550,
-    "varieties": [
-      "Subabul"
-    ]
-  },
-  {
-    "id": "jowarsorghum",
-    "name": "Jowar(Sorghum)",
-    "nameHi": "Jowar(Sorghum)",
-    "emoji": "🌾",
-    "totalRecords": 3,
-    "avgPrice": 3308,
-    "minPrice": 2600,
-    "maxPrice": 4025,
-    "varieties": [
-      "Jowar ( White)",
-      "Hybrid",
-      "Local"
-    ],
-    "msp": 4023,
-    "mspSeason": "खरीफ 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
-  },
-  {
-    "id": "papaya",
-    "name": "Papaya",
-    "nameHi": "पपीता",
-    "emoji": "🍏",
-    "totalRecords": 3,
-    "avgPrice": 1483,
-    "minPrice": 1300,
-    "maxPrice": 1600,
-    "varieties": [
-      "Papaya"
+      "Arhar Dal(Tur)"
     ]
   },
   {
@@ -1028,7 +1086,7 @@
     "name": "Fish",
     "nameHi": "मछली",
     "emoji": "🐟",
-    "totalRecords": 2,
+    "totalRecords": 52,
     "avgPrice": 9900,
     "minPrice": 9500,
     "maxPrice": 10000,
@@ -1037,49 +1095,77 @@
     ]
   },
   {
-    "id": "ground-nut-seed",
-    "name": "Ground Nut Seed",
-    "nameHi": "Ground Nut Seed",
+    "id": "ajwan",
+    "name": "Ajwan",
+    "nameHi": "Ajwan",
     "emoji": "🌱",
-    "totalRecords": 2,
-    "avgPrice": 11050,
-    "minPrice": 10000,
-    "maxPrice": 12000,
+    "totalRecords": 45,
+    "avgPrice": 17378,
+    "minPrice": 1003,
+    "maxPrice": 30303,
     "varieties": [
-      "Ground Nut Seed"
+      "Ajwan",
+      "Other"
     ]
   },
   {
-    "id": "green-grammoongwhole",
-    "name": "Green Gram(Moong)(Whole)",
-    "nameHi": "मूंग",
-    "emoji": "🫘",
-    "totalRecords": 2,
-    "avgPrice": 7500,
-    "minPrice": 7000,
-    "maxPrice": 8000,
+    "id": "gingerdry",
+    "name": "Ginger(Dry)",
+    "nameHi": "सोंठ",
+    "emoji": "🫐",
+    "totalRecords": 38,
+    "avgPrice": 11087,
+    "minPrice": 1156,
+    "maxPrice": 14500,
     "varieties": [
-      "Green (Whole)",
-      "Local (Whole)"
+      "Fresh Unbleached",
+      "Ginger-Organic"
+    ]
+  },
+  {
+    "id": "sunflower-sunflower-seed",
+    "name": "Sunflower/Sunflower Seed",
+    "nameHi": "Sunflower/Sunflower Seed",
+    "emoji": "🌱",
+    "totalRecords": 24,
+    "avgPrice": 6560,
+    "minPrice": 3000,
+    "maxPrice": 8150,
+    "varieties": [
+      "Sunflower Seed",
+      "Local",
+      "Bold",
+      "Sunflower"
     ],
-    "msp": 8780,
+    "msp": 8343,
     "mspSeason": "खरीफ 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
-    "sowingMonths": [
-      6,
-      7
-    ],
-    "growingMonths": [
-      8,
-      9
-    ],
-    "harvestMonths": [
-      9,
-      10
-    ],
-    "peakMonths": [
-      10,
-      11
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
+  },
+  {
+    "id": "millets",
+    "name": "Millets",
+    "nameHi": "Millets",
+    "emoji": "🌱",
+    "totalRecords": 19,
+    "avgPrice": 3579,
+    "minPrice": 249,
+    "maxPrice": 6000,
+    "varieties": [
+      "Millets"
+    ]
+  },
+  {
+    "id": "bengal-gram-dalchana-dal",
+    "name": "Bengal Gram Dal(Chana Dal)",
+    "nameHi": "Bengal Gram Dal(Chana Dal)",
+    "emoji": "🫘",
+    "totalRecords": 13,
+    "avgPrice": 5049,
+    "minPrice": 3070,
+    "maxPrice": 6000,
+    "varieties": [
+      "Bengal Gram Dal",
+      "Other"
     ]
   },
   {
@@ -1087,12 +1173,13 @@
     "name": "Soyabean",
     "nameHi": "सोयाबीन",
     "emoji": "🟤",
-    "totalRecords": 1,
-    "avgPrice": 5009,
-    "minPrice": 5009,
+    "totalRecords": 5,
+    "avgPrice": 4327,
+    "minPrice": 2828,
     "maxPrice": 5009,
     "varieties": [
-      "Other"
+      "Other",
+      "Soyabeen"
     ],
     "msp": 5708,
     "mspSeason": "खरीफ 2026-27",
@@ -1115,16 +1202,56 @@
     ]
   },
   {
-    "id": "arhar-daltur-dal",
-    "name": "Arhar Dal(Tur Dal)",
-    "nameHi": "Arhar Dal(Tur Dal)",
-    "emoji": "🫘",
-    "totalRecords": 1,
-    "avgPrice": 6100,
-    "minPrice": 5800,
-    "maxPrice": 6370,
+    "id": "yam",
+    "name": "Yam",
+    "nameHi": "रतालू",
+    "emoji": "🌱",
+    "totalRecords": 3,
+    "avgPrice": 2100,
+    "minPrice": 450,
+    "maxPrice": 3500,
     "varieties": [
-      "Arhar Dal(Tur)"
+      "Other",
+      "Yam"
+    ]
+  },
+  {
+    "id": "other-pulses",
+    "name": "Other Pulses",
+    "nameHi": "Other Pulses",
+    "emoji": "🌱",
+    "totalRecords": 2,
+    "avgPrice": 4040,
+    "minPrice": 750,
+    "maxPrice": 7500,
+    "varieties": [
+      "Rajma"
+    ]
+  },
+  {
+    "id": "jack-fruitripe",
+    "name": "Jack Fruit(Ripe)",
+    "nameHi": "कटहल",
+    "emoji": "🌱",
+    "totalRecords": 2,
+    "avgPrice": 2800,
+    "minPrice": 2700,
+    "maxPrice": 3000,
+    "varieties": [
+      "Jack Fruit"
+    ]
+  },
+  {
+    "id": "beans",
+    "name": "Beans",
+    "nameHi": "सेम",
+    "emoji": "🌱",
+    "totalRecords": 2,
+    "avgPrice": 4805,
+    "minPrice": 4410,
+    "maxPrice": 5300,
+    "varieties": [
+      "Local"
     ]
   },
   {
@@ -1139,34 +1266,5 @@
     "varieties": [
       "Prawn-White Prawn"
     ]
-  },
-  {
-    "id": "ghee",
-    "name": "Ghee",
-    "nameHi": "Ghee",
-    "emoji": "🌱",
-    "totalRecords": 1,
-    "avgPrice": 58300,
-    "minPrice": 58300,
-    "maxPrice": 58300,
-    "varieties": [
-      "Other"
-    ]
-  },
-  {
-    "id": "sesamumsesame-gingelly-til",
-    "name": "Sesamum(Sesame,Gingelly,Til)",
-    "nameHi": "Sesamum(Sesame,Gingelly,Til)",
-    "emoji": "🌱",
-    "totalRecords": 1,
-    "avgPrice": 8550,
-    "minPrice": 8550,
-    "maxPrice": 8550,
-    "varieties": [
-      "Black"
-    ],
-    "msp": 10346,
-    "mspSeason": "खरीफ 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
   }
 ]

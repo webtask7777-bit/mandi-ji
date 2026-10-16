@@ -17,10 +17,34 @@
     {
       "month": "07",
       "date": "2026-07",
-      "market": 12125,
-      "volume": 4,
-      "days": 4,
+      "market": 11750,
+      "volume": 6,
+      "days": 6,
       "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 10000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 5000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 10125,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -63,6 +87,46 @@
       "mandis": 1,
       "minPrice": 16000,
       "maxPrice": 16000
+    },
+    {
+      "date": "2026-07-20",
+      "market": 10000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 10000,
+      "maxPrice": 10000
+    },
+    {
+      "date": "2026-07-30",
+      "market": 12000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 12000,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-08-03",
+      "market": 10000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 10000,
+      "maxPrice": 10000
+    },
+    {
+      "date": "2026-09-13",
+      "market": 5000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 6250
+    },
+    {
+      "date": "2026-10-07",
+      "market": 10125,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 3750,
+      "maxPrice": 16500
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -70,8 +134,14 @@
     {
       "district": "Warangal",
       "nameHi": "Warangal",
-      "avgPrice": 11700,
-      "records": 5
+      "avgPrice": 11889,
+      "records": 9
+    },
+    {
+      "district": "Ranga Reddy",
+      "nameHi": "Ranga Reddy",
+      "avgPrice": 4375,
+      "records": 2
     }
   ]
 }

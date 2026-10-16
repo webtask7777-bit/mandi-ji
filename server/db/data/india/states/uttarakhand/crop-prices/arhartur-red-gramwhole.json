@@ -12,7 +12,23 @@
     {
       "month": "07",
       "date": "2026-07",
-      "market": 10980,
+      "market": 11490,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 8250,
+      "volume": 3,
+      "days": 3,
+      "mandis": 3
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 11000,
       "volume": 1,
       "days": 1,
       "mandis": 1
@@ -26,14 +42,66 @@
       "mandis": 1,
       "minPrice": 10950,
       "maxPrice": 10980
+    },
+    {
+      "date": "2026-07-29",
+      "market": 12000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 12000,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-08-11",
+      "market": 8072,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 8072,
+      "maxPrice": 8072
+    },
+    {
+      "date": "2026-08-27",
+      "market": 11000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 11000,
+      "maxPrice": 11000
+    },
+    {
+      "date": "2026-08-30",
+      "market": 8250,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 8250,
+      "maxPrice": 8250
+    },
+    {
+      "date": "2026-09-19",
+      "market": 11000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 11000,
+      "maxPrice": 11000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
+      "district": "Champawat",
+      "nameHi": "Champawat",
+      "avgPrice": 11333,
+      "records": 3
+    },
+    {
       "district": "Dehradoon",
       "nameHi": "Dehradoon",
-      "avgPrice": 10980,
+      "avgPrice": 9526,
+      "records": 2
+    },
+    {
+      "district": "Udhamsinghnagar",
+      "nameHi": "Udhamsinghnagar",
+      "avgPrice": 8250,
       "records": 1
     }
   ]

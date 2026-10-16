@@ -15,12 +15,28 @@
       "mandis": 1
     },
     {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2000,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 2000,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
+    },
+    {
       "month": "10",
       "date": "2026-10",
-      "market": 4100,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
+      "market": 3550,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -31,6 +47,46 @@
       "mandis": 1,
       "minPrice": 500,
       "maxPrice": 600
+    },
+    {
+      "date": "2026-07-24",
+      "market": 2000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-07-25",
+      "market": 2000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-09-28",
+      "market": 2000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-09-30",
+      "market": 2000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-10-14",
+      "market": 3000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
     },
     {
       "date": "2026-10-16",
@@ -46,8 +102,20 @@
     {
       "district": "Tarntaran",
       "nameHi": "Tarntaran",
-      "avgPrice": 2325,
-      "records": 2
+      "avgPrice": 2550,
+      "records": 3
+    },
+    {
+      "district": "Ludhiana",
+      "nameHi": "Ludhiana",
+      "avgPrice": 2000,
+      "records": 3
+    },
+    {
+      "district": "Kapurthala",
+      "nameHi": "Kapurthala",
+      "avgPrice": 2000,
+      "records": 1
     }
   ]
 }

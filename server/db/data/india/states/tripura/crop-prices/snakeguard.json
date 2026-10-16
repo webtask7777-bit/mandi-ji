@@ -13,6 +13,30 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 3800,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 5700,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 4800,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -23,10 +47,56 @@
       "mandis": 1,
       "minPrice": 5850,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-07-20",
+      "market": 3800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3700,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-07-23",
+      "market": 3800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3600,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-08-20",
+      "market": 5700,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5500,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-08-21",
+      "market": 5700,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5500,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-09-05",
+      "market": 4800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4500,
+      "maxPrice": 5000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
+    {
+      "district": "Dhalai",
+      "nameHi": "Dhalai",
+      "avgPrice": 4760,
+      "records": 5
+    },
     {
       "district": "Gomati",
       "nameHi": "Gomati",

@@ -49,9 +49,25 @@
     {
       "month": "07",
       "date": "2026-07",
-      "market": 2950,
-      "volume": 3,
-      "days": 3,
+      "market": 3000,
+      "volume": 5,
+      "days": 5,
+      "mandis": 2
+    },
+    {
+      "month": "08",
+      "date": "2026-08",
+      "market": 3608,
+      "volume": 7,
+      "days": 7,
+      "mandis": 2
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 4225,
+      "volume": 5,
+      "days": 5,
       "mandis": 2
     }
   ],
@@ -199,6 +215,118 @@
       "mandis": 1,
       "minPrice": 2300,
       "maxPrice": 2500
+    },
+    {
+      "date": "2026-07-24",
+      "market": 2700,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 2800
+    },
+    {
+      "date": "2026-07-29",
+      "market": 3500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3500,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-08-03",
+      "market": 2000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1900,
+      "maxPrice": 2100
+    },
+    {
+      "date": "2026-08-05",
+      "market": 5200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5200,
+      "maxPrice": 5200
+    },
+    {
+      "date": "2026-08-12",
+      "market": 4350,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4350,
+      "maxPrice": 4350
+    },
+    {
+      "date": "2026-08-14",
+      "market": 2700,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 2800
+    },
+    {
+      "date": "2026-08-20",
+      "market": 2500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2400,
+      "maxPrice": 2600
+    },
+    {
+      "date": "2026-08-21",
+      "market": 2200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 2300
+    },
+    {
+      "date": "2026-08-24",
+      "market": 2800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2700,
+      "maxPrice": 2900
+    },
+    {
+      "date": "2026-09-02",
+      "market": 5300,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5300,
+      "maxPrice": 5300
+    },
+    {
+      "date": "2026-09-04",
+      "market": 3500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3400,
+      "maxPrice": 3600
+    },
+    {
+      "date": "2026-09-07",
+      "market": 3100,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3200
+    },
+    {
+      "date": "2026-09-14",
+      "market": 3200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3100,
+      "maxPrice": 3300
+    },
+    {
+      "date": "2026-09-16",
+      "market": 2800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2700,
+      "maxPrice": 3000
     }
   ],
   "lastUpdated": "2026-10-16T07:04:32.377Z",
@@ -206,14 +334,20 @@
     {
       "district": "Zunheboto",
       "nameHi": "Zunheboto",
-      "avgPrice": 3656,
-      "records": 9
+      "avgPrice": 3420,
+      "records": 22
     },
     {
       "district": "Mon",
       "nameHi": "Mon",
       "avgPrice": 3382,
       "records": 5
+    },
+    {
+      "district": "Tsemenyu",
+      "nameHi": "Tsemenyu",
+      "avgPrice": 3667,
+      "records": 3
     },
     {
       "district": "Mokokchung",
@@ -225,12 +359,6 @@
       "district": "Phek",
       "nameHi": "Phek",
       "avgPrice": 3850,
-      "records": 2
-    },
-    {
-      "district": "Tsemenyu",
-      "nameHi": "Tsemenyu",
-      "avgPrice": 3750,
       "records": 2
     }
   ]
