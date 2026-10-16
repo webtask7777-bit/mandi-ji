@@ -9,6 +9,22 @@ import { listEditorialPosts } from '../server/utils/editorial.js';
 const root = process.cwd();
 const posts = JSON.parse(readFileSync(path.join(root, 'server/db/data/blog-posts.json'), 'utf8'));
 const articles = posts.filter(post => post.coverImage?.startsWith('/editorial/'));
+const imageManifest = JSON.parse(readFileSync(path.join(root, 'src/data/editorialImages.json'), 'utf8'));
+
+test('every editorial cover has smaller responsive assets and translations use their own language artwork', () => {
+  for (const post of articles) {
+    const image = imageManifest[post.coverImage];
+    assert.ok(image, `${post.slug}: registered cover`);
+    assert.deepEqual(image.candidates.map(item => item.width), [640, 960, 1672]);
+    for (const candidate of image.candidates) {
+      const file = path.join(root, 'public', candidate.src);
+      assert.ok(existsSync(file), `${post.slug}: responsive asset ${candidate.src}`);
+      assert.ok(readFileSync(file).length > 100, `${post.slug}: nonempty responsive asset`);
+    }
+  }
+  const tomato = articles.filter(post => post.translationGroup === 'tomato-sale-delivery');
+  assert.equal(new Set(tomato.map(post => post.coverImage)).size, tomato.length, 'Each language has an accurately localized cover');
+});
 
 test('editorial set preserves the wheat URL and has complete assets, references and working article links', () => {
   assert.ok(articles.length >= 8, 'Preserves the original guide collection while allowing new reviewed source-based entries');
@@ -85,6 +101,8 @@ test('published article HTML exposes its own social thumbnail, source links and 
     assert.equal((head.match(/<title\b/g) || []).length, 1, post.slug);
     assert.ok(head.includes(`content="https://mandi-ji.vercel.app${post.coverImage}"`), `${post.slug}: social cover`);
     assert.ok(html.includes(`src="${post.coverImage}"`), `${post.slug}: visible cover`);
+    assert.ok(html.includes(`${post.coverImage.replace('.webp', '-640.webp')} 640w`), `${post.slug}: responsive cover markup`);
+    assert.match(head, /property="og:image:width" content="1672"/, `${post.slug}: share image dimensions`);
     assert.ok(html.includes('id="sources-title"'), `${post.slug}: visible source section in article language`);
     for (const source of post.sources) assert.ok(html.includes(`href="${source.url.replaceAll('&', '&amp;')}"`), `${post.slug}: clickable primary source`);
     const schemas = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));

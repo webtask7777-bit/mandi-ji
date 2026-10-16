@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
+import editorialImages from '../data/editorialImages.json';
 
 // Use the domain that is actually deployed. Set VITE_SITE_URL only after a custom
 // domain is attached in Vercel; do not point search engines at an unconnected name.
@@ -38,6 +39,8 @@ export default function SEO({ title, description, path, noIndex = false, structu
   const pageTitle = title ? `${title} | SahiBhav` : DEFAULTS.title;
   const pageDesc = description || DEFAULTS.description;
   const pageImage = image ? new URL(image, SITE_URL).href : DEFAULTS.image;
+  const localImagePath = new URL(pageImage).origin === new URL(SITE_URL).origin ? new URL(pageImage).pathname : '';
+  const imageDimensions = Object.hasOwn(editorialImages, localImagePath) ? editorialImages[localImagePath] : null;
   const pageImageAlt = imageAlt || 'सही भाव — मंडी भाव और डिलीवरी खर्च';
   const pagePath = (path || pathname).split(/[?#]/)[0].replace(/\/+$/, '') || '/';
   const pageUrl = `${SITE_URL}${pagePath.startsWith('/') ? pagePath : `/${pagePath}`}`;
@@ -59,6 +62,9 @@ export default function SEO({ title, description, path, noIndex = false, structu
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDesc} />
       <meta property="og:image" content={pageImage} />
+      {imageDimensions && <meta property="og:image:width" content={String(imageDimensions.width)} />}
+      {imageDimensions && <meta property="og:image:height" content={String(imageDimensions.height)} />}
+      {imageDimensions && <meta property="og:image:type" content="image/webp" />}
       <meta property="og:image:alt" content={pageImageAlt} />
       <meta property="og:locale" content={`${pageLanguage}_IN`} />
       {languageLinks.filter(item => item.language !== pageLanguage).map(item => <meta key={item.language} property="og:locale:alternate" content={`${item.language}_IN`} />)}
