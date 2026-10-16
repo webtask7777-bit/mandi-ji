@@ -7,6 +7,30 @@
   },
   "history": [
     {
+      "month": "12",
+      "date": "2025-12",
+      "market": 13854,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "01",
+      "date": "2026-01",
+      "market": 8000,
+      "volume": 3,
+      "days": 3,
+      "mandis": 3
+    },
+    {
+      "month": "02",
+      "date": "2026-02",
+      "market": 8231,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
       "month": "03",
       "date": "2026-03",
       "market": 14220,
@@ -48,6 +72,46 @@
     }
   ],
   "dailyHistory": [
+    {
+      "date": "2025-12-31",
+      "market": 13854,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 13700,
+      "maxPrice": 14000
+    },
+    {
+      "date": "2026-01-23",
+      "market": 8000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 8000,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-01-29",
+      "market": 8000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 7000,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-01-31",
+      "market": 11230,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 11000,
+      "maxPrice": 11400
+    },
+    {
+      "date": "2026-02-28",
+      "market": 8231,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 8000,
+      "maxPrice": 8400
+    },
     {
       "date": "2026-03-13",
       "market": 24000,
@@ -236,16 +300,22 @@
   "lastUpdated": "2026-10-16T07:04:32.377Z",
   "districtBreakdown": [
     {
-      "district": "Chamrajnagar (कर्नाटक)",
-      "nameHi": "Chamrajnagar (कर्नाटक)",
-      "avgPrice": 12573,
-      "records": 13
-    },
-    {
       "district": "North and Middle Andaman (अंडमान निकोबार)",
       "nameHi": "North and Middle Andaman (अंडमान निकोबार)",
       "avgPrice": 24909,
       "records": 11
+    },
+    {
+      "district": "Chamarajanagar (कर्नाटक)",
+      "nameHi": "Chamarajanagar (कर्नाटक)",
+      "avgPrice": 13013,
+      "records": 8
+    },
+    {
+      "district": "Chamrajnagar (कर्नाटक)",
+      "nameHi": "Chamrajnagar (कर्नाटक)",
+      "avgPrice": 11807,
+      "records": 7
     },
     {
       "district": "Karimnagar (तेलंगाना)",
@@ -278,6 +348,12 @@
       "records": 4
     },
     {
+      "district": "Raipur (छत्तीसगढ़)",
+      "nameHi": "Raipur (छत्तीसगढ़)",
+      "avgPrice": 11105,
+      "records": 3
+    },
+    {
       "district": "Erode (तमिल नाडु)",
       "nameHi": "Erode (तमिल नाडु)",
       "avgPrice": 11417,
@@ -308,21 +384,9 @@
       "records": 2
     },
     {
-      "district": "Chamarajanagar (कर्नाटक)",
-      "nameHi": "Chamarajanagar (कर्नाटक)",
-      "avgPrice": 11650,
-      "records": 2
-    },
-    {
-      "district": "Mumbai (महाराष्ट्र)",
-      "nameHi": "Mumbai (महाराष्ट्र)",
-      "avgPrice": 20250,
-      "records": 1
-    },
-    {
-      "district": "Vashim (महाराष्ट्र)",
-      "nameHi": "Vashim (महाराष्ट्र)",
-      "avgPrice": 13400,
+      "district": "Bilaspur (छत्तीसगढ़)",
+      "nameHi": "Bilaspur (छत्तीसगढ़)",
+      "avgPrice": 8000,
       "records": 1
     }
   ]
