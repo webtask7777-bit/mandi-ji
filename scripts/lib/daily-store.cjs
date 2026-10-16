@@ -16,6 +16,9 @@ const path = require('path');
 
 const DAILY_DIR = path.join(__dirname, '..', '..', 'server', 'db', 'data', 'daily');
 
+// Source placeholders such as ₹0.01 are not prices. Nothing real trades below ₹1 per quintal.
+const MIN_PLAUSIBLE_PRICE = 1;
+
 const clean = (v) => String(v ?? '').replace(/\s+/g, ' ').trim();
 
 /** "15/10/2026" or "15-10-2026" → "2026-10-15"; anything else (or an impossible date) → null. */
@@ -53,7 +56,8 @@ function normalizeRecord(raw) {
   if (!rec.state || !rec.market || !rec.commodity) return { error: 'missing state/market/commodity' };
   if (!arrivalToISO(rec.arrival_date)) return { error: 'invalid arrival date' };
   if (!(rec.modal_price > 0)) return { error: 'missing modal price' };
-  for (const k of ['min_price', 'max_price']) if (!(rec[k] >= 0)) rec[k] = 0;
+  if (rec.modal_price < MIN_PLAUSIBLE_PRICE) return { error: 'placeholder price below ₹1' };
+  for (const k of ['min_price', 'max_price']) if (!(rec[k] >= MIN_PLAUSIBLE_PRICE)) rec[k] = 0;
   return { record: rec };
 }
 
@@ -128,4 +132,4 @@ function istDate(now = new Date()) {
   return new Date(now.getTime() + 330 * 60 * 1000).toISOString().slice(0, 10);
 }
 
-module.exports = { DAILY_DIR, arrivalToISO, normalizeRecord, recordKey, readDay, writeAtomic, mergeDay, mergeRecords, listDays, istDate };
+module.exports = { MIN_PLAUSIBLE_PRICE, DAILY_DIR, arrivalToISO, normalizeRecord, recordKey, readDay, writeAtomic, mergeDay, mergeRecords, listDays, istDate };

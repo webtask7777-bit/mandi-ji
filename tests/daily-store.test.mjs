@@ -23,6 +23,9 @@ test('normalisation trims names, parses Indian number formats and rejects unusab
   assert.equal(r.market, 'APMC Kamthi');
   assert.equal(r.modal_price, 5550);
   assert.equal(normalizeRecord(raw({ Modal_Price: '0' })).error, 'missing modal price');
+  // Source placeholders (₹0.01/quintal) must not reach the site as a ₹0 "lowest price".
+  assert.match(normalizeRecord(raw({ Modal_Price: '0.01', Min_Price: '0.01', Max_Price: '0.01' })).error, /placeholder/);
+  assert.equal(normalizeRecord(raw({ Min_Price: '0.5' })).record.min_price, 0);
   assert.equal(normalizeRecord(raw({ Arrival_Date: '31/02/2026' })).error, 'invalid arrival date');
   assert.equal(normalizeRecord(raw({ Market: ' ' })).error, 'missing state/market/commodity');
 });
