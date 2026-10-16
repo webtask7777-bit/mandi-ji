@@ -4,7 +4,8 @@
     "name": "Paddy(Common)",
     "nameHi": "धान",
     "emoji": "🌾",
-    "msp": 2300
+    "msp": 2300,
+    "mspSeason": "2024-25"
   },
   "history": [
     {
@@ -12,20 +13,26 @@
       "date": "2026-03",
       "market": 2938,
       "volume": 6,
+      "days": 3,
+      "mandis": 4,
       "msp": 2300
     },
     {
       "month": "04",
       "date": "2026-04",
-      "market": 2958,
+      "market": 3000,
       "volume": 3,
+      "days": 1,
+      "mandis": 3,
       "msp": 2300
     },
     {
       "month": "05",
       "date": "2026-05",
-      "market": 2938,
+      "market": 3000,
       "volume": 8,
+      "days": 6,
+      "mandis": 5,
       "msp": 2300
     },
     {
@@ -33,14 +40,17 @@
       "date": "2026-10",
       "market": 3000,
       "volume": 1,
+      "days": 1,
+      "mandis": 1,
       "msp": 2300
     }
   ],
   "dailyHistory": [
     {
       "date": "2026-03-26",
-      "market": 2958,
+      "market": 3000,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 2875,
       "maxPrice": 3000
     },
@@ -48,6 +58,7 @@
       "date": "2026-03-27",
       "market": 2875,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 2875,
       "maxPrice": 2875
     },
@@ -55,13 +66,15 @@
       "date": "2026-03-30",
       "market": 2938,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 2875,
       "maxPrice": 3000
     },
     {
       "date": "2026-04-06",
-      "market": 2958,
+      "market": 3000,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 2875,
       "maxPrice": 3000
     },
@@ -69,6 +82,7 @@
       "date": "2026-05-05",
       "market": 3000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 3000,
       "maxPrice": 3000
     },
@@ -76,6 +90,7 @@
       "date": "2026-05-06",
       "market": 2875,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 2875,
       "maxPrice": 2875
     },
@@ -83,6 +98,7 @@
       "date": "2026-05-14",
       "market": 2938,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 2875,
       "maxPrice": 3000
     },
@@ -90,6 +106,7 @@
       "date": "2026-05-15",
       "market": 2938,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 2875,
       "maxPrice": 3000
     },
@@ -97,6 +114,7 @@
       "date": "2026-05-18",
       "market": 2875,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 2875,
       "maxPrice": 2875
     },
@@ -104,6 +122,7 @@
       "date": "2026-05-19",
       "market": 3000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 3000,
       "maxPrice": 3000
     },
@@ -111,6 +130,7 @@
       "date": "2026-10-16",
       "market": 3000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 3000,
       "maxPrice": 3000
     }

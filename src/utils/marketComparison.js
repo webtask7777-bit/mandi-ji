@@ -13,11 +13,13 @@ export function getMandiPriceBasis(mandi) {
 }
 
 export function getMandiQuoteDate(mandi) {
-  return quoteDateISO(mandi?.quoteDate || mandi?.arrival_date || mandi?.date || mandi?.latestDate);
+  return quoteDateISO(mandi?.quoteDate || mandi?.arrival_date || mandi?.date || mandi?.lastDate || mandi?.latestDate);
 }
 
+/** Recent prices first (highest first), then mandis known only from older records. */
 export function sortMandiPrices(data = []) {
-  return data.filter(m => getMandiPrice(m) !== null).slice().sort((a, b) => getMandiPrice(b) - getMandiPrice(a));
+  const recentFirst = (a, b) => (getMandiPriceBasis(a) === 'recent' ? 0 : 1) - (getMandiPriceBasis(b) === 'recent' ? 0 : 1);
+  return data.filter(m => getMandiPrice(m) !== null).slice().sort((a, b) => recentFirst(a, b) || getMandiPrice(b) - getMandiPrice(a));
 }
 
 // Above this ratio a "gap" is almost always a unit or data-entry difference, not a market.

@@ -151,6 +151,7 @@
       "Angur Imp"
     ],
     "msp": 7550,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       5,
       6
@@ -221,9 +222,9 @@
     "name": "Coconut",
     "nameHi": "नारियल",
     "emoji": "🥥",
-    "totalRecords": 655,
-    "avgPrice": 22017,
-    "minPrice": 12,
+    "totalRecords": 637,
+    "avgPrice": 22610,
+    "minPrice": 2000,
     "maxPrice": 46000,
     "varieties": [
       "Grade-I",
@@ -425,6 +426,7 @@
       "Cotton (Ginned)"
     ],
     "msp": 7121,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       4,
       5
@@ -512,7 +514,6 @@
       "Kachha Basmati",
       "Other"
     ],
-    "msp": 2300,
     "sowingMonths": [
       5,
       6
@@ -546,6 +547,7 @@
       "Other"
     ],
     "msp": 5440,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       9,
       10
@@ -673,6 +675,7 @@
       "Other"
     ],
     "msp": 2625,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       6,
       7
@@ -908,6 +911,7 @@
       "Other"
     ],
     "msp": 2275,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       10,
       11
@@ -965,41 +969,6 @@
     ]
   },
   {
-    "id": "mango",
-    "name": "Mango",
-    "nameHi": "आम",
-    "emoji": "🥭",
-    "totalRecords": 155,
-    "avgPrice": 1678,
-    "minPrice": 300,
-    "maxPrice": 6000,
-    "varieties": [
-      "Other",
-      "Hapus(Alphaso)",
-      "Raspuri",
-      "Nati",
-      "Badami",
-      "Neelam",
-      "Totapuri",
-      "Mango"
-    ],
-    "sowingMonths": [],
-    "growingMonths": [
-      1,
-      2,
-      3
-    ],
-    "harvestMonths": [
-      4,
-      5,
-      6
-    ],
-    "peakMonths": [
-      5,
-      6
-    ]
-  },
-  {
     "id": "black-gram-dalurd-dal",
     "name": "Black Gram Dal(Urd Dal)",
     "nameHi": "उड़द दाल",
@@ -1010,8 +979,7 @@
     "maxPrice": 15122,
     "varieties": [
       "Black Gram Dal"
-    ],
-    "msp": 6950
+    ]
   },
   {
     "id": "soyabean",
@@ -1028,6 +996,7 @@
       "Yellow"
     ],
     "msp": 4892,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       5,
       6
@@ -1064,6 +1033,7 @@
       "Popcorn"
     ],
     "msp": 2090,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       5,
       6
@@ -1122,19 +1092,6 @@
     "maxPrice": 15000,
     "varieties": [
       "Arhar Dal(Tur)"
-    ]
-  },
-  {
-    "id": "ashgourd",
-    "name": "Ashgourd",
-    "nameHi": "पेठा",
-    "emoji": "🌱",
-    "totalRecords": 107,
-    "avgPrice": 1638,
-    "minPrice": 10,
-    "maxPrice": 5000,
-    "varieties": [
-      "Ashgourd"
     ]
   },
   {
@@ -1214,6 +1171,41 @@
     ]
   },
   {
+    "id": "mango",
+    "name": "Mango",
+    "nameHi": "आम",
+    "emoji": "🥭",
+    "totalRecords": 83,
+    "avgPrice": 2723,
+    "minPrice": 700,
+    "maxPrice": 6000,
+    "varieties": [
+      "Other",
+      "Hapus(Alphaso)",
+      "Raspuri",
+      "Nati",
+      "Badami",
+      "Neelam",
+      "Totapuri",
+      "Mango"
+    ],
+    "sowingMonths": [],
+    "growingMonths": [
+      1,
+      2,
+      3
+    ],
+    "harvestMonths": [
+      4,
+      5,
+      6
+    ],
+    "peakMonths": [
+      5,
+      6
+    ]
+  },
+  {
     "id": "gingerdry",
     "name": "Ginger(Dry)",
     "nameHi": "सोंठ",
@@ -1226,6 +1218,19 @@
       "Dry",
       "Other",
       "Fresh Unbleached"
+    ]
+  },
+  {
+    "id": "ashgourd",
+    "name": "Ashgourd",
+    "nameHi": "पेठा",
+    "emoji": "🌱",
+    "totalRecords": 79,
+    "avgPrice": 2214,
+    "minPrice": 800,
+    "maxPrice": 5000,
+    "varieties": [
+      "Ashgourd"
     ]
   },
   {
@@ -1263,6 +1268,7 @@
       "Sanna Bhatta"
     ],
     "msp": 2300,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       5,
       6
@@ -1346,20 +1352,6 @@
     ]
   },
   {
-    "id": "cashewnuts",
-    "name": "Cashewnuts",
-    "nameHi": "Cashewnuts",
-    "emoji": "🌱",
-    "totalRecords": 65,
-    "avgPrice": 14647,
-    "minPrice": 1200,
-    "maxPrice": 17500,
-    "varieties": [
-      "Local(Raw)",
-      "Other"
-    ]
-  },
-  {
     "id": "papaya",
     "name": "Papaya",
     "nameHi": "पपीता",
@@ -1370,6 +1362,20 @@
     "maxPrice": 8000,
     "varieties": [
       "Papaya"
+    ]
+  },
+  {
+    "id": "cashewnuts",
+    "name": "Cashewnuts",
+    "nameHi": "Cashewnuts",
+    "emoji": "🌱",
+    "totalRecords": 64,
+    "avgPrice": 14857,
+    "minPrice": 12500,
+    "maxPrice": 17500,
+    "varieties": [
+      "Local(Raw)",
+      "Other"
     ]
   },
   {
@@ -1542,9 +1548,9 @@
     "name": "Tender Coconut",
     "nameHi": "नारियल पानी",
     "emoji": "🥥",
-    "totalRecords": 34,
-    "avgPrice": 20145,
-    "minPrice": 18,
+    "totalRecords": 33,
+    "avgPrice": 20755,
+    "minPrice": 2000,
     "maxPrice": 40500,
     "varieties": [
       "Tender Coconut"
@@ -1589,6 +1595,7 @@
       "Other"
     ],
     "msp": 5650,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       9,
       10
@@ -1637,6 +1644,7 @@
       "Shelled (Bunch)"
     ],
     "msp": 6783,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       5,
       6
@@ -1771,6 +1779,7 @@
       "Ordinary (Split)"
     ],
     "msp": 8682,
+    "mspSeason": "2024-25",
     "sowingMonths": [
       6,
       7

@@ -3,8 +3,7 @@
     "id": "rice",
     "name": "Rice",
     "nameHi": "चावल",
-    "emoji": "🌾",
-    "msp": 2300
+    "emoji": "🌾"
   },
   "history": [
     {
@@ -12,14 +11,16 @@
       "date": "2026-06",
       "market": 5500,
       "volume": 1,
-      "msp": 2300
+      "days": 1,
+      "mandis": 1
     },
     {
       "month": "10",
       "date": "2026-10",
       "market": 2800,
       "volume": 1,
-      "msp": 2300
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -27,6 +28,7 @@
       "date": "2026-06-30",
       "market": 5500,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 5500,
       "maxPrice": 5500
     },
@@ -34,6 +36,7 @@
       "date": "2026-10-16",
       "market": 2800,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 2600,
       "maxPrice": 3000
     }

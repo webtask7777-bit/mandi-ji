@@ -14,6 +14,16 @@ import { getDataFreshness } from "../utils/dataFreshness";
 import { cropDetailPath } from "../utils/cropUrls";
 import "../styles/prices.css";
 
+const HI_MONTHS = ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'];
+/** "अक्टूबर 2026 · 1 दिन, 346 मंडियाँ": the ticker price says which month and how much data it rests on. */
+function tickerPriceLabel(quote) {
+  const m = /^(\d{4})-(\d{2})$/.exec(quote?.priceMonth || '');
+  if (!m) return 'अंतिम दर्ज महीने का औसत';
+  const parts = [`${HI_MONTHS[Number(m[2]) - 1]} ${m[1]}`];
+  if (quote.priceDays) parts.push(`${quote.priceDays} दिन${quote.priceMandis ? `, ${quote.priceMandis} मंडियाँ` : ''}`);
+  return `मंडियों का मध्य भाव · ${parts.join(' · ')}`;
+}
+
 const MONTH_HI = {
   '01': 'जनवरी', '02': 'फ़रवरी', '03': 'मार्च', '04': 'अप्रैल',
   '05': 'मई', '06': 'जून', '07': 'जुलाई', '08': 'अगस्त',
@@ -119,7 +129,7 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
   const cropsWithPrices = allCrops.slice(0, 12).map(crop => {
     const quote = ticker.find(item => item.id === crop.id);
     return { ...crop, displayName: crop.nameHi || crop.name, market: Number(quote?.price) > 0 ? quote.price : crop.avgPrice,
-      priceLabel: Number(quote?.price) > 0 ? 'अंतिम दर्ज महीने का औसत' : 'रिकॉर्ड का औसत', changePct: Number(quote?.prevPrice) > 0 ? quote.changePct : null,
+      priceLabel: Number(quote?.price) > 0 ? tickerPriceLabel(quote) : 'रिकॉर्ड का औसत', changePct: Number(quote?.prevPrice) > 0 ? quote.changePct : null,
       change: quote?.change ?? null, mandiCount: quote?.mandiCount ?? null, changeBasis: 'पिछले दर्ज महीने से' };
   });
   const visibleCards = showAllCards ? cropsWithPrices : cropsWithPrices.slice(0, 4);
@@ -188,7 +198,7 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
             <div className="sb-quote-hero__main"><div><h3>{cropName}</h3><p className="sb-quote-date">{recordLabel(heroRecord) || 'भाव की तारीख उपलब्ध नहीं'}</p><div className="sb-hero-amount">₹{number(heroPrice)}</div><span className="sb-unit-label">प्रति क्विंटल · उपलब्ध रिकॉर्ड का औसत</span></div><CropImage id={activeCrop} name={cropName} size="hero" /></div>
             {hasPrevious && <div className="sb-hero-change"><span className={`sb-change ${heroChange > 0 ? 'sb-change--up' : heroChange < 0 ? 'sb-change--down' : 'sb-change--flat'}`}>{heroChange >= 0 ? <ArrowUpRight size={18} aria-hidden="true" /> : <ArrowDownRight size={18} aria-hidden="true" />}{heroChange > 0 ? '+' : ''}₹{number(heroChange)} ({heroChange > 0 ? '+' : ''}{heroChangePct}%)</span><small>{recordLabel(previousRecord) ? `${recordLabel(previousRecord)} के रिकॉर्ड से` : 'पिछले उपलब्ध रिकॉर्ड से'}</small></div>}
             {heroComparison.status === 'gap' && <p className="sb-small-note">{gapNote(heroComparison)}।</p>}
-            {Number(latestPrice?.msp) > 0 && <div className="sb-msp-line"><span>दर्ज MSP</span><strong>₹{number(latestPrice.msp)} <small>/ क्विंटल</small></strong></div>}
+            {Number(latestPrice?.msp) > 0 && <div className="sb-msp-line"><span>{priceData?.crop?.mspSeason ? `MSP ${priceData.crop.mspSeason}` : 'दर्ज MSP'}</span><strong>₹{number(latestPrice.msp)} <small>/ क्विंटल</small></strong></div>}
             {!freshness.isCurrent && <p className="sb-quote-notice"><Info size={15} aria-hidden="true" />{freshness.label}। सौदे से पहले मंडी से भाव की पुष्टि करें।</p>}
             {Number(selectedTicker?.bestMandi?.price) >= 1 && Number(selectedTicker?.worstMandi?.price) >= 1 && <div className="sb-quote-range">
               {[{ label: 'दर्ज अधिकतम', market: selectedTicker.bestMandi }, { label: 'दर्ज न्यूनतम', market: selectedTicker.worstMandi }].map(({ label, market }) => {
@@ -203,7 +213,7 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
             <Link to={`/listing/new?type=sell&crop=${encodeURIComponent(activeCrop)}`} className="sb-sell-button"><ShoppingCart size={17} aria-hidden="true" />यह फसल बेचने की लिस्टिंग बनाएँ<ArrowRight size={17} aria-hidden="true" /></Link>
             {priceData?.lastUpdated && <p className="sb-sync-time">डेटा अपडेट: {formatTimestamp(priceData.lastUpdated)}</p>}
           </section>
-          <div className="sb-trend-panel"><MiniChart data={history} dailyData={dailyHistory} title={`${cropName} का भाव इतिहास`} formatMonth={formatMonthHi} /><p className="sb-data-note"><Info size={15} aria-hidden="true" />यह उपलब्ध भावों का इतिहास है। मंडी और फसल की गुणवत्ता के अनुसार वास्तविक भाव बदल सकता है।</p></div>
+          <div className="sb-trend-panel"><MiniChart data={history} dailyData={dailyHistory} mspSeason={priceData?.crop?.mspSeason} title={`${cropName} का भाव इतिहास`} formatMonth={formatMonthHi} /><p className="sb-data-note"><Info size={15} aria-hidden="true" />यह उपलब्ध भावों का इतिहास है। मंडी और फसल की गुणवत्ता के अनुसार वास्तविक भाव बदल सकता है।</p></div>
         </div> : <div className="sb-price-empty"><Sprout size={30} /><h3>इस फसल का भाव अभी उपलब्ध नहीं है</h3><p>दूसरी फसल या राज्य चुनकर उपलब्ध रिकॉर्ड देखें।</p></div>}
 
         {mover && <section className="sb-mover-strip" aria-label="उपलब्ध रिकॉर्ड में प्रमुख बदलाव"><div className="sb-mover-strip__label"><p className="sb-eyebrow">भाव में बदलाव</p><h3>बाज़ार की हलचल</h3><span>पिछले दर्ज महीने से</span></div><button type="button" className="sb-mover-quote" onClick={() => chooseCrop(mover.id)}><CropImage id={mover.id} name={mover.nameHi || mover.name} size="md" /><span><strong>{mover.nameHi || mover.name}</strong><small>{mover.mandiCount ? `${number(mover.mandiCount)} मंडियों के रिकॉर्ड` : 'उपलब्ध रिकॉर्ड'}</small></span><b>₹{number(mover.price)}<small>मासिक औसत / क्विंटल</small></b><span className={`sb-change ${mover.changePct > 0 ? 'sb-change--up' : 'sb-change--down'}`}>{mover.changePct > 0 ? <ArrowUpRight size={18} aria-hidden="true" /> : <ArrowDownRight size={18} aria-hidden="true" />}{mover.changePct > 0 ? '+' : ''}{mover.changePct}%</span></button>{topMovers.length > 1 && <div className="sb-mover-controls"><button type="button" onClick={() => setSliderIndex(index => (index - 1 + topMovers.length) % topMovers.length)} aria-label="पिछली फसल"><ChevronLeft size={18} /></button><span>{sliderIndex % topMovers.length + 1}/{topMovers.length}</span><button type="button" onClick={() => setSliderIndex(index => (index + 1) % topMovers.length)} aria-label="अगली फसल"><ChevronRight size={18} /></button></div>}</section>}

@@ -4,7 +4,8 @@
     "name": "Cotton",
     "nameHi": "कपास",
     "emoji": "☁️",
-    "msp": 7121
+    "msp": 7121,
+    "mspSeason": "2024-25"
   },
   "history": [
     {
@@ -12,13 +13,17 @@
       "date": "2026-06",
       "market": 12392,
       "volume": 2,
+      "days": 2,
+      "mandis": 1,
       "msp": 7121
     },
     {
       "month": "07",
       "date": "2026-07",
-      "market": 8964,
-      "volume": 12,
+      "market": 9117,
+      "volume": 11,
+      "days": 10,
+      "mandis": 2,
       "msp": 7121
     }
   ],
@@ -27,6 +32,7 @@
       "date": "2026-06-29",
       "market": 12477,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 12477,
       "maxPrice": 12477
     },
@@ -34,6 +40,7 @@
       "date": "2026-06-30",
       "market": 12307,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 12307,
       "maxPrice": 12307
     },
@@ -41,6 +48,7 @@
       "date": "2026-07-01",
       "market": 12412,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 12412,
       "maxPrice": 12412
     },
@@ -48,6 +56,7 @@
       "date": "2026-07-02",
       "market": 12307,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 12307,
       "maxPrice": 12307
     },
@@ -55,6 +64,7 @@
       "date": "2026-07-04",
       "market": 9901,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 4003,
       "maxPrice": 12308
     },
@@ -62,6 +72,7 @@
       "date": "2026-07-06",
       "market": 5107,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 5107,
       "maxPrice": 5107
     },
@@ -69,20 +80,23 @@
       "date": "2026-07-08",
       "market": 10179,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 8150,
       "maxPrice": 12207
     },
     {
       "date": "2026-07-10",
-      "market": 4853,
-      "volume": 2,
-      "minPrice": 500,
+      "market": 9205,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 9205,
       "maxPrice": 9205
     },
     {
       "date": "2026-07-11",
       "market": 12207,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 12207,
       "maxPrice": 12207
     },
@@ -90,6 +104,7 @@
       "date": "2026-07-15",
       "market": 12307,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 12307,
       "maxPrice": 12307
     },
@@ -97,6 +112,7 @@
       "date": "2026-07-16",
       "market": 8150,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 8150,
       "maxPrice": 8150
     },
@@ -104,6 +120,7 @@
       "date": "2026-07-18",
       "market": 5110,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 5110,
       "maxPrice": 5110
     }
@@ -121,12 +138,6 @@
       "nameHi": "Saharanpur",
       "avgPrice": 8150,
       "records": 2
-    },
-    {
-      "district": "Ayodhya",
-      "nameHi": "Ayodhya",
-      "avgPrice": 500,
-      "records": 1
     }
   ]
 }

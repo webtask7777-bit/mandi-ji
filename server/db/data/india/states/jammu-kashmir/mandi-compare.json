@@ -1,45 +1,14 @@
 {
   "apple": [
     {
-      "name": "Udhampur",
-      "district": "Udhampur",
-      "avgPrice": 9710,
-      "recentPrice": null,
-      "minPrice": 7000,
-      "maxPrice": 14000,
-      "records": 50,
-      "topVariety": "Apple",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 8873,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 12500,
-      "records": 63,
-      "topVariety": "Delicious",
-      "grade": "Medium"
-    },
-    {
-      "name": "Rajouri",
-      "district": "Rajouri",
-      "avgPrice": 6100,
-      "recentPrice": null,
-      "minPrice": 4500,
-      "maxPrice": 6500,
-      "records": 5,
-      "topVariety": "Apple",
-      "grade": "Grade B"
-    },
-    {
       "name": "Kathua",
       "district": "Kathua",
       "avgPrice": 8060,
       "recentPrice": 6000,
-      "minPrice": 4500,
-      "maxPrice": 13500,
+      "minPrice": 6000,
+      "maxPrice": 6000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 67,
       "topVariety": "Delicious",
       "grade": "Grade B"
@@ -51,6 +20,8 @@
       "recentPrice": 5733,
       "minPrice": 5100,
       "maxPrice": 6300,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 3,
       "topVariety": "American",
       "grade": "Grade A"
@@ -62,9 +33,50 @@
       "recentPrice": 5469,
       "minPrice": 5000,
       "maxPrice": 5937.5,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 2,
       "topVariety": "Kullu Delicious",
       "grade": "Grade A"
+    },
+    {
+      "name": "Udhampur",
+      "district": "Udhampur",
+      "avgPrice": 9710,
+      "recentPrice": null,
+      "minPrice": 7000,
+      "maxPrice": 14000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-20",
+      "records": 50,
+      "topVariety": "Apple",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 8873,
+      "recentPrice": null,
+      "minPrice": 3500,
+      "maxPrice": 12500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-20",
+      "records": 63,
+      "topVariety": "Delicious",
+      "grade": "Medium"
+    },
+    {
+      "name": "Rajouri",
+      "district": "Rajouri",
+      "avgPrice": 6100,
+      "recentPrice": null,
+      "minPrice": 4500,
+      "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-09",
+      "records": 5,
+      "topVariety": "Apple",
+      "grade": "Grade B"
     },
     {
       "name": "Nowpora",
@@ -73,6 +85,8 @@
       "recentPrice": null,
       "minPrice": 4100,
       "maxPrice": 5200,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-22",
       "records": 62,
       "topVariety": "American",
       "grade": "Grade A"
@@ -84,6 +98,8 @@
       "recentPrice": null,
       "minPrice": 2812.5,
       "maxPrice": 6250,
+      "rangeBasis": "all",
+      "lastDate": "2025-12-22",
       "records": 18,
       "topVariety": "Delicious",
       "grade": "Grade A"
@@ -95,6 +111,8 @@
       "recentPrice": null,
       "minPrice": 2812.5,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2025-12-20",
       "records": 8,
       "topVariety": "Delicious",
       "grade": "Grade A"
@@ -106,6 +124,8 @@
       "recentPrice": null,
       "minPrice": 2466.67,
       "maxPrice": 4833.33,
+      "rangeBasis": "all",
+      "lastDate": "2025-12-18",
       "records": 10,
       "topVariety": "Delicious",
       "grade": "Grade A"
@@ -113,12 +133,40 @@
   ],
   "banana": [
     {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 4108,
+      "recentPrice": 4250,
+      "minPrice": 4250,
+      "maxPrice": 4250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 75,
+      "topVariety": "Banana - Ripe",
+      "grade": "Grade B"
+    },
+    {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 4050,
+      "recentPrice": 4050,
+      "minPrice": 4050,
+      "maxPrice": 4050,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "Banana - Ripe",
+      "grade": "Medium"
+    },
+    {
       "name": "Rajouri (Phaliana)",
       "district": "Rajouri",
       "avgPrice": 6031,
       "recentPrice": null,
       "minPrice": 5500,
       "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 16,
       "topVariety": "Banana - Ripe",
       "grade": "Grade B"
@@ -130,6 +178,8 @@
       "recentPrice": null,
       "minPrice": 4200,
       "maxPrice": 5700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 28,
       "topVariety": "Medium",
       "grade": "Grade A"
@@ -141,6 +191,8 @@
       "recentPrice": null,
       "minPrice": 4300,
       "maxPrice": 6200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-04",
       "records": 27,
       "topVariety": "Banana - Ripe",
       "grade": "Grade B"
@@ -152,6 +204,8 @@
       "recentPrice": null,
       "minPrice": 4400,
       "maxPrice": 4400,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 13,
       "topVariety": null,
       "grade": "Grade B"
@@ -163,19 +217,10 @@
       "recentPrice": null,
       "minPrice": 4200,
       "maxPrice": 4400,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 41,
       "topVariety": null,
-      "grade": "Grade B"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 4108,
-      "recentPrice": 4250,
-      "minPrice": 3250,
-      "maxPrice": 5250,
-      "records": 75,
-      "topVariety": "Banana - Ripe",
       "grade": "Grade B"
     },
     {
@@ -185,20 +230,11 @@
       "recentPrice": null,
       "minPrice": 2800,
       "maxPrice": 5800,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 101,
       "topVariety": "Medium",
       "grade": "Grade B"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 4050,
-      "recentPrice": 4050,
-      "minPrice": 4050,
-      "maxPrice": 4050,
-      "records": 1,
-      "topVariety": "Banana - Ripe",
-      "grade": "Medium"
     },
     {
       "name": "Narwal Jammu",
@@ -207,6 +243,8 @@
       "recentPrice": null,
       "minPrice": 3100,
       "maxPrice": 4600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 51,
       "topVariety": "Medium",
       "grade": "Medium"
@@ -218,6 +256,8 @@
       "recentPrice": null,
       "minPrice": 3700,
       "maxPrice": 3700,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 2,
       "topVariety": null,
       "grade": "Grade A"
@@ -229,6 +269,8 @@
       "recentPrice": null,
       "minPrice": 2800,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 10,
       "topVariety": null,
       "grade": "Grade A"
@@ -242,6 +284,8 @@
       "recentPrice": 2750,
       "minPrice": 2750,
       "maxPrice": 2750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Beetroot",
       "grade": "FAQ"
@@ -253,6 +297,8 @@
       "recentPrice": null,
       "minPrice": 2100,
       "maxPrice": 3100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 15,
       "topVariety": "Beetroot",
       "grade": "FAQ"
@@ -260,12 +306,40 @@
   ],
   "bhindiladies-finger": [
     {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 2750,
+      "recentPrice": 2750,
+      "minPrice": 2750,
+      "maxPrice": 2750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "Bhindi",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 5673,
+      "recentPrice": 1900,
+      "minPrice": 1900,
+      "maxPrice": 1900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 77,
+      "topVariety": "Bhindi",
+      "grade": "FAQ"
+    },
+    {
       "name": "Rajouri",
       "district": "Rajouri",
       "avgPrice": 7888,
       "recentPrice": null,
       "minPrice": 6500,
       "maxPrice": 11000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 17,
       "topVariety": "Bhindi",
       "grade": "Grade B"
@@ -277,6 +351,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 9000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 38,
       "topVariety": null,
       "grade": "FAQ"
@@ -288,6 +364,8 @@
       "recentPrice": null,
       "minPrice": 3250,
       "maxPrice": 9000,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-19",
       "records": 45,
       "topVariety": null,
       "grade": "Grade B"
@@ -299,6 +377,8 @@
       "recentPrice": null,
       "minPrice": 750,
       "maxPrice": 7250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 55,
       "topVariety": "Bhindi",
       "grade": "FAQ"
@@ -310,6 +390,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 15,
       "topVariety": null,
       "grade": "FAQ"
@@ -321,20 +403,11 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 11,
       "topVariety": "Bhindi",
       "grade": "Grade B"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 2750,
-      "recentPrice": 2750,
-      "minPrice": 2750,
-      "maxPrice": 2750,
-      "records": 1,
-      "topVariety": "Bhindi",
-      "grade": "FAQ"
     },
     {
       "name": "Fruit and Vegetable Market Udhampur",
@@ -343,23 +416,40 @@
       "recentPrice": null,
       "minPrice": 2250,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 11,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 5673,
-      "recentPrice": 1900,
-      "minPrice": 1200,
-      "maxPrice": 9500,
-      "records": 77,
-      "topVariety": "Bhindi",
-      "grade": "FAQ"
     }
   ],
   "bitter-gourd": [
+    {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 6524,
+      "recentPrice": 2750,
+      "minPrice": 2750,
+      "maxPrice": 2750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 70,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 2750,
+      "recentPrice": 2750,
+      "minPrice": 2750,
+      "maxPrice": 2750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "Bitter Gourd",
+      "grade": "FAQ"
+    },
     {
       "name": "Parimpore",
       "district": "Srinagar",
@@ -367,6 +457,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 9000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 39,
       "topVariety": null,
       "grade": "FAQ"
@@ -378,6 +470,8 @@
       "recentPrice": null,
       "minPrice": 5500,
       "maxPrice": 9000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 21,
       "topVariety": "Bitter Gourd",
       "grade": "Grade B"
@@ -389,6 +483,8 @@
       "recentPrice": null,
       "minPrice": 2750,
       "maxPrice": 9500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 48,
       "topVariety": "Bitter Gourd",
       "grade": "Grade B"
@@ -400,96 +496,23 @@
       "recentPrice": null,
       "minPrice": 4200,
       "maxPrice": 9500,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-06",
       "records": 39,
-      "topVariety": "Bitter Gourd",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 6524,
-      "recentPrice": 2750,
-      "minPrice": 2750,
-      "maxPrice": 9500,
-      "records": 70,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 2750,
-      "recentPrice": 2750,
-      "minPrice": 2750,
-      "maxPrice": 2750,
-      "records": 1,
       "topVariety": "Bitter Gourd",
       "grade": "FAQ"
     }
   ],
   "bottle-gourd": [
     {
-      "name": "Rajouri",
-      "district": "Rajouri",
-      "avgPrice": 3227,
-      "recentPrice": null,
-      "minPrice": 2200,
-      "maxPrice": 4000,
-      "records": 15,
-      "topVariety": "Bottle Gourd",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Parimpore Srinagar",
-      "district": "Srinagar",
-      "avgPrice": 3167,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 4000,
-      "records": 15,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Parimpore",
-      "district": "Srinagar",
-      "avgPrice": 2806,
-      "recentPrice": null,
-      "minPrice": 1650,
-      "maxPrice": 4150,
-      "records": 59,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Rajouri (Phaliana)",
-      "district": "Rajouri",
-      "avgPrice": 2679,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 3500,
-      "records": 14,
-      "topVariety": "Bottle Gourd",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Batengoo Anantnag",
-      "district": "Anantnag",
-      "avgPrice": 2667,
-      "recentPrice": null,
-      "minPrice": 2000,
-      "maxPrice": 3000,
-      "records": 3,
-      "topVariety": "Bottle Gourd",
-      "grade": "FAQ"
-    },
-    {
       "name": "Kathua",
       "district": "Kathua",
       "avgPrice": 2256,
       "recentPrice": 2250,
-      "minPrice": 1100,
-      "maxPrice": 4500,
+      "minPrice": 2250,
+      "maxPrice": 2250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 77,
       "topVariety": "Bottle Gourd",
       "grade": "FAQ"
@@ -501,7 +524,74 @@
       "recentPrice": 2250,
       "minPrice": 2250,
       "maxPrice": 2250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
+      "topVariety": "Bottle Gourd",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Rajouri",
+      "district": "Rajouri",
+      "avgPrice": 3227,
+      "recentPrice": null,
+      "minPrice": 2200,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
+      "records": 15,
+      "topVariety": "Bottle Gourd",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Parimpore Srinagar",
+      "district": "Srinagar",
+      "avgPrice": 3167,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
+      "records": 15,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Parimpore",
+      "district": "Srinagar",
+      "avgPrice": 2806,
+      "recentPrice": null,
+      "minPrice": 1650,
+      "maxPrice": 4150,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-11",
+      "records": 59,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Rajouri (Phaliana)",
+      "district": "Rajouri",
+      "avgPrice": 2679,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
+      "records": 14,
+      "topVariety": "Bottle Gourd",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Batengoo Anantnag",
+      "district": "Anantnag",
+      "avgPrice": 2667,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
+      "records": 3,
       "topVariety": "Bottle Gourd",
       "grade": "FAQ"
     },
@@ -512,6 +602,8 @@
       "recentPrice": null,
       "minPrice": 550,
       "maxPrice": 3250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 50,
       "topVariety": "Bottle Gourd",
       "grade": "FAQ"
@@ -519,12 +611,40 @@
   ],
   "brinjal": [
     {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 2500,
+      "recentPrice": 2500,
+      "minPrice": 2500,
+      "maxPrice": 2500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "Brinjal",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 2417,
+      "recentPrice": 1850,
+      "minPrice": 1850,
+      "maxPrice": 1850,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 71,
+      "topVariety": "Round/Long",
+      "grade": "FAQ"
+    },
+    {
       "name": "Rajouri",
       "district": "Rajouri",
       "avgPrice": 3157,
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 7,
       "topVariety": "Brinjal",
       "grade": "Grade B"
@@ -536,19 +656,10 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 69,
       "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 2500,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "records": 1,
-      "topVariety": "Brinjal",
       "grade": "FAQ"
     },
     {
@@ -558,6 +669,8 @@
       "recentPrice": null,
       "minPrice": 1750,
       "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-20",
       "records": 46,
       "topVariety": null,
       "grade": "Grade B"
@@ -569,19 +682,10 @@
       "recentPrice": null,
       "minPrice": 1550,
       "maxPrice": 3200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 40,
       "topVariety": "Brinjal",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 2417,
-      "recentPrice": 1850,
-      "minPrice": 1750,
-      "maxPrice": 4250,
-      "records": 71,
-      "topVariety": "Round/Long",
       "grade": "FAQ"
     }
   ],
@@ -591,9 +695,24 @@
       "district": "Kathua",
       "avgPrice": 3963,
       "recentPrice": 7250,
-      "minPrice": 2000,
+      "minPrice": 7250,
       "maxPrice": 7250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 69,
+      "topVariety": "Capsicum",
+      "grade": "FAQ"
+    },
+    {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 5500,
+      "recentPrice": 5500,
+      "minPrice": 5500,
+      "maxPrice": 5500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
       "topVariety": "Capsicum",
       "grade": "FAQ"
     },
@@ -604,6 +723,8 @@
       "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2025-12-23",
       "records": 3,
       "topVariety": "Capsicum",
       "grade": "FAQ"
@@ -615,20 +736,11 @@
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 25,
       "topVariety": "Capsicum",
       "grade": "Grade B"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 5500,
-      "recentPrice": 5500,
-      "minPrice": 5500,
-      "maxPrice": 5500,
-      "records": 1,
-      "topVariety": "Capsicum",
-      "grade": "FAQ"
     },
     {
       "name": "Parimpore",
@@ -637,6 +749,8 @@
       "recentPrice": null,
       "minPrice": 1650,
       "maxPrice": 7250,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 62,
       "topVariety": null,
       "grade": "FAQ"
@@ -648,6 +762,8 @@
       "recentPrice": null,
       "minPrice": 2750,
       "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-06",
       "records": 33,
       "topVariety": "Capsicum",
       "grade": "FAQ"
@@ -655,23 +771,14 @@
   ],
   "cabbage": [
     {
-      "name": "Rajouri",
-      "district": "Rajouri",
-      "avgPrice": 2408,
-      "recentPrice": null,
-      "minPrice": 1500,
-      "maxPrice": 3500,
-      "records": 35,
-      "topVariety": "Cabbage",
-      "grade": "Grade B"
-    },
-    {
       "name": "Kathua",
       "district": "Kathua",
       "avgPrice": 837,
       "recentPrice": 1750,
-      "minPrice": 400,
-      "maxPrice": 2250,
+      "minPrice": 1750,
+      "maxPrice": 1750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 50,
       "topVariety": "Cabbage",
       "grade": "FAQ"
@@ -683,9 +790,24 @@
       "recentPrice": 1750,
       "minPrice": 1750,
       "maxPrice": 1750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Cabbage",
       "grade": "FAQ"
+    },
+    {
+      "name": "Rajouri",
+      "district": "Rajouri",
+      "avgPrice": 2408,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
+      "records": 35,
+      "topVariety": "Cabbage",
+      "grade": "Grade B"
     },
     {
       "name": "Batingoo",
@@ -694,6 +816,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-07",
       "records": 6,
       "topVariety": "Cabbage",
       "grade": "FAQ"
@@ -705,6 +829,8 @@
       "recentPrice": null,
       "minPrice": 750,
       "maxPrice": 1750,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-11",
       "records": 70,
       "topVariety": null,
       "grade": "FAQ"
@@ -716,6 +842,8 @@
       "recentPrice": null,
       "minPrice": 550,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 10,
       "topVariety": "Cabbage",
       "grade": "FAQ"
@@ -727,6 +855,8 @@
       "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 1600,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 49,
       "topVariety": null,
       "grade": "Grade B"
@@ -734,12 +864,27 @@
   ],
   "carrot": [
     {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 2750,
+      "recentPrice": 2750,
+      "minPrice": 2750,
+      "maxPrice": 2750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "Carrot",
+      "grade": "FAQ"
+    },
+    {
       "name": "Rajouri (Phaliana)",
       "district": "Rajouri",
       "avgPrice": 4000,
       "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-07",
       "records": 2,
       "topVariety": "Carrot",
       "grade": "Grade B"
@@ -751,20 +896,11 @@
       "recentPrice": null,
       "minPrice": 2650,
       "maxPrice": 3750,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 16,
       "topVariety": null,
       "grade": "Local"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 2750,
-      "recentPrice": 2750,
-      "minPrice": 2750,
-      "maxPrice": 2750,
-      "records": 1,
-      "topVariety": "Carrot",
-      "grade": "FAQ"
     },
     {
       "name": "Rajouri",
@@ -773,6 +909,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 15,
       "topVariety": "Carrot",
       "grade": "Grade B"
@@ -784,6 +922,8 @@
       "recentPrice": null,
       "minPrice": 1700,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-02",
       "records": 6,
       "topVariety": "Carrot",
       "grade": "FAQ"
@@ -795,6 +935,8 @@
       "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 2900,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 62,
       "topVariety": null,
       "grade": "FAQ"
@@ -806,6 +948,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 4200,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 37,
       "topVariety": "Carrot",
       "grade": "FAQ"
@@ -817,6 +961,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 2750,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 62,
       "topVariety": "Carrot",
       "grade": "FAQ"
@@ -824,12 +970,40 @@
   ],
   "cauliflower": [
     {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 2250,
+      "recentPrice": 2250,
+      "minPrice": 2250,
+      "maxPrice": 2250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "Cauliflower",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 1368,
+      "recentPrice": 2000,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 50,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Rajouri",
       "district": "Rajouri",
       "avgPrice": 3047,
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 3600,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 34,
       "topVariety": "Cauliflower",
       "grade": "Grade B"
@@ -841,41 +1015,23 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-03-07",
       "records": 7,
-      "topVariety": "Cauliflower",
-      "grade": "FAQ"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 2250,
-      "recentPrice": 2250,
-      "minPrice": 2250,
-      "maxPrice": 2250,
-      "records": 1,
       "topVariety": "Cauliflower",
       "grade": "FAQ"
     },
     {
       "name": "Narwal Jammu",
       "district": "Jammu",
-      "avgPrice": 2051,
+      "avgPrice": 2204,
       "recentPrice": null,
-      "minPrice": 62.5,
+      "minPrice": 1400,
       "maxPrice": 3500,
-      "records": 14,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-20",
+      "records": 13,
       "topVariety": "Cauliflower",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 1368,
-      "recentPrice": 2000,
-      "minPrice": 450,
-      "maxPrice": 3250,
-      "records": 50,
-      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -885,6 +1041,8 @@
       "recentPrice": null,
       "minPrice": 1150,
       "maxPrice": 3450,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 69,
       "topVariety": null,
       "grade": "FAQ"
@@ -896,6 +1054,8 @@
       "recentPrice": null,
       "minPrice": 500,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 38,
       "topVariety": null,
       "grade": "Grade B"
@@ -909,6 +1069,8 @@
       "recentPrice": 5500,
       "minPrice": 5500,
       "maxPrice": 5500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Coriander",
       "grade": "FAQ"
@@ -920,6 +1082,8 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 16,
       "topVariety": null,
       "grade": "FAQ"
@@ -931,6 +1095,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 7500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 65,
       "topVariety": null,
       "grade": "FAQ"
@@ -942,6 +1108,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 11,
       "topVariety": "Coriander",
       "grade": "FAQ"
@@ -953,6 +1121,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 7750,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 50,
       "topVariety": "Coriander",
       "grade": "FAQ"
@@ -964,20 +1134,11 @@
       "district": "Kathua",
       "avgPrice": 2648,
       "recentPrice": 3500,
-      "minPrice": 1250,
-      "maxPrice": 4750,
+      "minPrice": 3500,
+      "maxPrice": 3500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 65,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Parimpore",
-      "district": "Srinagar",
-      "avgPrice": 3429,
-      "recentPrice": null,
-      "minPrice": 1750,
-      "maxPrice": 4600,
-      "records": 66,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -988,8 +1149,23 @@
       "recentPrice": 3250,
       "minPrice": 3250,
       "maxPrice": 3250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Cucumbar",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Parimpore",
+      "district": "Srinagar",
+      "avgPrice": 3429,
+      "recentPrice": null,
+      "minPrice": 1750,
+      "maxPrice": 4600,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
+      "records": 66,
+      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -999,6 +1175,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 15,
       "topVariety": "Cucumbar",
       "grade": "Grade B"
@@ -1010,6 +1188,8 @@
       "recentPrice": null,
       "minPrice": 1750,
       "maxPrice": 3750,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-19",
       "records": 43,
       "topVariety": null,
       "grade": "Grade B"
@@ -1021,6 +1201,8 @@
       "recentPrice": null,
       "minPrice": 1250,
       "maxPrice": 3600,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-06",
       "records": 31,
       "topVariety": "Cucumbar",
       "grade": "FAQ"
@@ -1034,6 +1216,8 @@
       "recentPrice": null,
       "minPrice": 2100,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-12",
       "records": 25,
       "topVariety": null,
       "grade": "FAQ"
@@ -1045,6 +1229,8 @@
       "recentPrice": null,
       "minPrice": 1250,
       "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 37,
       "topVariety": "Field Pea",
       "grade": "FAQ"
@@ -1052,12 +1238,27 @@
   ],
   "french-beansfrasbean": [
     {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 4250,
+      "recentPrice": 4250,
+      "minPrice": 4250,
+      "maxPrice": 4250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "French Beans (Frasbean)",
+      "grade": "FAQ"
+    },
+    {
       "name": "Kathua",
       "district": "Kathua",
       "avgPrice": 7500,
       "recentPrice": null,
       "minPrice": 7500,
       "maxPrice": 7500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-04",
       "records": 2,
       "topVariety": null,
       "grade": "Grade B"
@@ -1069,6 +1270,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 7500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 6,
       "topVariety": null,
       "grade": "Grade B"
@@ -1080,6 +1283,8 @@
       "recentPrice": null,
       "minPrice": 4750,
       "maxPrice": 7500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 16,
       "topVariety": null,
       "grade": "FAQ"
@@ -1091,20 +1296,11 @@
       "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 15,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 4250,
-      "recentPrice": 4250,
-      "minPrice": 4250,
-      "maxPrice": 4250,
-      "records": 1,
-      "topVariety": "French Beans (Frasbean)",
-      "grade": "FAQ"
     },
     {
       "name": "Narwal Jammu",
@@ -1113,6 +1309,8 @@
       "recentPrice": null,
       "minPrice": 1900,
       "maxPrice": 5250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 30,
       "topVariety": "French Beans (Frasbean)",
       "grade": "FAQ"
@@ -1124,6 +1322,8 @@
       "recentPrice": null,
       "minPrice": 2100,
       "maxPrice": 5750,
+      "rangeBasis": "all",
+      "lastDate": "2026-02-02",
       "records": 29,
       "topVariety": null,
       "grade": "FAQ"
@@ -1135,8 +1335,10 @@
       "district": "Kathua",
       "avgPrice": 12865,
       "recentPrice": 15000,
-      "minPrice": 8500,
-      "maxPrice": 19000,
+      "minPrice": 15000,
+      "maxPrice": 15000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 63,
       "topVariety": "Average",
       "grade": "FAQ"
@@ -1148,6 +1350,8 @@
       "recentPrice": 14000,
       "minPrice": 14000,
       "maxPrice": 14000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "New Medium",
       "grade": "FAQ"
@@ -1159,6 +1363,8 @@
       "recentPrice": null,
       "minPrice": 7500,
       "maxPrice": 17500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 31,
       "topVariety": "Garlic",
       "grade": "FAQ"
@@ -1170,6 +1376,8 @@
       "recentPrice": null,
       "minPrice": 12000,
       "maxPrice": 12000,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-23",
       "records": 1,
       "topVariety": "China",
       "grade": "Grade Range-1"
@@ -1181,6 +1389,8 @@
       "recentPrice": null,
       "minPrice": 7000,
       "maxPrice": 15000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 54,
       "topVariety": "Garlic",
       "grade": "FAQ"
@@ -1192,6 +1402,8 @@
       "recentPrice": null,
       "minPrice": 4500,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 1,
       "topVariety": "Garlic",
       "grade": "FAQ"
@@ -1199,12 +1411,40 @@
   ],
   "gingergreen": [
     {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 8097,
+      "recentPrice": 7000,
+      "minPrice": 7000,
+      "maxPrice": 7000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 75,
+      "topVariety": "Green Ginger",
+      "grade": "FAQ"
+    },
+    {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 6250,
+      "recentPrice": 6250,
+      "minPrice": 6250,
+      "maxPrice": 6250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "Green Ginger",
+      "grade": "FAQ"
+    },
+    {
       "name": "Parimpore Srinagar",
       "district": "Srinagar",
       "avgPrice": 19844,
       "recentPrice": null,
       "minPrice": 18500,
       "maxPrice": 22000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 16,
       "topVariety": "Green Ginger",
       "grade": "FAQ"
@@ -1216,18 +1456,9 @@
       "recentPrice": null,
       "minPrice": 7000,
       "maxPrice": 14500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 66,
-      "topVariety": "Green Ginger",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 8097,
-      "recentPrice": 7000,
-      "minPrice": 5000,
-      "maxPrice": 20000,
-      "records": 75,
       "topVariety": "Green Ginger",
       "grade": "FAQ"
     },
@@ -1238,18 +1469,9 @@
       "recentPrice": null,
       "minPrice": 3750,
       "maxPrice": 16000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 36,
-      "topVariety": "Green Ginger",
-      "grade": "FAQ"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 6250,
-      "recentPrice": 6250,
-      "minPrice": 6250,
-      "maxPrice": 6250,
-      "records": 1,
       "topVariety": "Green Ginger",
       "grade": "FAQ"
     }
@@ -1262,6 +1484,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 4800,
+      "rangeBasis": "all",
+      "lastDate": "2026-01-30",
       "records": 36,
       "topVariety": null,
       "grade": "FAQ"
@@ -1269,23 +1493,14 @@
   ],
   "pomegranate": [
     {
-      "name": "Parimpore",
-      "district": "Srinagar",
-      "avgPrice": 18500,
-      "recentPrice": null,
-      "minPrice": 18500,
-      "maxPrice": 18500,
-      "records": 1,
-      "topVariety": "Pomogranate",
-      "grade": "Grade A"
-    },
-    {
       "name": "Kathua",
       "district": "Kathua",
       "avgPrice": 13500,
       "recentPrice": 17500,
-      "minPrice": 11000,
+      "minPrice": 17500,
       "maxPrice": 17500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 6,
       "topVariety": "Pomogranate",
       "grade": "Grade B"
@@ -1297,9 +1512,24 @@
       "recentPrice": 15500,
       "minPrice": 15500,
       "maxPrice": 15500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Pomogranate",
       "grade": "Medium"
+    },
+    {
+      "name": "Parimpore",
+      "district": "Srinagar",
+      "avgPrice": 18500,
+      "recentPrice": null,
+      "minPrice": 18500,
+      "maxPrice": 18500,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
+      "records": 1,
+      "topVariety": "Pomogranate",
+      "grade": "Grade A"
     },
     {
       "name": "Udhampur",
@@ -1308,6 +1538,8 @@
       "recentPrice": null,
       "minPrice": 14000,
       "maxPrice": 16000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 5,
       "topVariety": null,
       "grade": "Grade B"
@@ -1319,6 +1551,8 @@
       "recentPrice": null,
       "minPrice": 13000,
       "maxPrice": 16500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 3,
       "topVariety": "Pomogranate",
       "grade": "Medium"
@@ -1326,26 +1560,30 @@
   ],
   "potato": [
     {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 959,
+      "recentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 29,
+      "topVariety": "Potato",
+      "grade": "FAQ"
+    },
+    {
       "name": "Rajouri",
       "district": "Rajouri",
       "avgPrice": 2000,
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 4,
       "topVariety": "Local",
       "grade": "Grade B"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 959,
-      "recentPrice": 1500,
-      "minPrice": 450,
-      "maxPrice": 1750,
-      "records": 29,
-      "topVariety": "Potato",
-      "grade": "FAQ"
     },
     {
       "name": "Rajouri (Phaliana)",
@@ -1354,6 +1592,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 3,
       "topVariety": "Local",
       "grade": "Grade B"
@@ -1365,6 +1605,8 @@
       "recentPrice": null,
       "minPrice": 700,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 35,
       "topVariety": "Red",
       "grade": "FAQ"
@@ -1376,6 +1618,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
       "records": 3,
       "topVariety": "Potato",
       "grade": "FAQ"
@@ -1387,6 +1631,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 11,
       "topVariety": null,
       "grade": "Grade B"
@@ -1398,6 +1644,8 @@
       "recentPrice": null,
       "minPrice": 950,
       "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 2,
       "topVariety": "Red",
       "grade": "FAQ"
@@ -1409,6 +1657,8 @@
       "recentPrice": null,
       "minPrice": 800,
       "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 5,
       "topVariety": null,
       "grade": "Grade B"
@@ -1420,6 +1670,8 @@
       "recentPrice": null,
       "minPrice": 650,
       "maxPrice": 1350,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 12,
       "topVariety": "Potato",
       "grade": "FAQ"
@@ -1427,12 +1679,40 @@
   ],
   "pineapple": [
     {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 5375,
+      "recentPrice": 5375,
+      "minPrice": 4250,
+      "maxPrice": 6500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 2,
+      "topVariety": "Pine Apple",
+      "grade": "Medium"
+    },
+    {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 3971,
+      "recentPrice": 4250,
+      "minPrice": 4250,
+      "maxPrice": 4250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 29,
+      "topVariety": "Pine Apple",
+      "grade": "Grade B"
+    },
+    {
       "name": "Parimpore Srinagar",
       "district": "Srinagar",
       "avgPrice": 8338,
       "recentPrice": null,
       "minPrice": 6000,
       "maxPrice": 11000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 30,
       "topVariety": "Pine Apple",
       "grade": "Grade A"
@@ -1444,6 +1724,8 @@
       "recentPrice": null,
       "minPrice": 6500,
       "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-06",
       "records": 3,
       "topVariety": "Pine Apple",
       "grade": "Grade B"
@@ -1455,20 +1737,11 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 3,
       "topVariety": "Pine Apple",
       "grade": "Grade B"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 5375,
-      "recentPrice": 5375,
-      "minPrice": 4250,
-      "maxPrice": 6500,
-      "records": 2,
-      "topVariety": "Pine Apple",
-      "grade": "Medium"
     },
     {
       "name": "Parimpore",
@@ -1477,18 +1750,9 @@
       "recentPrice": null,
       "minPrice": 5250,
       "maxPrice": 5250,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 1,
-      "topVariety": "Pine Apple",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 3971,
-      "recentPrice": 4250,
-      "minPrice": 2750,
-      "maxPrice": 5000,
-      "records": 29,
       "topVariety": "Pine Apple",
       "grade": "Grade B"
     },
@@ -1499,6 +1763,8 @@
       "recentPrice": null,
       "minPrice": 2900,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 17,
       "topVariety": "Pine Apple",
       "grade": "Medium"
@@ -1512,6 +1778,8 @@
       "recentPrice": 9000,
       "minPrice": 9000,
       "maxPrice": 9000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Green Chilly",
       "grade": "FAQ"
@@ -1521,8 +1789,10 @@
       "district": "Kathua",
       "avgPrice": 5833,
       "recentPrice": 8500,
-      "minPrice": 4250,
+      "minPrice": 8500,
       "maxPrice": 8500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 6,
       "topVariety": "Green Chilly",
       "grade": "FAQ"
@@ -1534,6 +1804,8 @@
       "recentPrice": null,
       "minPrice": 2750,
       "maxPrice": 5750,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 3,
       "topVariety": "Green Chilly",
       "grade": "FAQ"
@@ -1545,6 +1817,8 @@
       "recentPrice": null,
       "minPrice": 3750,
       "maxPrice": 3750,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -1558,6 +1832,8 @@
       "recentPrice": null,
       "minPrice": 11000,
       "maxPrice": 15000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 4,
       "topVariety": "Mashrooms",
       "grade": "FAQ"
@@ -1569,6 +1845,8 @@
       "recentPrice": null,
       "minPrice": 12000,
       "maxPrice": 12000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 1,
       "topVariety": "Mashrooms",
       "grade": "FAQ"
@@ -1580,6 +1858,8 @@
       "recentPrice": null,
       "minPrice": 10000,
       "maxPrice": 10000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 1,
       "topVariety": "Mashrooms",
       "grade": "Grade B"
@@ -1591,8 +1871,10 @@
       "district": "Kathua",
       "avgPrice": 1422,
       "recentPrice": 1500,
-      "minPrice": 1100,
-      "maxPrice": 2750,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 18,
       "topVariety": "Pumpkin",
       "grade": "FAQ"
@@ -1604,6 +1886,8 @@
       "recentPrice": null,
       "minPrice": 550,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 15,
       "topVariety": "Pumpkin",
       "grade": "FAQ"
@@ -1617,6 +1901,8 @@
       "recentPrice": 9500,
       "minPrice": 9500,
       "maxPrice": 9500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Karbhuja",
       "grade": "Medium"
@@ -1628,6 +1914,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 6300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 16,
       "topVariety": "Karbhuja",
       "grade": "Medium"
@@ -1639,6 +1927,8 @@
       "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 3,
       "topVariety": "Karbhuja",
       "grade": "Grade B"
@@ -1650,6 +1940,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 5,
       "topVariety": "Karbhuja",
       "grade": "Grade A"
@@ -1661,6 +1953,8 @@
       "recentPrice": null,
       "minPrice": 1850,
       "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 11,
       "topVariety": "Karbhuja",
       "grade": "Medium"
@@ -1672,6 +1966,8 @@
       "recentPrice": null,
       "minPrice": 3600,
       "maxPrice": 3600,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 1,
       "topVariety": "Karbhuja",
       "grade": "Medium"
@@ -1683,6 +1979,8 @@
       "recentPrice": null,
       "minPrice": 2750,
       "maxPrice": 3750,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 2,
       "topVariety": "Karbhuja",
       "grade": "Grade B"
@@ -1694,6 +1992,8 @@
       "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 1,
       "topVariety": "Karbhuja",
       "grade": "Grade A"
@@ -1705,8 +2005,10 @@
       "district": "Kathua",
       "avgPrice": 2268,
       "recentPrice": 4750,
-      "minPrice": 1550,
+      "minPrice": 4750,
       "maxPrice": 4750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 11,
       "topVariety": "Nasik",
       "grade": "FAQ"
@@ -1718,6 +2020,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 3,
       "topVariety": "Onion",
       "grade": "Grade B"
@@ -1729,6 +2033,8 @@
       "recentPrice": null,
       "minPrice": 2050,
       "maxPrice": 2150,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 2,
       "topVariety": "Nasik",
       "grade": "FAQ"
@@ -1740,6 +2046,8 @@
       "recentPrice": null,
       "minPrice": 1700,
       "maxPrice": 2250,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-19",
       "records": 5,
       "topVariety": null,
       "grade": "Grade B"
@@ -1751,6 +2059,8 @@
       "recentPrice": null,
       "minPrice": 1400,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-20",
       "records": 4,
       "topVariety": "Onion",
       "grade": "FAQ"
@@ -1758,12 +2068,40 @@
   ],
   "mousambisweet-lime": [
     {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 9077,
+      "recentPrice": 5500,
+      "minPrice": 5500,
+      "maxPrice": 5500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 26,
+      "topVariety": null,
+      "grade": "Grade B"
+    },
+    {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 4750,
+      "recentPrice": 4750,
+      "minPrice": 4750,
+      "maxPrice": 4750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "Mousambi",
+      "grade": "Medium"
+    },
+    {
       "name": "Narwal Jammu",
       "district": "Jammu",
       "avgPrice": 6125,
       "recentPrice": null,
       "minPrice": 5250,
       "maxPrice": 7250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 8,
       "topVariety": "Mousambi",
       "grade": "Medium"
@@ -1775,19 +2113,10 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
       "records": 3,
       "topVariety": "Mousambi",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 9077,
-      "recentPrice": 5500,
-      "minPrice": 5500,
-      "maxPrice": 11000,
-      "records": 26,
-      "topVariety": null,
       "grade": "Grade B"
     },
     {
@@ -1797,20 +2126,11 @@
       "recentPrice": null,
       "minPrice": 5500,
       "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 1,
       "topVariety": "Mousambi",
       "grade": "Grade B"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 4750,
-      "recentPrice": 4750,
-      "minPrice": 4750,
-      "maxPrice": 4750,
-      "records": 1,
-      "topVariety": "Mousambi",
-      "grade": "Medium"
     }
   ],
   "orange": [
@@ -1821,6 +2141,8 @@
       "recentPrice": null,
       "minPrice": 8000,
       "maxPrice": 12500,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 6,
       "topVariety": "Orange",
       "grade": "Medium"
@@ -1832,6 +2154,8 @@
       "recentPrice": null,
       "minPrice": 7250,
       "maxPrice": 9000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-21",
       "records": 5,
       "topVariety": null,
       "grade": "Grade B"
@@ -1845,7 +2169,22 @@
       "recentPrice": 2750,
       "minPrice": 2750,
       "maxPrice": 2750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
+      "topVariety": "Knool Khol",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 2163,
+      "recentPrice": 2250,
+      "minPrice": 2250,
+      "maxPrice": 2250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 12,
       "topVariety": "Knool Khol",
       "grade": "FAQ"
     },
@@ -1856,6 +2195,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 7,
       "topVariety": "Knool Khol",
       "grade": "Grade B"
@@ -1867,19 +2208,10 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 2750,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 2,
       "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 2163,
-      "recentPrice": 2250,
-      "minPrice": 550,
-      "maxPrice": 3750,
-      "records": 12,
-      "topVariety": "Knool Khol",
       "grade": "FAQ"
     },
     {
@@ -1889,6 +2221,8 @@
       "recentPrice": null,
       "minPrice": 950,
       "maxPrice": 3250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 8,
       "topVariety": "Knool Khol",
       "grade": "FAQ"
@@ -1900,6 +2234,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 2,
       "topVariety": "Knool Khol",
       "grade": "Grade B"
@@ -1911,6 +2247,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 15,
       "topVariety": null,
       "grade": "FAQ"
@@ -1924,6 +2262,8 @@
       "recentPrice": null,
       "minPrice": 11000,
       "maxPrice": 16500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-06",
       "records": 7,
       "topVariety": null,
       "grade": "FAQ"
@@ -1935,6 +2275,8 @@
       "recentPrice": null,
       "minPrice": 7750,
       "maxPrice": 17000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
@@ -1946,6 +2288,8 @@
       "recentPrice": null,
       "minPrice": 4250,
       "maxPrice": 17000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 4,
       "topVariety": null,
       "grade": "FAQ"
@@ -1953,12 +2297,27 @@
   ],
   "round-gourd": [
     {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 2250,
+      "recentPrice": 2250,
+      "minPrice": 2250,
+      "maxPrice": 2250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "Round gourd",
+      "grade": "FAQ"
+    },
+    {
       "name": "Rajouri (Phaliana)",
       "district": "Rajouri",
       "avgPrice": 4000,
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 1,
       "topVariety": null,
       "grade": "Grade B"
@@ -1970,20 +2329,11 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 2,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 2250,
-      "recentPrice": 2250,
-      "minPrice": 2250,
-      "maxPrice": 2250,
-      "records": 1,
-      "topVariety": "Round gourd",
-      "grade": "FAQ"
     },
     {
       "name": "Kathua",
@@ -1992,6 +2342,8 @@
       "recentPrice": null,
       "minPrice": 1750,
       "maxPrice": 2750,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 10,
       "topVariety": "Round gourd",
       "grade": "FAQ"
@@ -2003,6 +2355,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 1800,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-06",
       "records": 1,
       "topVariety": "Round gourd",
       "grade": "FAQ"
@@ -2016,6 +2370,8 @@
       "recentPrice": 13000,
       "minPrice": 13000,
       "maxPrice": 13000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Guava",
       "grade": "Medium"
@@ -2025,8 +2381,10 @@
       "district": "Kathua",
       "avgPrice": 7568,
       "recentPrice": 12000,
-      "minPrice": 5750,
+      "minPrice": 12000,
       "maxPrice": 12000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 11,
       "topVariety": "Guava",
       "grade": "Grade B"
@@ -2038,6 +2396,8 @@
       "recentPrice": null,
       "minPrice": 10000,
       "maxPrice": 11000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 6,
       "topVariety": null,
       "grade": "Medium"
@@ -2049,6 +2409,8 @@
       "recentPrice": null,
       "minPrice": 9000,
       "maxPrice": 10000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 2,
       "topVariety": null,
       "grade": "Medium"
@@ -2060,6 +2422,8 @@
       "recentPrice": null,
       "minPrice": 6150,
       "maxPrice": 8000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 9,
       "topVariety": "Guava",
       "grade": "Medium"
@@ -2067,26 +2431,30 @@
   ],
   "indian-beansseam": [
     {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 5250,
+      "recentPrice": 5500,
+      "minPrice": 5500,
+      "maxPrice": 5500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 17,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Fruit and Vegetable Market Udhampur",
       "district": "Udhampur",
       "avgPrice": 5782,
       "recentPrice": null,
       "minPrice": 3200,
       "maxPrice": 9000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 11,
       "topVariety": null,
       "grade": "Grade B"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 5250,
-      "recentPrice": 5500,
-      "minPrice": 3500,
-      "maxPrice": 8250,
-      "records": 17,
-      "topVariety": null,
-      "grade": "FAQ"
     },
     {
       "name": "Udhampur",
@@ -2095,6 +2463,8 @@
       "recentPrice": null,
       "minPrice": 4200,
       "maxPrice": 9500,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 8,
       "topVariety": null,
       "grade": "Grade B"
@@ -2106,6 +2476,8 @@
       "recentPrice": null,
       "minPrice": 2250,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
@@ -2119,6 +2491,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3750,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 13,
       "topVariety": null,
       "grade": "Local"
@@ -2130,6 +2504,8 @@
       "recentPrice": null,
       "minPrice": 2100,
       "maxPrice": 2100,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -2141,6 +2517,8 @@
       "recentPrice": null,
       "minPrice": 1650,
       "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 11,
       "topVariety": null,
       "grade": "Grade B"
@@ -2152,6 +2530,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 2250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 24,
       "topVariety": "Raddish",
       "grade": "FAQ"
@@ -2163,6 +2543,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1750,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 4,
       "topVariety": "Raddish",
       "grade": "Medium"
@@ -2174,6 +2556,8 @@
       "recentPrice": null,
       "minPrice": 900,
       "maxPrice": 1300,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 4,
       "topVariety": null,
       "grade": "Grade B"
@@ -2181,12 +2565,40 @@
   ],
   "papaya": [
     {
+      "name": "MAC F&V Market Narwal Jammu",
+      "district": "Jammu",
+      "avgPrice": 5500,
+      "recentPrice": 5500,
+      "minPrice": 5500,
+      "maxPrice": 5500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "Papaya",
+      "grade": "Medium"
+    },
+    {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 4354,
+      "recentPrice": 5250,
+      "minPrice": 5250,
+      "maxPrice": 5250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 26,
+      "topVariety": "Papaya",
+      "grade": "Grade B"
+    },
+    {
       "name": "Batengoo Anantnag",
       "district": "Anantnag",
       "avgPrice": 7500,
       "recentPrice": null,
       "minPrice": 7000,
       "maxPrice": 8000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 2,
       "topVariety": "Papaya",
       "grade": "Grade A"
@@ -2198,19 +2610,10 @@
       "recentPrice": null,
       "minPrice": 4500,
       "maxPrice": 9500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 16,
       "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "MAC F&V Market Narwal Jammu",
-      "district": "Jammu",
-      "avgPrice": 5500,
-      "recentPrice": 5500,
-      "minPrice": 5500,
-      "maxPrice": 5500,
-      "records": 1,
-      "topVariety": "Papaya",
       "grade": "Medium"
     },
     {
@@ -2220,18 +2623,9 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 3,
-      "topVariety": "Papaya",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 4354,
-      "recentPrice": 5250,
-      "minPrice": 3250,
-      "maxPrice": 5250,
-      "records": 26,
       "topVariety": "Papaya",
       "grade": "Grade B"
     },
@@ -2242,6 +2636,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 5250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 11,
       "topVariety": "Papaya",
       "grade": "Grade B"
@@ -2253,6 +2649,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-16",
       "records": 11,
       "topVariety": "Papaya",
       "grade": "Grade B"
@@ -2264,6 +2662,8 @@
       "recentPrice": null,
       "minPrice": 4500,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-05",
       "records": 2,
       "topVariety": "Papaya",
       "grade": "Grade B"
@@ -2275,6 +2675,8 @@
       "recentPrice": null,
       "minPrice": 4400,
       "maxPrice": 4400,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 1,
       "topVariety": null,
       "grade": "Medium"
@@ -2286,6 +2688,8 @@
       "recentPrice": null,
       "minPrice": 22.5,
       "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 13,
       "topVariety": "Papaya",
       "grade": "Medium"
@@ -2293,12 +2697,27 @@
   ],
   "tomato": [
     {
+      "name": "Kathua",
+      "district": "Kathua",
+      "avgPrice": 2486,
+      "recentPrice": 2750,
+      "minPrice": 2750,
+      "maxPrice": 2750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 25,
+      "topVariety": "Hybrid",
+      "grade": "FAQ"
+    },
+    {
       "name": "Batengoo Anantnag",
       "district": "Anantnag",
       "avgPrice": 4875,
       "recentPrice": null,
       "minPrice": 4500,
       "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 4,
       "topVariety": "Tomato",
       "grade": "FAQ"
@@ -2310,6 +2729,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 11,
       "topVariety": "Tomato",
       "grade": "Grade B"
@@ -2321,6 +2742,8 @@
       "recentPrice": null,
       "minPrice": 2250,
       "maxPrice": 4250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 11,
       "topVariety": null,
       "grade": "Grade B"
@@ -2332,19 +2755,10 @@
       "recentPrice": null,
       "minPrice": 2100,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 16,
       "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kathua",
-      "district": "Kathua",
-      "avgPrice": 2486,
-      "recentPrice": 2750,
-      "minPrice": 1550,
-      "maxPrice": 3750,
-      "records": 25,
-      "topVariety": "Hybrid",
       "grade": "FAQ"
     },
     {
@@ -2354,6 +2768,8 @@
       "recentPrice": null,
       "minPrice": 2000,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 2,
       "topVariety": "Tomato",
       "grade": "Grade B"
@@ -2365,6 +2781,8 @@
       "recentPrice": null,
       "minPrice": 1700,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 7,
       "topVariety": "Tomato",
       "grade": "FAQ"
@@ -2376,6 +2794,8 @@
       "recentPrice": null,
       "minPrice": 1250,
       "maxPrice": 3750,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 5,
       "topVariety": null,
       "grade": "Grade B"
@@ -2389,6 +2809,8 @@
       "recentPrice": 3250,
       "minPrice": 3250,
       "maxPrice": 3250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Little gourd (Kundru)",
       "grade": "FAQ"
@@ -2400,6 +2822,8 @@
       "recentPrice": null,
       "minPrice": 1350,
       "maxPrice": 4250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 8,
       "topVariety": "Little gourd (Kundru)",
       "grade": "FAQ"
@@ -2413,6 +2837,8 @@
       "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 3750,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-06",
       "records": 2,
       "topVariety": "Peas Wet",
       "grade": "FAQ"
@@ -2426,6 +2852,8 @@
       "recentPrice": 6750,
       "minPrice": 6750,
       "maxPrice": 6750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Tender Coconut",
       "grade": "Medium"
@@ -2437,6 +2865,8 @@
       "recentPrice": null,
       "minPrice": 5250,
       "maxPrice": 7250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 4,
       "topVariety": "Tender Coconut",
       "grade": "Medium"
@@ -2450,6 +2880,8 @@
       "recentPrice": null,
       "minPrice": 4250,
       "maxPrice": 12500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 48,
       "topVariety": "Dusheri",
       "grade": "Medium"
@@ -2461,6 +2893,8 @@
       "recentPrice": null,
       "minPrice": 27.5,
       "maxPrice": 14000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 51,
       "topVariety": "Dusheri",
       "grade": "Medium"
@@ -2472,6 +2906,8 @@
       "recentPrice": null,
       "minPrice": 4500,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 15,
       "topVariety": "Chausa",
       "grade": "Grade B"
@@ -2483,6 +2919,8 @@
       "recentPrice": null,
       "minPrice": 3500,
       "maxPrice": 8500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 46,
       "topVariety": "Totapuri",
       "grade": "Grade B"
@@ -2494,6 +2932,8 @@
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-07",
       "records": 3,
       "topVariety": "Dusheri",
       "grade": "Grade A"
@@ -2505,8 +2945,10 @@
       "district": "Kathua",
       "avgPrice": 2958,
       "recentPrice": 3000,
-      "minPrice": 1750,
-      "maxPrice": 3750,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 6,
       "topVariety": "Spinach",
       "grade": "FAQ"
@@ -2518,6 +2960,8 @@
       "recentPrice": null,
       "minPrice": 1000,
       "maxPrice": 1000,
+      "rangeBasis": "all",
+      "lastDate": "2026-04-09",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -2531,6 +2975,8 @@
       "recentPrice": null,
       "minPrice": 15000,
       "maxPrice": 28000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-06",
       "records": 4,
       "topVariety": "Green",
       "grade": "Grade A"
@@ -2542,6 +2988,8 @@
       "recentPrice": null,
       "minPrice": 20000,
       "maxPrice": 26700,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 2,
       "topVariety": null,
       "grade": "Grade A"
@@ -2553,6 +3001,8 @@
       "recentPrice": null,
       "minPrice": 7750,
       "maxPrice": 10500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 2,
       "topVariety": "Green",
       "grade": "Medium"
@@ -2566,6 +3016,8 @@
       "recentPrice": 3900,
       "minPrice": 3900,
       "maxPrice": 3900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Water Melon",
       "grade": "Medium"
@@ -2577,6 +3029,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 2,
       "topVariety": "Water Melon",
       "grade": "Grade B"
@@ -2588,6 +3042,8 @@
       "recentPrice": null,
       "minPrice": 1450,
       "maxPrice": 2750,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 3,
       "topVariety": "Water Melon",
       "grade": "Medium"
@@ -2599,6 +3055,8 @@
       "recentPrice": null,
       "minPrice": 1800,
       "maxPrice": 2250,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 2,
       "topVariety": "Water Melon",
       "grade": "Medium"
@@ -2610,6 +3068,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 2250,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-19",
       "records": 3,
       "topVariety": "Water Melon",
       "grade": "Grade B"
@@ -2621,6 +3081,8 @@
       "recentPrice": null,
       "minPrice": 1500,
       "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 1,
       "topVariety": "Water Melon",
       "grade": "Grade B"
@@ -2634,6 +3096,8 @@
       "recentPrice": null,
       "minPrice": 2250,
       "maxPrice": 2250,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 2,
       "topVariety": null,
       "grade": "FAQ"
@@ -2645,6 +3109,8 @@
       "recentPrice": null,
       "minPrice": 1750,
       "maxPrice": 1750,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-20",
       "records": 2,
       "topVariety": "Tinda",
       "grade": "FAQ"
@@ -2658,6 +3124,8 @@
       "recentPrice": null,
       "minPrice": 2100,
       "maxPrice": 3750,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 5,
       "topVariety": "Ridgeguard(Tori)",
       "grade": "FAQ"
@@ -2669,6 +3137,8 @@
       "recentPrice": null,
       "minPrice": 1550,
       "maxPrice": 4750,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 17,
       "topVariety": null,
       "grade": "FAQ"
@@ -2682,6 +3152,8 @@
       "recentPrice": null,
       "minPrice": 7500,
       "maxPrice": 7500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-13",
       "records": 1,
       "topVariety": "Peas cod",
       "grade": "Medium"
@@ -2693,6 +3165,8 @@
       "recentPrice": null,
       "minPrice": 3250,
       "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 14,
       "topVariety": "Peas cod",
       "grade": "FAQ"
@@ -2704,6 +3178,8 @@
       "recentPrice": null,
       "minPrice": 2900,
       "maxPrice": 2900,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 1,
       "topVariety": "Peas cod",
       "grade": "FAQ"
@@ -2717,6 +3193,8 @@
       "recentPrice": null,
       "minPrice": 1100,
       "maxPrice": 1100,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 1,
       "topVariety": null,
       "grade": "FAQ"
@@ -2730,6 +3208,8 @@
       "recentPrice": null,
       "minPrice": 9000,
       "maxPrice": 35000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-20",
       "records": 9,
       "topVariety": "Makhmali",
       "grade": "Grade A"
@@ -2741,6 +3221,8 @@
       "recentPrice": null,
       "minPrice": 17000,
       "maxPrice": 17000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-14",
       "records": 1,
       "topVariety": "Awal Number",
       "grade": "Grade A"
@@ -2752,6 +3234,8 @@
       "recentPrice": null,
       "minPrice": 100,
       "maxPrice": 160.8,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-18",
       "records": 2,
       "topVariety": "Cherry",
       "grade": "Grade A"
@@ -2765,6 +3249,8 @@
       "recentPrice": null,
       "minPrice": 5500,
       "maxPrice": 7500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 16,
       "topVariety": null,
       "grade": "Grade B"
@@ -2776,6 +3262,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 3,
       "topVariety": null,
       "grade": "Grade B"
@@ -2787,6 +3275,8 @@
       "recentPrice": null,
       "minPrice": 25,
       "maxPrice": 7250,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 8,
       "topVariety": "Plum",
       "grade": "Medium"
@@ -2798,6 +3288,8 @@
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-11",
       "records": 1,
       "topVariety": null,
       "grade": "Grade A"
@@ -2809,6 +3301,8 @@
       "recentPrice": null,
       "minPrice": 3300,
       "maxPrice": 4300,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-15",
       "records": 13,
       "topVariety": null,
       "grade": "Grade A"
@@ -2820,6 +3314,8 @@
       "recentPrice": null,
       "minPrice": 2800,
       "maxPrice": 4800,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 26,
       "topVariety": "Santa Rosa",
       "grade": "Grade A"
@@ -2831,6 +3327,8 @@
       "recentPrice": null,
       "minPrice": 2600,
       "maxPrice": 4600,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-18",
       "records": 14,
       "topVariety": "Santa Rosa",
       "grade": "Medium"
@@ -2842,6 +3340,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-14",
       "records": 2,
       "topVariety": null,
       "grade": "Grade A"
@@ -2853,6 +3353,8 @@
       "recentPrice": null,
       "minPrice": 1875,
       "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 15,
       "topVariety": "Plum",
       "grade": "Grade A"
@@ -2866,6 +3368,8 @@
       "recentPrice": null,
       "minPrice": 9000,
       "maxPrice": 9000,
+      "rangeBasis": "all",
+      "lastDate": "2026-05-15",
       "records": 1,
       "topVariety": null,
       "grade": "Medium"
@@ -2877,6 +3381,8 @@
       "recentPrice": null,
       "minPrice": 8000,
       "maxPrice": 8000,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 1,
       "topVariety": "Peach",
       "grade": "Grade A"
@@ -2890,6 +3396,8 @@
       "recentPrice": null,
       "minPrice": 5000,
       "maxPrice": 13000,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 13,
       "topVariety": "Apricot(Jardalu/Khumani)",
       "grade": "Medium"
@@ -2901,6 +3409,8 @@
       "recentPrice": null,
       "minPrice": 8000,
       "maxPrice": 8000,
+      "rangeBasis": "all",
+      "lastDate": "2026-06-18",
       "records": 1,
       "topVariety": "Apricot(Jardalu/Khumani)",
       "grade": "Grade A"
@@ -2912,6 +3422,8 @@
       "recentPrice": null,
       "minPrice": 4200,
       "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-03",
       "records": 3,
       "topVariety": "Apricot(Jardalu/Khumani)",
       "grade": "Grade A"
@@ -2923,6 +3435,8 @@
       "recentPrice": null,
       "minPrice": 4000,
       "maxPrice": 5100,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-10",
       "records": 9,
       "topVariety": "Apricot(Jardalu/Khumani)",
       "grade": "Grade A"
@@ -2934,6 +3448,8 @@
       "recentPrice": null,
       "minPrice": 3000,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-13",
       "records": 8,
       "topVariety": "Apricot(Jardalu/Khumani)",
       "grade": "Grade A"
@@ -2947,6 +3463,8 @@
       "recentPrice": 3250,
       "minPrice": 3250,
       "maxPrice": 3250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Colacasia",
       "grade": "FAQ"
@@ -2958,6 +3476,8 @@
       "recentPrice": null,
       "minPrice": 1450,
       "maxPrice": 2750,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 8,
       "topVariety": "Colacasia",
       "grade": "FAQ"
@@ -2971,6 +3491,8 @@
       "recentPrice": null,
       "minPrice": 2200,
       "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-07-17",
       "records": 4,
       "topVariety": "Pointed gourd (Parval)",
       "grade": "FAQ"
@@ -2984,6 +3506,8 @@
       "recentPrice": 21750,
       "minPrice": 21750,
       "maxPrice": 21750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
       "records": 1,
       "topVariety": "Pears",
       "grade": "Medium"

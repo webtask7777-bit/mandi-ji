@@ -23,7 +23,7 @@ export default function MandiCompare({ data = [], cropName, onMandiClick, cropId
   const varieties = useMemo(() => [...new Set(validData.map(row => row.topVariety).filter(Boolean))].sort(), [validData]);
   // Crop switches may retain this component. An old variety must not hide a new crop.
   const activeVariety = varieties.includes(variety) ? variety : 'all';
-  const filtered = useMemo(() => validData.filter(row => (activeVariety === 'all' || row.topVariety === activeVariety) && `${row.name} ${row.district || ''} ${row.stateCode || ''}`.toLowerCase().includes(search.toLowerCase())).sort((a, b) => sort === 'low' ? getMandiPrice(a) - getMandiPrice(b) : getMandiPrice(b) - getMandiPrice(a)), [validData, activeVariety, search, sort]);
+  const filtered = useMemo(() => validData.filter(row => (activeVariety === 'all' || row.topVariety === activeVariety) && `${row.name} ${row.district || ''} ${row.stateCode || ''}`.toLowerCase().includes(search.toLowerCase())).sort((a, b) => (getMandiPriceBasis(a) === 'recent' ? 0 : 1) - (getMandiPriceBasis(b) === 'recent' ? 0 : 1) || (sort === 'low' ? getMandiPrice(a) - getMandiPrice(b) : getMandiPrice(b) - getMandiPrice(a))), [validData, activeVariety, search, sort]);
   const pair = useMemo(() => getComparisonPair(filtered), [filtered]);
   // Unusual is judged within the same variety and grade; summary tiles leave flagged rows out.
   const flagged = useMemo(() => flagOutliersByGroup(filtered, getMandiPrice, row => `${row.topVariety || ''}|${row.grade || ''}`.toLowerCase()), [filtered]);

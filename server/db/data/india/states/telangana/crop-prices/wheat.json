@@ -4,7 +4,8 @@
     "name": "Wheat",
     "nameHi": "गेहूँ",
     "emoji": "🌿",
-    "msp": 2275
+    "msp": 2275,
+    "mspSeason": "2024-25"
   },
   "history": [
     {
@@ -12,6 +13,8 @@
       "date": "2026-05",
       "market": 2125,
       "volume": 1,
+      "days": 1,
+      "mandis": 1,
       "msp": 2275
     },
     {
@@ -19,13 +22,17 @@
       "date": "2026-06",
       "market": 2399,
       "volume": 1,
+      "days": 1,
+      "mandis": 1,
       "msp": 2275
     },
     {
       "month": "07",
       "date": "2026-07",
-      "market": 2455,
+      "market": 2457,
       "volume": 9,
+      "days": 6,
+      "mandis": 3,
       "msp": 2275
     }
   ],
@@ -34,6 +41,7 @@
       "date": "2026-05-19",
       "market": 2125,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 2125,
       "maxPrice": 2280
     },
@@ -41,6 +49,7 @@
       "date": "2026-06-30",
       "market": 2399,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 2359,
       "maxPrice": 2399
     },
@@ -48,6 +57,7 @@
       "date": "2026-07-01",
       "market": 2531,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 1669,
       "maxPrice": 2600
     },
@@ -55,6 +65,7 @@
       "date": "2026-07-03",
       "market": 2429,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 2339,
       "maxPrice": 2459
     },
@@ -62,6 +73,7 @@
       "date": "2026-07-04",
       "market": 2389,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 2389,
       "maxPrice": 2389
     },
@@ -69,6 +81,7 @@
       "date": "2026-07-06",
       "market": 2539,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 2478,
       "maxPrice": 2600
     },
@@ -76,6 +89,7 @@
       "date": "2026-07-07",
       "market": 2525,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 2482,
       "maxPrice": 2525
     },
@@ -83,6 +97,7 @@
       "date": "2026-07-08",
       "market": 2306,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 2011,
       "maxPrice": 2600
     }

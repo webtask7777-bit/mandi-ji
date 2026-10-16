@@ -9,14 +9,18 @@
     {
       "month": "06",
       "date": "2026-06",
-      "market": 6275,
-      "volume": 7
+      "market": 5000,
+      "volume": 7,
+      "days": 3,
+      "mandis": 5
     },
     {
       "month": "07",
       "date": "2026-07",
-      "market": 9968,
-      "volume": 50
+      "market": 5979,
+      "volume": 48,
+      "days": 16,
+      "mandis": 13
     }
   ],
   "dailyHistory": [
@@ -24,6 +28,7 @@
       "date": "2026-06-26",
       "market": 5492,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 5000,
       "maxPrice": 6000
     },
@@ -31,20 +36,23 @@
       "date": "2026-06-29",
       "market": 7520,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 4500,
       "maxPrice": 16000
     },
     {
       "date": "2026-06-30",
-      "market": 6356,
+      "market": 6305,
       "volume": 4,
+      "mandis": 4,
       "minPrice": 4600,
       "maxPrice": 11600
     },
     {
       "date": "2026-07-01",
-      "market": 6625,
+      "market": 5700,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 4300,
       "maxPrice": 15000
     },
@@ -52,20 +60,23 @@
       "date": "2026-07-02",
       "market": 5625,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 4400,
       "maxPrice": 6300
     },
     {
       "date": "2026-07-03",
-      "market": 6666,
+      "market": 5387,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 3200,
       "maxPrice": 15000
     },
     {
       "date": "2026-07-04",
-      "market": 16516,
+      "market": 16969,
       "volume": 6,
+      "mandis": 6,
       "minPrice": 3600,
       "maxPrice": 28415
     },
@@ -73,6 +84,7 @@
       "date": "2026-07-05",
       "market": 9153,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 3500,
       "maxPrice": 14800
     },
@@ -80,6 +92,7 @@
       "date": "2026-07-06",
       "market": 5205,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 4000,
       "maxPrice": 16000
     },
@@ -87,62 +100,63 @@
       "date": "2026-07-07",
       "market": 7218,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 4000,
       "maxPrice": 14000
     },
     {
       "date": "2026-07-08",
-      "market": 10472,
+      "market": 8045,
       "volume": 4,
+      "mandis": 4,
       "minPrice": 3800,
       "maxPrice": 22000
     },
     {
       "date": "2026-07-09",
-      "market": 2917,
-      "volume": 3,
-      "minPrice": 300,
+      "market": 4225,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 3950,
       "maxPrice": 4500
     },
     {
       "date": "2026-07-10",
-      "market": 4861,
+      "market": 5273,
       "volume": 4,
+      "mandis": 4,
       "minPrice": 3200,
       "maxPrice": 8500
     },
     {
       "date": "2026-07-11",
-      "market": 4467,
+      "market": 4900,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 3200,
       "maxPrice": 5300
     },
     {
-      "date": "2026-07-13",
-      "market": 50400,
-      "volume": 1,
-      "minPrice": 50400,
-      "maxPrice": 50400
-    },
-    {
       "date": "2026-07-14",
-      "market": 14107,
+      "market": 5240,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 3500,
       "maxPrice": 60000
     },
     {
       "date": "2026-07-15",
-      "market": 8769,
+      "market": 4849,
       "volume": 4,
+      "mandis": 4,
       "minPrice": 3811,
       "maxPrice": 22019.1
     },
     {
       "date": "2026-07-16",
-      "market": 5668,
+      "market": 5505,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 4500,
       "maxPrice": 13500
     },
@@ -150,13 +164,15 @@
       "date": "2026-07-17",
       "market": 16000,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 4000,
       "maxPrice": 28000
     },
     {
       "date": "2026-07-18",
-      "market": 12480,
+      "market": 9061,
       "volume": 4,
+      "mandis": 4,
       "minPrice": 3800,
       "maxPrice": 28000
     }
@@ -172,8 +188,8 @@
     {
       "district": "Lucknow",
       "nameHi": "Lucknow",
-      "avgPrice": 7564,
-      "records": 14
+      "avgPrice": 4269,
+      "records": 13
     },
     {
       "district": "Ghaziabad",
@@ -215,12 +231,6 @@
       "district": "Gautam Budh Nagar",
       "nameHi": "Gautam Budh Nagar",
       "avgPrice": 28415,
-      "records": 1
-    },
-    {
-      "district": "Mainpuri",
-      "nameHi": "Mainpuri",
-      "avgPrice": 300,
       "records": 1
     },
     {

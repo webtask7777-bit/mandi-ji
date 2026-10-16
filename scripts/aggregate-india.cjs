@@ -9,6 +9,7 @@ const fs = require('fs');
 const path = require('path');
 const { recordKey, MIN_PLAUSIBLE_PRICE } = require('./lib/daily-store.cjs');
 const { monthChange, changeSignal } = require('./lib/month-change.cjs');
+const { newBucket, addPrice, bucketPrice, unitMismatchedSeries } = require('./lib/robust-price.cjs');
 
 const DATA_DIR = path.join(__dirname, '..', 'server', 'db', 'data');
 const DAILY_DIR = path.join(DATA_DIR, 'daily');
@@ -137,13 +138,15 @@ const CROP_HINDI = {
 };
 
 // ─── MSP 2024-25 (₹ per quintal) ──────────────────────────────────────
+// Whole grain/seed only: milled rice and split dal are not the MSP commodity. Values are the
+// 2024-25 notification and are labelled with that season wherever they are shown.
+const MSP_SEASON = '2024-25';
 const CROP_MSP = {
-  'paddycommon': 2300, 'rice': 2300, 'wheat': 2275, 'maize': 2090,
+  'paddycommon': 2300, 'wheat': 2275, 'maize': 2090,
   'bajrapearl-millet-cumbu': 2625, 'soyabean': 4892,
   'groundnut': 6783, 'mustard': 5650,
   'cotton': 7121, 'bengal-gramgramwhole': 5440,
   'arhartur-red-gramwhole': 7550, 'green-grammoongwhole': 8682,
-  'black-gram-dalurd-dal': 6950, 'masur-dal': 6425,
 };
 
 // ─── Season data for common crops ──────────────────────────────────────
@@ -217,6 +220,7 @@ const MANDI_STRIP_SUFFIXES = [
   /\s*\(Sabzi Mandi\)/gi,
   /\s*\(F&V\)/gi,
   /\s*APMC$/gi,
+  /^APMC\s+/gi,
 ];
 
 function cleanMandiName(name) {
@@ -226,6 +230,10 @@ function cleanMandiName(name) {
   }
   return cleaned.trim();
 }
+
+// A mandi is identified by state + district + cleaned name; same-name markets in different
+// states (Jalalabad PB / UP, Gorakhpur MP / UP) stay separate.
+const mandiKeyOf = rec => `${rec.state}|${rec.district}|${cleanMandiName(rec.market || '')}`;
 
 function slugify(name) {
   return name.toLowerCase()
@@ -298,12 +306,6 @@ function main() {
   const latestDailyData = JSON.parse(fs.readFileSync(path.join(DAILY_DIR, dailyFiles[dailyFiles.length - 1]), 'utf-8'));
   const lastUpdated = latestDailyData.fetchedAt || new Date().toISOString();
 
-  // Compute recent cutoff (last 7 days from latest file date)
-  const latestFileName = dailyFiles[dailyFiles.length - 1].replace('.json', '');
-  const latestDateObj = new Date(latestFileName + 'T00:00:00');
-  latestDateObj.setDate(latestDateObj.getDate() - 7);
-  const recentCutoff = latestDateObj.toISOString().slice(0, 10); // "YYYY-MM-DD"
-  console.log(`Recent cutoff date: ${recentCutoff}`);
 
   // The same observation can sit in two files (older fetches filed by fetch date, overlapping
   // snapshots). Keep one copy per identity key; the later file wins.
@@ -313,9 +315,21 @@ function main() {
     const data = JSON.parse(fs.readFileSync(path.join(DAILY_DIR, file), 'utf-8'));
     for (const rec of data.records || []) { rawCount++; byKey.set(recordKey(rec), rec); }
   }
-  const allRecords = [...byKey.values()];
+  const dedupedRecords = [...byKey.values()];
 
-  console.log(`Total records: ${allRecords.length} (${rawCount - allRecords.length} duplicates across files skipped)`);
+  // Leave out series reported in another unit (per bunch, per nut): they are not ₹/quintal.
+  const seriesKey = r => `${r.commodity}|${r.state}|${r.district}|${r.market}`;
+  const unitExcluded = unitMismatchedSeries(dedupedRecords, { seriesKey, commodityKey: r => r.commodity });
+  const allRecords = dedupedRecords.filter(r => !unitExcluded.has(seriesKey(r)));
+  console.log(`Unit check: ${unitExcluded.size} series (${dedupedRecords.length - allRecords.length} records) left out as not per quintal`);
+
+  // "Recent" = the 7 days before the newest observation (UTC dates), not the newest file name.
+  let newestObservation = '';
+  for (const r of allRecords) { const d = parseDateFull(r.arrival_date); if (d && d > newestObservation) newestObservation = d; }
+  const recentCutoff = newestObservation ? new Date(Date.parse(`${newestObservation}T00:00:00Z`) - 7 * 86400000).toISOString().slice(0, 10) : '';
+  console.log(`Newest observation ${newestObservation}; recent cutoff ${recentCutoff}`);
+
+  console.log(`Total records: ${allRecords.length} (${rawCount - dedupedRecords.length} duplicates across files skipped)`);
 
   // ─── Group by state ──────────────────────────────────────────────────
   const byState = {};
@@ -381,15 +395,15 @@ function main() {
 
       const month = parseDate(rec.arrival_date);
       if (month) {
-        if (!c.byMonth[month]) c.byMonth[month] = { prices: [], count: 0 };
-        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) c.byMonth[month].prices.push(rec.modal_price);
+        if (!c.byMonth[month]) c.byMonth[month] = newBucket();
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(c.byMonth[month], mandiKeyOf(rec), rec.modal_price, parseDateFull(rec.arrival_date));
         c.byMonth[month].count++;
       }
 
       const fullDate = parseDateFull(rec.arrival_date);
       if (fullDate) {
-        if (!c.byDay[fullDate]) c.byDay[fullDate] = { prices: [], minPrices: [], maxPrices: [], count: 0 };
-        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) c.byDay[fullDate].prices.push(rec.modal_price);
+        if (!c.byDay[fullDate]) c.byDay[fullDate] = { ...newBucket(), minPrices: [], maxPrices: [] };
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(c.byDay[fullDate], mandiKeyOf(rec), rec.modal_price, fullDate);
         if (rec.min_price >= MIN_PLAUSIBLE_PRICE) c.byDay[fullDate].minPrices.push(rec.min_price);
         if (rec.max_price >= MIN_PLAUSIBLE_PRICE) c.byDay[fullDate].maxPrices.push(rec.max_price);
         c.byDay[fullDate].count++;
@@ -409,14 +423,14 @@ function main() {
       if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) { allCrops[cropSlug].totalModal += rec.modal_price; allCrops[cropSlug].priceCount++; }
       const m2 = parseDate(rec.arrival_date);
       if (m2) {
-        if (!allCrops[cropSlug].byMonth[m2]) allCrops[cropSlug].byMonth[m2] = { prices: [], count: 0 };
-        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) allCrops[cropSlug].byMonth[m2].prices.push(rec.modal_price);
+        if (!allCrops[cropSlug].byMonth[m2]) allCrops[cropSlug].byMonth[m2] = newBucket();
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(allCrops[cropSlug].byMonth[m2], mandiKeyOf(rec), rec.modal_price, parseDateFull(rec.arrival_date));
         allCrops[cropSlug].byMonth[m2].count++;
       }
       const fullDate2 = parseDateFull(rec.arrival_date);
       if (fullDate2) {
-        if (!allCrops[cropSlug].byDay[fullDate2]) allCrops[cropSlug].byDay[fullDate2] = { prices: [], minPrices: [], maxPrices: [], count: 0 };
-        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) allCrops[cropSlug].byDay[fullDate2].prices.push(rec.modal_price);
+        if (!allCrops[cropSlug].byDay[fullDate2]) allCrops[cropSlug].byDay[fullDate2] = { ...newBucket(), minPrices: [], maxPrices: [] };
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(allCrops[cropSlug].byDay[fullDate2], mandiKeyOf(rec), rec.modal_price, fullDate2);
         if (rec.min_price >= MIN_PLAUSIBLE_PRICE) allCrops[cropSlug].byDay[fullDate2].minPrices.push(rec.min_price);
         if (rec.max_price >= MIN_PLAUSIBLE_PRICE) allCrops[cropSlug].byDay[fullDate2].maxPrices.push(rec.max_price);
         allCrops[cropSlug].byDay[fullDate2].count++;
@@ -452,7 +466,7 @@ function main() {
           minPrice: c.minPrice === Infinity ? 0 : c.minPrice,
           maxPrice: c.maxPrice,
           varieties: [...c.varieties].slice(0, 10),
-          ...(getCropMSP(c.id) ? { msp: getCropMSP(c.id) } : {}),
+          ...(getCropMSP(c.id) ? { msp: getCropMSP(c.id), mspSeason: MSP_SEASON } : {}),
           ...(seasonData.sowingMonths ? { sowingMonths: seasonData.sowingMonths } : {}),
           ...(seasonData.growingMonths ? { growingMonths: seasonData.growingMonths } : {}),
           ...(seasonData.harvestMonths ? { harvestMonths: seasonData.harvestMonths } : {}),
@@ -501,8 +515,10 @@ function main() {
         .map(([month, data]) => ({
           month: month.slice(5),
           date: month,
-          market: data.prices.length > 0 ? Math.round(data.prices.reduce((a, b) => a + b, 0) / data.prices.length) : 0,
+          market: bucketPrice(data),
           volume: data.count,
+          days: data.days.size,
+          mandis: Object.keys(data.byMandi).length,
           ...(msp ? { msp } : {}),
         }));
 
@@ -520,14 +536,15 @@ function main() {
         .sort(([a], [b]) => a.localeCompare(b))
         .map(([date, data]) => ({
           date,
-          market: data.prices.length > 0 ? Math.round(data.prices.reduce((a, b) => a + b, 0) / data.prices.length) : 0,
+          market: bucketPrice(data),
           volume: data.count,
+          mandis: Object.keys(data.byMandi).length,
           minPrice: data.minPrices.length > 0 ? Math.min(...data.minPrices) : 0,
           maxPrice: data.maxPrices.length > 0 ? Math.max(...data.maxPrices) : 0,
         }));
 
       writeJSON(path.join(stateDir, 'crop-prices', `${cropId}.json`), {
-        crop: { id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji, ...(msp ? { msp } : {}) },
+        crop: { id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji, ...(msp ? { msp, mspSeason: MSP_SEASON } : {}) },
         history,
         dailyHistory,
         lastUpdated,
@@ -586,6 +603,22 @@ function main() {
     return top;
   }
 
+  // Mandi-compare row: a recent price (last 7 days before the newest observation) with the
+  // min/max of that same window; mandis without recent data keep their historical average and
+  // last date, and are listed after every mandi with a recent price.
+  const avg = list => Math.round(list.reduce((a, b) => a + b, 0) / list.length);
+  const compareFields = m => {
+    const window = m.recentPrices.length ? m.recentPrices : m.prices;
+    return {
+      avgPrice: avg(m.prices),
+      recentPrice: m.recentPrices.length ? avg(m.recentPrices) : null,
+      minPrice: Math.min(...window), maxPrice: Math.max(...window),
+      rangeBasis: m.recentPrices.length ? 'recent' : 'all',
+      lastDate: m.lastDate || null, records: m.count,
+    };
+  };
+  const compareOrder = (a, b) => (b.recentPrice != null) - (a.recentPrice != null) || (b.recentPrice ?? b.avgPrice) - (a.recentPrice ?? a.avgPrice);
+
   const allCropMandis = {};
   for (const rec of allRecords) {
     const cropSlug = slugify(rec.commodity);
@@ -593,20 +626,21 @@ function main() {
     const stateInfo = STATES[rec.state];
     const stateHi = stateInfo ? stateInfo.nameHi : rec.state;
     if (!allCropMandis[cropSlug]) allCropMandis[cropSlug] = {};
-    if (!allCropMandis[cropSlug][mandiName]) {
-      allCropMandis[cropSlug][mandiName] = { name: mandiName, state: stateHi, stateId: stateInfo ? stateInfo.id : slugify(rec.state), stateCode: STATE_CODES[rec.state] || null, district: rec.district, prices: [], recentPrices: [], count: 0, varieties: {}, grades: {} };
+    const key = mandiKeyOf(rec);
+    if (!allCropMandis[cropSlug][key]) {
+      allCropMandis[cropSlug][key] = { name: mandiName, state: stateHi, stateId: stateInfo ? stateInfo.id : slugify(rec.state), stateCode: STATE_CODES[rec.state] || null, district: rec.district, prices: [], recentPrices: [], lastDate: '', count: 0, varieties: {}, grades: {} };
     }
+    const entry = allCropMandis[cropSlug][key];
     if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) {
-      allCropMandis[cropSlug][mandiName].prices.push(rec.modal_price);
+      entry.prices.push(rec.modal_price);
       // Track recent prices (last 7 days) for accurate best/worst mandi
       const fullDate = parseDateFull(rec.arrival_date);
-      if (fullDate && fullDate >= recentCutoff) {
-        allCropMandis[cropSlug][mandiName].recentPrices.push(rec.modal_price);
-      }
+      if (fullDate && fullDate > entry.lastDate) entry.lastDate = fullDate;
+      if (fullDate && fullDate >= recentCutoff) entry.recentPrices.push(rec.modal_price);
     }
-    if (rec.variety) allCropMandis[cropSlug][mandiName].varieties[rec.variety] = (allCropMandis[cropSlug][mandiName].varieties[rec.variety] || 0) + 1;
-    if (rec.grade) allCropMandis[cropSlug][mandiName].grades[rec.grade] = (allCropMandis[cropSlug][mandiName].grades[rec.grade] || 0) + 1;
-    allCropMandis[cropSlug][mandiName].count++;
+    if (rec.variety) entry.varieties[rec.variety] = (entry.varieties[rec.variety] || 0) + 1;
+    if (rec.grade) entry.grades[rec.grade] = (entry.grades[rec.grade] || 0) + 1;
+    entry.count++;
   }
 
   // Per-state mandi comparison
@@ -617,27 +651,25 @@ function main() {
       const cropSlug = slugify(rec.commodity);
       const mandiName = cleanMandiName(rec.market);
       if (!stateCropMandis[cropSlug]) stateCropMandis[cropSlug] = {};
-      if (!stateCropMandis[cropSlug][mandiName]) stateCropMandis[cropSlug][mandiName] = { name: mandiName, district: rec.district, prices: [], recentPrices: [], count: 0, varieties: {}, grades: {} };
+      const key = mandiKeyOf(rec);
+      if (!stateCropMandis[cropSlug][key]) stateCropMandis[cropSlug][key] = { name: mandiName, district: rec.district, prices: [], recentPrices: [], lastDate: '', count: 0, varieties: {}, grades: {} };
+      const entry = stateCropMandis[cropSlug][key];
       if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) {
-        stateCropMandis[cropSlug][mandiName].prices.push(rec.modal_price);
+        entry.prices.push(rec.modal_price);
         const fullDate = parseDateFull(rec.arrival_date);
-        if (fullDate && fullDate >= recentCutoff) {
-          stateCropMandis[cropSlug][mandiName].recentPrices.push(rec.modal_price);
-        }
+        if (fullDate && fullDate > entry.lastDate) entry.lastDate = fullDate;
+        if (fullDate && fullDate >= recentCutoff) entry.recentPrices.push(rec.modal_price);
       }
-      if (rec.variety) stateCropMandis[cropSlug][mandiName].varieties[rec.variety] = (stateCropMandis[cropSlug][mandiName].varieties[rec.variety] || 0) + 1;
-      if (rec.grade) stateCropMandis[cropSlug][mandiName].grades[rec.grade] = (stateCropMandis[cropSlug][mandiName].grades[rec.grade] || 0) + 1;
-      stateCropMandis[cropSlug][mandiName].count++;
+      if (rec.variety) entry.varieties[rec.variety] = (entry.varieties[rec.variety] || 0) + 1;
+      if (rec.grade) entry.grades[rec.grade] = (entry.grades[rec.grade] || 0) + 1;
+      entry.count++;
     }
     const stateMandiCompare = {};
     for (const [cropId, mandis] of Object.entries(stateCropMandis)) {
       const arr = Object.values(mandis).filter(m => m.prices.length > 0).map(m => ({
-        name: m.name, district: m.district,
-        avgPrice: Math.round(m.prices.reduce((a, b) => a + b, 0) / m.prices.length),
-        recentPrice: m.recentPrices.length > 0 ? Math.round(m.recentPrices.reduce((a, b) => a + b, 0) / m.recentPrices.length) : null,
-        minPrice: Math.min(...m.prices), maxPrice: Math.max(...m.prices), records: m.count,
+        name: m.name, district: m.district, ...compareFields(m),
         topVariety: getTopKey(m.varieties) || null, grade: getTopKey(m.grades) || null,
-      })).sort((a, b) => (b.recentPrice || b.avgPrice) - (a.recentPrice || a.avgPrice));
+      })).sort(compareOrder);
       if (arr.length > 0) stateMandiCompare[cropId] = arr;
     }
     writeJSON(path.join(INDIA_DIR, 'states', meta.id, 'mandi-compare.json'), stateMandiCompare);
@@ -647,12 +679,9 @@ function main() {
   const indiaMandiCompare = {};
   for (const [cropId, mandis] of Object.entries(allCropMandis)) {
     const arr = Object.values(mandis).filter(m => m.prices.length > 0).map(m => ({
-      name: m.name, state: m.state, stateId: m.stateId, stateCode: m.stateCode, district: m.district,
-      avgPrice: Math.round(m.prices.reduce((a, b) => a + b, 0) / m.prices.length),
-      recentPrice: m.recentPrices.length > 0 ? Math.round(m.recentPrices.reduce((a, b) => a + b, 0) / m.recentPrices.length) : null,
-      minPrice: Math.min(...m.prices), maxPrice: Math.max(...m.prices), records: m.count,
+      name: m.name, state: m.state, stateId: m.stateId, stateCode: m.stateCode, district: m.district, ...compareFields(m),
       topVariety: getTopKey(m.varieties) || null, grade: getTopKey(m.grades) || null,
-    })).sort((a, b) => (b.recentPrice || b.avgPrice) - (a.recentPrice || a.avgPrice));
+    })).sort(compareOrder);
     if (arr.length > 0) indiaMandiCompare[cropId] = arr;
   }
   writeJSON(path.join(INDIA_DIR, 'mandi-compare.json'), indiaMandiCompare);
@@ -662,7 +691,7 @@ function main() {
   for (const [cropId, c] of Object.entries(allCrops)) {
     const months = Object.entries(c.byMonth).sort(([a], [b]) => a.localeCompare(b));
     // Change only between consecutive months; null across a data gap.
-    const { price: latestPrice, prevPrice, change, changePct } = monthChange(months);
+    const { price: latestPrice, prevPrice, change, changePct, month: priceMonth, days: priceDays, mandis: priceMandis } = monthChange(months);
     const msp = getCropMSP(cropId);
     const mandiCount = allCropMandis[cropId] ? Object.keys(allCropMandis[cropId]).length : 0;
     // Use recent (last 7 days) prices for best/worst mandi — not all-time average
@@ -679,15 +708,15 @@ function main() {
           return avgA - avgB;
         })[0] : null;
 
+    // Signals come only from a valid month-over-month change. MSP comparisons are not used:
+    // the MSP table is a past season's figures.
     let signal = 'hold', signalHi = 'होल्ड';
-    if (msp && latestPrice > msp * 1.1) { signal = 'sell'; signalHi = 'बेचें'; }
-    else if (msp && latestPrice < msp * 0.9) { signal = 'buy'; signalHi = 'खरीदें'; }
-    else if (changeSignal(changePct)) ({ signal, signalHi } = changeSignal(changePct));
+    if (changeSignal(changePct)) ({ signal, signalHi } = changeSignal(changePct));
 
     tickerData.push({
       id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji,
-      price: latestPrice, prevPrice, change, changePct,
-      msp: msp || null,
+      price: latestPrice, priceMonth, priceDays, priceMandis, prevPrice, change, changePct,
+      msp: msp || null, mspSeason: msp ? MSP_SEASON : null,
       mspDiff: msp ? latestPrice - msp : null,
       mspDiffPct: msp ? parseFloat(((latestPrice - msp) / msp * 100).toFixed(1)) : null,
       records: c.records, mandiCount,
@@ -718,16 +747,14 @@ function main() {
     const stTicker = [];
     for (const [cropId, c] of Object.entries(stateCrops)) {
       const months = Object.entries(c.byMonth).sort(([a], [b]) => a.localeCompare(b));
-      const { price: lp, prevPrice: pp, change: ch, changePct: chPct } = monthChange(months);
+      const { price: lp, prevPrice: pp, change: ch, changePct: chPct, month: pMonth, days: pDays, mandis: pMandis } = monthChange(months);
       const msp = getCropMSP(cropId);
       let sig = 'hold', sigHi = 'होल्ड';
-      if (msp && lp > msp * 1.1) { sig = 'sell'; sigHi = 'बेचें'; }
-      else if (msp && lp < msp * 0.9) { sig = 'buy'; sigHi = 'खरीदें'; }
-      else if (changeSignal(chPct)) ({ signal: sig, signalHi: sigHi } = changeSignal(chPct));
+      if (changeSignal(chPct)) ({ signal: sig, signalHi: sigHi } = changeSignal(chPct));
       stTicker.push({
         id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji,
-        price: lp, prevPrice: pp, change: ch, changePct: chPct,
-        msp: msp || null, records: c.records, signal: sig, signalHi: sigHi,
+        price: lp, priceMonth: pMonth, priceDays: pDays, priceMandis: pMandis, prevPrice: pp, change: ch, changePct: chPct,
+        msp: msp || null, mspSeason: msp ? MSP_SEASON : null, records: c.records, signal: sig, signalHi: sigHi,
       });
     }
     stTicker.sort((a, b) => b.records - a.records);
@@ -749,7 +776,7 @@ function main() {
         emoji: c.emoji,
         totalRecords: c.records,
         avgPrice: c.priceCount > 0 ? Math.round(c.totalModal / c.priceCount) : 0,
-        ...(getCropMSP(c.id) ? { msp: getCropMSP(c.id) } : {}),
+        ...(getCropMSP(c.id) ? { msp: getCropMSP(c.id), mspSeason: MSP_SEASON } : {}),
         ...(seasonData.sowingMonths ? { sowingMonths: seasonData.sowingMonths } : {}),
         ...(seasonData.growingMonths ? { growingMonths: seasonData.growingMonths } : {}),
         ...(seasonData.harvestMonths ? { harvestMonths: seasonData.harvestMonths } : {}),
@@ -768,8 +795,10 @@ function main() {
       .map(([month, data]) => ({
         month: month.slice(5),
         date: month,
-        market: data.prices.length > 0 ? Math.round(data.prices.reduce((a, b) => a + b, 0) / data.prices.length) : 0,
+        market: bucketPrice(data),
         volume: data.count,
+        days: data.days.size,
+        mandis: Object.keys(data.byMandi).length,
         ...(msp ? { msp } : {}),
       }));
 
@@ -790,14 +819,15 @@ function main() {
       .sort(([a], [b]) => a.localeCompare(b))
       .map(([date, data]) => ({
         date,
-        market: data.prices.length > 0 ? Math.round(data.prices.reduce((a, b) => a + b, 0) / data.prices.length) : 0,
+        market: bucketPrice(data),
         volume: data.count,
+        mandis: Object.keys(data.byMandi).length,
         minPrice: data.minPrices.length > 0 ? Math.min(...data.minPrices) : 0,
         maxPrice: data.maxPrices.length > 0 ? Math.max(...data.maxPrices) : 0,
       }));
 
     writeJSON(path.join(INDIA_DIR, 'crop-prices', `${cropId}.json`), {
-      crop: { id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji, ...(msp ? { msp } : {}) },
+      crop: { id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji, ...(msp ? { msp, mspSeason: MSP_SEASON } : {}) },
       history,
       dailyHistory,
       lastUpdated,

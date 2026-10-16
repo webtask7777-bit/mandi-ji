@@ -9,32 +9,42 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 107403,
-      "volume": 16
+      "market": 108000,
+      "volume": 16,
+      "days": 4,
+      "mandis": 11
     },
     {
       "month": "05",
       "date": "2026-05",
-      "market": 125273,
-      "volume": 12
+      "market": 105000,
+      "volume": 12,
+      "days": 8,
+      "mandis": 8
     },
     {
       "month": "06",
       "date": "2026-06",
-      "market": 97006,
-      "volume": 3
+      "market": 101000,
+      "volume": 3,
+      "days": 2,
+      "mandis": 3
     },
     {
       "month": "07",
       "date": "2026-07",
-      "market": 209271,
-      "volume": 19
+      "market": 130222,
+      "volume": 18,
+      "days": 2,
+      "mandis": 12
     },
     {
       "month": "10",
       "date": "2026-10",
       "market": 130000,
-      "volume": 1
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -42,27 +52,31 @@
       "date": "2026-04-04",
       "market": 101000,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 100000,
       "maxPrice": 102000
     },
     {
       "date": "2026-04-06",
-      "market": 110959,
+      "market": 110000,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 97000,
       "maxPrice": 125000
     },
     {
       "date": "2026-04-09",
-      "market": 108595,
+      "market": 105782,
       "volume": 8,
+      "mandis": 8,
       "minPrice": 97000,
       "maxPrice": 130000
     },
     {
       "date": "2026-04-10",
-      "market": 104936,
+      "market": 104000,
       "volume": 3,
+      "mandis": 3,
       "minPrice": 97000,
       "maxPrice": 111500
     },
@@ -70,6 +84,7 @@
       "date": "2026-05-05",
       "market": 105500,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 103500,
       "maxPrice": 107500
     },
@@ -77,6 +92,7 @@
       "date": "2026-05-06",
       "market": 107000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 107000,
       "maxPrice": 107000
     },
@@ -84,6 +100,7 @@
       "date": "2026-05-08",
       "market": 105000,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 105000,
       "maxPrice": 105000
     },
@@ -91,6 +108,7 @@
       "date": "2026-05-09",
       "market": 105500,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 105000,
       "maxPrice": 106000
     },
@@ -98,6 +116,7 @@
       "date": "2026-05-14",
       "market": 93273,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 90000,
       "maxPrice": 96000
     },
@@ -105,6 +124,7 @@
       "date": "2026-05-15",
       "market": 352000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 352000,
       "maxPrice": 352000
     },
@@ -112,6 +132,7 @@
       "date": "2026-05-18",
       "market": 104000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 104000,
       "maxPrice": 104000
     },
@@ -119,6 +140,7 @@
       "date": "2026-05-19",
       "market": 107500,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 105000,
       "maxPrice": 110000
     },
@@ -126,6 +148,7 @@
       "date": "2026-06-21",
       "market": 103009,
       "volume": 2,
+      "mandis": 2,
       "minPrice": 101000,
       "maxPrice": 108050
     },
@@ -133,20 +156,23 @@
       "date": "2026-06-29",
       "market": 85000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 85000,
       "maxPrice": 85000
     },
     {
       "date": "2026-07-18",
-      "market": 262661,
-      "volume": 10,
+      "market": 131386,
+      "volume": 9,
+      "mandis": 9,
       "minPrice": 50000,
-      "maxPrice": 1317142.85
+      "maxPrice": 340000
     },
     {
       "date": "2026-07-19",
-      "market": 149949,
+      "market": 129500,
       "volume": 9,
+      "mandis": 9,
       "minPrice": 84687.5,
       "maxPrice": 250000
     },
@@ -154,6 +180,7 @@
       "date": "2026-10-16",
       "market": 130000,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 130000,
       "maxPrice": 130000
     }
@@ -191,16 +218,16 @@
       "records": 4
     },
     {
-      "district": "Sambhal (उत्तर प्रदेश)",
-      "nameHi": "Sambhal (उत्तर प्रदेश)",
-      "avgPrice": 413036,
-      "records": 4
-    },
-    {
       "district": "Lucknow (उत्तर प्रदेश)",
       "nameHi": "Lucknow (उत्तर प्रदेश)",
       "avgPrice": 121000,
       "records": 4
+    },
+    {
+      "district": "Sambhal (उत्तर प्रदेश)",
+      "nameHi": "Sambhal (उत्तर प्रदेश)",
+      "avgPrice": 111667,
+      "records": 3
     },
     {
       "district": "Jalaun (Orai) (उत्तर प्रदेश)",

@@ -10,13 +10,17 @@
       "month": "12",
       "date": "2025-12",
       "market": 10500,
-      "volume": 1
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     },
     {
       "month": "01",
       "date": "2026-01",
       "market": 10700,
-      "volume": 2
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -24,6 +28,7 @@
       "date": "2025-12-26",
       "market": 10500,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 10200,
       "maxPrice": 11000
     },
@@ -31,6 +36,7 @@
       "date": "2026-01-02",
       "market": 10600,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 10400,
       "maxPrice": 10600
     },
@@ -38,6 +44,7 @@
       "date": "2026-01-09",
       "market": 10800,
       "volume": 1,
+      "mandis": 1,
       "minPrice": 10600,
       "maxPrice": 11200
     }
