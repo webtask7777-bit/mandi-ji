@@ -96,6 +96,8 @@ try {
   await mkdir(generated, { recursive: true });
   const routes = new Set(['/', '/delivery-calculator', '/bechne-ka-hisab', '/data-status', '/about', '/contact', '/privacy', '/terms', '/blog']);
   const knownCrops = new Set();
+  // Sitemap <lastmod>: a price page changes when its newest record does; an article on its own update.
+  const lastmod = new Map();
   const newestObservation = loadIndiaData('stats')?.newestObservation || null;
   const states = (loadIndiaData('states') || []).filter(state => state.hasData);
   const scopes = ['all', ...new Set(states.map(state => state.id))];
@@ -108,11 +110,16 @@ try {
       knownCrops.add(route);
       let detail;
       try { detail = scope === 'all' ? loadIndiaCropPrices(crop.id) : loadStateCropPrices(scope, crop.id); } catch { /* no observed prices: keep out of sitemap */ }
-      if (hasPrice(detail) && isFresh(detail, newestObservation)) routes.add(route);
+      if (hasPrice(detail) && isFresh(detail, newestObservation)) { routes.add(route); lastmod.set(route, latestRecordDate(detail)?.slice(0, 10)); }
     }
   }
   const posts = JSON.parse(await readFile(path.join(root, 'server/db/data/blog-posts.json'), 'utf8'));
-  for (const post of posts.filter(post => post.status === 'published' && post.slug && post.content?.trim())) routes.add(`/blog/${encodeURIComponent(post.slug)}`);
+  for (const post of posts.filter(post => post.status === 'published' && post.slug && post.content?.trim())) {
+    const route = `/blog/${encodeURIComponent(post.slug)}`;
+    routes.add(route);
+    const updated = String(post.updatedAt || post.publishedAt || '').slice(0, 10);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(updated)) lastmod.set(route, updated);
+  }
   let count = 0;
   for (const route of routes) {
     const html = await render(route);
@@ -130,7 +137,7 @@ try {
   const shell = template.replace('</head>', '<meta name="robots" content="noindex, follow" data-rh="true" /><title data-rh="true">आपका खाता | SahiBhav</title></head>');
   await writeFile(path.join(generated, 'shell.html'), shell);
   await writeFile(path.join(generated, 'routes.json'), JSON.stringify({ routes: [...routes], knownCrops: [...knownCrops] }));
-  await writeFile(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...routes].sort().map(route => `  <url><loc>${xml(siteUrl + route)}</loc></url>`).join('\n')}\n</urlset>\n`);
+  await writeFile(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...routes].sort().map(route => `  <url><loc>${xml(siteUrl + route)}</loc>${lastmod.get(route) ? `<lastmod>${lastmod.get(route)}</lastmod>` : ''}</url>`).join('\n')}\n</urlset>\n`);
   const robots = (await readFile(path.join(root, 'public/robots.txt'), 'utf8')).replace(/^Sitemap:.*$/m, `Sitemap: ${siteUrl}/sitemap.xml`);
   await writeFile(path.join(dist, 'robots.txt'), robots);
   console.log(`SEO build complete: ${routes.size} indexable pages; real records only; dates preserved.`);

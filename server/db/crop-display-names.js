@@ -247,6 +247,11 @@ export const CROP_DISPLAY_NAMES = Object.freeze({
   'peas-wet': 'हरी मटर (गीली)',
   'tube-roseloose': 'रजनीगंधा (खुला)',
   'tube-rosedouble': 'रजनीगंधा (डबल)',
+  'buttery': 'Buttery',
+  'basil': 'बेसिल (Basil)',
+  'gulli': 'Gulli',
+  'vadang': 'Vadang',
+  'dhawai-flowers': 'धवई के फूल',
 });
 
 export function withCropDisplayName(crop) {
