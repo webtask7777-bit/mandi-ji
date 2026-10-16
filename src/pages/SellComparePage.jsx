@@ -1,6 +1,6 @@
 import { useEffect, useId, useMemo, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowLeft, Calculator, Copy, Info, Plus, RotateCcw, Scale, Trash2, Wallet } from 'lucide-react';
+import { ArrowLeft, Calculator, Copy, Info, MessageCircle, Plus, RotateCcw, Scale, Trash2, Wallet } from 'lucide-react';
 import SEO from '../components/SEO';
 import Brand from '../components/Brand';
 import Footer from '../components/Footer';
@@ -153,7 +153,11 @@ export default function SellComparePage() {
                     </tr>)}</tbody>
                   </table>
                 </div>
-                {result.comparable && <div className="sb-delivery-result-actions"><button type="button" className="sb-delivery-button" onClick={copy}><Copy size={15} aria-hidden="true" /> हिसाब कॉपी करें</button></div>}
+                {result.comparable && <div className="sb-delivery-result-actions">
+                  <button type="button" className="sb-delivery-button" onClick={copy}><Copy size={15} aria-hidden="true" /> हिसाब कॉपी करें</button>
+                  {/* Opens WhatsApp with the dated summary; the user chooses the recipient. */}
+                  <a className="sb-delivery-button" href={`https://wa.me/?text=${encodeURIComponent(`${saleComparisonSummary({ ...form, result })}\n\nअपना हिसाब करें: https://mandi-ji.vercel.app/bechne-ka-hisab`)}`} target="_blank" rel="noopener noreferrer"><MessageCircle size={15} aria-hidden="true" /> WhatsApp पर भेजें</a>
+                </div>}
                 <p className="sb-delivery-disclaimer">यह खेती की लागत घटाने के बाद का मुनाफ़ा नहीं, बिक्री के बाद हाथ में आने वाली रकम का अनुमान है। दर्ज मंडी भाव खरीदार का पक्का भाव नहीं होता। जाने से पहले व्यापारी से भाव, तौल और भुगतान की तारीख पूछें।</p>
                 <p className="sb-delivery-privacy">आपका हिसाब सिर्फ़ इसी ब्राउज़र में रहता है।</p>
               </div>

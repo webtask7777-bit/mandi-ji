@@ -137,16 +137,34 @@ const CROP_HINDI = {
   'wood': 'लकड़ी', 'firewood': 'जलाऊ लकड़ी', 'fish': 'मछली',
 };
 
-// ─── MSP 2024-25 (₹ per quintal) ──────────────────────────────────────
-// Whole grain/seed only: milled rice and split dal are not the MSP commodity. Values are the
-// 2024-25 notification and are labelled with that season wherever they are shown.
-const MSP_SEASON = '2024-25';
-const CROP_MSP = {
-  'paddycommon': 2300, 'wheat': 2275, 'maize': 2090,
-  'bajrapearl-millet-cumbu': 2625, 'soyabean': 4892,
-  'groundnut': 6783, 'mustard': 5650,
-  'cotton': 7121, 'bengal-gramgramwhole': 5440,
-  'arhartur-red-gramwhole': 7550, 'green-grammoongwhole': 8682,
+// ─── MSP (₹ per quintal), official PIB releases ───────────────────────
+// Only the exact commodity form the release names (whole grain/seed). Basmati, dal, atta and
+// oil carry no MSP. Each value keeps its season and source so the site can say which it is.
+const MSP_SOURCES = {
+  'kharif-2026-27': { label: 'खरीफ 2026-27', url: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618' }, // 13 May 2026
+  'rabi-2026-27': { label: 'रबी 2026-27', url: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2173567' },   // 1 Oct 2025
+};
+const CROP_MSP_TABLE = {
+  // Kharif marketing season 2026-27
+  'paddycommon': [2441, 'kharif-2026-27'], 'jowarsorghum': [4023, 'kharif-2026-27'],
+  'bajrapearl-millet-cumbu': [2900, 'kharif-2026-27'], 'ragifinger-millet': [5205, 'kharif-2026-27'],
+  'maize': [2410, 'kharif-2026-27'], 'arhartur-red-gramwhole': [8450, 'kharif-2026-27'],
+  'green-grammoongwhole': [8780, 'kharif-2026-27'], 'black-gramurd-beanswhole': [8200, 'kharif-2026-27'],
+  'groundnut': [7517, 'kharif-2026-27'], 'sunflower-seed': [8343, 'kharif-2026-27'],
+  'sunflower-sunflower-seed': [8343, 'kharif-2026-27'], 'soyabean': [5708, 'kharif-2026-27'],
+  'sesamumsesame-gingelly-til': [10346, 'kharif-2026-27'], 'niger-seedramtil': [10052, 'kharif-2026-27'],
+  'cotton': [8267, 'kharif-2026-27'],
+  // Rabi marketing season 2026-27 (the season of the wheat and gram now being sold)
+  'wheat': [2585, 'rabi-2026-27'], 'barleyjau': [2150, 'rabi-2026-27'],
+  'bengal-gramgramwhole': [5875, 'rabi-2026-27'], 'lentilmasurwhole': [7000, 'rabi-2026-27'],
+  'mustard': [6200, 'rabi-2026-27'], 'safflower': [6540, 'rabi-2026-27'],
+};
+const CROP_MSP = Object.fromEntries(Object.entries(CROP_MSP_TABLE).map(([id, [msp]]) => [id, msp]));
+const mspInfo = id => {
+  const row = CROP_MSP_TABLE[id];
+  if (!row) return {};
+  const src = MSP_SOURCES[row[1]];
+  return { msp: row[0], mspSeason: src.label, mspSource: src.url };
 };
 
 // ─── Season data for common crops ──────────────────────────────────────
@@ -466,7 +484,7 @@ function main() {
           minPrice: c.minPrice === Infinity ? 0 : c.minPrice,
           maxPrice: c.maxPrice,
           varieties: [...c.varieties].slice(0, 10),
-          ...(getCropMSP(c.id) ? { msp: getCropMSP(c.id), mspSeason: MSP_SEASON } : {}),
+          ...mspInfo(c.id),
           ...(seasonData.sowingMonths ? { sowingMonths: seasonData.sowingMonths } : {}),
           ...(seasonData.growingMonths ? { growingMonths: seasonData.growingMonths } : {}),
           ...(seasonData.harvestMonths ? { harvestMonths: seasonData.harvestMonths } : {}),
@@ -544,7 +562,7 @@ function main() {
         }));
 
       writeJSON(path.join(stateDir, 'crop-prices', `${cropId}.json`), {
-        crop: { id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji, ...(msp ? { msp, mspSeason: MSP_SEASON } : {}) },
+        crop: { id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji, ...mspInfo(cropId) },
         history,
         dailyHistory,
         lastUpdated,
@@ -579,6 +597,16 @@ function main() {
       topCrops: cropsArr.slice(0, 5).map(c => ({ id: c.id, name: c.name, nameHi: c.nameHi, emoji: c.emoji, records: c.totalRecords })),
     });
 
+    // Freshness by observation date, for the public data-status page.
+    let latestObservation = '';
+    const recentMandis = new Set();
+    let recentRecords = 0;
+    for (const r of records) {
+      const d = parseDateFull(r.arrival_date);
+      if (!d) continue;
+      if (d > latestObservation) latestObservation = d;
+      if (d >= recentCutoff) { recentRecords++; recentMandis.add(mandiKeyOf(r)); }
+    }
     statesList.push({
       id: meta.id,
       name: stateData.name,
@@ -587,6 +615,9 @@ function main() {
       totalDistricts: districts.size,
       totalMandis: markets.size,
       totalCrops: Object.keys(crops).length,
+      latestObservation: latestObservation || null,
+      recentRecords,
+      recentMandis: recentMandis.size,
     });
 
     console.log(`  ${stateData.name}: ${records.length} records, ${districts.size} districts, ${markets.size} mandis, ${Object.keys(crops).length} crops`);
@@ -716,7 +747,7 @@ function main() {
     tickerData.push({
       id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji,
       price: latestPrice, priceMonth, priceDays, priceMandis, prevPrice, change, changePct,
-      msp: msp || null, mspSeason: msp ? MSP_SEASON : null,
+      msp: msp || null, mspSeason: mspInfo(cropId).mspSeason || null, mspSource: mspInfo(cropId).mspSource || null,
       mspDiff: msp ? latestPrice - msp : null,
       mspDiffPct: msp ? parseFloat(((latestPrice - msp) / msp * 100).toFixed(1)) : null,
       records: c.records, mandiCount,
@@ -754,7 +785,7 @@ function main() {
       stTicker.push({
         id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji,
         price: lp, priceMonth: pMonth, priceDays: pDays, priceMandis: pMandis, prevPrice: pp, change: ch, changePct: chPct,
-        msp: msp || null, mspSeason: msp ? MSP_SEASON : null, records: c.records, signal: sig, signalHi: sigHi,
+        msp: msp || null, mspSeason: mspInfo(cropId).mspSeason || null, mspSource: mspInfo(cropId).mspSource || null, records: c.records, signal: sig, signalHi: sigHi,
       });
     }
     stTicker.sort((a, b) => b.records - a.records);
@@ -776,7 +807,7 @@ function main() {
         emoji: c.emoji,
         totalRecords: c.records,
         avgPrice: c.priceCount > 0 ? Math.round(c.totalModal / c.priceCount) : 0,
-        ...(getCropMSP(c.id) ? { msp: getCropMSP(c.id), mspSeason: MSP_SEASON } : {}),
+        ...mspInfo(c.id),
         ...(seasonData.sowingMonths ? { sowingMonths: seasonData.sowingMonths } : {}),
         ...(seasonData.growingMonths ? { growingMonths: seasonData.growingMonths } : {}),
         ...(seasonData.harvestMonths ? { harvestMonths: seasonData.harvestMonths } : {}),
@@ -827,7 +858,7 @@ function main() {
       }));
 
     writeJSON(path.join(INDIA_DIR, 'crop-prices', `${cropId}.json`), {
-      crop: { id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji, ...(msp ? { msp, mspSeason: MSP_SEASON } : {}) },
+      crop: { id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji, ...mspInfo(cropId) },
       history,
       dailyHistory,
       lastUpdated,
@@ -881,29 +912,8 @@ function main() {
     }
   }
 
-  // Inject CG scraper stats (CG data comes from scraper, not data.gov.in)
-  try {
-    const cgCrops = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'crops.json'), 'utf-8'));
-    const cgMandis = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'mandis.json'), 'utf-8'));
-    const cgDistricts = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'districts.json'), 'utf-8'));
-    const cgRecords = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'scraper', 'data', 'all-records.json'), 'utf-8'));
-    const cgIdx = statesList.findIndex(s => s.id === 'chhattisgarh');
-    const cgStats = {
-      id: 'chhattisgarh',
-      name: 'Chhattisgarh',
-      nameHi: 'छत्तीसगढ़',
-      totalRecords: cgRecords.length,
-      totalDistricts: cgDistricts.length,
-      totalMandis: cgMandis.length,
-      totalCrops: cgCrops.length,
-      hasData: true,
-    };
-    if (cgIdx >= 0) statesList[cgIdx] = cgStats;
-    else statesList.push(cgStats);
-    console.log(`Injected CG scraper stats: ${cgRecords.length} records, ${cgMandis.length} mandis`);
-  } catch (e) {
-    console.log('Note: CG scraper data not available, skipping CG injection');
-  }
+  // Chhattisgarh is counted from the same daily data as every other state; the legacy
+  // scraper files are no longer served for prices, so their counts are not injected.
 
   for (const s of statesList) {
     if (s.hasData === undefined) s.hasData = s.totalRecords > 0;
@@ -923,6 +933,8 @@ function main() {
     topStates: statesList.filter(s => s.hasData).slice(0, 5),
     dateRange: dailyFiles.map(f => f.replace('.json', '')),
     lastUpdated,
+    newestObservation: newestObservation || null,
+    recentCutoff: recentCutoff || null,
   });
 
   console.log(`\n=== All India Summary ===`);

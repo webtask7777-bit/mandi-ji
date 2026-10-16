@@ -20,6 +20,7 @@ const ListingDetailPage = lazy(() => import('./pages/ListingDetailPage'));
 const MyListingsPage = lazy(() => import('./pages/MyListingsPage'));
 const TransportPage = lazy(() => import('./pages/TransportPage'));
 const SellComparePage = lazy(() => import('./pages/SellComparePage'));
+const DataStatusPage = lazy(() => import('./pages/DataStatusPage'));
 const EwayBillPage = lazy(() => import('./pages/EwayBillPage'));
 const MyEwayBills = lazy(() => import('./components/eway/MyEwayBills'));
 const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
@@ -70,6 +71,7 @@ function App({ prerender = false, initialPage }) {
                 <Route path="/my-listings" element={<ProtectedRoute><MyListingsPage /></ProtectedRoute>} />
                 <Route path="/delivery-calculator" element={<DeliveryPage />} />
                 <Route path="/bechne-ka-hisab" element={<SellComparePage />} />
+                <Route path="/data-status" element={<DataStatusPage />} />
                 <Route path="/transport" element={<Navigate to="/delivery-calculator" replace />} />
                 <Route path="/eway-bill/new" element={<ProtectedRoute><EwayBillPage /></ProtectedRoute>} />
                 <Route path="/my-eway-bills" element={<ProtectedRoute><MyEwayBills /></ProtectedRoute>} />

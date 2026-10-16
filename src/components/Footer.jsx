@@ -14,6 +14,7 @@ export default function Footer() {
           <FooterLink to="/contact">संपर्क करें</FooterLink>
           <FooterLink to="/blog">खेती की जानकारी</FooterLink>
           <FooterLink to="/bechne-ka-hisab">कहाँ बेचूँ? हिसाब</FooterLink>
+          <FooterLink to="/data-status">भाव कितने ताज़ा हैं?</FooterLink>
           <FooterLink to="/delivery-calculator">डिलीवरी कैलकुलेटर</FooterLink>
           <FooterLink to="/privacy">गोपनीयता नीति</FooterLink>
           <FooterLink to="/terms">नियम और शर्तें</FooterLink>

@@ -16,7 +16,14 @@ router.get('/data-status', (req, res) => {
     totalStates: stats?.totalStates || 0,
     totalStatesExpected: stats?.totalStatesExpected || 36,
     lastUpdated: stats?.lastUpdated || null,
+    newestObservation: stats?.newestObservation || null,
+    recentCutoff: stats?.recentCutoff || null,
     dateRange: stats?.dateRange || [],
+    // Per state: newest observation date and how much it reported in the recent window.
+    states: (loadIndiaData('states') || []).filter(s => s.hasData).map(s => ({
+      id: s.id, name: s.name, nameHi: s.nameHi, latestObservation: s.latestObservation || null,
+      recentRecords: s.recentRecords ?? null, recentMandis: s.recentMandis ?? null, totalRecords: s.totalRecords,
+    })),
   });
 });
 
