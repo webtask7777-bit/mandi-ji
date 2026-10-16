@@ -14,7 +14,7 @@ import arbitrageRouter from '../server/routes/arbitrage.js';
 const rawCrops = JSON.parse(readFileSync(new URL('../server/db/data/india/crops.json', import.meta.url), 'utf8'));
 
 test('exact known non-crop IDs are excluded without excluding cowpea or lookalikes', () => {
-  assert.equal(NON_CROP_COMMODITY_IDS.length, 16);
+  assert.equal(NON_CROP_COMMODITY_IDS.length, 17);
   // sheep and she-goat are excluded before they ever appear in the source data.
   for (const id of NON_CROP_COMMODITY_IDS) assert.equal(isCropPriceCommodity(id), false, id);
   for (const id of ['cowpeaveg', 'cowpealobia-karamani', 'bullar', 'eggplant', 'wheat', 'cow-unverified-variety']) assert.equal(isCropPriceCommodity(id), true, id);

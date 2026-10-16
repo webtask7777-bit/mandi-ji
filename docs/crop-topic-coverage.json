@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-10-16",
+  "reviewedOn": "2026-10-17",
   "purpose": "Editorial discovery taxonomy audit of every distinct source commodity ID. This is not a botanical certification, a price merge, or an instruction to publish a page for every topic.",
   "sourceScope": "All crops.json and ticker.json plus crop-prices/*.json crop headers recursively under server/db/data (India, CG and individual states).",
-  "sourceFileCount": 2708,
-  "commodityCount": 370,
+  "sourceFileCount": 2808,
+  "commodityCount": 377,
   "topicCount": 165,
   "statusCounts": {
-    "curated-crop-topic": 271,
+    "curated-crop-topic": 272,
     "non-crop": 15,
-    "mixed-or-unspecified": 25,
-    "identity-review": 59
+    "mixed-or-unspecified": 27,
+    "identity-review": 63
   },
   "policy": [
     "Only exact normalized IDs are resolved; no substring, fuzzy, translated-name or botanical guessing.",
@@ -915,6 +915,16 @@
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
+      "commodityId": "coca",
+      "sourceNames": [
+        "Coca"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/coca.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Kerala reports Coca beside Cocoa at a different price; confirm whether it is cocoa and in which form (wet or dry beans) before linking."
+    },
+    {
       "commodityId": "cock",
       "sourceNames": [
         "Cock"
@@ -1808,6 +1818,16 @@
       "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
     },
     {
+      "commodityId": "jamamkhan",
+      "sourceNames": [
+        "Jamamkhan"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/jamamkhan.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Unverified regional label from a single Punjab report; no botanical assignment."
+    },
+    {
       "commodityId": "jamunnarale-hannu",
       "sourceNames": [
         "Jamun(Narale Hannu)"
@@ -2159,6 +2179,26 @@
       "status": "curated-crop-topic",
       "topicId": "lotus",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "mace",
+      "sourceNames": [
+        "Mace"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/mace.json",
+      "status": "curated-crop-topic",
+      "topicId": "nutmeg",
+      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "macoy",
+      "sourceNames": [
+        "macoy"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/macoy.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Makoy can mean black nightshade leaves or berries; confirm the species and form before cultivation advice."
     },
     {
       "commodityId": "mahedi",
@@ -2952,6 +2992,16 @@
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
+      "commodityId": "rat-tail-radishmogari",
+      "sourceNames": [
+        "Rat Tail Radish(Mogari)"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/rat-tail-radishmogari.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Pod radish (mogari) is grown for its pods, not the root; confirm the form before linking radish root cultivation advice."
+    },
+    {
       "commodityId": "raya",
       "sourceNames": [
         "Raya"
@@ -3100,6 +3150,16 @@
       "status": "curated-crop-topic",
       "topicId": "sunhemp",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "sanay",
+      "sourceNames": [
+        "sanay"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/sanay.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Senna (sanay) is reported as both seed and leaf varieties under one label; the forms cannot be separated."
     },
     {
       "commodityId": "season-leaves",
@@ -3633,6 +3693,16 @@
       "status": "identity-review",
       "topicId": null,
       "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "walnut",
+      "sourceNames": [
+        "Walnut"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/walnut.json",
+      "status": "mixed-or-unspecified",
+      "topicId": null,
+      "reason": "Walnut label does not state in-shell or kernel and no walnut cultivation topic exists yet; add one before linking."
     },
     {
       "commodityId": "water-chestnut",

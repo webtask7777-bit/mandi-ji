@@ -23,6 +23,7 @@ export const CROP_IMAGE_CATEGORY_IDS = Object.freeze({
     "white-peas",
   ]),
   fruit: Object.freeze([
+    "walnut",
     "almondbadam", "amlanelli-kai", "apple", "apricotjardalu-khumani", "avocado", "bael", "banana",
     "berzizyphus-borehannu", "cashewnuts", "chakotha", "cherry", "chikoossapota", "coconut",
     "custard-applesharifa", "dates", "figanjura-anjeer", "galgallemon", "grapes", "guava",
@@ -51,6 +52,7 @@ export const CROP_IMAGE_CATEGORY_IDS = Object.freeze({
     "turnip", "water-chestnut", "white-pumpkin", "wild-cucumber", "yam", "yamratalu",
   ]),
   spice: Object.freeze([
+    "mace",
     "ajwan", "basil", "bay-leaftejpatta", "black-pepper", "cardamom", "cardamoms", "chili-red",
     "chilli", "cinamondalchini", "cloves", "coriander", "corianderleaves", "corriander-seed",
     "cummin-seedjeera", "dry-chillies", "fenugreek", "garlic", "ginger", "gingerdry", "gingergreen",
@@ -93,12 +95,13 @@ export const CROP_IMAGE_CATEGORY_IDS = Object.freeze({
   ]),
   livestock: Object.freeze([
     "bull", "calf", "cock", "cow", "duck", "egg", "goat", "he-buffalo", "hen", "ox", "pigs",
-    "she-buffalo", "she-goat", "sheep",
+    "ram", "she-buffalo", "she-goat", "sheep",
   ]),
   seafood: Object.freeze([
     "fish", "prawn",
   ]),
   generic: Object.freeze([
+    "coca", "jamamkhan", "macoy", "sanay",
     "beans", "chilly-capsicum", "rubber", "sugarcane", "tendu-leaves-kendu-leaves-bidi-leaves", "tobacco",
     "kutki", "muesli", "coleus", "asalia", "sweet-saag",
     "alsandikai", "bop", "bullar", "buttery", "chapparad-avare", "cowpea", "duster-beans",
