@@ -9,26 +9,79 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 5000,
+      "market": 8125,
       "volume": 2
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 9750,
+      "volume": 3
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 7750,
+      "volume": 1
     }
   ],
   "dailyHistory": [
     {
       "date": "2026-04-01",
       "market": 5000,
-      "volume": 2,
+      "volume": 1,
       "minPrice": 4000,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 11250,
+      "volume": 1,
+      "minPrice": 10000,
+      "maxPrice": 12500
+    },
+    {
+      "date": "2026-05-09",
+      "market": 12750,
+      "volume": 1,
+      "minPrice": 12500,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-05-18",
+      "market": 8250,
+      "volume": 1,
+      "minPrice": 8000,
+      "maxPrice": 8500
+    },
+    {
+      "date": "2026-05-19",
+      "market": 8250,
+      "volume": 1,
+      "minPrice": 8000,
+      "maxPrice": 8500
+    },
+    {
+      "date": "2026-06-18",
+      "market": 7750,
+      "volume": 1,
+      "minPrice": 7500,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
+    {
+      "district": "Surendranagar",
+      "nameHi": "Surendranagar",
+      "avgPrice": 9650,
+      "records": 5
+    },
     {
       "district": "Ahmedabad",
       "nameHi": "Ahmedabad",
       "avgPrice": 5000,
-      "records": 2
+      "records": 1
     }
   ]
 }

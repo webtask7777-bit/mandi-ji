@@ -17,6 +17,12 @@
       "date": "2026-04",
       "market": 7600,
       "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 5187,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -33,10 +39,44 @@
       "volume": 1,
       "minPrice": 5600,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-07-05",
+      "market": 10000,
+      "volume": 1,
+      "minPrice": 9500,
+      "maxPrice": 10800
+    },
+    {
+      "date": "2026-07-07",
+      "market": 1726,
+      "volume": 1,
+      "minPrice": 1726,
+      "maxPrice": 1726
+    },
+    {
+      "date": "2026-07-14",
+      "market": 1523,
+      "volume": 1,
+      "minPrice": 1523,
+      "maxPrice": 1523
+    },
+    {
+      "date": "2026-07-17",
+      "market": 7500,
+      "volume": 1,
+      "minPrice": 7500,
+      "maxPrice": 7500
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
+    {
+      "district": "Uttara Kannada (कर्नाटक)",
+      "nameHi": "Uttara Kannada (कर्नाटक)",
+      "avgPrice": 1625,
+      "records": 2
+    },
     {
       "district": "Chikmagalur (कर्नाटक)",
       "nameHi": "Chikmagalur (कर्नाटक)",
@@ -47,6 +87,18 @@
       "district": "Tumkur (कर्नाटक)",
       "nameHi": "Tumkur (कर्नाटक)",
       "avgPrice": 7600,
+      "records": 1
+    },
+    {
+      "district": "Bengaluru South (कर्नाटक)",
+      "nameHi": "Bengaluru South (कर्नाटक)",
+      "avgPrice": 10000,
+      "records": 1
+    },
+    {
+      "district": "Hassan (कर्नाटक)",
+      "nameHi": "Hassan (कर्नाटक)",
+      "avgPrice": 7500,
       "records": 1
     }
   ]

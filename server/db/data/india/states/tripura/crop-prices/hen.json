@@ -7,23 +7,46 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 530,
-      "volume": 2
+      "month": "04",
+      "date": "2026-04",
+      "market": 600,
+      "volume": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 495,
+      "volume": 1
     }
   ],
-  "districtBreakdown": [
+  "dailyHistory": [
     {
-      "district": "Khowai",
-      "nameHi": "Khowai",
-      "avgPrice": 460,
-      "records": 1
+      "date": "2026-04-21",
+      "market": 600,
+      "volume": 1,
+      "minPrice": 350,
+      "maxPrice": 650
     },
+    {
+      "date": "2026-06-21",
+      "market": 495,
+      "volume": 1,
+      "minPrice": 490,
+      "maxPrice": 500
+    }
+  ],
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
+  "districtBreakdown": [
     {
       "district": "Dhalai",
       "nameHi": "Dhalai",
       "avgPrice": 600,
+      "records": 1
+    },
+    {
+      "district": "Khowai",
+      "nameHi": "Khowai",
+      "avgPrice": 495,
       "records": 1
     }
   ]

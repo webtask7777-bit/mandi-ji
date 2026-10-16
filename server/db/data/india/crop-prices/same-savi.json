@@ -16,6 +16,12 @@
       "month": "04",
       "date": "2026-04",
       "market": 2800,
+      "volume": 1
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 4400,
       "volume": 2
     }
   ],
@@ -37,18 +43,38 @@
     {
       "date": "2026-04-04",
       "market": 2800,
-      "volume": 2,
+      "volume": 1,
       "minPrice": 2800,
       "maxPrice": 2800
+    },
+    {
+      "date": "2026-05-04",
+      "market": 3100,
+      "volume": 1,
+      "minPrice": 3100,
+      "maxPrice": 3100
+    },
+    {
+      "date": "2026-05-19",
+      "market": 5700,
+      "volume": 1,
+      "minPrice": 5700,
+      "maxPrice": 5700
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Singroli (मध्य प्रदेश)",
       "nameHi": "Singroli (मध्य प्रदेश)",
-      "avgPrice": 2600,
+      "avgPrice": 2675,
       "records": 4
+    },
+    {
+      "district": "Chitradurga (कर्नाटक)",
+      "nameHi": "Chitradurga (कर्नाटक)",
+      "avgPrice": 5700,
+      "records": 1
     },
     {
       "district": "Balrampur (छत्तीसगढ़)",

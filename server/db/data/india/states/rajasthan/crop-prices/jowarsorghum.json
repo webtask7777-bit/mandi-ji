@@ -15,8 +15,20 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 2700,
+      "market": 2733,
       "volume": 3
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 2900,
+      "volume": 4
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2300,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -51,7 +63,7 @@
     {
       "date": "2026-04-01",
       "market": 2700,
-      "volume": 2,
+      "volume": 1,
       "minPrice": 2700,
       "maxPrice": 2700
     },
@@ -61,15 +73,64 @@
       "volume": 1,
       "minPrice": 2700,
       "maxPrice": 2700
+    },
+    {
+      "date": "2026-04-21",
+      "market": 2800,
+      "volume": 1,
+      "minPrice": 2800,
+      "maxPrice": 2800
+    },
+    {
+      "date": "2026-05-08",
+      "market": 2900,
+      "volume": 1,
+      "minPrice": 2900,
+      "maxPrice": 2900
+    },
+    {
+      "date": "2026-05-14",
+      "market": 2900,
+      "volume": 1,
+      "minPrice": 2900,
+      "maxPrice": 2900
+    },
+    {
+      "date": "2026-05-15",
+      "market": 2900,
+      "volume": 1,
+      "minPrice": 2900,
+      "maxPrice": 2900
+    },
+    {
+      "date": "2026-05-18",
+      "market": 2900,
+      "volume": 1,
+      "minPrice": 2900,
+      "maxPrice": 2900
+    },
+    {
+      "date": "2026-06-21",
+      "market": 2300,
+      "volume": 1,
+      "minPrice": 2100,
+      "maxPrice": 2450
+    },
+    {
+      "date": "2026-06-29",
+      "market": 2300,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 2700
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Jaipur",
       "nameHi": "Jaipur",
-      "avgPrice": 2700,
-      "records": 4
+      "avgPrice": 2813,
+      "records": 8
     },
     {
       "district": "Ajmer",
@@ -81,6 +142,18 @@
       "district": "Udaipur",
       "nameHi": "Udaipur",
       "avgPrice": 3600,
+      "records": 1
+    },
+    {
+      "district": "Tonk",
+      "nameHi": "Tonk",
+      "avgPrice": 2300,
+      "records": 1
+    },
+    {
+      "district": "Beawar",
+      "nameHi": "Beawar",
+      "avgPrice": 2300,
       "records": 1
     }
   ]

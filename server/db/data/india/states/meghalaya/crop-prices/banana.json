@@ -34,6 +34,30 @@
       "month": "04",
       "date": "2026-04",
       "market": 4000,
+      "volume": 3
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 4000,
+      "volume": 2
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 4000,
+      "volume": 2
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 4625,
+      "volume": 20
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 4000,
       "volume": 1
     }
   ],
@@ -198,10 +222,162 @@
       "volume": 1,
       "minPrice": 3000,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-05-14",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-06-26",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-06-30",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-01",
+      "market": 4913,
+      "volume": 4,
+      "minPrice": 2500,
+      "maxPrice": 6500
+    },
+    {
+      "date": "2026-07-02",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-03",
+      "market": 4600,
+      "volume": 2,
+      "minPrice": 2500,
+      "maxPrice": 5500
+    },
+    {
+      "date": "2026-07-04",
+      "market": 6600,
+      "volume": 1,
+      "minPrice": 6500,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-07-06",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-07",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-08",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-10",
+      "market": 4600,
+      "volume": 2,
+      "minPrice": 3000,
+      "maxPrice": 5500
+    },
+    {
+      "date": "2026-07-11",
+      "market": 6600,
+      "volume": 1,
+      "minPrice": 6500,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-07-13",
+      "market": 4625,
+      "volume": 2,
+      "minPrice": 3000,
+      "maxPrice": 5500
+    },
+    {
+      "date": "2026-07-14",
+      "market": 4000,
+      "volume": 2,
+      "minPrice": 3000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-15",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-16",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 4000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
+    {
+      "district": "East Khasi Hills",
+      "nameHi": "East Khasi Hills",
+      "avgPrice": 5375,
+      "records": 24
+    },
+    {
+      "district": "West Garo Hills",
+      "nameHi": "West Garo Hills",
+      "avgPrice": 5520,
+      "records": 10
+    },
     {
       "district": "South Garo Hills",
       "nameHi": "South Garo Hills",
@@ -215,22 +391,16 @@
       "records": 6
     },
     {
-      "district": "East Khasi Hills",
-      "nameHi": "East Khasi Hills",
-      "avgPrice": 9500,
-      "records": 6
-    },
-    {
-      "district": "West Garo Hills",
-      "nameHi": "West Garo Hills",
-      "avgPrice": 5300,
-      "records": 4
-    },
-    {
       "district": "South West Khasi Hills",
       "nameHi": "South West Khasi Hills",
       "avgPrice": 5250,
-      "records": 4
+      "records": 6
+    },
+    {
+      "district": "West Jaintia Hills",
+      "nameHi": "West Jaintia Hills",
+      "avgPrice": 4000,
+      "records": 1
     }
   ]
 }

@@ -29,6 +29,24 @@
       "date": "2026-03",
       "market": 5310,
       "volume": 16
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 4100,
+      "volume": 2
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 6145,
+      "volume": 6
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 6425,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -535,27 +553,83 @@
       "volume": 1,
       "minPrice": 6000,
       "maxPrice": 7500
+    },
+    {
+      "date": "2026-04-21",
+      "market": 4100,
+      "volume": 2,
+      "minPrice": 2000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-05-08",
+      "market": 5925,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 7400
+    },
+    {
+      "date": "2026-05-14",
+      "market": 7410,
+      "volume": 1,
+      "minPrice": 7325,
+      "maxPrice": 7500
+    },
+    {
+      "date": "2026-05-15",
+      "market": 5750,
+      "volume": 1,
+      "minPrice": 5000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-05-18",
+      "market": 5928,
+      "volume": 3,
+      "minPrice": 2000,
+      "maxPrice": 7725
+    },
+    {
+      "date": "2026-06-18",
+      "market": 6450,
+      "volume": 1,
+      "minPrice": 3525,
+      "maxPrice": 7425
+    },
+    {
+      "date": "2026-06-26",
+      "market": 7300,
+      "volume": 1,
+      "minPrice": 6325,
+      "maxPrice": 8275
+    },
+    {
+      "date": "2026-06-29",
+      "market": 5525,
+      "volume": 1,
+      "minPrice": 4175,
+      "maxPrice": 6875
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Rajkot",
       "nameHi": "Rajkot",
-      "avgPrice": 4212,
-      "records": 64
+      "avgPrice": 4220,
+      "records": 66
     },
     {
       "district": "Jamnagar",
       "nameHi": "Jamnagar",
-      "avgPrice": 4627,
-      "records": 25
+      "avgPrice": 4843,
+      "records": 29
     },
     {
       "district": "Porbandar",
       "nameHi": "Porbandar",
-      "avgPrice": 5204,
-      "records": 18
+      "avgPrice": 5502,
+      "records": 22
     },
     {
       "district": "Surat",
@@ -566,8 +640,8 @@
     {
       "district": "Junagarh",
       "nameHi": "Junagarh",
-      "avgPrice": 4570,
-      "records": 1
+      "avgPrice": 3885,
+      "records": 2
     }
   ]
 }

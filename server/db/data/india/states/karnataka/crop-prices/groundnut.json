@@ -17,8 +17,22 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 5420,
-      "volume": 3,
+      "market": 5416,
+      "volume": 10,
+      "msp": 6783
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 6854,
+      "volume": 5,
+      "msp": 6783
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 6568,
+      "volume": 2,
       "msp": 6783
     }
   ],
@@ -61,17 +75,91 @@
     {
       "date": "2026-04-04",
       "market": 5480,
-      "volume": 2,
+      "volume": 1,
       "minPrice": 1709,
       "maxPrice": 7840
+    },
+    {
+      "date": "2026-04-09",
+      "market": 5452,
+      "volume": 7,
+      "minPrice": 1819,
+      "maxPrice": 8282
+    },
+    {
+      "date": "2026-04-21",
+      "market": 5222,
+      "volume": 1,
+      "minPrice": 4600,
+      "maxPrice": 7202
+    },
+    {
+      "date": "2026-05-05",
+      "market": 6121,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 7009
+    },
+    {
+      "date": "2026-05-06",
+      "market": 6550,
+      "volume": 1,
+      "minPrice": 6550,
+      "maxPrice": 6550
+    },
+    {
+      "date": "2026-05-18",
+      "market": 6917,
+      "volume": 1,
+      "minPrice": 3002,
+      "maxPrice": 8102
+    },
+    {
+      "date": "2026-05-19",
+      "market": 7342,
+      "volume": 2,
+      "minPrice": 3005,
+      "maxPrice": 8629
+    },
+    {
+      "date": "2026-06-19",
+      "market": 6736,
+      "volume": 1,
+      "minPrice": 4379,
+      "maxPrice": 7869
+    },
+    {
+      "date": "2026-06-29",
+      "market": 6399,
+      "volume": 1,
+      "minPrice": 5029,
+      "maxPrice": 6669
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Koppal",
       "nameHi": "Koppal",
-      "avgPrice": 5818,
+      "avgPrice": 5867,
+      "records": 9
+    },
+    {
+      "district": "Gadag",
+      "nameHi": "Gadag",
+      "avgPrice": 6455,
+      "records": 4
+    },
+    {
+      "district": "Raichur",
+      "nameHi": "Raichur",
+      "avgPrice": 6364,
+      "records": 4
+    },
+    {
+      "district": "Haveri",
+      "nameHi": "Haveri",
+      "avgPrice": 5283,
       "records": 3
     },
     {
@@ -81,21 +169,9 @@
       "records": 2
     },
     {
-      "district": "Gadag",
-      "nameHi": "Gadag",
-      "avgPrice": 6431,
-      "records": 2
-    },
-    {
-      "district": "Raichur",
-      "nameHi": "Raichur",
-      "avgPrice": 6335,
-      "records": 2
-    },
-    {
-      "district": "Davangere",
-      "nameHi": "Davangere",
-      "avgPrice": 5480,
+      "district": "Bangalore",
+      "nameHi": "Bangalore",
+      "avgPrice": 23625,
       "records": 2
     },
     {
@@ -117,15 +193,21 @@
       "records": 1
     },
     {
-      "district": "Bangalore",
-      "nameHi": "Bangalore",
-      "avgPrice": 42500,
+      "district": "Davangere",
+      "nameHi": "Davangere",
+      "avgPrice": 5480,
       "records": 1
     },
     {
-      "district": "Haveri",
-      "nameHi": "Haveri",
-      "avgPrice": 4379,
+      "district": "Belgaum",
+      "nameHi": "Belgaum",
+      "avgPrice": 6744,
+      "records": 1
+    },
+    {
+      "district": "Bellary",
+      "nameHi": "Bellary",
+      "avgPrice": 6736,
       "records": 1
     }
   ]

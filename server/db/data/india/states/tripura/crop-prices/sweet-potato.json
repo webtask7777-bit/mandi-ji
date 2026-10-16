@@ -15,8 +15,20 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 2350,
-      "volume": 2
+      "market": 2400,
+      "volume": 3
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 2280,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2020,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -47,9 +59,30 @@
       "volume": 1,
       "minPrice": 2200,
       "maxPrice": 2300
+    },
+    {
+      "date": "2026-04-09",
+      "market": 2500,
+      "volume": 1,
+      "minPrice": 2400,
+      "maxPrice": 2600
+    },
+    {
+      "date": "2026-05-19",
+      "market": 2280,
+      "volume": 1,
+      "minPrice": 2250,
+      "maxPrice": 2300
+    },
+    {
+      "date": "2026-07-15",
+      "market": 2020,
+      "volume": 1,
+      "minPrice": 1950,
+      "maxPrice": 2090
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Gomati",
@@ -60,7 +93,13 @@
     {
       "district": "South Tripura",
       "nameHi": "South Tripura",
-      "avgPrice": 2250,
+      "avgPrice": 2183,
+      "records": 3
+    },
+    {
+      "district": "West District",
+      "nameHi": "West District",
+      "avgPrice": 2500,
       "records": 1
     }
   ]

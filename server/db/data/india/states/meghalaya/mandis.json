@@ -1,9 +1,37 @@
 [
   {
+    "name": "Shillong",
+    "originalName": "Shillong APMC",
+    "district": "East Khasi Hills",
+    "totalRecords": 301,
+    "topCrops": [
+      {
+        "name": "पान",
+        "count": 65
+      },
+      {
+        "name": "सुपारी",
+        "count": 63
+      },
+      {
+        "name": "फूलगोभी",
+        "count": 51
+      },
+      {
+        "name": "कद्दू",
+        "count": 19
+      },
+      {
+        "name": "केला",
+        "count": 19
+      }
+    ]
+  },
+  {
     "name": "Tura",
     "originalName": "Tura APMC",
     "district": "West Garo Hills",
-    "totalRecords": 207,
+    "totalRecords": 277,
     "topCrops": [
       {
         "name": "बैंगन",
@@ -28,38 +56,10 @@
     ]
   },
   {
-    "name": "Shillong",
-    "originalName": "Shillong APMC",
-    "district": "East Khasi Hills",
-    "totalRecords": 147,
-    "topCrops": [
-      {
-        "name": "फूलगोभी",
-        "count": 50
-      },
-      {
-        "name": "सुपारी",
-        "count": 47
-      },
-      {
-        "name": "पान",
-        "count": 46
-      },
-      {
-        "name": "कद्दू",
-        "count": 3
-      },
-      {
-        "name": "केला",
-        "count": 1
-      }
-    ]
-  },
-  {
     "name": "Sohra",
     "originalName": "Sohra APMC",
     "district": "East Khasi Hills",
-    "totalRecords": 61,
+    "totalRecords": 84,
     "topCrops": [
       {
         "name": "खीरा",
@@ -70,15 +70,15 @@
         "count": 11
       },
       {
+        "name": "गाजर",
+        "count": 11
+      },
+      {
         "name": "करेला",
         "count": 10
       },
       {
         "name": "बैंगन",
-        "count": 9
-      },
-      {
-        "name": "गाजर",
         "count": 9
       }
     ]
@@ -87,15 +87,15 @@
     "name": "Khliehriat",
     "originalName": "Khliehriat APMC",
     "district": "East Jaintia Hills",
-    "totalRecords": 44,
+    "totalRecords": 50,
     "topCrops": [
       {
         "name": "सोंठ",
-        "count": 10
+        "count": 11
       },
       {
         "name": "सुपारी",
-        "count": 9
+        "count": 10
       },
       {
         "name": "अरबी",
@@ -107,7 +107,35 @@
       },
       {
         "name": "पान",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "Rongram",
+    "originalName": "Rongram APMC",
+    "district": "West Garo Hills",
+    "totalRecords": 48,
+    "topCrops": [
+      {
+        "name": "बैंगन",
         "count": 5
+      },
+      {
+        "name": "पत्तागोभी",
+        "count": 5
+      },
+      {
+        "name": "फूलगोभी",
+        "count": 5
+      },
+      {
+        "name": "अरबी",
+        "count": 5
+      },
+      {
+        "name": "लौकी",
+        "count": 4
       }
     ]
   },
@@ -115,7 +143,7 @@
     "name": "Dadengiri",
     "originalName": "Dadengiri APMC",
     "district": "West Garo Hills",
-    "totalRecords": 36,
+    "totalRecords": 47,
     "topCrops": [
       {
         "name": "बैंगन",
@@ -135,19 +163,19 @@
       },
       {
         "name": "लौकी",
-        "count": 4
+        "count": 5
       }
     ]
   },
   {
-    "name": "Rongram",
-    "originalName": "Rongram APMC",
-    "district": "West Garo Hills",
-    "totalRecords": 26,
+    "name": "Mawkyrwat",
+    "originalName": "Mawkyrwat APMC",
+    "district": "South West Khasi Hills",
+    "totalRecords": 30,
     "topCrops": [
       {
-        "name": "बैंगन",
-        "count": 5
+        "name": "केला",
+        "count": 6
       },
       {
         "name": "पत्तागोभी",
@@ -158,11 +186,11 @@
         "count": 5
       },
       {
-        "name": "अरबी",
-        "count": 5
+        "name": "चुकंदर",
+        "count": 3
       },
       {
-        "name": "खीरा",
+        "name": "फ्रेंच बीन",
         "count": 3
       }
     ]
@@ -196,30 +224,58 @@
     ]
   },
   {
-    "name": "Mawkyrwat",
-    "originalName": "Mawkyrwat APMC",
-    "district": "South West Khasi Hills",
-    "totalRecords": 18,
+    "name": "Nongpoh (R-Bhoi)",
+    "originalName": "Nongpoh (R-Bhoi) APMC",
+    "district": "Nongpoh (R-Bhoi)",
+    "totalRecords": 15,
     "topCrops": [
       {
         "name": "पत्तागोभी",
-        "count": 5
-      },
-      {
-        "name": "केला",
-        "count": 4
+        "count": 2
       },
       {
         "name": "फूलगोभी",
-        "count": 4
-      },
-      {
-        "name": "चुकंदर",
         "count": 2
       },
       {
-        "name": "फ्रेंच बीन",
+        "name": "भिंडी",
         "count": 2
+      },
+      {
+        "name": "अनानास",
+        "count": 2
+      },
+      {
+        "name": "टमाटर",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "Jowai",
+    "originalName": "Jowai APMC",
+    "district": "West Jaintia Hills",
+    "totalRecords": 14,
+    "topCrops": [
+      {
+        "name": "आलू",
+        "count": 10
+      },
+      {
+        "name": "फूलगोभी",
+        "count": 1
+      },
+      {
+        "name": "बैंगन",
+        "count": 1
+      },
+      {
+        "name": "टमाटर",
+        "count": 1
+      },
+      {
+        "name": "गाजर",
+        "count": 1
       }
     ]
   },
@@ -300,18 +356,18 @@
     ]
   },
   {
-    "name": "Nongpoh (R-Bhoi)",
-    "originalName": "Nongpoh (R-Bhoi) APMC",
-    "district": "Nongpoh (R-Bhoi)",
-    "totalRecords": 4,
+    "name": "Mawiong Regulated Market",
+    "originalName": "Mawiong Regulated Market APMC",
+    "district": "East Khasi Hills",
+    "totalRecords": 10,
     "topCrops": [
       {
-        "name": "पत्तागोभी",
-        "count": 2
+        "name": "Bay leaf(Tejpatta)",
+        "count": 9
       },
       {
-        "name": "फूलगोभी",
-        "count": 2
+        "name": "Broomstick(Flower Broom)",
+        "count": 1
       }
     ]
   },
@@ -319,10 +375,62 @@
     "name": "Nongstoin",
     "originalName": "Nongstoin APMC",
     "district": "West Khasi Hills",
-    "totalRecords": 1,
+    "totalRecords": 7,
     "topCrops": [
       {
         "name": "फ्रेंच बीन",
+        "count": 2
+      },
+      {
+        "name": "आलू",
+        "count": 2
+      },
+      {
+        "name": "भिंडी",
+        "count": 1
+      },
+      {
+        "name": "टमाटर",
+        "count": 1
+      },
+      {
+        "name": "चुकंदर",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "Wahiajer",
+    "originalName": "Wahiajer APMC",
+    "district": "West Jaintia Hills",
+    "totalRecords": 3,
+    "topCrops": [
+      {
+        "name": "केला",
+        "count": 1
+      },
+      {
+        "name": "चावल",
+        "count": 1
+      },
+      {
+        "name": "आलू",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "Williamnagar",
+    "originalName": "Williamnagar APMC",
+    "district": "East Garo Hills",
+    "totalRecords": 2,
+    "topCrops": [
+      {
+        "name": "सोंठ",
+        "count": 1
+      },
+      {
+        "name": "टमाटर",
         "count": 1
       }
     ]

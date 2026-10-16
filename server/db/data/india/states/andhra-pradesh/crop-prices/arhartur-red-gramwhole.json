@@ -38,8 +38,22 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 6697,
-      "volume": 1,
+      "market": 6953,
+      "volume": 5,
+      "msp": 7550
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 7372,
+      "volume": 2,
+      "msp": 7550
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 7160,
+      "volume": 4,
       "msp": 7550
     }
   ],
@@ -589,15 +603,69 @@
       "volume": 1,
       "minPrice": 3820,
       "maxPrice": 7770
+    },
+    {
+      "date": "2026-04-09",
+      "market": 6870,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 7870
+    },
+    {
+      "date": "2026-04-10",
+      "market": 6630,
+      "volume": 1,
+      "minPrice": 6630,
+      "maxPrice": 6630
+    },
+    {
+      "date": "2026-04-21",
+      "market": 7283,
+      "volume": 2,
+      "minPrice": 2750,
+      "maxPrice": 7480
+    },
+    {
+      "date": "2026-05-05",
+      "market": 6911,
+      "volume": 1,
+      "minPrice": 3001,
+      "maxPrice": 7509
+    },
+    {
+      "date": "2026-05-15",
+      "market": 7832,
+      "volume": 1,
+      "minPrice": 3100,
+      "maxPrice": 7902
+    },
+    {
+      "date": "2026-10-16",
+      "market": 7160,
+      "volume": 4,
+      "minPrice": 4678,
+      "maxPrice": 9500
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Kurnool",
       "nameHi": "Kurnool",
-      "avgPrice": 7097,
-      "records": 107
+      "avgPrice": 7099,
+      "records": 113
+    },
+    {
+      "district": "Ananthapuramu",
+      "nameHi": "Ananthapuramu",
+      "avgPrice": 6763,
+      "records": 3
+    },
+    {
+      "district": "Palnadu",
+      "nameHi": "Palnadu",
+      "avgPrice": 8350,
+      "records": 1
     }
   ]
 }

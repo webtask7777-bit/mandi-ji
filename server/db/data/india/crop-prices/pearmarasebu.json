@@ -11,6 +11,36 @@
       "date": "2026-03",
       "market": 12000,
       "volume": 4
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 8167,
+      "volume": 2
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 6950,
+      "volume": 2
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 7750,
+      "volume": 2
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 8000,
+      "volume": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 14500,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -41,26 +71,93 @@
       "volume": 1,
       "minPrice": 15000,
       "maxPrice": 16000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 8167,
+      "volume": 2,
+      "minPrice": 6000,
+      "maxPrice": 17333.3342
+    },
+    {
+      "date": "2026-05-18",
+      "market": 7200,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 8500
+    },
+    {
+      "date": "2026-05-19",
+      "market": 6700,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 7500
+    },
+    {
+      "date": "2026-06-18",
+      "market": 7500,
+      "volume": 1,
+      "minPrice": 6500,
+      "maxPrice": 8500
+    },
+    {
+      "date": "2026-06-26",
+      "market": 8000,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 10000
+    },
+    {
+      "date": "2026-07-19",
+      "market": 8000,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 14000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 14500,
+      "volume": 1,
+      "minPrice": 14000,
+      "maxPrice": 15000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
-    {
-      "district": "Coimbatore (तमिल नाडु)",
-      "nameHi": "Coimbatore (तमिल नाडु)",
-      "avgPrice": 15500,
-      "records": 2
-    },
     {
       "district": "Pune (महाराष्ट्र)",
       "nameHi": "Pune (महाराष्ट्र)",
-      "avgPrice": 8000,
-      "records": 1
+      "avgPrice": 7280,
+      "records": 5
+    },
+    {
+      "district": "Coimbatore (तमिल नाडु)",
+      "nameHi": "Coimbatore (तमिल नाडु)",
+      "avgPrice": 15167,
+      "records": 3
     },
     {
       "district": "Thiruchirappalli (तमिल नाडु)",
       "nameHi": "Thiruchirappalli (तमिल नाडु)",
       "avgPrice": 9000,
+      "records": 1
+    },
+    {
+      "district": "Kurukshetra (हरियाणा)",
+      "nameHi": "Kurukshetra (हरियाणा)",
+      "avgPrice": 8000,
+      "records": 1
+    },
+    {
+      "district": "Shimla (हिमाचल प्रदेश)",
+      "nameHi": "Shimla (हिमाचल प्रदेश)",
+      "avgPrice": 8000,
+      "records": 1
+    },
+    {
+      "district": "Hyderabad (तेलंगाना)",
+      "nameHi": "Hyderabad (तेलंगाना)",
+      "avgPrice": 9333,
       "records": 1
     }
   ]

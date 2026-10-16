@@ -34,6 +34,34 @@
       "market": 11055,
       "volume": 19,
       "msp": 6950
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 13200,
+      "volume": 1,
+      "msp": 6950
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 12445,
+      "volume": 1,
+      "msp": 6950
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 10700,
+      "volume": 6,
+      "msp": 6950
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 10374,
+      "volume": 52,
+      "msp": 6950
     }
   ],
   "dailyHistory": [
@@ -407,15 +435,168 @@
       "volume": 1,
       "minPrice": 10000,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 13200,
+      "volume": 1,
+      "minPrice": 13200,
+      "maxPrice": 14600
+    },
+    {
+      "date": "2026-05-19",
+      "market": 12445,
+      "volume": 1,
+      "minPrice": 12333,
+      "maxPrice": 12445
+    },
+    {
+      "date": "2026-06-18",
+      "market": 8250,
+      "volume": 1,
+      "minPrice": 8000,
+      "maxPrice": 8500
+    },
+    {
+      "date": "2026-06-30",
+      "market": 11190,
+      "volume": 5,
+      "minPrice": 8000,
+      "maxPrice": 14200
+    },
+    {
+      "date": "2026-07-01",
+      "market": 10388,
+      "volume": 4,
+      "minPrice": 8000,
+      "maxPrice": 14000
+    },
+    {
+      "date": "2026-07-02",
+      "market": 9894,
+      "volume": 3,
+      "minPrice": 8000,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-07-03",
+      "market": 9647,
+      "volume": 3,
+      "minPrice": 8000,
+      "maxPrice": 11250
+    },
+    {
+      "date": "2026-07-04",
+      "market": 9750,
+      "volume": 2,
+      "minPrice": 8000,
+      "maxPrice": 11250
+    },
+    {
+      "date": "2026-07-05",
+      "market": 11800,
+      "volume": 1,
+      "minPrice": 11600,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-07-06",
+      "market": 9975,
+      "volume": 2,
+      "minPrice": 8000,
+      "maxPrice": 12000
+    },
+    {
+      "date": "2026-07-07",
+      "market": 10423,
+      "volume": 7,
+      "minPrice": 5600,
+      "maxPrice": 13200
+    },
+    {
+      "date": "2026-07-08",
+      "market": 10952,
+      "volume": 3,
+      "minPrice": 8000,
+      "maxPrice": 13783
+    },
+    {
+      "date": "2026-07-09",
+      "market": 11577,
+      "volume": 4,
+      "minPrice": 8000,
+      "maxPrice": 14000
+    },
+    {
+      "date": "2026-07-10",
+      "market": 9247,
+      "volume": 2,
+      "minPrice": 8000,
+      "maxPrice": 10344
+    },
+    {
+      "date": "2026-07-11",
+      "market": 9590,
+      "volume": 2,
+      "minPrice": 8000,
+      "maxPrice": 11029
+    },
+    {
+      "date": "2026-07-13",
+      "market": 9769,
+      "volume": 2,
+      "minPrice": 8000,
+      "maxPrice": 11500
+    },
+    {
+      "date": "2026-07-14",
+      "market": 10296,
+      "volume": 4,
+      "minPrice": 8000,
+      "maxPrice": 14200
+    },
+    {
+      "date": "2026-07-15",
+      "market": 10283,
+      "volume": 3,
+      "minPrice": 8000,
+      "maxPrice": 14320
+    },
+    {
+      "date": "2026-07-16",
+      "market": 12234,
+      "volume": 5,
+      "minPrice": 8000,
+      "maxPrice": 15122
+    },
+    {
+      "date": "2026-07-17",
+      "market": 9483,
+      "volume": 3,
+      "minPrice": 8000,
+      "maxPrice": 11900
+    },
+    {
+      "date": "2026-07-18",
+      "market": 8525,
+      "volume": 2,
+      "minPrice": 8000,
+      "maxPrice": 10600
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Dharwad",
       "nameHi": "Dharwad",
-      "avgPrice": 11460,
-      "records": 41
+      "avgPrice": 11501,
+      "records": 42
+    },
+    {
+      "district": "Hassan",
+      "nameHi": "Hassan",
+      "avgPrice": 11973,
+      "records": 25
     },
     {
       "district": "Mysore",
@@ -424,15 +605,33 @@
       "records": 18
     },
     {
-      "district": "Hassan",
-      "nameHi": "Hassan",
-      "avgPrice": 12107,
-      "records": 14
+      "district": "Bengaluru",
+      "nameHi": "Bengaluru",
+      "avgPrice": 8183,
+      "records": 18
+    },
+    {
+      "district": "Mysuru",
+      "nameHi": "Mysuru",
+      "avgPrice": 10431,
+      "records": 8
+    },
+    {
+      "district": "Bengaluru Rural",
+      "nameHi": "Bengaluru Rural",
+      "avgPrice": 12091,
+      "records": 7
     },
     {
       "district": "Shimoga",
       "nameHi": "Shimoga",
       "avgPrice": 12085,
+      "records": 6
+    },
+    {
+      "district": "Shivamogga",
+      "nameHi": "Shivamogga",
+      "avgPrice": 11831,
       "records": 6
     },
     {
@@ -448,6 +647,12 @@
       "records": 4
     },
     {
+      "district": "Tumakuru",
+      "nameHi": "Tumakuru",
+      "avgPrice": 10191,
+      "records": 4
+    },
+    {
       "district": "Kolar",
       "nameHi": "Kolar",
       "avgPrice": 11051,
@@ -457,6 +662,12 @@
       "district": "Haveri",
       "nameHi": "Haveri",
       "avgPrice": 11450,
+      "records": 2
+    },
+    {
+      "district": "Chikkaballapur",
+      "nameHi": "Chikkaballapur",
+      "avgPrice": 11800,
       "records": 2
     },
     {

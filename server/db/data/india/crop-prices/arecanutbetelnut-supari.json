@@ -33,8 +33,32 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 26483,
-      "volume": 12
+      "market": 35566,
+      "volume": 65
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 34814,
+      "volume": 31
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 36701,
+      "volume": 92
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 35882,
+      "volume": 1045
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 20000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -677,103 +701,334 @@
     },
     {
       "date": "2026-04-04",
-      "market": 25413,
-      "volume": 8,
+      "market": 26900,
+      "volume": 7,
       "minPrice": 15000,
       "maxPrice": 50000
+    },
+    {
+      "date": "2026-04-06",
+      "market": 29000,
+      "volume": 2,
+      "minPrice": 15000,
+      "maxPrice": 44000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 39169,
+      "volume": 32,
+      "minPrice": 10500,
+      "maxPrice": 61999
+    },
+    {
+      "date": "2026-04-10",
+      "market": 35286,
+      "volume": 7,
+      "minPrice": 13000,
+      "maxPrice": 57899
+    },
+    {
+      "date": "2026-04-21",
+      "market": 34661,
+      "volume": 13,
+      "minPrice": 10000,
+      "maxPrice": 52299
+    },
+    {
+      "date": "2026-05-04",
+      "market": 44392,
+      "volume": 4,
+      "minPrice": 23909,
+      "maxPrice": 55100
+    },
+    {
+      "date": "2026-05-05",
+      "market": 45500,
+      "volume": 1,
+      "minPrice": 45000,
+      "maxPrice": 46000
+    },
+    {
+      "date": "2026-05-06",
+      "market": 32125,
+      "volume": 4,
+      "minPrice": 11000,
+      "maxPrice": 47500
+    },
+    {
+      "date": "2026-05-14",
+      "market": 26769,
+      "volume": 5,
+      "minPrice": 15000,
+      "maxPrice": 41429.29
+    },
+    {
+      "date": "2026-05-15",
+      "market": 35533,
+      "volume": 3,
+      "minPrice": 15000,
+      "maxPrice": 48700
+    },
+    {
+      "date": "2026-05-18",
+      "market": 30625,
+      "volume": 4,
+      "minPrice": 13000,
+      "maxPrice": 46500
+    },
+    {
+      "date": "2026-05-19",
+      "market": 35746,
+      "volume": 9,
+      "minPrice": 12000,
+      "maxPrice": 52399
+    },
+    {
+      "date": "2026-05-20",
+      "market": 43000,
+      "volume": 1,
+      "minPrice": 42000,
+      "maxPrice": 44000
+    },
+    {
+      "date": "2026-06-18",
+      "market": 15000,
+      "volume": 1,
+      "minPrice": 15000,
+      "maxPrice": 15000
+    },
+    {
+      "date": "2026-06-29",
+      "market": 31060,
+      "volume": 5,
+      "minPrice": 16900,
+      "maxPrice": 47700
+    },
+    {
+      "date": "2026-06-30",
+      "market": 37281,
+      "volume": 86,
+      "minPrice": 11000,
+      "maxPrice": 140000
+    },
+    {
+      "date": "2026-07-01",
+      "market": 38089,
+      "volume": 49,
+      "minPrice": 7000,
+      "maxPrice": 95300
+    },
+    {
+      "date": "2026-07-02",
+      "market": 37462,
+      "volume": 82,
+      "minPrice": 8199,
+      "maxPrice": 90000
+    },
+    {
+      "date": "2026-07-03",
+      "market": 35407,
+      "volume": 70,
+      "minPrice": 10000,
+      "maxPrice": 90000
+    },
+    {
+      "date": "2026-07-04",
+      "market": 35516,
+      "volume": 59,
+      "minPrice": 2400,
+      "maxPrice": 91700
+    },
+    {
+      "date": "2026-07-05",
+      "market": 15147,
+      "volume": 4,
+      "minPrice": 11500,
+      "maxPrice": 24000
+    },
+    {
+      "date": "2026-07-06",
+      "market": 34741,
+      "volume": 75,
+      "minPrice": 7000,
+      "maxPrice": 92659
+    },
+    {
+      "date": "2026-07-07",
+      "market": 36448,
+      "volume": 87,
+      "minPrice": 10000,
+      "maxPrice": 88996
+    },
+    {
+      "date": "2026-07-08",
+      "market": 34038,
+      "volume": 68,
+      "minPrice": 4498,
+      "maxPrice": 91699
+    },
+    {
+      "date": "2026-07-09",
+      "market": 35425,
+      "volume": 72,
+      "minPrice": 9109,
+      "maxPrice": 91596
+    },
+    {
+      "date": "2026-07-10",
+      "market": 36504,
+      "volume": 73,
+      "minPrice": 11000,
+      "maxPrice": 90000
+    },
+    {
+      "date": "2026-07-11",
+      "market": 37335,
+      "volume": 34,
+      "minPrice": 11500,
+      "maxPrice": 90000
+    },
+    {
+      "date": "2026-07-12",
+      "market": 16686,
+      "volume": 7,
+      "minPrice": 6800,
+      "maxPrice": 36000
+    },
+    {
+      "date": "2026-07-13",
+      "market": 35920,
+      "volume": 77,
+      "minPrice": 8099,
+      "maxPrice": 89396
+    },
+    {
+      "date": "2026-07-14",
+      "market": 35569,
+      "volume": 83,
+      "minPrice": 11000,
+      "maxPrice": 90000
+    },
+    {
+      "date": "2026-07-15",
+      "market": 36628,
+      "volume": 65,
+      "minPrice": 7000,
+      "maxPrice": 90829
+    },
+    {
+      "date": "2026-07-16",
+      "market": 35681,
+      "volume": 74,
+      "minPrice": 6800,
+      "maxPrice": 90000
+    },
+    {
+      "date": "2026-07-17",
+      "market": 37759,
+      "volume": 66,
+      "minPrice": 2500,
+      "maxPrice": 475000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 20000,
+      "volume": 1,
+      "minPrice": 15000,
+      "maxPrice": 25000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Karwar(Uttar Kannad) (कर्नाटक)",
       "nameHi": "Karwar(Uttar Kannad) (कर्नाटक)",
-      "avgPrice": 41539,
-      "records": 867
+      "avgPrice": 41576,
+      "records": 891
     },
     {
       "district": "Shimoga (कर्नाटक)",
       "nameHi": "Shimoga (कर्नाटक)",
-      "avgPrice": 39436,
-      "records": 575
+      "avgPrice": 39332,
+      "records": 587
     },
     {
       "district": "Mangalore(Dakshin Kannad) (कर्नाटक)",
       "nameHi": "Mangalore(Dakshin Kannad) (कर्नाटक)",
-      "avgPrice": 28917,
-      "records": 366
+      "avgPrice": 29006,
+      "records": 371
     },
     {
       "district": "Kasargod (केरल)",
       "nameHi": "Kasargod (केरल)",
-      "avgPrice": 42331,
-      "records": 258
-    },
-    {
-      "district": "Davangere (कर्नाटक)",
-      "nameHi": "Davangere (कर्नाटक)",
-      "avgPrice": 28704,
-      "records": 197
-    },
-    {
-      "district": "Chitradurga (कर्नाटक)",
-      "nameHi": "Chitradurga (कर्नाटक)",
-      "avgPrice": 38031,
-      "records": 196
+      "avgPrice": 42564,
+      "records": 320
     },
     {
       "district": "North Goa (गोवा)",
       "nameHi": "North Goa (गोवा)",
-      "avgPrice": 37986,
-      "records": 195
+      "avgPrice": 38330,
+      "records": 268
     },
     {
-      "district": "Chikmagalur (कर्नाटक)",
-      "nameHi": "Chikmagalur (कर्नाटक)",
-      "avgPrice": 36783,
-      "records": 192
+      "district": "Chitradurga (कर्नाटक)",
+      "nameHi": "Chitradurga (कर्नाटक)",
+      "avgPrice": 38170,
+      "records": 249
+    },
+    {
+      "district": "Uttara Kannada (कर्नाटक)",
+      "nameHi": "Uttara Kannada (कर्नाटक)",
+      "avgPrice": 38218,
+      "records": 235
     },
     {
       "district": "South Goa (गोवा)",
       "nameHi": "South Goa (गोवा)",
-      "avgPrice": 39214,
-      "records": 171
+      "avgPrice": 39278,
+      "records": 234
+    },
+    {
+      "district": "Davangere (कर्नाटक)",
+      "nameHi": "Davangere (कर्नाटक)",
+      "avgPrice": 28247,
+      "records": 229
     },
     {
       "district": "Kannur (केरल)",
       "nameHi": "Kannur (केरल)",
-      "avgPrice": 40851,
-      "records": 166
+      "avgPrice": 40193,
+      "records": 209
     },
     {
-      "district": "Tumkur (कर्नाटक)",
-      "nameHi": "Tumkur (कर्नाटक)",
-      "avgPrice": 38530,
-      "records": 70
+      "district": "Shivamogga (कर्नाटक)",
+      "nameHi": "Shivamogga (कर्नाटक)",
+      "avgPrice": 39530,
+      "records": 206
     },
     {
-      "district": "Mandya (कर्नाटक)",
-      "nameHi": "Mandya (कर्नाटक)",
-      "avgPrice": 20695,
-      "records": 65
+      "district": "Chikmagalur (कर्नाटक)",
+      "nameHi": "Chikmagalur (कर्नाटक)",
+      "avgPrice": 36575,
+      "records": 197
+    },
+    {
+      "district": "Dakshina Kannada (कर्नाटक)",
+      "nameHi": "Dakshina Kannada (कर्नाटक)",
+      "avgPrice": 32071,
+      "records": 115
     },
     {
       "district": "Udupi (कर्नाटक)",
       "nameHi": "Udupi (कर्नाटक)",
-      "avgPrice": 43716,
-      "records": 58
+      "avgPrice": 43120,
+      "records": 85
     },
     {
-      "district": "East Khasi Hills (मेघालय)",
-      "nameHi": "East Khasi Hills (मेघालय)",
-      "avgPrice": 19734,
-      "records": 47
-    },
-    {
-      "district": "Chamrajnagar (कर्नाटक)",
-      "nameHi": "Chamrajnagar (कर्नाटक)",
-      "avgPrice": 16294,
-      "records": 43
+      "district": "Mandya (कर्नाटक)",
+      "nameHi": "Mandya (कर्नाटक)",
+      "avgPrice": 20097,
+      "records": 75
     }
   ]
 }

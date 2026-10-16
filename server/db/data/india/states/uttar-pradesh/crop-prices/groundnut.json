@@ -13,6 +13,27 @@
       "market": 5740,
       "volume": 1,
       "msp": 6783
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 6377,
+      "volume": 1,
+      "msp": 6783
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 10105,
+      "volume": 1,
+      "msp": 6783
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 8597,
+      "volume": 3,
+      "msp": 6783
     }
   ],
   "dailyHistory": [
@@ -22,14 +43,60 @@
       "volume": 1,
       "minPrice": 5500,
       "maxPrice": 5980
+    },
+    {
+      "date": "2026-04-09",
+      "market": 6377,
+      "volume": 1,
+      "minPrice": 5864,
+      "maxPrice": 6890
+    },
+    {
+      "date": "2026-05-05",
+      "market": 10105,
+      "volume": 1,
+      "minPrice": 7200,
+      "maxPrice": 14400
+    },
+    {
+      "date": "2026-06-21",
+      "market": 6074,
+      "volume": 1,
+      "minPrice": 6020,
+      "maxPrice": 6130
+    },
+    {
+      "date": "2026-06-29",
+      "market": 9859,
+      "volume": 2,
+      "minPrice": 6000,
+      "maxPrice": 13663
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Shahjahanpur",
       "nameHi": "Shahjahanpur",
-      "avgPrice": 5740,
+      "avgPrice": 6059,
+      "records": 2
+    },
+    {
+      "district": "Mahoba",
+      "nameHi": "Mahoba",
+      "avgPrice": 6065,
+      "records": 2
+    },
+    {
+      "district": "Amethi",
+      "nameHi": "Amethi",
+      "avgPrice": 10105,
+      "records": 1
+    },
+    {
+      "district": "Ghaziabad",
+      "nameHi": "Ghaziabad",
+      "avgPrice": 13663,
       "records": 1
     }
   ]

@@ -10,20 +10,44 @@
       "month": "03",
       "date": "2026-03",
       "market": 1814,
-      "volume": 1210
+      "volume": 1207
     },
     {
       "month": "04",
       "date": "2026-04",
-      "market": 1743,
-      "volume": 347
+      "market": 1662,
+      "volume": 838
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 1665,
+      "volume": 929
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 1871,
+      "volume": 675
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 1795,
+      "volume": 6959
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2039,
+      "volume": 137
     }
   ],
   "dailyHistory": [
     {
       "date": "2026-03-13",
-      "market": 1943,
-      "volume": 66,
+      "market": 1936,
+      "volume": 63,
       "minPrice": 400,
       "maxPrice": 5000
     },
@@ -113,8 +137,8 @@
     },
     {
       "date": "2026-04-01",
-      "market": 1779,
-      "volume": 131,
+      "market": 1789,
+      "volume": 122,
       "minPrice": 300,
       "maxPrice": 4000
     },
@@ -127,103 +151,397 @@
     },
     {
       "date": "2026-04-04",
-      "market": 1755,
-      "volume": 124,
+      "market": 1730,
+      "volume": 93,
       "minPrice": 300,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-04-06",
+      "market": 1683,
+      "volume": 212,
+      "minPrice": 500,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 1644,
+      "volume": 167,
+      "minPrice": 400,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-04-10",
+      "market": 1730,
+      "volume": 16,
+      "minPrice": 500,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 1474,
+      "volume": 136,
+      "minPrice": 225,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-05-04",
+      "market": 1622,
+      "volume": 43,
+      "minPrice": 450,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-05-05",
+      "market": 1678,
+      "volume": 127,
+      "minPrice": 302.2,
+      "maxPrice": 3200
+    },
+    {
+      "date": "2026-05-06",
+      "market": 1608,
+      "volume": 91,
+      "minPrice": 400,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-05-08",
+      "market": 1761,
+      "volume": 22,
+      "minPrice": 400,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-05-09",
+      "market": 1489,
+      "volume": 9,
+      "minPrice": 500,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-05-14",
+      "market": 1646,
+      "volume": 144,
+      "minPrice": 100,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 1631,
+      "volume": 162,
+      "minPrice": 100,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-05-16",
+      "market": 2359,
+      "volume": 11,
+      "minPrice": 700,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-05-18",
+      "market": 1727,
+      "volume": 146,
+      "minPrice": 150,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 1657,
+      "volume": 130,
+      "minPrice": 100,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-05-20",
+      "market": 1605,
+      "volume": 44,
+      "minPrice": 200,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-06-18",
+      "market": 1932,
+      "volume": 110,
+      "minPrice": 300,
+      "maxPrice": 4500
+    },
+    {
+      "date": "2026-06-19",
+      "market": 1958,
+      "volume": 20,
+      "minPrice": 500,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-06-21",
+      "market": 2048,
+      "volume": 50,
+      "minPrice": 700,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-06-24",
+      "market": 2250,
+      "volume": 2,
+      "minPrice": 1200,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-06-26",
+      "market": 2006,
+      "volume": 78,
+      "minPrice": 480,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-06-29",
+      "market": 2000,
+      "volume": 29,
+      "minPrice": 500,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-06-30",
+      "market": 1788,
+      "volume": 386,
+      "minPrice": 3.6,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-01",
+      "market": 1770,
+      "volume": 398,
+      "minPrice": 2.5,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-02",
+      "market": 1759,
+      "volume": 410,
+      "minPrice": 2.6,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-03",
+      "market": 1765,
+      "volume": 397,
+      "minPrice": 2,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-04",
+      "market": 1800,
+      "volume": 363,
+      "minPrice": 2,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-05",
+      "market": 1792,
+      "volume": 260,
+      "minPrice": 200,
+      "maxPrice": 4500
+    },
+    {
+      "date": "2026-07-06",
+      "market": 1764,
+      "volume": 384,
+      "minPrice": 100,
+      "maxPrice": 10000
+    },
+    {
+      "date": "2026-07-07",
+      "market": 1751,
+      "volume": 405,
+      "minPrice": 100,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-08",
+      "market": 1775,
+      "volume": 407,
+      "minPrice": 2.04,
+      "maxPrice": 11000
+    },
+    {
+      "date": "2026-07-09",
+      "market": 1770,
+      "volume": 398,
+      "minPrice": 14,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-10",
+      "market": 1800,
+      "volume": 372,
+      "minPrice": 100,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-11",
+      "market": 1893,
+      "volume": 309,
+      "minPrice": 1.6,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-12",
+      "market": 1791,
+      "volume": 301,
+      "minPrice": 1.8,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-07-13",
+      "market": 1764,
+      "volume": 390,
+      "minPrice": 2,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-14",
+      "market": 1817,
+      "volume": 399,
+      "minPrice": 1.1,
+      "maxPrice": 6500
+    },
+    {
+      "date": "2026-07-15",
+      "market": 1819,
+      "volume": 400,
+      "minPrice": 1.2,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-16",
+      "market": 1796,
+      "volume": 378,
+      "minPrice": 1.2,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-17",
+      "market": 1803,
+      "volume": 387,
+      "minPrice": 1.2,
+      "maxPrice": 16000
+    },
+    {
+      "date": "2026-07-18",
+      "market": 1849,
+      "volume": 359,
+      "minPrice": 1.1,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-07-19",
+      "market": 1889,
+      "volume": 242,
+      "minPrice": 1,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2039,
+      "volume": 137,
+      "minPrice": 600,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Salem (तमिल नाडु)",
       "nameHi": "Salem (तमिल नाडु)",
-      "avgPrice": 1833,
-      "records": 86
+      "avgPrice": 2085,
+      "records": 405
     },
     {
       "district": "Coimbatore (तमिल नाडु)",
       "nameHi": "Coimbatore (तमिल नाडु)",
-      "avgPrice": 1851,
-      "records": 59
-    },
-    {
-      "district": "Pudukkottai (तमिल नाडु)",
-      "nameHi": "Pudukkottai (तमिल नाडु)",
-      "avgPrice": 1298,
-      "records": 49
-    },
-    {
-      "district": "Thiruchirappalli (तमिल नाडु)",
-      "nameHi": "Thiruchirappalli (तमिल नाडु)",
-      "avgPrice": 1563,
-      "records": 44
-    },
-    {
-      "district": "Erode (तमिल नाडु)",
-      "nameHi": "Erode (तमिल नाडु)",
-      "avgPrice": 1861,
-      "records": 44
-    },
-    {
-      "district": "Theni (तमिल नाडु)",
-      "nameHi": "Theni (तमिल नाडु)",
-      "avgPrice": 1417,
-      "records": 44
+      "avgPrice": 1849,
+      "records": 293
     },
     {
       "district": "Virudhunagar (तमिल नाडु)",
       "nameHi": "Virudhunagar (तमिल नाडु)",
-      "avgPrice": 2110,
-      "records": 42
+      "avgPrice": 2301,
+      "records": 237
     },
     {
-      "district": "Karur (तमिल नाडु)",
-      "nameHi": "Karur (तमिल नाडु)",
-      "avgPrice": 1789,
-      "records": 41
+      "district": "Pudukkottai (तमिल नाडु)",
+      "nameHi": "Pudukkottai (तमिल नाडु)",
+      "avgPrice": 1266,
+      "records": 229
     },
     {
-      "district": "Namakkal (तमिल नाडु)",
-      "nameHi": "Namakkal (तमिल नाडु)",
-      "avgPrice": 1611,
-      "records": 41
+      "district": "Thiruchirappalli (तमिल नाडु)",
+      "nameHi": "Thiruchirappalli (तमिल नाडु)",
+      "avgPrice": 2019,
+      "records": 225
+    },
+    {
+      "district": "Theni (तमिल नाडु)",
+      "nameHi": "Theni (तमिल नाडु)",
+      "avgPrice": 1648,
+      "records": 222
     },
     {
       "district": "Thiruvarur (तमिल नाडु)",
       "nameHi": "Thiruvarur (तमिल नाडु)",
-      "avgPrice": 2112,
-      "records": 41
-    },
-    {
-      "district": "Dharmapuri (तमिल नाडु)",
-      "nameHi": "Dharmapuri (तमिल नाडु)",
-      "avgPrice": 1451,
-      "records": 40
-    },
-    {
-      "district": "Madurai (तमिल नाडु)",
-      "nameHi": "Madurai (तमिल नाडु)",
-      "avgPrice": 1700,
-      "records": 38
-    },
-    {
-      "district": "Thiruvannamalai (तमिल नाडु)",
-      "nameHi": "Thiruvannamalai (तमिल नाडु)",
-      "avgPrice": 2205,
-      "records": 38
+      "avgPrice": 2394,
+      "records": 219
     },
     {
       "district": "Vellore (तमिल नाडु)",
       "nameHi": "Vellore (तमिल नाडु)",
-      "avgPrice": 1845,
-      "records": 38
+      "avgPrice": 2140,
+      "records": 212
+    },
+    {
+      "district": "Thiruvannamalai (तमिल नाडु)",
+      "nameHi": "Thiruvannamalai (तमिल नाडु)",
+      "avgPrice": 2357,
+      "records": 210
+    },
+    {
+      "district": "Madurai (तमिल नाडु)",
+      "nameHi": "Madurai (तमिल नाडु)",
+      "avgPrice": 2058,
+      "records": 208
+    },
+    {
+      "district": "Dharmapuri (तमिल नाडु)",
+      "nameHi": "Dharmapuri (तमिल नाडु)",
+      "avgPrice": 1769,
+      "records": 196
+    },
+    {
+      "district": "Erode (तमिल नाडु)",
+      "nameHi": "Erode (तमिल नाडु)",
+      "avgPrice": 1993,
+      "records": 193
+    },
+    {
+      "district": "Namakkal (तमिल नाडु)",
+      "nameHi": "Namakkal (तमिल नाडु)",
+      "avgPrice": 2208,
+      "records": 191
     },
     {
       "district": "Thanjavur (तमिल नाडु)",
       "nameHi": "Thanjavur (तमिल नाडु)",
-      "avgPrice": 2368,
-      "records": 37
+      "avgPrice": 2584,
+      "records": 184
+    },
+    {
+      "district": "Karur (तमिल नाडु)",
+      "nameHi": "Karur (तमिल नाडु)",
+      "avgPrice": 2270,
+      "records": 177
     }
   ]
 }

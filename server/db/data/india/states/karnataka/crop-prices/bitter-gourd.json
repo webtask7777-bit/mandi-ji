@@ -33,8 +33,20 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 2525,
-      "volume": 4
+      "market": 2540,
+      "volume": 13
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 2596,
+      "volume": 14
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 3167,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -681,21 +693,112 @@
       "volume": 1,
       "minPrice": 1200,
       "maxPrice": 3200
+    },
+    {
+      "date": "2026-04-06",
+      "market": 2525,
+      "volume": 2,
+      "minPrice": 2000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 2067,
+      "volume": 3,
+      "minPrice": 1000,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-04-10",
+      "market": 3133,
+      "volume": 2,
+      "minPrice": 2000,
+      "maxPrice": 4165
+    },
+    {
+      "date": "2026-04-21",
+      "market": 2700,
+      "volume": 2,
+      "minPrice": 2300,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-05-05",
+      "market": 3133,
+      "volume": 3,
+      "minPrice": 2500,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-05-06",
+      "market": 1000,
+      "volume": 1,
+      "minPrice": 1000,
+      "maxPrice": 1200
+    },
+    {
+      "date": "2026-05-14",
+      "market": 3175,
+      "volume": 2,
+      "minPrice": 2500,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 1000,
+      "volume": 1,
+      "minPrice": 800,
+      "maxPrice": 1300
+    },
+    {
+      "date": "2026-05-16",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 1500,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-05-18",
+      "market": 3050,
+      "volume": 2,
+      "minPrice": 2000,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 3150,
+      "volume": 2,
+      "minPrice": 2500,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-05-20",
+      "market": 2100,
+      "volume": 2,
+      "minPrice": 1000,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-06-18",
+      "market": 3167,
+      "volume": 3,
+      "minPrice": 1500,
+      "maxPrice": 4400
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Bangalore",
       "nameHi": "Bangalore",
-      "avgPrice": 2950,
-      "records": 205
+      "avgPrice": 2952,
+      "records": 214
     },
     {
       "district": "Kolar",
       "nameHi": "Kolar",
-      "avgPrice": 1800,
-      "records": 168
+      "avgPrice": 1811,
+      "records": 178
     },
     {
       "district": "Davangere",
@@ -706,20 +809,20 @@
     {
       "district": "Mysore",
       "nameHi": "Mysore",
-      "avgPrice": 2742,
-      "records": 45
+      "avgPrice": 2721,
+      "records": 47
     },
     {
       "district": "Shimoga",
       "nameHi": "Shimoga",
-      "avgPrice": 3478,
-      "records": 34
+      "avgPrice": 3458,
+      "records": 36
     },
     {
       "district": "Chikmagalur",
       "nameHi": "Chikmagalur",
-      "avgPrice": 2393,
-      "records": 18
+      "avgPrice": 2486,
+      "records": 19
     },
     {
       "district": "Haveri",
@@ -744,6 +847,18 @@
       "nameHi": "Bellary",
       "avgPrice": 2575,
       "records": 4
+    },
+    {
+      "district": "Bengaluru South",
+      "nameHi": "Bengaluru South",
+      "avgPrice": 3500,
+      "records": 1
+    },
+    {
+      "district": "Shivamogga",
+      "nameHi": "Shivamogga",
+      "avgPrice": 3500,
+      "records": 1
     }
   ]
 }

@@ -7,18 +7,55 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
+      "month": "04",
+      "date": "2026-04",
       "market": 4500,
       "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 4667,
+      "volume": 3
     }
   ],
+  "dailyHistory": [
+    {
+      "date": "2026-04-21",
+      "market": 4500,
+      "volume": 1,
+      "minPrice": 4000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-06",
+      "market": 4500,
+      "volume": 1,
+      "minPrice": 4000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-07",
+      "market": 4500,
+      "volume": 1,
+      "minPrice": 4000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-09",
+      "market": 5000,
+      "volume": 1,
+      "minPrice": 4000,
+      "maxPrice": 6000
+    }
+  ],
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "North Goa",
       "nameHi": "North Goa",
-      "avgPrice": 4500,
-      "records": 1
+      "avgPrice": 4625,
+      "records": 4
     }
   ]
 }

@@ -20,8 +20,9 @@ test('exact known non-crop IDs are excluded without excluding cowpea or lookalik
     assert.equal(isCropPriceCommodity(id), false);
   }
   for (const id of ['cowpeaveg', 'cowpealobia-karamani', 'bullar', 'eggplant', 'wheat', 'cow-unverified-variety']) assert.equal(isCropPriceCommodity(id), true, id);
-  assert.equal(rawCrops.length, 285);
-  assert.equal(rawCrops.filter(crop => isCropPriceCommodity(crop.id)).length, 274);
+  // The catalogue grows as new data arrives; exactly the known non-crop IDs are withheld.
+  assert.ok(rawCrops.length >= 285);
+  assert.equal(rawCrops.filter(crop => isCropPriceCommodity(crop.id)).length, rawCrops.length - NON_CROP_COMMODITY_IDS.length);
 });
 
 test('price-gap candidates cannot offer livestock under quintal cost assumptions', () => {
@@ -53,7 +54,7 @@ test('served catalogs and direct price endpoints share the unit eligibility guar
       assert.ok(body.length > 0);
       assert.ok(body.every(crop => isCropPriceCommodity(crop.id)), `${kind}/${state}`);
       if (kind === 'crops' && state === 'all') {
-        assert.equal(body.length, 274);
+        assert.equal(body.length, rawCrops.length - NON_CROP_COMMODITY_IDS.length);
         assert.ok(body.some(crop => crop.id === 'cowpeaveg'));
         assert.ok(body.some(crop => crop.id === 'cowpealobia-karamani'));
       }

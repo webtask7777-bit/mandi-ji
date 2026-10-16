@@ -33,8 +33,32 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 1853,
-      "volume": 16
+      "market": 1685,
+      "volume": 55
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 1468,
+      "volume": 58
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 1490,
+      "volume": 10
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 1864,
+      "volume": 29
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1400,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -754,73 +778,206 @@
     },
     {
       "date": "2026-04-04",
-      "market": 1280,
+      "market": 1325,
+      "volume": 4,
+      "minPrice": 1000,
+      "maxPrice": 1800
+    },
+    {
+      "date": "2026-04-06",
+      "market": 1515,
+      "volume": 10,
+      "minPrice": 1000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 1658,
+      "volume": 12,
+      "minPrice": 150,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-04-10",
+      "market": 1533,
+      "volume": 3,
+      "minPrice": 1000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 1633,
+      "volume": 15,
+      "minPrice": 1000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-05-04",
+      "market": 1600,
+      "volume": 4,
+      "minPrice": 500,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-05-05",
+      "market": 1505,
+      "volume": 11,
+      "minPrice": 800,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-05-06",
+      "market": 1350,
       "volume": 5,
       "minPrice": 1000,
       "maxPrice": 1800
+    },
+    {
+      "date": "2026-05-09",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-05-14",
+      "market": 1467,
+      "volume": 9,
+      "minPrice": 800,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 1293,
+      "volume": 7,
+      "minPrice": 500,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-05-18",
+      "market": 1542,
+      "volume": 6,
+      "minPrice": 1000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 1489,
+      "volume": 9,
+      "minPrice": 1000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-05-20",
+      "market": 1425,
+      "volume": 6,
+      "minPrice": 800,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-06-18",
+      "market": 1150,
+      "volume": 4,
+      "minPrice": 650,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-06-21",
+      "market": 2100,
+      "volume": 2,
+      "minPrice": 1600,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-06-26",
+      "market": 1525,
+      "volume": 4,
+      "minPrice": 1000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-07-18",
+      "market": 1881,
+      "volume": 27,
+      "minPrice": 700,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-07-19",
+      "market": 1625,
+      "volume": 2,
+      "minPrice": 1200,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1400,
+      "volume": 1,
+      "minPrice": 1200,
+      "maxPrice": 1600
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 1296,
-      "records": 205
+      "avgPrice": 1289,
+      "records": 226
     },
     {
       "district": "Kurukshetra",
       "nameHi": "Kurukshetra",
-      "avgPrice": 1880,
-      "records": 200
+      "avgPrice": 1889,
+      "records": 210
     },
     {
       "district": "Sonipat",
       "nameHi": "Sonipat",
-      "avgPrice": 2269,
-      "records": 180
+      "avgPrice": 2255,
+      "records": 200
     },
     {
       "district": "Ambala",
       "nameHi": "Ambala",
-      "avgPrice": 1390,
-      "records": 164
+      "avgPrice": 1397,
+      "records": 173
     },
     {
       "district": "Mewat",
       "nameHi": "Mewat",
-      "avgPrice": 1597,
-      "records": 160
+      "avgPrice": 1595,
+      "records": 169
     },
     {
       "district": "Yamuna Nagar",
       "nameHi": "Yamuna Nagar",
-      "avgPrice": 1580,
-      "records": 145
+      "avgPrice": 1562,
+      "records": 158
     },
     {
       "district": "Faridabad",
       "nameHi": "Faridabad",
-      "avgPrice": 1479,
-      "records": 141
+      "avgPrice": 1476,
+      "records": 147
     },
     {
       "district": "Panchkula",
       "nameHi": "Panchkula",
-      "avgPrice": 1580,
-      "records": 141
+      "avgPrice": 1588,
+      "records": 146
     },
     {
       "district": "Mahendragarh-Narnaul",
       "nameHi": "Mahendragarh-Narnaul",
-      "avgPrice": 1544,
-      "records": 135
+      "avgPrice": 1546,
+      "records": 139
     },
     {
       "district": "Panipat",
       "nameHi": "Panipat",
-      "avgPrice": 1244,
-      "records": 115
+      "avgPrice": 1261,
+      "records": 124
     },
     {
       "district": "Bhiwani",
@@ -831,26 +988,26 @@
     {
       "district": "Jhajar",
       "nameHi": "Jhajar",
-      "avgPrice": 1569,
-      "records": 93
+      "avgPrice": 1566,
+      "records": 100
     },
     {
       "district": "Rewari",
       "nameHi": "Rewari",
-      "avgPrice": 1004,
-      "records": 85
+      "avgPrice": 1003,
+      "records": 89
     },
     {
-      "district": "Palwal",
-      "nameHi": "Palwal",
-      "avgPrice": 1002,
+      "district": "Kaithal",
+      "nameHi": "Kaithal",
+      "avgPrice": 1628,
       "records": 84
     },
     {
       "district": "Sirsa",
       "nameHi": "Sirsa",
-      "avgPrice": 1629,
-      "records": 83
+      "avgPrice": 1631,
+      "records": 84
     }
   ]
 }

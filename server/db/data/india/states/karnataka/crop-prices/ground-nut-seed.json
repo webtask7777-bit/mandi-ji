@@ -11,6 +11,24 @@
       "date": "2026-03",
       "market": 12786,
       "volume": 3
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 12200,
+      "volume": 1
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 12293,
+      "volume": 3
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 12100,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -34,15 +52,56 @@
       "volume": 1,
       "minPrice": 12500,
       "maxPrice": 12885
+    },
+    {
+      "date": "2026-04-21",
+      "market": 12200,
+      "volume": 1,
+      "minPrice": 12200,
+      "maxPrice": 12200
+    },
+    {
+      "date": "2026-05-06",
+      "market": 9899,
+      "volume": 1,
+      "minPrice": 7619,
+      "maxPrice": 11400
+    },
+    {
+      "date": "2026-05-14",
+      "market": 13490,
+      "volume": 2,
+      "minPrice": 11979,
+      "maxPrice": 16500
+    },
+    {
+      "date": "2026-06-18",
+      "market": 12500,
+      "volume": 1,
+      "minPrice": 12500,
+      "maxPrice": 12500
+    },
+    {
+      "date": "2026-06-19",
+      "market": 11700,
+      "volume": 1,
+      "minPrice": 11700,
+      "maxPrice": 11700
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Chitradurga",
       "nameHi": "Chitradurga",
-      "avgPrice": 12786,
-      "records": 3
+      "avgPrice": 12080,
+      "records": 8
+    },
+    {
+      "district": "Bangalore",
+      "nameHi": "Bangalore",
+      "avgPrice": 15000,
+      "records": 1
     }
   ]
 }

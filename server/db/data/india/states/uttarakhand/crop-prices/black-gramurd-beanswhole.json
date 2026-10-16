@@ -11,6 +11,18 @@
       "date": "2026-03",
       "market": 7500,
       "volume": 1
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 11510,
+      "volume": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 8900,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -20,15 +32,35 @@
       "volume": 1,
       "minPrice": 7500,
       "maxPrice": 7500
+    },
+    {
+      "date": "2026-05-19",
+      "market": 11510,
+      "volume": 1,
+      "minPrice": 11510,
+      "maxPrice": 11510
+    },
+    {
+      "date": "2026-06-30",
+      "market": 8900,
+      "volume": 2,
+      "minPrice": 7800,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Udhamsinghnagar",
       "nameHi": "Udhamsinghnagar",
-      "avgPrice": 7500,
-      "records": 1
+      "avgPrice": 7650,
+      "records": 2
+    },
+    {
+      "district": "Champawat",
+      "nameHi": "Champawat",
+      "avgPrice": 10755,
+      "records": 2
     }
   ]
 }

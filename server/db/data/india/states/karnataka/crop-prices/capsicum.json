@@ -33,7 +33,19 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 2400,
+      "market": 2875,
+      "volume": 16
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 2944,
+      "volume": 12
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 5967,
       "volume": 3
     }
   ],
@@ -667,51 +679,156 @@
       "volume": 2,
       "minPrice": 1500,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-04-06",
+      "market": 3500,
+      "volume": 2,
+      "minPrice": 2000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 2517,
+      "volume": 6,
+      "minPrice": 700,
+      "maxPrice": 4800
+    },
+    {
+      "date": "2026-04-10",
+      "market": 4800,
+      "volume": 2,
+      "minPrice": 2400,
+      "maxPrice": 7400
+    },
+    {
+      "date": "2026-04-21",
+      "market": 2367,
+      "volume": 3,
+      "minPrice": 1000,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-05-04",
+      "market": 3200,
+      "volume": 1,
+      "minPrice": 3100,
+      "maxPrice": 3300
+    },
+    {
+      "date": "2026-05-05",
+      "market": 4000,
+      "volume": 2,
+      "minPrice": 3200,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-05-06",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 2400,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-05-14",
+      "market": 3150,
+      "volume": 2,
+      "minPrice": 2400,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-05-15",
+      "market": 1100,
+      "volume": 1,
+      "minPrice": 800,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-05-16",
+      "market": 2381,
+      "volume": 1,
+      "minPrice": 2381,
+      "maxPrice": 2381
+    },
+    {
+      "date": "2026-05-18",
+      "market": 2925,
+      "volume": 2,
+      "minPrice": 2500,
+      "maxPrice": 3300
+    },
+    {
+      "date": "2026-05-19",
+      "market": 2750,
+      "volume": 2,
+      "minPrice": 1500,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-06-18",
+      "market": 2500,
+      "volume": 1,
+      "minPrice": 2300,
+      "maxPrice": 2700
+    },
+    {
+      "date": "2026-06-19",
+      "market": 9600,
+      "volume": 1,
+      "minPrice": 8200,
+      "maxPrice": 10000
+    },
+    {
+      "date": "2026-06-29",
+      "market": 5800,
+      "volume": 1,
+      "minPrice": 5700,
+      "maxPrice": 5900
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Kolar",
       "nameHi": "Kolar",
-      "avgPrice": 2434,
-      "records": 189
+      "avgPrice": 2414,
+      "records": 197
     },
     {
       "district": "Bangalore",
       "nameHi": "Bangalore",
-      "avgPrice": 3975,
-      "records": 166
+      "avgPrice": 3920,
+      "records": 176
     },
     {
       "district": "Kalburgi",
       "nameHi": "Kalburgi",
-      "avgPrice": 3225,
-      "records": 67
+      "avgPrice": 3227,
+      "records": 68
     },
     {
       "district": "Mysore",
       "nameHi": "Mysore",
-      "avgPrice": 3547,
-      "records": 45
+      "avgPrice": 3519,
+      "records": 47
     },
     {
       "district": "Shimoga",
       "nameHi": "Shimoga",
-      "avgPrice": 4409,
-      "records": 43
+      "avgPrice": 4393,
+      "records": 46
     },
     {
       "district": "Davangere",
       "nameHi": "Davangere",
-      "avgPrice": 4563,
-      "records": 19
+      "avgPrice": 4675,
+      "records": 20
     },
     {
       "district": "Chikmagalur",
       "nameHi": "Chikmagalur",
-      "avgPrice": 3657,
-      "records": 7
+      "avgPrice": 3498,
+      "records": 8
     },
     {
       "district": "Haveri",
@@ -729,6 +846,18 @@
       "district": "Belgaum",
       "nameHi": "Belgaum",
       "avgPrice": 3500,
+      "records": 1
+    },
+    {
+      "district": "Bengaluru South",
+      "nameHi": "Bengaluru South",
+      "avgPrice": 9600,
+      "records": 1
+    },
+    {
+      "district": "Mysuru",
+      "nameHi": "Mysuru",
+      "avgPrice": 5800,
       "records": 1
     }
   ]

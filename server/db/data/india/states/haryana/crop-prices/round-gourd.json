@@ -11,6 +11,18 @@
       "date": "2026-03",
       "market": 1675,
       "volume": 4
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 500,
+      "volume": 3
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 900,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -41,15 +53,43 @@
       "volume": 1,
       "minPrice": 1000,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-05-05",
+      "market": 500,
+      "volume": 1,
+      "minPrice": 400,
+      "maxPrice": 500
+    },
+    {
+      "date": "2026-05-14",
+      "market": 500,
+      "volume": 1,
+      "minPrice": 400,
+      "maxPrice": 500
+    },
+    {
+      "date": "2026-05-19",
+      "market": 500,
+      "volume": 1,
+      "minPrice": 400,
+      "maxPrice": 500
+    },
+    {
+      "date": "2026-07-18",
+      "market": 900,
+      "volume": 1,
+      "minPrice": 800,
+      "maxPrice": 1000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 1675,
-      "records": 4
+      "avgPrice": 1138,
+      "records": 8
     }
   ]
 }

@@ -17,8 +17,22 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 6436,
-      "volume": 7,
+      "market": 6388,
+      "volume": 16,
+      "msp": 6783
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 6973,
+      "volume": 9,
+      "msp": 6783
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 7913,
+      "volume": 3,
       "msp": 6783
     }
   ],
@@ -68,18 +82,114 @@
     {
       "date": "2026-04-04",
       "market": 5955,
-      "volume": 4,
+      "volume": 2,
       "minPrice": 4969,
       "maxPrice": 8300
+    },
+    {
+      "date": "2026-04-06",
+      "market": 6719,
+      "volume": 5,
+      "minPrice": 4567,
+      "maxPrice": 8259
+    },
+    {
+      "date": "2026-04-09",
+      "market": 6016,
+      "volume": 3,
+      "minPrice": 4599,
+      "maxPrice": 7467
+    },
+    {
+      "date": "2026-04-10",
+      "market": 6511,
+      "volume": 1,
+      "minPrice": 4779,
+      "maxPrice": 6789
+    },
+    {
+      "date": "2026-04-21",
+      "market": 5460,
+      "volume": 2,
+      "minPrice": 4511,
+      "maxPrice": 7119
+    },
+    {
+      "date": "2026-05-05",
+      "market": 6014,
+      "volume": 2,
+      "minPrice": 5409,
+      "maxPrice": 6619
+    },
+    {
+      "date": "2026-05-06",
+      "market": 6799,
+      "volume": 2,
+      "minPrice": 5209,
+      "maxPrice": 7309
+    },
+    {
+      "date": "2026-05-14",
+      "market": 7869,
+      "volume": 1,
+      "minPrice": 7319,
+      "maxPrice": 7869
+    },
+    {
+      "date": "2026-05-15",
+      "market": 8000,
+      "volume": 1,
+      "minPrice": 5400,
+      "maxPrice": 8639
+    },
+    {
+      "date": "2026-05-18",
+      "market": 8027,
+      "volume": 1,
+      "minPrice": 6060,
+      "maxPrice": 8366
+    },
+    {
+      "date": "2026-05-19",
+      "market": 6616,
+      "volume": 2,
+      "minPrice": 6363,
+      "maxPrice": 7542
+    },
+    {
+      "date": "2026-06-18",
+      "market": 7540,
+      "volume": 2,
+      "minPrice": 6970,
+      "maxPrice": 8109
+    },
+    {
+      "date": "2026-06-29",
+      "market": 8659,
+      "volume": 1,
+      "minPrice": 6859,
+      "maxPrice": 8659
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Mahbubnagar",
       "nameHi": "Mahbubnagar",
-      "avgPrice": 6601,
-      "records": 14
+      "avgPrice": 6799,
+      "records": 29
+    },
+    {
+      "district": "Nalgonda",
+      "nameHi": "Nalgonda",
+      "avgPrice": 6876,
+      "records": 5
+    },
+    {
+      "district": "Warangal",
+      "nameHi": "Warangal",
+      "avgPrice": 4511,
+      "records": 1
     }
   ]
 }

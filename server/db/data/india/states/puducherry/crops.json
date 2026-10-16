@@ -4,23 +4,10 @@
     "name": "Black Gram(Urd Beans)(Whole)",
     "nameHi": "सेम",
     "emoji": "🫘",
-    "totalRecords": 44,
-    "avgPrice": 7694,
-    "minPrice": 2777,
+    "totalRecords": 49,
+    "avgPrice": 7700,
+    "minPrice": 2300,
     "maxPrice": 10385.33,
-    "varieties": [
-      "Other"
-    ]
-  },
-  {
-    "id": "karamani",
-    "name": "Karamani",
-    "nameHi": "Karamani",
-    "emoji": "🌱",
-    "totalRecords": 2,
-    "avgPrice": 13029,
-    "minPrice": 3888,
-    "maxPrice": 13173,
     "varieties": [
       "Other"
     ]
@@ -30,12 +17,16 @@
     "name": "Paddy(Common)",
     "nameHi": "धान",
     "emoji": "🌾",
-    "totalRecords": 1,
-    "avgPrice": 1457,
-    "minPrice": 1457.332969,
-    "maxPrice": 1457.332969,
+    "totalRecords": 9,
+    "avgPrice": 1793,
+    "minPrice": 1097,
+    "maxPrice": 2039,
     "varieties": [
-      "White Ponni"
+      "White Ponni",
+      "Pommani",
+      "Other",
+      "ADT 39",
+      "ADT 37"
     ],
     "msp": 2300,
     "sowingMonths": [
@@ -58,14 +49,53 @@
     ]
   },
   {
+    "id": "groundnutsplit",
+    "name": "Groundnut(Split)",
+    "nameHi": "मूँगफली",
+    "emoji": "🥜",
+    "totalRecords": 9,
+    "avgPrice": 7588,
+    "minPrice": 6322.5,
+    "maxPrice": 8450,
+    "varieties": [
+      "Other"
+    ]
+  },
+  {
+    "id": "karamani",
+    "name": "Karamani",
+    "nameHi": "Karamani",
+    "emoji": "🌱",
+    "totalRecords": 4,
+    "avgPrice": 12620,
+    "minPrice": 3888,
+    "maxPrice": 13309,
+    "varieties": [
+      "Other"
+    ]
+  },
+  {
+    "id": "hybrid-cumbu",
+    "name": "Hybrid Cumbu",
+    "nameHi": "Hybrid Cumbu",
+    "emoji": "🌱",
+    "totalRecords": 4,
+    "avgPrice": 2725,
+    "minPrice": 2633,
+    "maxPrice": 2919,
+    "varieties": [
+      "Other"
+    ]
+  },
+  {
     "id": "green-grammoongwhole",
     "name": "Green Gram(Moong)(Whole)",
     "nameHi": "मूंग",
     "emoji": "🫘",
-    "totalRecords": 1,
-    "avgPrice": 5800,
+    "totalRecords": 3,
+    "avgPrice": 6736,
     "minPrice": 5000,
-    "maxPrice": 5800,
+    "maxPrice": 7909,
     "varieties": [
       "Local (Whole)"
     ],
@@ -88,14 +118,74 @@
     ]
   },
   {
-    "id": "groundnutsplit",
-    "name": "Groundnut(Split)",
-    "nameHi": "मूँगफली",
-    "emoji": "🥜",
+    "id": "cotton",
+    "name": "Cotton",
+    "nameHi": "कपास",
+    "emoji": "☁️",
+    "totalRecords": 2,
+    "avgPrice": 9143,
+    "minPrice": 8500,
+    "maxPrice": 9352,
+    "varieties": [
+      "Other"
+    ],
+    "msp": 7121,
+    "sowingMonths": [
+      4,
+      5
+    ],
+    "growingMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      10,
+      11,
+      0
+    ],
+    "peakMonths": [
+      11,
+      0,
+      1
+    ]
+  },
+  {
+    "id": "ragifinger-millet",
+    "name": "Ragi(Finger Millet)",
+    "nameHi": "Ragi(Finger Millet)",
+    "emoji": "🌱",
     "totalRecords": 1,
-    "avgPrice": 7448,
-    "minPrice": 6747.5,
-    "maxPrice": 8050,
+    "avgPrice": 3500,
+    "minPrice": 3500,
+    "maxPrice": 3500,
+    "varieties": [
+      "Local"
+    ]
+  },
+  {
+    "id": "dry-chillies",
+    "name": "Dry Chillies",
+    "nameHi": "सूखी मिर्च",
+    "emoji": "🌶️",
+    "totalRecords": 1,
+    "avgPrice": 16000,
+    "minPrice": 8890,
+    "maxPrice": 16000,
+    "varieties": [
+      "Other"
+    ]
+  },
+  {
+    "id": "t-v-cumbu",
+    "name": "T.V. Cumbu",
+    "nameHi": "T.V. Cumbu",
+    "emoji": "🌱",
+    "totalRecords": 1,
+    "avgPrice": 4409,
+    "minPrice": 4409,
+    "maxPrice": 4409,
     "varieties": [
       "Other"
     ]

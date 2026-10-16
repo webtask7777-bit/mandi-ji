@@ -38,8 +38,36 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 2073,
-      "volume": 34,
+      "market": 2102,
+      "volume": 162,
+      "msp": 2625
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 2182,
+      "volume": 159,
+      "msp": 2625
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2299,
+      "volume": 182,
+      "msp": 2625
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2315,
+      "volume": 2022,
+      "msp": 2625
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 2900,
+      "volume": 1,
       "msp": 2625
     }
   ],
@@ -753,103 +781,383 @@
     },
     {
       "date": "2026-04-04",
-      "market": 2011,
-      "volume": 22,
+      "market": 1976,
+      "volume": 19,
       "minPrice": 1250,
       "maxPrice": 2700
+    },
+    {
+      "date": "2026-04-06",
+      "market": 2085,
+      "volume": 31,
+      "minPrice": 1225,
+      "maxPrice": 4000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 2156,
+      "volume": 64,
+      "minPrice": 1400,
+      "maxPrice": 4539
+    },
+    {
+      "date": "2026-04-10",
+      "market": 2025,
+      "volume": 7,
+      "minPrice": 1700,
+      "maxPrice": 2669
+    },
+    {
+      "date": "2026-04-21",
+      "market": 2068,
+      "volume": 29,
+      "minPrice": 1100,
+      "maxPrice": 2805
+    },
+    {
+      "date": "2026-05-04",
+      "market": 2090,
+      "volume": 15,
+      "minPrice": 1650,
+      "maxPrice": 2645
+    },
+    {
+      "date": "2026-05-05",
+      "market": 2146,
+      "volume": 23,
+      "minPrice": 1250,
+      "maxPrice": 4500
+    },
+    {
+      "date": "2026-05-06",
+      "market": 2044,
+      "volume": 12,
+      "minPrice": 1550,
+      "maxPrice": 2600
+    },
+    {
+      "date": "2026-05-08",
+      "market": 2332,
+      "volume": 6,
+      "minPrice": 1250,
+      "maxPrice": 4500
+    },
+    {
+      "date": "2026-05-09",
+      "market": 2056,
+      "volume": 8,
+      "minPrice": 1525,
+      "maxPrice": 2755
+    },
+    {
+      "date": "2026-05-14",
+      "market": 2408,
+      "volume": 19,
+      "minPrice": 1500,
+      "maxPrice": 5521
+    },
+    {
+      "date": "2026-05-15",
+      "market": 2130,
+      "volume": 21,
+      "minPrice": 1500,
+      "maxPrice": 4500
+    },
+    {
+      "date": "2026-05-16",
+      "market": 2160,
+      "volume": 6,
+      "minPrice": 1755,
+      "maxPrice": 2450
+    },
+    {
+      "date": "2026-05-18",
+      "market": 2166,
+      "volume": 15,
+      "minPrice": 1400,
+      "maxPrice": 2440
+    },
+    {
+      "date": "2026-05-19",
+      "market": 2225,
+      "volume": 23,
+      "minPrice": 1500,
+      "maxPrice": 4699
+    },
+    {
+      "date": "2026-05-20",
+      "market": 2189,
+      "volume": 11,
+      "minPrice": 1500,
+      "maxPrice": 2600
+    },
+    {
+      "date": "2026-06-18",
+      "market": 2336,
+      "volume": 13,
+      "minPrice": 1700,
+      "maxPrice": 4755
+    },
+    {
+      "date": "2026-06-19",
+      "market": 2224,
+      "volume": 8,
+      "minPrice": 1750,
+      "maxPrice": 2725
+    },
+    {
+      "date": "2026-06-26",
+      "market": 2175,
+      "volume": 12,
+      "minPrice": 1750,
+      "maxPrice": 2700
+    },
+    {
+      "date": "2026-06-29",
+      "market": 2394,
+      "volume": 9,
+      "minPrice": 2000,
+      "maxPrice": 2795
+    },
+    {
+      "date": "2026-06-30",
+      "market": 2305,
+      "volume": 140,
+      "minPrice": 1055,
+      "maxPrice": 5975
+    },
+    {
+      "date": "2026-07-01",
+      "market": 2262,
+      "volume": 135,
+      "minPrice": 1300,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-02",
+      "market": 2347,
+      "volume": 139,
+      "minPrice": 1500,
+      "maxPrice": 5151
+    },
+    {
+      "date": "2026-07-03",
+      "market": 2372,
+      "volume": 127,
+      "minPrice": 1329,
+      "maxPrice": 5555
+    },
+    {
+      "date": "2026-07-04",
+      "market": 2218,
+      "volume": 94,
+      "minPrice": 1250,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-05",
+      "market": 2165,
+      "volume": 18,
+      "minPrice": 1700,
+      "maxPrice": 3300
+    },
+    {
+      "date": "2026-07-06",
+      "market": 2294,
+      "volume": 144,
+      "minPrice": 1250,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-07",
+      "market": 2358,
+      "volume": 130,
+      "minPrice": 1380,
+      "maxPrice": 5850
+    },
+    {
+      "date": "2026-07-08",
+      "market": 2387,
+      "volume": 127,
+      "minPrice": 1250,
+      "maxPrice": 5600
+    },
+    {
+      "date": "2026-07-09",
+      "market": 2301,
+      "volume": 136,
+      "minPrice": 1255,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-10",
+      "market": 2331,
+      "volume": 129,
+      "minPrice": 1155,
+      "maxPrice": 5345
+    },
+    {
+      "date": "2026-07-11",
+      "market": 2280,
+      "volume": 95,
+      "minPrice": 1000,
+      "maxPrice": 5555
+    },
+    {
+      "date": "2026-07-12",
+      "market": 2151,
+      "volume": 16,
+      "minPrice": 1700,
+      "maxPrice": 3600
+    },
+    {
+      "date": "2026-07-13",
+      "market": 2379,
+      "volume": 135,
+      "minPrice": 1325,
+      "maxPrice": 5305
+    },
+    {
+      "date": "2026-07-14",
+      "market": 2285,
+      "volume": 123,
+      "minPrice": 1250,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-15",
+      "market": 2290,
+      "volume": 131,
+      "minPrice": 1305,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-16",
+      "market": 2319,
+      "volume": 109,
+      "minPrice": 1520,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-17",
+      "market": 2346,
+      "volume": 126,
+      "minPrice": 1250,
+      "maxPrice": 5500
+    },
+    {
+      "date": "2026-07-18",
+      "market": 2299,
+      "volume": 90,
+      "minPrice": 1200,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-07-19",
+      "market": 2081,
+      "volume": 18,
+      "minPrice": 1600,
+      "maxPrice": 2700
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2900,
+      "volume": 1,
+      "minPrice": 2900,
+      "maxPrice": 2900
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Banaskanth (गुजरात)",
       "nameHi": "Banaskanth (गुजरात)",
-      "avgPrice": 2532,
-      "records": 660
+      "avgPrice": 2518,
+      "records": 881
     },
     {
       "district": "Nashik (महाराष्ट्र)",
       "nameHi": "Nashik (महाराष्ट्र)",
-      "avgPrice": 2296,
-      "records": 321
-    },
-    {
-      "district": "Morena (मध्य प्रदेश)",
-      "nameHi": "Morena (मध्य प्रदेश)",
-      "avgPrice": 1919,
-      "records": 304
-    },
-    {
-      "district": "Dausa (राजस्थान)",
-      "nameHi": "Dausa (राजस्थान)",
-      "avgPrice": 2189,
-      "records": 270
+      "avgPrice": 2316,
+      "records": 400
     },
     {
       "district": "Gandhinagar (गुजरात)",
       "nameHi": "Gandhinagar (गुजरात)",
-      "avgPrice": 2109,
-      "records": 266
+      "avgPrice": 2148,
+      "records": 351
+    },
+    {
+      "district": "Morena (मध्य प्रदेश)",
+      "nameHi": "Morena (मध्य प्रदेश)",
+      "avgPrice": 1933,
+      "records": 346
+    },
+    {
+      "district": "Dausa (राजस्थान)",
+      "nameHi": "Dausa (राजस्थान)",
+      "avgPrice": 2161,
+      "records": 327
+    },
+    {
+      "district": "Mehsana (गुजरात)",
+      "nameHi": "Mehsana (गुजरात)",
+      "avgPrice": 2094,
+      "records": 306
     },
     {
       "district": "Alwar (राजस्थान)",
       "nameHi": "Alwar (राजस्थान)",
-      "avgPrice": 1945,
-      "records": 264
+      "avgPrice": 1967,
+      "records": 297
     },
     {
       "district": "Tonk (राजस्थान)",
       "nameHi": "Tonk (राजस्थान)",
-      "avgPrice": 2020,
-      "records": 252
+      "avgPrice": 2017,
+      "records": 284
+    },
+    {
+      "district": "Bhavnagar (गुजरात)",
+      "nameHi": "Bhavnagar (गुजरात)",
+      "avgPrice": 2331,
+      "records": 278
+    },
+    {
+      "district": "Chattrapati Sambhajinagar (महाराष्ट्र)",
+      "nameHi": "Chattrapati Sambhajinagar (महाराष्ट्र)",
+      "avgPrice": 2595,
+      "records": 273
+    },
+    {
+      "district": "Beed (महाराष्ट्र)",
+      "nameHi": "Beed (महाराष्ट्र)",
+      "avgPrice": 2746,
+      "records": 260
+    },
+    {
+      "district": "Rajkot (गुजरात)",
+      "nameHi": "Rajkot (गुजरात)",
+      "avgPrice": 1937,
+      "records": 243
     },
     {
       "district": "Ahmednagar (महाराष्ट्र)",
       "nameHi": "Ahmednagar (महाराष्ट्र)",
-      "avgPrice": 2311,
-      "records": 239
+      "avgPrice": 2312,
+      "records": 241
+    },
+    {
+      "district": "Jalgaon (महाराष्ट्र)",
+      "nameHi": "Jalgaon (महाराष्ट्र)",
+      "avgPrice": 2439,
+      "records": 234
     },
     {
       "district": "Jaipur Rural (राजस्थान)",
       "nameHi": "Jaipur Rural (राजस्थान)",
       "avgPrice": 2079,
       "records": 233
-    },
-    {
-      "district": "Mehsana (गुजरात)",
-      "nameHi": "Mehsana (गुजरात)",
-      "avgPrice": 2054,
-      "records": 224
-    },
-    {
-      "district": "Bhavnagar (गुजरात)",
-      "nameHi": "Bhavnagar (गुजरात)",
-      "avgPrice": 2362,
-      "records": 221
-    },
-    {
-      "district": "Bhind (मध्य प्रदेश)",
-      "nameHi": "Bhind (मध्य प्रदेश)",
-      "avgPrice": 2009,
-      "records": 199
-    },
-    {
-      "district": "Beed (महाराष्ट्र)",
-      "nameHi": "Beed (महाराष्ट्र)",
-      "avgPrice": 2806,
-      "records": 188
-    },
-    {
-      "district": "Rajkot (गुजरात)",
-      "nameHi": "Rajkot (गुजरात)",
-      "avgPrice": 1922,
-      "records": 187
-    },
-    {
-      "district": "Chattrapati Sambhajinagar (महाराष्ट्र)",
-      "nameHi": "Chattrapati Sambhajinagar (महाराष्ट्र)",
-      "avgPrice": 2661,
-      "records": 174
     }
   ]
 }

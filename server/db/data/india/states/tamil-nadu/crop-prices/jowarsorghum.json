@@ -7,23 +7,72 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 4625,
-      "volume": 4
+      "month": "04",
+      "date": "2026-04",
+      "market": 1915,
+      "volume": 1
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 3400,
+      "volume": 3
     }
   ],
+  "dailyHistory": [
+    {
+      "date": "2026-04-09",
+      "market": 1915,
+      "volume": 1,
+      "minPrice": 1779,
+      "maxPrice": 2051
+    },
+    {
+      "date": "2026-05-05",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-05-14",
+      "market": 4050,
+      "volume": 1,
+      "minPrice": 3500,
+      "maxPrice": 4600
+    },
+    {
+      "date": "2026-05-19",
+      "market": 3150,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3300
+    }
+  ],
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
+    {
+      "district": "Cuddalore",
+      "nameHi": "Cuddalore",
+      "avgPrice": 1915,
+      "records": 1
+    },
+    {
+      "district": "Erode",
+      "nameHi": "Erode",
+      "avgPrice": 3000,
+      "records": 1
+    },
     {
       "district": "Coimbatore",
       "nameHi": "Coimbatore",
-      "avgPrice": 4750,
-      "records": 3
+      "avgPrice": 4050,
+      "records": 1
     },
     {
-      "district": "Dindigul",
-      "nameHi": "Dindigul",
-      "avgPrice": 4250,
+      "district": "Vellore",
+      "nameHi": "Vellore",
+      "avgPrice": 3150,
       "records": 1
     }
   ]

@@ -11,6 +11,18 @@
       "date": "2026-03",
       "market": 2200,
       "volume": 1
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 2500,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2575,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -20,14 +32,40 @@
       "volume": 1,
       "minPrice": 2200,
       "maxPrice": 2200
+    },
+    {
+      "date": "2026-05-09",
+      "market": 2500,
+      "volume": 1,
+      "minPrice": 2450,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-07-05",
+      "market": 2575,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 2575
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Mandla (मध्य प्रदेश)",
       "nameHi": "Mandla (मध्य प्रदेश)",
       "avgPrice": 2200,
+      "records": 1
+    },
+    {
+      "district": "Chhindwara (मध्य प्रदेश)",
+      "nameHi": "Chhindwara (मध्य प्रदेश)",
+      "avgPrice": 2500,
+      "records": 1
+    },
+    {
+      "district": "Rajgarh (मध्य प्रदेश)",
+      "nameHi": "Rajgarh (मध्य प्रदेश)",
+      "avgPrice": 2575,
       "records": 1
     }
   ]

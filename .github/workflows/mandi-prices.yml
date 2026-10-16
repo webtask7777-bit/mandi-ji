@@ -1,0 +1,70 @@
+name: Mandi prices
+
+# Fetch the data.gov.in current-price dataset, merge it into server/db/data/daily by
+# arrival date, rebuild the aggregates and commit. Vercel deploys the push to main.
+# The publisher refreshes the dataset around 20:00 UTC (01:30 IST); the second run
+# catches late updates.
+on:
+  schedule:
+    - cron: '45 20 * * *'
+    - cron: '30 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mandi-prices
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340  # the public sample key needs ~3 h; a registered key is much faster
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # Progress is tied to one dataset snapshot, so a rerun after a failure resumes it.
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache/datagov
+          key: datagov-${{ github.run_id }}
+          restore-keys: datagov-
+
+      - name: Fetch current prices
+        env:
+          DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
+        run: node scripts/fetch-daily.cjs --delay 1300
+
+      - name: Keep fetch progress for the next run
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/datagov
+          key: datagov-${{ github.run_id }}
+
+      - name: Rebuild aggregates
+        run: node scripts/aggregate-india.cjs
+
+      - name: Storage tests
+        run: node --test tests/daily-store.test.mjs
+
+      - name: Commit if anything changed
+        run: |
+          git add server/db/data
+          if git diff --cached --quiet; then
+            echo "No new observations."
+          else
+            git config user.name "sahibhav-data-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "data: mandi prices $(date -u +%F)"
+            git push
+          fi
+
+      # Runs last so a stale source is reported as a failed job, not hidden.
+      - name: Freshness
+        run: node scripts/check-freshness.cjs --max-age-days 3

@@ -15,8 +15,8 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 2000,
-      "volume": 1
+      "market": 1800,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -40,15 +40,29 @@
       "volume": 1,
       "minPrice": 1500,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-04-10",
+      "market": 1400,
+      "volume": 1,
+      "minPrice": 1400,
+      "maxPrice": 1600
+    },
+    {
+      "date": "2026-04-21",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 1600,
+      "maxPrice": 2000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Durg",
       "nameHi": "Durg",
-      "avgPrice": 2000,
-      "records": 3
+      "avgPrice": 1880,
+      "records": 5
     }
   ]
 }

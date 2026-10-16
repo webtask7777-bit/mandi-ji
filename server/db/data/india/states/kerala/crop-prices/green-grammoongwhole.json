@@ -17,7 +17,14 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 12000,
+      "market": 12240,
+      "volume": 5,
+      "msp": 8682
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 12633,
       "volume": 3,
       "msp": 8682
     }
@@ -64,15 +71,36 @@
       "volume": 3,
       "minPrice": 9800,
       "maxPrice": 13500
+    },
+    {
+      "date": "2026-04-21",
+      "market": 12600,
+      "volume": 2,
+      "minPrice": 11500,
+      "maxPrice": 14000
+    },
+    {
+      "date": "2026-05-04",
+      "market": 12300,
+      "volume": 1,
+      "minPrice": 11500,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-05-05",
+      "market": 12800,
+      "volume": 2,
+      "minPrice": 11800,
+      "maxPrice": 14000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Palakad",
       "nameHi": "Palakad",
-      "avgPrice": 12975,
-      "records": 8
+      "avgPrice": 12838,
+      "records": 13
     },
     {
       "district": "Kottayam",

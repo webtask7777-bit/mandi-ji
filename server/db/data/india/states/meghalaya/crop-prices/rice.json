@@ -8,18 +8,61 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 5000,
+      "month": "07",
+      "date": "2026-07",
+      "market": 6750,
+      "volume": 2,
+      "msp": 2300
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5700,
       "volume": 1,
       "msp": 2300
     }
   ],
+  "dailyHistory": [
+    {
+      "date": "2026-07-14",
+      "market": 5500,
+      "volume": 1,
+      "minPrice": 5000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-07-15",
+      "market": 8000,
+      "volume": 1,
+      "minPrice": 7000,
+      "maxPrice": 9000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 5700,
+      "volume": 1,
+      "minPrice": 5600,
+      "maxPrice": 5800
+    }
+  ],
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
-      "district": "East Jaintia Hills",
-      "nameHi": "East Jaintia Hills",
-      "avgPrice": 5000,
+      "district": "West Jaintia Hills",
+      "nameHi": "West Jaintia Hills",
+      "avgPrice": 5500,
+      "records": 1
+    },
+    {
+      "district": "Nongpoh (R-Bhoi)",
+      "nameHi": "Nongpoh (R-Bhoi)",
+      "avgPrice": 8000,
+      "records": 1
+    },
+    {
+      "district": "East Khasi Hills",
+      "nameHi": "East Khasi Hills",
+      "avgPrice": 5700,
       "records": 1
     }
   ]

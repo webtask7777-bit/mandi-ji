@@ -11,6 +11,24 @@
       "date": "2026-03",
       "market": 8000,
       "volume": 1
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 7000,
+      "volume": 1
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 6950,
+      "volume": 2
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 7500,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -20,15 +38,43 @@
       "volume": 1,
       "minPrice": 8000,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-04-09",
+      "market": 7000,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-05-18",
+      "market": 7200,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 8500
+    },
+    {
+      "date": "2026-05-19",
+      "market": 6700,
+      "volume": 1,
+      "minPrice": 6000,
+      "maxPrice": 7500
+    },
+    {
+      "date": "2026-06-18",
+      "market": 7500,
+      "volume": 1,
+      "minPrice": 6500,
+      "maxPrice": 8500
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 8000,
-      "records": 1
+      "avgPrice": 7280,
+      "records": 5
     }
   ]
 }

@@ -7,18 +7,41 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 5242,
+      "month": "06",
+      "date": "2026-06",
+      "market": 6740,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 6200,
       "volume": 1
     }
   ],
+  "dailyHistory": [
+    {
+      "date": "2026-06-30",
+      "market": 6740,
+      "volume": 1,
+      "minPrice": 5300,
+      "maxPrice": 6870
+    },
+    {
+      "date": "2026-07-06",
+      "market": 6200,
+      "volume": 1,
+      "minPrice": 5451,
+      "maxPrice": 6800
+    }
+  ],
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Pratapgarh",
       "nameHi": "Pratapgarh",
-      "avgPrice": 5242,
-      "records": 1
+      "avgPrice": 6470,
+      "records": 2
     }
   ]
 }

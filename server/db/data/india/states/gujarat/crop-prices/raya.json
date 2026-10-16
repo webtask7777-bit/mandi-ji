@@ -7,18 +7,47 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 3373,
-      "volume": 2
+      "month": "04",
+      "date": "2026-04",
+      "market": 5070,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 6550,
+      "volume": 1
     }
   ],
+  "dailyHistory": [
+    {
+      "date": "2026-04-21",
+      "market": 5070,
+      "volume": 1,
+      "minPrice": 4500,
+      "maxPrice": 5640
+    },
+    {
+      "date": "2026-07-01",
+      "market": 6550,
+      "volume": 1,
+      "minPrice": 6375,
+      "maxPrice": 6692
+    }
+  ],
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Jamnagar",
       "nameHi": "Jamnagar",
-      "avgPrice": 3373,
-      "records": 2
+      "avgPrice": 5070,
+      "records": 1
+    },
+    {
+      "district": "Kachchh",
+      "nameHi": "Kachchh",
+      "avgPrice": 6550,
+      "records": 1
     }
   ]
 }

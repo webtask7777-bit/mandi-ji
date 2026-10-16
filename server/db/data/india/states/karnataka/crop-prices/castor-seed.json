@@ -29,6 +29,12 @@
       "date": "2026-03",
       "market": 6414,
       "volume": 7
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 6037,
+      "volume": 7
     }
   ],
   "dailyHistory": [
@@ -178,9 +184,51 @@
       "volume": 3,
       "minPrice": 5673,
       "maxPrice": 6500
+    },
+    {
+      "date": "2026-07-01",
+      "market": 6400,
+      "volume": 1,
+      "minPrice": 6400,
+      "maxPrice": 6400
+    },
+    {
+      "date": "2026-07-03",
+      "market": 6512,
+      "volume": 1,
+      "minPrice": 6025,
+      "maxPrice": 6640
+    },
+    {
+      "date": "2026-07-06",
+      "market": 5621,
+      "volume": 1,
+      "minPrice": 5621,
+      "maxPrice": 5621
+    },
+    {
+      "date": "2026-07-08",
+      "market": 6460,
+      "volume": 2,
+      "minPrice": 6300,
+      "maxPrice": 6520
+    },
+    {
+      "date": "2026-07-11",
+      "market": 5308,
+      "volume": 1,
+      "minPrice": 5308,
+      "maxPrice": 5308
+    },
+    {
+      "date": "2026-07-15",
+      "market": 5500,
+      "volume": 1,
+      "minPrice": 5000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Bellary",
@@ -189,15 +237,15 @@
       "records": 14
     },
     {
+      "district": "Chitradurga",
+      "nameHi": "Chitradurga",
+      "avgPrice": 6968,
+      "records": 4
+    },
+    {
       "district": "Bijapur",
       "nameHi": "Bijapur",
       "avgPrice": 5750,
-      "records": 3
-    },
-    {
-      "district": "Chitradurga",
-      "nameHi": "Chitradurga",
-      "avgPrice": 7120,
       "records": 3
     },
     {
@@ -216,6 +264,42 @@
       "district": "Raichur",
       "nameHi": "Raichur",
       "avgPrice": 7427,
+      "records": 1
+    },
+    {
+      "district": "Vijayanagara",
+      "nameHi": "Vijayanagara",
+      "avgPrice": 6400,
+      "records": 1
+    },
+    {
+      "district": "Vijayapura",
+      "nameHi": "Vijayapura",
+      "avgPrice": 5621,
+      "records": 1
+    },
+    {
+      "district": "Bengaluru South",
+      "nameHi": "Bengaluru South",
+      "avgPrice": 6400,
+      "records": 1
+    },
+    {
+      "district": "Chikkamagaluru",
+      "nameHi": "Chikkamagaluru",
+      "avgPrice": 6520,
+      "records": 1
+    },
+    {
+      "district": "Gadag",
+      "nameHi": "Gadag",
+      "avgPrice": 5308,
+      "records": 1
+    },
+    {
+      "district": "Chikkaballapur",
+      "nameHi": "Chikkaballapur",
+      "avgPrice": 5500,
       "records": 1
     }
   ]

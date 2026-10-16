@@ -11,6 +11,12 @@
       "date": "2026-04",
       "market": 7,
       "volume": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -20,15 +26,29 @@
       "volume": 1,
       "minPrice": 6.25,
       "maxPrice": 7.5
+    },
+    {
+      "date": "2026-06-18",
+      "market": 2,
+      "volume": 1,
+      "minPrice": 1.5,
+      "maxPrice": 1.87
+    },
+    {
+      "date": "2026-06-26",
+      "market": 2,
+      "volume": 1,
+      "minPrice": 1.37,
+      "maxPrice": 1.75
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Kamrup",
       "nameHi": "Kamrup",
-      "avgPrice": 7,
-      "records": 1
+      "avgPrice": 3,
+      "records": 3
     }
   ]
 }

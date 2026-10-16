@@ -23,6 +23,12 @@
       "date": "2026-03",
       "market": 10180,
       "volume": 5
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 4500,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -74,9 +80,16 @@
       "volume": 1,
       "minPrice": 11500,
       "maxPrice": 11510
+    },
+    {
+      "date": "2026-06-30",
+      "market": 4500,
+      "volume": 1,
+      "minPrice": 4500,
+      "maxPrice": 4500
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Mandla",
@@ -88,6 +101,12 @@
       "district": "Singroli",
       "nameHi": "Singroli",
       "avgPrice": 8000,
+      "records": 1
+    },
+    {
+      "district": "Sidhi",
+      "nameHi": "Sidhi",
+      "avgPrice": 4500,
       "records": 1
     }
   ]

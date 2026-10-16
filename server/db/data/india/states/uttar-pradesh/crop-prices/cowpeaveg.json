@@ -21,8 +21,14 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 3500,
-      "volume": 1
+      "market": 3433,
+      "volume": 3
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 2125,
+      "volume": 4
     }
   ],
   "dailyHistory": [
@@ -200,9 +206,51 @@
       "volume": 1,
       "minPrice": 3000,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-04-06",
+      "market": 3300,
+      "volume": 1,
+      "minPrice": 3200,
+      "maxPrice": 3400
+    },
+    {
+      "date": "2026-04-21",
+      "market": 3500,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-05-05",
+      "market": 2900,
+      "volume": 1,
+      "minPrice": 2800,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-05-08",
+      "market": 2500,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-05-15",
+      "market": 2100,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 2200
+    },
+    {
+      "date": "2026-05-20",
+      "market": 1000,
+      "volume": 1,
+      "minPrice": 900,
+      "maxPrice": 1200
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Aligarh",
@@ -213,8 +261,14 @@
     {
       "district": "Mirzapur",
       "nameHi": "Mirzapur",
-      "avgPrice": 3171,
-      "records": 7
+      "avgPrice": 3042,
+      "records": 12
+    },
+    {
+      "district": "Sonbhadra",
+      "nameHi": "Sonbhadra",
+      "avgPrice": 1000,
+      "records": 1
     }
   ]
 }

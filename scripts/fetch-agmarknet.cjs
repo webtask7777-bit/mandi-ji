@@ -26,7 +26,8 @@ const MAX_RETRIES = 3;
 const DATE_WINDOW_DAYS = 7;      // 7-day windows (fast: ~8s per call)
 const DEFAULT_CONCURRENCY = 10;  // 10 parallel requests
 
-const DAILY_DIR = path.join(__dirname, '..', 'server', 'db', 'data', 'daily');
+const { DAILY_DIR, mergeRecords, listDays, normalizeRecord: normalizeStored } = require('./lib/daily-store.cjs');
+const CACHE_DIR = path.join(__dirname, '..', '.cache', 'agmarknet');
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
@@ -139,21 +140,23 @@ async function fetchPage(groupId, commodityId, fromDate, toDate, page = 1) {
         await sleep(attempt * 5000);
         continue;
       }
-      if (!res.ok) throw new Error(`API ${res.status}`);
+      if (!res.ok) {
+        const body = await res.text();
+        // Since Oct 2026 the report endpoint demands a captcha. Stop: never try to get past it.
+        if (/CAPTCHA/i.test(body)) throw Object.assign(new Error('Agmarknet now requires a captcha for reports; automated fetching is not possible'), { fatal: true });
+        throw Object.assign(new Error(`API ${res.status}`), { fatal: true });
+      }
 
       const data = await res.json();
       if (data.status === 404 || !data.data?.records?.length) return { records: [] };
       return { records: data.data.records[0]?.data || [] };
     } catch (e) {
-      if (e.name === 'AbortError') {
-        if (attempt < MAX_RETRIES) { await sleep(2000); continue; }
-        return { records: [] };
-      }
-      if (attempt < MAX_RETRIES) { await sleep(attempt * 2000); continue; }
-      return { records: [] };
+      if (e.fatal) throw e;
+      if (attempt < MAX_RETRIES) { await sleep(e.name === 'AbortError' ? 2000 : attempt * 2000); continue; }
     }
   }
-  return { records: [] };
+  // A failed request is not "no data": fail the commodity so it is retried, not marked complete.
+  throw new Error(`${commodityId} ${fromDate}..${toDate} page ${page}: failed after ${MAX_RETRIES} attempts`);
 }
 
 // ── Normalize record ────────────────────────────────────────
@@ -208,7 +211,22 @@ async function main() {
   console.log(`   Output: ${DAILY_DIR}\n`);
 
   const commodities = await fetchCommodities();
-  const dateWindows = getDateWindows(startDate, endDate);
+  let dateWindows = getDateWindows(startDate, endDate);
+  if (skipExisting) {
+    // Only fetch runs of days that have no stored file yet, in windows of at most 7 days.
+    const have = new Set(listDays());
+    const missing = [];
+    for (const d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) if (!have.has(toISODate(d))) missing.push(toISODate(d));
+    dateWindows = [];
+    for (const day of missing) {
+      const last = dateWindows[dateWindows.length - 1];
+      const next = last && new Date(new Date(last.to).getTime() + 86400000).toISOString().slice(0, 10);
+      const span = last && (Date.parse(day) - Date.parse(last.from)) / 86400000;
+      if (last && next === day && span < DATE_WINDOW_DAYS) last.to = day;
+      else dateWindows.push({ from: day, to: day });
+    }
+    console.log(`   --skip-existing: ${missing.length} missing days in ${dateWindows.length} windows`);
+  }
   const totalCalls = commodities.length * dateWindows.length;
 
   console.log(`   Commodities: ${commodities.length}`);
@@ -227,7 +245,9 @@ async function main() {
   }
 
   // Progress tracking
-  const progressFile = path.join(DAILY_DIR, '.agmarknet-progress.json');
+  // Progress belongs to one date range; a different range must not skip commodities.
+  fs.mkdirSync(CACHE_DIR, { recursive: true });
+  const progressFile = path.join(CACHE_DIR, `progress-${dateWindows.map(w => w.from + '_' + w.to).join(',').replace(/[^\w,-]/g, '').slice(0, 120)}.json`);
   let progress = { completedCommodities: [], totalRecords: 0 };
   if (fs.existsSync(progressFile)) {
     progress = JSON.parse(fs.readFileSync(progressFile, 'utf-8'));
@@ -240,6 +260,7 @@ async function main() {
   let apiCalls = 0;
   let commoditiesDone = 0;
   let commoditiesEmpty = 0;
+  let commoditiesFailed = 0;
   const startTime = Date.now();
 
   // Build task list: for each commodity, create a single task that fetches all windows
@@ -259,6 +280,7 @@ async function main() {
 
       let commodityRecords = 0;
 
+      try {
       for (const window of dateWindows) {
         let page = 1;
         let hasMore = true;
@@ -282,6 +304,11 @@ async function main() {
           if (hasMore) page++;
         }
       }
+      } catch (e) {
+        if (e.fatal) throw e;
+        console.log(`\n  ⚠️ ${commodity.name}: ${e.message}`);
+        return { commodity, records: commodityRecords, failed: true };
+      }
 
       return { commodity, records: commodityRecords };
     });
@@ -291,6 +318,7 @@ async function main() {
 
     // Process results
     for (const r of results) {
+      if (r.failed) { commoditiesFailed++; continue; } // retried on the next run
       if (r.records > 0) {
         totalNewRecords += r.records;
         process.stdout.write(`  ✅ ${r.commodity.name}: ${r.records.toLocaleString()} | `);
@@ -318,7 +346,7 @@ async function main() {
   console.log(`\n💾 Final save...`);
   const fileCount = flushDailyBuckets(dailyBuckets);
 
-  if (fs.existsSync(progressFile)) fs.unlinkSync(progressFile);
+  if (commoditiesFailed === 0 && fs.existsSync(progressFile)) fs.unlinkSync(progressFile);
 
   const elapsed = ((Date.now() - startTime) / 1000 / 60).toFixed(1);
   console.log(`\n═══════════════════════════════════════`);
@@ -328,46 +356,28 @@ async function main() {
   console.log(`   Commodities done:   ${commoditiesDone}`);
   console.log(`   Commodities empty:  ${commoditiesEmpty}`);
   console.log(`   New records:        ${totalNewRecords.toLocaleString()}`);
+  console.log(`   Commodities failed: ${commoditiesFailed}`);
   console.log(`   Daily files saved:  ${fileCount}`);
   console.log(`═══════════════════════════════════════\n`);
 
+  if (commoditiesFailed > 0) {
+    console.error(`❌ ${commoditiesFailed} commodities failed; rerun with the same range to retry them.`);
+    process.exitCode = 1;
+  }
   if (totalNewRecords > 0) {
     console.log(`✅ Now run: node scripts/aggregate-india.cjs`);
     console.log(`   to rebuild dashboards with historical data.\n`);
   }
 }
 
-// ── Flush daily buckets to disk ─────────────────────────────
+// ── Merge daily buckets into stored files (never overwrite) ─
 function flushDailyBuckets(buckets) {
-  let count = 0;
+  const valid = [];
   for (const [date, records] of Object.entries(buckets)) {
-    if (records.length === 0) continue;
-
-    // Deduplicate
-    const seen = new Set();
-    const unique = [];
-    for (const r of records) {
-      const key = `${r.state}|${r.district}|${r.market}|${r.commodity}|${r.variety}|${r.grade}|${r.arrival_date}`;
-      if (!seen.has(key)) { seen.add(key); unique.push(r); }
-    }
-
-    const states = new Set(unique.map(r => r.state));
-    const commodities = new Set(unique.map(r => r.commodity));
-    const output = {
-      date,
-      fetchedAt: new Date().toISOString(),
-      source: 'agmarknet.gov.in',
-      total: unique.length,
-      states: states.size,
-      commodities: commodities.size,
-      records: unique,
-    };
-
-    fs.writeFileSync(path.join(DAILY_DIR, `${date}.json`), JSON.stringify(output, null, 2));
-    buckets[date] = unique;
-    count++;
+    for (const r of records) { const { record } = normalizeStored(r); if (record) valid.push(record); }
+    delete buckets[date];
   }
-  return count;
+  return valid.length ? mergeRecords(valid, { source: 'agmarknet.gov.in' }).length : 0;
 }
 
 main().catch(e => { console.error('Fatal:', e.message); process.exit(1); });

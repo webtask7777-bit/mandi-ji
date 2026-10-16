@@ -28,7 +28,19 @@
       "month": "04",
       "date": "2026-04",
       "market": 5500,
-      "volume": 2
+      "volume": 3
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 6167,
+      "volume": 3
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5500,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -332,21 +344,49 @@
       "volume": 1,
       "minPrice": 5000,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 5500,
+      "volume": 1,
+      "minPrice": 5000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-05-14",
+      "market": 6250,
+      "volume": 2,
+      "minPrice": 6000,
+      "maxPrice": 7000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 6000,
+      "volume": 1,
+      "minPrice": 5500,
+      "maxPrice": 6500
+    },
+    {
+      "date": "2026-10-16",
+      "market": 5500,
+      "volume": 1,
+      "minPrice": 5000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Dimapur",
       "nameHi": "Dimapur",
-      "avgPrice": 5837,
-      "records": 43
+      "avgPrice": 5840,
+      "records": 47
     },
     {
       "district": "Kohima",
       "nameHi": "Kohima",
-      "avgPrice": 4000,
-      "records": 1
+      "avgPrice": 5000,
+      "records": 2
     }
   ]
 }

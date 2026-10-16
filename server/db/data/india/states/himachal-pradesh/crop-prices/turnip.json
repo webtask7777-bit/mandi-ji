@@ -15,8 +15,20 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 1500,
+      "market": 2000,
+      "volume": 2
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2000,
       "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2300,
+      "volume": 5
     }
   ],
   "dailyHistory": [
@@ -75,10 +87,65 @@
       "volume": 1,
       "minPrice": 1000,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 2500,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-06-30",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-01",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-07",
+      "market": 2500,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-08",
+      "market": 2500,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-13",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-14",
+      "market": 2500,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
+    {
+      "district": "Shimla",
+      "nameHi": "Shimla",
+      "avgPrice": 2250,
+      "records": 6
+    },
     {
       "district": "Kullu",
       "nameHi": "Kullu",
@@ -95,7 +162,7 @@
       "district": "Mandi",
       "nameHi": "Mandi",
       "avgPrice": 2500,
-      "records": 1
+      "records": 2
     },
     {
       "district": "Una",

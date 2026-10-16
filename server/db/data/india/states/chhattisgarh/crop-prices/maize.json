@@ -13,6 +13,27 @@
       "market": 2046,
       "volume": 4,
       "msp": 2090
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 1550,
+      "volume": 1,
+      "msp": 2090
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 1750,
+      "volume": 2,
+      "msp": 2090
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 1700,
+      "volume": 1,
+      "msp": 2090
     }
   ],
   "dailyHistory": [
@@ -29,10 +50,44 @@
       "volume": 1,
       "minPrice": 1700,
       "maxPrice": 1750
+    },
+    {
+      "date": "2026-04-09",
+      "market": 1550,
+      "volume": 1,
+      "minPrice": 1500,
+      "maxPrice": 1600
+    },
+    {
+      "date": "2026-05-04",
+      "market": 1600,
+      "volume": 1,
+      "minPrice": 1600,
+      "maxPrice": 1600
+    },
+    {
+      "date": "2026-05-14",
+      "market": 1900,
+      "volume": 1,
+      "minPrice": 1900,
+      "maxPrice": 1900
+    },
+    {
+      "date": "2026-06-21",
+      "market": 1700,
+      "volume": 1,
+      "minPrice": 1600,
+      "maxPrice": 1800
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
+    {
+      "district": "Kanker",
+      "nameHi": "Kanker",
+      "avgPrice": 1650,
+      "records": 2
+    },
     {
       "district": "Balrampur",
       "nameHi": "Balrampur",
@@ -55,6 +110,18 @@
       "district": "Kondagaon",
       "nameHi": "Kondagaon",
       "avgPrice": 1725,
+      "records": 1
+    },
+    {
+      "district": "Narayanpur",
+      "nameHi": "Narayanpur",
+      "avgPrice": 1550,
+      "records": 1
+    },
+    {
+      "district": "Jashpur",
+      "nameHi": "Jashpur",
+      "avgPrice": 1900,
       "records": 1
     }
   ]

@@ -15,8 +15,26 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 1750,
-      "volume": 3
+      "market": 2008,
+      "volume": 14
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 3250,
+      "volume": 4
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2610,
+      "volume": 5
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 3000,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -79,7 +97,7 @@
     {
       "date": "2026-04-01",
       "market": 1125,
-      "volume": 2,
+      "volume": 1,
       "minPrice": 1000,
       "maxPrice": 1250
     },
@@ -89,21 +107,96 @@
       "volume": 1,
       "minPrice": 2500,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-04-06",
+      "market": 1575,
+      "volume": 3,
+      "minPrice": 900,
+      "maxPrice": 2250
+    },
+    {
+      "date": "2026-04-09",
+      "market": 1533,
+      "volume": 4,
+      "minPrice": 1000,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-04-21",
+      "market": 2625,
+      "volume": 5,
+      "minPrice": 1000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-05-05",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 3500,
+      "volume": 2,
+      "minPrice": 1500,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 3500
+    },
+    {
+      "date": "2026-06-18",
+      "market": 2813,
+      "volume": 4,
+      "minPrice": 1000,
+      "maxPrice": 6000
+    },
+    {
+      "date": "2026-06-26",
+      "market": 1800,
+      "volume": 1,
+      "minPrice": 1600,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
-    {
-      "district": "Vadodara(Baroda) (गुजरात)",
-      "nameHi": "Vadodara(Baroda) (गुजरात)",
-      "avgPrice": 1115,
-      "records": 5
-    },
     {
       "district": "Dimapur (नागालैंड)",
       "nameHi": "Dimapur (नागालैंड)",
-      "avgPrice": 2875,
+      "avgPrice": 3000,
+      "records": 8
+    },
+    {
+      "district": "Vadodara(Baroda) (गुजरात)",
+      "nameHi": "Vadodara(Baroda) (गुजरात)",
+      "avgPrice": 1493,
+      "records": 7
+    },
+    {
+      "district": "Lower Subansiri (अरुणाचल प्रदेश)",
+      "nameHi": "Lower Subansiri (अरुणाचल प्रदेश)",
+      "avgPrice": 1000,
       "records": 4
+    },
+    {
+      "district": "Kaithal (हरियाणा)",
+      "nameHi": "Kaithal (हरियाणा)",
+      "avgPrice": 1033,
+      "records": 3
     },
     {
       "district": "Hissar (हरियाणा)",
@@ -112,21 +205,39 @@
       "records": 3
     },
     {
+      "district": "Nuapada (ओडिशा)",
+      "nameHi": "Nuapada (ओडिशा)",
+      "avgPrice": 2667,
+      "records": 3
+    },
+    {
+      "district": "Nawanshahr (पंजाब)",
+      "nameHi": "Nawanshahr (पंजाब)",
+      "avgPrice": 1065,
+      "records": 2
+    },
+    {
       "district": "Baghpat (उत्तर प्रदेश)",
       "nameHi": "Baghpat (उत्तर प्रदेश)",
       "avgPrice": 500,
       "records": 2
     },
     {
-      "district": "Kaithal (हरियाणा)",
-      "nameHi": "Kaithal (हरियाणा)",
-      "avgPrice": 1000,
+      "district": "Mahbubnagar (तेलंगाना)",
+      "nameHi": "Mahbubnagar (तेलंगाना)",
+      "avgPrice": 5000,
       "records": 2
     },
     {
-      "district": "Nawanshahr (पंजाब)",
-      "nameHi": "Nawanshahr (पंजाब)",
-      "avgPrice": 1100,
+      "district": "Longleng (नागालैंड)",
+      "nameHi": "Longleng (नागालैंड)",
+      "avgPrice": 1450,
+      "records": 2
+    },
+    {
+      "district": "Shimla (हिमाचल प्रदेश)",
+      "nameHi": "Shimla (हिमाचल प्रदेश)",
+      "avgPrice": 2000,
       "records": 1
     },
     {
@@ -142,9 +253,15 @@
       "records": 1
     },
     {
-      "district": "Lower Subansiri (अरुणाचल प्रदेश)",
-      "nameHi": "Lower Subansiri (अरुणाचल प्रदेश)",
-      "avgPrice": 1000,
+      "district": "Kohima (नागालैंड)",
+      "nameHi": "Kohima (नागालैंड)",
+      "avgPrice": 1500,
+      "records": 1
+    },
+    {
+      "district": "North and Middle Andaman (अंडमान निकोबार)",
+      "nameHi": "North and Middle Andaman (अंडमान निकोबार)",
+      "avgPrice": 5000,
       "records": 1
     }
   ]

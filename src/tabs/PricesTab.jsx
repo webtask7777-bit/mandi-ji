@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { TrendingUp, TrendingDown, ChevronRight, ChevronLeft, BarChart3, ArrowUpRight, ArrowDownRight, ShoppingCart, AlertTriangle, Search, LayoutList, CalendarDays, Info, Sprout, ArrowRight, Bookmark, Calculator } from "lucide-react";
+import { TrendingUp, TrendingDown, ChevronRight, ChevronLeft, BarChart3, ArrowUpRight, ArrowDownRight, ShoppingCart, AlertTriangle, Search, LayoutList, CalendarDays, Info, Sprout, ArrowRight, Bookmark, Calculator, Scale } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useApi } from "../hooks/useApi";
 import PriceCard from "../components/PriceCard";
@@ -196,6 +196,7 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
             </div>}
             {selectedTicker?.bestMandi && <p className="sb-small-note">मंडी, किस्म और तारीख अलग हो सकती है।</p>}
             {onDeliveryCalculate && <button type="button" className="sb-delivery-cta" onClick={calculateFromHero}><span className="sb-delivery-cta__icon"><Calculator size={21} aria-hidden="true" /></span><span><strong>यहाँ से माल मँगाना सही रहेगा?</strong><small>गाड़ी, दूरी और खर्च के साथ हिसाब देखें</small></span><ArrowRight size={18} aria-hidden="true" /></button>}
+            <Link to="/bechne-ka-hisab" state={{ saleScenario: { cropName } }} className="sb-sell-button"><Scale size={17} aria-hidden="true" />कहाँ बेचूँ? भाड़ा काटकर हिसाब करें<ArrowRight size={17} aria-hidden="true" /></Link>
             <Link to={`/listing/new?type=sell&crop=${encodeURIComponent(activeCrop)}`} className="sb-sell-button"><ShoppingCart size={17} aria-hidden="true" />यह फसल बेचने की लिस्टिंग बनाएँ<ArrowRight size={17} aria-hidden="true" /></Link>
             {priceData?.lastUpdated && <p className="sb-sync-time">डेटा अपडेट: {formatTimestamp(priceData.lastUpdated)}</p>}
           </section>

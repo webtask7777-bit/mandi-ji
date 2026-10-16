@@ -15,8 +15,14 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 70,
-      "volume": 2
+      "market": 77,
+      "volume": 3
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 133,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -47,15 +53,43 @@
       "volume": 1,
       "minPrice": 60,
       "maxPrice": 100
+    },
+    {
+      "date": "2026-04-21",
+      "market": 90,
+      "volume": 1,
+      "minPrice": 80,
+      "maxPrice": 100
+    },
+    {
+      "date": "2026-05-05",
+      "market": 80,
+      "volume": 1,
+      "minPrice": 60,
+      "maxPrice": 100
+    },
+    {
+      "date": "2026-05-06",
+      "market": 100,
+      "volume": 1,
+      "minPrice": 80,
+      "maxPrice": 120
+    },
+    {
+      "date": "2026-05-14",
+      "market": 220,
+      "volume": 1,
+      "minPrice": 200,
+      "maxPrice": 240
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Delhi",
       "nameHi": "Delhi",
-      "avgPrice": 63,
-      "records": 4
+      "avgPrice": 93,
+      "records": 8
     }
   ]
 }

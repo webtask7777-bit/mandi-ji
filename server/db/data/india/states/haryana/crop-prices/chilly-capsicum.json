@@ -29,6 +29,18 @@
       "date": "2026-03",
       "market": 3933,
       "volume": 3
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 1500,
+      "volume": 1
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 1150,
+      "volume": 2
     }
   ],
   "dailyHistory": [
@@ -283,15 +295,36 @@
       "volume": 1,
       "minPrice": 2500,
       "maxPrice": 5300
+    },
+    {
+      "date": "2026-04-21",
+      "market": 1500,
+      "volume": 1,
+      "minPrice": 1500,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-05-04",
+      "market": 1200,
+      "volume": 1,
+      "minPrice": 1000,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-05-05",
+      "market": 1100,
+      "volume": 1,
+      "minPrice": 1000,
+      "maxPrice": 1200
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Panipat",
       "nameHi": "Panipat",
-      "avgPrice": 3560,
-      "records": 25
+      "avgPrice": 3314,
+      "records": 28
     },
     {
       "district": "Hissar",

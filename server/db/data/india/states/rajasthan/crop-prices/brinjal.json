@@ -33,8 +33,26 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 1610,
-      "volume": 5
+      "market": 1453,
+      "volume": 16
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 1283,
+      "volume": 12
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 1700,
+      "volume": 3
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2100,
+      "volume": 3
     }
   ],
   "dailyHistory": [
@@ -723,39 +741,130 @@
       "volume": 1,
       "minPrice": 1800,
       "maxPrice": 1800
+    },
+    {
+      "date": "2026-04-06",
+      "market": 1250,
+      "volume": 5,
+      "minPrice": 500,
+      "maxPrice": 2200
+    },
+    {
+      "date": "2026-04-09",
+      "market": 1217,
+      "volume": 3,
+      "minPrice": 600,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-04-21",
+      "market": 1767,
+      "volume": 3,
+      "minPrice": 1200,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-05-04",
+      "market": 1200,
+      "volume": 1,
+      "minPrice": 800,
+      "maxPrice": 1600
+    },
+    {
+      "date": "2026-05-05",
+      "market": 1250,
+      "volume": 2,
+      "minPrice": 800,
+      "maxPrice": 1600
+    },
+    {
+      "date": "2026-05-06",
+      "market": 1100,
+      "volume": 1,
+      "minPrice": 1000,
+      "maxPrice": 1200
+    },
+    {
+      "date": "2026-05-14",
+      "market": 1467,
+      "volume": 3,
+      "minPrice": 1000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 1075,
+      "volume": 2,
+      "minPrice": 600,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-05-18",
+      "market": 1350,
+      "volume": 3,
+      "minPrice": 800,
+      "maxPrice": 2200
+    },
+    {
+      "date": "2026-06-18",
+      "market": 1600,
+      "volume": 1,
+      "minPrice": 1200,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-06-21",
+      "market": 1100,
+      "volume": 1,
+      "minPrice": 1000,
+      "maxPrice": 1200
+    },
+    {
+      "date": "2026-06-26",
+      "market": 2400,
+      "volume": 1,
+      "minPrice": 2200,
+      "maxPrice": 2600
+    },
+    {
+      "date": "2026-07-18",
+      "market": 2100,
+      "volume": 3,
+      "minPrice": 500,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Udaipur",
       "nameHi": "Udaipur",
-      "avgPrice": 1954,
-      "records": 80
+      "avgPrice": 1945,
+      "records": 83
+    },
+    {
+      "district": "Jalore",
+      "nameHi": "Jalore",
+      "avgPrice": 973,
+      "records": 67
+    },
+    {
+      "district": "Jaipur",
+      "nameHi": "Jaipur",
+      "avgPrice": 1543,
+      "records": 65
     },
     {
       "district": "Ajmer",
       "nameHi": "Ajmer",
-      "avgPrice": 1242,
-      "records": 61
+      "avgPrice": 1233,
+      "records": 63
     },
     {
       "district": "Jaipur Rural",
       "nameHi": "Jaipur Rural",
       "avgPrice": 1667,
       "records": 61
-    },
-    {
-      "district": "Jalore",
-      "nameHi": "Jalore",
-      "avgPrice": 961,
-      "records": 59
-    },
-    {
-      "district": "Jaipur",
-      "nameHi": "Jaipur",
-      "avgPrice": 1575,
-      "records": 58
     },
     {
       "district": "Bikaner",
@@ -766,8 +875,14 @@
     {
       "district": "Jodhpur",
       "nameHi": "Jodhpur",
-      "avgPrice": 1761,
-      "records": 41
+      "avgPrice": 1743,
+      "records": 42
+    },
+    {
+      "district": "Ganganagar",
+      "nameHi": "Ganganagar",
+      "avgPrice": 2381,
+      "records": 42
     },
     {
       "district": "Alwar",
@@ -776,16 +891,16 @@
       "records": 35
     },
     {
-      "district": "Ganganagar",
-      "nameHi": "Ganganagar",
-      "avgPrice": 2429,
-      "records": 35
-    },
-    {
       "district": "Pali",
       "nameHi": "Pali",
       "avgPrice": 1285,
       "records": 11
+    },
+    {
+      "district": "Chittorgarh",
+      "nameHi": "Chittorgarh",
+      "avgPrice": 1500,
+      "records": 1
     }
   ]
 }

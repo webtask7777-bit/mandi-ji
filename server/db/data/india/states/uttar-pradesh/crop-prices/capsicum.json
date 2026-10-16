@@ -33,8 +33,26 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 2030,
-      "volume": 5
+      "market": 2040,
+      "volume": 20
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 1589,
+      "volume": 12
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2500,
+      "volume": 1
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2500,
+      "volume": 1
     }
   ],
   "dailyHistory": [
@@ -681,21 +699,112 @@
       "volume": 2,
       "minPrice": 1500,
       "maxPrice": 2200
+    },
+    {
+      "date": "2026-04-06",
+      "market": 3410,
+      "volume": 1,
+      "minPrice": 3360,
+      "maxPrice": 3460
+    },
+    {
+      "date": "2026-04-09",
+      "market": 1676,
+      "volume": 7,
+      "minPrice": 900,
+      "maxPrice": 2400
+    },
+    {
+      "date": "2026-04-10",
+      "market": 2298,
+      "volume": 4,
+      "minPrice": 1520,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-04-21",
+      "market": 2103,
+      "volume": 3,
+      "minPrice": 1500,
+      "maxPrice": 2660
+    },
+    {
+      "date": "2026-05-04",
+      "market": 1667,
+      "volume": 3,
+      "minPrice": 1000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-05-05",
+      "market": 1300,
+      "volume": 1,
+      "minPrice": 1300,
+      "maxPrice": 1300
+    },
+    {
+      "date": "2026-05-06",
+      "market": 1250,
+      "volume": 1,
+      "minPrice": 1250,
+      "maxPrice": 1250
+    },
+    {
+      "date": "2026-05-14",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 2000,
+      "volume": 1,
+      "minPrice": 2000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-05-18",
+      "market": 1511,
+      "volume": 3,
+      "minPrice": 1000,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 1493,
+      "volume": 2,
+      "minPrice": 900,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-06-19",
+      "market": 2500,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 2500
+    },
+    {
+      "date": "2026-07-19",
+      "market": 2500,
+      "volume": 1,
+      "minPrice": 2500,
+      "maxPrice": 2500
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
     {
       "district": "Etawah",
       "nameHi": "Etawah",
-      "avgPrice": 2612,
-      "records": 96
+      "avgPrice": 2620,
+      "records": 98
     },
     {
       "district": "Barabanki",
       "nameHi": "Barabanki",
-      "avgPrice": 3179,
-      "records": 75
+      "avgPrice": 3149,
+      "records": 77
     },
     {
       "district": "Amroha",
@@ -714,6 +823,12 @@
       "nameHi": "Bahraich",
       "avgPrice": 3281,
       "records": 39
+    },
+    {
+      "district": "Saharanpur",
+      "nameHi": "Saharanpur",
+      "avgPrice": 2543,
+      "records": 33
     },
     {
       "district": "Baghpat",
@@ -740,16 +855,10 @@
       "records": 29
     },
     {
-      "district": "Saharanpur",
-      "nameHi": "Saharanpur",
-      "avgPrice": 2748,
-      "records": 29
-    },
-    {
       "district": "Lakhimpur",
       "nameHi": "Lakhimpur",
-      "avgPrice": 4167,
-      "records": 28
+      "avgPrice": 4118,
+      "records": 29
     },
     {
       "district": "Sitapur",
@@ -758,22 +867,22 @@
       "records": 28
     },
     {
+      "district": "Jaunpur",
+      "nameHi": "Jaunpur",
+      "avgPrice": 3618,
+      "records": 25
+    },
+    {
       "district": "Lucknow",
       "nameHi": "Lucknow",
       "avgPrice": 3421,
       "records": 25
     },
     {
-      "district": "Jaunpur",
-      "nameHi": "Jaunpur",
-      "avgPrice": 3656,
-      "records": 24
-    },
-    {
       "district": "Agra",
       "nameHi": "Agra",
-      "avgPrice": 3021,
-      "records": 20
+      "avgPrice": 2996,
+      "records": 21
     }
   ]
 }

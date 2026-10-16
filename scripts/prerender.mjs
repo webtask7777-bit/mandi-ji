@@ -24,7 +24,7 @@ const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compa
 const cache = new Map();
 const manifest = JSON.parse(await readFile(path.join(dist, '.vite/manifest.json'), 'utf8'));
 function routeAssets(route) {
-  const page = /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/__not-found__':'NotFoundPage' })[route];
+  const page = /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/__not-found__':'NotFoundPage' })[route];
   const css = new Set();
   const seen = new Set();
   function visit(key) { if (seen.has(key)) return; seen.add(key); const entry = manifest[key]; if (!entry) return; (entry.css || []).forEach(file => css.add(file)); (entry.imports || []).forEach(visit); }
@@ -80,7 +80,7 @@ async function writePage(route, html) {
 }
 try {
   await mkdir(generated, { recursive: true });
-  const routes = new Set(['/', '/delivery-calculator', '/about', '/contact', '/privacy', '/terms', '/blog']);
+  const routes = new Set(['/', '/delivery-calculator', '/bechne-ka-hisab', '/about', '/contact', '/privacy', '/terms', '/blog']);
   const knownCrops = new Set();
   const states = (loadIndiaData('states') || []).filter(state => state.hasData);
   const scopes = ['all', ...new Set([...states.map(state => state.id), 'chhattisgarh'])];

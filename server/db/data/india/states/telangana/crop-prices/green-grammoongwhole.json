@@ -17,8 +17,15 @@
     {
       "month": "04",
       "date": "2026-04",
-      "market": 7811,
-      "volume": 2,
+      "market": 7338,
+      "volume": 3,
+      "msp": 8682
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 6968,
+      "volume": 3,
       "msp": 8682
     }
   ],
@@ -33,24 +40,52 @@
     {
       "date": "2026-04-04",
       "market": 7811,
-      "volume": 2,
+      "volume": 1,
       "minPrice": 7407,
       "maxPrice": 7939
+    },
+    {
+      "date": "2026-04-09",
+      "market": 7102,
+      "volume": 2,
+      "minPrice": 6810,
+      "maxPrice": 7673
+    },
+    {
+      "date": "2026-05-06",
+      "market": 6894,
+      "volume": 1,
+      "minPrice": 4293,
+      "maxPrice": 7182
+    },
+    {
+      "date": "2026-05-15",
+      "market": 6543,
+      "volume": 1,
+      "minPrice": 4363,
+      "maxPrice": 6642
+    },
+    {
+      "date": "2026-05-19",
+      "market": 7466,
+      "volume": 1,
+      "minPrice": 3536,
+      "maxPrice": 7466
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
-    {
-      "district": "Mahbubnagar",
-      "nameHi": "Mahbubnagar",
-      "avgPrice": 7811,
-      "records": 2
-    },
     {
       "district": "Nalgonda",
       "nameHi": "Nalgonda",
-      "avgPrice": 7169,
-      "records": 1
+      "avgPrice": 7093,
+      "records": 5
+    },
+    {
+      "district": "Mahbubnagar",
+      "nameHi": "Mahbubnagar",
+      "avgPrice": 7311,
+      "records": 2
     }
   ]
 }

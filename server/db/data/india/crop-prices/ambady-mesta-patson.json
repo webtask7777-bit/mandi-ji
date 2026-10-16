@@ -29,6 +29,18 @@
       "date": "2026-04",
       "market": 3300,
       "volume": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2910,
+      "volume": 3
+    },
+    {
+      "month": "07",
+      "date": "2026-07",
+      "market": 2921,
+      "volume": 29
     }
   ],
   "dailyHistory": [
@@ -87,14 +99,151 @@
       "volume": 1,
       "minPrice": 3300,
       "maxPrice": 3300
+    },
+    {
+      "date": "2026-06-30",
+      "market": 2910,
+      "volume": 3,
+      "minPrice": 2795,
+      "maxPrice": 3080
+    },
+    {
+      "date": "2026-07-01",
+      "market": 2883,
+      "volume": 2,
+      "minPrice": 2510,
+      "maxPrice": 3100
+    },
+    {
+      "date": "2026-07-02",
+      "market": 2963,
+      "volume": 2,
+      "minPrice": 2815,
+      "maxPrice": 3060
+    },
+    {
+      "date": "2026-07-03",
+      "market": 2916,
+      "volume": 2,
+      "minPrice": 2750,
+      "maxPrice": 3040
+    },
+    {
+      "date": "2026-07-04",
+      "market": 2908,
+      "volume": 2,
+      "minPrice": 2690,
+      "maxPrice": 3040
+    },
+    {
+      "date": "2026-07-06",
+      "market": 3000,
+      "volume": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-07",
+      "market": 2895,
+      "volume": 2,
+      "minPrice": 2700,
+      "maxPrice": 3080
+    },
+    {
+      "date": "2026-07-08",
+      "market": 2931,
+      "volume": 2,
+      "minPrice": 2825,
+      "maxPrice": 3040
+    },
+    {
+      "date": "2026-07-09",
+      "market": 2472,
+      "volume": 3,
+      "minPrice": 1750,
+      "maxPrice": 2930
+    },
+    {
+      "date": "2026-07-10",
+      "market": 2882,
+      "volume": 1,
+      "minPrice": 2750,
+      "maxPrice": 2970
+    },
+    {
+      "date": "2026-07-11",
+      "market": 2969,
+      "volume": 2,
+      "minPrice": 2750,
+      "maxPrice": 3055
+    },
+    {
+      "date": "2026-07-13",
+      "market": 2945,
+      "volume": 2,
+      "minPrice": 2733,
+      "maxPrice": 3090
+    },
+    {
+      "date": "2026-07-14",
+      "market": 2998,
+      "volume": 2,
+      "minPrice": 2790,
+      "maxPrice": 3170
+    },
+    {
+      "date": "2026-07-15",
+      "market": 3054,
+      "volume": 1,
+      "minPrice": 2900,
+      "maxPrice": 3170
+    },
+    {
+      "date": "2026-07-16",
+      "market": 3165,
+      "volume": 2,
+      "minPrice": 3090,
+      "maxPrice": 3180
+    },
+    {
+      "date": "2026-07-17",
+      "market": 3080,
+      "volume": 1,
+      "minPrice": 2920,
+      "maxPrice": 3086
+    },
+    {
+      "date": "2026-07-18",
+      "market": 3070,
+      "volume": 2,
+      "minPrice": 2830,
+      "maxPrice": 3240
     }
   ],
-  "lastUpdated": "2026-04-04T13:00:16.380Z",
+  "lastUpdated": "2026-10-16T04:22:52.101Z",
   "districtBreakdown": [
+    {
+      "district": "Balodabazar (छत्तीसगढ़)",
+      "nameHi": "Balodabazar (छत्तीसगढ़)",
+      "avgPrice": 2917,
+      "records": 16
+    },
+    {
+      "district": "Mungeli (छत्तीसगढ़)",
+      "nameHi": "Mungeli (छत्तीसगढ़)",
+      "avgPrice": 3006,
+      "records": 14
+    },
     {
       "district": "Bilaspur (छत्तीसगढ़)",
       "nameHi": "Bilaspur (छत्तीसगढ़)",
       "avgPrice": 2967,
+      "records": 3
+    },
+    {
+      "district": "Raipur (छत्तीसगढ़)",
+      "nameHi": "Raipur (छत्तीसगढ़)",
+      "avgPrice": 2464,
       "records": 3
     },
     {
@@ -113,12 +262,6 @@
       "district": "Singroli (मध्य प्रदेश)",
       "nameHi": "Singroli (मध्य प्रदेश)",
       "avgPrice": 7500,
-      "records": 1
-    },
-    {
-      "district": "Raipur (छत्तीसगढ़)",
-      "nameHi": "Raipur (छत्तीसगढ़)",
-      "avgPrice": 2700,
       "records": 1
     }
   ]
