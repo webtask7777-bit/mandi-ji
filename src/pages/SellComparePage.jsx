@@ -1,7 +1,7 @@
 import { useEffect, useId, useMemo, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calculator, Copy, Info, MessageCircle, Plus, RotateCcw, Scale, Trash2, Wallet } from 'lucide-react';
-import SEO from '../components/SEO';
+import SEO, { SITE_URL } from '../components/SEO';
 import Brand from '../components/Brand';
 import Footer from '../components/Footer';
 import { getDataFreshness } from '../utils/dataFreshness';
@@ -29,9 +29,15 @@ function readDraft() {
 
 /** Prefill from a price card: dated mandi quotes become options; freight is never inherited. */
 function fromScenario(scenario) {
-  const form = emptyForm();
-  form.cropName = scenario.cropName || '';
   const quotes = (scenario.options || []).slice(0, MAX_OPTIONS - 1);
+  const cropName = scenario.cropName || '';
+  // Only a crop name: keep the saved calculation for the same crop instead of wiping it.
+  if (!quotes.length) {
+    const draft = readDraft();
+    if (!cropName || draft.cropName === cropName) return draft;
+  }
+  const form = emptyForm();
+  form.cropName = cropName;
   if (quotes.length) form.options = [farmgate(), ...quotes.map(q => ({ ...mandi(q.label || ''), pricePerQuintal: Number(q.pricePerQuintal) > 0 ? String(q.pricePerQuintal) : '', quoteDate: q.quoteDate || null, variety: q.variety || '', grade: q.grade || '' }))];
   return form;
 }
@@ -85,8 +91,12 @@ function OptionCard({ option, index, uid, row, onChange, onRemove, canRemove }) 
 export default function SellComparePage() {
   const uid = useId();
   const location = useLocation();
-  const [form, setForm] = useState(() => (location.state?.saleScenario ? fromScenario(location.state.saleScenario) : readDraft()));
-  const [notice, setNotice] = useState(location.state?.saleScenario ? 'दर्ज मंडी भाव भर दिए हैं। भाड़ा, कमी और खेत पर मिलने वाला भाव खुद भरें।' : '');
+  const navigate = useNavigate();
+  const scenario = location.state?.saleScenario;
+  const [form, setForm] = useState(() => (scenario ? fromScenario(scenario) : readDraft()));
+  const [notice, setNotice] = useState(scenario?.options?.length ? 'दर्ज मंडी भाव भर दिए हैं। भाड़ा, कमी और खेत पर मिलने वाला भाव खुद भरें।' : '');
+  // The scenario is used once; a reload or back navigation must not apply it over the user's entries.
+  useEffect(() => { if (scenario) navigate(location.pathname, { replace: true, state: null }); }, [scenario, navigate, location.pathname]);
 
   useEffect(() => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(form)); } catch { /* optional */ } }, [form]);
   useEffect(() => { if (!notice) return; const t = setTimeout(() => setNotice(''), 6500); return () => clearTimeout(t); }, [notice]);
@@ -156,7 +166,7 @@ export default function SellComparePage() {
                 {result.comparable && <div className="sb-delivery-result-actions">
                   <button type="button" className="sb-delivery-button" onClick={copy}><Copy size={15} aria-hidden="true" /> हिसाब कॉपी करें</button>
                   {/* Opens WhatsApp with the dated summary; the user chooses the recipient. */}
-                  <a className="sb-delivery-button" href={`https://wa.me/?text=${encodeURIComponent(`${saleComparisonSummary({ ...form, result })}\n\nअपना हिसाब करें: https://mandi-ji.vercel.app/bechne-ka-hisab`)}`} target="_blank" rel="noopener noreferrer"><MessageCircle size={15} aria-hidden="true" /> WhatsApp पर भेजें</a>
+                  <a className="sb-delivery-button" href={`https://wa.me/?text=${encodeURIComponent(`${saleComparisonSummary({ ...form, result })}\n\nअपना हिसाब करें: ${SITE_URL}/bechne-ka-hisab`)}`} target="_blank" rel="noopener noreferrer"><MessageCircle size={15} aria-hidden="true" /> WhatsApp पर भेजें</a>
                 </div>}
                 <p className="sb-delivery-disclaimer">यह खेती की लागत घटाने के बाद का मुनाफ़ा नहीं, बिक्री के बाद हाथ में आने वाली रकम का अनुमान है। दर्ज मंडी भाव खरीदार का पक्का भाव नहीं होता। जाने से पहले व्यापारी से भाव, तौल और भुगतान की तारीख पूछें।</p>
                 <p className="sb-delivery-privacy">आपका हिसाब सिर्फ़ इसी ब्राउज़र में रहता है।</p>

@@ -6,6 +6,10 @@ import { prepareEditorialPost } from '../utils/editorial.js';
 
 const router = Router();
 
+// Admin edits may change content fields only; ids and creation times are never taken from a request.
+const PROTECTED_FIELDS = new Set(['id', 'createdAt', 'createdBy', '__proto__', 'constructor', 'prototype']);
+const editable = body => Object.fromEntries(Object.entries(body && typeof body === 'object' ? body : {}).filter(([key]) => !PROTECTED_FIELDS.has(key)));
+
 // All routes require admin
 router.use(adminOnly);
 
@@ -44,7 +48,7 @@ router.get('/stats', (req, res) => {
       recentUsers,
       topCrops,
     });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'स्टैट्स लोड करने में विफल' });
   }
 });
@@ -60,7 +64,7 @@ router.get('/users', (req, res) => {
     // Sort newest first
     safeUsers.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     res.json(safeUsers);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'उपयोगकर्ता लोड करने में विफल' });
   }
 });
@@ -78,7 +82,7 @@ router.put('/users/:id/role', (req, res) => {
     const updated = updateItem('users.json', req.params.id, { role });
     const { passwordHash: _, ...safe } = updated;
     res.json(safe);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'भूमिका अपडेट करने में विफल' });
   }
 });
@@ -96,7 +100,7 @@ router.put('/users/:id/status', (req, res) => {
     const updated = updateItem('users.json', req.params.id, { status });
     const { passwordHash: _, ...safe } = updated;
     res.json(safe);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'स्टेटस अपडेट करने में विफल' });
   }
 });
@@ -107,7 +111,7 @@ router.get('/listings', (req, res) => {
     const listings = readJSON('listings.json');
     listings.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     res.json(listings);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'लिस्टिंग लोड करने में विफल' });
   }
 });
@@ -120,7 +124,7 @@ router.delete('/listings/:id', (req, res) => {
 
     deleteItem('listings.json', req.params.id);
     res.json({ success: true, message: 'लिस्टिंग हटा दी गई' });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'लिस्टिंग हटाने में विफल' });
   }
 });
@@ -131,7 +135,7 @@ router.get('/eway-bills', (req, res) => {
     const bills = readJSON('eway-bills.json');
     bills.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     res.json(bills);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'Bills लोड करने में विफल' });
   }
 });
@@ -146,7 +150,7 @@ router.get('/pages', (req, res) => {
   try {
     const pages = readJSON('pages.json');
     res.json(pages);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'पेज लोड करने में विफल' });
   }
 });
@@ -156,11 +160,11 @@ router.put('/pages/:key', (req, res) => {
   try {
     const pages = readJSON('pages.json');
     const key = req.params.key;
-    if (!pages[key]) return res.status(404).json({ error: 'पेज नहीं मिला' });
-    pages[key] = { ...pages[key], ...req.body, lastUpdated: new Date().toISOString() };
+    if (!Object.hasOwn(pages, key)) return res.status(404).json({ error: 'पेज नहीं मिला' });
+    pages[key] = { ...pages[key], ...editable(req.body), lastUpdated: new Date().toISOString() };
     writeJSON('pages.json', pages);
     res.json(pages[key]);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'पेज अपडेट करने में विफल' });
   }
 });
@@ -173,7 +177,7 @@ router.get('/blog', (req, res) => {
     const posts = readJSON('blog-posts.json');
     posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     res.json(posts);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'ब्लॉग लोड करने में विफल' });
   }
 });
@@ -185,7 +189,7 @@ router.post('/blog', (req, res) => {
     if (errors.length) return res.status(400).json({ error: errors.join(' '), details: errors });
     appendItem('blog-posts.json', post);
     res.json(post);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'ब्लॉग बनाने में विफल' });
   }
 });
@@ -200,7 +204,7 @@ router.put('/blog/:id', (req, res) => {
     if (errors.length) return res.status(400).json({ error: errors.join(' '), details: errors });
     const updated = changed ? updateItem('blog-posts.json', req.params.id, post) : existing;
     res.json(updated);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'पोस्ट अपडेट करने में विफल' });
   }
 });
@@ -212,7 +216,7 @@ router.delete('/blog/:id', (req, res) => {
     if (!exists) return res.status(404).json({ error: 'पोस्ट नहीं मिली' });
     deleteItem('blog-posts.json', req.params.id);
     res.json({ success: true, message: 'पोस्ट हटा दी गई' });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'पोस्ट हटाने में विफल' });
   }
 });
@@ -225,7 +229,7 @@ router.get('/banners', (req, res) => {
     const banners = readJSON('banners.json');
     banners.sort((a, b) => (a.order || 0) - (b.order || 0));
     res.json(banners);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'बैनर लोड करने में विफल' });
   }
 });
@@ -241,7 +245,7 @@ router.post('/banners', (req, res) => {
     };
     appendItem('banners.json', banner);
     res.json(banner);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'बैनर बनाने में विफल' });
   }
 });
@@ -251,9 +255,9 @@ router.put('/banners/:id', (req, res) => {
   try {
     const exists = findById('banners.json', req.params.id);
     if (!exists) return res.status(404).json({ error: 'बैनर नहीं मिला' });
-    const updated = updateItem('banners.json', req.params.id, req.body);
+    const updated = updateItem('banners.json', req.params.id, editable(req.body));
     res.json(updated);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'बैनर अपडेट करने में विफल' });
   }
 });
@@ -265,7 +269,7 @@ router.delete('/banners/:id', (req, res) => {
     if (!exists) return res.status(404).json({ error: 'बैनर नहीं मिला' });
     deleteItem('banners.json', req.params.id);
     res.json({ success: true, message: 'बैनर हटा दिया गया' });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'बैनर हटाने में विफल' });
   }
 });
@@ -276,7 +280,7 @@ router.delete('/banners/:id', (req, res) => {
 router.get('/crop-info', (req, res) => {
   try {
     res.json(readJSON('crop-info.json'));
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'फसल जानकारी लोड करने में विफल' });
   }
 });
@@ -292,7 +296,7 @@ router.post('/crop-info', (req, res) => {
     };
     appendItem('crop-info.json', info);
     res.json(info);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'फसल जानकारी बनाने में विफल' });
   }
 });
@@ -302,9 +306,9 @@ router.put('/crop-info/:id', (req, res) => {
   try {
     const exists = findById('crop-info.json', req.params.id);
     if (!exists) return res.status(404).json({ error: 'फसल जानकारी नहीं मिली' });
-    const updated = updateItem('crop-info.json', req.params.id, { ...req.body, updatedAt: new Date().toISOString() });
+    const updated = updateItem('crop-info.json', req.params.id, { ...editable(req.body), updatedAt: new Date().toISOString() });
     res.json(updated);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'फसल जानकारी अपडेट करने में विफल' });
   }
 });
@@ -316,7 +320,7 @@ router.delete('/crop-info/:id', (req, res) => {
     if (!exists) return res.status(404).json({ error: 'फसल जानकारी नहीं मिली' });
     deleteItem('crop-info.json', req.params.id);
     res.json({ success: true, message: 'फसल जानकारी हटा दी गई' });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'फसल जानकारी हटाने में विफल' });
   }
 });
@@ -329,7 +333,7 @@ router.get('/notifications', (req, res) => {
     const notifs = readJSON('notifications.json');
     notifs.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     res.json(notifs);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'सूचनाएं लोड करने में विफल' });
   }
 });
@@ -346,7 +350,7 @@ router.post('/notifications', (req, res) => {
     };
     appendItem('notifications.json', notif);
     res.json(notif);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'सूचना बनाने में विफल' });
   }
 });
@@ -356,9 +360,9 @@ router.put('/notifications/:id', (req, res) => {
   try {
     const exists = findById('notifications.json', req.params.id);
     if (!exists) return res.status(404).json({ error: 'सूचना नहीं मिली' });
-    const updated = updateItem('notifications.json', req.params.id, req.body);
+    const updated = updateItem('notifications.json', req.params.id, editable(req.body));
     res.json(updated);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'सूचना अपडेट करने में विफल' });
   }
 });
@@ -370,7 +374,7 @@ router.delete('/notifications/:id', (req, res) => {
     if (!exists) return res.status(404).json({ error: 'सूचना नहीं मिली' });
     deleteItem('notifications.json', req.params.id);
     res.json({ success: true, message: 'सूचना हटा दी गई' });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'सूचना हटाने में विफल' });
   }
 });

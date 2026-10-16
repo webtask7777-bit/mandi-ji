@@ -47,10 +47,12 @@ export default function MyEwayBills() {
           <header className="sticky top-0 z-30 bg-background border-b border-zinc-800">
             <div className="flex items-center gap-3 px-4 py-3">
               <button
+                type="button"
+                aria-label="वापस जाएँ"
                 onClick={() => setSelectedBill(null)}
                 className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:bg-zinc-800 transition-colors"
               >
-                <ArrowLeft size={16} className="text-zinc-400" />
+                <ArrowLeft size={16} className="text-zinc-400" aria-hidden="true" />
               </button>
               <h1 className="text-base font-bold">Bill: {selectedBill.billNumber}</h1>
             </div>
@@ -70,10 +72,12 @@ export default function MyEwayBills() {
         <header className="sticky top-0 z-30 bg-background border-b border-zinc-800">
           <div className="flex items-center gap-3 px-4 py-3">
             <button
+              type="button"
+              aria-label="वापस जाएँ"
               onClick={() => navigate('/')}
               className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:bg-zinc-800 transition-colors"
             >
-              <ArrowLeft size={16} className="text-zinc-400" />
+              <ArrowLeft size={16} className="text-zinc-400" aria-hidden="true" />
             </button>
             <h1 className="text-base font-bold">मेरे E-way Bills</h1>
           </div>
@@ -101,7 +105,7 @@ export default function MyEwayBills() {
               <div className="text-sm font-medium text-zinc-400">कोई E-way Bill नहीं</div>
               <div className="text-xs text-zinc-600 mt-1">आपने अभी तक कोई E-way Bill नहीं बनाया है</div>
               <button
-                onClick={() => navigate('/eway-bill')}
+                onClick={() => navigate('/eway-bill/new')}
                 className="mt-4 bg-green-500 hover:bg-green-600 text-green-950 font-bold px-4 py-2 rounded-xl text-sm transition-colors"
               >
                 नया Bill बनाएं

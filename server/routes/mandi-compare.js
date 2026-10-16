@@ -11,7 +11,8 @@ router.get('/:cropId', (req, res) => {
   if (!isCropPriceCommodity(cropId)) return res.status(422).json(UNSUPPORTED_COMMODITY_ERROR);
   const scope = resolveScope(req.query.state);
   if (!scope) return res.status(400).json(UNKNOWN_STATE_ERROR);
-  res.json((loadScopeData(scope, 'mandi-compare') || {})[cropId] || []);
+  const compare = loadScopeData(scope, 'mandi-compare') || {};
+  res.json(Object.hasOwn(compare, cropId) ? compare[cropId] : []);
 });
 
 export default router;

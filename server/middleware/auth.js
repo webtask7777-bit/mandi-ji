@@ -31,6 +31,8 @@ export function authRequired(req, res, next) {
     const decoded = jwt.verify(header.slice(7), JWT_SECRET, { algorithms: ['HS256'] });
     const user = findById('users.json', decoded.id);
     if (!user) return res.status(401).json({ error: 'उपयोगकर्ता नहीं मिला' });
+    // A token issued before suspension must stop working at once, not after 30 days.
+    if (user.status === 'suspended') return res.status(403).json({ error: 'खाता निलंबित है' });
     req.user = user;
     next();
   } catch {

@@ -77,14 +77,20 @@ router.get('/me', authRequired, (req, res) => {
 // PUT /api/auth/kyc
 router.put('/kyc', authRequired, (req, res) => {
   try {
-    const { aadhaar, pan, kisanCard, digilockerVerified } = req.body;
-    const kycDetails = { aadhaar, pan, kisanCard, digilockerVerified };
-    const kycStatus = digilockerVerified ? 'verified' : 'pending';
+    const { aadhaar, pan, kisanCard } = req.body || {};
+    // Only masked identifiers are stored, and a client can never mark itself verified:
+    // verification needs a real DigiLocker/KYC check, which is not built.
+    const last4 = value => {
+      const digits = String(value || '').replace(/[^0-9A-Za-z]/g, '');
+      return digits.length >= 4 ? `XXXX${digits.slice(-4).toUpperCase()}` : '';
+    };
+    const kycDetails = { aadhaarLast4: last4(aadhaar), panLast4: last4(pan), kisanCardLast4: last4(kisanCard), digilockerVerified: false };
+    const kycStatus = 'pending';
     const updated = updateItem('users.json', req.user.id, { kycDetails, kycStatus });
     if (!updated) return res.status(404).json({ error: 'उपयोगकर्ता नहीं मिला' });
     const { passwordHash: _, ...safeUser } = updated;
     res.json({ user: safeUser });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'KYC अपडेट विफल' });
   }
 });

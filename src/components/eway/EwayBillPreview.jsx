@@ -57,7 +57,7 @@ export default function EwayBillPreview({ bill, isPreview = false }) {
             <div className="flex items-center gap-2">
               <FileText size={18} className="text-green-500" />
               <div>
-                <div className="text-sm font-bold text-foreground">E-way Bill</div>
+                <div className="text-sm font-bold text-foreground">E-way Bill ड्राफ्ट</div>
                 <div className="text-[10px] text-zinc-500">सही भाव - कृषि बाज़ार</div>
               </div>
             </div>
@@ -65,15 +65,19 @@ export default function EwayBillPreview({ bill, isPreview = false }) {
               <StatusBadge status={bill.status} />
               {!isPreview && (
                 <button
+                  type="button"
+                  aria-label="ड्राफ्ट प्रिंट करें"
                   onClick={handlePrint}
                   className="w-7 h-7 rounded-lg bg-zinc-800 flex items-center justify-center hover:bg-zinc-700 transition-colors"
                 >
-                  <Printer size={12} className="text-zinc-400" />
+                  <Printer size={12} className="text-zinc-400" aria-hidden="true" />
                 </button>
               )}
             </div>
           </div>
         </div>
+
+        <p className="px-4 py-2 border-b border-zinc-800 text-[11px] leading-snug text-amber-400" role="note">यह GST पोर्टल (ewaybillgov.gov.in) से बना ई-वे बिल नहीं है और माल ढुलाई के लिए मान्य नहीं है। यह सिर्फ़ आपके रिकॉर्ड का ड्राफ्ट है; असली ई-वे बिल पोर्टल पर बनाएँ।</p>
 
         {/* Bill Number */}
         <div className="px-4 py-2 border-b border-zinc-800 bg-zinc-950">
@@ -196,7 +200,8 @@ export default function EwayBillPreview({ bill, isPreview = false }) {
         `}</style>
 
         <div className="text-center border-b-2 border-black pb-3 mb-4">
-          <h1 className="text-lg font-bold">E-way Bill</h1>
+          <h1 className="text-lg font-bold">E-way Bill ड्राफ्ट (केवल रिकॉर्ड हेतु)</h1>
+          <div className="text-xs font-bold mt-1">यह GST पोर्टल (ewaybillgov.gov.in) से बना ई-वे बिल नहीं है और माल ढुलाई के लिए मान्य नहीं है। यह सिर्फ़ आपके रिकॉर्ड का ड्राफ्ट है; असली ई-वे बिल पोर्टल पर बनाएँ।</div>
           <div className="text-xs text-gray-500">SahiBhav - Agricultural Marketplace</div>
           <div className="text-base font-mono font-bold mt-1">{bill.billNumber}</div>
         </div>

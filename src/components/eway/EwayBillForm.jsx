@@ -78,8 +78,8 @@ export default function EwayBillForm() {
       case 0: return form.supplyType && form.docDate;
       case 1: return form.fromName.trim();
       case 2: return form.toName.trim();
-      case 3: return form.cropName.trim() && form.quantity && form.value;
-      case 4: return form.transportMode;
+      case 3: return form.cropName.trim() && Number(form.quantity) > 0 && Number(form.value) > 0;
+      case 4: return form.transportMode && (form.distance === '' || (Number(form.distance) > 0 && Number(form.distance) <= 4000));
       case 5: return true;
       default: return true;
     }
@@ -181,8 +181,8 @@ export default function EwayBillForm() {
                 </div>
               </div>
               <div>
-                <label className={labelClass}>दस्तावेज़ नंबर</label>
-                <input
+                <label htmlFor="eway-field-1" className={labelClass}>दस्तावेज़ नंबर</label>
+                <input id="eway-field-1"
                   type="text"
                   value={form.docNumber}
                   onChange={e => updateField('docNumber', e.target.value)}
@@ -191,8 +191,8 @@ export default function EwayBillForm() {
                 />
               </div>
               <div>
-                <label className={labelClass}>दस्तावेज़ तिथि</label>
-                <input
+                <label htmlFor="eway-field-2" className={labelClass}>दस्तावेज़ तिथि</label>
+                <input id="eway-field-2"
                   type="date"
                   value={form.docDate}
                   onChange={e => updateField('docDate', e.target.value)}
@@ -206,8 +206,8 @@ export default function EwayBillForm() {
           {step === 1 && (
             <>
               <div>
-                <label className={labelClass}>भेजने वाले का नाम *</label>
-                <input
+                <label htmlFor="eway-field-3" className={labelClass}>भेजने वाले का नाम *</label>
+                <input id="eway-field-3"
                   type="text"
                   value={form.fromName}
                   onChange={e => updateField('fromName', e.target.value)}
@@ -216,8 +216,8 @@ export default function EwayBillForm() {
                 />
               </div>
               <div>
-                <label className={labelClass}>GSTIN (वैकल्पिक)</label>
-                <input
+                <label htmlFor="eway-field-4" className={labelClass}>GSTIN (वैकल्पिक)</label>
+                <input id="eway-field-4"
                   type="text"
                   value={form.fromGstin}
                   onChange={e => updateField('fromGstin', e.target.value.toUpperCase())}
@@ -227,8 +227,8 @@ export default function EwayBillForm() {
                 />
               </div>
               <div>
-                <label className={labelClass}>पता</label>
-                <input
+                <label htmlFor="eway-field-5" className={labelClass}>पता</label>
+                <input id="eway-field-5"
                   type="text"
                   value={form.fromAddress}
                   onChange={e => updateField('fromAddress', e.target.value)}
@@ -238,8 +238,8 @@ export default function EwayBillForm() {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className={labelClass}>राज्य</label>
-                  <input
+                  <label htmlFor="eway-field-6" className={labelClass}>राज्य</label>
+                  <input id="eway-field-6"
                     type="text"
                     value={form.fromState}
                     onChange={e => updateField('fromState', e.target.value)}
@@ -248,8 +248,8 @@ export default function EwayBillForm() {
                   />
                 </div>
                 <div>
-                  <label className={labelClass}>पिनकोड</label>
-                  <input
+                  <label htmlFor="eway-field-7" className={labelClass}>पिनकोड</label>
+                  <input id="eway-field-7"
                     type="text"
                     value={form.fromPincode}
                     onChange={e => updateField('fromPincode', e.target.value)}
@@ -266,8 +266,8 @@ export default function EwayBillForm() {
           {step === 2 && (
             <>
               <div>
-                <label className={labelClass}>प्राप्तकर्ता का नाम *</label>
-                <input
+                <label htmlFor="eway-field-8" className={labelClass}>प्राप्तकर्ता का नाम *</label>
+                <input id="eway-field-8"
                   type="text"
                   value={form.toName}
                   onChange={e => updateField('toName', e.target.value)}
@@ -276,8 +276,8 @@ export default function EwayBillForm() {
                 />
               </div>
               <div>
-                <label className={labelClass}>GSTIN (वैकल्पिक)</label>
-                <input
+                <label htmlFor="eway-field-9" className={labelClass}>GSTIN (वैकल्पिक)</label>
+                <input id="eway-field-9"
                   type="text"
                   value={form.toGstin}
                   onChange={e => updateField('toGstin', e.target.value.toUpperCase())}
@@ -287,8 +287,8 @@ export default function EwayBillForm() {
                 />
               </div>
               <div>
-                <label className={labelClass}>पता</label>
-                <input
+                <label htmlFor="eway-field-10" className={labelClass}>पता</label>
+                <input id="eway-field-10"
                   type="text"
                   value={form.toAddress}
                   onChange={e => updateField('toAddress', e.target.value)}
@@ -298,8 +298,8 @@ export default function EwayBillForm() {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className={labelClass}>राज्य</label>
-                  <input
+                  <label htmlFor="eway-field-11" className={labelClass}>राज्य</label>
+                  <input id="eway-field-11"
                     type="text"
                     value={form.toState}
                     onChange={e => updateField('toState', e.target.value)}
@@ -308,8 +308,8 @@ export default function EwayBillForm() {
                   />
                 </div>
                 <div>
-                  <label className={labelClass}>पिनकोड</label>
-                  <input
+                  <label htmlFor="eway-field-12" className={labelClass}>पिनकोड</label>
+                  <input id="eway-field-12"
                     type="text"
                     value={form.toPincode}
                     onChange={e => updateField('toPincode', e.target.value)}
@@ -326,8 +326,8 @@ export default function EwayBillForm() {
           {step === 3 && (
             <>
               <div>
-                <label className={labelClass}>फसल / सामान का नाम *</label>
-                <input
+                <label htmlFor="eway-field-13" className={labelClass}>फसल / सामान का नाम *</label>
+                <input id="eway-field-13"
                   type="text"
                   value={form.cropName}
                   onChange={e => updateField('cropName', e.target.value)}
@@ -336,8 +336,8 @@ export default function EwayBillForm() {
                 />
               </div>
               <div>
-                <label className={labelClass}>HSN कोड</label>
-                <input
+                <label htmlFor="eway-field-14" className={labelClass}>HSN कोड</label>
+                <input id="eway-field-14"
                   type="text"
                   value={form.hsnCode}
                   onChange={e => updateField('hsnCode', e.target.value)}
@@ -348,8 +348,8 @@ export default function EwayBillForm() {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className={labelClass}>मात्रा *</label>
-                  <input
+                  <label htmlFor="eway-field-15" className={labelClass}>मात्रा *</label>
+                  <input id="eway-field-15"
                     type="number"
                     value={form.quantity}
                     onChange={e => updateField('quantity', e.target.value)}
@@ -359,8 +359,8 @@ export default function EwayBillForm() {
                   />
                 </div>
                 <div>
-                  <label className={labelClass}>इकाई</label>
-                  <input
+                  <label htmlFor="eway-field-16" className={labelClass}>इकाई</label>
+                  <input id="eway-field-16"
                     type="text"
                     value={form.unit}
                     onChange={e => updateField('unit', e.target.value)}
@@ -370,8 +370,8 @@ export default function EwayBillForm() {
                 </div>
               </div>
               <div>
-                <label className={labelClass}>कुल मूल्य (रुपये) *</label>
-                <input
+                <label htmlFor="eway-field-17" className={labelClass}>कुल मूल्य (रुपये) *</label>
+                <input id="eway-field-17"
                   type="number"
                   value={form.value}
                   onChange={e => updateField('value', e.target.value)}
@@ -408,8 +408,8 @@ export default function EwayBillForm() {
                 </div>
               </div>
               <div>
-                <label className={labelClass}>वाहन नंबर</label>
-                <input
+                <label htmlFor="eway-field-18" className={labelClass}>वाहन नंबर</label>
+                <input id="eway-field-18"
                   type="text"
                   value={form.vehicleNumber}
                   onChange={e => updateField('vehicleNumber', e.target.value.toUpperCase())}
@@ -419,8 +419,8 @@ export default function EwayBillForm() {
                 <p className="text-[9px] text-zinc-600 mt-1">भारतीय वाहन नंबर प्रारूप</p>
               </div>
               <div>
-                <label className={labelClass}>दूरी (किलोमीटर)</label>
-                <input
+                <label htmlFor="eway-field-19" className={labelClass}>दूरी (किलोमीटर)</label>
+                <input id="eway-field-19"
                   type="number"
                   value={form.distance}
                   onChange={e => updateField('distance', e.target.value)}
@@ -469,7 +469,8 @@ export default function EwayBillForm() {
                   },
                   totalValue: Number(form.value) || 0,
                   validFrom: new Date().toISOString(),
-                  validUntil: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString(),
+                  // Same rule as the server: one day per 200 km or part of it (100 km when blank).
+                  validUntil: new Date(Date.now() + Math.max(1, Math.ceil((Number(form.distance) || 100) / 200)) * 24 * 60 * 60 * 1000).toISOString(),
                   status: 'preview',
                 }}
                 isPreview

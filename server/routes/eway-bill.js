@@ -1,24 +1,25 @@
 import { Router } from 'express';
+import { randomBytes } from 'node:crypto';
 import { v4 as uuid } from 'uuid';
 import { readJSON, appendItem, findById, updateItem } from '../db/json-store.js';
 import { authRequired } from '../middleware/auth.js';
 
 const router = Router();
 
-// Generate bill number: MJ-2026-XXXXX
-function generateBillNumber() {
+// Draft reference: MJ-2026-XXXXXXXX, unique among stored drafts. It is not a GST e-way
+// bill number; only the GST portal issues those.
+function generateBillNumber(existing) {
   const year = new Date().getFullYear();
-  const rand = Math.floor(10000 + Math.random() * 90000);
-  return `MJ-${year}-${rand}`;
+  const taken = new Set(existing.map(bill => bill.billNumber));
+  for (;;) {
+    const number = `MJ-${year}-${randomBytes(4).toString('hex').toUpperCase()}`;
+    if (!taken.has(number)) return number;
+  }
 }
 
-// Calculate validity based on distance (Indian e-way bill rules simplified)
-function getValidity(distanceKm) {
-  if (distanceKm <= 100) return 1;    // 1 day
-  if (distanceKm <= 300) return 3;    // 3 days
-  if (distanceKm <= 500) return 5;    // 5 days
-  if (distanceKm <= 1000) return 10;  // 10 days
-  return 15;                           // 15 days
+// CGST Rule 138(10), ordinary cargo by road: one day per 200 km or part of it.
+export function getValidity(distanceKm) {
+  return Math.max(1, Math.ceil(distanceKm / 200));
 }
 
 // POST /api/eway-bill/generate — authRequired
@@ -46,13 +47,19 @@ router.post('/generate', authRequired, (req, res) => {
       transportMode,
       vehicleNumber,
       distance,
-    } = req.body;
+    } = req.body || {};
 
     if (!fromName || !toName || !cropName || !quantity || !value) {
       return res.status(400).json({ error: 'सभी आवश्यक फ़ील्ड भरें' });
     }
 
-    const distanceKm = Number(distance) || 100;
+    const distanceKm = distance === undefined || distance === '' ? 100 : Number(distance);
+    if (!Number.isFinite(distanceKm) || distanceKm <= 0 || distanceKm > 4000) {
+      return res.status(400).json({ error: 'दूरी 1 से 4000 किमी के बीच होनी चाहिए' });
+    }
+    if (!(Number(quantity) > 0) || !(Number(value) > 0)) {
+      return res.status(400).json({ error: 'मात्रा और मूल्य 0 से अधिक होने चाहिए' });
+    }
     const validityDays = getValidity(distanceKm);
     const now = new Date();
     const validFrom = now.toISOString();
@@ -60,7 +67,7 @@ router.post('/generate', authRequired, (req, res) => {
 
     const bill = {
       id: uuid(),
-      billNumber: generateBillNumber(),
+      billNumber: generateBillNumber(readJSON('eway-bills.json')),
       userId: req.user.id,
       userName: req.user.name,
       supplyType: supplyType || 'outward',
@@ -104,7 +111,7 @@ router.post('/generate', authRequired, (req, res) => {
 
     appendItem('eway-bills.json', bill);
     res.status(201).json(bill);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'E-way Bill जनरेट करने में विफल' });
   }
 });
@@ -117,7 +124,7 @@ router.get('/my', authRequired, (req, res) => {
       .filter(b => b.userId === req.user.id)
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     res.json(userBills);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'Bills लोड करने में विफल' });
   }
 });
@@ -132,7 +139,7 @@ router.get('/:id', authRequired, (req, res) => {
       return res.status(403).json({ error: 'अनुमति नहीं है' });
     }
     res.json(bill);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'Bill लोड करने में विफल' });
   }
 });
@@ -154,7 +161,7 @@ router.put('/:id/cancel', authRequired, (req, res) => {
       cancelledAt: new Date().toISOString(),
     });
     res.json(updated);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'Bill रद्द करने में विफल' });
   }
 });
