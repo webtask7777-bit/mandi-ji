@@ -46,3 +46,12 @@ test('every built ticker (all-India and each state) carries the robust price bas
     }
   }
 });
+
+test('thin national points are dropped but the newest day is kept', async () => {
+  const { dropThinBuckets } = require('../scripts/lib/robust-price.cjs');
+  const bucket = n => ({ byMandi: Object.fromEntries(Array.from({ length: n }, (_, i) => [`m${i}`, [1]])) });
+  const months = { '2025-12': bucket(5), '2026-01': bucket(5), '2026-03': bucket(500), '2026-04': bucket(600), '2026-05': bucket(550) };
+  assert.deepEqual(dropThinBuckets(months).sort(), ['2025-12', '2026-01']);
+  const days = { '2026-07-18': bucket(300), '2026-07-19': bucket(280), '2026-07-20': bucket(310), '2026-10-16': bucket(4) };
+  assert.deepEqual(dropThinBuckets(days, 0.2, { keepLatest: true }), []);
+});

@@ -101,3 +101,15 @@ test('all three price loaders preserve source values while correcting only crop 
     assert.deepEqual(load(), { ...original, crop: { ...original.crop, nameHi } }, path);
   }
 });
+
+test('no two served crops share a Hindi display name', async () => {
+  const { readFileSync } = await import('node:fs');
+  const { normalizeCropDataset } = await import('../server/db/crop-display-names.js');
+  const { isCropPriceCommodity } = await import('../src/utils/cropEligibility.js');
+  const crops = normalizeCropDataset('crops', JSON.parse(readFileSync(new URL('../server/db/data/india/crops.json', import.meta.url), 'utf8'))).filter(c => isCropPriceCommodity(c.id));
+  const seen = new Map();
+  for (const crop of crops) {
+    assert.ok(!seen.has(crop.nameHi), `${crop.id} and ${seen.get(crop.nameHi)} are both "${crop.nameHi}"`);
+    seen.set(crop.nameHi, crop.id);
+  }
+});

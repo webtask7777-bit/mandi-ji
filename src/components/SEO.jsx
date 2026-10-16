@@ -20,8 +20,9 @@ const SCHEMA_JSON = JSON.stringify({
   description: DEFAULTS.description,
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
-  inLanguage: ['hi', 'en'],
-  author: { '@type': 'Organization', name: 'SahiBhav' },
+  inLanguage: 'hi',
+  isAccessibleForFree: true,
+  author: { '@type': 'Organization', name: 'SahiBhav', url: SITE_URL },
 });
 
 export default function SEO({ title, description, path, noIndex = false, structuredData, image, imageAlt, type = 'website' }) {

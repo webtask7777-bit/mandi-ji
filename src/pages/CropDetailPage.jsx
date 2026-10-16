@@ -97,7 +97,7 @@ export default function CropDetailPage() {
           {priceError && <div className="sb-detail-notice" role="alert"><AlertCircle size={20} aria-hidden="true" /><div><strong>{unavailable ? 'यह फसल पृष्ठ उपलब्ध नहीं है' : 'भाव के रिकॉर्ड लोड नहीं हो पाए'}</strong><p>{unavailable ? 'इस क्षेत्र की उपलब्ध फसलों की सूची से भाव देखें।' : 'कनेक्शन की जाँच करें और पृष्ठ दोबारा खोलें।'}</p></div>{unavailable ? <Link to={dashboardPath}>उपलब्ध फसलें देखें</Link> : <button type="button" onClick={() => window.location.reload()}>फिर कोशिश करें</button>}</div>}
           <div className="sb-crop-detail-grid">
             <section className="sb-crop-quote" aria-label={`${cropName} का उपलब्ध भाव`}>
-              <div className="sb-crop-quote__identity"><div><span className="sb-detail-kicker">{latestDay ? 'दैनिक रिकॉर्ड का भाव' : latestMonth ? 'मासिक औसत भाव' : 'उपलब्ध मंडी भाव'}</span><h2>{cropName}</h2><p>{quoteLabel}</p></div><CropImage id={cropId} name={cropName} size="hero" /></div>
+              <div className="sb-crop-quote__identity"><div><span className="sb-detail-kicker">{latestDay ? 'दैनिक रिकॉर्ड का भाव' : latestMonth ? 'महीने का मध्य भाव' : 'उपलब्ध मंडी भाव'}</span><h2>{cropName}</h2><p>{quoteLabel}</p></div><CropImage id={cropId} name={cropName} size="hero" /></div>
               {heroPrice !== null ? <>
                 <div className="sb-crop-quote__value"><strong>₹{money(heroPrice)}</strong><span>/ क्विंटल</span></div>
                 {change !== null ? <div className={`sb-detail-change ${change > 0 ? 'is-up' : change < 0 ? 'is-down' : 'is-flat'}`}>

@@ -327,7 +327,7 @@ test('a per-trip quote does not need a distance; a per-km rate does', async () =
 test('price basis codes are shown in Hindi, unknown codes are not shown raw', async () => {
   const { priceBasisLabel } = await import('../src/utils/deliveryCalculator.js');
   assert.equal(priceBasisLabel('daily-average'), 'उस दिन के दर्ज भावों का औसत');
-  assert.match(priceBasisLabel('recent'), /हाल के/);
+  assert.match(priceBasisLabel('recent'), /आख़िरी दर्ज तारीख तक के 7 दिनों/);
   assert.equal(priceBasisLabel('something-new'), '');
 });
 

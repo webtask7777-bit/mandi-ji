@@ -1,25 +1,21 @@
 import { Router } from 'express';
-import { loadData, loadIndiaData, loadStateData } from '../db/connection.js';
+import { loadIndiaData, loadStateData } from '../db/connection.js';
 
 const router = Router();
 
 router.get('/', (req, res) => {
   const { state, district_id } = req.query;
-  if (state === 'all') return res.json([]);
-  if (state && state !== 'chhattisgarh') return res.json(loadStateData(state, 'mandis') || []);
-
-  const mandis = loadData('mandis');
-  const districts = loadData('districts');
-  let result = mandis.map(m => ({ ...m, district: districts.find(d => d.id === m.districtId) }));
-  if (district_id) result = result.filter(m => m.districtId === Number(district_id));
-  res.json(result);
+  // Every state, Chhattisgarh included, uses the current aggregated files. The legacy
+  // Chhattisgarh files (March 2026, old crop ids) are no longer served.
+  if (!state || state === 'all') return res.json([]);
+  const mandis = loadStateData(state, 'mandis') || [];
+  res.json(district_id ? mandis.filter(m => m.district === district_id) : mandis);
 });
 
 router.get('/heatmap', (req, res) => {
   const { state } = req.query;
-  if (state === 'all') return res.json(loadIndiaData('heatmap') || {});
-  if (state && state !== 'chhattisgarh') return res.json(loadStateData(state, 'heatmap') || {});
-  res.json(loadData('heatmap'));
+  if (!state || state === 'all') return res.json(loadIndiaData('heatmap') || {});
+  res.json(loadStateData(state, 'heatmap') || {});
 });
 
 export default router;

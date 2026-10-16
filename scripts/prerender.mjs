@@ -73,6 +73,20 @@ async function render(route) {
 function hasPrice(detail) {
   return [...(detail?.dailyHistory || []), ...(detail?.history || [])].some(row => Number(row.market) > 0);
 }
+// Pages whose newest record is more than STALE_DAYS older than the newest observation in the
+// data stay reachable but are not offered to search engines (noindex, not in the sitemap)
+// until fresh records arrive.
+const STALE_DAYS = 90;
+function latestRecordDate(detail) {
+  const daily = (detail?.dailyHistory || []).filter(row => Number(row.market) > 0).map(row => String(row.date)).sort().at(-1);
+  const monthly = (detail?.history || []).filter(row => Number(row.market) > 0).map(row => `${row.date}-28`).sort().at(-1);
+  return daily || monthly || null;
+}
+function isFresh(detail, newest) {
+  const latest = latestRecordDate(detail);
+  if (!latest || !newest) return Boolean(latest);
+  return (Date.parse(`${newest}T00:00:00Z`) - Date.parse(`${latest.slice(0, 10)}T00:00:00Z`)) / 86400000 <= STALE_DAYS;
+}
 async function writePage(route, html) {
   const output = path.join(dist, route === '/' ? 'index.html' : `${route.slice(1)}.html`);
   await mkdir(path.dirname(output), { recursive: true });
@@ -82,6 +96,7 @@ try {
   await mkdir(generated, { recursive: true });
   const routes = new Set(['/', '/delivery-calculator', '/bechne-ka-hisab', '/data-status', '/about', '/contact', '/privacy', '/terms', '/blog']);
   const knownCrops = new Set();
+  const newestObservation = loadIndiaData('stats')?.newestObservation || null;
   const states = (loadIndiaData('states') || []).filter(state => state.hasData);
   const scopes = ['all', ...new Set(states.map(state => state.id))];
   for (const scope of scopes) {
@@ -93,7 +108,7 @@ try {
       knownCrops.add(route);
       let detail;
       try { detail = scope === 'all' ? loadIndiaCropPrices(crop.id) : loadStateCropPrices(scope, crop.id); } catch { /* no observed prices: keep out of sitemap */ }
-      if (hasPrice(detail)) routes.add(route);
+      if (hasPrice(detail) && isFresh(detail, newestObservation)) routes.add(route);
     }
   }
   const posts = JSON.parse(await readFile(path.join(root, 'server/db/data/blog-posts.json'), 'utf8'));
@@ -107,7 +122,7 @@ try {
     await writePage(route, html);
     if (++count % 100 === 0) console.log(`Prerendered ${count}/${routes.size} public pages`);
   }
-  // Empty catalog entries remain usable but are not advertised to search engines.
+  // Empty or stale catalog entries remain usable but are not advertised to search engines.
   for (const route of knownCrops) if (!routes.has(route)) await writePage(route, (await render(route)).replace(/content="index, follow, max-image-preview:large"/g, 'content="noindex, follow"'));
   const notFound = (await render('/__not-found__')).replace(/<link[^>]*rel="canonical"[^>]*>/g, '').replace(/<meta[^>]*property="og:url"[^>]*>/g, '');
   await writeFile(path.join(dist, '404.html'), notFound);

@@ -8,8 +8,8 @@
 const fs = require('fs');
 const path = require('path');
 const { recordKey, MIN_PLAUSIBLE_PRICE } = require('./lib/daily-store.cjs');
-const { monthChange, changeSignal } = require('./lib/month-change.cjs');
-const { newBucket, addPrice, bucketPrice, unitMismatchedSeries } = require('./lib/robust-price.cjs');
+const { monthChange } = require('./lib/month-change.cjs');
+const { newBucket, addPrice, bucketPrice, unitMismatchedSeries, dropThinBuckets, priceSanity } = require('./lib/robust-price.cjs');
 
 const DATA_DIR = path.join(__dirname, '..', 'server', 'db', 'data');
 const DAILY_DIR = path.join(DATA_DIR, 'daily');
@@ -195,7 +195,7 @@ const CROP_SEASONS = {
   'coconut':      { sowingMonths: [], growingMonths: [0,1,2,3,4,5,6,7,8,9,10,11], harvestMonths: [0,1,2,3,4,5,6,7,8,9,10,11], peakMonths: [0,1,2,3,4,5,6,7,8,9,10,11] },
   // Grains & Pulses
   'paddycommon':  { sowingMonths: [5,6], growingMonths: [7,8,9], harvestMonths: [10,11], peakMonths: [11,0,1] },
-  'wheat':        { sowingMonths: [10,11], growingMonths: [0,1], harvestMonths: [3,4], peakMonths: [4,5] },
+  'wheat':        { sowingMonths: [10,11], growingMonths: [0,1], harvestMonths: [2,3], peakMonths: [3,4] }, // harvest Mar–Apr, arrivals peak Apr–May
   'maize':        { sowingMonths: [5,6], growingMonths: [7,8], harvestMonths: [9,10], peakMonths: [10,11] },
   'rice':         { sowingMonths: [5,6], growingMonths: [7,8,9], harvestMonths: [10,11], peakMonths: [11,0] },
   'bajrapearl-millet-cumbu': { sowingMonths: [6,7], growingMonths: [8,9], harvestMonths: [9,10], peakMonths: [10,11] },
@@ -338,8 +338,11 @@ function main() {
   // Leave out series reported in another unit (per bunch, per nut): they are not ₹/quintal.
   const seriesKey = r => `${r.commodity}|${r.state}|${r.district}|${r.market}`;
   const unitExcluded = unitMismatchedSeries(dedupedRecords, { seriesKey, commodityKey: r => r.commodity });
-  const allRecords = dedupedRecords.filter(r => !unitExcluded.has(seriesKey(r)));
-  console.log(`Unit check: ${unitExcluded.size} series (${dedupedRecords.length - allRecords.length} records) left out as not per quintal`);
+  const unitChecked = dedupedRecords.filter(r => !unitExcluded.has(seriesKey(r)));
+  console.log(`Unit check: ${unitExcluded.size} series (${dedupedRecords.length - unitChecked.length} records) left out as not per quintal`);
+  const sanity = priceSanity(unitChecked, r => r.commodity);
+  const allRecords = unitChecked.filter(r => sanity.keep(r)).map(r => sanity.clip(r));
+  console.log(`Price sanity: ${unitChecked.length - allRecords.length} records more than 20x from the commodity's typical price left out`);
 
   // "Recent" = the 7 days before the newest observation (UTC dates), not the newest file name.
   let newestObservation = '';
@@ -701,6 +704,12 @@ function main() {
     return top;
   }
 
+  // National series: leave out months/days whose mandi count collapses (one state's history
+  // before national coverage for that crop, e.g. tomato Dec 2025 – Feb 2026 = 5 CG mandis).
+  let thinRemoved = 0;
+  for (const c of Object.values(allCrops)) thinRemoved += dropThinBuckets(c.byMonth).length + dropThinBuckets(c.byDay, 0.2, { keepLatest: true }).length;
+  console.log(`National series: ${thinRemoved} thin month/day points left out`);
+
   // Mandi-compare row: a recent price (last 7 days before the newest observation) with the
   // min/max of that same window; mandis without recent data keep their historical average and
   // last date, and are listed after every mandi with a recent price.
@@ -809,8 +818,6 @@ function main() {
 
     // Signals come only from a valid month-over-month change. MSP comparisons are not used:
     // the MSP table is a past season's figures.
-    let signal = 'hold', signalHi = 'होल्ड';
-    if (changeSignal(changePct)) ({ signal, signalHi } = changeSignal(changePct));
 
     tickerData.push({
       id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji,
@@ -821,7 +828,6 @@ function main() {
       records: c.records, mandiCount,
       bestMandi: bestMandi ? { name: bestMandi.name, state: bestMandi.state, stateCode: bestMandi.stateCode, price: Math.round(bestMandi.recentPrices.reduce((a, b) => a + b, 0) / bestMandi.recentPrices.length) } : null,
       worstMandi: worstMandi ? { name: worstMandi.name, state: worstMandi.state, stateCode: worstMandi.stateCode, price: Math.round(worstMandi.recentPrices.reduce((a, b) => a + b, 0) / worstMandi.recentPrices.length) } : null,
-      signal, signalHi,
     });
   }
   tickerData.sort((a, b) => b.records - a.records);
@@ -848,12 +854,10 @@ function main() {
       const months = Object.entries(c.byMonth).sort(([a], [b]) => a.localeCompare(b));
       const { price: lp, prevPrice: pp, change: ch, changePct: chPct, month: pMonth, days: pDays, mandis: pMandis } = monthChange(months);
       const msp = getCropMSP(cropId);
-      let sig = 'hold', sigHi = 'होल्ड';
-      if (changeSignal(chPct)) ({ signal: sig, signalHi: sigHi } = changeSignal(chPct));
       stTicker.push({
         id: cropId, name: c.name, nameHi: getCropHindi(cropId, c.name) || c.name, emoji: c.emoji,
         price: lp, priceMonth: pMonth, priceDays: pDays, priceMandis: pMandis, prevPrice: pp, change: ch, changePct: chPct,
-        msp: msp || null, mspSeason: mspInfo(cropId).mspSeason || null, mspSource: mspInfo(cropId).mspSource || null, records: c.records, signal: sig, signalHi: sigHi,
+        msp: msp || null, mspSeason: mspInfo(cropId).mspSeason || null, mspSource: mspInfo(cropId).mspSource || null, records: c.records,
       });
     }
     stTicker.sort((a, b) => b.records - a.records);
