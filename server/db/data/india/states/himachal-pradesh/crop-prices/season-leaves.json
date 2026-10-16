@@ -33,10 +33,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 2036,
-      "volume": 12,
-      "days": 11,
-      "mandis": 2
+      "market": 1550,
+      "volume": 15,
+      "days": 12,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -159,15 +159,23 @@
       "mandis": 1,
       "minPrice": 1300,
       "maxPrice": 1800
+    },
+    {
+      "date": "2026-10-16",
+      "market": 1300,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 1000,
+      "maxPrice": 1700
     }
   ],
-  "lastUpdated": "2026-10-16T07:04:32.377Z",
+  "lastUpdated": "2026-10-16T22:02:00.498Z",
   "districtBreakdown": [
     {
       "district": "Una",
       "nameHi": "Una",
-      "avgPrice": 1675,
-      "records": 12
+      "avgPrice": 1646,
+      "records": 13
     },
     {
       "district": "Shimla",
@@ -178,7 +186,13 @@
     {
       "district": "Hamirpur",
       "nameHi": "Hamirpur",
-      "avgPrice": 2500,
+      "avgPrice": 2050,
+      "records": 2
+    },
+    {
+      "district": "Mandi",
+      "nameHi": "Mandi",
+      "avgPrice": 1100,
       "records": 1
     }
   ]

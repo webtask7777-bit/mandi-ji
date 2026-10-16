@@ -41,10 +41,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 130000,
-      "volume": 1,
+      "market": 135000,
+      "volume": 5,
       "days": 1,
-      "mandis": 1
+      "mandis": 5
     }
   ],
   "dailyHistory": [
@@ -178,20 +178,20 @@
     },
     {
       "date": "2026-10-16",
-      "market": 130000,
-      "volume": 1,
-      "mandis": 1,
+      "market": 135000,
+      "volume": 5,
+      "mandis": 5,
       "minPrice": 130000,
-      "maxPrice": 130000
+      "maxPrice": 142000
     }
   ],
-  "lastUpdated": "2026-10-16T07:04:32.377Z",
+  "lastUpdated": "2026-10-16T22:02:00.498Z",
   "districtBreakdown": [
     {
       "district": "Barabanki",
       "nameHi": "Barabanki",
-      "avgPrice": 113903,
-      "records": 12
+      "avgPrice": 117392,
+      "records": 14
     },
     {
       "district": "Sitapur",
@@ -236,21 +236,27 @@
       "records": 2
     },
     {
+      "district": "Rampur",
+      "nameHi": "Rampur",
+      "avgPrice": 116750,
+      "records": 2
+    },
+    {
       "district": "Bareilly",
       "nameHi": "Bareilly",
       "avgPrice": 108000,
       "records": 1
     },
     {
-      "district": "Rampur",
-      "nameHi": "Rampur",
-      "avgPrice": 101000,
-      "records": 1
-    },
-    {
       "district": "Amroha",
       "nameHi": "Amroha",
       "avgPrice": 50000,
+      "records": 1
+    },
+    {
+      "district": "Shahjahanpur",
+      "nameHi": "Shahjahanpur",
+      "avgPrice": 135000,
       "records": 1
     }
   ]

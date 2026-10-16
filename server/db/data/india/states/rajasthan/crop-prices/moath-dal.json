@@ -21,6 +21,14 @@
       "volume": 2,
       "days": 2,
       "mandis": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 8104,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -71,9 +79,17 @@
       "mandis": 1,
       "minPrice": 3700,
       "maxPrice": 3850
+    },
+    {
+      "date": "2026-10-16",
+      "market": 8104,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 7200,
+      "maxPrice": 9008
     }
   ],
-  "lastUpdated": "2026-10-16T07:04:32.377Z",
+  "lastUpdated": "2026-10-16T22:02:00.498Z",
   "districtBreakdown": [
     {
       "district": "Barmer",
@@ -86,6 +102,12 @@
       "nameHi": "Churu",
       "avgPrice": 4788,
       "records": 4
+    },
+    {
+      "district": "Bikaner",
+      "nameHi": "Bikaner",
+      "avgPrice": 8104,
+      "records": 1
     }
   ]
 }

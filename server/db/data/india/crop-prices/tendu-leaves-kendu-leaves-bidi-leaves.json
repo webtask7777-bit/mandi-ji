@@ -21,6 +21,14 @@
       "volume": 2,
       "days": 2,
       "mandis": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 9250,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -47,20 +55,34 @@
       "mandis": 1,
       "minPrice": 2400,
       "maxPrice": 2400
+    },
+    {
+      "date": "2026-10-16",
+      "market": 9250,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 6000,
+      "maxPrice": 12500
     }
   ],
-  "lastUpdated": "2026-10-16T07:04:32.377Z",
+  "lastUpdated": "2026-10-16T22:02:00.498Z",
   "districtBreakdown": [
     {
       "district": "Amroha (उत्तर प्रदेश)",
       "nameHi": "Amroha (उत्तर प्रदेश)",
-      "avgPrice": 6214,
-      "records": 2
+      "avgPrice": 8309,
+      "records": 3
     },
     {
       "district": "Unnao (उत्तर प्रदेश)",
       "nameHi": "Unnao (उत्तर प्रदेश)",
       "avgPrice": 2400,
+      "records": 1
+    },
+    {
+      "district": "Kannuj (उत्तर प्रदेश)",
+      "nameHi": "Kannuj (उत्तर प्रदेश)",
+      "avgPrice": 6000,
       "records": 1
     }
   ]

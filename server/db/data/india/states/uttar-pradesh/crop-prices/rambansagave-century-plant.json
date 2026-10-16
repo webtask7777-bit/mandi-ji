@@ -29,6 +29,14 @@
       "volume": 7,
       "days": 4,
       "mandis": 5
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 500,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -79,9 +87,17 @@
       "mandis": 1,
       "minPrice": 430,
       "maxPrice": 430
+    },
+    {
+      "date": "2026-10-16",
+      "market": 500,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 400,
+      "maxPrice": 600
     }
   ],
-  "lastUpdated": "2026-10-16T07:04:32.377Z",
+  "lastUpdated": "2026-10-16T22:02:00.498Z",
   "districtBreakdown": [
     {
       "district": "Kanpur",
@@ -117,6 +133,18 @@
       "district": "Unnao",
       "nameHi": "Unnao",
       "avgPrice": 430,
+      "records": 1
+    },
+    {
+      "district": "Pratapgarh",
+      "nameHi": "Pratapgarh",
+      "avgPrice": 400,
+      "records": 1
+    },
+    {
+      "district": "Rampur",
+      "nameHi": "Rampur",
+      "avgPrice": 600,
       "records": 1
     }
   ]

@@ -69,9 +69,9 @@
       "month": "10",
       "date": "2026-10",
       "market": 2800,
-      "volume": 85,
-      "days": 15,
-      "mandis": 17,
+      "volume": 90,
+      "days": 16,
+      "mandis": 19,
       "msp": 4023
     }
   ],
@@ -651,9 +651,17 @@
       "mandis": 2,
       "minPrice": 2371,
       "maxPrice": 5200
+    },
+    {
+      "date": "2026-10-16",
+      "market": 2725,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 2396,
+      "maxPrice": 4200
     }
   ],
-  "lastUpdated": "2026-10-16T07:04:32.377Z",
+  "lastUpdated": "2026-10-16T22:02:00.498Z",
   "districtBreakdown": [
     {
       "district": "Ajmer",
@@ -680,16 +688,16 @@
       "records": 17
     },
     {
+      "district": "Udaipur",
+      "nameHi": "Udaipur",
+      "avgPrice": 2512,
+      "records": 14
+    },
+    {
       "district": "Bhilwara",
       "nameHi": "Bhilwara",
       "avgPrice": 2348,
       "records": 14
-    },
-    {
-      "district": "Udaipur",
-      "nameHi": "Udaipur",
-      "avgPrice": 2457,
-      "records": 12
     },
     {
       "district": "Kota",
@@ -706,14 +714,14 @@
     {
       "district": "Nagaur",
       "nameHi": "Nagaur",
-      "avgPrice": 2833,
-      "records": 6
+      "avgPrice": 2800,
+      "records": 7
     },
     {
       "district": "Beawar",
       "nameHi": "Beawar",
-      "avgPrice": 3060,
-      "records": 5
+      "avgPrice": 3183,
+      "records": 6
     },
     {
       "district": "Dausa",
@@ -725,6 +733,12 @@
       "district": "Swai Madhopur",
       "nameHi": "Swai Madhopur",
       "avgPrice": 2175,
+      "records": 1
+    },
+    {
+      "district": "Pali",
+      "nameHi": "Pali",
+      "avgPrice": 2725,
       "records": 1
     }
   ]

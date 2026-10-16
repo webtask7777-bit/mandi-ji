@@ -13,6 +13,14 @@
       "volume": 2,
       "days": 2,
       "mandis": 1
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 11000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -31,15 +39,29 @@
       "mandis": 1,
       "minPrice": 7000,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 11000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 10500,
+      "maxPrice": 11500
     }
   ],
-  "lastUpdated": "2026-10-16T07:04:32.377Z",
+  "lastUpdated": "2026-10-16T22:02:00.498Z",
   "districtBreakdown": [
     {
       "district": "Cuttack",
       "nameHi": "Cuttack",
       "avgPrice": 7500,
       "records": 2
+    },
+    {
+      "district": "Balasore",
+      "nameHi": "Balasore",
+      "avgPrice": 11000,
+      "records": 1
     }
   ]
 }

@@ -81,10 +81,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 4500,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
+      "market": 5000,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -1327,9 +1327,17 @@
       "mandis": 1,
       "minPrice": 4000,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 5500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5500,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-16T07:04:32.377Z",
+  "lastUpdated": "2026-10-16T22:02:00.498Z",
   "districtBreakdown": [
     {
       "district": "Sundergarh",
@@ -1368,6 +1376,12 @@
       "records": 2
     },
     {
+      "district": "Balasore",
+      "nameHi": "Balasore",
+      "avgPrice": 5750,
+      "records": 2
+    },
+    {
       "district": "Sonepur",
       "nameHi": "Sonepur",
       "avgPrice": 4000,
@@ -1377,12 +1391,6 @@
       "district": "Khurda",
       "nameHi": "Khurda",
       "avgPrice": 3800,
-      "records": 1
-    },
-    {
-      "district": "Balasore",
-      "nameHi": "Balasore",
-      "avgPrice": 6000,
       "records": 1
     }
   ]

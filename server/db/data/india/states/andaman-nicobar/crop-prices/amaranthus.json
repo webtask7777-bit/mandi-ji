@@ -45,6 +45,14 @@
       "volume": 32,
       "days": 16,
       "mandis": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 7000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -295,15 +303,23 @@
       "mandis": 2,
       "minPrice": 3000,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-10-16",
+      "market": 7000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-10-16T07:04:32.377Z",
+  "lastUpdated": "2026-10-16T22:02:00.498Z",
   "districtBreakdown": [
     {
       "district": "North and Middle Andaman",
       "nameHi": "North and Middle Andaman",
-      "avgPrice": 4073,
-      "records": 48
+      "avgPrice": 4133,
+      "records": 49
     }
   ]
 }
