@@ -1,0 +1,86 @@
+{
+  "createdAt": "2026-10-16",
+  "generator": "Built-in image_gen.imagegen",
+  "useCase": "product-mockup",
+  "note": "AI-generated representative commodity illustrations for mandi UI, not specimen photographs or an identification tool. Research URLs support commodity identity; they are not image sources. Original source crop names are preserved.",
+  "styleReference": "public/visuals/crop-arhar-whole.webp (visually inspected, not sent as imagegen edit input)",
+  "export": {
+    "format": "WebP",
+    "width": 512,
+    "height": 512,
+    "quality": 82,
+    "alphaQuality": 100,
+    "background": "transparent",
+    "commandTemplate": "convert INPUT -resize 512x512 -quality 82 -define webp:alpha-quality=100 OUTPUT"
+  },
+  "assets": [
+    {
+      "id": "giloy",
+      "prompt": "Use case: product-mockup. Asset type: a single commodity thumbnail for a Hindi Indian agricultural mandi app, matching a premium realistic cutout product-photo icon set. Photorealistic studio catalog photography, precise natural surface detail, soft even studio lighting, no harsh shadow. Square 1:1 canvas; compact centered subject filling roughly 82 percent of width, fully visible, comfortable transparent padding. Camera at low three-quarter tabletop angle. Genuinely transparent alpha background, no floor, no backdrop, no cast shadow, no checkerboard. No lettering, no labels, no watermark, no packaging, no bowl, no basket, no decorative props. Subject: Giloy / Tinospora cordifolia, a compact bundle of five short freshly cut woody climbing-vine stem segments, thick corky knobbly green-brown skin with raised lenticels, pale creamy porous cut cross-sections visible on two segments. One broad distinctly heart-shaped green Tinospora cordifolia leaf behind the stems with palmate veins. The stems are the main traded commodity. Botanically credible and recognisable; not bamboo, not ginger, not sugarcane. Isolated stems and one leaf only.",
+      "scientificName": "Tinospora cordifolia",
+      "sources": [
+        "https://ayush.gov.in/resources/pdf/quality_standards/Advisory-on-Guduchi-for-General-Public.pdf",
+        "https://indiaflora-ces.iisc.ac.in/EasternGhats/herbsheet.php?cat=4&id=2396"
+      ],
+      "generatedSource": "/workspace/scratch/631417f8700e/generated_images/exec-877e0878-61bb-4eb6-9a9b-65cde663da56.png",
+      "path": "public/visuals/crop-giloy.webp",
+      "transparent_background": true
+    },
+    {
+      "id": "behada",
+      "prompt": "Use case: product-mockup. Asset type: a single commodity thumbnail for a Hindi Indian agricultural mandi app, matching a premium realistic cutout product-photo icon set. Photorealistic studio catalog photography, precise natural surface detail, soft even studio lighting, no harsh shadow. Square 1:1 canvas; compact centered subject filling roughly 82 percent of width, fully visible, comfortable transparent padding. Camera at low three-quarter tabletop angle. Genuinely transparent alpha background, no floor, no backdrop, no cast shadow, no checkerboard. No lettering, no labels, no watermark, no packaging, no bowl, no basket, no decorative props. Subject: Bahera / Behada / Terminalia bellirica, approximately fourteen whole dried fruits in a compact heap. Small oval to almost spherical grey-tan and muted brown fruits, gently longitudinally ridged, fine natural powdery and faintly velvety weathered surfaces, occasional pointed short end, a few fruits resting individually at front. These are whole dried beleric myrobalan fruits; not walnuts, not almond shells, not bright green amla, not elongated strongly ribbed harad. Natural botanical accuracy.",
+      "scientificName": "Terminalia bellirica",
+      "sources": [
+        "https://cb.imsc.res.in/imppat/phytochemical/Terminalia%20bellirica"
+      ],
+      "generatedSource": "/workspace/scratch/631417f8700e/generated_images/exec-899a2e4e-5186-45c6-879f-6533643c0e2d.png",
+      "path": "public/visuals/crop-behada.webp",
+      "transparent_background": true
+    },
+    {
+      "id": "neem-seed",
+      "prompt": "Use case: product-mockup. Asset type: a single commodity thumbnail for a Hindi Indian agricultural mandi app, matching a premium realistic cutout product-photo icon set. Photorealistic studio catalog photography, precise natural surface detail, soft even studio lighting, no harsh shadow. Square 1:1 canvas; compact centered subject filling roughly 82 percent of width, fully visible, comfortable transparent padding. Camera at low three-quarter tabletop angle. Genuinely transparent alpha background, no floor, no backdrop, no cast shadow, no checkerboard. No lettering, no labels, no watermark, no packaging, no bowl, no basket, no decorative props. Subject: Neem seeds (Azadirachta indica), a compact mound of many narrow elongated ovoid dry seeds/kernels, cream to buff with some papery tan outer skin and occasional muted beige-brown streaks. Pointed or tapered ends, subtle irregular natural texture, roughly rice-to-peanut sized proportions, oblong kernels noticeably longer than wide. A few loose seeds at front. Botanical product accuracy: no green peas, no round beans, no sunflower seeds, no rice grains, no fresh neem fruits, no leaves.",
+      "scientificName": "Azadirachta indica",
+      "sources": [
+        "https://nmpb.nic.in/sites/default/files/OperationalGuidlines2024Eng.pdf",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294709&lang=1&reg=48"
+      ],
+      "generatedSource": "/workspace/scratch/631417f8700e/generated_images/exec-c183e978-f43e-4343-a3e3-c2082c7930df.png",
+      "path": "public/visuals/crop-neem-seed.webp",
+      "transparent_background": true
+    },
+    {
+      "id": "grass-pea",
+      "prompt": "Use case: product-mockup. Asset type: a single commodity thumbnail for a Hindi Indian agricultural mandi app, matching a premium realistic cutout product-photo icon set. Photorealistic studio catalog photography, precise natural surface detail, soft even studio lighting, no harsh shadow. Square 1:1 canvas; compact centered subject filling roughly 82 percent of width, fully visible, comfortable transparent padding. Camera at low three-quarter tabletop angle. Genuinely transparent alpha background, no floor, no backdrop, no cast shadow, no checkerboard. No lettering, no labels, no watermark, no packaging, no bowl, no basket, no decorative props. Subject: dry whole grass-pea seeds, Lathyrus sativus, known as khesari / Tivda / Tiwra. A compact mound of many small distinctly angular wedge-shaped and irregular four-sided seeds with flat planes and modest rounded edges, muted grey-beige, cream and very pale subdued grey-green shades, subtle mottling. Several isolated seeds at front clearly show their angular wedge outlines and small hilum. Dry whole seeds, not split yellow dal, not round garden peas, not spherical chickpeas, not pigeonpeas. Botanically recognisable product photo.",
+      "scientificName": "Lathyrus sativus",
+      "sources": [
+        "https://www.icar-iipr.org.in/lathyrus/",
+        "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2021.826208/full"
+      ],
+      "generatedSource": "/workspace/scratch/631417f8700e/generated_images/exec-639f17a9-1c96-456b-9e2b-de288d6070f9.png",
+      "path": "public/visuals/crop-grass-pea.webp",
+      "transparent_background": true
+    }
+  ],
+  "additionalIdentityResearch": {
+    "marget": {
+      "identity": "Unverified botanical identity; preserve source name Marget; no verified equivalence to Marguerite",
+      "marketContextSources": [
+        "https://acrop.app/mandi/delhi/shahdara/flower-marketgazipur/marget"
+      ]
+    },
+    "delha": {
+      "identity": "Unverified botanical identity; preserve source name Delha; no verified equivalence to Dahlia or Dhaincha",
+      "marketContextSources": [
+        "https://www.napanta.com/commodity-agri-market/nct-of-delhi/delha/flower-market%2Cgazipur/"
+      ]
+    },
+    "chhappanKaddu": {
+      "identity": "Summer squash, Cucurbita pepo; pattypan is one form and not a universal identity",
+      "sources": [
+        "https://epubs.icar.org.in/index.php/IJAgS/article/download/54232/22878/370041",
+        "https://pau.edu/content/ccil/pf/2.pdf"
+      ]
+    }
+  }
+}

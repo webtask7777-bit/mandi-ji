@@ -1,0 +1,65 @@
+{
+  "created": "2026-10-16",
+  "method": "Built-in imagegen; original assets for missing monthly mover images",
+  "export": {
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "quality": 82,
+    "alphaQuality": 100
+  },
+  "identityNotes": {
+    "flower-category": "Representative flower-category illustration for source names Marget and Delha; exact botanical identities remain unverified. Visible disclosure required.",
+    "mixed-pulses": "Representative category artwork for Other Pulses, not one specific commodity.",
+    "summer-squash": "Chappan Kaddu is summer squash, Cucurbita pepo; not orange winter pumpkin.",
+    "tuberose-double": "Use only for Tube Rose(Double), not loose or single-flowered tuberose."
+  },
+  "sources": [
+    "https://epubs.icar.org.in/index.php/IJAgS/article/download/54232/22878/370041",
+    "https://pau.edu/content/ccil/pf/2.pdf"
+  ],
+  "assets": [
+    {
+      "id": "tuberose-double",
+      "prompt": "Create a professional photorealistic agricultural commodity cutout for a Hindi mandi-price app. Square composition. True transparent background. Centered compact arrangement filling 80% of the frame, all edges completely visible with generous clear margin. Soft natural studio light, accurate realistic textures, crisp silhouette readable at 40px thumbnail. No backdrop, no ground plane, no bowl, no packaging, no text, no labels, no watermark. Subject: three short flowering stems of DOUBLE-FLOWERED TUBEROSE (Polianthes tuberosa / Agave amica, Rajnigandha), slightly diagonally clustered. Small waxy ivory-white fragrant blossoms with multiple layers of petals arranged along upright green flower spikes, a few unopened tubular pale buds at their tips. Accurate tuberose morphology, not roses or lilies. Include just enough green stem to identify cut flowers; compact thumbnail arrangement.",
+      "generatedSource": "/workspace/scratch/631417f8700e/generated_images/exec-9ff60dee-db26-4d62-acdb-464974db14c3.png",
+      "output": "public/visuals/crop-tuberose-double.webp",
+      "transparent_background": true
+    },
+    {
+      "id": "chrysanthemum-loose",
+      "prompt": "Create a professional photorealistic agricultural commodity cutout for a Hindi mandi-price app. Square composition. True transparent background. Centered compact arrangement filling 80% of the frame, all edges completely visible with generous clear margin. Soft natural studio light, accurate realistic textures, crisp silhouette readable at 40px thumbnail. No backdrop, no ground plane, no bowl, no packaging, no text, no labels, no watermark. Subject: a compact loose pile of fresh cut CHRYSANTHEMUM flower heads sold in Indian flower mandis, mostly rich golden-yellow with two white heads. Dense many-layered narrow petals characteristic of chrysanthemum pompon flowers, green calyx visible under a side-facing bloom. Flowers detached from long stems, no bouquet, no vase. Not marigolds, not daisies.",
+      "generatedSource": "/workspace/scratch/631417f8700e/generated_images/exec-fea39498-ce75-488b-a541-277813ba7a7c.png",
+      "output": "public/visuals/crop-chrysanthemum-loose.webp",
+      "transparent_background": true
+    },
+    {
+      "id": "makhana",
+      "prompt": "Create a professional photorealistic agricultural commodity cutout for a Hindi mandi-price app. Square composition. True transparent background. Centered compact arrangement filling 80% of the frame, all edges completely visible with generous clear margin. Soft natural studio light, accurate realistic textures, crisp silhouette readable at 40px thumbnail. No backdrop, no ground plane, no bowl, no packaging, no text, no labels, no watermark. Subject: small compact mound of popped MAKHANA fox nuts, Euryale ferox. Puffy irregular cream-white spherical light kernels with subtle brown flecks and small natural toasted seed-skin marks, approximately marble size, distinct porous texture. Unseasoned white popped foxnuts, not popcorn, not peanuts, not black raw seeds.",
+      "generatedSource": "/workspace/scratch/631417f8700e/generated_images/exec-1c671012-59ac-40b7-bda2-df623dca84f7.png",
+      "output": "public/visuals/crop-makhana.webp",
+      "transparent_background": true
+    },
+    {
+      "id": "summer-squash",
+      "prompt": "Create a professional photorealistic agricultural commodity cutout for a Hindi mandi-price app. Square composition. True transparent background. Centered compact arrangement filling 80% of the frame, all edges completely visible with generous clear margin. Soft natural studio light, accurate realistic textures, crisp silhouette readable at 40px thumbnail. No backdrop, no ground plane, no bowl, no packaging, no text, no labels, no watermark. Subject: two fresh CHAPPAN KADDU Indian summer squash (Cucurbita pepo), small pale green flattened round fruits, gently scalloped shallow ribs and short thick green stems; one cut half in front exposing clean ivory-white flesh and very tender small immature cream seeds. These are tender summer squash, not orange pumpkins and not long zucchini. Restrained realistic light-green rind. Compact natural product arrangement.",
+      "generatedSource": "/workspace/scratch/631417f8700e/generated_images/exec-e84dd6a8-2bd6-4f97-84be-1b42f2ede130.png",
+      "output": "public/visuals/crop-summer-squash.webp",
+      "transparent_background": true
+    },
+    {
+      "id": "mixed-pulses",
+      "prompt": "Create a professional photorealistic agricultural commodity cutout for a Hindi mandi-price app. Square composition. True transparent background. Centered compact arrangement filling 80% of the frame, all edges completely visible with generous clear margin. Soft natural studio light, accurate realistic textures, crisp silhouette readable at 40px thumbnail. No backdrop, no ground plane, no bowl, no packaging, no text, no labels, no watermark. Subject: representative mixed dry whole pulses category. A compact low mound containing visibly varied whole green mung beans, black urad beans, brown lentils, tan chickpeas and reddish-brown pigeon peas, mixed naturally with clearly distinct seed sizes. Represents the category 'other pulses', not a particular single commodity. No prepared dish, no sprouting, no powder, no leaves.",
+      "generatedSource": "/workspace/scratch/631417f8700e/generated_images/exec-96e01e1c-ea34-4874-9322-0355f8b61177.png",
+      "output": "public/visuals/crop-mixed-pulses.webp",
+      "transparent_background": true
+    },
+    {
+      "id": "flower-category",
+      "prompt": "Create one premium polished softly dimensional illustration icon for a flower commodity category in an Indian agricultural app. Square transparent canvas, centered compact tiny bouquet formed from three clearly stylized geometric flowers with rounded cream, muted saffron and sage petals, short green stems. Elegant tactile paper-like material, subtle realistic studio shading, simple petals arranged as a symbolic flower, not a recognizable exact botanical species and not a photograph. Object fills 78% of the frame with clean padding. No pot, no wrapping, no text, no letter, no watermark, no colored background. True transparent background. This is intentionally a representative category illustration for flower-market names whose exact species is unverified.",
+      "generatedSource": "/workspace/scratch/631417f8700e/generated_images/exec-0f000bb0-4c30-43a1-b51f-8aa35a2706f3.png",
+      "output": "public/visuals/crop-flower-category.webp",
+      "transparent_background": true
+    }
+  ]
+}

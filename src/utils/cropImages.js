@@ -43,9 +43,31 @@ export const CROP_IMAGES = Object.freeze({
   ridgeguardtori: 'ridge-gourd', ridgegourd: 'ridge-gourd',
   barnyard: 'barnyard-millet', linseed: 'linseed', 'flax-seeds': 'linseed',
   sunflower: 'sunflower-seed', 'sunflower-seed': 'sunflower-seed',
+  // These are exact source commodities, including whole seeds and fruit forms.
+  peach: 'peach', litchi: 'litchi', 'jamunnarale-hannu': 'jamun',
+  'apricotjardalu-khumani': 'apricot', giloy: 'giloy',
+  'methi-seeds': 'fenugreek-seed', soanf: 'fennel-seed', ajwan: 'ajwain',
+  'tube-rosedouble': 'tuberose-double', chrysanthemumloose: 'chrysanthemum-loose',
+  makhanafoxnut: 'makhana', 'chhappan-kaddu': 'summer-squash',
+  'berzizyphus-borehannu': 'ber', lakteora: 'grass-pea', tivda: 'grass-pea',
+  behada: 'behada', 'neem-seed': 'neem-seed', rajgir: 'amaranth-grain',
+  // The source names do not establish a specific flower/pulse identity.
+  // These category illustrations must retain their explanatory notes.
+  marget: 'flower-category', delha: 'flower-category', 'other-pulses': 'mixed-pulses',
+});
+
+export const CROP_IMAGE_NOTES = Object.freeze({
+  marget: 'फूल श्रेणी का प्रतीकात्मक चित्र; किस्म की पहचान की पुष्टि बाकी है।',
+  delha: 'फूल श्रेणी का प्रतीकात्मक चित्र; किस्म की पहचान की पुष्टि बाकी है।',
+  'other-pulses': 'दालों की श्रेणी का प्रतीकात्मक चित्र।',
 });
 
 export function getCropImageSource(id) {
   const image = CROP_IMAGES[String(id || '').toLowerCase()];
   return typeof image === 'string' ? `/visuals/crop-${image}.webp` : null;
+}
+
+export function getCropImageNote(id) {
+  const note = CROP_IMAGE_NOTES[String(id || '').toLowerCase()];
+  return typeof note === 'string' ? note : null;
 }

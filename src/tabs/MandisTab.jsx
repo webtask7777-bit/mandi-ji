@@ -4,6 +4,7 @@ import CropImage from '@/components/CropImage';
 import { MONTHS } from '../data/constants';
 import { useApi } from '../hooks/useApi';
 import { getDataFreshness, getLatestQuoteDate } from '../utils/dataFreshness';
+import { getCropImageNote } from '../utils/cropImages';
 import '@/styles/secondary.css';
 
 const HEAT = ['#edf0e6', '#c7d6b7', '#8cad8a', '#507f63', '#174c3c'];
@@ -55,7 +56,10 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
     };
   }, [tickerData]);
 
-  const cropButton = (crop, metric, direction) => <button type="button" key={crop.id} className="sb-market-crop-row" onClick={() => onCropClick?.(crop.id)} aria-label={`${crop.nameHi || crop.name}: ${metric}; भाव का विवरण देखें`}><span><CropImage id={crop.id} name={crop.nameHi || crop.name} size="sm" /><strong>{crop.nameHi || crop.name}</strong></span><b data-direction={direction}>{metric}</b></button>;
+  const cropButton = (crop, metric, direction) => {
+    const imageNote = getCropImageNote(crop.id);
+    return <button type="button" key={crop.id} className="sb-market-crop-row" onClick={() => onCropClick?.(crop.id)} aria-label={`${crop.nameHi || crop.name}: ${metric}; ${imageNote ? `${imageNote} ` : ''}भाव का विवरण देखें`}><span><CropImage id={crop.id} name={crop.nameHi || crop.name} size="sm" /><span className="sb-market-crop-label"><strong>{crop.nameHi || crop.name}</strong>{imageNote && <small title={imageNote}>प्रतीकात्मक चित्र</small>}</span></span><b data-direction={direction}>{metric}</b></button>;
+  };
 
   return <div className="sb-secondary-tab sb-mandis-tab flex flex-col">
     <div className="sb-secondary-heading"><div><span className="sb-secondary-eyebrow">मंडी नज़र</span><h2>बाज़ार की चाल समझें</h2><p>उपलब्ध मासिक औसत में बदलाव और मंडी रिकॉर्ड एक जगह।</p></div><span className="sb-feature-icon"><BarChart3 size={28} /></span></div>
