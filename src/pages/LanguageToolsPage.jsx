@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { ArrowRight, BookOpen, Check, ChevronDown, CircleHelp, Globe2, MapPin, Search, ShieldCheck, Sprout, Truck } from 'lucide-react';
-import { AVAILABLE_LANGUAGES, getLanguage, languagePath, LANGUAGE_STORAGE_KEY } from '../../shared/languages';
+import { AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, getLanguage, languagePath, LANGUAGE_STORAGE_KEY } from '../../shared/languages';
 import { useRememberedLanguage } from '../hooks/useLanguagePreference';
 import { getLanguageCopy, localizedCropName, formatLanguageNumber, formatLanguageDate } from '../i18n';
 import { useApi } from '../hooks/useApi';
@@ -9,16 +9,17 @@ import SEO from '../components/SEO';
 import NotFoundPage from './NotFoundPage';
 import CropImage from '../components/CropImage';
 import { cropDetailPath } from '../utils/cropUrls';
-import { buildLanguageToolsUrl, calculateDeliveryEstimate, latestPriceRecord } from '../utils/languageTools';
+import { buildLanguageToolsUrl, calculateDeliveryEstimate, latestPriceRecord, normalizePriceHistory } from '../utils/languageTools';
+import { buildLanguageBlogUrl, buildLanguageChooserUrl } from '../utils/languageNavigation';
 import '../styles/languages.css';
 import '../styles/language-fonts.css';
 
 const EMPTY_FORM = { vehicle: 'smallVehicle', capacity: '', distance: '', rate: '', weight: '', extra: '', roundTrip: false };
 const VEHICLES = ['smallVehicle', 'mediumVehicle', 'largeVehicle'];
-const GUIDE_LINKS = [
-  { code: 'hi', key: 'hindiGuides', path: '/blog?language=hi' },
-  { code: 'mr', key: 'marathiGuides', path: '/blog/tamatar-vikri-vahatuk-kharch-marathi' },
-  { code: 'gu', key: 'gujaratiGuides', path: '/blog/tameta-vechan-parivahan-kharch-gujarati' },
+const FALLBACK_GUIDES = [
+  { code: 'hi', key: 'hindiGuides' },
+  { code: 'mr', key: 'marathiGuides' },
+  { code: 'gu', key: 'gujaratiGuides' },
 ];
 
 function LanguageTools({ language, copy: t }) {
@@ -31,11 +32,11 @@ function LanguageTools({ language, copy: t }) {
   const [visibleCount, setVisibleCount] = useState(12);
   // The saved choice survives a reload: read it back instead of starting as "not saved".
   const savedLanguage = useRememberedLanguage();
-  const [rememberedNow, setRemembered] = useState(false);
-  const remembered = rememberedNow || savedLanguage?.code === language.code;
+  const remembered = savedLanguage?.code === language.code;
   const [form, setForm] = useState(EMPTY_FORM);
   const [calculation, setCalculation] = useState(null);
   const [invalid, setInvalid] = useState(false);
+  const [historySelection, setHistorySelection] = useState(null);
   const statesRequest = useApi('/states');
   const states = useMemo(() => (Array.isArray(statesRequest.data) ? statesRequest.data : []).filter(state => state.id && state.name), [statesRequest.data]);
   const selectedState = requestedState === 'all' ? 'all' : states.some(state => state.id === requestedState) ? requestedState : null;
@@ -45,7 +46,14 @@ function LanguageTools({ language, copy: t }) {
   const crops = useMemo(() => Array.isArray(cropsRequest.data) ? cropsRequest.data : [], [cropsRequest.data]);
   const selectedCrop = requestedCrop ? crops.find(crop => crop.id === requestedCrop) || null : crops.find(crop => crop.id === 'wheat') || crops[0] || null;
   const priceRequest = useApi(selectedCrop && selectedState ? `/prices/${encodeURIComponent(selectedCrop.id)}?state=${encodeURIComponent(selectedState)}&months=13` : null);
+  const priceHistory = useMemo(() => normalizePriceHistory(priceRequest.data), [priceRequest.data]);
   const record = latestPriceRecord(priceRequest.data);
+  const selectionKey = `${selectedState || requestedState}:${selectedCrop?.id || requestedCrop || ''}`;
+  const historyBasis = historySelection?.key === selectionKey && priceHistory[historySelection.basis]?.length ? historySelection.basis : record?.basis || 'daily';
+  const historyRows = priceHistory[historyBasis];
+  const navigationContext = { state: selectedState || requestedState, crop: selectedCrop?.id || requestedCrop, sourceCrop: selectedCrop?.id || requestedCrop, toolLanguage: language.code };
+  const chooserUrl = buildLanguageChooserUrl(navigationContext);
+  const guideLinks = SEARCH_LANGUAGES.some(item => item.code === language.code) ? [{ code: language.code, key: 'guides' }] : FALLBACK_GUIDES;
   const sourceName = selectedCrop?.name || selectedCrop?.nameEn || selectedCrop?.id;
   const cropName = selectedCrop ? localizedCropName(selectedCrop, language.code) : '';
   const number = (value, options = {}) => formatLanguageNumber(value, language.code, { maximumFractionDigits: 2, ...options });
@@ -60,14 +68,14 @@ function LanguageTools({ language, copy: t }) {
     navigate(buildLanguageToolsUrl(language.code, { state, crop }), { replace: true });
   };
   const switchLanguage = code => {
-    setRemembered(false);
     navigate(buildLanguageToolsUrl(code, { state: selectedState || requestedState, crop: selectedCrop?.id || requestedCrop }));
   };
   const rememberLanguage = () => {
     try {
       window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language.code);
-      setRemembered(true);
-    } catch { setRemembered(false); }
+      // Native storage events reach other tabs; refresh subscribers in this tab too.
+      window.dispatchEvent(new Event('storage'));
+    } catch { /* A blocked storage write does not claim the choice was saved. */ }
   };
   const changeForm = (key, value) => {
     // Choosing a vehicle only labels the trip; it never erases capacity or rate already entered.
@@ -93,12 +101,12 @@ function LanguageTools({ language, copy: t }) {
     <a className="sb-language-skip" href="#language-tools">{t.skip}</a>
     <header className="sb-language-header">
       <div className="sb-language-header-inner">
-        <Link to="/languages" className="sb-language-brand" aria-label="SahiBhav"><img src="/brand/app-icon.svg" alt="" width="40" height="40" /><span lang="en" dir="ltr">SahiBhav<span className="sb-language-brand-dot">.</span></span></Link>
+        <Link to={chooserUrl} className="sb-language-brand" aria-label="SahiBhav"><img src="/brand/app-icon.svg" alt="" width="40" height="40" /><span lang="en" dir="ltr">SahiBhav<span className="sb-language-brand-dot">.</span></span></Link>
         <div className="sb-language-header-actions">
           <label className="sb-language-switch"><Globe2 size={17} aria-hidden="true" /><span className="sb-language-sr">{t.language}</span>
             <select aria-label={t.language} value={language.code} onChange={event => switchLanguage(event.target.value)}>{AVAILABLE_LANGUAGES.map(item => <option key={item.code} value={item.code} lang={item.code}>{item.name}</option>)}</select><ChevronDown size={15} aria-hidden="true" />
           </label>
-          <Link to="/languages" className="sb-language-all">{t.allLanguages}</Link>
+          <Link to={chooserUrl} className="sb-language-all">{t.allLanguages}</Link>
         </div>
       </div>
     </header>
@@ -132,8 +140,15 @@ function LanguageTools({ language, copy: t }) {
               <span className="sb-language-price-label">{t.updated}</span>
               {selectedCrop && <div className="sb-language-price-crop"><div><h3 lang={cropName === sourceName ? 'en' : language.code}>{cropName}</h3>{cropName !== sourceName && <span lang="en">{sourceName}</span>}</div><CropImage id={selectedCrop.id} name={selectedCrop.nameHi || selectedCrop.name} size="sm" /></div>}
               {priceRequest.loading || loadingCrops ? <p className="sb-language-price-status" role="status">{t.loading}</p> : priceRequest.error ? <div className="sb-language-price-status" role="alert"><p>{t.error}</p><button type="button" onClick={retry}>{t.retry}</button></div> : record ? <><p className="sb-language-price-value"><bdi>{currency(record.market)}</bdi><span>{t.perQuintal}</span></p><div className="sb-language-record-date"><span>{record.basis === 'daily' ? t.daily : t.monthly}</span><strong><span className="sb-language-sr">{t.recorded}: </span><time dateTime={record.date}>{recordDate}</time></strong></div></> : <p className="sb-language-price-status">{t.noPrice}</p>}
-              {selectedCrop && <Link className="sb-language-history-link" to={cropDetailPath(selectedCrop.id, selectedState)}>{t.detailsHindi}<ArrowRight size={16} aria-hidden="true" /></Link>}
             </article>
+            {!priceRequest.loading && !loadingCrops && !priceRequest.error && selectedCrop && <section className="sb-language-history" aria-labelledby="language-history-title">
+              <div className="sb-language-history-heading"><h3 id="language-history-title">{t.prices}</h3><span>{t.perQuintal}</span></div>
+              <div className="sb-language-history-basis" role="group" aria-label={t.prices}>{['daily', 'monthly'].map(basis => <button key={basis} type="button" aria-pressed={historyBasis === basis} aria-controls="language-price-table" disabled={!priceHistory[basis].length} onClick={() => setHistorySelection({ key: selectionKey, basis })}>{t[basis]}</button>)}</div>
+              {historyRows.length ? <div className="sb-language-history-scroll" role="region" tabIndex={0} aria-label={`${cropName} · ${t[historyBasis]}`}>
+                <table id="language-price-table"><caption className="sb-language-sr">{cropName} · {t[historyBasis]} · {t.perQuintal}</caption><thead><tr><th scope="col">{t.recorded}</th><th scope="col">{t.prices}</th></tr></thead><tbody>{historyRows.map((item, index) => <tr key={`${item.date}-${index}`}><th scope="row"><time dateTime={item.date}>{formatLanguageDate(item.date, language.code)}</time></th><td><bdi>{currency(item.market)}</bdi></td></tr>)}</tbody></table>
+              </div> : <p id="language-price-table" className="sb-language-status">{t.empty}</p>}
+              <Link className="sb-language-history-link" to={cropDetailPath(selectedCrop.id, selectedState)}>{t.detailsHindi}<ArrowRight size={16} aria-hidden="true" /></Link>
+            </section>}
             <div className="sb-language-method"><CircleHelp size={21} aria-hidden="true" /><div><h3>{t.methodTitle}</h3><p>{t.methodBody}</p></div></div>
           </div>
         </div>
@@ -153,8 +168,8 @@ function LanguageTools({ language, copy: t }) {
           <p className="sb-language-estimate-note"><CircleHelp size={17} aria-hidden="true" />{t.estimateNote}</p>
         </aside></div>
       </section>
-      <section id="language-guides" className="sb-language-section sb-language-guides" aria-labelledby="language-guides-title"><div className="sb-language-section-heading"><div><span className="sb-language-section-number" aria-hidden="true">03 /</span><h2 id="language-guides-title">{t.guides}</h2></div><BookOpen size={25} aria-hidden="true" /></div><p>{t.guideNote}</p><div className="sb-language-guide-grid">{GUIDE_LINKS.map(guide => <Link key={guide.code} to={guide.path}><span lang={guide.code}>{getLanguage(guide.code).name}</span><strong>{t[guide.key]}</strong><ArrowRight size={18} aria-hidden="true" /></Link>)}</div></section>
-      <footer className="sb-language-footer"><div className="sb-language-footer-top"><Link to="/languages" className="sb-language-brand"><img src="/brand/app-icon.svg" alt="" width="34" height="34" /><span lang="en" dir="ltr">SahiBhav<span className="sb-language-brand-dot">.</span></span></Link><span className="sb-language-footer-free"><ShieldCheck size={17} aria-hidden="true" />{t.free}</span></div><p>{t.translationNote}</p><div className="sb-language-footer-links"><Link to="/languages">{t.allLanguages}</Link><Link to="/">{t.home}</Link><Link to="/about">{t.about}</Link><Link to="/privacy">{t.privacy}</Link><Link to="/contact">{t.feedback}</Link></div><div className="sb-language-sources"><span>{t.dataSource}</span><a href="https://www.data.gov.in/" target="_blank" rel="noopener noreferrer" lang="en">data.gov.in</a><a href="https://agmarknet.gov.in/" target="_blank" rel="noopener noreferrer" lang="en">Agmarknet</a><a href="https://agriportal.cg.nic.in/" target="_blank" rel="noopener noreferrer" lang="en">agriportal.cg.nic.in</a></div></footer>
+      <section id="language-guides" className="sb-language-section sb-language-guides" aria-labelledby="language-guides-title"><div className="sb-language-section-heading"><div><span className="sb-language-section-number" aria-hidden="true">03 /</span><h2 id="language-guides-title">{t.guides}</h2></div><BookOpen size={25} aria-hidden="true" /></div><p>{t.guideNote}</p><div className="sb-language-guide-grid">{guideLinks.map(guide => <Link key={guide.code} to={buildLanguageBlogUrl(guide.code, { ...navigationContext, crop: null })}><span lang={guide.code}>{getLanguage(guide.code).name}</span><strong>{t[guide.key]}</strong><ArrowRight size={18} aria-hidden="true" /></Link>)}</div></section>
+      <footer className="sb-language-footer"><div className="sb-language-footer-top"><Link to={chooserUrl} className="sb-language-brand"><img src="/brand/app-icon.svg" alt="" width="34" height="34" /><span lang="en" dir="ltr">SahiBhav<span className="sb-language-brand-dot">.</span></span></Link><span className="sb-language-footer-free"><ShieldCheck size={17} aria-hidden="true" />{t.free}</span></div><p>{t.translationNote}</p><div className="sb-language-footer-links"><Link to={chooserUrl}>{t.allLanguages}</Link><Link to="/">{t.home}</Link><Link to="/about">{t.about}</Link><Link to="/privacy">{t.privacy}</Link><Link to="/contact">{t.feedback}</Link></div><div className="sb-language-sources"><span>{t.dataSource}</span><a href="https://www.data.gov.in/" target="_blank" rel="noopener noreferrer" lang="en">data.gov.in</a><a href="https://agmarknet.gov.in/" target="_blank" rel="noopener noreferrer" lang="en">Agmarknet</a><a href="https://agriportal.cg.nic.in/" target="_blank" rel="noopener noreferrer" lang="en">agriportal.cg.nic.in</a></div></footer>
     </main>
   </div>;
 }

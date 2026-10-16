@@ -1,6 +1,41 @@
-export const EDITORIAL_LANGUAGES = { hi: 'हिन्दी', mr: 'मराठी', gu: 'ગુજરાતી' };
+import { getTopicById } from '../../shared/cropTopics.js';
+import asCrops from '../i18n/locales/as.crops.json' with { type: 'json' };
+import bnCrops from '../i18n/locales/bn.crops.json' with { type: 'json' };
+import knCrops from '../i18n/locales/kn.crops.json' with { type: 'json' };
+import mlCrops from '../i18n/locales/ml.crops.json' with { type: 'json' };
+import neCrops from '../i18n/locales/ne.crops.json' with { type: 'json' };
+import orCrops from '../i18n/locales/or.crops.json' with { type: 'json' };
+import paCrops from '../i18n/locales/pa.crops.json' with { type: 'json' };
+import taCrops from '../i18n/locales/ta.crops.json' with { type: 'json' };
+import teCrops from '../i18n/locales/te.crops.json' with { type: 'json' };
+import urCrops from '../i18n/locales/ur.crops.json' with { type: 'json' };
+import { EDITORIAL_LANGUAGE_NAMES } from '../../shared/editorialLanguages.js';
+import enLabels from '../i18n/editorial/en.json' with { type: 'json' };
+import asLabels from '../i18n/editorial/as.json' with { type: 'json' };
+import bnLabels from '../i18n/editorial/bn.json' with { type: 'json' };
+import knLabels from '../i18n/editorial/kn.json' with { type: 'json' };
+import mlLabels from '../i18n/editorial/ml.json' with { type: 'json' };
+import neLabels from '../i18n/editorial/ne.json' with { type: 'json' };
+import orLabels from '../i18n/editorial/or.json' with { type: 'json' };
+import paLabels from '../i18n/editorial/pa.json' with { type: 'json' };
+import taLabels from '../i18n/editorial/ta.json' with { type: 'json' };
+import teLabels from '../i18n/editorial/te.json' with { type: 'json' };
+import urLabels from '../i18n/editorial/ur.json' with { type: 'json' };
+
+export const EDITORIAL_LANGUAGES = EDITORIAL_LANGUAGE_NAMES;
 
 const labels = {
+  en: enLabels,
+  as: asLabels,
+  bn: bnLabels,
+  kn: knLabels,
+  ml: mlLabels,
+  ne: neLabels,
+  or: orLabels,
+  pa: paLabels,
+  ta: taLabels,
+  te: teLabels,
+  ur: urLabels,
   hi: {
     locale: 'hi-IN', brand: 'सही भाव', guide: 'मार्गदर्शिका', guides: 'किसान मार्गदर्शिकाएँ', allGuides: 'सभी मार्गदर्शिकाएँ', allArticles: 'सभी लेख', article: 'लेख',
     market: 'मंडी भाव', delivery: 'डिलीवरी खर्च', home: 'सही भाव के मुख्य पृष्ठ पर जाएँ', navigation: 'मुख्य लिंक', skip: 'लेखों पर जाएँ',
@@ -64,13 +99,25 @@ export function editorialDate(value, language = 'hi') {
   const date = new Date(value);
   return Number.isFinite(date.getTime()) ? date.toLocaleDateString(getEditorialLabels(language).locale, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }) : null;
 }
-export function blogLanguagePath(language = 'hi') { return language === 'hi' ? '/blog' : `/blog?language=${encodeURIComponent(language)}`; }
+export function blogLanguagePath(language = 'hi') { return language === 'hi' || !Object.hasOwn(EDITORIAL_LANGUAGES, language) ? '/blog' : `/${language}/blog`; }
 
 const cropNames = {
+  as: asCrops,
+  bn: bnCrops,
+  kn: knCrops,
+  ml: mlCrops,
+  ne: neCrops,
+  or: orCrops,
+  pa: paCrops,
+  ta: taCrops,
+  te: teCrops,
+  ur: urCrops,
   mr: { paddy: 'भात / तांदूळ', wheat: 'गहू', maize: 'मका', gram: 'हरभरा', mustard: 'मोहरी', soybean: 'सोयाबीन', cotton: 'कापूस', arhar: 'तूर', moong: 'मूग', urad: 'उडीद', masoor: 'मसूर', bajra: 'बाजरी', jowar: 'ज्वारी', sugarcane: 'ऊस', groundnut: 'भुईमूग', onion: 'कांदा', potato: 'बटाटा', tomato: 'टोमॅटो', garlic: 'लसूण', chilli: 'मिरची', grapes: 'द्राक्षे', banana: 'केळी', pomegranate: 'डाळिंब', mango: 'आंबा', okra: 'भेंडी', brinjal: 'वांगी', cauliflower: 'फुलकोबी', cabbage: 'कोबी' },
   gu: { paddy: 'ડાંગર / ચોખા', wheat: 'ઘઉં', maize: 'મકાઈ', gram: 'ચણા', mustard: 'રાયડો', soybean: 'સોયાબીન', cotton: 'કપાસ', arhar: 'તુવેર', moong: 'મગ', urad: 'અડદ', masoor: 'મસૂર', bajra: 'બાજરી', jowar: 'જુવાર', sugarcane: 'શેરડી', groundnut: 'મગફળી', onion: 'ડુંગળી', potato: 'બટાટા', tomato: 'ટામેટાં', garlic: 'લસણ', chilli: 'મરચાં', grapes: 'દ્રાક્ષ', banana: 'કેળાં', pomegranate: 'દાડમ', mango: 'કેરી', okra: 'ભીંડા', brinjal: 'રીંગણ', cauliflower: 'ફુલાવર', cabbage: 'કોબી' },
 };
-export function editorialCropName(id, fallback, language = 'hi') { return cropNames[language]?.[id] || fallback || id; }
+export function editorialCropName(id, fallback, language = 'hi') {
+  return cropNames[language]?.[id] || (language === 'hi' ? fallback : getTopicById(id)?.nameEn) || fallback || id;
+}
 export function editorialStateName(id, fallback, language = 'hi') {
-  return ({ gu: { gujarat: 'ગુજરાત', maharashtra: 'મહારાષ્ટ્ર', chhattisgarh: 'છત્તીસગઢ', 'madhya-pradesh': 'મધ્ય પ્રદેશ', rajasthan: 'રાજસ્થાન', 'uttar-pradesh': 'ઉત્તર પ્રદેશ', bihar: 'બિહાર', punjab: 'પંજાબ', haryana: 'હરિયાણા' } })[language]?.[id] || fallback || id;
+  return ({ gu: { gujarat: 'ગુજરાત', maharashtra: 'મહારાષ્ટ્ર', chhattisgarh: 'છત્તીસગઢ', 'madhya-pradesh': 'મધ્ય પ્રદેશ', rajasthan: 'રાજસ્થાન', 'uttar-pradesh': 'ઉત્તર પ્રદેશ', bihar: 'બિહાર', punjab: 'પંજાબ', haryana: 'હરિયાણા' } })[language]?.[id] || (['hi', 'mr'].includes(language) ? fallback : id?.split('-').map(word => word[0]?.toUpperCase() + word.slice(1)).join(' ')) || fallback || id;
 }

@@ -52,6 +52,7 @@ function App({ prerender = false, initialPage }) {
   const DeliveryPage = initialPage?.kind === 'delivery' ? initialPage.Component : TransportPage;
   const LanguagePage = initialPage?.kind === 'language' ? initialPage.Component : LanguageToolsPage;
   const LanguageChooser = initialPage?.kind === 'languages' ? initialPage.Component : LanguagesPage;
+  const GuideLibrary = initialPage?.kind === 'blog' ? initialPage.Component : BlogPage;
 
   return (
     <AuthProvider>
@@ -86,7 +87,8 @@ function App({ prerender = false, initialPage }) {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/privacy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms" element={<TermsPage />} />
-                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog" element={<GuideLibrary />} />
+                <Route path="/:language/blog" element={<GuideLibrary />} />
                 <Route path="/blog/:slug" element={<ArticlePage />} />
                 <Route path="/admin/*" element={<AdminRoute><AdminLayout /></AdminRoute>} />
                 <Route path="*" element={<NotFoundPage />} />

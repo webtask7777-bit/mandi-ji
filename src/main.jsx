@@ -18,6 +18,7 @@ if (snapshotElement) {
   // Keep useful HTML visible until the current lazy route is ready.
   if (/^\/crop\//.test(path) || /^\/mandi-bhav\/[^/]+\/[^/]+\/?$/.test(path)) initialPage = { kind: 'crop', Component: (await import('./pages/CropDetailPage.jsx')).default };
   else if (/^\/blog\/.+/.test(path)) initialPage = { kind: 'article', Component: (await import('./pages/BlogArticlePage.jsx')).default };
+  else if (path === '/blog' || /^\/[a-z]{2,3}\/blog$/.test(path)) initialPage = { kind: 'blog', Component: (await import('./pages/BlogPage.jsx')).default };
   else if (/^\/[a-z]{2,3}\/mandi-bhav$/.test(path)) initialPage = { kind: 'language', Component: (await import('./pages/LanguageToolsPage.jsx')).default };
   else if (path === '/languages') initialPage = { kind: 'languages', Component: (await import('./pages/LanguagesPage.jsx')).default };
   else if (path === '/delivery-calculator') initialPage = { kind: 'delivery', Component: (await import('./pages/TransportPage.jsx')).default };

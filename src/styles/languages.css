@@ -88,7 +88,23 @@
 .sb-language-record-date { display:flex; flex-direction:column; gap:5px; background:#ffffff0a; border:1px solid #ffffff17; border-radius:10px; padding:11px 13px; }
 .sb-language-record-date > span { font-size:11px; color:#cfbc86; }
 .sb-language-record-date strong { font-size:14px; line-height:1.75; font-weight:600; }
-.sb-language-history-link { display:flex; align-items:center; justify-content:space-between; gap:9px; min-height:44px; margin-block-start:17px; font-size:12px; color:#e3e8cc !important; }
+.sb-language-history { min-width:0; border:1px solid var(--language-line); border-radius:16px; background:#fffdf8; overflow:hidden; }
+.sb-language-history-heading { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:5px 12px; padding:17px 18px 8px; }
+.sb-language-history-heading h3 { margin:0; font-size:15px; line-height:1.8; font-weight:650; }
+.sb-language-history-heading > span { color:var(--language-muted); font-size:11px; line-height:1.7; }
+.sb-language-history-basis { display:flex; gap:6px; padding:0 14px 12px; }
+.sb-language-history-basis button { flex:1; min-width:0; min-height:44px; padding:8px; border:1px solid #dce3d7; border-radius:9px; background:#fffdf8; color:#536b4d; font-size:11px; line-height:1.8; }
+.sb-language-history-basis button[aria-pressed='true'] { border-color:#6e8f60; background:#eaf1e2; color:#214d36; font-weight:650; }
+.sb-language-history-basis button:disabled { color:#8a8c80; background:#f4f4ef; cursor:not-allowed; }
+.sb-language-history-scroll { overflow:auto; max-height:320px; scrollbar-gutter:stable; border-block:1px solid var(--language-line); overscroll-behavior:contain; }
+.sb-language-history-scroll table { width:100%; border-collapse:separate; border-spacing:0; font-size:12px; line-height:1.8; }
+.sb-language-history-scroll th, .sb-language-history-scroll td { padding:11px 17px; text-align:start; border-block-end:1px solid #e8ecdf; }
+.sb-language-history-scroll thead th { position:sticky; inset-block-start:0; z-index:1; background:#f0f3e7; color:#58734b; font-weight:650; }
+.sb-language-history-scroll tbody th { font-weight:400; color:#607255; }
+.sb-language-history-scroll th:last-child, .sb-language-history-scroll td:last-child { text-align:end; }
+.sb-language-history-scroll td { font-variant-numeric:tabular-nums; font-weight:650; white-space:nowrap; }
+.sb-language-history-scroll tbody tr:last-child > * { border-block-end:0; }
+.sb-language-history-link { display:flex; align-items:center; justify-content:space-between; gap:9px; min-height:44px; padding:11px 17px; font-size:11px; color:#5f7154 !important; }
 .sb-language-history-link:hover { text-decoration:underline; text-underline-offset:4px; }
 .sb-language-price-status { min-height:130px; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; font-size:14px; line-height:1.9; color:#d5dfcd; }
 .sb-language-method { display:flex; align-items:flex-start; gap:12px; padding:20px; background:#f2edda; border:1px solid #e8dfc3; border-radius:15px; }
@@ -126,6 +142,7 @@
 .sb-language-estimate-note svg { margin-block-start:3px; }
 .sb-language-guides > p { font-size:13px; color:#6a7861; line-height:1.9; margin-block:-5px 18px; }
 .sb-language-guide-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; }
+.sb-language-guide-grid > a:only-child { grid-column:1/-1; }
 .sb-language-guide-grid > a { position:relative; display:flex; flex-direction:column; gap:12px; padding:22px; border:1px solid #dce3d7; background:#fffdf7; border-radius:15px; min-width:0; }
 .sb-language-guide-grid > a:hover { background:#f1f4e9; border-color:#b4c5a6; }
 .sb-language-guide-grid > a > span { display:block; color:#9b8450; font-size:18px; line-height:1.7; }
@@ -248,3 +265,6 @@
 
 /* Cursive Arabic shaping must not inherit compressed Latin headline tracking. */
 .sb-language-page[dir="rtl"] h1,.sb-language-page[dir="rtl"] h2,.sb-language-page[dir="rtl"] h3,.sb-language-page[dir="rtl"] .sb-language-eyebrow{letter-spacing:normal;}
+
+/* Keep the shared crop artwork legible against the dark price card. */
+.sb-language-price-card .sb-crop-image{background:#f4f1e6;border-radius:50%;isolation:isolate}

@@ -1,7 +1,8 @@
 import { CROP_TOPICS, getCropTopic, getTopicById } from '../../shared/cropTopics.js';
 import { INDIA_STATES } from '../../src/data/india-states.js';
+import { EDITORIAL_LANGUAGE_CODES } from '../../shared/editorialLanguages.js';
 
-export const EDITORIAL_LANGUAGES = Object.freeze(['hi', 'mr', 'gu']);
+export const EDITORIAL_LANGUAGES = EDITORIAL_LANGUAGE_CODES;
 const STATE_IDS = new Set([...INDIA_STATES.map(state => state.id), 'ladakh', 'dadra-daman', 'dadra-nagar-haveli-daman-diu']);
 const COMMODITY_IDS = new Set(CROP_TOPICS.flatMap(topic => topic.commodityIds));
 const EDITORIAL_AUTHOR = 'सही भाव संपादकीय';
@@ -15,7 +16,11 @@ const hasText = value => typeof value === 'string' && Boolean(value.trim());
 const valueOf = value => typeof value === 'string' ? value.trim() : '';
 const languageOf = post => post.language || 'hi';
 const unique = values => [...new Set(values)];
-const summaryOf = ({ content, ...summary }) => summary;
+const summaryOf = post => {
+  const summary = { ...post };
+  delete summary.content;
+  return summary;
+};
 const normalizedBody = text => valueOf(text).normalize('NFKC').replace(/\s+/gu, ' ').toLocaleLowerCase();
 const published = post => post.status === 'published' && hasText(post.content);
 const stateMatches = (post, state) => !state || !post.stateIds?.length || post.stateIds.includes(state);
@@ -108,7 +113,7 @@ export function validateEditorialPost(post, allPosts = [], { now = Date.now() } 
   if (!hasText(post.slug) || !/^[\p{L}\p{M}\p{N}]+(?:-[\p{L}\p{M}\p{N}]+)*$/u.test(post.slug)) errors.push('Slug में केवल अक्षर, अंक और बीच में hyphen रखें।');
   if (otherPosts.some(item => item.slug === post.slug)) errors.push('यह slug पहले से मौजूद है।');
   if (!['draft', 'published'].includes(post.status)) errors.push('लेख का status draft या published होना चाहिए।');
-  if (!EDITORIAL_LANGUAGES.includes(post.language)) errors.push('समर्थित भाषा चुनें: hi, mr या gu।');
+  if (!EDITORIAL_LANGUAGES.includes(post.language)) errors.push(`समर्थित भाषा चुनें: ${EDITORIAL_LANGUAGES.join(', ')}।`);
   for (const [field, lookup, label] of [['cropTopics', getTopicById, 'फसल समूह'], ['stateIds', id => STATE_IDS.has(id), 'राज्य']]) {
     if (!Array.isArray(post[field]) || post[field].some(id => typeof id !== 'string' || !lookup(id))) errors.push(`${label} की सूची में केवल मान्य ID रखें।`);
   }

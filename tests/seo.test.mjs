@@ -130,7 +130,12 @@ test('every sitemap URL resolves to indexable HTML with unique metadata and safe
       const date = modificationDates.get(entry);
       const article = Object.values(snapshot).map(item => item.data).find(data => data?.slug && data?.content);
       const prices = Object.entries(snapshot).find(([request]) => request.startsWith('/prices/'))?.[1]?.data;
+      const library = Object.entries(snapshot).find(([request]) => request.startsWith('/cms/blog?'))?.[1]?.data;
       if (article) assert.equal(date, String(article.updatedAt || article.publishedAt).slice(0, 10), 'article lastmod uses actual editorial date');
+      else if (library && /^(?:\/blog|\/[a-z]{2,3}\/blog)$/.test(url.pathname)) {
+        const updated = library.posts.map(post => String(post.updatedAt || post.publishedAt).slice(0, 10)).sort().at(-1);
+        assert.equal(date, updated, 'library lastmod uses the latest actual editorial update in its language');
+      }
       else if (prices) {
         const daily = (prices.dailyHistory || []).filter(row => Number(row.market) > 0).map(row => String(row.date)).sort().at(-1);
         const monthly = (prices.history || []).filter(row => Number(row.market) > 0).map(row => `${row.date}-28`).sort().at(-1);

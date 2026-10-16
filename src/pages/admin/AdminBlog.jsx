@@ -6,7 +6,7 @@ import { useConfirm } from '../../components/ui/ConfirmDialog';
 import { STATE_NAMES } from '../../context/StateContext';
 import { CROP_TOPICS } from '../../../shared/cropTopics.js';
 
-const LANGUAGES = { hi: 'हिन्दी', mr: 'मराठी', gu: 'ગુજરાતી' };
+import { EDITORIAL_LANGUAGE_NAMES as LANGUAGES } from '../../../shared/editorialLanguages.js';
 const FILTER_TABS = [
   { key: 'all', label: 'सभी' },
   { key: 'draft', label: 'ड्राफ़्ट' },

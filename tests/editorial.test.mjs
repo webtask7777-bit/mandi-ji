@@ -10,8 +10,11 @@ const root = process.cwd();
 const posts = JSON.parse(readFileSync(path.join(root, 'server/db/data/blog-posts.json'), 'utf8'));
 const articles = posts.filter(post => post.coverImage?.startsWith('/editorial/'));
 const imageManifest = JSON.parse(readFileSync(path.join(root, 'src/data/editorialImages.json'), 'utf8'));
+const linksToArticle = (html, slug) => [...html.matchAll(/href="([^"]+)"/g)].some(([, href]) => {
+  try { return new URL(href.replaceAll('&amp;', '&'), 'https://mandi-ji.vercel.app').pathname === `/blog/${slug}`; } catch { return false; }
+});
 
-test('every editorial cover has smaller responsive assets and translations use their own language artwork', () => {
+test('editorial covers are responsive and shared translation artwork is explicitly text-free', () => {
   for (const post of articles) {
     const image = imageManifest[post.coverImage];
     assert.ok(image, `${post.slug}: registered cover`);
@@ -23,7 +26,11 @@ test('every editorial cover has smaller responsive assets and translations use t
     }
   }
   const tomato = articles.filter(post => post.translationGroup === 'tomato-sale-delivery');
-  assert.equal(new Set(tomato.map(post => post.coverImage)).size, tomato.length, 'Each language has an accurately localized cover');
+  const coverCounts = new Map();
+  for (const post of tomato) coverCounts.set(post.coverImage, (coverCounts.get(post.coverImage) || 0) + 1);
+  for (const [cover, count] of coverCounts) {
+    if (count > 1) assert.equal(imageManifest[cover].textFree, true, 'Shared art must have no language-specific image text');
+  }
 });
 
 test('editorial set preserves the wheat URL and has complete assets, references and working article links', () => {
@@ -89,8 +96,8 @@ test('filtered guide pages render only matching cards and keep query combination
     }
     const html = result.head + result.html;
     assert.match(html, /content="noindex, follow"/, route);
-    if (expected) assert.ok(html.includes(`href="/blog/${expected}"`), `${route}: matching article is visible`);
-    assert.ok(!html.includes(`href="/blog/${excluded}"`), `${route}: unrelated featured/card is not shown`);
+    if (expected) assert.ok(linksToArticle(html, expected), `${route}: matching article is visible`);
+    assert.ok(!linksToArticle(html, excluded), `${route}: unrelated featured/card is not shown`);
   }
 });
 test('published article HTML exposes its own social thumbnail, source links and updated structured data', { skip: built ? false : 'Run npm run build to generate the editorial pages.' }, () => {
@@ -117,7 +124,7 @@ test('published article HTML exposes its own social thumbnail, source links and 
       for (const translated of articles.filter(item => item.translationGroup === post.translationGroup)) {
         const alternate = new RegExp(`<link[^>]+rel="alternate"[^>]+hrefLang="${translated.language}"[^>]+href="https://mandi-ji.vercel.app/blog/${translated.slug}"`, 'i');
         assert.match(head, alternate, `${post.slug}: reciprocal ${translated.language} alternate including self`);
-        if (translated.slug !== post.slug) assert.ok(html.includes(`href="/blog/${translated.slug}"`), `${post.slug}: visible language navigation`);
+        if (translated.slug !== post.slug) assert.ok(linksToArticle(html, translated.slug), `${post.slug}: visible language navigation`);
       }
     }
   }

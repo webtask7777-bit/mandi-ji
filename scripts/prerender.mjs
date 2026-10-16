@@ -5,6 +5,7 @@ import { loadIndiaData, loadStateData, loadIndiaCropPrices, loadStateCropPrices 
 import { isCropPriceCommodity } from '../src/utils/cropEligibility.js';
 import { cropDetailPath } from '../src/utils/cropUrls.js';
 import { getLanguage, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, languagePath } from '../shared/languages.js';
+import { EDITORIAL_LANGUAGE_CODES } from '../shared/editorialLanguages.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.env.NODE_ENV = 'production';
@@ -25,7 +26,7 @@ const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compa
 const cache = new Map();
 const manifest = JSON.parse(await readFile(path.join(dist, '.vite/manifest.json'), 'utf8'));
 function routeAssets(route) {
-  const page = /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
+  const page = /^\/[a-z]{2,3}\/blog$/.test(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
   const css = new Set();
   const seen = new Set();
   function visit(key) { if (seen.has(key)) return; seen.add(key); const entry = manifest[key]; if (!entry) return; (entry.css || []).forEach(file => css.add(file)); (entry.imports || []).forEach(visit); }
@@ -102,6 +103,7 @@ async function writePage(route, html) {
 try {
   await mkdir(generated, { recursive: true });
   const routes = new Set(['/', '/delivery-calculator', '/bechne-ka-hisab', '/data-status', '/about', '/contact', '/privacy', '/terms', '/blog', '/languages', ...SEARCH_LANGUAGES.map(item => languagePath(item.code))]);
+  for (const code of EDITORIAL_LANGUAGE_CODES) if (code !== 'hi') routes.add(`/${code}/blog`);
   const knownCrops = new Set();
   // Sitemap <lastmod>: a price page changes when its newest record does; an article on its own update.
   const lastmod = new Map();
@@ -125,7 +127,11 @@ try {
     const route = `/blog/${encodeURIComponent(post.slug)}`;
     routes.add(route);
     const updated = String(post.updatedAt || post.publishedAt || '').slice(0, 10);
-    if (/^\d{4}-\d{2}-\d{2}$/.test(updated)) lastmod.set(route, updated);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(updated)) {
+      lastmod.set(route, updated);
+      const library = !post.language || post.language === 'hi' ? '/blog' : `/${post.language}/blog`;
+      if (routes.has(library) && updated > (lastmod.get(library) || '')) lastmod.set(library, updated);
+    }
   }
   let count = 0;
   for (const route of routes) {

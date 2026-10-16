@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { LANGUAGES, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, getLanguage, languagePath, languageFromPath, normalizeLanguage } from '../shared/languages.js';
-import { parseLanguageNumber, latestPriceRecord, calculateDeliveryEstimate, buildLanguageToolsUrl } from '../src/utils/languageTools.js';
+import { parseLanguageNumber, latestPriceRecord, normalizePriceHistory, calculateDeliveryEstimate, buildLanguageToolsUrl } from '../src/utils/languageTools.js';
 import { calculateDeliveryScenario } from '../src/utils/deliveryCalculator.js';
 
 const root = process.cwd();
@@ -109,6 +109,50 @@ test('monthly fallback preserves its month and never invents a daily quote date'
   assert.equal(latestPriceRecord({ dailyHistory: [{ date: '2026-09-12', market: 1000 }], history: [{ date: '2026-09', market: 1300 }] }).basis, 'daily', 'daily observation wins within the same month');
 });
 
+test('native history separates periods, orders observations newest first and cannot mutate the cached source', () => {
+  const source = Object.freeze({
+    dailyHistory: Object.freeze([
+      Object.freeze({ date: '2026-01-02', market: '१,२५०.५०', mandis: 3 }),
+      Object.freeze({ date: '2026-03-04', market: '১,৪০০' }),
+      Object.freeze({ date: '2024-02-29', market: '۱۲۳۴٫۵' }),
+    ]),
+    history: Object.freeze([
+      Object.freeze({ date: '2026-02', market: '১,৩০০' }),
+      Object.freeze({ date: '2026-03', market: '१,५००' }),
+    ]),
+    lastUpdated: '2026-10-17T12:00:00Z',
+  });
+  const snapshot = JSON.stringify(source);
+  const history = normalizePriceHistory(source);
+  assert.deepEqual(history.daily.map(({ date, market, basis }) => ({ date, market, basis })), [
+    { date: '2026-03-04', market: 1400, basis: 'daily' },
+    { date: '2026-01-02', market: 1250.5, basis: 'daily' },
+    { date: '2024-02-29', market: 1234.5, basis: 'daily' },
+  ]);
+  assert.deepEqual(history.monthly.map(record => [record.date, record.market, record.basis]), [['2026-03', 1500, 'monthly'], ['2026-02', 1300, 'monthly']]);
+  assert.notEqual(history.daily[1], source.dailyHistory[0], 'normalized entries do not alias source records');
+  assert.throws(() => history.daily.sort(), TypeError);
+  assert.throws(() => { history.monthly[0].market = 1; }, TypeError);
+  assert.equal(JSON.stringify(source), snapshot);
+});
+
+test('native history excludes missing, impossible and mismatched dates, nonpositive prices and unsafe amounts', () => {
+  const malformed = [null, undefined, {}, { market: 300 }, { date: '2026-04-01', market: '' }, { date: '2026-04-01', market: '०' }, { date: '2026-04-01', market: -50 }, { date: '2026-04-01', market: Infinity }, { date: '2026-04-01', market: Number.MAX_SAFE_INTEGER + 1 }];
+  const result = normalizePriceHistory({
+    dailyHistory: [...malformed, { date: '2025-02-29', market: 300 }, { date: '2026-04-31', market: 300 }, { date: '2026-04', market: 300 }, { date: '2026-04-01T00:00:00Z', market: 300 }],
+    history: [...malformed, { date: '2026-00', market: 300 }, { date: '2026-13', market: 300 }, { date: '2026-04-01', market: 300 }],
+    lastUpdated: '2026-04-01', avgPrice: 900,
+  });
+  assert.deepEqual(result, { daily: [], monthly: [] }, 'ingestion metadata cannot supply an observation');
+  for (const input of [null, undefined, {}, { history: {}, dailyHistory: '2026-04-01' }]) assert.deepEqual(normalizePriceHistory(input), { daily: [], monthly: [] });
+});
+
+test('native history retains distinct same-date observations and preserves latest-record tie behavior', () => {
+  const data = { dailyHistory: [{ date: '2026-04-02', market: 1000 }, { date: '2026-04-01', market: 900 }, { date: '2026-04-02', market: 1100 }] };
+  assert.deepEqual(normalizePriceHistory(data).daily.map(record => record.market), [1100, 1000, 900]);
+  assert.equal(latestPriceRecord(data).market, 1100, 'the last valid same-date source record remains the latest card');
+});
+
 const deliveryInput = { distance: 80, capacity: 1000, weight: 2500, rate: 18, extra: 900, roundTrip: false };
 test('localized delivery estimate charges every vehicle trip and treats extra costs as one consignment total', () => {
   assert.deepEqual(calculateDeliveryEstimate(deliveryInput), { valid: true, trips: 3, totalDistance: 240, totalCost: 5220, perKg: 2.088 });
@@ -180,6 +224,10 @@ test('built language pages expose translated primary content, correct document d
     for (const key of ['headline', 'intro', 'prices', 'delivery', 'priceNote', 'estimateNote']) {
       assert.ok(html.includes(escapeHTML(copy[key])), `${language.code}: translated ${key} is rendered`);
     }
+    assert.ok(html.includes('id="language-price-table"'), `${language.code}: dated history renders in the native page`);
+    assert.match(html, /<th scope="col">[^<]+<\/th>/, `${language.code}: semantic table column headers`);
+    assert.ok(html.includes(`<th scope="col">${escapeHTML(copy.recorded)}</th>`), `${language.code}: native observation-date header`);
+    assert.match(html, /<th scope="row"><time dateTime="\d{4}-\d{2}(?:-\d{2})?">/i, `${language.code}: individual observations keep their actual date precision`);
     const robots = tags(head, 'meta').find(tag => tag.name === 'robots')?.content;
     assert.ok(robots, `${language.code}: explicit indexing status`);
     assert.equal(robots.startsWith('noindex'), !language.searchReady, `${language.code}: provisional translation indexing`);

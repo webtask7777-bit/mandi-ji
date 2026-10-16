@@ -1,0 +1,60 @@
+{
+  "id": "editorial-tomato-market-delivery-en",
+  "title": "Sell tomatoes nearby or send them farther? Compare the money left after delivery",
+  "slug": "tomato-market-delivery-en",
+  "excerpt": "Compare two markets for the same load by accounting for price, saleable weight, vehicle capacity, trips, crates and other selling costs. Every rate in this example is hypothetical.",
+  "seoTitle": "Tomato market comparison: money left after delivery costs",
+  "seoDescription": "A worked example comparing nearby and distant tomato markets. Include saleable weight, vehicle capacity, crates, trips, losses and selling costs. All rates are hypothetical.",
+  "content": "A higher price at a distant market is only the starting point. First calculate how much money would remain after selling there. Distance alone does not decide the result. Saleable weight, buyer acceptance, vehicle capacity, trips, crates, loading and unloading, and payment timing can all change the decision. The example below explains the calculation; none of its amounts is a current market price or a transport quote.\n\n## Use the same basis for comparison\n\nThe [government OGD market dataset](https://www.data.gov.in/catalog/current-daily-price-various-commodities-various-markets-mandi) contains daily wholesale minimum, maximum and modal prices. The price for your produce may differ with its quality, the buyer and the time of sale. Open [SahiBhav's tomato page](/crop/tomato) and check the market, record date, variety and unit. An old record is not a firm offer to buy your load today.\n\nFor both markets, use an available reference for the same quality and date. Then discuss the actual condition of your load with the buyer. Multiplying the highest recorded price by the full load may produce an attractive figure, but that does not make it the amount you will receive.\n\n## Work out the saleable quantity first\n\nSuppose you have 1,000 kilograms of tomatoes to send from the farm. Clearly state how much loss or rejection you assume in each comparison. This example assumes that 20 kilograms will not sell at the nearby market and 50 kilograms will not sell at the distant market. These are hypothetical quantities, not fixed loss rates determined by distance. Change them to suit your packing, quality and experience.\n\nThe [National Horticulture Board's tomato guide](https://www.nhb.gov.in/pdf/vegetable/tomato/tom009.pdf) emphasizes separating spoiled or damaged fruit, packing that protects fruit from crushing, and careful, prompt transport. When deciding how many crates to use, consider fruit protection, the space available in the vehicle and the return of empty crates.\n\n## A fully hypothetical comparison for 1,000 kg\n\n**Nearby market:** Assume a saleable weight of 980 kg and an expected actual selling price of ₹14 per kg. Gross receipts are 980 × 14 = **₹13,720**. Allow ₹800 for transport, ₹300 for loading and unloading, ₹200 for crates and ₹200 for other applicable costs. Total selling-related costs are ₹1,500, leaving **₹12,220**.\n\n**Distant market:** Assume a saleable weight of 950 kg and an expected selling price of ₹17 per kg. Gross receipts are 950 × 17 = **₹16,150**. Allow ₹2,200 for transport, ₹500 for loading and unloading, ₹300 for crates and ₹300 for other applicable costs. Total costs are ₹3,300, leaving **₹12,850**.\n\nUnder these assumptions, sending the load farther leaves only **₹630** more. Per kilogram of the original 1,000 kg sent, the amount left after selling costs is ₹12.22 nearby and ₹12.85 farther away. This is not net farming profit: production costs have not yet been deducted from either amount.\n\n## What if the price changes slightly?\n\nIf the distant market pays ₹16 instead of ₹17 per kg and all other assumptions stay the same, the amount left is 950 × 16 − 3,300 = **₹11,900**. That is ₹320 less than the nearby-market estimate. With the other assumptions unchanged, the distant market would need to pay (12,220 + 3,300) ÷ 950, or about **₹16.34 per kg**, to match the nearby result. This is a mathematical break-even point, not a price forecast.\n\n## Account for the vehicle and every trip\n\nEnter the vehicle, distance and available cost inputs in the [delivery calculator](/delivery-calculator). Do not choose a vehicle by its name alone. Confirm the permitted weight limit, load including crates, available space and safe stacking with the operator. If the whole load does not fit in one trip, include the cost of another trip. Get written clarity on whether the charge includes the return journey, tolls, waiting time and labour.\n\nAn estimated calculator result is neither a transport booking nor a confirmed quote. Add any cost without a separate input field to your total separately. Do not treat a percentage commission and a fixed fee as the same thing; confirm the actual amount that applies.\n\n## Final checks before dispatch\n\n- Confirm the buyer, the time they will accept the load and their quality conditions.\n- Clarify weighing, return of crates, rejected produce and how payment will be made.\n- Run a second calculation with a lower price or greater losses.\n- Check that weather and route conditions are suitable for the journey.\n\nAfter every sale, record both the estimate and the actual outcome to improve the calculation for your next load.",
+  "tags": [
+    "tomatoes",
+    "market prices",
+    "transport",
+    "delivery calculator",
+    "selling costs"
+  ],
+  "category": "Markets and costs",
+  "status": "published",
+  "author": "सही भाव संपादकीय",
+  "authorType": "Organization",
+  "createdAt": "2026-10-16T19:17:27.230Z",
+  "updatedAt": "2026-10-16T19:17:27.230Z",
+  "publishedAt": "2026-10-16T19:17:27.230Z",
+  "coverImage": "/editorial/tomato-market-comparison-neutral.webp",
+  "coverAlt": "Illustration of tomato crates, a goods vehicle and a comparison of delivery to two markets",
+  "coverCaption": "Illustrative AI-generated image, not a photograph of an actual shipment or market event.",
+  "takeaways": [
+    "Compare saleable weight and all selling costs alongside the price.",
+    "The distant market is ahead by ₹630 in this example; a lower price changes the outcome.",
+    "Confirm vehicle capacity, trips, crates and payment terms."
+  ],
+  "sources": [
+    {
+      "title": "National Horticulture Board — Tomato Post Harvest Technology",
+      "url": "https://www.nhb.gov.in/pdf/vegetable/tomato/tom009.pdf",
+      "accessedAt": "2026-10-16"
+    },
+    {
+      "title": "Government of India OGD — Daily Wholesale Commodity Prices from AGMARKNET",
+      "url": "https://www.data.gov.in/catalog/current-daily-price-various-commodities-various-markets-mandi",
+      "accessedAt": "2026-10-16"
+    }
+  ],
+  "relatedSlugs": [],
+  "readingMinutes": 5,
+  "cropTopics": [
+    "tomato"
+  ],
+  "stateIds": [],
+  "regionLabel": "India · General market and selling-cost calculation",
+  "weatherRelevant": false,
+  "priceLinks": [
+    {
+      "label": "Recorded tomato market prices",
+      "path": "/crop/tomato"
+    }
+  ],
+  "language": "en",
+  "translationGroup": "tomato-sale-delivery",
+  "editorialNote": "An editorial guide based on official sources, prepared and translated with AI assistance. The translation has not been independently reviewed by a native-language editor. Check the original sources for your region and crop conditions."
+}

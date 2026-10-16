@@ -14,18 +14,21 @@ The language directory at `/languages` covers the 22 Eighth Schedule languages p
 
 All new interface translations are editorial drafts, not certified native-reviewed translations. Four previews have additional terminology/orthography uncertainty. The five pending languages need an actual translator; rendering Hindi under another language code is deliberately not used.
 
-The existing ten articles remain in their actual published languages: Hindi, Marathi and Gujarati. The localized tools link to them with their language explicitly indicated. Article language and tool-interface language are separate.
+There are now 21 published articles. The tomato market-versus-delivery-cost guide is available in all 14 search-ready languages: Hindi, English, Assamese, Bengali, Gujarati, Kannada, Malayalam, Marathi, Nepali, Odia, Punjabi, Tamil, Telugu and Urdu. Eleven full translations were added; the other seven guides remain Hindi. This does not claim that every crop has an article. Each new translation clearly discloses AI assistance and pending independent native-language review. Article language and tool-interface language are separate.
 
 ## Working flows
 
 - `/en/mandi-bhav`, `/ta/mandi-bhav`, `/te/mandi-bhav`, `/bn/mandi-bhav` and the corresponding available language URLs.
+- State and exact crop query selections survive the language switch and the language directory. Blog cards, article translation links and delivery/price calls to action preserve return context separately from editorial crop groups. Article language comes from published content, never from the tool-language preference. Native library routes (`/ta/blog`, `/ur/blog`, etc.) are prerendered in their own language before JavaScript loads; legacy `/blog?language=...` links still work after app startup.
+- Example native library: `/ta/blog`; example article: `/blog/tomato-market-delivery-ta`. Native libraries show only available published articles, including an honest empty state for unmatched filters.
 - State and crop query selections survive the language switch. Example: `/ta/mandi-bhav?state=tamil-nadu&crop=tomato`.
 - Official source identifiers, some crop names and state/market names stay in their source form. Exact localized crop IDs are used; no price identities are merged through broad editorial topics.
 - Unknown/no-data states do not silently return all-India prices. Unknown crops do not silently return wheat prices.
 - The latest valid daily observation is used unless a newer monthly period exists; same-month daily observations take priority. Observation date is never replaced by ingestion time.
+- Daily and monthly histories are separate, selectable, newest-first tables in the chosen tool language. They reuse the existing price response, validate calendar dates and amounts, and do not mutate cached data. Hindi full details remain an explicitly labeled optional link.
 - Prices remain INR per quintal. Historical observations are not described as today's price or a guaranteed offer.
 - Delivery calculator: trips = ceiling(load / legal usable capacity); charged distance = trips × one-way distance × return multiplier; estimate = charged distance × quoted rate + user-entered total extras.
-- Payload and rate must be entered for the chosen category. Changing category clears these vehicle-specific fields. Categories are examples, not manufacturer-certified payload specifications.
+- Payload and rate are manual inputs confirmed by the user. As in the integrated crop-fix release, changing the category preserves those entered values; a category labels the trip and does not supply or certify capacity or fare. Categories are examples, not manufacturer-certified payload specifications.
 - Empty fields are invalid; explicit zero is allowed for rate/extras only. Negative, invalid and unsafe overflow values are rejected. Native numeric scripts, Indian comma grouping and Arabic decimal separators are supported.
 - Per-kg result uses the entered total load, including packaging. It is not silently claimed to be per kg of saleable produce.
 - Language preference is stored locally only after the user chooses to remember it. The directory suggests it on return. No forced browser-language or location redirect.
@@ -49,6 +52,15 @@ Ten additional Noto fonts are self-hosted for Bengali/Assamese, Tamil, Telugu, K
 - `src/pages/LanguageToolsPage.jsx`: translated price and delivery tools.
 - `src/utils/languageTools.js`: locale-independent numeric and price rules.
 - `tests/languages.test.mjs`: meaningful language, arithmetic, date and generated-page checks.
+- `shared/editorialLanguages.js`: actual editorial language coverage for CMS and frontend.
+- `src/i18n/editorial/*.json`: 83-key article and library interface dictionaries for the 11 added languages.
+- `content/editorial/tomato-market-delivery-*.json`: full translated source articles, preserving primary references and worked-example assumptions.
+- `src/utils/languageNavigation.js`: safe, local-only language/state/exact-crop navigation context.
+- `tests/editorial-languages.test.mjs`, `tests/languageNavigation.test.mjs`: actual article coverage, arithmetic, source parity, direction, canonical and navigation checks.
+
+## Editorial artwork
+
+The 11 new translations share one deliberately text-free tomato transport illustration. Native headlines, image descriptions and AI-illustration disclosures are HTML, so they remain accessible and do not require readers to interpret Hindi image text. Existing Hindi, Marathi and Gujarati covers remain. The new cover has responsive 640/960/1672px variants; intrinsic size is 1672×942. `content/editorial/thumbnail-prompts-national-neutral.json` records the exact image-generation prompt and review. The responsive image manifest explicitly marks shared art as text-free; tests reject reused language-specific artwork.
 
 ## Publishing a pending language
 
@@ -68,4 +80,4 @@ Ten additional Noto fonts are self-hosted for Bengali/Assamese, Tamil, Telugu, K
 
 ## Validation and remaining QA
 
-The implementation passed 187 automated tests and targeted ESLint checks. Font cmap checks covered 1,129 character requirements across all 23 language names and the available dictionaries, with zero missing glyphs. Browser screenshot validation could not run because the available Chromium download was incomplete; do not interpret these checks as completed mobile/RTL screenshot review. Native-language editorial review remains necessary as described above.
+The combined implementation passed 204 automated tests (zero failures or skips), targeted ESLint checks, and a production build generating 1,615 indexable pages. The tests include native library HTML before JavaScript, all 14 article alternates, context retention, example arithmetic and daily/monthly history. Font cmap checks covered 1,898 character requirements across all 23 language names and 55 JSON files, including all 11 new articles and all 11 new interface dictionaries, with zero missing glyphs. The concurrent crop-artwork/name fixes from main commit f003c0b9 were integrated before final validation. Browser screenshot validation could not run because the available Chromium download was incomplete; do not interpret these checks as completed mobile/RTL screenshot review. Native-language editorial review remains necessary as described above.

@@ -1,5 +1,18 @@
 /* SahiBhav's forest, grain and paper palette, shared by its editorial surfaces. */
 .sb-journal-page{min-height:100vh;background:#f7f5ec;color:#1b3027}
+.sb-journal-page.sb-language-surface{font-family:'SahiBhav National','SahiBhav Sans',system-ui,sans-serif}
+.sb-journal-page input,.sb-journal-page select,.sb-journal-page button{font-family:inherit}
+.sb-journal-page [dir='ltr'],.sb-journal-page bdi{unicode-bidi:isolate}
+.sb-journal-page[dir='rtl'] .sb-journal-focus{padding-left:0;padding-right:24px;border-left:0;border-right:1px solid #d5ddcd}
+.sb-journal-page[dir='rtl'] .sb-journal-search-form select{padding-right:12px;padding-left:28px}
+.sb-journal-page[dir='rtl'] .sb-journal-sources ol{padding-left:0;padding-right:21px}
+.sb-journal-page[dir='rtl'] .sb-journal-sources li{padding-left:0;padding-right:4px}
+.sb-journal-page[dir='rtl'] .sb-journal-sources li a>svg{margin-left:0;margin-right:6px}
+.sb-journal-page[dir='rtl'] :is(h1,h2,h3,.sb-journal-eyebrow){letter-spacing:normal}
+.sb-journal-page[dir='rtl'] :is(.lucide-arrow-right,.lucide-arrow-left){transform:scaleX(-1)}
+.sb-journal-prose{overflow-wrap:anywhere}
+.sb-journal-prose table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse}
+.sb-journal-prose th,.sb-journal-prose td{padding:10px 12px;border:1px solid #dce3d4;text-align:start;min-width:100px}
 .sb-journal-page a,.sb-journal-page button{-webkit-tap-highlight-color:transparent}
 .sb-journal-page a:focus-visible,.sb-journal-page button:focus-visible{outline:3px solid #78a87c;outline-offset:5px;border-radius:6px}
 .sb-journal-skip{position:absolute;top:8px;left:16px;transform:translateY(-150%);z-index:100;background:#174c3c;color:white;padding:12px 20px;border-radius:8px}

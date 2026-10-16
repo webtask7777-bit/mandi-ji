@@ -36,20 +36,27 @@ function validObservationDate(value, monthly) {
   return Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0, 10) === expected;
 }
 
-export function latestPriceRecord(data) {
-  const newest = (key, basis) => {
-    const records = (Array.isArray(data?.[key]) ? data[key] : []).filter(record => {
+// Keep the two observation periods separate. This is a new immutable view of the
+// response: selecting/sorting history must never reorder the shared API cache.
+export function normalizePriceHistory(data) {
+  const observations = (key, basis) => {
+    const records = (Array.isArray(data?.[key]) ? data[key] : []).map((record, index) => ({ record, index })).filter(({ record }) => {
       const value = parseLanguageNumber(record?.market);
-      return value !== null && value > 0 && validObservationDate(record?.date, basis === 'monthly');
-    }).sort((a, b) => a.date.localeCompare(b.date));
-    const record = records.at(-1);
-    return record ? { ...record, market: parseLanguageNumber(record.market), basis } : null;
+      return value !== null && value > 0 && value <= Number.MAX_SAFE_INTEGER && validObservationDate(record?.date, basis === 'monthly');
+    }).sort((a, b) => b.record.date.localeCompare(a.record.date) || b.index - a.index)
+      .map(({ record }) => Object.freeze({ ...record, market: parseLanguageNumber(record.market), basis }));
+    return Object.freeze(records);
   };
-  const daily = newest('dailyHistory', 'daily');
-  const monthly = newest('history', 'monthly');
+  return Object.freeze({ daily: observations('dailyHistory', 'daily'), monthly: observations('history', 'monthly') });
+}
+
+export function latestPriceRecord(data) {
+  const history = normalizePriceHistory(data);
+  const daily = history.daily[0];
+  const monthly = history.monthly[0];
   // Prefer the precise daily observation within a month, but never hide a newer month.
   if (daily && (!monthly || daily.date.slice(0, 7) >= monthly.date)) return daily;
-  return monthly;
+  return monthly || null;
 }
 
 export function buildLanguageToolsUrl(code, { state, crop } = {}) {

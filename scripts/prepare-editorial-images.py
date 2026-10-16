@@ -11,6 +11,11 @@ ROOT = Path(__file__).resolve().parents[1]
 posts = json.loads((ROOT / 'server/db/data/blog-posts.json').read_text())
 covers = sorted({post['coverImage'] for post in posts if post.get('coverImage', '').startswith('/editorial/')} | {'/editorial/journal-overview.webp'})
 manifest = {}
+text_free_covers = set()
+for prompt_file in (ROOT / 'content/editorial').glob('thumbnail-prompts-*.json'):
+    for entry in json.loads(prompt_file.read_text()):
+        if entry.get('textFree') is True and entry.get('file'):
+            text_free_covers.add(f"/editorial/{entry['file']}.webp")
 for cover in covers:
     source = ROOT / 'public' / cover.lstrip('/')
     with Image.open(source) as image:
@@ -26,5 +31,7 @@ for cover in covers:
             candidates.append({'src': '/' + str(filename.relative_to(ROOT / 'public')), 'width': target, 'height': output_height})
         candidates.append({'src': cover, 'width': width, 'height': height})
         manifest[cover] = {'width': width, 'height': height, 'candidates': candidates}
+        if cover in text_free_covers:
+            manifest[cover]['textFree'] = True
 (ROOT / 'src/data/editorialImages.json').write_text(json.dumps(manifest, indent=2) + '\n')
 print(f'Prepared {len(covers)} approved covers with responsive candidates.')
