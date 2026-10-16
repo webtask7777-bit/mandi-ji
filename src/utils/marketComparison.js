@@ -20,10 +20,17 @@ export function sortMandiPrices(data = []) {
   return data.filter(m => getMandiPrice(m) !== null).slice().sort((a, b) => getMandiPrice(b) - getMandiPrice(a));
 }
 
-/** Compare like-labelled observations. Unknown dates remain unknown, never today's quotes. */
+// Above this ratio a "gap" is almost always a unit or data-entry difference, not a market.
+export const MAX_PAIR_RATIO = 3;
+
+/**
+ * Compare like-labelled observations. Only recent prices are paired: all-time averages
+ * cover different periods per mandi, so their difference is not a current gap.
+ */
 export function getComparisonPair(data = []) {
   const groups = new Map();
   for (const mandi of sortMandiPrices(data)) {
+    if (getMandiPriceBasis(mandi) !== 'recent') continue;
     const variety = mandi.topVariety?.trim();
     if (!variety) continue;
     const key = JSON.stringify([variety.toLowerCase(), (mandi.grade || '').trim().toLowerCase(), getMandiPriceBasis(mandi), getMandiQuoteDate(mandi)]);
@@ -40,7 +47,7 @@ export function getComparisonPair(data = []) {
     const low = [...rows].reverse().find(m => `${m.stateCode}|${m.district}|${m.name}` !== `${high.stateCode}|${high.district}|${high.name}`);
     if (!low) continue;
     const spread = getMandiPrice(high) - getMandiPrice(low);
-    if (spread <= 0) continue;
+    if (spread <= 0 || getMandiPrice(high) / getMandiPrice(low) > MAX_PAIR_RATIO) continue;
     candidates.push({ high, low, spread, count: rows.length, variety: high.topVariety, grade: high.grade || null, quoteDate: getMandiQuoteDate(high), basis: getMandiPriceBasis(high), outliersExcluded: group.length - rows.length });
   }
   // Prefer the largest cohort so a rare pair doesn't dominate the comparison.

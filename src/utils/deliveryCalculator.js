@@ -88,7 +88,7 @@ export function prefillDeliveryForm(previous, scenario) {
     from: scenario.buyMandi || '', to: scenario.sellMandi || '', priceUnit: 'quintal',
     buyPrice: Number(scenario.buyPrice) > 0 ? scenario.buyPrice : '',
     benchmarkPrice: !isListingOffer && Number(scenario.sellPrice) > 0 ? scenario.sellPrice : '',
-    distanceKm: '', ratePerKm: '', quotePerTrip: '', minFare: 0, tollPerTrip: 0,
+    distanceKm: '', ratePerKm: '', quotePerTrip: '', minFare: '', tollPerTrip: '',
     comparisonMode: isListingOffer ? 'local' : 'resale', example: false, locationOnly: false,
     sourceQuote: {
       date: scenario.quoteDate || null, basis: scenario.priceBasis || '',

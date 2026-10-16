@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calculator, ChevronDown, ChevronUp, Search, SlidersHorizontal, Info } from 'lucide-react';
 import { useStateContext } from '../context/StateContext';
-import { getOutlierBounds, isOutlier } from '../lib/outlier';
+import { flagOutliersByGroup } from '../lib/outlier';
 import { getDataFreshness } from '../utils/dataFreshness';
 import { cropDetailPath } from '../utils/cropUrls';
 import { getComparisonPair, getMandiPrice, getMandiPriceBasis, getMandiQuoteDate, sortMandiPrices } from '../utils/marketComparison';
@@ -25,11 +25,15 @@ export default function MandiCompare({ data = [], cropName, onMandiClick, cropId
   const activeVariety = varieties.includes(variety) ? variety : 'all';
   const filtered = useMemo(() => validData.filter(row => (activeVariety === 'all' || row.topVariety === activeVariety) && `${row.name} ${row.district || ''} ${row.stateCode || ''}`.toLowerCase().includes(search.toLowerCase())).sort((a, b) => sort === 'low' ? getMandiPrice(a) - getMandiPrice(b) : getMandiPrice(b) - getMandiPrice(a)), [validData, activeVariety, search, sort]);
   const pair = useMemo(() => getComparisonPair(filtered), [filtered]);
-  const bounds = useMemo(() => getOutlierBounds(filtered.map(getMandiPrice)), [filtered]);
+  // Unusual is judged within the same variety and grade; summary tiles leave flagged rows out.
+  const flagged = useMemo(() => flagOutliersByGroup(filtered, getMandiPrice, row => `${row.topVariety || ''}|${row.grade || ''}`.toLowerCase()), [filtered]);
+  const usual = useMemo(() => filtered.filter(row => !flagged.has(row)), [filtered, flagged]);
   if (!validData.length) return null;
-  const max = Math.max(...filtered.map(getMandiPrice));
-  const min = Math.min(...filtered.map(getMandiPrice));
-  const average = filtered.length ? filtered.reduce((sum, row) => sum + getMandiPrice(row), 0) / filtered.length : 0;
+  const summaryRows = usual.length ? usual : filtered;
+  const max = Math.max(...summaryRows.map(getMandiPrice));
+  const min = Math.min(...summaryRows.map(getMandiPrice));
+  const average = summaryRows.length ? summaryRows.reduce((sum, row) => sum + getMandiPrice(row), 0) / summaryRows.length : 0;
+  const excludedCount = filtered.length - summaryRows.length;
   const visible = showAll ? filtered : filtered.slice(0, 8);
 
   function calculatePair() {
@@ -44,10 +48,10 @@ export default function MandiCompare({ data = [], cropName, onMandiClick, cropId
     <div className="sb-comparison-heading"><div><span className="sb-comparison-eyebrow">बाज़ार को समझें</span><h2>{cropName} की मंडी तुलना</h2></div><span className="sb-comparison-count">{validData.length.toLocaleString('en-IN')} मंडी रिकॉर्ड</span></div>
     <p className="sb-comparison-intro">भाव ₹ / क्विंटल में। किस्म, ग्रेड और रिकॉर्ड की तारीख देखकर तुलना करें।</p>
     <div className="sb-comparison-toolbar"><label className="sb-comparison-search"><Search size={16} aria-hidden="true" /><input value={search} onChange={event => { setSearch(event.target.value); setShowAll(false); }} placeholder="मंडी या ज़िला खोजें" aria-label="मंडी या ज़िला खोजें" /></label><label className="sb-comparison-select"><SlidersHorizontal size={15} aria-hidden="true" /><select aria-label="किस्म फ़िल्टर" value={activeVariety} onChange={event => { setVariety(event.target.value); setShowAll(false); }}><option value="all">सभी किस्में</option>{varieties.map(item => <option key={item} value={item}>{item}</option>)}</select></label><select aria-label="भाव क्रम" value={sort} onChange={event => setSort(event.target.value)}><option value="high">अधिक भाव पहले</option><option value="low">कम भाव पहले</option></select></div>
-    {!!filtered.length && <div className="sb-comparison-summary"><div><span>अधिकतम दर्ज औसत</span><strong>₹{money(max)}</strong></div><div><span>मंडियों का साधारण औसत</span><strong>₹{money(average)}</strong></div><div><span>न्यूनतम दर्ज औसत</span><strong>₹{money(min)}</strong></div></div>}
+    {!!filtered.length && <div className="sb-comparison-summary"><div><span>अधिकतम दर्ज औसत</span><strong>₹{money(max)}</strong></div><div><span>मंडियों का साधारण औसत</span><strong>₹{money(average)}</strong></div><div><span>न्यूनतम दर्ज औसत</span><strong>₹{money(min)}</strong></div>{excludedCount > 0 && <small>{excludedCount.toLocaleString('en-IN')} असामान्य रिकॉर्ड इन आँकड़ों में शामिल नहीं</small>}</div>}
     <div className="sb-comparison-table-wrap" tabIndex={0} role="region" aria-label="मंडी तुलना तालिका, छोटे पर्दे पर दाएँ-बाएँ स्क्रॉल करें"><table className="sb-comparison-table"><caption className="sr-only">{cropName} के उपलब्ध मंडी भाव, किस्म, ग्रेड और भाव की तारीख</caption><thead><tr><th scope="col">मंडी / किस्म</th><th scope="col">दर्ज भाव</th><th scope="col">रिकॉर्ड का आधार</th></tr></thead><tbody>{visible.map((row, index) => {
       const freshness = getDataFreshness(getMandiQuoteDate(row));
-      return <tr key={`${row.stateCode}-${row.district}-${row.name}-${index}`}><td><div className="sb-mandi-name">{onMandiClick ? <button type="button" onClick={() => onMandiClick(row.name)}>{row.name}</button> : <strong>{row.name}</strong>}{row.stateCode && <button type="button" className="sb-state-link" disabled={!STATE_CODE_TO_ID[row.stateCode]} onClick={() => selectStateDirect(STATE_CODE_TO_ID[row.stateCode])}>{row.stateCode}</button>}</div><span>{[row.district, row.topVariety, row.grade].filter(Boolean).join(' · ')}</span></td><td><strong className="sb-mandi-price">₹{money(getMandiPrice(row))}</strong>{isOutlier(getMandiPrice(row), bounds) && <small className="sb-outlier">असामान्य रिकॉर्ड</small>}</td><td><span>{getMandiPriceBasis(row) === 'recent' ? 'हाल के रिकॉर्ड का औसत' : 'ऐतिहासिक औसत'}</span><small>{freshness.dateLabel}</small></td></tr>;
+      return <tr key={`${row.stateCode}-${row.district}-${row.name}-${index}`}><td><div className="sb-mandi-name">{onMandiClick ? <button type="button" onClick={() => onMandiClick(row.name)}>{row.name}</button> : <strong>{row.name}</strong>}{row.stateCode && <button type="button" className="sb-state-link" disabled={!STATE_CODE_TO_ID[row.stateCode]} onClick={() => selectStateDirect(STATE_CODE_TO_ID[row.stateCode])}>{row.stateCode}</button>}</div><span>{[row.district, row.topVariety, row.grade].filter(Boolean).join(' · ')}</span></td><td><strong className="sb-mandi-price">₹{money(getMandiPrice(row))}</strong>{flagged.has(row) && <small className="sb-outlier">असामान्य रिकॉर्ड</small>}</td><td><span>{getMandiPriceBasis(row) === 'recent' ? 'हाल के रिकॉर्ड का औसत' : 'ऐतिहासिक औसत'}</span><small>{freshness.dateLabel}</small></td></tr>;
     })}</tbody></table>{!filtered.length && <div className="sb-comparison-empty">इस खोज में मंडी नहीं मिली। दूसरा नाम या किस्म चुनें।</div>}</div>
     {filtered.length > 8 && <button type="button" className="sb-comparison-more" aria-expanded={showAll} onClick={() => setShowAll(value => !value)}>{showAll ? <><ChevronUp size={16} /> कम मंडियाँ दिखाएँ</> : <><ChevronDown size={16} /> सभी {filtered.length.toLocaleString('en-IN')} मंडियाँ देखें</>}</button>}
     <p className="sb-comparison-footnote"><Info size={14} aria-hidden="true" />अलग तारीखों, किस्मों या ग्रेड के औसत सीधे बिक्री का पक्का भाव नहीं बताते। साधारण औसत को आवक के अनुसार भार नहीं दिया गया है।</p>

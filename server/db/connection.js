@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from 'fs';
+import { readFileSync, existsSync, readdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import { normalizeCropDataset, normalizeCropPriceDetail } from './crop-display-names.js';
@@ -70,3 +70,28 @@ export function reloadData(name) {
   delete cache[name];
   return loadData(name);
 }
+
+// ─── Price scopes ───────────────────────────────────────────────────────
+// Every price route resolves `state` the same way: missing → all-India; a known state id →
+// that state's current data (Chhattisgarh included; its legacy files stop in March 2026);
+// anything else → null, which routes answer with 400 instead of an empty 200.
+let stateIds = null;
+export function resolveScope(state) {
+  if (state === undefined || state === '' || state === 'all') return 'all';
+  if (typeof state !== 'string' || !/^[a-z][a-z-]*$/.test(state)) return null;
+  if (!stateIds) {
+    const dir = path.join(INDIA_DIR, 'states');
+    stateIds = new Set(existsSync(dir) ? readdirSync(dir, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => d.name) : []);
+  }
+  return stateIds.has(state) ? state : null;
+}
+
+export function loadScopeData(scope, name) {
+  return scope === 'all' ? loadIndiaData(name) : loadStateData(scope, name);
+}
+
+export function loadScopeCropPrices(scope, cropId) {
+  return scope === 'all' ? loadIndiaCropPrices(cropId) : loadStateCropPrices(scope, cropId);
+}
+
+export const UNKNOWN_STATE_ERROR = Object.freeze({ error: 'Unknown state', code: 'UNKNOWN_STATE' });

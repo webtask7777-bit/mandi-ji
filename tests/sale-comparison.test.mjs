@@ -68,3 +68,12 @@ test('the shared summary carries quote dates and the not-a-guarantee line', () =
   assert.match(text, /भाव की तारीख 2026-10-15/);
   assert.match(text, /पक्का भाव नहीं/);
 });
+
+test('options within ₹1 are a tie: same rank, no winner', () => {
+  const r = compareSaleOptions({ quantity: 10, options: [
+    { label: 'gate', kind: 'farmgate', pricePerQuintal: 2000 },
+    { label: 'mandi', kind: 'mandi', pricePerQuintal: 2100, freightTotal: 1000, lossPercent: 0 },
+  ] });
+  assert.equal(r.tie, true);
+  assert.deepEqual(r.rows.map(x => x.rank), [1, 1]);
+});

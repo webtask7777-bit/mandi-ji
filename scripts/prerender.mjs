@@ -1,7 +1,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadData, loadIndiaData, loadStateData, loadCropPrices, loadIndiaCropPrices, loadStateCropPrices } from '../server/db/connection.js';
+import { loadIndiaData, loadStateData, loadIndiaCropPrices, loadStateCropPrices } from '../server/db/connection.js';
 import { isCropPriceCommodity } from '../src/utils/cropEligibility.js';
 import { cropDetailPath } from '../src/utils/cropUrls.js';
 
@@ -83,16 +83,16 @@ try {
   const routes = new Set(['/', '/delivery-calculator', '/bechne-ka-hisab', '/about', '/contact', '/privacy', '/terms', '/blog']);
   const knownCrops = new Set();
   const states = (loadIndiaData('states') || []).filter(state => state.hasData);
-  const scopes = ['all', ...new Set([...states.map(state => state.id), 'chhattisgarh'])];
+  const scopes = ['all', ...new Set(states.map(state => state.id))];
   for (const scope of scopes) {
-    const crops = scope === 'all' ? loadIndiaData('crops') : scope === 'chhattisgarh' ? loadData('crops') : loadStateData(scope, 'crops');
+    const crops = scope === 'all' ? loadIndiaData('crops') : loadStateData(scope, 'crops');
     if (!Array.isArray(crops) || !crops.length) continue;
     if (scope !== 'all') routes.add(`/mandi-bhav/${scope}`);
     for (const crop of crops.filter(crop => isCropPriceCommodity(crop.id))) {
       const route = cropDetailPath(crop.id, scope);
       knownCrops.add(route);
       let detail;
-      try { detail = scope === 'all' ? loadIndiaCropPrices(crop.id) : scope === 'chhattisgarh' ? loadCropPrices(crop.id) : loadStateCropPrices(scope, crop.id); } catch { /* no observed prices: keep out of sitemap */ }
+      try { detail = scope === 'all' ? loadIndiaCropPrices(crop.id) : loadStateCropPrices(scope, crop.id); } catch { /* no observed prices: keep out of sitemap */ }
       if (hasPrice(detail)) routes.add(route);
     }
   }
