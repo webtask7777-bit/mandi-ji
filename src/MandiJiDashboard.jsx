@@ -60,6 +60,7 @@ export default function MandiJiDashboard() {
   const [jumpToCrop, setJumpToCrop] = useState(null);
   const [jumpToMandi, setJumpToMandi] = useState(null);
   const [dismissedBanners, setDismissedBanners] = useState([]);
+  const [showNotifications, setShowNotifications] = useState(false);
 
   function handleCropClick(cropId) {
     setJumpToCrop(cropId);
@@ -189,15 +190,28 @@ export default function MandiJiDashboard() {
             {notifications?.length > 0 && (
               <div className="relative">
                 <button
-                  onClick={() => navigate('/blog')}
+                  type="button"
+                  onClick={() => setShowNotifications(open => !open)}
                   className="sb-icon-button"
                   aria-label={`सूचनाएँ देखें, ${notifications.length} उपलब्ध`}
+                  aria-expanded={showNotifications}
+                  aria-controls="sb-notification-list"
                 >
-                  <Bell size={14} className="text-zinc-400" />
-                  <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-red-500 rounded-full text-[7px] text-white font-bold flex items-center justify-center">
+                  <Bell size={14} className="text-zinc-400" aria-hidden="true" />
+                  <span aria-hidden="true" className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-red-500 rounded-full text-[7px] text-white font-bold flex items-center justify-center">
                     {notifications.length}
                   </span>
                 </button>
+                {showNotifications && (
+                  <div id="sb-notification-list" role="region" aria-label="सूचनाएँ" className="absolute right-0 top-full mt-2 z-50 w-72 max-w-[calc(100vw-2rem)] rounded-xl border border-zinc-800 bg-zinc-950 p-2 shadow-xl">
+                    {notifications.map(item => (
+                      <div key={item.id} className="rounded-lg px-2 py-2 text-left">
+                        <div className="text-sm font-bold text-foreground">{brandCopy(item.title)}</div>
+                        {item.message && <div className="text-xs text-zinc-400 mt-0.5">{brandCopy(item.message)}</div>}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
             {/* User button */}
@@ -314,7 +328,9 @@ export default function MandiJiDashboard() {
               <div className="text-sm font-bold">{brandCopy(banner.title)}</div>
               <div className="text-xs opacity-80">{brandCopy(banner.message)}</div>
             </div>
-            {banner.link && <button onClick={() => navigate(banner.link)} className="text-[9px] font-bold underline shrink-0">देखें</button>}
+            {/^https?:\/\//i.test(banner.link || '')
+              ? <a href={banner.link} target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold underline shrink-0">देखें</a>
+              : banner.link?.startsWith('/') && <button type="button" onClick={() => navigate(banner.link)} className="text-[9px] font-bold underline shrink-0">देखें</button>}
             <button onClick={() => setDismissedBanners(prev => [...prev, banner.id])} className="sb-icon-button" aria-label="सूचना बंद करें"><X size={14}/></button>
           </div>
         );
@@ -466,7 +482,7 @@ export default function MandiJiDashboard() {
                 {statesNoData.length > 0 && (
                   <div className="mt-3">
                     <div className="text-[9px] text-zinc-500 tracking-wider font-bold mb-1.5 px-1">
-                      डेटा जल्द आएगा ({statesNoData.length})
+                      अभी डेटा उपलब्ध नहीं ({statesNoData.length})
                     </div>
                     {statesNoData.map(s => (
                       <button

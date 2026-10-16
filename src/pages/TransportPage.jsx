@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Truck } from 'lucide-react';
 import DeliveryCalculatorTab from '../tabs/DeliveryCalculatorTab';
 import SEO from '../components/SEO';
@@ -11,6 +11,7 @@ import '../styles/dashboard.css';
 
 export default function TransportPage() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [scenario, setScenario] = useState(location.state?.deliveryScenario || null);
   return (
     <div className="sb-dashboard sb-delivery-page">
@@ -24,7 +25,7 @@ export default function TransportPage() {
       <main id="delivery-main" className="sb-main">
         <div className="sb-calculator-page-heading"><span className="sb-eyebrow"><Truck size={16} aria-hidden="true" />सही भाव · हिसाब और तैयारी</span><h1>मंडी डिलीवरी कैलकुलेटर और गाइड</h1></div>
         <CropImageLegend />
-        <DeliveryCalculatorTab initialScenario={scenario} onScenarioConsumed={() => setScenario(null)} />
+        <DeliveryCalculatorTab initialScenario={scenario} onScenarioConsumed={() => { setScenario(null); navigate(location.pathname, { replace: true, state: null }); }} />
         <Footer />
       </main>
     </div>

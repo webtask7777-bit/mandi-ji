@@ -71,6 +71,7 @@ export function deliveryFormToInput(form) {
 export function priceBasisLabel(basis) {
   return ({
     'daily-average': 'उस दिन के दर्ज भावों का औसत',
+    'monthly-average': 'उस महीने के दर्ज भावों का औसत',
     recent: 'आख़िरी दर्ज तारीख तक के 7 दिनों के दर्ज भावों का औसत',
     historical: 'पुराने दर्ज भावों का औसत',
     'listing-offer': 'विक्रेता का माँगा हुआ भाव',

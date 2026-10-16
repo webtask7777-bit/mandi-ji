@@ -9,7 +9,7 @@ const router = Router();
 router.get('/pages/:key', (req, res) => {
   try {
     const pages = read('pages.json');
-    const page = pages[req.params.key];
+    const page = Object.hasOwn(pages, req.params.key) ? pages[req.params.key] : null;
     if (!page) return res.status(404).json({ error: 'पेज नहीं मिला' });
     res.json(page);
   } catch (err) {

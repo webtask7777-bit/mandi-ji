@@ -9,6 +9,11 @@ const INDIA_DIR = path.join(DATA_DIR, 'india');
 
 const cache = {};
 
+// Every id that becomes part of a file path must be a plain slug: no dots, slashes or
+// encoded traversal can reach another data file.
+const SAFE_ID = /^[a-z0-9][a-z0-9-]*$/;
+export const isSafeId = id => typeof id === 'string' && id.length <= 80 && SAFE_ID.test(id);
+
 export function loadData(name) {
   if (!cache[name]) {
     const file = path.join(DATA_DIR, `${name}.json`);
@@ -18,6 +23,7 @@ export function loadData(name) {
 }
 
 export function loadCropPrices(cropId) {
+  if (!isSafeId(cropId)) return null;
   const key = `crop-prices/${cropId}`;
   if (!cache[key]) {
     const file = path.join(DATA_DIR, 'crop-prices', `${cropId}.json`);
@@ -27,6 +33,7 @@ export function loadCropPrices(cropId) {
 }
 
 export function loadIndiaData(name) {
+  if (!isSafeId(name)) return null;
   const key = `india/${name}`;
   if (!cache[key]) {
     const file = path.join(INDIA_DIR, `${name}.json`);
@@ -37,6 +44,7 @@ export function loadIndiaData(name) {
 }
 
 export function loadStateData(stateId, name) {
+  if (!isSafeId(stateId) || !isSafeId(name)) return null;
   const key = `india/states/${stateId}/${name}`;
   if (!cache[key]) {
     const file = path.join(INDIA_DIR, 'states', stateId, `${name}.json`);
@@ -47,6 +55,7 @@ export function loadStateData(stateId, name) {
 }
 
 export function loadIndiaCropPrices(cropId) {
+  if (!isSafeId(cropId)) return null;
   const key = `india/crop-prices/${cropId}`;
   if (!cache[key]) {
     const file = path.join(INDIA_DIR, 'crop-prices', `${cropId}.json`);
@@ -57,6 +66,7 @@ export function loadIndiaCropPrices(cropId) {
 }
 
 export function loadStateCropPrices(stateId, cropId) {
+  if (!isSafeId(stateId) || !isSafeId(cropId)) return null;
   const key = `india/states/${stateId}/crop-prices/${cropId}`;
   if (!cache[key]) {
     const file = path.join(INDIA_DIR, 'states', stateId, 'crop-prices', `${cropId}.json`);

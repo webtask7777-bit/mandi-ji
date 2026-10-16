@@ -3,6 +3,8 @@ export default async (req, res) => {
     const { default: app } = await import('../server/index.js');
     app(req, res);
   } catch (err) {
-    res.status(500).json({ error: err.message, stack: err.stack?.split('\n').slice(0, 5) });
+    // The details go to the function log, never to the client.
+    console.error('API failed to start', err);
+    res.status(500).json({ error: 'सर्वर अभी उपलब्ध नहीं है' });
   }
 };

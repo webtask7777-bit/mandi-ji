@@ -101,10 +101,12 @@ export default function CreateListingPage() {
       <header className="sticky top-0 z-30 bg-zinc-950 border-b border-zinc-800">
         <div className="flex items-center gap-3 px-4 py-3">
           <button
+            type="button"
+            aria-label="वापस जाएँ"
             onClick={() => navigate(-1)}
             className="p-1.5 rounded-lg hover:bg-zinc-800 transition-colors"
           >
-            <ArrowLeft size={20} className="text-zinc-400" />
+            <ArrowLeft size={20} className="text-zinc-400" aria-hidden="true" />
           </button>
           <h1 className="text-base font-bold">नई लिस्टिंग</h1>
         </div>
@@ -151,8 +153,8 @@ export default function CreateListingPage() {
 
         {/* Crop Selector */}
         <div>
-          <label className="text-xs font-semibold text-zinc-400 mb-1.5 block">फसल चुनें</label>
-          <select
+          <label htmlFor="listing-field-1" className="text-xs font-semibold text-zinc-400 mb-1.5 block">फसल चुनें</label>
+          <select id="listing-field-1"
             value={cropId}
             onChange={e => setCropId(e.target.value)}
             className="w-full h-11 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-foreground outline-none focus:border-green-500 transition-colors appearance-none"
@@ -168,8 +170,8 @@ export default function CreateListingPage() {
 
         {/* Quantity */}
         <div>
-          <label className="text-xs font-semibold text-zinc-400 mb-1.5 block">मात्रा (क्विंटल)</label>
-          <input
+          <label htmlFor="listing-field-2" className="text-xs font-semibold text-zinc-400 mb-1.5 block">मात्रा (क्विंटल)</label>
+          <input id="listing-field-2"
             type="number"
             value={quantity}
             onChange={e => setQuantity(e.target.value)}
@@ -182,8 +184,8 @@ export default function CreateListingPage() {
 
         {/* Price */}
         <div>
-          <label className="text-xs font-semibold text-zinc-400 mb-1.5 block">भाव (₹/क्विंटल)</label>
-          <input
+          <label htmlFor="listing-field-3" className="text-xs font-semibold text-zinc-400 mb-1.5 block">भाव (₹/क्विंटल)</label>
+          <input id="listing-field-3"
             type="number"
             value={price}
             onChange={e => setPrice(e.target.value)}
@@ -196,8 +198,8 @@ export default function CreateListingPage() {
 
         {/* Mandi / Location */}
         <div>
-          <label className="text-xs font-semibold text-zinc-400 mb-1.5 block">मंडी / स्थान</label>
-          <input
+          <label htmlFor="listing-field-4" className="text-xs font-semibold text-zinc-400 mb-1.5 block">मंडी / स्थान</label>
+          <input id="listing-field-4"
             type="text"
             value={mandiName}
             onChange={e => setMandiName(e.target.value)}
@@ -208,8 +210,8 @@ export default function CreateListingPage() {
 
         {/* Description */}
         <div>
-          <label className="text-xs font-semibold text-zinc-400 mb-1.5 block">विवरण (वैकल्पिक)</label>
-          <textarea
+          <label htmlFor="listing-field-5" className="text-xs font-semibold text-zinc-400 mb-1.5 block">विवरण (वैकल्पिक)</label>
+          <textarea id="listing-field-5"
             value={description}
             onChange={e => setDescription(e.target.value)}
             placeholder="अपनी फसल या ज़रूरत के बारे में लिखें..."

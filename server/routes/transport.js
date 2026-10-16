@@ -72,12 +72,16 @@ function haversineKm(lat1, lng1, lat2, lng2) {
 }
 
 function getCoords(cityName) {
-  if (!cityName) return null;
-  const key = cityName.toLowerCase().trim().replace(/[^a-z\s]/g, '');
-  if (CITY_COORDS[key]) return CITY_COORDS[key];
-  // Try partial match
+  if (typeof cityName !== 'string') return null;
+  // Only Latin names are listed; a name in another script (रायपुर) leaves an empty key,
+  // which must not "match" the first city in the table.
+  const key = cityName.toLowerCase().trim().replace(/[^a-z\s]/g, '').replace(/\s+/g, ' ').trim();
+  if (key.length < 3) return null;
+  if (Object.hasOwn(CITY_COORDS, key)) return CITY_COORDS[key];
+  // Partial match on whole words ("raipur mandi" → raipur), never on fragments.
+  const words = new Set(key.split(' '));
   for (const [k, v] of Object.entries(CITY_COORDS)) {
-    if (key.includes(k) || k.includes(key)) return v;
+    if (k.split(' ').every(word => words.has(word))) return v;
   }
   return null;
 }
@@ -85,37 +89,41 @@ function getCoords(cityName) {
 function calcDistance(origin, destination) {
   const cA = getCoords(origin);
   const cB = getCoords(destination);
-  if (cA && cB) return Math.max(50, haversineKm(cA[0], cA[1], cB[0], cB[1]));
-  // Fallback: same city
-  if (origin.toLowerCase().trim() === destination.toLowerCase().trim()) return 50;
-  return 500; // unknown city fallback
+  if (!cA || !cB) return null;
+  return Math.max(50, haversineKm(cA[0], cA[1], cB[0], cB[1]));
 }
+
+const MAX_QUINTALS = 100000;
 
 // POST /api/transport/calculate
 router.post('/calculate', (req, res) => {
   try {
-    const { origin, destination, weightQuintals, vehicleType } = req.body;
+    const { origin, destination, weightQuintals, vehicleType } = req.body || {};
 
-    if (!origin || !destination || !weightQuintals || !vehicleType) {
+    if (typeof origin !== 'string' || typeof destination !== 'string' || !origin.trim() || !destination.trim() || weightQuintals === undefined || !vehicleType) {
       return res.status(400).json({ error: 'सभी फ़ील्ड आवश्यक हैं' });
     }
 
-    const vehicle = VEHICLES[vehicleType];
-    if (!vehicle) {
+    if (typeof vehicleType !== 'string' || !Object.hasOwn(VEHICLES, vehicleType)) {
       return res.status(400).json({ error: 'अमान्य वाहन प्रकार' });
     }
+    const vehicle = VEHICLES[vehicleType];
 
     const weight = Number(weightQuintals);
-    if (weight <= 0) {
-      return res.status(400).json({ error: 'मात्रा 0 से अधिक होनी चाहिए' });
+    if (!Number.isFinite(weight) || weight <= 0 || weight > MAX_QUINTALS) {
+      return res.status(400).json({ error: 'मात्रा 0 से अधिक और 1,00,000 क्विंटल तक होनी चाहिए' });
     }
 
     const distance = calcDistance(origin, destination);
+    if (distance === null) {
+      // Guessing a distance would give a confident but wrong cost.
+      return res.status(422).json({ error: 'शहर सूची में नहीं मिला। शहर का नाम अंग्रेज़ी में लिखें (जैसे Raipur)।', code: 'UNKNOWN_CITY' });
+    }
     const trips = Math.ceil(weight / vehicle.cap);
     const baseCost = vehicle.base * trips;
     const distanceCost = distance * vehicle.perKm * trips;
     const loadingCost = weight * 5;
-    const tollEstimate = Math.round(distance * 0.5);
+    const tollEstimate = Math.round(distance * 0.5) * trips;
     const totalCost = baseCost + distanceCost + loadingCost + tollEstimate;
     const costPerQuintal = Math.round(totalCost / weight);
     const estimatedHours = Math.round((distance / vehicle.speed) * trips * 10) / 10;
@@ -133,7 +141,7 @@ router.post('/calculate', (req, res) => {
       vehicleName: vehicle.name,
       vehicleCapacity: vehicle.cap,
     });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'कैलकुलेशन विफल' });
   }
 });

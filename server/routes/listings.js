@@ -6,11 +6,18 @@ import { isCropPriceCommodity, UNSUPPORTED_COMMODITY_ERROR } from '../../src/uti
 
 const router = Router();
 
+const LISTING_TYPES = new Set(['buy', 'sell']);
+const LISTING_STATUSES = new Set(['active', 'sold', 'closed']);
+const validAmount = value => Number.isFinite(Number(value)) && Number(value) > 0 && Number(value) <= 10_000_000;
+
 // GET /api/listings — query params: type, crop, state, page, limit, sort
 router.get('/', (req, res) => {
   try {
     let listings = readJSON('listings.json');
-    const { type, crop, state, page = 1, limit = 20, sort = 'newest' } = req.query;
+    const one = value => (typeof value === 'string' ? value : '');
+    const type = one(req.query.type), crop = one(req.query.crop), state = one(req.query.state);
+    const { page = 1, limit = 20 } = req.query;
+    const sort = one(req.query.sort) || 'newest';
 
     // Filter by type (buy/sell)
     if (type) {
@@ -62,10 +69,14 @@ router.get('/', (req, res) => {
 // POST /api/listings — authRequired, create listing
 router.post('/', authRequired, (req, res) => {
   try {
-    const { type, cropId, cropName, cropEmoji, quantity, pricePerUnit, mandiName, state, district, description } = req.body;
+    const { type, cropId, cropName, cropEmoji, quantity, pricePerUnit, mandiName, state, district, description } = req.body || {};
 
-    if (!type || !cropName || !quantity || !pricePerUnit || !mandiName) {
+    if (!type || typeof cropName !== 'string' || !cropName.trim() || !quantity || !pricePerUnit || !mandiName) {
       return res.status(400).json({ error: 'सभी आवश्यक फ़ील्ड भरें' });
+    }
+    if (!LISTING_TYPES.has(type)) return res.status(400).json({ error: 'लिस्टिंग का प्रकार buy या sell होना चाहिए' });
+    if (!validAmount(quantity) || !validAmount(pricePerUnit)) {
+      return res.status(400).json({ error: 'मात्रा और भाव 0 से अधिक संख्या होने चाहिए' });
     }
     // Listings are priced per quintal; livestock and other non-crop items are not accepted.
     const listingCropId = cropId || cropName.toLowerCase().replace(/\s+/g, '-');
@@ -112,6 +123,7 @@ router.post('/', authRequired, (req, res) => {
 router.get('/:id', (req, res) => {
   try {
     const listing = findById('listings.json', req.params.id);
+    // Expired or closed listings are still shown, with their status, by the detail page.
     if (!listing) return res.status(404).json({ error: 'लिस्टिंग नहीं मिली' });
     res.json(listing);
   } catch {
@@ -130,9 +142,18 @@ router.put('/:id', authRequired, (req, res) => {
 
     const allowedFields = ['quantity', 'pricePerUnit', 'description', 'status'];
     const updates = {};
+    const body = req.body || {};
     for (const key of allowedFields) {
-      if (req.body[key] !== undefined) updates[key] = req.body[key];
+      if (body[key] !== undefined) updates[key] = body[key];
     }
+    if (updates.status !== undefined && !LISTING_STATUSES.has(updates.status)) return res.status(400).json({ error: 'अमान्य स्थिति' });
+    for (const key of ['quantity', 'pricePerUnit']) {
+      if (updates[key] !== undefined) {
+        if (!validAmount(updates[key])) return res.status(400).json({ error: 'मात्रा और भाव 0 से अधिक संख्या होने चाहिए' });
+        updates[key] = Number(updates[key]);
+      }
+    }
+    if (updates.description !== undefined) updates.description = String(updates.description).slice(0, 1000);
     updates.updatedAt = new Date().toISOString();
 
     const updated = updateItem('listings.json', req.params.id, updates);
