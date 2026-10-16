@@ -136,14 +136,16 @@ export default function SellComparePage() {
               <div className="sb-delivery-result-card">
                 <div className="sb-delivery-result-top"><span><Calculator size={17} aria-hidden="true" /> हाथ में कितना बचेगा</span><span className="sb-delivery-estimate-tag">अनुमान</span></div>
                 {result.comparable ? <>
-                  <p className="sb-sell-verdict"><strong>{best.label}</strong> में {money(best.net)} बचने का अनुमान{result.runnerUp ? <>, जो {result.runnerUp.label} से {money(result.margin)} ज़्यादा है</> : null}।</p>
-                  {result.closeCall && <p className="sb-delivery-small-note"><Info size={14} aria-hidden="true" /> फ़र्क बहुत कम है। ग्रेड, तौल या छूटा हुआ खर्च नतीजा पलट सकता है।</p>}
+                  {result.tie
+                    ? <p className="sb-sell-verdict"><strong>{best.label}</strong> और <strong>{result.runnerUp.label}</strong> में लगभग बराबर, {money(best.net)} बचने का अनुमान।</p>
+                    : <p className="sb-sell-verdict"><strong>{best.label}</strong> में {money(best.net)} बचने का अनुमान{result.runnerUp ? <>, जो {result.runnerUp.label} से {money(result.margin)} ज़्यादा है</> : null}।</p>}
+                  {result.closeCall && !result.tie && <p className="sb-delivery-small-note"><Info size={14} aria-hidden="true" /> फ़र्क बहुत कम है। ग्रेड, तौल या छूटा हुआ खर्च नतीजा पलट सकता है।</p>}
                 </> : <p className="sb-delivery-empty-summary">कम से कम दो विकल्पों के ज़रूरी खाने भरें। खाली भाड़ा 0 नहीं माना जाता।</p>}
                 <div className="sb-delivery-table-scroll">
                   <table className="sb-sell-table">
                     <caption className="sr-only">हर विकल्प की कुल बिक्री, कटौती और हाथ में बचत</caption>
                     <thead><tr><th scope="col">विकल्प</th><th scope="col">बिक्री</th><th scope="col">खर्च</th><th scope="col">हाथ में</th></tr></thead>
-                    <tbody>{result.rows.map(row => <tr key={row.index} className={best && row === best ? 'is-best' : ''}>
+                    <tbody>{result.rows.map(row => <tr key={row.index} className={row.rank === 1 ? 'is-best' : ''}>
                       <th scope="row">{row.label}{row.status === 'ok' && row.assumedZero.length ? <small>0 माना: {row.assumedZero.join(', ')}</small> : null}</th>
                       {row.status === 'ok'
                         ? <><td>{money(row.gross)}</td><td>−{money(row.deductions)}</td><td><strong>{money(row.net)}</strong>{row.rank > 1 && <small>−{money(row.behindBest)}</small>}</td></>

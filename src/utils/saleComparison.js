@@ -83,15 +83,17 @@ export function compareSaleOptions({ quantity, quantityUnit = 'quintal', options
   const rows = options.map((option, index) => ({ index, label: option.label || `विकल्प ${index + 1}`, ...calculateSaleOption(option, quantityKg) }));
   const ranked = rows.filter(r => r.status === 'ok').sort((a, b) => b.net - a.net);
   const best = ranked[0] || null;
+  // Options less than ₹1 apart share a rank: a rounding difference is not a winner.
   for (const r of rows) {
     if (r.status !== 'ok') continue;
-    r.rank = ranked.indexOf(r) + 1;
     r.behindBest = best.net - r.net;
+    r.rank = 1 + ranked.filter(other => other.net - r.net >= 1).length;
   }
   const runnerUp = ranked[1] || null;
   const margin = best && runnerUp ? best.net - runnerUp.net : null;
-  const closeCall = margin != null && Math.abs(best.net) > 0 && margin / Math.abs(best.net) * 100 < closeCallPercent;
-  return { quantityKg: Number.isFinite(quantityKg) ? quantityKg : null, rows, best, runnerUp, margin, closeCall, comparable: ranked.length >= 2 };
+  const tie = margin != null && margin < 1;
+  const closeCall = tie || (margin != null && Math.abs(best.net) > 0 && margin / Math.abs(best.net) * 100 < closeCallPercent);
+  return { quantityKg: Number.isFinite(quantityKg) ? quantityKg : null, rows, best, runnerUp, margin, tie, closeCall, comparable: ranked.length >= 2 };
 }
 
 /** Build a plain-text summary for copy/share; includes source dates so a shared result stays dated. */
@@ -106,7 +108,8 @@ export function saleComparisonSummary({ cropName, quantity, quantityUnit, option
       ? `${row.rank}. ${row.label}: हाथ में ${money(row.net)} · भाव ${money(Number(option.pricePerQuintal))}/क्विंटल${date}`
       : `– ${row.label}: अधूरा (${row.missing.join(', ') || 'जाँचें'})`);
   }
-  if (result.closeCall) lines.push('फ़र्क बहुत कम है: ग्रेड या छूटा खर्च नतीजा बदल सकता है।');
+  if (result.tie) lines.push('दोनों विकल्पों में लगभग बराबर रकम बचती है।');
+  else if (result.closeCall) lines.push('फ़र्क बहुत कम है: ग्रेड या छूटा खर्च नतीजा बदल सकता है।');
   lines.push('यह अनुमान है, पक्का भाव नहीं। खेती की लागत शामिल नहीं।');
   return lines.join('\n');
 }

@@ -1,13 +1,12 @@
 import { Router } from 'express';
-import { loadData, loadIndiaData, loadStateData } from '../db/connection.js';
+import { loadIndiaData, resolveScope, loadScopeData, UNKNOWN_STATE_ERROR } from '../db/connection.js';
 
 const router = Router();
 
 router.get('/', (req, res) => {
-  const { state } = req.query;
-  if (state === 'all') return res.json(loadIndiaData('stats') || {});
-  if (state && state !== 'chhattisgarh') return res.json(loadStateData(state, 'stats') || {});
-  res.json(loadData('dashboard-stats'));
+  const scope = resolveScope(req.query.state);
+  if (!scope) return res.status(400).json(UNKNOWN_STATE_ERROR);
+  res.json(loadScopeData(scope, 'stats') || {});
 });
 
 router.get('/data-status', (req, res) => {

@@ -49,18 +49,21 @@ export default function MiniChart({ data = [], dailyData = [], title = "भा�
   const hasMsp = chartData.some(record => positiveNumber(record.msp));
   const hasVolume = chartData.some(record => positiveNumber(record.volume));
   const hasPriceRange = chartData.some(record => positiveNumber(record.minPrice) && positiveNumber(record.maxPrice) && Number(record.minPrice) <= Number(record.maxPrice));
-  const prices = chartData.flatMap(record => [record.market, record.msp,
-    ...(positiveNumber(record.minPrice) && positiveNumber(record.maxPrice) && Number(record.minPrice) <= Number(record.maxPrice) ? [record.minPrice, record.maxPrice] : [])]
-    .filter(positiveNumber).map(Number));
+  // Scale to the price line (and MSP), not to the min–max band: one extreme record
+  // otherwise flattens the line. The band is clipped to the visible range.
+  const prices = chartData.flatMap(record => [record.market, record.msp]).filter(positiveNumber).map(Number);
   const dataMax = Math.max(...prices);
   const dataMin = Math.min(...prices);
-  const padding = (dataMax - dataMin) * .15 || Math.max(dataMax * .08, 20);
-  const yMin = Math.max(0, Math.floor((dataMin - padding) / 100) * 100);
-  const yMax = Math.ceil((dataMax + padding) / 100) * 100;
+  const padding = (dataMax - dataMin) * .15 || Math.max(dataMax * .08, dataMax < 100 ? 1 : 20);
+  // Round to a step that suits the size of the numbers (₹5 items and ₹5,000 crops alike).
+  const roughStep = Math.max((dataMax - dataMin + 2 * padding) / 4, 0.5);
+  const unit = 10 ** Math.floor(Math.log10(roughStep));
+  const tickStep = [1, 2, 5, 10].map(m => m * unit).find(step => step >= roughStep) || 10 * unit;
+  const yMin = Math.max(0, Math.floor((dataMin - padding) / tickStep) * tickStep);
+  const yMax = Math.ceil((dataMax + padding) / tickStep) * tickStep;
   const yRange = yMax - yMin || 1;
-  const tickStep = Math.ceil(yRange / 4 / 100) * 100;
   const yTicks = [];
-  for (let value = yMin; value <= yMax; value += tickStep) yTicks.push(value);
+  for (let i = 0; yMin + i * tickStep <= yMax + 1e-9; i++) yTicks.push(Number((yMin + i * tickStep).toFixed(6)));
 
   const leftPad = 50, rightPad = 18, topPad = 16, bottomPad = 33;
   const chartW = 320, chartH = 140, volumeHeight = hasVolume ? 24 : 0;
@@ -69,7 +72,7 @@ export default function MiniChart({ data = [], dailyData = [], title = "भा�
   const xStep = chartW / (chartData.length - 1 || 1);
   const barW = Math.min(xStep * .45, 14);
   const toX = index => chartData.length === 1 ? leftPad + chartW / 2 : leftPad + index * xStep;
-  const toY = value => topPad + chartH - ((Number(value) - yMin) / yRange) * chartH;
+  const toY = value => topPad + chartH - ((Math.min(yMax, Math.max(yMin, Number(value))) - yMin) / yRange) * chartH;
   const marketPath = chartData.map((record, index) => `${index ? 'L' : 'M'}${toX(index)},${toY(record.market)}`).join(' ');
   const areaPath = `${marketPath} L${toX(chartData.length - 1)},${topPad + chartH} L${toX(0)},${topPad + chartH} Z`;
   // Start a fresh segment after every missing MSP. A market price is never an MSP fallback.
@@ -164,7 +167,7 @@ export default function MiniChart({ data = [], dailyData = [], title = "भा�
           <span className="inline-flex items-center gap-1.5"><span style={{ width: 13, height: 3, background: COLORS.forest, borderRadius: 2 }} />बाज़ार भाव</span>
           {hasMsp && <span className="inline-flex items-center gap-1.5"><span style={{ width: 13, borderTop: `2px dashed ${COLORS.gold}` }} />दर्ज MSP</span>}
           {hasPriceRange && <span className="inline-flex items-center gap-1.5"><span style={{ width: 10, height: 10, background: COLORS.band, borderRadius: 2 }} />न्यूनतम–अधिकतम</span>}
-          {hasVolume && <span className="inline-flex items-center gap-1.5"><span style={{ width: 10, height: 10, background: COLORS.volume, borderRadius: 2 }} />सापेक्ष मात्रा</span>}
+          {hasVolume && <span className="inline-flex items-center gap-1.5"><span style={{ width: 10, height: 10, background: COLORS.volume, borderRadius: 2 }} />रिकॉर्ड की संख्या</span>}
         </div>
         <p className="text-[11px] leading-relaxed mt-3" style={{ color: COLORS.muted }}>बिंदु उपलब्ध रिकॉर्ड के क्रम में हैं। बीच की दूरी समान समय नहीं दर्शाती।</p>
       </div>
