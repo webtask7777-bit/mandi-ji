@@ -50,9 +50,9 @@
       "month": "10",
       "date": "2026-10",
       "market": 2750,
-      "volume": 11,
-      "days": 1,
-      "mandis": 11
+      "volume": 24,
+      "days": 2,
+      "mandis": 14
     }
   ],
   "dailyHistory": [
@@ -383,39 +383,47 @@
       "mandis": 11,
       "minPrice": 1800,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-10-17",
+      "market": 2750,
+      "volume": 13,
+      "mandis": 13,
+      "minPrice": 1800,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-10-16T22:02:00.498Z",
+  "lastUpdated": "2026-10-17T04:53:33.634Z",
   "districtBreakdown": [
     {
       "district": "Salem",
       "nameHi": "Salem",
-      "avgPrice": 2617,
-      "records": 86
+      "avgPrice": 2612,
+      "records": 90
     },
     {
       "district": "Coimbatore",
       "nameHi": "Coimbatore",
-      "avgPrice": 2622,
-      "records": 76
+      "avgPrice": 2637,
+      "records": 79
     },
     {
       "district": "Karur",
       "nameHi": "Karur",
       "avgPrice": 3758,
-      "records": 64
+      "records": 65
     },
     {
       "district": "Kallakurichi",
       "nameHi": "Kallakurichi",
-      "avgPrice": 3022,
-      "records": 45
+      "avgPrice": 3043,
+      "records": 47
     },
     {
       "district": "Namakkal",
       "nameHi": "Namakkal",
-      "avgPrice": 2580,
-      "records": 41
+      "avgPrice": 2585,
+      "records": 42
     },
     {
       "district": "Dindigul",
@@ -426,8 +434,14 @@
     {
       "district": "Erode",
       "nameHi": "Erode",
-      "avgPrice": 1643,
-      "records": 21
+      "avgPrice": 1655,
+      "records": 22
+    },
+    {
+      "district": "Dharmapuri",
+      "nameHi": "Dharmapuri",
+      "avgPrice": 2033,
+      "records": 9
     },
     {
       "district": "Krishnagiri",
@@ -440,12 +454,6 @@
       "nameHi": "Theni",
       "avgPrice": 5000,
       "records": 9
-    },
-    {
-      "district": "Dharmapuri",
-      "nameHi": "Dharmapuri",
-      "avgPrice": 1975,
-      "records": 8
     },
     {
       "district": "Thoothukudi",
