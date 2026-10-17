@@ -65,13 +65,21 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 4233,
-      "volume": 222,
-      "days": 16,
+      "market": 4281,
+      "volume": 232,
+      "days": 17,
       "mandis": 23
     }
   ],
   "dailyHistory": [
+    {
+      "date": "2026-03-22",
+      "market": 3200,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 2000,
+      "maxPrice": 7000
+    },
     {
       "date": "2026-03-26",
       "market": 4950,
@@ -94,6 +102,14 @@
       "volume": 4,
       "mandis": 4,
       "minPrice": 3000,
+      "maxPrice": 8000
+    },
+    {
+      "date": "2026-03-30",
+      "market": 5000,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 3500,
       "maxPrice": 8000
     },
     {
@@ -183,6 +199,14 @@
       "mandis": 4,
       "minPrice": 1800,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-05-19",
+      "market": 2500,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 1000,
+      "maxPrice": 4000
     },
     {
       "date": "2026-06-26",
@@ -903,39 +927,47 @@
       "mandis": 13,
       "minPrice": 1800,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-10-17",
+      "market": 5000,
+      "volume": 10,
+      "mandis": 10,
+      "minPrice": 2200,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-10-17T04:53:33.634Z",
+  "lastUpdated": "2026-10-17T19:32:16.488Z",
   "districtBreakdown": [
     {
       "district": "Yamuna Nagar",
       "nameHi": "Yamuna Nagar",
-      "avgPrice": 3597,
-      "records": 301
+      "avgPrice": 3605,
+      "records": 304
     },
     {
       "district": "Kurukshetra",
       "nameHi": "Kurukshetra",
-      "avgPrice": 4829,
-      "records": 239
+      "avgPrice": 4834,
+      "records": 241
     },
     {
       "district": "Mahendragarh-Narnaul",
       "nameHi": "Mahendragarh-Narnaul",
-      "avgPrice": 2615,
-      "records": 165
-    },
-    {
-      "district": "Ambala",
-      "nameHi": "Ambala",
-      "avgPrice": 2748,
-      "records": 159
+      "avgPrice": 2630,
+      "records": 166
     },
     {
       "district": "Sonipat",
       "nameHi": "Sonipat",
-      "avgPrice": 5628,
-      "records": 159
+      "avgPrice": 5636,
+      "records": 161
+    },
+    {
+      "district": "Ambala",
+      "nameHi": "Ambala",
+      "avgPrice": 2753,
+      "records": 160
     },
     {
       "district": "Mewat",
@@ -946,8 +978,8 @@
     {
       "district": "Panchkula",
       "nameHi": "Panchkula",
-      "avgPrice": 2960,
-      "records": 102
+      "avgPrice": 2962,
+      "records": 103
     },
     {
       "district": "Faridabad",

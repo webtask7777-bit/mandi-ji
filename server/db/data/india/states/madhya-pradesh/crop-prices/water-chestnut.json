@@ -17,9 +17,9 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 1850,
-      "volume": 2,
-      "days": 1,
+      "market": 2050,
+      "volume": 3,
+      "days": 2,
       "mandis": 2
     }
   ],
@@ -39,20 +39,28 @@
       "mandis": 2,
       "minPrice": 1500,
       "maxPrice": 2400
+    },
+    {
+      "date": "2026-10-17",
+      "market": 2300,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2300,
+      "maxPrice": 2300
     }
   ],
-  "lastUpdated": "2026-10-17T04:53:33.634Z",
+  "lastUpdated": "2026-10-17T19:32:16.488Z",
   "districtBreakdown": [
+    {
+      "district": "Morena",
+      "nameHi": "Morena",
+      "avgPrice": 1900,
+      "records": 2
+    },
     {
       "district": "Indore",
       "nameHi": "Indore",
       "avgPrice": 7000,
-      "records": 1
-    },
-    {
-      "district": "Morena",
-      "nameHi": "Morena",
-      "avgPrice": 1500,
       "records": 1
     },
     {

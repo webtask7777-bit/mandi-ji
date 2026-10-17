@@ -73,10 +73,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 5667,
-      "volume": 3,
-      "days": 3,
-      "mandis": 1
+      "market": 5083,
+      "volume": 4,
+      "days": 4,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -807,9 +807,17 @@
       "mandis": 1,
       "minPrice": 6000,
       "maxPrice": 7000
+    },
+    {
+      "date": "2026-10-17",
+      "market": 4500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-17T04:53:33.634Z",
+  "lastUpdated": "2026-10-17T19:32:16.488Z",
   "districtBreakdown": [
     {
       "district": "Una",
@@ -828,6 +836,12 @@
       "nameHi": "Hamirpur",
       "avgPrice": 3800,
       "records": 2
+    },
+    {
+      "district": "Mandi",
+      "nameHi": "Mandi",
+      "avgPrice": 4500,
+      "records": 1
     }
   ]
 }

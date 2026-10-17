@@ -40,6 +40,15 @@
       "volume": 2,
       "days": 2,
       "mandis": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 12600,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1,
+      "msp": 8200
     }
   ],
   "dailyHistory": [
@@ -82,20 +91,28 @@
       "mandis": 1,
       "minPrice": 7500,
       "maxPrice": 7500
+    },
+    {
+      "date": "2026-10-17",
+      "market": 12600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 12600,
+      "maxPrice": 12600
     }
   ],
-  "lastUpdated": "2026-10-17T04:53:33.634Z",
+  "lastUpdated": "2026-10-17T19:32:16.488Z",
   "districtBreakdown": [
+    {
+      "district": "Champawat",
+      "nameHi": "Champawat",
+      "avgPrice": 11323,
+      "records": 4
+    },
     {
       "district": "Udhamsinghnagar",
       "nameHi": "Udhamsinghnagar",
       "avgPrice": 7600,
-      "records": 3
-    },
-    {
-      "district": "Champawat",
-      "nameHi": "Champawat",
-      "avgPrice": 10897,
       "records": 3
     }
   ]

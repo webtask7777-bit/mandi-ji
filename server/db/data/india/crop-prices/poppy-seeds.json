@@ -7,22 +7,6 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 119933,
-      "volume": 3,
-      "days": 2,
-      "mandis": 1
-    },
-    {
-      "month": "04",
-      "date": "2026-04",
-      "market": 140000,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
-    },
-    {
       "month": "07",
       "date": "2026-07",
       "market": 122550,
@@ -49,10 +33,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 121629,
-      "volume": 52,
-      "days": 14,
-      "mandis": 5
+      "market": 117015,
+      "volume": 57,
+      "days": 15,
+      "mandis": 6
     }
   ],
   "dailyHistory": [
@@ -623,27 +607,35 @@
       "mandis": 3,
       "minPrice": 45100,
       "maxPrice": 176800
+    },
+    {
+      "date": "2026-10-17",
+      "market": 119600,
+      "volume": 5,
+      "mandis": 4,
+      "minPrice": 45900,
+      "maxPrice": 176400
     }
   ],
-  "lastUpdated": "2026-10-17T04:53:33.634Z",
+  "lastUpdated": "2026-10-17T19:32:16.488Z",
   "districtBreakdown": [
     {
       "district": "Neemuch (मध्य प्रदेश)",
       "nameHi": "Neemuch (मध्य प्रदेश)",
-      "avgPrice": 111853,
-      "records": 122
+      "avgPrice": 111807,
+      "records": 124
     },
     {
       "district": "Ratlam (मध्य प्रदेश)",
       "nameHi": "Ratlam (मध्य प्रदेश)",
-      "avgPrice": 120355,
-      "records": 61
+      "avgPrice": 120513,
+      "records": 62
     },
     {
       "district": "Mandsaur (मध्य प्रदेश)",
       "nameHi": "Mandsaur (मध्य प्रदेश)",
-      "avgPrice": 124255,
-      "records": 52
+      "avgPrice": 124852,
+      "records": 53
     },
     {
       "district": "Bareilly (उत्तर प्रदेश)",
@@ -679,6 +671,12 @@
       "district": "Kanpur (उत्तर प्रदेश)",
       "nameHi": "Kanpur (उत्तर प्रदेश)",
       "avgPrice": 146670,
+      "records": 1
+    },
+    {
+      "district": "Barabanki (उत्तर प्रदेश)",
+      "nameHi": "Barabanki (उत्तर प्रदेश)",
+      "avgPrice": 70000,
       "records": 1
     }
   ]

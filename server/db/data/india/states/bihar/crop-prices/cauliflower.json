@@ -33,10 +33,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 4570,
-      "volume": 109,
-      "days": 14,
-      "mandis": 22
+      "market": 4525,
+      "volume": 113,
+      "days": 15,
+      "mandis": 24
     }
   ],
   "dailyHistory": [
@@ -727,9 +727,17 @@
       "mandis": 14,
       "minPrice": 2800,
       "maxPrice": 5600
+    },
+    {
+      "date": "2026-10-17",
+      "market": 3500,
+      "volume": 4,
+      "mandis": 4,
+      "minPrice": 1975,
+      "maxPrice": 5120
     }
   ],
-  "lastUpdated": "2026-10-17T04:53:33.634Z",
+  "lastUpdated": "2026-10-17T19:32:16.488Z",
   "districtBreakdown": [
     {
       "district": "Madhubani",
@@ -768,15 +776,21 @@
       "records": 8
     },
     {
+      "district": "Gopalgang",
+      "nameHi": "Gopalgang",
+      "avgPrice": 5028,
+      "records": 8
+    },
+    {
       "district": "Gaya",
       "nameHi": "Gaya",
       "avgPrice": 5643,
       "records": 7
     },
     {
-      "district": "Gopalgang",
-      "nameHi": "Gopalgang",
-      "avgPrice": 5014,
+      "district": "East Champaran/ Motihari",
+      "nameHi": "East Champaran/ Motihari",
+      "avgPrice": 3686,
       "records": 7
     },
     {
@@ -789,12 +803,6 @@
       "district": "Jamui",
       "nameHi": "Jamui",
       "avgPrice": 4060,
-      "records": 5
-    },
-    {
-      "district": "East Champaran/ Motihari",
-      "nameHi": "East Champaran/ Motihari",
-      "avgPrice": 3760,
       "records": 5
     },
     {
@@ -814,6 +822,12 @@
       "nameHi": "Sheohar",
       "avgPrice": 4450,
       "records": 2
+    },
+    {
+      "district": "Kaimur/Bhabhua",
+      "nameHi": "Kaimur/Bhabhua",
+      "avgPrice": 1975,
+      "records": 1
     }
   ]
 }

@@ -33,10 +33,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 8479,
-      "volume": 39,
-      "days": 10,
-      "mandis": 1
+      "market": 8240,
+      "volume": 40,
+      "days": 11,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -191,9 +191,17 @@
       "mandis": 1,
       "minPrice": 5000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-10-17",
+      "market": 8000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 8000,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-10-17T04:53:33.634Z",
+  "lastUpdated": "2026-10-17T19:32:16.488Z",
   "districtBreakdown": [
     {
       "district": "Srinagar",
@@ -212,6 +220,12 @@
       "nameHi": "Kathua",
       "avgPrice": 8150,
       "records": 5
+    },
+    {
+      "district": "Rajouri",
+      "nameHi": "Rajouri",
+      "avgPrice": 8000,
+      "records": 1
     }
   ]
 }

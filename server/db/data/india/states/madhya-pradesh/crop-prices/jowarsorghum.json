@@ -45,9 +45,9 @@
       "month": "10",
       "date": "2026-10",
       "market": 2459,
-      "volume": 12,
-      "days": 7,
-      "mandis": 8,
+      "volume": 14,
+      "days": 8,
+      "mandis": 10,
       "msp": 4023
     }
   ],
@@ -251,9 +251,17 @@
       "mandis": 3,
       "minPrice": 2300,
       "maxPrice": 3011
+    },
+    {
+      "date": "2026-10-17",
+      "market": 2445,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2300,
+      "maxPrice": 2505
     }
   ],
-  "lastUpdated": "2026-10-17T04:53:33.634Z",
+  "lastUpdated": "2026-10-17T19:32:16.488Z",
   "districtBreakdown": [
     {
       "district": "Indore",
@@ -292,6 +300,12 @@
       "records": 3
     },
     {
+      "district": "Gwalior",
+      "nameHi": "Gwalior",
+      "avgPrice": 3203,
+      "records": 2
+    },
+    {
       "district": "Khandwa",
       "nameHi": "Khandwa",
       "avgPrice": 2421,
@@ -310,12 +324,6 @@
       "records": 2
     },
     {
-      "district": "Gwalior",
-      "nameHi": "Gwalior",
-      "avgPrice": 3900,
-      "records": 1
-    },
-    {
       "district": "Rajgarh",
       "nameHi": "Rajgarh",
       "avgPrice": 1600,
@@ -331,6 +339,12 @@
       "district": "Dhar",
       "nameHi": "Dhar",
       "avgPrice": 3011,
+      "records": 1
+    },
+    {
+      "district": "Guna",
+      "nameHi": "Guna",
+      "avgPrice": 2385,
       "records": 1
     }
   ]

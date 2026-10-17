@@ -42,8 +42,8 @@
       "month": "10",
       "date": "2026-10",
       "market": 4000,
-      "volume": 12,
-      "days": 8,
+      "volume": 14,
+      "days": 9,
       "mandis": 5
     }
   ],
@@ -255,14 +255,28 @@
       "mandis": 4,
       "minPrice": 2500,
       "maxPrice": 5500
+    },
+    {
+      "date": "2026-10-17",
+      "market": 4550,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 4000,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-17T04:53:33.634Z",
+  "lastUpdated": "2026-10-17T19:32:16.488Z",
   "districtBreakdown": [
     {
       "district": "Garhwal (Pauri)",
       "nameHi": "Garhwal (Pauri)",
       "avgPrice": 2291,
+      "records": 11
+    },
+    {
+      "district": "Haridwar",
+      "nameHi": "Haridwar",
+      "avgPrice": 4791,
       "records": 11
     },
     {
@@ -275,12 +289,6 @@
       "district": "Dehradoon",
       "nameHi": "Dehradoon",
       "avgPrice": 3911,
-      "records": 9
-    },
-    {
-      "district": "Haridwar",
-      "nameHi": "Haridwar",
-      "avgPrice": 4844,
       "records": 9
     },
     {

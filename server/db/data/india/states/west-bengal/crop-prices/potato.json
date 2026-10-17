@@ -66,12 +66,20 @@
       "month": "10",
       "date": "2026-10",
       "market": 703,
-      "volume": 850,
-      "days": 16,
+      "volume": 883,
+      "days": 17,
       "mandis": 68
     }
   ],
   "dailyHistory": [
+    {
+      "date": "2026-03-22",
+      "market": 700,
+      "volume": 13,
+      "mandis": 11,
+      "minPrice": 450,
+      "maxPrice": 1700
+    },
     {
       "date": "2026-03-26",
       "market": 760,
@@ -145,6 +153,14 @@
       "maxPrice": 1600
     },
     {
+      "date": "2026-05-06",
+      "market": 630,
+      "volume": 12,
+      "mandis": 11,
+      "minPrice": 300,
+      "maxPrice": 1600
+    },
+    {
       "date": "2026-05-14",
       "market": 800,
       "volume": 19,
@@ -159,6 +175,14 @@
       "mandis": 20,
       "minPrice": 390,
       "maxPrice": 1600
+    },
+    {
+      "date": "2026-05-18",
+      "market": 720,
+      "volume": 11,
+      "mandis": 11,
+      "minPrice": 395,
+      "maxPrice": 820
     },
     {
       "date": "2026-05-19",
@@ -1039,57 +1063,65 @@
       "mandis": 33,
       "minPrice": 460,
       "maxPrice": 1500
+    },
+    {
+      "date": "2026-10-17",
+      "market": 680,
+      "volume": 33,
+      "mandis": 33,
+      "minPrice": 490,
+      "maxPrice": 1500
     }
   ],
-  "lastUpdated": "2026-10-17T04:53:33.634Z",
+  "lastUpdated": "2026-10-17T19:32:16.488Z",
   "districtBreakdown": [
     {
       "district": "Coochbehar",
       "nameHi": "Coochbehar",
-      "avgPrice": 626,
-      "records": 702
+      "avgPrice": 625,
+      "records": 708
     },
     {
       "district": "Hooghly",
       "nameHi": "Hooghly",
       "avgPrice": 712,
-      "records": 601
+      "records": 603
     },
     {
       "district": "Bankura",
       "nameHi": "Bankura",
       "avgPrice": 664,
-      "records": 536
+      "records": 539
     },
     {
       "district": "Nadia",
       "nameHi": "Nadia",
       "avgPrice": 828,
-      "records": 525
+      "records": 528
     },
     {
       "district": "Purba Bardhaman",
       "nameHi": "Purba Bardhaman",
-      "avgPrice": 767,
-      "records": 429
+      "avgPrice": 766,
+      "records": 431
     },
     {
       "district": "Birbhum",
       "nameHi": "Birbhum",
       "avgPrice": 932,
-      "records": 367
+      "records": 370
     },
     {
       "district": "Darjeeling",
       "nameHi": "Darjeeling",
-      "avgPrice": 1214,
-      "records": 361
+      "avgPrice": 1213,
+      "records": 364
     },
     {
       "district": "Jalpaiguri",
       "nameHi": "Jalpaiguri",
-      "avgPrice": 623,
-      "records": 360
+      "avgPrice": 622,
+      "records": 362
     },
     {
       "district": "Murshidabad",
@@ -1113,25 +1145,25 @@
       "district": "Medinipur(E)",
       "nameHi": "Medinipur(E)",
       "avgPrice": 799,
-      "records": 241
+      "records": 243
     },
     {
       "district": "Uttar Dinajpur",
       "nameHi": "Uttar Dinajpur",
-      "avgPrice": 663,
-      "records": 239
+      "avgPrice": 662,
+      "records": 240
     },
     {
       "district": "North 24 Parganas",
       "nameHi": "North 24 Parganas",
-      "avgPrice": 950,
-      "records": 235
+      "avgPrice": 949,
+      "records": 237
     },
     {
       "district": "Malda",
       "nameHi": "Malda",
       "avgPrice": 642,
-      "records": 220
+      "records": 221
     }
   ]
 }

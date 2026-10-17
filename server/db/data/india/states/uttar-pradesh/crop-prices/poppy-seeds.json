@@ -33,10 +33,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 85714,
-      "volume": 3,
-      "days": 3,
-      "mandis": 2
+      "market": 70000,
+      "volume": 4,
+      "days": 4,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -143,9 +143,17 @@
       "mandis": 1,
       "minPrice": 131428,
       "maxPrice": 131428
+    },
+    {
+      "date": "2026-10-17",
+      "market": 70000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 70000,
+      "maxPrice": 70000
     }
   ],
-  "lastUpdated": "2026-10-17T04:53:33.634Z",
+  "lastUpdated": "2026-10-17T19:32:16.488Z",
   "districtBreakdown": [
     {
       "district": "Bareilly",
@@ -181,6 +189,12 @@
       "district": "Kanpur",
       "nameHi": "Kanpur",
       "avgPrice": 146670,
+      "records": 1
+    },
+    {
+      "district": "Barabanki",
+      "nameHi": "Barabanki",
+      "avgPrice": 70000,
       "records": 1
     }
   ]

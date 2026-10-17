@@ -37,6 +37,14 @@
       "volume": 8,
       "days": 8,
       "mandis": 2
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 9000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -167,15 +175,23 @@
       "mandis": 1,
       "minPrice": 32000,
       "maxPrice": 42000
+    },
+    {
+      "date": "2026-10-17",
+      "market": 9000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-10-17T04:53:33.634Z",
+  "lastUpdated": "2026-10-17T19:32:16.488Z",
   "districtBreakdown": [
     {
       "district": "Solan",
       "nameHi": "Solan",
-      "avgPrice": 36667,
-      "records": 15
+      "avgPrice": 34938,
+      "records": 16
     },
     {
       "district": "Hamirpur",
