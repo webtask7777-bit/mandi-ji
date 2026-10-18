@@ -202,7 +202,7 @@
     "name": "Potato",
     "nameHi": "आलू",
     "emoji": "🥔",
-    "totalRecords": 2185,
+    "totalRecords": 2187,
     "avgPrice": 884,
     "minPrice": 300,
     "maxPrice": 4000,
@@ -238,8 +238,8 @@
     "name": "Tomato",
     "nameHi": "टमाटर",
     "emoji": "🍅",
-    "totalRecords": 2170,
-    "avgPrice": 2181,
+    "totalRecords": 2171,
+    "avgPrice": 2180,
     "minPrice": 100,
     "maxPrice": 6000,
     "varieties": [
@@ -336,8 +336,8 @@
     "name": "Onion",
     "nameHi": "प्याज",
     "emoji": "🧅",
-    "totalRecords": 1812,
-    "avgPrice": 2651,
+    "totalRecords": 1813,
+    "avgPrice": 2652,
     "minPrice": 300,
     "maxPrice": 5800,
     "varieties": [
@@ -375,8 +375,8 @@
     "name": "Garlic",
     "nameHi": "लहसुन",
     "emoji": "🧄",
-    "totalRecords": 1685,
-    "avgPrice": 9756,
+    "totalRecords": 1686,
+    "avgPrice": 9759,
     "minPrice": 700,
     "maxPrice": 41000,
     "varieties": [
@@ -464,7 +464,7 @@
     "name": "Cucumbar(Kheera)",
     "nameHi": "खीरा",
     "emoji": "🌱",
-    "totalRecords": 1384,
+    "totalRecords": 1385,
     "avgPrice": 1870,
     "minPrice": 100,
     "maxPrice": 4500,
@@ -508,7 +508,7 @@
     "name": "Cabbage",
     "nameHi": "पत्तागोभी",
     "emoji": "🥬",
-    "totalRecords": 1140,
+    "totalRecords": 1141,
     "avgPrice": 1356,
     "minPrice": 200,
     "maxPrice": 7200,
@@ -541,8 +541,8 @@
     "name": "Bhindi(Ladies Finger)",
     "nameHi": "भिंडी",
     "emoji": "🌱",
-    "totalRecords": 1124,
-    "avgPrice": 3121,
+    "totalRecords": 1125,
+    "avgPrice": 3119,
     "minPrice": 500,
     "maxPrice": 20000,
     "varieties": [
@@ -555,7 +555,7 @@
     "name": "Cauliflower",
     "nameHi": "फूलगोभी",
     "emoji": "🥦",
-    "totalRecords": 1073,
+    "totalRecords": 1074,
     "avgPrice": 2125,
     "minPrice": 80,
     "maxPrice": 7000,
@@ -591,7 +591,7 @@
     "name": "Brinjal",
     "nameHi": "बैंगन",
     "emoji": "🍆",
-    "totalRecords": 1054,
+    "totalRecords": 1055,
     "avgPrice": 1654,
     "minPrice": 400,
     "maxPrice": 5000,
@@ -630,8 +630,8 @@
     "name": "Ginger(Green)",
     "nameHi": "अदरक",
     "emoji": "🫐",
-    "totalRecords": 925,
-    "avgPrice": 6172,
+    "totalRecords": 926,
+    "avgPrice": 6170,
     "minPrice": 500,
     "maxPrice": 20500,
     "varieties": [
@@ -644,8 +644,8 @@
     "name": "Bottle gourd",
     "nameHi": "लौकी",
     "emoji": "🥒",
-    "totalRecords": 913,
-    "avgPrice": 1315,
+    "totalRecords": 914,
+    "avgPrice": 1314,
     "minPrice": 400,
     "maxPrice": 3600,
     "varieties": [
@@ -786,7 +786,7 @@
     "name": "Capsicum",
     "nameHi": "शिमला मिर्च",
     "emoji": "🫑",
-    "totalRecords": 854,
+    "totalRecords": 855,
     "avgPrice": 3158,
     "minPrice": 500,
     "maxPrice": 10000,
@@ -895,8 +895,8 @@
     "name": "Bitter gourd",
     "nameHi": "करेला",
     "emoji": "🥒",
-    "totalRecords": 695,
-    "avgPrice": 3112,
+    "totalRecords": 696,
+    "avgPrice": 3111,
     "minPrice": 800,
     "maxPrice": 30000,
     "varieties": [
@@ -947,8 +947,8 @@
     "name": "Green Chilli",
     "nameHi": "हरी मिर्च",
     "emoji": "🌶️",
-    "totalRecords": 639,
-    "avgPrice": 2594,
+    "totalRecords": 640,
+    "avgPrice": 2593,
     "minPrice": 500,
     "maxPrice": 37002,
     "varieties": [
@@ -985,8 +985,8 @@
     "name": "Coriander(Leaves)",
     "nameHi": "धनिया",
     "emoji": "🌿",
-    "totalRecords": 635,
-    "avgPrice": 3303,
+    "totalRecords": 636,
+    "avgPrice": 3301,
     "minPrice": 300,
     "maxPrice": 16500,
     "varieties": [
@@ -1613,6 +1613,20 @@
     ]
   },
   {
+    "id": "onion-green",
+    "name": "Onion Green",
+    "nameHi": "हरा प्याज",
+    "emoji": "🧅",
+    "totalRecords": 177,
+    "avgPrice": 2611,
+    "minPrice": 500,
+    "maxPrice": 7000,
+    "varieties": [
+      "Onion Green",
+      "Other"
+    ]
+  },
+  {
     "id": "pointed-gourdparval",
     "name": "Pointed gourd(Parval)",
     "nameHi": "Pointed gourd(Parval)",
@@ -1623,20 +1637,6 @@
     "maxPrice": 4500,
     "varieties": [
       "Pointed gourd (Parval)",
-      "Other"
-    ]
-  },
-  {
-    "id": "onion-green",
-    "name": "Onion Green",
-    "nameHi": "हरा प्याज",
-    "emoji": "🧅",
-    "totalRecords": 176,
-    "avgPrice": 2615,
-    "minPrice": 500,
-    "maxPrice": 7000,
-    "varieties": [
-      "Onion Green",
       "Other"
     ]
   },

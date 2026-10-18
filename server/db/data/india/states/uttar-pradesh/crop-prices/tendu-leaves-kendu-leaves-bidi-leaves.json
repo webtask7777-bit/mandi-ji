@@ -25,10 +25,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 9250,
-      "volume": 2,
-      "days": 1,
-      "mandis": 2
+      "market": 6000,
+      "volume": 3,
+      "days": 2,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -63,9 +63,17 @@
       "mandis": 2,
       "minPrice": 6000,
       "maxPrice": 12500
+    },
+    {
+      "date": "2026-10-18",
+      "market": 5000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-18T06:27:14.947Z",
+  "lastUpdated": "2026-10-18T20:49:36.321Z",
   "districtBreakdown": [
     {
       "district": "Amroha",
@@ -83,6 +91,12 @@
       "district": "Kannuj",
       "nameHi": "Kannuj",
       "avgPrice": 6000,
+      "records": 1
+    },
+    {
+      "district": "Jaunpur",
+      "nameHi": "Jaunpur",
+      "avgPrice": 5000,
       "records": 1
     }
   ]
