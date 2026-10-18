@@ -107,19 +107,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Mokokchung Town",
-      "district": "Mokokchung",
-      "avgPrice": 3168,
-      "recentPrice": 4000,
-      "minPrice": 4000,
-      "maxPrice": 4000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-10",
-      "records": 17,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Nuiland",
       "district": "Dimapur",
       "avgPrice": 5000,
@@ -159,6 +146,19 @@
       "grade": "Local"
     },
     {
+      "name": "Mokokchung Town",
+      "district": "Mokokchung",
+      "avgPrice": 3168,
+      "recentPrice": null,
+      "minPrice": 2100,
+      "maxPrice": 5350,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-10",
+      "records": 17,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Mangkolemba",
       "district": "Mokokchung",
       "avgPrice": 3142,
@@ -187,19 +187,6 @@
   ],
   "bitter-gourd": [
     {
-      "name": "Dimapur",
-      "district": "Dimapur",
-      "avgPrice": 5520,
-      "recentPrice": 6167,
-      "minPrice": 6000,
-      "maxPrice": 7000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 74,
-      "topVariety": "Bitter Gourd",
-      "grade": "Local"
-    },
-    {
       "name": "Jalukie",
       "district": "Kohima",
       "avgPrice": 5383,
@@ -213,6 +200,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Dimapur",
+      "district": "Dimapur",
+      "avgPrice": 5520,
+      "recentPrice": 6000,
+      "minPrice": 6000,
+      "maxPrice": 6000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-17",
+      "records": 74,
+      "topVariety": "Bitter Gourd",
+      "grade": "Local"
+    },
+    {
       "name": "Kipheri",
       "district": "Kiphire",
       "avgPrice": 5032,
@@ -223,32 +223,6 @@
       "lastDate": "2026-10-16",
       "records": 10,
       "topVariety": "Bitter Gourd",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Mangkolemba",
-      "district": "Mokokchung",
-      "avgPrice": 3879,
-      "recentPrice": 2900,
-      "minPrice": 2900,
-      "maxPrice": 2900,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-10",
-      "records": 19,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Mokokchung Town",
-      "district": "Mokokchung",
-      "avgPrice": 4006,
-      "recentPrice": 2900,
-      "minPrice": 2900,
-      "maxPrice": 2900,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-10",
-      "records": 18,
-      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -301,6 +275,32 @@
       "lastDate": "2026-09-02",
       "records": 3,
       "topVariety": "Bitter Gourd",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Mokokchung Town",
+      "district": "Mokokchung",
+      "avgPrice": 4006,
+      "recentPrice": null,
+      "minPrice": 2600,
+      "maxPrice": 6600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-10",
+      "records": 18,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Mangkolemba",
+      "district": "Mokokchung",
+      "avgPrice": 3879,
+      "recentPrice": null,
+      "minPrice": 2600,
+      "maxPrice": 6900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-10",
+      "records": 19,
+      "topVariety": null,
       "grade": "FAQ"
     },
     {
@@ -397,19 +397,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Mangkolemba",
-      "district": "Mokokchung",
-      "avgPrice": 1638,
-      "recentPrice": 1500,
-      "minPrice": 1500,
-      "maxPrice": 1500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-10",
-      "records": 13,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Wokha Town",
       "district": "Wokha",
       "avgPrice": 1967,
@@ -444,6 +431,19 @@
       "maxPrice": 2600,
       "rangeBasis": "all",
       "lastDate": "2026-09-12",
+      "records": 13,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Mangkolemba",
+      "district": "Mokokchung",
+      "avgPrice": 1638,
+      "recentPrice": null,
+      "minPrice": 1300,
+      "maxPrice": 2100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-10",
       "records": 13,
       "topVariety": null,
       "grade": "FAQ"
@@ -573,8 +573,8 @@
       "name": "Baghty",
       "district": "Wokha",
       "avgPrice": 2476,
-      "recentPrice": 1927,
-      "minPrice": 1780,
+      "recentPrice": 2000,
+      "minPrice": 2000,
       "maxPrice": 2000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
@@ -666,7 +666,7 @@
       "name": "Dimapur",
       "district": "Dimapur",
       "avgPrice": 3307,
-      "recentPrice": 3333,
+      "recentPrice": 3300,
       "minPrice": 3000,
       "maxPrice": 3500,
       "rangeBasis": "recent",
@@ -702,19 +702,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Mangkolemba",
-      "district": "Mokokchung",
-      "avgPrice": 2620,
-      "recentPrice": 2700,
-      "minPrice": 2700,
-      "maxPrice": 2700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-10",
-      "records": 10,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Wokha Town",
       "district": "Wokha",
       "avgPrice": 2900,
@@ -728,25 +715,12 @@
       "grade": "Local"
     },
     {
-      "name": "Mokokchung Town",
-      "district": "Mokokchung",
-      "avgPrice": 2338,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-10",
-      "records": 13,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Baghty",
       "district": "Wokha",
       "avgPrice": 2765,
-      "recentPrice": 2150,
+      "recentPrice": 2000,
       "minPrice": 2000,
-      "maxPrice": 2300,
+      "maxPrice": 2000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-13",
       "records": 17,
@@ -843,6 +817,32 @@
       "records": 3,
       "topVariety": "Brinjal",
       "grade": "FAQ"
+    },
+    {
+      "name": "Mangkolemba",
+      "district": "Mokokchung",
+      "avgPrice": 2620,
+      "recentPrice": null,
+      "minPrice": 1700,
+      "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-10",
+      "records": 10,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Mokokchung Town",
+      "district": "Mokokchung",
+      "avgPrice": 2338,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 3300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-10",
+      "records": 13,
+      "topVariety": null,
+      "grade": "FAQ"
     }
   ],
   "bhindiladies-finger": [
@@ -863,7 +863,7 @@
       "name": "Dimapur",
       "district": "Dimapur",
       "avgPrice": 4540,
-      "recentPrice": 4250,
+      "recentPrice": 4300,
       "minPrice": 3500,
       "maxPrice": 5000,
       "rangeBasis": "recent",
@@ -881,19 +881,6 @@
       "maxPrice": 3200,
       "rangeBasis": "recent",
       "lastDate": "2026-10-13",
-      "records": 13,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Mokokchung Town",
-      "district": "Mokokchung",
-      "avgPrice": 3331,
-      "recentPrice": 3100,
-      "minPrice": 3100,
-      "maxPrice": 3100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-10",
       "records": 13,
       "topVariety": null,
       "grade": "FAQ"
@@ -960,6 +947,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-05",
       "records": 10,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Mokokchung Town",
+      "district": "Mokokchung",
+      "avgPrice": 3331,
+      "recentPrice": null,
+      "minPrice": 2700,
+      "maxPrice": 4900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-10",
+      "records": 13,
       "topVariety": null,
       "grade": "FAQ"
     },
@@ -1150,32 +1150,6 @@
       "grade": "Local"
     },
     {
-      "name": "Mangkolemba",
-      "district": "Mokokchung",
-      "avgPrice": 1506,
-      "recentPrice": 1700,
-      "minPrice": 1700,
-      "maxPrice": 1700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-10",
-      "records": 16,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Mokokchung Town",
-      "district": "Mokokchung",
-      "avgPrice": 1494,
-      "recentPrice": 1700,
-      "minPrice": 1700,
-      "maxPrice": 1700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-10",
-      "records": 16,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Phek",
       "district": "Phek",
       "avgPrice": 3559,
@@ -1278,6 +1252,32 @@
       "records": 17,
       "topVariety": null,
       "grade": "Local"
+    },
+    {
+      "name": "Mangkolemba",
+      "district": "Mokokchung",
+      "avgPrice": 1506,
+      "recentPrice": null,
+      "minPrice": 1100,
+      "maxPrice": 1900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-10",
+      "records": 16,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
+      "name": "Mokokchung Town",
+      "district": "Mokokchung",
+      "avgPrice": 1494,
+      "recentPrice": null,
+      "minPrice": 1100,
+      "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-10",
+      "records": 16,
+      "topVariety": null,
+      "grade": "FAQ"
     }
   ],
   "colacasia": [
@@ -1576,19 +1576,6 @@
   ],
   "fish": [
     {
-      "name": "Wokha Town",
-      "district": "Wokha",
-      "avgPrice": 25923,
-      "recentPrice": 28200,
-      "minPrice": 28200,
-      "maxPrice": 28200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-10",
-      "records": 15,
-      "topVariety": "Fish",
-      "grade": "FAQ"
-    },
-    {
       "name": "Mon",
       "district": "Mon",
       "avgPrice": 12205,
@@ -1600,22 +1587,22 @@
       "records": 1,
       "topVariety": "Bata Putti",
       "grade": "Local"
+    },
+    {
+      "name": "Wokha Town",
+      "district": "Wokha",
+      "avgPrice": 25923,
+      "recentPrice": null,
+      "minPrice": 17000,
+      "maxPrice": 31600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-10",
+      "records": 15,
+      "topVariety": "Fish",
+      "grade": "FAQ"
     }
   ],
   "cauliflower": [
-    {
-      "name": "Mangkolemba",
-      "district": "Mokokchung",
-      "avgPrice": 1450,
-      "recentPrice": 1800,
-      "minPrice": 1800,
-      "maxPrice": 1800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-10",
-      "records": 10,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
     {
       "name": "Kohima",
       "district": "Kohima",
@@ -1669,6 +1656,19 @@
       "grade": "Local"
     },
     {
+      "name": "Mangkolemba",
+      "district": "Mokokchung",
+      "avgPrice": 1450,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 2300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-10",
+      "records": 10,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Mokokchung Town",
       "district": "Mokokchung",
       "avgPrice": 1100,
@@ -1715,7 +1715,7 @@
       "name": "Dimapur",
       "district": "Dimapur",
       "avgPrice": 5632,
-      "recentPrice": 5583,
+      "recentPrice": 5600,
       "minPrice": 5000,
       "maxPrice": 6000,
       "rangeBasis": "recent",
@@ -1820,19 +1820,6 @@
       "grade": "Local"
     },
     {
-      "name": "Wokha Town",
-      "district": "Wokha",
-      "avgPrice": 2400,
-      "recentPrice": 2150,
-      "minPrice": 2000,
-      "maxPrice": 2300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-15",
-      "records": 13,
-      "topVariety": "Pumpkin",
-      "grade": "Local"
-    },
-    {
       "name": "Kipheri",
       "district": "Kiphire",
       "avgPrice": 2672,
@@ -1844,6 +1831,19 @@
       "records": 5,
       "topVariety": "Pumpkin",
       "grade": "FAQ"
+    },
+    {
+      "name": "Wokha Town",
+      "district": "Wokha",
+      "avgPrice": 2400,
+      "recentPrice": 2000,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-15",
+      "records": 13,
+      "topVariety": "Pumpkin",
+      "grade": "Local"
     },
     {
       "name": "Jalukie",
@@ -1981,9 +1981,9 @@
       "name": "Dimapur",
       "district": "Dimapur",
       "avgPrice": 7353,
-      "recentPrice": 7000,
+      "recentPrice": 6800,
       "minPrice": 6000,
-      "maxPrice": 8000,
+      "maxPrice": 7000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 78,

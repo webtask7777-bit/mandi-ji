@@ -41,10 +41,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 1742,
-      "volume": 30,
-      "days": 16,
-      "mandis": 4
+      "market": 1750,
+      "volume": 31,
+      "days": 17,
+      "mandis": 5
     }
   ],
   "dailyHistory": [
@@ -623,9 +623,17 @@
       "mandis": 1,
       "minPrice": 1000,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-10-18",
+      "market": 2250,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 2500
     }
   ],
-  "lastUpdated": "2026-10-17T19:32:16.488Z",
+  "lastUpdated": "2026-10-18T06:27:14.947Z",
   "districtBreakdown": [
     {
       "district": "Pune",
@@ -644,6 +652,12 @@
       "nameHi": "Jalgaon",
       "avgPrice": 1667,
       "records": 24
+    },
+    {
+      "district": "Ahilyanagar",
+      "nameHi": "Ahilyanagar",
+      "avgPrice": 2250,
+      "records": 1
     }
   ]
 }
