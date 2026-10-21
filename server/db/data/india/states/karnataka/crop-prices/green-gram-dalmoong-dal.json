@@ -57,10 +57,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 9227,
-      "volume": 17,
-      "days": 13,
-      "mandis": 4
+      "market": 9070,
+      "volume": 18,
+      "days": 14,
+      "mandis": 5
     }
   ],
   "dailyHistory": [
@@ -783,9 +783,17 @@
       "mandis": 1,
       "minPrice": 9800,
       "maxPrice": 11000
+    },
+    {
+      "date": "2026-10-21",
+      "market": 7000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 7000,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-10-21T03:07:04.176Z",
+  "lastUpdated": "2026-10-21T15:07:34.636Z",
   "districtBreakdown": [
     {
       "district": "Bengaluru",
@@ -830,6 +838,12 @@
       "records": 3
     },
     {
+      "district": "Haveri",
+      "nameHi": "Haveri",
+      "avgPrice": 8100,
+      "records": 2
+    },
+    {
       "district": "Dharwad",
       "nameHi": "Dharwad",
       "avgPrice": 9000,
@@ -845,12 +859,6 @@
       "district": "Mandya",
       "nameHi": "Mandya",
       "avgPrice": 9800,
-      "records": 1
-    },
-    {
-      "district": "Haveri",
-      "nameHi": "Haveri",
-      "avgPrice": 9200,
       "records": 1
     }
   ]

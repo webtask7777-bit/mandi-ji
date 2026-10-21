@@ -29,6 +29,14 @@
       "volume": 5,
       "days": 4,
       "mandis": 4
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 1669,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -79,20 +87,28 @@
       "mandis": 1,
       "minPrice": 8695,
       "maxPrice": 8695
+    },
+    {
+      "date": "2026-10-21",
+      "market": 1669,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1668.51,
+      "maxPrice": 1668.51
     }
   ],
-  "lastUpdated": "2026-10-21T03:07:04.176Z",
+  "lastUpdated": "2026-10-21T15:07:34.636Z",
   "districtBreakdown": [
+    {
+      "district": "Ghaziabad",
+      "nameHi": "Ghaziabad",
+      "avgPrice": 6353,
+      "records": 3
+    },
     {
       "district": "Etah",
       "nameHi": "Etah",
       "avgPrice": 4750,
-      "records": 2
-    },
-    {
-      "district": "Ghaziabad",
-      "nameHi": "Ghaziabad",
-      "avgPrice": 8695,
       "records": 2
     },
     {

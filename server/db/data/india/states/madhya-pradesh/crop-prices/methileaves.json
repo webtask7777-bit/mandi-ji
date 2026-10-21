@@ -57,9 +57,9 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 3500,
-      "volume": 66,
-      "days": 18,
+      "market": 3321,
+      "volume": 68,
+      "days": 19,
       "mandis": 9
     }
   ],
@@ -903,9 +903,17 @@
       "mandis": 1,
       "minPrice": 3500,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-10-21",
+      "market": 4000,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 3000,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-21T03:07:04.176Z",
+  "lastUpdated": "2026-10-21T15:07:34.636Z",
   "districtBreakdown": [
     {
       "district": "Indore",
@@ -928,8 +936,8 @@
     {
       "district": "Sehore",
       "nameHi": "Sehore",
-      "avgPrice": 4030,
-      "records": 50
+      "avgPrice": 4049,
+      "records": 51
     },
     {
       "district": "Bhopal",
@@ -968,6 +976,12 @@
       "records": 3
     },
     {
+      "district": "Morena",
+      "nameHi": "Morena",
+      "avgPrice": 3250,
+      "records": 2
+    },
+    {
       "district": "Jhabua",
       "nameHi": "Jhabua",
       "avgPrice": 942,
@@ -989,12 +1003,6 @@
       "district": "Shajapur",
       "nameHi": "Shajapur",
       "avgPrice": 5000,
-      "records": 1
-    },
-    {
-      "district": "Morena",
-      "nameHi": "Morena",
-      "avgPrice": 3500,
       "records": 1
     }
   ]
