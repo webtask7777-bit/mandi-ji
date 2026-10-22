@@ -46,8 +46,9 @@ test('informative fallback descriptions and hero disclosure remain readable', ()
 
 test('representative-image legend explains the visible marker without hover or interaction', () => {
   const html = renderToStaticMarkup(createElement(CropImageLegend));
-  assert.match(html, /प्रतीकात्मक चित्र/);
-  assert.match(html, /वास्तविक फसल, किस्म या बिक्री के माल की तस्वीर नहीं/);
+  assert.match(html, /चित्र पहचान में मदद के लिए बनाए गए हैं/);
+  assert.match(html, /बिक्री के माल या उसकी किस्म की तस्वीरें नहीं/);
+  assert.match(html, /≈ चिह्न केवल उपज की श्रेणी बताता है/);
   assert.doesNotMatch(html, /<(?:button|details)\b/);
 });
 

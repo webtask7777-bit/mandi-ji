@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-10-17",
+  "reviewedOn": "2026-10-22",
   "purpose": "Editorial discovery taxonomy audit of every distinct source commodity ID. This is not a botanical certification, a price merge, or an instruction to publish a page for every topic.",
   "sourceScope": "All crops.json and ticker.json plus crop-prices/*.json crop headers recursively under server/db/data (India, CG and individual states).",
-  "sourceFileCount": 2808,
-  "commodityCount": 377,
+  "sourceFileCount": 2838,
+  "commodityCount": 388,
   "topicCount": 165,
   "statusCounts": {
-    "curated-crop-topic": 272,
+    "curated-crop-topic": 275,
     "non-crop": 15,
     "mixed-or-unspecified": 27,
-    "identity-review": 63
+    "identity-review": 71
   },
   "policy": [
     "Only exact normalized IDs are resolved; no substring, fuzzy, translated-name or botanical guessing.",
@@ -31,6 +31,21 @@
       "id": "tnau-karamani",
       "url": "https://www.agritech.tnau.ac.in/expert_system/cattlebuffalo/Fodder%20Production.html",
       "supports": "Cowpea / Lobia is also called Karamani; does not establish whether a market record is fresh or dry."
+    },
+    {
+      "id": "icar-rai-raya",
+      "url": "https://www.icar.gov.in/sites/default/files/2022-04/Abst-Jr-062AG.pdf",
+      "supports": "ICAR describes rai/raya as Indian mustard. Exact source Rayee has Raee variety; this spelling interpretation supports editorial discovery, not a cultivar claim."
+    },
+    {
+      "id": "kau-taro-forms",
+      "url": "https://www.celkau.in/crops/tuber/colocasia/about.php",
+      "supports": "KAU identifies Colocasia as taro and distinguishes leaves, petioles and corms; form-specific guidance remains necessary."
+    },
+    {
+      "id": "delhi-forest-tesu-palash",
+      "url": "https://eforest.delhi.gov.in/wildlife/publication/lists_of_common_trees_in_delhi.pdf",
+      "supports": "Delhi Forest lists Tesu and Palash among the common names of Butea monosperma; used only for the explicit flower commodity."
     }
   ],
   "commodities": [
@@ -43,6 +58,16 @@
       "status": "identity-review",
       "topicId": null,
       "reason": "Source name conflicts with observed Chirayta variety; establish crop identity before a species guide."
+    },
+    {
+      "commodityId": "adulsa",
+      "sourceNames": [
+        "Adulsa"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/adulsa.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "New medicinal commodity requires a dedicated editorial topic and traded-part review; a botanical illustration does not authorize medicinal or cultivation advice."
     },
     {
       "commodityId": "ajwan",
@@ -445,6 +470,16 @@
       "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
     },
     {
+      "commodityId": "bejhar",
+      "sourceNames": [
+        "Bejhar"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/bejhar.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Local Bejhar label with an Other variety does not establish a crop identity or mixture composition. Obtain source-market identification before matching a crop guide."
+    },
+    {
       "commodityId": "bengal-gram-dalchana-dal",
       "sourceNames": [
         "Bengal Gram Dal(Chana Dal)"
@@ -563,6 +598,16 @@
       "status": "curated-crop-topic",
       "topicId": "black-pepper",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "blueberry",
+      "sourceNames": [
+        "Blueberry"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/blueberry.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Distinct blueberry commodity has no reviewed editorial topic yet. Review a dedicated topic rather than applying apple, jamun or other fruit guidance."
     },
     {
       "commodityId": "bottle-gourd",
@@ -775,6 +820,16 @@
       "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
     },
     {
+      "commodityId": "chena",
+      "sourceNames": [
+        "Chena"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chena.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Chena was reviewed as proso millet for imagery, but still needs a dedicated editorial topic and regional/form review. Do not inherit kodo or other millet advice."
+    },
+    {
       "commodityId": "chennangi-dal",
       "sourceNames": [
         "Chennangi Dal"
@@ -803,6 +858,16 @@
       "status": "curated-crop-topic",
       "topicId": "summer-squash",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "chiaseeds",
+      "sourceNames": [
+        "Chiaseeds"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/chiaseeds.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Explicit chia seed commodity has no dedicated reviewed editorial topic. Keep separate from basil, psyllium and other seed guides until its own topic is curated."
     },
     {
       "commodityId": "chicorychikori-kasni",
@@ -1483,6 +1548,16 @@
       "status": "non-crop",
       "topicId": null,
       "reason": "Animal, animal product or aquatic commodity; excluded from crop cultivation topics."
+    },
+    {
+      "commodityId": "gokhru",
+      "sourceNames": [
+        "Gokhru"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/gokhru.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Unqualified Gokhru label does not identify the traded botanical type or plant part. Obtain source-market confirmation before any species-specific guide."
     },
     {
       "commodityId": "gond",
@@ -2912,6 +2987,16 @@
       "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
     },
     {
+      "commodityId": "quinoa",
+      "sourceNames": [
+        "Quinoa"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/quinoa.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Distinct quinoa commodity has no dedicated reviewed editorial topic. Do not inherit amaranth, millet or other grain guidance while its own topic is pending."
+    },
+    {
       "commodityId": "rab-liquid-jaggery-molasses",
       "sourceNames": [
         "Rab/Liquid Jaggery/Molasses"
@@ -3002,6 +3087,16 @@
       "reason": "Pod radish (mogari) is grown for its pods, not the root; confirm the form before linking radish root cultivation advice."
     },
     {
+      "commodityId": "ratanjot",
+      "sourceNames": [
+        "Ratanjot"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/ratanjot.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Ratanjot source label lacks a botanical identifier and traded form. Resolve the regional name and product part before assigning cultivation or use guidance."
+    },
+    {
       "commodityId": "raya",
       "sourceNames": [
         "Raya"
@@ -3010,6 +3105,16 @@
       "status": "identity-review",
       "topicId": null,
       "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
+    },
+    {
+      "commodityId": "rayee",
+      "sourceNames": [
+        "Rayee"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/rayee.json",
+      "status": "curated-crop-topic",
+      "topicId": "mustard",
+      "reason": "Exact source Rayee with Raee variety is interpreted as the rai/raya mustard trade name documented by ICAR; discovery only, with source prices and cultivar identity kept separate."
     },
     {
       "commodityId": "red-gram",
@@ -3525,6 +3630,16 @@
       "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
     },
     {
+      "commodityId": "taro-arvi-leaves",
+      "sourceNames": [
+        "Taro (Arvi) Leaves"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/taro-arvi-leaves.json",
+      "status": "curated-crop-topic",
+      "topicId": "colocasia",
+      "reason": "Source explicitly identifies taro leaves; KAU confirms Colocasia/taro leaf and petiole forms. Share discovery context only; leaves, stems and corms retain distinct handling guidance and prices."
+    },
+    {
       "commodityId": "taro-arvi-stem",
       "sourceNames": [
         "Taro (Arvi) Stem"
@@ -3553,6 +3668,16 @@
       "status": "curated-crop-topic",
       "topicId": "tendu",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
+    },
+    {
+      "commodityId": "tesu-flower",
+      "sourceNames": [
+        "Tesu Flower"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/tesu-flower.json",
+      "status": "curated-crop-topic",
+      "topicId": "palash",
+      "reason": "Delhi Forest identifies Tesu and Palash as names of the same tree. Group the explicit flower commodity for discovery while preserving its source ID and prices."
     },
     {
       "commodityId": "thogrikai",

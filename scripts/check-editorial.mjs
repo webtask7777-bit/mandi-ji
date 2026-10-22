@@ -7,6 +7,12 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const posts = JSON.parse(await readFile(path.join(root, 'server/db/data/blog-posts.json'), 'utf8'));
 const problems = [];
 const published = posts.filter(post => post.status === 'published');
+const expectedLocales = Object.fromEntries(published
+  .filter(post => post.content?.trim())
+  .sort((a, b) => a.slug.localeCompare(b.slug))
+  .map(post => [post.slug, post.language || 'hi']));
+const articleLocales = JSON.parse(await readFile(path.join(root, 'src/data/editorialLocales.json'), 'utf8').catch(() => '{}'));
+if (JSON.stringify(articleLocales) !== JSON.stringify(expectedLocales)) problems.push('Published article locale registry is stale; run npm run sync:editorial.');
 for (const post of posts) {
   for (const error of validateEditorialPost(post, posts)) problems.push(`${post.slug}: ${error}`);
   if (post.status !== 'published') continue;

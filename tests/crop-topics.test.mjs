@@ -68,6 +68,9 @@ test('known crop forms share editorial context without replacing source IDs', ()
     ginger: ['gingergreen', 'gingerdry'],
     coriander: ['corianderleaves', 'corriander-seed'],
     fenugreek: ['methileaves', 'methi-seeds'],
+    mustard: ['mustard', 'indian-colzasarson', 'rayee'],
+    colocasia: ['colocasia', 'colacasia', 'taro-arvi-stem', 'taro-arvi-leaves'],
+    palash: ['palash-flowers', 'tesu-flower'],
   })) {
     const group = getTopicById(topic);
     for (const id of ids) {
@@ -96,6 +99,7 @@ test('ambiguous identities, mixtures and animal goods do not inherit crop advice
     'absinthe', 'white-pumpkin', 'wild-cucumber', 'tube-flower',
     'millets', 'other-pulses', 'dal-mix', 'otherveg', 'leafy-vegetable',
     'cow', 'fish', 'sheep', 'ghee', 'egg', 'prawn',
+    'adulsa', 'bejhar', 'blueberry', 'chena', 'chiaseeds', 'gokhru', 'quinoa', 'ratanjot',
   ]) assert.equal(getCropTopic(id), null, id);
   assert.ok(getCropTopic('karamani').commodityIds.includes('cowpealobia-karamani'));
   assert.equal(getCropTopic('hybrid-cumbu').id, 'bajra');

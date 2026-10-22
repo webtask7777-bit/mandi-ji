@@ -1,4 +1,5 @@
 import { CROP_IMAGE_CATEGORIES } from '../data/cropImageCategories.js';
+import { CROP_IMAGE_ADDITIONS, CROP_COMMODITY_IMAGE_NOTES } from '../data/cropImageAdditions.js';
 
 // Explicit commodity IDs only. Never infer identity with substring matching:
 // seeds, leaves, whole pulses, dal, fresh produce and processed products differ.
@@ -77,6 +78,7 @@ export const CROP_IMAGES = Object.freeze({
   'sunflower-sunflower-seed': 'sunflower-seed',
   'amranthas-red': 'amaranth',
   'ridge-gourdpermal-hybrid-gourd': 'ridge-gourd',
+  ...CROP_IMAGE_ADDITIONS,
 });
 
 export const CROP_IMAGE_NOTES = Object.freeze({
@@ -117,7 +119,7 @@ export function getCropImage(id) {
     src: `/visuals/crop-${CROP_IMAGES[key]}.webp`,
     kind: isCategory ? 'category' : 'commodity',
     category: fallback.category,
-    note: isCategory ? CROP_IMAGE_NOTES[key] : null,
+    note: isCategory ? CROP_IMAGE_NOTES[key] : CROP_COMMODITY_IMAGE_NOTES[key] || null,
   };
 }
 

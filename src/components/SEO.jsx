@@ -77,7 +77,7 @@ export default function SEO({ title, description, path, noIndex = false, structu
       <meta name="twitter:description" content={pageDesc} />
       <meta name="twitter:image" content={pageImage} />
       <meta name="twitter:image:alt" content={pageImageAlt} />
-      <script type="application/ld+json">{JSON.stringify({ ...SCHEMA, inLanguage: pageLanguage })}</script>
+      <script type="application/ld+json">{JSON.stringify({ ...SCHEMA, description: pageDesc, inLanguage: pageLanguage }).replace(/</g, '\\u003c')}</script>
       {structuredData && <script type="application/ld+json">{JSON.stringify(structuredData).replace(/</g, '\\u003c')}</script>}
     </Helmet>
   );

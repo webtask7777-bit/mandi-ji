@@ -1,0 +1,3006 @@
+{
+  "reviewedOn": "2026-10-22",
+  "baseCommit": "d24c477f",
+  "scope": "Image identity review only. Illustrations do not certify actual consignment, cultivar, grade, or agronomic suitability. Editorial-topic status is not image identity.",
+  "counts": {
+    "retain-identity-unresolved": 32,
+    "generate-specific": 25,
+    "reuse-existing": 12,
+    "generate-multiple-forms": 24
+  },
+  "entries": [
+    {
+      "sourceId": "absinthe",
+      "decision": "retain-identity-unresolved",
+      "reason": "All126 observed raw varieties say chirayta; conflicts with Absinthe/wormwood commodity name. Do not draw Artemisia or Swertia without source correction.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 126,
+      "rawVarietyEvidence": [
+        {
+          "variety": "chirayta",
+          "state": "Madhya Pradesh",
+          "count": 126,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "adulsa",
+      "decision": "generate-specific",
+      "subject": "Adulsa / Justicia adhatoda leaves",
+      "asset": "/visuals/crop-adulsa.webp",
+      "reason": "Named herb identified by botanical garden and experimental research. Leaf illustration only, no medicine claim.",
+      "sources": [
+        {
+          "url": "https://epcp.ac.in/vasaka-tree-2/",
+          "supports": "Adulsa / Justicia adhatoda; fresh leaves"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/ae41b214-fb50-4686-be69-3e03735ae8c5/content",
+          "supports": "Experiment collected Adulsa/Justicia adhatoda leaves"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 1,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Adulsa",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-10-21.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "alasande-gram",
+      "decision": "generate-specific",
+      "subject": "Whole cowpea grains",
+      "asset": "/visuals/crop-cowpea-whole.webp",
+      "reason": "Alasande Gram, predominantly Karnataka, identifies cowpea grain. Source does not assert a black-eye or red-seeded cultivar: use a representative cowpea grain illustration with cultivar disclaimer.",
+      "sources": [
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/fe2ea3fe-268e-47a7-8fb3-f2cb3c718f31/content",
+          "supports": "Cowpea Vigna unguiculata = Alasande in Kannada; used green pods and grain"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 533,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Alasande Gram",
+          "state": "Karnataka",
+          "count": 524,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Alasande Gram",
+          "state": "Gujarat",
+          "count": 8,
+          "sourceFile": "server/db/data/daily/2026-07-08.json"
+        },
+        {
+          "variety": "Alasande Gram",
+          "state": "Rajasthan",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-07-27.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "alsandikai",
+      "decision": "reuse-existing",
+      "subject": "Cowpea vegetable pods",
+      "asset": "/visuals/crop-cowpea-pods.webp",
+      "reason": "Alsandikai records concentrated Karnataka F&V markets and Kerala; Alasande is cowpea. -kai vegetable form supports pods. A cultivar-neutral cowpea-pod illustration is defensible.",
+      "sources": [
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/fe2ea3fe-268e-47a7-8fb3-f2cb3c718f31/content",
+          "supports": "Cowpea Vigna unguiculata = Alasande in Kannada; used green pods and grain"
+        }
+      ],
+      "confidence": "medium-high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 529,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Alsandikai",
+          "state": "Karnataka",
+          "count": 230,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Alsandikai",
+          "state": "Keralam",
+          "count": 158,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Alsandikai",
+          "state": "Kerala",
+          "count": 141,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "asalia",
+      "decision": "generate-specific",
+      "subject": "Garden cress reddish-brown oval seeds",
+      "asset": "/visuals/crop-garden-cress-seed.webp",
+      "reason": "Both names identify garden cress in primary agricultural references. Render seeds without medicinal claims.",
+      "sources": [
+        {
+          "url": "https://www.aujodhpur.ac.in/public/pdf/16-07-2019-Minutes-of-II-Research-Council-AU-Jodhpur-30-08-2017.pdf",
+          "supports": "Asalia = Lepidium sativum"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/83a9b4aa-76f5-4844-8d30-5deb448f39c3/content",
+          "supports": "Garden cress = asalia/chandrasoor; mainly grown for seeds"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/9c00b3ee-1fe7-4353-87a5-a9c4430df5a6/content",
+          "supports": "Asalia/chandrsoor seeds are brownish-red and oval"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 300,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Asalia",
+          "state": "Madhya Pradesh",
+          "count": 266,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Asalia",
+          "state": "Gujarat",
+          "count": 25,
+          "sourceFile": "server/db/data/daily/2026-10-13.json"
+        },
+        {
+          "variety": "Asalia-Organic",
+          "state": "Gujarat",
+          "count": 4,
+          "sourceFile": "server/db/data/daily/2025-12-18.json"
+        },
+        {
+          "variety": "Asalia",
+          "state": "Rajasthan",
+          "count": 3,
+          "sourceFile": "server/db/data/daily/2026-07-27.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Rajasthan",
+          "count": 2,
+          "sourceFile": "server/db/data/daily/2026-03-27.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "asgand",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw varieties conflict: Asgand74+organic1 versus Asafoetida leaf69 and Asafoetida seeds23. Do not assign ashwagandha from regional spelling.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 167,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Asgand",
+          "state": "Madhya Pradesh",
+          "count": 74,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Asafoetida leaf",
+          "state": "Madhya Pradesh",
+          "count": 69,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Asafoetida seeds",
+          "state": "Madhya Pradesh",
+          "count": 23,
+          "sourceFile": "server/db/data/daily/2026-01-03.json"
+        },
+        {
+          "variety": "Organic",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-03-02.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "astera",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw Astera Telangana and Other Delhi/Maharashtra; Aster/China-aster botanical inference not confirmed by exact primary trade reference.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 247,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Astera",
+          "state": "Telangana",
+          "count": 105,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Maharashtra",
+          "count": 84,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        },
+        {
+          "variety": "Other",
+          "state": "NCT of Delhi",
+          "count": 58,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "avare-dal",
+      "decision": "generate-specific",
+      "subject": "Whole dried lablab beans",
+      "asset": "/visuals/crop-lablab-whole.webp",
+      "reason": "178/191 raw rows explicitly Avare(Whole). Do not make a split-dal image simply because the commodity ID says dal. Illustrate whole lablab beans and record form disclaimer.",
+      "sources": [
+        {
+          "url": "https://indiaflora-ces.iisc.ac.in/FloraKarnataka/herbsheet.php?cat=1&id=2223",
+          "supports": "Lablab purpureus / Avare Kaai, pods used as vegetable"
+        },
+        {
+          "url": "https://agritech.tnau.ac.in/agriculture/agri_nutrientmgt_gardenlablab.html",
+          "supports": "Garden Lablab (Avarai)"
+        },
+        {
+          "url": "https://krishi.icar.gov.in/jspui/bitstream/123456789/2662/1/EJPB_V5_N2_272-276.pdf",
+          "supports": "Dolichos/Hyacinth bean/Sem"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/0a135e98-ae10-4cf4-8ea5-59e24af923ae/content",
+          "supports": "Indian bean / Sem / Gujarati Wal Papadi; Surat cultivation"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 191,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Avare (Whole)",
+          "state": "Karnataka",
+          "count": 178,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Gujarat",
+          "count": 13,
+          "sourceFile": "server/db/data/daily/2026-03-03.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "balekai",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw mostly Other Rajasthan; common Kannada raw-banana hypothesis not directly corroborated in primary source within this bounded pass.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 29,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Rajasthan",
+          "count": 28,
+          "sourceFile": "server/db/data/daily/2026-09-17.json"
+        },
+        {
+          "variety": "Balekai",
+          "state": "Odisha",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-10-14.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "bejhar",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 2,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Uttar Pradesh",
+          "count": 2,
+          "sourceFile": "server/db/data/daily/2026-10-21.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "bhui-amlaya",
+      "decision": "retain-identity-unresolved",
+      "reason": "Bhuai Amlai variety confirms regional herb label, but not which Phyllanthus taxon/market form. No single species illustration validated.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 10,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Bhuai Amlai",
+          "state": "Madhya Pradesh",
+          "count": 10,
+          "sourceFile": "server/db/data/daily/2026-10-13.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "blueberry",
+      "decision": "generate-specific",
+      "subject": "Ripe blueberries",
+      "asset": "/visuals/crop-blueberry.webp",
+      "reason": "Exact new source commodity; guide taxonomy lag does not prevent a blueberry illustration.",
+      "sources": [
+        {
+          "url": "https://epubs.icar.org.in/index.php/IndHort/article/view/111443",
+          "supports": "Blueberry crop"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 1,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Blueberry",
+          "state": "Telangana",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-10-16.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "brahmi",
+      "decision": "retain-identity-unresolved",
+      "reason": "Brahmi5 raw rows have no botanical subtype. Bacopa and Centella common-name ambiguity remains.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 5,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Brahmi",
+          "state": "Madhya Pradesh",
+          "count": 5,
+          "sourceFile": "server/db/data/daily/2026-10-13.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "bullar",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 45,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Telangana",
+          "count": 33,
+          "sourceFile": "server/db/data/daily/2026-02-13.json"
+        },
+        {
+          "variety": "Bullar-W",
+          "state": "Karnataka",
+          "count": 11,
+          "sourceFile": "server/db/data/daily/2026-02-26.json"
+        },
+        {
+          "variety": "Bullar-S",
+          "state": "Telangana",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-03-09.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "buttery",
+      "decision": "retain-identity-unresolved",
+      "reason": "1,981 MP rows repeat Buttery/Buttery-Organic. Hypothesis batri/grass pea not corroborated by a primary source in bounded research; do not map by similar spelling.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 1981,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Buttery",
+          "state": "Madhya Pradesh",
+          "count": 1973,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Buttery-Organic",
+          "state": "Madhya Pradesh",
+          "count": 8,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "chakotha",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 22,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Chakootha",
+          "state": "NCT of Delhi",
+          "count": 16,
+          "sourceFile": "server/db/data/daily/2026-10-13.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Punjab",
+          "count": 6,
+          "sourceFile": "server/db/data/daily/2026-01-10.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "chandrashoor",
+      "decision": "generate-specific",
+      "subject": "Garden cress reddish-brown oval seeds",
+      "asset": "/visuals/crop-garden-cress-seed.webp",
+      "reason": "Both names identify garden cress in primary agricultural references. Render seeds without medicinal claims.",
+      "sources": [
+        {
+          "url": "https://www.aujodhpur.ac.in/public/pdf/16-07-2019-Minutes-of-II-Research-Council-AU-Jodhpur-30-08-2017.pdf",
+          "supports": "Asalia = Lepidium sativum"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/83a9b4aa-76f5-4844-8d30-5deb448f39c3/content",
+          "supports": "Garden cress = asalia/chandrasoor; mainly grown for seeds"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/9c00b3ee-1fe7-4353-87a5-a9c4430df5a6/content",
+          "supports": "Asalia/chandrsoor seeds are brownish-red and oval"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 1,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Chandrashoor-Organic",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-07-13.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "chapparad-avare",
+      "decision": "reuse-existing",
+      "subject": "Lablab flat green pods",
+      "asset": "/visuals/crop-flat-beans.webp",
+      "reason": "All raw varieties are Chapparada Avarekai in Karnataka. IISc Avare Kaai plus herbarium-derived Capparada-avare supports lablab. Existing flat pod artwork fits named vegetable, no cultivar assertion.",
+      "sources": [
+        {
+          "url": "https://indiaflora-ces.iisc.ac.in/FloraKarnataka/herbsheet.php?cat=1&id=2223",
+          "supports": "Lablab purpureus / Avare Kaai, pods used as vegetable"
+        },
+        {
+          "url": "https://agritech.tnau.ac.in/agriculture/agri_nutrientmgt_gardenlablab.html",
+          "supports": "Garden Lablab (Avarai)"
+        },
+        {
+          "url": "https://krishi.icar.gov.in/jspui/bitstream/123456789/2662/1/EJPB_V5_N2_272-276.pdf",
+          "supports": "Dolichos/Hyacinth bean/Sem"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/0a135e98-ae10-4cf4-8ea5-59e24af923ae/content",
+          "supports": "Indian bean / Sem / Gujarati Wal Papadi; Surat cultivation"
+        },
+        {
+          "url": "https://indiabiodiversity.org/species/show/264642",
+          "supports": "Lablab purpureus synonym Capparada-avare (search indexed; direct page returned403)"
+        }
+      ],
+      "confidence": "medium-high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 459,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Chapparada Avarekai",
+          "state": "Karnataka",
+          "count": 459,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "chena",
+      "decision": "generate-specific",
+      "subject": "Proso millet grain",
+      "asset": "/visuals/crop-proso-millet.webp",
+      "reason": "Raw source Chena is Madhya Pradesh; IIMR directly names Chena as Hindi name of proso millet. Named grain artwork appropriate; no cultivar guarantee.",
+      "sources": [
+        {
+          "url": "https://millets.res.in/millets_info.php",
+          "supports": "Proso millet Hindi Chena; Barri"
+        }
+      ],
+      "confidence": "medium-high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 1,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Chena",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-10-16.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "chennangi-dal",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 120,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Chennangi Dal",
+          "state": "Karnataka",
+          "count": 120,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "chiaseeds",
+      "decision": "generate-specific",
+      "subject": "Chia seeds",
+      "asset": "/visuals/crop-chia-seeds.webp",
+      "reason": "Exact source commodity explicitly seeds.",
+      "sources": [
+        {
+          "url": "https://www.icar.gov.in/en/cultivation-practices-chia-salvia-hispanica-l-shallow-black-soils-drought-prone-areas",
+          "supports": "Chia = Salvia hispanica"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 12,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Chiaseeds",
+          "state": "Madhya Pradesh",
+          "count": 12,
+          "sourceFile": "server/db/data/daily/2026-10-16.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "coca",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw source Coca18 and Cocoa65 coexist; source does not prove a typo. Do not reuse cocoa art automatically.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 18,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Keralam",
+          "count": 18,
+          "sourceFile": "server/db/data/daily/2026-08-06.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "coleus",
+      "decision": "retain-identity-unresolved",
+      "reason": "Only genus-level Coleus17 in Kerala; ornamental foliage and medicinal root species differ.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 17,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Coleus",
+          "state": "Kerala",
+          "count": 17,
+          "sourceFile": "server/db/data/daily/2026-01-03.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "delha",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 72,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Delha",
+          "state": "NCT of Delhi",
+          "count": 72,
+          "sourceFile": "server/db/data/daily/2025-12-16.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "dhawai-flowers",
+      "decision": "generate-multiple-forms",
+      "subject": "Dhawai / Woodfordia small red flowers fresh and dried",
+      "asset": "/visuals/crop-dhawai-flowers.webp",
+      "reason": "Source explicitly Flowers of Dhavai. IISc names Dhawai/Woodfordia fruticosa. Exact fresh-versus-dried lot form is unspecified; illustrate flower subject and disclose.",
+      "sources": [
+        {
+          "url": "https://indiaflora-ces.iisc.ac.in/herbsheet.php?cat=13&id=12490",
+          "supports": "Woodfordia fruticosa Hindi Dhawai, clustered flowers"
+        },
+        {
+          "url": "https://mpsfri.org/files/Utili_MIS_22-23.pdf",
+          "supports": "Market analysis names Dhawai flower Woodfordia fruticosa"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 7,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Flowers of Dhavai",
+          "state": "Madhya Pradesh",
+          "count": 7,
+          "sourceFile": "server/db/data/daily/2026-07-02.json"
+        }
+      ],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "duster-beans",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw Kerala rows mainly Other,9 Duster Beans. Cluster-bean typo or different bean identity not proven.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 415,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Keralam",
+          "count": 209,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Kerala",
+          "count": 162,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Assam",
+          "count": 13,
+          "sourceFile": "server/db/data/daily/2026-02-10.json"
+        },
+        {
+          "variety": "Duster Beans",
+          "state": "Kerala",
+          "count": 9,
+          "sourceFile": "server/db/data/daily/2026-01-01.json"
+        },
+        {
+          "variety": "Duster Beans",
+          "state": "Odisha",
+          "count": 8,
+          "sourceFile": "server/db/data/daily/2026-01-19.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Odisha",
+          "count": 5,
+          "sourceFile": "server/db/data/daily/2026-10-09.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Karnataka",
+          "count": 4,
+          "sourceFile": "server/db/data/daily/2026-08-27.json"
+        },
+        {
+          "variety": "Duster Beans",
+          "state": "Keralam",
+          "count": 4,
+          "sourceFile": "server/db/data/daily/2026-08-20.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "field-beananumulu",
+      "decision": "generate-multiple-forms",
+      "subject": "Lablab field bean pods and whole beans",
+      "asset": "/visuals/crop-lablab-forms.webp",
+      "reason": "IISc explicitly lists Telugu Anumulu for Lablab field bean; source all11 rows Telangana. Crop identity established, trade form unspecified: pods plus whole beans without claiming lot form.",
+      "sources": [
+        {
+          "url": "https://indiaflora-ces.iisc.ac.in/herbsheet.php?cat=13&id=6850",
+          "supports": "Lablab purpureus var lignosus, Anumulu Telugu"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/33b3d782-c6a1-48f2-81fa-cf70a1460d95/content",
+          "supports": "Field bean Lablab purpureus = anumulu; vegetable and pulse crop"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 11,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Field Bean(Anumulu)",
+          "state": "Telangana",
+          "count": 11,
+          "sourceFile": "server/db/data/daily/2026-10-16.json"
+        }
+      ],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "gokhru",
+      "decision": "retain-identity-unresolved",
+      "reason": "Single Gokhru row lacks small/big qualifier; Tribulus versus Pedalium trade identity not settled.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 1,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Gokhru",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-10-17.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "green-avarew",
+      "decision": "generate-multiple-forms",
+      "subject": "Green lablab pods and shelled fresh green beans",
+      "asset": "/visuals/crop-green-lablab.webp",
+      "reason": "High-coverage Green Avare(W), mainly Tamil Nadu, is named lablab; W alone does not settle pod/shelled form. Show pods plus shelled green beans with form-unspecified metadata.",
+      "sources": [
+        {
+          "url": "https://indiaflora-ces.iisc.ac.in/FloraKarnataka/herbsheet.php?cat=1&id=2223",
+          "supports": "Lablab purpureus / Avare Kaai, pods used as vegetable"
+        },
+        {
+          "url": "https://agritech.tnau.ac.in/agriculture/agri_nutrientmgt_gardenlablab.html",
+          "supports": "Garden Lablab (Avarai)"
+        },
+        {
+          "url": "https://krishi.icar.gov.in/jspui/bitstream/123456789/2662/1/EJPB_V5_N2_272-276.pdf",
+          "supports": "Dolichos/Hyacinth bean/Sem"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/0a135e98-ae10-4cf4-8ea5-59e24af923ae/content",
+          "supports": "Indian bean / Sem / Gujarati Wal Papadi; Surat cultivation"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 19735,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Green Avare (W)",
+          "state": "Tamil Nadu",
+          "count": 11875,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Tamil Nadu",
+          "count": 7160,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Green Avare (W)",
+          "state": "Keralam",
+          "count": 441,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Green Avare (W)",
+          "state": "Karnataka",
+          "count": 227,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Green Avare (W)",
+          "state": "Kerala",
+          "count": 31,
+          "sourceFile": "server/db/data/daily/2026-05-14.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Punjab",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-09-24.json"
+        }
+      ],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "gulli",
+      "decision": "generate-specific",
+      "subject": "Mahua oilseeds",
+      "asset": "/visuals/crop-mahua-seed.webp",
+      "reason": "Source mainly MP and UP. MP State Forest Research Institute and IIT Indore identify Gulli as mahua seeds. Do not reuse mahua flower art.",
+      "sources": [
+        {
+          "url": "https://www.mpsfri.org/files/Primary_Processing_Bul53.pdf",
+          "supports": "Madhuca latifolia Mahua gulli, oil-yielding seeds"
+        },
+        {
+          "url": "https://dspace.iiti.ac.in/bitstream/123456789/17745/1/TH_791_M_Amin_Khan_2101161005.pdf",
+          "supports": "Glossary Gulli = Mahua seeds"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 817,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Gulli",
+          "state": "Madhya Pradesh",
+          "count": 652,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Uttar Pradesh",
+          "count": 164,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Gulli-Organic",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-08-07.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "harrah",
+      "decision": "generate-specific",
+      "subject": "Harra / Terminalia chebula dried fruits",
+      "asset": "/visuals/crop-harra.webp",
+      "reason": "MP source Harrah and forestry market records identify Terminalia chebula fruits. Keep distinct from Baheda.",
+      "sources": [
+        {
+          "url": "https://tfrienglish.icfre.gov.in/bulletin_board/bulletin55.pdf",
+          "supports": "Harra fruits Terminalia chebula in MP"
+        },
+        {
+          "url": "https://smpb.cgstate.gov.in/sites/default/files/MSP%20of%20Raw%20Medicinal%20Plants%20Produce%20in%20Chhattisgarh.pdf",
+          "supports": "Terminalia chebula Harra Dry"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 1,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Harrah",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-03-27.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "honge-seed",
+      "decision": "generate-specific",
+      "subject": "Karanja / Pongamia seeds",
+      "asset": "/visuals/crop-karanja-seed.webp",
+      "reason": "Honge Seed is explicit seed form; IISc names Honge and Karanj for Pongamia pinnata. Share karanja seed subject if generated.",
+      "sources": [
+        {
+          "url": "https://wgbis.ces.iisc.ac.in/energy/water/paper/ETR79/description.html",
+          "supports": "Pongamia pinnata = Honge, Karanj, brown seed pods"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 19,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Honge Seed",
+          "state": "Karnataka",
+          "count": 19,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "indian-beansseam",
+      "decision": "reuse-existing",
+      "subject": "Lablab flat green pods",
+      "asset": "/visuals/crop-flat-beans.webp",
+      "reason": "Named Indian bean/Sem/Papadi commodity can use existing fresh flat lablab pod illustration. This is commodity artwork, not evidence of a specific cultivar or actual lot.",
+      "sources": [
+        {
+          "url": "https://indiaflora-ces.iisc.ac.in/FloraKarnataka/herbsheet.php?cat=1&id=2223",
+          "supports": "Lablab purpureus / Avare Kaai, pods used as vegetable"
+        },
+        {
+          "url": "https://agritech.tnau.ac.in/agriculture/agri_nutrientmgt_gardenlablab.html",
+          "supports": "Garden Lablab (Avarai)"
+        },
+        {
+          "url": "https://krishi.icar.gov.in/jspui/bitstream/123456789/2662/1/EJPB_V5_N2_272-276.pdf",
+          "supports": "Dolichos/Hyacinth bean/Sem"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/0a135e98-ae10-4cf4-8ea5-59e24af923ae/content",
+          "supports": "Indian bean / Sem / Gujarati Wal Papadi; Surat cultivation"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 5871,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Indian Beans (Seam)",
+          "state": "Tamil Nadu",
+          "count": 4802,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Keralam",
+          "count": 343,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Indian Beans (Seam)",
+          "state": "Keralam",
+          "count": 246,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Gujarat",
+          "count": 152,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Jammu and Kashmir",
+          "count": 134,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Indian Beans (Seam)",
+          "state": "Telangana",
+          "count": 43,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Tripura",
+          "count": 33,
+          "sourceFile": "server/db/data/daily/2026-08-27.json"
+        },
+        {
+          "variety": "Beans or Semi",
+          "state": "Madhya Pradesh",
+          "count": 30,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "jaee",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 1,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Uttar Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-05-14.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "jaffri",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 9,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Jaffri",
+          "state": "NCT of Delhi",
+          "count": 9,
+          "sourceFile": "server/db/data/daily/2026-10-13.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "jamamkhan",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 1,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Punjab",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-08-12.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "javi",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 11,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Javi",
+          "state": "Rajasthan",
+          "count": 11,
+          "sourceFile": "server/db/data/daily/2026-07-08.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "kakada",
+      "decision": "generate-specific",
+      "subject": "Kakada jasmine white star-shaped flowers",
+      "asset": "/visuals/crop-kakada.webp",
+      "reason": "UAS Bangalore horticultural research directly identifies Kakada as Jasminum multiflorum. Generic white-flowered Kakada artwork does not assert Pink Kakada cultivar.",
+      "sources": [
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/20f623d5-8735-4a8b-9c92-2db2b4066149/content",
+          "supports": "Kakada = Jasminum multiflorum"
+        },
+        {
+          "url": "https://courseware.cutm.ac.in/files/2020/12/Slide-11-Cultivation-practices-of-jasmine-2.pdf",
+          "supports": "Jasminum pubescens/multiflorum = Kakada"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 872,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Kakada",
+          "state": "Tamil Nadu",
+          "count": 712,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Kakada",
+          "state": "Telangana",
+          "count": 82,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Maharashtra",
+          "count": 78,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "kankambra",
+      "decision": "generate-specific",
+      "subject": "Kanakambaram / Crossandra orange flowers",
+      "asset": "/visuals/crop-crossandra.webp",
+      "reason": "Source Kankambra at Gudimalkapur Telangana flower market is a transliteration of Kanakambaram; Hyderabad nursery botanical inventory directly establishes Crossandra.",
+      "sources": [
+        {
+          "url": "https://greenhyderabad.ghmc.gov.in/PDF/List%20of%20Nurseries_2020.pdf",
+          "supports": "Crossandra infundibuliformis = Kanakambaram"
+        },
+        {
+          "url": "https://agriwelfare.gov.in/Documents/Intensive_Agriculture_Oct_Dec2023.pdf",
+          "supports": "Crossandra Kanakambaram orange/yellow flowers"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 82,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Kankambra",
+          "state": "Telangana",
+          "count": 82,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "kutki",
+      "decision": "generate-specific",
+      "subject": "Little millet grains",
+      "asset": "/visuals/crop-little-millet.webp",
+      "reason": "Observed records concentrated Dindori/Nainpur MP and Raipur CG, matching IIMR Kutki grain crop geography. No botanical claim based on price. Context supports millet rather than Himalayan medicinal Kutki.",
+      "sources": [
+        {
+          "url": "https://www.millets.res.in/farmer/Latest_Millet_English_Full_Book_2020.pdf",
+          "supports": "Little millet Panicum sumatrense, common name Kutki, MP and CG varieties"
+        },
+        {
+          "url": "https://www.millets.res.in/technologies/little_millet.pdf",
+          "supports": "Jawahar Kutki at JNKVV Rewa MP and Chhattisgarh Kutki"
+        }
+      ],
+      "confidence": "medium-high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 395,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Kutki",
+          "state": "Madhya Pradesh",
+          "count": 388,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Kutki-Organic",
+          "state": "Chattisgarh",
+          "count": 3,
+          "sourceFile": "server/db/data/daily/2026-09-30.json"
+        },
+        {
+          "variety": "Kutki-Organic",
+          "state": "Madhya Pradesh",
+          "count": 3,
+          "sourceFile": "server/db/data/daily/2026-05-04.json"
+        },
+        {
+          "variety": "Kutki/gnat",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-09-24.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "lilly",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw Lily Telangana and Other Delhi flower market; specific commercial flower form not established (true lily vs regional loose-flower label).",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 211,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "NCT of Delhi",
+          "count": 110,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Lily",
+          "state": "Telangana",
+          "count": 101,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "macoy",
+      "decision": "generate-multiple-forms",
+      "subject": "Makoy / black nightshade leafy sprig with berries",
+      "asset": "/visuals/crop-makoy.webp",
+      "reason": "Raw variety explicitly Makoy. NMPB establishes Solanum nigrum. Show named plant illustration; raw herb/berry commercial form unspecified and no eating/safety claims.",
+      "sources": [
+        {
+          "url": "https://nmpb.nic.in/pdf/OperationalGuidlines2024Eng.pdf",
+          "supports": "Solanum nigrum = Makoy"
+        },
+        {
+          "url": "https://mpsfri.org/files/Utili_MIS_22-23.pdf",
+          "supports": "Makoi dana panchang commodity in market analysis"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 1,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Makoy",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-07-30.json"
+        }
+      ],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "mahedi",
+      "decision": "generate-multiple-forms",
+      "subject": "Henna leaves fresh and dried",
+      "asset": "/visuals/crop-henna.webp",
+      "reason": "All70 raw rows are Sojat City Rajasthan; source spelling Mahedi is consistent with Mehndi commodity. Official Sojat and ICFRE document henna leaf crop. Do not assert powder form, GI certification, or actual source provenance.",
+      "sources": [
+        {
+          "url": "https://www.india.gov.in/explore-india/odop/details/sojat-mehndi",
+          "supports": "Sojat Mehndi is henna from leaves"
+        },
+        {
+          "url": "https://english.icfre.gov.in/pdf/publication/publication27.pdf",
+          "supports": "Mehndi/Henna Lawsonia inermis in Sojat"
+        }
+      ],
+      "confidence": "medium-high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 70,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Mahedi",
+          "state": "Rajasthan",
+          "count": 70,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        }
+      ],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "marget",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 26,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Marget",
+          "state": "NCT of Delhi",
+          "count": 26,
+          "sourceFile": "server/db/data/daily/2026-05-14.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "mataki",
+      "decision": "generate-specific",
+      "subject": "Whole moth bean grains",
+      "asset": "/visuals/crop-moth-bean.webp",
+      "reason": "ICAR establishes Matki/Math as moth bean; source varieties Mataki(W), Moath(W) support whole grain rather than assuming split dal.",
+      "sources": [
+        {
+          "url": "https://icar.gov.in/en/node/3850",
+          "supports": "Moth bean known as Matki/Math; Vigna aconitfolia"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 251,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Maharashtra",
+          "count": 154,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        },
+        {
+          "variety": "Mataki (W)",
+          "state": "Karnataka",
+          "count": 85,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Gujarat",
+          "count": 6,
+          "sourceFile": "server/db/data/daily/2026-10-13.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Rajasthan",
+          "count": 6,
+          "sourceFile": "server/db/data/daily/2026-10-03.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "moath-dal",
+      "decision": "generate-specific",
+      "subject": "Whole moth bean grains",
+      "asset": "/visuals/crop-moth-bean.webp",
+      "reason": "ICAR establishes Matki/Math as moth bean; source varieties Mataki(W), Moath(W) support whole grain rather than assuming split dal.",
+      "sources": [
+        {
+          "url": "https://icar.gov.in/en/node/3850",
+          "supports": "Moth bean known as Matki/Math; Vigna aconitfolia"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 15,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Moath (W)",
+          "state": "Rajasthan",
+          "count": 8,
+          "sourceFile": "server/db/data/daily/2026-04-06.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Rajasthan",
+          "count": 7,
+          "sourceFile": "server/db/data/daily/2026-04-06.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "muesli",
+      "decision": "generate-specific",
+      "subject": "Safed musli pale slender tuberous roots",
+      "asset": "/visuals/crop-safed-musli.webp",
+      "reason": "Raw varieties explicitly Safed Musli for white-muesli and some muesli rows; NMPB establishes tuberous root commercial form. Render market commodity roots without certifying botanical species, because trade musli may include related species.",
+      "sources": [
+        {
+          "url": "https://nmpb.nic.in/sites/default/files/publications/safed_musli.pdf",
+          "supports": "Safed Musli; tuberous root is part used"
+        }
+      ],
+      "confidence": "medium-high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 19,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Muesli",
+          "state": "Madhya Pradesh",
+          "count": 17,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Safed Musli",
+          "state": "Madhya Pradesh",
+          "count": 2,
+          "sourceFile": "server/db/data/daily/2026-10-08.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "muleti",
+      "decision": "generate-specific",
+      "subject": "Liquorice roots and stolon sticks",
+      "asset": "/visuals/crop-liquorice.webp",
+      "reason": "30 raw rows explicitly Mulethi-Organic; NMPB identifies root/stolon form. Brown woody sticks with pale cut ends; no treatment or health claims.",
+      "sources": [
+        {
+          "url": "https://www.nmpb.nic.in/sites/default/files/publications/liquorice_mulethi.pdf",
+          "supports": "Mulethi = Glycyrrhiza glabra; part used root"
+        },
+        {
+          "url": "https://nmpb.nic.in/sites/default/files/publications/Agro_techniques_of_selected_medicinal_plants_Vol-II.pdf",
+          "supports": "Mulethi root/stolon cylindrical yellowish brown, longitudinal wrinkles"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 34,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Mulethi-Organic",
+          "state": "Chattisgarh",
+          "count": 30,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        },
+        {
+          "variety": "Muleti",
+          "state": "Madhya Pradesh",
+          "count": 4,
+          "sourceFile": "server/db/data/daily/2026-10-13.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "patti-calcutta",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 14,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Patti Calcutta",
+          "state": "NCT of Delhi",
+          "count": 14,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "pupadia",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 6,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Pupadia",
+          "state": "Madhya Pradesh",
+          "count": 5,
+          "sourceFile": "server/db/data/daily/2026-07-21.json"
+        },
+        {
+          "variety": "Pupadia-Organic",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-07-05.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "quinoa",
+      "decision": "generate-specific",
+      "subject": "Quinoa grain",
+      "asset": "/visuals/crop-quinoa.webp",
+      "reason": "Exact source commodity; grain illustration can precede guide taxonomy coverage.",
+      "sources": [
+        {
+          "url": "https://epubs.icar.org.in/index.php/IndFarm/article/view/96935",
+          "supports": "Growing super grain quinoa in India"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 3,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Quinoa",
+          "state": "Madhya Pradesh",
+          "count": 3,
+          "sourceFile": "server/db/data/daily/2026-10-16.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "raibel",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 99,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Raibel",
+          "state": "NCT of Delhi",
+          "count": 98,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "NCT of Delhi",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-10-14.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "rat-tail-radishmogari",
+      "decision": "generate-specific",
+      "subject": "Rat-tail radish green/purple slender edible pods",
+      "asset": "/visuals/crop-rat-tail-radish-pods.webp",
+      "reason": "Exact source name specifies pod crop; no root-radish imagery.",
+      "sources": [
+        {
+          "url": "https://scicon.sastra.org.in/wp-content/uploads/2023/11/Abstracts_ISEUHC2023.pdf",
+          "supports": "ICAR authors: Mougri/Raphanus sativus var caudatus grown for tender green/purple pods, no fleshy root"
+        },
+        {
+          "url": "https://npgsweb.ars-grin.gov/gringlobal/taxon/taxonomydetail?id=457323",
+          "supports": "USDA taxon rat-tail radish"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 7,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Gujarat",
+          "count": 5,
+          "sourceFile": "server/db/data/daily/2026-10-12.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Punjab",
+          "count": 2,
+          "sourceFile": "server/db/data/daily/2026-09-25.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "ratanjot",
+      "decision": "retain-identity-unresolved",
+      "reason": "Single Ratanjot row lacks form/species. Jatropha oilseed versus red dye-root trade name ambiguity remains.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 1,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Ratanjot",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-10-16.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "raya",
+      "decision": "reuse-existing",
+      "subject": "Mustard seed commodity illustration",
+      "asset": "/visuals/crop-mustard.webp",
+      "reason": "ICAR establishes rai/raya as Indian mustard in trade. Rayee source variety Raee is spelling variation. Existing mustard artwork may illustrate crop but does not certify cultivar, grade, or seed treatment.",
+      "sources": [
+        {
+          "url": "https://www.icar.gov.in/sites/default/files/2022-04/Abst-Jr-062AG.pdf",
+          "supports": "Indian mustard Brassica juncea commonly rai/raya/laha; raya traded as mustard"
+        }
+      ],
+      "confidence": "medium-high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 3,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Gujarat",
+          "count": 3,
+          "sourceFile": "server/db/data/daily/2026-08-14.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "rayee",
+      "decision": "reuse-existing",
+      "subject": "Mustard seed commodity illustration",
+      "asset": "/visuals/crop-mustard.webp",
+      "reason": "ICAR establishes rai/raya as Indian mustard in trade. Rayee source variety Raee is spelling variation. Existing mustard artwork may illustrate crop but does not certify cultivar, grade, or seed treatment.",
+      "sources": [
+        {
+          "url": "https://www.icar.gov.in/sites/default/files/2022-04/Abst-Jr-062AG.pdf",
+          "supports": "Indian mustard Brassica juncea commonly rai/raya/laha; raya traded as mustard"
+        }
+      ],
+      "confidence": "medium-high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 4,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Raee",
+          "state": "Madhya Pradesh",
+          "count": 4,
+          "sourceFile": "server/db/data/daily/2026-10-16.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "same-savi",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw variety names span Saanva/Sama MP, Same/Savi Local Karnataka and Savo CG. Little millet alias Same is known, but cross-state Saanva could be barnyard millet. Keep source unresolved instead of overriding all rows.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 138,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Saanva/Sama",
+          "state": "Madhya Pradesh",
+          "count": 57,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Same/Savi Local",
+          "state": "Karnataka",
+          "count": 39,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Savo Others",
+          "state": "Chattisgarh",
+          "count": 25,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        },
+        {
+          "variety": "Local",
+          "state": "Chattisgarh",
+          "count": 15,
+          "sourceFile": "server/db/data/daily/2026-07-27.json"
+        },
+        {
+          "variety": "Organic",
+          "state": "Madhya Pradesh",
+          "count": 2,
+          "sourceFile": "server/db/data/daily/2026-07-27.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "seemebadnekai",
+      "decision": "reuse-existing",
+      "subject": "Chayote fruits",
+      "asset": "/visuals/crop-chayote.webp",
+      "reason": "Source varieties Seemebadanekai, concentrated Karnataka; IISc explicitly lists Seeme-badine-kaayi as chayote.",
+      "sources": [
+        {
+          "url": "https://indiaflora-ces.iisc.ac.in/herbsheet.php?cat=13&id=10685",
+          "supports": "Sechium edule / Chayote / Seeme-badine-kaayi"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 470,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Seemebadanekai",
+          "state": "Karnataka",
+          "count": 390,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Keralam",
+          "count": 69,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Kerala",
+          "count": 11,
+          "sourceFile": "server/db/data/daily/2026-04-06.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "sem",
+      "decision": "reuse-existing",
+      "subject": "Lablab flat green pods",
+      "asset": "/visuals/crop-flat-beans.webp",
+      "reason": "Named Indian bean/Sem/Papadi commodity can use existing fresh flat lablab pod illustration. This is commodity artwork, not evidence of a specific cultivar or actual lot.",
+      "sources": [
+        {
+          "url": "https://indiaflora-ces.iisc.ac.in/FloraKarnataka/herbsheet.php?cat=1&id=2223",
+          "supports": "Lablab purpureus / Avare Kaai, pods used as vegetable"
+        },
+        {
+          "url": "https://agritech.tnau.ac.in/agriculture/agri_nutrientmgt_gardenlablab.html",
+          "supports": "Garden Lablab (Avarai)"
+        },
+        {
+          "url": "https://krishi.icar.gov.in/jspui/bitstream/123456789/2662/1/EJPB_V5_N2_272-276.pdf",
+          "supports": "Dolichos/Hyacinth bean/Sem"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/0a135e98-ae10-4cf4-8ea5-59e24af923ae/content",
+          "supports": "Indian bean / Sem / Gujarati Wal Papadi; Surat cultivation"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 2,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Sem",
+          "state": "Assam",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-10-16.json"
+        },
+        {
+          "variety": "Sem",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-05-06.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "sompu",
+      "decision": "reuse-existing",
+      "subject": "Fennel seeds named crop illustration",
+      "asset": "/visuals/crop-fennel-seed.webp",
+      "reason": "IISc explicitly lists Sompu as Kannada/Telugu fennel. Raw source variety Chalu does not establish leaf/seed form; retain form-unspecified metadata when using existing fennel seed illustration.",
+      "sources": [
+        {
+          "url": "https://indiaflora-ces.iisc.ac.in/herbsheet.php?cat=13&id=5137",
+          "supports": "Foeniculum vulgare / fennel / Sompu"
+        }
+      ],
+      "confidence": "medium-high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 4,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Chalu",
+          "state": "Keralam",
+          "count": 4,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "surat-beanspapadi",
+      "decision": "reuse-existing",
+      "subject": "Lablab flat green pods",
+      "asset": "/visuals/crop-flat-beans.webp",
+      "reason": "Named Indian bean/Sem/Papadi commodity can use existing fresh flat lablab pod illustration. This is commodity artwork, not evidence of a specific cultivar or actual lot.",
+      "sources": [
+        {
+          "url": "https://indiaflora-ces.iisc.ac.in/FloraKarnataka/herbsheet.php?cat=1&id=2223",
+          "supports": "Lablab purpureus / Avare Kaai, pods used as vegetable"
+        },
+        {
+          "url": "https://agritech.tnau.ac.in/agriculture/agri_nutrientmgt_gardenlablab.html",
+          "supports": "Garden Lablab (Avarai)"
+        },
+        {
+          "url": "https://krishi.icar.gov.in/jspui/bitstream/123456789/2662/1/EJPB_V5_N2_272-276.pdf",
+          "supports": "Dolichos/Hyacinth bean/Sem"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/0a135e98-ae10-4cf4-8ea5-59e24af923ae/content",
+          "supports": "Indian bean / Sem / Gujarati Wal Papadi; Surat cultivation"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 182,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Gujarat",
+          "count": 175,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Surat Beans (Papadi)",
+          "state": "Gujarat",
+          "count": 7,
+          "sourceFile": "server/db/data/daily/2026-08-25.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "sweet-saag",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 105,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Uttar Pradesh",
+          "count": 104,
+          "sourceFile": "server/db/data/daily/2026-05-14.json"
+        },
+        {
+          "variety": "Sweet Saag",
+          "state": "Himachal Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-10-17.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "taramira",
+      "decision": "generate-specific",
+      "subject": "Taramira oilseeds",
+      "asset": "/visuals/crop-taramira.webp",
+      "reason": "Taramira identity established by IISc. Show reddish-brown ovoid seeds, not mustard seeds or leafy salad product.",
+      "sources": [
+        {
+          "url": "https://indiaflora-ces.iisc.ac.in/herbsheet.php?cat=13&id=4569",
+          "supports": "Eruca sativa = Taramira"
+        },
+        {
+          "url": "https://krishikosh.egranth.ac.in/server/api/core/bitstreams/76e0f6f9-6a22-4963-b177-beb13154d0f6/content",
+          "supports": "Taramira seeds reddish brown, ovoid, smooth"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 249,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Rajasthan",
+          "count": 185,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Taramira",
+          "state": "Madhya Pradesh",
+          "count": 46,
+          "sourceFile": "server/db/data/daily/2026-08-06.json"
+        },
+        {
+          "variety": "Taramira",
+          "state": "Rajasthan",
+          "count": 9,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        },
+        {
+          "variety": "Taramira",
+          "state": "Gujarat",
+          "count": 9,
+          "sourceFile": "server/db/data/daily/2026-04-06.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "taro-arvi-leaves",
+      "decision": "generate-specific",
+      "subject": "Taro green leaves",
+      "asset": "/visuals/crop-taro-leaves.webp",
+      "reason": "Source explicitly leaves; do not reuse colocasia corm art.",
+      "sources": [
+        {
+          "url": "https://www.celkau.in/crops/tuber/colocasia/about.php",
+          "supports": "Colocasia/taro edible leaves distinct from corms"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 3,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Taro (Arvi) Leaves",
+          "state": "Madhya Pradesh",
+          "count": 3,
+          "sourceFile": "server/db/data/daily/2026-10-16.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "tesu-flower",
+      "decision": "generate-specific",
+      "subject": "Tesu / Palash bright orange flowers",
+      "asset": "/visuals/crop-tesu-flower.webp",
+      "reason": "Explicit Tesu Flower source, botanical identity and flower appearance established by Delhi Forest.",
+      "sources": [
+        {
+          "url": "https://eforest.delhi.gov.in/wildlife/publication/lists_of_common_trees_in_delhi.pdf",
+          "supports": "Butea monosperma known as dhak/palash/tesu, bright orange flowers"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 1,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Tesu Flower",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-10-16.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "thogrikai",
+      "decision": "generate-specific",
+      "subject": "Fresh pigeon pea pods",
+      "asset": "/visuals/crop-pigeon-pea-pods.webp",
+      "reason": "All24 rows Karnataka variety Thogarikai. Kannada Togari/pigeon pea established in historical government botanical account; -kai and F&V market context support pod form. Keep source spelling and form inference explicit.",
+      "sources": [
+        {
+          "url": "https://dspace.gipe.ac.in/xmlui/bitstream/handle/10973/36769/GIPE-059858.pdf?isAllowed=y&sequence=3",
+          "supports": "South Canara flora lists Cajanus indicus, Kannada togari, pigeon-pea"
+        },
+        {
+          "url": "https://cess.ac.in/wp-content/uploads/2024/07/Cess-Monograph-57-Papers-FINAL-15-5-24-1.pdf",
+          "supports": "Primary crop survey lists Cajanus cajan Togari varieties"
+        }
+      ],
+      "confidence": "medium-high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 24,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Thogarikai",
+          "state": "Karnataka",
+          "count": 24,
+          "sourceFile": "server/db/data/daily/2026-10-13.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "thondekai",
+      "decision": "reuse-existing",
+      "subject": "Ivy gourd fruits",
+      "asset": "/visuals/crop-ivy-gourd.webp",
+      "reason": "Raw source consistently Thondekai; Kannada Thonde/Thonde balli and Telugu Tonda kaaya refer to Coccinia grandis. Standard ivy-gourd fruit art is appropriate; no cultivar claim.",
+      "sources": [
+        {
+          "url": "https://indiaflora-ces.iisc.ac.in/FloraPeninsular/herbsheet.php?cat=7&id=2970",
+          "supports": "Coccinia grandis, ivy gourd, Kannada Thonde balli"
+        },
+        {
+          "url": "https://caps.ncbs.res.in/GRAYU/plant/Coccinia%20grandis",
+          "supports": "Thonde = Coccinia grandis"
+        }
+      ],
+      "confidence": "high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 11677,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Thondekai",
+          "state": "Tamil Nadu",
+          "count": 11004,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Thondekai",
+          "state": "Karnataka",
+          "count": 527,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Thondekai",
+          "state": "Telangana",
+          "count": 125,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Telangana",
+          "count": 17,
+          "sourceFile": "server/db/data/daily/2026-08-06.json"
+        },
+        {
+          "variety": "Thondekai",
+          "state": "Kerala",
+          "count": 3,
+          "sourceFile": "server/db/data/daily/2026-04-06.json"
+        },
+        {
+          "variety": "Thondekai",
+          "state": "Keralam",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-06-18.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "tube-flower",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 313,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Tube Flower",
+          "state": "Tamil Nadu",
+          "count": 313,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "vadang",
+      "decision": "retain-identity-unresolved",
+      "reason": "Raw commodity/variety label checked; no primary trade/botanical reference sufficiently establishes this local or abbreviated identity within the bounded review. Keep category illustration pending source-market confirmation.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 1,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Y Windg",
+          "state": "Madhya Pradesh",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-07-03.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "white-muesli",
+      "decision": "generate-specific",
+      "subject": "Safed musli pale slender tuberous roots",
+      "asset": "/visuals/crop-safed-musli.webp",
+      "reason": "Raw varieties explicitly Safed Musli for white-muesli and some muesli rows; NMPB establishes tuberous root commercial form. Render market commodity roots without certifying botanical species, because trade musli may include related species.",
+      "sources": [
+        {
+          "url": "https://nmpb.nic.in/sites/default/files/publications/safed_musli.pdf",
+          "supports": "Safed Musli; tuberous root is part used"
+        }
+      ],
+      "confidence": "medium-high",
+      "inference": true,
+      "researchStatus": "reviewed",
+      "rawRecordCount": 183,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Safed Musli-Organic",
+          "state": "Chattisgarh",
+          "count": 177,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "White Muesli",
+          "state": "Madhya Pradesh",
+          "count": 6,
+          "sourceFile": "server/db/data/daily/2026-07-22.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "white-pumpkin",
+      "decision": "retain-identity-unresolved",
+      "reason": "White Pumpkin raw records do not settle ash gourd versus white-skinned Cucurbita pumpkin cultivar.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 216,
+      "rawVarietyEvidence": [
+        {
+          "variety": "White Pumpkin",
+          "state": "Karnataka",
+          "count": 162,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "White Pumpkin",
+          "state": "Keralam",
+          "count": 28,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Tripura",
+          "count": 13,
+          "sourceFile": "server/db/data/daily/2026-09-19.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Keralam",
+          "count": 6,
+          "sourceFile": "server/db/data/daily/2026-07-07.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Andaman and Nicobar",
+          "count": 4,
+          "sourceFile": "server/db/data/daily/2026-07-02.json"
+        },
+        {
+          "variety": "White Pumpkin",
+          "state": "Kerala",
+          "count": 2,
+          "sourceFile": "server/db/data/daily/2026-05-19.json"
+        },
+        {
+          "variety": "Other",
+          "state": "West Bengal",
+          "count": 1,
+          "sourceFile": "server/db/data/daily/2026-09-10.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "wild-cucumber",
+      "decision": "retain-identity-unresolved",
+      "reason": "Wild Cucumber label can refer to multiple genera/species; no more specific raw variety.",
+      "researchStatus": "bounded-review-no-sufficient-confirmation",
+      "sources": [],
+      "nextStep": "Obtain source-market bilingual commodity list, botanical identifier, or market specimen reference; preserve source ID and prices.",
+      "rawRecordCount": 12,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Wild Cucumber",
+          "state": "Telangana",
+          "count": 12,
+          "sourceFile": "server/db/data/daily/2026-10-16.json"
+        }
+      ],
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "mangoraw-ripe",
+      "decision": "generate-multiple-forms",
+      "subject": "Mango(Raw-Ripe)",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Combined raw-ripe label; a mixed raw+ripe mango illustration must not assert actual batch condition."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 17797,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Mango - Raw-Ripe",
+          "state": "Tamil Nadu",
+          "count": 14343,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Mango - Raw-Ripe",
+          "state": "Keralam",
+          "count": 1619,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Maharashtra",
+          "count": 474,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Keralam",
+          "count": 312,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Gujarat",
+          "count": 148,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Mango - Raw-Ripe",
+          "state": "Kerala",
+          "count": 119,
+          "sourceFile": "server/db/data/daily/2026-05-14.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Rajasthan",
+          "count": 118,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        },
+        {
+          "variety": "Mango - Raw-Ripe",
+          "state": "Haryana",
+          "count": 116,
+          "sourceFile": "server/db/data/daily/2026-08-06.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Whole green mango and ripe mango with orange flesh slice; illustration explicitly includes both stages."
+    },
+    {
+      "sourceId": "chilly-capsicum",
+      "decision": "generate-multiple-forms",
+      "subject": "Chilly Capsicum",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Combined name may mean pungent chili or sweet capsicum; editorial taxonomy alone does not settle visual identity."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 7067,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Maharashtra",
+          "count": 4377,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Chilly Capsicum",
+          "state": "Chhattisgarh",
+          "count": 1348,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Chilly Capsicum",
+          "state": "Karnataka",
+          "count": 796,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Chilly Capsicum",
+          "state": "Chattisgarh",
+          "count": 267,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Punjab",
+          "count": 139,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Haryana",
+          "count": 55,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Madhya Pradesh",
+          "count": 45,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Chilly Capsicum",
+          "state": "Punjab",
+          "count": 15,
+          "sourceFile": "server/db/data/daily/2026-08-27.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Long green/red chillies and blocky sweet capsicum together; source compound label does not identify one type."
+    },
+    {
+      "sourceId": "guar",
+      "decision": "generate-multiple-forms",
+      "subject": "Guar",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Fresh pods versus seed not established."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 5359,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Maharashtra",
+          "count": 2901,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Gwar",
+          "state": "Gujarat",
+          "count": 680,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Gwar",
+          "state": "Rajasthan",
+          "count": 566,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Gujarat",
+          "count": 318,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Rajasthan",
+          "count": 268,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Guaar",
+          "state": "Gujarat",
+          "count": 178,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Gwar",
+          "state": "Punjab",
+          "count": 95,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Haryana",
+          "count": 94,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Cluster-bean green pods beside a small pile of mature guar seeds."
+    },
+    {
+      "sourceId": "cowpea",
+      "decision": "generate-multiple-forms",
+      "subject": "Cowpea/Barbati",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Cowpea/Barbati could mean vegetable pods or dry beans; commercial form needs confirmation."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "noTaxonomyChange": true,
+      "visualBrief": "Green cowpea vegetable pods beside mature cowpea beans."
+    },
+    {
+      "sourceId": "peas",
+      "decision": "generate-multiple-forms",
+      "subject": "Peas",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Fresh/dry form unspecified."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "noTaxonomyChange": true,
+      "visualBrief": "Green pea pods and fresh peas beside dried pea grains."
+    },
+    {
+      "sourceId": "rubber",
+      "decision": "generate-multiple-forms",
+      "subject": "Rubber",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Raw latex versus sheets/blocks form needs source reference."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 338,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Keralam",
+          "count": 232,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "RSS-4",
+          "state": "Keralam",
+          "count": 84,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Kerala",
+          "count": 20,
+          "sourceFile": "server/db/data/daily/2026-05-14.json"
+        },
+        {
+          "variety": "RSS-4",
+          "state": "Kerala",
+          "count": 2,
+          "sourceFile": "server/db/data/daily/2026-05-19.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Folded amber ribbed rubber sheets; raw records explicitly include86 RSS-4 rows, remaining Other forms unknown. Named product illustration, no grade certification."
+    },
+    {
+      "sourceId": "isabgulpsyllium",
+      "decision": "generate-multiple-forms",
+      "subject": "Isabgul(Psyllium)",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Seeds and husk differ; commercial form needs reference."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 762,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Isabgul (Psyllium)",
+          "state": "Rajasthan",
+          "count": 234,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Isabgol",
+          "state": "Madhya Pradesh",
+          "count": 205,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Isabgul (Psyllium)",
+          "state": "Gujarat",
+          "count": 178,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Rajasthan",
+          "count": 118,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Gujarat",
+          "count": 27,
+          "sourceFile": "server/db/data/daily/2026-10-13.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Tiny brown psyllium seeds beside off-white flaky psyllium husk."
+    },
+    {
+      "sourceId": "chicorychikori-kasni",
+      "decision": "generate-multiple-forms",
+      "subject": "Chicory(Chikori/Kasni)",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Crop identified; commercial root, seed or leaf form needs source reference."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 61,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Uttar Pradesh",
+          "count": 44,
+          "sourceFile": "server/db/data/daily/2026-05-14.json"
+        },
+        {
+          "variety": "Chikori",
+          "state": "Gujarat",
+          "count": 17,
+          "sourceFile": "server/db/data/daily/2026-07-07.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Chicory roots and a leafy sprig; no coffee powder or actual lot-form claim."
+    },
+    {
+      "sourceId": "coffee",
+      "decision": "generate-multiple-forms",
+      "subject": "Coffee",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Green, roasted, parchment or berry form needs source reference."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 610,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Keralam",
+          "count": 339,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Kerala",
+          "count": 271,
+          "sourceFile": "server/db/data/daily/2025-12-16.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Coffee cherries beside green and roasted coffee beans; named crop forms, not a processing-grade claim."
+    },
+    {
+      "sourceId": "cocoa",
+      "decision": "generate-multiple-forms",
+      "subject": "Cocoa",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Bean, pod or powder form needs source reference."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 65,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Cocoa",
+          "state": "Keralam",
+          "count": 54,
+          "sourceFile": "server/db/data/daily/2026-08-06.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Kerala",
+          "count": 11,
+          "sourceFile": "server/db/data/daily/2025-12-16.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Opened cocoa pod with beans, dried brown beans beside it; no chocolate/powder product assumption."
+    },
+    {
+      "sourceId": "field-pea",
+      "decision": "generate-multiple-forms",
+      "subject": "Field Pea",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Fresh/dried form not established; do not map to existing dry pea or green pod art."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 3292,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Field Pea",
+          "state": "Telangana",
+          "count": 915,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Field Pea",
+          "state": "Punjab",
+          "count": 820,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Field Pea",
+          "state": "Uttar Pradesh",
+          "count": 541,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Punjab",
+          "count": 170,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Field Pea",
+          "state": "Keralam",
+          "count": 166,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Uttarakhand",
+          "count": 158,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Field Pea",
+          "state": "Kerala",
+          "count": 130,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Field Pea",
+          "state": "Uttarakhand",
+          "count": 86,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Fresh pea pods beside dry field-pea grains; keep form-unspecified metadata."
+    },
+    {
+      "sourceId": "cowpealobia-karamani",
+      "decision": "generate-multiple-forms",
+      "subject": "Cowpea(Lobia/Karamani)",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Lobia/Karamani identifies cowpea but dry grain versus fresh pod form is not explicit."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 1676,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Cowpea (Whole)",
+          "state": "Karnataka",
+          "count": 461,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Rajasthan",
+          "count": 292,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Maharashtra",
+          "count": 255,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Uttar Pradesh",
+          "count": 158,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Telangana",
+          "count": 140,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Cowpea (Whole)",
+          "state": "Kerala",
+          "count": 81,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Cowpea (Whole)",
+          "state": "Keralam",
+          "count": 72,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        },
+        {
+          "variety": "Cowpea (Whole)",
+          "state": "Telangana",
+          "count": 51,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Whole cowpea beans beside one green pod; raw rows explicitly include461 Cowpea(Whole), other forms unspecified."
+    },
+    {
+      "sourceId": "redcowpea",
+      "decision": "generate-multiple-forms",
+      "subject": "Red Cowpea",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Red cowpea suggests dry red seed; check source form."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "noTaxonomyChange": true,
+      "visualBrief": "Whole red/brown cowpea beans; named red form, no variety certification."
+    },
+    {
+      "sourceId": "karamani",
+      "decision": "generate-multiple-forms",
+      "subject": "Karamani",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Cowpea identity curated; dry grain versus fresh pod form remains open."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 6,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Pondicherry",
+          "count": 6,
+          "sourceFile": "server/db/data/daily/2026-04-06.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Cowpea pods plus mature beans, source form unspecified."
+    },
+    {
+      "sourceId": "chili-red",
+      "decision": "generate-multiple-forms",
+      "subject": "Chili Red",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Fresh red versus dried red form unspecified."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 2878,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Bold",
+          "state": "Tamil Nadu",
+          "count": 639,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Maharashtra",
+          "count": 535,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Uttar Pradesh",
+          "count": 464,
+          "sourceFile": "server/db/data/daily/2026-09-21.json"
+        },
+        {
+          "variety": "Red",
+          "state": "Andhra Pradesh",
+          "count": 303,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Red",
+          "state": "Madhya Pradesh",
+          "count": 265,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Geeli Mirchi",
+          "state": "Madhya Pradesh",
+          "count": 97,
+          "sourceFile": "server/db/data/daily/2025-12-16.json"
+        },
+        {
+          "variety": "Red",
+          "state": "Kerala",
+          "count": 75,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Red",
+          "state": "Keralam",
+          "count": 72,
+          "sourceFile": "server/db/data/daily/2026-09-09.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Fresh red chilli beside dried wrinkled red chillies."
+    },
+    {
+      "sourceId": "coriander",
+      "decision": "generate-multiple-forms",
+      "subject": "Coriander",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Leaf versus seed unspecified."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "noTaxonomyChange": true,
+      "visualBrief": "Coriander leafy sprig beside tan round coriander seeds."
+    },
+    {
+      "sourceId": "fenugreek",
+      "decision": "generate-multiple-forms",
+      "subject": "Fenugreek",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Leaf versus seed unspecified."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "noTaxonomyChange": true,
+      "visualBrief": "Fresh fenugreek sprig beside small angular golden fenugreek seeds."
+    },
+    {
+      "sourceId": "cardamoms",
+      "decision": "generate-multiple-forms",
+      "subject": "Cardamoms",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Small green versus large black type unspecified."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "rawRecordCount": 90,
+      "rawVarietyEvidence": [
+        {
+          "variety": "Other",
+          "state": "Maharashtra",
+          "count": 45,
+          "sourceFile": "server/db/data/daily/2026-01-06.json"
+        },
+        {
+          "variety": "Other",
+          "state": "Kerala",
+          "count": 45,
+          "sourceFile": "server/db/data/daily/2025-12-16.json"
+        }
+      ],
+      "noTaxonomyChange": true,
+      "visualBrief": "Green cardamom pods and larger brown-black cardamom pods together; type unspecified."
+    },
+    {
+      "sourceId": "chilli",
+      "decision": "generate-multiple-forms",
+      "subject": "Chilli",
+      "reason": "Crop name is established, but source does not uniformly specify the commercial form. Show the named crop forms together, not a category substitute or certified lot image.",
+      "researchStatus": "source-form-reviewed",
+      "formCaution": [
+        "Fresh/dried/colour form unspecified."
+      ],
+      "sources": [],
+      "metadata": "named-crop-illustration-form-unspecified",
+      "noTaxonomyChange": true,
+      "visualBrief": "Fresh green/red chillies and dried red chillies together; form unspecified."
+    },
+    {
+      "sourceId": "pepper-garbled",
+      "decision": "reuse-existing",
+      "subject": "Black peppercorns",
+      "asset": "/visuals/crop-black-pepper.webp",
+      "reason": "Spices Board confirms both are black pepper grades. Existing peppercorn illustration can represent named commodity, but must not certify garbling/cleanliness/grade.",
+      "sources": [
+        {
+          "url": "https://www.indianspices.com/trade/trade-enquiry.html",
+          "supports": "Separate trade entries black pepper garbled and ungarbled"
+        },
+        {
+          "url": "https://www.indianspices.com/sites/default/files/cultivation_practices-pepper_1.pdf",
+          "supports": "Black pepper garbled grades"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "noTaxonomyChange": true
+    },
+    {
+      "sourceId": "pepper-ungarbled",
+      "decision": "reuse-existing",
+      "subject": "Black peppercorns",
+      "asset": "/visuals/crop-black-pepper.webp",
+      "reason": "Spices Board confirms both are black pepper grades. Existing peppercorn illustration can represent named commodity, but must not certify garbling/cleanliness/grade.",
+      "sources": [
+        {
+          "url": "https://www.indianspices.com/trade/trade-enquiry.html",
+          "supports": "Separate trade entries black pepper garbled and ungarbled"
+        },
+        {
+          "url": "https://www.indianspices.com/sites/default/files/cultivation_practices-pepper_1.pdf",
+          "supports": "Black pepper garbled grades"
+        }
+      ],
+      "confidence": "high",
+      "inference": false,
+      "researchStatus": "reviewed",
+      "noTaxonomyChange": true
+    }
+  ],
+  "generationStatus": "No imagery generated or app mapping changed by this audit agent; asset paths are proposed or existing reuse candidates.",
+  "integrationPolicy": "One traded product/form per image. Mixed-form generations are inactive and not mapped. Identity evidence alone does not approve a mixed image. Source commodity IDs and prices remain unchanged."
+}

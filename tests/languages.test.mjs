@@ -153,6 +153,46 @@ test('native history retains distinct same-date observations and preserves lates
   assert.equal(latestPriceRecord(data).market, 1100, 'the last valid same-date source record remains the latest card');
 });
 
+test('price history rejects future days and months using the India calendar day', () => {
+  const data = {
+    dailyHistory: [
+      { date: '2026-10-30', market: 1100 }, { date: '2026-10-31', market: 1200 },
+      { date: '2026-11-01', market: 1300 }, { date: '2026-11-02', market: 1400 },
+      { date: '9999-12-31', market: 9999 },
+    ],
+    history: [{ date: '2026-09', market: 1000 }, { date: '2026-10', market: 1150 }, { date: '2026-11', market: 1250 }, { date: '9999-12', market: 9999 }],
+    lastUpdated: '9999-12-31T00:00:00Z',
+  };
+  const snapshot = JSON.stringify(data);
+  const beforeMidnight = { now: new Date('2026-10-31T18:29:59.999Z') };
+  const afterMidnight = { now: new Date('2026-10-31T18:30:00.000Z') };
+  const before = normalizePriceHistory(data, beforeMidnight);
+  assert.deepEqual(before.daily.map(row => row.date), ['2026-10-31', '2026-10-30']);
+  assert.deepEqual(before.monthly.map(row => row.date), ['2026-10', '2026-09']);
+  assert.equal(latestPriceRecord(data, beforeMidnight).date, '2026-10-31');
+  const after = normalizePriceHistory(data, afterMidnight);
+  assert.deepEqual(after.daily.map(row => row.date), ['2026-11-01', '2026-10-31', '2026-10-30']);
+  assert.deepEqual(after.monthly.map(row => row.date), ['2026-11', '2026-10', '2026-09']);
+  assert.equal(latestPriceRecord(data, afterMidnight).date, '2026-11-01', 'current IST day is accepted even while UTC is still the preceding day');
+  assert.equal(JSON.stringify(data), snapshot, 'filtering does not delete or rewrite stored source observations');
+});
+
+test('future or invalid daily quotes fall back only to valid nonfuture observations', () => {
+  const clock = { now: new Date('2026-10-16T12:00:00Z') };
+  const data = {
+    dailyHistory: [{ date: '2026-10-17', market: 1700 }, { date: '2026-02-30', market: 8000 }],
+    history: [{ date: '2026-11', market: 1800 }, { date: '2026-10', market: 1600 }, { date: '2026-09', market: 1500 }],
+  };
+  assert.deepEqual(latestPriceRecord(data, clock), { date: '2026-10', market: 1600, basis: 'monthly' }, 'current-month observations remain available');
+  assert.equal(latestPriceRecord({ dailyHistory: [{ date: '9999-12-31', market: 9000 }], history: [{ date: '9999-12', market: 9500 }], lastUpdated: '2026-10-16T12:00:00Z', avgPrice: 1000 }, clock), null);
+  const historical = { dailyHistory: [{ date: '2024-02-29', market: '१२५०' }], history: [{ date: '2024-02', market: 1200 }] };
+  assert.deepEqual(latestPriceRecord(historical, clock), { date: '2024-02-29', market: 1250, basis: 'daily' }, 'historical prices and date precision are unchanged');
+  for (const now of [new Date(NaN), null, '2026-10-16', Infinity]) {
+    assert.deepEqual(normalizePriceHistory(data, { now }), { daily: [], monthly: [] }, 'an invalid injected clock cannot bypass the future-date guard');
+    assert.equal(latestPriceRecord(data, { now }), null);
+  }
+});
+
 const deliveryInput = { distance: 80, capacity: 1000, weight: 2500, rate: 18, extra: 900, roundTrip: false };
 test('localized delivery estimate charges every vehicle trip and treats extra costs as one consignment total', () => {
   assert.deepEqual(calculateDeliveryEstimate(deliveryInput), { valid: true, trips: 3, totalDistance: 240, totalCost: 5220, perKg: 2.088 });

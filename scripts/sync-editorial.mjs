@@ -15,4 +15,9 @@ for (const filename of (await readdir(path.join(root, 'content/editorial'))).fil
   count++;
 }
 await writeFile(database, JSON.stringify(posts, null, 2) + '\n');
+const articleLocales = Object.fromEntries(posts
+  .filter(post => post.status === 'published' && post.content?.trim())
+  .sort((a, b) => a.slug.localeCompare(b.slug))
+  .map(post => [post.slug, post.language || 'hi']));
+await writeFile(path.join(root, 'src/data/editorialLocales.json'), JSON.stringify(articleLocales, null, 2) + '\n');
 console.log(`Synchronized ${count} editorial source files; unrelated CMS entries preserved. Run npm run check:editorial before publishing.`);

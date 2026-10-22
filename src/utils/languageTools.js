@@ -36,13 +36,26 @@ function validObservationDate(value, monthly) {
   return Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0, 10) === expected;
 }
 
+function observationCutoff(now) {
+  if (!(now instanceof Date) || !Number.isFinite(now.getTime())) return null;
+  // Match the ingestion pipeline's India calendar day (UTC + 05:30), regardless
+  // of the browser/server timezone. Inject `now` for deterministic validation.
+  const indiaTime = new Date(now.getTime() + 330 * 60 * 1000);
+  if (!Number.isFinite(indiaTime.getTime())) return null;
+  const day = indiaTime.toISOString().slice(0, 10);
+  return validObservationDate(day, false) ? day : null;
+}
+
 // Keep the two observation periods separate. This is a new immutable view of the
 // response: selecting/sorting history must never reorder the shared API cache.
-export function normalizePriceHistory(data) {
+export function normalizePriceHistory(data, { now = new Date() } = {}) {
+  const cutoff = observationCutoff(now);
   const observations = (key, basis) => {
     const records = (Array.isArray(data?.[key]) ? data[key] : []).map((record, index) => ({ record, index })).filter(({ record }) => {
       const value = parseLanguageNumber(record?.market);
-      return value !== null && value > 0 && value <= Number.MAX_SAFE_INTEGER && validObservationDate(record?.date, basis === 'monthly');
+      const monthly = basis === 'monthly';
+      return cutoff !== null && value !== null && value > 0 && value <= Number.MAX_SAFE_INTEGER
+        && validObservationDate(record?.date, monthly) && record.date <= (monthly ? cutoff.slice(0, 7) : cutoff);
     }).sort((a, b) => b.record.date.localeCompare(a.record.date) || b.index - a.index)
       .map(({ record }) => Object.freeze({ ...record, market: parseLanguageNumber(record.market), basis }));
     return Object.freeze(records);
@@ -50,8 +63,8 @@ export function normalizePriceHistory(data) {
   return Object.freeze({ daily: observations('dailyHistory', 'daily'), monthly: observations('history', 'monthly') });
 }
 
-export function latestPriceRecord(data) {
-  const history = normalizePriceHistory(data);
+export function latestPriceRecord(data, options) {
+  const history = normalizePriceHistory(data, options);
   const daily = history.daily[0];
   const monthly = history.monthly[0];
   // Prefer the precise daily observation within a month, but never hide a newer month.

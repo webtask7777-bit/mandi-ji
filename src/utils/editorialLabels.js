@@ -1,4 +1,6 @@
 import { getTopicById } from '../../shared/cropTopics.js';
+import { getIndiaRegion, normalizeRegionId } from '../../shared/indiaRegions.js';
+import articleLocales from '../data/editorialLocales.json' with { type: 'json' };
 import asCrops from '../i18n/locales/as.crops.json' with { type: 'json' };
 import bnCrops from '../i18n/locales/bn.crops.json' with { type: 'json' };
 import knCrops from '../i18n/locales/kn.crops.json' with { type: 'json' };
@@ -95,6 +97,9 @@ const labels = {
   },
 };
 export function getEditorialLabels(language = 'hi') { return labels[language] || labels.hi; }
+// This small registry is generated from actual published records by sync:editorial.
+// Keep loading/error copy in the article's language, independently of tool navigation.
+export function editorialArticleLanguage(slug) { return Object.hasOwn(articleLocales, slug) ? articleLocales[slug] : null; }
 export function editorialDate(value, language = 'hi') {
   const date = new Date(value);
   return Number.isFinite(date.getTime()) ? date.toLocaleDateString(getEditorialLabels(language).locale, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }) : null;
@@ -119,5 +124,17 @@ export function editorialCropName(id, fallback, language = 'hi') {
   return cropNames[language]?.[id] || (language === 'hi' ? fallback : getTopicById(id)?.nameEn) || fallback || id;
 }
 export function editorialStateName(id, fallback, language = 'hi') {
-  return ({ gu: { gujarat: 'ગુજરાત', maharashtra: 'મહારાષ્ટ્ર', chhattisgarh: 'છત્તીસગઢ', 'madhya-pradesh': 'મધ્ય પ્રદેશ', rajasthan: 'રાજસ્થાન', 'uttar-pradesh': 'ઉત્તર પ્રદેશ', bihar: 'બિહાર', punjab: 'પંજાબ', haryana: 'હરિયાણા' } })[language]?.[id] || (['hi', 'mr'].includes(language) ? fallback : id?.split('-').map(word => word[0]?.toUpperCase() + word.slice(1)).join(' ')) || fallback || id;
+  const region = getIndiaRegion(id);
+  return nativeStateNames[language]?.[normalizeRegionId(id)] || (language === 'hi' ? region?.nameHi || fallback : region?.name) || fallback || id;
+}
+
+const nativeStateNames = {
+  mr: {
+    'andaman-nicobar': 'अंदमान आणि निकोबार', 'andhra-pradesh': 'आंध्र प्रदेश', 'arunachal-pradesh': 'अरुणाचल प्रदेश', assam: 'आसाम', bihar: 'बिहार', chandigarh: 'चंदीगड', chhattisgarh: 'छत्तीसगड', delhi: 'दिल्ली', goa: 'गोवा', gujarat: 'गुजरात', haryana: 'हरियाणा', 'himachal-pradesh': 'हिमाचल प्रदेश', 'jammu-kashmir': 'जम्मू आणि काश्मीर', jharkhand: 'झारखंड', karnataka: 'कर्नाटक', kerala: 'केरळ', ladakh: 'लडाख', lakshadweep: 'लक्षद्वीप', 'madhya-pradesh': 'मध्य प्रदेश', maharashtra: 'महाराष्ट्र', manipur: 'मणिपूर', meghalaya: 'मेघालय', mizoram: 'मिझोराम', nagaland: 'नागालँड', odisha: 'ओडिशा', puducherry: 'पुदुच्चेरी', punjab: 'पंजाब', rajasthan: 'राजस्थान', sikkim: 'सिक्कीम', 'tamil-nadu': 'तामिळनाडू', telangana: 'तेलंगणा', tripura: 'त्रिपुरा', 'uttar-pradesh': 'उत्तर प्रदेश', uttarakhand: 'उत्तराखंड', 'west-bengal': 'पश्चिम बंगाल', 'dadra-daman': 'दादरा आणि नगर हवेली आणि दमण आणि दीव',
+  },
+  gu: { gujarat: 'ગુજરાત', maharashtra: 'મહારાષ્ટ્ર', chhattisgarh: 'છત્તીસગઢ', 'madhya-pradesh': 'મધ્ય પ્રદેશ', rajasthan: 'રાજસ્થાન', 'uttar-pradesh': 'ઉત્તર પ્રદેશ', bihar: 'બિહાર', punjab: 'પંજાબ', haryana: 'હરિયાણા', 'dadra-daman': 'દાદરા અને નગર હવેલી અને દમણ અને દીવ' },
+};
+
+export function editorialStateLanguage(id, language = 'hi') {
+  return language === 'hi' || nativeStateNames[language]?.[normalizeRegionId(id)] ? language : 'en';
 }

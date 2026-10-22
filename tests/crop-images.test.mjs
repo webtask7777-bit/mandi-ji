@@ -57,7 +57,7 @@ test('all source catalogs, tickers and price details have one explicit category 
   for (const id of new Set([...sourceIds, ...Object.keys(CROP_IMAGES)])) {
     assert.ok(Object.hasOwn(CROP_IMAGE_CATEGORIES, id), `${id} explicitly classified`);
     const image = getCropImage(id);
-    assert.match(image.src, /^\/visuals\/(?:crop|category)-[a-z-]+\.webp$/, id);
+    assert.match(image.src, /^\/visuals\/(?:crop|category)-[a-z0-9-]+\.webp$/, id);
     assert.ok(['commodity', 'category'].includes(image.kind), id);
     if (image.kind === 'category') assert.match(image.note, /प्रतीकात्मक चित्र/, id);
   }
@@ -89,18 +89,57 @@ test('grain, leafy crops, pulse forms and flower forms are never conflated', () 
     ['corriander-seed', 'corianderleaves'], ['green-peas', 'field-pea'],
     ['coconut', 'tender-coconut'], ['coconut', 'coconut-oil'],
     ['green-chilli', 'dry-chillies'],
+    ['capsicum', 'green-chilli'], ['capsicum', 'dry-chillies'],
+    ['methileaves', 'methi-seeds'], ['turmericraw', 'turmeric'],
+    ['groundnut-podsraw', 'groundnutsplit'], ['jack-fruitripe', 'jackfruitgreen-raw-unripe'],
+    ['mahua', 'mahua-seedhippe-seed'], ['coconut', 'copra'],
   ]) {
     assert.notEqual(getCropImageSource(first), getCropImageSource(second), `${first} vs ${second}`);
   }
-  for (const id of ['fenugreek', 'methileaves', 'pegeon-peaarhar-fali', 'tube-rosesingle', 'tube-roseloose', 'chrysanthemum']) {
+  for (const id of ['fenugreek', 'tube-rosesingle', 'chrysanthemum']) {
     assert.equal(getCropImage(id).kind, 'category', `${id} has only representative artwork`);
   }
   assert.equal(getCropImage('field-pea').kind, 'category', 'Source does not establish fresh/dried form');
   assert.equal(getCropImage('peasdry').kind, 'commodity', 'Explicit dry peas use dry whole pea artwork');
   assert.notEqual(getCropImageSource('peasdry'), getCropImageSource('green-peas'));
-  for (const id of ['kutki', 'muesli', 'coleus', 'asalia', 'sweet-saag']) {
+  for (const id of ['coleus', 'sweet-saag']) {
     assert.equal(getCropImage(id).category, 'generic', `${id} needs source identity verification`);
   }
+  for (const id of ['kutki', 'muesli', 'asalia', 'methileaves', 'pegeon-peaarhar-fali', 'tube-roseloose']) {
+    assert.equal(getCropImage(id).kind, 'commodity', `${id} has reviewed single-product artwork`);
+  }
+});
+
+test('mixed commercial forms are never used to resolve an ambiguous source label', () => {
+  for (const id of ['peas', 'field-pea', 'chilly-capsicum', 'chilli', 'chili-red', 'guar',
+    'coriander', 'fenugreek', 'cardamoms', 'mangoraw-ripe', 'coffee', 'cowpea',
+    'cowpealobia-karamani', 'karamani', 'field-beananumulu', 'isabgulpsyllium']) {
+    assert.equal(getCropImage(id).kind, 'category', `${id}: do not mix forms to fill a missing image`);
+  }
+  assert.notEqual(getCropImageSource('green-peas'), getCropImageSource('peasdry'));
+  for (const id of ['absinthe', 'asgand', 'coca', 'ratanjot', 'gokhru', 'bejhar']) {
+    assert.equal(getCropImage(id).kind, 'category', `${id}: conflicting identity stays unresolved`);
+  }
+});
+
+test('every approved generated asset is integrated and rejected mixed assets are not shipped', () => {
+  const docs = new URL('../docs/', import.meta.url);
+  const mapped = new Set(Object.values(CROP_IMAGES).map(slug => `/visuals/crop-${slug}.webp`));
+  let approved = 0;
+  for (const filename of readdirSync(docs).filter(name => /^crop-image-prompts-.+-v4\.json$/.test(name))) {
+    for (const entry of JSON.parse(readFileSync(new URL(filename, docs), 'utf8'))) {
+      if (!entry.asset || entry.active === false || String(entry.status || '').startsWith('inactive')) {
+        if (entry.rejectedAsset) assert.ok(!mapped.has(entry.rejectedAsset.replace(/^public/, '')), filename);
+        continue;
+      }
+      approved += 1;
+      for (const id of entry.ids || entry.sourceIds || []) {
+        assert.equal(getCropImageSource(id), entry.asset.replace(/^public/, ''), `${filename}: ${id}`);
+        assert.equal(getCropImage(id).kind, 'commodity', id);
+      }
+    }
+  }
+  assert.ok(approved >= 130, 'Full reviewed image set is represented');
 });
 
 test('category art has a disclosure and unknown source IDs preserve the neutral fallback', () => {

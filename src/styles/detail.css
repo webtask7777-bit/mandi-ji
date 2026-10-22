@@ -93,10 +93,10 @@
 .sb-article-content h2 { font-size: 26px; }
 .sb-article-content h3 { font-size: 22px; }
 .sb-article-content h4, .sb-article-content h5, .sb-article-content h6 { font-size: 19px; }
-.sb-article-content ul, .sb-article-content ol { padding-left: 1.5em; margin: .75em 0 1.5em; }
+.sb-article-content ul, .sb-article-content ol { padding-inline-start: 1.5em; padding-inline-end: 0; margin: .75em 0 1.5em; }
 .sb-article-content ul { list-style-type: disc; }
 .sb-article-content ol { list-style-type: decimal; }
-.sb-article-content li { padding-left: .2em; margin: .45em 0; }
+.sb-article-content li { padding-inline-start: .2em; margin: .45em 0; }
 .sb-article-content li > p { margin: .6em 0; }
 .sb-article-content li::marker { color: #66865e; }
 .sb-article-content a { color: #174c3c; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
