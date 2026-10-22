@@ -99,7 +99,7 @@ test('KCC routes never turn a request into a path outside the summaries', async 
 test('published summaries are internally consistent', async t => {
   const get = await serve(t);
   const index = await get('/api/kcc');
-  if (index.status === 503) return t.skip('no KCC summaries built');
+  if (index.status === 404) return t.skip('no KCC summaries built');
   assert.equal(index.status, 200);
   assert.equal(index.body.months.length, 12);
   assert.ok(['live', 'seasonal'].includes(index.body.meta.mode));

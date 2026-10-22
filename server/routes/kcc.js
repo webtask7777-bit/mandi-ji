@@ -21,7 +21,8 @@ function load(...parts) {
 }
 
 const meta = () => load('meta');
-const unavailable = res => res.status(503).json({ error: 'फसल सलाह का डेटा अभी तैयार नहीं है' });
+// 404, not 503: a build without summaries must still prerender (it treats 404 as "no data").
+const unavailable = res => res.status(404).json({ error: 'फसल सलाह का डेटा अभी तैयार नहीं है' });
 
 router.get('/', (req, res) => {
   const index = load('index');
