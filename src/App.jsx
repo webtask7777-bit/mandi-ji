@@ -3,7 +3,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import './index.css';
 import SplashScreen from './components/SplashScreen';
-import MandiJiDashboard from './MandiJiDashboard';
+import SahiBhavDashboard from './SahiBhavDashboard';
 import { StateProvider } from './context/StateContext';
 import { AuthProvider } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
@@ -35,6 +35,7 @@ const LanguagesPage = lazy(() => import('./pages/LanguagesPage'));
 const LanguageToolsPage = lazy(() => import('./pages/LanguageToolsPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
+const FasalSalahPage = lazy(() => import('./pages/FasalSalahPage'));
 
 function PageLoader() {
   return (
@@ -54,6 +55,7 @@ function App({ prerender = false, initialPage }) {
   const LanguagePage = initialPage?.kind === 'language' ? initialPage.Component : LanguageToolsPage;
   const LanguageChooser = initialPage?.kind === 'languages' ? initialPage.Component : LanguagesPage;
   const GuideLibrary = initialPage?.kind === 'blog' ? initialPage.Component : BlogPage;
+  const SalahPage = initialPage?.kind === 'salah' ? initialPage.Component : FasalSalahPage;
 
   return (
     <AuthProvider>
@@ -66,20 +68,23 @@ function App({ prerender = false, initialPage }) {
             </AnimatePresence>
             <Suspense fallback={<PageLoader />}>
               <Routes>
-                <Route path="/" element={<MandiJiDashboard />} />
+                <Route path="/" element={<SahiBhavDashboard />} />
                 <Route path="/languages" element={<LanguageChooser />} />
                 <Route path="/:language/mandi-bhav" element={<LanguagePage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/listing/new" element={<ProtectedRoute><CreateListingPage /></ProtectedRoute>} />
                 <Route path="/crop/:cropId" element={<CropPage />} />
-                <Route path="/mandi-bhav/:stateId" element={<MandiJiDashboard />} />
+                <Route path="/mandi-bhav/:stateId" element={<SahiBhavDashboard />} />
                 <Route path="/mandi-bhav/:stateId/:cropId" element={<CropPage />} />
                 <Route path="/listing/:id" element={<ListingDetailPage />} />
                 <Route path="/my-listings" element={<ProtectedRoute><MyListingsPage /></ProtectedRoute>} />
                 <Route path="/delivery-calculator" element={<DeliveryPage />} />
                 <Route path="/bechne-ka-hisab" element={<SellComparePage />} />
                 <Route path="/data-status" element={<DataStatusPage />} />
+                <Route path="/fasal-salah" element={<SalahPage />} />
+                <Route path="/fasal-salah/:stateId" element={<SalahPage />} />
+                <Route path="/fasal-salah/:stateId/:districtId" element={<SalahPage />} />
                 <Route path="/transport" element={<Navigate to="/delivery-calculator" replace />} />
                 <Route path="/eway-bill/new" element={<ProtectedRoute><EwayBillPage /></ProtectedRoute>} />
                 <Route path="/my-eway-bills" element={<ProtectedRoute><MyEwayBills /></ProtectedRoute>} />

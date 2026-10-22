@@ -16,6 +16,8 @@ import adminRouter from './routes/admin.js';
 import cmsRouter from './routes/cms.js';
 import paymentsRouter from './routes/payments.js';
 import arbitrageRouter from './routes/arbitrage.js';
+import kccRouter from './routes/kcc.js';
+import priceHistoryRouter from './routes/price-history.js';
 
 const app = express();
 app.use(cors());
@@ -40,16 +42,18 @@ app.use('/api/eway-bill', ewayBillRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/cms', cmsRouter);
 app.use('/api/arbitrage', arbitrageRouter);
+app.use('/api/kcc', kccRouter);
+app.use('/api/price-history', priceHistoryRouter);
 // Removed: /api/weather (seeded random readings), /api/load-board and /api/transport-board
 // (no screen used them; unauthenticated posting/deleting, full phone numbers, writes that fail
 // on read-only hosting).
 
-app.get('/api/health', (req, res) => res.json({ status: 'ok', name: 'MandiJi API' }));
+app.get('/api/health', (req, res) => res.json({ status: 'ok', name: 'SahiBhav API' }));
 
 if (!process.env.VERCEL) {
   const PORT = 3001;
   app.listen(PORT, () => {
-    console.log(`🌾 MandiJi API running on http://localhost:${PORT}`);
+    console.log(`🌾 SahiBhav API running on http://localhost:${PORT}`);
   });
 }
 

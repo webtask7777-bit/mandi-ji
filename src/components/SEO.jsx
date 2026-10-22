@@ -5,7 +5,7 @@ import { getLanguage, languageFromPath } from '../../shared/languages.js';
 
 // Use the domain that is actually deployed. Set VITE_SITE_URL only after a custom
 // domain is attached in Vercel; do not point search engines at an unconnected name.
-export const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://mandi-ji.vercel.app').replace(/\/$/, '');
+export const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://sahibhav.in').replace(/\/$/, '');
 const DEFAULTS = {
   title: 'सही भाव — भारत के मंडी भाव | SahiBhav',
   description: 'फसल के दर्ज मंडी भाव देखें, मंडियों की तुलना करें और बिक्री व परिवहन की तैयारी करें। सही भाव — SahiBhav।',

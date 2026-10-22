@@ -50,7 +50,7 @@ function validatePublicSnapshot(html, label) {
   assert.ok(!snapshots[0].text.includes('<'), `${label}: script-opening characters must be escaped in embedded JSON`);
   const snapshot = JSON.parse(snapshots[0].text);
   assert.ok(snapshot && !Array.isArray(snapshot) && typeof snapshot === 'object');
-  const allowed = new Set(['crops', 'mandis', 'districts', 'states', 'ticker', 'prices', 'mandi-compare', 'arbitrage', 'stats']);
+  const allowed = new Set(['crops', 'mandis', 'districts', 'states', 'ticker', 'prices', 'mandi-compare', 'arbitrage', 'stats', 'kcc', 'price-history']);
   for (const request of Object.keys(snapshot)) {
     const url = new URL(request, 'https://public-snapshot.invalid');
     assert.equal(url.origin, 'https://public-snapshot.invalid', `${label}: snapshot cannot reference another origin`);
@@ -140,6 +140,10 @@ test('every sitemap URL resolves to indexable HTML with unique metadata and safe
         const daily = (prices.dailyHistory || []).filter(row => Number(row.market) > 0).map(row => String(row.date)).sort().at(-1);
         const monthly = (prices.history || []).filter(row => Number(row.market) > 0).map(row => `${row.date}-28`).sort().at(-1);
         assert.equal(date, (daily || monthly).slice(0, 10), 'price lastmod uses observed record date');
+      } else if (Object.entries(snapshot).find(([request, entry]) => request.startsWith('/kcc') && entry?.data?.meta)?.[1]?.data?.meta?.coverage?.newestCall) {
+        const kcc = Object.entries(snapshot).find(([request, entry]) => request.startsWith('/kcc') && entry?.data?.meta)[1].data;
+        // The page shows the current month: lastmod is the newest call or the build month's first day.
+        assert.ok(date >= kcc.meta.coverage.newestCall && /^\d{4}-\d{2}-(?:01|\d{2})$/.test(date) && (date === kcc.meta.coverage.newestCall || date.endsWith('-01')), 'फसल सलाह lastmod uses the data or month start, never the build time');
       } else assert.fail(`${entry}: unknown modification date must not be replaced with deployment date`);
     }
   }

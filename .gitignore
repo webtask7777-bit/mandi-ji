@@ -26,3 +26,11 @@ server/generated/seo/
 
 # ingestion progress cache
 .cache
+
+# Vercel CLI link
+.vercel
+
+# Environment files (keys)
+.env
+.env.*
+!.env.example

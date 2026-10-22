@@ -1,0 +1,121 @@
+/* फसल सलाह — KCC question summaries. Palette follows detail.css (cream, forest, grain). */
+.sb-salah-page .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.sb-salah-crumb { display: inline-flex; gap: 10px; align-items: center; }
+
+.sb-salah-hero { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(260px, 1fr); gap: 28px; align-items: end; margin-bottom: 22px; }
+.sb-salah-hero h1 { font-size: clamp(26px, 3.2vw, 40px); line-height: 1.4; font-weight: 750; letter-spacing: -.03em; margin: 8px 0 10px; }
+.sb-salah-hero h1 span { color: #ba8322; }
+.sb-salah-hero p { margin: 0; max-width: 56ch; color: #65736a; font-size: 14px; line-height: 1.85; }
+
+.sb-salah-finder { background: #fff; border: 1px solid #dde3d7; border-radius: 18px; padding: 16px; position: relative; }
+.sb-salah-finder label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+.sb-salah-finder__input { display: flex; align-items: center; gap: 8px; border: 1px solid #d2dacc; border-radius: 12px; padding: 0 12px; min-height: 46px; background: #fbfaf5; }
+.sb-salah-finder__input:focus-within { border-color: #39715a; outline: 2px solid #39715a; outline-offset: 2px; }
+.sb-salah-finder__input input { flex: 1; border: 0; background: transparent; outline: none; font-size: 14px; min-width: 0; }
+.sb-salah-finder__results { list-style: none; margin: 8px 0 0; padding: 0; max-height: 260px; overflow-y: auto; }
+.sb-salah-finder__results a { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 10px; border-radius: 10px; font-size: 14px; color: #1b3027; }
+.sb-salah-finder__results a:hover, .sb-salah-finder__results a:focus-visible { background: #edf1e8; }
+.sb-salah-finder__results small { margin-left: auto; color: #56645b; font-size: 12px; }
+
+.sb-salah-months { display: flex; gap: 6px; overflow-x: auto; padding: 2px 2px 10px; margin-bottom: 18px; scrollbar-width: thin; }
+.sb-salah-months button { flex: 0 0 auto; min-width: 54px; min-height: 44px; padding: 0 12px; border-radius: 999px; border: 1px solid #dde3d7; background: #fff; color: #254d3c; font-size: 13px; font-weight: 650; }
+.sb-salah-months button:hover { border-color: #a1b79b; }
+.sb-salah-months button[aria-pressed="true"] { background: #174c3c; border-color: #174c3c; color: #fff; }
+
+.sb-salah-source { display: flex; gap: 12px; align-items: flex-start; background: #fcf4df; border: 1px solid #e9dcbb; color: #6d5220; border-radius: 16px; padding: 15px 18px; margin-bottom: 20px; font-size: 13px; line-height: 1.8; }
+.sb-salah-source > svg { flex-shrink: 0; margin-top: 3px; }
+.sb-salah-source strong { display: block; font-weight: 750; color: #5b4418; }
+.sb-salah-source p { margin: 2px 0 0; }
+.sb-salah-source a { text-decoration: underline; text-underline-offset: 3px; }
+
+.sb-salah-alerts { border: 1px solid #e3b7b2; background: #fbeeec; color: #7d2e29; border-radius: 16px; padding: 16px 18px; margin-bottom: 20px; }
+.sb-salah-alerts h2 { display: flex; gap: 8px; align-items: center; font-size: 16px; font-weight: 750; margin: 0 0 8px; }
+.sb-salah-alerts ul { margin: 0; padding-left: 20px; font-size: 13px; line-height: 1.9; }
+
+.sb-salah-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr); gap: 20px; align-items: start; margin-bottom: 20px; }
+.sb-salah-side { display: grid; gap: 20px; }
+.sb-salah-section-head h2 { font-size: 22px; font-weight: 750; margin: 6px 0 14px; }
+.sb-salah-list > ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+
+.sb-salah-problem { background: #fff; border: 1px solid #dde3d7; border-left: 4px solid #477d9b; border-radius: 16px; padding: 16px 18px; }
+.sb-salah-kind-keet { border-left-color: #b3433e; }
+.sb-salah-kind-rog { border-left-color: #8a6899; }
+.sb-salah-kind-poshan { border-left-color: #ba8322; }
+.sb-salah-kind-kharpatwar { border-left-color: #477d9b; }
+.sb-salah-kind-kheti { border-left-color: #39715a; }
+.sb-salah-problem__head { display: flex; gap: 14px; align-items: flex-start; }
+.sb-salah-rank { font-size: 12px; font-weight: 750; color: #6a755f; font-variant-numeric: tabular-nums; padding-top: 4px; }
+.sb-salah-problem__title { flex: 1; min-width: 0; }
+.sb-salah-problem__title h3 { font-size: 17px; font-weight: 750; line-height: 1.5; margin: 4px 0 8px; }
+.sb-salah-problem__title p { margin: 6px 0 0; font-size: 12.5px; color: #65736a; }
+.sb-salah-problem__title p strong { color: #9a6a16; font-weight: 700; }
+.sb-salah-kind { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 700; color: #5d6e60; background: #edf1e8; border-radius: 999px; padding: 3px 10px; }
+.sb-salah-meter { height: 6px; border-radius: 999px; background: #edf1e8; overflow: hidden; }
+.sb-salah-meter span { display: block; height: 100%; border-radius: inherit; background: #174c3c; }
+.sb-salah-toggle { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; margin-top: 6px; color: #174c3c; font-size: 13px; font-weight: 700; }
+.sb-salah-toggle svg { transition: transform .2s; }
+.sb-salah-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+.sb-salah-answers { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 10px; }
+.sb-salah-answers li { background: #f7f5ec; border-radius: 12px; padding: 12px 14px; }
+.sb-salah-answers p { margin: 0; font-size: 13.5px; line-height: 1.85; overflow-wrap: anywhere; }
+.sb-salah-answers span { display: block; font-size: 11px; font-weight: 750; letter-spacing: .03em; color: #5d6e60; }
+.sb-salah-question { color: #3c4c42; }
+.sb-salah-answer { margin-top: 8px !important; color: #1b3027; }
+.sb-salah-answers small { display: block; margin-top: 6px; font-size: 11.5px; color: #5f6b62; }
+.sb-salah-muted { color: #65736a; font-size: 13px; }
+
+.sb-salah-next ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 10px; }
+.sb-salah-next li { display: grid; gap: 2px; padding: 10px 12px; background: #f5e8bd55; border: 1px solid #ecdcae; border-radius: 12px; font-size: 13px; }
+.sb-salah-next li span { color: #765a21; font-size: 12px; }
+
+.sb-salah-mix { display: flex; height: 14px; border-radius: 999px; overflow: hidden; gap: 2px; margin: 12px 0; }
+.sb-salah-mix span { min-width: 4px; }
+.sb-salah-mix-legend { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 12px; font-size: 12.5px; }
+.sb-salah-mix-legend li { display: flex; align-items: center; gap: 6px; }
+.sb-salah-mix-legend strong { margin-left: auto; font-variant-numeric: tabular-nums; }
+.sb-salah-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+.sb-salah-mix-crop { background: #174c3c; }
+.sb-salah-mix-weather { background: #477d9b; }
+.sb-salah-mix-scheme { background: #ba8322; }
+.sb-salah-mix-market { background: #8a6899; }
+.sb-salah-mix-animal { background: #b3433e; }
+.sb-salah-mix-other { background: #b9c3b4; }
+
+.sb-salah-help p { font-size: 13px; color: #65736a; margin: 0 0 10px; }
+.sb-salah-call { display: inline-flex; align-items: center; min-height: 48px; padding: 0 18px; border-radius: 12px; background: #174c3c; color: #fff; font-size: 18px; font-weight: 750; letter-spacing: .02em; margin-bottom: 12px; font-variant-numeric: tabular-nums; }
+.sb-salah-call:hover { background: #0f3a2d; }
+
+.sb-salah-pattern { margin-bottom: 20px; }
+.sb-salah-heat-scroll { position: relative; overflow-x: auto; margin-top: 12px; }
+/* Hidden cell labels are absolutely positioned: keep them inside the scroll box, not the page. */
+.sb-salah-heat th, .sb-salah-heat td { position: relative; }
+.sb-salah-heat { border-collapse: separate; border-spacing: 3px; width: 100%; min-width: 640px; font-size: 12px; }
+.sb-salah-heat th { font-weight: 650; color: #5d6e60; padding: 4px 6px; white-space: nowrap; }
+.sb-salah-heat thead th { font-size: 11px; text-align: center; }
+.sb-salah-heat thead th:first-child, .sb-salah-heat tbody th { text-align: left; }
+.sb-salah-heat tbody th { max-width: 240px; white-space: normal; line-height: 1.4; color: #1b3027; }
+.sb-salah-heat td { height: 28px; min-width: 30px; border-radius: 6px; background: color-mix(in srgb, #174c3c calc(var(--level, 0) * 100%), #eef2ea); }
+.sb-salah-heat td.is-unknown { background: repeating-linear-gradient(135deg, #eef2ea 0 4px, #f7f5ec 4px 8px); }
+.sb-salah-heat .is-current { outline: 2px solid #8a5f12; outline-offset: -1px; }
+.sb-salah-heat thead .is-current { color: #9a6a16; outline: none; }
+
+.sb-salah-places { margin-bottom: 20px; }
+.sb-salah-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.sb-salah-links a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 6px 14px; border: 1px solid #dde3d7; border-radius: 999px; background: #fbfaf5; font-size: 13px; color: #174c3c; }
+.sb-salah-links a:hover { background: #edf1e8; border-color: #a1b79b; }
+.sb-salah-links small { color: #5f6b62; font-size: 11px; }
+
+@media (max-width: 900px) {
+  .sb-salah-hero, .sb-salah-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .sb-salah-problem { padding: 14px; }
+  .sb-salah-problem__head { gap: 10px; }
+  .sb-salah-problem__title h3 { font-size: 15.5px; }
+  .sb-salah-mix-legend { grid-template-columns: 1fr; }
+}
+
+/* Keyboard focus on the scrollable heatmap and kicker contrast on the cream background. */
+.sb-salah-heat-scroll:focus-visible { outline: 2px solid #39715a; outline-offset: 2px; border-radius: 8px; }
+.sb-salah-page .sb-detail-kicker { color: #5d6e60; }

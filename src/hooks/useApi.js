@@ -2,7 +2,11 @@ import { useState, useEffect, useMemo } from 'react';
 import { apiFetch } from '../api/client';
 import { useApiSnapshot } from '../context/ApiSnapshotContext';
 
-export function useApi(path) {
+/**
+ * revalidate: false — data that only changes with a deploy (KCC summaries, price history): a response
+ * already embedded in the prerendered page is used as is, not downloaded again after hydration.
+ */
+export function useApi(path, { revalidate = true } = {}) {
   const snapshot = useApiSnapshot();
   if (path) snapshot.collect?.(path);
   const request = useMemo(() => ({ path }), [path]);
@@ -11,11 +15,12 @@ export function useApi(path) {
   useEffect(() => {
     let cancelled = false;
     if (!request.path) return;
+    if (!revalidate && snapshot.responses?.[request.path]) return;
     apiFetch(request.path)
       .then(data => { if (!cancelled) setResponse({ request, data, error: null }); })
       .catch(error => { if (!cancelled) setResponse({ request, data: null, error }); });
     return () => { cancelled = true; };
-  }, [request]);
+  }, [request, revalidate, snapshot.responses]);
 
   // A new key must never render the previous crop/state while its effect is pending.
   if (!path) return { data: null, loading: false, error: null };

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
-import { ChevronDown, X, Search, MapPin, User, LogIn, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe } from "lucide-react";
+import { ChevronDown, X, Search, MapPin, User, LogIn, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe, Sprout } from "lucide-react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useApi } from "./hooks/useApi";
 import { useStateContext } from "./context/StateContext";
@@ -36,7 +36,7 @@ const TAB_ITEMS = [
   { value: "bazaar", icon: ShoppingBasket, label: "बाज़ार" },
 ];
 
-export default function MandiJiDashboard() {
+export default function SahiBhavDashboard() {
   const selectedMonth = new Date().getMonth();
   const [searchParams, setSearchParams] = useSearchParams();
   const requestedTab = searchParams.get('tab');
@@ -315,6 +315,7 @@ export default function MandiJiDashboard() {
         <a className="sb-task-shortcut" href="#sb-crop-picker"><span className="sb-task-art" aria-hidden="true"><FarmVisual name="language-farmers-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>फसल का भाव</strong><small>दर्ज तारीख के साथ</small></span><ArrowRight size={18} aria-hidden="true" /></a>
         <button className="sb-task-shortcut" type="button" onClick={() => setActiveTab('mandis')}><span className="sb-task-art" aria-hidden="true"><FarmVisual name="mandi-market-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>मंडी की जानकारी</strong><small>उपलब्ध रिकॉर्ड समझें</small></span><ArrowRight size={18} aria-hidden="true" /></button>
         <button className="sb-task-shortcut" type="button" onClick={() => setActiveTab('delivery')}><span className="sb-task-art" aria-hidden="true"><FarmVisual name="farm-delivery-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>पहुँचने तक की लागत</strong><small>वाहन, दूरी और बचत</small></span><ArrowRight size={18} aria-hidden="true" /></button>
+        <Link className="sb-task-shortcut" to={selectedState ? `/fasal-salah/${selectedState}` : '/fasal-salah'}><span className="sb-task-art" aria-hidden="true"><FarmVisual name="farm-journal-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>फसल सलाह</strong><small>इस महीने के कीट-रोग</small></span><ArrowRight size={18} aria-hidden="true" /></Link>
       </nav>}
 
       {/* Banners */}

@@ -10,7 +10,7 @@ const readJSON = file => JSON.parse(readFileSync(new URL(file, import.meta.url),
 const posts = readJSON('../server/db/data/blog-posts.json');
 const hasSSR = existsSync(new URL('../dist-ssr/entry-server.js', import.meta.url));
 const ssrOptions = { skip: hasSSR ? false : 'Build the SSR bundle first.' };
-const parseUrl = href => new URL(href.replaceAll('&amp;', '&'), 'https://mandi-ji.vercel.app');
+const parseUrl = href => new URL(href.replaceAll('&amp;', '&'), 'https://sahibhav.in');
 
 async function render(route, responses = {}) {
   const { renderPage } = await import('../dist-ssr/entry-server.js');

@@ -11,7 +11,7 @@ const posts = JSON.parse(readFileSync(path.join(root, 'server/db/data/blog-posts
 const articles = posts.filter(post => post.coverImage?.startsWith('/editorial/'));
 const imageManifest = JSON.parse(readFileSync(path.join(root, 'src/data/editorialImages.json'), 'utf8'));
 const linksToArticle = (html, slug) => [...html.matchAll(/href="([^"]+)"/g)].some(([, href]) => {
-  try { return new URL(href.replaceAll('&amp;', '&'), 'https://mandi-ji.vercel.app').pathname === `/blog/${slug}`; } catch { return false; }
+  try { return new URL(href.replaceAll('&amp;', '&'), 'https://sahibhav.in').pathname === `/blog/${slug}`; } catch { return false; }
 });
 
 test('editorial covers are responsive and shared translation artwork is explicitly text-free', () => {
@@ -106,7 +106,7 @@ test('published article HTML exposes its own social thumbnail, source links and 
     const head = html.split('</head>')[0];
     assert.equal((html.match(/<h1\b/g) || []).length, 1, post.slug);
     assert.equal((head.match(/<title\b/g) || []).length, 1, post.slug);
-    assert.ok(head.includes(`content="https://mandi-ji.vercel.app${post.coverImage}"`), `${post.slug}: social cover`);
+    assert.ok(head.includes(`content="https://sahibhav.in${post.coverImage}"`), `${post.slug}: social cover`);
     assert.ok(html.includes(`src="${post.coverImage}"`), `${post.slug}: visible cover`);
     assert.ok(html.includes(`${post.coverImage.replace('.webp', '-640.webp')} 640w`), `${post.slug}: responsive cover markup`);
     assert.match(head, /property="og:image:width" content="1672"/, `${post.slug}: share image dimensions`);
@@ -122,7 +122,7 @@ test('published article HTML exposes its own social thumbnail, source links and 
     assert.ok(JSON.stringify(posting.image).includes(post.coverImage));
     if (post.translationGroup) {
       for (const translated of articles.filter(item => item.translationGroup === post.translationGroup)) {
-        const alternate = new RegExp(`<link[^>]+rel="alternate"[^>]+hrefLang="${translated.language}"[^>]+href="https://mandi-ji.vercel.app/blog/${translated.slug}"`, 'i');
+        const alternate = new RegExp(`<link[^>]+rel="alternate"[^>]+hrefLang="${translated.language}"[^>]+href="https://sahibhav.in/blog/${translated.slug}"`, 'i');
         assert.match(head, alternate, `${post.slug}: reciprocal ${translated.language} alternate including self`);
         if (translated.slug !== post.slug) assert.ok(linksToArticle(html, translated.slug), `${post.slug}: visible language navigation`);
       }
