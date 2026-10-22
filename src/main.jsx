@@ -21,6 +21,7 @@ if (snapshotElement) {
   else if (path === '/blog' || /^\/[a-z]{2,3}\/blog$/.test(path)) initialPage = { kind: 'blog', Component: (await import('./pages/BlogPage.jsx')).default };
   else if (/^\/[a-z]{2,3}\/mandi-bhav$/.test(path)) initialPage = { kind: 'language', Component: (await import('./pages/LanguageToolsPage.jsx')).default };
   else if (path === '/languages') initialPage = { kind: 'languages', Component: (await import('./pages/LanguagesPage.jsx')).default };
+  else if (/^\/fasal-salah(?:\/|$)/.test(path)) initialPage = { kind: 'salah', Component: (await import('./pages/FasalSalahPage.jsx')).default };
   else if (path === '/delivery-calculator') initialPage = { kind: 'delivery', Component: (await import('./pages/TransportPage.jsx')).default };
 }
 document.head.querySelectorAll('[data-sb-seo], [data-rh="true"]').forEach(element => element.remove());

@@ -50,7 +50,7 @@ function validatePublicSnapshot(html, label) {
   assert.ok(!snapshots[0].text.includes('<'), `${label}: script-opening characters must be escaped in embedded JSON`);
   const snapshot = JSON.parse(snapshots[0].text);
   assert.ok(snapshot && !Array.isArray(snapshot) && typeof snapshot === 'object');
-  const allowed = new Set(['crops', 'mandis', 'districts', 'states', 'ticker', 'prices', 'mandi-compare', 'arbitrage', 'stats']);
+  const allowed = new Set(['crops', 'mandis', 'districts', 'states', 'ticker', 'prices', 'mandi-compare', 'arbitrage', 'stats', 'kcc']);
   for (const request of Object.keys(snapshot)) {
     const url = new URL(request, 'https://public-snapshot.invalid');
     assert.equal(url.origin, 'https://public-snapshot.invalid', `${label}: snapshot cannot reference another origin`);

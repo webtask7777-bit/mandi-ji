@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
-import { ChevronDown, X, Search, MapPin, User, LogIn, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe } from "lucide-react";
+import { ChevronDown, X, Search, MapPin, User, LogIn, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe, Sprout } from "lucide-react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useApi } from "./hooks/useApi";
 import { useStateContext } from "./context/StateContext";
@@ -315,6 +315,7 @@ export default function MandiJiDashboard() {
         <a href="#sb-crop-picker"><span className="sb-task-number">01</span><span><strong>फसल का भाव</strong><small>दर्ज तारीख के साथ</small></span><ChartNoAxesCombined size={20} aria-hidden="true" /></a>
         <button type="button" onClick={() => setActiveTab('mandis')}><span className="sb-task-number">02</span><span><strong>मंडी की जानकारी</strong><small>उपलब्ध रिकॉर्ड समझें</small></span><Store size={20} aria-hidden="true" /></button>
         <button type="button" onClick={() => setActiveTab('delivery')}><span className="sb-task-number">03</span><span><strong>पहुँचने तक की लागत</strong><small>वाहन, दूरी और बचत</small></span><Truck size={20} aria-hidden="true" /></button>
+        <Link to={selectedState ? `/fasal-salah/${selectedState}` : '/fasal-salah'}><span className="sb-task-number">04</span><span><strong>फसल सलाह</strong><small>इस महीने के कीट-रोग</small></span><Sprout size={20} aria-hidden="true" /></Link>
       </nav>}
 
       {/* Banners */}

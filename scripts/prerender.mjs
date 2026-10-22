@@ -22,11 +22,11 @@ const origin = `http://127.0.0.1:${server.address().port}`;
 const template = (await readFile(path.join(dist, 'index.html'), 'utf8'))
   .replace(/<title\b[^>]*>[\s\S]*?<\/title>/gi, '')
   .replace(/<meta\b[^>]*data-rh="true"[^>]*>/gi, '');
-const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compare|arbitrage|stats)(?:[/?]|$)|^\/cms\/(?:blog|banners|notifications)(?:[/?]|$)/;
+const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compare|arbitrage|stats|kcc)(?:[/?]|$)|^\/cms\/(?:blog|banners|notifications)(?:[/?]|$)/;
 const cache = new Map();
 const manifest = JSON.parse(await readFile(path.join(dist, '.vite/manifest.json'), 'utf8'));
 function routeAssets(route) {
-  const page = /^\/[a-z]{2,3}\/blog$/.test(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
+  const page = /^\/[a-z]{2,3}\/blog$/.test(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : /^\/fasal-salah(?:\/|$)/.test(route) ? 'FasalSalahPage' : ({ '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
   const css = new Set();
   const seen = new Set();
   function visit(key) { if (seen.has(key)) return; seen.add(key); const entry = manifest[key]; if (!entry) return; (entry.css || []).forEach(file => css.add(file)); (entry.imports || []).forEach(visit); }
@@ -133,6 +133,15 @@ try {
       if (routes.has(library) && updated > (lastmod.get(library) || '')) lastmod.set(library, updated);
     }
   }
+  // फसल सलाह: national, state and published district pages. A sampled (development) build is
+  // rendered but never indexed.
+  const salahRoutes = [];
+  try {
+    const kccMeta = JSON.parse(await readFile(path.join(root, 'server/db/data/kcc/meta.json'), 'utf8'));
+    const kccIndex = JSON.parse(await readFile(path.join(root, 'server/db/data/kcc/index.json'), 'utf8'));
+    salahRoutes.push('/fasal-salah', ...kccIndex.states.flatMap(state => [`/fasal-salah/${state.id}`, ...state.districts.map(district => `/fasal-salah/${state.id}/${district.id}`)]));
+    if (!kccMeta.sampled) for (const route of salahRoutes) { routes.add(route); lastmod.set(route, kccMeta.builtOn); }
+  } catch { /* no KCC summaries built: the pages show their unavailable state */ }
   let count = 0;
   for (const route of routes) {
     const html = await render(route);
@@ -144,6 +153,7 @@ try {
   }
   // Provisional translations are reachable, but are not indexed until their terminology is reviewed.
   for (const language of AVAILABLE_LANGUAGES.filter(item => !item.searchReady)) await writePage(languagePath(language.code), await render(languagePath(language.code)));
+  for (const route of salahRoutes) if (!routes.has(route)) await writePage(route, await render(route));
   // Empty or stale catalog entries remain usable but are not advertised to search engines.
   for (const route of knownCrops) if (!routes.has(route)) await writePage(route, (await render(route)).replace(/content="index, follow, max-image-preview:large"/g, 'content="noindex, follow"'));
   const notFound = (await render('/__not-found__')).replace(/<link[^>]*rel="canonical"[^>]*>/g, '').replace(/<meta[^>]*property="og:url"[^>]*>/g, '');

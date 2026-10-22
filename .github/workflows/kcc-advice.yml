@@ -1,0 +1,119 @@
+name: KCC crop advice
+
+# Fetch Kisan Call Centre transcripts from data.gov.in, one year per job, and rebuild the
+# फसल सलाह summaries in server/db/data/kcc. Raw rows stay in the Actions cache (never in the
+# repository), so a run that times out resumes where it stopped and a later run only fetches
+# months that are missing or still growing. Vercel deploys the committed summaries.
+on:
+  schedule:
+    - cron: '0 3 5 * *'   # monthly: the source publishes with a long delay
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kcc-advice
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 2   # one API key; two slices at a time stay clear of rate limits
+      matrix:
+        year: [2022, 2023, 2024, 2025, 2026]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache/kcc/raw
+          key: kcc-raw-${{ matrix.year }}-${{ github.run_id }}
+          restore-keys: kcc-raw-${{ matrix.year }}-
+
+      - name: Fetch ${{ matrix.year }}
+        env:
+          DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
+        run: |
+          # Only the newest months can still grow; earlier years are fetched once.
+          refresh=0
+          if [ "${{ matrix.year }}" -ge 2025 ]; then refresh=2; fi
+          mkdir -p .cache/kcc/raw
+          node scripts/fetch-kcc.cjs --from ${{ matrix.year }}-01 --to ${{ matrix.year }}-12 --delay 700 --refresh-recent $refresh
+
+      - name: Keep fetched months for the next run
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/kcc/raw
+          key: kcc-raw-${{ matrix.year }}-${{ github.run_id }}
+
+  publish:
+    needs: fetch
+    # Publish whatever is complete even if one year is still unfinished; the sidecars say what is in.
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Restore 2022
+        uses: actions/cache/restore@v4
+        with: { path: .cache/kcc/raw, key: 'kcc-raw-2022-${{ github.run_id }}', restore-keys: 'kcc-raw-2022-' }
+      - run: mkdir -p .cache/kcc/all && cp -n .cache/kcc/raw/* .cache/kcc/all/ 2>/dev/null || true
+      - name: Restore 2023
+        uses: actions/cache/restore@v4
+        with: { path: .cache/kcc/raw, key: 'kcc-raw-2023-${{ github.run_id }}', restore-keys: 'kcc-raw-2023-' }
+      - run: cp -n .cache/kcc/raw/* .cache/kcc/all/ 2>/dev/null || true
+      - name: Restore 2024
+        uses: actions/cache/restore@v4
+        with: { path: .cache/kcc/raw, key: 'kcc-raw-2024-${{ github.run_id }}', restore-keys: 'kcc-raw-2024-' }
+      - run: cp -n .cache/kcc/raw/* .cache/kcc/all/ 2>/dev/null || true
+      - name: Restore 2025
+        uses: actions/cache/restore@v4
+        with: { path: .cache/kcc/raw, key: 'kcc-raw-2025-${{ github.run_id }}', restore-keys: 'kcc-raw-2025-' }
+      - run: cp -n .cache/kcc/raw/* .cache/kcc/all/ 2>/dev/null || true
+      - name: Restore 2026
+        uses: actions/cache/restore@v4
+        with: { path: .cache/kcc/raw, key: 'kcc-raw-2026-${{ github.run_id }}', restore-keys: 'kcc-raw-2026-' }
+      - name: Combine years
+        run: |
+          cp -n .cache/kcc/raw/* .cache/kcc/all/ 2>/dev/null || true
+          rm -rf .cache/kcc/raw && mv .cache/kcc/all .cache/kcc/raw
+          ls .cache/kcc/raw/*.json | wc -l
+
+      - name: Refuse a sampled build
+        run: |
+          if grep -l '"sample": true' .cache/kcc/raw/*.json; then echo "Sampled months must not be published."; exit 1; fi
+
+      - name: Build summaries
+        run: node scripts/aggregate-kcc.cjs
+
+      - name: Tests
+        run: node --test tests/kcc-advice.test.mjs
+
+      - name: Commit if anything changed
+        run: |
+          git add server/db/data/kcc
+          if git diff --cached --quiet; then
+            echo "No change in the KCC summaries."
+          else
+            git config user.name "sahibhav-data-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "data: KCC crop advice summaries $(date -u +%F) (data.gov.in)"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

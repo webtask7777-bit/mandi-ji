@@ -34,6 +34,7 @@ const LanguagesPage = lazy(() => import('./pages/LanguagesPage'));
 const LanguageToolsPage = lazy(() => import('./pages/LanguageToolsPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
+const FasalSalahPage = lazy(() => import('./pages/FasalSalahPage'));
 
 function PageLoader() {
   return (
@@ -53,6 +54,7 @@ function App({ prerender = false, initialPage }) {
   const LanguagePage = initialPage?.kind === 'language' ? initialPage.Component : LanguageToolsPage;
   const LanguageChooser = initialPage?.kind === 'languages' ? initialPage.Component : LanguagesPage;
   const GuideLibrary = initialPage?.kind === 'blog' ? initialPage.Component : BlogPage;
+  const SalahPage = initialPage?.kind === 'salah' ? initialPage.Component : FasalSalahPage;
 
   return (
     <AuthProvider>
@@ -79,6 +81,9 @@ function App({ prerender = false, initialPage }) {
                 <Route path="/delivery-calculator" element={<DeliveryPage />} />
                 <Route path="/bechne-ka-hisab" element={<SellComparePage />} />
                 <Route path="/data-status" element={<DataStatusPage />} />
+                <Route path="/fasal-salah" element={<SalahPage />} />
+                <Route path="/fasal-salah/:stateId" element={<SalahPage />} />
+                <Route path="/fasal-salah/:stateId/:districtId" element={<SalahPage />} />
                 <Route path="/transport" element={<Navigate to="/delivery-calculator" replace />} />
                 <Route path="/eway-bill/new" element={<ProtectedRoute><EwayBillPage /></ProtectedRoute>} />
                 <Route path="/my-eway-bills" element={<ProtectedRoute><MyEwayBills /></ProtectedRoute>} />
