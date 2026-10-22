@@ -35,7 +35,7 @@ const TAB_ITEMS = [
   { value: "bazaar", icon: ShoppingBasket, label: "बाज़ार" },
 ];
 
-export default function MandiJiDashboard() {
+export default function SahiBhavDashboard() {
   const selectedMonth = new Date().getMonth();
   const [searchParams, setSearchParams] = useSearchParams();
   const requestedTab = searchParams.get('tab');

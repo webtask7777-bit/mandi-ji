@@ -3,7 +3,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import './index.css';
 import SplashScreen from './components/SplashScreen';
-import MandiJiDashboard from './MandiJiDashboard';
+import SahiBhavDashboard from './SahiBhavDashboard';
 import { StateProvider } from './context/StateContext';
 import { AuthProvider } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
@@ -67,14 +67,14 @@ function App({ prerender = false, initialPage }) {
             </AnimatePresence>
             <Suspense fallback={<PageLoader />}>
               <Routes>
-                <Route path="/" element={<MandiJiDashboard />} />
+                <Route path="/" element={<SahiBhavDashboard />} />
                 <Route path="/languages" element={<LanguageChooser />} />
                 <Route path="/:language/mandi-bhav" element={<LanguagePage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/listing/new" element={<ProtectedRoute><CreateListingPage /></ProtectedRoute>} />
                 <Route path="/crop/:cropId" element={<CropPage />} />
-                <Route path="/mandi-bhav/:stateId" element={<MandiJiDashboard />} />
+                <Route path="/mandi-bhav/:stateId" element={<SahiBhavDashboard />} />
                 <Route path="/mandi-bhav/:stateId/:cropId" element={<CropPage />} />
                 <Route path="/listing/:id" element={<ListingDetailPage />} />
                 <Route path="/my-listings" element={<ProtectedRoute><MyListingsPage /></ProtectedRoute>} />

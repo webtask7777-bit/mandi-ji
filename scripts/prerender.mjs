@@ -12,7 +12,7 @@ process.env.NODE_ENV = 'production';
 const { renderPage } = await import('../dist-ssr/entry-server.js');
 const dist = path.join(root, 'dist');
 const generated = path.join(root, 'server/generated/seo');
-const siteUrl = (process.env.VITE_SITE_URL || 'https://mandi-ji.vercel.app').replace(/\/$/, '');
+const siteUrl = (process.env.VITE_SITE_URL || 'https://sahibhav.in').replace(/\/$/, '');
 if (!/^https:\/\/[^/?#]+$/.test(siteUrl)) throw new Error('VITE_SITE_URL must be an HTTPS origin');
 // The production API must not bind its usual port while used during a build.
 process.env.VERCEL = '1';

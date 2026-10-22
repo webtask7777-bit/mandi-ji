@@ -59,9 +59,9 @@ test('native library URLs contain the correct language before JavaScript loads',
     const route = code === 'hi' ? '/blog' : `/${code}/blog`;
     const html = readFileSync(new URL(`../dist${route}.html`, import.meta.url), 'utf8');
     assert.match(html, new RegExp(`<html[^>]*\\blang="${code}"`), code);
-    assert.ok(html.includes(`href="https://mandi-ji.vercel.app${route}"`), `${code}: native self-canonical`);
+    assert.ok(html.includes(`href="https://sahibhav.in${route}"`), `${code}: native self-canonical`);
     assert.ok(html.includes(translations.find(post => post.language === code).title.replaceAll('&', '&amp;')), `${code}: native article title in initial HTML`);
-    assert.ok(sitemap.includes(`<loc>https://mandi-ji.vercel.app${route}</loc>`));
+    assert.ok(sitemap.includes(`<loc>https://sahibhav.in${route}</loc>`));
     assert.doesNotMatch(html.split('</head>')[0], /noindex/);
   }
   const urdu = readFileSync(new URL('../dist/blog/tomato-market-delivery-ur.html', import.meta.url), 'utf8');

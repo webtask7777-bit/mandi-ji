@@ -112,14 +112,14 @@ test('rendered chooser preserves price scope while changing the tool language', 
     assert.equal(link.searchParams.get('state'), 'tamil-nadu');
     assert.equal(link.searchParams.get('crop'), 'paddycommon');
   }
-  assert.match(result.head + result.html, /rel="canonical"[^>]+href="https:\/\/mandi-ji.vercel.app\/languages"/);
+  assert.match(result.head + result.html, /rel="canonical"[^>]+href="https:\/\/sahibhav.in\/languages"/);
 });
 
 test('rendered articles keep their real language, clean SEO URLs and original tool context', { skip: hasSSR ? false : 'Build the SSR bundle first.' }, async () => {
   const slug = 'tamatar-vikri-vahatuk-kharch-marathi';
   const result = await renderNavigationPage(buildArticleNavigationUrl(slug, context));
   assert.match(result.html, /sb-journal-article-page[^>]+lang="mr"[^>]+dir="ltr"/);
-  assert.match(result.head + result.html, new RegExp(`rel="canonical"[^>]+href="https://mandi-ji.vercel.app/blog/${slug}"`));
+  assert.match(result.head + result.html, new RegExp(`rel="canonical"[^>]+href="https://sahibhav.in/blog/${slug}"`));
   const links = linkedUrls(result.html);
   const exactPrices = links.filter(url => url.pathname === '/ta/mandi-bhav' && url.hash === '#language-prices');
   assert.ok(exactPrices.some(url => url.searchParams.get('crop') === 'tomato' && url.searchParams.get('state') === 'tamil-nadu'));
@@ -134,7 +134,7 @@ test('native guide library renders actual article-language direction and preserv
   const route = buildLanguageBlogUrl('ur', { ...context, crop: '' });
   const result = await renderNavigationPage(route);
   assert.match(result.html, /sb-journal-page[^>]+lang="ur"[^>]+dir="rtl"/);
-  assert.match(result.head + result.html, /rel="canonical"[^>]+href="https:\/\/mandi-ji.vercel.app\/ur\/blog"/);
+  assert.match(result.head + result.html, /rel="canonical"[^>]+href="https:\/\/sahibhav.in\/ur\/blog"/);
   const articleLinks = linkedUrls(result.html).filter(url => url.pathname.startsWith('/blog/'));
   assert.ok(articleLinks.length > 0);
   for (const link of articleLinks) {
@@ -160,7 +160,7 @@ test('native library pages ship translated first-paint HTML without hydration or
     assert.ok(existsSync(file), `${code}: native library HTML must exist`);
     const html = readFileSync(file, 'utf8');
     assert.match(html, new RegExp(`<html[^>]+lang="${code}"`));
-    assert.match(html, new RegExp(`rel="canonical"[^>]+href="https://mandi-ji.vercel.app${libraryPath}"`));
+    assert.match(html, new RegExp(`rel="canonical"[^>]+href="https://sahibhav.in${libraryPath}"`));
     assert.doesNotMatch(html.split('</head>')[0], /rel="alternate"[^>]+hrefLang=/i, 'non-equivalent article collections have no hreflang');
     const labelFile = new URL(`../src/i18n/editorial/${code}.json`, import.meta.url);
     if (existsSync(labelFile)) {

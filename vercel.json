@@ -45,6 +45,28 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mandi-ji.vercel.app"
+        }
+      ],
+      "destination": "https://sahibhav.in/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.sahibhav.in"
+        }
+      ],
+      "destination": "https://sahibhav.in/:path*",
+      "permanent": true
+    },
+    {
       "source": "/pricing",
       "destination": "/",
       "permanent": true

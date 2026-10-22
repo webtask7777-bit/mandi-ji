@@ -173,7 +173,7 @@ function parseDate(dateStr) {
 // MAIN
 // ═══════════════════════════════════════════════════════════════════════════════
 
-console.log('=== MandiJi Data Aggregation ===\n');
+console.log('=== SahiBhav Data Aggregation ===\n');
 
 // Load raw records
 console.log('Loading raw records...');

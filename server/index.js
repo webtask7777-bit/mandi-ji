@@ -48,12 +48,12 @@ app.use('/api/price-history', priceHistoryRouter);
 // (no screen used them; unauthenticated posting/deleting, full phone numbers, writes that fail
 // on read-only hosting).
 
-app.get('/api/health', (req, res) => res.json({ status: 'ok', name: 'MandiJi API' }));
+app.get('/api/health', (req, res) => res.json({ status: 'ok', name: 'SahiBhav API' }));
 
 if (!process.env.VERCEL) {
   const PORT = 3001;
   app.listen(PORT, () => {
-    console.log(`🌾 MandiJi API running on http://localhost:${PORT}`);
+    console.log(`🌾 SahiBhav API running on http://localhost:${PORT}`);
   });
 }
 
