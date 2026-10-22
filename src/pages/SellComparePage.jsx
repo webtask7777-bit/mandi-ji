@@ -68,7 +68,7 @@ function OptionCard({ option, index, uid, row, onChange, onRemove, canRemove }) 
       </div>
       {canRemove && <button type="button" className="sb-delivery-delete" onClick={onRemove} aria-label={`${option.label || 'विकल्प'} हटाएँ`}><Trash2 size={16} aria-hidden="true" /></button>}
     </div>
-    {freshness && <p className="sb-delivery-small-note"><Info size={14} aria-hidden="true" /> दर्ज मंडी भाव भरा गया · {freshness.label}{option.variety ? ` · ${option.variety}` : ''}{option.grade ? ` · ${option.grade}` : ''}. व्यापारी का असली भाव पूछकर बदलें।</p>}
+    {freshness && <p className="sb-delivery-small-note"><Info size={14} aria-hidden="true" /> भाव की तारीख · {freshness.label}{option.variety ? ` · ${option.variety}` : ''}{option.grade ? ` · ${option.grade}` : ''}। व्यापारी का असली भाव पूछकर बदलें।</p>}
     <div className="sb-delivery-two-fields">
       <Field id={id('price')} label={isMandi ? 'मंडी में मिलने वाला भाव' : 'खरीदार का दिया भाव'} value={option.pricePerQuintal} onChange={set('pricePerQuintal')} suffix="₹ / क्विंटल" required error={err('pricePerQuintal')} />
       <Field id={id('loss')} label="वज़न / खराबे की कमी" value={option.lossPercent} onChange={set('lossPercent')} suffix="%" max={100} required={isMandi} hint={isMandi ? 'तौल में कटौती, सूखना, खराबा' : 'खाली = 0 माना जाएगा'} error={err('lossPercent')} />
@@ -85,6 +85,38 @@ function OptionCard({ option, index, uid, row, onChange, onRemove, canRemove }) 
       </div>
       <Field id={id('other')} label="अन्य खर्च (खाना, बोरी, इंतज़ार)" value={option.otherTotal} onChange={set('otherTotal')} suffix="₹" error={err('otherTotal')} />
     </details>
+    <details className="sb-delivery-extra-costs sb-sell-quote-details">
+      <summary><span><strong>भाव की तारीख, किस्म और ग्रेड</strong><small>पता हो तो भरें; खाली जानकारी समान नहीं मानी जाएगी</small></span></summary>
+      <div className="sb-delivery-field"><Field id={id('quote-date')} label="यह भाव किस तारीख का है?" type="date" value={typeof option.quoteDate === 'string' ? option.quoteDate.slice(0, 10) : ''} onChange={set('quoteDate')} placeholder="" /></div>
+      <div className="sb-delivery-two-fields">
+        <Field id={id('variety')} label="किस्म" type="text" value={option.variety} onChange={set('variety')} placeholder="जैसे खरीदार ने बताया" />
+        <Field id={id('grade')} label="ग्रेड / गुणवत्ता" type="text" value={option.grade} onChange={set('grade')} placeholder="पता हो तो भरें" />
+      </div>
+    </details>
+  </section>;
+}
+
+function QuoteCautions({ cautions }) {
+  if (!cautions.differingFields.length && !cautions.missingFields.length) return null;
+  return <div className="sb-sell-quote-caution" role="note">
+    <strong><Info size={16} aria-hidden="true" /> भाव की तुलना से पहले</strong>
+    {cautions.differingFields.length > 0 && <><p>दर्ज जानकारी अलग है। एक ही माल के लिए खरीदार से भाव की पुष्टि करें।</p><ul>{cautions.differingFields.map(field => <li key={field.key}><b>{field.label}:</b> {field.entries.map(entry => `${entry.label} — ${entry.value}`).join(' · ')}</li>)}</ul></>}
+    {cautions.missingFields.length > 0 && <p>कुछ विकल्पों में {cautions.missingFields.join(', ')} की जानकारी नहीं है। इन्हें एक जैसा मानकर तुलना न करें।</p>}
+  </div>;
+}
+
+function FarmgateBreakEven({ result, options, headingId }) {
+  const rows = result.rows.filter(row => row.farmgateBreakEven);
+  if (!result.farmgateReference || !rows.length) return null;
+  return <section className="sb-sell-break-even" aria-labelledby={headingId}>
+    <div className="sb-sell-break-even-heading"><span><Scale size={18} aria-hidden="true" /></span><div><h3 id={headingId}>खेत पर बिक्री की बराबरी का भाव</h3><p><strong>{result.farmgateReference.label}</strong> में खर्च के बाद {money(result.farmgateReference.net)} मिलने के हिसाब से।</p></div></div>
+    <div className="sb-sell-break-even-options">{rows.map(row => {
+      const insight = row.farmgateBreakEven;
+      return <div className="sb-sell-break-even-option" key={row.index}><h4>{row.label}</h4>{insight.status === 'ok'
+        ? <><p className="sb-sell-break-even-price"><strong>{money(Math.ceil(insight.requiredPricePerQuintal))}</strong><span>/ क्विंटल या अधिक</span></p><p>{insight.requiredPricePerQuintal === 0 ? 'इन खर्चों पर किसी भी सकारात्मक भाव से खेत पर बिक्री जितनी या अधिक शुद्ध रकम मिलने का अनुमान है।' : 'इतने भाव पर खेत पर बिक्री जितनी या अधिक शुद्ध रकम मिलने का अनुमान है।'}</p><small>आपका भरा भाव: {money(Number(options[row.index].pricePerQuintal))} / क्विंटल</small></>
+        : <p className="sb-sell-break-even-unavailable">{insight.reason === 'no-saleable-weight' ? '100% कमी पर बेचने योग्य माल नहीं बचता। भाव बढ़ाने से शुद्ध रकम नहीं बढ़ेगी।' : insight.reason === 'no-retained-receipts' ? 'कमीशन और शुल्क बिक्री का 100% या अधिक काट रहे हैं। इस हिसाब पर बराबरी का सामान्य भाव नहीं निकलता।' : 'इन संख्याओं से बराबरी का भाव नहीं निकल सका। मात्रा और खर्च जाँचें।'}</p>}</div>;
+    })}</div>
+    <p className="sb-sell-break-even-note">यही मात्रा, कमी और खर्च माने गए हैं। ज़रूरी भाव अगले पूरे रुपये तक ऊपर किया गया है। यह शुद्ध बिक्री प्राप्ति की तुलना है; खेती की लागत शामिल नहीं है।</p>
   </section>;
 }
 
@@ -144,7 +176,7 @@ export default function SellComparePage() {
 
             <aside className="sb-delivery-results" aria-label="बेचने के हिसाब का परिणाम" aria-live="polite">
               <div className="sb-delivery-result-card">
-                <div className="sb-delivery-result-top"><span><Calculator size={17} aria-hidden="true" /> हाथ में कितना बचेगा</span><span className="sb-delivery-estimate-tag">अनुमान</span></div>
+                <div className="sb-delivery-result-top"><span><Calculator size={17} aria-hidden="true" /> खर्च के बाद शुद्ध रकम</span><span className="sb-delivery-estimate-tag">अनुमान</span></div>
                 {result.comparable ? <>
                   {result.tie
                     ? <p className="sb-sell-verdict"><strong>{best.label}</strong> और <strong>{result.runnerUp.label}</strong> में लगभग बराबर, {money(best.net)} बचने का अनुमान।</p>
@@ -153,7 +185,7 @@ export default function SellComparePage() {
                 </> : <p className="sb-delivery-empty-summary">कम से कम दो विकल्पों के ज़रूरी खाने भरें। खाली भाड़ा 0 नहीं माना जाता।</p>}
                 <div className="sb-delivery-table-scroll">
                   <table className="sb-sell-table">
-                    <caption className="sr-only">हर विकल्प की कुल बिक्री, कटौती और हाथ में बचत</caption>
+                    <caption className="sr-only">हर विकल्प की कुल बिक्री, कटौती और शुद्ध बिक्री प्राप्ति</caption>
                     <thead><tr><th scope="col">विकल्प</th><th scope="col">बिक्री</th><th scope="col">खर्च</th><th scope="col">हाथ में</th></tr></thead>
                     <tbody>{result.rows.map(row => <tr key={row.index} className={row.rank === 1 ? 'is-best' : ''}>
                       <th scope="row">{row.label}{row.status === 'ok' && row.assumedZero.length ? <small>0 माना: {row.assumedZero.join(', ')}</small> : null}</th>
@@ -163,6 +195,8 @@ export default function SellComparePage() {
                     </tr>)}</tbody>
                   </table>
                 </div>
+                <QuoteCautions cautions={result.quoteCautions} />
+                <FarmgateBreakEven result={result} options={form.options} headingId={`${uid}-break-even`} />
                 {result.comparable && <div className="sb-delivery-result-actions">
                   <button type="button" className="sb-delivery-button" onClick={copy}><Copy size={15} aria-hidden="true" /> हिसाब कॉपी करें</button>
                   {/* Opens WhatsApp with the dated summary; the user chooses the recipient. */}

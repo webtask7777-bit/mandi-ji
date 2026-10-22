@@ -35,6 +35,8 @@ const LanguagesPage = lazy(() => import('./pages/LanguagesPage'));
 const LanguageToolsPage = lazy(() => import('./pages/LanguageToolsPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
+const KisanCalendarPage = lazy(() => import('./pages/KisanCalendarPage'));
+const KisanSalahPage = lazy(() => import('./pages/KisanSalahPage'));
 
 function PageLoader() {
   return (
@@ -54,6 +56,8 @@ function App({ prerender = false, initialPage }) {
   const LanguagePage = initialPage?.kind === 'language' ? initialPage.Component : LanguageToolsPage;
   const LanguageChooser = initialPage?.kind === 'languages' ? initialPage.Component : LanguagesPage;
   const GuideLibrary = initialPage?.kind === 'blog' ? initialPage.Component : BlogPage;
+  const CalendarPage = initialPage?.kind === 'calendar' ? initialPage.Component : KisanCalendarPage;
+  const SalahPage = initialPage?.kind === 'salah' ? initialPage.Component : KisanSalahPage;
 
   return (
     <AuthProvider>
@@ -68,6 +72,8 @@ function App({ prerender = false, initialPage }) {
               <Routes>
                 <Route path="/" element={<MandiJiDashboard />} />
                 <Route path="/languages" element={<LanguageChooser />} />
+                <Route path="/kisan-calendar" element={<CalendarPage />} />
+                <Route path="/kisan-salah" element={<SalahPage />} />
                 <Route path="/:language/mandi-bhav" element={<LanguagePage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />

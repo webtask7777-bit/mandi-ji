@@ -31,6 +31,67 @@ const dateValue = value => {
 };
 const todayIndia = now => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(now));
 
+// Keep vowel marks: removing Unicode marks would change Indian-language words.
+// Chandrabindu/anusvara and invisible joiner variants are common keyboard differences.
+function searchText(value) {
+  return valueOf(value).normalize('NFKC').toLocaleLowerCase()
+    .replace(/[\u200c\u200d]/gu, '').replace(/\u0901/gu, '\u0902')
+    .replace(/[^\p{L}\p{M}\p{N}\s]/gu, ' ').replace(/\s+/gu, ' ').trim();
+}
+
+// These are search equivalents, not diagnoses or mappings between crop products.
+// A result still needs to contain an equivalent word in its visible editorial text.
+const SEARCH_EQUIVALENTS = [
+  ['फफूँद', 'फफूंद', 'mould', 'mold'],
+  ['अंकुरण', 'germination', 'sprouting'],
+  ['पत्तियों', 'पत्तियाँ', 'पत्तियां', 'पत्ती', 'leaf', 'leaves'],
+  ['पाला', 'पाले', 'frost'],
+  ['बारिश', 'वर्षा', 'rain', 'rainfall'],
+  ['ओलावृष्टि', 'ओले', 'hail', 'hailstorm'],
+  ['भीगा', 'भीगी', 'भीगे', 'भीगना', 'भीगने', 'wet'],
+  ['नमी', 'moisture'],
+  ['भंडारण', 'storage'],
+  ['सिंचाई', 'irrigation'],
+  ['बुवाई', 'बुआई', 'sowing'],
+  ['कटाई', 'harvest', 'harvesting'],
+  ['ढुलाई', 'परिवहन', 'transport', 'transportation', 'delivery'],
+  ['गेहूँ', 'गेहूं', 'wheat'],
+  ['धान', 'paddy'],
+  ['टमाटर', 'tomato', 'tomatoes'],
+];
+const SEARCH_ALIASES = new Map(SEARCH_EQUIVALENTS.flatMap(group => {
+  const words = unique(group.map(searchText));
+  return words.map(word => [word, words]);
+}));
+const SEARCH_CONNECTORS = new Set([
+  'का', 'की', 'के', 'में', 'से', 'और', 'को', 'पर', 'है', 'हैं', 'हो', 'क्या', 'कैसे', 'करें', 'लिए', 'करना',
+  'the', 'a', 'an', 'and', 'in', 'of', 'for', 'to', 'is', 'how', 'what', 'with',
+].map(searchText));
+
+function searchTerms(query) {
+  const words = unique(searchText(valueOf(query).slice(0, 250)).split(' ').filter(Boolean));
+  const meaningful = words.filter(word => !SEARCH_CONNECTORS.has(word));
+  return (meaningful.length ? meaningful : words).map(word => SEARCH_ALIASES.get(word) || [word]);
+}
+
+function editorialSearchScore(post, terms) {
+  // Index reader-visible text, not Markdown link destinations or source URL fragments.
+  const body = valueOf(post.content).replace(/!?\[([^\]]*)\]\([^)]*\)/gu, '$1').replace(/https?:\/\/\S+/gu, '');
+  const fields = [
+    [post.title, 8],
+    [[post.excerpt, post.category, ...(post.tags || [])].join(' '), 4],
+    [(post.takeaways || []).join(' '), 2],
+    [body, 1],
+  ].map(([text, weight]) => ({ words: new Set(searchText(text).split(' ')), weight }));
+  let score = 0;
+  for (const equivalents of terms) {
+    const match = fields.find(field => equivalents.some(word => field.words.has(word)));
+    if (!match) return 0; // Never silently drop an unmatched crop or symptom.
+    score += match.weight;
+  }
+  return score;
+}
+
 function boundedInteger(value, fallback, max) {
   const text = typeof value === 'number' ? String(value) : valueOf(value);
   if (!/^\d+$/.test(text)) return fallback;
@@ -66,15 +127,17 @@ export function listEditorialPosts(allPosts, query = {}) {
   const crop = valueOf(query.crop);
   const topic = crop ? getCropTopic(crop) : null;
   const category = valueOf(query.category);
-  const search = valueOf(query.q).normalize('NFKC').toLocaleLowerCase().slice(0, 250);
+  const search = searchTerms(query.q);
   const slugs = valueOf(query.slugs).split(',').map(value => value.trim()).filter(Boolean).slice(0, 20);
   const matching = inLanguage.filter(post => {
     if (crop && (!topic || !post.cropTopics?.includes(topic.id))) return false;
     if (category && post.category !== category) return false;
     if (slugs.length && !slugs.includes(post.slug)) return false;
-    if (search && ![post.title, post.excerpt, ...(post.tags || [])].join(' ').normalize('NFKC').toLocaleLowerCase().includes(search)) return false;
     return true;
-  }).sort((a, b) => (Date.parse(b.publishedAt) || 0) - (Date.parse(a.publishedAt) || 0) || a.slug.localeCompare(b.slug));
+  }).map(post => ({ post, score: search.length ? editorialSearchScore(post, search) : 1 }))
+    .filter(result => result.score > 0)
+    .sort((a, b) => b.score - a.score || (Date.parse(b.post.publishedAt) || 0) - (Date.parse(a.post.publishedAt) || 0) || a.post.slug.localeCompare(b.post.slug))
+    .map(({ post }) => post);
   const page = boundedInteger(query.page, 1, 1000000);
   const limit = boundedInteger(query.limit, 10, 50);
   return {

@@ -14,6 +14,9 @@ export default function Footer() {
           <FooterLink to="/about">हमारे बारे में</FooterLink>
           <FooterLink to="/contact">संपर्क करें</FooterLink>
           <FooterLink to="/blog">खेती की जानकारी</FooterLink>
+          <FooterLink to="/kisan-calendar">किसान कैलेंडर</FooterLink>
+          <FooterLink to="/kisan-salah">समस्या के अनुसार सलाह</FooterLink>
+          <FooterLink to="/blog/mandi-bhav-min-max-modal-kaise-padhen">मंडी भाव कैसे पढ़ें?</FooterLink>
           <FooterLink to="/bechne-ka-hisab">कहाँ बेचूँ? हिसाब</FooterLink>
           <FooterLink to="/data-status">भाव कितने ताज़ा हैं?</FooterLink>
           <FooterLink to="/delivery-calculator">डिलीवरी कैलकुलेटर</FooterLink>

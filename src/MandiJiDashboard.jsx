@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
-import { ChevronDown, X, Search, MapPin, User, LogIn, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe } from "lucide-react";
+import { ChevronDown, X, Search, MapPin, User, LogIn, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe, Scale, BookOpen } from "lucide-react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useApi } from "./hooks/useApi";
 import { useStateContext } from "./context/StateContext";
@@ -18,6 +18,7 @@ import Brand from "./components/Brand";
 import FarmVisual from "./components/FarmVisual";
 import { CropImageLegend } from "./components/CropImage";
 import "./styles/dashboard.css";
+import "./styles/discovery-links.css";
 
 // The map and marketplace should not delay the first price screen.
 const CalendarTab = lazy(() => import('./tabs/CalendarTab'));
@@ -318,6 +319,11 @@ export default function MandiJiDashboard() {
       </nav>}
 
       {/* Banners */}
+      {activeTab === 'prices' && <nav className="sb-discovery-links" aria-label="योजना, सलाह और बिक्री का हिसाब">
+        <Link to="/bechne-ka-hisab"><Scale size={18} aria-hidden="true" /><span><strong>कहाँ बेचूँ?</strong><small>खर्च काटकर मिलने वाली रकम</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
+        <Link to={`/kisan-calendar${stateParam !== 'all' ? `?state=${stateParam}` : ''}`}><CalendarDays size={18} aria-hidden="true" /><span><strong>किसान कैलेंडर</strong><small>महीने के अनुसार तैयारी</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
+        <Link to="/kisan-salah"><BookOpen size={18} aria-hidden="true" /><span><strong>समस्या के अनुसार सलाह</strong><small>मौसम, भंडारण और बिक्री</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
+      </nav>}
       {banners?.filter(b => !dismissedBanners.includes(b.id) && (b.type !== 'promo' || activeTab === 'prices')).map(banner => {
         const colors = { info: 'bg-blue-500/10 border-blue-500/30 text-blue-400', warning: 'bg-amber-500/10 border-amber-500/30 text-amber-400', promo: 'bg-green-500/10 border-green-500/30 text-green-400', success: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' };
         const icons = { info: <Info size={12}/>, warning: <AlertTriangle size={12}/>, promo: <Gift size={12}/>, success: <CheckCircle size={12}/> };

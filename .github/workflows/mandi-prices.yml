@@ -28,32 +28,30 @@ jobs:
         with:
           node-version: 24
 
-      # Progress is tied to one dataset snapshot, so a rerun after a failure resumes it.
+      # Only progress backed by successfully committed records is restored.
       - uses: actions/cache/restore@v4
         with:
           path: .cache/datagov
-          key: datagov-${{ github.run_id }}
-          restore-keys: datagov-
+          key: datagov-committed-v2-${{ github.run_id }}
+          restore-keys: datagov-committed-v2-
 
       - name: Fetch current prices
+        id: fetch
+        # Complete state slices are already validated and merged atomically. Keep
+        # those observations even if another state fails; report failure below.
+        continue-on-error: true
         env:
           DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
         run: node scripts/fetch-daily.cjs --delay 1300
-
-      - name: Keep fetch progress for the next run
-        if: always()
-        uses: actions/cache/save@v4
-        with:
-          path: .cache/datagov
-          key: datagov-${{ github.run_id }}
 
       - name: Rebuild aggregates
         run: node scripts/aggregate-india.cjs
 
       - name: Storage tests
-        run: node --test tests/daily-store.test.mjs
+        run: node --test tests/daily-store.test.mjs tests/price-workflow.test.mjs
 
       - name: Commit if anything changed
+        id: commit_data
         run: |
           git add server/db/data
           if git diff --cached --quiet; then
@@ -65,6 +63,21 @@ jobs:
             git push
           fi
 
-      # Runs last so a stale source is reported as a failed job, not hidden.
+      # Completion flags must never survive without their corresponding records.
+      # A failed validation or push leaves the previous durable cache untouched.
+      - name: Keep fetch progress for the next run
+        if: success() && steps.commit_data.outcome == 'success'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/datagov
+          key: datagov-committed-v2-${{ github.run_id }}
+
       - name: Freshness
         run: node scripts/check-freshness.cjs --max-age-days 3
+
+      # continue-on-error above permits recovery, never a false successful run.
+      - name: Report incomplete fetch
+        if: always() && steps.fetch.outcome == 'failure'
+        run: |
+          echo "::error::Price fetch was incomplete. Only validated observations that were successfully committed can be resumed."
+          exit 1

@@ -100,6 +100,7 @@ function BlogLibraryPage({ routeLanguage }) {
     <main className="sb-journal-main" id="main-content">
       <section className="sb-journal-intro sb-journal-intro--illustrated" aria-labelledby="journal-title"><div className="sb-journal-intro-copy"><span className="sb-journal-eyebrow"><Leaf size={15} aria-hidden="true" /> {copy.brand} {copy.guide}</span><h1 id="journal-title">{copy.hero}<br /><em>{copy.heroAccent}</em></h1><p>{copy.intro}</p></div><figure className="sb-journal-intro-art"><FarmVisual name="farm-journal-v1" priority sizes="(max-width: 640px) calc(100vw - 32px), 540px" /><figcaption>{copy.illustration}</figcaption></figure></section>
       <div className="sb-journal-scope-strip"><MapPin size={18} aria-hidden="true" /><strong>{copy.regionFocus}</strong><span>{copy.regionHelp}</span></div>
+      {language === 'hi' && <nav className="sb-journal-scope-strip" aria-label="खेती की तैयारी के औज़ार"><Link to="/kisan-salah">समस्या के अनुसार लेख चुनें →</Link><Link to={`/kisan-calendar${state ? `?state=${state}` : ''}`}>किसान कैलेंडर →</Link><Link to="/bechne-ka-hisab">कहाँ बेचने पर ज़्यादा बचेगा? →</Link></nav>}
 
       <section className="sb-journal-discovery" aria-labelledby="discovery-title">
         <h2 id="discovery-title"><Search size={18} aria-hidden="true" />{copy.browse}</h2>

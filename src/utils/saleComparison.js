@@ -51,7 +51,7 @@ export function calculateSaleOption(option, quantityKg) {
     if (values[key] === null && REQUIRED[kind].includes(key) && !errors[key]) missing.push(FIELD_LABELS[key]);
   }
   if (values.pricePerQuintal === 0) errors.pricePerQuintal = 'भाव शून्य नहीं हो सकता';
-  if (!(quantityKg > 0)) return { status: 'incomplete', kind, missing: ['मात्रा'], errors };
+  if (!Number.isFinite(quantityKg) || !(quantityKg > 0)) return { status: 'incomplete', kind, missing: ['मात्रा'], errors };
   if (Object.keys(errors).length) return { status: 'invalid', kind, missing, errors };
   if (missing.length) return { status: 'incomplete', kind, missing, errors };
 
@@ -63,6 +63,9 @@ export function calculateSaleOption(option, quantityKg) {
   const transport = v.freightTotal + v.handlingTotal;
   const deductions = commission + marketFee + transport + v.otherTotal;
   const net = gross - deductions;
+  if (![saleableKg, gross, deductions, net, net / (quantityKg / QUINTAL_KG)].every(Number.isFinite)) {
+    return { status: 'invalid', kind, missing, errors: { calculation: 'मात्रा, भाव या खर्च की संख्या बहुत बड़ी है; जाँचकर भरें' } };
+  }
   const assumedZero = OPTIONAL_COSTS.filter(k => values[k] === null).map(k => FIELD_LABELS[k]);
   if (kind === 'farmgate') {
     if (values.freightTotal === null) assumedZero.push(FIELD_LABELS.freightTotal);
@@ -72,6 +75,55 @@ export function calculateSaleOption(option, quantityKg) {
     status: 'ok', kind, saleableKg, gross, commission, marketFee, transport, other: v.otherTotal,
     deductions, net, netPerQuintal: net / (quantityKg / QUINTAL_KG), assumedZero,
   };
+}
+
+/**
+ * Minimum nonnegative quote needed to reach the reference net receipts. Fees are
+ * both deducted from gross receipts, just as in calculateSaleOption; loss reduces
+ * saleable weight once. Keep the exact result here and round upward only in the UI.
+ */
+function farmgateBreakEven(option, row, reference) {
+  const retainedShare = 1 - (Number(option.commissionPercent || 0) + Number(option.marketFeePercent || 0)) / 100;
+  const effectiveQuintals = row.saleableKg / QUINTAL_KG * retainedShare;
+  const fixedCosts = row.transport + row.other;
+  if (!(effectiveQuintals > 0)) {
+    return { status: 'unavailable', reason: row.saleableKg <= 0 ? 'no-saleable-weight' : 'no-retained-receipts' };
+  }
+  const threshold = (reference.net + fixedCosts) / effectiveQuintals;
+  if (!Number.isFinite(threshold)) return { status: 'unavailable', reason: 'out-of-range' };
+  return { status: 'ok', requiredPricePerQuintal: Math.max(0, threshold) };
+}
+
+const QUOTE_FIELDS = [
+  { key: 'quoteDate', label: 'भाव की तारीख' },
+  { key: 'variety', label: 'किस्म' },
+  { key: 'grade', label: 'ग्रेड' },
+];
+const UNKNOWN_QUOTE_VALUES = new Set(['-', '—', '–', 'n/a', 'na', 'unknown', 'not available', 'अज्ञात', 'उपलब्ध नहीं']);
+function knownQuoteValue(value, key) {
+  if (typeof value !== 'string') return '';
+  const normalized = value.normalize('NFKC').trim().replace(/\s+/gu, ' ');
+  if (key === 'quoteDate') {
+    const day = normalized.match(/^(\d{4}-\d{2}-\d{2})(?:T.*)?$/)?.[1];
+    const parsed = day ? new Date(`${day}T00:00:00Z`) : null;
+    return parsed && Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0, 10) === day ? day : '';
+  }
+  return UNKNOWN_QUOTE_VALUES.has(normalized.toLowerCase()) ? '' : normalized;
+}
+
+/** Only compare supplied metadata on completed options; missing is never a match. */
+function quoteCautions(options, rows) {
+  const completed = rows.filter(row => row.status === 'ok');
+  if (completed.length < 2) return { differingFields: [], missingFields: [] };
+  const differingFields = [];
+  const missingFields = [];
+  for (const field of QUOTE_FIELDS) {
+    const entries = completed.map(row => ({ index: row.index, label: row.label, value: knownQuoteValue(options[row.index][field.key], field.key) }));
+    const known = entries.filter(entry => entry.value);
+    if (known.length < completed.length) missingFields.push(field.label);
+    if (new Set(known.map(entry => entry.value.toLowerCase())).size > 1) differingFields.push({ ...field, entries: known });
+  }
+  return { differingFields, missingFields };
 }
 
 /**
@@ -93,7 +145,13 @@ export function compareSaleOptions({ quantity, quantityUnit = 'quintal', options
   const margin = best && runnerUp ? best.net - runnerUp.net : null;
   const tie = margin != null && margin < 1;
   const closeCall = tie || (margin != null && Math.abs(best.net) > 0 && margin / Math.abs(best.net) * 100 < closeCallPercent);
-  return { quantityKg: Number.isFinite(quantityKg) ? quantityKg : null, rows, best, runnerUp, margin, tie, closeCall, comparable: ranked.length >= 2 };
+  const farmgateReference = rows.find(row => row.status === 'ok' && row.kind === 'farmgate') || null;
+  if (farmgateReference) {
+    for (const row of rows) {
+      if (row.status === 'ok' && row.kind === 'mandi') row.farmgateBreakEven = farmgateBreakEven(options[row.index], row, farmgateReference);
+    }
+  }
+  return { quantityKg: Number.isFinite(quantityKg) ? quantityKg : null, rows, best, runnerUp, margin, tie, closeCall, comparable: ranked.length >= 2, farmgateReference, quoteCautions: quoteCautions(options, rows) };
 }
 
 /** Build a plain-text summary for copy/share; includes source dates so a shared result stays dated. */

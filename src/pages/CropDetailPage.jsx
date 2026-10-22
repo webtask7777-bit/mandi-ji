@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Link, useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, TrendingUp, TrendingDown, Minus, MapPin, Clock3, ShoppingCart, Calculator, Info, AlertCircle, RefreshCw } from 'lucide-react';
 import { useApi } from '../hooks/useApi';
+import { useApiSnapshot } from '../context/ApiSnapshotContext';
 import { STATE_NAMES } from '../context/StateContext';
 import Brand from '../components/Brand';
 import CropImage, { CropImageLegend } from '../components/CropImage';
@@ -13,6 +15,7 @@ import { comparableChange, gapNote } from '../utils/priceChange';
 import { cropDetailPath } from '../utils/cropUrls';
 import { getLanguage } from '../../shared/languages';
 import { normalizeRegionId } from '../../shared/indiaRegions';
+import { getCropIndexability } from '../../shared/cropIndexability';
 import { readLanguageNavigation, localizedToolsUrl } from '../utils/languageNavigation';
 import '../styles/detail.css';
 
@@ -52,6 +55,16 @@ export default function CropDetailPage() {
   const stateQuery = encodeURIComponent(stateParam);
   const cropQuery = encodeURIComponent(cropId);
   const { data: priceData, loading: priceLoading, error: priceError } = useApi(`/prices/${cropQuery}?months=13&state=${stateQuery}`);
+  const priceRequest = `${stateParam}/${cropId}`;
+  const { asOf } = useApiSnapshot();
+  const indexability = getCropIndexability(priceData, { asOf, loading: priceLoading, error: priceError });
+  const [lastIndexability, setLastIndexability] = useState(null);
+  if (indexability.noIndex !== null && (lastIndexability?.request !== priceRequest || lastIndexability.noIndex !== indexability.noIndex)) {
+    setLastIndexability({ request: priceRequest, noIndex: indexability.noIndex });
+  }
+  // Revalidation failures must not turn a known stale page back into indexable
+  // content; pending requests must not be mistaken for an empty price history.
+  const priceNoIndex = indexability.noIndex ?? (lastIndexability?.request === priceRequest ? lastIndexability.noIndex : false);
   const { data: mandiData, loading: mandiLoading, error: mandiError } = useApi(`/mandi-compare/${cropQuery}?state=${stateQuery}`);
   const { data: tickerData } = useApi(`/ticker?state=${stateQuery}`);
   const unavailable = [404, 422].includes(Number(priceError?.status)) || /\bAPI (404|422):/.test(priceError?.message || '');
@@ -86,7 +99,7 @@ export default function CropDetailPage() {
     <div className="sb-detail-page">
       <SEO title={`${cropName} मंडी भाव — ${stateNameHi}${heroPrice !== null ? ` · ${quoteLabel}` : ''}`}
         description={`${stateNameHi} में ${cropName} के उपलब्ध मंडी रिकॉर्ड${heroPrice !== null ? `: ₹${money(heroPrice)}/क्विंटल, ${quoteLabel}` : ''}। भाव का इतिहास और मंडी तुलना देखें। रिकॉर्ड की तारीख जाँचकर सौदे का भाव मंडी से पुष्टि करें।`}
-        path={cropDetailPath(cropId, stateParam)} noIndex={unavailable || (!priceLoading && !priceError && !history.length && !dailyHistory.length)}
+        path={cropDetailPath(cropId, stateParam)} noIndex={unavailable || priceNoIndex}
         structuredData={cropName && !unavailable ? { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: `${stateNameHi} के मंडी भाव`, item: `${SITE_URL}${dashboardPath}` },
           { '@type': 'ListItem', position: 2, name: cropName, item: `${SITE_URL}${cropDetailPath(cropId, stateParam)}` },

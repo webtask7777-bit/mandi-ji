@@ -2,10 +2,10 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import editorialImages from '../data/editorialImages.json';
 import { getLanguage, languageFromPath } from '../../shared/languages.js';
+import { resolveSiteOrigin } from '../../shared/siteOrigin.js';
 
-// Use the domain that is actually deployed. Set VITE_SITE_URL only after a custom
-// domain is attached in Vercel; do not point search engines at an unconnected name.
-export const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://mandi-ji.vercel.app').replace(/\/$/, '');
+// sahibhav.in was verified serving this application before the migration.
+export const SITE_URL = resolveSiteOrigin(import.meta.env.VITE_SITE_URL);
 const DEFAULTS = {
   title: 'सही भाव — भारत के मंडी भाव | SahiBhav',
   description: 'फसल के दर्ज मंडी भाव देखें, मंडियों की तुलना करें और बिक्री व परिवहन की तैयारी करें। सही भाव — SahiBhav।',

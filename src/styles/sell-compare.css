@@ -22,3 +22,34 @@
 .sb-delivery-results p.sb-delivery-privacy { margin: 0; padding: 0 22px 18px; }
 .sb-sell-table tbody td { white-space: nowrap; }
 .sb-sell-table tbody td[colspan] { white-space: normal; }
+.sb-sell-quote-details { margin-top: 12px; }
+.sb-sell-quote-details > summary small { display: block; margin-top: 3px; font-size: 10px; line-height: 1.6; font-weight: 400; color: #64765b; }
+.sb-sell-quote-details > .sb-delivery-two-fields { padding-bottom: 16px; }
+.sb-sell-quote-details input[type="date"] { min-width: 0; }
+.sb-sell-quote-caution { margin: 18px 22px; padding: 14px 15px; border: 1px solid #e7d9ae; border-radius: 12px; background: #fbf7e9; color: #725b2b; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+.sb-sell-quote-caution > strong { display: flex; align-items: center; gap: 7px; color: #624c20; font-weight: 650; }
+.sb-sell-quote-caution > strong svg { flex-shrink: 0; }
+.sb-sell-quote-caution p { margin: 7px 0 0; }
+.sb-sell-quote-caution ul { margin: 7px 0 0; padding-inline-start: 18px; }
+.sb-sell-quote-caution li + li { margin-top: 5px; }
+.sb-sell-break-even { margin: 20px 22px; padding: 18px; border: 1px solid #cfdcc5; border-radius: 16px; background: #f5f8ee; color: #31532b; }
+.sb-sell-break-even-heading { display: flex; align-items: flex-start; gap: 10px; }
+.sb-sell-break-even-heading > span { display: grid; place-items: center; flex: 0 0 34px; height: 34px; border-radius: 10px; background: #e1ebd7; color: #456b31; }
+.sb-sell-break-even h3 { margin: 0; font-size: 16px; line-height: 1.6; font-weight: 700; }
+.sb-sell-break-even-heading p { margin: 5px 0 0; font-size: 11px; line-height: 1.8; color: #5a7151; overflow-wrap: anywhere; }
+.sb-sell-break-even-options { display: grid; gap: 10px; margin-top: 16px; }
+.sb-sell-break-even-option { min-width: 0; padding: 13px 15px; border: 1px solid #dce6d3; border-radius: 11px; background: #fffef9; }
+.sb-sell-break-even-option h4 { margin: 0; font-size: 13px; line-height: 1.7; font-weight: 650; color: #395a2d; overflow-wrap: anywhere; }
+.sb-sell-break-even-option p { margin: 5px 0 0; font-size: 11px; line-height: 1.8; color: #5b6f53; }
+.sb-sell-break-even-option .sb-sell-break-even-price { display: flex; align-items: baseline; gap: 7px; flex-wrap: wrap; margin: 6px 0; }
+.sb-sell-break-even-price strong { color: #224c25; font-size: 25px; font-weight: 750; line-height: 1.5; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.sb-sell-break-even-price span { font-size: 11px; }
+.sb-sell-break-even-option small { display: block; margin-top: 8px; padding-top: 8px; border-top: 1px solid #e7ecdf; font-size: 10px; line-height: 1.8; color: #687b5d; }
+.sb-sell-break-even-option .sb-sell-break-even-unavailable { color: #725b2b; }
+.sb-sell-break-even .sb-sell-break-even-note { margin: 13px 0 0; font-size: 10px; line-height: 1.8; color: #66775b; }
+@media (max-width: 480px) {
+  .sb-sell-quote-caution, .sb-sell-break-even { margin-inline: 14px; }
+  .sb-sell-break-even { padding: 14px; }
+  .sb-sell-break-even h3 { font-size: 15px; }
+  .sb-sell-break-even-option { padding: 12px; }
+}

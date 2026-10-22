@@ -6,14 +6,15 @@ import { isCropPriceCommodity } from '../src/utils/cropEligibility.js';
 import { cropDetailPath } from '../src/utils/cropUrls.js';
 import { getLanguage, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, languagePath } from '../shared/languages.js';
 import { EDITORIAL_LANGUAGE_CODES } from '../shared/editorialLanguages.js';
+import { resolveSiteOrigin } from '../shared/siteOrigin.js';
+import { getCropIndexability } from '../shared/cropIndexability.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.env.NODE_ENV = 'production';
 const { renderPage } = await import('../dist-ssr/entry-server.js');
 const dist = path.join(root, 'dist');
 const generated = path.join(root, 'server/generated/seo');
-const siteUrl = (process.env.VITE_SITE_URL || 'https://mandi-ji.vercel.app').replace(/\/$/, '');
-if (!/^https:\/\/[^/?#]+$/.test(siteUrl)) throw new Error('VITE_SITE_URL must be an HTTPS origin');
+const siteUrl = resolveSiteOrigin(process.env.VITE_SITE_URL);
 // The production API must not bind its usual port while used during a build.
 process.env.VERCEL = '1';
 const { default: app } = await import('../server/index.js');
@@ -26,7 +27,7 @@ const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compa
 const cache = new Map();
 const manifest = JSON.parse(await readFile(path.join(dist, '.vite/manifest.json'), 'utf8'));
 function routeAssets(route) {
-  const page = /^\/[a-z]{2,3}\/blog$/.test(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
+  const page = /^\/[a-z]{2,3}\/blog$/.test(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/kisan-calendar':'KisanCalendarPage', '/kisan-salah':'KisanSalahPage', '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
   const css = new Set();
   const seen = new Set();
   function visit(key) { if (seen.has(key)) return; seen.add(key); const entry = manifest[key]; if (!entry) return; (entry.css || []).forEach(file => css.add(file)); (entry.imports || []).forEach(visit); }
@@ -50,7 +51,7 @@ async function render(route) {
   const responses = {};
   let rendered;
   for (let pass = 0; pass < 5; pass++) {
-    rendered = await renderPage(route, responses);
+    rendered = await renderPage(route, responses, { asOf: indexAsOf });
     const missing = rendered.requested.filter(request => !Object.hasOwn(responses, request));
     if (!missing.length) break;
     for (const request of missing) {
@@ -78,23 +79,9 @@ async function render(route) {
   return template.replace(/<html\b[^>]*>/, `<html lang="${documentLanguage}" dir="${languageInfo.dir}">`).replace('</head>', `${head}${routeAssets(route)}\n</head>`)
     .replace('<div id="root"></div>', `<div id="root">${body.replaceAll('आज का उपलब्ध रिकॉर्ड', 'उपलब्ध दर्ज रिकॉर्ड').replace(/\d+ दिन पुराना रिकॉर्ड/g, 'पुराना रिकॉर्ड · तारीख देखें')}</div><script id="sahibhav-public-data" type="application/json">${escapeJson(pageResponses)}</script>`);
 }
-function hasPrice(detail) {
-  return [...(detail?.dailyHistory || []), ...(detail?.history || [])].some(row => Number(row.market) > 0);
-}
-// Pages whose newest record is more than STALE_DAYS older than the newest observation in the
-// data stay reachable but are not offered to search engines (noindex, not in the sitemap)
-// until fresh records arrive.
-const STALE_DAYS = 90;
-function latestRecordDate(detail) {
-  const daily = (detail?.dailyHistory || []).filter(row => Number(row.market) > 0).map(row => String(row.date)).sort().at(-1);
-  const monthly = (detail?.history || []).filter(row => Number(row.market) > 0).map(row => `${row.date}-28`).sort().at(-1);
-  return daily || monthly || null;
-}
-function isFresh(detail, newest) {
-  const latest = latestRecordDate(detail);
-  if (!latest || !newest) return Boolean(latest);
-  return (Date.parse(`${newest}T00:00:00Z`) - Date.parse(`${latest.slice(0, 10)}T00:00:00Z`)) / 86400000 <= STALE_DAYS;
-}
+// A frozen dataset must still age. Use one real-time reference throughout the
+// build and the same policy as CropDetailPage; rebuilds refresh the static HTML.
+const indexAsOf = new Date();
 async function writePage(route, html) {
   const output = path.join(dist, route === '/' ? 'index.html' : `${route.slice(1)}.html`);
   await mkdir(path.dirname(output), { recursive: true });
@@ -102,12 +89,11 @@ async function writePage(route, html) {
 }
 try {
   await mkdir(generated, { recursive: true });
-  const routes = new Set(['/', '/delivery-calculator', '/bechne-ka-hisab', '/data-status', '/about', '/contact', '/privacy', '/terms', '/blog', '/languages', ...SEARCH_LANGUAGES.map(item => languagePath(item.code))]);
+  const routes = new Set(['/', '/kisan-calendar', '/kisan-salah', '/delivery-calculator', '/bechne-ka-hisab', '/data-status', '/about', '/contact', '/privacy', '/terms', '/blog', '/languages', ...SEARCH_LANGUAGES.map(item => languagePath(item.code))]);
   for (const code of EDITORIAL_LANGUAGE_CODES) if (code !== 'hi') routes.add(`/${code}/blog`);
   const knownCrops = new Set();
   // Sitemap <lastmod>: a price page changes when its newest record does; an article on its own update.
   const lastmod = new Map();
-  const newestObservation = loadIndiaData('stats')?.newestObservation || null;
   const states = (loadIndiaData('states') || []).filter(state => state.hasData);
   const scopes = ['all', ...new Set(states.map(state => state.id))];
   for (const scope of scopes) {
@@ -119,7 +105,8 @@ try {
       knownCrops.add(route);
       let detail;
       try { detail = scope === 'all' ? loadIndiaCropPrices(crop.id) : loadStateCropPrices(scope, crop.id); } catch { /* no observed prices: keep out of sitemap */ }
-      if (hasPrice(detail) && isFresh(detail, newestObservation)) { routes.add(route); lastmod.set(route, latestRecordDate(detail)?.slice(0, 10)); }
+      const indexability = getCropIndexability(detail, { asOf: indexAsOf });
+      if (indexability.noIndex === false) { routes.add(route); lastmod.set(route, indexability.latestDate); }
     }
   }
   const posts = JSON.parse(await readFile(path.join(root, 'server/db/data/blog-posts.json'), 'utf8'));
@@ -145,7 +132,7 @@ try {
   // Provisional translations are reachable, but are not indexed until their terminology is reviewed.
   for (const language of AVAILABLE_LANGUAGES.filter(item => !item.searchReady)) await writePage(languagePath(language.code), await render(languagePath(language.code)));
   // Empty or stale catalog entries remain usable but are not advertised to search engines.
-  for (const route of knownCrops) if (!routes.has(route)) await writePage(route, (await render(route)).replace(/content="index, follow, max-image-preview:large"/g, 'content="noindex, follow"'));
+  for (const route of knownCrops) if (!routes.has(route)) await writePage(route, await render(route));
   const notFound = (await render('/__not-found__')).replace(/<link[^>]*rel="canonical"[^>]*>/g, '').replace(/<meta[^>]*property="og:url"[^>]*>/g, '');
   await writeFile(path.join(dist, '404.html'), notFound);
   await writeFile(path.join(generated, '404.html'), notFound);

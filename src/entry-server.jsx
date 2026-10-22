@@ -1,4 +1,5 @@
 import React from 'react';
+import { Buffer } from 'node:buffer';
 import { PassThrough } from 'node:stream';
 import { renderToPipeableStream } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
@@ -6,7 +7,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { ApiSnapshotProvider } from './context/ApiSnapshotContext';
 import App from './App';
 
-export function renderPage(url, responses = {}) {
+export function renderPage(url, responses = {}, { asOf } = {}) {
   const requested = new Set();
   const helmetContext = {};
   return new Promise((resolve, reject) => {
@@ -26,7 +27,7 @@ export function renderPage(url, responses = {}) {
     });
     const stream = renderToPipeableStream(
       <HelmetProvider context={helmetContext}><StaticRouter location={url}>
-        <ApiSnapshotProvider value={{ responses, collect: path => requested.add(path) }}>
+        <ApiSnapshotProvider value={{ responses, asOf, collect: path => requested.add(path) }}>
           <App prerender />
         </ApiSnapshotProvider>
       </StaticRouter></HelmetProvider>,
