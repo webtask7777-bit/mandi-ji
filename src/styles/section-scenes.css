@@ -1,0 +1,17 @@
+/* Compact illustrated introductions keep the working data and controls close. */
+.sb-section-scene.sb-section-scene{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.9fr);align-items:stretch;gap:0;background:#f6f4e9;border:1px solid #dce3d5;border-radius:22px;overflow:hidden;margin-bottom:22px}
+.sb-section-scene-copy{min-width:0;padding:26px 30px;align-self:center}
+.sb-section-scene-art{position:relative;min-width:0;min-height:215px;margin:0;background:#e5e9d7;overflow:hidden}
+.sb-section-scene-art>.sb-farm-visual{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.sb-section-scene-art>figcaption{position:absolute;inset-inline-end:10px;bottom:10px;max-width:calc(100% - 20px);padding:5px 8px;border-radius:6px;background:#173d2bd9;color:#fff;font-size:9px;line-height:1.5}
+.sb-section-scene .sb-delivery-heading-actions{flex-direction:row;justify-content:flex-start;flex-wrap:wrap;margin-top:18px;gap:8px}
+.sb-section-scene .sb-delivery-heading-actions button{background:#fffdf6;border-color:#cad6c0;color:#254e39}
+.sb-section-scene .sb-delivery-heading-actions button:hover{background:#e8efdf}
+.sb-section-scene .sb-delivery-eyebrow,.sb-section-scene .sb-secondary-eyebrow{display:flex;align-items:center;gap:7px;color:#5a714f}
+.sb-section-scene .sb-atlas-delivery-link{display:inline-flex;margin-top:17px;padding:10px 14px;background:#fffdf6}
+.sb-section-scene .sb-atlas-delivery-link>svg{display:block;width:21px}
+.sb-section-scene-detail{display:inline-flex;align-items:center;gap:8px;margin-top:19px;color:#506b49;font-size:12px;line-height:1.7}
+.sb-section-scene-copy h2{font-size:clamp(25px,3vw,35px);line-height:1.45;color:#183e2e}
+.sb-section-scene-copy p{font-size:13px;line-height:1.8;max-width:530px!important}
+@media(max-width:800px){.sb-section-scene-copy{padding:22px}.sb-section-scene.sb-section-scene{grid-template-columns:minmax(0,1.2fr) minmax(0,.85fr)}.sb-section-scene-art{min-height:235px}.sb-section-scene-art>.sb-farm-visual{object-position:58% center}}
+@media(max-width:620px){.sb-section-scene.sb-section-scene{grid-template-columns:minmax(0,1fr);border-radius:17px}.sb-section-scene-copy{padding:23px}.sb-section-scene-art{min-height:0;aspect-ratio:2.5/1}.sb-section-scene-art>.sb-farm-visual{object-position:50% 58%}.sb-section-scene-copy h2{font-size:27px}.sb-section-scene .sb-delivery-mobile-break{display:none}.sb-section-scene .sb-atlas-delivery-link{display:inline-flex}.sb-section-scene-detail{margin-top:12px}}
