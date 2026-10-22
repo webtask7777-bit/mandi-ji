@@ -1,6 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { ArrowDown, ArrowRight, Calculator, Check, ChevronDown, Copy, Download, Info, MapPin, Package, RotateCcw, Route, Save, Scale, ShieldCheck, Trash2, Truck } from 'lucide-react';
 import VehicleIllustration from '../components/VehicleIllustration';
+import FarmVisual from '../components/FarmVisual';
 import DeliveryResources from '../components/delivery/DeliveryResources';
 import PlacePicker from '../components/delivery/PlacePicker';
 import { STATE_NAMES } from '../context/StateContext';
@@ -10,6 +11,7 @@ import CropImage from '../components/CropImage';
 import { calculateDeliveryScenario, compareDeliveryVehicles, getDeliverySummaryText, VEHICLE_PRESETS, deliveryFormToInput, convertDeliveryPrice, convertDeliveryQuantity, prefillDeliveryForm, getDeliveryTrips, getDeliveryCropOptions, priceBasisLabel } from '../utils/deliveryCalculator';
 import { getDataFreshness } from '../utils/dataFreshness';
 import '../styles/delivery.css';
+import '../styles/section-scenes.css';
 
 const STORAGE_KEY = 'sahibhav.delivery.draft.v1';
 const SAVED_KEY = 'sahibhav.delivery.saved.v1';
@@ -236,9 +238,12 @@ export default function DeliveryCalculatorTab({ initialScenario, onScenarioConsu
   };
 
   return <section className="sb-delivery" aria-labelledby={fieldId('title')}>
-    <header className="sb-delivery-heading">
+    <header className="sb-delivery-heading sb-section-scene">
+      <div className="sb-section-scene-copy">
       <div><span className="sb-delivery-eyebrow"><Route size={15} aria-hidden="true" /> भाव से आगे, पूरी तैयारी</span><h2 id={fieldId('title')}>माल वहाँ से लाना<br className="sb-delivery-mobile-break" /> कितना सही पड़ेगा?</h2><p>पूरी लागत निकालें, पैकिंग और गाड़ी समझें, फिर मंडी की यात्रा की तैयारी करें।</p></div>
       <div className="sb-delivery-heading-actions"><button type="button" className="sb-delivery-button" onClick={loadExample}><Calculator size={16} aria-hidden="true" /> उदाहरण देखें</button><button type="button" className="sb-delivery-button is-quiet" onClick={reset}><RotateCcw size={15} aria-hidden="true" /> नया हिसाब</button></div>
+      </div>
+      <figure className="sb-section-scene-art"><FarmVisual name="farm-delivery-v1" sizes="(max-width: 620px) calc(100vw - 40px), 470px" priority /><figcaption>सांकेतिक AI चित्र · वाहन की जानकारी नीचे देखें</figcaption></figure>
     </header>
     <nav className="sb-delivery-jumpnav" aria-label="डिलीवरी के औज़ार और जानकारी">
       <a href="#delivery-calculation"><Calculator size={16} aria-hidden="true" /> खर्च निकालें</a>

@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Activity, ArrowDownRight, ArrowUpRight, BarChart3, ChevronDown, ChevronUp, Info, RefreshCw, ShieldCheck, Store, X } from 'lucide-react';
 import CropImage from '@/components/CropImage';
+import FarmVisual from '@/components/FarmVisual';
 import { MONTHS } from '../data/constants';
 import { useApi } from '../hooks/useApi';
 import { getDataFreshness, getLatestQuoteDate } from '../utils/dataFreshness';
 import { getCropImageNote } from '../utils/cropImages';
 import '@/styles/secondary.css';
+import '@/styles/section-scenes.css';
 
 const HEAT = ['#edf0e6', '#c7d6b7', '#8cad8a', '#507f63', '#174c3c'];
 const heatSolid = value => HEAT[value <= 1 ? 0 : value <= 3 ? 1 : value <= 5 ? 2 : value <= 7 ? 3 : 4];
@@ -62,7 +64,7 @@ export default function MandisTab({ selectedMonth, heatmap, regions, stateParam,
   };
 
   return <div className="sb-secondary-tab sb-mandis-tab flex flex-col">
-    <div className="sb-secondary-heading"><div><span className="sb-secondary-eyebrow">मंडी नज़र</span><h2>बाज़ार की चाल समझें</h2><p>महीने के मध्य भाव में बदलाव और मंडी रिकॉर्ड एक जगह।</p></div><span className="sb-feature-icon"><BarChart3 size={28} /></span></div>
+    <div className="sb-secondary-heading sb-section-scene"><div className="sb-section-scene-copy"><span className="sb-secondary-eyebrow"><BarChart3 size={16} aria-hidden="true" /> मंडी नज़र</span><h2>बाज़ार की चाल समझें</h2><p>महीने के मध्य भाव में बदलाव और मंडी रिकॉर्ड एक जगह।</p><span className="sb-section-scene-detail"><Store size={16} aria-hidden="true" /> फसल, मंडी और दर्ज तारीख साथ देखें।</span></div><figure className="sb-section-scene-art"><FarmVisual name="mandi-market-v1" sizes="(max-width: 620px) calc(100vw - 40px), 470px" priority /><figcaption>मंडी का सांकेतिक AI चित्र</figcaption></figure></div>
     {jumpToMandi && <div className="sb-mandi-context"><Store size={20} /><div><strong>मंडी संदर्भ: {jumpToMandi}</strong><p>भाव टैब से आए हैं। नीचे उपलब्ध मंडियों का रिकॉर्ड इतिहास देखें।</p></div><button type="button" onClick={() => onMandiConsumed?.()} aria-label="मंडी संदेश बंद करें"><X size={18} /></button></div>}
     {loading && <div className="sb-listing-grid" role="status" aria-label="मंडी सारांश लोड हो रहा है"><div className="sb-listing-skeleton" /><div className="sb-listing-skeleton" /></div>}
     {!loading && error && <div className="sb-secondary-empty" role="status"><RefreshCw size={27} /><h3>मंडी सारांश नहीं खुल सका</h3><p>नेटवर्क जाँचें और फिर कोशिश करें।</p><button type="button" className="sb-secondary-outline" onClick={() => setRetry(value => value + 1)}>दोबारा कोशिश करें</button></div>}

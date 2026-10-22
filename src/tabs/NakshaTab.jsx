@@ -5,12 +5,14 @@ import { useStateContext } from '../context/StateContext';
 import { useApi } from '../hooks/useApi';
 import LeafletMap from '../components/LeafletMap/LeafletMap';
 import CropImage from '../components/CropImage';
+import FarmVisual from '../components/FarmVisual';
 import { districtCropMatch } from '../components/LeafletMap/mapStyles';
 import { districtSearchText, findDistrictRecord, getMandiDistrictName, placeKey } from '../utils/mapData';
 import { cropDetailPath } from '../utils/cropUrls';
 import { getDataFreshness, getLatestQuoteDate } from '../utils/dataFreshness';
 import { getMapMandiKey, resolveMapSelection, updateMapSearch } from '../utils/mapSelection';
 import '@/styles/atlas.css';
+import '@/styles/section-scenes.css';
 
 const number = value => value != null && Number.isFinite(Number(value)) ? Number(value).toLocaleString('en-IN') : '—';
 const label = item => item?.nameHi || item?.name || 'नाम उपलब्ध नहीं';
@@ -93,7 +95,7 @@ export default function NakshaTab({ districts = [], mandis = [], states = [], cr
   }
 
   return <div className="sb-atlas">
-    <header className="sb-atlas-intro"><div><span className="sb-atlas-eyebrow"><Compass size={15} aria-hidden="true" /> राज्य से मंडी तक</span><h2>मंडी चुनें। खर्च समझें।</h2><p>अपने क्षेत्र की मंडियाँ खोजें, फसल के रिकॉर्ड देखें और भेजने से पहले ढुलाई का हिसाब जोड़ें।</p></div><Link className="sb-atlas-delivery-link" to="/delivery-calculator"><Truck size={20} aria-hidden="true" /><span>कितना पड़ेगा पहुँचाने में?<strong>डिलीवरी खर्च देखें <ArrowRight size={15} aria-hidden="true" /></strong></span></Link></header>
+    <header className="sb-atlas-intro sb-section-scene"><div className="sb-section-scene-copy"><span className="sb-atlas-eyebrow"><Compass size={15} aria-hidden="true" /> राज्य से मंडी तक</span><h2>मंडी चुनें। खर्च समझें।</h2><p>अपने क्षेत्र की मंडियाँ खोजें, फसल के रिकॉर्ड देखें और भेजने से पहले ढुलाई का हिसाब जोड़ें।</p><Link className="sb-atlas-delivery-link" to="/delivery-calculator"><Truck size={20} aria-hidden="true" /><span>कितना पड़ेगा पहुँचाने में?<strong>डिलीवरी खर्च देखें <ArrowRight size={15} aria-hidden="true" /></strong></span></Link></div><figure className="sb-section-scene-art"><FarmVisual name="farm-delivery-v1" sizes="(max-width: 620px) calc(100vw - 40px), 470px" priority /><figcaption>सांकेतिक AI चित्र · वास्तविक नक्शा नीचे है</figcaption></figure></header>
     <div className="sb-atlas-summary">{summaries.map(({ label: title, value, icon }) => <div key={title}><span className="sb-atlas-stat-icon">{icon}</span><div><strong>{number(value)}</strong><span>{title}</span></div></div>)}</div>
     <div className="sb-atlas-toolbar"><nav aria-label="नक्शे का क्षेत्र"><button type="button" onClick={() => selectStateDirect(null)} disabled={!selectedState}>भारत</button>{selectedState && <><ChevronRight size={14} aria-hidden="true" /><button type="button" onClick={showDistricts}>{stateNameHi}</button></>}{selectedDistrict && <><ChevronRight size={14} aria-hidden="true" /><span>{district ? label(district) : selectedDistrict}</span></>}</nav><button type="button" className="sb-atlas-reset" onClick={() => { setMapResetKey(key => key + 1); }}><RotateCcw size={14} aria-hidden="true" />नक्शा रीसेट</button></div>
     <div className="sb-atlas-filterbar"><label className="sb-atlas-crop-filter"><Sprout size={18} aria-hidden="true" /><span>फसल चुनें<select aria-label="नक्शे पर फसल चुनें" value={selectedCrop} onChange={event => updateSelection({ mapCrop: event.target.value })} disabled={!cropOptions.length}><option value="">सभी फसलें</option>{cropOptions.map(item => <option key={item.id} value={item.id}>{cropLabels[label(item)] > 1 ? `${label(item)} · ${item.name !== label(item) ? item.name : item.id}` : label(item)}</option>)}</select></span></label><p>फसल चुनने पर जहाँ रिकॉर्ड मिला है, उसकी पुष्टि देखें।</p><button type="button" className="sb-atlas-copy" onClick={copyMapLink}><Copy size={15} aria-hidden="true" />नक्शे का लिंक</button></div>
