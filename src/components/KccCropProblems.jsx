@@ -16,7 +16,7 @@ export default function KccCropProblems({ cropId, cropName, stateId = 'all' }) {
   return <section className="sb-detail-section sb-crop-kcc" aria-labelledby="crop-kcc-title">
     <span className="sb-detail-kicker"><Sprout size={15} aria-hidden="true" /> फसल सलाह · किसान कॉल सेंटर</span>
     <h2 id="crop-kcc-title">{MONTHS_HI[month - 1]} में {cropName} के किसान क्या पूछते हैं</h2>
-    <p>{scopeName} में पिछले सालों के इसी महीने के सवालों के अनुसार। हर समस्या पर KCC की सलाह फसल सलाह पृष्ठ पर पढ़ें।</p>
+    <p>{scopeName} में पिछले सालों के इसी महीने {cropName} से जुड़े हर 100 सवालों में से कितने किस समस्या के थे। हर समस्या पर KCC की सलाह फसल सलाह पृष्ठ पर पढ़ें।</p>
     {problems.length > 0 && <ul>{problems.map(item => <li key={item.key}>
       <span>{item.problemHi} <small className="sb-salah-kind">{KIND_LABEL[item.kind]}</small></span>
       <strong>100 में {Math.round(item.share)}</strong>

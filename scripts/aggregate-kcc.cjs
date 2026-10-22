@@ -175,14 +175,15 @@ function summarize(scope, yearsPerMonth, topicInfo, { sampled, minCalls }) {
           ...(sampled ? {} : { callsPerYear: Math.round(perYear(item.n, month)) }),
         };
       });
-    return { month: month + 1, ...(sampled ? {} : { callsPerYear: Math.round(perYear(total, month)), cropCallsPerYear: Math.round(perYear(cropCalls[month], month)) }), observed: yearsPerMonth[month] ? total : 0, families, top };
+    return { month: month + 1, covered: yearsPerMonth[month] > 0, years: yearsPerMonth[month], ...(sampled ? {} : { callsPerYear: Math.round(perYear(total, month)), cropCallsPerYear: Math.round(perYear(cropCalls[month], month)) }), observed: yearsPerMonth[month] ? total : 0, families, top };
   });
 
   const seriesKeys = [...annualTopic.entries()].sort((a, b) => b[1] - a[1]).slice(0, SERIES_TOPICS).map(([key]) => key);
   const series = Object.fromEntries(seriesKeys.map(key => {
     const values = scope.topics.get(key).map((n, m) => perYear(n, m));
     const peak = Math.max(...values) || 1;
-    return [key, values.map(value => Math.round(value * 100 / peak))];
+    // A month the stored data does not cover is unknown (null), not zero questions.
+    return [key, values.map((value, m) => (yearsPerMonth[m] ? Math.round(value * 100 / peak) : null))];
   }));
   const used = new Set([...months.flatMap(month => month.top.map(item => item.key)), ...seriesKeys]);
   const topics = Object.fromEntries([...used].map(key => [key, topicInfo.get(key)]));

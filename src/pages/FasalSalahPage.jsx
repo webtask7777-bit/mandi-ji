@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { AlertTriangle, ArrowLeft, ArrowRight, Bug, CalendarDays, ChevronDown, Info, Leaf, MapPin, Phone, Search, Sprout, TrendingUp } from 'lucide-react';
 import SEO, { SITE_URL } from '../components/SEO';
@@ -7,7 +7,7 @@ import { useApi } from '../hooks/useApi';
 import { cropDetailPath } from '../utils/cropUrls';
 import {
   FAMILY_LABEL, KIND_LABEL, MONTHS_HI, MONTHS_SHORT_HI, currentMonthIST, dateHi, liftLabel, monthYearHi,
-  nextMonth, parseMonth, perHundred, risingNext, salahPath, scriptLang,
+  nextMonth, parseMonth, perHundred, risingNext, salahPath, scriptLang, searchPlaces,
 } from '../utils/kccAdvice';
 import '../styles/detail.css';
 import '../styles/fasal-salah.css';
@@ -15,7 +15,7 @@ import '../styles/fasal-salah.css';
 const KIND_ICON = { keet: Bug, rog: Leaf, poshan: Sprout, kharpatwar: Leaf, kheti: Sprout };
 const number = n => Number(n || 0).toLocaleString('en-IN');
 
-function SourceNote({ meta }) {
+function SourceNote({ meta, placeName, calls }) {
   if (!meta) return null;
   const range = `${monthYearHi(meta.coverage.from)} – ${dateHi(meta.coverage.newestCall)}`;
   return <div className="sb-salah-source" role="note">
@@ -23,7 +23,9 @@ function SourceNote({ meta }) {
     <div>
       <strong>{meta.mode === 'live' ? 'ताज़ा सवालों के साथ मौसमी पैटर्न' : 'यह पिछले सालों का मौसमी पैटर्न है, इस साल की चेतावनी नहीं'}</strong>
       <p>
-        किसान कॉल सेंटर (1800-180-1551) पर किसानों के {meta.calls ? `${number(meta.calls)} ` : ''}सवालों से बना ({range})।
+        {calls && placeName
+          ? `किसान कॉल सेंटर (1800-180-1551) पर ${placeName} के किसानों के ${number(calls)} सवालों से बना (${range})।`
+          : `किसान कॉल सेंटर (1800-180-1551) पर किसानों के ${meta.calls ? `${number(meta.calls)} ` : ''}सवालों से बना (${range})।`}
         {meta.mode !== 'live' && ` सरकारी स्रोत में ${dateHi(meta.coverage.sourceNewestCall)} के बाद के सवाल अभी नहीं आए हैं; नए सवाल आते ही यहाँ ताज़ा बदलाव भी दिखेंगे।`}
         {meta.sampled && ' अभी केवल नमूना डेटा जुड़ा है — प्रतिशत अनुमान हैं।'}
         {' '}<a href={meta.sourceUrl} target="_blank" rel="noopener noreferrer">स्रोत: data.gov.in</a>
@@ -33,7 +35,17 @@ function SourceNote({ meta }) {
 }
 
 function MonthPicker({ month, onChange }) {
-  return <div className="sb-salah-months" role="group" aria-label="महीना चुनें">
+  const ref = useRef(null);
+  // On a narrow screen the chosen month can sit off-screen in the scrolling row.
+  useEffect(() => {
+    const row = ref.current;
+    const button = row?.querySelector('[aria-pressed="true"]');
+    if (!row || !button) return;
+    const rowBox = row.getBoundingClientRect();
+    const buttonBox = button.getBoundingClientRect();
+    row.scrollLeft += buttonBox.left - rowBox.left - (rowBox.width - buttonBox.width) / 2;
+  }, [month]);
+  return <div className="sb-salah-months" role="group" aria-label="महीना चुनें" ref={ref}>
     {MONTHS_SHORT_HI.map((label, index) => <button key={label} type="button" aria-pressed={month === index + 1} onClick={() => onChange(index + 1)} aria-label={MONTHS_HI[index]}>{label}</button>)}
   </div>;
 }
@@ -81,14 +93,14 @@ function YearPattern({ series, topics, month }) {
   return <section className="sb-detail-section sb-salah-pattern" aria-labelledby="salah-pattern-title">
     <span className="sb-detail-kicker"><CalendarDays size={15} aria-hidden="true" /> साल भर का पैटर्न</span>
     <h2 id="salah-pattern-title">कौन-सी समस्या किस महीने ज़ोर पकड़ती है</h2>
-    <p>गहरा रंग = उस समस्या के सबसे ज़्यादा सवाल वाला महीना। हर पंक्ति अपनी ही सबसे ऊँची संख्या से तुलना है।</p>
+    <p>गहरा रंग = उस समस्या के सबसे ज़्यादा सवाल वाला महीना। हर पंक्ति अपनी ही सबसे ऊँची संख्या से तुलना है।{Object.values(series).some(values => values.includes(null)) && ' धारीदार खाने = उस महीने का आँकड़ा अभी नहीं जुड़ा।'}</p>
     <div className="sb-salah-heat-scroll">
       <table className="sb-salah-heat">
         <caption className="sr-only">हर समस्या के सवाल महीने के अनुसार, सबसे ज़्यादा वाले महीने को 100 मानकर</caption>
         <thead><tr><th scope="col">समस्या</th>{MONTHS_SHORT_HI.map((label, index) => <th key={label} scope="col" className={index + 1 === month ? 'is-current' : ''}>{label}</th>)}</tr></thead>
         <tbody>{keys.map(key => <tr key={key}>
           <th scope="row">{topics[key].cropHi} · {topics[key].problemHi}</th>
-          {series[key].map((value, index) => <td key={index} className={index + 1 === month ? 'is-current' : ''} style={{ '--level': value / 100 }}><span className="sr-only">{MONTHS_HI[index]}: {value}</span></td>)}
+          {series[key].map((value, index) => <td key={index} className={`${index + 1 === month ? 'is-current' : ''}${value == null ? ' is-unknown' : ''}`} style={value == null ? undefined : { '--level': value / 100 }}><span className="sr-only">{MONTHS_HI[index]}: {value == null ? 'आँकड़ा नहीं' : value}</span></td>)}
         </tr>)}</tbody>
       </table>
     </div>
@@ -102,7 +114,7 @@ function FamilyMix({ families, month }) {
     <span className="sb-detail-kicker">फ़ोन किस बारे में आते हैं</span>
     <h2 id="salah-family-title">{MONTHS_HI[month - 1]} में किसान किस बारे में पूछते हैं</h2>
     <div className="sb-salah-mix" aria-hidden="true">{entries.map(([family, share]) => <span key={family} className={`sb-salah-mix-${family}`} style={{ flexGrow: share }} />)}</div>
-    <ul className="sb-salah-mix-legend">{entries.map(([family, share]) => <li key={family}><span className={`sb-salah-dot sb-salah-mix-${family}`} aria-hidden="true" />{FAMILY_LABEL[family] || family} <strong>{Math.round(share)}%</strong></li>)}</ul>
+    <ul className="sb-salah-mix-legend">{entries.map(([family, share]) => <li key={family}><span className={`sb-salah-dot sb-salah-mix-${family}`} aria-hidden="true" />{FAMILY_LABEL[family] || family} <strong>{share < 1 ? '1% से कम' : `${Math.round(share)}%`}</strong></li>)}</ul>
   </section>;
 }
 
@@ -116,13 +128,7 @@ function Alerts({ alerts, topics }) {
 
 function PlaceFinder({ states }) {
   const [query, setQuery] = useState('');
-  const matches = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (q.length < 2) return [];
-    return (states || []).flatMap(state => state.districts.map(district => ({ state, district })))
-      .filter(({ state, district }) => district.name.toLowerCase().includes(q) || state.nameHi.includes(query.trim()) || state.name.toLowerCase().includes(q))
-      .slice(0, 12);
-  }, [query, states]);
+  const matches = useMemo(() => searchPlaces(states, query), [query, states]);
   return <div className="sb-salah-finder">
     <label htmlFor="salah-district-search">अपना ज़िला खोजें</label>
     <div className="sb-salah-finder__input"><Search size={16} aria-hidden="true" /><input id="salah-district-search" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="जैसे Raipur, Nashik, Ludhiana" autoComplete="off" /></div>
@@ -190,7 +196,7 @@ export default function FasalSalahPage() {
       {error && <div className="sb-detail-notice" role="alert"><AlertTriangle size={20} aria-hidden="true" /><div><strong>{notFound && level === 'india' ? 'फसल सलाह का डेटा तैयार हो रहा है' : notFound ? 'इस जगह के सवाल उपलब्ध नहीं हैं' : 'फसल सलाह अभी लोड नहीं हो पाई'}</strong><p>{notFound && level === 'india' ? 'किसान कॉल सेंटर के सवाल जोड़े जा रहे हैं। कुछ घंटों बाद फिर देखें। तब तक मंडी भाव देखें।' : notFound ? 'जिन ज़िलों से कम सवाल आए हैं, उनके लिए राज्य की सलाह देखें।' : 'थोड़ी देर बाद पृष्ठ दोबारा खोलें।'}</p></div><Link to={level === 'india' ? '/' : stateId && level === 'district' ? salahPath(stateId) : '/fasal-salah'}>{level === 'india' ? 'मंडी भाव' : stateId && level === 'district' ? 'राज्य की सलाह' : 'सभी राज्य'}</Link></div>}
 
       {data && <>
-        <SourceNote meta={meta} />
+        <SourceNote meta={meta} placeName={level === 'india' ? null : placeName} calls={level === 'india' ? null : data.calls} />
         <Alerts alerts={data.alerts} topics={data.topics || {}} />
         <div className="sb-salah-grid">
           <section className="sb-salah-list" aria-labelledby="salah-top-title">
@@ -199,7 +205,7 @@ export default function FasalSalahPage() {
               <h2 id="salah-top-title">इस महीने की आम समस्याएँ</h2>
             </div>
             {top.length ? <ol>{top.map((item, i) => <ProblemCard key={item.key} rank={i + 1} item={item} topic={data.topics?.[item.key]} qa={data.qa?.[item.key]} stateId={level === 'india' ? null : stateId} scopeHi={level === 'india' ? null : stateNameHi} />)}</ol>
-              : <p className="sb-salah-muted">इस महीने के लिए पर्याप्त सवाल दर्ज नहीं हैं। दूसरा महीना चुनें{level === 'district' ? ' या राज्य की सलाह देखें' : ''}।</p>}
+              : <p className="sb-salah-muted">{monthData && monthData.covered === false ? `${MONTHS_HI[month - 1]} के सवाल अभी नहीं जुड़े हैं। दूसरा महीना चुनें।` : `इस महीने के लिए पर्याप्त सवाल दर्ज नहीं हैं। दूसरा महीना चुनें${level === 'district' ? ' या राज्य की सलाह देखें' : ''}।`}</p>}
           </section>
           <aside className="sb-salah-side">
             {upcoming.length > 0 && <section className="sb-detail-section sb-salah-next" aria-labelledby="salah-next-title">
@@ -226,7 +232,7 @@ export default function FasalSalahPage() {
         {level === 'india' && data.states?.length > 0 && <section className="sb-detail-section sb-salah-places" aria-labelledby="salah-states-title">
           <span className="sb-detail-kicker"><MapPin size={15} aria-hidden="true" /> अपनी जगह चुनें</span>
           <h2 id="salah-states-title">राज्य के अनुसार फसल सलाह</h2>
-          <div className="sb-salah-links">{data.states.map(state => <Link key={state.id} to={salahPath(state.id)}>{state.nameHi}<small>{state.districts.length ? `${state.districts.length} ज़िले` : 'राज्य स्तर'}</small></Link>)}</div>
+          <div className="sb-salah-links">{data.states.map(state => <Link key={state.id} to={salahPath(state.id)}>{state.nameHi}<small>{state.districts.length ? `${state.districts.length} ${state.districts.length === 1 ? 'ज़िला' : 'ज़िले'}` : 'राज्य स्तर'}</small></Link>)}</div>
         </section>}
         {level === 'state' && data.districts?.length > 0 && <section className="sb-detail-section sb-salah-places" aria-labelledby="salah-districts-title">
           <span className="sb-detail-kicker"><MapPin size={15} aria-hidden="true" /> ज़िला चुनें</span>

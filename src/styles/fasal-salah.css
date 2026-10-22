@@ -87,13 +87,16 @@
 .sb-salah-call:hover { background: #0f3a2d; }
 
 .sb-salah-pattern { margin-bottom: 20px; }
-.sb-salah-heat-scroll { overflow-x: auto; margin-top: 12px; }
+.sb-salah-heat-scroll { position: relative; overflow-x: auto; margin-top: 12px; }
+/* Hidden cell labels are absolutely positioned: keep them inside the scroll box, not the page. */
+.sb-salah-heat th, .sb-salah-heat td { position: relative; }
 .sb-salah-heat { border-collapse: separate; border-spacing: 3px; width: 100%; min-width: 640px; font-size: 12px; }
 .sb-salah-heat th { font-weight: 650; color: #5d6e60; padding: 4px 6px; white-space: nowrap; }
 .sb-salah-heat thead th { font-size: 11px; text-align: center; }
 .sb-salah-heat thead th:first-child, .sb-salah-heat tbody th { text-align: left; }
 .sb-salah-heat tbody th { max-width: 240px; overflow: hidden; text-overflow: ellipsis; color: #1b3027; }
 .sb-salah-heat td { height: 28px; min-width: 30px; border-radius: 6px; background: color-mix(in srgb, #174c3c calc(var(--level, 0) * 100%), #eef2ea); }
+.sb-salah-heat td.is-unknown { background: repeating-linear-gradient(135deg, #eef2ea 0 4px, #f7f5ec 4px 8px); }
 .sb-salah-heat .is-current { outline: 2px solid #ba8322; outline-offset: -1px; }
 .sb-salah-heat thead .is-current { color: #9a6a16; outline: none; }
 

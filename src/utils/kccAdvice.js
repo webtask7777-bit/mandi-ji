@@ -70,3 +70,30 @@ export function scriptLang(text) {
 }
 
 export const salahPath = (stateId, districtId) => ['/fasal-salah', stateId, districtId].filter(Boolean).join('/');
+
+/**
+ * Spelling-tolerant key for place names (Nashik/Nasik, Ahmednagar/Ahmadnagar, Bareilly/Barely):
+ * the first letter and the consonant skeleton, without h, doubled letters or later vowels.
+ */
+export function placeKey(value) {
+  const letters = String(value || '').toLowerCase().replace(/[^a-z]/g, '').replace(/h/g, '').replace(/w/g, 'v');
+  return (letters.slice(0, 1) + letters.slice(1).replace(/[aeiouy]/g, '')).replace(/(.)\1+/g, '$1');
+}
+
+/** Districts matching a search, exact spellings first, at most `limit`. */
+export function searchPlaces(states, query, limit = 12) {
+  const q = String(query || '').trim();
+  if (q.length < 2) return [];
+  const lower = q.toLowerCase();
+  const key = placeKey(q);
+  const scored = [];
+  for (const state of states || []) {
+    const stateHit = state.nameHi?.includes(q) || state.name?.toLowerCase().includes(lower);
+    for (const district of state.districts || []) {
+      const name = district.name.toLowerCase();
+      const score = name.startsWith(lower) ? 0 : name.includes(lower) ? 1 : key.length >= 2 && placeKey(name).includes(key) ? 2 : stateHit ? 3 : null;
+      if (score !== null) scored.push({ score, state, district });
+    }
+  }
+  return scored.sort((a, b) => a.score - b.score || a.district.name.localeCompare(b.district.name)).slice(0, limit);
+}

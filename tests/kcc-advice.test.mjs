@@ -4,7 +4,7 @@ import express from 'express';
 import { once } from 'node:events';
 import { createRequire } from 'node:module';
 import kccRouter from '../server/routes/kcc.js';
-import { currentMonthIST, liftLabel, parseMonth, perHundred, risingNext, scriptLang, dateHi } from '../src/utils/kccAdvice.js';
+import { currentMonthIST, liftLabel, parseMonth, perHundred, risingNext, scriptLang, dateHi, placeKey, searchPlaces } from '../src/utils/kccAdvice.js';
 
 const require = createRequire(import.meta.url);
 const { classify, cropOf, problemFromText, queryFamily } = require('../scripts/lib/kcc-topics.cjs');
@@ -127,4 +127,17 @@ test('published summaries are internally consistent', async t => {
     assert.equal(page.status, 200);
     for (const key of Object.keys(page.body.qa)) assert.ok(page.body.topics[key], key);
   }
+});
+
+test('district search tolerates common spelling differences', () => {
+  assert.equal(placeKey('Nashik'), placeKey('Nasik'));
+  assert.equal(placeKey('Ahmednagar'), placeKey('Ahmadnagar'));
+  const states = [
+    { id: 'maharashtra', name: 'Maharashtra', nameHi: 'महाराष्ट्र', districts: [{ id: 'nasik', name: 'Nasik' }, { id: 'nagpur', name: 'Nagpur' }, { id: 'nanded', name: 'Nanded' }] },
+    { id: 'chhattisgarh', name: 'Chhattisgarh', nameHi: 'छत्तीसगढ़', districts: [{ id: 'raipur', name: 'Raipur' }] },
+  ];
+  assert.deepEqual(searchPlaces(states, 'Nashik').map(m => m.district.id), ['nasik']);
+  assert.equal(searchPlaces(states, 'na')[0].district.id, 'nagpur', 'exact prefixes first');
+  assert.deepEqual(searchPlaces(states, 'छत्तीस').map(m => m.district.id), ['raipur'], 'Hindi state name lists its districts');
+  assert.deepEqual(searchPlaces(states, 'x'), []);
 });
