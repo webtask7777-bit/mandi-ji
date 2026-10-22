@@ -1,5 +1,17 @@
 const DASHBOARD_TABS = new Set(['prices', 'delivery', 'mandis', 'calendar', 'naksha', 'bazaar']);
 
+/** Price selections are exact IDs in the currently loaded regional catalogue. */
+export function getDashboardSourceCrop(search, crops = []) {
+  const id = new URLSearchParams(search).get('sourceCrop');
+  return id && crops.some(crop => crop.id === id) ? id : null;
+}
+
+export function getDashboardCropSearch(search, cropId, crops = []) {
+  const next = new URLSearchParams(search);
+  if (typeof cropId === 'string' && crops.some(crop => crop.id === cropId)) next.set('sourceCrop', cropId);
+  return next;
+}
+
 /** Share the active dashboard workspace when the user switches region. */
 export function getDashboardTab(search = '') {
   const requested = new URLSearchParams(search).get('tab');
@@ -13,9 +25,14 @@ export function getDashboardStateUrl(stateId, search = '') {
   const tab = getDashboardTab(search);
   if (tab === 'prices') return path;
   const params = new URLSearchParams({ tab });
+  const previous = new URLSearchParams(search);
   // Place IDs belong to their source state. Only carry the crop candidate;
   // Naksha validates it against the new state's loaded catalog before use.
-  const crop = new URLSearchParams(search).get('mapCrop');
+  const crop = previous.get('mapCrop');
   if (tab === 'naksha' && crop) params.set('mapCrop', crop);
+  const calendarMonth = previous.get('calendarMonth');
+  if (tab === 'calendar' && /^(?:[1-9]|1[0-2])$/.test(calendarMonth || '')) {
+    params.set('calendarMonth', calendarMonth);
+  }
   return `${path}?${params}`;
 }

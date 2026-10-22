@@ -1,9 +1,9 @@
-// These exact source IDs are livestock, poultry, fish or eggs. Their reporting
+// These exact source IDs are livestock, poultry, fish, eggs or dairy. Their reporting
 // units are not established for the crop UI's ₹/quintal and kg calculations.
 // Keep the source records intact; exclude only these known IDs from that UI.
 export const NON_CROP_COMMODITY_IDS = Object.freeze([
   'cow', 'bull', 'calf', 'goat', 'cock', 'duck',
-  'he-buffalo', 'she-buffalo', 'pigs', 'fish', 'egg', 'ox', 'hen', 'prawn', 'sheep', 'she-goat', 'ram',
+  'he-buffalo', 'she-buffalo', 'pigs', 'fish', 'egg', 'ox', 'hen', 'prawn', 'sheep', 'she-goat', 'ram', 'ghee',
 ]);
 const excludedIds = new Set(NON_CROP_COMMODITY_IDS);
 

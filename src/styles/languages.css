@@ -32,7 +32,7 @@
 .sb-language-button:hover { background:#103a2d; }
 .sb-language-text-link { display:inline-flex; align-items:center; gap:8px; min-height:44px; color:var(--language-green) !important; font-size:13px; font-weight:650; }
 .sb-language-text-link:hover { text-decoration:underline; text-underline-offset:4px; }
-.sb-language-remember { display:flex; align-items:center; gap:7px; font-size:12px !important; color:#71816f; background:transparent; border:0; text-align:start; min-height:40px; padding:0; }
+.sb-language-remember { display:flex; align-items:center; gap:7px; font-size:12px !important; color:#596a53; background:transparent; border:0; text-align:start; min-height:40px; padding:0; }
 .sb-language-remember.is-saved { color:var(--language-green); }
 .sb-language-hero-art { position:relative; border-radius:38% 38% 22px 22px; border:1px solid #e3e6d9; background:#efeede; height:350px; overflow:hidden; }
 .sb-language-hero-art > img { width:100%; height:100%; object-fit:cover; object-position:center; }
@@ -57,7 +57,7 @@
 .sb-language-search { position:relative; display:flex; align-items:center; }
 .sb-language-search > svg { position:absolute; inset-inline-start:11px; color:#8a9684; pointer-events:none; }
 .sb-language-search > input { padding-inline-start:35px; }
-.sb-language-search input::placeholder { color:#74816d; font-size:12px; font-weight:400; opacity:1; }
+.sb-language-search input::placeholder { color:#626f5c; font-size:12px; font-weight:400; opacity:1; }
 .sb-language-crop-list { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px; }
 .sb-language-crop { min-width:0; display:flex; align-items:center; gap:9px; min-height:77px; background:#fbfcf8; border:1px solid #e9ede4; border-radius:11px; padding:10px; text-align:start; color:var(--language-ink); }
 .sb-language-crop:hover { background:#f4f7ec; border-color:#b4c7a7; }
@@ -68,9 +68,9 @@
 .sb-language-crop-art > img[hidden] { display:none; }
 .sb-language-crop-name { display:flex; flex-direction:column; gap:3px; min-width:0; }
 .sb-language-crop-name strong { font-size:13px; line-height:1.7; font-weight:650; overflow-wrap:anywhere; }
-.sb-language-crop-name small { color:#74806f; font-family:Arial, sans-serif; font-size:10px; line-height:1.4; overflow-wrap:anywhere; }
+.sb-language-crop-name small { color:#626f5c; font-family:Arial, sans-serif; font-size:11px; line-height:1.4; overflow-wrap:anywhere; }
 .sb-language-show-more { display:flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:12px; width:100%; margin-block-start:12px; background:transparent; border:1px solid var(--language-line); border-radius:9px; color:#516d47; font-size:12px !important; font-weight:600 !important; }
-.sb-language-small-note { color:#74806f; font-size:11px; line-height:1.9; margin-block-start:16px !important; }
+.sb-language-small-note { color:#626f5c; font-size:12px; line-height:1.9; margin-block-start:16px !important; }
 .sb-language-status { padding:35px 12px; font-size:13px; line-height:1.9; text-align:center; color:#627367; }
 .sb-language-status button, .sb-language-price-status button { color:inherit; text-decoration:underline; text-underline-offset:4px; background:transparent; border:0; min-height:44px; font-weight:650; }
 .sb-language-price-side { display:flex; flex-direction:column; gap:15px; min-width:0; }
@@ -110,8 +110,8 @@
 .sb-language-method { display:flex; align-items:flex-start; gap:12px; padding:20px; background:#f2edda; border:1px solid #e8dfc3; border-radius:15px; }
 .sb-language-method > svg { margin-block-start:4px; color:#9b7e33; }
 .sb-language-method h3 { margin:0 0 8px; font-size:14px; font-weight:650; line-height:1.7; }
-.sb-language-method p { color:#7b735b; font-size:12px; line-height:1.95; }
-.sb-language-price-disclaimer { color:#7a816e; font-size:11px; line-height:1.9; margin:14px 4px 0 !important; }
+.sb-language-method p { color:#6b634e; font-size:12px; line-height:1.95; }
+.sb-language-price-disclaimer { color:#596a53; font-size:12px; line-height:1.9; margin:14px 4px 0 !important; }
 .sb-language-delivery-grid { display:grid; grid-template-columns:minmax(0, 1.25fr) minmax(0, .85fr); gap:22px; align-items:start; }
 .sb-language-vehicle-choice { padding:0; margin:0; border:0; min-width:0; }
 .sb-language-vehicle-choice legend { font-size:12px; font-weight:650; margin-block-end:10px; }
@@ -137,15 +137,15 @@
 .sb-language-result dl > div { display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding-block:15px; border-block-end:1px solid #d6dfc9; }
 .sb-language-result dt { font-size:12px; line-height:1.8; color:#5f7056; }
 .sb-language-result dd { margin:0; font-size:15px; line-height:1.6; font-weight:650; font-variant-numeric:tabular-nums; text-align:end; overflow-wrap:anywhere; }
-.sb-language-result-instruction { font-size:13px; line-height:1.95; color:#758068; margin-block-end:24px !important; }
-.sb-language-estimate-note { display:flex; align-items:flex-start; gap:8px; margin-block-start:22px !important; color:#748065; font-size:11px; line-height:1.9; }
+.sb-language-result-instruction { font-size:13px; line-height:1.95; color:#596a53; margin-block-end:24px !important; }
+.sb-language-estimate-note { display:flex; align-items:flex-start; gap:8px; margin-block-start:22px !important; color:#596a53; font-size:12px; line-height:1.9; }
 .sb-language-estimate-note svg { margin-block-start:3px; }
 .sb-language-guides > p { font-size:13px; color:#6a7861; line-height:1.9; margin-block:-5px 18px; }
 .sb-language-guide-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; }
 .sb-language-guide-grid > a:only-child { grid-column:1/-1; }
 .sb-language-guide-grid > a { position:relative; display:flex; flex-direction:column; gap:12px; padding:22px; border:1px solid #dce3d7; background:#fffdf7; border-radius:15px; min-width:0; }
 .sb-language-guide-grid > a:hover { background:#f1f4e9; border-color:#b4c5a6; }
-.sb-language-guide-grid > a > span { display:block; color:#9b8450; font-size:18px; line-height:1.7; }
+.sb-language-guide-grid > a > span { display:block; color:#80692f; font-size:18px; line-height:1.7; }
 .sb-language-guide-grid strong { font-size:13px; line-height:1.9; padding-inline-end:25px; font-weight:650; }
 .sb-language-guide-grid svg { position:absolute; inset-inline-end:20px; inset-block-end:23px; color:#5c7a4e; }
 .sb-language-footer { margin-block-start:45px; padding-block:28px 35px; border-block-start:1px solid var(--language-line); }
@@ -153,11 +153,11 @@
 .sb-language-footer .sb-language-brand > img { width:34px; height:34px; }
 .sb-language-footer .sb-language-brand > span { font-size:22px; }
 .sb-language-footer-free { display:flex; align-items:center; gap:7px; font-size:12px; color:#6b7b5c; }
-.sb-language-footer > p { color:#7d8673; font-size:11px; line-height:1.9; max-width:850px; }
+.sb-language-footer > p { color:#596a53; font-size:12px; line-height:1.9; max-width:850px; }
 .sb-language-footer-links { display:flex; flex-wrap:wrap; gap:8px 24px; margin-block:14px 10px; }
 .sb-language-footer-links a { display:flex; align-items:center; min-height:44px; font-size:12px; color:#566b4d; }
 .sb-language-footer-links a:hover, .sb-language-sources a:hover { text-decoration:underline; text-underline-offset:4px; }
-.sb-language-sources { display:flex; align-items:center; flex-wrap:wrap; gap:8px 16px; color:#829077; font-size:10px; }
+.sb-language-sources { display:flex; align-items:center; flex-wrap:wrap; gap:8px 16px; color:#596a53; font-size:12px; }
 .sb-language-sources a { display:flex; align-items:center; min-height:36px; }
 .sb-language-page[dir='rtl'] .sb-language-button > svg:last-child, .sb-language-page[dir='rtl'] .sb-language-text-link > svg:last-child, .sb-language-page[dir='rtl'] .sb-language-history-link > svg, .sb-language-page[dir='rtl'] .sb-language-guide-grid > a > svg { transform:scaleX(-1); }
 @media (max-width:900px) {
@@ -227,9 +227,9 @@
   .sb-language-crop { padding:8px; gap:7px; min-height:72px; }
   .sb-language-crop-art { width:37px; height:37px; flex-basis:37px; }
   .sb-language-crop-name strong { font-size:12px; }
-  .sb-language-crop-name small { font-size:9px; }
+  .sb-language-crop-name small { font-size:11px; }
   .sb-language-crop > svg { width:13px; }
-  .sb-language-small-note, .sb-language-price-disclaimer { font-size:10px; }
+  .sb-language-small-note, .sb-language-price-disclaimer { font-size:12px; }
   .sb-language-vehicle-choice > div { gap:8px; }
   .sb-language-form-fields { gap:15px 12px; }
   .sb-language-form-fields label { font-size:11px; }

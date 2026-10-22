@@ -12,6 +12,7 @@ import Toast from './components/ui/Toast';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import AdminRoute from './components/auth/AdminRoute';
 import SEO from './components/SEO';
+import RouteScroll from './components/RouteScroll';
 
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage'));
@@ -99,6 +100,7 @@ function App({ prerender = false, initialPage }) {
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </Suspense>
+            <RouteScroll />
             <Toast />
           </StateProvider>
         </ConfirmProvider>

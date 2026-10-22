@@ -7,8 +7,8 @@ import EditorialImage from '@/components/EditorialImage';
 import LocalWeatherLinks from '@/components/LocalWeatherLinks';
 import { useApi } from '@/hooks/useApi';
 import { getTopicById } from '../../shared/cropTopics';
-import { EDITORIAL_LANGUAGES, getEditorialLabels, editorialDate, editorialCropName } from '@/utils/editorialLabels';
-import { getLanguage } from '../../shared/languages';
+import { EDITORIAL_LANGUAGES, getEditorialLabels, editorialDate, editorialCropName, editorialArticleLanguage } from '@/utils/editorialLabels';
+import { getLanguage, languagePath } from '../../shared/languages';
 import { readLanguageNavigation, buildLanguageChooserUrl, buildLanguageBlogUrl, buildArticleNavigationUrl, localizedToolsUrl, localizedPriceUrl, editorialNavigationUrl } from '@/utils/languageNavigation';
 import Markdown from 'react-markdown';
 import '@/styles/detail.css';
@@ -36,13 +36,14 @@ export default function BlogArticlePage() {
   const context = readLanguageNavigation(searchParams);
   const { data: post, loading, error } = useApi(`/cms/blog/${encodeURIComponent(slug)}`);
   const hasPost = post && typeof post.title === 'string';
-  const language = Object.hasOwn(EDITORIAL_LANGUAGES, post?.language) ? post.language : 'hi';
+  const language = Object.hasOwn(EDITORIAL_LANGUAGES, post?.language) ? post.language : editorialArticleLanguage(slug) || 'hi';
   const copy = getEditorialLabels(language);
   const languageInfo = getLanguage(language);
   const blogPath = buildLanguageBlogUrl(language, context);
   const marketPath = localizedToolsUrl(context, language);
-  const chooserPath = buildLanguageChooserUrl({ ...context, crop: context.sourceCrop });
+  const chooserPath = buildLanguageChooserUrl({ ...context, crop: context.sourceCrop, toolLanguage: context.toolLanguage || language });
   const linkedArticlePath = nextSlug => buildArticleNavigationUrl(nextSlug, context);
+  const translatedArticlePath = nextSlug => buildArticleNavigationUrl(nextSlug, { ...context, q: '', category: '', page: '' });
   const publishedDate = post?.publishedAt ? editorialDate(post.publishedAt, language) : null;
   const updatedDate = post?.updatedAt ? editorialDate(post.updatedAt, language) : null;
   const content = typeof post?.content === 'string' ? post.content : '';
@@ -63,7 +64,7 @@ export default function BlogArticlePage() {
   return <div className={`sb-journal-page sb-journal-article-page sb-language-surface sb-language-script-${languageInfo?.script || 'Devanagari'}`} lang={language} dir={languageInfo?.dir || 'ltr'}>
     <SEO title={hasPost ? (post.seoTitle || post.title) : copy.guides} description={hasPost ? (post.seoDescription || post.excerpt || post.title) : copy.intro} path={articlePath} noIndex={isMissing} image={coverImage} imageAlt={post?.coverAlt} type="article" language={language} alternates={alternates} structuredData={hasPost ? { '@context': 'https://schema.org', '@graph': [
       { '@type': 'BlogPosting', headline: post.title, description: post.seoDescription || post.excerpt || post.title, url: `${SITE_URL}${articlePath}`, mainEntityOfPage: `${SITE_URL}${articlePath}`, inLanguage: language, ...(publishedDate ? { datePublished: post.publishedAt } : {}), ...(updatedDate ? { dateModified: post.updatedAt } : {}), ...(coverImage ? { image: [coverImage] } : {}), ...(post.category ? { articleSection: post.category } : {}), ...(post.author ? { author: { '@type': post.authorType === 'Organization' ? 'Organization' : 'Person', name: post.author } } : {}), publisher: { '@type': 'Organization', name: 'SahiBhav', url: SITE_URL } },
-      { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: copy.brand, item: `${SITE_URL}/` }, { '@type': 'ListItem', position: 2, name: copy.guide, item: `${SITE_URL}/blog` }, { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}${articlePath}` }] },
+      { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: copy.brand, item: `${SITE_URL}${languagePath(language)}` }, { '@type': 'ListItem', position: 2, name: copy.guide, item: `${SITE_URL}${buildLanguageBlogUrl(language)}` }, { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}${articlePath}` }] },
     ] } : undefined} />
     <a className="sb-journal-skip" href="#main-content">{copy.skip}</a>
     <header className="sb-journal-header"><div className="sb-journal-header__inner"><Link to={marketPath} aria-label={copy.home}><Brand /></Link><Link to={chooserPath} className="sb-journal-back">{copy.language}</Link><Link to={blogPath} className="sb-journal-back"><ArrowLeft size={16} aria-hidden="true" />{copy.allGuides}</Link></div></header>
@@ -78,7 +79,7 @@ export default function BlogArticlePage() {
             <h1>{post.title}</h1>{post.excerpt && <p className="sb-journal-deck">{post.excerpt}</p>}
             <div className="sb-journal-byline">{post.author && <span><UserRound size={15} aria-hidden="true" /><bdi lang={post.authorType === 'Organization' ? 'hi' : undefined}>{post.author}</bdi></span>}{publishedDate && <span><CalendarDays size={15} aria-hidden="true" />{copy.published}: <time dateTime={post.publishedAt}><bdi>{publishedDate}</bdi></time></span>}{updatedDate && <span>{copy.updated}: <time dateTime={post.updatedAt}><bdi>{updatedDate}</bdi></time></span>}</div>
             {(post.editorialNote || post.authorType === 'Organization') && <p className="sb-journal-editorial-note">{post.editorialNote || copy.editorial}</p>}
-            {translations.length > 1 && <nav className="sb-journal-translations" aria-label={copy.changeLanguage}><span><Languages size={16} aria-hidden="true" />{copy.changeLanguage}</span><div>{translations.map(item => item.language === language ? <span key={item.language} lang={item.language} dir={getLanguage(item.language)?.dir} aria-current="page">{EDITORIAL_LANGUAGES[item.language]}</span> : <Link key={item.language} to={linkedArticlePath(item.slug)} lang={item.language} dir={getLanguage(item.language)?.dir} hrefLang={item.language}>{EDITORIAL_LANGUAGES[item.language]}</Link>)}</div></nav>}
+            {translations.length > 1 && <nav className="sb-journal-translations" aria-label={copy.changeLanguage}><span><Languages size={16} aria-hidden="true" />{copy.changeLanguage}</span><div>{translations.map(item => item.language === language ? <span key={item.language} lang={item.language} dir={getLanguage(item.language)?.dir} aria-current="page">{EDITORIAL_LANGUAGES[item.language]}</span> : <Link key={item.language} to={translatedArticlePath(item.slug)} lang={item.language} dir={getLanguage(item.language)?.dir} hrefLang={item.language}>{EDITORIAL_LANGUAGES[item.language]}</Link>)}</div></nav>}
           </header>
           <figure className="sb-journal-cover"><EditorialImage src={post.coverImage} alt={post.coverAlt || post.title} language={language} width="1672" height="941" fetchPriority="high" sizes="(max-width: 1200px) calc(100vw - 32px), 1100px" />{post.coverImage && <figcaption>{post.coverCaption || copy.caption}</figcaption>}</figure>
           <div className="sb-journal-reading-layout"><div className="sb-journal-reading-main">

@@ -5,7 +5,7 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useApi } from "./hooks/useApi";
 import { useStateContext } from "./context/StateContext";
 import { useAuth } from "./context/AuthContext";
-import { FALLBACK_CROPS, FALLBACK_SEASONS, FALLBACK_REGIONS } from "./data/constants";
+import { FALLBACK_CROPS, FALLBACK_REGIONS } from "./data/constants";
 import { tabVariants } from "./utils/animations";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -77,7 +77,7 @@ export default function SahiBhavDashboard() {
   const { selectedState, selectStateDirect, stateNameHi, isCG, stateParam } = useStateContext();
 
   const stateQuery = stateParam !== "all" ? `?state=${stateParam}` : "?state=all";
-  const { data: apiCrops, loading: cropsLoading } = useApi(`/crops${stateQuery}`);
+  const { data: apiCrops, loading: cropsLoading, error: cropsError } = useApi(`/crops${stateQuery}`);
   const { data: apiMandis, loading: mandisLoading, error: mandisError } = useApi(`/mandis${stateQuery}`);
   const { data: apiDistricts, loading: districtsLoading, error: districtsError } = useApi(`/districts${stateQuery}`);
   const { data: apiHeatmap } = useApi(`/mandis/heatmap${stateQuery}`);
@@ -86,7 +86,6 @@ export default function SahiBhavDashboard() {
   const { data: notifications } = useApi(`/cms/notifications${stateParam !== 'all' ? `?state=${stateParam}` : ''}`);
 
   const crops = apiCrops || FALLBACK_CROPS;
-  const seasons = FALLBACK_SEASONS;
   const mandis = apiMandis || [];
   const districts = apiDistricts || [];
   const heatmap = apiHeatmap || {};
@@ -157,7 +156,7 @@ export default function SahiBhavDashboard() {
     <div className="sb-dashboard">
       <a href="#main-content" className="sb-skip-link">मुख्य जानकारी पर जाएँ</a>
       <SEO
-        title={activeTab === 'delivery' ? 'डिलीवरी खर्च और माल की कुल लागत' : `${stateNameHi} मंडी भाव`}
+        title={activeTab === 'calendar' ? 'किसान कैलेंडर — महीनेवार फसल योजना' : activeTab === 'delivery' ? 'डिलीवरी खर्च और माल की कुल लागत' : `${stateNameHi} मंडी भाव`}
         description={`${stateNameHi} की मंडियों के उपलब्ध दर्ज भाव। सब्ज़ी, अनाज, दाल — फसल भाव, मंडी तुलना और बिक्री कैलकुलेटर।`}
         path={selectedState ? `/mandi-bhav/${selectedState}` : "/"}
       />
@@ -342,7 +341,7 @@ export default function SahiBhavDashboard() {
         {activeTab !== "prices" && (
           <div className="sb-section-heading">
             <p className="sb-eyebrow">{stateNameHi} · सही भाव</p>
-            <h1>{TAB_ITEMS.find(tab => tab.value === activeTab)?.label}</h1>
+            <h1>{activeTab === 'calendar' ? 'किसान कैलेंडर' : TAB_ITEMS.find(tab => tab.value === activeTab)?.label}</h1>
           </div>
         )}
         <CropImageLegend />
@@ -353,7 +352,7 @@ export default function SahiBhavDashboard() {
             transition={{ duration: 0.15 }}>
             <Suspense fallback={<div role="status" className="py-12 text-center text-muted-foreground">जानकारी खुल रही है…</div>}>
             {activeTab === "prices" && <PricesTab crops={crops} stateParam={stateParam} initialCropId={jumpToCrop} onCropConsumed={() => setJumpToCrop(null)} onMandiClick={handleMandiClick} onDeliveryCalculate={handleDeliveryCalculate}/>}
-            {activeTab === "calendar" && <CalendarTab selectedMonth={selectedMonth} crops={crops} seasons={seasons} isCG={isCG}/>}
+            {activeTab === "calendar" && <CalendarTab crops={apiCrops || []} loading={cropsLoading} error={cropsError} stateName={stateNameHi} stateParam={stateParam} onCropClick={handleCropClick}/>}
             {activeTab === "mandis" && <MandisTab selectedMonth={selectedMonth} heatmap={heatmap} regions={isCG ? FALLBACK_REGIONS : null} stateParam={stateParam} onCropClick={handleCropClick} jumpToMandi={jumpToMandi} onMandiConsumed={() => setJumpToMandi(null)}/>}
             {activeTab === "naksha" && <NakshaTab key={stateParam} districts={districts} mandis={mandis} states={states} crops={cropsLoading ? [] : apiCrops || []} cropDataReady={!cropsLoading && Array.isArray(apiCrops)} loading={selectedState ? districtsLoading || mandisLoading : statesLoading} error={selectedState ? districtsError || mandisError : statesError} onDeliveryCalculate={handleDeliveryCalculate}/>}
             {activeTab === "bazaar" && <BazaarTab />}

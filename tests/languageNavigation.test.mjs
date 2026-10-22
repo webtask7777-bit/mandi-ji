@@ -6,6 +6,7 @@ import { EDITORIAL_LANGUAGE_CODES } from '../shared/editorialLanguages.js';
 import {
   readLanguageNavigation, buildLanguageChooserUrl, buildLanguageBlogUrl,
   buildArticleNavigationUrl, localizedToolsUrl, localizedPriceUrl, editorialNavigationUrl,
+  buildHindiCropDetailUrl, dashboardLanguageContext, dashboardLanguageSection,
 } from '../src/utils/languageNavigation.js';
 
 const context = { toolLanguage: 'ta', state: 'tamil-nadu', sourceCrop: 'paddycommon', crop: 'paddy' };
@@ -36,6 +37,12 @@ test('chooser carries the exact tool selection across language choice', () => {
   assert.equal(url.searchParams.get('state'), 'tamil-nadu');
   assert.equal(buildLanguageChooserUrl({ state: 'all', crop: 'tomato' }), '/languages?crop=tomato');
   assert.equal(buildLanguageChooserUrl(), '/languages');
+  const delivery = parse(buildLanguageChooserUrl({ ...context, toolSection: 'delivery' }));
+  assert.equal(readLanguageNavigation(delivery.search).toolSection, 'delivery');
+  for (const section of ['https://evil.test', 'delivery#other', 'unknown']) {
+    assert.equal(readLanguageNavigation(`?toolSection=${encodeURIComponent(section)}`).toolSection, undefined);
+    assert.equal(parse(buildLanguageChooserUrl({ toolSection: section })).searchParams.has('toolSection'), false);
+  }
 });
 
 test('price links retain explicit commodity and regional scope while adopting the reader tool language', () => {
@@ -80,15 +87,53 @@ test('article content links keep context but honor an explicit destination filte
   assert.equal(buildLanguageBlogUrl('https://evil.test'), '/blog');
 });
 
+test('article round-trip preserves bounded native search, category and pagination separately from tool context', () => {
+  const search = { ...context, q: 'टमाटर & ढुलाई', category: 'मंडी और लागत', page: '2' };
+  const article = parse(buildArticleNavigationUrl('a-guide', search));
+  const retained = readLanguageNavigation(article.search);
+  assert.deepEqual(retained, search);
+  const library = parse(buildLanguageBlogUrl('hi', retained));
+  assert.equal(library.searchParams.get('q'), search.q);
+  assert.equal(library.searchParams.get('category'), search.category);
+  assert.equal(library.searchParams.get('page'), '2');
+  assert.equal(parse(localizedToolsUrl(retained, 'hi')).searchParams.has('q'), false, 'editorial search never becomes a price filter');
+  assert.equal(readLanguageNavigation('?q=first&q=second').q, 'first', 'filter reading agrees with the rendered library');
+  const unsafe = readLanguageNavigation(`?q=${'a'.repeat(300)}&category=%00native%0A&page=900000000`);
+  assert.equal(unsafe.q.length, 160);
+  assert.equal(unsafe.category, 'native');
+  assert.equal(unsafe.page, undefined);
+  for (const page of ['-1', '0', '1', '2e3', '2.5', 'NaN']) assert.equal(readLanguageNavigation(`?page=${page}`).page, undefined);
+});
+
+test('Hindi detail continuation keeps a validated native language and exact scoped crop', () => {
+  assert.equal(buildHindiCropDetailUrl('tomato', 'tamil-nadu', 'ta'), '/mandi-bhav/tamil-nadu/tomato?toolLanguage=ta');
+  assert.equal(buildHindiCropDetailUrl('paddycommon', 'daman-diu', 'ur'), '/mandi-bhav/dadra-daman/paddycommon?toolLanguage=ur');
+  assert.equal(buildHindiCropDetailUrl('tomato', 'all', 'kok'), '/crop/tomato');
+  const link = parse(buildHindiCropDetailUrl('tomato', 'tamil-nadu', 'ta'));
+  const navigation = readLanguageNavigation(link.search);
+  assert.equal(localizedToolsUrl({ ...navigation, state: 'tamil-nadu', sourceCrop: 'tomato' }, 'hi', 'prices'), '/ta/mandi-bhav?state=tamil-nadu&crop=tomato#language-prices');
+});
+
+test('dashboard language entry retains region and exact map crop without guessing a crop family', () => {
+  const scoped = dashboardLanguageContext('/mandi-bhav/tamil-nadu', '?tab=naksha&mapCrop=paddycommon&state=punjab');
+  assert.equal(localizedToolsUrl({ ...scoped, toolLanguage: 'ta' }), '/ta/mandi-bhav?state=tamil-nadu&crop=paddycommon');
+  assert.equal(dashboardLanguageContext('/', '?state=dadra-nagar-haveli').state, 'dadra-daman');
+  assert.equal(dashboardLanguageContext('/', '?state=unknown-state').state, 'unknown-state');
+  assert.equal(dashboardLanguageContext('/', '?crop=paddy').sourceCrop, '');
+  assert.equal(dashboardLanguageSection('/delivery-calculator'), 'delivery');
+  assert.equal(dashboardLanguageSection('/mandi-bhav/tamil-nadu', '?tab=delivery'), 'delivery');
+  assert.equal(dashboardLanguageSection('/mandi-bhav/tamil-nadu', '?tab=prices'), '');
+});
+
 const hasSSR = existsSync(new URL('../dist-ssr/entry-server.js', import.meta.url));
 const posts = JSON.parse(readFileSync(new URL('../server/db/data/blog-posts.json', import.meta.url), 'utf8'));
 const linkedUrls = html => [...html.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>/g)].map(match => parse(match[1].replaceAll('&amp;', '&')));
 const seoLinkedUrls = html => [...html.matchAll(/<link\b[^>]*>/g)]
   .filter(match => /\brel="(?:canonical|alternate)"/.test(match[0]))
   .map(match => parse(match[0].match(/\bhref="([^"]+)"/)[1].replaceAll('&amp;', '&')));
-async function renderNavigationPage(route) {
+async function renderNavigationPage(route, initialResponses = {}) {
   const { renderPage } = await import('../dist-ssr/entry-server.js');
-  const responses = {};
+  const responses = { ...initialResponses };
   let result;
   for (let pass = 0; pass < 3; pass++) {
     result = await renderPage(route, responses);
@@ -104,6 +149,23 @@ async function renderNavigationPage(route) {
   return result;
 }
 
+test('rendered Hindi detail offers a native return using route scope while keeping Hindi SEO', { skip: hasSSR ? false : 'Build the SSR bundle first.' }, async () => {
+  const result = await renderNavigationPage('/mandi-bhav/tamil-nadu/tomato?toolLanguage=ta&state=punjab&sourceCrop=wheat', {
+    '/prices/tomato?months=13&state=tamil-nadu': { data: { crop: { id: 'tomato', name: 'Tomato', nameHi: 'टमाटर' }, history: [], dailyHistory: [], districtBreakdown: [] } },
+    '/mandi-compare/tomato?state=tamil-nadu': { data: [] },
+    '/ticker?state=tamil-nadu': { data: [] },
+  });
+  const native = linkedUrls(result.html).filter(url => url.pathname === '/ta/mandi-bhav');
+  assert.ok(native.length >= 1, 'Hindi detail has an in-app native return');
+  for (const url of native) {
+    assert.equal(url.searchParams.get('state'), 'tamil-nadu');
+    assert.equal(url.searchParams.get('crop'), 'tomato');
+    assert.equal(url.hash, '#language-prices');
+  }
+  assert.match(result.head + result.html, /rel="canonical"[^>]+href="https:\/\/mandi-ji.vercel.app\/mandi-bhav\/tamil-nadu\/tomato"/);
+  assert.match(result.head + result.html, /property="og:locale"[^>]+content="hi_IN"/);
+});
+
 test('rendered chooser preserves price scope while changing the tool language', { skip: hasSSR ? false : 'Build the SSR bundle first.' }, async () => {
   const result = await renderNavigationPage('/languages?state=tamil-nadu&crop=paddycommon');
   const links = linkedUrls(result.html).filter(url => url.pathname.endsWith('/mandi-bhav'));
@@ -113,6 +175,25 @@ test('rendered chooser preserves price scope while changing the tool language', 
     assert.equal(link.searchParams.get('crop'), 'paddycommon');
   }
   assert.match(result.head + result.html, /rel="canonical"[^>]+href="https:\/\/sahibhav.in\/languages"/);
+});
+
+test('delivery language choice retains the calculator destination without a saved language', { skip: hasSSR ? false : 'Build the SSR bundle first.' }, async () => {
+  const { renderPage } = await import('../dist-ssr/entry-server.js');
+  const delivery = await renderPage('/delivery-calculator?state=tamil-nadu&sourceCrop=paddycommon', {});
+  const chooser = linkedUrls(delivery.html).find(url => url.pathname === '/languages');
+  assert.ok(chooser, 'the delivery page exposes the language chooser before a preference is saved');
+  assert.equal(chooser.searchParams.get('toolSection'), 'delivery');
+  const result = await renderNavigationPage(`${chooser.pathname}${chooser.search}`);
+  const choices = linkedUrls(result.html).filter(url => url.pathname.endsWith('/mandi-bhav'));
+  assert.equal(choices.length, 18);
+  for (const url of choices) {
+    assert.equal(url.searchParams.get('state'), 'tamil-nadu');
+    assert.equal(url.searchParams.get('crop'), 'paddycommon');
+    assert.equal(url.hash, '#language-delivery');
+  }
+  const native = await renderPage('/ta/mandi-bhav?state=tamil-nadu&crop=paddycommon#language-delivery', {});
+  const nativeChooser = linkedUrls(native.html).find(url => url.pathname === '/languages');
+  assert.equal(nativeChooser.searchParams.get('toolSection'), 'delivery', 'another language choice keeps the active calculator section');
 });
 
 test('rendered articles keep their real language, clean SEO URLs and original tool context', { skip: hasSSR ? false : 'Build the SSR bundle first.' }, async () => {

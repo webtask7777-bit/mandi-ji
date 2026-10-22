@@ -4,8 +4,7 @@ import { ArrowUpRight, Check, Globe2, Languages, Search, Sprout } from 'lucide-r
 import SEO, { SITE_URL } from '../components/SEO';
 import { LANGUAGES, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, languagePath, getLanguage } from '../../shared/languages.js';
 import { useRememberedLanguage, useSuggestedLanguage } from '../hooks/useLanguagePreference';
-import { buildLanguageToolsUrl } from '../utils/languageTools';
-import { readLanguageNavigation, buildLanguageBlogUrl } from '../utils/languageNavigation';
+import { readLanguageNavigation, buildLanguageBlogUrl, localizedToolsUrl } from '../utils/languageNavigation';
 import '../styles/language-fonts.css';
 import '../styles/language-chooser.css';
 
@@ -14,7 +13,7 @@ export default function LanguagesPage() {
   const [searchParams] = useSearchParams();
   const context = readLanguageNavigation(searchParams);
   const selection = { state: context.state, crop: context.crop || context.sourceCrop };
-  const toolsPath = code => buildLanguageToolsUrl(code, selection);
+  const toolsPath = code => localizedToolsUrl({ ...context, toolLanguage: code, sourceCrop: selection.crop }, code, context.toolSection);
   const saved = useRememberedLanguage();
   const suggested = useSuggestedLanguage();
   const filtered = LANGUAGES.filter(item => `${item.name} ${item.english} ${item.code}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()));

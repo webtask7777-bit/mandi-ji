@@ -6,9 +6,9 @@ import EditorialImage from '@/components/EditorialImage';
 import LocalWeatherLinks from '@/components/LocalWeatherLinks';
 import NotFoundPage from './NotFoundPage';
 import { useApi } from '@/hooks/useApi';
-import { STATE_NAMES } from '@/context/StateContext';
+import { INDIA_REGIONS, getIndiaRegion, normalizeRegionId } from '../../shared/indiaRegions';
 import { getCropTopic } from '../../shared/cropTopics';
-import { EDITORIAL_LANGUAGES, getEditorialLabels, editorialDate, editorialCropName, editorialStateName } from '@/utils/editorialLabels';
+import { EDITORIAL_LANGUAGES, getEditorialLabels, editorialDate, editorialCropName, editorialStateName, editorialStateLanguage } from '@/utils/editorialLabels';
 import { getLanguage } from '../../shared/languages';
 import { readLanguageNavigation, buildLanguageChooserUrl, buildLanguageBlogUrl, buildArticleNavigationUrl, localizedToolsUrl } from '@/utils/languageNavigation';
 import '@/styles/editorial.css';
@@ -35,11 +35,11 @@ function BlogLibraryPage({ routeLanguage }) {
   const languageInfo = getLanguage(language);
   const context = readLanguageNavigation(searchParams);
   const marketPath = localizedToolsUrl(context, language);
-  const chooserPath = buildLanguageChooserUrl({ ...context, crop: context.sourceCrop });
-  const resetPath = buildLanguageBlogUrl(language, { ...context, crop: '', state: '' });
+  const chooserPath = buildLanguageChooserUrl({ ...context, crop: context.sourceCrop, toolLanguage: context.toolLanguage || language });
+  const resetPath = buildLanguageBlogUrl(language, { ...context, crop: '', state: '', q: '', category: '', page: '' });
   const articlePath = slug => buildArticleNavigationUrl(slug, context);
   const crop = searchParams.get('crop') || '';
-  const state = searchParams.get('state') || '';
+  const state = normalizeRegionId(searchParams.get('state') || '');
   const category = searchParams.get('category') || '';
   const query = searchParams.get('q') || '';
   const page = Math.max(1, Number.parseInt(searchParams.get('page'), 10) || 1);
@@ -62,6 +62,7 @@ function BlogLibraryPage({ routeLanguage }) {
 
   function updateFilter(key, value) {
     const next = new URLSearchParams(searchParams);
+    if (state) next.set('state', state);
     next.delete('language');
     next.delete('page');
     // Topic labels can differ between languages; keep crop/state intent, reset the category.
@@ -85,6 +86,7 @@ function BlogLibraryPage({ routeLanguage }) {
   }
   function pagePath(nextPage) {
     const next = new URLSearchParams(searchParams);
+    if (state) next.set('state', state);
     next.delete('language');
     if (nextPage > 1) next.set('page', String(nextPage)); else next.delete('page');
     return `${libraryPath}${next.size ? `?${next}` : ''}`;
@@ -103,8 +105,8 @@ function BlogLibraryPage({ routeLanguage }) {
           {context.toolLanguage && <input type="hidden" name="toolLanguage" value={context.toolLanguage} />}
           {context.sourceCrop && <input type="hidden" name="sourceCrop" value={context.sourceCrop} />}
           <label><span>{copy.crop}</span><select name="crop" value={crop} onChange={event => updateFilter('crop', event.target.value)}><option value="">{copy.allCrops}</option>{crop && !selectedCropInFacets && <option value={crop}>{editorialCropName(selectedTopic?.id || crop, selectedTopic?.nameHi || crop, language)}</option>}{cropFacets.map(item => <option key={item.id} value={item.id}>{editorialCropName(item.id, item.nameHi, language)} ({item.count})</option>)}</select></label>
-          <label><span>{copy.state}</span><select name="state" value={state} onChange={event => updateFilter('state', event.target.value)}><option value="">{copy.allStates}</option>{state && !Object.hasOwn(STATE_NAMES, state) && <option value={state}>{state}</option>}{Object.entries(STATE_NAMES).map(([id, name]) => <option key={id} value={id}>{editorialStateName(id, name, language)}</option>)}</select></label>
-          <label><span>{copy.language}</span><select name="language" value={language} onChange={event => updateFilter('language', event.target.value)}>{Object.entries(EDITORIAL_LANGUAGES).map(([id, name]) => <option key={id} value={id}>{name}{languageFacets.some(item => item.id === id) ? ` (${languageFacets.find(item => item.id === id).count})` : ''}</option>)}</select></label>
+          <label><span>{copy.state}</span><select name="state" value={state} onChange={event => updateFilter('state', event.target.value)}><option value="">{copy.allStates}</option>{state && !getIndiaRegion(state) && <option value={state} lang="en" dir="ltr">{state}</option>}{INDIA_REGIONS.map(({ id, nameHi }) => <option key={id} value={id} lang={editorialStateLanguage(id, language)} dir={getLanguage(editorialStateLanguage(id, language))?.dir || 'ltr'}>{editorialStateName(id, nameHi, language)}</option>)}</select></label>
+          <label><span>{copy.language}</span><select name="language" value={language} onChange={event => updateFilter('language', event.target.value)}>{Object.entries(EDITORIAL_LANGUAGES).map(([id, name]) => <option key={id} value={id} lang={id} dir={getLanguage(id)?.dir || 'ltr'}>{name}{languageFacets.some(item => item.id === id) ? ` (${languageFacets.find(item => item.id === id).count})` : ''}</option>)}</select></label>
           <label><span>{copy.category}</span><select name="category" value={category} onChange={event => updateFilter('category', event.target.value)}><option value="">{copy.allCategories}</option>{category && !categoryFacets.some(item => item.name === category) && <option value={category}>{category}</option>}{categoryFacets.map(item => <option key={item.name} value={item.name}>{item.name} ({item.count})</option>)}</select></label>
           <label className="sb-journal-search-field"><span>{copy.search}</span><input key={query} name="q" type="search" defaultValue={query} maxLength={160} placeholder={copy.searchPlaceholder} /></label>
           <div className="sb-journal-search-actions"><button type="submit" className="sb-journal-button"><Search size={16} aria-hidden="true" />{copy.apply}</button>{hasFilters && <Link to={resetPath}>{copy.reset}</Link>}</div>

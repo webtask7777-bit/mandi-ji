@@ -1,4 +1,4 @@
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, TrendingUp, TrendingDown, Minus, MapPin, Clock3, ShoppingCart, Calculator, Info, AlertCircle, RefreshCw } from 'lucide-react';
 import { useApi } from '../hooks/useApi';
 import { STATE_NAMES } from '../context/StateContext';
@@ -13,6 +13,9 @@ import PriceHistory from '../components/PriceHistory';
 import { getDataFreshness } from '../utils/dataFreshness';
 import { comparableChange, gapNote } from '../utils/priceChange';
 import { cropDetailPath } from '../utils/cropUrls';
+import { getLanguage } from '../../shared/languages';
+import { normalizeRegionId } from '../../shared/indiaRegions';
+import { readLanguageNavigation, localizedToolsUrl } from '../utils/languageNavigation';
 import '../styles/detail.css';
 
 const MONTH_HI = {
@@ -41,9 +44,13 @@ function formatTimestamp(value) {
 export default function CropDetailPage() {
   const { cropId, stateId } = useParams();
   const navigate = useNavigate();
-  const stateParam = stateId || 'all';
-  const stateNameHi = stateId ? (STATE_NAMES[stateId] || stateId) : 'भारत';
-  const dashboardPath = stateId ? `/mandi-bhav/${encodeURIComponent(stateId)}` : '/';
+  const [searchParams] = useSearchParams();
+  const navigation = readLanguageNavigation(searchParams);
+  const returnLanguage = getLanguage(navigation.toolLanguage);
+  const stateParam = normalizeRegionId(stateId) || 'all';
+  const stateNameHi = stateId ? (STATE_NAMES[stateParam] || stateParam) : 'भारत';
+  const dashboardPath = stateId ? `/mandi-bhav/${encodeURIComponent(stateParam)}` : '/';
+  const nativeReturnPath = returnLanguage ? localizedToolsUrl({ toolLanguage: returnLanguage.code, state: stateParam, sourceCrop: cropId }, 'hi', 'prices') : null;
   const stateQuery = encodeURIComponent(stateParam);
   const cropQuery = encodeURIComponent(cropId);
   const { data: priceData, loading: priceLoading, error: priceError } = useApi(`/prices/${cropQuery}?months=13&state=${stateQuery}`);
@@ -88,7 +95,7 @@ export default function CropDetailPage() {
         ] } : undefined} />
       <header className="sb-detail-header"><div className="sb-detail-header__inner">
         <Link to="/" aria-label="सही भाव के मुख्य पृष्ठ पर जाएँ"><Brand /></Link>
-        <Link to={dashboardPath} className="sb-detail-back"><ArrowLeft size={16} aria-hidden="true" /> {stateNameHi} के मंडी भाव</Link>
+        <Link to={nativeReturnPath || dashboardPath} className="sb-detail-back"><ArrowLeft size={16} aria-hidden="true" />{returnLanguage ? <bdi lang={returnLanguage.code} dir={returnLanguage.dir}>{returnLanguage.name} · SahiBhav</bdi> : <span>{stateNameHi} के मंडी भाव</span>}</Link>
       </div></header>
       <main className="sb-detail-main" id="main-content">
         <nav className="sb-detail-breadcrumb" aria-label="पृष्ठ पथ"><Link to={dashboardPath}>{stateNameHi} के मंडी भाव</Link><span aria-hidden="true">/</span><span>{cropName}</span></nav>
@@ -134,7 +141,7 @@ export default function CropDetailPage() {
         </div>}
         <KccCropProblems cropId={cropId} cropName={cropName} stateId={stateParam} />
         <CropGuides cropId={cropId} cropName={cropName} stateId={stateParam} />
-        <footer className="sb-detail-footer"><Brand compact /><p>सही भाव। समझकर फ़ैसला।</p><Link to={dashboardPath}>मुख्य पृष्ठ पर जाएँ <ArrowRight size={15} aria-hidden="true" /></Link></footer>
+        <footer className="sb-detail-footer"><Brand compact /><p>सही भाव। समझकर फ़ैसला।</p><Link to={nativeReturnPath || dashboardPath}>{returnLanguage ? <bdi lang={returnLanguage.code} dir={returnLanguage.dir}>{returnLanguage.name} · SahiBhav</bdi> : 'मुख्य पृष्ठ पर जाएँ'} <ArrowRight size={15} aria-hidden="true" /></Link></footer>
       </main>
     </div>
   );

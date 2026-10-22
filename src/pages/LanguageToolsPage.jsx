@@ -8,9 +8,8 @@ import { useApi } from '../hooks/useApi';
 import SEO from '../components/SEO';
 import NotFoundPage from './NotFoundPage';
 import CropImage from '../components/CropImage';
-import { cropDetailPath } from '../utils/cropUrls';
 import { buildLanguageToolsUrl, calculateDeliveryEstimate, latestPriceRecord, normalizePriceHistory } from '../utils/languageTools';
-import { buildLanguageBlogUrl, buildLanguageChooserUrl } from '../utils/languageNavigation';
+import { buildLanguageBlogUrl, buildLanguageChooserUrl, buildHindiCropDetailUrl, localizedToolsUrl } from '../utils/languageNavigation';
 import '../styles/languages.css';
 import '../styles/language-fonts.css';
 
@@ -51,7 +50,7 @@ function LanguageTools({ language, copy: t }) {
   const selectionKey = `${selectedState || requestedState}:${selectedCrop?.id || requestedCrop || ''}`;
   const historyBasis = historySelection?.key === selectionKey && priceHistory[historySelection.basis]?.length ? historySelection.basis : record?.basis || 'daily';
   const historyRows = priceHistory[historyBasis];
-  const navigationContext = { state: selectedState || requestedState, crop: selectedCrop?.id || requestedCrop, sourceCrop: selectedCrop?.id || requestedCrop, toolLanguage: language.code };
+  const navigationContext = { state: selectedState || requestedState, crop: selectedCrop?.id || requestedCrop, sourceCrop: selectedCrop?.id || requestedCrop, toolLanguage: language.code, toolSection: location.hash.replace(/^#language-/, '') };
   const chooserUrl = buildLanguageChooserUrl(navigationContext);
   const guideLinks = SEARCH_LANGUAGES.some(item => item.code === language.code) ? [{ code: language.code, key: 'guides' }] : FALLBACK_GUIDES;
   const sourceName = selectedCrop?.name || selectedCrop?.nameEn || selectedCrop?.id;
@@ -68,7 +67,7 @@ function LanguageTools({ language, copy: t }) {
     navigate(buildLanguageToolsUrl(language.code, { state, crop }), { replace: true });
   };
   const switchLanguage = code => {
-    navigate(buildLanguageToolsUrl(code, { state: selectedState || requestedState, crop: selectedCrop?.id || requestedCrop }));
+    navigate(localizedToolsUrl({ ...navigationContext, toolLanguage: code }, code, navigationContext.toolSection));
   };
   const rememberLanguage = () => {
     try {
@@ -147,14 +146,14 @@ function LanguageTools({ language, copy: t }) {
               {historyRows.length ? <div className="sb-language-history-scroll" role="region" tabIndex={0} aria-label={`${cropName} · ${t[historyBasis]}`}>
                 <table id="language-price-table"><caption className="sb-language-sr">{cropName} · {t[historyBasis]} · {t.perQuintal}</caption><thead><tr><th scope="col">{t.recorded}</th><th scope="col">{t.prices}</th></tr></thead><tbody>{historyRows.map((item, index) => <tr key={`${item.date}-${index}`}><th scope="row"><time dateTime={item.date}>{formatLanguageDate(item.date, language.code)}</time></th><td><bdi>{currency(item.market)}</bdi></td></tr>)}</tbody></table>
               </div> : <p id="language-price-table" className="sb-language-status">{t.empty}</p>}
-              <Link className="sb-language-history-link" to={cropDetailPath(selectedCrop.id, selectedState)}>{t.detailsHindi}<ArrowRight size={16} aria-hidden="true" /></Link>
+              <Link className="sb-language-history-link" to={buildHindiCropDetailUrl(selectedCrop.id, selectedState, language.code)}>{t.detailsHindi}<ArrowRight size={16} aria-hidden="true" /></Link>
             </section>}
             <div className="sb-language-method"><CircleHelp size={21} aria-hidden="true" /><div><h3>{t.methodTitle}</h3><p>{t.methodBody}</p></div></div>
           </div>
         </div>
         <p className="sb-language-price-disclaimer">{t.priceNote}</p>
       </section>
-      <section id="language-delivery" className="sb-language-section" aria-labelledby="language-delivery-title">
+      <section id="language-delivery" className="sb-language-section" aria-labelledby="language-delivery-title" data-scroll-ready={!loadingCrops && !priceRequest.loading}>
         <div className="sb-language-section-heading"><div><span className="sb-language-section-number" aria-hidden="true">02 /</span><h2 id="language-delivery-title">{t.delivery}</h2></div><Truck size={26} aria-hidden="true" /></div>
         <div className="sb-language-delivery-grid"><form className="sb-language-panel sb-language-form" onSubmit={calculate} noValidate>
           <fieldset className="sb-language-vehicle-choice"><legend>{t.vehicle}</legend><div>{VEHICLES.map((vehicle, index) => <label className={form.vehicle === vehicle ? 'is-selected' : ''} key={vehicle}><input type="radio" name="vehicle" value={vehicle} checked={form.vehicle === vehicle} onChange={() => changeForm('vehicle', vehicle)} /><Truck size={24 + index * 3} aria-hidden="true" /><span>{t[vehicle]}</span></label>)}</div></fieldset>
@@ -168,7 +167,7 @@ function LanguageTools({ language, copy: t }) {
           <p className="sb-language-estimate-note"><CircleHelp size={17} aria-hidden="true" />{t.estimateNote}</p>
         </aside></div>
       </section>
-      <section id="language-guides" className="sb-language-section sb-language-guides" aria-labelledby="language-guides-title"><div className="sb-language-section-heading"><div><span className="sb-language-section-number" aria-hidden="true">03 /</span><h2 id="language-guides-title">{t.guides}</h2></div><BookOpen size={25} aria-hidden="true" /></div><p>{t.guideNote}</p><div className="sb-language-guide-grid">{guideLinks.map(guide => <Link key={guide.code} to={buildLanguageBlogUrl(guide.code, { ...navigationContext, crop: null })}><span lang={guide.code}>{getLanguage(guide.code).name}</span><strong>{t[guide.key]}</strong><ArrowRight size={18} aria-hidden="true" /></Link>)}</div></section>
+      <section id="language-guides" className="sb-language-section sb-language-guides" aria-labelledby="language-guides-title" data-scroll-ready={!loadingCrops && !priceRequest.loading}><div className="sb-language-section-heading"><div><span className="sb-language-section-number" aria-hidden="true">03 /</span><h2 id="language-guides-title">{t.guides}</h2></div><BookOpen size={25} aria-hidden="true" /></div><p>{t.guideNote}</p><div className="sb-language-guide-grid">{guideLinks.map(guide => <Link key={guide.code} to={buildLanguageBlogUrl(guide.code, { ...navigationContext, crop: null })}><span lang={guide.code}>{getLanguage(guide.code).name}</span><strong>{t[guide.key]}</strong><ArrowRight size={18} aria-hidden="true" /></Link>)}</div></section>
       <footer className="sb-language-footer"><div className="sb-language-footer-top"><Link to={chooserUrl} className="sb-language-brand"><img src="/brand/app-icon.svg" alt="" width="34" height="34" /><span lang="en" dir="ltr">SahiBhav<span className="sb-language-brand-dot">.</span></span></Link><span className="sb-language-footer-free"><ShieldCheck size={17} aria-hidden="true" />{t.free}</span></div><p>{t.translationNote}</p><div className="sb-language-footer-links"><Link to={chooserUrl}>{t.allLanguages}</Link><Link to="/">{t.home}</Link><Link to="/about">{t.about}</Link><Link to="/privacy">{t.privacy}</Link><Link to="/contact">{t.feedback}</Link></div><div className="sb-language-sources"><span>{t.dataSource}</span><a href="https://www.data.gov.in/" target="_blank" rel="noopener noreferrer" lang="en">data.gov.in</a><a href="https://agmarknet.gov.in/" target="_blank" rel="noopener noreferrer" lang="en">Agmarknet</a><a href="https://agriportal.cg.nic.in/" target="_blank" rel="noopener noreferrer" lang="en">agriportal.cg.nic.in</a></div></footer>
     </main>
   </div>;

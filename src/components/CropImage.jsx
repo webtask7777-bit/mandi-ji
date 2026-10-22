@@ -29,9 +29,12 @@ function CropArtwork({ image, categoryImage, name, size, className, decorative }
   const [state, setState] = useState({ attempt: 0, loaded: false });
   const candidate = candidates[state.attempt];
   const source = candidate?.src;
-  const hasArtwork = Boolean(candidate && state.loaded);
+  // A category photograph can mix unrelated products (for example pulses under
+  // an unspecified "peas" label). Use the neutral crate until an exact form is known.
+  const categoryOnly = candidate?.kind === "category";
+  const hasArtwork = Boolean(candidate && state.loaded && !categoryOnly);
   const representative = !hasArtwork || candidate.kind === "category";
-  const note = hasArtwork ? candidate.note : FALLBACK_NOTE;
+  const note = categoryOnly || hasArtwork ? candidate.note : FALLBACK_NOTE;
   const description = note ? `${name ? `${name} — ` : ""}${note}` : name;
 
   const handleLoad = useCallback(() => {
@@ -52,13 +55,13 @@ function CropArtwork({ image, categoryImage, name, size, className, decorative }
 
   return <span className={`sb-crop-image sb-crop-image--${size} ${className}`}
     data-image-kind={representative ? "category" : "commodity"}
-    data-image-state={hasArtwork ? "loaded" : candidate ? "loading" : "fallback"}
+    data-image-state={hasArtwork ? "loaded" : candidate && !categoryOnly ? "loading" : "fallback"}
     role={!decorative ? "img" : undefined}
     aria-label={!decorative ? description : undefined}
     aria-hidden={decorative ? true : undefined}
-    title={representative ? note || FALLBACK_NOTE : undefined}>
+    title={note || (representative ? FALLBACK_NOTE : undefined)}>
     {!hasArtwork && <CommodityPlaceholder />}
-    {candidate && <img key={source} ref={imageRef} src={source} alt="" width="512" height="512"
+    {candidate && !categoryOnly && <img key={source} ref={imageRef} src={source} alt="" width="512" height="512"
       className={`sb-crop-image__artwork ${hasArtwork ? "is-loaded" : "is-loading"}`}
       loading={size === "hero" ? "eager" : "lazy"} decoding="async"
       onLoad={handleLoad} onError={handleError} />}
@@ -81,6 +84,6 @@ export default function CropImage({ id, name = "", size = "md", className = "", 
 export function CropImageLegend({ className = "" }) {
   return <p className={`sb-crop-image-legend ${className}`}>
     <span className="sb-crop-image-legend__symbol" aria-hidden="true">≈</span>
-    <span><strong>प्रतीकात्मक चित्र</strong> · इस चिह्न वाले चित्र उपज की श्रेणी बताते हैं; वास्तविक फसल, किस्म या बिक्री के माल की तस्वीर नहीं हैं।</span>
+    <span><strong>चित्र के बारे में</strong> · फसल के चित्र पहचान में मदद के लिए बनाए गए हैं; ये बिक्री के माल या उसकी किस्म की तस्वीरें नहीं हैं। ≈ चिह्न केवल उपज की श्रेणी बताता है।</span>
   </p>;
 }
