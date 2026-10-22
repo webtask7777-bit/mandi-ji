@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { loadIndiaData, loadStateData, loadIndiaCropPrices, loadStateCropPrices } from '../server/db/connection.js';
 import { isCropPriceCommodity } from '../src/utils/cropEligibility.js';
 import { cropDetailPath } from '../src/utils/cropUrls.js';
+import { isFreshPriceDetail as isFresh, latestRecordDate } from '../src/utils/indexability.js';
 import { getLanguage, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, languagePath } from '../shared/languages.js';
 import { EDITORIAL_LANGUAGE_CODES } from '../shared/editorialLanguages.js';
 
@@ -26,7 +27,7 @@ const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compa
 const cache = new Map();
 const manifest = JSON.parse(await readFile(path.join(dist, '.vite/manifest.json'), 'utf8'));
 function routeAssets(route) {
-  const page = /^\/[a-z]{2,3}\/blog$/.test(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : /^\/fasal-salah(?:\/|$)/.test(route) ? 'FasalSalahPage' : ({ '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
+  const page = /^\/[a-z]{2,3}\/blog$/.test(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : /^\/fasal-salah(?:\/|$)/.test(route) ? 'FasalSalahPage' : ({ '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/editorial-policy':'EditorialPolicyPage', '/__not-found__':'NotFoundPage' })[route];
   const css = new Set();
   const seen = new Set();
   function visit(key) { if (seen.has(key)) return; seen.add(key); const entry = manifest[key]; if (!entry) return; (entry.css || []).forEach(file => css.add(file)); (entry.imports || []).forEach(visit); }
@@ -81,20 +82,6 @@ async function render(route) {
 function hasPrice(detail) {
   return [...(detail?.dailyHistory || []), ...(detail?.history || [])].some(row => Number(row.market) > 0);
 }
-// Pages whose newest record is more than STALE_DAYS older than the newest observation in the
-// data stay reachable but are not offered to search engines (noindex, not in the sitemap)
-// until fresh records arrive.
-const STALE_DAYS = 90;
-function latestRecordDate(detail) {
-  const daily = (detail?.dailyHistory || []).filter(row => Number(row.market) > 0).map(row => String(row.date)).sort().at(-1);
-  const monthly = (detail?.history || []).filter(row => Number(row.market) > 0).map(row => `${row.date}-28`).sort().at(-1);
-  return daily || monthly || null;
-}
-function isFresh(detail, newest) {
-  const latest = latestRecordDate(detail);
-  if (!latest || !newest) return Boolean(latest);
-  return (Date.parse(`${newest}T00:00:00Z`) - Date.parse(`${latest.slice(0, 10)}T00:00:00Z`)) / 86400000 <= STALE_DAYS;
-}
 async function writePage(route, html) {
   const output = path.join(dist, route === '/' ? 'index.html' : `${route.slice(1)}.html`);
   await mkdir(path.dirname(output), { recursive: true });
@@ -102,7 +89,7 @@ async function writePage(route, html) {
 }
 try {
   await mkdir(generated, { recursive: true });
-  const routes = new Set(['/', '/delivery-calculator', '/bechne-ka-hisab', '/data-status', '/about', '/contact', '/privacy', '/terms', '/blog', '/languages', ...SEARCH_LANGUAGES.map(item => languagePath(item.code))]);
+  const routes = new Set(['/', '/delivery-calculator', '/bechne-ka-hisab', '/data-status', '/editorial-policy', '/about', '/contact', '/privacy', '/terms', '/blog', '/languages', ...SEARCH_LANGUAGES.map(item => languagePath(item.code))]);
   for (const code of EDITORIAL_LANGUAGE_CODES) if (code !== 'hi') routes.add(`/${code}/blog`);
   const knownCrops = new Set();
   // Sitemap <lastmod>: a price page changes when its newest record does; an article on its own update.
@@ -161,7 +148,14 @@ try {
   for (const language of AVAILABLE_LANGUAGES.filter(item => !item.searchReady)) await writePage(languagePath(language.code), await render(languagePath(language.code)));
   for (const route of salahRoutes) if (!routes.has(route)) await writePage(route, await render(route));
   // Empty or stale catalog entries remain usable but are not advertised to search engines.
-  for (const route of knownCrops) if (!routes.has(route)) await writePage(route, (await render(route)).replace(/content="index, follow, max-image-preview:large"/g, 'content="noindex, follow"'));
+  // The page itself sets noindex for empty and stale records (src/utils/indexability.js), so the
+  // HTML and the page after JavaScript agree; the build only checks that it did.
+  for (const route of knownCrops) {
+    if (routes.has(route)) continue;
+    const html = await render(route);
+    if (!/name="robots" content="noindex/.test(html)) throw new Error(`Stale or empty crop page is indexable: ${route}`);
+    await writePage(route, html);
+  }
   const notFound = (await render('/__not-found__')).replace(/<link[^>]*rel="canonical"[^>]*>/g, '').replace(/<meta[^>]*property="og:url"[^>]*>/g, '');
   await writeFile(path.join(dist, '404.html'), notFound);
   await writeFile(path.join(generated, '404.html'), notFound);
