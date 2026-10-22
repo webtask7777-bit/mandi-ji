@@ -54,6 +54,68 @@ function isPricePath(value) {
   return Boolean(state && STATE_IDS.has(state[1]) && (!state[2] || COMMODITY_IDS.has(state[2])));
 }
 
+// Search ---------------------------------------------------------------------------------
+// Hindi spellings that mean the same thing: chandrabindu/anusvara (फफूँद/फफूंद), nukta forms,
+// joiners. Applied to the query and the text alike.
+export const normalizeSearch = value => String(value ?? '').normalize('NFD')
+  .replace(/[\u200c\u200d]/g, '')
+  .replace(/\u0901/g, '\u0902')
+  .replace(/\u093c/g, '')
+  .normalize('NFC')
+  .toLocaleLowerCase()
+  .replace(/[^\p{L}\p{M}\p{N}]+/gu, ' ')
+  .trim();
+
+// A small, reviewed list of equivalent terms (Hindi, transliteration, English). Each group's
+// words find each other; no fuzzy matching, so distinct products are never merged.
+const SEARCH_ALIASES = [
+  ['फफूंद', 'फंगस', 'fungus', 'fungal', 'mould', 'mold'],
+  ['अंकुरण', 'अंकुर', 'germination', 'sprouting'],
+  ['पाला', 'शीतलहर', 'frost', 'cold wave'],
+  ['बारिश', 'वर्षा', 'बरसात', 'rain'],
+  ['भंडारण', 'storage', 'गोदाम'],
+  ['नमी', 'moisture', 'सीलन'],
+  ['ढुलाई', 'भाड़ा', 'परिवहन', 'transport', 'freight'],
+  ['पत्ती', 'पत्तियों', 'पत्ते', 'पत्तों', 'leaf', 'leaves'],
+].map(group => group.map(normalizeSearch));
+
+function queryTerms(search) {
+  return normalizeSearch(search).split(' ').filter(Boolean).slice(0, 8).map(word => {
+    const group = SEARCH_ALIASES.find(items => items.some(item => item === word || (word.length >= 4 && item.startsWith(word))));
+    return group ? [...new Set([word, ...group])] : [word];
+  });
+}
+
+const searchFields = new WeakMap();
+// Markdown markup is dropped; only words a reader sees are searched.
+const plainText = markdown => String(markdown ?? '').replace(/!\[[^\]]*\]\([^)]*\)/g, ' ').replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/[#*_>`|~-]+/g, ' ');
+function fieldsOf(post) {
+  if (!searchFields.has(post)) {
+    searchFields.set(post, {
+      title: normalizeSearch(post.title),
+      lead: normalizeSearch([post.excerpt, ...(post.tags || []), post.category, ...(post.cropTopics || []).map(id => getCropTopic(id)?.nameHi)].join(' ')),
+      body: normalizeSearch([plainText(post.content), ...(post.takeaways || [])].join(' ')),
+    });
+  }
+  return searchFields.get(post);
+}
+
+/** 0 = no match; otherwise higher is better: every term must appear, title beats lead beats body. */
+export function searchScore(post, search) {
+  const terms = queryTerms(search);
+  if (!terms.length) return 1;
+  const { title, lead, body } = fieldsOf(post);
+  let score = 0;
+  for (const alternatives of terms) {
+    const hit = field => alternatives.some(word => field.includes(word));
+    if (hit(title)) score += 4;
+    else if (hit(lead)) score += 2;
+    else if (hit(body)) score += 1;
+    else return 0;
+  }
+  return score;
+}
+
 /** Filters the complete collection before pagination; source crop IDs resolve only through curated topics. */
 export function listEditorialPosts(allPosts, query = {}) {
   const state = valueOf(query.state) === 'all' ? '' : valueOf(query.state);
@@ -66,19 +128,22 @@ export function listEditorialPosts(allPosts, query = {}) {
   const crop = valueOf(query.crop);
   const topic = crop ? getCropTopic(crop) : null;
   const category = valueOf(query.category);
-  const search = valueOf(query.q).normalize('NFKC').toLocaleLowerCase().slice(0, 250);
+  const search = valueOf(query.q).slice(0, 250);
   const slugs = valueOf(query.slugs).split(',').map(value => value.trim()).filter(Boolean).slice(0, 20);
   const matching = inLanguage.filter(post => {
     if (crop && (!topic || !post.cropTopics?.includes(topic.id))) return false;
     if (category && post.category !== category) return false;
     if (slugs.length && !slugs.includes(post.slug)) return false;
-    if (search && ![post.title, post.excerpt, ...(post.tags || [])].join(' ').normalize('NFKC').toLocaleLowerCase().includes(search)) return false;
+    if (search && !searchScore(post, search)) return false;
     return true;
-  }).sort((a, b) => (Date.parse(b.publishedAt) || 0) - (Date.parse(a.publishedAt) || 0) || a.slug.localeCompare(b.slug));
+  }).sort((a, b) => (search ? searchScore(b, search) - searchScore(a, search) : 0) || (Date.parse(b.publishedAt) || 0) - (Date.parse(a.publishedAt) || 0) || a.slug.localeCompare(b.slug));
   const page = boundedInteger(query.page, 1, 1000000);
   const limit = boundedInteger(query.limit, 10, 50);
+  // No result for a search: offer the newest guides in this language, clearly as suggestions.
+  const suggestions = search && !matching.length ? inLanguage.slice().sort((a, b) => (Date.parse(b.publishedAt) || 0) - (Date.parse(a.publishedAt) || 0)).slice(0, 3).map(summaryOf) : [];
   return {
     posts: matching.slice((page - 1) * limit, page * limit).map(summaryOf),
+    suggestions,
     total: matching.length,
     page,
     totalPages: Math.ceil(matching.length / limit),

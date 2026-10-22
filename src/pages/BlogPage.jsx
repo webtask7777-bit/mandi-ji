@@ -48,6 +48,8 @@ function BlogLibraryPage({ routeLanguage }) {
   for (const [key, value] of Object.entries({ crop, state, category, q: query })) if (value) apiQuery.set(key, value);
   const { data, loading, error } = useApi(`/cms/blog?${apiQuery}`);
   const posts = Array.isArray(data?.posts) ? data.posts : [];
+  // Suggestions when a search finds nothing: the newest guides here, not presented as matches.
+  const suggestions = Array.isArray(data?.suggestions) ? data.suggestions : [];
   const total = Number.isFinite(data?.total) ? data.total : 0;
   const totalPages = Math.max(1, Number(data?.totalPages) || 1);
   const facets = data?.facets || {};
@@ -93,7 +95,7 @@ function BlogLibraryPage({ routeLanguage }) {
   }
 
   return <div className={`sb-journal-page sb-language-surface sb-language-script-${languageInfo?.script || 'Devanagari'}`} lang={language} dir={languageInfo?.dir || 'ltr'}>
-    <SEO title={`${copy.guides} — ${copy.crop}, ${copy.state}, ${copy.language}`} description={copy.intro} path={libraryPath} noIndex={isFilteredUrl} language={language} image={['hi', 'mr', 'gu'].includes(language) ? '/editorial/journal-overview.webp' : '/editorial/tomato-market-comparison-neutral.webp'} imageAlt={copy.guides} />
+    <SEO title={`${copy.guides} — ${copy.crop}, ${copy.state}, ${copy.language}`} description={copy.intro} path={libraryPath} noIndex={isFilteredUrl} language={language} image={LIBRARY_SHARE_IMAGE[language] || LIBRARY_SHARE_IMAGE.default} imageAlt={copy.guides} />
     <a className="sb-journal-skip" href="#main-content">{copy.skip}</a>
     <header className="sb-journal-header"><div className="sb-journal-header__inner"><Link to={marketPath} aria-label={copy.home}><Brand /></Link><nav aria-label={copy.navigation}><Link to={chooserPath}>{copy.language}</Link><Link to={marketPath}>{copy.market}</Link><Link to={localizedToolsUrl(context, language, 'delivery')}>{copy.delivery} <ArrowRight size={15} aria-hidden="true" /></Link></nav></div></header>
     <main className="sb-journal-main" id="main-content">
@@ -118,7 +120,7 @@ function BlogLibraryPage({ routeLanguage }) {
       <section className="sb-journal-library" aria-labelledby="guides-title" aria-busy={loading}>
         <div className="sb-journal-section-heading"><div><span className="sb-journal-eyebrow">{copy.libraryKicker}</span><h2 id="guides-title">{copy.library}</h2></div><span role="status">{!loading && !error ? `${total} ${hasFilters ? copy.result : copy.available}` : ''}</span></div>
         {loading && <div className="sb-journal-status" role="status">{copy.loading}</div>}
-        {!loading && posts.length === 0 && <div className="sb-journal-status" role={error ? 'alert' : 'status'}><BookOpen size={30} aria-hidden="true" /><h3>{error ? copy.loadError : copy.empty}</h3><p>{error ? copy.errorHelp : copy.emptyHelp}</p>{hasFilters && <Link className="sb-journal-button" to={resetPath}>{copy.reset}</Link>}{page > 1 && <Link to={pagePath(1)}>{copy.page} 1 <ArrowRight size={15} aria-hidden="true" /></Link>}</div>}
+        {!loading && posts.length === 0 && <div className="sb-journal-status" role={error ? 'alert' : 'status'}><BookOpen size={30} aria-hidden="true" /><h3>{error ? copy.loadError : copy.empty}</h3><p>{error ? copy.errorHelp : copy.emptyHelp}</p>{hasFilters && <Link className="sb-journal-button" to={resetPath}>{copy.reset}</Link>}{page > 1 && <Link to={pagePath(1)}>{copy.page} 1 <ArrowRight size={15} aria-hidden="true" /></Link>}{!error && suggestions.length > 0 && <div className="sb-journal-suggestions"><h4>{copy.related}</h4><ul>{suggestions.map(post => <li key={post.slug}><Link to={`/blog/${post.slug}`}>{post.title}</Link></li>)}</ul></div>}</div>}
         <div className="sb-journal-grid">{posts.map(post => <article className="sb-journal-card" key={post.slug}><Link to={articlePath(post.slug)} className="sb-journal-card__image" aria-label={`${post.title} — ${copy.read}`}><EditorialImage src={post.coverImage} alt={post.coverAlt || post.title} language={language} width="1672" height="941" loading="lazy" decoding="async" />{post.coverImage && <span className="sb-journal-image-note">{copy.illustration}</span>}</Link><div className="sb-journal-card__body"><span className="sb-journal-category">{post.category || copy.guide}</span><h3><Link to={articlePath(post.slug)}>{post.title}</Link></h3><p>{post.excerpt}</p>{post.regionLabel && <span className="sb-journal-region"><MapPin size={13} aria-hidden="true" />{post.regionLabel}</span>}<PostMeta post={post} language={language} /><Link to={articlePath(post.slug)} className="sb-journal-card__link" aria-label={`${post.title} — ${copy.read}`}>{copy.read} <ArrowRight size={16} aria-hidden="true" /></Link></div></article>)}</div>
         {!loading && !error && totalPages > 1 && posts.length > 0 && <nav className="sb-journal-pagination" aria-label={copy.pagination}>{page > 1 ? <Link to={pagePath(page - 1)} rel="prev"><ArrowLeft size={16} aria-hidden="true" />{copy.previous}</Link> : <span /> }<span aria-current="page">{copy.page} <bdi>{page} / {totalPages}</bdi></span>{page < totalPages ? <Link to={pagePath(page + 1)} rel="next">{copy.next}<ArrowRight size={16} aria-hidden="true" /></Link> : <span />}</nav>}
       </section>
@@ -128,6 +130,19 @@ function BlogLibraryPage({ routeLanguage }) {
     </main>
   </div>;
 }
+
+// Share image per guide library. The journal overview carries Hindi headline text, so only the
+// Hindi library uses it; Marathi and Gujarati use their localized cover, others the textless one.
+// Revisit when a library grows beyond its one tomato guide.
+const LIBRARY_SHARE_IMAGE = {
+  hi: '/editorial/journal-overview.webp',
+  mr: '/editorial/tamatar-mandi-kharch-mr.webp',
+  gu: '/editorial/tamatar-mandi-kharch-gu.webp',
+  default: '/editorial/tomato-market-comparison-neutral.webp',
+};
+
+// No hreflang between language libraries: they hold different articles (Hindi 8, others 1), and
+// alternates are only for equivalent pages. Add them when the collections genuinely match.
 
 export default function BlogPage() {
   const { language } = useParams();
