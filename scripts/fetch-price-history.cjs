@@ -103,6 +103,7 @@ async function fetchDay(iso, opts) {
   let read = 0;
   let total = 0;
   let passes = 0;
+  let stable = false;
   const keep = rows => {
     read += rows.length;
     for (const raw of rows) {
@@ -115,6 +116,7 @@ async function fetchDay(iso, opts) {
   while (passes < MAX_PASSES) {
     passes++;
     const before = unique.size;
+    const readBefore = read;
     const rejectedBefore = rejected;
     rejected = 0;
     const first = await fetchPage(filters);
@@ -128,9 +130,11 @@ async function fetchDay(iso, opts) {
     // Rejected rows are counted once per pass, not summed over passes.
     rejected = Math.max(rejected, rejectedBefore);
     if (unique.size + rejected >= total * opts.minComplete) break;
-    if (passes > 1 && unique.size - before < total * 0.002) break;
+    // A full pass that finds nothing new: the rest are rows the source files twice under the
+    // same mandi, commodity, variety, grade and date. The day is complete.
+    if (passes > 1 && unique.size - before < total * 0.002) { stable = read - readBefore >= total * opts.minComplete; break; }
   }
-  return { total, read, passes, rows: [...unique.values()], rejected };
+  return { total, read, passes, stable, rows: [...unique.values()], rejected };
 }
 
 function days(from, to, newestFirst) {
@@ -148,9 +152,9 @@ async function main() {
     if (readMeta(iso)?.complete) continue;
     try {
       const day = await fetchDay(iso, opts);
-      const complete = day.rows.length + day.rejected >= day.total * opts.minComplete;
+      const complete = day.stable || day.rows.length + day.rejected >= day.total * opts.minComplete;
       if (!complete) { failed.push(iso); console.log(`  ${iso}: ${day.rows.length} unique of ${day.total} after ${day.passes} passes; will retry`); continue; }
-      writeDay(iso, { date: iso, sourceTotal: day.total, passes: day.passes, stored: day.rows.length, rejected: day.rejected, complete, fetchedAt: new Date().toISOString() }, day.rows);
+      writeDay(iso, { date: iso, sourceTotal: day.total, passes: day.passes, stable: day.stable, stored: day.rows.length, rejected: day.rejected, complete, fetchedAt: new Date().toISOString() }, day.rows);
       stored++;
       if (stored % 10 === 0 || day.total === 0) console.log(`  ${iso}: ${day.rows.length} of ${day.total} stored (${stored} days this run)`);
     } catch (e) {
