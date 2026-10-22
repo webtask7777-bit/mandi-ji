@@ -1,32 +1,51 @@
 name: KCC crop advice
 
 # Fetch Kisan Call Centre transcripts from data.gov.in, one year per job, and rebuild the
-# फसल सलाह summaries in server/db/data/kcc. Raw rows stay in the Actions cache (never in the
-# repository), so a run that times out resumes where it stopped and a later run only fetches
-# months that are missing or still growing. Vercel deploys the committed summaries.
+# फसल सलाह summaries in server/db/data/kcc. Raw rows never enter the repository:
+# - the Actions cache keeps each year's raw months between runs (a weekly run keeps it from
+#   expiring after GitHub's 7 days without access), so a run only fetches months that are
+#   missing or still growing;
+# - each job also hands its months to the publish job as an artifact.
+# The aggregator refuses to replace published summaries with ones that cover fewer months, so a
+# failed or evicted year cannot shrink what is live. Vercel deploys the committed summaries.
 on:
   schedule:
-    - cron: '0 3 5 * *'   # monthly: the source publishes with a long delay
+    - cron: '0 3 * * 1'   # weekly, Monday 08:30 IST
   workflow_dispatch:
 
+# Read-only by default; only the publish job may push.
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: kcc-advice
   cancel-in-progress: false
 
 jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      years: ${{ steps.years.outputs.years }}
+    steps:
+      - id: years
+        # 2022 up to the current year, so new years are fetched without editing this file.
+        run: echo "years=$(node -e 'const y=new Date().getUTCFullYear();console.log(JSON.stringify(Array.from({length:y-2021},(_,i)=>2022+i)))')" >> "$GITHUB_OUTPUT"
+
   fetch:
+    needs: plan
     runs-on: ubuntu-latest
     timeout-minutes: 340
+    permissions:
+      contents: read
     strategy:
       fail-fast: false
       max-parallel: 2   # one API key; two slices at a time stay clear of rate limits
       matrix:
-        year: [2022, 2023, 2024, 2025, 2026]
+        year: ${{ fromJSON(needs.plan.outputs.years) }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - uses: actions/setup-node@v4
         with:
@@ -35,17 +54,17 @@ jobs:
       - uses: actions/cache/restore@v4
         with:
           path: .cache/kcc/raw
-          key: kcc-raw-${{ matrix.year }}-${{ github.run_id }}
+          key: kcc-raw-${{ matrix.year }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: kcc-raw-${{ matrix.year }}-
 
       - name: Fetch ${{ matrix.year }}
         env:
           DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
         run: |
-          # Only the newest months can still grow; earlier years are fetched once.
-          refresh=0
-          if [ "${{ matrix.year }}" -ge 2025 ]; then refresh=2; fi
           mkdir -p .cache/kcc/raw
+          # The newest years' last months can still grow; earlier complete months are skipped.
+          refresh=0
+          if [ "${{ matrix.year }}" -ge "$(( $(date -u +%Y) - 1 ))" ]; then refresh=2; fi
           node scripts/fetch-kcc.cjs --from ${{ matrix.year }}-01 --to ${{ matrix.year }}-12 --delay 700 --refresh-recent $refresh
 
       - name: Keep fetched months for the next run
@@ -53,14 +72,25 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: .cache/kcc/raw
-          key: kcc-raw-${{ matrix.year }}-${{ github.run_id }}
+          key: kcc-raw-${{ matrix.year }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Hand this year to the publish job
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kcc-raw-${{ matrix.year }}
+          path: .cache/kcc/raw/${{ matrix.year }}-*
+          if-no-files-found: ignore
+          retention-days: 3
 
   publish:
     needs: fetch
-    # Publish whatever is complete even if one year is still unfinished; the sidecars say what is in.
+    # Publish what is complete even if one year is unfinished; the aggregator will not shrink coverage.
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -70,33 +100,16 @@ jobs:
 
       - run: npm ci --no-audit --no-fund
 
-      - name: Restore 2022
-        uses: actions/cache/restore@v4
-        with: { path: .cache/kcc/raw, key: 'kcc-raw-2022-${{ github.run_id }}', restore-keys: 'kcc-raw-2022-' }
-      - run: mkdir -p .cache/kcc/all && cp -n .cache/kcc/raw/* .cache/kcc/all/ 2>/dev/null || true
-      - name: Restore 2023
-        uses: actions/cache/restore@v4
-        with: { path: .cache/kcc/raw, key: 'kcc-raw-2023-${{ github.run_id }}', restore-keys: 'kcc-raw-2023-' }
-      - run: cp -n .cache/kcc/raw/* .cache/kcc/all/ 2>/dev/null || true
-      - name: Restore 2024
-        uses: actions/cache/restore@v4
-        with: { path: .cache/kcc/raw, key: 'kcc-raw-2024-${{ github.run_id }}', restore-keys: 'kcc-raw-2024-' }
-      - run: cp -n .cache/kcc/raw/* .cache/kcc/all/ 2>/dev/null || true
-      - name: Restore 2025
-        uses: actions/cache/restore@v4
-        with: { path: .cache/kcc/raw, key: 'kcc-raw-2025-${{ github.run_id }}', restore-keys: 'kcc-raw-2025-' }
-      - run: cp -n .cache/kcc/raw/* .cache/kcc/all/ 2>/dev/null || true
-      - name: Restore 2026
-        uses: actions/cache/restore@v4
-        with: { path: .cache/kcc/raw, key: 'kcc-raw-2026-${{ github.run_id }}', restore-keys: 'kcc-raw-2026-' }
-      - name: Combine years
-        run: |
-          cp -n .cache/kcc/raw/* .cache/kcc/all/ 2>/dev/null || true
-          rm -rf .cache/kcc/raw && mv .cache/kcc/all .cache/kcc/raw
-          ls .cache/kcc/raw/*.json | wc -l
+      - name: Collect every year's months
+        uses: actions/download-artifact@v4
+        with:
+          pattern: kcc-raw-*
+          path: .cache/kcc/raw
+          merge-multiple: true
 
       - name: Refuse a sampled build
         run: |
+          ls .cache/kcc/raw/*.json | wc -l
           if grep -l '"sample": true' .cache/kcc/raw/*.json; then echo "Sampled months must not be published."; exit 1; fi
 
       - name: Build summaries

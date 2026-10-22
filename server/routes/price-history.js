@@ -6,16 +6,19 @@ import { isSafeId } from '../db/connection.js';
 
 // Monthly price history since 2009, built by scripts/aggregate-price-history.cjs.
 const router = Router();
+// Built at deploy time only (Vercel purges the CDN cache on deploy).
+router.use((req, res, next) => { res.set('Cache-Control', 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800'); next(); });
 const DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'db', 'data', 'price-history');
 const cache = new Map();
 
 function load(name) {
   if (!isSafeId(name)) return null;
-  if (!cache.has(name)) {
-    const file = path.join(DIR, `${name}.json`);
-    cache.set(name, existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : null);
-  }
-  return cache.get(name);
+  if (cache.has(name)) return cache.get(name);
+  const file = path.join(DIR, `${name}.json`);
+  if (!existsSync(file)) return null; // misses are not cached: random ids cannot grow memory
+  const value = JSON.parse(readFileSync(file, 'utf8'));
+  cache.set(name, value);
+  return value;
 }
 
 router.get('/:cropId', (req, res) => {
@@ -32,8 +35,8 @@ router.get('/:cropId', (req, res) => {
     coverage: crop.coverage,
     source: { name: index.source, url: index.sourceUrl },
     all: crop.all,
-    state: stateId ? crop.states[stateId] || null : null,
-    seasonal: { all: crop.seasonal.all, state: stateId ? crop.seasonal.states[stateId] || null : null },
+    state: stateId && Object.hasOwn(crop.states, stateId) ? crop.states[stateId] : null,
+    seasonal: { all: crop.seasonal.all, state: stateId && Object.hasOwn(crop.seasonal.states, stateId) ? crop.seasonal.states[stateId] : null },
   });
 });
 

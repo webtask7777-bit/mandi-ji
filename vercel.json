@@ -32,7 +32,7 @@
       ]
     },
     {
-      "source": "/api/(.*)",
+      "source": "/api/((?!kcc|price-history).*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -45,14 +45,14 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/:path((?!google[0-9a-f]+\\.html$).*)",
       "has": [
         {
           "type": "host",
           "value": "mandi-ji.vercel.app"
         }
       ],
-      "destination": "https://sahibhav.in/:path*",
+      "destination": "https://sahibhav.in/:path",
       "permanent": true
     },
     {

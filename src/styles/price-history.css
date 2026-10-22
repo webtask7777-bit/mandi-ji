@@ -1,10 +1,10 @@
 /* Long monthly price history on crop pages. Palette follows detail.css. */
 .sb-history { margin-top: 24px; }
 .sb-history-chart-box { width: 100%; margin: 14px 0 6px; }
-.sb-history-chart { display: block; max-width: 100%; height: auto; }
-.sb-history-grid { stroke: #e4e9de; stroke-width: 1; }
+.sb-history-chart { display: block; width: 100%; height: 230px; }
+.sb-history-grid { stroke: #c9d2c2; stroke-width: 1; }
 .sb-history-axis { fill: #65796a; font-size: 11px; font-variant-numeric: tabular-nums; }
-.sb-history-band { fill: #dde7d3; opacity: .75; }
+.sb-history-band { fill: #c9d8bd; stroke: #8fa98a; stroke-width: .75; }
 .sb-history-line { fill: none; stroke: #174c3c; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 .sb-history-dot { fill: #a37a25; stroke: #fff; stroke-width: 2; }
 
@@ -12,7 +12,7 @@
 .sb-history-facts > div { background: #f7f5ec; border-radius: 12px; padding: 10px 12px; display: grid; gap: 2px; }
 .sb-history-facts span { font-size: 11.5px; color: #65736a; font-weight: 650; }
 .sb-history-facts strong { font-size: 18px; font-weight: 750; font-variant-numeric: tabular-nums; }
-.sb-history-facts small { font-size: 11.5px; color: #7b877e; }
+.sb-history-facts small { font-size: 11.5px; color: #5f6b62; }
 
 .sb-history-season-wrap { margin-top: 18px; border-top: 1px solid #e4e9de; padding-top: 16px; }
 .sb-history-season-wrap h3 { display: flex; align-items: center; gap: 7px; font-size: 16px; font-weight: 750; margin: 0 0 6px; }
@@ -24,7 +24,7 @@
 .sb-history-season__track .is-up { bottom: 50%; background: #174c3c; }
 .sb-history-season__track .is-down { top: 50%; background: #b98a3a; }
 .sb-history-season__bar small { font-size: 10.5px; color: #65796a; white-space: nowrap; }
-.sb-history-season__bar b { font-size: 10.5px; font-weight: 700; font-variant-numeric: tabular-nums; color: #7b877e; }
+.sb-history-season__bar b { font-size: 10.5px; font-weight: 700; font-variant-numeric: tabular-nums; color: #5f6b62; }
 .sb-history-season__bar b.is-up { color: #174c3c; }
 .sb-history-season__bar b.is-down { color: #8a6420; }
 .sb-history-season__bar.is-current small { color: #9a6a16; font-weight: 750; }
@@ -34,6 +34,16 @@
 .sb-history-source { font-size: 12px; color: #65736a; margin: 12px 0 0; }
 .sb-history-source a { text-decoration: underline; text-underline-offset: 3px; }
 
+.sb-history-table { margin: 4px 0 2px; font-size: 13px; }
+.sb-history-table summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; color: #174c3c; font-weight: 650; }
+.sb-history-table table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.sb-history-table th, .sb-history-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #e4e9de; }
+.sb-history-table small { color: #5f6b62; }
+.sb-history .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (max-width: 480px) {
+  .sb-history-chart { height: 200px; }
+}
 @media (max-width: 560px) {
   .sb-history-season { gap: 2px; }
   .sb-history-season__bar small, .sb-history-season__bar b { font-size: 9px; }

@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Sprout } from 'lucide-react';
 import { useApi } from '../hooks/useApi';
 import { KIND_LABEL, MONTHS_HI, currentMonthIST, nextMonth, salahPath } from '../utils/kccAdvice';
-import '../styles/fasal-salah.css';
+import '../styles/crop-kcc.css';
 
 /** On a crop price page: what Kisan Call Centre callers ask about this crop this month. */
 export default function KccCropProblems({ cropId, cropName, stateId = 'all' }) {
   const query = stateId && stateId !== 'all' ? `?state=${encodeURIComponent(stateId)}` : '';
-  const { data } = useApi(`/kcc/crop/${encodeURIComponent(cropId)}${query}`);
+  const { data } = useApi(`/kcc/crop/${encodeURIComponent(cropId)}${query}`, { revalidate: false });
   const month = currentMonthIST();
   const problems = data?.months?.[month - 1] || [];
   const upcoming = (data?.months?.[nextMonth(month) - 1] || []).filter(item => !problems.some(now => now.key === item.key)).slice(0, 2);

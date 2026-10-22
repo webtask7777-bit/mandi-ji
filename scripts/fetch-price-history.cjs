@@ -28,6 +28,11 @@ const SAMPLE_KEY = '579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b';
 const API_KEY = process.env.DATA_GOV_API_KEY || SAMPLE_KEY;
 const REQUEST_LIMIT = 1000;
 const RAW_DIR = path.join(__dirname, '..', '.cache', 'prices', 'raw');
+const SETTLE_DAYS = 14;
+const daysAgo = n => new Date(Date.now() + 5.5 * 3600e3 - n * 86400e3).toISOString().slice(0, 10);
+const settleCutoff = () => daysAgo(SETTLE_DAYS);
+// A day still empty two months later (holiday, no reporting) is genuinely empty.
+const emptyCutoff = () => daysAgo(60);
 
 function parseArgs() {
   const args = process.argv.slice(2);
@@ -152,8 +157,11 @@ async function main() {
     if (readMeta(iso)?.complete) continue;
     try {
       const day = await fetchDay(iso, opts);
-      const complete = day.stable || day.rows.length + day.rejected >= day.total * opts.minComplete;
-      if (!complete) { failed.push(iso); console.log(`  ${iso}: ${day.rows.length} unique of ${day.total} after ${day.passes} passes; will retry`); continue; }
+      // Mandis keep uploading for days after a market day, and an unpublished day reads as 0 rows:
+      // the last SETTLE_DAYS (and empty days) are stored but stay open, so the next run reads them again.
+      const settled = iso <= settleCutoff() && (day.total > 0 || iso <= emptyCutoff());
+      const complete = settled && (day.stable || day.rows.length + day.rejected >= day.total * opts.minComplete);
+      if (!complete && settled) { failed.push(iso); console.log(`  ${iso}: ${day.rows.length} unique of ${day.total} after ${day.passes} passes; will retry`); continue; }
       writeDay(iso, { date: iso, sourceTotal: day.total, passes: day.passes, stable: day.stable, stored: day.rows.length, rejected: day.rejected, complete, fetchedAt: new Date().toISOString() }, day.rows);
       stored++;
       if (stored % 10 === 0 || day.total === 0) console.log(`  ${iso}: ${day.rows.length} of ${day.total} stored (${stored} days this run)`);

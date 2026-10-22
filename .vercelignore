@@ -3,3 +3,8 @@ scraper/
 .cache/
 dist/
 dist-ssr/
+
+# Environment files (keys)
+.env
+.env.*
+!.env.example

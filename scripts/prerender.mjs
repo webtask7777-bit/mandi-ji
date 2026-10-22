@@ -140,9 +140,14 @@ try {
     const kccMeta = JSON.parse(await readFile(path.join(root, 'server/db/data/kcc/meta.json'), 'utf8'));
     const kccIndex = JSON.parse(await readFile(path.join(root, 'server/db/data/kcc/index.json'), 'utf8'));
     salahRoutes.push('/fasal-salah', ...kccIndex.states.flatMap(state => [`/fasal-salah/${state.id}`, ...state.districts.map(district => `/fasal-salah/${state.id}/${district.id}`)]));
-    // lastmod is the newest call in the summaries: the pages change only when the data does.
-    if (!kccMeta.sampled) for (const route of salahRoutes) { routes.add(route); if (kccMeta.coverage?.newestCall) lastmod.set(route, kccMeta.coverage.newestCall); }
-  } catch { /* no KCC summaries built: the pages show their unavailable state */ }
+    // The pages show the current month, so they change at each month start as well as with new calls.
+    const monthStart = `${new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 7)}-01`;
+    const salahLastmod = [kccMeta.coverage?.newestCall, monthStart].filter(Boolean).sort().at(-1);
+    if (!kccMeta.sampled) for (const route of salahRoutes) { routes.add(route); lastmod.set(route, salahLastmod); }
+  } catch {
+    // No KCC summaries built: the landing page still exists (noindex, "being prepared") for the footer link.
+    salahRoutes.push('/fasal-salah');
+  }
   let count = 0;
   for (const route of routes) {
     const html = await render(route);

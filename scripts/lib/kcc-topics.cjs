@@ -48,14 +48,16 @@ const PROBLEMS = [
   { id: 'root-rot', hi: 'जड़ / तना गलन', kind: 'rog', re: /root ?rot|collar ?rot|stem ?rot|damping|जड़ ?गलन|जड़ ?सड़न|तना ?गलन|आर्द्र ?गलन/i },
   { id: 'leaf-curl', hi: 'पत्ती मरोड़ (लीफ कर्ल)', kind: 'rog', re: /leaf ?curl|पत्ती ?मरोड़|पत्ता ?मरोड़|कुकड़ा|चुरड़ा/i },
   { id: 'mosaic', hi: 'पीला मोज़ेक / वायरस', kind: 'rog', re: /mosaic|virus|viral|मोजेक|मोज़ेक|विषाणु|वायरस|ਵਾਇਰਸ/i },
-  { id: 'leaf-spot', hi: 'पत्ती धब्बा', kind: 'rog', re: /leaf ?spot|tikka|cercospora|alternaria|anthracnose|पत्ती ?धब्बा|पत्तों ?पर ?धब्बे|धब्बा ?रोग|टिक्का/i },
+  { id: 'leaf-spot', hi: 'पत्ती धब्बा', kind: 'rog', re: /lea(?:f|ves) ?spots?|tikka|cercospora|alternaria|anthracnose|पत्ती ?धब्बा|पत्तों ?पर ?धब्बे|धब्बा ?रोग|टिक्का/i },
   { id: 'fungal', hi: 'फफूंद रोग', kind: 'rog', re: /fung|\brot\b|सड़न|फफूंद|फफूँद/i },
   // Weather damage
   { id: 'frost', hi: 'पाला (शीतलहर) से बचाव', kind: 'kheti', re: /frost|cold ?wave|पाला|पाले|शीतलहर|शीत ?लहर/i },
   // Nutrition and plant health
   { id: 'zinc', hi: 'जिंक की कमी (खैरा)', kind: 'poshan', re: /zinc|khaira|खैरा|जिंक|जस्ता/i },
+  { id: 'deficiency', hi: 'पोषक तत्व की कमी', kind: 'poshan', re: /deficien|की कमी|कमी के लक्षण/i },
   { id: 'yellowing', hi: 'पत्ती पीली पड़ना', kind: 'poshan', re: /yellow(ing)?|पीला(पन)?|पीली|ਪੀਲ/i },
-  { id: 'flower-drop', hi: 'फूल / फल झड़ना', kind: 'poshan', re: /flower ?drop|fruit ?drop|flower ?shedding|फूल ?झड़|फल ?झड़|फूल ?गिर/i },
+  { id: 'flower-drop', hi: 'फूल / फल झड़ना', kind: 'poshan', re: /(?:flower|fruit|bud)s? ?(?:drop|fall|shedding)|फूल ?झड़|फल ?झड़|फूल ?गिर|फल ?गिर/i },
+  { id: 'flowering', hi: 'फूल बढ़ाना', kind: 'poshan', re: /(?:induc|increas|more)\w* (?:of )?flower|flower(?:ing)? (?:induc|increas)|फूल ?(?:बढ़|अधिक|ज़्यादा)/i },
   { id: 'growth', hi: 'बढ़वार और फुटाव', kind: 'poshan', re: /growth|tiller|बढ़वार|बढ़ोतरी|कल्ले|फुटाव/i },
   { id: 'nutrients', hi: 'खाद और पोषण', kind: 'poshan', re: /nutrient|fertili[sz]er|\bdose\b|urea|\bdap\b|\bnpk\b|micronutrient|खाद|उर्वरक|यूरिया|पोषक|पोषण/i },
   // Weeds
@@ -63,9 +65,11 @@ const PROBLEMS = [
   // Practices
   { id: 'variety', hi: 'उन्नत किस्म', kind: 'kheti', re: /variet|hybrid|किस्म|प्रजाति|वैरायटी/i },
   { id: 'seed-treatment', hi: 'बीज उपचार', kind: 'kheti', re: /seed ?treat|बीज ?उपचार|बीजोपचार/i },
-  { id: 'sowing', hi: 'बुवाई का समय और तरीका', kind: 'kheti', re: /sowing|seed ?rate|spacing|nursery|transplant|बुवाई|बोवाई|रोपाई|नर्सरी|बीज ?दर/i },
+  { id: 'sowing', hi: 'बुवाई का समय और तरीका', kind: 'kheti', re: /sowing|planting|plantation|seed ?rate|spacing|nursery|transplant|बुवाई|बोवाई|रोपाई|नर्सरी|बीज ?दर/i },
   { id: 'irrigation', hi: 'सिंचाई', kind: 'kheti', re: /irrigat|water ?manage|सिंचाई|पानी ?कब/i },
   { id: 'harvest-storage', hi: 'कटाई और भंडारण', kind: 'kheti', re: /harvest|storage|post ?harvest|कटाई|भंडारण/i },
+  { id: 'pruning', hi: 'कटाई-छँटाई (प्रूनिंग)', kind: 'kheti', re: /prun|छँटाई|छंटाई/i },
+  { id: 'yield', hi: 'उपज बढ़ाना', kind: 'kheti', re: /yield|उपज|पैदावार|उत्पादन ?बढ़/i },
   // A call that says only "insect" or "disease", and the plant-protection fallback: one topic,
   // so unnamed questions do not crowd out the named pests and diseases.
   { id: 'pest-disease', hi: 'कीट-रोग नियंत्रण (सामान्य)', kind: 'keet', re: /insect|\bpests?\b|disease|कीट|कीड़|रोग|बीमारी/i },
@@ -122,6 +126,11 @@ function problemFromText(text) {
 
 // KCC crop spellings → display crop. mandi is the price-page crop id where one exists.
 const CROPS = [
+  // Names that contain another crop's name come first (custard apple ≠ apple, sweet potato ≠ potato).
+  { id: 'custard-apple', hi: 'सीताफल', mandi: 'custard-applesharifa', re: /custard ?apple|sitaphal|sharifa/i },
+  { id: 'pineapple', hi: 'अनानास', mandi: 'pineapple', re: /pine ?apple/i },
+  { id: 'sweet-potato', hi: 'शकरकंद', mandi: 'sweet-potato', re: /sweet ?potato/i },
+  { id: 'horse-gram', hi: 'कुलथी', mandi: null, re: /horse ?gram|kulthi/i },
   { id: 'paddy', hi: 'धान', mandi: 'paddycommon', re: /paddy|\bdhan\b|\brice\b/i },
   { id: 'wheat', hi: 'गेहूँ', mandi: 'wheat', re: /wheat/i },
   { id: 'maize', hi: 'मक्का', mandi: 'maize', re: /maize|makka|corn/i },
@@ -129,8 +138,8 @@ const CROPS = [
   { id: 'soybean', hi: 'सोयाबीन', mandi: 'soyabean', re: /soy/i },
   { id: 'sugarcane', hi: 'गन्ना', mandi: null, re: /sugarcane|ganna/i },
   { id: 'mustard', hi: 'सरसों', mandi: 'mustard', re: /mustard|rapeseed|sarson|toria/i },
-  { id: 'arhar', hi: 'अरहर (तुअर)', mandi: 'arhartur-red-gramwhole', re: /red ?gram|arhar|tur\b|pigeon/i },
-  { id: 'urad', hi: 'उड़द', mandi: 'black-gramurd-beanswhole', re: /black ?gram|urd|urad/i },
+  { id: 'arhar', hi: 'अरहर (तुअर)', mandi: 'arhartur-red-gramwhole', re: /red ?gram|arhar|\btur\b|pigeon/i },
+  { id: 'urad', hi: 'उड़द', mandi: 'black-gramurd-beanswhole', re: /black ?gram|\burd\b|\burad\b/i },
   { id: 'moong', hi: 'मूंग', mandi: 'green-grammoongwhole', re: /green ?gram|moong|mung ?bean/i },
   { id: 'gram', hi: 'चना', mandi: 'bengal-gramgramwhole', re: /bengal ?gram|chick ?pea|\bgram\b|chana/i },
   { id: 'groundnut', hi: 'मूँगफली', mandi: 'groundnut', re: /groundnut|peanut|mung ?phalli/i },
@@ -140,7 +149,7 @@ const CROPS = [
   { id: 'pea', hi: 'मटर', mandi: 'green-peas', re: /\bpeas?\b/i },
   { id: 'sesame', hi: 'तिल', mandi: 'sesamumsesame-gingelly-til', re: /sesam|gingelly|\btil\b/i },
   { id: 'tomato', hi: 'टमाटर', mandi: 'tomato', re: /tomato/i },
-  { id: 'potato', hi: 'आलू', mandi: 'potato', re: /potato/i },
+  { id: 'potato', hi: 'आलू', mandi: 'potato', re: /\bpotato/i },
   { id: 'onion', hi: 'प्याज', mandi: 'onion', re: /onion/i },
   { id: 'brinjal', hi: 'बैंगन', mandi: 'brinjal', re: /brinjal|egg ?plant|baingan/i },
   { id: 'chilli', hi: 'मिर्च', mandi: 'green-chilli', re: /chil+i|mirch/i },
@@ -175,7 +184,7 @@ const CROPS = [
   { id: 'capsicum', hi: 'शिमला मिर्च', mandi: 'capsicum', re: /capsicum/i },
   { id: 'beans', hi: 'सेम / बीन्स', mandi: 'beans', re: /\bbeans?\b|french ?bean/i },
   { id: 'grapes', hi: 'अंगूर', mandi: 'grapes', re: /grape/i },
-  { id: 'apple', hi: 'सेब', mandi: 'apple', re: /apple/i },
+  { id: 'apple', hi: 'सेब', mandi: 'apple', re: /\bapple/i },
   { id: 'jute', hi: 'जूट (पटसन)', mandi: null, re: /jute/i },
   { id: 'tea', hi: 'चाय', mandi: null, re: /^tea\b/i },
   { id: 'coffee', hi: 'कॉफी', mandi: null, re: /coffee/i },
@@ -201,8 +210,15 @@ function cropOf(name, question = '') {
   return slug ? { id: slug, hi: titleCase(value.replace(/\(.*?\)/g, '')), mandi: null } : null;
 }
 
+const ANIMAL_SECTOR = /animal|fisher|veterin|dairy|poultry|sericult/i;
+const ANIMAL_NAME = /bovine|\bcows?\b|buffalo|cattle|\bgoats?\b|\bsheep\b|poultry|chicken|\bhens?\b|\bfish|\bpigs?\b|swine|\bducks?\b|honey ?bee|bee ?keeping|silk ?worm/i;
+// Calls about the call centre itself or a phone number are not crop advice.
+const NOT_A_QUESTION = /contact (?:number|no)|phone (?:number|no)|mobile (?:number|no)|calling kisa+n|test call|call (?:back|disconnect)|wrong number/i;
+
 /** One call → { family, crop, problem } where crop/problem are set only for crop advice. */
 function classify(row) {
+  if (ANIMAL_SECTOR.test(clean(row.sec)) || ANIMAL_NAME.test(clean(row.c))) return { family: 'animal' };
+  if (NOT_A_QUESTION.test(clean(row.q))) return { family: 'other' };
   const family = queryFamily(row.qt, row.q);
   if (['weather', 'market', 'scheme', 'animal'].includes(family)) return { family };
   const crop = cropOf(row.c, row.q);

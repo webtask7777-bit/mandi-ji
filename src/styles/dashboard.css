@@ -71,7 +71,7 @@
 .sb-splash-icon { border-radius: 20px; box-shadow: 0 8px 30px #174c3c15; }
 .sb-splash-identity p { color: #64775e; font-size: 13px; }
 .sb-splash-progress { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: #174c3c; transform-origin: left; }
-.sb-dashboard button:focus-visible, .sb-dashboard a:focus-visible { outline: 3px solid #aabd88; outline-offset: 3px; }
+.sb-dashboard button:focus-visible, .sb-dashboard a:focus-visible { outline: 3px solid #2d614b; outline-offset: 3px; }
 @media (min-width: 768px) {
   .sb-state-picker { bottom: 5vh; max-height: 85vh; border-radius: 24px; }
 }
@@ -142,6 +142,8 @@
 .sb-task-shortcuts small { display: block; margin-top: 3px; color: #647568; font-size: 12px; }
 .sb-task-shortcuts svg { margin-left: auto; color: #2d614b; flex-shrink: 0; }
 .sb-task-shortcuts > :last-child { background: #e7efde; border-color: #c2d2b7; }
+.sb-task-shortcuts > :last-child .sb-task-number { color: #4f654f; }
+.sb-task-shortcuts > :last-child small { color: #4d5d51; }
 .sb-calculator-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 32px; }
 .sb-calculator-page-heading { padding: 7px 0 24px; }
 .sb-calculator-page-heading h1 { font-size: clamp(25px, 3vw, 34px); line-height: 1.35; font-weight: 750; letter-spacing: -.025em; }

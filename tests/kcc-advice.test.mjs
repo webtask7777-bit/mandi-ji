@@ -125,8 +125,18 @@ test('published summaries are internally consistent', async t => {
   for (const district of state.districts.slice(0, 3)) {
     const page = await get(`/api/kcc/districts/${state.id}/${district.id}`);
     assert.equal(page.status, 200);
-    for (const key of Object.keys(page.body.qa)) assert.ok(page.body.topics[key], key);
+    assert.equal(page.body.qa, undefined, 'page payloads carry no answers');
+    const month = page.body.months.findIndex(m => m.top.length) + 1;
+    if (!month) continue;
+    const answers = await get(`/api/kcc/districts/${state.id}/${district.id}/qa?mahina=${month}`);
+    assert.equal(answers.status, 200);
+    const ranked = new Set(page.body.months[month - 1].top.map(item => item.key));
+    for (const [key, list] of Object.entries(answers.body.qa)) {
+      assert.ok(ranked.has(key), `answers only for that month's ranked problems: ${key}`);
+      assert.ok(list.length <= 4);
+    }
   }
+  assert.equal((await get(`/api/kcc/qa?mahina=13`)).status, 400);
 });
 
 test('district search tolerates common spelling differences', () => {

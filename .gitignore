@@ -29,3 +29,8 @@ server/generated/seo/
 
 # Vercel CLI link
 .vercel
+
+# Environment files (keys)
+.env
+.env.*
+!.env.example
