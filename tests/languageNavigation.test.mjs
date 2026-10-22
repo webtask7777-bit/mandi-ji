@@ -154,6 +154,8 @@ test('rendered Hindi detail offers a native return using route scope while keepi
     '/prices/tomato?months=13&state=tamil-nadu': { data: { crop: { id: 'tomato', name: 'Tomato', nameHi: 'टमाटर' }, history: [], dailyHistory: [], districtBreakdown: [] } },
     '/mandi-compare/tomato?state=tamil-nadu': { data: [] },
     '/ticker?state=tamil-nadu': { data: [] },
+    '/kcc/crop/tomato?state=tamil-nadu': { data: null, error: 'API 404: /kcc/crop/tomato?state=tamil-nadu' },
+    '/price-history/tomato?state=tamil-nadu': { data: null, error: 'API 404: /price-history/tomato?state=tamil-nadu' },
   });
   const native = linkedUrls(result.html).filter(url => url.pathname === '/ta/mandi-bhav');
   assert.ok(native.length >= 1, 'Hindi detail has an in-app native return');
@@ -162,7 +164,7 @@ test('rendered Hindi detail offers a native return using route scope while keepi
     assert.equal(url.searchParams.get('crop'), 'tomato');
     assert.equal(url.hash, '#language-prices');
   }
-  assert.match(result.head + result.html, /rel="canonical"[^>]+href="https:\/\/mandi-ji.vercel.app\/mandi-bhav\/tamil-nadu\/tomato"/);
+  assert.match(result.head + result.html, /rel="canonical"[^>]+href="https:\/\/sahibhav.in\/mandi-bhav\/tamil-nadu\/tomato"/);
   assert.match(result.head + result.html, /property="og:locale"[^>]+content="hi_IN"/);
 });
 
