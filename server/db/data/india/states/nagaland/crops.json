@@ -77,8 +77,8 @@
     "name": "Green Chilli",
     "nameHi": "हरी मिर्च",
     "emoji": "🌶️",
-    "totalRecords": 176,
-    "avgPrice": 7194,
+    "totalRecords": 177,
+    "avgPrice": 7201,
     "minPrice": 1500,
     "maxPrice": 12000,
     "varieties": [
@@ -115,8 +115,8 @@
     "name": "Banana",
     "nameHi": "केला",
     "emoji": "🍌",
-    "totalRecords": 163,
-    "avgPrice": 4599,
+    "totalRecords": 164,
+    "avgPrice": 4600,
     "minPrice": 2000,
     "maxPrice": 10000,
     "varieties": [
@@ -312,8 +312,8 @@
     "name": "Chow Chow",
     "nameHi": "चायोटे",
     "emoji": "🌱",
-    "totalRecords": 121,
-    "avgPrice": 2287,
+    "totalRecords": 122,
+    "avgPrice": 2278,
     "minPrice": 700,
     "maxPrice": 5000,
     "varieties": [
@@ -430,6 +430,20 @@
     ]
   },
   {
+    "id": "ashgourd",
+    "name": "Ashgourd",
+    "nameHi": "पेठा",
+    "emoji": "🌱",
+    "totalRecords": 84,
+    "avgPrice": 2326,
+    "minPrice": 1100,
+    "maxPrice": 4000,
+    "varieties": [
+      "Other",
+      "Ashgourd"
+    ]
+  },
+  {
     "id": "cucumbarkheera",
     "name": "Cucumbar(Kheera)",
     "nameHi": "खीरा",
@@ -442,20 +456,6 @@
       "Other",
       "Cucumbar",
       "Cucumber-Organic"
-    ]
-  },
-  {
-    "id": "ashgourd",
-    "name": "Ashgourd",
-    "nameHi": "पेठा",
-    "emoji": "🌱",
-    "totalRecords": 83,
-    "avgPrice": 2332,
-    "minPrice": 1100,
-    "maxPrice": 4000,
-    "varieties": [
-      "Other",
-      "Ashgourd"
     ]
   },
   {
@@ -526,8 +526,8 @@
     "name": "Papaya",
     "nameHi": "पपीता",
     "emoji": "🍏",
-    "totalRecords": 50,
-    "avgPrice": 3923,
+    "totalRecords": 51,
+    "avgPrice": 3914,
     "minPrice": 1600,
     "maxPrice": 6500,
     "varieties": [
@@ -852,6 +852,35 @@
     ]
   },
   {
+    "id": "orange",
+    "name": "Orange",
+    "nameHi": "संतरा",
+    "emoji": "🍊",
+    "totalRecords": 3,
+    "avgPrice": 7333,
+    "minPrice": 4000,
+    "maxPrice": 9800,
+    "varieties": [
+      "Other"
+    ],
+    "sowingMonths": [],
+    "growingMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      10,
+      11,
+      0
+    ],
+    "peakMonths": [
+      11,
+      0
+    ]
+  },
+  {
     "id": "turmericraw",
     "name": "Turmeric(raw)",
     "nameHi": "कच्ची हल्दी",
@@ -909,35 +938,6 @@
     "peakMonths": [
       3,
       4
-    ]
-  },
-  {
-    "id": "orange",
-    "name": "Orange",
-    "nameHi": "संतरा",
-    "emoji": "🍊",
-    "totalRecords": 2,
-    "avgPrice": 8750,
-    "minPrice": 8000,
-    "maxPrice": 9800,
-    "varieties": [
-      "Other"
-    ],
-    "sowingMonths": [],
-    "growingMonths": [
-      6,
-      7,
-      8,
-      9
-    ],
-    "harvestMonths": [
-      10,
-      11,
-      0
-    ],
-    "peakMonths": [
-      11,
-      0
     ]
   },
   {

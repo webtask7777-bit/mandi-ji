@@ -4,25 +4,12 @@
       "name": "Tura",
       "district": "West Garo Hills",
       "avgPrice": 8507,
-      "recentPrice": 8600,
-      "minPrice": 8600,
-      "maxPrice": 8600,
-      "rangeBasis": "recent",
+      "recentPrice": null,
+      "minPrice": 6800,
+      "maxPrice": 9500,
+      "rangeBasis": "all",
       "lastDate": "2026-10-14",
       "records": 45,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Dadengiri",
-      "district": "West Garo Hills",
-      "avgPrice": 8040,
-      "recentPrice": 7300,
-      "minPrice": 7300,
-      "maxPrice": 7300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 5,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -50,6 +37,19 @@
       "lastDate": "2026-09-26",
       "records": 14,
       "topVariety": "Bitter Gourd",
+      "grade": "Medium"
+    },
+    {
+      "name": "Dadengiri",
+      "district": "West Garo Hills",
+      "avgPrice": 8040,
+      "recentPrice": null,
+      "minPrice": 7300,
+      "maxPrice": 8300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 5,
+      "topVariety": null,
       "grade": "Medium"
     },
     {
@@ -110,7 +110,7 @@
       "name": "Shillong",
       "district": "East Khasi Hills",
       "avgPrice": 4395,
-      "recentPrice": 4633,
+      "recentPrice": 4650,
       "minPrice": 4500,
       "maxPrice": 4800,
       "rangeBasis": "recent",
@@ -268,8 +268,8 @@
       "name": "Jowai",
       "district": "West Jaintia Hills",
       "avgPrice": 2971,
-      "recentPrice": 3625,
-      "minPrice": 3500,
+      "recentPrice": 3750,
+      "minPrice": 3750,
       "maxPrice": 3750,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
@@ -281,7 +281,7 @@
       "name": "Shillong",
       "district": "East Khasi Hills",
       "avgPrice": 1911,
-      "recentPrice": 1933,
+      "recentPrice": 1950,
       "minPrice": 1900,
       "maxPrice": 2000,
       "rangeBasis": "recent",
@@ -452,9 +452,9 @@
       "name": "Shillong",
       "district": "East Khasi Hills",
       "avgPrice": 6227,
-      "recentPrice": 4500,
+      "recentPrice": 4000,
       "minPrice": 4000,
-      "maxPrice": 5500,
+      "maxPrice": 4000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-16",
       "records": 64,
@@ -528,19 +528,6 @@
     }
   ],
   "cucumbarkheera": [
-    {
-      "name": "Dadengiri",
-      "district": "West Garo Hills",
-      "avgPrice": 4371,
-      "recentPrice": 5300,
-      "minPrice": 5300,
-      "maxPrice": 5300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 7,
-      "topVariety": null,
-      "grade": "Medium"
-    },
     {
       "name": "Jowai",
       "district": "West Jaintia Hills",
@@ -618,6 +605,19 @@
       "records": 7,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Dadengiri",
+      "district": "West Garo Hills",
+      "avgPrice": 4371,
+      "recentPrice": null,
+      "minPrice": 3300,
+      "maxPrice": 5300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 7,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Sohra",
@@ -701,19 +701,6 @@
     }
   ],
   "banana": [
-    {
-      "name": "Dadengiri",
-      "district": "West Garo Hills",
-      "avgPrice": 4960,
-      "recentPrice": 5100,
-      "minPrice": 5100,
-      "maxPrice": 5100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 10,
-      "topVariety": null,
-      "grade": "Medium"
-    },
     {
       "name": "Shillong",
       "district": "East Khasi Hills",
@@ -819,6 +806,19 @@
       "grade": "Medium"
     },
     {
+      "name": "Dadengiri",
+      "district": "West Garo Hills",
+      "avgPrice": 4960,
+      "recentPrice": null,
+      "minPrice": 4200,
+      "maxPrice": 5200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 10,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
       "name": "Wahiajer",
       "district": "West Jaintia Hills",
       "avgPrice": 4056,
@@ -886,32 +886,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Tura",
-      "district": "West Garo Hills",
-      "avgPrice": 17754,
-      "recentPrice": 16000,
-      "minPrice": 16000,
-      "maxPrice": 16000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 65,
-      "topVariety": "Local",
-      "grade": "Medium"
-    },
-    {
-      "name": "Dadengiri",
-      "district": "West Garo Hills",
-      "avgPrice": 12182,
-      "recentPrice": 10000,
-      "minPrice": 10000,
-      "maxPrice": 10000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 11,
-      "topVariety": "Local",
-      "grade": "Medium"
-    },
-    {
       "name": "Khliehriat",
       "district": "East Jaintia Hills",
       "avgPrice": 34333,
@@ -923,6 +897,19 @@
       "records": 6,
       "topVariety": "Local",
       "grade": "Local"
+    },
+    {
+      "name": "Tura",
+      "district": "West Garo Hills",
+      "avgPrice": 17754,
+      "recentPrice": null,
+      "minPrice": 16000,
+      "maxPrice": 27000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 65,
+      "topVariety": "Local",
+      "grade": "Medium"
     },
     {
       "name": "Rongram",
@@ -964,6 +951,19 @@
       "grade": "Large"
     },
     {
+      "name": "Dadengiri",
+      "district": "West Garo Hills",
+      "avgPrice": 12182,
+      "recentPrice": null,
+      "minPrice": 9000,
+      "maxPrice": 17000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 11,
+      "topVariety": "Local",
+      "grade": "Medium"
+    },
+    {
       "name": "Baghmara",
       "district": "South Garo Hills",
       "avgPrice": 8500,
@@ -978,19 +978,6 @@
     }
   ],
   "bhindiladies-finger": [
-    {
-      "name": "Dadengiri",
-      "district": "West Garo Hills",
-      "avgPrice": 7189,
-      "recentPrice": 7200,
-      "minPrice": 7200,
-      "maxPrice": 7200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 9,
-      "topVariety": null,
-      "grade": "Medium"
-    },
     {
       "name": "Tura",
       "district": "West Garo Hills",
@@ -1014,6 +1001,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-25",
       "records": 10,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Dadengiri",
+      "district": "West Garo Hills",
+      "avgPrice": 7189,
+      "recentPrice": null,
+      "minPrice": 4300,
+      "maxPrice": 8200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 9,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -1098,19 +1098,6 @@
   ],
   "bottle-gourd": [
     {
-      "name": "Tura",
-      "district": "West Garo Hills",
-      "avgPrice": 3658,
-      "recentPrice": 4100,
-      "minPrice": 4100,
-      "maxPrice": 4100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 64,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Baghmara",
       "district": "South Garo Hills",
       "avgPrice": 4500,
@@ -1148,6 +1135,19 @@
       "records": 3,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Tura",
+      "district": "West Garo Hills",
+      "avgPrice": 3658,
+      "recentPrice": null,
+      "minPrice": 2600,
+      "maxPrice": 4200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 64,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Rongram",
@@ -1339,25 +1339,12 @@
       "name": "Tura",
       "district": "West Garo Hills",
       "avgPrice": 7012,
-      "recentPrice": 6800,
-      "minPrice": 6800,
-      "maxPrice": 6800,
-      "rangeBasis": "recent",
+      "recentPrice": null,
+      "minPrice": 6200,
+      "maxPrice": 8600,
+      "rangeBasis": "all",
       "lastDate": "2026-10-14",
       "records": 41,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Dadengiri",
-      "district": "West Garo Hills",
-      "avgPrice": 5200,
-      "recentPrice": 6200,
-      "minPrice": 6200,
-      "maxPrice": 6200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 10,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -1372,6 +1359,19 @@
       "lastDate": "2026-09-30",
       "records": 7,
       "topVariety": "Colacasia",
+      "grade": "Medium"
+    },
+    {
+      "name": "Dadengiri",
+      "district": "West Garo Hills",
+      "avgPrice": 5200,
+      "recentPrice": null,
+      "minPrice": 4200,
+      "maxPrice": 7200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 10,
+      "topVariety": null,
       "grade": "Medium"
     },
     {
@@ -1406,7 +1406,7 @@
       "name": "Shillong",
       "district": "East Khasi Hills",
       "avgPrice": 11086,
-      "recentPrice": 10667,
+      "recentPrice": 10500,
       "minPrice": 10000,
       "maxPrice": 11000,
       "rangeBasis": "recent",
@@ -1414,32 +1414,6 @@
       "records": 64,
       "topVariety": "Nadia",
       "grade": "FAQ"
-    },
-    {
-      "name": "Tura",
-      "district": "West Garo Hills",
-      "avgPrice": 6303,
-      "recentPrice": 6300,
-      "minPrice": 6300,
-      "maxPrice": 6300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 61,
-      "topVariety": "Nadia",
-      "grade": "Medium"
-    },
-    {
-      "name": "Dadengiri",
-      "district": "West Garo Hills",
-      "avgPrice": 5880,
-      "recentPrice": 6000,
-      "minPrice": 6000,
-      "maxPrice": 6000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 10,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Wahiajer",
@@ -1507,6 +1481,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Tura",
+      "district": "West Garo Hills",
+      "avgPrice": 6303,
+      "recentPrice": null,
+      "minPrice": 5400,
+      "maxPrice": 6800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 61,
+      "topVariety": "Nadia",
+      "grade": "Medium"
+    },
+    {
       "name": "Rongram",
       "district": "West Garo Hills",
       "avgPrice": 6000,
@@ -1516,6 +1503,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-09",
       "records": 12,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Dadengiri",
+      "district": "West Garo Hills",
+      "avgPrice": 5880,
+      "recentPrice": null,
+      "minPrice": 5700,
+      "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 10,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -1605,7 +1605,7 @@
       "name": "Shillong",
       "district": "East Khasi Hills",
       "avgPrice": 7133,
-      "recentPrice": 8833,
+      "recentPrice": 8750,
       "minPrice": 8500,
       "maxPrice": 9000,
       "rangeBasis": "recent",
@@ -1831,19 +1831,6 @@
   ],
   "pumpkin": [
     {
-      "name": "Tura",
-      "district": "West Garo Hills",
-      "avgPrice": 6692,
-      "recentPrice": 6800,
-      "minPrice": 6800,
-      "maxPrice": 6800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 53,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Shillong",
       "district": "East Khasi Hills",
       "avgPrice": 2835,
@@ -1855,6 +1842,19 @@
       "records": 81,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Tura",
+      "district": "West Garo Hills",
+      "avgPrice": 6692,
+      "recentPrice": null,
+      "minPrice": 6200,
+      "maxPrice": 7600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 53,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Rongram",
@@ -1942,7 +1942,7 @@
       "name": "Shillong",
       "district": "East Khasi Hills",
       "avgPrice": 1368,
-      "recentPrice": 1667,
+      "recentPrice": 1675,
       "minPrice": 1650,
       "maxPrice": 1700,
       "rangeBasis": "recent",
@@ -1969,24 +1969,11 @@
   ],
   "potato": [
     {
-      "name": "Tura",
-      "district": "West Garo Hills",
-      "avgPrice": 2218,
-      "recentPrice": 2300,
-      "minPrice": 2300,
-      "maxPrice": 2300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 55,
-      "topVariety": "Local",
-      "grade": "Medium"
-    },
-    {
       "name": "Jowai",
       "district": "West Jaintia Hills",
       "avgPrice": 1895,
-      "recentPrice": 1675,
-      "minPrice": 1650,
+      "recentPrice": 1700,
+      "minPrice": 1700,
       "maxPrice": 1700,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
@@ -2057,6 +2044,19 @@
       "lastDate": "2026-09-30",
       "records": 2,
       "topVariety": "Jyoti",
+      "grade": "Medium"
+    },
+    {
+      "name": "Tura",
+      "district": "West Garo Hills",
+      "avgPrice": 2218,
+      "recentPrice": null,
+      "minPrice": 2200,
+      "maxPrice": 2300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 55,
+      "topVariety": "Local",
       "grade": "Medium"
     },
     {
@@ -2329,7 +2329,7 @@
       "name": "Shillong",
       "district": "East Khasi Hills",
       "avgPrice": 2300,
-      "recentPrice": 2933,
+      "recentPrice": 2950,
       "minPrice": 2800,
       "maxPrice": 3100,
       "rangeBasis": "recent",
@@ -2516,19 +2516,6 @@
   ],
   "sponge-gourd": [
     {
-      "name": "Dadengiri",
-      "district": "West Garo Hills",
-      "avgPrice": 4786,
-      "recentPrice": 4200,
-      "minPrice": 4200,
-      "maxPrice": 4200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 7,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
       "name": "Tura",
       "district": "West Garo Hills",
       "avgPrice": 5718,
@@ -2553,22 +2540,22 @@
       "records": 10,
       "topVariety": null,
       "grade": "Medium"
-    }
-  ],
-  "ridgeguardtori": [
+    },
     {
       "name": "Dadengiri",
       "district": "West Garo Hills",
-      "avgPrice": 4200,
-      "recentPrice": 4200,
+      "avgPrice": 4786,
+      "recentPrice": null,
       "minPrice": 4200,
-      "maxPrice": 4200,
-      "rangeBasis": "recent",
+      "maxPrice": 5300,
+      "rangeBasis": "all",
       "lastDate": "2026-10-14",
-      "records": 4,
+      "records": 7,
       "topVariety": null,
       "grade": "Medium"
-    },
+    }
+  ],
+  "ridgeguardtori": [
     {
       "name": "Tura",
       "district": "West Garo Hills",
@@ -2592,6 +2579,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-25",
       "records": 10,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Dadengiri",
+      "district": "West Garo Hills",
+      "avgPrice": 4200,
+      "recentPrice": null,
+      "minPrice": 4200,
+      "maxPrice": 4200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 4,
       "topVariety": null,
       "grade": "Medium"
     }
@@ -2657,7 +2657,7 @@
       "name": "Mawiong Regulated Market",
       "district": "East Khasi Hills",
       "avgPrice": 8564,
-      "recentPrice": 8100,
+      "recentPrice": 8133,
       "minPrice": 8000,
       "maxPrice": 8200,
       "rangeBasis": "recent",
@@ -2684,24 +2684,11 @@
   ],
   "green-chilli": [
     {
-      "name": "Tura",
-      "district": "West Garo Hills",
-      "avgPrice": 15760,
-      "recentPrice": 17000,
-      "minPrice": 17000,
-      "maxPrice": 17000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 52,
-      "topVariety": "Local",
-      "grade": "Medium"
-    },
-    {
       "name": "Jowai",
       "district": "West Jaintia Hills",
       "avgPrice": 6984,
-      "recentPrice": 9250,
-      "minPrice": 9000,
+      "recentPrice": 9500,
+      "minPrice": 9500,
       "maxPrice": 9500,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
@@ -2713,14 +2700,27 @@
       "name": "Shillong",
       "district": "East Khasi Hills",
       "avgPrice": 6818,
-      "recentPrice": 8667,
+      "recentPrice": 8500,
       "minPrice": 8500,
-      "maxPrice": 9000,
+      "maxPrice": 8500,
       "rangeBasis": "recent",
       "lastDate": "2026-10-16",
       "records": 62,
       "topVariety": "Local",
       "grade": "FAQ"
+    },
+    {
+      "name": "Tura",
+      "district": "West Garo Hills",
+      "avgPrice": 15760,
+      "recentPrice": null,
+      "minPrice": 11500,
+      "maxPrice": 17000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 52,
+      "topVariety": "Local",
+      "grade": "Medium"
     },
     {
       "name": "Dadengiri",
@@ -2793,8 +2793,8 @@
       "name": "Jowai",
       "district": "West Jaintia Hills",
       "avgPrice": 5553,
-      "recentPrice": 6225,
-      "minPrice": 6100,
+      "recentPrice": 6350,
+      "minPrice": 6350,
       "maxPrice": 6350,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
@@ -2847,25 +2847,12 @@
       "name": "Tura",
       "district": "West Garo Hills",
       "avgPrice": 20942,
-      "recentPrice": 21000,
-      "minPrice": 21000,
-      "maxPrice": 21000,
-      "rangeBasis": "recent",
+      "recentPrice": null,
+      "minPrice": 15000,
+      "maxPrice": 22000,
+      "rangeBasis": "all",
       "lastDate": "2026-10-14",
       "records": 52,
-      "topVariety": null,
-      "grade": "Medium"
-    },
-    {
-      "name": "Dadengiri",
-      "district": "West Garo Hills",
-      "avgPrice": 18667,
-      "recentPrice": 19000,
-      "minPrice": 19000,
-      "maxPrice": 19000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 9,
       "topVariety": null,
       "grade": "Medium"
     },
@@ -2879,6 +2866,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-09",
       "records": 10,
+      "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Dadengiri",
+      "district": "West Garo Hills",
+      "avgPrice": 18667,
+      "recentPrice": null,
+      "minPrice": 17000,
+      "maxPrice": 19000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 9,
       "topVariety": null,
       "grade": "Medium"
     }
@@ -3026,7 +3026,7 @@
       "name": "Shillong",
       "district": "East Khasi Hills",
       "avgPrice": 4357,
-      "recentPrice": 4333,
+      "recentPrice": 4250,
       "minPrice": 4000,
       "maxPrice": 4500,
       "rangeBasis": "recent",
@@ -3038,19 +3038,6 @@
   ],
   "tapioca": [
     {
-      "name": "Dadengiri",
-      "district": "West Garo Hills",
-      "avgPrice": 4100,
-      "recentPrice": 4100,
-      "minPrice": 4100,
-      "maxPrice": 4100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 2,
-      "topVariety": "Local",
-      "grade": "Medium"
-    },
-    {
       "name": "Tura",
       "district": "West Garo Hills",
       "avgPrice": 6133,
@@ -3060,6 +3047,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-12",
       "records": 3,
+      "topVariety": "Local",
+      "grade": "Medium"
+    },
+    {
+      "name": "Dadengiri",
+      "district": "West Garo Hills",
+      "avgPrice": 4100,
+      "recentPrice": null,
+      "minPrice": 4100,
+      "maxPrice": 4100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 2,
       "topVariety": "Local",
       "grade": "Medium"
     },

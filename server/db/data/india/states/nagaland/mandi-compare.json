@@ -1,19 +1,6 @@
 {
   "banana": [
     {
-      "name": "Pfatsero",
-      "district": "Phek",
-      "avgPrice": 6467,
-      "recentPrice": 6500,
-      "minPrice": 6500,
-      "maxPrice": 6500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 24,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Mon",
       "district": "Mon",
       "avgPrice": 4434,
@@ -40,6 +27,32 @@
       "grade": "Local"
     },
     {
+      "name": "Baghty",
+      "district": "Wokha",
+      "avgPrice": 3579,
+      "recentPrice": 4860,
+      "minPrice": 4860,
+      "maxPrice": 4860,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-22",
+      "records": 27,
+      "topVariety": "Banana - Ripe",
+      "grade": "Local"
+    },
+    {
+      "name": "Pfatsero",
+      "district": "Phek",
+      "avgPrice": 6467,
+      "recentPrice": null,
+      "minPrice": 3000,
+      "maxPrice": 10000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 24,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Tsemenyu",
       "district": "Tsemenyu",
       "avgPrice": 4970,
@@ -62,19 +75,6 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-13",
       "records": 24,
-      "topVariety": "Banana - Ripe",
-      "grade": "Local"
-    },
-    {
-      "name": "Baghty",
-      "district": "Wokha",
-      "avgPrice": 3529,
-      "recentPrice": null,
-      "minPrice": 2200,
-      "maxPrice": 5200,
-      "rangeBasis": "all",
-      "lastDate": "2026-10-12",
-      "records": 26,
       "topVariety": "Banana - Ripe",
       "grade": "Local"
     }
@@ -358,19 +358,6 @@
   ],
   "chow-chow": [
     {
-      "name": "Pfatsero",
-      "district": "Phek",
-      "avgPrice": 3633,
-      "recentPrice": 3500,
-      "minPrice": 3500,
-      "maxPrice": 3500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 15,
-      "topVariety": "Chow Chow",
-      "grade": "Local"
-    },
-    {
       "name": "Tsemenyu",
       "district": "Tsemenyu",
       "avgPrice": 2833,
@@ -412,14 +399,27 @@
     {
       "name": "Baghty",
       "district": "Wokha",
-      "avgPrice": 1427,
+      "avgPrice": 1413,
       "recentPrice": 1200,
       "minPrice": 1200,
       "maxPrice": 1200,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-15",
-      "records": 15,
+      "lastDate": "2026-10-22",
+      "records": 16,
       "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Pfatsero",
+      "district": "Phek",
+      "avgPrice": 3633,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 15,
+      "topVariety": "Chow Chow",
       "grade": "Local"
     },
     {
@@ -490,19 +490,6 @@
       "grade": "Local"
     },
     {
-      "name": "Baghty",
-      "district": "Wokha",
-      "avgPrice": 6421,
-      "recentPrice": 7000,
-      "minPrice": 7000,
-      "maxPrice": 7000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 14,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Longleng",
       "district": "Longleng",
       "avgPrice": 8900,
@@ -514,6 +501,19 @@
       "records": 5,
       "topVariety": "Green Ginger",
       "grade": "FAQ"
+    },
+    {
+      "name": "Baghty",
+      "district": "Wokha",
+      "avgPrice": 6421,
+      "recentPrice": null,
+      "minPrice": 4000,
+      "maxPrice": 8500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 14,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Kohima",
@@ -583,6 +583,19 @@
       "grade": "Local"
     },
     {
+      "name": "Wokha Town",
+      "district": "Wokha",
+      "avgPrice": 2310,
+      "recentPrice": 1900,
+      "minPrice": 1900,
+      "maxPrice": 1900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-22",
+      "records": 21,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Phek",
       "district": "Phek",
       "avgPrice": 2800,
@@ -593,19 +606,6 @@
       "lastDate": "2026-02-18",
       "records": 2,
       "topVariety": "Ashgourd",
-      "grade": "Local"
-    },
-    {
-      "name": "Wokha Town",
-      "district": "Wokha",
-      "avgPrice": 2331,
-      "recentPrice": null,
-      "minPrice": 1900,
-      "maxPrice": 2820,
-      "rangeBasis": "all",
-      "lastDate": "2026-10-13",
-      "records": 20,
-      "topVariety": null,
       "grade": "Local"
     },
     {
@@ -687,19 +687,6 @@
       "records": 15,
       "topVariety": "Brinjal",
       "grade": "FAQ"
-    },
-    {
-      "name": "Wokha Town",
-      "district": "Wokha",
-      "avgPrice": 2900,
-      "recentPrice": 2600,
-      "minPrice": 2600,
-      "maxPrice": 2600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 13,
-      "topVariety": "Brinjal",
-      "grade": "Local"
     },
     {
       "name": "Baghty",
@@ -804,6 +791,19 @@
       "records": 2,
       "topVariety": "Brinjal",
       "grade": "FAQ"
+    },
+    {
+      "name": "Wokha Town",
+      "district": "Wokha",
+      "avgPrice": 2900,
+      "recentPrice": null,
+      "minPrice": 1800,
+      "maxPrice": 4200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 13,
+      "topVariety": "Brinjal",
+      "grade": "Local"
     },
     {
       "name": "Phek",
@@ -1137,19 +1137,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Pfatsero",
-      "district": "Phek",
-      "avgPrice": 2500,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 4,
-      "topVariety": "Cabbage",
-      "grade": "Local"
-    },
-    {
       "name": "Phek",
       "district": "Phek",
       "avgPrice": 3559,
@@ -1198,6 +1185,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-02",
       "records": 2,
+      "topVariety": "Cabbage",
+      "grade": "Local"
+    },
+    {
+      "name": "Pfatsero",
+      "district": "Phek",
+      "avgPrice": 2500,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 4,
       "topVariety": "Cabbage",
       "grade": "Local"
     },
@@ -1592,10 +1592,10 @@
       "name": "Mon",
       "district": "Mon",
       "avgPrice": 12205,
-      "recentPrice": 12205,
+      "recentPrice": null,
       "minPrice": 12205,
       "maxPrice": 12205,
-      "rangeBasis": "recent",
+      "rangeBasis": "all",
       "lastDate": "2026-10-14",
       "records": 1,
       "topVariety": "Bata Putti",
@@ -1755,19 +1755,6 @@
   ],
   "pumpkin": [
     {
-      "name": "Pfatsero",
-      "district": "Phek",
-      "avgPrice": 4071,
-      "recentPrice": 4500,
-      "minPrice": 4500,
-      "maxPrice": 4500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 14,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Phek",
       "district": "Phek",
       "avgPrice": 3797,
@@ -1859,6 +1846,19 @@
       "grade": "Local"
     },
     {
+      "name": "Pfatsero",
+      "district": "Phek",
+      "avgPrice": 4071,
+      "recentPrice": null,
+      "minPrice": 4000,
+      "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 14,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Mokokchung Town",
       "district": "Mokokchung",
       "avgPrice": 3700,
@@ -1926,6 +1926,19 @@
   ],
   "green-chilli": [
     {
+      "name": "Wokha Town",
+      "district": "Wokha",
+      "avgPrice": 8040,
+      "recentPrice": 8500,
+      "minPrice": 8500,
+      "maxPrice": 8500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-22",
+      "records": 10,
+      "topVariety": "Green Chilly",
+      "grade": "Local"
+    },
+    {
       "name": "Kohima",
       "district": "Kohima",
       "avgPrice": 9353,
@@ -1989,19 +2002,6 @@
       "records": 6,
       "topVariety": "Green Chilly",
       "grade": "FAQ"
-    },
-    {
-      "name": "Wokha Town",
-      "district": "Wokha",
-      "avgPrice": 7989,
-      "recentPrice": null,
-      "minPrice": 7800,
-      "maxPrice": 8200,
-      "rangeBasis": "all",
-      "lastDate": "2026-10-13",
-      "records": 9,
-      "topVariety": "Green Chilly",
-      "grade": "Local"
     },
     {
       "name": "Phek",
@@ -2229,6 +2229,19 @@
   ],
   "orange": [
     {
+      "name": "Baghty",
+      "district": "Wokha",
+      "avgPrice": 4500,
+      "recentPrice": 4500,
+      "minPrice": 4500,
+      "maxPrice": 4500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-22",
+      "records": 1,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Wokha Town",
       "district": "Wokha",
       "avgPrice": 8750,
@@ -2314,8 +2327,8 @@
       "name": "Mon",
       "district": "Mon",
       "avgPrice": 1089,
-      "recentPrice": 1089,
-      "minPrice": 1008,
+      "recentPrice": 1170,
+      "minPrice": 1170,
       "maxPrice": 1170,
       "rangeBasis": "recent",
       "lastDate": "2026-10-21",
@@ -2696,19 +2709,6 @@
   ],
   "pineapple": [
     {
-      "name": "Baghty",
-      "district": "Wokha",
-      "avgPrice": 4344,
-      "recentPrice": 5500,
-      "minPrice": 5500,
-      "maxPrice": 5500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 26,
-      "topVariety": "Pine Apple",
-      "grade": "Local"
-    },
-    {
       "name": "Phek",
       "district": "Phek",
       "avgPrice": 4400,
@@ -2719,6 +2719,19 @@
       "lastDate": "2026-09-14",
       "records": 15,
       "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Baghty",
+      "district": "Wokha",
+      "avgPrice": 4344,
+      "recentPrice": null,
+      "minPrice": 3250,
+      "maxPrice": 6600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 26,
+      "topVariety": "Pine Apple",
       "grade": "Local"
     },
     {
@@ -2766,9 +2779,9 @@
       "name": "Tsemenyu",
       "district": "Tsemenyu",
       "avgPrice": 4647,
-      "recentPrice": 4750,
+      "recentPrice": 4500,
       "minPrice": 4500,
-      "maxPrice": 5000,
+      "maxPrice": 4500,
       "rangeBasis": "recent",
       "lastDate": "2026-10-16",
       "records": 15,
@@ -2778,13 +2791,13 @@
     {
       "name": "Wokha Town",
       "district": "Wokha",
-      "avgPrice": 3058,
-      "recentPrice": 2400,
+      "avgPrice": 3098,
+      "recentPrice": 2950,
       "minPrice": 2400,
-      "maxPrice": 2400,
+      "maxPrice": 3500,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-15",
-      "records": 10,
+      "lastDate": "2026-10-22",
+      "records": 11,
       "topVariety": null,
       "grade": "Local"
     },
@@ -2916,19 +2929,6 @@
   ],
   "guava": [
     {
-      "name": "Pfatsero",
-      "district": "Phek",
-      "avgPrice": 5500,
-      "recentPrice": 6500,
-      "minPrice": 6500,
-      "maxPrice": 6500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 4,
-      "topVariety": "Guava",
-      "grade": "Local"
-    },
-    {
       "name": "Baghty",
       "district": "Wokha",
       "avgPrice": 4199,
@@ -2939,6 +2939,19 @@
       "lastDate": "2026-10-17",
       "records": 17,
       "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Pfatsero",
+      "district": "Phek",
+      "avgPrice": 5500,
+      "recentPrice": null,
+      "minPrice": 4500,
+      "maxPrice": 6500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 4,
+      "topVariety": "Guava",
       "grade": "Local"
     }
   ],
@@ -3263,10 +3276,10 @@
       "name": "Pfatsero",
       "district": "Phek",
       "avgPrice": 12333,
-      "recentPrice": 14000,
-      "minPrice": 14000,
+      "recentPrice": null,
+      "minPrice": 11000,
       "maxPrice": 14000,
-      "rangeBasis": "recent",
+      "rangeBasis": "all",
       "lastDate": "2026-10-14",
       "records": 3,
       "topVariety": "Persimon(Japani Fal)",

@@ -66,12 +66,20 @@
       "month": "10",
       "date": "2026-10",
       "market": 4917,
-      "volume": 172,
-      "days": 17,
+      "volume": 173,
+      "days": 18,
       "mandis": 19
     }
   ],
   "dailyHistory": [
+    {
+      "date": "2026-03-13",
+      "market": 5200,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 5000,
+      "maxPrice": 5500
+    },
     {
       "date": "2026-03-27",
       "market": 5450,
@@ -153,12 +161,28 @@
       "maxPrice": 8500
     },
     {
+      "date": "2026-05-06",
+      "market": 7750,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 7000,
+      "maxPrice": 9000
+    },
+    {
       "date": "2026-05-14",
       "market": 7750,
       "volume": 4,
       "mandis": 4,
       "minPrice": 6000,
       "maxPrice": 9000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 7150,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 6000,
+      "maxPrice": 8000
     },
     {
       "date": "2026-05-18",
@@ -175,6 +199,14 @@
       "mandis": 4,
       "minPrice": 7000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-06-18",
+      "market": 10100,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 8000,
+      "maxPrice": 11000
     },
     {
       "date": "2026-06-30",
@@ -255,6 +287,14 @@
       "mandis": 9,
       "minPrice": 6000,
       "maxPrice": 10500
+    },
+    {
+      "date": "2026-07-11",
+      "market": 8000,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 7000,
+      "maxPrice": 9000
     },
     {
       "date": "2026-07-13",
@@ -625,6 +665,14 @@
       "maxPrice": 6500
     },
     {
+      "date": "2026-09-06",
+      "market": 4650,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 4500,
+      "maxPrice": 5000
+    },
+    {
       "date": "2026-09-07",
       "market": 5000,
       "volume": 13,
@@ -671,6 +719,14 @@
       "mandis": 4,
       "minPrice": 4000,
       "maxPrice": 5500
+    },
+    {
+      "date": "2026-09-13",
+      "market": 4500,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 4000,
+      "maxPrice": 5000
     },
     {
       "date": "2026-09-14",
@@ -919,15 +975,23 @@
       "mandis": 11,
       "minPrice": 3500,
       "maxPrice": 6200
+    },
+    {
+      "date": "2026-10-22",
+      "market": 4900,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4800,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-21T15:07:34.636Z",
+  "lastUpdated": "2026-10-22T04:03:01.708Z",
   "districtBreakdown": [
     {
       "district": "Kangra",
       "nameHi": "Kangra",
-      "avgPrice": 5883,
-      "records": 553
+      "avgPrice": 5881,
+      "records": 554
     },
     {
       "district": "Una",

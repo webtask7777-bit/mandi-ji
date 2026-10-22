@@ -27,19 +27,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Channarayapatna",
-      "district": "Hassan",
-      "avgPrice": 8164,
-      "recentPrice": 9300,
-      "minPrice": 9300,
-      "maxPrice": 9300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 8,
-      "topVariety": "Alasande Gram",
-      "grade": "Medium"
-    },
-    {
       "name": "Hanagal",
       "district": "Haveri",
       "avgPrice": 8400,
@@ -51,32 +38,6 @@
       "records": 6,
       "topVariety": "Alasande Gram",
       "grade": "Medium"
-    },
-    {
-      "name": "Chitradurga",
-      "district": "Chitradurga",
-      "avgPrice": 6398,
-      "recentPrice": 8511,
-      "minPrice": 8511,
-      "maxPrice": 8511,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 40,
-      "topVariety": "Alasande Gram",
-      "grade": "Local"
-    },
-    {
-      "name": "Davangere",
-      "district": "Davangere",
-      "avgPrice": 7032,
-      "recentPrice": 7123,
-      "minPrice": 7123,
-      "maxPrice": 7123,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 56,
-      "topVariety": "Alasande Gram",
-      "grade": "Local"
     },
     {
       "name": "Laxmeshwar",
@@ -170,6 +131,19 @@
       "grade": "Small"
     },
     {
+      "name": "Channarayapatna",
+      "district": "Hassan",
+      "avgPrice": 8164,
+      "recentPrice": null,
+      "minPrice": 7060,
+      "maxPrice": 9300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 8,
+      "topVariety": "Alasande Gram",
+      "grade": "Medium"
+    },
+    {
       "name": "HarappanaHalli",
       "district": "Davangere",
       "avgPrice": 8133,
@@ -257,6 +231,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-13",
       "records": 24,
+      "topVariety": "Alasande Gram",
+      "grade": "Local"
+    },
+    {
+      "name": "Davangere",
+      "district": "Davangere",
+      "avgPrice": 7032,
+      "recentPrice": null,
+      "minPrice": 6050,
+      "maxPrice": 10207,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 56,
       "topVariety": "Alasande Gram",
       "grade": "Local"
     },
@@ -361,6 +348,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-24",
       "records": 1,
+      "topVariety": "Alasande Gram",
+      "grade": "Local"
+    },
+    {
+      "name": "Chitradurga",
+      "district": "Chitradurga",
+      "avgPrice": 6398,
+      "recentPrice": null,
+      "minPrice": 3525,
+      "maxPrice": 12272,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 40,
       "topVariety": "Alasande Gram",
       "grade": "Local"
     },
@@ -484,37 +484,11 @@
       "grade": "Grade Range-1"
     },
     {
-      "name": "Shimoga",
-      "district": "Shivamogga",
-      "avgPrice": 49469,
-      "recentPrice": 47685,
-      "minPrice": 33800,
-      "maxPrice": 65009,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 578,
-      "topVariety": "Gorabalu",
-      "grade": "Local"
-    },
-    {
-      "name": "Tiptur",
-      "district": "Tumakuru",
-      "avgPrice": 50274,
-      "recentPrice": 46905,
-      "minPrice": 46905,
-      "maxPrice": 46905,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 38,
-      "topVariety": "Rashi",
-      "grade": "Local"
-    },
-    {
       "name": "Koppa",
       "district": "Chikkamagaluru",
       "avgPrice": 44019,
-      "recentPrice": 41785,
-      "minPrice": 11000,
+      "recentPrice": 48020,
+      "minPrice": 34235,
       "maxPrice": 58050,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
@@ -575,19 +549,6 @@
       "grade": "Local"
     },
     {
-      "name": "Karkala",
-      "district": "Udupi",
-      "avgPrice": 40089,
-      "recentPrice": 38750,
-      "minPrice": 30000,
-      "maxPrice": 47500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 157,
-      "topVariety": "New Variety",
-      "grade": "Local"
-    },
-    {
       "name": "Yellapur",
       "district": "Uttara Kannada",
       "avgPrice": 41399,
@@ -604,7 +565,7 @@
       "name": "Sirsi",
       "district": "Uttara Kannada",
       "avgPrice": 40618,
-      "recentPrice": 36373,
+      "recentPrice": 36185,
       "minPrice": 22099,
       "maxPrice": 45760,
       "rangeBasis": "recent",
@@ -760,8 +721,8 @@
       "name": "Bhadravathi",
       "district": "Shivamogga",
       "avgPrice": 20919,
-      "recentPrice": 18499,
-      "minPrice": 10100,
+      "recentPrice": 20179,
+      "minPrice": 10200,
       "maxPrice": 45196,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
@@ -783,19 +744,6 @@
       "grade": "Local"
     },
     {
-      "name": "Kadur",
-      "district": "Chikkamagaluru",
-      "avgPrice": 20670,
-      "recentPrice": 17333,
-      "minPrice": 10000,
-      "maxPrice": 30000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 87,
-      "topVariety": "Churu",
-      "grade": "Medium"
-    },
-    {
       "name": "Hiriyur",
       "district": "Chitradurga",
       "avgPrice": 23940,
@@ -809,19 +757,6 @@
       "grade": "Local"
     },
     {
-      "name": "Arakalgud",
-      "district": "Hassan",
-      "avgPrice": 20553,
-      "recentPrice": 13900,
-      "minPrice": 10300,
-      "maxPrice": 17500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 110,
-      "topVariety": "Sippegotu",
-      "grade": "Medium"
-    },
-    {
       "name": "Davangere",
       "district": "Davangere",
       "avgPrice": 23156,
@@ -831,19 +766,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
       "records": 116,
-      "topVariety": "Sippegotu",
-      "grade": "Local"
-    },
-    {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 12118,
-      "recentPrice": 11800,
-      "minPrice": 11800,
-      "maxPrice": 11800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 11,
       "topVariety": "Sippegotu",
       "grade": "Local"
     },
@@ -900,6 +822,19 @@
       "grade": "Local"
     },
     {
+      "name": "Tiptur",
+      "district": "Tumakuru",
+      "avgPrice": 50274,
+      "recentPrice": null,
+      "minPrice": 45543,
+      "maxPrice": 53500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 38,
+      "topVariety": "Rashi",
+      "grade": "Local"
+    },
+    {
       "name": "Malur",
       "district": "Kolar",
       "avgPrice": 50000,
@@ -923,6 +858,19 @@
       "lastDate": "2026-09-29",
       "records": 62,
       "topVariety": "Rashi",
+      "grade": "Local"
+    },
+    {
+      "name": "Shimoga",
+      "district": "Shivamogga",
+      "avgPrice": 49469,
+      "recentPrice": null,
+      "minPrice": 8500,
+      "maxPrice": 97550,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 578,
+      "topVariety": "Gorabalu",
       "grade": "Local"
     },
     {
@@ -976,6 +924,19 @@
       "records": 17,
       "topVariety": "Rashi",
       "grade": "Medium"
+    },
+    {
+      "name": "Karkala",
+      "district": "Udupi",
+      "avgPrice": 40089,
+      "recentPrice": null,
+      "minPrice": 30000,
+      "maxPrice": 47500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 157,
+      "topVariety": "New Variety",
+      "grade": "Local"
     },
     {
       "name": "Mangaluru",
@@ -1225,6 +1186,32 @@
       "grade": "Local"
     },
     {
+      "name": "Kadur",
+      "district": "Chikkamagaluru",
+      "avgPrice": 20670,
+      "recentPrice": null,
+      "minPrice": 6000,
+      "maxPrice": 52199,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 87,
+      "topVariety": "Churu",
+      "grade": "Medium"
+    },
+    {
+      "name": "Arakalgud",
+      "district": "Hassan",
+      "avgPrice": 20553,
+      "recentPrice": null,
+      "minPrice": 9000,
+      "maxPrice": 60350,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 110,
+      "topVariety": "Sippegotu",
+      "grade": "Medium"
+    },
+    {
       "name": "Arasikere",
       "district": "Hassan",
       "avgPrice": 18875,
@@ -1351,6 +1338,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-01",
       "records": 14,
+      "topVariety": "Sippegotu",
+      "grade": "Local"
+    },
+    {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 12118,
+      "recentPrice": null,
+      "minPrice": 10000,
+      "maxPrice": 13000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 11,
       "topVariety": "Sippegotu",
       "grade": "Local"
     },
@@ -1501,19 +1501,6 @@
     }
   ],
   "arhar-daltur-dal": [
-    {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 10343,
-      "recentPrice": 13552,
-      "minPrice": 13552,
-      "maxPrice": 13552,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 58,
-      "topVariety": "Arhar Dal(Tur)",
-      "grade": "Local"
-    },
     {
       "name": "Doddaballapur",
       "district": "Bengaluru Rural",
@@ -1706,6 +1693,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-07-29",
       "records": 1,
+      "topVariety": "Arhar Dal(Tur)",
+      "grade": "Local"
+    },
+    {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 10343,
+      "recentPrice": null,
+      "minPrice": 7550,
+      "maxPrice": 13552,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 58,
       "topVariety": "Arhar Dal(Tur)",
       "grade": "Local"
     },
@@ -1972,32 +1972,6 @@
       "grade": "Local"
     },
     {
-      "name": "Jevargi",
-      "district": "Kalaburagi",
-      "avgPrice": 8314,
-      "recentPrice": 9953,
-      "minPrice": 9953,
-      "maxPrice": 9953,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 22,
-      "topVariety": "Arhar (Whole)",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Yadgir",
-      "district": "Yadgir",
-      "avgPrice": 8259,
-      "recentPrice": 9938,
-      "minPrice": 9500,
-      "maxPrice": 10375,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 76,
-      "topVariety": "Red",
-      "grade": "FAQ"
-    },
-    {
       "name": "Vijayapura",
       "district": "Vijayapura",
       "avgPrice": 8019,
@@ -2035,19 +2009,6 @@
       "records": 74,
       "topVariety": "Arhar (Whole)",
       "grade": "FAQ"
-    },
-    {
-      "name": "sedam",
-      "district": "Kalaburagi",
-      "avgPrice": 8171,
-      "recentPrice": 9633,
-      "minPrice": 9633,
-      "maxPrice": 9633,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 90,
-      "topVariety": "Arhar (Whole)",
-      "grade": "Non-FAQ"
     },
     {
       "name": "Bidar",
@@ -2089,19 +2050,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 6015,
-      "recentPrice": 7650,
-      "minPrice": 7650,
-      "maxPrice": 7650,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 13,
-      "topVariety": "Red",
-      "grade": "Local"
-    },
-    {
       "name": "Gadag",
       "district": "Gadag",
       "avgPrice": 4978,
@@ -2139,19 +2087,6 @@
       "records": 22,
       "topVariety": "Arhar (Whole)",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Hungund",
-      "district": "Bagalkot",
-      "avgPrice": 7752,
-      "recentPrice": 5624,
-      "minPrice": 5624,
-      "maxPrice": 5624,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 42,
-      "topVariety": "Arhar (Whole)",
-      "grade": "FAQ"
     },
     {
       "name": "Laxmeshwar",
@@ -2258,6 +2193,45 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Jevargi",
+      "district": "Kalaburagi",
+      "avgPrice": 8314,
+      "recentPrice": null,
+      "minPrice": 7400,
+      "maxPrice": 9976,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 22,
+      "topVariety": "Arhar (Whole)",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Yadgir",
+      "district": "Yadgir",
+      "avgPrice": 8259,
+      "recentPrice": null,
+      "minPrice": 7239,
+      "maxPrice": 10850,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 76,
+      "topVariety": "Red",
+      "grade": "FAQ"
+    },
+    {
+      "name": "sedam",
+      "district": "Kalaburagi",
+      "avgPrice": 8171,
+      "recentPrice": null,
+      "minPrice": 5148,
+      "maxPrice": 10529,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 90,
+      "topVariety": "Arhar (Whole)",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Bangarpet",
       "district": "Kolar",
       "avgPrice": 7950,
@@ -2319,6 +2293,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-03-05",
       "records": 3,
+      "topVariety": "Arhar (Whole)",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Hungund",
+      "district": "Bagalkot",
+      "avgPrice": 7752,
+      "recentPrice": null,
+      "minPrice": 3000,
+      "maxPrice": 9900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 42,
       "topVariety": "Arhar (Whole)",
       "grade": "FAQ"
     },
@@ -2593,6 +2580,19 @@
       "lastDate": "2026-03-03",
       "records": 2,
       "topVariety": "Arhar (Whole)",
+      "grade": "Local"
+    },
+    {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 6015,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 7650,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 13,
+      "topVariety": "Red",
       "grade": "Local"
     },
     {
@@ -2925,32 +2925,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Yadgir",
-      "district": "Yadgir",
-      "avgPrice": 2701,
-      "recentPrice": 3000,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 4,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
-      "name": "Chitradurga",
-      "district": "Chitradurga",
-      "avgPrice": 2659,
-      "recentPrice": 2945,
-      "minPrice": 2945,
-      "maxPrice": 2945,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 13,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
       "name": "Ramdurga",
       "district": "Belagavi",
       "avgPrice": 2398,
@@ -2993,8 +2967,8 @@
       "name": "H.B. Halli",
       "district": "Vijayanagara",
       "avgPrice": 2519,
-      "recentPrice": 2700,
-      "minPrice": 2600,
+      "recentPrice": 2750,
+      "minPrice": 2700,
       "maxPrice": 2800,
       "rangeBasis": "recent",
       "lastDate": "2026-10-18",
@@ -3003,11 +2977,24 @@
       "grade": "FAQ"
     },
     {
+      "name": "Koppal",
+      "district": "Koppal",
+      "avgPrice": 2473,
+      "recentPrice": 2701,
+      "minPrice": 2701,
+      "maxPrice": 2701,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-15",
+      "records": 52,
+      "topVariety": "Hybrid",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Rona",
       "district": "Gadag",
       "avgPrice": 2511,
-      "recentPrice": 2673,
-      "minPrice": 2626,
+      "recentPrice": 2689,
+      "minPrice": 2676,
       "maxPrice": 2709,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
@@ -3042,19 +3029,6 @@
       "grade": "Local"
     },
     {
-      "name": "Koppal",
-      "district": "Koppal",
-      "avgPrice": 2473,
-      "recentPrice": 2576,
-      "minPrice": 2450,
-      "maxPrice": 2701,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-15",
-      "records": 52,
-      "topVariety": "Hybrid",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Kalaburagi",
       "district": "Kalaburagi",
       "avgPrice": 2403,
@@ -3079,19 +3053,6 @@
       "records": 14,
       "topVariety": "Hybrid",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Badami",
-      "district": "Bagalkot",
-      "avgPrice": 2482,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 21,
-      "topVariety": "Hybrid",
-      "grade": "FAQ"
     },
     {
       "name": "Nagamangala",
@@ -3159,6 +3120,19 @@
       "grade": "Local"
     },
     {
+      "name": "Yadgir",
+      "district": "Yadgir",
+      "avgPrice": 2701,
+      "recentPrice": null,
+      "minPrice": 2400,
+      "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 4,
+      "topVariety": null,
+      "grade": "FAQ"
+    },
+    {
       "name": "Kudligi",
       "district": "Vijayanagara",
       "avgPrice": 2681,
@@ -3170,6 +3144,19 @@
       "records": 8,
       "topVariety": "Local",
       "grade": "FAQ"
+    },
+    {
+      "name": "Chitradurga",
+      "district": "Chitradurga",
+      "avgPrice": 2659,
+      "recentPrice": null,
+      "minPrice": 2109,
+      "maxPrice": 2945,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 13,
+      "topVariety": "Local",
+      "grade": "Local"
     },
     {
       "name": "Davangere",
@@ -3248,6 +3235,19 @@
       "records": 16,
       "topVariety": "Local",
       "grade": "Local"
+    },
+    {
+      "name": "Badami",
+      "district": "Bagalkot",
+      "avgPrice": 2482,
+      "recentPrice": null,
+      "minPrice": 2200,
+      "maxPrice": 2650,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 21,
+      "topVariety": "Hybrid",
+      "grade": "FAQ"
     },
     {
       "name": "Hubballi",
@@ -3670,19 +3670,6 @@
       "grade": "Local"
     },
     {
-      "name": "Ramanagara",
-      "district": "Bengaluru South",
-      "avgPrice": 7732,
-      "recentPrice": 7100,
-      "minPrice": 7100,
-      "maxPrice": 7100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 14,
-      "topVariety": "Banana - Green",
-      "grade": "Local"
-    },
-    {
       "name": "Binny Mill (FF&V) Bengaluru",
       "district": "Bengaluru",
       "avgPrice": 2254,
@@ -3692,6 +3679,19 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 65,
+      "topVariety": "Banana - Green",
+      "grade": "Local"
+    },
+    {
+      "name": "Ramanagara",
+      "district": "Bengaluru South",
+      "avgPrice": 7732,
+      "recentPrice": null,
+      "minPrice": 6400,
+      "maxPrice": 10500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 14,
       "topVariety": "Banana - Green",
       "grade": "Local"
     },
@@ -3867,32 +3867,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 7387,
-      "recentPrice": 8650,
-      "minPrice": 8650,
-      "maxPrice": 8650,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 21,
-      "topVariety": "Bengal Gram Dal",
-      "grade": "Local"
-    },
-    {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 7659,
-      "recentPrice": 8500,
-      "minPrice": 8500,
-      "maxPrice": 8500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 43,
-      "topVariety": "Bengal Gram Dal",
-      "grade": "Local"
-    },
-    {
       "name": "Gadag",
       "district": "Gadag",
       "avgPrice": 8171,
@@ -3945,6 +3919,19 @@
       "grade": "Local"
     },
     {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 7659,
+      "recentPrice": null,
+      "minPrice": 5629,
+      "maxPrice": 8708,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 43,
+      "topVariety": "Bengal Gram Dal",
+      "grade": "Local"
+    },
+    {
       "name": "Chamarajanagar",
       "district": "Chamarajanagar",
       "avgPrice": 7650,
@@ -3993,6 +3980,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-30",
       "records": 9,
+      "topVariety": "Bengal Gram Dal",
+      "grade": "Local"
+    },
+    {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 7387,
+      "recentPrice": null,
+      "minPrice": 6500,
+      "maxPrice": 8650,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 21,
       "topVariety": "Bengal Gram Dal",
       "grade": "Local"
     },
@@ -4063,19 +4063,6 @@
     }
   ],
   "beans": [
-    {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 4315,
-      "recentPrice": 7000,
-      "minPrice": 7000,
-      "maxPrice": 7000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 53,
-      "topVariety": "Beans (Whole)",
-      "grade": "Local"
-    },
     {
       "name": "Malur",
       "district": "Kolar",
@@ -4220,19 +4207,6 @@
       "grade": "Local"
     },
     {
-      "name": "Chikkamagaluru",
-      "district": "Chikkamagaluru",
-      "avgPrice": 4484,
-      "recentPrice": 4200,
-      "minPrice": 4200,
-      "maxPrice": 4200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 83,
-      "topVariety": "Beans (Whole)",
-      "grade": "Local"
-    },
-    {
       "name": "Chintamani",
       "district": "Chikkaballapur",
       "avgPrice": 3434,
@@ -4257,19 +4231,6 @@
       "records": 33,
       "topVariety": "Beans (Whole)",
       "grade": "Large"
-    },
-    {
-      "name": "Belur",
-      "district": "Hassan",
-      "avgPrice": 4079,
-      "recentPrice": 3501,
-      "minPrice": 3501,
-      "maxPrice": 3501,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 37,
-      "topVariety": "Beans (Whole)",
-      "grade": "Medium"
     },
     {
       "name": "Davangere",
@@ -4428,6 +4389,32 @@
       "grade": "Local"
     },
     {
+      "name": "Chikkamagaluru",
+      "district": "Chikkamagaluru",
+      "avgPrice": 4484,
+      "recentPrice": null,
+      "minPrice": 2650,
+      "maxPrice": 6900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 83,
+      "topVariety": "Beans (Whole)",
+      "grade": "Local"
+    },
+    {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 4315,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 53,
+      "topVariety": "Beans (Whole)",
+      "grade": "Local"
+    },
+    {
       "name": "Hoskote",
       "district": "Bengaluru Rural",
       "avgPrice": 4147,
@@ -4439,6 +4426,19 @@
       "records": 35,
       "topVariety": "Beans (Whole)",
       "grade": "Large"
+    },
+    {
+      "name": "Belur",
+      "district": "Hassan",
+      "avgPrice": 4079,
+      "recentPrice": null,
+      "minPrice": 2006,
+      "maxPrice": 6014,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 37,
+      "topVariety": "Beans (Whole)",
+      "grade": "Medium"
     },
     {
       "name": "Chickkaballapura",
@@ -5212,32 +5212,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Chitradurga",
-      "district": "Chitradurga",
-      "avgPrice": 5596,
-      "recentPrice": 7781,
-      "minPrice": 7781,
-      "maxPrice": 7781,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 39,
-      "topVariety": "Average (Whole)",
-      "grade": "Local"
-    },
-    {
-      "name": "Jevargi",
-      "district": "Kalaburagi",
-      "avgPrice": 6284,
-      "recentPrice": 7671,
-      "minPrice": 7671,
-      "maxPrice": 7671,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 11,
-      "topVariety": "Average (Whole)",
-      "grade": "FAQ"
-    },
-    {
       "name": "Sindhanur",
       "district": "Raichur",
       "avgPrice": 6139,
@@ -5249,19 +5223,6 @@
       "records": 61,
       "topVariety": "Average (Whole)",
       "grade": "Local"
-    },
-    {
-      "name": "Rona",
-      "district": "Gadag",
-      "avgPrice": 6454,
-      "recentPrice": 7600,
-      "minPrice": 7600,
-      "maxPrice": 7600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 22,
-      "topVariety": "Average (Whole)",
-      "grade": "Non-FAQ"
     },
     {
       "name": "Vijayapura",
@@ -5355,19 +5316,6 @@
       "grade": "Local"
     },
     {
-      "name": "Nargunda",
-      "district": "Gadag",
-      "avgPrice": 6536,
-      "recentPrice": 6780,
-      "minPrice": 6780,
-      "maxPrice": 6780,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 62,
-      "topVariety": "Jawari/Local",
-      "grade": "FAQ"
-    },
-    {
       "name": "Laxmeshwar",
       "district": "Gadag",
       "avgPrice": 5544,
@@ -5379,19 +5327,6 @@
       "records": 65,
       "topVariety": "Jawari/Local",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Shimoga",
-      "district": "Shivamogga",
-      "avgPrice": 6870,
-      "recentPrice": 6700,
-      "minPrice": 6700,
-      "maxPrice": 6700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 18,
-      "topVariety": "Jawari/Local",
-      "grade": "Local"
     },
     {
       "name": "Kustagi",
@@ -5563,6 +5498,19 @@
       "grade": "Local"
     },
     {
+      "name": "Shimoga",
+      "district": "Shivamogga",
+      "avgPrice": 6870,
+      "recentPrice": null,
+      "minPrice": 6350,
+      "maxPrice": 8900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 18,
+      "topVariety": "Jawari/Local",
+      "grade": "Local"
+    },
+    {
       "name": "Dharwar",
       "district": "Dharwad",
       "avgPrice": 6591,
@@ -5600,6 +5548,19 @@
       "records": 2,
       "topVariety": null,
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Nargunda",
+      "district": "Gadag",
+      "avgPrice": 6536,
+      "recentPrice": null,
+      "minPrice": 5850,
+      "maxPrice": 8158,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 62,
+      "topVariety": "Jawari/Local",
+      "grade": "FAQ"
     },
     {
       "name": "Soundati",
@@ -5654,6 +5615,19 @@
       "grade": "Grade Range-1"
     },
     {
+      "name": "Rona",
+      "district": "Gadag",
+      "avgPrice": 6454,
+      "recentPrice": null,
+      "minPrice": 4699,
+      "maxPrice": 7800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 22,
+      "topVariety": "Average (Whole)",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Annigeri",
       "district": "Dharwad",
       "avgPrice": 6418,
@@ -5702,6 +5676,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-03-27",
       "records": 1,
+      "topVariety": "Average (Whole)",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jevargi",
+      "district": "Kalaburagi",
+      "avgPrice": 6284,
+      "recentPrice": null,
+      "minPrice": 5000,
+      "maxPrice": 7671,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 11,
       "topVariety": "Average (Whole)",
       "grade": "FAQ"
     },
@@ -5966,6 +5953,19 @@
       "grade": "Local"
     },
     {
+      "name": "Chitradurga",
+      "district": "Chitradurga",
+      "avgPrice": 5596,
+      "recentPrice": null,
+      "minPrice": 3362,
+      "maxPrice": 7781,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 39,
+      "topVariety": "Average (Whole)",
+      "grade": "Local"
+    },
+    {
       "name": "Kalburgi (Afzalpur)",
       "district": "Kalaburagi",
       "avgPrice": 5567,
@@ -6189,19 +6189,6 @@
   ],
   "black-gram-dalurd-dal": [
     {
-      "name": "Shimoga",
-      "district": "Shivamogga",
-      "avgPrice": 12744,
-      "recentPrice": 14700,
-      "minPrice": 14700,
-      "maxPrice": 14700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 39,
-      "topVariety": "Black Gram Dal",
-      "grade": "Local"
-    },
-    {
       "name": "Bengaluru",
       "district": "Bengaluru",
       "avgPrice": 12441,
@@ -6226,19 +6213,6 @@
       "records": 35,
       "topVariety": "Black Gram Dal",
       "grade": "Medium"
-    },
-    {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 11238,
-      "recentPrice": 12600,
-      "minPrice": 12600,
-      "maxPrice": 12600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 51,
-      "topVariety": "Black Gram Dal",
-      "grade": "Local"
     },
     {
       "name": "Arasikere",
@@ -6304,6 +6278,19 @@
       "records": 28,
       "topVariety": "Black Gram Dal",
       "grade": "Medium"
+    },
+    {
+      "name": "Shimoga",
+      "district": "Shivamogga",
+      "avgPrice": 12744,
+      "recentPrice": null,
+      "minPrice": 7600,
+      "maxPrice": 16000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 39,
+      "topVariety": "Black Gram Dal",
+      "grade": "Local"
     },
     {
       "name": "Tarikere",
@@ -6419,6 +6406,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-08",
       "records": 5,
+      "topVariety": "Black Gram Dal",
+      "grade": "Local"
+    },
+    {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 11238,
+      "recentPrice": null,
+      "minPrice": 7269,
+      "maxPrice": 15200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 51,
       "topVariety": "Black Gram Dal",
       "grade": "Local"
     },
@@ -6921,19 +6921,6 @@
   ],
   "black-gramurd-beanswhole": [
     {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 10114,
-      "recentPrice": 12600,
-      "minPrice": 12600,
-      "maxPrice": 12600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 52,
-      "topVariety": "Black Gram (Whole)",
-      "grade": "Local"
-    },
-    {
       "name": "Hospet",
       "district": "Vijayanagara",
       "avgPrice": 11325,
@@ -6958,19 +6945,6 @@
       "records": 67,
       "topVariety": "Black Gram (Whole)",
       "grade": "FAQ"
-    },
-    {
-      "name": "sedam",
-      "district": "Kalaburagi",
-      "avgPrice": 8799,
-      "recentPrice": 10032,
-      "minPrice": 10032,
-      "maxPrice": 10032,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 47,
-      "topVariety": "Black Gram (Whole)",
-      "grade": "Non-FAQ"
     },
     {
       "name": "Basava Kalayana",
@@ -7023,19 +6997,6 @@
       "records": 8,
       "topVariety": "Black Gram (Whole)",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Annigeri",
-      "district": "Dharwad",
-      "avgPrice": 7679,
-      "recentPrice": 9100,
-      "minPrice": 9100,
-      "maxPrice": 9100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 33,
-      "topVariety": "Black Gram (Whole)",
-      "grade": "FAQ"
     },
     {
       "name": "Hubballi",
@@ -7168,6 +7129,19 @@
       "grade": "Local"
     },
     {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 10114,
+      "recentPrice": null,
+      "minPrice": 6027,
+      "maxPrice": 12650,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 52,
+      "topVariety": "Black Gram (Whole)",
+      "grade": "Local"
+    },
+    {
       "name": "Mysore (Bandipalya)",
       "district": "Mysuru",
       "avgPrice": 10053,
@@ -7192,6 +7166,19 @@
       "records": 19,
       "topVariety": "Black Gram (Whole)",
       "grade": "Local"
+    },
+    {
+      "name": "sedam",
+      "district": "Kalaburagi",
+      "avgPrice": 8799,
+      "recentPrice": null,
+      "minPrice": 8300,
+      "maxPrice": 10080,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 47,
+      "topVariety": "Black Gram (Whole)",
+      "grade": "Non-FAQ"
     },
     {
       "name": "Nagamangala",
@@ -7491,6 +7478,19 @@
       "records": 30,
       "topVariety": "Black Gram (Whole)",
       "grade": "Local"
+    },
+    {
+      "name": "Annigeri",
+      "district": "Dharwad",
+      "avgPrice": 7679,
+      "recentPrice": null,
+      "minPrice": 5952,
+      "maxPrice": 9700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 33,
+      "topVariety": "Black Gram (Whole)",
+      "grade": "FAQ"
     },
     {
       "name": "Humanabad",
@@ -8017,19 +8017,6 @@
       "grade": "Local"
     },
     {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 2342,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 32,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Kadur",
       "district": "Chikkamagaluru",
       "avgPrice": 2224,
@@ -8249,6 +8236,19 @@
       "records": 56,
       "topVariety": "Brinjal",
       "grade": "Small"
+    },
+    {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 2342,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 2550,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 32,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Binny Mill, Bangalore",
@@ -8487,19 +8487,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 59771,
-      "recentPrice": 70650,
-      "minPrice": 70650,
-      "maxPrice": 70650,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 14,
-      "topVariety": "Black Pepper",
-      "grade": "Local"
-    },
-    {
       "name": "Gonikappal",
       "district": "Kodagu",
       "avgPrice": 44745,
@@ -8513,23 +8500,10 @@
       "grade": "Medium"
     },
     {
-      "name": "Shimoga",
-      "district": "Shivamogga",
-      "avgPrice": 66918,
-      "recentPrice": 70000,
-      "minPrice": 70000,
-      "maxPrice": 70000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 35,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Sirsi",
       "district": "Uttara Kannada",
       "avgPrice": 66434,
-      "recentPrice": 69335,
+      "recentPrice": 69190,
       "minPrice": 67889,
       "maxPrice": 70100,
       "rangeBasis": "recent",
@@ -8617,32 +8591,6 @@
       "grade": "Grade Range-1"
     },
     {
-      "name": "Karkala",
-      "district": "Udupi",
-      "avgPrice": 50000,
-      "recentPrice": 50000,
-      "minPrice": 50000,
-      "maxPrice": 50000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 39,
-      "topVariety": "Black Pepper",
-      "grade": "Local"
-    },
-    {
-      "name": "Koppa",
-      "district": "Chikkamagaluru",
-      "avgPrice": 46447,
-      "recentPrice": 45757,
-      "minPrice": 31513,
-      "maxPrice": 60000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 149,
-      "topVariety": "Black Pepper",
-      "grade": "Local"
-    },
-    {
       "name": "Puttur",
       "district": "Dakshina Kannada",
       "avgPrice": 52937,
@@ -8669,17 +8617,17 @@
       "grade": "Local"
     },
     {
-      "name": "Belur",
-      "district": "Hassan",
-      "avgPrice": 40987,
-      "recentPrice": 35000,
-      "minPrice": 35000,
-      "maxPrice": 35000,
+      "name": "Koppa",
+      "district": "Chikkamagaluru",
+      "avgPrice": 46447,
+      "recentPrice": 31513,
+      "minPrice": 31513,
+      "maxPrice": 31513,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 38,
+      "lastDate": "2026-10-17",
+      "records": 149,
       "topVariety": "Black Pepper",
-      "grade": "Medium"
+      "grade": "Local"
     },
     {
       "name": "Bengaluru",
@@ -8693,6 +8641,19 @@
       "records": 8,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Shimoga",
+      "district": "Shivamogga",
+      "avgPrice": 66918,
+      "recentPrice": null,
+      "minPrice": 59000,
+      "maxPrice": 75468,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 35,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Hosanagara",
@@ -8760,6 +8721,19 @@
       "grade": "Grade Range-1"
     },
     {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 59771,
+      "recentPrice": null,
+      "minPrice": 35000,
+      "maxPrice": 70650,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 14,
+      "topVariety": "Black Pepper",
+      "grade": "Local"
+    },
+    {
       "name": "Hassan",
       "district": "Hassan",
       "avgPrice": 58170,
@@ -8822,6 +8796,19 @@
       "lastDate": "2026-05-19",
       "records": 25,
       "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Karkala",
+      "district": "Udupi",
+      "avgPrice": 50000,
+      "recentPrice": null,
+      "minPrice": 50000,
+      "maxPrice": 50000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 39,
+      "topVariety": "Black Pepper",
       "grade": "Local"
     },
     {
@@ -8888,6 +8875,19 @@
       "records": 65,
       "topVariety": "Black Pepper",
       "grade": "Small"
+    },
+    {
+      "name": "Belur",
+      "district": "Hassan",
+      "avgPrice": 40987,
+      "recentPrice": null,
+      "minPrice": 35000,
+      "maxPrice": 70000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 38,
+      "topVariety": "Black Pepper",
+      "grade": "Medium"
     },
     {
       "name": "Mangaluru",
@@ -9442,19 +9442,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Belur",
-      "district": "Hassan",
-      "avgPrice": 2200,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 4,
-      "topVariety": "Cabbage",
-      "grade": "Medium"
-    },
-    {
       "name": "Davangere",
       "district": "Davangere",
       "avgPrice": 1306,
@@ -9477,19 +9464,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 65,
-      "topVariety": "Cabbage",
-      "grade": "Local"
-    },
-    {
-      "name": "Chikkamagaluru",
-      "district": "Chikkamagaluru",
-      "avgPrice": 1816,
-      "recentPrice": 1400,
-      "minPrice": 1400,
-      "maxPrice": 1400,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 50,
       "topVariety": "Cabbage",
       "grade": "Local"
     },
@@ -9637,19 +9611,6 @@
       "grade": "Local"
     },
     {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 2293,
-      "recentPrice": 500,
-      "minPrice": 500,
-      "maxPrice": 500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 29,
-      "topVariety": "Cabbage",
-      "grade": "Local"
-    },
-    {
       "name": "Channarayapatna",
       "district": "Hassan",
       "avgPrice": 4067,
@@ -9715,6 +9676,32 @@
       "grade": "Large"
     },
     {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 2293,
+      "recentPrice": null,
+      "minPrice": 500,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 29,
+      "topVariety": "Cabbage",
+      "grade": "Local"
+    },
+    {
+      "name": "Belur",
+      "district": "Hassan",
+      "avgPrice": 2200,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 4,
+      "topVariety": "Cabbage",
+      "grade": "Medium"
+    },
+    {
       "name": "T. Narasipura",
       "district": "Mysuru",
       "avgPrice": 2000,
@@ -9726,6 +9713,19 @@
       "records": 23,
       "topVariety": "Cabbage",
       "grade": "Small"
+    },
+    {
+      "name": "Chikkamagaluru",
+      "district": "Chikkamagaluru",
+      "avgPrice": 1816,
+      "recentPrice": null,
+      "minPrice": 1300,
+      "maxPrice": 2100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 50,
+      "topVariety": "Cabbage",
+      "grade": "Local"
     },
     {
       "name": "Binny Mill, Bengaluru",
@@ -10083,19 +10083,6 @@
       "grade": "Local"
     },
     {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 3214,
-      "recentPrice": 4000,
-      "minPrice": 4000,
-      "maxPrice": 4000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 27,
-      "topVariety": "Carrot",
-      "grade": "Local"
-    },
-    {
       "name": "Binny Mill (FF&V) Bengaluru",
       "district": "Bengaluru",
       "avgPrice": 5246,
@@ -10354,6 +10341,19 @@
       "records": 6,
       "topVariety": null,
       "grade": "Medium"
+    },
+    {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 3214,
+      "recentPrice": null,
+      "minPrice": 1400,
+      "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 27,
+      "topVariety": "Carrot",
+      "grade": "Local"
     },
     {
       "name": "Hoskote",
@@ -10696,19 +10696,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Chikkamagaluru",
-      "district": "Chikkamagaluru",
-      "avgPrice": 1798,
-      "recentPrice": 1700,
-      "minPrice": 1700,
-      "maxPrice": 1700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 58,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
       "name": "Hunsur",
       "district": "Mysuru",
       "avgPrice": 1789,
@@ -10874,6 +10861,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-05-18",
       "records": 47,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
+      "name": "Chikkamagaluru",
+      "district": "Chikkamagaluru",
+      "avgPrice": 1798,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 2150,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 58,
       "topVariety": "Local",
       "grade": "Local"
     },
@@ -11248,32 +11248,6 @@
   ],
   "cowpealobia-karamani": [
     {
-      "name": "Soundati",
-      "district": "Belagavi",
-      "avgPrice": 9288,
-      "recentPrice": 9950,
-      "minPrice": 9950,
-      "maxPrice": 9950,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 4,
-      "topVariety": "Cowpea (Whole)",
-      "grade": "Small"
-    },
-    {
-      "name": "Koppal",
-      "district": "Koppal",
-      "avgPrice": 6977,
-      "recentPrice": 9450,
-      "minPrice": 9450,
-      "maxPrice": 9450,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 19,
-      "topVariety": "Cowpea (Whole)",
-      "grade": "Small"
-    },
-    {
       "name": "Kustagi",
       "district": "Koppal",
       "avgPrice": 8167,
@@ -11311,6 +11285,19 @@
       "records": 1,
       "topVariety": "Cowpea (Whole)",
       "grade": "Medium"
+    },
+    {
+      "name": "Soundati",
+      "district": "Belagavi",
+      "avgPrice": 9288,
+      "recentPrice": null,
+      "minPrice": 7900,
+      "maxPrice": 10000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 4,
+      "topVariety": "Cowpea (Whole)",
+      "grade": "Small"
     },
     {
       "name": "Manvi",
@@ -11482,6 +11469,19 @@
       "grade": "Medium"
     },
     {
+      "name": "Koppal",
+      "district": "Koppal",
+      "avgPrice": 6977,
+      "recentPrice": null,
+      "minPrice": 5005,
+      "maxPrice": 9450,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 19,
+      "topVariety": "Cowpea (Whole)",
+      "grade": "Small"
+    },
+    {
       "name": "Piriya Pattana",
       "district": "Mysuru",
       "avgPrice": 6700,
@@ -11614,6 +11614,32 @@
   ],
   "copra": [
     {
+      "name": "Turvekere",
+      "district": "Tumakuru",
+      "avgPrice": 21338,
+      "recentPrice": 30000,
+      "minPrice": 30000,
+      "maxPrice": 30000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-15",
+      "records": 277,
+      "topVariety": "Small",
+      "grade": "Grade Range-1"
+    },
+    {
+      "name": "Tiptur",
+      "district": "Tumakuru",
+      "avgPrice": 21194,
+      "recentPrice": 30000,
+      "minPrice": 30000,
+      "maxPrice": 30000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-15",
+      "records": 124,
+      "topVariety": "Copra",
+      "grade": "Local"
+    },
+    {
       "name": "Hosadurga",
       "district": "Chitradurga",
       "avgPrice": 21721,
@@ -11627,84 +11653,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Turvekere",
-      "district": "Tumakuru",
-      "avgPrice": 21338,
-      "recentPrice": 26000,
-      "minPrice": 18000,
-      "maxPrice": 30000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-15",
-      "records": 277,
-      "topVariety": "Small",
-      "grade": "Grade Range-1"
-    },
-    {
-      "name": "Tiptur",
-      "district": "Tumakuru",
-      "avgPrice": 21194,
-      "recentPrice": 24750,
-      "minPrice": 19500,
-      "maxPrice": 30000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-15",
-      "records": 124,
-      "topVariety": "Copra",
-      "grade": "Local"
-    },
-    {
-      "name": "Nagamangala",
-      "district": "Mandya",
-      "avgPrice": 23332,
-      "recentPrice": 24500,
-      "minPrice": 20000,
-      "maxPrice": 29000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 128,
-      "topVariety": "Medium",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Huliyar",
-      "district": "Tumakuru",
-      "avgPrice": 22554,
-      "recentPrice": 24370,
-      "minPrice": 18000,
-      "maxPrice": 30739,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 188,
-      "topVariety": "Milling Copra",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kadur",
-      "district": "Chikkamagaluru",
-      "avgPrice": 20031,
-      "recentPrice": 23550,
-      "minPrice": 20000,
-      "maxPrice": 27100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 49,
-      "topVariety": "Medium",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Channarayapatna",
-      "district": "Hassan",
-      "avgPrice": 22194,
-      "recentPrice": 23250,
-      "minPrice": 18000,
-      "maxPrice": 28500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 196,
-      "topVariety": "Copra",
-      "grade": "FAQ"
-    },
-    {
       "name": "Mandya",
       "district": "Mandya",
       "avgPrice": 25475,
@@ -11714,19 +11662,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 16,
-      "topVariety": "Copra",
-      "grade": "Local"
-    },
-    {
-      "name": "Maddur",
-      "district": "Mandya",
-      "avgPrice": 18419,
-      "recentPrice": 17000,
-      "minPrice": 17000,
-      "maxPrice": 17000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 74,
       "topVariety": "Copra",
       "grade": "Local"
     },
@@ -11874,6 +11809,19 @@
       "grade": "Local"
     },
     {
+      "name": "Nagamangala",
+      "district": "Mandya",
+      "avgPrice": 23332,
+      "recentPrice": null,
+      "minPrice": 9800,
+      "maxPrice": 34300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 128,
+      "topVariety": "Medium",
+      "grade": "FAQ"
+    },
+    {
       "name": "Tumakuru",
       "district": "Tumakuru",
       "avgPrice": 23214,
@@ -11885,6 +11833,32 @@
       "records": 58,
       "topVariety": "Ball",
       "grade": "Local"
+    },
+    {
+      "name": "Huliyar",
+      "district": "Tumakuru",
+      "avgPrice": 22554,
+      "recentPrice": null,
+      "minPrice": 8300,
+      "maxPrice": 33881,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 188,
+      "topVariety": "Milling Copra",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Channarayapatna",
+      "district": "Hassan",
+      "avgPrice": 22194,
+      "recentPrice": null,
+      "minPrice": 7000,
+      "maxPrice": 34343,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 196,
+      "topVariety": "Copra",
+      "grade": "FAQ"
     },
     {
       "name": "Bhadravathi",
@@ -11939,6 +11913,19 @@
       "grade": "Local"
     },
     {
+      "name": "Kadur",
+      "district": "Chikkamagaluru",
+      "avgPrice": 20031,
+      "recentPrice": null,
+      "minPrice": 16000,
+      "maxPrice": 30500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 49,
+      "topVariety": "Medium",
+      "grade": "FAQ"
+    },
+    {
       "name": "Tumkur",
       "district": "Tumakuru",
       "avgPrice": 19636,
@@ -11961,6 +11948,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-07",
       "records": 7,
+      "topVariety": "Copra",
+      "grade": "Local"
+    },
+    {
+      "name": "Maddur",
+      "district": "Mandya",
+      "avgPrice": 18419,
+      "recentPrice": null,
+      "minPrice": 9700,
+      "maxPrice": 71000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 74,
       "topVariety": "Copra",
       "grade": "Local"
     },
@@ -12162,19 +12162,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Belur",
-      "district": "Hassan",
-      "avgPrice": 11578,
-      "recentPrice": 12000,
-      "minPrice": 12000,
-      "maxPrice": 12000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 9,
-      "topVariety": "Suyodhar (Ginned)",
-      "grade": "FAQ"
-    },
-    {
       "name": "Gundlupet",
       "district": "Chamarajanagar",
       "avgPrice": 11967,
@@ -12279,32 +12266,6 @@
       "grade": "Local"
     },
     {
-      "name": "Nargunda",
-      "district": "Gadag",
-      "avgPrice": 9183,
-      "recentPrice": 9506,
-      "minPrice": 9506,
-      "maxPrice": 9506,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 19,
-      "topVariety": "Narma BT Cotton",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Soundati",
-      "district": "Belagavi",
-      "avgPrice": 9248,
-      "recentPrice": 9500,
-      "minPrice": 9500,
-      "maxPrice": 9500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 87,
-      "topVariety": "Narma BT Cotton",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Indi",
       "district": "Vijayapura",
       "avgPrice": 9500,
@@ -12357,30 +12318,17 @@
       "grade": "FAQ"
     },
     {
-      "name": "Afzalpur",
-      "district": "Kalaburagi",
-      "avgPrice": 9032,
-      "recentPrice": 9350,
-      "minPrice": 9350,
-      "maxPrice": 9350,
+      "name": "Haveri",
+      "district": "Haveri",
+      "avgPrice": 8591,
+      "recentPrice": 9302,
+      "minPrice": 9202,
+      "maxPrice": 9401,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 22,
-      "topVariety": "N-44",
-      "grade": "Local"
-    },
-    {
-      "name": "Kalaburagi",
-      "district": "Kalaburagi",
-      "avgPrice": 9015,
-      "recentPrice": 9350,
-      "minPrice": 9350,
-      "maxPrice": 9350,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 15,
-      "topVariety": null,
-      "grade": "Local"
+      "lastDate": "2026-10-17",
+      "records": 45,
+      "topVariety": "Narma BT Cotton",
+      "grade": "FAQ"
     },
     {
       "name": "Lingasugur",
@@ -12422,45 +12370,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Jevargi",
-      "district": "Kalaburagi",
-      "avgPrice": 9251,
-      "recentPrice": 9188,
-      "minPrice": 9188,
-      "maxPrice": 9188,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 22,
-      "topVariety": "Narma BT Cotton",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Haveri",
-      "district": "Haveri",
-      "avgPrice": 8591,
-      "recentPrice": 9187,
-      "minPrice": 8959,
-      "maxPrice": 9401,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 45,
-      "topVariety": "Narma BT Cotton",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Annigeri",
-      "district": "Dharwad",
-      "avgPrice": 9285,
-      "recentPrice": 9168,
-      "minPrice": 9168,
-      "maxPrice": 9168,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 25,
-      "topVariety": "Narma BT Cotton",
-      "grade": "FAQ"
-    },
-    {
       "name": "Sindhanur",
       "district": "Raichur",
       "avgPrice": 8868,
@@ -12471,19 +12380,6 @@
       "lastDate": "2026-10-16",
       "records": 40,
       "topVariety": "Bunny",
-      "grade": "Local"
-    },
-    {
-      "name": "Gokak",
-      "district": "Belagavi",
-      "avgPrice": 8430,
-      "recentPrice": 9000,
-      "minPrice": 9000,
-      "maxPrice": 9000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 27,
-      "topVariety": "Narma BT Cotton",
       "grade": "Local"
     },
     {
@@ -12500,19 +12396,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Kadur",
-      "district": "Chikkamagaluru",
-      "avgPrice": 10000,
-      "recentPrice": 9000,
-      "minPrice": 9000,
-      "maxPrice": 9000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 5,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Kottur",
       "district": "Vijayanagara",
       "avgPrice": 6826,
@@ -12526,6 +12409,19 @@
       "grade": "Local"
     },
     {
+      "name": "Belur",
+      "district": "Hassan",
+      "avgPrice": 11578,
+      "recentPrice": null,
+      "minPrice": 9500,
+      "maxPrice": 12500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 9,
+      "topVariety": "Suyodhar (Ginned)",
+      "grade": "FAQ"
+    },
+    {
       "name": "Shimoga",
       "district": "Shivamogga",
       "avgPrice": 10167,
@@ -12537,6 +12433,19 @@
       "records": 3,
       "topVariety": null,
       "grade": "Local"
+    },
+    {
+      "name": "Kadur",
+      "district": "Chikkamagaluru",
+      "avgPrice": 10000,
+      "recentPrice": null,
+      "minPrice": 9000,
+      "maxPrice": 12000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 5,
+      "topVariety": null,
+      "grade": "FAQ"
     },
     {
       "name": "Dharwar",
@@ -12578,6 +12487,58 @@
       "grade": "FAQ"
     },
     {
+      "name": "Annigeri",
+      "district": "Dharwad",
+      "avgPrice": 9285,
+      "recentPrice": null,
+      "minPrice": 8486,
+      "maxPrice": 9700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 25,
+      "topVariety": "Narma BT Cotton",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jevargi",
+      "district": "Kalaburagi",
+      "avgPrice": 9251,
+      "recentPrice": null,
+      "minPrice": 8727,
+      "maxPrice": 9819,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 22,
+      "topVariety": "Narma BT Cotton",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Soundati",
+      "district": "Belagavi",
+      "avgPrice": 9248,
+      "recentPrice": null,
+      "minPrice": 7490,
+      "maxPrice": 9650,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 87,
+      "topVariety": "Narma BT Cotton",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Nargunda",
+      "district": "Gadag",
+      "avgPrice": 9183,
+      "recentPrice": null,
+      "minPrice": 8567,
+      "maxPrice": 9803,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 19,
+      "topVariety": "Narma BT Cotton",
+      "grade": "FAQ"
+    },
+    {
       "name": "Shiggoan",
       "district": "Haveri",
       "avgPrice": 9167,
@@ -12615,6 +12576,32 @@
       "records": 6,
       "topVariety": "Jayadhar",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Afzalpur",
+      "district": "Kalaburagi",
+      "avgPrice": 9032,
+      "recentPrice": null,
+      "minPrice": 8500,
+      "maxPrice": 9500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 22,
+      "topVariety": "N-44",
+      "grade": "Local"
+    },
+    {
+      "name": "Kalaburagi",
+      "district": "Kalaburagi",
+      "avgPrice": 9015,
+      "recentPrice": null,
+      "minPrice": 8600,
+      "maxPrice": 9350,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 15,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Kundagol",
@@ -12718,6 +12705,19 @@
       "lastDate": "2026-10-13",
       "records": 2,
       "topVariety": "DCH-32(Unginned)",
+      "grade": "Local"
+    },
+    {
+      "name": "Gokak",
+      "district": "Belagavi",
+      "avgPrice": 8430,
+      "recentPrice": null,
+      "minPrice": 3500,
+      "maxPrice": 13488,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 27,
+      "topVariety": "Narma BT Cotton",
       "grade": "Local"
     },
     {
@@ -12856,9 +12856,9 @@
       "name": "Koppa",
       "district": "Chikkamagaluru",
       "avgPrice": 25878,
-      "recentPrice": 42500,
+      "recentPrice": 40000,
       "minPrice": 40000,
-      "maxPrice": 45000,
+      "maxPrice": 40000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-16",
       "records": 94,
@@ -12918,19 +12918,6 @@
       "grade": "Local"
     },
     {
-      "name": "Nagamangala",
-      "district": "Mandya",
-      "avgPrice": 21232,
-      "recentPrice": 25000,
-      "minPrice": 25000,
-      "maxPrice": 25000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 34,
-      "topVariety": "Medium",
-      "grade": "Medium"
-    },
-    {
       "name": "Honnali",
       "district": "Davangere",
       "avgPrice": 24454,
@@ -12942,19 +12929,6 @@
       "records": 66,
       "topVariety": "Small",
       "grade": "Medium"
-    },
-    {
-      "name": "Maddur",
-      "district": "Mandya",
-      "avgPrice": 21623,
-      "recentPrice": 24000,
-      "minPrice": 24000,
-      "maxPrice": 24000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 61,
-      "topVariety": "Small",
-      "grade": "Local"
     },
     {
       "name": "Hosadurga",
@@ -13139,19 +13113,6 @@
       "grade": "Grade Range-1"
     },
     {
-      "name": "Channarayapatna",
-      "district": "Hassan",
-      "avgPrice": 21340,
-      "recentPrice": 20000,
-      "minPrice": 20000,
-      "maxPrice": 20000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 65,
-      "topVariety": "Medium",
-      "grade": "Medium"
-    },
-    {
       "name": "Harihara",
       "district": "Davangere",
       "avgPrice": 21801,
@@ -13165,24 +13126,11 @@
       "grade": "Small"
     },
     {
-      "name": "T. Narasipura",
-      "district": "Mysuru",
-      "avgPrice": 16152,
-      "recentPrice": 17500,
-      "minPrice": 17500,
-      "maxPrice": 17500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 23,
-      "topVariety": "Small",
-      "grade": "Small"
-    },
-    {
       "name": "Sirsi",
       "district": "Uttara Kannada",
       "avgPrice": 5218,
-      "recentPrice": 4920,
-      "minPrice": 4910,
+      "recentPrice": 4930,
+      "minPrice": 4930,
       "maxPrice": 4930,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
@@ -13412,6 +13360,32 @@
       "grade": "Local"
     },
     {
+      "name": "Maddur",
+      "district": "Mandya",
+      "avgPrice": 21623,
+      "recentPrice": null,
+      "minPrice": 19000,
+      "maxPrice": 40000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 61,
+      "topVariety": "Small",
+      "grade": "Local"
+    },
+    {
+      "name": "Channarayapatna",
+      "district": "Hassan",
+      "avgPrice": 21340,
+      "recentPrice": null,
+      "minPrice": 13000,
+      "maxPrice": 40200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 65,
+      "topVariety": "Medium",
+      "grade": "Medium"
+    },
+    {
       "name": "Malur",
       "district": "Kolar",
       "avgPrice": 21320,
@@ -13423,6 +13397,19 @@
       "records": 12,
       "topVariety": "Small",
       "grade": "Local"
+    },
+    {
+      "name": "Nagamangala",
+      "district": "Mandya",
+      "avgPrice": 21232,
+      "recentPrice": null,
+      "minPrice": 18000,
+      "maxPrice": 25000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 34,
+      "topVariety": "Medium",
+      "grade": "Medium"
     },
     {
       "name": "Srirangapattana",
@@ -13605,6 +13592,19 @@
       "records": 35,
       "topVariety": "Small",
       "grade": "Local"
+    },
+    {
+      "name": "T. Narasipura",
+      "district": "Mysuru",
+      "avgPrice": 16152,
+      "recentPrice": null,
+      "minPrice": 14500,
+      "maxPrice": 25000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 23,
+      "topVariety": "Small",
+      "grade": "Small"
     },
     {
       "name": "Hirekerur",
@@ -13884,19 +13884,6 @@
   ],
   "cucumbarkheera": [
     {
-      "name": "Chikkamagaluru",
-      "district": "Chikkamagaluru",
-      "avgPrice": 1814,
-      "recentPrice": 3300,
-      "minPrice": 3300,
-      "maxPrice": 3300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 56,
-      "topVariety": "Cucumbar",
-      "grade": "Local"
-    },
-    {
       "name": "Shimoga",
       "district": "Shivamogga",
       "avgPrice": 1914,
@@ -13908,19 +13895,6 @@
       "records": 109,
       "topVariety": "Cucumbar",
       "grade": "Local"
-    },
-    {
-      "name": "Belur",
-      "district": "Hassan",
-      "avgPrice": 1445,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 55,
-      "topVariety": "Cucumbar",
-      "grade": "Medium"
     },
     {
       "name": "Davangere",
@@ -14248,6 +14222,19 @@
       "grade": "Local"
     },
     {
+      "name": "Chikkamagaluru",
+      "district": "Chikkamagaluru",
+      "avgPrice": 1814,
+      "recentPrice": null,
+      "minPrice": 800,
+      "maxPrice": 3300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 56,
+      "topVariety": "Cucumbar",
+      "grade": "Local"
+    },
+    {
       "name": "Chikkamagalore",
       "district": "Chikkamagaluru",
       "avgPrice": 1811,
@@ -14322,6 +14309,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-05-18",
       "records": 43,
+      "topVariety": "Cucumbar",
+      "grade": "Medium"
+    },
+    {
+      "name": "Belur",
+      "district": "Hassan",
+      "avgPrice": 1445,
+      "recentPrice": null,
+      "minPrice": 800,
+      "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 55,
       "topVariety": "Cucumbar",
       "grade": "Medium"
     },
@@ -15128,7 +15128,7 @@
       "name": "Davangere",
       "district": "Davangere",
       "avgPrice": 10156,
-      "recentPrice": 15525,
+      "recentPrice": 15500,
       "minPrice": 15400,
       "maxPrice": 15600,
       "rangeBasis": "recent",
@@ -15175,19 +15175,6 @@
       "records": 23,
       "topVariety": "Garlic",
       "grade": "Medium"
-    },
-    {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 9080,
-      "recentPrice": 9444,
-      "minPrice": 9444,
-      "maxPrice": 9444,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 32,
-      "topVariety": "Garlic",
-      "grade": "Local"
     },
     {
       "name": "Doddaballapur",
@@ -15277,6 +15264,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-10",
       "records": 11,
+      "topVariety": "Garlic",
+      "grade": "Local"
+    },
+    {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 9080,
+      "recentPrice": null,
+      "minPrice": 1131,
+      "maxPrice": 11000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 32,
       "topVariety": "Garlic",
       "grade": "Local"
     },
@@ -15569,45 +15569,6 @@
       "grade": "Grade Range-1"
     },
     {
-      "name": "Arakalgud",
-      "district": "Hassan",
-      "avgPrice": 2330,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 56,
-      "topVariety": "Green Ginger",
-      "grade": "Medium"
-    },
-    {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 1946,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 111,
-      "topVariety": "Green Ginger",
-      "grade": "Local"
-    },
-    {
-      "name": "Belur",
-      "district": "Hassan",
-      "avgPrice": 1693,
-      "recentPrice": 1400,
-      "minPrice": 1400,
-      "maxPrice": 1400,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 118,
-      "topVariety": "Green Ginger",
-      "grade": "Medium"
-    },
-    {
       "name": "Arasikere",
       "district": "Hassan",
       "avgPrice": 1642,
@@ -15619,19 +15580,6 @@
       "records": 32,
       "topVariety": "Green Ginger",
       "grade": "Medium"
-    },
-    {
-      "name": "Mundgod",
-      "district": "Uttara Kannada",
-      "avgPrice": 1024,
-      "recentPrice": 1000,
-      "minPrice": 1000,
-      "maxPrice": 1000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 17,
-      "topVariety": "Green Ginger",
-      "grade": "Small"
     },
     {
       "name": "THIRTHAHALLI",
@@ -15920,6 +15868,19 @@
       "grade": "Local"
     },
     {
+      "name": "Arakalgud",
+      "district": "Hassan",
+      "avgPrice": 2330,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 25000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 56,
+      "topVariety": "Green Ginger",
+      "grade": "Medium"
+    },
+    {
       "name": "Channarayapatna",
       "district": "Hassan",
       "avgPrice": 2182,
@@ -15959,6 +15920,19 @@
       "grade": "Medium"
     },
     {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 1946,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 13527,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 111,
+      "topVariety": "Green Ginger",
+      "grade": "Local"
+    },
+    {
       "name": "Nanjangud",
       "district": "Mysuru",
       "avgPrice": 1867,
@@ -15983,6 +15957,19 @@
       "records": 4,
       "topVariety": "Green Ginger",
       "grade": "Local"
+    },
+    {
+      "name": "Belur",
+      "district": "Hassan",
+      "avgPrice": 1693,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 118,
+      "topVariety": "Green Ginger",
+      "grade": "Medium"
     },
     {
       "name": "Shikaripura",
@@ -16022,6 +16009,19 @@
       "records": 79,
       "topVariety": "Green Ginger",
       "grade": "Medium"
+    },
+    {
+      "name": "Mundgod",
+      "district": "Uttara Kannada",
+      "avgPrice": 1024,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 1200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 17,
+      "topVariety": "Green Ginger",
+      "grade": "Small"
     },
     {
       "name": "Sakaleshpura",
@@ -16617,32 +16617,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Huliyar",
-      "district": "Tumakuru",
-      "avgPrice": 3102,
-      "recentPrice": 2800,
-      "minPrice": 2800,
-      "maxPrice": 2800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 42,
-      "topVariety": "Elephant Yam (Suran)",
-      "grade": "Grade Range-1"
-    },
-    {
-      "name": "Kadur",
-      "district": "Chikkamagaluru",
-      "avgPrice": 2319,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 8,
-      "topVariety": "Elephant Yam (Suran)",
-      "grade": "Medium"
-    },
-    {
       "name": "Davangere",
       "district": "Davangere",
       "avgPrice": 1742,
@@ -16695,6 +16669,19 @@
       "grade": "Medium"
     },
     {
+      "name": "Huliyar",
+      "district": "Tumakuru",
+      "avgPrice": 3102,
+      "recentPrice": null,
+      "minPrice": 2300,
+      "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 42,
+      "topVariety": "Elephant Yam (Suran)",
+      "grade": "Grade Range-1"
+    },
+    {
       "name": "Hosadurga",
       "district": "Chitradurga",
       "avgPrice": 2985,
@@ -16704,6 +16691,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-05",
       "records": 13,
+      "topVariety": "Elephant Yam (Suran)",
+      "grade": "Medium"
+    },
+    {
+      "name": "Kadur",
+      "district": "Chikkamagaluru",
+      "avgPrice": 2319,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 2650,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 8,
       "topVariety": "Elephant Yam (Suran)",
       "grade": "Medium"
     },
@@ -17001,8 +17001,8 @@
       "name": "Chickkaballapura",
       "district": "Chikkaballapur",
       "avgPrice": 8992,
-      "recentPrice": 9250,
-      "minPrice": 8000,
+      "recentPrice": 10500,
+      "minPrice": 10500,
       "maxPrice": 10500,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
@@ -17238,19 +17238,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Chitradurga",
-      "district": "Chitradurga",
-      "avgPrice": 3769,
-      "recentPrice": 3611,
-      "minPrice": 3611,
-      "maxPrice": 3611,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 37,
-      "topVariety": "Avare (Whole)",
-      "grade": "Local"
-    },
-    {
       "name": "Gadag",
       "district": "Gadag",
       "avgPrice": 2586,
@@ -17377,6 +17364,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-04",
       "records": 16,
+      "topVariety": "Avare (Whole)",
+      "grade": "Local"
+    },
+    {
+      "name": "Chitradurga",
+      "district": "Chitradurga",
+      "avgPrice": 3769,
+      "recentPrice": null,
+      "minPrice": 2250,
+      "maxPrice": 5389,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 37,
       "topVariety": "Avare (Whole)",
       "grade": "Local"
     },
@@ -17740,19 +17740,6 @@
       "grade": "Local"
     },
     {
-      "name": "Shimoga",
-      "district": "Shivamogga",
-      "avgPrice": 18287,
-      "recentPrice": 17500,
-      "minPrice": 17500,
-      "maxPrice": 17500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 27,
-      "topVariety": "Dry",
-      "grade": "Local"
-    },
-    {
       "name": "Periyapatna",
       "district": "Mysuru",
       "avgPrice": 17389,
@@ -17762,32 +17749,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-16",
       "records": 5,
-      "topVariety": "Dry",
-      "grade": "Medium"
-    },
-    {
-      "name": "Sorabha",
-      "district": "Shivamogga",
-      "avgPrice": 18605,
-      "recentPrice": 15000,
-      "minPrice": 15000,
-      "maxPrice": 15000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 57,
-      "topVariety": "Dry",
-      "grade": "Local"
-    },
-    {
-      "name": "Arakalgud",
-      "district": "Hassan",
-      "avgPrice": 15481,
-      "recentPrice": 15000,
-      "minPrice": 15000,
-      "maxPrice": 15000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 24,
       "topVariety": "Dry",
       "grade": "Medium"
     },
@@ -17831,6 +17792,19 @@
       "grade": "Local"
     },
     {
+      "name": "Sorabha",
+      "district": "Shivamogga",
+      "avgPrice": 18605,
+      "recentPrice": null,
+      "minPrice": 9500,
+      "maxPrice": 32500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 57,
+      "topVariety": "Dry",
+      "grade": "Local"
+    },
+    {
       "name": "Hunsur",
       "district": "Mysuru",
       "avgPrice": 18367,
@@ -17840,6 +17814,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-07",
       "records": 12,
+      "topVariety": "Dry",
+      "grade": "Local"
+    },
+    {
+      "name": "Shimoga",
+      "district": "Shivamogga",
+      "avgPrice": 18287,
+      "recentPrice": null,
+      "minPrice": 12500,
+      "maxPrice": 31500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 27,
       "topVariety": "Dry",
       "grade": "Local"
     },
@@ -17920,6 +17907,19 @@
       "records": 8,
       "topVariety": "Dry",
       "grade": "Local"
+    },
+    {
+      "name": "Arakalgud",
+      "district": "Hassan",
+      "avgPrice": 15481,
+      "recentPrice": null,
+      "minPrice": 10000,
+      "maxPrice": 25000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 24,
+      "topVariety": "Dry",
+      "grade": "Medium"
     },
     {
       "name": "Belur",
@@ -18028,19 +18028,6 @@
   ],
   "betal-leaves": [
     {
-      "name": "Channapatna",
-      "district": "Bengaluru South",
-      "avgPrice": 3238,
-      "recentPrice": 2250,
-      "minPrice": 2250,
-      "maxPrice": 2250,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 46,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
       "name": "Channapatana",
       "district": "Bangalore",
       "avgPrice": 6794,
@@ -18065,6 +18052,19 @@
       "records": 32,
       "topVariety": "Local",
       "grade": "Medium"
+    },
+    {
+      "name": "Channapatna",
+      "district": "Bengaluru South",
+      "avgPrice": 3238,
+      "recentPrice": null,
+      "minPrice": 1600,
+      "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 46,
+      "topVariety": "Local",
+      "grade": "Local"
     }
   ],
   "cashewnuts": [
@@ -18335,19 +18335,6 @@
       "grade": "Local"
     },
     {
-      "name": "Belur",
-      "district": "Hassan",
-      "avgPrice": 1426,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 41,
-      "topVariety": "Hybrid",
-      "grade": "Medium"
-    },
-    {
       "name": "Kadur",
       "district": "Chikkamagaluru",
       "avgPrice": 1408,
@@ -18426,19 +18413,6 @@
       "grade": "Local"
     },
     {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 1649,
-      "recentPrice": 1500,
-      "minPrice": 1500,
-      "maxPrice": 1500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 20,
-      "topVariety": "Tomato",
-      "grade": "Local"
-    },
-    {
       "name": "Bagepalli",
       "district": "Chikkaballapur",
       "avgPrice": 1424,
@@ -18487,19 +18461,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-16",
       "records": 83,
-      "topVariety": "Tomato",
-      "grade": "Local"
-    },
-    {
-      "name": "Chikkamagaluru",
-      "district": "Chikkamagaluru",
-      "avgPrice": 1427,
-      "recentPrice": 1250,
-      "minPrice": 1250,
-      "maxPrice": 1250,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 100,
       "topVariety": "Tomato",
       "grade": "Local"
     },
@@ -18751,6 +18712,19 @@
       "grade": "Local"
     },
     {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 1649,
+      "recentPrice": null,
+      "minPrice": 900,
+      "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 20,
+      "topVariety": "Tomato",
+      "grade": "Local"
+    },
+    {
       "name": "Santhesargur",
       "district": "Mysuru",
       "avgPrice": 1556,
@@ -18801,6 +18775,32 @@
       "records": 2,
       "topVariety": "Tomato",
       "grade": "Local"
+    },
+    {
+      "name": "Chikkamagaluru",
+      "district": "Chikkamagaluru",
+      "avgPrice": 1427,
+      "recentPrice": null,
+      "minPrice": 800,
+      "maxPrice": 2520,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 100,
+      "topVariety": "Tomato",
+      "grade": "Local"
+    },
+    {
+      "name": "Belur",
+      "district": "Hassan",
+      "avgPrice": 1426,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 3903,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 41,
+      "topVariety": "Hybrid",
+      "grade": "Medium"
     },
     {
       "name": "K.R. Pet",
@@ -19000,19 +19000,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 3241,
-      "recentPrice": 4000,
-      "minPrice": 4000,
-      "maxPrice": 4000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 29,
-      "topVariety": "Green Chilly",
-      "grade": "Local"
-    },
-    {
       "name": "Gundlupet",
       "district": "Chamarajanagar",
       "avgPrice": 3272,
@@ -19037,19 +19024,6 @@
       "records": 70,
       "topVariety": "Green Chilly",
       "grade": "Medium"
-    },
-    {
-      "name": "Chikkamagaluru",
-      "district": "Chikkamagaluru",
-      "avgPrice": 2768,
-      "recentPrice": 3700,
-      "minPrice": 3700,
-      "maxPrice": 3700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 83,
-      "topVariety": "Green Chilly",
-      "grade": "Local"
     },
     {
       "name": "Doddaballapur",
@@ -19338,6 +19312,19 @@
       "grade": "Local"
     },
     {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 3241,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 29,
+      "topVariety": "Green Chilly",
+      "grade": "Local"
+    },
+    {
       "name": "Bhagepalli",
       "district": "Kolar",
       "avgPrice": 3133,
@@ -19362,6 +19349,19 @@
       "records": 5,
       "topVariety": "Green Chilly",
       "grade": "Medium"
+    },
+    {
+      "name": "Chikkamagaluru",
+      "district": "Chikkamagaluru",
+      "avgPrice": 2768,
+      "recentPrice": null,
+      "minPrice": 1300,
+      "maxPrice": 3700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 83,
+      "topVariety": "Green Chilly",
+      "grade": "Local"
     },
     {
       "name": "Chamaraj Nagar",
@@ -19544,19 +19544,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-16",
       "records": 69,
-      "topVariety": "Ladies Finger",
-      "grade": "Local"
-    },
-    {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 2807,
-      "recentPrice": 3000,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 14,
       "topVariety": "Ladies Finger",
       "grade": "Local"
     },
@@ -19754,6 +19741,19 @@
       "records": 27,
       "topVariety": "Ladies Finger",
       "grade": "Large"
+    },
+    {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 2807,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 14,
+      "topVariety": "Ladies Finger",
+      "grade": "Local"
     },
     {
       "name": "Binny Mill, Bengaluru",
@@ -20005,19 +20005,6 @@
       "grade": "Local"
     },
     {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 2940,
-      "recentPrice": 3000,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 15,
-      "topVariety": "Ridgeguard(Tori)",
-      "grade": "Local"
-    },
-    {
       "name": "Channapatna",
       "district": "Bengaluru South",
       "avgPrice": 2800,
@@ -20148,19 +20135,6 @@
       "grade": "Local"
     },
     {
-      "name": "Chikkamagaluru",
-      "district": "Chikkamagaluru",
-      "avgPrice": 1917,
-      "recentPrice": 1700,
-      "minPrice": 1700,
-      "maxPrice": 1700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 45,
-      "topVariety": "Ridgeguard(Tori)",
-      "grade": "Local"
-    },
-    {
       "name": "Chamarajanagar",
       "district": "Chamarajanagar",
       "avgPrice": 1968,
@@ -20224,6 +20198,19 @@
       "records": 7,
       "topVariety": "Ridgeguard(Tori)",
       "grade": "Medium"
+    },
+    {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 2940,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 15,
+      "topVariety": "Ridgeguard(Tori)",
+      "grade": "Local"
     },
     {
       "name": "Binny Mill, Bengaluru",
@@ -20339,6 +20326,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-12",
       "records": 86,
+      "topVariety": "Ridgeguard(Tori)",
+      "grade": "Local"
+    },
+    {
+      "name": "Chikkamagaluru",
+      "district": "Chikkamagaluru",
+      "avgPrice": 1917,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 45,
       "topVariety": "Ridgeguard(Tori)",
       "grade": "Local"
     },
@@ -20936,19 +20936,6 @@
       "grade": "Local"
     },
     {
-      "name": "Ramanagara",
-      "district": "Bengaluru South",
-      "avgPrice": 2225,
-      "recentPrice": 2200,
-      "minPrice": 2200,
-      "maxPrice": 2200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 8,
-      "topVariety": "Potato",
-      "grade": "Local"
-    },
-    {
       "name": "Shimoga",
       "district": "Shivamogga",
       "avgPrice": 1987,
@@ -21040,19 +21027,6 @@
       "grade": "Large"
     },
     {
-      "name": "Belur",
-      "district": "Hassan",
-      "avgPrice": 1300,
-      "recentPrice": 1700,
-      "minPrice": 1700,
-      "maxPrice": 1700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 8,
-      "topVariety": "Local",
-      "grade": "Medium"
-    },
-    {
       "name": "Kolar",
       "district": "Kolar",
       "avgPrice": 2156,
@@ -21092,19 +21066,6 @@
       "grade": "Local"
     },
     {
-      "name": "Chikkamagaluru",
-      "district": "Chikkamagaluru",
-      "avgPrice": 1800,
-      "recentPrice": 1500,
-      "minPrice": 1500,
-      "maxPrice": 1500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 87,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Udupi",
       "district": "Udupi",
       "avgPrice": 1451,
@@ -21127,19 +21088,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
       "records": 58,
-      "topVariety": "Potato",
-      "grade": "Local"
-    },
-    {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 1059,
-      "recentPrice": 1068,
-      "minPrice": 1068,
-      "maxPrice": 1068,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 76,
       "topVariety": "Potato",
       "grade": "Local"
     },
@@ -21192,6 +21140,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-07",
       "records": 3,
+      "topVariety": "Potato",
+      "grade": "Local"
+    },
+    {
+      "name": "Ramanagara",
+      "district": "Bengaluru South",
+      "avgPrice": 2225,
+      "recentPrice": null,
+      "minPrice": 2200,
+      "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 8,
       "topVariety": "Potato",
       "grade": "Local"
     },
@@ -21283,6 +21244,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-03-27",
       "records": 1,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Chikkamagaluru",
+      "district": "Chikkamagaluru",
+      "avgPrice": 1800,
+      "recentPrice": null,
+      "minPrice": 1450,
+      "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 87,
       "topVariety": null,
       "grade": "Local"
     },
@@ -21391,6 +21365,19 @@
       "grade": "Medium"
     },
     {
+      "name": "Belur",
+      "district": "Hassan",
+      "avgPrice": 1300,
+      "recentPrice": null,
+      "minPrice": 1100,
+      "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 8,
+      "topVariety": "Local",
+      "grade": "Medium"
+    },
+    {
       "name": "K.R.Nagar",
       "district": "Mysuru",
       "avgPrice": 1200,
@@ -21415,6 +21402,19 @@
       "records": 4,
       "topVariety": "Potato",
       "grade": "Medium"
+    },
+    {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 1059,
+      "recentPrice": null,
+      "minPrice": 950,
+      "maxPrice": 1500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 76,
+      "topVariety": "Potato",
+      "grade": "Local"
     },
     {
       "name": "Bhagepalli",
@@ -21474,40 +21474,14 @@
       "name": "Hungund",
       "district": "Bagalkot",
       "avgPrice": 3526,
-      "recentPrice": 3696,
-      "minPrice": 2450,
+      "recentPrice": 3756,
+      "minPrice": 2500,
       "maxPrice": 5000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 40,
       "topVariety": "Popcorn",
       "grade": "FAQ"
-    },
-    {
-      "name": "Chitradurga",
-      "district": "Chitradurga",
-      "avgPrice": 2895,
-      "recentPrice": 3672,
-      "minPrice": 2742,
-      "maxPrice": 4602,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 41,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 2177,
-      "recentPrice": 3500,
-      "minPrice": 3500,
-      "maxPrice": 3500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 52,
-      "topVariety": "Local",
-      "grade": "Local"
     },
     {
       "name": "Kadur",
@@ -21588,6 +21562,32 @@
       "grade": "FAQ"
     },
     {
+      "name": "Haveri",
+      "district": "Haveri",
+      "avgPrice": 2422,
+      "recentPrice": 2700,
+      "minPrice": 2700,
+      "maxPrice": 2700,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-17",
+      "records": 65,
+      "topVariety": "Local",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Athani",
+      "district": "Belagavi",
+      "avgPrice": 2168,
+      "recentPrice": 2700,
+      "minPrice": 2700,
+      "maxPrice": 2700,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-17",
+      "records": 9,
+      "topVariety": "Hybrid/Local",
+      "grade": "Local"
+    },
+    {
       "name": "Santhesargur",
       "district": "Mysuru",
       "avgPrice": 2101,
@@ -21599,6 +21599,19 @@
       "records": 19,
       "topVariety": "Local",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Davangere",
+      "district": "Davangere",
+      "avgPrice": 2568,
+      "recentPrice": 2696,
+      "minPrice": 2674,
+      "maxPrice": 2709,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-17",
+      "records": 63,
+      "topVariety": "Local",
+      "grade": "Local"
     },
     {
       "name": "Hubballi",
@@ -21614,17 +21627,30 @@
       "grade": "Local"
     },
     {
-      "name": "Davangere",
-      "district": "Davangere",
-      "avgPrice": 2568,
-      "recentPrice": 2684,
-      "minPrice": 2647,
-      "maxPrice": 2709,
+      "name": "Koppal",
+      "district": "Koppal",
+      "avgPrice": 2513,
+      "recentPrice": 2690,
+      "minPrice": 2690,
+      "maxPrice": 2690,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 63,
-      "topVariety": "Local",
-      "grade": "Local"
+      "lastDate": "2026-10-15",
+      "records": 65,
+      "topVariety": "Yellow",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "H.B. Halli",
+      "district": "Vijayanagara",
+      "avgPrice": 2417,
+      "recentPrice": 2678,
+      "minPrice": 2550,
+      "maxPrice": 2750,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-18",
+      "records": 50,
+      "topVariety": "Hybrid/Local",
+      "grade": "FAQ"
     },
     {
       "name": "Ranebennur",
@@ -21666,84 +21692,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Shimoga",
-      "district": "Shivamogga",
-      "avgPrice": 2577,
-      "recentPrice": 2650,
-      "minPrice": 2650,
-      "maxPrice": 2650,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 46,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
-      "name": "K.R. Pet",
-      "district": "Mandya",
-      "avgPrice": 2350,
-      "recentPrice": 2650,
-      "minPrice": 2650,
-      "maxPrice": 2650,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 3,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
-      "name": "Athani",
-      "district": "Belagavi",
-      "avgPrice": 2168,
-      "recentPrice": 2650,
-      "minPrice": 2600,
-      "maxPrice": 2700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 9,
-      "topVariety": "Hybrid/Local",
-      "grade": "Local"
-    },
-    {
-      "name": "Yaragatti",
-      "district": "Belagavi",
-      "avgPrice": 2604,
-      "recentPrice": 2650,
-      "minPrice": 2650,
-      "maxPrice": 2650,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 10,
-      "topVariety": "Local",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "H.B. Halli",
-      "district": "Vijayanagara",
-      "avgPrice": 2417,
-      "recentPrice": 2646,
-      "minPrice": 2550,
-      "maxPrice": 2750,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-18",
-      "records": 50,
-      "topVariety": "Hybrid/Local",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Koppal",
-      "district": "Koppal",
-      "avgPrice": 2513,
-      "recentPrice": 2645,
-      "minPrice": 2600,
-      "maxPrice": 2690,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-15",
-      "records": 65,
-      "topVariety": "Yellow",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Kustagi",
       "district": "Koppal",
       "avgPrice": 2398,
@@ -21760,7 +21708,7 @@
       "name": "Bhadravathi",
       "district": "Shivamogga",
       "avgPrice": 2530,
-      "recentPrice": 2625,
+      "recentPrice": 2633,
       "minPrice": 2500,
       "maxPrice": 2700,
       "rangeBasis": "recent",
@@ -21783,19 +21731,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Haveri",
-      "district": "Haveri",
-      "avgPrice": 2422,
-      "recentPrice": 2610,
-      "minPrice": 2520,
-      "maxPrice": 2700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 65,
-      "topVariety": "Local",
-      "grade": "FAQ"
-    },
-    {
       "name": "Gangavathi",
       "district": "Koppal",
       "avgPrice": 2583,
@@ -21806,6 +21741,19 @@
       "lastDate": "2026-10-17",
       "records": 39,
       "topVariety": "Local",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Mundgod",
+      "district": "Uttara Kannada",
+      "avgPrice": 2508,
+      "recentPrice": 2600,
+      "minPrice": 2600,
+      "maxPrice": 2600,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-15",
+      "records": 52,
+      "topVariety": "Hybrid/Local",
       "grade": "Non-FAQ"
     },
     {
@@ -21822,23 +21770,10 @@
       "grade": "FAQ"
     },
     {
-      "name": "Shiggoan",
-      "district": "Haveri",
-      "avgPrice": 2478,
-      "recentPrice": 2600,
-      "minPrice": 2600,
-      "maxPrice": 2600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 45,
-      "topVariety": "Hybrid/Local",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Rona",
       "district": "Gadag",
       "avgPrice": 2536,
-      "recentPrice": 2597,
+      "recentPrice": 2591,
       "minPrice": 2500,
       "maxPrice": 2674,
       "rangeBasis": "recent",
@@ -21846,32 +21781,6 @@
       "records": 38,
       "topVariety": "Hybrid/Local",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Mundgod",
-      "district": "Uttara Kannada",
-      "avgPrice": 2508,
-      "recentPrice": 2590,
-      "minPrice": 2580,
-      "maxPrice": 2600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-15",
-      "records": 52,
-      "topVariety": "Hybrid/Local",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Gokak",
-      "district": "Belagavi",
-      "avgPrice": 2579,
-      "recentPrice": 2580,
-      "minPrice": 2580,
-      "maxPrice": 2580,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 38,
-      "topVariety": "Local",
-      "grade": "Local"
     },
     {
       "name": "Gadag",
@@ -21913,32 +21822,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Soundati",
-      "district": "Belagavi",
-      "avgPrice": 2682,
-      "recentPrice": 2560,
-      "minPrice": 2560,
-      "maxPrice": 2560,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 42,
-      "topVariety": "Local",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Nandagada",
-      "district": "Belagavi",
-      "avgPrice": 2449,
-      "recentPrice": 2560,
-      "minPrice": 2560,
-      "maxPrice": 2560,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 11,
-      "topVariety": "Hybrid/Local",
-      "grade": "FAQ"
-    },
-    {
       "name": "Hoovinahadagali",
       "district": "Vijayanagara",
       "avgPrice": 2467,
@@ -21950,19 +21833,6 @@
       "records": 30,
       "topVariety": "Hybrid/Local",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Sorabha",
-      "district": "Shivamogga",
-      "avgPrice": 2406,
-      "recentPrice": 2540,
-      "minPrice": 2540,
-      "maxPrice": 2540,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 37,
-      "topVariety": "Local",
-      "grade": "Local"
     },
     {
       "name": "Harihara",
@@ -21988,19 +21858,6 @@
       "lastDate": "2026-10-17",
       "records": 31,
       "topVariety": "Hybrid/Local",
-      "grade": "Local"
-    },
-    {
-      "name": "Hirekerur",
-      "district": "Haveri",
-      "avgPrice": 2445,
-      "recentPrice": 2523,
-      "minPrice": 2523,
-      "maxPrice": 2523,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 69,
-      "topVariety": "Local",
       "grade": "Local"
     },
     {
@@ -22056,45 +21913,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Badami",
-      "district": "Bagalkot",
-      "avgPrice": 2502,
-      "recentPrice": 2480,
-      "minPrice": 2480,
-      "maxPrice": 2480,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 18,
-      "topVariety": "Hybrid/Local",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kalaghatagi",
-      "district": "Dharwad",
-      "avgPrice": 2478,
-      "recentPrice": 2457,
-      "minPrice": 2457,
-      "maxPrice": 2457,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 58,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
-      "name": "Annigeri",
-      "district": "Dharwad",
-      "avgPrice": 2445,
-      "recentPrice": 2455,
-      "minPrice": 2455,
-      "maxPrice": 2455,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 21,
-      "topVariety": "Local",
-      "grade": "FAQ"
-    },
-    {
       "name": "Yellapur",
       "district": "Uttara Kannada",
       "avgPrice": 2455,
@@ -22106,19 +21924,6 @@
       "records": 13,
       "topVariety": "Local",
       "grade": "Local"
-    },
-    {
-      "name": "Nargunda",
-      "district": "Gadag",
-      "avgPrice": 2495,
-      "recentPrice": 2420,
-      "minPrice": 2420,
-      "maxPrice": 2420,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 58,
-      "topVariety": "Local",
-      "grade": "FAQ"
     },
     {
       "name": "Periyapatna",
@@ -22160,32 +21965,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Savanur",
-      "district": "Haveri",
-      "avgPrice": 2432,
-      "recentPrice": 2300,
-      "minPrice": 2300,
-      "maxPrice": 2300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 33,
-      "topVariety": "Hybrid/Local",
-      "grade": "Local"
-    },
-    {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 2451,
-      "recentPrice": 2250,
-      "minPrice": 2250,
-      "maxPrice": 2250,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 45,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
       "name": "Gundlupet",
       "district": "Chamarajanagar",
       "avgPrice": 2430,
@@ -22197,19 +21976,6 @@
       "records": 22,
       "topVariety": "Local",
       "grade": "Local"
-    },
-    {
-      "name": "Arakalgud",
-      "district": "Hassan",
-      "avgPrice": 2247,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 30,
-      "topVariety": "Local",
-      "grade": "FAQ"
     },
     {
       "name": "Hunsur",
@@ -22277,6 +22043,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Chitradurga",
+      "district": "Chitradurga",
+      "avgPrice": 2895,
+      "recentPrice": null,
+      "minPrice": 1832,
+      "maxPrice": 4602,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 41,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
       "name": "Chintamani",
       "district": "Chikkaballapur",
       "avgPrice": 2871,
@@ -22303,6 +22082,19 @@
       "grade": "Local"
     },
     {
+      "name": "Soundati",
+      "district": "Belagavi",
+      "avgPrice": 2682,
+      "recentPrice": null,
+      "minPrice": 2300,
+      "maxPrice": 2970,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 42,
+      "topVariety": "Local",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Gauribidanur",
       "district": "Chikkaballapur",
       "avgPrice": 2654,
@@ -22327,6 +22119,19 @@
       "records": 2,
       "topVariety": "Local",
       "grade": "Local"
+    },
+    {
+      "name": "Yaragatti",
+      "district": "Belagavi",
+      "avgPrice": 2604,
+      "recentPrice": null,
+      "minPrice": 2575,
+      "maxPrice": 2650,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 10,
+      "topVariety": "Local",
+      "grade": "Non-FAQ"
     },
     {
       "name": "Channarayapatna",
@@ -22366,6 +22171,32 @@
       "records": 10,
       "topVariety": "Local",
       "grade": "FAQ"
+    },
+    {
+      "name": "Gokak",
+      "district": "Belagavi",
+      "avgPrice": 2579,
+      "recentPrice": null,
+      "minPrice": 2350,
+      "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 38,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
+      "name": "Shimoga",
+      "district": "Shivamogga",
+      "avgPrice": 2577,
+      "recentPrice": null,
+      "minPrice": 2100,
+      "maxPrice": 2850,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 46,
+      "topVariety": "Local",
+      "grade": "Local"
     },
     {
       "name": "Belur",
@@ -22472,6 +22303,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Badami",
+      "district": "Bagalkot",
+      "avgPrice": 2502,
+      "recentPrice": null,
+      "minPrice": 2450,
+      "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 18,
+      "topVariety": "Hybrid/Local",
+      "grade": "FAQ"
+    },
+    {
       "name": "Indi",
       "district": "Vijayapura",
       "avgPrice": 2500,
@@ -22485,6 +22329,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Nargunda",
+      "district": "Gadag",
+      "avgPrice": 2495,
+      "recentPrice": null,
+      "minPrice": 2200,
+      "maxPrice": 2811,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 58,
+      "topVariety": "Local",
+      "grade": "FAQ"
+    },
+    {
       "name": "Sirsi",
       "district": "Uttara Kannada",
       "avgPrice": 2480,
@@ -22494,6 +22351,32 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-12",
       "records": 5,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
+      "name": "Shiggoan",
+      "district": "Haveri",
+      "avgPrice": 2478,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 2700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 45,
+      "topVariety": "Hybrid/Local",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Kalaghatagi",
+      "district": "Dharwad",
+      "avgPrice": 2478,
+      "recentPrice": null,
+      "minPrice": 2300,
+      "maxPrice": 2650,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 58,
       "topVariety": "Local",
       "grade": "Local"
     },
@@ -22511,6 +22394,58 @@
       "grade": "Local"
     },
     {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 2451,
+      "recentPrice": null,
+      "minPrice": 1800,
+      "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 45,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
+      "name": "Nandagada",
+      "district": "Belagavi",
+      "avgPrice": 2449,
+      "recentPrice": null,
+      "minPrice": 2200,
+      "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 11,
+      "topVariety": "Hybrid/Local",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Annigeri",
+      "district": "Dharwad",
+      "avgPrice": 2445,
+      "recentPrice": null,
+      "minPrice": 2207,
+      "maxPrice": 2580,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 21,
+      "topVariety": "Local",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Hirekerur",
+      "district": "Haveri",
+      "avgPrice": 2445,
+      "recentPrice": null,
+      "minPrice": 1800,
+      "maxPrice": 2700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 69,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
       "name": "THIRTHAHALLI",
       "district": "Shivamogga",
       "avgPrice": 2435,
@@ -22521,6 +22456,32 @@
       "lastDate": "2026-09-03",
       "records": 6,
       "topVariety": "Hybrid/Local",
+      "grade": "Local"
+    },
+    {
+      "name": "Savanur",
+      "district": "Haveri",
+      "avgPrice": 2432,
+      "recentPrice": null,
+      "minPrice": 1810,
+      "maxPrice": 2700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 33,
+      "topVariety": "Hybrid/Local",
+      "grade": "Local"
+    },
+    {
+      "name": "Sorabha",
+      "district": "Shivamogga",
+      "avgPrice": 2406,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 2780,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 37,
+      "topVariety": "Local",
       "grade": "Local"
     },
     {
@@ -22587,6 +22548,19 @@
       "records": 22,
       "topVariety": "Local",
       "grade": "FAQ"
+    },
+    {
+      "name": "K.R. Pet",
+      "district": "Mandya",
+      "avgPrice": 2350,
+      "recentPrice": null,
+      "minPrice": 2200,
+      "maxPrice": 2650,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 3,
+      "topVariety": "Local",
+      "grade": "Local"
     },
     {
       "name": "T. Narasipura",
@@ -22719,6 +22693,19 @@
       "grade": "Grade Range-1"
     },
     {
+      "name": "Arakalgud",
+      "district": "Hassan",
+      "avgPrice": 2247,
+      "recentPrice": null,
+      "minPrice": 1950,
+      "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 30,
+      "topVariety": "Local",
+      "grade": "FAQ"
+    },
+    {
       "name": "Byadagi",
       "district": "Haveri",
       "avgPrice": 2233,
@@ -22756,6 +22743,19 @@
       "records": 4,
       "topVariety": "Local",
       "grade": "FAQ"
+    },
+    {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 2177,
+      "recentPrice": null,
+      "minPrice": 1250,
+      "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 52,
+      "topVariety": "Local",
+      "grade": "Local"
     },
     {
       "name": "Manvi",
@@ -23020,19 +23020,6 @@
       "grade": "Local"
     },
     {
-      "name": "Koppal",
-      "district": "Koppal",
-      "avgPrice": 7217,
-      "recentPrice": 8179,
-      "minPrice": 6431,
-      "maxPrice": 9927,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 30,
-      "topVariety": "Gejje",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Gadag",
       "district": "Gadag",
       "avgPrice": 7389,
@@ -23072,32 +23059,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Chitradurga",
-      "district": "Chitradurga",
-      "avgPrice": 7777,
-      "recentPrice": 7688,
-      "minPrice": 7688,
-      "maxPrice": 7688,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 30,
-      "topVariety": "Natte",
-      "grade": "Local"
-    },
-    {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 5872,
-      "recentPrice": 7144,
-      "minPrice": 7144,
-      "maxPrice": 7144,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 44,
-      "topVariety": "Big (With Shell)",
-      "grade": "Local"
-    },
-    {
       "name": "Ramdurga",
       "district": "Belagavi",
       "avgPrice": 7253,
@@ -23109,6 +23070,19 @@
       "records": 25,
       "topVariety": "Gejje",
       "grade": "FAQ"
+    },
+    {
+      "name": "Davangere",
+      "district": "Davangere",
+      "avgPrice": 6814,
+      "recentPrice": 6723,
+      "minPrice": 6655,
+      "maxPrice": 6791,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-16",
+      "records": 31,
+      "topVariety": "Gejje",
+      "grade": "Local"
     },
     {
       "name": "Laxmeshwar",
@@ -23124,17 +23098,17 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Davangere",
-      "district": "Davangere",
-      "avgPrice": 6814,
-      "recentPrice": 6652,
-      "minPrice": 6511,
-      "maxPrice": 6791,
+      "name": "Koppal",
+      "district": "Koppal",
+      "avgPrice": 7217,
+      "recentPrice": 6431,
+      "minPrice": 6431,
+      "maxPrice": 6431,
       "rangeBasis": "recent",
       "lastDate": "2026-10-16",
-      "records": 31,
+      "records": 30,
       "topVariety": "Gejje",
-      "grade": "Local"
+      "grade": "Non-FAQ"
     },
     {
       "name": "Savanur",
@@ -23251,6 +23225,19 @@
       "lastDate": "2026-10-08",
       "records": 3,
       "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Chitradurga",
+      "district": "Chitradurga",
+      "avgPrice": 7777,
+      "recentPrice": null,
+      "minPrice": 5810,
+      "maxPrice": 9315,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 30,
+      "topVariety": "Natte",
       "grade": "Local"
     },
     {
@@ -23423,6 +23410,19 @@
       "grade": "Local"
     },
     {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 5872,
+      "recentPrice": null,
+      "minPrice": 3608,
+      "maxPrice": 9250,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 44,
+      "topVariety": "Big (With Shell)",
+      "grade": "Local"
+    },
+    {
       "name": "Lingasugur",
       "district": "Raichur",
       "avgPrice": 5300,
@@ -23514,19 +23514,6 @@
       "records": 20,
       "topVariety": "White",
       "grade": "FAQ"
-    },
-    {
-      "name": "Chitradurga",
-      "district": "Chitradurga",
-      "avgPrice": 11279,
-      "recentPrice": 11976,
-      "minPrice": 11976,
-      "maxPrice": 11976,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 7,
-      "topVariety": "Black",
-      "grade": "Local"
     },
     {
       "name": "Gadag",
@@ -23698,6 +23685,19 @@
       "grade": "Local"
     },
     {
+      "name": "Chitradurga",
+      "district": "Chitradurga",
+      "avgPrice": 11279,
+      "recentPrice": null,
+      "minPrice": 5275,
+      "maxPrice": 12575,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 7,
+      "topVariety": "Black",
+      "grade": "Local"
+    },
+    {
       "name": "Kanakapura",
       "district": "Bengaluru South",
       "avgPrice": 11250,
@@ -23765,19 +23765,6 @@
   ],
   "orange": [
     {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 7035,
-      "recentPrice": 6300,
-      "minPrice": 6300,
-      "maxPrice": 6300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 36,
-      "topVariety": "Nagpuri",
-      "grade": "Medium"
-    },
-    {
       "name": "Kalaburagi",
       "district": "Kalaburagi",
       "avgPrice": 3397,
@@ -23815,6 +23802,19 @@
       "records": 12,
       "topVariety": "Nagpuri",
       "grade": "Large"
+    },
+    {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 7035,
+      "recentPrice": null,
+      "minPrice": 3500,
+      "maxPrice": 8625,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 36,
+      "topVariety": "Nagpuri",
+      "grade": "Medium"
     },
     {
       "name": "Davangere",
@@ -23874,8 +23874,8 @@
       "name": "Mysuru",
       "district": "Mysuru",
       "avgPrice": 2587,
-      "recentPrice": 3088,
-      "minPrice": 2815,
+      "recentPrice": 3360,
+      "minPrice": 3360,
       "maxPrice": 3360,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
@@ -24003,45 +24003,6 @@
       "grade": "Local"
     },
     {
-      "name": "Ramanagara",
-      "district": "Bengaluru South",
-      "avgPrice": 3548,
-      "recentPrice": 3800,
-      "minPrice": 3800,
-      "maxPrice": 3800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 21,
-      "topVariety": "Fine",
-      "grade": "Local"
-    },
-    {
-      "name": "Nagamangala",
-      "district": "Mandya",
-      "avgPrice": 3585,
-      "recentPrice": 3550,
-      "minPrice": 3550,
-      "maxPrice": 3550,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 46,
-      "topVariety": "Local",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Chitradurga",
-      "district": "Chitradurga",
-      "avgPrice": 3543,
-      "recentPrice": 3541,
-      "minPrice": 3541,
-      "maxPrice": 3541,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 34,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
       "name": "HarappanaHalli",
       "district": "Davangere",
       "avgPrice": 3430,
@@ -24055,17 +24016,17 @@
       "grade": "Local"
     },
     {
-      "name": "Davangere",
-      "district": "Davangere",
-      "avgPrice": 3200,
-      "recentPrice": 3517,
-      "minPrice": 3353,
-      "maxPrice": 3657,
+      "name": "H.B. Halli",
+      "district": "Vijayanagara",
+      "avgPrice": 3266,
+      "recentPrice": 3493,
+      "minPrice": 3460,
+      "maxPrice": 3525,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
-      "records": 65,
-      "topVariety": "Local",
-      "grade": "Local"
+      "records": 41,
+      "topVariety": "Feeds (Poultry Quality)",
+      "grade": "FAQ"
     },
     {
       "name": "Kottur",
@@ -24081,17 +24042,17 @@
       "grade": "Local"
     },
     {
-      "name": "H.B. Halli",
-      "district": "Vijayanagara",
-      "avgPrice": 3266,
-      "recentPrice": 3478,
-      "minPrice": 3450,
-      "maxPrice": 3525,
+      "name": "Davangere",
+      "district": "Davangere",
+      "avgPrice": 3200,
+      "recentPrice": 3470,
+      "minPrice": 3353,
+      "maxPrice": 3541,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
-      "records": 41,
-      "topVariety": "Feeds (Poultry Quality)",
-      "grade": "FAQ"
+      "records": 65,
+      "topVariety": "Local",
+      "grade": "Local"
     },
     {
       "name": "Mandya",
@@ -24146,19 +24107,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 3345,
-      "recentPrice": 3300,
-      "minPrice": 3300,
-      "maxPrice": 3300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 75,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
       "name": "Gundlupet",
       "district": "Chamarajanagar",
       "avgPrice": 3209,
@@ -24183,32 +24131,6 @@
       "records": 13,
       "topVariety": "Fine",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Haveri",
-      "district": "Haveri",
-      "avgPrice": 3080,
-      "recentPrice": 3200,
-      "minPrice": 3200,
-      "maxPrice": 3200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 5,
-      "topVariety": "Medium",
-      "grade": "Local"
-    },
-    {
-      "name": "Kadur",
-      "district": "Chikkamagaluru",
-      "avgPrice": 3271,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 11,
-      "topVariety": "Red",
-      "grade": "FAQ"
     },
     {
       "name": "Bangalore",
@@ -24341,6 +24263,19 @@
       "grade": "Local"
     },
     {
+      "name": "Nagamangala",
+      "district": "Mandya",
+      "avgPrice": 3585,
+      "recentPrice": null,
+      "minPrice": 3200,
+      "maxPrice": 4400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 46,
+      "topVariety": "Local",
+      "grade": "FAQ"
+    },
+    {
       "name": "Chikkamagaluru",
       "district": "Chikkamagaluru",
       "avgPrice": 3577,
@@ -24350,6 +24285,32 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-09",
       "records": 6,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
+      "name": "Ramanagara",
+      "district": "Bengaluru South",
+      "avgPrice": 3548,
+      "recentPrice": null,
+      "minPrice": 3300,
+      "maxPrice": 3800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 21,
+      "topVariety": "Fine",
+      "grade": "Local"
+    },
+    {
+      "name": "Chitradurga",
+      "district": "Chitradurga",
+      "avgPrice": 3543,
+      "recentPrice": null,
+      "minPrice": 3141,
+      "maxPrice": 3876,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 34,
       "topVariety": "Local",
       "grade": "Local"
     },
@@ -24497,6 +24458,19 @@
       "grade": "Local"
     },
     {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 3345,
+      "recentPrice": null,
+      "minPrice": 2700,
+      "maxPrice": 3900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 75,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
       "name": "Bhadravathi",
       "district": "Shivamogga",
       "avgPrice": 3330,
@@ -24599,6 +24573,19 @@
       "records": 38,
       "topVariety": "Fine",
       "grade": "Local"
+    },
+    {
+      "name": "Kadur",
+      "district": "Chikkamagaluru",
+      "avgPrice": 3271,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 3812,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 11,
+      "topVariety": "Red",
+      "grade": "FAQ"
     },
     {
       "name": "Madhugiri",
@@ -24742,6 +24729,19 @@
       "records": 5,
       "topVariety": "Local",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Haveri",
+      "district": "Haveri",
+      "avgPrice": 3080,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 3500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 5,
+      "topVariety": "Medium",
+      "grade": "Local"
     },
     {
       "name": "Hunsur",
@@ -25021,32 +25021,6 @@
       "grade": "Local"
     },
     {
-      "name": "Kadur",
-      "district": "Chikkamagaluru",
-      "avgPrice": 20000,
-      "recentPrice": 20000,
-      "minPrice": 20000,
-      "maxPrice": 20000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 25,
-      "topVariety": "Tender Coconut",
-      "grade": "Medium"
-    },
-    {
-      "name": "Channarayapatna",
-      "district": "Hassan",
-      "avgPrice": 15000,
-      "recentPrice": 15000,
-      "minPrice": 15000,
-      "maxPrice": 15000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 85,
-      "topVariety": "Tender Coconut",
-      "grade": "Medium"
-    },
-    {
       "name": "Malavalli",
       "district": "Mandya",
       "avgPrice": 33120,
@@ -25151,6 +25125,19 @@
       "grade": "Grade Range-1"
     },
     {
+      "name": "Kadur",
+      "district": "Chikkamagaluru",
+      "avgPrice": 20000,
+      "recentPrice": null,
+      "minPrice": 20000,
+      "maxPrice": 20000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 25,
+      "topVariety": "Tender Coconut",
+      "grade": "Medium"
+    },
+    {
       "name": "Bhadravathi",
       "district": "Shivamogga",
       "avgPrice": 20000,
@@ -25188,6 +25175,19 @@
       "records": 63,
       "topVariety": "Tender Coconut",
       "grade": "Local"
+    },
+    {
+      "name": "Channarayapatna",
+      "district": "Hassan",
+      "avgPrice": 15000,
+      "recentPrice": null,
+      "minPrice": 15000,
+      "maxPrice": 15000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 85,
+      "topVariety": "Tender Coconut",
+      "grade": "Medium"
     },
     {
       "name": "Holenarsipura",
@@ -25545,19 +25545,6 @@
   ],
   "rice": [
     {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 5743,
-      "recentPrice": 11174,
-      "minPrice": 6950,
-      "maxPrice": 15398,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 109,
-      "topVariety": "Fine",
-      "grade": "Local"
-    },
-    {
       "name": "Chintamani",
       "district": "Chikkaballapur",
       "avgPrice": 5797,
@@ -25597,19 +25584,6 @@
       "grade": "Small"
     },
     {
-      "name": "Kampli",
-      "district": "Bellary",
-      "avgPrice": 4865,
-      "recentPrice": 5315,
-      "minPrice": 3000,
-      "maxPrice": 7100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 80,
-      "topVariety": "Medium",
-      "grade": "Local"
-    },
-    {
       "name": "Gadag",
       "district": "Gadag",
       "avgPrice": 5333,
@@ -25623,17 +25597,17 @@
       "grade": "Medium"
     },
     {
-      "name": "Karatagi",
-      "district": "Koppal",
-      "avgPrice": 5143,
-      "recentPrice": 4850,
-      "minPrice": 3600,
-      "maxPrice": 6100,
+      "name": "Kampli",
+      "district": "Bellary",
+      "avgPrice": 4865,
+      "recentPrice": 4869,
+      "minPrice": 3000,
+      "maxPrice": 6750,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 38,
-      "topVariety": "Sona Masuri (OLD)",
-      "grade": "Small"
+      "lastDate": "2026-10-17",
+      "records": 80,
+      "topVariety": "Medium",
+      "grade": "Local"
     },
     {
       "name": "Sindhanur",
@@ -25675,43 +25649,17 @@
       "grade": "Local"
     },
     {
-      "name": "Mundgod",
-      "district": "Uttara Kannada",
-      "avgPrice": 2721,
-      "recentPrice": 3400,
-      "minPrice": 3400,
-      "maxPrice": 3400,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 47,
-      "topVariety": "Boiled Rice",
-      "grade": "Small"
-    },
-    {
       "name": "Davangere",
       "district": "Davangere",
       "avgPrice": 3334,
-      "recentPrice": 3011,
-      "minPrice": 2450,
+      "recentPrice": 3198,
+      "minPrice": 2675,
       "maxPrice": 4215,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 101,
       "topVariety": "Medium",
       "grade": "Local"
-    },
-    {
-      "name": "Channarayapatna",
-      "district": "Hassan",
-      "avgPrice": 2950,
-      "recentPrice": 3000,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 10,
-      "topVariety": "Hassan Dappa",
-      "grade": "Medium"
     },
     {
       "name": "Gangavathi",
@@ -25766,19 +25714,6 @@
       "grade": "Medium"
     },
     {
-      "name": "T. Narasipura",
-      "district": "Mysuru",
-      "avgPrice": 2604,
-      "recentPrice": 2750,
-      "minPrice": 2600,
-      "maxPrice": 2900,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 66,
-      "topVariety": "Broken Rice",
-      "grade": "Small"
-    },
-    {
       "name": "Manvi",
       "district": "Raichur",
       "avgPrice": 2860,
@@ -25805,6 +25740,19 @@
       "grade": "Medium"
     },
     {
+      "name": "Bhadravathi",
+      "district": "Shivamogga",
+      "avgPrice": 2584,
+      "recentPrice": 2550,
+      "minPrice": 2500,
+      "maxPrice": 2700,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-17",
+      "records": 85,
+      "topVariety": "Medium",
+      "grade": "Local"
+    },
+    {
       "name": "Mandya",
       "district": "Mandya",
       "avgPrice": 2410,
@@ -25815,45 +25763,6 @@
       "lastDate": "2026-10-17",
       "records": 55,
       "topVariety": "Broken Rice",
-      "grade": "Local"
-    },
-    {
-      "name": "Haveri",
-      "district": "Haveri",
-      "avgPrice": 3089,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 64,
-      "topVariety": "Coarse",
-      "grade": "Large"
-    },
-    {
-      "name": "Sorabha",
-      "district": "Shivamogga",
-      "avgPrice": 2400,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 75,
-      "topVariety": "Fine",
-      "grade": "Local"
-    },
-    {
-      "name": "Bhadravathi",
-      "district": "Shivamogga",
-      "avgPrice": 2584,
-      "recentPrice": 2492,
-      "minPrice": 1950,
-      "maxPrice": 2800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 85,
-      "topVariety": "Medium",
       "grade": "Local"
     },
     {
@@ -25974,6 +25883,19 @@
       "grade": "Medium"
     },
     {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 5743,
+      "recentPrice": null,
+      "minPrice": 2300,
+      "maxPrice": 19250,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 109,
+      "topVariety": "Fine",
+      "grade": "Local"
+    },
+    {
       "name": "Malur",
       "district": "Kolar",
       "avgPrice": 5531,
@@ -26011,6 +25933,19 @@
       "records": 4,
       "topVariety": "Sona Masuri New",
       "grade": "Local"
+    },
+    {
+      "name": "Karatagi",
+      "district": "Koppal",
+      "avgPrice": 5143,
+      "recentPrice": null,
+      "minPrice": 2250,
+      "maxPrice": 6565,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 38,
+      "topVariety": "Sona Masuri (OLD)",
+      "grade": "Small"
     },
     {
       "name": "Hanuru",
@@ -26234,6 +26169,19 @@
       "grade": "Local"
     },
     {
+      "name": "Haveri",
+      "district": "Haveri",
+      "avgPrice": 3089,
+      "recentPrice": null,
+      "minPrice": 2100,
+      "maxPrice": 7360,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 64,
+      "topVariety": "Coarse",
+      "grade": "Large"
+    },
+    {
       "name": "Hunsur",
       "district": "Mysuru",
       "avgPrice": 3010,
@@ -26257,6 +26205,19 @@
       "lastDate": "2026-10-03",
       "records": 1,
       "topVariety": null,
+      "grade": "Medium"
+    },
+    {
+      "name": "Channarayapatna",
+      "district": "Hassan",
+      "avgPrice": 2950,
+      "recentPrice": null,
+      "minPrice": 2700,
+      "maxPrice": 3400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 10,
+      "topVariety": "Hassan Dappa",
       "grade": "Medium"
     },
     {
@@ -26309,6 +26270,19 @@
       "lastDate": "2026-06-30",
       "records": 1,
       "topVariety": "Coarse",
+      "grade": "Small"
+    },
+    {
+      "name": "Mundgod",
+      "district": "Uttara Kannada",
+      "avgPrice": 2721,
+      "recentPrice": null,
+      "minPrice": 2200,
+      "maxPrice": 4850,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 47,
+      "topVariety": "Boiled Rice",
       "grade": "Small"
     },
     {
@@ -26386,6 +26360,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-04",
       "records": 26,
+      "topVariety": "Broken Rice",
+      "grade": "Small"
+    },
+    {
+      "name": "T. Narasipura",
+      "district": "Mysuru",
+      "avgPrice": 2604,
+      "recentPrice": null,
+      "minPrice": 1800,
+      "maxPrice": 6733,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 66,
       "topVariety": "Broken Rice",
       "grade": "Small"
     },
@@ -26492,6 +26479,19 @@
       "records": 6,
       "topVariety": "Govt. Quality",
       "grade": "Small"
+    },
+    {
+      "name": "Sorabha",
+      "district": "Shivamogga",
+      "avgPrice": 2400,
+      "recentPrice": null,
+      "minPrice": 1900,
+      "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 75,
+      "topVariety": "Fine",
+      "grade": "Local"
     },
     {
       "name": "Pandavapura",
@@ -26771,19 +26771,6 @@
       "grade": "Local"
     },
     {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 2482,
-      "recentPrice": 2630,
-      "minPrice": 2630,
-      "maxPrice": 2630,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 67,
-      "topVariety": "Pine Apple",
-      "grade": "Medium"
-    },
-    {
       "name": "Davangere",
       "district": "Davangere",
       "avgPrice": 2512,
@@ -26847,6 +26834,19 @@
       "records": 6,
       "topVariety": "Pine Apple",
       "grade": "Large"
+    },
+    {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 2482,
+      "recentPrice": null,
+      "minPrice": 1950,
+      "maxPrice": 2900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 67,
+      "topVariety": "Pine Apple",
+      "grade": "Medium"
     }
   ],
   "seemebadnekai": [
@@ -27209,8 +27209,8 @@
       "name": "Mysuru",
       "district": "Mysuru",
       "avgPrice": 2257,
-      "recentPrice": 2450,
-      "minPrice": 2400,
+      "recentPrice": 2500,
+      "minPrice": 2500,
       "maxPrice": 2500,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
@@ -27312,19 +27312,6 @@
   ],
   "paddycommon": [
     {
-      "name": "Belur",
-      "district": "Hassan",
-      "avgPrice": 4045,
-      "recentPrice": 5300,
-      "minPrice": 5300,
-      "maxPrice": 5300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 40,
-      "topVariety": "Paddy",
-      "grade": "FAQ"
-    },
-    {
       "name": "Kanakagiri",
       "district": "Koppal",
       "avgPrice": 3928,
@@ -27403,6 +27390,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Davangere",
+      "district": "Davangere",
+      "avgPrice": 2891,
+      "recentPrice": 3679,
+      "minPrice": 3399,
+      "maxPrice": 3888,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-17",
+      "records": 60,
+      "topVariety": "Paddy Medium",
+      "grade": "Local"
+    },
+    {
       "name": "Harihara",
       "district": "Davangere",
       "avgPrice": 3628,
@@ -27426,32 +27426,6 @@
       "lastDate": "2026-10-17",
       "records": 71,
       "topVariety": "Sona Masuri (OLD)",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Davangere",
-      "district": "Davangere",
-      "avgPrice": 2891,
-      "recentPrice": 3606,
-      "minPrice": 3387,
-      "maxPrice": 3888,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 60,
-      "topVariety": "Paddy Medium",
-      "grade": "Local"
-    },
-    {
-      "name": "Karatagi",
-      "district": "Koppal",
-      "avgPrice": 3377,
-      "recentPrice": 3560,
-      "minPrice": 2500,
-      "maxPrice": 4500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 233,
-      "topVariety": "Paddy RNR Old",
       "grade": "Non-FAQ"
     },
     {
@@ -27510,27 +27484,14 @@
       "name": "Mundgod",
       "district": "Uttara Kannada",
       "avgPrice": 2730,
-      "recentPrice": 3013,
-      "minPrice": 2800,
-      "maxPrice": 3400,
+      "recentPrice": 2925,
+      "minPrice": 2850,
+      "maxPrice": 3000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
       "records": 97,
       "topVariety": "Paddy",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Sorabha",
-      "district": "Shivamogga",
-      "avgPrice": 2499,
-      "recentPrice": 2850,
-      "minPrice": 2850,
-      "maxPrice": 2850,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 45,
-      "topVariety": "Paddy",
-      "grade": "Local"
     },
     {
       "name": "Haliyala",
@@ -27557,45 +27518,6 @@
       "records": 42,
       "topVariety": "Paddy Medium",
       "grade": "Local"
-    },
-    {
-      "name": "T. Narasipura",
-      "district": "Mysuru",
-      "avgPrice": 2507,
-      "recentPrice": 2700,
-      "minPrice": 2700,
-      "maxPrice": 2700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 84,
-      "topVariety": "Paddy",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Arakalgud",
-      "district": "Hassan",
-      "avgPrice": 2636,
-      "recentPrice": 2600,
-      "minPrice": 2600,
-      "maxPrice": 2600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 22,
-      "topVariety": "Paddy",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Shimoga",
-      "district": "Shivamogga",
-      "avgPrice": 3071,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 26,
-      "topVariety": "Paddy fine",
-      "grade": "FAQ"
     },
     {
       "name": "Mandya",
@@ -27661,6 +27583,19 @@
       "records": 16,
       "topVariety": "Paddy",
       "grade": "Local"
+    },
+    {
+      "name": "Belur",
+      "district": "Hassan",
+      "avgPrice": 4045,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 5555,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 40,
+      "topVariety": "Paddy",
+      "grade": "FAQ"
     },
     {
       "name": "Kustagi",
@@ -27741,6 +27676,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Karatagi",
+      "district": "Koppal",
+      "avgPrice": 3377,
+      "recentPrice": null,
+      "minPrice": 2015,
+      "maxPrice": 4710,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 233,
+      "topVariety": "Paddy RNR Old",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "SIRGUPPA",
       "district": "Bellary",
       "avgPrice": 3144,
@@ -27778,6 +27726,19 @@
       "records": 17,
       "topVariety": "Paddy",
       "grade": "Grade Range-1"
+    },
+    {
+      "name": "Shimoga",
+      "district": "Shivamogga",
+      "avgPrice": 3071,
+      "recentPrice": null,
+      "minPrice": 2300,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 26,
+      "topVariety": "Paddy fine",
+      "grade": "FAQ"
     },
     {
       "name": "Shahapur",
@@ -27936,6 +27897,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Arakalgud",
+      "district": "Hassan",
+      "avgPrice": 2636,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 3900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 22,
+      "topVariety": "Paddy",
+      "grade": "FAQ"
+    },
+    {
       "name": "Santhesargur",
       "district": "Mysuru",
       "avgPrice": 2575,
@@ -28014,6 +27988,19 @@
       "grade": "Local"
     },
     {
+      "name": "T. Narasipura",
+      "district": "Mysuru",
+      "avgPrice": 2507,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 84,
+      "topVariety": "Paddy",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Ranebennur",
       "district": "Haveri",
       "avgPrice": 2503,
@@ -28062,6 +28049,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-30",
       "records": 5,
+      "topVariety": "Paddy",
+      "grade": "Local"
+    },
+    {
+      "name": "Sorabha",
+      "district": "Shivamogga",
+      "avgPrice": 2499,
+      "recentPrice": null,
+      "minPrice": 1760,
+      "maxPrice": 3950,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 45,
       "topVariety": "Paddy",
       "grade": "Local"
     },
@@ -28445,19 +28445,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 12165,
-      "recentPrice": 13100,
-      "minPrice": 13100,
-      "maxPrice": 13100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 35,
-      "topVariety": "Tamarind Fruit",
-      "grade": "Local"
-    },
-    {
       "name": "Shimoga",
       "district": "Shivamogga",
       "avgPrice": 13225,
@@ -28480,6 +28467,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-30",
       "records": 1,
+      "topVariety": "Tamarind Fruit",
+      "grade": "Local"
+    },
+    {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 12165,
+      "recentPrice": null,
+      "minPrice": 7343,
+      "maxPrice": 15500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 35,
       "topVariety": "Tamarind Fruit",
       "grade": "Local"
     },
@@ -28629,19 +28629,6 @@
       "grade": "Local"
     },
     {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 3278,
-      "recentPrice": 3500,
-      "minPrice": 3500,
-      "maxPrice": 3500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 9,
-      "topVariety": "Thondekai",
-      "grade": "Local"
-    },
-    {
       "name": "Gauribidanur",
       "district": "Chikkaballapur",
       "avgPrice": 2904,
@@ -28757,6 +28744,19 @@
       "records": 2,
       "topVariety": "Thondekai",
       "grade": "Medium"
+    },
+    {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 3278,
+      "recentPrice": null,
+      "minPrice": 3000,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 9,
+      "topVariety": "Thondekai",
+      "grade": "Local"
     },
     {
       "name": "Binny Mill, Bengaluru",
@@ -28904,19 +28904,6 @@
       "grade": "Local"
     },
     {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 1798,
-      "recentPrice": 1500,
-      "minPrice": 1500,
-      "maxPrice": 1500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 10,
-      "topVariety": "Sweet Pumpkin",
-      "grade": "Local"
-    },
-    {
       "name": "Shimoga",
       "district": "Shivamogga",
       "avgPrice": 1016,
@@ -29021,6 +29008,19 @@
       "grade": "Local"
     },
     {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 1798,
+      "recentPrice": null,
+      "minPrice": 1480,
+      "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 10,
+      "topVariety": "Sweet Pumpkin",
+      "grade": "Local"
+    },
+    {
       "name": "Arasikere",
       "district": "Hassan",
       "avgPrice": 1500,
@@ -29088,19 +29088,6 @@
   ],
   "onion": [
     {
-      "name": "Ramanagara",
-      "district": "Bengaluru South",
-      "avgPrice": 4175,
-      "recentPrice": 5000,
-      "minPrice": 5000,
-      "maxPrice": 5000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 8,
-      "topVariety": "Onion",
-      "grade": "Local"
-    },
-    {
       "name": "Shimoga",
       "district": "Shivamogga",
       "avgPrice": 4091,
@@ -29125,19 +29112,6 @@
       "records": 48,
       "topVariety": "Pusa-Red",
       "grade": "Large"
-    },
-    {
-      "name": "Belur",
-      "district": "Hassan",
-      "avgPrice": 3394,
-      "recentPrice": 4500,
-      "minPrice": 4500,
-      "maxPrice": 4500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 17,
-      "topVariety": "Bombay (U.P.)",
-      "grade": "Medium"
     },
     {
       "name": "Doddaballapur",
@@ -29182,7 +29156,7 @@
       "name": "Davangere",
       "district": "Davangere",
       "avgPrice": 3766,
-      "recentPrice": 4100,
+      "recentPrice": 4133,
       "minPrice": 4000,
       "maxPrice": 4200,
       "rangeBasis": "recent",
@@ -29203,32 +29177,6 @@
       "records": 83,
       "topVariety": "Onion",
       "grade": "Local"
-    },
-    {
-      "name": "Chikkamagaluru",
-      "district": "Chikkamagaluru",
-      "avgPrice": 3857,
-      "recentPrice": 4000,
-      "minPrice": 4000,
-      "maxPrice": 4000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 77,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 3714,
-      "recentPrice": 4000,
-      "minPrice": 4000,
-      "maxPrice": 4000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 47,
-      "topVariety": null,
-      "grade": "Medium"
     },
     {
       "name": "Bengaluru",
@@ -29296,43 +29244,17 @@
       "grade": "Medium"
     },
     {
-      "name": "Arasikere",
-      "district": "Hassan",
-      "avgPrice": 2438,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 8,
-      "topVariety": "Onion",
-      "grade": "Medium"
-    },
-    {
       "name": "Ranebennur",
       "district": "Haveri",
       "avgPrice": 1887,
-      "recentPrice": 1750,
+      "recentPrice": 1000,
       "minPrice": 1000,
-      "maxPrice": 2500,
+      "maxPrice": 1000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-16",
       "records": 23,
       "topVariety": "Local",
       "grade": "Medium"
-    },
-    {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 2557,
-      "recentPrice": 1222,
-      "minPrice": 1222,
-      "maxPrice": 1222,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 29,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Gubbi",
@@ -29361,6 +29283,19 @@
       "grade": "Small"
     },
     {
+      "name": "Ramanagara",
+      "district": "Bengaluru South",
+      "avgPrice": 4175,
+      "recentPrice": null,
+      "minPrice": 3000,
+      "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 8,
+      "topVariety": "Onion",
+      "grade": "Local"
+    },
+    {
       "name": "Haveri",
       "district": "Haveri",
       "avgPrice": 4100,
@@ -29374,6 +29309,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Chikkamagaluru",
+      "district": "Chikkamagaluru",
+      "avgPrice": 3857,
+      "recentPrice": null,
+      "minPrice": 2100,
+      "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 77,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Bagalkot",
       "district": "Bagalkot",
       "avgPrice": 3848,
@@ -29385,6 +29333,19 @@
       "records": 22,
       "topVariety": "Onion",
       "grade": "Local"
+    },
+    {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 3714,
+      "recentPrice": null,
+      "minPrice": 2050,
+      "maxPrice": 4800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 47,
+      "topVariety": null,
+      "grade": "Medium"
     },
     {
       "name": "Hunsur",
@@ -29437,6 +29398,19 @@
       "records": 9,
       "topVariety": "Onion",
       "grade": "Local"
+    },
+    {
+      "name": "Belur",
+      "district": "Hassan",
+      "avgPrice": 3394,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 17,
+      "topVariety": "Bombay (U.P.)",
+      "grade": "Medium"
     },
     {
       "name": "Channarayapatna",
@@ -29541,6 +29515,32 @@
       "records": 16,
       "topVariety": "Onion",
       "grade": "Local"
+    },
+    {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 2557,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 5080,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 29,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Arasikere",
+      "district": "Hassan",
+      "avgPrice": 2438,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 8,
+      "topVariety": "Onion",
+      "grade": "Medium"
     },
     {
       "name": "Kalaburagi",
@@ -29753,19 +29753,6 @@
       "grade": "Local"
     },
     {
-      "name": "Gokak",
-      "district": "Belagavi",
-      "avgPrice": 5332,
-      "recentPrice": 5454,
-      "minPrice": 5454,
-      "maxPrice": 5454,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 75,
-      "topVariety": "Penti",
-      "grade": "Local"
-    },
-    {
       "name": "Gadag",
       "district": "Gadag",
       "avgPrice": 4915,
@@ -29789,19 +29776,6 @@
       "lastDate": "2026-10-17",
       "records": 19,
       "topVariety": "Achhu",
-      "grade": "Local"
-    },
-    {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 5365,
-      "recentPrice": 5245,
-      "minPrice": 5245,
-      "maxPrice": 5245,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 35,
-      "topVariety": null,
       "grade": "Local"
     },
     {
@@ -29857,19 +29831,6 @@
       "grade": "Local"
     },
     {
-      "name": "Channarayapatna",
-      "district": "Hassan",
-      "avgPrice": 2400,
-      "recentPrice": 1500,
-      "minPrice": 1500,
-      "maxPrice": 1500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 15,
-      "topVariety": "Achhu",
-      "grade": "Medium"
-    },
-    {
       "name": "K.R.Nagar",
       "district": "Mysuru",
       "avgPrice": 20000,
@@ -29922,6 +29883,19 @@
       "grade": "Local"
     },
     {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 5365,
+      "recentPrice": null,
+      "minPrice": 3235,
+      "maxPrice": 7000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 35,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Mudhol",
       "district": "Bagalkot",
       "avgPrice": 5363,
@@ -29945,6 +29919,19 @@
       "lastDate": "2026-10-08",
       "records": 5,
       "topVariety": "Unde",
+      "grade": "Local"
+    },
+    {
+      "name": "Gokak",
+      "district": "Belagavi",
+      "avgPrice": 5332,
+      "recentPrice": null,
+      "minPrice": 4000,
+      "maxPrice": 6800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 75,
+      "topVariety": "Penti",
       "grade": "Local"
     },
     {
@@ -30271,6 +30258,19 @@
       "records": 3,
       "topVariety": null,
       "grade": "Local"
+    },
+    {
+      "name": "Channarayapatna",
+      "district": "Hassan",
+      "avgPrice": 2400,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 3700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 15,
+      "topVariety": "Achhu",
+      "grade": "Medium"
     }
   ],
   "grapes": [
@@ -30384,9 +30384,9 @@
       "name": "Mysuru",
       "district": "Mysuru",
       "avgPrice": 5290,
-      "recentPrice": 4275,
+      "recentPrice": 4200,
       "minPrice": 4200,
-      "maxPrice": 4350,
+      "maxPrice": 4200,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
       "records": 78,
@@ -30780,8 +30780,8 @@
       "name": "Mysuru",
       "district": "Mysuru",
       "avgPrice": 13529,
-      "recentPrice": 14350,
-      "minPrice": 13700,
+      "recentPrice": 15000,
+      "minPrice": 15000,
       "maxPrice": 15000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
@@ -30948,19 +30948,6 @@
       "grade": "Small"
     },
     {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 5220,
-      "recentPrice": 5000,
-      "minPrice": 5000,
-      "maxPrice": 5000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 52,
-      "topVariety": "Horse gram (Whole)",
-      "grade": "Local"
-    },
-    {
       "name": "Gadag",
       "district": "Gadag",
       "avgPrice": 4307,
@@ -31115,6 +31102,19 @@
       "records": 1,
       "topVariety": "Horse gram (Whole)",
       "grade": "Medium"
+    },
+    {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 5220,
+      "recentPrice": null,
+      "minPrice": 3000,
+      "maxPrice": 8400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 52,
+      "topVariety": "Horse gram (Whole)",
+      "grade": "Local"
     },
     {
       "name": "Bangarpet",
@@ -31771,19 +31771,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 3528,
-      "recentPrice": 3851,
-      "minPrice": 3851,
-      "maxPrice": 3851,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 42,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
       "name": "Hospet",
       "district": "Vijayanagara",
       "avgPrice": 3512,
@@ -31793,19 +31780,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 19,
-      "topVariety": "Medium",
-      "grade": "Local"
-    },
-    {
-      "name": "Shimoga",
-      "district": "Shivamogga",
-      "avgPrice": 3471,
-      "recentPrice": 3725,
-      "minPrice": 3725,
-      "maxPrice": 3725,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 30,
       "topVariety": "Medium",
       "grade": "Local"
     },
@@ -32057,6 +32031,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 3528,
+      "recentPrice": null,
+      "minPrice": 3047,
+      "maxPrice": 8572,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 42,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
       "name": "Huliyar",
       "district": "Tumakuru",
       "avgPrice": 3525,
@@ -32093,6 +32080,19 @@
       "lastDate": "2026-10-12",
       "records": 23,
       "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Shimoga",
+      "district": "Shivamogga",
+      "avgPrice": 3471,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 3851,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 30,
+      "topVariety": "Medium",
       "grade": "Local"
     },
     {
@@ -33196,19 +33196,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Soundati",
-      "district": "Belagavi",
-      "avgPrice": 3194,
-      "recentPrice": 5900,
-      "minPrice": 5900,
-      "maxPrice": 5900,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 9,
-      "topVariety": "Jowar ( White)",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Ramdurga",
       "district": "Belagavi",
       "avgPrice": 3749,
@@ -33285,19 +33272,6 @@
       "records": 59,
       "topVariety": "Jowar ( White)",
       "grade": "FAQ"
-    },
-    {
-      "name": "Chitradurga",
-      "district": "Chitradurga",
-      "avgPrice": 2831,
-      "recentPrice": 3350,
-      "minPrice": 3350,
-      "maxPrice": 3350,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 7,
-      "topVariety": "Jowar ( White)",
-      "grade": "Local"
     },
     {
       "name": "Hubballi",
@@ -33415,19 +33389,6 @@
       "records": 15,
       "topVariety": "Jowar Hybrid",
       "grade": "Local"
-    },
-    {
-      "name": "Hungund",
-      "district": "Bagalkot",
-      "avgPrice": 2261,
-      "recentPrice": 2300,
-      "minPrice": 2300,
-      "maxPrice": 2300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 28,
-      "topVariety": "Yellow",
-      "grade": "FAQ"
     },
     {
       "name": "Bagalkot",
@@ -33651,6 +33612,19 @@
       "grade": "Local"
     },
     {
+      "name": "Soundati",
+      "district": "Belagavi",
+      "avgPrice": 3194,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 5900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 9,
+      "topVariety": "Jowar ( White)",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Haveri",
       "district": "Haveri",
       "avgPrice": 3177,
@@ -33755,6 +33729,19 @@
       "grade": "Local"
     },
     {
+      "name": "Chitradurga",
+      "district": "Chitradurga",
+      "avgPrice": 2831,
+      "recentPrice": null,
+      "minPrice": 2452,
+      "maxPrice": 3350,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 7,
+      "topVariety": "Jowar ( White)",
+      "grade": "Local"
+    },
+    {
       "name": "Jamakhandi",
       "district": "Bagalkot",
       "avgPrice": 2807,
@@ -33855,6 +33842,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-11",
       "records": 34,
+      "topVariety": "Yellow",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Hungund",
+      "district": "Bagalkot",
+      "avgPrice": 2261,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 28,
       "topVariety": "Yellow",
       "grade": "FAQ"
     },
@@ -34138,19 +34138,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Mangaluru",
-      "district": "Dakshina Kannada",
-      "avgPrice": 10000,
-      "recentPrice": 10000,
-      "minPrice": 10000,
-      "maxPrice": 10000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 1,
-      "topVariety": "Green (Whole)",
-      "grade": "Local"
-    },
-    {
       "name": "Bailahongal",
       "district": "Belagavi",
       "avgPrice": 8486,
@@ -34164,32 +34151,6 @@
       "grade": "Local"
     },
     {
-      "name": "Nargunda",
-      "district": "Gadag",
-      "avgPrice": 8240,
-      "recentPrice": 8775,
-      "minPrice": 8775,
-      "maxPrice": 8775,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 53,
-      "topVariety": "Green (Whole)",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Yadgir",
-      "district": "Yadgir",
-      "avgPrice": 7886,
-      "recentPrice": 8752,
-      "minPrice": 8752,
-      "maxPrice": 8752,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 58,
-      "topVariety": "Green (Whole)",
-      "grade": "FAQ"
-    },
-    {
       "name": "Bidar",
       "district": "Bidar",
       "avgPrice": 6955,
@@ -34200,6 +34161,19 @@
       "lastDate": "2026-10-17",
       "records": 66,
       "topVariety": "Local",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rona",
+      "district": "Gadag",
+      "avgPrice": 8589,
+      "recentPrice": 8500,
+      "minPrice": 8500,
+      "maxPrice": 8500,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-15",
+      "records": 60,
+      "topVariety": "Green (Whole)",
       "grade": "Non-FAQ"
     },
     {
@@ -34238,19 +34212,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 60,
-      "topVariety": "Green (Whole)",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "sedam",
-      "district": "Kalaburagi",
-      "avgPrice": 7872,
-      "recentPrice": 8253,
-      "minPrice": 8253,
-      "maxPrice": 8253,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 58,
       "topVariety": "Green (Whole)",
       "grade": "Non-FAQ"
     },
@@ -34320,19 +34281,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Rona",
-      "district": "Gadag",
-      "avgPrice": 8589,
-      "recentPrice": 7650,
-      "minPrice": 6800,
-      "maxPrice": 8500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-15",
-      "records": 60,
-      "topVariety": "Green (Whole)",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Humanabad",
       "district": "Bidar",
       "avgPrice": 7545,
@@ -34342,19 +34290,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-16",
       "records": 31,
-      "topVariety": "Green (Whole)",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Annigeri",
-      "district": "Dharwad",
-      "avgPrice": 7527,
-      "recentPrice": 7000,
-      "minPrice": 7000,
-      "maxPrice": 7000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 45,
       "topVariety": "Green (Whole)",
       "grade": "FAQ"
     },
@@ -34394,6 +34329,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-21",
       "records": 3,
+      "topVariety": "Green (Whole)",
+      "grade": "Local"
+    },
+    {
+      "name": "Mangaluru",
+      "district": "Dakshina Kannada",
+      "avgPrice": 10000,
+      "recentPrice": null,
+      "minPrice": 10000,
+      "maxPrice": 10000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 1,
       "topVariety": "Green (Whole)",
       "grade": "Local"
     },
@@ -34658,6 +34606,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Nargunda",
+      "district": "Gadag",
+      "avgPrice": 8240,
+      "recentPrice": null,
+      "minPrice": 6150,
+      "maxPrice": 9600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 53,
+      "topVariety": "Green (Whole)",
+      "grade": "FAQ"
+    },
+    {
       "name": "Aurad",
       "district": "Bidar",
       "avgPrice": 8240,
@@ -34749,6 +34710,32 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Yadgir",
+      "district": "Yadgir",
+      "avgPrice": 7886,
+      "recentPrice": null,
+      "minPrice": 3001,
+      "maxPrice": 8752,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 58,
+      "topVariety": "Green (Whole)",
+      "grade": "FAQ"
+    },
+    {
+      "name": "sedam",
+      "district": "Kalaburagi",
+      "avgPrice": 7872,
+      "recentPrice": null,
+      "minPrice": 6033,
+      "maxPrice": 9677,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 58,
+      "topVariety": "Green (Whole)",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Kalaghatagi",
       "district": "Dharwad",
       "avgPrice": 7638,
@@ -34760,6 +34747,19 @@
       "records": 3,
       "topVariety": "Ordinary (Split)",
       "grade": "Local"
+    },
+    {
+      "name": "Annigeri",
+      "district": "Dharwad",
+      "avgPrice": 7527,
+      "recentPrice": null,
+      "minPrice": 3950,
+      "maxPrice": 8753,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 45,
+      "topVariety": "Green (Whole)",
+      "grade": "FAQ"
     },
     {
       "name": "Mundaragi",
@@ -34959,19 +34959,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 6363,
-      "recentPrice": 8200,
-      "minPrice": 8200,
-      "maxPrice": 8200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 25,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Laxmeshwar",
       "district": "Gadag",
       "avgPrice": 6899,
@@ -35085,6 +35072,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-10",
       "records": 1,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 6363,
+      "recentPrice": null,
+      "minPrice": 3000,
+      "maxPrice": 8528,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 25,
       "topVariety": null,
       "grade": "Local"
     }
@@ -35236,19 +35236,6 @@
       "grade": "Medium"
     },
     {
-      "name": "Hassan",
-      "district": "Hassan",
-      "avgPrice": 4951,
-      "recentPrice": 4800,
-      "minPrice": 4800,
-      "maxPrice": 4800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 2,
-      "topVariety": "Green Peas",
-      "grade": "Local"
-    },
-    {
       "name": "Bangarpet",
       "district": "Kolar",
       "avgPrice": 6567,
@@ -35270,6 +35257,19 @@
       "maxPrice": 7912,
       "rangeBasis": "all",
       "lastDate": "2026-07-30",
+      "records": 2,
+      "topVariety": "Green Peas",
+      "grade": "Local"
+    },
+    {
+      "name": "Hassan",
+      "district": "Hassan",
+      "avgPrice": 4951,
+      "recentPrice": null,
+      "minPrice": 4800,
+      "maxPrice": 5101,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
       "records": 2,
       "topVariety": "Green Peas",
       "grade": "Local"
@@ -35446,32 +35446,6 @@
       "grade": "Local"
     },
     {
-      "name": "Kalaghatagi",
-      "district": "Dharwad",
-      "avgPrice": 6092,
-      "recentPrice": 6526,
-      "minPrice": 6526,
-      "maxPrice": 6526,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 62,
-      "topVariety": "Soyabeen",
-      "grade": "Local"
-    },
-    {
-      "name": "Haveri",
-      "district": "Haveri",
-      "avgPrice": 5975,
-      "recentPrice": 6500,
-      "minPrice": 6500,
-      "maxPrice": 6500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 68,
-      "topVariety": "Soyabeen",
-      "grade": "FAQ"
-    },
-    {
       "name": "Laxmeshwar",
       "district": "Gadag",
       "avgPrice": 5476,
@@ -35520,19 +35494,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 70,
-      "topVariety": "Soyabeen",
-      "grade": "Local"
-    },
-    {
-      "name": "Savanur",
-      "district": "Haveri",
-      "avgPrice": 5587,
-      "recentPrice": 5548,
-      "minPrice": 5548,
-      "maxPrice": 5548,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 26,
       "topVariety": "Soyabeen",
       "grade": "Local"
     },
@@ -35598,6 +35559,32 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-12",
       "records": 65,
+      "topVariety": "Soyabeen",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kalaghatagi",
+      "district": "Dharwad",
+      "avgPrice": 6092,
+      "recentPrice": null,
+      "minPrice": 5039,
+      "maxPrice": 7300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 62,
+      "topVariety": "Soyabeen",
+      "grade": "Local"
+    },
+    {
+      "name": "Haveri",
+      "district": "Haveri",
+      "avgPrice": 5975,
+      "recentPrice": null,
+      "minPrice": 5000,
+      "maxPrice": 8050,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 68,
       "topVariety": "Soyabeen",
       "grade": "FAQ"
     },
@@ -35702,6 +35689,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-12",
       "records": 22,
+      "topVariety": "Soyabeen",
+      "grade": "Local"
+    },
+    {
+      "name": "Savanur",
+      "district": "Haveri",
+      "avgPrice": 5587,
+      "recentPrice": null,
+      "minPrice": 3525,
+      "maxPrice": 6800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 26,
       "topVariety": "Soyabeen",
       "grade": "Local"
     },
@@ -35893,8 +35893,8 @@
       "name": "Mysuru",
       "district": "Mysuru",
       "avgPrice": 4244,
-      "recentPrice": 6330,
-      "minPrice": 6000,
+      "recentPrice": 6660,
+      "minPrice": 6660,
       "maxPrice": 6660,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
@@ -36048,19 +36048,6 @@
       "grade": "Local"
     },
     {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 9335,
-      "recentPrice": 11749,
-      "minPrice": 11749,
-      "maxPrice": 11749,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 27,
-      "topVariety": "Ground Nut Seed",
-      "grade": "Local"
-    },
-    {
       "name": "Gadag",
       "district": "Gadag",
       "avgPrice": 11231,
@@ -36200,6 +36187,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-03",
       "records": 11,
+      "topVariety": "Ground Nut Seed",
+      "grade": "Local"
+    },
+    {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 9335,
+      "recentPrice": null,
+      "minPrice": 6000,
+      "maxPrice": 12860,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 27,
       "topVariety": "Ground Nut Seed",
       "grade": "Local"
     },
@@ -36773,19 +36773,6 @@
       "grade": "FAQ"
     },
     {
-      "name": "Chitradurga",
-      "district": "Chitradurga",
-      "avgPrice": 7504,
-      "recentPrice": 8030,
-      "minPrice": 8030,
-      "maxPrice": 8030,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 17,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
       "name": "Kustagi",
       "district": "Koppal",
       "avgPrice": 7898,
@@ -36812,6 +36799,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Hungund",
+      "district": "Bagalkot",
+      "avgPrice": 7622,
+      "recentPrice": 7900,
+      "minPrice": 7900,
+      "maxPrice": 7900,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-17",
+      "records": 27,
+      "topVariety": "Local",
+      "grade": "FAQ"
+    },
+    {
       "name": "Rona",
       "district": "Gadag",
       "avgPrice": 7209,
@@ -36823,19 +36823,6 @@
       "records": 19,
       "topVariety": "Sunflower",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Nargunda",
-      "district": "Gadag",
-      "avgPrice": 7539,
-      "recentPrice": 7800,
-      "minPrice": 7800,
-      "maxPrice": 7800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 21,
-      "topVariety": "Sunflower",
-      "grade": "FAQ"
     },
     {
       "name": "Ramdurga",
@@ -36877,19 +36864,6 @@
       "grade": "Local"
     },
     {
-      "name": "Hungund",
-      "district": "Bagalkot",
-      "avgPrice": 7622,
-      "recentPrice": 7750,
-      "minPrice": 7600,
-      "maxPrice": 7900,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 27,
-      "topVariety": "Local",
-      "grade": "FAQ"
-    },
-    {
       "name": "Ballari",
       "district": "Bellary",
       "avgPrice": 7686,
@@ -36899,19 +36873,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 31,
-      "topVariety": "Sunflower",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Mudhol",
-      "district": "Bagalkot",
-      "avgPrice": 7428,
-      "recentPrice": 7700,
-      "minPrice": 7700,
-      "maxPrice": 7700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 8,
       "topVariety": "Sunflower",
       "grade": "Non-FAQ"
     },
@@ -36968,19 +36929,6 @@
       "grade": "Grade Range-1"
     },
     {
-      "name": "Yadgir",
-      "district": "Yadgir",
-      "avgPrice": 6760,
-      "recentPrice": 7175,
-      "minPrice": 7175,
-      "maxPrice": 7175,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 7,
-      "topVariety": "Sunflower",
-      "grade": "FAQ"
-    },
-    {
       "name": "Kalaburagi",
       "district": "Kalaburagi",
       "avgPrice": 5442,
@@ -36992,19 +36940,6 @@
       "records": 5,
       "topVariety": "Sunflower",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Mysuru",
-      "district": "Mysuru",
-      "avgPrice": 7570,
-      "recentPrice": 6218,
-      "minPrice": 6218,
-      "maxPrice": 6218,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-14",
-      "records": 48,
-      "topVariety": "Local",
-      "grade": "Local"
     },
     {
       "name": "Sira",
@@ -37124,6 +37059,45 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Mysuru",
+      "district": "Mysuru",
+      "avgPrice": 7570,
+      "recentPrice": null,
+      "minPrice": 2759,
+      "maxPrice": 8999,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 48,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
+      "name": "Nargunda",
+      "district": "Gadag",
+      "avgPrice": 7539,
+      "recentPrice": null,
+      "minPrice": 6300,
+      "maxPrice": 8100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 21,
+      "topVariety": "Sunflower",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Chitradurga",
+      "district": "Chitradurga",
+      "avgPrice": 7504,
+      "recentPrice": null,
+      "minPrice": 6896,
+      "maxPrice": 8348,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 17,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
       "name": "Yaragatti",
       "district": "Belagavi",
       "avgPrice": 7500,
@@ -37161,6 +37135,19 @@
       "records": 11,
       "topVariety": "Sunflower",
       "grade": "FAQ"
+    },
+    {
+      "name": "Mudhol",
+      "district": "Bagalkot",
+      "avgPrice": 7428,
+      "recentPrice": null,
+      "minPrice": 7350,
+      "maxPrice": 7700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 8,
+      "topVariety": "Sunflower",
+      "grade": "Non-FAQ"
     },
     {
       "name": "Koppal",
@@ -37254,6 +37241,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Yadgir",
+      "district": "Yadgir",
+      "avgPrice": 6760,
+      "recentPrice": null,
+      "minPrice": 6258,
+      "maxPrice": 7175,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-14",
+      "records": 7,
+      "topVariety": "Sunflower",
+      "grade": "FAQ"
+    },
+    {
       "name": "Bijapur",
       "district": "Vijayapura",
       "avgPrice": 6442,
@@ -37337,8 +37337,8 @@
       "name": "Chickkaballapura",
       "district": "Chikkaballapur",
       "avgPrice": 2481,
-      "recentPrice": 2750,
-      "minPrice": 2500,
+      "recentPrice": 3000,
+      "minPrice": 3000,
       "maxPrice": 3000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
@@ -37644,8 +37644,8 @@
       "name": "Chickkaballapura",
       "district": "Chikkaballapur",
       "avgPrice": 7199,
-      "recentPrice": 11500,
-      "minPrice": 10500,
+      "recentPrice": 12500,
+      "minPrice": 12500,
       "maxPrice": 12500,
       "rangeBasis": "recent",
       "lastDate": "2026-10-15",
@@ -38435,10 +38435,10 @@
       "name": "Hassan",
       "district": "Hassan",
       "avgPrice": 2500,
-      "recentPrice": 2500,
+      "recentPrice": null,
       "minPrice": 2500,
       "maxPrice": 2500,
-      "rangeBasis": "recent",
+      "rangeBasis": "all",
       "lastDate": "2026-10-14",
       "records": 14,
       "topVariety": "Leafy Vegetables",
