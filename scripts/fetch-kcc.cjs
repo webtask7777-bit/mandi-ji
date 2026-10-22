@@ -177,7 +177,8 @@ async function main() {
   console.log(`KCC dataset: ${newest.datasetTotal} calls, newest call ${newest.newestCall}`);
   const to = opts.to && opts.to < newest.month ? opts.to : newest.month;
   const months = monthsBetween(opts.from, to);
-  const recent = new Set(months.slice(-opts.refreshRecent));
+  // slice(-0) would be the whole list: 0 must mean no month is refreshed.
+  const recent = new Set(opts.refreshRecent ? months.slice(-opts.refreshRecent) : []);
   const failed = [];
   for (const month of months) {
     const existing = readSidecar(month);
