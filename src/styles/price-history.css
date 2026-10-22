@@ -1,6 +1,7 @@
 /* Long monthly price history on crop pages. Palette follows detail.css. */
 .sb-history { margin-top: 24px; }
-.sb-history-chart { display: block; width: 100%; height: auto; margin: 14px 0 6px; }
+.sb-history-chart-box { width: 100%; margin: 14px 0 6px; }
+.sb-history-chart { display: block; max-width: 100%; height: auto; }
 .sb-history-grid { stroke: #e4e9de; stroke-width: 1; }
 .sb-history-axis { fill: #65796a; font-size: 11px; font-variant-numeric: tabular-nums; }
 .sb-history-band { fill: #dde7d3; opacity: .75; }
@@ -23,6 +24,9 @@
 .sb-history-season__track .is-up { bottom: 50%; background: #174c3c; }
 .sb-history-season__track .is-down { top: 50%; background: #b98a3a; }
 .sb-history-season__bar small { font-size: 10.5px; color: #65796a; white-space: nowrap; }
+.sb-history-season__bar b { font-size: 10.5px; font-weight: 700; font-variant-numeric: tabular-nums; color: #7b877e; }
+.sb-history-season__bar b.is-up { color: #174c3c; }
+.sb-history-season__bar b.is-down { color: #8a6420; }
 .sb-history-season__bar.is-current small { color: #9a6a16; font-weight: 750; }
 .sb-history-season__bar.is-current .sb-history-season__track { background-color: #f5e8bd66; border-radius: 6px; }
 .sb-history-note { display: flex; gap: 6px; align-items: flex-start; font-size: 12px !important; color: #65736a !important; }
@@ -32,6 +36,7 @@
 
 @media (max-width: 560px) {
   .sb-history-season { gap: 2px; }
-  .sb-history-season__bar small { font-size: 9px; }
-  .sb-history-axis { font-size: 13px; }
+  .sb-history-season__bar small, .sb-history-season__bar b { font-size: 9px; }
+  .sb-history-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sb-history-facts strong { font-size: 16px; }
 }

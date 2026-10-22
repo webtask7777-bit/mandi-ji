@@ -10,24 +10,21 @@ export function seasonalExtremes(pct) {
   return high.pct - low.pct >= 6 ? { high, low } : null;
 }
 
-/** The same calendar month (1–12) N years before the newest year that has it. */
-export function sameMonthEarlier(rows, month, yearsAgo = [1, 5]) {
+/** The same calendar month (1–12) N years before the current year (India time), where recorded. */
+export function sameMonthEarlier(rows, month, yearsAgo = [1, 5], currentYear = new Date(Date.now() + 5.5 * 3600e3).getUTCFullYear()) {
   const byMonth = new Map(rows.map(row => [row[0], row]));
   const mm = String(month).padStart(2, '0');
-  const newestYear = Number(rows.at(-1)?.[0]?.slice(0, 4));
-  // The current month may not be in the data yet; count back from the newest year that has it.
-  const base = [newestYear, newestYear - 1].find(year => byMonth.has(`${year}-${mm}`)) ?? newestYear;
   return yearsAgo
-    .map(n => ({ yearsAgo: n, row: byMonth.get(`${base - n}-${mm}`) }))
+    .map(n => ({ yearsAgo: n, row: byMonth.get(`${currentYear - n}-${mm}`) }))
     .filter(item => item.row);
 }
 
 /** One label per year, thinned so labels never crowd (at most ~9). */
-export function yearTicks(rows) {
+export function yearTicks(rows, maxTicks = 9) {
   if (!rows?.length) return [];
   const first = Number(rows[0][0].slice(0, 4));
   const last = Number(rows.at(-1)[0].slice(0, 4));
-  const step = Math.max(1, Math.ceil((last - first + 1) / 9));
+  const step = Math.max(1, Math.ceil((last - first + 1) / maxTicks));
   const ticks = [];
   for (let year = Math.ceil(first / step) * step; year <= last; year += step) {
     const ym = `${year}-01`;

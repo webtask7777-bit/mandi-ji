@@ -1,4 +1,4 @@
-import { useId, useMemo } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { CalendarDays, History, Info } from 'lucide-react';
 import { useApi } from '../hooks/useApi';
 import { MONTHS_HI, MONTHS_SHORT_HI, currentMonthIST } from '../utils/kccAdvice';
@@ -8,11 +8,26 @@ import '../styles/price-history.css';
 const money = n => `₹${Math.round(n).toLocaleString('en-IN')}`;
 const monthLabel = ym => `${MONTHS_HI[Number(ym.slice(5, 7)) - 1]} ${ym.slice(0, 4)}`;
 
+/** Width of an element in CSS pixels (720 before it is measured, e.g. in prerendered HTML). */
+function useWidth(ref) {
+  const [width, setWidth] = useState(720);
+  useEffect(() => {
+    const element = ref.current;
+    if (!element || typeof ResizeObserver === 'undefined') return undefined;
+    const observer = new ResizeObserver(([entry]) => setWidth(Math.round(entry.contentRect.width) || 720));
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [ref]);
+  return width;
+}
+
 function LongChart({ rows, title }) {
   const id = useId().replace(/[^a-zA-Z0-9_-]/g, '');
-  const width = 720;
-  const height = 220;
-  const pad = { top: 12, right: 12, bottom: 26, left: 52 };
+  const box = useRef(null);
+  // Drawn at the real width so axis text keeps its size on a phone instead of shrinking with the SVG.
+  const width = Math.max(280, useWidth(box));
+  const height = width < 480 ? 200 : 230;
+  const pad = { top: 12, right: 10, bottom: 26, left: 52 };
   const values = rows.flatMap(row => [row[1], row[3]]).filter(v => v > 0);
   const max = Math.max(...values) * 1.05;
   const min = Math.max(0, Math.min(...rows.map(row => row[2] || row[1])) * 0.9);
@@ -33,14 +48,14 @@ function LongChart({ rows, title }) {
   const line = seg => seg.map((row, i) => `${i ? 'L' : 'M'}${x(row[0]).toFixed(1)},${y(row[1]).toFixed(1)}`).join('');
   const band = seg => seg.length < 2 ? '' : `${seg.map((row, i) => `${i ? 'L' : 'M'}${x(row[0]).toFixed(1)},${y(row[3] || row[1]).toFixed(1)}`).join('')}${seg.slice().reverse().map(row => `L${x(row[0]).toFixed(1)},${y(row[2] || row[1]).toFixed(1)}`).join('')}Z`;
   const gridValues = [0, 0.5, 1].map(f => min + (max - min) * f);
-  return <svg viewBox={`0 0 ${width} ${height}`} className="sb-history-chart" role="img" aria-labelledby={`${id}-t`}>
+  return <div ref={box} className="sb-history-chart-box"><svg viewBox={`0 0 ${width} ${height}`} width={width} height={height} className="sb-history-chart" role="img" aria-labelledby={`${id}-t`}>
     <title id={`${id}-t`}>{title}</title>
     {gridValues.map(v => <g key={v}><line x1={pad.left} x2={width - pad.right} y1={y(v)} y2={y(v)} className="sb-history-grid" /><text x={pad.left - 6} y={y(v) + 4} textAnchor="end" className="sb-history-axis">{money(v)}</text></g>)}
-    {yearTicks(rows).map(ym => <text key={ym} x={x(ym)} y={height - 8} textAnchor="middle" className="sb-history-axis">{ym.slice(0, 4)}</text>)}
+    {yearTicks(rows, Math.max(3, Math.floor(width / 70))).map(ym => <text key={ym} x={x(ym)} y={height - 8} textAnchor="middle" className="sb-history-axis">{ym.slice(0, 4)}</text>)}
     {segments.map((seg, i) => <path key={`b${i}`} d={band(seg)} className="sb-history-band" />)}
     {segments.map((seg, i) => <path key={`l${i}`} d={line(seg)} className="sb-history-line" />)}
     <circle cx={x(rows.at(-1)[0])} cy={y(rows.at(-1)[1])} r="4" className="sb-history-dot" />
-  </svg>;
+  </svg></div>;
 }
 
 function SeasonBars({ profile, month }) {
@@ -50,6 +65,7 @@ function SeasonBars({ profile, month }) {
       <div className="sb-history-season__track" aria-hidden="true">
         {pct != null && <span className={pct >= 0 ? 'is-up' : 'is-down'} style={{ height: `${Math.abs(pct) / max * 50}%` }} />}
       </div>
+      <b aria-hidden="true" className={pct == null ? '' : pct >= 0 ? 'is-up' : 'is-down'}>{pct == null ? '–' : `${pct > 0 ? '+' : ''}${Math.round(pct)}%`}</b>
       <small aria-hidden="true">{MONTHS_SHORT_HI[i]}</small>
     </div>)}
   </div>;
@@ -74,7 +90,7 @@ export default function PriceHistory({ cropId, cropName, stateId = 'all', stateN
     <p>हर महीने की मंडियों के औसत भाव का मध्य (median)। हल्की पट्टी = आधी मंडियों का भाव इसी दायरे में रहा। ₹/क्विंटल।</p>
     <LongChart rows={rows} title={`${cropName} का ${scopeHi} में मासिक भाव, ${monthLabel(rows[0][0])} से ${monthLabel(latest[0])}`} />
     <div className="sb-history-facts">
-      <div><span>सबसे नया महीना</span><strong>{money(latest[1])}</strong><small>{monthLabel(latest[0])} · {latest[4]} मंडियाँ</small></div>
+      <div><span>सबसे नया महीना</span><strong>{money(latest[1])}</strong><small>{monthLabel(latest[0])} · {Number(latest[4]).toLocaleString('en-IN')} मंडियाँ</small></div>
       {earlier.map(item => <div key={item.yearsAgo}><span>{item.yearsAgo === 1 ? 'पिछले साल इसी महीने' : `${item.yearsAgo} साल पहले`}</span><strong>{money(item.row[1])}</strong><small>{monthLabel(item.row[0])}</small></div>)}
     </div>
     {profile && extremes && <div className="sb-history-season-wrap">

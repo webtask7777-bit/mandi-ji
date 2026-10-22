@@ -52,10 +52,11 @@ test('seasonal extremes need a real spread', () => {
   assert.equal(seasonalExtremes([5, null, null, null]), null);
 });
 
-test('same month in earlier years counts back from the newest year that has the month', () => {
-  const rows = ['2015-10', '2020-10', '2024-10', '2025-09', '2025-10', '2026-09'].map(ym => [ym, 1, 1, 1, 1]);
-  // October 2026 is not in the data yet: count back from 2025.
-  assert.deepEqual(sameMonthEarlier(rows, 10, [1, 5, 10]).map(item => item.row[0]), ['2024-10', '2020-10', '2015-10']);
+test('same month in earlier years counts back from the current year', () => {
+  const rows = ['2016-10', '2021-10', '2024-10', '2025-09', '2025-10', '2026-09'].map(ym => [ym, 1, 1, 1, 1]);
+  // In October 2026, "last year" is October 2025, whatever the newest stored month is.
+  assert.deepEqual(sameMonthEarlier(rows, 10, [1, 5, 10], 2026).map(item => item.row[0]), ['2025-10', '2021-10', '2016-10']);
+  assert.deepEqual(sameMonthEarlier(rows, 10, [3], 2026), [], 'a missing year (2023) is left out, not replaced');
 });
 
 test('year ticks stay sparse over long ranges', () => {
