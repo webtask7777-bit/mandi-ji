@@ -187,7 +187,7 @@ export default function FasalSalahPage() {
       <MonthPicker month={month} onChange={setMonth} />
 
       {loading && <div className="sb-detail-status" role="status"><Sprout size={24} aria-hidden="true" /><h2>सवालों का सार लोड हो रहा है</h2></div>}
-      {error && <div className="sb-detail-notice" role="alert"><AlertTriangle size={20} aria-hidden="true" /><div><strong>{notFound ? 'इस जगह के सवाल उपलब्ध नहीं हैं' : 'फसल सलाह अभी लोड नहीं हो पाई'}</strong><p>{notFound ? 'जिन ज़िलों से कम सवाल आए हैं, उनके लिए राज्य की सलाह देखें।' : 'थोड़ी देर बाद पृष्ठ दोबारा खोलें।'}</p></div><Link to={stateId && level === 'district' ? salahPath(stateId) : '/fasal-salah'}>{stateId && level === 'district' ? 'राज्य की सलाह' : 'सभी राज्य'}</Link></div>}
+      {error && <div className="sb-detail-notice" role="alert"><AlertTriangle size={20} aria-hidden="true" /><div><strong>{notFound && level === 'india' ? 'फसल सलाह का डेटा तैयार हो रहा है' : notFound ? 'इस जगह के सवाल उपलब्ध नहीं हैं' : 'फसल सलाह अभी लोड नहीं हो पाई'}</strong><p>{notFound && level === 'india' ? 'किसान कॉल सेंटर के सवाल जोड़े जा रहे हैं। कुछ घंटों बाद फिर देखें। तब तक मंडी भाव देखें।' : notFound ? 'जिन ज़िलों से कम सवाल आए हैं, उनके लिए राज्य की सलाह देखें।' : 'थोड़ी देर बाद पृष्ठ दोबारा खोलें।'}</p></div><Link to={level === 'india' ? '/' : stateId && level === 'district' ? salahPath(stateId) : '/fasal-salah'}>{level === 'india' ? 'मंडी भाव' : stateId && level === 'district' ? 'राज्य की सलाह' : 'सभी राज्य'}</Link></div>}
 
       {data && <>
         <SourceNote meta={meta} />
