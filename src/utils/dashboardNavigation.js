@@ -25,9 +25,14 @@ export function getDashboardStateUrl(stateId, search = '') {
   const tab = getDashboardTab(search);
   if (tab === 'prices') return path;
   const params = new URLSearchParams({ tab });
+  const previous = new URLSearchParams(search);
   // Place IDs belong to their source state. Only carry the crop candidate;
   // Naksha validates it against the new state's loaded catalog before use.
-  const crop = new URLSearchParams(search).get('mapCrop');
+  const crop = previous.get('mapCrop');
   if (tab === 'naksha' && crop) params.set('mapCrop', crop);
+  const calendarMonth = previous.get('calendarMonth');
+  if (tab === 'calendar' && /^(?:[1-9]|1[0-2])$/.test(calendarMonth || '')) {
+    params.set('calendarMonth', calendarMonth);
+  }
   return `${path}?${params}`;
 }
