@@ -38,7 +38,7 @@ function bucketPrice(bucket) {
  * reported in another unit (per bunch, per nut, per 1000 nuts). Returns the set of series
  * keys to leave out of per-quintal figures. Only judged for commodities with enough data.
  */
-function unitMismatchedSeries(records, { seriesKey, commodityKey, minRecords = 30, minSeries = 5, ratio = 10 } = {}) {
+function unitMismatchedSeries(records, { seriesKey, commodityKey, minRecords = 30, minSeries = 5, ratio = 10, ratioFor = () => ratio } = {}) {
   const byCommodity = new Map();
   for (const r of records) {
     if (!(r.modal_price > 0)) continue;
@@ -50,14 +50,15 @@ function unitMismatchedSeries(records, { seriesKey, commodityKey, minRecords = 3
     series.get(s).push(r.modal_price);
   }
   const excluded = new Set();
-  for (const series of byCommodity.values()) {
+  for (const [commodity, series] of byCommodity) {
+    const limit = ratioFor(commodity) || ratio;
     const all = [...series.values()].flat();
     if (all.length < minRecords || series.size < minSeries) continue;
     const typical = median([...series.values()].map(median));
     if (!(typical > 0)) continue;
     for (const [key, prices] of series) {
       const m = median(prices);
-      if (m < typical / ratio || m > typical * ratio) excluded.add(key);
+      if (m < typical / limit || m > typical * limit) excluded.add(key);
     }
   }
   return excluded;

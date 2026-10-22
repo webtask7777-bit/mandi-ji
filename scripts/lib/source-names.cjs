@@ -91,6 +91,10 @@ const COMMODITY_ALIASES = {
 // Commodities the source reports per piece, bunch, nut or animal (betelnut ₹4, lotus ₹8,
 // flowers ₹20–₹250, sheep and goats per head) or in another small unit (saffron ₹65,000,
 // a fraction of its per-kg price): a per-quintal page would be false, so they are not published.
+// Commodities whose other-unit series sit closer than 10x to the per-quintal price:
+// coconut per 1000 nuts (Karnataka, Andhra ₹15,000–24,000) vs per quintal (Tamil Nadu, Kerala ~₹5,500).
+const UNIT_RATIO_OVERRIDES = { Coconut: 2.5 };
+
 const NON_QUINTAL_COMMODITIES = new Set([
   'Betelnuts', 'Lotus', 'Chrysanthemum', 'Jarbara', 'Anthorium', 'Tube Rose(Single)',
   'Tube Rose(Double)', 'BOP', 'Carnation', 'Orchid', 'Ram', 'Sheep', 'She Goat', 'Saffron',
@@ -120,4 +124,4 @@ const DISTRICT_ALIASES = {
   Telangana: { Hanmakonda: 'Hanumakonda' },
 };
 
-module.exports = { STATES, STATE_CODES, STATE_ALIASES, COMMODITY_ALIASES, NON_QUINTAL_COMMODITIES, DRY_COMMODITY, FRESH_FORM, DRY_FLOOR, belowDryFloor, DISTRICT_ALIASES };
+module.exports = { UNIT_RATIO_OVERRIDES, STATES, STATE_CODES, STATE_ALIASES, COMMODITY_ALIASES, NON_QUINTAL_COMMODITIES, DRY_COMMODITY, FRESH_FORM, DRY_FLOOR, belowDryFloor, DISTRICT_ALIASES };

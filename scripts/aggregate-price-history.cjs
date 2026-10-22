@@ -28,7 +28,7 @@ const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
 const { median } = require('./lib/robust-price.cjs');
-const { STATES, STATE_ALIASES, COMMODITY_ALIASES, NON_QUINTAL_COMMODITIES, belowDryFloor, DISTRICT_ALIASES } = require('./lib/source-names.cjs');
+const { STATES, STATE_ALIASES, COMMODITY_ALIASES, NON_QUINTAL_COMMODITIES, belowDryFloor, DISTRICT_ALIASES, UNIT_RATIO_OVERRIDES } = require('./lib/source-names.cjs');
 
 const ROOT = path.join(__dirname, '..');
 const RAW_DIR = path.join(ROOT, '.cache', 'prices', 'raw');
@@ -101,7 +101,7 @@ function readMonth(files) {
 }
 
 /** Series means → per scope: { row: [median, p25, p75, mandis], series: Map(key → mean) }. */
-function summarizeMonth(seriesSums) {
+function summarizeMonth(seriesSums, unitRatio = UNIT_RATIO) {
   const seriesMeans = new Map([...seriesSums].map(([key, [sum, count]]) => [key, sum / count]));
   // A mandi's price: the mean of its variety/grade series.
   const byMandi = new Map();
@@ -111,7 +111,7 @@ function summarizeMonth(seriesSums) {
   }
   const mandis = [...byMandi].map(([mandi, values]) => [mandi, values.reduce((a, b) => a + b, 0) / values.length]);
   const national = median(mandis.map(([, value]) => value));
-  const inUnit = value => !(national > 0) || mandis.length < 5 || (value >= national / UNIT_RATIO && value <= national * UNIT_RATIO);
+  const inUnit = value => !(national > 0) || mandis.length < 5 || (value >= national / unitRatio && value <= national * unitRatio);
   const keptMandis = new Set(mandis.filter(([, value]) => inUnit(value)).map(([mandi]) => mandi));
   const row = values => {
     const sorted = values.slice().sort((a, b) => a - b);
@@ -218,7 +218,7 @@ function main() {
     usedMonths++;
     for (const [crop, series] of read) {
       const entry = crops.get(crop) || crops.set(crop, { commodity: series.commodity, scopes: new Map(), links: new Map(), last: new Map() }).get(crop);
-      for (const [scope, { row, series: scopeSeries }] of Object.entries(summarizeMonth(series))) {
+      for (const [scope, { row, series: scopeSeries }] of Object.entries(summarizeMonth(series, UNIT_RATIO_OVERRIDES[series.commodity] || UNIT_RATIO))) {
         if (!(row[0] > 0)) continue;
         if (scope !== 'all' && row[3] < MIN_STATE_MANDIS) continue;
         (entry.scopes.get(scope) || entry.scopes.set(scope, []).get(scope)).push([month, ...row]);

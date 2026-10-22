@@ -15,7 +15,7 @@ const DATA_DIR = path.join(__dirname, '..', 'server', 'db', 'data');
 const DAILY_DIR = path.join(DATA_DIR, 'daily');
 const INDIA_DIR = path.join(DATA_DIR, 'india');
 
-const { STATES, STATE_CODES, STATE_ALIASES, COMMODITY_ALIASES, NON_QUINTAL_COMMODITIES, belowDryFloor, DISTRICT_ALIASES } = require('./lib/source-names.cjs');
+const { STATES, STATE_CODES, STATE_ALIASES, COMMODITY_ALIASES, NON_QUINTAL_COMMODITIES, belowDryFloor, DISTRICT_ALIASES, UNIT_RATIO_OVERRIDES } = require('./lib/source-names.cjs');
 
 // ─── Hindi Crop Name Mapping ───────────────────────────────────────────
 const CROP_HINDI = {
@@ -277,7 +277,7 @@ function main() {
 
   // Leave out series reported in another unit (per bunch, per nut): they are not ₹/quintal.
   const seriesKey = r => `${r.commodity}|${r.state}|${r.district}|${r.market}`;
-  const unitExcluded = unitMismatchedSeries(dedupedRecords, { seriesKey, commodityKey: r => r.commodity });
+  const unitExcluded = unitMismatchedSeries(dedupedRecords, { seriesKey, commodityKey: r => r.commodity, ratioFor: commodity => UNIT_RATIO_OVERRIDES[COMMODITY_ALIASES[commodity] || commodity] });
   const unitChecked = dedupedRecords.filter(r => !unitExcluded.has(seriesKey(r)));
   console.log(`Unit check: ${unitExcluded.size} series (${dedupedRecords.length - unitChecked.length} records) left out as not per quintal`);
   const sanity = priceSanity(unitChecked, r => r.commodity);
