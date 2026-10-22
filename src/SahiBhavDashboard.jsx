@@ -15,6 +15,7 @@ import SEO from "./components/SEO";
 import Footer from "./components/Footer";
 import LanguageEntry from "./components/LanguageEntry";
 import Brand from "./components/Brand";
+import FarmVisual from "./components/FarmVisual";
 import { CropImageLegend } from "./components/CropImage";
 import "./styles/dashboard.css";
 
@@ -289,7 +290,7 @@ export default function SahiBhavDashboard() {
       </header>
 
       {activeTab === "prices" && (
-        <section className="sb-welcome" aria-labelledby="welcome-heading">
+        <section className="sb-welcome sb-welcome--illustrated" aria-labelledby="welcome-heading">
           <div className="sb-welcome-copy">
             <p className="sb-eyebrow"><span /> {stateNameHi} की मंडियों से</p>
             <h1 id="welcome-heading">भाव से आगे।<br /><span>पूरे सौदे का हिसाब।</span></h1>
@@ -304,17 +305,17 @@ export default function SahiBhavDashboard() {
             </div>
           </div>
           <div className="sb-welcome-image" aria-hidden="true">
-            <img src="/visuals/hero-harvest.webp" alt="" width="1280" height="853" fetchPriority="high" />
-            <div className="sb-image-caption">खेत से मंडी तक, आपके साथ।</div>
+            <FarmVisual name="mandi-market-v1" priority sizes="(max-width: 640px) calc(100vw - 36px), 550px" />
+            <div className="sb-image-caption"><span>खेत से मंडी तक, आपके साथ।</span><small>सांकेतिक चित्र</small></div>
           </div>
         </section>
       )}
 
-      {activeTab === 'prices' && <nav className="sb-task-shortcuts" aria-label="अपना अगला कदम चुनें">
-        <a href="#sb-crop-picker"><span className="sb-task-number">01</span><span><strong>फसल का भाव</strong><small>दर्ज तारीख के साथ</small></span><ChartNoAxesCombined size={20} aria-hidden="true" /></a>
-        <button type="button" onClick={() => setActiveTab('mandis')}><span className="sb-task-number">02</span><span><strong>मंडी की जानकारी</strong><small>उपलब्ध रिकॉर्ड समझें</small></span><Store size={20} aria-hidden="true" /></button>
-        <button type="button" onClick={() => setActiveTab('delivery')}><span className="sb-task-number">03</span><span><strong>पहुँचने तक की लागत</strong><small>वाहन, दूरी और बचत</small></span><Truck size={20} aria-hidden="true" /></button>
-        <Link to={selectedState ? `/fasal-salah/${selectedState}` : '/fasal-salah'}><span className="sb-task-number">04</span><span><strong>फसल सलाह</strong><small>इस महीने के कीट-रोग</small></span><Sprout size={20} aria-hidden="true" /></Link>
+      {activeTab === 'prices' && <nav className="sb-task-shortcuts sb-task-shortcuts--visual" aria-label="अपना अगला कदम चुनें">
+        <a className="sb-task-shortcut" href="#sb-crop-picker"><span className="sb-task-art" aria-hidden="true"><FarmVisual name="language-farmers-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>फसल का भाव</strong><small>दर्ज तारीख के साथ</small></span><ArrowRight size={18} aria-hidden="true" /></a>
+        <button className="sb-task-shortcut" type="button" onClick={() => setActiveTab('mandis')}><span className="sb-task-art" aria-hidden="true"><FarmVisual name="mandi-market-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>मंडी की जानकारी</strong><small>उपलब्ध रिकॉर्ड समझें</small></span><ArrowRight size={18} aria-hidden="true" /></button>
+        <button className="sb-task-shortcut" type="button" onClick={() => setActiveTab('delivery')}><span className="sb-task-art" aria-hidden="true"><FarmVisual name="farm-delivery-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>पहुँचने तक की लागत</strong><small>वाहन, दूरी और बचत</small></span><ArrowRight size={18} aria-hidden="true" /></button>
+        <Link className="sb-task-shortcut" to={selectedState ? `/fasal-salah/${selectedState}` : '/fasal-salah'}><span className="sb-task-art" aria-hidden="true"><FarmVisual name="farm-journal-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>फसल सलाह</strong><small>इस महीने के कीट-रोग</small></span><ArrowRight size={18} aria-hidden="true" /></Link>
       </nav>}
 
       {/* Banners */}

@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, BookOpen, CalendarDays, Clock3, Leaf, MapPin, Se
 import SEO from '@/components/SEO';
 import Brand from '@/components/Brand';
 import EditorialImage from '@/components/EditorialImage';
+import FarmVisual from '@/components/FarmVisual';
 import LocalWeatherLinks from '@/components/LocalWeatherLinks';
 import NotFoundPage from './NotFoundPage';
 import { useApi } from '@/hooks/useApi';
@@ -95,11 +96,12 @@ function BlogLibraryPage({ routeLanguage }) {
   }
 
   return <div className={`sb-journal-page sb-language-surface sb-language-script-${languageInfo?.script || 'Devanagari'}`} lang={language} dir={languageInfo?.dir || 'ltr'}>
-    <SEO title={`${copy.guides} — ${copy.crop}, ${copy.state}, ${copy.language}`} description={copy.intro} path={libraryPath} noIndex={isFilteredUrl} language={language} image={LIBRARY_SHARE_IMAGE[language] || LIBRARY_SHARE_IMAGE.default} imageAlt={copy.guides} />
+    <SEO title={`${copy.guides} — ${copy.crop}, ${copy.state}, ${copy.language}`} description={copy.intro} path={libraryPath} noIndex={isFilteredUrl} language={language} image="/visuals/farm-journal-v1.webp" imageAlt={copy.guides} />
     <a className="sb-journal-skip" href="#main-content">{copy.skip}</a>
     <header className="sb-journal-header"><div className="sb-journal-header__inner"><Link to={marketPath} aria-label={copy.home}><Brand /></Link><nav aria-label={copy.navigation}><Link to={chooserPath}>{copy.language}</Link><Link to={marketPath}>{copy.market}</Link><Link to={localizedToolsUrl(context, language, 'delivery')}>{copy.delivery} <ArrowRight size={15} aria-hidden="true" /></Link></nav></div></header>
     <main className="sb-journal-main" id="main-content">
-      <section className="sb-journal-intro" aria-labelledby="journal-title"><div><span className="sb-journal-eyebrow"><Leaf size={15} aria-hidden="true" /> {copy.brand} {copy.guide}</span><h1 id="journal-title">{copy.hero}<br /><em>{copy.heroAccent}</em></h1><p>{copy.intro}</p></div><div className="sb-journal-focus"><MapPin size={18} aria-hidden="true" /><div><strong>{copy.regionFocus}</strong><span>{copy.regionHelp}</span></div></div></section>
+      <section className="sb-journal-intro sb-journal-intro--illustrated" aria-labelledby="journal-title"><div className="sb-journal-intro-copy"><span className="sb-journal-eyebrow"><Leaf size={15} aria-hidden="true" /> {copy.brand} {copy.guide}</span><h1 id="journal-title">{copy.hero}<br /><em>{copy.heroAccent}</em></h1><p>{copy.intro}</p></div><figure className="sb-journal-intro-art"><FarmVisual name="farm-journal-v1" priority sizes="(max-width: 640px) calc(100vw - 32px), 540px" /><figcaption>{copy.illustration}</figcaption></figure></section>
+      <div className="sb-journal-scope-strip"><MapPin size={18} aria-hidden="true" /><strong>{copy.regionFocus}</strong><span>{copy.regionHelp}</span></div>
 
       <section className="sb-journal-discovery" aria-labelledby="discovery-title">
         <h2 id="discovery-title"><Search size={18} aria-hidden="true" />{copy.browse}</h2>
@@ -115,7 +117,7 @@ function BlogLibraryPage({ routeLanguage }) {
         </form>
       </section>
 
-      {featured && <section className="sb-journal-feature" aria-labelledby="featured-title"><Link to={articlePath(featured.slug)} className="sb-journal-feature__image" aria-label={featured.title}><EditorialImage src={featured.coverImage} alt={featured.coverAlt || featured.title} language={language} width="1672" height="941" fetchPriority="high" sizes="(max-width: 800px) calc(100vw - 32px), 650px" />{featured.coverImage && <span className="sb-journal-image-note">{copy.illustration}</span>}</Link><div className="sb-journal-feature__copy"><span className="sb-journal-eyebrow">{copy.featured}</span>{featured.category && <span className="sb-journal-category">{featured.category}</span>}<h2 id="featured-title"><Link to={articlePath(featured.slug)}>{featured.title}</Link></h2><p>{featured.excerpt}</p>{featured.regionLabel && <span className="sb-journal-region"><MapPin size={13} aria-hidden="true" />{featured.regionLabel}</span>}<PostMeta post={featured} language={language} /><Link to={articlePath(featured.slug)} className="sb-journal-button">{copy.readGuide} <ArrowRight size={18} aria-hidden="true" /></Link></div></section>}
+      {featured && <section className="sb-journal-feature" aria-labelledby="featured-title"><Link to={articlePath(featured.slug)} className="sb-journal-feature__image" aria-label={featured.title}><EditorialImage src={featured.coverImage} alt={featured.coverAlt || featured.title} language={language} width="1672" height="941" loading="lazy" decoding="async" sizes="(max-width: 800px) calc(100vw - 32px), 650px" />{featured.coverImage && <span className="sb-journal-image-note">{copy.illustration}</span>}</Link><div className="sb-journal-feature__copy"><span className="sb-journal-eyebrow">{copy.featured}</span>{featured.category && <span className="sb-journal-category">{featured.category}</span>}<h2 id="featured-title"><Link to={articlePath(featured.slug)}>{featured.title}</Link></h2><p>{featured.excerpt}</p>{featured.regionLabel && <span className="sb-journal-region"><MapPin size={13} aria-hidden="true" />{featured.regionLabel}</span>}<PostMeta post={featured} language={language} /><Link to={articlePath(featured.slug)} className="sb-journal-button">{copy.readGuide} <ArrowRight size={18} aria-hidden="true" /></Link></div></section>}
 
       <section className="sb-journal-library" aria-labelledby="guides-title" aria-busy={loading}>
         <div className="sb-journal-section-heading"><div><span className="sb-journal-eyebrow">{copy.libraryKicker}</span><h2 id="guides-title">{copy.library}</h2></div><span role="status">{!loading && !error ? `${total} ${hasFilters ? copy.result : copy.available}` : ''}</span></div>
@@ -130,16 +132,6 @@ function BlogLibraryPage({ routeLanguage }) {
     </main>
   </div>;
 }
-
-// Share image per guide library. The journal overview carries Hindi headline text, so only the
-// Hindi library uses it; Marathi and Gujarati use their localized cover, others the textless one.
-// Revisit when a library grows beyond its one tomato guide.
-const LIBRARY_SHARE_IMAGE = {
-  hi: '/editorial/journal-overview.webp',
-  mr: '/editorial/tamatar-mandi-kharch-mr.webp',
-  gu: '/editorial/tamatar-mandi-kharch-gu.webp',
-  default: '/editorial/tomato-market-comparison-neutral.webp',
-};
 
 // No hreflang between language libraries: they hold different articles (Hindi 8, others 1), and
 // alternates are only for equivalent pages. Add them when the collections genuinely match.

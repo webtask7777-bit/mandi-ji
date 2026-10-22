@@ -1,0 +1,18 @@
+/* Real artwork anchors task navigation; prices and calculations keep their own space. */
+.sb-farm-visual{display:block;width:100%;height:100%;object-fit:cover}
+.sb-dashboard .sb-welcome--illustrated{gap:0;margin-top:24px;margin-bottom:18px;grid-template-columns:1.06fr 1fr;border:1px solid #d8e1d2;border-radius:25px;background:#eef2e4;overflow:hidden}
+.sb-welcome--illustrated .sb-welcome-copy{padding:30px 32px}
+.sb-welcome--illustrated .sb-welcome-description{max-width:45ch;color:#526851}
+.sb-welcome--illustrated .sb-welcome-image{height:100%;min-height:305px;border-radius:0;background:#d8ddc0}
+.sb-welcome--illustrated .sb-welcome-image img{object-position:center}
+.sb-welcome--illustrated .sb-image-caption{display:flex;flex-direction:column;gap:3px;bottom:20px;left:23px}
+.sb-welcome--illustrated .sb-image-caption small{font-size:10px;opacity:.9;letter-spacing:.02em}
+.sb-task-shortcuts--visual>.sb-task-shortcut{padding:10px;gap:12px;min-height:90px;overflow:hidden}
+.sb-task-shortcuts--visual .sb-task-art{display:block;flex:0 0 64px;width:64px;height:64px;overflow:hidden;border-radius:11px;background:#e3e8d7}
+.sb-task-shortcuts--visual .sb-task-copy{min-width:0;flex:1}
+.sb-task-shortcuts--visual .sb-task-copy strong{line-height:1.6}
+.sb-task-shortcuts--visual .sb-task-copy small{line-height:1.6}
+.sb-task-shortcuts--visual>.sb-task-shortcut>svg{width:18px;margin-right:3px}
+@media(max-width:900px){.sb-welcome--illustrated .sb-welcome-copy{padding:26px 24px}.sb-welcome--illustrated .sb-welcome-actions{flex-wrap:wrap;gap:5px 15px}.sb-task-shortcuts--visual>.sb-task-shortcut{gap:9px}.sb-task-shortcuts--visual .sb-task-art{width:48px;height:58px;flex-basis:48px}}
+@media(max-width:760px){.sb-task-shortcuts--visual>.sb-task-shortcut{display:grid;grid-template-columns:1fr auto;padding:10px;gap:8px;align-items:start}.sb-task-shortcuts--visual .sb-task-art{height:52px;width:100%;grid-column:1/-1;border-radius:8px}.sb-task-shortcuts--visual .sb-task-copy{grid-column:1/-1;order:1!important;flex-basis:auto!important}.sb-task-shortcuts--visual>.sb-task-shortcut>svg{display:none}}
+@media(max-width:640px){.sb-dashboard .sb-welcome--illustrated{grid-template-columns:1fr;margin-top:16px;gap:0;border-radius:20px}.sb-welcome--illustrated .sb-welcome-copy{padding:23px 22px 20px}.sb-welcome--illustrated h1{font-size:clamp(29px,7.5vw,37px)}.sb-welcome--illustrated .sb-welcome-image{display:block;height:160px;min-height:0;margin:0;border-radius:0}.sb-welcome--illustrated .sb-welcome-image img{position:static;object-position:center 57%}.sb-welcome--illustrated .sb-image-caption{left:17px;bottom:13px;font-size:12px}.sb-welcome--illustrated .sb-image-caption small{font-size:9px}.sb-task-shortcuts--visual>.sb-task-shortcut{padding:9px}.sb-task-shortcuts--visual .sb-task-copy strong{font-size:12px}.sb-task-shortcuts--visual .sb-task-copy small{font-size:10px}}

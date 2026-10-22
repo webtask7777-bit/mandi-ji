@@ -171,7 +171,9 @@ test('rendered Hindi detail offers a native return using route scope while keepi
 test('rendered chooser preserves price scope while changing the tool language', { skip: hasSSR ? false : 'Build the SSR bundle first.' }, async () => {
   const result = await renderNavigationPage('/languages?state=tamil-nadu&crop=paddycommon');
   const links = linkedUrls(result.html).filter(url => url.pathname.endsWith('/mandi-bhav'));
-  assert.equal(links.length, 18);
+  // The recommendation and task cards may repeat a destination; all 18 language
+  // choices must still be present, and every tool link must preserve exact scope.
+  assert.equal(new Set(links.map(url => url.pathname)).size, 18);
   for (const link of links) {
     assert.equal(link.searchParams.get('state'), 'tamil-nadu');
     assert.equal(link.searchParams.get('crop'), 'paddycommon');
@@ -186,7 +188,9 @@ test('delivery language choice retains the calculator destination without a save
   assert.ok(chooser, 'the delivery page exposes the language chooser before a preference is saved');
   assert.equal(chooser.searchParams.get('toolSection'), 'delivery');
   const result = await renderNavigationPage(`${chooser.pathname}${chooser.search}`);
-  const choices = linkedUrls(result.html).filter(url => url.pathname.endsWith('/mandi-bhav'));
+  // Explicit price/guide task cards are separate from language-choice links.
+  const languageChoiceLinks = [...result.html.matchAll(/<a\b[^>]*\bhrefLang="[^"]+"[^>]*>/gi)].map(match => match[0]).join('');
+  const choices = linkedUrls(languageChoiceLinks).filter(url => url.pathname.endsWith('/mandi-bhav'));
   assert.equal(choices.length, 18);
   for (const url of choices) {
     assert.equal(url.searchParams.get('state'), 'tamil-nadu');

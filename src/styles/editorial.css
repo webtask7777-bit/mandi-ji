@@ -161,6 +161,28 @@
 .sb-journal-topic-links a{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:9px 13px;border:1px solid #d8e2ce;border-radius:9px;background:#eff4e8;font-size:12px;font-weight:600;color:#3f633b}
 .sb-journal-main>.sb-local-weather{margin-top:38px}
 .sb-journal-reading-main>.sb-local-weather{margin-top:30px}
+.sb-journal-intro--illustrated{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:0;padding:0;margin:30px 0 0;overflow:hidden;border:1px solid #dce3d4;border-radius:24px;background:#ecefdf}
+.sb-journal-intro-copy{padding:30px 32px}
+.sb-journal-intro--illustrated h1{font-size:clamp(32px,3.6vw,46px);line-height:1.4;margin:14px 0}
+.sb-journal-intro--illustrated p{font-size:14px;max-width:48ch;color:#53684e}
+.sb-journal-intro-art{position:relative;margin:0;height:100%;min-height:320px;overflow:hidden;background:#dce3cf}
+.sb-journal-intro-art .sb-farm-visual{object-position:center}
+.sb-journal-intro-art figcaption{position:absolute;inset-inline-end:14px;bottom:12px;font-size:10px;line-height:1.7;background:#163d31db;color:#fffdf7;padding:4px 9px;border-radius:6px}
+.sb-journal-scope-strip{display:flex;align-items:center;gap:10px;padding:17px 3px 23px;color:#536b4b;font-size:12px;line-height:1.8}
+.sb-journal-scope-strip>svg{flex-shrink:0;color:#6f865d}
+.sb-journal-scope-strip>strong{flex-shrink:0;font-weight:650}
+.sb-journal-scope-strip>span{color:#65765b}
+/* Keep the complete text-bearing cover visible in an intentional landscape frame. */
+.sb-journal-feature{align-items:center;padding:18px;gap:10px;background:#fffdf7}
+.sb-journal-feature__image{align-self:center;min-height:0;aspect-ratio:16/9;border:1px solid #e2e6d8;border-radius:15px;background:#f2f0e6}
+.sb-journal-feature__image img{height:auto;aspect-ratio:16/9;object-fit:contain}
+.sb-journal-feature__copy{padding:16px 20px}
+.sb-journal-feature__copy>.sb-journal-eyebrow{margin-bottom:10px}
+.sb-journal-feature h2{font-size:clamp(22px,2.4vw,29px);line-height:1.5;margin:10px 0}
+.sb-journal-feature__copy>p{font-size:13px;margin-bottom:13px}
+.sb-journal-feature .sb-journal-button{margin-top:16px}
+@media(max-width:800px){.sb-journal-intro-copy{padding:25px}.sb-journal-intro-art{min-height:295px}.sb-journal-intro--illustrated h1{font-size:32px}.sb-journal-scope-strip{flex-wrap:wrap;gap:5px 9px}.sb-journal-scope-strip>span{flex-basis:100%;padding-inline-start:27px}.sb-journal-feature{padding:15px;gap:0}.sb-journal-feature__copy{padding:22px 10px 12px}.sb-journal-feature h2{font-size:25px}}
+@media(max-width:560px){.sb-journal-intro--illustrated{grid-template-columns:1fr;margin-top:20px;border-radius:19px;padding:0}.sb-journal-intro-copy{padding:25px 22px 21px}.sb-journal-intro--illustrated h1{font-size:33px;line-height:1.4}.sb-journal-intro--illustrated p{font-size:13px}.sb-journal-intro-art{height:165px;min-height:0}.sb-journal-intro-art .sb-farm-visual{object-position:center 62%}.sb-journal-scope-strip{font-size:11px;padding-bottom:20px}.sb-journal-feature{padding:11px}.sb-journal-feature__image{border-radius:11px}.sb-journal-feature__copy{padding:20px 10px 12px}.sb-journal-feature h2{font-size:23px;line-height:1.6}}
 @media(max-width:800px){.sb-journal-search-form{grid-template-columns:repeat(2,minmax(0,1fr))}.sb-journal-search-field{grid-column:auto}.sb-journal-search-actions{align-content:flex-end}.sb-journal-discovery{padding:24px}}
 @media(max-width:560px){.sb-journal-discovery{padding:21px 18px;border-radius:16px;margin-bottom:22px}.sb-journal-discovery h2{font-size:17px;margin-bottom:16px}.sb-journal-search-form{gap:13px 10px}.sb-journal-search-form select,.sb-journal-search-form input{font-size:16px;padding:10px 9px}.sb-journal-search-form select{padding-right:22px}.sb-journal-search-field{grid-column:1/-1}.sb-journal-search-actions{grid-column:1/-1;align-items:center}.sb-journal-search-actions .sb-journal-button{flex:0 1 160px}.sb-journal-pagination{gap:8px;font-size:11px}.sb-journal-pagination>a{font-size:11px;padding:9px 10px;gap:5px}.sb-journal-article-context{gap:9px}.sb-journal-price-links{padding:21px 18px}.sb-journal-price-links h2{font-size:20px}.sb-journal-price-links a{font-size:12px;width:100%;justify-content:space-between}.sb-journal-translations{gap:10px}.sb-journal-translations>span{flex-basis:100%}}
 

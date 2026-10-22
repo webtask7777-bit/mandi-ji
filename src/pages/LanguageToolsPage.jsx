@@ -8,6 +8,7 @@ import { useApi } from '../hooks/useApi';
 import SEO from '../components/SEO';
 import NotFoundPage from './NotFoundPage';
 import CropImage from '../components/CropImage';
+import FarmVisual from '../components/FarmVisual';
 import { buildLanguageToolsUrl, calculateDeliveryEstimate, latestPriceRecord, normalizePriceHistory } from '../utils/languageTools';
 import { buildLanguageBlogUrl, buildLanguageChooserUrl, buildHindiCropDetailUrl, localizedToolsUrl } from '../utils/languageNavigation';
 import '../styles/languages.css';
@@ -95,7 +96,7 @@ function LanguageTools({ language, copy: t }) {
 
   return <div className={`sb-language-page sb-language-surface sb-language-script-${language.script}`} lang={language.code} dir={language.dir}>
     <SEO title={t.title} description={t.description} path={languagePath(language.code)} language={language.code} noIndex={language.searchReady === false}
-      image="/visuals/hero-harvest.webp" imageAlt={t.title}
+      image="/visuals/language-farmers-v1.webp" imageAlt={t.title}
       alternates={AVAILABLE_LANGUAGES.filter(item => item.code.length === 2 && item.searchReady !== false).map(item => ({ language: item.code, path: languagePath(item.code) }))} xDefaultPath="/languages" />
     <a className="sb-language-skip" href="#language-tools">{t.skip}</a>
     <header className="sb-language-header">
@@ -115,9 +116,9 @@ function LanguageTools({ language, copy: t }) {
           <div className="sb-language-hero-actions"><a className="sb-language-button" href="#language-prices"><Sprout size={18} aria-hidden="true" />{t.prices}<ArrowRight size={17} aria-hidden="true" /></a><a className="sb-language-text-link" href="#language-delivery">{t.delivery}<ArrowRight size={16} aria-hidden="true" /></a></div>
           <button className={`sb-language-remember ${remembered ? 'is-saved' : ''}`} type="button" onClick={rememberLanguage}>{remembered ? <Check size={16} aria-hidden="true" /> : <Globe2 size={16} aria-hidden="true" />}<span role="status">{remembered ? t.saved : t.remember}</span></button>
         </div>
-        <div className="sb-language-hero-art" aria-hidden="true"><img src="/visuals/hero-harvest.webp" alt="" width="1280" height="853" fetchPriority="high" decoding="async" /><div className="sb-language-free"><ShieldCheck size={20} /><span>{t.free}</span></div></div>
+        <div className="sb-language-hero-art" aria-hidden="true"><FarmVisual name="language-farmers-v1" priority sizes="(max-width: 640px) calc(100vw - 40px), 520px" /><div className="sb-language-free"><ShieldCheck size={20} /><span>{t.free}</span></div></div>
       </section>
-      <nav className="sb-language-jumpnav" aria-label={t.title}><a href="#language-prices"><Sprout size={17} aria-hidden="true" />{t.prices}</a><a href="#language-delivery"><Truck size={17} aria-hidden="true" />{t.delivery}</a><a href="#language-guides"><BookOpen size={17} aria-hidden="true" />{t.guides}</a></nav>
+      <nav className="sb-language-jumpnav sb-language-jumpnav--visual" aria-label={t.title}><a href="#language-prices"><span aria-hidden="true"><FarmVisual name="mandi-market-v1" sizes="100px" /></span>{t.prices}<ArrowRight size={15} aria-hidden="true" /></a><a href="#language-delivery"><span aria-hidden="true"><FarmVisual name="farm-delivery-v1" sizes="100px" /></span>{t.delivery}<ArrowRight size={15} aria-hidden="true" /></a><a href="#language-guides"><span aria-hidden="true"><FarmVisual name="farm-journal-v1" sizes="100px" /></span>{t.guides}<ArrowRight size={15} aria-hidden="true" /></a></nav>
       <section id="language-prices" className="sb-language-section" aria-labelledby="language-prices-title">
         <div className="sb-language-section-heading"><div><span className="sb-language-section-number" aria-hidden="true">01 /</span><h2 id="language-prices-title">{t.prices}</h2></div><span className="sb-language-place"><MapPin size={16} aria-hidden="true" /><span lang={selectedState === 'all' ? language.code : 'en'}>{selectedState === 'all' ? t.allIndia : currentState?.name || t.empty}</span></span></div>
         <div className="sb-language-prices-grid">
@@ -162,12 +163,12 @@ function LanguageTools({ language, copy: t }) {
           <label className="sb-language-checkbox"><input type="checkbox" checked={form.roundTrip} onChange={event => changeForm('roundTrip', event.target.checked)} /><span>{t.roundTrip}</span></label>
           {invalid && <p className="sb-language-form-error" id="language-calculation-error" role="alert">{t.invalid}</p>}
           <button className="sb-language-button sb-language-calculate" type="submit">{t.calculate}<ArrowRight size={18} aria-hidden="true" /></button>
-        </form><aside className="sb-language-result" aria-live="polite" aria-atomic="true"><span className="sb-language-result-icon" aria-hidden="true"><Truck size={31} /></span><h3>{t.totalCost}</h3>
+        </form><aside className="sb-language-result" aria-live="polite" aria-atomic="true"><div className="sb-language-result-art" aria-hidden="true"><FarmVisual name="farm-delivery-v1" sizes="(max-width: 640px) calc(100vw - 80px), 400px" /></div><h3>{t.totalCost}</h3>
           {calculation ? <><p className="sb-language-total"><bdi>{currency(calculation.totalCost)}</bdi></p><dl><div><dt>{t.trips}</dt><dd><bdi>{number(calculation.trips, { maximumFractionDigits: 0 })}</bdi></dd></div><div><dt>{t.totalDistance}</dt><dd><bdi>{number(calculation.totalDistance)}</bdi> {t.km}</dd></div><div><dt>{t.perKg}</dt><dd><bdi>{currency(calculation.perKg)}</bdi></dd></div></dl></> : <p className="sb-language-result-instruction">{t.vehicleNote}</p>}
           <p className="sb-language-estimate-note"><CircleHelp size={17} aria-hidden="true" />{t.estimateNote}</p>
         </aside></div>
       </section>
-      <section id="language-guides" className="sb-language-section sb-language-guides" aria-labelledby="language-guides-title" data-scroll-ready={!loadingCrops && !priceRequest.loading}><div className="sb-language-section-heading"><div><span className="sb-language-section-number" aria-hidden="true">03 /</span><h2 id="language-guides-title">{t.guides}</h2></div><BookOpen size={25} aria-hidden="true" /></div><p>{t.guideNote}</p><div className="sb-language-guide-grid">{guideLinks.map(guide => <Link key={guide.code} to={buildLanguageBlogUrl(guide.code, { ...navigationContext, crop: null })}><span lang={guide.code}>{getLanguage(guide.code).name}</span><strong>{t[guide.key]}</strong><ArrowRight size={18} aria-hidden="true" /></Link>)}</div></section>
+      <section id="language-guides" className="sb-language-section sb-language-guides" aria-labelledby="language-guides-title" data-scroll-ready={!loadingCrops && !priceRequest.loading}><div className="sb-language-section-heading"><div><span className="sb-language-section-number" aria-hidden="true">03 /</span><h2 id="language-guides-title">{t.guides}</h2></div><BookOpen size={25} aria-hidden="true" /></div><p>{t.guideNote}</p><div className="sb-language-guide-grid sb-language-guide-grid--visual">{guideLinks.map(guide => <Link key={guide.code} to={buildLanguageBlogUrl(guide.code, { ...navigationContext, crop: null })}><div className="sb-language-guide-art" aria-hidden="true"><FarmVisual name="farm-journal-v1" sizes="(max-width: 640px) 40vw, 350px" /></div><span lang={guide.code}>{getLanguage(guide.code).name}</span><strong>{t[guide.key]}</strong><ArrowRight size={18} aria-hidden="true" /></Link>)}</div></section>
       <footer className="sb-language-footer"><div className="sb-language-footer-top"><Link to={chooserUrl} className="sb-language-brand"><img src="/brand/app-icon.svg" alt="" width="34" height="34" /><span lang="en" dir="ltr">SahiBhav<span className="sb-language-brand-dot">.</span></span></Link><span className="sb-language-footer-free"><ShieldCheck size={17} aria-hidden="true" />{t.free}</span></div><p>{t.translationNote}</p><div className="sb-language-footer-links"><Link to={chooserUrl}>{t.allLanguages}</Link><Link to="/">{t.home}</Link><Link to="/about">{t.about}</Link><Link to="/privacy">{t.privacy}</Link><Link to="/contact">{t.feedback}</Link></div><div className="sb-language-sources"><span>{t.dataSource}</span><a href="https://www.data.gov.in/" target="_blank" rel="noopener noreferrer" lang="en">data.gov.in</a><a href="https://agmarknet.gov.in/" target="_blank" rel="noopener noreferrer" lang="en">Agmarknet</a><a href="https://agriportal.cg.nic.in/" target="_blank" rel="noopener noreferrer" lang="en">agriportal.cg.nic.in</a></div></footer>
     </main>
   </div>;
