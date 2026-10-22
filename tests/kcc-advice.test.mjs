@@ -26,6 +26,18 @@ test('specific problems are matched before broad ones', () => {
   assert.equal(problemFromText('sheath blight in rice').id, 'sheath-blight');
 });
 
+test('real call-centre spellings: typos, frost, generic insect/disease, gram in the question', () => {
+  assert.equal(problemFromText('BLACK THIRPS IN CHILLI MANAGEMENT').id, 'thrips');
+  assert.equal(problemFromText('Prevention of Fall army warm in maize').id, 'fall-armyworm');
+  assert.equal(problemFromText('ASKED ABOUT TO FROST SAVING').id, 'frost');
+  assert.equal(problemFromText('white blister disease problem in Mustard crop').id, 'rust');
+  const insect = call('Plant Protection', 'Others', 'ASKED ABOUT TO INSECT CONTROL IN ONION ?');
+  assert.deepEqual([insect.crop.id, insect.problem.id], ['onion', 'pest-disease']);
+  const disease = call('Plant Protection', 'Others', 'ASKED ABOUT TO DISEASE CONTROL IN GRAM ?');
+  assert.deepEqual([disease.crop.id, disease.problem.id], ['gram', 'pest-disease']);
+  assert.equal(cropOf('Others', 'yellow mosaic in black gram').id, 'urad');
+});
+
 test('a plant-protection call without a named problem is general, not a fungus', () => {
   assert.equal(call('Plant Protection', 'Wheat', 'Plant protection in wheat?').problem.id, 'pest-disease');
 });

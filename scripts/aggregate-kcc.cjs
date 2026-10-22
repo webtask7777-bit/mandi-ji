@@ -49,7 +49,7 @@ const STATE_ALIASES = {
   pondicherry: 'puducherry', delhi: 'delhi', nctofdelhi: 'delhi', jammuandkashmir: 'jammu-kashmir', jammukashmir: 'jammu-kashmir',
   andamanandnicobarislands: 'andaman-nicobar', andamanandnicobar: 'andaman-nicobar', andamannicobar: 'andaman-nicobar',
   dadraandnagarhaveli: 'dadra-daman', damananddiu: 'dadra-daman', dadraandnagarhavelianddamananddiu: 'dadra-daman',
-  uttaranchal: 'uttarakhand', jharkand: 'jharkhand', telengana: 'telangana', andrapradesh: 'andhra-pradesh',
+  uttaranchal: 'uttarakhand', jharkand: 'jharkhand', aandnislands: 'andaman-nicobar', telengana: 'telangana', andrapradesh: 'andhra-pradesh',
 };
 const slug = value => clean(value).toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const titleCase = value => clean(value).toLowerCase().replace(/(^|[\s(/-])\p{L}/gu, match => match.toUpperCase());
@@ -330,7 +330,7 @@ async function main() {
   // National Q&A: the most asked answers across states, Hindi/English first (the page is Hindi).
   const readable = text => /[ऀ-ॿ]/.test(text) || !/[^\u0000-ɏ]/.test(text);
   const nationalQa = Object.fromEntries([...nationalSummary.used].map(key => {
-    const candidates = [...qa.values()].flatMap(store => bestQa(store.get(key)));
+    const candidates = [...qa.entries()].flatMap(([stateId, store]) => bestQa(store.get(key)).map(item => ({ ...item, stateHi: states.get(stateId)?.state.nameHi })));
     candidates.sort((a, b) => Number(readable(b.a)) - Number(readable(a.a)) || b.asked - a.asked);
     return [key, candidates.slice(0, QA_PER_TOPIC)];
   }).filter(([, list]) => list.length));

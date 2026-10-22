@@ -38,18 +38,18 @@ function MonthPicker({ month, onChange }) {
   </div>;
 }
 
-function Answers({ items }) {
+function Answers({ items, scopeHi }) {
   if (!items?.length) return <p className="sb-salah-muted">इस समस्या का लिखित जवाब इस क्षेत्र के रिकॉर्ड में नहीं मिला।</p>;
   return <ol className="sb-salah-answers">
     {items.map(item => <li key={`${item.q}-${item.answeredOn}`}>
       <p className="sb-salah-question" lang={scriptLang(item.q)}><span>सवाल</span>{item.q}</p>
       <p className="sb-salah-answer" lang={scriptLang(item.a)}><span>KCC का जवाब</span>{item.a}</p>
-      <small>{item.asked > 1 ? `${number(item.asked)} बार पूछा गया · ` : ''}{item.answeredOn ? `जवाब की तारीख ${dateHi(item.answeredOn)}` : ''}</small>
+      <small>{item.asked > 1 ? `${item.stateHi || scopeHi ? `${item.stateHi || scopeHi} में ` : ''}${number(item.asked)} बार पूछा गया · ` : item.stateHi ? `${item.stateHi} · ` : ''}{item.answeredOn ? `जवाब की तारीख ${dateHi(item.answeredOn)}` : ''}</small>
     </li>)}
   </ol>;
 }
 
-function ProblemCard({ rank, item, topic, qa, stateId }) {
+function ProblemCard({ rank, item, topic, qa, stateId, scopeHi }) {
   const [open, setOpen] = useState(rank === 1);
   if (!topic) return null;
   const Icon = KIND_ICON[topic.kind] || Leaf;
@@ -69,7 +69,7 @@ function ProblemCard({ rank, item, topic, qa, stateId }) {
       {open ? 'जवाब छिपाएँ' : 'KCC ने क्या सलाह दी?'} <ChevronDown size={16} aria-hidden="true" />
     </button>
     <div id={panelId} hidden={!open}>
-      <Answers items={qa} />
+      <Answers items={qa} scopeHi={scopeHi} />
       {topic.mandiCrop && <Link className="sb-detail-text-link" to={cropDetailPath(topic.mandiCrop, stateId || 'all')}>{topic.cropHi} का मंडी भाव देखें <ArrowRight size={15} aria-hidden="true" /></Link>}
     </div>
   </li>;
@@ -198,7 +198,7 @@ export default function FasalSalahPage() {
               <span className="sb-detail-kicker"><Bug size={15} aria-hidden="true" /> {MONTHS_HI[month - 1]} में सबसे ज़्यादा पूछी गई</span>
               <h2 id="salah-top-title">इस महीने की आम समस्याएँ</h2>
             </div>
-            {top.length ? <ol>{top.map((item, i) => <ProblemCard key={item.key} rank={i + 1} item={item} topic={data.topics?.[item.key]} qa={data.qa?.[item.key]} stateId={level === 'india' ? null : stateId} />)}</ol>
+            {top.length ? <ol>{top.map((item, i) => <ProblemCard key={item.key} rank={i + 1} item={item} topic={data.topics?.[item.key]} qa={data.qa?.[item.key]} stateId={level === 'india' ? null : stateId} scopeHi={level === 'india' ? null : stateNameHi} />)}</ol>
               : <p className="sb-salah-muted">इस महीने के लिए पर्याप्त सवाल दर्ज नहीं हैं। दूसरा महीना चुनें{level === 'district' ? ' या राज्य की सलाह देखें' : ''}।</p>}
           </section>
           <aside className="sb-salah-side">
