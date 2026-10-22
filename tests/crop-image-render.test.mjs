@@ -4,6 +4,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createServer } from 'vite';
 import { CROP_IMAGE_CATEGORIES } from '../src/data/cropImageCategories.js';
+import { getCropImage } from '../src/utils/cropImages.js';
 
 const server = await createServer({
   configFile: new URL('../vite.config.js', import.meta.url).pathname,
@@ -20,8 +21,13 @@ test('every image box has an inline illustration before remote artwork loads', (
     const html = render({ id, name: 'उपज' });
     const label = typeof id === 'string' ? id : 'invalid or missing ID';
     assert.match(html, /<svg[^>]+viewBox="0 0 160 160"/, label);
-    assert.match(html, /<img[^>]+src="\/visuals\/[^" ]+\.webp"/, label);
-    assert.match(html, /data-image-state="loading"/, label);
+    if (getCropImage(id).kind === 'commodity') {
+      assert.match(html, /<img[^>]+src="\/visuals\/[^" ]+\.webp"/, label);
+      assert.match(html, /data-image-state="loading"/, label);
+    } else {
+      assert.doesNotMatch(html, /<img\b/, `${label}: no mixed category photograph`);
+      assert.match(html, /data-image-state="fallback"/, label);
+    }
     assert.match(html, /sb-crop-image__badge/, label);
     assert.doesNotMatch(html, /src="(?:null|undefined|)"/, label);
   }
@@ -40,8 +46,10 @@ test('informative fallback descriptions and hero disclosure remain readable', ()
   assert.match(html, /role="img"/);
   assert.match(html, /aria-label="नई उपज — [^"]*प्रतीकात्मक चित्र/);
   assert.match(html, /<span>प्रतीकात्मक<\/span>/);
-  assert.match(html, /loading="eager"/);
-  assert.match(html, /<img[^>]+alt=""/);
+  assert.doesNotMatch(html, /<img\b/);
+  const exact = render({ id: 'white-peas', size: 'hero' });
+  assert.match(exact, /loading="eager"/);
+  assert.match(exact, /<img[^>]+alt=""/);
 });
 
 test('representative-image legend explains the visible marker without hover or interaction', () => {

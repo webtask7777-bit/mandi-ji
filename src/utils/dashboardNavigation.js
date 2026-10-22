@@ -1,5 +1,17 @@
 const DASHBOARD_TABS = new Set(['prices', 'delivery', 'mandis', 'calendar', 'naksha', 'bazaar']);
 
+/** Price selections are exact IDs in the currently loaded regional catalogue. */
+export function getDashboardSourceCrop(search, crops = []) {
+  const id = new URLSearchParams(search).get('sourceCrop');
+  return id && crops.some(crop => crop.id === id) ? id : null;
+}
+
+export function getDashboardCropSearch(search, cropId, crops = []) {
+  const next = new URLSearchParams(search);
+  if (typeof cropId === 'string' && crops.some(crop => crop.id === cropId)) next.set('sourceCrop', cropId);
+  return next;
+}
+
 /** Share the active dashboard workspace when the user switches region. */
 export function getDashboardTab(search = '') {
   const requested = new URLSearchParams(search).get('tab');

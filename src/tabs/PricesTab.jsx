@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { TrendingUp, TrendingDown, ChevronRight, ChevronLeft, BarChart3, ArrowUpRight, ArrowDownRight, ShoppingCart, AlertTriangle, Search, LayoutList, CalendarDays, Info, Sprout, ArrowRight, Bookmark, Calculator, Scale } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useApi } from "../hooks/useApi";
 import PriceCard from "../components/PriceCard";
 import CropImage from "../components/CropImage";
@@ -12,6 +12,7 @@ import { getOutlierBounds, isOutlier } from "@/lib/outlier";
 import { comparableChange, gapNote } from "../utils/priceChange";
 import { getDataFreshness } from "../utils/dataFreshness";
 import { cropDetailPath } from "../utils/cropUrls";
+import { getDashboardSourceCrop, getDashboardCropSearch } from "../utils/dashboardNavigation";
 import "../styles/prices.css";
 
 const HI_MONTHS = ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'];
@@ -71,6 +72,8 @@ const interactionId = () => globalThis.crypto?.randomUUID?.() || `${Date.now()}-
 
 export default function PricesTab({ crops = [], stateParam, initialCropId, onCropConsumed, onMandiClick, onDeliveryCalculate }) {
   const allCrops = useMemo(() => Array.isArray(crops) ? crops : [], [crops]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const routeCrop = getDashboardSourceCrop(searchParams, allCrops);
   const [selection, setSelection] = useState({ crop: initialCropId || null, navigationCrop: initialCropId });
   const [showAllCards, setShowAllCards] = useState(false);
   const [showAllCrops, setShowAllCrops] = useState(false);
@@ -93,10 +96,14 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
     if (initialCropId) setView('chart');
   }
   useEffect(() => {
-    if (initialCropId) onCropConsumed?.();
-  }, [initialCropId, onCropConsumed]);
+    if (!initialCropId) return;
+    if (routeCrop !== initialCropId && allCrops.some(crop => crop.id === initialCropId)) {
+      setSearchParams(previous => getDashboardCropSearch(previous, initialCropId, allCrops), { replace: true });
+    }
+    onCropConsumed?.();
+  }, [initialCropId, onCropConsumed, allCrops, routeCrop, setSearchParams]);
 
-  const activeCrop = initialCropId || (allCrops.some(crop => crop.id === selection.crop) ? selection.crop : getDefaultCrop(allCrops, tickerLoading ? [] : tickerData));
+  const activeCrop = initialCropId || routeCrop || (allCrops.some(crop => crop.id === selection.crop) ? selection.crop : getDefaultCrop(allCrops, tickerLoading ? [] : tickerData));
   const { data: priceData, loading: priceLoading, error: priceError } = useApi(`/prices/${activeCrop}?months=13${stateQ}`);
   const { data: mandiCompareData, loading: mandiLoading, error: mandiError } = useApi(`/mandi-compare/${activeCrop}${tickerQ}`);
   const selectedMeta = allCrops.find(crop => crop.id === activeCrop);
@@ -149,7 +156,9 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
   }
 
   function chooseCrop(id) {
+    if (!allCrops.some(crop => crop.id === id)) return;
     setSelection(current => ({ ...current, crop: id }));
+    setSearchParams(previous => getDashboardCropSearch(previous, id, allCrops), { replace: true });
   }
 
   return (
