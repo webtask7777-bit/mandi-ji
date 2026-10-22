@@ -89,14 +89,22 @@ function writeDay(iso, meta, rows) {
   fs.renameSync(`${file}.tmp`, file);
 }
 
+const MAX_PASSES = 4;
+
+/**
+ * Recent days are still being re-indexed while they are read, so offset paging skips some
+ * rows and repeats others. A day is read again (rows of every pass are kept) until its unique
+ * rows reach --min-complete of the total or a pass adds almost nothing new.
+ */
 async function fetchDay(iso, opts) {
   const filters = { 'filters[Arrival_Date]': sourceDate(iso) };
-  const first = await fetchPage(filters);
-  const total = Number(first.total) || 0;
-  const pageSize = first.records.length || REQUEST_LIMIT;
   const unique = new Map();
   let rejected = 0;
+  let read = 0;
+  let total = 0;
+  let passes = 0;
   const keep = rows => {
+    read += rows.length;
     for (const raw of rows) {
       const { record } = normalizeRecord(raw);
       // The filter is exact, but a row is filed under its own date or not at all.
@@ -104,12 +112,25 @@ async function fetchDay(iso, opts) {
       else rejected++;
     }
   };
-  keep(first.records);
-  for (let offset = pageSize; offset < total; offset += pageSize) {
-    await sleep(opts.delayMs);
-    keep((await fetchPage({ ...filters, offset: String(offset) })).records);
+  while (passes < MAX_PASSES) {
+    passes++;
+    const before = unique.size;
+    const rejectedBefore = rejected;
+    rejected = 0;
+    const first = await fetchPage(filters);
+    total = Number(first.total) || 0;
+    const pageSize = first.records.length || REQUEST_LIMIT;
+    keep(first.records);
+    for (let offset = pageSize; offset < total; offset += pageSize) {
+      await sleep(opts.delayMs);
+      keep((await fetchPage({ ...filters, offset: String(offset) })).records);
+    }
+    // Rejected rows are counted once per pass, not summed over passes.
+    rejected = Math.max(rejected, rejectedBefore);
+    if (unique.size + rejected >= total * opts.minComplete) break;
+    if (passes > 1 && unique.size - before < total * 0.002) break;
   }
-  return { total, rows: [...unique.values()], rejected };
+  return { total, read, passes, rows: [...unique.values()], rejected };
 }
 
 function days(from, to, newestFirst) {
@@ -128,8 +149,8 @@ async function main() {
     try {
       const day = await fetchDay(iso, opts);
       const complete = day.rows.length + day.rejected >= day.total * opts.minComplete;
-      if (!complete) { failed.push(iso); console.log(`  ${iso}: only ${day.rows.length}/${day.total}; will retry`); continue; }
-      writeDay(iso, { date: iso, sourceTotal: day.total, stored: day.rows.length, rejected: day.rejected, complete, fetchedAt: new Date().toISOString() }, day.rows);
+      if (!complete) { failed.push(iso); console.log(`  ${iso}: ${day.rows.length} unique of ${day.total} after ${day.passes} passes; will retry`); continue; }
+      writeDay(iso, { date: iso, sourceTotal: day.total, passes: day.passes, stored: day.rows.length, rejected: day.rejected, complete, fetchedAt: new Date().toISOString() }, day.rows);
       stored++;
       if (stored % 10 === 0 || day.total === 0) console.log(`  ${iso}: ${day.rows.length} of ${day.total} stored (${stored} days this run)`);
     } catch (e) {
