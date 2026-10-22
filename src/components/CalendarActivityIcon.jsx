@@ -1,9 +1,11 @@
+import { useState } from 'react';
+
 const GREEN = '#244f3b';
 const GOLD = '#c79b46';
 const CREAM = '#f5edda';
 
-/** Small, deliberately geometric agricultural marks for the calendar stages. */
-export default function CalendarActivityIcon({ type, size = 32, ...props }) {
+/** Geometry remains available if an illustration cannot be loaded. */
+function CalendarActivityFallback({ type, size = 88, ...props }) {
   let artwork;
 
   switch (type) {
@@ -59,4 +61,38 @@ export default function CalendarActivityIcon({ type, size = 32, ...props }) {
     focusable="false"
     {...props}
   >{artwork}</svg>;
+}
+
+
+const ACTIVITY_IMAGES = Object.freeze({
+  sowing: '/visuals/calendar-sowing-v2.webp',
+  growing: '/visuals/calendar-growing-v2.webp',
+  harvest: '/visuals/calendar-harvest-v2.webp',
+  arrival: '/visuals/calendar-arrival-v2.webp',
+});
+
+/** Decorative artwork; the adjacent card text supplies the accessible name. */
+export default function CalendarActivityIcon({ type, size = 88, className = '', style, ...props }) {
+  const src = ACTIVITY_IMAGES[type];
+  const [failedSource, setFailedSource] = useState(null);
+  return <span
+    className={`kc-activity-art ${className}`.trim()}
+    style={{ '--activity-size': `${size}px`, ...style }}
+    aria-hidden="true"
+    {...props}
+  >
+    {!src || failedSource === src
+      ? <CalendarActivityFallback type={type} size={size} />
+      : <img
+        src={src}
+        alt=""
+        aria-hidden="true"
+        width="320"
+        height="320"
+        loading="lazy"
+        decoding="async"
+        draggable="false"
+        onError={() => setFailedSource(src)}
+      />}
+  </span>;
 }
