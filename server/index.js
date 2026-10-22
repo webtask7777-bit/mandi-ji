@@ -50,6 +50,9 @@ app.use('/api/price-history', priceHistoryRouter);
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', name: 'SahiBhav API' }));
 
+// Unknown API paths answer in JSON like every other API error, not with an HTML page.
+app.use('/api', (req, res) => res.status(404).json({ error: 'यह API उपलब्ध नहीं है' }));
+
 if (!process.env.VERCEL) {
   const PORT = 3001;
   app.listen(PORT, () => {

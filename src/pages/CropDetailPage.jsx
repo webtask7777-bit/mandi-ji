@@ -12,6 +12,7 @@ import KccCropProblems from '../components/KccCropProblems';
 import PriceHistory from '../components/PriceHistory';
 import { getDataFreshness } from '../utils/dataFreshness';
 import { comparableChange, gapNote } from '../utils/priceChange';
+import { isFreshPriceDetail } from '../utils/indexability';
 import { cropDetailPath } from '../utils/cropUrls';
 import { getLanguage } from '../../shared/languages';
 import { normalizeRegionId } from '../../shared/indiaRegions';
@@ -88,7 +89,7 @@ export default function CropDetailPage() {
     <div className="sb-detail-page">
       <SEO title={`${cropName} मंडी भाव — ${stateNameHi}${heroPrice !== null ? ` · ${quoteLabel}` : ''}`}
         description={`${stateNameHi} में ${cropName} के उपलब्ध मंडी रिकॉर्ड${heroPrice !== null ? `: ₹${money(heroPrice)}/क्विंटल, ${quoteLabel}` : ''}। भाव का इतिहास और मंडी तुलना देखें। रिकॉर्ड की तारीख जाँचकर सौदे का भाव मंडी से पुष्टि करें।`}
-        path={cropDetailPath(cropId, stateParam)} noIndex={unavailable || (!priceLoading && !priceError && !history.length && !dailyHistory.length)}
+        path={cropDetailPath(cropId, stateParam)} noIndex={unavailable || (!priceLoading && !priceError && (!history.length && !dailyHistory.length || !isFreshPriceDetail(priceData, priceData?.newestObservation)))}
         structuredData={cropName && !unavailable ? { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: `${stateNameHi} के मंडी भाव`, item: `${SITE_URL}${dashboardPath}` },
           { '@type': 'ListItem', position: 2, name: cropName, item: `${SITE_URL}${cropDetailPath(cropId, stateParam)}` },

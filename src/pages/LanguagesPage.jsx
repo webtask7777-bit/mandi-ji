@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, BookOpen, Check, ChevronDown, Globe2, Languages, MapPin, Search, ShieldCheck, Sprout, Truck } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BookOpen, Check, ChevronDown, Globe2, Languages, MapPin, Phone, Search, ShieldCheck, Sprout, Truck } from 'lucide-react';
 import SEO, { SITE_URL } from '../components/SEO';
 import Brand from '../components/Brand';
 import { LANGUAGES, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, languagePath, getLanguage } from '../../shared/languages.js';
 import { getIndiaRegion } from '../../shared/indiaRegions.js';
 import cropNamesHi from '../i18n/locales/hi.crops.json';
 import { useRememberedLanguage, useSuggestedLanguage } from '../hooks/useLanguagePreference';
+import { hasContact } from '../data/contact';
 import { readLanguageNavigation, buildLanguageBlogUrl, localizedToolsUrl } from '../utils/languageNavigation';
 import '../styles/language-fonts.css';
 import '../styles/language-chooser.css';
@@ -43,6 +44,7 @@ export default function LanguagesPage() {
     { name: 'mandi-market-v1', icon: Sprout, title: 'अपनी फसल का भाव', text: 'दर्ज तारीख के साथ भाव देखें और उपलब्ध रिकॉर्ड समझें।', link: toolsPath(recommendation.code, 'prices'), action: 'मंडी भाव देखें', number: '01' },
     { name: 'farm-delivery-v1', icon: Truck, title: 'पहुँचने तक का खर्च', text: 'दूरी, वाहन और माल की मात्रा जोड़कर ढुलाई का हिसाब करें।', link: toolsPath(recommendation.code, 'delivery'), action: 'खर्च निकालें', number: '02' },
     { name: 'farm-journal-v1', icon: BookOpen, title: 'खेती की काम की बात', text: 'कटाई, मौसम और बिक्री की तैयारी पर स्रोतों के साथ गाइड पढ़ें।', link: guidePath, action: 'उपलब्ध गाइड पढ़ें', number: '03' },
+    { name: 'language-farmers-v1', icon: Phone, title: 'फसल सलाह (हिंदी)', text: 'आपके ज़िले में इस महीने कौन-से कीट-रोग आम हैं और किसान कॉल सेंटर ने क्या सलाह दी।', link: selection.state ? `/fasal-salah/${selection.state}` : '/fasal-salah', action: 'फसल सलाह देखें', number: '04' },
   ];
 
   return <div className="sb-language-surface sb-language-chooser" lang="hi" dir="ltr">
@@ -78,8 +80,8 @@ export default function LanguagesPage() {
       </section>
 
       <section className="sb-language-resources" aria-labelledby="language-resources-title"><div className="sb-language-section-head"><div><span className="sb-language-kicker">मंडी से आगे, आपके काम की बात</span><h2 id="language-resources-title">अगला कदम, समझकर।</h2></div><span className="sb-language-resource-note">आपके राज्य और फसल के चयन के साथ</span></div><div className="sb-language-resource-grid">{resources.map(({ name, icon: Icon, title, text, link, action, number }) => <Link className="sb-language-resource-card" key={name} to={link}><div className="sb-language-resource-art"><LanguageArtwork name={name} /><span className="sb-language-resource-number">{number}</span><span className="sb-language-resource-icon"><Icon size={20} aria-hidden="true" /></span></div><div className="sb-language-resource-copy"><h3>{title}</h3><p>{text}</p><span>{action}<ArrowUpRight size={18} aria-hidden="true" /></span></div></Link>)}</div><small className="sb-language-art-note">बैनर सांकेतिक AI चित्र हैं। गाइड केवल उनकी उपलब्ध भाषाओं में मिलेंगी।</small></section>
-      <aside className="sb-language-coverage-note"><span className="sb-language-note-icon"><ShieldCheck size={27} aria-hidden="true" /></span><div><h2>अपनी भाषा में जानकारी। समझकर फैसला।</h2><p>भाव खोज, तारीख की जानकारी और डिलीवरी हिसाब का इंटरफ़ेस अनूदित है। सरकारी स्रोतों के मंडी, राज्य और कुछ फसल नाम मूल रूप में रहेंगे। हर लेख की उपलब्ध भाषा अलग हो सकती है; पूरी पुरानी app और हर लेख का अनुवाद अभी पूरा नहीं है।</p><Link to="/contact">किसी शब्द में सुधार सुझाएँ <ArrowUpRight size={16} aria-hidden="true" /></Link></div></aside>
+      <aside className="sb-language-coverage-note"><span className="sb-language-note-icon"><ShieldCheck size={27} aria-hidden="true" /></span><div><h2>अपनी भाषा में जानकारी। समझकर फैसला।</h2><p>भाव खोज, तारीख की जानकारी और डिलीवरी हिसाब का इंटरफ़ेस अनूदित है। सरकारी स्रोतों के मंडी, राज्य और कुछ फसल नाम मूल रूप में रहेंगे। हर लेख की उपलब्ध भाषा अलग हो सकती है; पूरी app और हर लेख का अनुवाद अभी पूरा नहीं है।</p>{/* Only offered once a monitored contact channel exists (src/data/contact.js). */}{hasContact() && <Link to="/contact">किसी शब्द में सुधार सुझाएँ <ArrowUpRight size={16} aria-hidden="true" /></Link>}</div></aside>
     </main>
-    <footer className="sb-language-chooser-footer"><span>सही भाव · फसल आपकी। फैसला आपका।</span><div><Link to={guidePath}>खेती की मार्गदर्शिकाएँ</Link><Link to="/contact">संपर्क और सुझाव</Link></div></footer>
+    <footer className="sb-language-chooser-footer"><span>सही भाव · फसल आपकी। फैसला आपका।</span><div><Link to={guidePath}>खेती की मार्गदर्शिकाएँ</Link>{hasContact() && <Link to="/contact">संपर्क और सुझाव</Link>}<Link to="/editorial-policy">संपादकीय नीति</Link></div></footer>
   </div>;
 }

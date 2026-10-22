@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { resolveScope, loadScopeData, loadScopeCropPrices, UNKNOWN_STATE_ERROR } from '../db/connection.js';
+import { resolveScope, loadScopeData, loadScopeCropPrices, loadIndiaData, UNKNOWN_STATE_ERROR } from '../db/connection.js';
 
 import { isCropPriceCommodity, UNSUPPORTED_COMMODITY_ERROR } from '../../src/utils/cropEligibility.js';
 
@@ -33,6 +33,8 @@ router.get('/:cropId', (req, res) => {
       dailyHistory: cropData.dailyHistory || [],
       lastUpdated: cropData.lastUpdated || null,
       districtBreakdown: cropData.districtBreakdown || [],
+      // The dataset's newest observation: the page decides staleness (noindex) with it.
+      newestObservation: loadIndiaData('stats')?.newestObservation || null,
     });
   }
   // A catalogue entry without stored prices: return the crop with empty history.
