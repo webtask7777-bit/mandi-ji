@@ -9,6 +9,7 @@ import MandiCompare from '../components/MandiCompare';
 import SEO, { SITE_URL } from '../components/SEO';
 import CropGuides from '../components/CropGuides';
 import KccCropProblems from '../components/KccCropProblems';
+import PriceHistory from '../components/PriceHistory';
 import { getDataFreshness } from '../utils/dataFreshness';
 import { comparableChange, gapNote } from '../utils/priceChange';
 import { cropDetailPath } from '../utils/cropUrls';
@@ -120,6 +121,7 @@ export default function CropDetailPage() {
             </section>
           </div>
         </>}
+        <PriceHistory cropId={cropId} cropName={cropName} stateId={stateParam} stateNameHi={stateNameHi} />
         {mandiLoading ? <div className="sb-detail-loading" role="status">मंडियों के रिकॉर्ड लोड हो रहे हैं…</div> : mandiError ? <div className="sb-detail-notice" role="alert"><Info size={18} aria-hidden="true" /><p>मंडी तुलना अभी लोड नहीं हो पाई। कृपया पृष्ठ दोबारा खोलें।</p></div> : mandis.length > 0 ? <MandiCompare key={`${cropId}-${stateQuery}`} data={mandis} cropName={cropName} cropId={cropId} dailyHistory={dailyHistory} onDeliveryCalculate={openDeliveryCalculator} /> : !priceLoading && <section className="sb-detail-section"><h2>मंडी तुलना</h2><p>इस फसल और क्षेत्र के लिए मंडी रिकॉर्ड उपलब्ध नहीं हैं।</p></section>}
         {(districts.length > 0 || cropTicker || msp !== null) && <div className="sb-detail-bottom-grid">
           {districts.length > 0 && <section className="sb-detail-section"><span className="sb-detail-kicker">डेटा कहाँ से है?</span><h2>ज़िला वार रिकॉर्ड</h2><p>उपलब्ध प्रविष्टियों की संख्या; व्यापार की मात्रा नहीं।</p><div className="sb-detail-districts">{districts.slice(0, 10).map(row => <div className="sb-detail-district" key={row.district}><span>{row.nameHi || row.district}</span><div className="sb-detail-district__track" aria-hidden="true"><span style={{ width: `${Number(row.records) / maxDistrictRecords * 100}%` }} /></div><strong>{Number(row.records).toLocaleString('en-IN')}</strong></div>)}</div></section>}

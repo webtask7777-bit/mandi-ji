@@ -22,7 +22,7 @@ const origin = `http://127.0.0.1:${server.address().port}`;
 const template = (await readFile(path.join(dist, 'index.html'), 'utf8'))
   .replace(/<title\b[^>]*>[\s\S]*?<\/title>/gi, '')
   .replace(/<meta\b[^>]*data-rh="true"[^>]*>/gi, '');
-const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compare|arbitrage|stats|kcc)(?:[/?]|$)|^\/cms\/(?:blog|banners|notifications)(?:[/?]|$)/;
+const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compare|arbitrage|stats|kcc|price-history)(?:[/?]|$)|^\/cms\/(?:blog|banners|notifications)(?:[/?]|$)/;
 const cache = new Map();
 const manifest = JSON.parse(await readFile(path.join(dist, '.vite/manifest.json'), 'utf8'));
 function routeAssets(route) {
@@ -140,7 +140,8 @@ try {
     const kccMeta = JSON.parse(await readFile(path.join(root, 'server/db/data/kcc/meta.json'), 'utf8'));
     const kccIndex = JSON.parse(await readFile(path.join(root, 'server/db/data/kcc/index.json'), 'utf8'));
     salahRoutes.push('/fasal-salah', ...kccIndex.states.flatMap(state => [`/fasal-salah/${state.id}`, ...state.districts.map(district => `/fasal-salah/${state.id}/${district.id}`)]));
-    if (!kccMeta.sampled) for (const route of salahRoutes) { routes.add(route); lastmod.set(route, kccMeta.builtOn); }
+    // lastmod is the newest call in the summaries: the pages change only when the data does.
+    if (!kccMeta.sampled) for (const route of salahRoutes) { routes.add(route); if (kccMeta.coverage?.newestCall) lastmod.set(route, kccMeta.coverage.newestCall); }
   } catch { /* no KCC summaries built: the pages show their unavailable state */ }
   let count = 0;
   for (const route of routes) {

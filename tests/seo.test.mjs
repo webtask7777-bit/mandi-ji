@@ -50,7 +50,7 @@ function validatePublicSnapshot(html, label) {
   assert.ok(!snapshots[0].text.includes('<'), `${label}: script-opening characters must be escaped in embedded JSON`);
   const snapshot = JSON.parse(snapshots[0].text);
   assert.ok(snapshot && !Array.isArray(snapshot) && typeof snapshot === 'object');
-  const allowed = new Set(['crops', 'mandis', 'districts', 'states', 'ticker', 'prices', 'mandi-compare', 'arbitrage', 'stats', 'kcc']);
+  const allowed = new Set(['crops', 'mandis', 'districts', 'states', 'ticker', 'prices', 'mandi-compare', 'arbitrage', 'stats', 'kcc', 'price-history']);
   for (const request of Object.keys(snapshot)) {
     const url = new URL(request, 'https://public-snapshot.invalid');
     assert.equal(url.origin, 'https://public-snapshot.invalid', `${label}: snapshot cannot reference another origin`);
@@ -140,6 +140,9 @@ test('every sitemap URL resolves to indexable HTML with unique metadata and safe
         const daily = (prices.dailyHistory || []).filter(row => Number(row.market) > 0).map(row => String(row.date)).sort().at(-1);
         const monthly = (prices.history || []).filter(row => Number(row.market) > 0).map(row => `${row.date}-28`).sort().at(-1);
         assert.equal(date, (daily || monthly).slice(0, 10), 'price lastmod uses observed record date');
+      } else if (Object.entries(snapshot).find(([request]) => request.startsWith('/kcc'))?.[1]?.data?.meta?.coverage?.newestCall) {
+        const kcc = Object.entries(snapshot).find(([request]) => request.startsWith('/kcc'))[1].data;
+        assert.equal(date, kcc.meta.coverage.newestCall, 'फसल सलाह lastmod uses the newest call in the summaries');
       } else assert.fail(`${entry}: unknown modification date must not be replaced with deployment date`);
     }
   }

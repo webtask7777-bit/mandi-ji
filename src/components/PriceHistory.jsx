@@ -1,0 +1,88 @@
+import { useId, useMemo } from 'react';
+import { CalendarDays, History, Info } from 'lucide-react';
+import { useApi } from '../hooks/useApi';
+import { MONTHS_HI, MONTHS_SHORT_HI, currentMonthIST } from '../utils/kccAdvice';
+import { seasonalExtremes, sameMonthEarlier, yearTicks } from '../utils/priceHistory';
+import '../styles/price-history.css';
+
+const money = n => `₹${Math.round(n).toLocaleString('en-IN')}`;
+const monthLabel = ym => `${MONTHS_HI[Number(ym.slice(5, 7)) - 1]} ${ym.slice(0, 4)}`;
+
+function LongChart({ rows, title }) {
+  const id = useId().replace(/[^a-zA-Z0-9_-]/g, '');
+  const width = 720;
+  const height = 220;
+  const pad = { top: 12, right: 12, bottom: 26, left: 52 };
+  const values = rows.flatMap(row => [row[1], row[3]]).filter(v => v > 0);
+  const max = Math.max(...values) * 1.05;
+  const min = Math.max(0, Math.min(...rows.map(row => row[2] || row[1])) * 0.9);
+  const index = ym => {
+    const [y, m] = ym.split('-').map(Number);
+    return y * 12 + m - 1;
+  };
+  const first = index(rows[0][0]);
+  const span = Math.max(1, index(rows.at(-1)[0]) - first);
+  const x = ym => pad.left + ((index(ym) - first) / span) * (width - pad.left - pad.right);
+  const y = v => pad.top + (1 - (v - min) / (max - min || 1)) * (height - pad.top - pad.bottom);
+  // A gap of more than two months breaks the line instead of drawing across missing data.
+  const segments = [];
+  rows.forEach((row, i) => {
+    if (!i || index(row[0]) - index(rows[i - 1][0]) > 2) segments.push([]);
+    segments.at(-1).push(row);
+  });
+  const line = seg => seg.map((row, i) => `${i ? 'L' : 'M'}${x(row[0]).toFixed(1)},${y(row[1]).toFixed(1)}`).join('');
+  const band = seg => seg.length < 2 ? '' : `${seg.map((row, i) => `${i ? 'L' : 'M'}${x(row[0]).toFixed(1)},${y(row[3] || row[1]).toFixed(1)}`).join('')}${seg.slice().reverse().map(row => `L${x(row[0]).toFixed(1)},${y(row[2] || row[1]).toFixed(1)}`).join('')}Z`;
+  const gridValues = [0, 0.5, 1].map(f => min + (max - min) * f);
+  return <svg viewBox={`0 0 ${width} ${height}`} className="sb-history-chart" role="img" aria-labelledby={`${id}-t`}>
+    <title id={`${id}-t`}>{title}</title>
+    {gridValues.map(v => <g key={v}><line x1={pad.left} x2={width - pad.right} y1={y(v)} y2={y(v)} className="sb-history-grid" /><text x={pad.left - 6} y={y(v) + 4} textAnchor="end" className="sb-history-axis">{money(v)}</text></g>)}
+    {yearTicks(rows).map(ym => <text key={ym} x={x(ym)} y={height - 8} textAnchor="middle" className="sb-history-axis">{ym.slice(0, 4)}</text>)}
+    {segments.map((seg, i) => <path key={`b${i}`} d={band(seg)} className="sb-history-band" />)}
+    {segments.map((seg, i) => <path key={`l${i}`} d={line(seg)} className="sb-history-line" />)}
+    <circle cx={x(rows.at(-1)[0])} cy={y(rows.at(-1)[1])} r="4" className="sb-history-dot" />
+  </svg>;
+}
+
+function SeasonBars({ profile, month }) {
+  const max = Math.max(5, ...profile.pct.filter(Number.isFinite).map(Math.abs));
+  return <div className="sb-history-season" role="list">
+    {profile.pct.map((pct, i) => <div key={MONTHS_SHORT_HI[i]} role="listitem" className={`sb-history-season__bar${i + 1 === month ? ' is-current' : ''}`} aria-label={`${MONTHS_HI[i]}: ${pct == null ? 'आँकड़ा नहीं' : `${pct > 0 ? '+' : ''}${pct}%`}`}>
+      <div className="sb-history-season__track" aria-hidden="true">
+        {pct != null && <span className={pct >= 0 ? 'is-up' : 'is-down'} style={{ height: `${Math.abs(pct) / max * 50}%` }} />}
+      </div>
+      <small aria-hidden="true">{MONTHS_SHORT_HI[i]}</small>
+    </div>)}
+  </div>;
+}
+
+/** On a crop price page: monthly price history since 2009 and the usual seasonal pattern. */
+export default function PriceHistory({ cropId, cropName, stateId = 'all', stateNameHi }) {
+  const query = stateId && stateId !== 'all' ? `?state=${encodeURIComponent(stateId)}` : '';
+  const { data } = useApi(`/price-history/${encodeURIComponent(cropId)}${query}`);
+  const month = currentMonthIST();
+  const rows = data?.state?.length ? data.state : data?.all;
+  const scopeHi = data?.state?.length ? stateNameHi : 'भारत';
+  const profile = data?.seasonal?.state || data?.seasonal?.all;
+  const profileScope = data?.seasonal?.state ? stateNameHi : 'भारत';
+  const extremes = useMemo(() => (profile ? seasonalExtremes(profile.pct) : null), [profile]);
+  const earlier = useMemo(() => (rows ? sameMonthEarlier(rows, month, [1, 5, 10]) : []), [rows, month]);
+  if (!rows?.length) return null;
+  const latest = rows.at(-1);
+  return <section className="sb-detail-section sb-history" aria-labelledby="history-title">
+    <span className="sb-detail-kicker"><History size={15} aria-hidden="true" /> लंबा भाव इतिहास</span>
+    <h2 id="history-title">{cropName}: {rows[0][0].slice(0, 4)} से अब तक के भाव · {scopeHi}</h2>
+    <p>हर महीने की मंडियों के औसत भाव का मध्य (median)। हल्की पट्टी = आधी मंडियों का भाव इसी दायरे में रहा। ₹/क्विंटल।</p>
+    <LongChart rows={rows} title={`${cropName} का ${scopeHi} में मासिक भाव, ${monthLabel(rows[0][0])} से ${monthLabel(latest[0])}`} />
+    <div className="sb-history-facts">
+      <div><span>सबसे नया महीना</span><strong>{money(latest[1])}</strong><small>{monthLabel(latest[0])} · {latest[4]} मंडियाँ</small></div>
+      {earlier.map(item => <div key={item.yearsAgo}><span>{item.yearsAgo === 1 ? 'पिछले साल इसी महीने' : `${item.yearsAgo} साल पहले`}</span><strong>{money(item.row[1])}</strong><small>{monthLabel(item.row[0])}</small></div>)}
+    </div>
+    {profile && extremes && <div className="sb-history-season-wrap">
+      <h3><CalendarDays size={16} aria-hidden="true" /> किस महीने भाव आम तौर पर ऊँचा या नीचा रहता है</h3>
+      <p>{profileScope} में {cropName} का भाव आम तौर पर <strong>{MONTHS_HI[extremes.high.month]}</strong> में सबसे ऊँचा (साल के औसत से {extremes.high.pct > 0 ? '+' : ''}{extremes.high.pct}%) और <strong>{MONTHS_HI[extremes.low.month]}</strong> में सबसे नीचा ({extremes.low.pct}%) रहता है।</p>
+      <SeasonBars profile={profile} month={month} />
+      <p className="sb-history-note"><Info size={14} aria-hidden="true" /> पिछले {profile.years} सालों के आँकड़ों पर आधारित — हर साल का भाव मौसम, आवक और माँग से अलग हो सकता है। बेचने से पहले आज का भाव ज़रूर देखें।</p>
+    </div>}
+    {data?.source && <p className="sb-history-source">स्रोत: <a href={data.source.url} target="_blank" rel="noopener noreferrer">Agmarknet के दैनिक मंडी भाव, data.gov.in</a></p>}
+  </section>;
+}

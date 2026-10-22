@@ -17,6 +17,7 @@ import cmsRouter from './routes/cms.js';
 import paymentsRouter from './routes/payments.js';
 import arbitrageRouter from './routes/arbitrage.js';
 import kccRouter from './routes/kcc.js';
+import priceHistoryRouter from './routes/price-history.js';
 
 const app = express();
 app.use(cors());
@@ -42,6 +43,7 @@ app.use('/api/admin', adminRouter);
 app.use('/api/cms', cmsRouter);
 app.use('/api/arbitrage', arbitrageRouter);
 app.use('/api/kcc', kccRouter);
+app.use('/api/price-history', priceHistoryRouter);
 // Removed: /api/weather (seeded random readings), /api/load-board and /api/transport-board
 // (no screen used them; unauthenticated posting/deleting, full phone numbers, writes that fail
 // on read-only hosting).
