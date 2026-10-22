@@ -36,6 +36,7 @@ const LanguageToolsPage = lazy(() => import('./pages/LanguageToolsPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
 const FasalSalahPage = lazy(() => import('./pages/FasalSalahPage'));
+const EditorialPolicyPage = lazy(() => import('./pages/EditorialPolicyPage'));
 
 function PageLoader() {
   return (
@@ -83,6 +84,7 @@ function App({ prerender = false, initialPage }) {
                 <Route path="/bechne-ka-hisab" element={<SellComparePage />} />
                 <Route path="/data-status" element={<DataStatusPage />} />
                 <Route path="/fasal-salah" element={<SalahPage />} />
+                <Route path="/samasya-salah" element={<Navigate to="/fasal-salah" replace />} />
                 <Route path="/fasal-salah/:stateId" element={<SalahPage />} />
                 <Route path="/fasal-salah/:stateId/:districtId" element={<SalahPage />} />
                 <Route path="/transport" element={<Navigate to="/delivery-calculator" replace />} />
@@ -90,6 +92,7 @@ function App({ prerender = false, initialPage }) {
                 <Route path="/my-eway-bills" element={<ProtectedRoute><MyEwayBills /></ProtectedRoute>} />
                 <Route path="/pricing" element={<Navigate to="/" replace />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/editorial-policy" element={<EditorialPolicyPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/privacy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms" element={<TermsPage />} />

@@ -106,6 +106,12 @@
 .sb-salah-links a:hover { background: #edf1e8; border-color: #a1b79b; }
 .sb-salah-links small { color: #5f6b62; font-size: 11px; }
 
+.sb-salah-guides { margin-bottom: 20px; }
+.sb-salah-guides ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.sb-salah-guides li a { display: grid; gap: 4px; min-height: 44px; padding: 12px 14px; border: 1px solid #dde3d7; border-radius: 14px; background: #fbfaf5; color: #1b3027; font-size: 14px; font-weight: 650; line-height: 1.6; }
+.sb-salah-guides li a:hover { background: #edf1e8; border-color: #a1b79b; }
+.sb-salah-guides li small { font-size: 11.5px; font-weight: 700; color: #5d6e60; }
+
 @media (max-width: 900px) {
   .sb-salah-hero, .sb-salah-grid { grid-template-columns: 1fr; }
 }

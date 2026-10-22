@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
-import { AlertTriangle, ArrowLeft, ArrowRight, Bug, CalendarDays, ChevronDown, Info, Leaf, MapPin, Phone, Search, Sprout, TrendingUp } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, ArrowRight, BookOpen, Bug, CalendarDays, ChevronDown, Info, Leaf, MapPin, Phone, Search, Sprout, TrendingUp } from 'lucide-react';
 import SEO, { SITE_URL } from '../components/SEO';
 import Brand from '../components/Brand';
 import { useApi } from '../hooks/useApi';
@@ -117,6 +117,32 @@ function FamilyMix({ families, month }) {
     <h2 id="salah-family-title">{MONTHS_HI[month - 1]} में किसान किस बारे में पूछते हैं</h2>
     <div className="sb-salah-mix" aria-hidden="true">{entries.map(([family, share]) => <span key={family} className={`sb-salah-mix-${family}`} style={{ flexGrow: share }} />)}</div>
     <ul className="sb-salah-mix-legend">{entries.map(([family, share]) => <li key={family}><span className={`sb-salah-dot sb-salah-mix-${family}`} aria-hidden="true" />{FAMILY_LABEL[family] || family} <strong>{share < 1 ? '1% से कम' : `${Math.round(share)}%`}</strong></li>)}</ul>
+  </section>;
+}
+
+// Situations the published guides already cover (sourced, with their own review notes).
+// Shown with every Fasal Salah page so a farmer reaches them from the problem view.
+const SITUATION_GUIDES = [
+  ['dhan-katai-barish-taiyari', 'कटाई से पहले बारिश'],
+  ['bheega-dhan-sukhana-nami-bhandaran', 'भीगा माल, नमी और भंडारण'],
+  ['pala-sabji-fasal-taiyari', 'पाला / शीतलहर'],
+  ['fasal-nuksan-barish-olavrishti-suchna', 'बारिश-ओले से नुकसान की सूचना'],
+  ['raipur-krishi-mausam-forecast-kaise-padhen', 'मौसम पूर्वानुमान पढ़ना'],
+  ['tamatar-mandi-dhulai-ke-baad-bachat', 'बेचने और ढुलाई का खर्च'],
+];
+
+function SituationGuides() {
+  const query = new URLSearchParams({ slugs: SITUATION_GUIDES.map(([slug]) => slug).join(','), language: 'hi', limit: '10' });
+  const { data } = useApi(`/cms/blog?${query}`);
+  const bySlug = new Map((data?.posts || []).map(post => [post.slug, post]));
+  const guides = SITUATION_GUIDES.filter(([slug]) => bySlug.has(slug));
+  if (!guides.length) return null;
+  return <section className="sb-detail-section sb-salah-guides" aria-labelledby="salah-guides-title">
+    <span className="sb-detail-kicker"><BookOpen size={15} aria-hidden="true" /> हालात के हिसाब से तैयारी</span>
+    <h2 id="salah-guides-title">मौसम और फसल की मुश्किलों पर गाइड</h2>
+    <p>स्रोतों के साथ लिखे लेख: क्या जाँचें, क्या टालें और स्थानीय मदद कब लें।</p>
+    <ul>{guides.map(([slug, label]) => <li key={slug}><Link to={`/blog/${slug}`}><small>{label}</small>{bySlug.get(slug).title}</Link></li>)}</ul>
+    <Link className="sb-detail-text-link" to="/blog">सभी खेती गाइड <ArrowRight size={15} aria-hidden="true" /></Link>
   </section>;
 }
 
@@ -238,6 +264,7 @@ export default function FasalSalahPage() {
           </aside>
         </div>
         <YearPattern series={data.series} topics={data.topics} month={month} />
+        <SituationGuides />
 
         {level === 'india' && data.states?.length > 0 && <section className="sb-detail-section sb-salah-places" aria-labelledby="salah-states-title">
           <span className="sb-detail-kicker"><MapPin size={15} aria-hidden="true" /> अपनी जगह चुनें</span>
