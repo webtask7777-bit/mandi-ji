@@ -17,8 +17,8 @@
       "name": "Wokha Town",
       "district": "Wokha",
       "avgPrice": 4082,
-      "recentPrice": 5350,
-      "minPrice": 5300,
+      "recentPrice": 5400,
+      "minPrice": 5400,
       "maxPrice": 5400,
       "rangeBasis": "recent",
       "lastDate": "2026-10-21",
@@ -81,32 +81,6 @@
   ],
   "banana-green": [
     {
-      "name": "Kipheri",
-      "district": "Kiphire",
-      "avgPrice": 3997,
-      "recentPrice": 4200,
-      "minPrice": 4200,
-      "maxPrice": 4200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 27,
-      "topVariety": "Banana - Green",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Longleng",
-      "district": "Longleng",
-      "avgPrice": 3600,
-      "recentPrice": 4200,
-      "minPrice": 4200,
-      "maxPrice": 4200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 34,
-      "topVariety": "Banana - Green",
-      "grade": "FAQ"
-    },
-    {
       "name": "Nuiland",
       "district": "Dimapur",
       "avgPrice": 5000,
@@ -144,6 +118,32 @@
       "records": 3,
       "topVariety": "Banana - Green",
       "grade": "Local"
+    },
+    {
+      "name": "Kipheri",
+      "district": "Kiphire",
+      "avgPrice": 3997,
+      "recentPrice": null,
+      "minPrice": 2100,
+      "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 27,
+      "topVariety": "Banana - Green",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Longleng",
+      "district": "Longleng",
+      "avgPrice": 3600,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 5700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 34,
+      "topVariety": "Banana - Green",
+      "grade": "FAQ"
     },
     {
       "name": "Mokokchung Town",
@@ -187,19 +187,6 @@
   ],
   "bitter-gourd": [
     {
-      "name": "Jalukie",
-      "district": "Kohima",
-      "avgPrice": 5383,
-      "recentPrice": 6000,
-      "minPrice": 6000,
-      "maxPrice": 6000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 6,
-      "topVariety": "Bitter Gourd",
-      "grade": "FAQ"
-    },
-    {
       "name": "Dimapur",
       "district": "Dimapur",
       "avgPrice": 5520,
@@ -213,19 +200,6 @@
       "grade": "Local"
     },
     {
-      "name": "Kipheri",
-      "district": "Kiphire",
-      "avgPrice": 5032,
-      "recentPrice": 5830,
-      "minPrice": 5830,
-      "maxPrice": 5830,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 10,
-      "topVariety": "Bitter Gourd",
-      "grade": "FAQ"
-    },
-    {
       "name": "Kohima",
       "district": "Kohima",
       "avgPrice": 6000,
@@ -237,6 +211,19 @@
       "records": 1,
       "topVariety": "Bitter Gourd",
       "grade": "Local"
+    },
+    {
+      "name": "Jalukie",
+      "district": "Kohima",
+      "avgPrice": 5383,
+      "recentPrice": null,
+      "minPrice": 4000,
+      "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 6,
+      "topVariety": "Bitter Gourd",
+      "grade": "FAQ"
     },
     {
       "name": "Mon",
@@ -274,6 +261,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-02",
       "records": 3,
+      "topVariety": "Bitter Gourd",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kipheri",
+      "district": "Kiphire",
+      "avgPrice": 5032,
+      "recentPrice": null,
+      "minPrice": 4500,
+      "maxPrice": 5830,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 10,
       "topVariety": "Bitter Gourd",
       "grade": "FAQ"
     },
@@ -464,19 +464,6 @@
       "grade": "Local"
     },
     {
-      "name": "Kipheri",
-      "district": "Kiphire",
-      "avgPrice": 8692,
-      "recentPrice": 8710,
-      "minPrice": 8710,
-      "maxPrice": 8710,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 8,
-      "topVariety": "Green Ginger",
-      "grade": "FAQ"
-    },
-    {
       "name": "Wokha Town",
       "district": "Wokha",
       "avgPrice": 6069,
@@ -499,6 +486,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-06",
       "records": 5,
+      "topVariety": "Green Ginger",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kipheri",
+      "district": "Kiphire",
+      "avgPrice": 8692,
+      "recentPrice": null,
+      "minPrice": 7355,
+      "maxPrice": 9630,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 8,
       "topVariety": "Green Ginger",
       "grade": "FAQ"
     },
@@ -653,40 +653,14 @@
       "name": "Dimapur",
       "district": "Dimapur",
       "avgPrice": 3307,
-      "recentPrice": 3333,
-      "minPrice": 3000,
+      "recentPrice": 3500,
+      "minPrice": 3500,
       "maxPrice": 3500,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 75,
       "topVariety": "Brinjal",
       "grade": "Local"
-    },
-    {
-      "name": "Jalukie",
-      "district": "Kohima",
-      "avgPrice": 3213,
-      "recentPrice": 3000,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 8,
-      "topVariety": "Brinjal",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kipheri",
-      "district": "Kiphire",
-      "avgPrice": 3006,
-      "recentPrice": 2860,
-      "minPrice": 2860,
-      "maxPrice": 2860,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 15,
-      "topVariety": "Brinjal",
-      "grade": "FAQ"
     },
     {
       "name": "Baghty",
@@ -767,6 +741,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Jalukie",
+      "district": "Kohima",
+      "avgPrice": 3213,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 8,
+      "topVariety": "Brinjal",
+      "grade": "FAQ"
+    },
+    {
       "name": "Tuli",
       "district": "Mokokchung",
       "avgPrice": 3171,
@@ -777,6 +764,19 @@
       "lastDate": "2026-10-13",
       "records": 14,
       "topVariety": "Arkasheela Mattigulla",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kipheri",
+      "district": "Kiphire",
+      "avgPrice": 3006,
+      "recentPrice": null,
+      "minPrice": 1700,
+      "maxPrice": 4720,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 15,
+      "topVariety": "Brinjal",
       "grade": "FAQ"
     },
     {
@@ -863,8 +863,8 @@
       "name": "Dimapur",
       "district": "Dimapur",
       "avgPrice": 4540,
-      "recentPrice": 4167,
-      "minPrice": 3500,
+      "recentPrice": 4500,
+      "minPrice": 4500,
       "maxPrice": 4500,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
@@ -1098,45 +1098,6 @@
   ],
   "cabbage": [
     {
-      "name": "Kohima",
-      "district": "Kohima",
-      "avgPrice": 3293,
-      "recentPrice": 5000,
-      "minPrice": 5000,
-      "maxPrice": 5000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 57,
-      "topVariety": "Cabbage",
-      "grade": "Local"
-    },
-    {
-      "name": "Jalukie",
-      "district": "Kohima",
-      "avgPrice": 3317,
-      "recentPrice": 4300,
-      "minPrice": 4300,
-      "maxPrice": 4300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 12,
-      "topVariety": "Cabbage",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kipheri",
-      "district": "Kiphire",
-      "avgPrice": 2884,
-      "recentPrice": 4240,
-      "minPrice": 4240,
-      "maxPrice": 4240,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 29,
-      "topVariety": "Cabbage",
-      "grade": "FAQ"
-    },
-    {
       "name": "Phek",
       "district": "Phek",
       "avgPrice": 3559,
@@ -1150,6 +1111,32 @@
       "grade": "FAQ"
     },
     {
+      "name": "Jalukie",
+      "district": "Kohima",
+      "avgPrice": 3317,
+      "recentPrice": null,
+      "minPrice": 1800,
+      "maxPrice": 4300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 12,
+      "topVariety": "Cabbage",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kohima",
+      "district": "Kohima",
+      "avgPrice": 3293,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 57,
+      "topVariety": "Cabbage",
+      "grade": "Local"
+    },
+    {
       "name": "Tsemenyu",
       "district": "Tsemenyu",
       "avgPrice": 3195,
@@ -1159,6 +1146,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-21",
       "records": 19,
+      "topVariety": "Cabbage",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kipheri",
+      "district": "Kiphire",
+      "avgPrice": 2884,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 4240,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 29,
       "topVariety": "Cabbage",
       "grade": "FAQ"
     },
@@ -1390,32 +1390,6 @@
   ],
   "cucumbarkheera": [
     {
-      "name": "Jalukie",
-      "district": "Kohima",
-      "avgPrice": 1436,
-      "recentPrice": 1500,
-      "minPrice": 1500,
-      "maxPrice": 1500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 11,
-      "topVariety": "Cucumbar",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Longleng",
-      "district": "Longleng",
-      "avgPrice": 1333,
-      "recentPrice": 1200,
-      "minPrice": 1200,
-      "maxPrice": 1200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 9,
-      "topVariety": "Cucumbar",
-      "grade": "FAQ"
-    },
-    {
       "name": "Tsemenyu",
       "district": "Tsemenyu",
       "avgPrice": 3813,
@@ -1481,6 +1455,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Jalukie",
+      "district": "Kohima",
+      "avgPrice": 1436,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 11,
+      "topVariety": "Cucumbar",
+      "grade": "FAQ"
+    },
+    {
       "name": "Wokha Town",
       "district": "Wokha",
       "avgPrice": 1419,
@@ -1492,6 +1479,19 @@
       "records": 13,
       "topVariety": "Cucumbar",
       "grade": "Local"
+    },
+    {
+      "name": "Longleng",
+      "district": "Longleng",
+      "avgPrice": 1333,
+      "recentPrice": null,
+      "minPrice": 900,
+      "maxPrice": 2300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 9,
+      "topVariety": "Cucumbar",
+      "grade": "FAQ"
     },
     {
       "name": "Mon",
@@ -1538,10 +1538,10 @@
       "name": "Kohima",
       "district": "Kohima",
       "avgPrice": 5361,
-      "recentPrice": 8000,
-      "minPrice": 8000,
+      "recentPrice": null,
+      "minPrice": 3000,
       "maxPrice": 8000,
-      "rangeBasis": "recent",
+      "rangeBasis": "all",
       "lastDate": "2026-10-16",
       "records": 18,
       "topVariety": "Carrot",
@@ -1715,9 +1715,9 @@
       "name": "Dimapur",
       "district": "Dimapur",
       "avgPrice": 5632,
-      "recentPrice": 5333,
+      "recentPrice": 5000,
       "minPrice": 5000,
-      "maxPrice": 5500,
+      "maxPrice": 5000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 117,
@@ -1755,30 +1755,30 @@
   ],
   "pumpkin": [
     {
-      "name": "Phek",
-      "district": "Phek",
-      "avgPrice": 3797,
-      "recentPrice": 3750,
-      "minPrice": 3700,
-      "maxPrice": 3800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 35,
-      "topVariety": null,
-      "grade": "FAQ"
-    },
-    {
       "name": "Tsemenyu",
       "district": "Tsemenyu",
       "avgPrice": 3689,
-      "recentPrice": 3464,
-      "minPrice": 2928.04,
+      "recentPrice": 4000,
+      "minPrice": 4000,
       "maxPrice": 4000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-21",
       "records": 25,
       "topVariety": "pumpkin-Organic",
       "grade": "Local"
+    },
+    {
+      "name": "Phek",
+      "district": "Phek",
+      "avgPrice": 3797,
+      "recentPrice": 3700,
+      "minPrice": 3700,
+      "maxPrice": 3700,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-17",
+      "records": 35,
+      "topVariety": null,
+      "grade": "FAQ"
     },
     {
       "name": "Baghty",
@@ -1794,51 +1794,25 @@
       "grade": "Local"
     },
     {
-      "name": "Kipheri",
-      "district": "Kiphire",
-      "avgPrice": 2672,
-      "recentPrice": 2030,
-      "minPrice": 2030,
-      "maxPrice": 2030,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 5,
-      "topVariety": "Pumpkin",
-      "grade": "FAQ"
-    },
-    {
       "name": "Kohima",
       "district": "Kohima",
-      "avgPrice": 2625,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
+      "avgPrice": 2640,
+      "recentPrice": 3000,
+      "minPrice": 3000,
+      "maxPrice": 3000,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-15",
-      "records": 24,
+      "lastDate": "2026-10-24",
+      "records": 25,
       "topVariety": "Pumpkin",
       "grade": "Local"
-    },
-    {
-      "name": "Jalukie",
-      "district": "Kohima",
-      "avgPrice": 2213,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 8,
-      "topVariety": "Pumpkin",
-      "grade": "FAQ"
     },
     {
       "name": "Wokha Town",
       "district": "Wokha",
       "avgPrice": 2364,
-      "recentPrice": 1950,
+      "recentPrice": 1900,
       "minPrice": 1900,
-      "maxPrice": 2000,
+      "maxPrice": 1900,
       "rangeBasis": "recent",
       "lastDate": "2026-10-21",
       "records": 14,
@@ -1898,6 +1872,19 @@
       "grade": "Local"
     },
     {
+      "name": "Kipheri",
+      "district": "Kiphire",
+      "avgPrice": 2672,
+      "recentPrice": null,
+      "minPrice": 2030,
+      "maxPrice": 3530,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 5,
+      "topVariety": "Pumpkin",
+      "grade": "FAQ"
+    },
+    {
       "name": "Mon",
       "district": "Mon",
       "avgPrice": 2217,
@@ -1909,6 +1896,19 @@
       "records": 5,
       "topVariety": "Pumpkin",
       "grade": "Local"
+    },
+    {
+      "name": "Jalukie",
+      "district": "Kohima",
+      "avgPrice": 2213,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 8,
+      "topVariety": "Pumpkin",
+      "grade": "FAQ"
     },
     {
       "name": "Ghathashi",
@@ -1926,6 +1926,19 @@
   ],
   "green-chilli": [
     {
+      "name": "Kohima",
+      "district": "Kohima",
+      "avgPrice": 9389,
+      "recentPrice": 9000,
+      "minPrice": 8000,
+      "maxPrice": 10000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-24",
+      "records": 18,
+      "topVariety": "Green Chilly",
+      "grade": "Grade A"
+    },
+    {
       "name": "Wokha Town",
       "district": "Wokha",
       "avgPrice": 8040,
@@ -1937,19 +1950,6 @@
       "records": 10,
       "topVariety": "Green Chilly",
       "grade": "Local"
-    },
-    {
-      "name": "Kohima",
-      "district": "Kohima",
-      "avgPrice": 9353,
-      "recentPrice": 8000,
-      "minPrice": 8000,
-      "maxPrice": 8000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 17,
-      "topVariety": "Green Chilly",
-      "grade": "Grade A"
     },
     {
       "name": "Baghty",
@@ -1965,24 +1965,11 @@
       "grade": "Local"
     },
     {
-      "name": "Longleng",
-      "district": "Longleng",
-      "avgPrice": 6677,
-      "recentPrice": 7300,
-      "minPrice": 7300,
-      "maxPrice": 7300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 22,
-      "topVariety": "Green Chilly",
-      "grade": "FAQ"
-    },
-    {
       "name": "Dimapur",
       "district": "Dimapur",
       "avgPrice": 7353,
-      "recentPrice": 6667,
-      "minPrice": 6000,
+      "recentPrice": 7000,
+      "minPrice": 7000,
       "maxPrice": 7000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
@@ -2056,6 +2043,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Longleng",
+      "district": "Longleng",
+      "avgPrice": 6677,
+      "recentPrice": null,
+      "minPrice": 4500,
+      "maxPrice": 8100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 22,
+      "topVariety": "Green Chilly",
+      "grade": "FAQ"
+    },
+    {
       "name": "Pfatsero",
       "district": "Phek",
       "avgPrice": 4636,
@@ -2110,19 +2110,6 @@
       "grade": "Local"
     },
     {
-      "name": "Kipheri",
-      "district": "Kiphire",
-      "avgPrice": 2270,
-      "recentPrice": 2600,
-      "minPrice": 2600,
-      "maxPrice": 2600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 12,
-      "topVariety": "Leafy Vegetables",
-      "grade": "FAQ"
-    },
-    {
       "name": "Wokha Town",
       "district": "Wokha",
       "avgPrice": 2338,
@@ -2134,32 +2121,6 @@
       "records": 16,
       "topVariety": "Leafy Vegetables",
       "grade": "Local"
-    },
-    {
-      "name": "Longleng",
-      "district": "Longleng",
-      "avgPrice": 1733,
-      "recentPrice": 2400,
-      "minPrice": 2400,
-      "maxPrice": 2400,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 27,
-      "topVariety": "Leafy Vegetables",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Jalukie",
-      "district": "Kohima",
-      "avgPrice": 2182,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 11,
-      "topVariety": "Leafy Vegetables",
-      "grade": "FAQ"
     },
     {
       "name": "Baghty",
@@ -2201,6 +2162,32 @@
       "grade": "Local"
     },
     {
+      "name": "Kipheri",
+      "district": "Kiphire",
+      "avgPrice": 2270,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 2600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 12,
+      "topVariety": "Leafy Vegetables",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Jalukie",
+      "district": "Kohima",
+      "avgPrice": 2182,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 11,
+      "topVariety": "Leafy Vegetables",
+      "grade": "FAQ"
+    },
+    {
       "name": "Tenning",
       "district": "Peren",
       "avgPrice": 2150,
@@ -2210,6 +2197,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-08-28",
       "records": 4,
+      "topVariety": "Leafy Vegetables",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Longleng",
+      "district": "Longleng",
+      "avgPrice": 1733,
+      "recentPrice": null,
+      "minPrice": 700,
+      "maxPrice": 2700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 27,
       "topVariety": "Leafy Vegetables",
       "grade": "FAQ"
     },
@@ -2274,54 +2274,15 @@
     {
       "name": "Kohima",
       "district": "Kohima",
-      "avgPrice": 3427,
-      "recentPrice": 3000,
-      "minPrice": 3000,
+      "avgPrice": 3408,
+      "recentPrice": 2750,
+      "minPrice": 2500,
       "maxPrice": 3000,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-17",
-      "records": 48,
+      "lastDate": "2026-10-24",
+      "records": 49,
       "topVariety": "Potato",
       "grade": "Local"
-    },
-    {
-      "name": "Jalukie",
-      "district": "Kohima",
-      "avgPrice": 3091,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 11,
-      "topVariety": "Potato",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kipheri",
-      "district": "Kiphire",
-      "avgPrice": 2380,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 6,
-      "topVariety": "Potato",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Longleng",
-      "district": "Longleng",
-      "avgPrice": 2342,
-      "recentPrice": 1900,
-      "minPrice": 1900,
-      "maxPrice": 1900,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 26,
-      "topVariety": "Potato",
-      "grade": "FAQ"
     },
     {
       "name": "Mon",
@@ -2337,6 +2298,19 @@
       "grade": "Local"
     },
     {
+      "name": "Jalukie",
+      "district": "Kohima",
+      "avgPrice": 3091,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 11,
+      "topVariety": "Potato",
+      "grade": "FAQ"
+    },
+    {
       "name": "Tenning",
       "district": "Peren",
       "avgPrice": 2650,
@@ -2346,6 +2320,32 @@
       "rangeBasis": "all",
       "lastDate": "2026-08-20",
       "records": 2,
+      "topVariety": "Potato",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kipheri",
+      "district": "Kiphire",
+      "avgPrice": 2380,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 3240,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 6,
+      "topVariety": "Potato",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Longleng",
+      "district": "Longleng",
+      "avgPrice": 2342,
+      "recentPrice": null,
+      "minPrice": 1400,
+      "maxPrice": 3600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 26,
       "topVariety": "Potato",
       "grade": "FAQ"
     },
@@ -2420,40 +2420,14 @@
       "name": "Phek",
       "district": "Phek",
       "avgPrice": 5438,
-      "recentPrice": 5500,
+      "recentPrice": 5400,
       "minPrice": 5400,
-      "maxPrice": 5600,
+      "maxPrice": 5400,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 21,
       "topVariety": null,
       "grade": "FAQ"
-    },
-    {
-      "name": "Kohima",
-      "district": "Kohima",
-      "avgPrice": 5100,
-      "recentPrice": 5000,
-      "minPrice": 5000,
-      "maxPrice": 5000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 10,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Baghty",
-      "district": "Wokha",
-      "avgPrice": 5200,
-      "recentPrice": 4500,
-      "minPrice": 4500,
-      "maxPrice": 4500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-15",
-      "records": 4,
-      "topVariety": "Yam (Ratalu)",
-      "grade": "Local"
     },
     {
       "name": "Zunheboto",
@@ -2480,6 +2454,32 @@
       "records": 5,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Baghty",
+      "district": "Wokha",
+      "avgPrice": 5200,
+      "recentPrice": null,
+      "minPrice": 4500,
+      "maxPrice": 5600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-15",
+      "records": 4,
+      "topVariety": "Yam (Ratalu)",
+      "grade": "Local"
+    },
+    {
+      "name": "Kohima",
+      "district": "Kohima",
+      "avgPrice": 5100,
+      "recentPrice": null,
+      "minPrice": 3000,
+      "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 10,
+      "topVariety": null,
+      "grade": "Local"
     },
     {
       "name": "Longleng",
@@ -2523,42 +2523,16 @@
       "grade": "Local"
     },
     {
-      "name": "Longleng",
-      "district": "Longleng",
-      "avgPrice": 3752,
-      "recentPrice": 4500,
-      "minPrice": 4500,
-      "maxPrice": 4500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 29,
-      "topVariety": "Tomato",
-      "grade": "FAQ"
-    },
-    {
       "name": "Jalukie",
       "district": "Kohima",
       "avgPrice": 4413,
-      "recentPrice": 4500,
-      "minPrice": 4500,
-      "maxPrice": 4500,
-      "rangeBasis": "recent",
+      "recentPrice": null,
+      "minPrice": 3000,
+      "maxPrice": 6000,
+      "rangeBasis": "all",
       "lastDate": "2026-10-16",
       "records": 8,
       "topVariety": "Tomato",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kipheri",
-      "district": "Kiphire",
-      "avgPrice": 2116,
-      "recentPrice": 2025,
-      "minPrice": 2025,
-      "maxPrice": 2025,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 5,
-      "topVariety": "Local",
       "grade": "FAQ"
     },
     {
@@ -2571,6 +2545,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-14",
       "records": 12,
+      "topVariety": "Tomato",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Longleng",
+      "district": "Longleng",
+      "avgPrice": 3752,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 4700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 29,
       "topVariety": "Tomato",
       "grade": "FAQ"
     },
@@ -2627,6 +2614,19 @@
       "grade": "Local"
     },
     {
+      "name": "Kipheri",
+      "district": "Kiphire",
+      "avgPrice": 2116,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 2900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 5,
+      "topVariety": "Local",
+      "grade": "FAQ"
+    },
+    {
       "name": "Ghathashi",
       "district": "Zunheboto",
       "avgPrice": 1520,
@@ -2645,10 +2645,10 @@
       "name": "Kohima",
       "district": "Kohima",
       "avgPrice": 2985,
-      "recentPrice": 2750,
-      "minPrice": 2500,
-      "maxPrice": 3000,
-      "rangeBasis": "recent",
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
       "lastDate": "2026-10-16",
       "records": 33,
       "topVariety": null,
@@ -2776,29 +2776,29 @@
       "grade": "Local"
     },
     {
-      "name": "Tsemenyu",
-      "district": "Tsemenyu",
-      "avgPrice": 4647,
-      "recentPrice": 4500,
-      "minPrice": 4500,
-      "maxPrice": 4500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 15,
-      "topVariety": "Papaya-Organic",
-      "grade": "Local"
-    },
-    {
       "name": "Wokha Town",
       "district": "Wokha",
       "avgPrice": 3098,
-      "recentPrice": 2950,
-      "minPrice": 2400,
+      "recentPrice": 3500,
+      "minPrice": 3500,
       "maxPrice": 3500,
       "rangeBasis": "recent",
       "lastDate": "2026-10-22",
       "records": 11,
       "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Tsemenyu",
+      "district": "Tsemenyu",
+      "avgPrice": 4647,
+      "recentPrice": null,
+      "minPrice": 4000,
+      "maxPrice": 6000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 15,
+      "topVariety": "Papaya-Organic",
       "grade": "Local"
     },
     {
@@ -2833,9 +2833,9 @@
       "name": "Phek",
       "district": "Phek",
       "avgPrice": 3425,
-      "recentPrice": 4000,
+      "recentPrice": 3800,
       "minPrice": 3800,
-      "maxPrice": 4200,
+      "maxPrice": 3800,
       "rangeBasis": "recent",
       "lastDate": "2026-10-17",
       "records": 4,
@@ -3002,19 +3002,6 @@
   ],
   "papayaraw": [
     {
-      "name": "Jalukie",
-      "district": "Kohima",
-      "avgPrice": 2000,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 1,
-      "topVariety": "Papaya (Raw)",
-      "grade": "FAQ"
-    },
-    {
       "name": "Tuli",
       "district": "Mokokchung",
       "avgPrice": 2392,
@@ -3039,6 +3026,19 @@
       "records": 2,
       "topVariety": null,
       "grade": "Local"
+    },
+    {
+      "name": "Jalukie",
+      "district": "Kohima",
+      "avgPrice": 2000,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 2000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 1,
+      "topVariety": "Papaya (Raw)",
+      "grade": "FAQ"
     },
     {
       "name": "Longleng",
@@ -3185,19 +3185,6 @@
   ],
   "onion": [
     {
-      "name": "Jalukie",
-      "district": "Kohima",
-      "avgPrice": 3467,
-      "recentPrice": 3000,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-16",
-      "records": 9,
-      "topVariety": "Onion",
-      "grade": "FAQ"
-    },
-    {
       "name": "Kohima",
       "district": "Kohima",
       "avgPrice": 4500,
@@ -3209,6 +3196,19 @@
       "records": 2,
       "topVariety": "Onion",
       "grade": "Grade A"
+    },
+    {
+      "name": "Jalukie",
+      "district": "Kohima",
+      "avgPrice": 3467,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-16",
+      "records": 9,
+      "topVariety": "Onion",
+      "grade": "FAQ"
     }
   ],
   "hen": [

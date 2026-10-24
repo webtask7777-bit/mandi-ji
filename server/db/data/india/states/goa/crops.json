@@ -21,8 +21,8 @@
     "name": "Banana",
     "nameHi": "केला",
     "emoji": "🍌",
-    "totalRecords": 179,
-    "avgPrice": 3834,
+    "totalRecords": 180,
+    "avgPrice": 3840,
     "minPrice": 2000,
     "maxPrice": 8000,
     "varieties": [
@@ -61,8 +61,8 @@
     "name": "Apple",
     "nameHi": "सेब",
     "emoji": "🍎",
-    "totalRecords": 141,
-    "avgPrice": 13184,
+    "totalRecords": 142,
+    "avgPrice": 13197,
     "minPrice": 8000,
     "maxPrice": 20000,
     "varieties": [
@@ -85,6 +85,39 @@
     "peakMonths": [
       8,
       9
+    ]
+  },
+  {
+    "id": "potato",
+    "name": "Potato",
+    "nameHi": "आलू",
+    "emoji": "🥔",
+    "totalRecords": 111,
+    "avgPrice": 1488,
+    "minPrice": 1000,
+    "maxPrice": 2500,
+    "varieties": [
+      "Potato",
+      "Other"
+    ],
+    "sowingMonths": [
+      9,
+      10
+    ],
+    "growingMonths": [
+      11,
+      0,
+      1
+    ],
+    "harvestMonths": [
+      1,
+      2,
+      3
+    ],
+    "peakMonths": [
+      2,
+      3,
+      4
     ]
   },
   {
@@ -125,45 +158,12 @@
     ]
   },
   {
-    "id": "potato",
-    "name": "Potato",
-    "nameHi": "आलू",
-    "emoji": "🥔",
-    "totalRecords": 110,
-    "avgPrice": 1487,
-    "minPrice": 1000,
-    "maxPrice": 2500,
-    "varieties": [
-      "Potato",
-      "Other"
-    ],
-    "sowingMonths": [
-      9,
-      10
-    ],
-    "growingMonths": [
-      11,
-      0,
-      1
-    ],
-    "harvestMonths": [
-      1,
-      2,
-      3
-    ],
-    "peakMonths": [
-      2,
-      3,
-      4
-    ]
-  },
-  {
     "id": "onion",
     "name": "Onion",
     "nameHi": "प्याज",
     "emoji": "🧅",
-    "totalRecords": 93,
-    "avgPrice": 2276,
+    "totalRecords": 94,
+    "avgPrice": 2286,
     "minPrice": 800,
     "maxPrice": 3600,
     "varieties": [
@@ -246,7 +246,7 @@
     "name": "Water Melon",
     "nameHi": "तरबूज",
     "emoji": "🌱",
-    "totalRecords": 73,
+    "totalRecords": 74,
     "avgPrice": 2243,
     "minPrice": 1500,
     "maxPrice": 3000,

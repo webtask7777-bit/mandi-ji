@@ -65,10 +65,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 4500,
-      "volume": 267,
-      "days": 20,
-      "mandis": 27
+      "market": 4183,
+      "volume": 289,
+      "days": 21,
+      "mandis": 30
     }
   ],
   "dailyHistory": [
@@ -1159,45 +1159,59 @@
       "mandis": 10,
       "minPrice": 3000,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-10-24",
+      "market": 4375,
+      "volume": 22,
+      "mandis": 22,
+      "minPrice": 1800,
+      "maxPrice": 9000
     }
   ],
-  "lastUpdated": "2026-10-22T04:03:01.708Z",
+  "lastUpdated": "2026-10-24T15:07:57.722Z",
   "districtBreakdown": [
     {
       "district": "The Nilgiris (तमिल नाडु)",
       "nameHi": "The Nilgiris (तमिल नाडु)",
-      "avgPrice": 3441,
-      "records": 307
+      "avgPrice": 3443,
+      "records": 309
     },
     {
       "district": "Coimbatore (तमिल नाडु)",
       "nameHi": "Coimbatore (तमिल नाडु)",
-      "avgPrice": 4880,
-      "records": 169
+      "avgPrice": 4896,
+      "records": 172
     },
     {
       "district": "Tiruvallur (तमिल नाडु)",
       "nameHi": "Tiruvallur (तमिल नाडु)",
-      "avgPrice": 4172,
-      "records": 134
+      "avgPrice": 4178,
+      "records": 135
     },
     {
       "district": "Madurai (तमिल नाडु)",
       "nameHi": "Madurai (तमिल नाडु)",
-      "avgPrice": 6401,
-      "records": 130
+      "avgPrice": 6394,
+      "records": 131
     },
     {
       "district": "Karur (तमिल नाडु)",
       "nameHi": "Karur (तमिल नाडु)",
-      "avgPrice": 4760,
-      "records": 125
+      "avgPrice": 4765,
+      "records": 126
     },
     {
       "district": "Thiruchirappalli (तमिल नाडु)",
       "nameHi": "Thiruchirappalli (तमिल नाडु)",
-      "avgPrice": 3204,
-      "records": 95
+      "avgPrice": 3205,
+      "records": 96
+    },
+    {
+      "district": "Theni (तमिल नाडु)",
+      "nameHi": "Theni (तमिल नाडु)",
+      "avgPrice": 4629,
+      "records": 79
     },
     {
       "district": "East Khasi Hills (मेघालय)",
@@ -1206,22 +1220,16 @@
       "records": 79
     },
     {
-      "district": "Theni (तमिल नाडु)",
-      "nameHi": "Theni (तमिल नाडु)",
-      "avgPrice": 4629,
-      "records": 76
-    },
-    {
       "district": "Erode (तमिल नाडु)",
       "nameHi": "Erode (तमिल नाडु)",
-      "avgPrice": 5992,
-      "records": 65
+      "avgPrice": 5995,
+      "records": 66
     },
     {
       "district": "Shamli (उत्तर प्रदेश)",
       "nameHi": "Shamli (उत्तर प्रदेश)",
-      "avgPrice": 2561,
-      "records": 18
+      "avgPrice": 2545,
+      "records": 19
     },
     {
       "district": "Shimla (हिमाचल प्रदेश)",
@@ -1232,13 +1240,19 @@
     {
       "district": "Virudhunagar (तमिल नाडु)",
       "nameHi": "Virudhunagar (तमिल नाडु)",
-      "avgPrice": 7304,
-      "records": 14
+      "avgPrice": 7383,
+      "records": 15
     },
     {
       "district": "Kangra (हिमाचल प्रदेश)",
       "nameHi": "Kangra (हिमाचल प्रदेश)",
-      "avgPrice": 3467,
+      "avgPrice": 3572,
+      "records": 9
+    },
+    {
+      "district": "Tarntaran (पंजाब)",
+      "nameHi": "Tarntaran (पंजाब)",
+      "avgPrice": 3008,
       "records": 6
     },
     {
@@ -1246,12 +1260,6 @@
       "nameHi": "Kullu (हिमाचल प्रदेश)",
       "avgPrice": 1833,
       "records": 6
-    },
-    {
-      "district": "Tarntaran (पंजाब)",
-      "nameHi": "Tarntaran (पंजाब)",
-      "avgPrice": 3130,
-      "records": 5
     }
   ]
 }

@@ -37,6 +37,14 @@
       "volume": 3,
       "days": 3,
       "mandis": 3
+    },
+    {
+      "month": "10",
+      "date": "2026-10",
+      "market": 5000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -215,15 +223,23 @@
       "mandis": 1,
       "minPrice": 12804.54,
       "maxPrice": 12804.54
+    },
+    {
+      "date": "2026-10-24",
+      "market": 5000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-22T04:03:01.708Z",
+  "lastUpdated": "2026-10-24T15:07:57.722Z",
   "districtBreakdown": [
     {
       "district": "Bhopal",
       "nameHi": "Bhopal",
-      "avgPrice": 9863,
-      "records": 12
+      "avgPrice": 9489,
+      "records": 13
     },
     {
       "district": "Neemuch",
