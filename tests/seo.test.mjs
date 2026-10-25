@@ -130,6 +130,7 @@ test('every sitemap URL resolves to indexable HTML with unique metadata and safe
       const date = modificationDates.get(entry);
       const article = Object.values(snapshot).map(item => item.data).find(data => data?.slug && data?.content);
       const prices = Object.entries(snapshot).find(([request]) => request.startsWith('/prices/'))?.[1]?.data;
+      const mandi = Object.entries(snapshot).find(([request]) => request.startsWith('/mandis/detail/'))?.[1]?.data;
       const library = Object.entries(snapshot).find(([request]) => request.startsWith('/cms/blog?'))?.[1]?.data;
       if (article) assert.equal(date, String(article.updatedAt || article.publishedAt).slice(0, 10), 'article lastmod uses actual editorial date');
       else if (library && /^(?:\/blog|\/[a-z]{2,3}\/blog)$/.test(url.pathname)) {
@@ -140,6 +141,9 @@ test('every sitemap URL resolves to indexable HTML with unique metadata and safe
         const daily = (prices.dailyHistory || []).filter(row => Number(row.market) > 0).map(row => String(row.date)).sort().at(-1);
         const monthly = (prices.history || []).filter(row => Number(row.market) > 0).map(row => `${row.date}-28`).sort().at(-1);
         assert.equal(date, (daily || monthly).slice(0, 10), 'price lastmod uses observed record date');
+      } else if (mandi) {
+        const latest = mandi.crops.map(crop => crop.lastDate).filter(day => /^\d{4}-\d{2}-\d{2}$/.test(day || '')).sort().at(-1);
+        assert.equal(date, latest, 'mandi lastmod uses its newest observed record date');
       } else assert.fail(`${entry}: unknown modification date must not be replaced with deployment date`);
     }
   }
