@@ -75,13 +75,19 @@ export function mandiSummaries(index) {
   })).filter(row => row.cropCount > 0).sort((a, b) => b.records - a.records || a.name.localeCompare(b.name));
 }
 
-/** Same policy for the sitemap, the initial HTML and the browser's robots tag. */
-export function getMandiIndexability(mandi, { asOf = new Date() } = {}) {
+/** A crop row counts as current when its own record date is within the last 30 days. */
+export function isRecentMandiCrop(crop, asOf = new Date()) {
   const clock = new Date(asOf);
-  if (!mandi || !Array.isArray(mandi.crops) || !Number.isFinite(clock.getTime())) return { noIndex: true, latestDate: null, recentCrops: 0 };
+  if (!Number.isFinite(clock.getTime()) || !/^\d{4}-\d{2}-\d{2}$/.test(crop?.lastDate || '')) return false;
   const today = new Date(clock.getTime() + IST_OFFSET_MS).toISOString().slice(0, 10);
   const cutoff = new Date(Date.parse(`${today}T00:00:00Z`) - MANDI_INDEX_MAX_AGE_DAYS * DAY_MS).toISOString().slice(0, 10);
-  const recent = mandi.crops.filter(crop => /^\d{4}-\d{2}-\d{2}$/.test(crop.lastDate || '') && crop.lastDate >= cutoff && crop.lastDate <= today);
+  return crop.lastDate >= cutoff && crop.lastDate <= today;
+}
+
+/** Same policy for the sitemap, the initial HTML and the browser's robots tag. */
+export function getMandiIndexability(mandi, { asOf = new Date() } = {}) {
+  if (!mandi || !Array.isArray(mandi.crops) || !Number.isFinite(new Date(asOf).getTime())) return { noIndex: true, latestDate: null, recentCrops: 0 };
+  const recent = mandi.crops.filter(crop => isRecentMandiCrop(crop, asOf));
   const latestDate = recent.map(crop => crop.lastDate).sort().at(-1) || null;
   return { noIndex: recent.length < MANDI_INDEX_MIN_CROPS, latestDate, recentCrops: recent.length };
 }
