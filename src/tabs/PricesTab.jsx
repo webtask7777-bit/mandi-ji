@@ -164,12 +164,6 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
 
   return (
     <div className="sb-prices-page">
-      {!tickerLoading && validTicker.length > 0 && <section className="sb-market-pulse" aria-label="उपलब्ध बाज़ार रिकॉर्ड का सार">
-        <div className="sb-market-pulse__title"><span className="sb-eyebrow">बाज़ार का रुख़</span><strong>लगातार दो दर्ज महीनों के मध्य भाव में</strong></div>
-        <div><TrendingUp size={19} className="sb-change--up" aria-hidden="true" /><strong>{number(gainers)}</strong><span>फसलों में बढ़त</span></div>
-        <div><TrendingDown size={19} className="sb-change--down" aria-hidden="true" /><strong>{number(losers)}</strong><span>फसलों में गिरावट</span></div>
-        <div><Sprout size={19} aria-hidden="true" /><strong>{number(validTicker.length)}</strong><span>फसलों के भाव</span></div>
-      </section>}
 
       <section className="sb-crop-picker" id="sb-crop-picker" aria-labelledby="sb-crop-picker-title">
         <div className="sb-section-heading">
@@ -184,12 +178,6 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
         </div>
         {filteredCrops.length === 0 && <p className="sb-empty-copy">{savedOnly ? 'इस सूची में फसल नहीं है। सभी फसलें खोलें, फिर भाव के पास सेव बटन दबाएँ।' : 'इस नाम से फसल नहीं मिली। हिंदी या अंग्रेज़ी नाम से खोजें।'}</p>}
         {!cropSearch.trim() && filteredCrops.length > 15 && <button type="button" className="sb-text-button" onClick={() => setShowAllCrops(!showAllCrops)} aria-expanded={showAllCrops}>{showAllCrops ? 'कम फसलें दिखाएँ' : `सभी ${filteredCrops.length} फसलें देखें`}<ChevronRight size={16} aria-hidden="true" /></button>}
-        {filteredCrops.length > 0 && <details className="mt-3 rounded-xl border border-[#dfe6d8] bg-[#fffefb] px-4">
-          <summary className="cursor-pointer py-3 text-sm font-semibold text-[#174c3c]">फसल वार मंडी भाव के पृष्ठ ({filteredCrops.length})</summary>
-          <nav aria-label="फसल वार मंडी भाव" className="grid max-h-80 grid-cols-2 gap-x-4 overflow-y-auto pb-3 sm:grid-cols-3">
-            {filteredCrops.map(crop => <Link key={crop.id} to={cropDetailPath(crop.id, stateParam)} className="flex min-h-11 items-center py-2 text-sm leading-relaxed text-[#174c3c] underline decoration-[#b3c5aa] underline-offset-4">{crop.nameHi || crop.name} मंडी भाव</Link>)}
-          </nav>
-        </details>}
       </section>
 
       <p className="sr-only" role="status">{saveNotice}</p>
@@ -227,6 +215,18 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
           <div className="sb-trend-panel"><MiniChart data={history} dailyData={dailyHistory} mspSeason={priceData?.crop?.mspSeason} title={`${cropName} का भाव इतिहास`} formatMonth={formatMonthHi} /><p className="sb-data-note"><Info size={15} aria-hidden="true" />यह उपलब्ध भावों का इतिहास है। मंडी और फसल की गुणवत्ता के अनुसार वास्तविक भाव बदल सकता है।</p></div>
         </div> : <div className="sb-price-empty"><Sprout size={30} /><h3>इस फसल का भाव अभी उपलब्ध नहीं है</h3><p>दूसरी फसल या राज्य चुनकर उपलब्ध रिकॉर्ड देखें।</p></div>}
 
+        {!tickerLoading && validTicker.length > 0 && <section className="sb-market-pulse" aria-label="उपलब्ध बाज़ार रिकॉर्ड का सार">
+          <div className="sb-market-pulse__title"><span className="sb-eyebrow">बाज़ार का रुख़</span><strong>लगातार दो दर्ज महीनों के मध्य भाव में</strong></div>
+          <div><TrendingUp size={19} className="sb-change--up" aria-hidden="true" /><strong>{number(gainers)}</strong><span>फसलों में बढ़त</span></div>
+          <div><TrendingDown size={19} className="sb-change--down" aria-hidden="true" /><strong>{number(losers)}</strong><span>फसलों में गिरावट</span></div>
+          <div><Sprout size={19} aria-hidden="true" /><strong>{number(validTicker.length)}</strong><span>फसलों के भाव</span></div>
+        </section>}
+        {filteredCrops.length > 0 && <details className="mt-3 rounded-xl border border-[#dfe6d8] bg-[#fffefb] px-4">
+          <summary className="cursor-pointer py-3 text-sm font-semibold text-[#174c3c]">फसल वार मंडी भाव के पृष्ठ ({filteredCrops.length})</summary>
+          <nav aria-label="फसल वार मंडी भाव" className="grid max-h-80 grid-cols-2 gap-x-4 overflow-y-auto pb-3 sm:grid-cols-3">
+            {filteredCrops.map(crop => <Link key={crop.id} to={cropDetailPath(crop.id, stateParam)} className="flex min-h-11 items-center py-2 text-sm leading-relaxed text-[#174c3c] underline decoration-[#b3c5aa] underline-offset-4">{crop.nameHi || crop.name} मंडी भाव</Link>)}
+          </nav>
+        </details>}
         {mover && <section className="sb-mover-strip" aria-label="उपलब्ध रिकॉर्ड में प्रमुख बदलाव"><div className="sb-mover-strip__label"><p className="sb-eyebrow">भाव में बदलाव</p><h3>बाज़ार की हलचल</h3><span>पिछले दर्ज महीने से</span></div><button type="button" className="sb-mover-quote" onClick={() => chooseCrop(mover.id)}><CropImage id={mover.id} name={mover.nameHi || mover.name} size="md" /><span><strong>{mover.nameHi || mover.name}</strong><small>{mover.mandiCount ? `${number(mover.mandiCount)} मंडियों के रिकॉर्ड` : 'उपलब्ध रिकॉर्ड'}</small></span><b>₹{number(mover.price)}<small>महीने का मध्य भाव / क्विंटल</small></b><span className={`sb-change ${mover.changePct > 0 ? 'sb-change--up' : 'sb-change--down'}`}>{mover.changePct > 0 ? <ArrowUpRight size={18} aria-hidden="true" /> : <ArrowDownRight size={18} aria-hidden="true" />}{mover.changePct > 0 ? '+' : ''}{mover.changePct}%</span></button>{topMovers.length > 1 && <div className="sb-mover-controls"><button type="button" onClick={() => setSliderIndex(index => (index - 1 + topMovers.length) % topMovers.length)} aria-label="पिछली फसल"><ChevronLeft size={18} /></button><span>{sliderIndex % topMovers.length + 1}/{topMovers.length}</span><button type="button" onClick={() => setSliderIndex(index => (index + 1) % topMovers.length)} aria-label="अगली फसल"><ChevronRight size={18} /></button></div>}</section>}
 
         {comparisons.length > 1 && <div className="sb-market-comparison"><MandiCompare data={comparisons} cropName={cropName} cropEmoji="" dailyHistory={dailyHistory} shelfLife={selectedMeta?.shelfLife} onMandiClick={onMandiClick} cropId={activeCrop} onDeliveryCalculate={onDeliveryCalculate} /></div>}

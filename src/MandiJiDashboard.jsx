@@ -17,6 +17,7 @@ import LanguageEntry from "./components/LanguageEntry";
 import Brand from "./components/Brand";
 import FarmVisual from "./components/FarmVisual";
 import MandiDirectory from "./components/MandiDirectory";
+import MandiSearch from "./components/MandiSearch";
 import { CropImageLegend } from "./components/CropImage";
 import "./styles/dashboard.css";
 import "./styles/discovery-links.css";
@@ -292,39 +293,23 @@ export default function MandiJiDashboard() {
       </header>
 
       {activeTab === "prices" && (
-        <section className="sb-welcome sb-welcome--illustrated" aria-labelledby="welcome-heading">
-          <div className="sb-welcome-copy">
-            <p className="sb-eyebrow"><span /> {stateNameHi} की मंडियों से</p>
-            <h1 id="welcome-heading">{stateParam !== 'all' ? `${stateNameHi} के मंडी भाव।` : 'मंडी भाव से आगे।'}<br /><span>पूरे सौदे का हिसाब।</span></h1>
-            <p className="sb-welcome-description">मंडी का भाव देखें। फिर भाड़ा, खर्च और माल की कमी जोड़कर जानें—आपके यहाँ पहुँचने पर कितना पड़ेगा?</p>
-            <div className="sb-welcome-actions">
-              <button className="sb-primary-button" onClick={() => setShowStatePicker(true)}>
-                <MapPin size={16} aria-hidden="true" /> अपना राज्य चुनें
-              </button>
-              <button className="sb-text-button" onClick={() => setActiveTab("delivery")}>
-                डिलीवरी खर्च निकालें <ArrowRight size={16} aria-hidden="true" />
-              </button>
-            </div>
+        <section className="sb-intro" aria-labelledby="welcome-heading">
+          <div className="sb-intro__copy">
+            <p className="sb-eyebrow"><span /> {stateNameHi} की मंडियों के दर्ज रिकॉर्ड</p>
+            <h1 id="welcome-heading">{stateNameHi} के मंडी भाव</h1>
+            <p className="sb-intro__description">भाव देखें, फिर भाड़ा और खर्च जोड़कर पूरे सौदे का हिसाब लगाएँ।</p>
           </div>
-          <div className="sb-welcome-image" aria-hidden="true">
-            <FarmVisual name="mandi-market-v1" priority sizes="(max-width: 640px) calc(100vw - 36px), 550px" />
-            <div className="sb-image-caption"><span>खेत से मंडी तक, आपके साथ।</span><small>सांकेतिक चित्र</small></div>
+          <div className="sb-intro__tools">
+            {stateParam !== 'all' && <MandiSearch stateParam={stateParam} stateNameHi={stateNameHi} />}
+            {stateParam === 'all' && <button className="sb-primary-button" onClick={() => setShowStatePicker(true)}>
+              <MapPin size={16} aria-hidden="true" /> अपना राज्य चुनें
+            </button>}
           </div>
         </section>
       )}
 
-      {activeTab === 'prices' && <nav className="sb-task-shortcuts sb-task-shortcuts--visual" aria-label="अपना अगला कदम चुनें">
-        <a className="sb-task-shortcut" href="#sb-crop-picker"><span className="sb-task-art" aria-hidden="true"><FarmVisual name="language-farmers-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>फसल का भाव</strong><small>दर्ज तारीख के साथ</small></span><ArrowRight size={18} aria-hidden="true" /></a>
-        <button className="sb-task-shortcut" type="button" onClick={() => setActiveTab('mandis')}><span className="sb-task-art" aria-hidden="true"><FarmVisual name="mandi-market-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>मंडी की जानकारी</strong><small>उपलब्ध रिकॉर्ड समझें</small></span><ArrowRight size={18} aria-hidden="true" /></button>
-        <button className="sb-task-shortcut" type="button" onClick={() => setActiveTab('delivery')}><span className="sb-task-art" aria-hidden="true"><FarmVisual name="farm-delivery-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>पहुँचने तक की लागत</strong><small>वाहन, दूरी और बचत</small></span><ArrowRight size={18} aria-hidden="true" /></button>
-      </nav>}
 
       {/* Banners */}
-      {activeTab === 'prices' && <nav className="sb-discovery-links" aria-label="योजना, सलाह और बिक्री का हिसाब">
-        <Link to="/bechne-ka-hisab"><Scale size={18} aria-hidden="true" /><span><strong>कहाँ बेचूँ?</strong><small>खर्च काटकर मिलने वाली रकम</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
-        <Link to={`/kisan-calendar${stateParam !== 'all' ? `?state=${stateParam}` : ''}`}><CalendarDays size={18} aria-hidden="true" /><span><strong>किसान कैलेंडर</strong><small>महीने के अनुसार तैयारी</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
-        <Link to="/kisan-salah"><BookOpen size={18} aria-hidden="true" /><span><strong>समस्या के अनुसार सलाह</strong><small>मौसम, भंडारण और बिक्री</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
-      </nav>}
       {banners?.filter(b => !dismissedBanners.includes(b.id) && (b.type !== 'promo' || activeTab === 'prices')).map(banner => {
         const colors = { info: 'bg-blue-500/10 border-blue-500/30 text-blue-400', warning: 'bg-amber-500/10 border-amber-500/30 text-amber-400', promo: 'bg-green-500/10 border-green-500/30 text-green-400', success: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' };
         const icons = { info: <Info size={12}/>, warning: <AlertTriangle size={12}/>, promo: <Gift size={12}/>, success: <CheckCircle size={12}/> };
@@ -351,7 +336,7 @@ export default function MandiJiDashboard() {
             <h1>{activeTab === 'calendar' ? 'किसान कैलेंडर' : TAB_ITEMS.find(tab => tab.value === activeTab)?.label}</h1>
           </div>
         )}
-        <CropImageLegend />
+        {activeTab !== 'prices' && <CropImageLegend />}
         <AnimatePresence mode="wait">
           <Motion.div key={activeTab === 'delivery' || activeTab === 'naksha' ? activeTab : `${activeTab}-${stateParam}`} variants={tabVariants}
             id={`panel-${activeTab}`} role="tabpanel" aria-labelledby={`tab-${activeTab}`} className={`sb-tab-panel sb-panel-${activeTab}`}
@@ -367,6 +352,17 @@ export default function MandiJiDashboard() {
             </Suspense>
           </Motion.div>
         </AnimatePresence>
+        {activeTab === 'prices' && <nav className="sb-task-shortcuts sb-task-shortcuts--visual" aria-label="अपना अगला कदम चुनें">
+          <a className="sb-task-shortcut" href="#sb-crop-picker"><span className="sb-task-art" aria-hidden="true"><FarmVisual name="language-farmers-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>फसल का भाव</strong><small>दर्ज तारीख के साथ</small></span><ArrowRight size={18} aria-hidden="true" /></a>
+          <button className="sb-task-shortcut" type="button" onClick={() => setActiveTab('mandis')}><span className="sb-task-art" aria-hidden="true"><FarmVisual name="mandi-market-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>मंडी की जानकारी</strong><small>उपलब्ध रिकॉर्ड समझें</small></span><ArrowRight size={18} aria-hidden="true" /></button>
+          <button className="sb-task-shortcut" type="button" onClick={() => setActiveTab('delivery')}><span className="sb-task-art" aria-hidden="true"><FarmVisual name="farm-delivery-v1" sizes="120px" /></span><span className="sb-task-copy"><strong>पहुँचने तक की लागत</strong><small>वाहन, दूरी और बचत</small></span><ArrowRight size={18} aria-hidden="true" /></button>
+        </nav>}
+        {activeTab === 'prices' && <nav className="sb-discovery-links" aria-label="योजना, सलाह और बिक्री का हिसाब">
+          <Link to="/bechne-ka-hisab"><Scale size={18} aria-hidden="true" /><span><strong>कहाँ बेचूँ?</strong><small>खर्च काटकर मिलने वाली रकम</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
+          <Link to={`/kisan-calendar${stateParam !== 'all' ? `?state=${stateParam}` : ''}`}><CalendarDays size={18} aria-hidden="true" /><span><strong>किसान कैलेंडर</strong><small>महीने के अनुसार तैयारी</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
+          <Link to="/kisan-salah"><BookOpen size={18} aria-hidden="true" /><span><strong>समस्या के अनुसार सलाह</strong><small>मौसम, भंडारण और बिक्री</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
+        </nav>}
+        {activeTab === 'prices' && <CropImageLegend />}
         {stateParam !== 'all' && <MandiDirectory stateParam={stateParam} stateNameHi={stateNameHi} />}
         <nav className="sb-crop-directory" aria-label="राज्य के मंडी भाव"><h2>राज्य के अनुसार मंडी भाव</h2><div className="sb-crop-directory-links">{states.filter(state => state.hasData).map(state => <Link key={state.id} to={`/mandi-bhav/${state.id}`}>{state.nameHi || state.name}</Link>)}</div></nav>
         <Footer />

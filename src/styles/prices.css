@@ -313,3 +313,23 @@
 .sb-mandi-directory-more summary { cursor: pointer; color: #174c3c; font-size: 14px; font-weight: 600; min-height: 44px; display: flex; align-items: center; }
 .sb-mandi-directory-more .sb-crop-directory-links { margin-top: 8px; }
 .sb-quote-share { width: 100%; margin: 4px 0 8px; }
+/* Keep the crop strip and the price on the first screen. */
+.sb-prices-page .sb-crop-picker .sb-eyebrow,.sb-prices-page .sb-picker-tools>span{display:none}
+.sb-prices-page .sb-crop-choices:not(.sb-crop-choices--expanded) .sb-crop-choice>span:last-child{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sb-prices-page .sb-picker-tools{margin:0 0 8px}
+.sb-prices-page .sb-picker-filters button{min-height:40px}
+.sb-prices-page .sb-crop-choices:not(.sb-crop-choices--expanded) .sb-crop-choice{flex-basis:78px;min-height:0;height:auto;padding:6px 5px 8px;gap:3px}
+.sb-prices-page .sb-crop-choices:not(.sb-crop-choices--expanded) .sb-crop-choice .sb-crop-image--lg{width:46px;height:46px}
+.sb-prices-page .sb-crop-choices:not(.sb-crop-choices--expanded){padding-bottom:6px;align-items:flex-start;min-height:0;height:auto}
+.sb-prices-page .sb-selected-heading{gap:8px;padding-top:12px}
+.sb-prices-page .sb-selected-heading>div:first-child{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px}
+.sb-prices-page .sb-selected-heading h2{font-size:18px;margin:0}
+.sb-prices-page .sb-selected-heading .sb-text-button{min-height:32px}
+.sb-prices-page .sb-selected-actions button,.sb-prices-page .sb-selected-actions .sb-save-crop{min-height:40px}
+.sb-prices-page .sb-selected-heading .sb-eyebrow{display:none}
+.sb-prices-page .sb-quote-hero h3{display:none}
+.sb-prices-page .sb-quote-hero__main{margin-top:8px}
+@media (max-width:640px){
+.sb-prices-page .sb-crop-picker>.sb-section-heading{margin-bottom:10px;gap:8px}
+.sb-prices-page .sb-crop-picker h2{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+}

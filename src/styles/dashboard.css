@@ -193,3 +193,30 @@
   .sb-header-row .sb-language-entry { min-width: 39px; min-height: 39px; padding: 8px; flex-shrink: 0; }
   .sb-header-row .sb-language-entry > span:first-of-type { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
+
+/* Compact page intro: the price picker and quote follow immediately. */
+.sb-intro { margin: 22px 32px 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px 28px; flex-wrap: wrap; }
+.sb-intro__copy { min-width: 0; }
+.sb-intro .sb-eyebrow { margin-bottom: 6px; }
+.sb-intro h1 { font-size: clamp(25px, 2.6vw, 34px); line-height: 1.35; font-weight: 750; letter-spacing: -.03em; margin: 0; color: #174c3c; }
+.sb-intro__description { font-size: 13px; line-height: 1.7; color: #66776b; margin: 4px 0 0; }
+.sb-intro__tools { display: flex; align-items: center; gap: 10px 16px; flex-wrap: wrap; }
+.sb-main > .sb-task-shortcuts { margin: 28px 0 12px; }
+.sb-mandi-search { position: relative; width: min(100%, 300px); }
+.sb-mandi-search__field { display: flex; align-items: center; gap: 9px; min-height: 44px; padding: 0 13px; border: 1px solid #cfd9c8; border-radius: 11px; background: #fffefb; color: #5f735f; }
+.sb-mandi-search__field:focus-within { border-color: #60846a; box-shadow: 0 0 0 3px #60846a18; }
+.sb-mandi-search__field input { flex: 1; min-width: 0; background: transparent; border: 0; outline: 0; font-size: 14px; color: #20372d; }
+.sb-mandi-search__results { position: absolute; z-index: 20; top: calc(100% + 6px); left: 0; right: 0; margin: 0; padding: 6px; list-style: none; background: #fffefb; border: 1px solid #dce3d6; border-radius: 12px; box-shadow: 0 10px 28px #174c3c1f; }
+.sb-mandi-search__results a { display: flex; flex-direction: column; min-height: 44px; justify-content: center; padding: 7px 10px; border-radius: 8px; color: #174c3c; text-decoration: none; }
+.sb-mandi-search__results a:hover, .sb-mandi-search__results a:focus-visible { background: #eef3e8; }
+.sb-mandi-search__results strong { font-size: 14px; font-weight: 650; }
+.sb-mandi-search__results small { font-size: 12px; color: #6b7a6c; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sb-mandi-search__empty { padding: 10px; font-size: 13px; color: #6b7a6c; }
+@media (max-width: 640px) {
+  .sb-intro { margin: 16px 18px 0; gap: 10px; }
+  .sb-intro h1 { font-size: 24px; }
+  .sb-intro__description, .sb-intro .sb-eyebrow { display: none; }
+  .sb-intro__tools, .sb-mandi-search { width: 100%; }
+  .sb-main > .sb-task-shortcuts { margin: 22px 0 10px; }
+}
+@media (max-width: 380px) { .sb-intro { margin-left: 14px; margin-right: 14px; } }
