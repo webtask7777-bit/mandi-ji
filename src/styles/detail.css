@@ -163,3 +163,8 @@
   .sb-article-content blockquote { padding: 16px 18px; }
   .sb-article-end { padding: 25px 22px; }
 }
+.sb-mandi-links { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 8px 16px; }
+.sb-mandi-links li { display: flex; flex-direction: column; min-width: 0; padding: 8px 0; border-bottom: 1px solid #edf0ea; }
+.sb-mandi-links a { font-weight: 600; color: #1f5132; text-decoration: none; }
+.sb-mandi-links a:hover { text-decoration: underline; }
+.sb-mandi-links small { font-size: 12px; color: #65736a; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

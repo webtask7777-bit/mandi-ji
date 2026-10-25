@@ -8,6 +8,7 @@ import { getLanguage, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, languagePath } from
 import { EDITORIAL_LANGUAGE_CODES } from '../shared/editorialLanguages.js';
 import { resolveSiteOrigin } from '../shared/siteOrigin.js';
 import { getCropIndexability } from '../shared/cropIndexability.js';
+import { buildMandiIndex, getMandiIndexability, mandiPath } from '../shared/mandiPages.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.env.NODE_ENV = 'production';
@@ -27,7 +28,7 @@ const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compa
 const cache = new Map();
 const manifest = JSON.parse(await readFile(path.join(dist, '.vite/manifest.json'), 'utf8'));
 function routeAssets(route) {
-  const page = /^\/[a-z]{2,3}\/blog$/.test(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/kisan-calendar':'KisanCalendarPage', '/kisan-salah':'KisanSalahPage', '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
+  const page = /^\/[a-z]{2,3}\/blog$/.test(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : route.startsWith('/mandi/') ? 'MandiDetailPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/kisan-calendar':'KisanCalendarPage', '/kisan-salah':'KisanSalahPage', '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
   const css = new Set();
   const seen = new Set();
   function visit(key) { if (seen.has(key)) return; seen.add(key); const entry = manifest[key]; if (!entry) return; (entry.css || []).forEach(file => css.add(file)); (entry.imports || []).forEach(visit); }
@@ -109,6 +110,18 @@ try {
       if (indexability.noIndex === false) { routes.add(route); lastmod.set(route, indexability.latestDate); }
     }
   }
+  // One page per mandi; only mandis with several recent crop records go in the sitemap.
+  const knownMandis = new Set();
+  for (const state of states) {
+    const index = buildMandiIndex(loadStateData(state.id, 'mandi-compare') || {}, loadStateData(state.id, 'crops') || []);
+    for (const mandi of index.values()) {
+      if (!mandi.crops.length) continue;
+      const route = mandiPath(state.id, mandi.slug);
+      const indexability = getMandiIndexability(mandi, { asOf: indexAsOf });
+      if (indexability.noIndex) knownMandis.add(route);
+      else { routes.add(route); lastmod.set(route, indexability.latestDate); }
+    }
+  }
   const posts = JSON.parse(await readFile(path.join(root, 'server/db/data/blog-posts.json'), 'utf8'));
   for (const post of posts.filter(post => post.status === 'published' && post.slug && post.content?.trim())) {
     const route = `/blog/${encodeURIComponent(post.slug)}`;
@@ -133,6 +146,7 @@ try {
   for (const language of AVAILABLE_LANGUAGES.filter(item => !item.searchReady)) await writePage(languagePath(language.code), await render(languagePath(language.code)));
   // Empty or stale catalog entries remain usable but are not advertised to search engines.
   for (const route of knownCrops) if (!routes.has(route)) await writePage(route, await render(route));
+  for (const route of knownMandis) await writePage(route, await render(route));
   const notFound = (await render('/__not-found__')).replace(/<link[^>]*rel="canonical"[^>]*>/g, '').replace(/<meta[^>]*property="og:url"[^>]*>/g, '');
   await writeFile(path.join(dist, '404.html'), notFound);
   await writeFile(path.join(generated, '404.html'), notFound);

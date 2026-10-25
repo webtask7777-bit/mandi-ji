@@ -18,7 +18,10 @@ test('metadata rejects origins with credentials, insecure protocols or URL suffi
 
 test('legacy host rules are permanent and preserve the requested path', () => {
   const { redirects } = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url)));
-  const hostRules = redirects.filter(rule => rule.has?.some(item => item.type === 'host'));
+  const hostRules = redirects.filter(rule => rule.has?.some(item => item.type === 'host') && rule.source !== '/');
+  // "/:path*" does not catch the bare root on Vercel; the www root has its own rule.
+  const rootRules = redirects.filter(rule => rule.has?.some(item => item.type === 'host') && rule.source === '/');
+  assert.deepEqual(rootRules.map(rule => [rule.has[0].value, rule.destination, rule.permanent]), [['www.sahibhav.in', `${PRODUCTION_SITE_ORIGIN}/`, true]]);
   assert.deepEqual(hostRules.map(rule => rule.has[0].value), ['mandi-ji.vercel.app', 'www.sahibhav.in']);
   for (const rule of hostRules) {
     assert.equal(rule.source, '/:path*');

@@ -56,6 +56,17 @@
       "permanent": true
     },
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.sahibhav.in"
+        }
+      ],
+      "destination": "https://sahibhav.in/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
@@ -86,6 +97,566 @@
         }
       ],
       "destination": "/mandi-bhav/:region",
+      "permanent": true
+    },
+    {
+      "source": "/crop/aalu",
+      "destination": "/crop/potato",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/aalu",
+      "destination": "/mandi-bhav/:state/potato",
+      "permanent": true
+    },
+    {
+      "source": "/crop/aam",
+      "destination": "/crop/mango",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/aam",
+      "destination": "/mandi-bhav/:state/mango",
+      "permanent": true
+    },
+    {
+      "source": "/crop/adrak",
+      "destination": "/crop/gingergreen",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/adrak",
+      "destination": "/mandi-bhav/:state/gingergreen",
+      "permanent": true
+    },
+    {
+      "source": "/crop/aloo",
+      "destination": "/crop/potato",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/aloo",
+      "destination": "/mandi-bhav/:state/potato",
+      "permanent": true
+    },
+    {
+      "source": "/crop/alu",
+      "destination": "/crop/potato",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/alu",
+      "destination": "/mandi-bhav/:state/potato",
+      "permanent": true
+    },
+    {
+      "source": "/crop/arhar",
+      "destination": "/crop/arhartur-red-gramwhole",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/arhar",
+      "destination": "/mandi-bhav/:state/arhartur-red-gramwhole",
+      "permanent": true
+    },
+    {
+      "source": "/crop/baingan",
+      "destination": "/crop/brinjal",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/baingan",
+      "destination": "/mandi-bhav/:state/brinjal",
+      "permanent": true
+    },
+    {
+      "source": "/crop/bajra",
+      "destination": "/crop/bajrapearl-millet-cumbu",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/bajra",
+      "destination": "/mandi-bhav/:state/bajrapearl-millet-cumbu",
+      "permanent": true
+    },
+    {
+      "source": "/crop/bhindi",
+      "destination": "/crop/bhindiladies-finger",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/bhindi",
+      "destination": "/mandi-bhav/:state/bhindiladies-finger",
+      "permanent": true
+    },
+    {
+      "source": "/crop/chana",
+      "destination": "/crop/bengal-gramgramwhole",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/chana",
+      "destination": "/mandi-bhav/:state/bengal-gramgramwhole",
+      "permanent": true
+    },
+    {
+      "source": "/crop/chawal",
+      "destination": "/crop/rice",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/chawal",
+      "destination": "/mandi-bhav/:state/rice",
+      "permanent": true
+    },
+    {
+      "source": "/crop/dhan",
+      "destination": "/crop/paddycommon",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/dhan",
+      "destination": "/mandi-bhav/:state/paddycommon",
+      "permanent": true
+    },
+    {
+      "source": "/crop/dhaniya",
+      "destination": "/crop/corianderleaves",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/dhaniya",
+      "destination": "/mandi-bhav/:state/corianderleaves",
+      "permanent": true
+    },
+    {
+      "source": "/crop/gajar",
+      "destination": "/crop/carrot",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/gajar",
+      "destination": "/mandi-bhav/:state/carrot",
+      "permanent": true
+    },
+    {
+      "source": "/crop/gehu",
+      "destination": "/crop/wheat",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/gehu",
+      "destination": "/mandi-bhav/:state/wheat",
+      "permanent": true
+    },
+    {
+      "source": "/crop/gehun",
+      "destination": "/crop/wheat",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/gehun",
+      "destination": "/mandi-bhav/:state/wheat",
+      "permanent": true
+    },
+    {
+      "source": "/crop/genhu",
+      "destination": "/crop/wheat",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/genhu",
+      "destination": "/mandi-bhav/:state/wheat",
+      "permanent": true
+    },
+    {
+      "source": "/crop/ginger",
+      "destination": "/crop/gingergreen",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/ginger",
+      "destination": "/mandi-bhav/:state/gingergreen",
+      "permanent": true
+    },
+    {
+      "source": "/crop/gobhi",
+      "destination": "/crop/cauliflower",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/gobhi",
+      "destination": "/mandi-bhav/:state/cauliflower",
+      "permanent": true
+    },
+    {
+      "source": "/crop/haldi",
+      "destination": "/crop/turmeric",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/haldi",
+      "destination": "/mandi-bhav/:state/turmeric",
+      "permanent": true
+    },
+    {
+      "source": "/crop/hari-mirch",
+      "destination": "/crop/green-chilli",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/hari-mirch",
+      "destination": "/mandi-bhav/:state/green-chilli",
+      "permanent": true
+    },
+    {
+      "source": "/crop/jau",
+      "destination": "/crop/barleyjau",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/jau",
+      "destination": "/mandi-bhav/:state/barleyjau",
+      "permanent": true
+    },
+    {
+      "source": "/crop/jowar",
+      "destination": "/crop/jowarsorghum",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/jowar",
+      "destination": "/mandi-bhav/:state/jowarsorghum",
+      "permanent": true
+    },
+    {
+      "source": "/crop/kapas",
+      "destination": "/crop/cotton",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/kapas",
+      "destination": "/mandi-bhav/:state/cotton",
+      "permanent": true
+    },
+    {
+      "source": "/crop/karela",
+      "destination": "/crop/bitter-gourd",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/karela",
+      "destination": "/mandi-bhav/:state/bitter-gourd",
+      "permanent": true
+    },
+    {
+      "source": "/crop/kela",
+      "destination": "/crop/banana",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/kela",
+      "destination": "/mandi-bhav/:state/banana",
+      "permanent": true
+    },
+    {
+      "source": "/crop/lahsun",
+      "destination": "/crop/garlic",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/lahsun",
+      "destination": "/mandi-bhav/:state/garlic",
+      "permanent": true
+    },
+    {
+      "source": "/crop/lauki",
+      "destination": "/crop/bottle-gourd",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/lauki",
+      "destination": "/mandi-bhav/:state/bottle-gourd",
+      "permanent": true
+    },
+    {
+      "source": "/crop/lehsun",
+      "destination": "/crop/garlic",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/lehsun",
+      "destination": "/mandi-bhav/:state/garlic",
+      "permanent": true
+    },
+    {
+      "source": "/crop/makka",
+      "destination": "/crop/maize",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/makka",
+      "destination": "/mandi-bhav/:state/maize",
+      "permanent": true
+    },
+    {
+      "source": "/crop/makki",
+      "destination": "/crop/maize",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/makki",
+      "destination": "/mandi-bhav/:state/maize",
+      "permanent": true
+    },
+    {
+      "source": "/crop/masoor",
+      "destination": "/crop/lentilmasurwhole",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/masoor",
+      "destination": "/mandi-bhav/:state/lentilmasurwhole",
+      "permanent": true
+    },
+    {
+      "source": "/crop/matar",
+      "destination": "/crop/green-peas",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/matar",
+      "destination": "/mandi-bhav/:state/green-peas",
+      "permanent": true
+    },
+    {
+      "source": "/crop/methi",
+      "destination": "/crop/methileaves",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/methi",
+      "destination": "/mandi-bhav/:state/methileaves",
+      "permanent": true
+    },
+    {
+      "source": "/crop/mirch",
+      "destination": "/crop/green-chilli",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/mirch",
+      "destination": "/mandi-bhav/:state/green-chilli",
+      "permanent": true
+    },
+    {
+      "source": "/crop/moong",
+      "destination": "/crop/green-grammoongwhole",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/moong",
+      "destination": "/mandi-bhav/:state/green-grammoongwhole",
+      "permanent": true
+    },
+    {
+      "source": "/crop/moongfali",
+      "destination": "/crop/groundnut",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/moongfali",
+      "destination": "/mandi-bhav/:state/groundnut",
+      "permanent": true
+    },
+    {
+      "source": "/crop/mung",
+      "destination": "/crop/green-grammoongwhole",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/mung",
+      "destination": "/mandi-bhav/:state/green-grammoongwhole",
+      "permanent": true
+    },
+    {
+      "source": "/crop/mungfali",
+      "destination": "/crop/groundnut",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/mungfali",
+      "destination": "/mandi-bhav/:state/groundnut",
+      "permanent": true
+    },
+    {
+      "source": "/crop/paddy",
+      "destination": "/crop/paddycommon",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/paddy",
+      "destination": "/mandi-bhav/:state/paddycommon",
+      "permanent": true
+    },
+    {
+      "source": "/crop/patta-gobhi",
+      "destination": "/crop/cabbage",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/patta-gobhi",
+      "destination": "/mandi-bhav/:state/cabbage",
+      "permanent": true
+    },
+    {
+      "source": "/crop/pattagobhi",
+      "destination": "/crop/cabbage",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/pattagobhi",
+      "destination": "/mandi-bhav/:state/cabbage",
+      "permanent": true
+    },
+    {
+      "source": "/crop/phool-gobhi",
+      "destination": "/crop/cauliflower",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/phool-gobhi",
+      "destination": "/mandi-bhav/:state/cauliflower",
+      "permanent": true
+    },
+    {
+      "source": "/crop/phoolgobhi",
+      "destination": "/crop/cauliflower",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/phoolgobhi",
+      "destination": "/mandi-bhav/:state/cauliflower",
+      "permanent": true
+    },
+    {
+      "source": "/crop/pyaaz",
+      "destination": "/crop/onion",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/pyaaz",
+      "destination": "/mandi-bhav/:state/onion",
+      "permanent": true
+    },
+    {
+      "source": "/crop/pyaj",
+      "destination": "/crop/onion",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/pyaj",
+      "destination": "/mandi-bhav/:state/onion",
+      "permanent": true
+    },
+    {
+      "source": "/crop/pyaz",
+      "destination": "/crop/onion",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/pyaz",
+      "destination": "/mandi-bhav/:state/onion",
+      "permanent": true
+    },
+    {
+      "source": "/crop/sarso",
+      "destination": "/crop/mustard",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/sarso",
+      "destination": "/mandi-bhav/:state/mustard",
+      "permanent": true
+    },
+    {
+      "source": "/crop/sarson",
+      "destination": "/crop/mustard",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/sarson",
+      "destination": "/mandi-bhav/:state/mustard",
+      "permanent": true
+    },
+    {
+      "source": "/crop/seb",
+      "destination": "/crop/apple",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/seb",
+      "destination": "/mandi-bhav/:state/apple",
+      "permanent": true
+    },
+    {
+      "source": "/crop/soybean",
+      "destination": "/crop/soyabean",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/soybean",
+      "destination": "/mandi-bhav/:state/soyabean",
+      "permanent": true
+    },
+    {
+      "source": "/crop/tamatar",
+      "destination": "/crop/tomato",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/tamatar",
+      "destination": "/mandi-bhav/:state/tomato",
+      "permanent": true
+    },
+    {
+      "source": "/crop/til",
+      "destination": "/crop/sesamumsesame-gingelly-til",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/til",
+      "destination": "/mandi-bhav/:state/sesamumsesame-gingelly-til",
+      "permanent": true
+    },
+    {
+      "source": "/crop/tuar",
+      "destination": "/crop/arhartur-red-gramwhole",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/tuar",
+      "destination": "/mandi-bhav/:state/arhartur-red-gramwhole",
+      "permanent": true
+    },
+    {
+      "source": "/crop/tur",
+      "destination": "/crop/arhartur-red-gramwhole",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/tur",
+      "destination": "/mandi-bhav/:state/arhartur-red-gramwhole",
+      "permanent": true
+    },
+    {
+      "source": "/crop/urad",
+      "destination": "/crop/black-gramurd-beanswhole",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/urad",
+      "destination": "/mandi-bhav/:state/black-gramurd-beanswhole",
       "permanent": true
     }
   ]

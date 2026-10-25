@@ -16,6 +16,7 @@ import Footer from "./components/Footer";
 import LanguageEntry from "./components/LanguageEntry";
 import Brand from "./components/Brand";
 import FarmVisual from "./components/FarmVisual";
+import MandiDirectory from "./components/MandiDirectory";
 import { CropImageLegend } from "./components/CropImage";
 import "./styles/dashboard.css";
 import "./styles/discovery-links.css";
@@ -158,7 +159,7 @@ export default function MandiJiDashboard() {
     <div className="sb-dashboard">
       <a href="#main-content" className="sb-skip-link">मुख्य जानकारी पर जाएँ</a>
       <SEO
-        title={activeTab === 'calendar' ? 'किसान कैलेंडर — महीनेवार फसल योजना' : activeTab === 'delivery' ? 'डिलीवरी खर्च और माल की कुल लागत' : `${stateNameHi} मंडी भाव`}
+        title={activeTab === 'calendar' ? 'किसान कैलेंडर — महीनेवार फसल योजना' : activeTab === 'delivery' ? 'डिलीवरी खर्च और माल की कुल लागत' : stateParam !== 'all' ? `${stateNameHi} मंडी भाव — सभी मंडियों और फसलों के ताज़ा रेट` : `${stateNameHi} मंडी भाव`}
         description={`${stateNameHi} की मंडियों के उपलब्ध दर्ज भाव। सब्ज़ी, अनाज, दाल — फसल भाव, मंडी तुलना और बिक्री कैलकुलेटर।`}
         path={selectedState ? `/mandi-bhav/${selectedState}` : "/"}
       />
@@ -294,7 +295,7 @@ export default function MandiJiDashboard() {
         <section className="sb-welcome sb-welcome--illustrated" aria-labelledby="welcome-heading">
           <div className="sb-welcome-copy">
             <p className="sb-eyebrow"><span /> {stateNameHi} की मंडियों से</p>
-            <h1 id="welcome-heading">भाव से आगे।<br /><span>पूरे सौदे का हिसाब।</span></h1>
+            <h1 id="welcome-heading">{stateParam !== 'all' ? `${stateNameHi} के मंडी भाव।` : 'मंडी भाव से आगे।'}<br /><span>पूरे सौदे का हिसाब।</span></h1>
             <p className="sb-welcome-description">मंडी का भाव देखें। फिर भाड़ा, खर्च और माल की कमी जोड़कर जानें—आपके यहाँ पहुँचने पर कितना पड़ेगा?</p>
             <div className="sb-welcome-actions">
               <button className="sb-primary-button" onClick={() => setShowStatePicker(true)}>
@@ -366,6 +367,7 @@ export default function MandiJiDashboard() {
             </Suspense>
           </Motion.div>
         </AnimatePresence>
+        {stateParam !== 'all' && <MandiDirectory stateParam={stateParam} stateNameHi={stateNameHi} />}
         <nav className="sb-crop-directory" aria-label="राज्य के मंडी भाव"><h2>राज्य के अनुसार मंडी भाव</h2><div className="sb-crop-directory-links">{states.filter(state => state.hasData).map(state => <Link key={state.id} to={`/mandi-bhav/${state.id}`}>{state.nameHi || state.name}</Link>)}</div></nav>
         <Footer />
       </main>

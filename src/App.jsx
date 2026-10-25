@@ -26,6 +26,7 @@ const EwayBillPage = lazy(() => import('./pages/EwayBillPage'));
 const MyEwayBills = lazy(() => import('./components/eway/MyEwayBills'));
 const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
 const CropDetailPage = lazy(() => import('./pages/CropDetailPage'));
+const MandiDetailPage = lazy(() => import('./pages/MandiDetailPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -51,6 +52,7 @@ function App({ prerender = false, initialPage }) {
   const needsAccountMetadata = /^\/(?:admin|register|my-listings|my-eway-bills|eway-bill|listing\/new)(?:\/|$)/.test(pathname);
   const [showSplash, setShowSplash] = useState(!prerender);
   const CropPage = initialPage?.kind === 'crop' ? initialPage.Component : CropDetailPage;
+  const MandiPage = initialPage?.kind === 'mandi' ? initialPage.Component : MandiDetailPage;
   const ArticlePage = initialPage?.kind === 'article' ? initialPage.Component : BlogArticlePage;
   const DeliveryPage = initialPage?.kind === 'delivery' ? initialPage.Component : TransportPage;
   const LanguagePage = initialPage?.kind === 'language' ? initialPage.Component : LanguageToolsPage;
@@ -81,6 +83,7 @@ function App({ prerender = false, initialPage }) {
                 <Route path="/crop/:cropId" element={<CropPage />} />
                 <Route path="/mandi-bhav/:stateId" element={<MandiJiDashboard />} />
                 <Route path="/mandi-bhav/:stateId/:cropId" element={<CropPage />} />
+                <Route path="/mandi/:stateId/:mandiSlug" element={<MandiPage />} />
                 <Route path="/listing/:id" element={<ListingDetailPage />} />
                 <Route path="/my-listings" element={<ProtectedRoute><MyListingsPage /></ProtectedRoute>} />
                 <Route path="/delivery-calculator" element={<DeliveryPage />} />

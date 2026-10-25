@@ -97,8 +97,8 @@ export default function CropDetailPage() {
 
   return (
     <div className="sb-detail-page">
-      <SEO title={`${cropName} मंडी भाव — ${stateNameHi}${heroPrice !== null ? ` · ${quoteLabel}` : ''}`}
-        description={`${stateNameHi} में ${cropName} के उपलब्ध मंडी रिकॉर्ड${heroPrice !== null ? `: ₹${money(heroPrice)}/क्विंटल, ${quoteLabel}` : ''}। भाव का इतिहास और मंडी तुलना देखें। रिकॉर्ड की तारीख जाँचकर सौदे का भाव मंडी से पुष्टि करें।`}
+      <SEO title={`${cropName}${crop.name && crop.name !== cropName ? ` (${crop.name})` : ''} का मंडी भाव — ${stateNameHi}${heroPrice !== null ? ` · ${quoteLabel}` : ''}`}
+        description={`${stateNameHi} में ${cropName} का ताज़ा दर्ज मंडी भाव${heroPrice !== null ? `: ₹${money(heroPrice)}/क्विंटल, ${quoteLabel}` : ''}। हर मंडी का रेट, भाव का इतिहास और मंडी तुलना देखें। रिकॉर्ड की तारीख जाँचकर सौदे का भाव मंडी से पुष्टि करें।`}
         path={cropDetailPath(cropId, stateParam)} noIndex={unavailable || priceNoIndex}
         structuredData={cropName && !unavailable ? { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: `${stateNameHi} के मंडी भाव`, item: `${SITE_URL}${dashboardPath}` },
