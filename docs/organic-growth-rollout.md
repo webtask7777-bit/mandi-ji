@@ -8,6 +8,8 @@ The inspected production site was older than repository main. Main already conta
 
 The latest main update already moves crop prices and mandi search to the first screen. This change preserves that layout and adds Hindi mandi discovery, route-specific dashboard loading, removal of map-only requests from the price screen, explicit average-price provenance and custom-domain listing canonicals. It does not add or fabricate market observations.
 
+The prerender now finishes the document after lazy routes resolve, so visible price tables are not shipped in hidden streaming segments that require browser scripts to relocate them. Raw HTML tests cover the resulting content order as well as metadata and source dates.
+
 ## 1. Release and verify
 
 1. Confirm Vercel project `sahibhav` is linked to `webtask7777-bit/mandi-ji`, and confirm the intended production branch and source SHA. The connected project currently needs team authorization before these details or deployments can be inspected.

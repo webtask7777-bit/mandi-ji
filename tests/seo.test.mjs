@@ -169,6 +169,7 @@ test('price screen leads with source-dated prices and defers map-only data', art
     const html = htmlFor(route);
     const snapshot = validatePublicSnapshot(html, route);
     const body = html.split('</head>')[1];
+    assert.doesNotMatch(body, /<div hidden id="S:/, 'static prices must not depend on scripts moving streamed hidden sections');
     const quoteStart = body.indexOf('class="sb-quote-hero"');
     assert.ok(quoteStart >= 0 && quoteStart < body.indexOf('sb-task-shortcuts'), 'price precedes secondary shortcuts');
     assert.ok(quoteStart < body.indexOf('class="sb-market-pulse"'), 'monthly overview follows the selected quote');
