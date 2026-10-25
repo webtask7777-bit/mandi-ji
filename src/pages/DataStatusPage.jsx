@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import Brand from '../components/Brand';
 import Footer from '../components/Footer';
 import { useApi } from '../hooks/useApi';
+import { useApiSnapshot } from '../context/ApiSnapshotContext';
 import { getDataFreshness } from '../utils/dataFreshness';
 import { ageInDays, findDataGaps, sortStatesByFreshness } from '../utils/dataStatus';
 import '../styles/dashboard.css';
@@ -15,12 +16,16 @@ const label = iso => (iso ? getDataFreshness(iso).dateLabel : 'उपलब्�
 const ageLabel = iso => {
   const age = ageInDays(iso);
   if (age === null) return '—';
-  if (age <= 0) return 'आज';
+  if (age < 0) return 'भविष्य की तारीख · जाँचें';
+  if (age === 0) return 'आज';
   return age === 1 ? '1 दिन पुराना' : `${number(age)} दिन पुराना`;
 };
 
 export default function DataStatusPage() {
   const { data, loading, error } = useApi('/stats/data-status');
+  const { collect } = useApiSnapshot();
+  // Static HTML can be cached for days; only the browser computes relative age.
+  const recordAge = iso => collect ? 'दर्ज रिकॉर्ड' : ageLabel(iso);
   const states = sortStatesByFreshness(data?.states || []);
   const gaps = findDataGaps(data?.dateRange || []);
   const newest = data?.newestObservation;
@@ -40,7 +45,7 @@ export default function DataStatusPage() {
           {error && <p className="sb-delivery-error">स्थिति अभी लोड नहीं हो पाई। थोड़ी देर बाद फिर देखें।</p>}
           {data && <>
             <div className="sb-delivery-card">
-              <p className="sb-sell-verdict" style={{ padding: 0 }}><CalendarDays size={18} aria-hidden="true" /> सबसे नई दर्ज तारीख: <strong>{label(newest)}</strong> ({ageLabel(newest)})</p>
+              <p className="sb-sell-verdict" style={{ padding: 0 }}><CalendarDays size={18} aria-hidden="true" /> सबसे नई दर्ज तारीख: <strong>{label(newest)}</strong> ({recordAge(newest)})</p>
               <p className="sb-delivery-small-note" style={{ padding: '10px 0 0' }}><Info size={14} aria-hidden="true" /> यह मंडी में भाव दर्ज होने की तारीख है, डेटा डाउनलोड करने का समय नहीं। स्रोत: कृषि एवं किसान कल्याण मंत्रालय का data.gov.in डेटासेट। हर राज्य हर दिन भाव नहीं भेजता।</p>
               {gaps.map(gap => <p key={gap.from} className="sb-delivery-small-note" style={{ padding: '10px 0 0' }}><Info size={14} aria-hidden="true" /> {label(gap.from)} से {label(gap.to)} तक ({number(gap.days)} दिन) के रिकॉर्ड स्रोत से उपलब्ध नहीं हैं। इस अवधि का कोई भाव नहीं दिखाया जाता और इसके आर-पार बदलाव नहीं गिना जाता।</p>)}
             </div>
@@ -52,7 +57,7 @@ export default function DataStatusPage() {
                   <thead><tr><th scope="col">राज्य</th><th scope="col">आख़िरी दर्ज तारीख</th><th scope="col">पिछले 7 दिन</th></tr></thead>
                   <tbody>{states.map(state => <tr key={state.id}>
                     <th scope="row"><Link to={`/mandi-bhav/${state.id}`}>{state.nameHi || state.name}</Link></th>
-                    <td>{label(state.latestObservation)}<small>{ageLabel(state.latestObservation)}</small></td>
+                    <td>{label(state.latestObservation)}<small>{recordAge(state.latestObservation)}</small></td>
                     <td>{state.recentMandis ? `${number(state.recentMandis)} मंडियाँ` : 'कोई भाव नहीं'}<small>{state.recentRecords ? `${number(state.recentRecords)} रिकॉर्ड` : ''}</small></td>
                   </tr>)}</tbody>
                 </table>

@@ -3,14 +3,14 @@
   "reviewedOn": "2026-10-22",
   "purpose": "Editorial discovery taxonomy audit of every distinct source commodity ID. This is not a botanical certification, a price merge, or an instruction to publish a page for every topic.",
   "sourceScope": "All crops.json and ticker.json plus crop-prices/*.json crop headers recursively under server/db/data (India, CG and individual states).",
-  "sourceFileCount": 2838,
-  "commodityCount": 388,
+  "sourceFileCount": 2843,
+  "commodityCount": 390,
   "topicCount": 165,
   "statusCounts": {
+    "identity-review": 73,
     "curated-crop-topic": 275,
-    "non-crop": 15,
     "mixed-or-unspecified": 27,
-    "identity-review": 71
+    "non-crop": 15
   },
   "policy": [
     "Only exact normalized IDs are resolved; no substring, fuzzy, translated-name or botanical guessing.",
@@ -1750,6 +1750,16 @@
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
+      "commodityId": "gudmar",
+      "sourceNames": [
+        "Gudmar"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/gudmar.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "New source commodity; verify the traded plant part and identity before assigning crop-specific editorial guidance."
+    },
+    {
       "commodityId": "gulli",
       "sourceNames": [
         "gulli"
@@ -3197,6 +3207,16 @@
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
+      "commodityId": "round-chilli",
+      "sourceNames": [
+        "Round Chilli"
+      ],
+      "sourceExample": "server/db/data/india/crop-prices/round-chilli.json",
+      "status": "identity-review",
+      "topicId": null,
+      "reason": "Source label does not establish fresh or dried form; retain representative artwork and review its identity before grouping with a chilli topic."
+    },
+    {
       "commodityId": "round-gourd",
       "sourceNames": [
         "Round gourd"
@@ -3939,5 +3959,6 @@
       "topicId": "yam",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     }
-  ]
+  ],
+  "lastUpdatedOn": "2026-10-25"
 }

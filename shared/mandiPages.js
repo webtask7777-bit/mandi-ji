@@ -49,6 +49,7 @@ export function buildMandiIndex(compare, crops = []) {
       entry.crops.push({
         id: cropId, name: crop.name || cropId, nameHi: crop.nameHi || crop.name || cropId,
         price, minPrice: positive(row.minPrice) ? Number(row.minPrice) : null, maxPrice: positive(row.maxPrice) ? Number(row.maxPrice) : null,
+        priceBasis: positive(row.recentPrice) ? 'recent' : 'historical',
         rangeBasis: row.rangeBasis || null, lastDate: row.lastDate || null, records: Number(row.records) || 0,
         variety: row.topVariety || null, grade: row.grade || null,
       });
@@ -78,6 +79,7 @@ export function mandiSummaries(index) {
 /** A crop row counts as current when its own record date is within the last 30 days. */
 export function isRecentMandiCrop(crop, asOf = new Date()) {
   const clock = new Date(asOf);
+  if (crop?.priceBasis === 'historical') return false;
   if (!Number.isFinite(clock.getTime()) || !/^\d{4}-\d{2}-\d{2}$/.test(crop?.lastDate || '')) return false;
   const today = new Date(clock.getTime() + IST_OFFSET_MS).toISOString().slice(0, 10);
   const cutoff = new Date(Date.parse(`${today}T00:00:00Z`) - MANDI_INDEX_MAX_AGE_DAYS * DAY_MS).toISOString().slice(0, 10);

@@ -32,10 +32,13 @@ test('a mandi page collects every crop with a positive price; a shared name gets
   assert.equal(mandiSummaries(index)[0].slug, 'raipur');
 });
 
-test('only mandis with several recent crops are indexable', () => {
+test('only mandis with several recent price averages are indexable', () => {
   const index = buildMandiIndex(compare, crops);
   const asOf = new Date('2026-10-25T06:00:00Z');
-  assert.deepEqual(getMandiIndexability(index.get('raipur'), { asOf }), { noIndex: false, latestDate: '2026-10-24', recentCrops: 3 });
+  assert.deepEqual(getMandiIndexability(index.get('raipur'), { asOf }), { noIndex: true, latestDate: '2026-10-24', recentCrops: 2 });
+  assert.equal(index.get('raipur').crops.find(crop => crop.id === 'onion').priceBasis, 'historical', 'a recent lastDate does not turn an all-time average into a recent price');
+  const fresh = { ...index.get('raipur'), crops: [...index.get('raipur').crops, { id: 'maize', price: 2000, priceBasis: 'recent', lastDate: '2026-10-24' }] };
+  assert.equal(getMandiIndexability(fresh, { asOf }).noIndex, false);
   assert.equal(getMandiIndexability(index.get('neora-raipur'), { asOf }).noIndex, true);
   assert.equal(getMandiIndexability(index.get('raipur'), { asOf: new Date('2027-01-30T06:00:00Z') }).noIndex, true);
   assert.equal(getMandiIndexability(null).noIndex, true);

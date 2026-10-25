@@ -10,6 +10,7 @@ import { getDataFreshness } from '../utils/dataFreshness';
 import { cropDetailPath } from '../utils/cropUrls';
 import { normalizeRegionId } from '../../shared/indiaRegions';
 import { getMandiIndexability, isRecentMandiCrop, mandiPath } from '../../shared/mandiPages';
+import { mandiDisplayName } from '../../shared/mandiNames';
 import '../styles/detail.css';
 import '../styles/comparison.css';
 
@@ -29,15 +30,16 @@ export default function MandiDetailPage() {
   const recentCrops = crops.filter(crop => isRecentMandiCrop(crop, asOf));
   const tableCrops = recentCrops.length ? recentCrops : crops;
   const olderCrops = recentCrops.length ? crops.filter(crop => !recentCrops.includes(crop)) : [];
-  const name = mandi?.name || mandiSlug;
+  const sourceName = mandi?.name || mandiSlug;
+  const name = mandiDisplayName(sourceName, stateParam);
   const latest = getDataFreshness(indexability.latestDate || mandi?.latestDate);
   const topNames = crops.slice().sort((a, b) => b.records - a.records).slice(0, 3).map(crop => crop.nameHi);
   const path = mandiPath(stateParam, mandiSlug);
-  const place = [mandi?.district && mandi.district !== name ? mandi.district : null, stateNameHi].filter(Boolean).join(', ');
+  const place = [mandi?.district && mandi.district !== sourceName ? mandi.district : null, stateNameHi].filter(Boolean).join(', ');
 
   const cropRow = crop => <tr key={crop.id}>
     <td><div className="sb-mandi-name"><Link to={cropDetailPath(crop.id, stateParam)}>{crop.nameHi}</Link></div><span>{[crop.nameHi !== crop.name ? crop.name : null, crop.variety, crop.grade].filter(Boolean).join(' · ')}</span></td>
-    <td><strong className="sb-mandi-price">₹{money(crop.price)}</strong></td>
+    <td><strong className="sb-mandi-price">₹{money(crop.price)}</strong><small>{crop.priceBasis === 'historical' ? 'ऐतिहासिक औसत' : 'हाल के रिकॉर्ड का औसत'}</small></td>
     <td><span>{crop.minPrice && crop.maxPrice ? `₹${money(crop.minPrice)} – ₹${money(crop.maxPrice)}` : '—'}</span></td>
     <td><small>{getDataFreshness(crop.lastDate).dateLabel}</small></td>
   </tr>;
@@ -45,7 +47,7 @@ export default function MandiDetailPage() {
   return (
     <div className="sb-detail-page">
       <SEO title={`${name} मंडी भाव${topNames.length ? ` — ${topNames.join(', ')} के रेट` : ''}${latest.date ? ` · ${latest.dateLabel}` : ''}`}
-        description={`${name} मंडी (${place}) के ताज़ा दर्ज भाव: ${recentCrops.length || crops.length} फसलें${topNames.length ? `, जैसे ${topNames.join(', ')}` : ''}। हर फसल का भाव ₹/क्विंटल, किस्म और तारीख के साथ। सौदे से पहले मंडी से भाव की पुष्टि करें।`}
+        description={`${name} मंडी (${place}) के ${recentCrops.length ? 'हाल के दर्ज' : 'ऐतिहासिक'} औसत भाव: ${recentCrops.length || crops.length} फसलें${topNames.length ? `, जैसे ${topNames.join(', ')}` : ''}। भाव ₹/क्विंटल, किस्म और तारीख के साथ। सौदे से पहले मंडी से पुष्टि करें।`}
         path={path} noIndex={loading ? false : unavailable || Boolean(error) || indexability.noIndex}
         structuredData={mandi && !unavailable ? { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: `${stateNameHi} के मंडी भाव`, item: `${SITE_URL}${dashboardPath}` },
@@ -59,24 +61,24 @@ export default function MandiDetailPage() {
         <nav className="sb-detail-breadcrumb" aria-label="पृष्ठ पथ"><Link to={dashboardPath}>{stateNameHi} के मंडी भाव</Link><span aria-hidden="true">/</span><span>{name} मंडी</span></nav>
         <section className="sb-crop-detail-heading">
           <div><span className="sb-detail-kicker">मंडी के सभी दर्ज भाव</span><h1>{name} मंडी भाव</h1><p>{recentCrops.length ? `${recentCrops.length} फसलों के हाल के दर्ज रिकॉर्ड` : 'फसलवार दर्ज रिकॉर्ड'}{latest.date ? ` · अंतिम रिकॉर्ड ${latest.dateLabel}` : ''}</p></div>
-          <span className="sb-detail-location"><MapPin size={15} aria-hidden="true" />{place}</span>
+          <span className="sb-detail-location"><MapPin size={15} aria-hidden="true" />{name !== sourceName ? `${sourceName} · ` : ''}{place}</span>
         </section>
-        {tableCrops.length > 0 && <WhatsAppShare className="sb-detail-share" text={`${name} मंडी के भाव${latest.date ? ` (${latest.dateLabel})` : ''}: ${tableCrops.slice(0, 4).map(crop => `${crop.nameHi} ₹${money(crop.price)}`).join(', ')}। सभी फसलों के भाव देखें:`} path={path} label="ये भाव WhatsApp पर भेजें" />}
+        {tableCrops.length > 0 && <WhatsAppShare className="sb-detail-share" text={`${name} मंडी के दर्ज औसत (₹/क्विंटल): ${tableCrops.slice(0, 4).map(crop => `${crop.nameHi} ₹${money(crop.price)} (${getDataFreshness(crop.lastDate).dateLabel}${crop.priceBasis === 'historical' ? ', ऐतिहासिक' : ''})`).join('; ')}। किस्म और गुणवत्ता देखकर पुष्टि करें। पूरी जानकारी:`} path={path} label="ये भाव WhatsApp पर भेजें" />}
         {loading ? <div className="sb-detail-status" role="status"><RefreshCw size={24} aria-hidden="true" /><h2>मंडी के रिकॉर्ड लोड हो रहे हैं</h2><p>फसलवार भाव आ रहे हैं।</p></div>
           : error ? <div className="sb-detail-notice" role="alert"><AlertCircle size={20} aria-hidden="true" /><div><strong>{unavailable ? 'यह मंडी पृष्ठ उपलब्ध नहीं है' : 'मंडी के रिकॉर्ड लोड नहीं हो पाए'}</strong><p>{unavailable ? 'राज्य की मंडियों की सूची से मंडी चुनें।' : 'कनेक्शन की जाँच करें और पृष्ठ दोबारा खोलें।'}</p></div><Link to={dashboardPath}>मंडियाँ देखें</Link></div>
           : <section className="sb-mandi-comparison" aria-label={`${name} मंडी के फसलवार भाव`}>
             <div className="sb-comparison-heading"><div><span className="sb-comparison-eyebrow">फसलवार भाव</span><h2>{name} मंडी के फसलवार दर्ज भाव</h2></div><span className="sb-comparison-count">{tableCrops.length.toLocaleString('en-IN')} फसलें</span></div>
-            <p className="sb-comparison-intro">भाव ₹ / क्विंटल में। हर पंक्ति की अपनी तारीख है; पुरानी तारीख वाले भाव को आज का भाव न मानें।</p>
+            <p className="sb-comparison-intro">भाव ₹ / क्विंटल में, उपलब्ध रिकॉर्ड की अवधि का औसत हैं। तारीख उस फसल के आख़िरी रिकॉर्ड की है; यह उस दिन का अकेला मोडल भाव नहीं है। न्यूनतम–अधिकतम उसी अवधि के दर्ज मोडल भावों की सीमा है।</p>
             <div className="sb-comparison-table-wrap" tabIndex={0} role="region" aria-label="फसलवार भाव तालिका, छोटे पर्दे पर दाएँ-बाएँ स्क्रॉल करें"><table className="sb-comparison-table"><caption className="sr-only">{name} मंडी के फसलवार दर्ज भाव, किस्म और तारीख</caption>
               <thead><tr><th scope="col">फसल / किस्म</th><th scope="col">दर्ज भाव</th><th scope="col">न्यूनतम – अधिकतम</th><th scope="col">तारीख</th></tr></thead>
               <tbody>{tableCrops.map(cropRow)}</tbody>
             </table></div>
-            {olderCrops.length > 0 && <details className="sb-comparison-history"><summary>ऐतिहासिक भाव · {olderCrops.length} फसलें जिनका पिछले 30 दिन में रिकॉर्ड नहीं है</summary><p>ये पुराने रिकॉर्ड हैं, आज के भाव नहीं।</p><div className="sb-comparison-table-wrap"><table className="sb-comparison-table"><caption className="sr-only">{name} मंडी के पुराने रिकॉर्ड</caption><tbody>{olderCrops.map(cropRow)}</tbody></table></div></details>}
+            {olderCrops.length > 0 && <details className="sb-comparison-history"><summary>ऐतिहासिक भाव · {olderCrops.length} फसलों का हाल का औसत उपलब्ध नहीं है</summary><p>ये पुराने रिकॉर्ड की अवधि के औसत हैं, आज के भाव नहीं।</p><div className="sb-comparison-table-wrap"><table className="sb-comparison-table"><caption className="sr-only">{name} मंडी के पुराने रिकॉर्ड</caption><tbody>{olderCrops.map(cropRow)}</tbody></table></div></details>}
             <p className="sb-comparison-footnote"><Info size={14} aria-hidden="true" />स्रोत: data.gov.in / agriportal के दर्ज रिकॉर्ड। किस्म, गुणवत्ता और आवक के अनुसार बिक्री का भाव अलग हो सकता है।</p>
           </section>}
         {Array.isArray(mandi?.nearby) && mandi.nearby.length > 0 && <section className="sb-detail-section">
           <span className="sb-detail-kicker">आस-पास</span><h2>{mandi.district} ज़िले की दूसरी मंडियाँ</h2>
-          <ul className="sb-mandi-links">{mandi.nearby.map(row => <li key={row.slug}><Link to={mandiPath(stateParam, row.slug)}>{row.name} मंडी भाव</Link><small>{row.topCrops.join(', ')}</small></li>)}</ul>
+          <ul className="sb-mandi-links">{mandi.nearby.map(row => <li key={row.slug}><Link to={mandiPath(stateParam, row.slug)}>{mandiDisplayName(row.name, stateParam)} मंडी भाव</Link><small>{row.topCrops.join(', ')}</small></li>)}</ul>
         </section>}
         <footer className="sb-detail-footer"><Brand compact /><p>सही भाव। समझकर फ़ैसला।</p><Link to={dashboardPath}>{stateNameHi} की सभी मंडियाँ <ArrowRight size={15} aria-hidden="true" /></Link></footer>
       </main>

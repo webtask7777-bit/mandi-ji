@@ -82,9 +82,9 @@ export default function MandiJiDashboard() {
 
   const stateQuery = stateParam !== "all" ? `?state=${stateParam}` : "?state=all";
   const { data: apiCrops, loading: cropsLoading, error: cropsError } = useApi(`/crops${stateQuery}`);
-  const { data: apiMandis, loading: mandisLoading, error: mandisError } = useApi(`/mandis${stateQuery}`);
-  const { data: apiDistricts, loading: districtsLoading, error: districtsError } = useApi(`/districts${stateQuery}`);
-  const { data: apiHeatmap } = useApi(`/mandis/heatmap${stateQuery}`);
+  const { data: apiMandis, loading: mandisLoading, error: mandisError } = useApi(activeTab === 'naksha' ? `/mandis${stateQuery}` : null);
+  const { data: apiDistricts, loading: districtsLoading, error: districtsError } = useApi(activeTab === 'naksha' ? `/districts${stateQuery}` : null);
+  const { data: apiHeatmap } = useApi(activeTab === 'mandis' ? `/mandis/heatmap${stateQuery}` : null);
   const { data: apiStates, loading: statesLoading, error: statesError } = useApi('/states');
   const { data: banners } = useApi('/cms/banners');
   const { data: notifications } = useApi(`/cms/notifications${stateParam !== 'all' ? `?state=${stateParam}` : ''}`);
@@ -160,7 +160,7 @@ export default function MandiJiDashboard() {
     <div className="sb-dashboard">
       <a href="#main-content" className="sb-skip-link">मुख्य जानकारी पर जाएँ</a>
       <SEO
-        title={activeTab === 'calendar' ? 'किसान कैलेंडर — महीनेवार फसल योजना' : activeTab === 'delivery' ? 'डिलीवरी खर्च और माल की कुल लागत' : stateParam !== 'all' ? `${stateNameHi} मंडी भाव — सभी मंडियों और फसलों के ताज़ा रेट` : `${stateNameHi} मंडी भाव`}
+        title={activeTab === 'calendar' ? 'किसान कैलेंडर — महीनेवार फसल योजना' : activeTab === 'delivery' ? 'डिलीवरी खर्च और माल की कुल लागत' : stateParam !== 'all' ? `${stateNameHi} मंडी भाव — फसलवार रेट और दर्ज तारीख` : 'भारत मंडी भाव — फसल और मंडी के अनुसार दर्ज रेट'}
         description={`${stateNameHi} की मंडियों के उपलब्ध दर्ज भाव। सब्ज़ी, अनाज, दाल — फसल भाव, मंडी तुलना और बिक्री कैलकुलेटर।`}
         path={selectedState ? `/mandi-bhav/${selectedState}` : "/"}
       />

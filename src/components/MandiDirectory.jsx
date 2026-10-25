@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useApi } from '../hooks/useApi';
 import { mandiPath } from '../../shared/mandiPages';
+import { mandiDisplayName } from '../../shared/mandiNames';
 
 const VISIBLE = 40;
 
@@ -9,7 +10,7 @@ export default function MandiDirectory({ stateParam, stateNameHi }) {
   const { data } = useApi(`/mandis/directory?state=${encodeURIComponent(stateParam)}`);
   const mandis = Array.isArray(data) ? data : [];
   if (!mandis.length) return null;
-  const link = row => <Link key={row.slug} to={mandiPath(stateParam, row.slug)}>{row.name}</Link>;
+  const link = row => <Link key={row.slug} to={mandiPath(stateParam, row.slug)}>{mandiDisplayName(row.name, stateParam)}{mandiDisplayName(row.name, stateParam) !== row.name ? ` · ${row.name}` : ''}</Link>;
   return (
     <nav className="sb-crop-directory" aria-label={`${stateNameHi} की मंडियों के भाव`}>
       <h2>{stateNameHi} की मंडियों के भाव</h2>
