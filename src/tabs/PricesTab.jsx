@@ -12,6 +12,7 @@ import { getOutlierBounds, isOutlier } from "@/lib/outlier";
 import { comparableChange, gapNote } from "../utils/priceChange";
 import { getDataFreshness } from "../utils/dataFreshness";
 import { cropDetailPath } from "../utils/cropUrls";
+import WhatsAppShare from "../components/WhatsAppShare";
 import { getDashboardSourceCrop, getDashboardCropSearch } from "../utils/dashboardNavigation";
 import "../styles/prices.css";
 
@@ -219,6 +220,7 @@ export default function PricesTab({ crops = [], stateParam, initialCropId, onCro
             {selectedTicker?.bestMandi && <p className="sb-small-note">मंडी, किस्म और तारीख अलग हो सकती है।</p>}
             {onDeliveryCalculate && <button type="button" className="sb-delivery-cta" onClick={calculateFromHero}><span className="sb-delivery-cta__icon"><Calculator size={21} aria-hidden="true" /></span><span><strong>यहाँ से माल मँगाना सही रहेगा?</strong><small>गाड़ी, दूरी और खर्च के साथ हिसाब देखें</small></span><ArrowRight size={18} aria-hidden="true" /></button>}
             <Link to="/bechne-ka-hisab" state={{ saleScenario: { cropName } }} className="sb-sell-button"><Scale size={17} aria-hidden="true" />कहाँ बेचूँ? भाड़ा काटकर हिसाब करें<ArrowRight size={17} aria-hidden="true" /></Link>
+            {Number(heroPrice) > 0 && <WhatsAppShare className="sb-quote-share" text={`${cropName} का मंडी भाव: ₹${number(heroPrice)}/क्विंटल · ${recordLabel(heroRecord) || ''}। हर मंडी का भाव देखें:`} path={cropDetailPath(activeCrop, stateParam)} />}
             <Link to={`/listing/new?type=sell&crop=${encodeURIComponent(activeCrop)}`} className="sb-sell-button"><ShoppingCart size={17} aria-hidden="true" />यह फसल बेचने की लिस्टिंग बनाएँ<ArrowRight size={17} aria-hidden="true" /></Link>
             {priceData?.lastUpdated && <p className="sb-sync-time">स्रोत से डेटा लिया गया: {formatTimestamp(priceData.lastUpdated)} · भाव की तारीख ऊपर देखें</p>}
           </section>

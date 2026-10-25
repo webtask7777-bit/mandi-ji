@@ -5,6 +5,7 @@ import { useApiSnapshot } from '../context/ApiSnapshotContext';
 import { STATE_NAMES } from '../context/StateContext';
 import Brand from '../components/Brand';
 import SEO, { SITE_URL } from '../components/SEO';
+import WhatsAppShare from '../components/WhatsAppShare';
 import { getDataFreshness } from '../utils/dataFreshness';
 import { cropDetailPath } from '../utils/cropUrls';
 import { normalizeRegionId } from '../../shared/indiaRegions';
@@ -60,6 +61,7 @@ export default function MandiDetailPage() {
           <div><span className="sb-detail-kicker">मंडी के सभी दर्ज भाव</span><h1>{name} मंडी भाव</h1><p>{recentCrops.length ? `${recentCrops.length} फसलों के हाल के दर्ज रिकॉर्ड` : 'फसलवार दर्ज रिकॉर्ड'}{latest.date ? ` · अंतिम रिकॉर्ड ${latest.dateLabel}` : ''}</p></div>
           <span className="sb-detail-location"><MapPin size={15} aria-hidden="true" />{place}</span>
         </section>
+        {tableCrops.length > 0 && <WhatsAppShare className="sb-detail-share" text={`${name} मंडी के भाव${latest.date ? ` (${latest.dateLabel})` : ''}: ${tableCrops.slice(0, 4).map(crop => `${crop.nameHi} ₹${money(crop.price)}`).join(', ')}। सभी फसलों के भाव देखें:`} path={path} label="ये भाव WhatsApp पर भेजें" />}
         {loading ? <div className="sb-detail-status" role="status"><RefreshCw size={24} aria-hidden="true" /><h2>मंडी के रिकॉर्ड लोड हो रहे हैं</h2><p>फसलवार भाव आ रहे हैं।</p></div>
           : error ? <div className="sb-detail-notice" role="alert"><AlertCircle size={20} aria-hidden="true" /><div><strong>{unavailable ? 'यह मंडी पृष्ठ उपलब्ध नहीं है' : 'मंडी के रिकॉर्ड लोड नहीं हो पाए'}</strong><p>{unavailable ? 'राज्य की मंडियों की सूची से मंडी चुनें।' : 'कनेक्शन की जाँच करें और पृष्ठ दोबारा खोलें।'}</p></div><Link to={dashboardPath}>मंडियाँ देखें</Link></div>
           : <section className="sb-mandi-comparison" aria-label={`${name} मंडी के फसलवार भाव`}>

@@ -10,6 +10,7 @@ import MiniChart from '../components/MiniChart';
 import MandiCompare from '../components/MandiCompare';
 import SEO, { SITE_URL } from '../components/SEO';
 import CropGuides from '../components/CropGuides';
+import WhatsAppShare from '../components/WhatsAppShare';
 import { getDataFreshness } from '../utils/dataFreshness';
 import { comparableChange, gapNote } from '../utils/priceChange';
 import { cropDetailPath } from '../utils/cropUrls';
@@ -131,6 +132,7 @@ export default function CropDetailPage() {
                 {updatedLabel && <p className="sb-detail-sync">स्रोत से डेटा लिया गया: {updatedLabel} · भाव की तारीख ऊपर देखें</p>}
               </> : <div className="sb-detail-no-price"><strong>इस क्षेत्र के भाव उपलब्ध नहीं हैं</strong><p>दूसरे क्षेत्र के रिकॉर्ड मुख्य मंडी भाव पृष्ठ पर देखें।</p><Link to={dashboardPath}>क्षेत्र बदलें <ArrowRight size={16} aria-hidden="true" /></Link></div>}
               {heroPrice !== null && <button type="button" className="sb-detail-primary" onClick={() => openDeliveryCalculator({ cropId, cropName, buyPrice: heroPrice, quoteDate: heroRecord?.date, priceBasis: latestDay ? 'daily-average' : 'monthly-average' })}><Calculator size={18} aria-hidden="true" />माल मँगाने का पूरा खर्च देखें<ArrowRight size={16} aria-hidden="true" /></button>}
+              {heroPrice !== null && <WhatsAppShare className="sb-detail-share" text={`${cropName} का मंडी भाव (${stateNameHi}): ₹${money(heroPrice)}/क्विंटल · ${quoteLabel}। हर मंडी का भाव देखें:`} path={cropDetailPath(cropId, stateParam)} />}
               <Link to={`/listing/new?type=sell&crop=${encodeURIComponent(cropId)}`} className={heroPrice !== null ? 'sb-detail-text-link' : 'sb-detail-primary'}><ShoppingCart size={18} aria-hidden="true" />यह फसल बेचें<ArrowRight size={16} aria-hidden="true" /></Link>
             </section>
             <section className="sb-crop-detail-trend" aria-label="भाव का इतिहास">

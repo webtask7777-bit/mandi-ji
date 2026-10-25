@@ -22,6 +22,16 @@
     <!-- Default title (overridden by Helmet per page) -->
     <title data-rh="true">सही भाव — भारत के मंडी भाव | SahiBhav</title>
     <meta name="description" content="फसल के दर्ज मंडी भाव देखें, मंडियों की तुलना करें और बिक्री व परिवहन की तैयारी करें। सही भाव — SahiBhav।" data-rh="true" />
+    <!-- Vercel Web Analytics: cookieless page counts, only on the production host -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      if (location.hostname === 'sahibhav.in') {
+        var vaScript = document.createElement('script');
+        vaScript.defer = true;
+        vaScript.src = '/_vercel/insights/script.js';
+        document.head.appendChild(vaScript);
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
