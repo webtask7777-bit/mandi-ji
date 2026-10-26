@@ -4,10 +4,11 @@ import { mandiPath } from '../../shared/mandiPages';
 
 const VISIBLE = 40;
 
-// Crawlable links to every mandi page of the selected state.
+// Crawlable links to the state's indexable mandi pages. Thin (noindex) mandi pages stay
+// reachable through the mandi search instead of being advertised here.
 export default function MandiDirectory({ stateParam, stateNameHi }) {
   const { data } = useApi(`/mandis/directory?state=${encodeURIComponent(stateParam)}`);
-  const mandis = Array.isArray(data) ? data : [];
+  const mandis = Array.isArray(data) ? data.filter(row => row.indexable !== false) : [];
   if (!mandis.length) return null;
   const link = row => <Link key={row.slug} to={mandiPath(stateParam, row.slug)}>{row.name}</Link>;
   return (
