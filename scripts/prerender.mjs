@@ -32,10 +32,11 @@ function routeAssets(route) {
   const css = new Set();
   const seen = new Set();
   function visit(key) { if (seen.has(key)) return; seen.add(key); const entry = manifest[key]; if (!entry) return; (entry.css || []).forEach(file => css.add(file)); (entry.imports || []).forEach(visit); }
-  const key = page ? `src/pages/${page}.jsx` : 'index.html';
+  const dashboard = route === '/' || /^\/mandi-bhav\/[^/]+$/.test(route);
+  const key = dashboard ? 'src/MandiJiDashboard.jsx' : page ? `src/pages/${page}.jsx` : 'index.html';
   visit(key);
   const originalCss = new Set(manifest['index.html']?.css || []);
-  return [...css].filter(file => !originalCss.has(file)).map(file => `<link rel="stylesheet" href="/${file}" />`).join('') + (manifest[key]?.file && page ? `<link rel="modulepreload" href="/${manifest[key].file}" />` : '');
+  return [...css].filter(file => !originalCss.has(file)).map(file => `<link rel="stylesheet" href="/${file}" />`).join('') + (manifest[key]?.file && (page || dashboard) ? `<link rel="modulepreload" href="/${manifest[key].file}" />` : '');
 }
 const escapeJson = value => JSON.stringify(value).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
 const xml = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');

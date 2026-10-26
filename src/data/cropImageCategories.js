@@ -129,6 +129,8 @@ export const CROP_IMAGE_CATEGORY_IDS = Object.freeze({
     "fish", "prawn",
   ]),
   generic: Object.freeze([
+    // Newly reported source labels retain representative art until identity/form review.
+    "gudmar", "round-chilli",
     "beans", "bejhar", "bop", "bullar",
     "buttery", "chilly-capsicum", "coca", "coleus",
     "cowpea", "duster-beans", "field-beananumulu", "guar",

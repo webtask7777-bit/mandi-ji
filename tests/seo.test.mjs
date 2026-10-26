@@ -164,6 +164,26 @@ test('raw home and state pages contain navigable crop links and the blog index e
   for (const post of listed) assert.ok(blog.includes(`href="/blog/${encodeURIComponent(post.slug)}"`), 'listed article is discoverable from blog HTML');
 });
 
+test('price screen leads with source-dated prices and defers map-only data', artifactOptions, () => {
+  for (const route of ['/', '/mandi-bhav/chhattisgarh']) {
+    const html = htmlFor(route);
+    const snapshot = validatePublicSnapshot(html, route);
+    const body = html.split('</head>')[1];
+    assert.doesNotMatch(body, /<div hidden id="S:/, 'static prices must not depend on scripts moving streamed hidden sections');
+    const quoteStart = body.indexOf('class="sb-quote-hero"');
+    assert.ok(quoteStart >= 0 && quoteStart < body.indexOf('sb-task-shortcuts'), 'price precedes secondary shortcuts');
+    assert.ok(quoteStart < body.indexOf('class="sb-market-pulse"'), 'monthly overview follows the selected quote');
+    const prices = Object.entries(snapshot).find(([request]) => request.startsWith('/prices/'))?.[1]?.data;
+    assert.ok(prices?.dailyHistory?.some(record => Number(record.market) > 0), 'daily quote has observed source records');
+    assert.match(plainText(body.slice(quoteStart, body.indexOf('</section>', quoteStart))), /₹.*क्विंटल/);
+    assert.ok(!Object.keys(snapshot).some(request => /^\/(?:districts|mandis(?:\/heatmap)?)(?:\?|$)/.test(request)), 'map and heatmap APIs wait for their own tabs');
+    const h1 = plainText(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || '');
+    assert.ok(h1.includes(route === '/' ? 'भारत' : 'छत्तीसगढ़'));
+    assert.ok(h1.includes('मंडी भाव'));
+  }
+  assert.doesNotMatch(plainText(htmlFor('/data-status')), /\(आज\)|\d+ दिन पुराना/, 'cached data-status HTML uses absolute dates');
+});
+
 function callGuard(url, query = {}) {
   const result = { headers: {}, statusCode: null, body: null };
   const response = {

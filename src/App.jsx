@@ -3,7 +3,6 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import './index.css';
 import SplashScreen from './components/SplashScreen';
-import MandiJiDashboard from './MandiJiDashboard';
 import { StateProvider } from './context/StateContext';
 import { AuthProvider } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
@@ -15,6 +14,7 @@ import SEO from './components/SEO';
 import RouteScroll from './components/RouteScroll';
 
 const LoginPage = lazy(() => import('./pages/LoginPage'));
+const MandiJiDashboard = lazy(() => import('./MandiJiDashboard'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage'));
 const CreateListingPage = lazy(() => import('./pages/CreateListingPage'));
 const ListingDetailPage = lazy(() => import('./pages/ListingDetailPage'));
@@ -52,6 +52,7 @@ function App({ prerender = false, initialPage }) {
   const needsAccountMetadata = /^\/(?:admin|register|my-listings|my-eway-bills|eway-bill|listing\/new)(?:\/|$)/.test(pathname);
   const [showSplash, setShowSplash] = useState(!prerender);
   const CropPage = initialPage?.kind === 'crop' ? initialPage.Component : CropDetailPage;
+  const DashboardPage = initialPage?.kind === 'dashboard' ? initialPage.Component : MandiJiDashboard;
   const MandiPage = initialPage?.kind === 'mandi' ? initialPage.Component : MandiDetailPage;
   const ArticlePage = initialPage?.kind === 'article' ? initialPage.Component : BlogArticlePage;
   const DeliveryPage = initialPage?.kind === 'delivery' ? initialPage.Component : TransportPage;
@@ -72,7 +73,7 @@ function App({ prerender = false, initialPage }) {
             </AnimatePresence>
             <Suspense fallback={<PageLoader />}>
               <Routes>
-                <Route path="/" element={<MandiJiDashboard />} />
+                <Route path="/" element={<DashboardPage />} />
                 <Route path="/languages" element={<LanguageChooser />} />
                 <Route path="/kisan-calendar" element={<CalendarPage />} />
                 <Route path="/kisan-salah" element={<SalahPage />} />
@@ -81,7 +82,7 @@ function App({ prerender = false, initialPage }) {
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/listing/new" element={<ProtectedRoute><CreateListingPage /></ProtectedRoute>} />
                 <Route path="/crop/:cropId" element={<CropPage />} />
-                <Route path="/mandi-bhav/:stateId" element={<MandiJiDashboard />} />
+                <Route path="/mandi-bhav/:stateId" element={<DashboardPage />} />
                 <Route path="/mandi-bhav/:stateId/:cropId" element={<CropPage />} />
                 <Route path="/mandi/:stateId/:mandiSlug" element={<MandiPage />} />
                 <Route path="/listing/:id" element={<ListingDetailPage />} />

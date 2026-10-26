@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { readJSON } from '../server/db/json-store.js';
+import { resolveSiteOrigin } from '../shared/siteOrigin.js';
 
 const generated = path.join(process.cwd(), 'server/generated/seo');
 const shell = () => readFileSync(path.join(generated, 'shell.html'), 'utf8');
@@ -12,7 +13,7 @@ export default function page(req, res) {
   // Read only fixed filenames. A request URL never becomes a filesystem path.
   let requested;
   try {
-    const url = new URL(req.url, 'https://mandi-ji.vercel.app');
+    const url = new URL(req.url, resolveSiteOrigin(process.env.VITE_SITE_URL));
     requested = `/${String(req.query?.path ?? url.searchParams.get('path') ?? url.pathname).replace(/^\/+/, '')}`.replace(/\/+$/, '') || '/';
   } catch { requested = '/__invalid__'; }
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
@@ -32,7 +33,7 @@ export default function page(req, res) {
       const robots = active ? 'index, follow' : 'noindex, follow';
       const title = [item.cropName || 'फसल', item.type === 'sell' ? 'बिक्री का प्रस्ताव' : 'खरीद की माँग', item.mandiName || item.district || item.state].filter(Boolean).join(' · ') + ' | SahiBhav';
       const description = 'उपयोगकर्ता का फसल प्रस्ताव। मात्रा, दिया गया भाव और स्थान देखें; उपलब्धता और सौदे की पुष्टि करें।';
-      const site = (process.env.VITE_SITE_URL || 'https://mandi-ji.vercel.app').replace(/\/$/, '');
+      const site = resolveSiteOrigin(process.env.VITE_SITE_URL);
       const head = `<title data-sb-seo="true">${escapeHtml(title)}</title><meta data-sb-seo="true" name="robots" content="${robots}"><meta data-sb-seo="true" name="description" content="${escapeHtml(description)}"><link data-sb-seo="true" rel="canonical" href="${escapeHtml(site + requested)}">`;
       const html = shell().replace(/<title\b[^>]*>[\s\S]*?<\/title>/g, '').replace(/<meta[^>]*name="robots"[^>]*>/g, '').replace('</head>', `${head}</head>`);
       res.setHeader('X-Robots-Tag', robots);
