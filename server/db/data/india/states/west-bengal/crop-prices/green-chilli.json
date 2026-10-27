@@ -66,12 +66,20 @@
       "month": "10",
       "date": "2026-10",
       "market": 6221,
-      "volume": 542,
-      "days": 20,
+      "volume": 544,
+      "days": 21,
       "mandis": 40
     }
   ],
   "dailyHistory": [
+    {
+      "date": "2026-03-26",
+      "market": 7400,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 3400,
+      "maxPrice": 8600
+    },
     {
       "date": "2026-03-27",
       "market": 6000,
@@ -911,9 +919,17 @@
       "mandis": 8,
       "minPrice": 3500,
       "maxPrice": 8600
+    },
+    {
+      "date": "2026-10-27",
+      "market": 6100,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 4000,
+      "maxPrice": 8500
     }
   ],
-  "lastUpdated": "2026-10-24T15:07:57.722Z",
+  "lastUpdated": "2026-10-27T06:43:47.532Z",
   "districtBreakdown": [
     {
       "district": "Nadia",
@@ -984,8 +1000,8 @@
     {
       "district": "Darjeeling",
       "nameHi": "Darjeeling",
-      "avgPrice": 6130,
-      "records": 105
+      "avgPrice": 6111,
+      "records": 106
     },
     {
       "district": "Kolkata",
@@ -1002,8 +1018,8 @@
     {
       "district": "Jhargram",
       "nameHi": "Jhargram",
-      "avgPrice": 8285,
-      "records": 86
+      "avgPrice": 8282,
+      "records": 87
     }
   ]
 }
