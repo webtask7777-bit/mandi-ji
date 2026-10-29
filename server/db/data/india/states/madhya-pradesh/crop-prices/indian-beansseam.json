@@ -41,9 +41,9 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 2500,
-      "volume": 5,
-      "days": 5,
+      "market": 2750,
+      "volume": 7,
+      "days": 6,
       "mandis": 3
     }
   ],
@@ -343,15 +343,23 @@
       "mandis": 1,
       "minPrice": 1000,
       "maxPrice": 1200
+    },
+    {
+      "date": "2026-10-29",
+      "market": 3750,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 3000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-29T06:25:28.346Z",
+  "lastUpdated": "2026-10-29T15:07:57.965Z",
   "districtBreakdown": [
     {
       "district": "Morena",
       "nameHi": "Morena",
-      "avgPrice": 3986,
-      "records": 22
+      "avgPrice": 3943,
+      "records": 23
     },
     {
       "district": "Sagar",
@@ -378,6 +386,12 @@
       "records": 2
     },
     {
+      "district": "Sehore",
+      "nameHi": "Sehore",
+      "avgPrice": 5000,
+      "records": 2
+    },
+    {
       "district": "Betul",
       "nameHi": "Betul",
       "avgPrice": 1000,
@@ -387,12 +401,6 @@
       "district": "Narsinghpur",
       "nameHi": "Narsinghpur",
       "avgPrice": 6000,
-      "records": 1
-    },
-    {
-      "district": "Sehore",
-      "nameHi": "Sehore",
-      "avgPrice": 5500,
       "records": 1
     }
   ]

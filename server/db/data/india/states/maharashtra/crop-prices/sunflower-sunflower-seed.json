@@ -36,10 +36,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 7466,
-      "volume": 12,
-      "days": 8,
-      "mandis": 4,
+      "market": 7432,
+      "volume": 14,
+      "days": 9,
+      "mandis": 5,
       "msp": 8343
     }
   ],
@@ -395,9 +395,17 @@
       "mandis": 1,
       "minPrice": 7200,
       "maxPrice": 7600
+    },
+    {
+      "date": "2026-10-29",
+      "market": 6927,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 6000,
+      "maxPrice": 7645
     }
   ],
-  "lastUpdated": "2026-10-29T06:25:28.346Z",
+  "lastUpdated": "2026-10-29T15:07:57.965Z",
   "districtBreakdown": [
     {
       "district": "Pune",
@@ -426,8 +434,8 @@
     {
       "district": "Jalgaon",
       "nameHi": "Jalgaon",
-      "avgPrice": 6575,
-      "records": 3
+      "avgPrice": 6537,
+      "records": 4
     },
     {
       "district": "Dhule",
@@ -472,6 +480,12 @@
       "records": 2
     },
     {
+      "district": "Solapur",
+      "nameHi": "Solapur",
+      "avgPrice": 7432,
+      "records": 2
+    },
+    {
       "district": "Yavatmal",
       "nameHi": "Yavatmal",
       "avgPrice": 5200,
@@ -481,12 +495,6 @@
       "district": "Beed",
       "nameHi": "Beed",
       "avgPrice": 4501,
-      "records": 1
-    },
-    {
-      "district": "Solapur",
-      "nameHi": "Solapur",
-      "avgPrice": 7432,
       "records": 1
     }
   ]

@@ -25,10 +25,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 2740,
-      "volume": 33,
-      "days": 19,
-      "mandis": 6
+      "market": 2800,
+      "volume": 35,
+      "days": 20,
+      "mandis": 7
     }
   ],
   "dailyHistory": [
@@ -519,9 +519,17 @@
       "mandis": 1,
       "minPrice": 2800,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-10-29",
+      "market": 2700,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1600,
+      "maxPrice": 3700
     }
   ],
-  "lastUpdated": "2026-10-29T06:25:28.346Z",
+  "lastUpdated": "2026-10-29T15:07:57.965Z",
   "districtBreakdown": [
     {
       "district": "South Tripura",
@@ -532,13 +540,19 @@
     {
       "district": "Gomati",
       "nameHi": "Gomati",
-      "avgPrice": 1995,
-      "records": 20
+      "avgPrice": 1986,
+      "records": 21
     },
     {
       "district": "Dhalai",
       "nameHi": "Dhalai",
       "avgPrice": 2800,
+      "records": 1
+    },
+    {
+      "district": "West District",
+      "nameHi": "West District",
+      "avgPrice": 3600,
       "records": 1
     }
   ]

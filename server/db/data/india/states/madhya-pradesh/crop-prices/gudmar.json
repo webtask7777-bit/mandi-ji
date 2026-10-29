@@ -10,9 +10,9 @@
       "month": "10",
       "date": "2026-10",
       "market": 4500,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
+      "volume": 3,
+      "days": 2,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -23,14 +23,34 @@
       "mandis": 1,
       "minPrice": 4500,
       "maxPrice": 4500
+    },
+    {
+      "date": "2026-10-29",
+      "market": 4475,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 3950,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-29T06:25:28.346Z",
+  "lastUpdated": "2026-10-29T15:07:57.965Z",
   "districtBreakdown": [
     {
       "district": "Damoh",
       "nameHi": "Damoh",
       "avgPrice": 4500,
+      "records": 1
+    },
+    {
+      "district": "Katni",
+      "nameHi": "Katni",
+      "avgPrice": 3950,
+      "records": 1
+    },
+    {
+      "district": "Sagar",
+      "nameHi": "Sagar",
+      "avgPrice": 5000,
       "records": 1
     }
   ]
