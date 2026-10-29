@@ -58,8 +58,8 @@
       "month": "10",
       "date": "2026-10",
       "market": 6243,
-      "volume": 109,
-      "days": 21,
+      "volume": 110,
+      "days": 22,
       "mandis": 16
     }
   ],
@@ -815,9 +815,17 @@
       "mandis": 2,
       "minPrice": 6000,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-10-29",
+      "market": 12000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 12000,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-10-27T06:43:47.532Z",
+  "lastUpdated": "2026-10-29T06:25:28.346Z",
   "districtBreakdown": [
     {
       "district": "Patiala",
@@ -874,6 +882,12 @@
       "records": 2
     },
     {
+      "district": "Fazilka",
+      "nameHi": "Fazilka",
+      "avgPrice": 12000,
+      "records": 2
+    },
+    {
       "district": "Ropar (Rupnagar)",
       "nameHi": "Ropar (Rupnagar)",
       "avgPrice": 9200,
@@ -883,12 +897,6 @@
       "district": "Muktsar",
       "nameHi": "Muktsar",
       "avgPrice": 4500,
-      "records": 1
-    },
-    {
-      "district": "Fazilka",
-      "nameHi": "Fazilka",
-      "avgPrice": 12000,
       "records": 1
     }
   ]

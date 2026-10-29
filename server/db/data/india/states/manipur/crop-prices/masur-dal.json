@@ -58,8 +58,8 @@
       "month": "10",
       "date": "2026-10",
       "market": 10750,
-      "volume": 41,
-      "days": 10,
+      "volume": 42,
+      "days": 11,
       "mandis": 5
     }
   ],
@@ -599,14 +599,28 @@
       "mandis": 2,
       "minPrice": 9000,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-10-29",
+      "market": 9500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 9000,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-10-27T06:43:47.532Z",
+  "lastUpdated": "2026-10-29T06:25:28.346Z",
   "districtBreakdown": [
     {
       "district": "Imphal West",
       "nameHi": "Imphal West",
       "avgPrice": 10500,
+      "records": 59
+    },
+    {
+      "district": "Imphal East",
+      "nameHi": "Imphal East",
+      "avgPrice": 9585,
       "records": 59
     },
     {
@@ -619,12 +633,6 @@
       "district": "Bishnupur",
       "nameHi": "Bishnupur",
       "avgPrice": 10724,
-      "records": 58
-    },
-    {
-      "district": "Imphal East",
-      "nameHi": "Imphal East",
-      "avgPrice": 9586,
       "records": 58
     },
     {

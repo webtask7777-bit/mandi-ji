@@ -25,10 +25,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 11350,
-      "volume": 10,
-      "days": 10,
-      "mandis": 1
+      "market": 14011,
+      "volume": 12,
+      "days": 11,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -215,21 +215,35 @@
       "mandis": 1,
       "minPrice": 10000,
       "maxPrice": 11000
+    },
+    {
+      "date": "2026-10-29",
+      "market": 13625,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 10000,
+      "maxPrice": 16750
     }
   ],
-  "lastUpdated": "2026-10-27T06:43:47.532Z",
+  "lastUpdated": "2026-10-29T06:25:28.346Z",
   "districtBreakdown": [
     {
       "district": "Aurangabad",
       "nameHi": "Aurangabad",
-      "avgPrice": 13026,
-      "records": 19
+      "avgPrice": 12900,
+      "records": 20
     },
     {
       "district": "Chhapra",
       "nameHi": "Chhapra",
       "avgPrice": 7750,
       "records": 4
+    },
+    {
+      "district": "Kaimur/Bhabhua",
+      "nameHi": "Kaimur/Bhabhua",
+      "avgPrice": 16750,
+      "records": 1
     }
   ]
 }

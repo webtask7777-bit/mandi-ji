@@ -1,32 +1,6 @@
 {
   "banana": [
     {
-      "name": "Mon",
-      "district": "Mon",
-      "avgPrice": 4434,
-      "recentPrice": 5530,
-      "minPrice": 5530,
-      "maxPrice": 5530,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 17,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
-      "name": "Wokha Town",
-      "district": "Wokha",
-      "avgPrice": 4082,
-      "recentPrice": 5400,
-      "minPrice": 5400,
-      "maxPrice": 5400,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 29,
-      "topVariety": "Medium",
-      "grade": "Local"
-    },
-    {
       "name": "Baghty",
       "district": "Wokha",
       "avgPrice": 3579,
@@ -63,6 +37,32 @@
       "lastDate": "2026-09-11",
       "records": 43,
       "topVariety": "Banana-Organic",
+      "grade": "Local"
+    },
+    {
+      "name": "Mon",
+      "district": "Mon",
+      "avgPrice": 4434,
+      "recentPrice": null,
+      "minPrice": 3300,
+      "maxPrice": 5900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 17,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Wokha Town",
+      "district": "Wokha",
+      "avgPrice": 4082,
+      "recentPrice": null,
+      "minPrice": 3200,
+      "maxPrice": 5800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 29,
+      "topVariety": "Medium",
       "grade": "Local"
     },
     {
@@ -189,13 +189,13 @@
     {
       "name": "Dimapur",
       "district": "Dimapur",
-      "avgPrice": 5520,
-      "recentPrice": 5500,
+      "avgPrice": 5526,
+      "recentPrice": 5750,
       "minPrice": 5500,
-      "maxPrice": 5500,
+      "maxPrice": 6000,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-27",
-      "records": 75,
+      "lastDate": "2026-10-29",
+      "records": 76,
       "topVariety": "Bitter Gourd",
       "grade": "Local"
     },
@@ -358,19 +358,6 @@
   ],
   "chow-chow": [
     {
-      "name": "Tsemenyu",
-      "district": "Tsemenyu",
-      "avgPrice": 2833,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 24,
-      "topVariety": "Chow Chow",
-      "grade": "Local"
-    },
-    {
       "name": "Baghty",
       "district": "Wokha",
       "avgPrice": 1413,
@@ -393,6 +380,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-14",
       "records": 15,
+      "topVariety": "Chow Chow",
+      "grade": "Local"
+    },
+    {
+      "name": "Tsemenyu",
+      "district": "Tsemenyu",
+      "avgPrice": 2833,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 4500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 24,
       "topVariety": "Chow Chow",
       "grade": "Local"
     },
@@ -450,19 +450,6 @@
     }
   ],
   "gingergreen": [
-    {
-      "name": "Mon",
-      "district": "Mon",
-      "avgPrice": 5995,
-      "recentPrice": 8810,
-      "minPrice": 8810,
-      "maxPrice": 8810,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 11,
-      "topVariety": "Green Ginger",
-      "grade": "Local"
-    },
     {
       "name": "Tuli",
       "district": "Mokokchung",
@@ -539,6 +526,19 @@
       "lastDate": "2026-10-17",
       "records": 26,
       "topVariety": null,
+      "grade": "Local"
+    },
+    {
+      "name": "Mon",
+      "district": "Mon",
+      "avgPrice": 5995,
+      "recentPrice": null,
+      "minPrice": 4100,
+      "maxPrice": 9280,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 11,
+      "topVariety": "Green Ginger",
       "grade": "Local"
     },
     {
@@ -665,13 +665,13 @@
     {
       "name": "Dimapur",
       "district": "Dimapur",
-      "avgPrice": 3303,
+      "avgPrice": 3299,
       "recentPrice": 3000,
       "minPrice": 3000,
       "maxPrice": 3000,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-27",
-      "records": 76,
+      "lastDate": "2026-10-29",
+      "records": 77,
       "topVariety": "Brinjal",
       "grade": "Local"
     },
@@ -687,19 +687,6 @@
       "records": 15,
       "topVariety": "Arkasheela Mattigulla",
       "grade": "FAQ"
-    },
-    {
-      "name": "Baghty",
-      "district": "Wokha",
-      "avgPrice": 2739,
-      "recentPrice": 2300,
-      "minPrice": 2300,
-      "maxPrice": 2300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 18,
-      "topVariety": null,
-      "grade": "Local"
     },
     {
       "name": "Kohima",
@@ -819,6 +806,19 @@
       "grade": "Local"
     },
     {
+      "name": "Baghty",
+      "district": "Wokha",
+      "avgPrice": 2739,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 4860,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 18,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Phek",
       "district": "Phek",
       "avgPrice": 2633,
@@ -862,13 +862,13 @@
     {
       "name": "Dimapur",
       "district": "Dimapur",
-      "avgPrice": 4545,
+      "avgPrice": 4551,
       "recentPrice": 5000,
       "minPrice": 5000,
       "maxPrice": 5000,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-27",
-      "records": 88,
+      "lastDate": "2026-10-29",
+      "records": 89,
       "topVariety": "Bhindi",
       "grade": "Local"
     },
@@ -994,13 +994,13 @@
     {
       "name": "Dimapur",
       "district": "Dimapur",
-      "avgPrice": 2979,
+      "avgPrice": 2990,
       "recentPrice": 3500,
       "minPrice": 3500,
       "maxPrice": 3500,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-27",
-      "records": 47,
+      "lastDate": "2026-10-29",
+      "records": 48,
       "topVariety": "Bottle Gourd",
       "grade": "Local"
     },
@@ -1592,10 +1592,10 @@
       "name": "Wokha Town",
       "district": "Wokha",
       "avgPrice": 26128,
-      "recentPrice": 29200,
-      "minPrice": 29200,
-      "maxPrice": 29200,
-      "rangeBasis": "recent",
+      "recentPrice": null,
+      "minPrice": 17000,
+      "maxPrice": 31600,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
       "records": 16,
       "topVariety": "Fish",
@@ -1714,13 +1714,13 @@
     {
       "name": "Dimapur",
       "district": "Dimapur",
-      "avgPrice": 5627,
+      "avgPrice": 5622,
       "recentPrice": 5000,
       "minPrice": 5000,
       "maxPrice": 5000,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-27",
-      "records": 118,
+      "lastDate": "2026-10-29",
+      "records": 119,
       "topVariety": "Local",
       "grade": "Local"
     },
@@ -1768,32 +1768,6 @@
   ],
   "pumpkin": [
     {
-      "name": "Tsemenyu",
-      "district": "Tsemenyu",
-      "avgPrice": 3689,
-      "recentPrice": 4000,
-      "minPrice": 4000,
-      "maxPrice": 4000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 25,
-      "topVariety": "pumpkin-Organic",
-      "grade": "Local"
-    },
-    {
-      "name": "Baghty",
-      "district": "Wokha",
-      "avgPrice": 3663,
-      "recentPrice": 3200,
-      "minPrice": 3200,
-      "maxPrice": 3200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 13,
-      "topVariety": null,
-      "grade": "Local"
-    },
-    {
       "name": "Kohima",
       "district": "Kohima",
       "avgPrice": 2640,
@@ -1803,19 +1777,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 25,
-      "topVariety": "Pumpkin",
-      "grade": "Local"
-    },
-    {
-      "name": "Wokha Town",
-      "district": "Wokha",
-      "avgPrice": 2364,
-      "recentPrice": 1900,
-      "minPrice": 1900,
-      "maxPrice": 1900,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 14,
       "topVariety": "Pumpkin",
       "grade": "Local"
     },
@@ -1859,6 +1820,32 @@
       "grade": "FAQ"
     },
     {
+      "name": "Tsemenyu",
+      "district": "Tsemenyu",
+      "avgPrice": 3689,
+      "recentPrice": null,
+      "minPrice": 2700,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 25,
+      "topVariety": "pumpkin-Organic",
+      "grade": "Local"
+    },
+    {
+      "name": "Baghty",
+      "district": "Wokha",
+      "avgPrice": 3663,
+      "recentPrice": null,
+      "minPrice": 3200,
+      "maxPrice": 4300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 13,
+      "topVariety": null,
+      "grade": "Local"
+    },
+    {
       "name": "Mangkolemba",
       "district": "Mokokchung",
       "avgPrice": 3600,
@@ -1896,6 +1883,19 @@
       "records": 5,
       "topVariety": "Pumpkin",
       "grade": "FAQ"
+    },
+    {
+      "name": "Wokha Town",
+      "district": "Wokha",
+      "avgPrice": 2364,
+      "recentPrice": null,
+      "minPrice": 1900,
+      "maxPrice": 3800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 14,
+      "topVariety": "Pumpkin",
+      "grade": "Local"
     },
     {
       "name": "Mon",
@@ -1967,13 +1967,13 @@
     {
       "name": "Dimapur",
       "district": "Dimapur",
-      "avgPrice": 7361,
+      "avgPrice": 7369,
       "recentPrice": 8000,
       "minPrice": 8000,
       "maxPrice": 8000,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-27",
-      "records": 79,
+      "lastDate": "2026-10-29",
+      "records": 80,
       "topVariety": "Green Chilly",
       "grade": "Small"
     },
@@ -2112,13 +2112,13 @@
     {
       "name": "Dimapur",
       "district": "Dimapur",
-      "avgPrice": 2987,
+      "avgPrice": 2988,
       "recentPrice": 3000,
       "minPrice": 3000,
       "maxPrice": 3000,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-27",
-      "records": 79,
+      "lastDate": "2026-10-29",
+      "records": 80,
       "topVariety": "Leafy Vegetables",
       "grade": "Local"
     },
@@ -2298,19 +2298,6 @@
       "grade": "Local"
     },
     {
-      "name": "Mon",
-      "district": "Mon",
-      "avgPrice": 1089,
-      "recentPrice": 1170,
-      "minPrice": 1170,
-      "maxPrice": 1170,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 2,
-      "topVariety": "Local",
-      "grade": "Local"
-    },
-    {
       "name": "Jalukie",
       "district": "Kohima",
       "avgPrice": 3091,
@@ -2415,6 +2402,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Mon",
+      "district": "Mon",
+      "avgPrice": 1089,
+      "recentPrice": null,
+      "minPrice": 1008,
+      "maxPrice": 1170,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 2,
+      "topVariety": "Local",
+      "grade": "Local"
+    },
+    {
       "name": "Baghty",
       "district": "Wokha",
       "avgPrice": 983,
@@ -2441,6 +2441,19 @@
       "records": 6,
       "topVariety": null,
       "grade": "FAQ"
+    },
+    {
+      "name": "Tsemenyu",
+      "district": "Tsemenyu",
+      "avgPrice": 4327,
+      "recentPrice": 4000,
+      "minPrice": 4000,
+      "maxPrice": 4000,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-29",
+      "records": 26,
+      "topVariety": "Yam (Ratalu)",
+      "grade": "Local"
     },
     {
       "name": "Phek",
@@ -2506,19 +2519,6 @@
       "records": 3,
       "topVariety": "Yam (Ratalu)",
       "grade": "FAQ"
-    },
-    {
-      "name": "Tsemenyu",
-      "district": "Tsemenyu",
-      "avgPrice": 4340,
-      "recentPrice": null,
-      "minPrice": 3500,
-      "maxPrice": 5500,
-      "rangeBasis": "all",
-      "lastDate": "2026-10-12",
-      "records": 25,
-      "topVariety": "Yam (Ratalu)",
-      "grade": "Local"
     }
   ],
   "tomato": [

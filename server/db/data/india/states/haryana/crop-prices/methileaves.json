@@ -41,9 +41,9 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 3429,
-      "volume": 74,
-      "days": 20,
+      "market": 3345,
+      "volume": 78,
+      "days": 21,
       "mandis": 9
     }
   ],
@@ -359,9 +359,17 @@
       "mandis": 2,
       "minPrice": 3000,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-10-29",
+      "market": 2750,
+      "volume": 4,
+      "mandis": 4,
+      "minPrice": 1000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-10-27T06:43:47.532Z",
+  "lastUpdated": "2026-10-29T06:25:28.346Z",
   "districtBreakdown": [
     {
       "district": "Kurukshetra",
@@ -378,14 +386,20 @@
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 4938,
-      "records": 16
+      "avgPrice": 4971,
+      "records": 17
     },
     {
       "district": "Sonipat",
       "nameHi": "Sonipat",
-      "avgPrice": 3430,
-      "records": 10
+      "avgPrice": 3345,
+      "records": 11
+    },
+    {
+      "district": "Mahendragarh-Narnaul",
+      "nameHi": "Mahendragarh-Narnaul",
+      "avgPrice": 2875,
+      "records": 4
     },
     {
       "district": "Yamuna Nagar",
@@ -394,16 +408,10 @@
       "records": 4
     },
     {
-      "district": "Mahendragarh-Narnaul",
-      "nameHi": "Mahendragarh-Narnaul",
-      "avgPrice": 2833,
-      "records": 3
-    },
-    {
       "district": "Gurgaon",
       "nameHi": "Gurgaon",
-      "avgPrice": 2433,
-      "records": 3
+      "avgPrice": 2200,
+      "records": 4
     }
   ]
 }

@@ -1,19 +1,6 @@
 {
   "maize": [
     {
-      "name": "Neora",
-      "district": "Raipur",
-      "avgPrice": 2580,
-      "recentPrice": 2580,
-      "minPrice": 2580,
-      "maxPrice": 2580,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 1,
-      "topVariety": "Local",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Devda",
       "district": "Bastar",
       "avgPrice": 2300,
@@ -23,19 +10,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 3,
-      "topVariety": "Local",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Ramanujganj",
-      "district": "Balrampur",
-      "avgPrice": 2333,
-      "recentPrice": 2410,
-      "minPrice": 2410,
-      "maxPrice": 2410,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 89,
       "topVariety": "Local",
       "grade": "FAQ"
     },
@@ -50,58 +24,6 @@
       "lastDate": "2026-10-24",
       "records": 25,
       "topVariety": "Hybrid",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Dhanora",
-      "district": "Kondagaon",
-      "avgPrice": 2050,
-      "recentPrice": 2350,
-      "minPrice": 2350,
-      "maxPrice": 2350,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 32,
-      "topVariety": "Hybrid/Local",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Keshkal",
-      "district": "Kondagaon",
-      "avgPrice": 1900,
-      "recentPrice": 2300,
-      "minPrice": 2300,
-      "maxPrice": 2300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 332,
-      "topVariety": "Hybrid/Local",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Gamhari",
-      "district": "Kondagaon",
-      "avgPrice": 2056,
-      "recentPrice": 2300,
-      "minPrice": 2300,
-      "maxPrice": 2300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 36,
-      "topVariety": "Hybrid/Local",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Vishrampur",
-      "district": "Kondagaon",
-      "avgPrice": 2039,
-      "recentPrice": 2300,
-      "minPrice": 2300,
-      "maxPrice": 2300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 35,
-      "topVariety": "Hybrid/Local",
       "grade": "Non-FAQ"
     },
     {
@@ -157,6 +79,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Neora",
+      "district": "Raipur",
+      "avgPrice": 2580,
+      "recentPrice": null,
+      "minPrice": 2580,
+      "maxPrice": 2580,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 1,
+      "topVariety": "Local",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Karpawand",
       "district": "Bastar",
       "avgPrice": 2490,
@@ -207,6 +142,19 @@
       "records": 16,
       "topVariety": "Deshi Red",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Ramanujganj",
+      "district": "Balrampur",
+      "avgPrice": 2333,
+      "recentPrice": null,
+      "minPrice": 2230,
+      "maxPrice": 2430,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 89,
+      "topVariety": "Local",
+      "grade": "FAQ"
     },
     {
       "name": "Katghora",
@@ -430,6 +378,32 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Gamhari",
+      "district": "Kondagaon",
+      "avgPrice": 2056,
+      "recentPrice": null,
+      "minPrice": 1900,
+      "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 36,
+      "topVariety": "Hybrid/Local",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Dhanora",
+      "district": "Kondagaon",
+      "avgPrice": 2050,
+      "recentPrice": null,
+      "minPrice": 1950,
+      "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 32,
+      "topVariety": "Hybrid/Local",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Muli",
       "district": "Bastar",
       "avgPrice": 2050,
@@ -467,6 +441,19 @@
       "records": 12,
       "topVariety": "Hybrid",
       "grade": "FAQ"
+    },
+    {
+      "name": "Vishrampur",
+      "district": "Kondagaon",
+      "avgPrice": 2039,
+      "recentPrice": null,
+      "minPrice": 1700,
+      "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 35,
+      "topVariety": "Hybrid/Local",
+      "grade": "Non-FAQ"
     },
     {
       "name": "UPMANDI BHANUPRATAPPUR",
@@ -661,6 +648,19 @@
       "lastDate": "2026-10-06",
       "records": 177,
       "topVariety": "Deshi Red",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Keshkal",
+      "district": "Kondagaon",
+      "avgPrice": 1900,
+      "recentPrice": null,
+      "minPrice": 1550,
+      "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 332,
+      "topVariety": "Hybrid/Local",
       "grade": "Non-FAQ"
     },
     {
@@ -1030,17 +1030,17 @@
       "grade": "FAQ"
     },
     {
-      "name": "Ramanujganj",
-      "district": "Balrampur",
-      "avgPrice": 2362,
-      "recentPrice": 2500,
-      "minPrice": 2500,
-      "maxPrice": 2500,
+      "name": "Abhanpur",
+      "district": "Raipur",
+      "avgPrice": 2205,
+      "recentPrice": 2525,
+      "minPrice": 2525,
+      "maxPrice": 2525,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 105,
-      "topVariety": "Paddy Coarse",
-      "grade": "FAQ"
+      "lastDate": "2026-10-24",
+      "records": 456,
+      "topVariety": "I.R. 64",
+      "grade": "Non-FAQ"
     },
     {
       "name": "Raipur",
@@ -1069,30 +1069,17 @@
       "grade": "FAQ"
     },
     {
-      "name": "Abhanpur",
-      "district": "Raipur",
-      "avgPrice": 2205,
-      "recentPrice": 2435,
-      "minPrice": 2345,
-      "maxPrice": 2525,
+      "name": "Gurur",
+      "district": "Balod",
+      "avgPrice": 2361,
+      "recentPrice": 2440,
+      "minPrice": 2440,
+      "maxPrice": 2440,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
-      "records": 456,
-      "topVariety": "I.R. 64",
+      "records": 91,
+      "topVariety": "I.R.-64",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Manendragarh",
-      "district": "Manendragarh Chirmiri Bhartpur",
-      "avgPrice": 2274,
-      "recentPrice": 2400,
-      "minPrice": 2400,
-      "maxPrice": 2400,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 163,
-      "topVariety": "MTU-1010",
-      "grade": "FAQ"
     },
     {
       "name": "Ambikapur",
@@ -1106,19 +1093,6 @@
       "records": 319,
       "topVariety": "Mahamaya",
       "grade": "FAQ"
-    },
-    {
-      "name": "Gurur",
-      "district": "Balod",
-      "avgPrice": 2361,
-      "recentPrice": 2370,
-      "minPrice": 2300,
-      "maxPrice": 2440,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-24",
-      "records": 91,
-      "topVariety": "I.R.-64",
-      "grade": "Non-FAQ"
     },
     {
       "name": "Mungeli",
@@ -1147,19 +1121,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Jagdalpur",
-      "district": "Bastar",
-      "avgPrice": 2047,
-      "recentPrice": 2300,
-      "minPrice": 2300,
-      "maxPrice": 2300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 268,
-      "topVariety": "Paddy Coarse",
-      "grade": "FAQ"
-    },
-    {
       "name": "Gandai",
       "district": "Khairagarh Chhuikhadan Gandai",
       "avgPrice": 2075,
@@ -1173,12 +1134,38 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Dondilohara",
+      "district": "Balod",
+      "avgPrice": 2014,
+      "recentPrice": 2280,
+      "minPrice": 2280,
+      "maxPrice": 2280,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-24",
+      "records": 86,
+      "topVariety": "I.R. 64",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Narharpur",
+      "district": "Kanker",
+      "avgPrice": 2006,
+      "recentPrice": 2250,
+      "minPrice": 2250,
+      "maxPrice": 2250,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-24",
+      "records": 68,
+      "topVariety": "I.R. 64",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Kharora",
       "district": "Raipur",
       "avgPrice": 2036,
-      "recentPrice": 2290,
+      "recentPrice": 2240,
       "minPrice": 2240,
-      "maxPrice": 2340,
+      "maxPrice": 2240,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 87,
@@ -1186,28 +1173,28 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Balodabazar",
-      "district": "Balodabazar",
-      "avgPrice": 2785,
-      "recentPrice": 2225,
-      "minPrice": 1800,
-      "maxPrice": 3100,
+      "name": "Lakhanpuri",
+      "district": "Kanker",
+      "avgPrice": 2017,
+      "recentPrice": 2230,
+      "minPrice": 2230,
+      "maxPrice": 2230,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
-      "records": 510,
-      "topVariety": "Sarana",
+      "records": 68,
+      "topVariety": "I.R. 64",
       "grade": "Non-FAQ"
     },
     {
-      "name": "Dondilohara",
-      "district": "Balod",
-      "avgPrice": 2014,
-      "recentPrice": 2210,
-      "minPrice": 2140,
-      "maxPrice": 2280,
+      "name": "Charama",
+      "district": "Kanker",
+      "avgPrice": 1970,
+      "recentPrice": 2200,
+      "minPrice": 2200,
+      "maxPrice": 2200,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
-      "records": 86,
+      "records": 514,
       "topVariety": "I.R. 64",
       "grade": "Non-FAQ"
     },
@@ -1225,84 +1212,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Keshkal",
-      "district": "Kondagaon",
-      "avgPrice": 1964,
-      "recentPrice": 2200,
-      "minPrice": 2200,
-      "maxPrice": 2200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 161,
-      "topVariety": "Paddy Coarse",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Vishrampur",
-      "district": "Kondagaon",
-      "avgPrice": 2100,
-      "recentPrice": 2200,
-      "minPrice": 2200,
-      "maxPrice": 2200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 12,
-      "topVariety": "Paddy Coarse",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Lakhanpuri",
-      "district": "Kanker",
-      "avgPrice": 2017,
-      "recentPrice": 2165,
-      "minPrice": 2100,
-      "maxPrice": 2230,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-24",
-      "records": 68,
-      "topVariety": "I.R. 64",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Narharpur",
-      "district": "Kanker",
-      "avgPrice": 2006,
-      "recentPrice": 2150,
-      "minPrice": 2050,
-      "maxPrice": 2250,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-24",
-      "records": 68,
-      "topVariety": "I.R. 64",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Charama",
-      "district": "Kanker",
-      "avgPrice": 1970,
-      "recentPrice": 2100,
-      "minPrice": 2000,
-      "maxPrice": 2200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-24",
-      "records": 514,
-      "topVariety": "I.R. 64",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Narayanpur",
-      "district": "Narayanpur",
-      "avgPrice": 1877,
-      "recentPrice": 2100,
-      "minPrice": 2100,
-      "maxPrice": 2100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 168,
-      "topVariety": "Safari",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Devda",
       "district": "Bastar",
       "avgPrice": 2020,
@@ -1316,25 +1225,12 @@
       "grade": "FAQ"
     },
     {
-      "name": "Pithoura",
-      "district": "Mahasamund",
-      "avgPrice": 1893,
-      "recentPrice": 2050,
-      "minPrice": 2000,
-      "maxPrice": 2100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 421,
-      "topVariety": "MTU-1010",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Dondi",
       "district": "Balod",
       "avgPrice": 1977,
-      "recentPrice": 2045,
+      "recentPrice": 2040,
       "minPrice": 2040,
-      "maxPrice": 2050,
+      "maxPrice": 2040,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 83,
@@ -1345,9 +1241,9 @@
       "name": "Neora",
       "district": "Raipur",
       "avgPrice": 1954,
-      "recentPrice": 2013,
+      "recentPrice": 2010,
       "minPrice": 2010,
-      "maxPrice": 2015,
+      "maxPrice": 2010,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 79,
@@ -1355,77 +1251,25 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Naila",
-      "district": "Janjgeer-Champa",
-      "avgPrice": 1972,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 240,
-      "topVariety": "MTU-1010",
-      "grade": "FAQ"
-    },
-    {
       "name": "Baikunthpur",
       "district": "Koriya",
-      "avgPrice": 2272,
+      "avgPrice": 2270,
       "recentPrice": 2000,
       "minPrice": 2000,
       "maxPrice": 2000,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-27",
-      "records": 147,
+      "lastDate": "2026-10-29",
+      "records": 148,
       "topVariety": "I.R. 36",
       "grade": "FAQ"
-    },
-    {
-      "name": "Tokapal",
-      "district": "Bastar",
-      "avgPrice": 2029,
-      "recentPrice": 2000,
-      "minPrice": 2000,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 13,
-      "topVariety": "Paddy Coarse",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Surajpur",
-      "district": "Surajpur",
-      "avgPrice": 2337,
-      "recentPrice": 1997,
-      "minPrice": 1800,
-      "maxPrice": 2390,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-27",
-      "records": 166,
-      "topVariety": "I.R. 64",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Basana",
-      "district": "Mahasamund",
-      "avgPrice": 1982,
-      "recentPrice": 1980,
-      "minPrice": 1980,
-      "maxPrice": 1980,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 309,
-      "topVariety": "1001",
-      "grade": "Non-FAQ"
     },
     {
       "name": "Saraypali",
       "district": "Mahasamund",
       "avgPrice": 1953,
-      "recentPrice": 1968,
-      "minPrice": 1810,
-      "maxPrice": 2100,
+      "recentPrice": 1995,
+      "minPrice": 1995,
+      "maxPrice": 1995,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 76,
@@ -1436,9 +1280,9 @@
       "name": "Katghora",
       "district": "Korba",
       "avgPrice": 2172,
-      "recentPrice": 1953,
+      "recentPrice": 1905,
       "minPrice": 1905,
-      "maxPrice": 2000,
+      "maxPrice": 1905,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 377,
@@ -1446,43 +1290,30 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Baramkela",
-      "district": "Sarangarh Bilaigarh",
-      "avgPrice": 1929,
-      "recentPrice": 1900,
-      "minPrice": 1900,
-      "maxPrice": 1900,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 392,
-      "topVariety": "1001",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Pendraroad",
-      "district": "Gourela Pendra Marwahi",
-      "avgPrice": 2182,
-      "recentPrice": 1863,
-      "minPrice": 1725,
-      "maxPrice": 2000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 407,
-      "topVariety": "Khadwan",
-      "grade": "FAQ"
-    },
-    {
-      "name": "Kharsiya",
-      "district": "Raigarh",
-      "avgPrice": 2010,
+      "name": "Surajpur",
+      "district": "Surajpur",
+      "avgPrice": 2333,
       "recentPrice": 1800,
       "minPrice": 1800,
       "maxPrice": 1800,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 194,
-      "topVariety": "MTU-1010",
-      "grade": "FAQ"
+      "lastDate": "2026-10-29",
+      "records": 167,
+      "topVariety": "I.R. 64",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Balodabazar",
+      "district": "Balodabazar",
+      "avgPrice": 2785,
+      "recentPrice": 1800,
+      "minPrice": 1800,
+      "maxPrice": 1800,
+      "rangeBasis": "recent",
+      "lastDate": "2026-10-24",
+      "records": 510,
+      "topVariety": "Sarana",
+      "grade": "Non-FAQ"
     },
     {
       "name": "Pathalgaon",
@@ -1500,13 +1331,13 @@
     {
       "name": "Bijapur",
       "district": "Bijapur",
-      "avgPrice": 1942,
+      "avgPrice": 1941,
       "recentPrice": 1800,
       "minPrice": 1800,
       "maxPrice": 1800,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-27",
-      "records": 118,
+      "lastDate": "2026-10-29",
+      "records": 119,
       "topVariety": "1001",
       "grade": "Non-FAQ"
     },
@@ -1531,8 +1362,8 @@
       "minPrice": 1800,
       "maxPrice": 1800,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-27",
-      "records": 2,
+      "lastDate": "2026-10-29",
+      "records": 3,
       "topVariety": "1001",
       "grade": "Non-FAQ"
     },
@@ -1544,21 +1375,8 @@
       "minPrice": 1800,
       "maxPrice": 1800,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-27",
-      "records": 1,
-      "topVariety": "1001",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Dharamjaygarh",
-      "district": "Raigarh",
-      "avgPrice": 1700,
-      "recentPrice": 1700,
-      "minPrice": 1700,
-      "maxPrice": 1700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 13,
+      "lastDate": "2026-10-29",
+      "records": 2,
       "topVariety": "1001",
       "grade": "Non-FAQ"
     },
@@ -1574,19 +1392,6 @@
       "records": 391,
       "topVariety": "Sarana",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Arang",
-      "district": "Raipur",
-      "avgPrice": 1992,
-      "recentPrice": 1600,
-      "minPrice": 1600,
-      "maxPrice": 1600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 173,
-      "topVariety": "Sarana",
-      "grade": "FAQ"
     },
     {
       "name": "Bhatapara",
@@ -1667,6 +1472,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Ramanujganj",
+      "district": "Balrampur",
+      "avgPrice": 2362,
+      "recentPrice": null,
+      "minPrice": 1900,
+      "maxPrice": 2700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 105,
+      "topVariety": "Paddy Coarse",
+      "grade": "FAQ"
+    },
+    {
       "name": "Jashpur",
       "district": "Jashpur",
       "avgPrice": 2347,
@@ -1719,6 +1537,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Manendragarh",
+      "district": "Manendragarh Chirmiri Bhartpur",
+      "avgPrice": 2274,
+      "recentPrice": null,
+      "minPrice": 1815,
+      "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 163,
+      "topVariety": "MTU-1010",
+      "grade": "FAQ"
+    },
+    {
       "name": "Gamhari",
       "district": "Kondagaon",
       "avgPrice": 2229,
@@ -1756,6 +1587,19 @@
       "records": 79,
       "topVariety": "Mahamaya",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Pendraroad",
+      "district": "Gourela Pendra Marwahi",
+      "avgPrice": 2182,
+      "recentPrice": null,
+      "minPrice": 1700,
+      "maxPrice": 5000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 407,
+      "topVariety": "Khadwan",
+      "grade": "FAQ"
     },
     {
       "name": "Biranpur kalan (Sahaspur Lohra)",
@@ -1862,6 +1706,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Vishrampur",
+      "district": "Kondagaon",
+      "avgPrice": 2100,
+      "recentPrice": null,
+      "minPrice": 1900,
+      "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 12,
+      "topVariety": "Paddy Coarse",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Kanker",
       "district": "Kanker",
       "avgPrice": 2088,
@@ -1953,6 +1810,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Jagdalpur",
+      "district": "Bastar",
+      "avgPrice": 2047,
+      "recentPrice": null,
+      "minPrice": 1838,
+      "maxPrice": 11400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 268,
+      "topVariety": "Paddy Coarse",
+      "grade": "FAQ"
+    },
+    {
       "name": "Akaltara",
       "district": "Janjgeer-Champa",
       "avgPrice": 2047,
@@ -1990,6 +1860,19 @@
       "records": 238,
       "topVariety": "Mahamaya",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Tokapal",
+      "district": "Bastar",
+      "avgPrice": 2029,
+      "recentPrice": null,
+      "minPrice": 1900,
+      "maxPrice": 2280,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 13,
+      "topVariety": "Paddy Coarse",
+      "grade": "FAQ"
     },
     {
       "name": "Lohandiguda",
@@ -2054,6 +1937,19 @@
       "lastDate": "2026-10-12",
       "records": 13,
       "topVariety": "Paddy Coarse",
+      "grade": "FAQ"
+    },
+    {
+      "name": "Kharsiya",
+      "district": "Raigarh",
+      "avgPrice": 2010,
+      "recentPrice": null,
+      "minPrice": 1545,
+      "maxPrice": 2369,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 194,
+      "topVariety": "MTU-1010",
       "grade": "FAQ"
     },
     {
@@ -2174,6 +2070,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Arang",
+      "district": "Raipur",
+      "avgPrice": 1992,
+      "recentPrice": null,
+      "minPrice": 1550,
+      "maxPrice": 2400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 173,
+      "topVariety": "Sarana",
+      "grade": "FAQ"
+    },
+    {
       "name": "Belarbahara",
       "district": "Dhamtari",
       "avgPrice": 1988,
@@ -2198,6 +2107,19 @@
       "records": 12,
       "topVariety": "Paddy Coarse",
       "grade": "FAQ"
+    },
+    {
+      "name": "Basana",
+      "district": "Mahasamund",
+      "avgPrice": 1982,
+      "recentPrice": null,
+      "minPrice": 1664,
+      "maxPrice": 2389,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 309,
+      "topVariety": "1001",
+      "grade": "Non-FAQ"
     },
     {
       "name": "Lormi",
@@ -2250,6 +2172,19 @@
       "records": 262,
       "topVariety": "Sarana",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Naila",
+      "district": "Janjgeer-Champa",
+      "avgPrice": 1972,
+      "recentPrice": null,
+      "minPrice": 1061,
+      "maxPrice": 3101,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 240,
+      "topVariety": "MTU-1010",
+      "grade": "FAQ"
     },
     {
       "name": "Sarsiwan",
@@ -2326,6 +2261,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-14",
       "records": 6,
+      "topVariety": "Paddy Coarse",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Keshkal",
+      "district": "Kondagaon",
+      "avgPrice": 1964,
+      "recentPrice": null,
+      "minPrice": 1687,
+      "maxPrice": 2500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 161,
       "topVariety": "Paddy Coarse",
       "grade": "Non-FAQ"
     },
@@ -2499,6 +2447,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Baramkela",
+      "district": "Sarangarh Bilaigarh",
+      "avgPrice": 1929,
+      "recentPrice": null,
+      "minPrice": 1600,
+      "maxPrice": 2369,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 392,
+      "topVariety": "1001",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Bhoring",
       "district": "Mahasamund",
       "avgPrice": 1927,
@@ -2577,6 +2538,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Pithoura",
+      "district": "Mahasamund",
+      "avgPrice": 1893,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 2369,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 421,
+      "topVariety": "MTU-1010",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Sarayapali",
       "district": "Mahasamund",
       "avgPrice": 1892,
@@ -2626,6 +2600,19 @@
       "lastDate": "2026-03-09",
       "records": 239,
       "topVariety": "Khadwan",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Narayanpur",
+      "district": "Narayanpur",
+      "avgPrice": 1877,
+      "recentPrice": null,
+      "minPrice": 1600,
+      "maxPrice": 3900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 168,
+      "topVariety": "Safari",
       "grade": "Non-FAQ"
     },
     {
@@ -2954,6 +2941,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Dharamjaygarh",
+      "district": "Raigarh",
+      "avgPrice": 1700,
+      "recentPrice": null,
+      "minPrice": 1700,
+      "maxPrice": 1700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 13,
+      "topVariety": "1001",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Tendukona",
       "district": "Mahasamund",
       "avgPrice": 1700,
@@ -3045,19 +3045,6 @@
       "records": 323,
       "topVariety": "Local",
       "grade": "FAQ"
-    },
-    {
-      "name": "Takhatpur",
-      "district": "Bilaspur",
-      "avgPrice": 2381,
-      "recentPrice": 2300,
-      "minPrice": 2300,
-      "maxPrice": 2300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 16,
-      "topVariety": "Local",
-      "grade": "Non-FAQ"
     },
     {
       "name": "Jagdalpur",
@@ -3411,6 +3398,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Takhatpur",
+      "district": "Bilaspur",
+      "avgPrice": 2381,
+      "recentPrice": null,
+      "minPrice": 2000,
+      "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 16,
+      "topVariety": "Local",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Pratappur",
       "district": "Surajpur",
       "avgPrice": 2372,
@@ -3698,19 +3698,6 @@
     }
   ],
   "bengal-gramgramwhole": [
-    {
-      "name": "Balod",
-      "district": "Balod",
-      "avgPrice": 4524,
-      "recentPrice": 6560,
-      "minPrice": 6560,
-      "maxPrice": 6560,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 23,
-      "topVariety": "Desi (Whole)",
-      "grade": "Non-FAQ"
-    },
     {
       "name": "Kawardha",
       "district": "Kabirdham",
@@ -4050,6 +4037,19 @@
       "grade": "FAQ"
     },
     {
+      "name": "Balod",
+      "district": "Balod",
+      "avgPrice": 4524,
+      "recentPrice": null,
+      "minPrice": 3000,
+      "maxPrice": 6560,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 23,
+      "topVariety": "Desi (Whole)",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Gharghoda",
       "district": "Raigarh",
       "avgPrice": 4500,
@@ -4208,24 +4208,11 @@
   ],
   "papaya": [
     {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 1825,
-      "recentPrice": 3200,
-      "minPrice": 3200,
-      "maxPrice": 3200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 61,
-      "topVariety": "Papaya",
-      "grade": "Grade B"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 2197,
-      "recentPrice": 3100,
-      "minPrice": 3000,
+      "recentPrice": 3200,
+      "minPrice": 3200,
       "maxPrice": 3200,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
@@ -4273,6 +4260,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 1825,
+      "recentPrice": null,
+      "minPrice": 1100,
+      "maxPrice": 3200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 61,
+      "topVariety": "Papaya",
+      "grade": "Grade B"
+    },
+    {
       "name": "Gandai",
       "district": "Khairagarh Chhuikhadan Gandai",
       "avgPrice": 1817,
@@ -4301,19 +4301,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 5339,
-      "recentPrice": 4700,
-      "minPrice": 4700,
-      "maxPrice": 4700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 371,
-      "topVariety": "Mousambi",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Tiphra",
       "district": "Bilaspur",
       "avgPrice": 7926,
@@ -4325,6 +4312,19 @@
       "records": 42,
       "topVariety": "Mousambi",
       "grade": "Grade B"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 5339,
+      "recentPrice": null,
+      "minPrice": 2800,
+      "maxPrice": 8500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 371,
+      "topVariety": "Mousambi",
+      "grade": "Non-FAQ"
     },
     {
       "name": "Bilaspur",
@@ -4342,25 +4342,12 @@
   ],
   "amaranthus": [
     {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 2356,
-      "recentPrice": 4700,
-      "minPrice": 4700,
-      "maxPrice": 4700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 315,
-      "topVariety": "Amaranthus",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 2977,
-      "recentPrice": 4100,
+      "recentPrice": 4000,
       "minPrice": 4000,
-      "maxPrice": 4200,
+      "maxPrice": 4000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 341,
@@ -4392,6 +4379,19 @@
       "records": 22,
       "topVariety": "Amaranthus",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 2356,
+      "recentPrice": null,
+      "minPrice": 900,
+      "maxPrice": 4800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 315,
+      "topVariety": "Amaranthus",
+      "grade": "Non-FAQ"
     }
   ],
   "bottle-gourd": [
@@ -4399,8 +4399,8 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 1155,
-      "recentPrice": 1100,
-      "minPrice": 1000,
+      "recentPrice": 1200,
+      "minPrice": 1200,
       "maxPrice": 1200,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
@@ -4418,19 +4418,6 @@
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 168,
-      "topVariety": "Bottle Gourd",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 966,
-      "recentPrice": 700,
-      "minPrice": 700,
-      "maxPrice": 700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 376,
       "topVariety": "Bottle Gourd",
       "grade": "Non-FAQ"
     },
@@ -4485,29 +4472,29 @@
       "records": 31,
       "topVariety": "Bottle Gourd",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 966,
+      "recentPrice": null,
+      "minPrice": 300,
+      "maxPrice": 2800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 376,
+      "topVariety": "Bottle Gourd",
+      "grade": "Non-FAQ"
     }
   ],
   "orange": [
     {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 8605,
-      "recentPrice": 8200,
-      "minPrice": 8200,
-      "maxPrice": 8200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 64,
-      "topVariety": "Orange",
-      "grade": "Grade B"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 5680,
-      "recentPrice": 5500,
+      "recentPrice": 5000,
       "minPrice": 5000,
-      "maxPrice": 6000,
+      "maxPrice": 5000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 279,
@@ -4515,13 +4502,26 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 8605,
+      "recentPrice": null,
+      "minPrice": 3800,
+      "maxPrice": 15100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 64,
+      "topVariety": "Orange",
+      "grade": "Grade B"
+    },
+    {
       "name": "Rajnandgaon",
       "district": "Rajnandgaon",
       "avgPrice": 4459,
-      "recentPrice": 4300,
-      "minPrice": 4300,
-      "maxPrice": 4300,
-      "rangeBasis": "recent",
+      "recentPrice": null,
+      "minPrice": 2400,
+      "maxPrice": 6800,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
       "records": 292,
       "topVariety": "Orange",
@@ -4543,41 +4543,15 @@
   ],
   "bhindiladies-finger": [
     {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 3316,
-      "recentPrice": 3600,
-      "minPrice": 3600,
-      "maxPrice": 3600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 90,
-      "topVariety": "Bhindi",
-      "grade": "Grade B"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 3530,
-      "recentPrice": 3250,
-      "minPrice": 2800,
-      "maxPrice": 3700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-24",
-      "records": 408,
-      "topVariety": "Bhindi",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 2780,
       "recentPrice": 2800,
       "minPrice": 2800,
       "maxPrice": 2800,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 372,
+      "lastDate": "2026-10-24",
+      "records": 408,
       "topVariety": "Bhindi",
       "grade": "Non-FAQ"
     },
@@ -4608,6 +4582,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 3316,
+      "recentPrice": null,
+      "minPrice": 1700,
+      "maxPrice": 5100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 90,
+      "topVariety": "Bhindi",
+      "grade": "Grade B"
+    },
+    {
       "name": "Bilaspur",
       "district": "Bilaspur",
       "avgPrice": 3111,
@@ -4617,6 +4604,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-03-10",
       "records": 345,
+      "topVariety": "Bhindi",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 2780,
+      "recentPrice": null,
+      "minPrice": 900,
+      "maxPrice": 7500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 372,
       "topVariety": "Bhindi",
       "grade": "Non-FAQ"
     },
@@ -4636,24 +4636,11 @@
   ],
   "potato": [
     {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 2070,
-      "recentPrice": 2300,
-      "minPrice": 2300,
-      "maxPrice": 2300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 87,
-      "topVariety": "Local",
-      "grade": "Grade B"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 1748,
-      "recentPrice": 2250,
-      "minPrice": 2000,
+      "recentPrice": 2500,
+      "minPrice": 2500,
       "maxPrice": 2500,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
@@ -4675,17 +4662,17 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 1287,
-      "recentPrice": 900,
-      "minPrice": 900,
-      "maxPrice": 900,
-      "rangeBasis": "recent",
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 2070,
+      "recentPrice": null,
+      "minPrice": 1300,
+      "maxPrice": 3400,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
-      "records": 378,
-      "topVariety": "Potato",
-      "grade": "Non-FAQ"
+      "records": 87,
+      "topVariety": "Local",
+      "grade": "Grade B"
     },
     {
       "name": "Bilaspur",
@@ -4725,6 +4712,19 @@
       "records": 28,
       "topVariety": "Local",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 1287,
+      "recentPrice": null,
+      "minPrice": 700,
+      "maxPrice": 2100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 378,
+      "topVariety": "Potato",
+      "grade": "Non-FAQ"
     }
   ],
   "apple": [
@@ -4732,8 +4732,8 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 17657,
-      "recentPrice": 16500,
-      "minPrice": 16000,
+      "recentPrice": 17000,
+      "minPrice": 17000,
       "maxPrice": 17000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
@@ -4745,10 +4745,10 @@
       "name": "Rajnandgaon",
       "district": "Rajnandgaon",
       "avgPrice": 12813,
-      "recentPrice": 14000,
-      "minPrice": 14000,
-      "maxPrice": 14000,
-      "rangeBasis": "recent",
+      "recentPrice": null,
+      "minPrice": 1300,
+      "maxPrice": 18500,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
       "records": 362,
       "topVariety": "Apple",
@@ -4758,10 +4758,10 @@
       "name": "Tiphra",
       "district": "Bilaspur",
       "avgPrice": 11387,
-      "recentPrice": 11200,
-      "minPrice": 11200,
-      "maxPrice": 11200,
-      "rangeBasis": "recent",
+      "recentPrice": null,
+      "minPrice": 6800,
+      "maxPrice": 19500,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
       "records": 68,
       "topVariety": "Apple",
@@ -4783,25 +4783,12 @@
   ],
   "spinach": [
     {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 2576,
-      "recentPrice": 4700,
-      "minPrice": 4700,
-      "maxPrice": 4700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 361,
-      "topVariety": "Spinach",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 3324,
-      "recentPrice": 4400,
+      "recentPrice": 3600,
       "minPrice": 3000,
-      "maxPrice": 6000,
+      "maxPrice": 4200,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 399,
@@ -4831,6 +4818,19 @@
       "rangeBasis": "all",
       "lastDate": "2025-07-29",
       "records": 31,
+      "topVariety": "Spinach",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 2576,
+      "recentPrice": null,
+      "minPrice": 900,
+      "maxPrice": 5700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 361,
       "topVariety": "Spinach",
       "grade": "Non-FAQ"
     },
@@ -4866,40 +4866,14 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 1712,
-      "recentPrice": 1900,
+      "recentPrice": 1800,
       "minPrice": 1800,
-      "maxPrice": 2000,
+      "maxPrice": 1800,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 408,
       "topVariety": "Local",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 1818,
-      "recentPrice": 1800,
-      "minPrice": 1800,
-      "maxPrice": 1800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 374,
-      "topVariety": "Deshi",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 1548,
-      "recentPrice": 1600,
-      "minPrice": 1600,
-      "maxPrice": 1600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 93,
-      "topVariety": "Local",
-      "grade": "Grade B"
     },
     {
       "name": "Gandai",
@@ -4952,22 +4926,35 @@
       "records": 347,
       "topVariety": "Local",
       "grade": "Non-FAQ"
-    }
-  ],
-  "brinjal": [
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 1818,
+      "recentPrice": null,
+      "minPrice": 300,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 374,
+      "topVariety": "Deshi",
+      "grade": "Non-FAQ"
+    },
     {
       "name": "Tiphra",
       "district": "Bilaspur",
-      "avgPrice": 1855,
-      "recentPrice": 2600,
-      "minPrice": 2600,
-      "maxPrice": 2600,
-      "rangeBasis": "recent",
+      "avgPrice": 1548,
+      "recentPrice": null,
+      "minPrice": 800,
+      "maxPrice": 3600,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
-      "records": 74,
-      "topVariety": "Brinjal",
+      "records": 93,
+      "topVariety": "Local",
       "grade": "Grade B"
-    },
+    }
+  ],
+  "brinjal": [
     {
       "name": "Gandai",
       "district": "Khairagarh Chhuikhadan Gandai",
@@ -4985,25 +4972,12 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 1495,
-      "recentPrice": 1650,
+      "recentPrice": 1600,
       "minPrice": 1600,
-      "maxPrice": 1700,
+      "maxPrice": 1600,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 392,
-      "topVariety": "Brinjal",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 1337,
-      "recentPrice": 1000,
-      "minPrice": 1000,
-      "maxPrice": 1000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 365,
       "topVariety": "Brinjal",
       "grade": "Non-FAQ"
     },
@@ -5034,6 +5008,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 1855,
+      "recentPrice": null,
+      "minPrice": 700,
+      "maxPrice": 3600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 74,
+      "topVariety": "Brinjal",
+      "grade": "Grade B"
+    },
+    {
       "name": "Bilaspur",
       "district": "Bilaspur",
       "avgPrice": 1769,
@@ -5043,6 +5030,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-03-10",
       "records": 346,
+      "topVariety": "Brinjal",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 1337,
+      "recentPrice": null,
+      "minPrice": 300,
+      "maxPrice": 3300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 365,
       "topVariety": "Brinjal",
       "grade": "Non-FAQ"
     }
@@ -5288,40 +5288,14 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 8511,
-      "recentPrice": 9000,
+      "recentPrice": 8000,
       "minPrice": 8000,
-      "maxPrice": 10000,
+      "maxPrice": 8000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 394,
       "topVariety": "Local",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 4646,
-      "recentPrice": 8700,
-      "minPrice": 8700,
-      "maxPrice": 8700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 365,
-      "topVariety": "Local",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 5732,
-      "recentPrice": 5200,
-      "minPrice": 5200,
-      "maxPrice": 5200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 76,
-      "topVariety": "Lemon",
-      "grade": "Grade B"
     },
     {
       "name": "Raigarh",
@@ -5337,6 +5311,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 5732,
+      "recentPrice": null,
+      "minPrice": 2800,
+      "maxPrice": 9200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 76,
+      "topVariety": "Lemon",
+      "grade": "Grade B"
+    },
+    {
       "name": "Bilaspur",
       "district": "Bilaspur",
       "avgPrice": 5430,
@@ -5346,6 +5333,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-03-10",
       "records": 346,
+      "topVariety": "Local",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 4646,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 14000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 365,
       "topVariety": "Local",
       "grade": "Non-FAQ"
     },
@@ -5458,19 +5458,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 2480,
-      "recentPrice": 3000,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 361,
-      "topVariety": "Local",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 3087,
@@ -5510,6 +5497,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 2480,
+      "recentPrice": null,
+      "minPrice": 500,
+      "maxPrice": 5700,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 361,
+      "topVariety": "Local",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Bilaspur",
       "district": "Bilaspur",
       "avgPrice": 2465,
@@ -5538,32 +5538,6 @@
   ],
   "raddish": [
     {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 2101,
-      "recentPrice": 3200,
-      "minPrice": 3200,
-      "maxPrice": 3200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 83,
-      "topVariety": "Raddish",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 1734,
-      "recentPrice": 2800,
-      "minPrice": 2800,
-      "maxPrice": 2800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 298,
-      "topVariety": "Raddish",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 1631,
@@ -5590,6 +5564,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 2101,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 4100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 83,
+      "topVariety": "Raddish",
+      "grade": "Grade B"
+    },
+    {
       "name": "Dhamtari",
       "district": "Dhamtari",
       "avgPrice": 1926,
@@ -5612,6 +5599,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-03-10",
       "records": 343,
+      "topVariety": "Raddish",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 1734,
+      "recentPrice": null,
+      "minPrice": 700,
+      "maxPrice": 2900,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 298,
       "topVariety": "Raddish",
       "grade": "Non-FAQ"
     }
@@ -5644,32 +5644,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 3605,
-      "recentPrice": 3600,
-      "minPrice": 3600,
-      "maxPrice": 3600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 78,
-      "topVariety": "Bitter Gourd",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 3601,
-      "recentPrice": 3300,
-      "minPrice": 3300,
-      "maxPrice": 3300,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 354,
-      "topVariety": "Bitter Gourd",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Raigarh",
       "district": "Raigarh",
       "avgPrice": 4292,
@@ -5696,6 +5670,32 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 3605,
+      "recentPrice": null,
+      "minPrice": 1900,
+      "maxPrice": 6200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 78,
+      "topVariety": "Bitter Gourd",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 3601,
+      "recentPrice": null,
+      "minPrice": 900,
+      "maxPrice": 7800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 354,
+      "topVariety": "Bitter Gourd",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Dhamtari",
       "district": "Dhamtari",
       "avgPrice": 3553,
@@ -5710,32 +5710,6 @@
     }
   ],
   "chilly-capsicum": [
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 3833,
-      "recentPrice": 3800,
-      "minPrice": 3800,
-      "maxPrice": 3800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 354,
-      "topVariety": "Chilly Capsicum",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 3360,
-      "recentPrice": 3600,
-      "minPrice": 3600,
-      "maxPrice": 3600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 57,
-      "topVariety": "Chilly Capsicum",
-      "grade": "Grade B"
-    },
     {
       "name": "Durg",
       "district": "Durg",
@@ -5789,6 +5763,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 3833,
+      "recentPrice": null,
+      "minPrice": 1800,
+      "maxPrice": 7500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 354,
+      "topVariety": "Chilly Capsicum",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Dhamtari",
       "district": "Dhamtari",
       "avgPrice": 3821,
@@ -5800,35 +5787,22 @@
       "records": 28,
       "topVariety": "Chilly Capsicum",
       "grade": "Non-FAQ"
-    }
-  ],
-  "carrot": [
+    },
     {
       "name": "Tiphra",
       "district": "Bilaspur",
-      "avgPrice": 3035,
-      "recentPrice": 3800,
-      "minPrice": 3800,
-      "maxPrice": 3800,
-      "rangeBasis": "recent",
+      "avgPrice": 3360,
+      "recentPrice": null,
+      "minPrice": 1600,
+      "maxPrice": 6200,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
-      "records": 80,
-      "topVariety": "Carrot",
+      "records": 57,
+      "topVariety": "Chilly Capsicum",
       "grade": "Grade B"
-    },
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 2316,
-      "recentPrice": 3000,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 370,
-      "topVariety": "Carrot",
-      "grade": "Non-FAQ"
-    },
+    }
+  ],
+  "carrot": [
     {
       "name": "Durg",
       "district": "Durg",
@@ -5856,6 +5830,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 3035,
+      "recentPrice": null,
+      "minPrice": 1900,
+      "maxPrice": 4200,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 80,
+      "topVariety": "Carrot",
+      "grade": "Grade B"
+    },
+    {
       "name": "Bilaspur",
       "district": "Bilaspur",
       "avgPrice": 2596,
@@ -5865,6 +5852,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-03-10",
       "records": 312,
+      "topVariety": "Carrot",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 2316,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 370,
       "topVariety": "Carrot",
       "grade": "Non-FAQ"
     },
@@ -5897,24 +5897,11 @@
   ],
   "pomegranate": [
     {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 12987,
-      "recentPrice": 15000,
-      "minPrice": 15000,
-      "maxPrice": 15000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 364,
-      "topVariety": "Pomogranate",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 16087,
-      "recentPrice": 15000,
-      "minPrice": 14000,
+      "recentPrice": 16000,
+      "minPrice": 16000,
       "maxPrice": 16000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
@@ -5923,13 +5910,26 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 12987,
+      "recentPrice": null,
+      "minPrice": 9500,
+      "maxPrice": 17500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 364,
+      "topVariety": "Pomogranate",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Tiphra",
       "district": "Bilaspur",
       "avgPrice": 11438,
-      "recentPrice": 9200,
-      "minPrice": 9200,
-      "maxPrice": 9200,
-      "rangeBasis": "recent",
+      "recentPrice": null,
+      "minPrice": 7200,
+      "maxPrice": 18500,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
       "records": 69,
       "topVariety": "Pomogranate",
@@ -5950,19 +5950,6 @@
     }
   ],
   "cabbage": [
-    {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 1784,
-      "recentPrice": 3100,
-      "minPrice": 3100,
-      "maxPrice": 3100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 79,
-      "topVariety": "Cabbage",
-      "grade": "Grade B"
-    },
     {
       "name": "Durg",
       "district": "Durg",
@@ -5990,19 +5977,6 @@
       "grade": "Non-FAQ"
     },
     {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 1041,
-      "recentPrice": 1000,
-      "minPrice": 1000,
-      "maxPrice": 1000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 365,
-      "topVariety": "Cabbage",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Raigarh",
       "district": "Raigarh",
       "avgPrice": 2794,
@@ -6014,6 +5988,19 @@
       "records": 350,
       "topVariety": "Cabbage",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 1784,
+      "recentPrice": null,
+      "minPrice": 700,
+      "maxPrice": 3100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 79,
+      "topVariety": "Cabbage",
+      "grade": "Grade B"
     },
     {
       "name": "Bilaspur",
@@ -6040,22 +6027,22 @@
       "records": 32,
       "topVariety": "Cabbage",
       "grade": "Non-FAQ"
-    }
-  ],
-  "little-gourdkundru": [
+    },
     {
       "name": "Rajnandgaon",
       "district": "Rajnandgaon",
-      "avgPrice": 2130,
-      "recentPrice": 3700,
-      "minPrice": 3700,
-      "maxPrice": 3700,
-      "rangeBasis": "recent",
+      "avgPrice": 1041,
+      "recentPrice": null,
+      "minPrice": 300,
+      "maxPrice": 3800,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
-      "records": 366,
-      "topVariety": "Local",
+      "records": 365,
+      "topVariety": "Cabbage",
       "grade": "Non-FAQ"
-    },
+    }
+  ],
+  "little-gourdkundru": [
     {
       "name": "Durg",
       "district": "Durg",
@@ -6068,19 +6055,6 @@
       "records": 411,
       "topVariety": "Local",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 2133,
-      "recentPrice": 2600,
-      "minPrice": 2600,
-      "maxPrice": 2600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 90,
-      "topVariety": "Little gourd (Kundru)",
-      "grade": "Grade B"
     },
     {
       "name": "Gandai",
@@ -6131,6 +6105,32 @@
       "rangeBasis": "all",
       "lastDate": "2025-07-29",
       "records": 31,
+      "topVariety": "Local",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 2133,
+      "recentPrice": null,
+      "minPrice": 1100,
+      "maxPrice": 3800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 90,
+      "topVariety": "Little gourd (Kundru)",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 2130,
+      "recentPrice": null,
+      "minPrice": 700,
+      "maxPrice": 4000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 366,
       "topVariety": "Local",
       "grade": "Non-FAQ"
     }
@@ -6207,9 +6207,9 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 2608,
-      "recentPrice": 3150,
+      "recentPrice": 3000,
       "minPrice": 3000,
-      "maxPrice": 3300,
+      "maxPrice": 3000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 155,
@@ -6258,38 +6258,12 @@
   ],
   "beetroot": [
     {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 3269,
-      "recentPrice": 3600,
-      "minPrice": 3600,
-      "maxPrice": 3600,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 90,
-      "topVariety": "Beetroot",
-      "grade": "Grade B"
-    },
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 2325,
-      "recentPrice": 2800,
-      "minPrice": 2800,
-      "maxPrice": 2800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 376,
-      "topVariety": "Beetroot",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 1910,
-      "recentPrice": 1900,
+      "recentPrice": 1800,
       "minPrice": 1800,
-      "maxPrice": 2000,
+      "maxPrice": 1800,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 412,
@@ -6310,6 +6284,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 3269,
+      "recentPrice": null,
+      "minPrice": 1600,
+      "maxPrice": 5100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 90,
+      "topVariety": "Beetroot",
+      "grade": "Grade B"
+    },
+    {
       "name": "Bilaspur",
       "district": "Bilaspur",
       "avgPrice": 2435,
@@ -6321,47 +6308,34 @@
       "records": 346,
       "topVariety": "Beetroot",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 2325,
+      "recentPrice": null,
+      "minPrice": 1000,
+      "maxPrice": 5500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 376,
+      "topVariety": "Beetroot",
+      "grade": "Non-FAQ"
     }
   ],
   "green-chilli": [
     {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 3992,
-      "recentPrice": 6800,
-      "minPrice": 6800,
-      "maxPrice": 6800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 366,
-      "topVariety": "Green Chilly",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 4272,
-      "recentPrice": 5500,
+      "recentPrice": 5000,
       "minPrice": 5000,
-      "maxPrice": 6000,
+      "maxPrice": 5000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 387,
       "topVariety": "Green Chilly",
       "grade": "Non-FAQ"
-    },
-    {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 3597,
-      "recentPrice": 3200,
-      "minPrice": 3200,
-      "maxPrice": 3200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 77,
-      "topVariety": "Green Chilly",
-      "grade": "Grade B"
     },
     {
       "name": "Dhamtari",
@@ -6375,6 +6349,32 @@
       "records": 31,
       "topVariety": "Green Chilly",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 3992,
+      "recentPrice": null,
+      "minPrice": 1100,
+      "maxPrice": 9500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 366,
+      "topVariety": "Green Chilly",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 3597,
+      "recentPrice": null,
+      "minPrice": 2100,
+      "maxPrice": 9100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 77,
+      "topVariety": "Green Chilly",
+      "grade": "Grade B"
     },
     {
       "name": "Bilaspur",
@@ -6395,9 +6395,9 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 1935,
-      "recentPrice": 4550,
+      "recentPrice": 4500,
       "minPrice": 4500,
-      "maxPrice": 4600,
+      "maxPrice": 4500,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 393,
@@ -6408,27 +6408,14 @@
       "name": "Tiphra",
       "district": "Bilaspur",
       "avgPrice": 3159,
-      "recentPrice": 4200,
-      "minPrice": 4200,
-      "maxPrice": 4200,
-      "rangeBasis": "recent",
+      "recentPrice": null,
+      "minPrice": 1400,
+      "maxPrice": 5200,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
       "records": 78,
       "topVariety": "Local",
       "grade": "Grade B"
-    },
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 1888,
-      "recentPrice": 3800,
-      "minPrice": 3800,
-      "maxPrice": 3800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 366,
-      "topVariety": "Onion",
-      "grade": "Non-FAQ"
     },
     {
       "name": "Raigarh",
@@ -6441,6 +6428,19 @@
       "lastDate": "2026-10-14",
       "records": 346,
       "topVariety": "Local",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 1888,
+      "recentPrice": null,
+      "minPrice": 900,
+      "maxPrice": 5300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 366,
+      "topVariety": "Onion",
       "grade": "Non-FAQ"
     },
     {
@@ -6542,8 +6542,8 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 1773,
-      "recentPrice": 1700,
-      "minPrice": 1600,
+      "recentPrice": 1800,
+      "minPrice": 1800,
       "maxPrice": 1800,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
@@ -6557,8 +6557,8 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 2765,
-      "recentPrice": 4800,
-      "minPrice": 3200,
+      "recentPrice": 6400,
+      "minPrice": 6400,
       "maxPrice": 6400,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
@@ -6974,25 +6974,12 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 4261,
-      "recentPrice": 3800,
-      "minPrice": 3600,
-      "maxPrice": 4000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-24",
-      "records": 383,
-      "topVariety": "Local",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 2738,
       "recentPrice": 3600,
       "minPrice": 3600,
       "maxPrice": 3600,
       "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 225,
+      "lastDate": "2026-10-24",
+      "records": 383,
       "topVariety": "Local",
       "grade": "Non-FAQ"
     },
@@ -7036,6 +7023,19 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 2738,
+      "recentPrice": null,
+      "minPrice": 800,
+      "maxPrice": 7500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 225,
+      "topVariety": "Local",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Gandai",
       "district": "Khairagarh Chhuikhadan Gandai",
       "avgPrice": 2722,
@@ -7067,9 +7067,9 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 4660,
-      "recentPrice": 5500,
+      "recentPrice": 5000,
       "minPrice": 5000,
-      "maxPrice": 6000,
+      "maxPrice": 5000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 409,
@@ -8997,24 +8997,11 @@
   ],
   "ridgeguardtori": [
     {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 3007,
-      "recentPrice": 5100,
-      "minPrice": 5100,
-      "maxPrice": 5100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 14,
-      "topVariety": "Ridgeguard(Tori)",
-      "grade": "Grade B"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 4237,
-      "recentPrice": 3300,
-      "minPrice": 3000,
+      "recentPrice": 3600,
+      "minPrice": 3600,
       "maxPrice": 3600,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
@@ -9034,6 +9021,19 @@
       "records": 239,
       "topVariety": "Ridgeguard(Tori)",
       "grade": "Non-FAQ"
+    },
+    {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 3007,
+      "recentPrice": null,
+      "minPrice": 1500,
+      "maxPrice": 5100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 14,
+      "topVariety": "Ridgeguard(Tori)",
+      "grade": "Grade B"
     },
     {
       "name": "Dhamtari",
@@ -9747,43 +9747,17 @@
   ],
   "cowpeaveg": [
     {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 2601,
-      "recentPrice": 3700,
-      "minPrice": 3700,
-      "maxPrice": 3700,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 68,
-      "topVariety": "Cowpea (Veg)",
-      "grade": "Grade B"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 2205,
-      "recentPrice": 3400,
+      "recentPrice": 2800,
       "minPrice": 2800,
-      "maxPrice": 4000,
+      "maxPrice": 2800,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 83,
       "topVariety": "Cowpea (Veg)",
       "grade": "Local"
-    },
-    {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 2277,
-      "recentPrice": 2100,
-      "minPrice": 2100,
-      "maxPrice": 2100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 73,
-      "topVariety": "Cowpea (Veg)",
-      "grade": "Grade B"
     },
     {
       "name": "Raigarh",
@@ -9795,6 +9769,32 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-15",
       "records": 25,
+      "topVariety": "Cowpea (Veg)",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 2601,
+      "recentPrice": null,
+      "minPrice": 1300,
+      "maxPrice": 5800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 68,
+      "topVariety": "Cowpea (Veg)",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 2277,
+      "recentPrice": null,
+      "minPrice": 900,
+      "maxPrice": 4300,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 73,
       "topVariety": "Cowpea (Veg)",
       "grade": "Grade B"
     }
@@ -9867,45 +9867,6 @@
     }
   ],
   "mahua": [
-    {
-      "name": "Bhopalpattnam",
-      "district": "Bijapur",
-      "avgPrice": 2959,
-      "recentPrice": 3000,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 49,
-      "topVariety": "Mahua",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Bharamgarh",
-      "district": "Bijapur",
-      "avgPrice": 2979,
-      "recentPrice": 3000,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 48,
-      "topVariety": "Mahua",
-      "grade": "Non-FAQ"
-    },
-    {
-      "name": "Bijapur",
-      "district": "Bijapur",
-      "avgPrice": 2971,
-      "recentPrice": 3000,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 52,
-      "topVariety": "Mahua",
-      "grade": "Non-FAQ"
-    },
     {
       "name": "Kurud",
       "district": "Dhamtari",
@@ -10375,6 +10336,32 @@
       "grade": "Non-FAQ"
     },
     {
+      "name": "Bharamgarh",
+      "district": "Bijapur",
+      "avgPrice": 2979,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 48,
+      "topVariety": "Mahua",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Bijapur",
+      "district": "Bijapur",
+      "avgPrice": 2971,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 52,
+      "topVariety": "Mahua",
+      "grade": "Non-FAQ"
+    },
+    {
       "name": "Manendragarh",
       "district": "Manendragarh Chirmiri Bhartpur",
       "avgPrice": 2970,
@@ -10384,6 +10371,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-08-17",
       "records": 10,
+      "topVariety": "Mahua",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Bhopalpattnam",
+      "district": "Bijapur",
+      "avgPrice": 2959,
+      "recentPrice": null,
+      "minPrice": 2500,
+      "maxPrice": 3000,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 49,
       "topVariety": "Mahua",
       "grade": "Non-FAQ"
     },
@@ -10828,9 +10828,9 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 2772,
-      "recentPrice": 3400,
+      "recentPrice": 3200,
       "minPrice": 3200,
-      "maxPrice": 3600,
+      "maxPrice": 3200,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 85,
@@ -10841,10 +10841,10 @@
       "name": "Tiphra",
       "district": "Bilaspur",
       "avgPrice": 2655,
-      "recentPrice": 2600,
-      "minPrice": 2600,
-      "maxPrice": 2600,
-      "rangeBasis": "recent",
+      "recentPrice": null,
+      "minPrice": 1600,
+      "maxPrice": 4800,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
       "records": 60,
       "topVariety": "Yam",
@@ -10882,9 +10882,9 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 4601,
-      "recentPrice": 5500,
+      "recentPrice": 5000,
       "minPrice": 5000,
-      "maxPrice": 6000,
+      "maxPrice": 5000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 89,
@@ -10933,43 +10933,17 @@
   ],
   "ashgourd": [
     {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 2639,
-      "recentPrice": 4100,
-      "minPrice": 4100,
-      "maxPrice": 4100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 84,
-      "topVariety": "Gouard",
-      "grade": "Grade B"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 3464,
-      "recentPrice": 3200,
+      "recentPrice": 3000,
       "minPrice": 3000,
-      "maxPrice": 3400,
+      "maxPrice": 3000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 94,
       "topVariety": "Gouard",
       "grade": "Medium"
-    },
-    {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 3025,
-      "recentPrice": 2800,
-      "minPrice": 2800,
-      "maxPrice": 2800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 76,
-      "topVariety": "Gouard",
-      "grade": "Grade B"
     },
     {
       "name": "Gandai",
@@ -10996,47 +10970,60 @@
       "records": 41,
       "topVariety": "Ashgourd",
       "grade": "Grade B"
-    }
-  ],
-  "banana": [
+    },
     {
       "name": "Rajnandgaon",
       "district": "Rajnandgaon",
-      "avgPrice": 3062,
-      "recentPrice": 3100,
-      "minPrice": 3100,
-      "maxPrice": 3100,
-      "rangeBasis": "recent",
+      "avgPrice": 3025,
+      "recentPrice": null,
+      "minPrice": 1400,
+      "maxPrice": 5500,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
-      "records": 81,
-      "topVariety": "Medium",
+      "records": 76,
+      "topVariety": "Gouard",
       "grade": "Grade B"
     },
     {
       "name": "Tiphra",
       "district": "Bilaspur",
-      "avgPrice": 2474,
-      "recentPrice": 2900,
-      "minPrice": 2900,
-      "maxPrice": 2900,
-      "rangeBasis": "recent",
+      "avgPrice": 2639,
+      "recentPrice": null,
+      "minPrice": 1200,
+      "maxPrice": 4600,
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
-      "records": 81,
-      "topVariety": "Banana - Ripe",
+      "records": 84,
+      "topVariety": "Gouard",
       "grade": "Grade B"
-    },
+    }
+  ],
+  "banana": [
     {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 1374,
-      "recentPrice": 1300,
+      "recentPrice": 1000,
       "minPrice": 1000,
-      "maxPrice": 1600,
+      "maxPrice": 1000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 95,
       "topVariety": "Banana - Ripe",
       "grade": "Medium"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 3062,
+      "recentPrice": null,
+      "minPrice": 2600,
+      "maxPrice": 3400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 81,
+      "topVariety": "Medium",
+      "grade": "Grade B"
     },
     {
       "name": "Raigarh",
@@ -11049,6 +11036,19 @@
       "lastDate": "2026-10-15",
       "records": 20,
       "topVariety": "Medium",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 2474,
+      "recentPrice": null,
+      "minPrice": 1300,
+      "maxPrice": 3600,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 81,
+      "topVariety": "Banana - Ripe",
       "grade": "Grade B"
     },
     {
@@ -11067,19 +11067,6 @@
   ],
   "squashchappal-kadoo": [
     {
-      "name": "Tiphra",
-      "district": "Bilaspur",
-      "avgPrice": 1266,
-      "recentPrice": 2100,
-      "minPrice": 2100,
-      "maxPrice": 2100,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 90,
-      "topVariety": "Squash(Chappal Kadoo)",
-      "grade": "Grade B"
-    },
-    {
       "name": "Gandai",
       "district": "Khairagarh Chhuikhadan Gandai",
       "avgPrice": 1083,
@@ -11093,25 +11080,12 @@
       "grade": "Grade B"
     },
     {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 1094,
-      "recentPrice": 1200,
-      "minPrice": 1200,
-      "maxPrice": 1200,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 77,
-      "topVariety": "Squash(Chappal Kadoo)",
-      "grade": "Grade B"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 1149,
-      "recentPrice": 1150,
+      "recentPrice": 1000,
       "minPrice": 1000,
-      "maxPrice": 1300,
+      "maxPrice": 1000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 90,
@@ -11128,6 +11102,32 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-15",
       "records": 42,
+      "topVariety": "Squash(Chappal Kadoo)",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Tiphra",
+      "district": "Bilaspur",
+      "avgPrice": 1266,
+      "recentPrice": null,
+      "minPrice": 700,
+      "maxPrice": 2100,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 90,
+      "topVariety": "Squash(Chappal Kadoo)",
+      "grade": "Grade B"
+    },
+    {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 1094,
+      "recentPrice": null,
+      "minPrice": 900,
+      "maxPrice": 1400,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 77,
       "topVariety": "Squash(Chappal Kadoo)",
       "grade": "Grade B"
     }
@@ -11751,19 +11751,6 @@
   ],
   "millets": [
     {
-      "name": "Pandariya",
-      "district": "Kabirdham",
-      "avgPrice": 2589,
-      "recentPrice": 2550,
-      "minPrice": 2550,
-      "maxPrice": 2550,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 12,
-      "topVariety": "Millets",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Jagdalpur",
       "district": "Bastar",
       "avgPrice": 4000,
@@ -11916,6 +11903,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-08-20",
       "records": 1,
+      "topVariety": "Millets",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Pandariya",
+      "district": "Kabirdham",
+      "avgPrice": 2589,
+      "recentPrice": null,
+      "minPrice": 2395,
+      "maxPrice": 2850,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 12,
       "topVariety": "Millets",
       "grade": "Non-FAQ"
     },
@@ -12132,25 +12132,12 @@
   ],
   "beans": [
     {
-      "name": "Rajnandgaon",
-      "district": "Rajnandgaon",
-      "avgPrice": 5005,
-      "recentPrice": 5800,
-      "minPrice": 5800,
-      "maxPrice": 5800,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 63,
-      "topVariety": "Local",
-      "grade": "Grade B"
-    },
-    {
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 3982,
-      "recentPrice": 3250,
+      "recentPrice": 2700,
       "minPrice": 2700,
-      "maxPrice": 3800,
+      "maxPrice": 2700,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 71,
@@ -12184,6 +12171,19 @@
       "grade": "Grade B"
     },
     {
+      "name": "Rajnandgaon",
+      "district": "Rajnandgaon",
+      "avgPrice": 5005,
+      "recentPrice": null,
+      "minPrice": 2800,
+      "maxPrice": 7800,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 63,
+      "topVariety": "Local",
+      "grade": "Grade B"
+    },
+    {
       "name": "Tiphra",
       "district": "Bilaspur",
       "avgPrice": 3677,
@@ -12198,19 +12198,6 @@
     }
   ],
   "muleti": [
-    {
-      "name": "Manendragarh",
-      "district": "Manendragarh Chirmiri Bhartpur",
-      "avgPrice": 350,
-      "recentPrice": 250,
-      "minPrice": 250,
-      "maxPrice": 250,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 3,
-      "topVariety": "Mulethi-Organic",
-      "grade": "Non-FAQ"
-    },
     {
       "name": "Rajnandgaon",
       "district": "Rajnandgaon",
@@ -12247,6 +12234,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-10-17",
       "records": 7,
+      "topVariety": "Mulethi-Organic",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Manendragarh",
+      "district": "Manendragarh Chirmiri Bhartpur",
+      "avgPrice": 350,
+      "recentPrice": null,
+      "minPrice": 250,
+      "maxPrice": 500,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 3,
       "topVariety": "Mulethi-Organic",
       "grade": "Non-FAQ"
     }
@@ -12606,10 +12606,10 @@
       "name": "Bastar",
       "district": "Bastar",
       "avgPrice": 23000,
-      "recentPrice": 23000,
+      "recentPrice": null,
       "minPrice": 23000,
       "maxPrice": 23000,
-      "rangeBasis": "recent",
+      "rangeBasis": "all",
       "lastDate": "2026-10-21",
       "records": 1,
       "topVariety": "Dry",
@@ -12686,9 +12686,9 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 6047,
-      "recentPrice": 5500,
+      "recentPrice": 5000,
       "minPrice": 5000,
-      "maxPrice": 6000,
+      "maxPrice": 5000,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 75,
@@ -12806,19 +12806,6 @@
   ],
   "bamboo": [
     {
-      "name": "Ramanujganj",
-      "district": "Balrampur",
-      "avgPrice": 209,
-      "recentPrice": 250,
-      "minPrice": 250,
-      "maxPrice": 250,
-      "rangeBasis": "recent",
-      "lastDate": "2026-10-21",
-      "records": 12,
-      "topVariety": "Bamboo",
-      "grade": "Non-FAQ"
-    },
-    {
       "name": "Manendragarh",
       "district": "Manendragarh Chirmiri Bhartpur",
       "avgPrice": 238,
@@ -12893,6 +12880,19 @@
       "rangeBasis": "all",
       "lastDate": "2026-09-30",
       "records": 1,
+      "topVariety": "Bamboo",
+      "grade": "Non-FAQ"
+    },
+    {
+      "name": "Ramanujganj",
+      "district": "Balrampur",
+      "avgPrice": 209,
+      "recentPrice": null,
+      "minPrice": 200,
+      "maxPrice": 260,
+      "rangeBasis": "all",
+      "lastDate": "2026-10-21",
+      "records": 12,
       "topVariety": "Bamboo",
       "grade": "Non-FAQ"
     },
@@ -13079,9 +13079,9 @@
       "name": "Durg",
       "district": "Durg",
       "avgPrice": 5286,
-      "recentPrice": 4750,
+      "recentPrice": 4500,
       "minPrice": 4500,
-      "maxPrice": 5000,
+      "maxPrice": 4500,
       "rangeBasis": "recent",
       "lastDate": "2026-10-24",
       "records": 7,

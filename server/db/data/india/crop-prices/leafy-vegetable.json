@@ -66,12 +66,20 @@
       "month": "10",
       "date": "2026-10",
       "market": 2225,
-      "volume": 243,
-      "days": 21,
+      "volume": 250,
+      "days": 22,
       "mandis": 30
     }
   ],
   "dailyHistory": [
+    {
+      "date": "2026-03-26",
+      "market": 1813,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1000,
+      "maxPrice": 3000
+    },
     {
       "date": "2026-03-27",
       "market": 1100,
@@ -110,6 +118,14 @@
       "volume": 5,
       "mandis": 5,
       "minPrice": 1000,
+      "maxPrice": 5000
+    },
+    {
+      "date": "2026-05-15",
+      "market": 3500,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1500,
       "maxPrice": 5000
     },
     {
@@ -871,9 +887,17 @@
       "mandis": 6,
       "minPrice": 1500,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-10-29",
+      "market": 3000,
+      "volume": 7,
+      "mandis": 7,
+      "minPrice": 1000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-27T06:43:47.532Z",
+  "lastUpdated": "2026-10-29T06:25:28.346Z",
   "districtBreakdown": [
     {
       "district": "Hyderabad (तेलंगाना)",
@@ -885,7 +909,7 @@
       "district": "Ranga Reddy (तेलंगाना)",
       "nameHi": "Ranga Reddy (तेलंगाना)",
       "avgPrice": 3492,
-      "records": 157
+      "records": 159
     },
     {
       "district": "Vadodara(Baroda) (गुजरात)",
@@ -896,14 +920,14 @@
     {
       "district": "Dimapur (नागालैंड)",
       "nameHi": "Dimapur (नागालैंड)",
-      "avgPrice": 2987,
-      "records": 79
+      "avgPrice": 2988,
+      "records": 80
     },
     {
       "district": "Mahbubnagar (तेलंगाना)",
       "nameHi": "Mahbubnagar (तेलंगाना)",
-      "avgPrice": 5270,
-      "records": 74
+      "avgPrice": 5267,
+      "records": 75
     },
     {
       "district": "Medchal Malkajgiri (तेलंगाना)",
@@ -932,8 +956,8 @@
     {
       "district": "North and Middle Andaman (अंडमान निकोबार)",
       "nameHi": "North and Middle Andaman (अंडमान निकोबार)",
-      "avgPrice": 5643,
-      "records": 35
+      "avgPrice": 5597,
+      "records": 36
     },
     {
       "district": "Longleng (नागालैंड)",

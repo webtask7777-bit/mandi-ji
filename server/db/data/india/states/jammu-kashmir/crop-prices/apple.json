@@ -81,10 +81,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 5815,
-      "volume": 411,
-      "days": 21,
-      "mandis": 13
+      "market": 5799,
+      "volume": 417,
+      "days": 22,
+      "mandis": 14
     }
   ],
   "dailyHistory": [
@@ -1535,9 +1535,17 @@
       "mandis": 3,
       "minPrice": 3000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-10-29",
+      "market": 4531,
+      "volume": 6,
+      "mandis": 3,
+      "minPrice": 2187.5,
+      "maxPrice": 6875
     }
   ],
-  "lastUpdated": "2026-10-27T06:43:47.532Z",
+  "lastUpdated": "2026-10-29T06:25:28.346Z",
   "districtBreakdown": [
     {
       "district": "Srinagar",
@@ -1548,14 +1556,14 @@
     {
       "district": "Baramulla",
       "nameHi": "Baramulla",
-      "avgPrice": 4676,
-      "records": 218
+      "avgPrice": 4684,
+      "records": 220
     },
     {
       "district": "Shopian",
       "nameHi": "Shopian",
-      "avgPrice": 6466,
-      "records": 210
+      "avgPrice": 6448,
+      "records": 212
     },
     {
       "district": "Pulwama",
@@ -1610,6 +1618,12 @@
       "nameHi": "Rajouri",
       "avgPrice": 6054,
       "records": 63
+    },
+    {
+      "district": "Budgam",
+      "nameHi": "Budgam",
+      "avgPrice": 2703,
+      "records": 2
     }
   ]
 }

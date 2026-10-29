@@ -25,10 +25,10 @@
     {
       "month": "10",
       "date": "2026-10",
-      "market": 8481,
-      "volume": 12,
-      "days": 5,
-      "mandis": 4
+      "market": 8500,
+      "volume": 15,
+      "days": 6,
+      "mandis": 5
     }
   ],
   "dailyHistory": [
@@ -119,15 +119,23 @@
       "mandis": 1,
       "minPrice": 8351,
       "maxPrice": 8564
+    },
+    {
+      "date": "2026-10-29",
+      "market": 8696,
+      "volume": 3,
+      "mandis": 2,
+      "minPrice": 8561,
+      "maxPrice": 9000
     }
   ],
-  "lastUpdated": "2026-10-27T06:43:47.532Z",
+  "lastUpdated": "2026-10-29T06:25:28.346Z",
   "districtBreakdown": [
     {
       "district": "Bikaner",
       "nameHi": "Bikaner",
-      "avgPrice": 8305,
-      "records": 10
+      "avgPrice": 8353,
+      "records": 12
     },
     {
       "district": "Barmer",
@@ -151,6 +159,12 @@
       "district": "Ganganagar",
       "nameHi": "Ganganagar",
       "avgPrice": 8500,
+      "records": 1
+    },
+    {
+      "district": "Jaisalmer",
+      "nameHi": "Jaisalmer",
+      "avgPrice": 8800,
       "records": 1
     }
   ]
