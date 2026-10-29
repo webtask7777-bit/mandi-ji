@@ -36,7 +36,7 @@ router.get('/detail/:slug', (req, res) => {
   const index = stateMandiIndex(scope);
   const mandi = index.get(String(req.params.slug || ''));
   if (!mandi || !mandi.crops.length) return res.status(404).json({ error: 'Unknown mandi', code: 'UNKNOWN_MANDI' });
-  const nearby = mandiSummaries(index).filter(row => row.slug !== mandi.slug && mandi.district && row.district === mandi.district).slice(0, 8);
+  const nearby = mandiSummaries(index).filter(row => row.indexable && row.slug !== mandi.slug && mandi.district && row.district === mandi.district).slice(0, 8);
   res.json({ ...mandi, state: scope, nearby });
 });
 

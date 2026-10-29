@@ -45,6 +45,26 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/mandi-bhav",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hi",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hi/blog",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/hi/blog/:slug",
+      "destination": "/blog/:slug",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [
         {

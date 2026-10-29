@@ -1,9 +1,11 @@
 // One mandi page per (state, mandi). Built by inverting the state's
 // crop → mandi comparison file, so every price shown is a record the crop
 // pages already show. Shared by the API, the page and the prerender.
+import { isCropPriceCommodity } from '../src/utils/cropEligibility.js';
 
 export const MANDI_INDEX_MAX_AGE_DAYS = 30;
-export const MANDI_INDEX_MIN_CROPS = 3;
+// Mandis with fewer recent crops make thin pages that Google crawls but does not index.
+export const MANDI_INDEX_MIN_CROPS = 5;
 const DAY_MS = 86_400_000;
 const IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
 
@@ -36,6 +38,8 @@ export function buildMandiIndex(compare, crops = []) {
   }
   const index = new Map();
   for (const [cropId, rows] of Object.entries(compare || {})) {
+    // Livestock, fish, eggs and ghee have no crop page and no confirmed ₹/quintal unit.
+    if (!isCropPriceCommodity(cropId)) continue;
     for (const row of Array.isArray(rows) ? rows : []) {
       const base = slugify(row?.name);
       if (!base) continue;
@@ -67,9 +71,9 @@ export function buildMandiIndex(compare, crops = []) {
 }
 
 /** Summary rows for a state's mandi list (links), most-recorded first. */
-export function mandiSummaries(index) {
-  return [...index.values()].map(({ slug, name, district, crops, latestDate }) => ({
-    slug, name, district, latestDate, cropCount: crops.length,
+export function mandiSummaries(index, { asOf = new Date() } = {}) {
+  return [...index.values()].map(mandi => ({ mandi, indexable: !getMandiIndexability(mandi, { asOf }).noIndex })).map(({ mandi: { slug, name, district, crops, latestDate }, indexable }) => ({
+    slug, name, district, latestDate, cropCount: crops.length, indexable,
     records: crops.reduce((sum, crop) => sum + crop.records, 0),
     topCrops: crops.slice().sort((a, b) => b.records - a.records).slice(0, 3).map(crop => crop.nameHi),
   })).filter(row => row.cropCount > 0).sort((a, b) => b.records - a.records || a.name.localeCompare(b.name));
