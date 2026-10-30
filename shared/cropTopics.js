@@ -8,7 +8,7 @@
  * These labels do not claim a species, cultivar or geographic recommendation.
  */
 const TOPIC_ROWS = [
-  ["paddy", "धान / चावल", "Paddy / rice", "grain", "paddy paddycommon paddybasmati rice basmati-rice broken-rice beaten-rice"],
+  ["paddy", "धान", "Paddy", "grain", "paddy paddycommon paddybasmati rice basmati-rice broken-rice beaten-rice"],
   ["wheat", "गेहूँ", "Wheat", "grain", "wheat wheat-atta"],
   ["maize", "मक्का", "Maize", "grain", "maize baby-corn sweet-corn"],
   ["gram", "चना", "Chickpea", "pulses", "gram bengal-gramgramwhole bengal-gram-dalchana-dal kabuli-chanachickpeas-white gram-rawchholia"],
@@ -192,7 +192,8 @@ for (const topic of CROP_TOPICS) {
 
 /** Topic IDs only; useful when validating CMS metadata. */
 // Processed or milled forms share a topic for browsing, but the topic's guides are about
-// growing and handling the crop; these pages do not list them as if they applied.
+// growing and handling the crop. The editorial API and crop-page recommendations
+// exclude these forms; matching a topic is not enough to establish applicability.
 export const PROCESSED_FORM_IDS = Object.freeze(new Set([
   'wheat-atta', 'rice', 'basmati-rice', 'broken-rice', 'beaten-rice', 'mustard-oil', 'ground-nut-oil',
   'bengal-gram-dalchana-dal', 'arhar-daltur-dal', 'red-gram-split-arhar-dal-tur-dal', 'green-gram-dalmoong-dal',

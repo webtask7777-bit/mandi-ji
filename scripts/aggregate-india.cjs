@@ -9,6 +9,7 @@ const fs = require('fs');
 const path = require('path');
 const { recordKey, MIN_PLAUSIBLE_PRICE } = require('./lib/daily-store.cjs');
 const { monthChange } = require('./lib/month-change.cjs');
+const { buildMandiComparison, recentDateCutoff } = require('./lib/mandi-comparison.cjs');
 const { newBucket, addPrice, bucketPrice, unitMismatchedSeries, dropThinBuckets, priceSanity } = require('./lib/robust-price.cjs');
 
 const DATA_DIR = path.join(__dirname, '..', 'server', 'db', 'data');
@@ -289,12 +290,26 @@ const MANDI_STRIP_SUFFIXES = [
   /^APMC\s+/gi,
 ];
 
+// These inputs repeat millions of times but have only a few thousand distinct
+// values. Cache by the value, never by record object (whose identity is mutable).
+const cleanMandiCache = new Map();
+const slugCache = new Map();
+const emojiCache = new Map();
+const hindiCache = new Map();
+const monthCache = new Map();
+const dateCache = new Map();
+const cropEmojiEntries = Object.entries(CROP_EMOJI);
+const cropHindiEntries = Object.entries(CROP_HINDI);
+
 function cleanMandiName(name) {
+  if (cleanMandiCache.has(name)) return cleanMandiCache.get(name);
   let cleaned = name;
   for (const pattern of MANDI_STRIP_SUFFIXES) {
     cleaned = cleaned.replace(pattern, '');
   }
-  return cleaned.trim();
+  cleaned = cleaned.trim();
+  cleanMandiCache.set(name, cleaned);
+  return cleaned;
 }
 
 // A mandi is identified by state + district + cleaned name; same-name markets in different
@@ -302,27 +317,34 @@ function cleanMandiName(name) {
 const mandiKeyOf = rec => `${rec.state}|${rec.district}|${cleanMandiName(rec.market || '')}`;
 
 function slugify(name) {
-  return name.toLowerCase()
+  if (slugCache.has(name)) return slugCache.get(name);
+  const slug = name.toLowerCase()
     .replace(/[()]/g, '')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
+  slugCache.set(name, slug);
+  return slug;
 }
 
 function getCropEmoji(name) {
+  if (emojiCache.has(name)) return emojiCache.get(name);
   const lower = name.toLowerCase();
-  for (const [key, emoji] of Object.entries(CROP_EMOJI)) {
-    if (lower.includes(key)) return emoji;
+  for (const [key, emoji] of cropEmojiEntries) {
+    if (lower.includes(key)) { emojiCache.set(name, emoji); return emoji; }
   }
+  emojiCache.set(name, '\u{1F331}');
   return '\u{1F331}';
 }
 
 function getCropHindi(slug, originalName) {
   if (CROP_HINDI[slug]) return CROP_HINDI[slug];
+  if (hindiCache.has(slug)) return hindiCache.get(slug);
   // Try partial match
   const lower = slug.toLowerCase();
-  for (const [key, hindi] of Object.entries(CROP_HINDI)) {
-    if (lower.includes(key) || key.includes(lower)) return hindi;
+  for (const [key, hindi] of cropHindiEntries) {
+    if (lower.includes(key) || key.includes(lower)) { hindiCache.set(slug, hindi); return hindi; }
   }
+  hindiCache.set(slug, null);
   return null;
 }
 
@@ -337,17 +359,21 @@ function getCropSeasonData(slug) {
 function parseDate(dateStr) {
   // "11/03/2026" -> "2026-03"
   if (!dateStr) return null;
+  if (monthCache.has(dateStr)) return monthCache.get(dateStr);
   const parts = dateStr.split('/');
-  if (parts.length === 3) return `${parts[2]}-${parts[1]}`;
-  return null;
+  const month = parts.length === 3 ? `${parts[2]}-${parts[1]}` : null;
+  monthCache.set(dateStr, month);
+  return month;
 }
 
 function parseDateFull(dateStr) {
   // "11/03/2026" -> "2026-03-11"
   if (!dateStr) return null;
+  if (dateCache.has(dateStr)) return dateCache.get(dateStr);
   const parts = dateStr.split('/');
-  if (parts.length === 3) return `${parts[2]}-${parts[1]}-${parts[0]}`;
-  return null;
+  const date = parts.length === 3 ? `${parts[2]}-${parts[1]}-${parts[0]}` : null;
+  dateCache.set(dateStr, date);
+  return date;
 }
 
 function writeJSON(filePath, data) {
@@ -369,13 +395,16 @@ function main() {
   console.log(`Loading ${dailyFiles.length} daily snapshot(s)...`);
 
   // Extract lastUpdated from the latest daily file
-  const latestDailyData = JSON.parse(fs.readFileSync(path.join(DAILY_DIR, dailyFiles[dailyFiles.length - 1]), 'utf-8'));
-  const lastUpdated = latestDailyData.fetchedAt || new Date().toISOString();
+  const lastUpdated = JSON.parse(fs.readFileSync(path.join(DAILY_DIR, dailyFiles[dailyFiles.length - 1]), 'utf-8')).fetchedAt || new Date().toISOString();
 
 
   // The same observation can sit in two files (older fetches filed by fetch date, overlapping
   // snapshots). Keep one copy per identity key; the later file wins.
   const byKey = new Map();
+  // JSON parsing otherwise allocates another copy of every state, crop and date
+  // string for every row. Reuse equal strings without altering any source value.
+  const sourceLabels = new Map();
+  const labelFields = ['state', 'district', 'market', 'commodity', 'variety', 'grade', 'arrival_date'];
   let rawCount = 0;
   for (const file of dailyFiles) {
     const data = JSON.parse(fs.readFileSync(path.join(DAILY_DIR, file), 'utf-8'));
@@ -383,30 +412,50 @@ function main() {
       rawCount++;
       // Spellings first (Chattisgarh → Chhattisgarh), so one observation filed under both is kept once.
       if (STATE_ALIASES[rec.state]) rec.state = STATE_ALIASES[rec.state];
+      for (const field of labelFields) {
+        const value = rec[field];
+        if (typeof value !== 'string') continue;
+        if (!sourceLabels.has(value)) sourceLabels.set(value, value);
+        rec[field] = sourceLabels.get(value);
+      }
       byKey.set(recordKey(rec), rec);
     }
   }
   // The dry floor runs before the unit check: otherwise impossible ₹200 rows set the
   // commodity's typical price and the real ₹3,000+ series are excluded as another unit.
-  const dedupedRecords = [...byKey.values()].filter(r => !NON_QUINTAL_COMMODITIES.has(COMMODITY_ALIASES[r.commodity] || r.commodity) && !belowDryFloor(r));
+  let dedupedRecords = [];
+  for (const rec of byKey.values()) {
+    if (!NON_QUINTAL_COMMODITIES.has(COMMODITY_ALIASES[rec.commodity] || rec.commodity) && !belowDryFloor(rec)) dedupedRecords.push(rec);
+  }
+  const dedupedCount = dedupedRecords.length;
+  // No later stage needs the multi-million-entry keys or the interning lookup.
+  byKey.clear();
+  sourceLabels.clear();
 
   // Leave out series reported in another unit (per bunch, per nut): they are not ₹/quintal.
   const seriesKey = r => `${r.commodity}|${r.state}|${r.district}|${r.market}`;
   const unitExcluded = unitMismatchedSeries(dedupedRecords, { seriesKey, commodityKey: r => r.commodity });
-  const unitChecked = dedupedRecords.filter(r => !unitExcluded.has(seriesKey(r)));
+  let unitChecked = dedupedRecords.filter(r => !unitExcluded.has(seriesKey(r)));
   console.log(`Unit check: ${unitExcluded.size} series (${dedupedRecords.length - unitChecked.length} records) left out as not per quintal`);
+  dedupedRecords = null;
   const sanity = priceSanity(unitChecked, r => r.commodity);
-  const allRecords = unitChecked.filter(r => sanity.keep(r)).map(r => sanity.clip(r));
+  const allRecords = [];
+  for (const rec of unitChecked) if (sanity.keep(rec)) allRecords.push(sanity.clip(rec));
   console.log(`Price sanity: ${unitChecked.length - allRecords.length} records more than 20x from the commodity's typical price left out`);
+  unitChecked = null;
 
-  // "Recent" = the 7 days before the newest observation (UTC dates), not the newest file name.
+  // "Recent" = seven calendar dates including the newest observation, not the newest file name.
   let newestObservation = '';
-  for (const r of allRecords) { const d = parseDateFull(r.arrival_date); if (d && d > newestObservation) newestObservation = d; }
-  const recentCutoff = newestObservation ? new Date(Date.parse(`${newestObservation}T00:00:00Z`) - 7 * 86400000).toISOString().slice(0, 10) : '';
+  const observedDates = new Set();
+  for (const r of allRecords) {
+    const d = parseDateFull(r.arrival_date);
+    if (d) { observedDates.add(d); if (d > newestObservation) newestObservation = d; }
+  }
+  const recentCutoff = recentDateCutoff(newestObservation) || '';
   console.log(`Newest observation ${newestObservation}; recent cutoff ${recentCutoff}`);
   const heatmapFrom = newestObservation ? (() => { const [y, m] = newestObservation.slice(0, 7).split('-').map(Number); const i = y * 12 + m - 1 - 11; return `${Math.floor(i / 12)}-${String(i % 12 + 1).padStart(2, '0')}`; })() : '';
 
-  console.log(`Total records: ${allRecords.length} (${rawCount - dedupedRecords.length} duplicates across files skipped)`);
+  console.log(`Total records: ${allRecords.length} (${rawCount - dedupedCount} duplicates across files skipped)`);
 
   // Every crop-price file is rewritten below; files left from commodities that are no longer
   // published (renamed ids, unit-excluded items, livestock) must not keep being served.
@@ -446,7 +495,12 @@ function main() {
     const district = DISTRICT_ALIASES[rec.state]?.[rec.district];
     if (district) rec.district = district;
   }
-  const spellingKey = rec => `${rec.state}|${cleanMandiName(rec.market || '').toLowerCase().split(/[^a-z0-9]+/).filter(w => w && w !== 'apmc').sort().join(' ')}`;
+  const spellingCache = new Map();
+  const spellingKey = rec => {
+    const cacheKey = `${rec.state}|${rec.market || ''}`;
+    if (!spellingCache.has(cacheKey)) spellingCache.set(cacheKey, `${rec.state}|${cleanMandiName(rec.market || '').toLowerCase().split(/[^a-z0-9]+/).filter(w => w && w !== 'apmc').sort().join(' ')}`);
+    return spellingCache.get(cacheKey);
+  };
   const spellings = new Map();
   for (const rec of allRecords) {
     const key = spellingKey(rec);
@@ -535,12 +589,29 @@ function main() {
     const meta = STATES[stateData.name] || { id: stateId, nameHi: stateData.name };
     const records = stateData.records;
 
-    const districts = new Set(records.map(r => r.district));
-    const markets = new Set(records.map(r => r.market));
+    const districts = new Set();
+    const markets = new Set();
+    const districtSummaries = new Map();
+    const marketSummaries = new Map();
     const crops = {};
 
     for (const rec of records) {
       const cropSlug = slugify(rec.commodity);
+      const cropNameHi = getCropHindi(cropSlug, rec.commodity) || rec.commodity;
+      const month = parseDate(rec.arrival_date);
+      const fullDate = parseDateFull(rec.arrival_date);
+      const marketKey = mandiKeyOf(rec);
+      districts.add(rec.district);
+      markets.add(rec.market);
+      if (!districtSummaries.has(rec.district)) districtSummaries.set(rec.district, { count: 0, crops: {} });
+      const districtSummary = districtSummaries.get(rec.district);
+      districtSummary.count++;
+      districtSummary.crops[cropNameHi] = (districtSummary.crops[cropNameHi] || 0) + 1;
+      if (!marketSummaries.has(rec.market)) marketSummaries.set(rec.market, { count: 0, district: rec.district || '', crops: {}, byMonthCount: {} });
+      const marketSummary = marketSummaries.get(rec.market);
+      marketSummary.count++;
+      marketSummary.crops[cropNameHi] = (marketSummary.crops[cropNameHi] || 0) + 1;
+      if (month && month >= heatmapFrom) marketSummary.byMonthCount[month] = (marketSummary.byMonthCount[month] || 0) + 1;
       if (!crops[cropSlug]) {
         crops[cropSlug] = {
           id: cropSlug,
@@ -564,25 +635,23 @@ function main() {
       if (rec.max_price >= MIN_PLAUSIBLE_PRICE) c.maxPrice = Math.max(c.maxPrice, rec.max_price);
       if (rec.variety) c.varieties.add(rec.variety);
 
-      const month = parseDate(rec.arrival_date);
       if (month) {
         if (!c.byMonth[month]) c.byMonth[month] = newBucket();
-        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(c.byMonth[month], mandiKeyOf(rec), rec.modal_price, parseDateFull(rec.arrival_date));
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(c.byMonth[month], marketKey, rec.modal_price, fullDate);
         c.byMonth[month].count++;
       }
 
-      const fullDate = parseDateFull(rec.arrival_date);
       if (fullDate) {
-        if (!c.byDay[fullDate]) c.byDay[fullDate] = { ...newBucket(), minPrices: [], maxPrices: [] };
-        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(c.byDay[fullDate], mandiKeyOf(rec), rec.modal_price, fullDate);
-        if (rec.min_price >= MIN_PLAUSIBLE_PRICE) c.byDay[fullDate].minPrices.push(rec.min_price);
-        if (rec.max_price >= MIN_PLAUSIBLE_PRICE) c.byDay[fullDate].maxPrices.push(rec.max_price);
+        if (!c.byDay[fullDate]) c.byDay[fullDate] = { ...newBucket(), minPrice: Infinity, maxPrice: 0 };
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(c.byDay[fullDate], marketKey, rec.modal_price, fullDate);
+        if (rec.min_price >= MIN_PLAUSIBLE_PRICE) c.byDay[fullDate].minPrice = Math.min(c.byDay[fullDate].minPrice, rec.min_price);
+        if (rec.max_price >= MIN_PLAUSIBLE_PRICE) c.byDay[fullDate].maxPrice = Math.max(c.byDay[fullDate].maxPrice, rec.max_price);
         c.byDay[fullDate].count++;
       }
 
       if (rec.district) {
-        if (!c.byDistrict[rec.district]) c.byDistrict[rec.district] = { prices: [], count: 0 };
-        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) c.byDistrict[rec.district].prices.push(rec.modal_price);
+        if (!c.byDistrict[rec.district]) c.byDistrict[rec.district] = { total: 0, priceCount: 0, count: 0 };
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) { c.byDistrict[rec.district].total += rec.modal_price; c.byDistrict[rec.district].priceCount++; }
         c.byDistrict[rec.district].count++;
       }
 
@@ -593,18 +662,18 @@ function main() {
       allCrops[cropSlug].records++;
       if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) { allCrops[cropSlug].totalModal += rec.modal_price; allCrops[cropSlug].priceCount++; }
       const national = isNational(rec);
-      const m2 = national ? parseDate(rec.arrival_date) : null;
+      const m2 = national ? month : null;
       if (m2) {
         if (!allCrops[cropSlug].byMonth[m2]) allCrops[cropSlug].byMonth[m2] = newBucket();
-        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(allCrops[cropSlug].byMonth[m2], mandiKeyOf(rec), rec.modal_price, parseDateFull(rec.arrival_date));
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(allCrops[cropSlug].byMonth[m2], marketKey, rec.modal_price, fullDate);
         allCrops[cropSlug].byMonth[m2].count++;
       }
-      const fullDate2 = national ? parseDateFull(rec.arrival_date) : null;
+      const fullDate2 = national ? fullDate : null;
       if (fullDate2) {
-        if (!allCrops[cropSlug].byDay[fullDate2]) allCrops[cropSlug].byDay[fullDate2] = { ...newBucket(), minPrices: [], maxPrices: [] };
-        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(allCrops[cropSlug].byDay[fullDate2], mandiKeyOf(rec), rec.modal_price, fullDate2);
-        if (rec.min_price >= MIN_PLAUSIBLE_PRICE) allCrops[cropSlug].byDay[fullDate2].minPrices.push(rec.min_price);
-        if (rec.max_price >= MIN_PLAUSIBLE_PRICE) allCrops[cropSlug].byDay[fullDate2].maxPrices.push(rec.max_price);
+        if (!allCrops[cropSlug].byDay[fullDate2]) allCrops[cropSlug].byDay[fullDate2] = { ...newBucket(), minPrice: Infinity, maxPrice: 0 };
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) addPrice(allCrops[cropSlug].byDay[fullDate2], marketKey, rec.modal_price, fullDate2);
+        if (rec.min_price >= MIN_PLAUSIBLE_PRICE) allCrops[cropSlug].byDay[fullDate2].minPrice = Math.min(allCrops[cropSlug].byDay[fullDate2].minPrice, rec.min_price);
+        if (rec.max_price >= MIN_PLAUSIBLE_PRICE) allCrops[cropSlug].byDay[fullDate2].maxPrice = Math.max(allCrops[cropSlug].byDay[fullDate2].maxPrice, rec.max_price);
         allCrops[cropSlug].byDay[fullDate2].count++;
       }
 
@@ -612,8 +681,8 @@ function main() {
       if (national && rec.district) {
         if (!allCropDistricts[cropSlug]) allCropDistricts[cropSlug] = {};
         const distKey = `${rec.district} (${meta.nameHi})`;
-        if (!allCropDistricts[cropSlug][distKey]) allCropDistricts[cropSlug][distKey] = { prices: [], count: 0 };
-        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) allCropDistricts[cropSlug][distKey].prices.push(rec.modal_price);
+        if (!allCropDistricts[cropSlug][distKey]) allCropDistricts[cropSlug][distKey] = { total: 0, priceCount: 0, count: 0 };
+        if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) { allCropDistricts[cropSlug][distKey].total += rec.modal_price; allCropDistricts[cropSlug][distKey].priceCount++; }
         allCropDistricts[cropSlug][distKey].count++;
       }
     }
@@ -651,13 +720,11 @@ function main() {
 
     // State districts
     const districtsArr = [...districts].map(d => {
-      const distRecords = records.filter(r => r.district === d);
+      const summary = districtSummaries.get(d);
       return {
         name: d,
-        totalRecords: distRecords.length,
-        topCrops: Object.entries(
-          distRecords.reduce((acc, r) => { acc[getCropHindi(slugify(r.commodity), r.commodity) || r.commodity] = (acc[getCropHindi(slugify(r.commodity), r.commodity) || r.commodity] || 0) + 1; return acc; }, {})
-        ).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([name, count]) => ({ name, count })),
+        totalRecords: summary.count,
+        topCrops: Object.entries(summary.crops).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([name, count]) => ({ name, count })),
       };
     }).sort((a, b) => b.totalRecords - a.totalRecords);
 
@@ -665,15 +732,13 @@ function main() {
 
     // State mandis (with cleaned names)
     const mandisArr = [...markets].map(m => {
-      const mRecords = records.filter(r => r.market === m);
+      const summary = marketSummaries.get(m);
       return {
         name: cleanMandiName(m),
         originalName: m,
-        district: mRecords[0]?.district || '',
-        totalRecords: mRecords.length,
-        topCrops: Object.entries(
-          mRecords.reduce((acc, r) => { const hi = getCropHindi(slugify(r.commodity), r.commodity) || r.commodity; acc[hi] = (acc[hi] || 0) + 1; return acc; }, {})
-        ).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([name, count]) => ({ name, count })),
+        district: summary.district,
+        totalRecords: summary.count,
+        topCrops: Object.entries(summary.crops).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([name, count]) => ({ name, count })),
       };
     }).sort((a, b) => b.totalRecords - a.totalRecords);
 
@@ -701,7 +766,7 @@ function main() {
         .map(([district, data]) => ({
           district,
           nameHi: district,
-          avgPrice: data.prices.length > 0 ? Math.round(data.prices.reduce((a, b) => a + b, 0) / data.prices.length) : 0,
+          avgPrice: data.priceCount > 0 ? Math.round(data.total / data.priceCount) : 0,
           records: data.count,
         }))
         .sort((a, b) => b.records - a.records)
@@ -714,8 +779,8 @@ function main() {
           market: bucketPrice(data),
           volume: data.count,
           mandis: Object.keys(data.byMandi).length,
-          minPrice: data.minPrices.length > 0 ? Math.min(...data.minPrices) : 0,
-          maxPrice: data.maxPrices.length > 0 ? Math.max(...data.maxPrices) : 0,
+          minPrice: data.minPrice === Infinity ? 0 : data.minPrice,
+          maxPrice: data.maxPrice,
         }));
 
       writeJSON(path.join(stateDir, 'crop-prices', `${cropId}.json`), {
@@ -730,13 +795,7 @@ function main() {
     // State heatmap (top 30 mandis, cleaned names)
     const heatmapData = {};
     for (const m of mandisArr.slice(0, 30)) {
-      const mRecords = records.filter(r => r.market === m.originalName);
-      const byMonthCount = {};
-      for (const r of mRecords) {
-        const month = parseDate(r.arrival_date);
-        // Only the latest 12 months, so each calendar month comes from one year.
-        if (month && month >= heatmapFrom) byMonthCount[month] = (byMonthCount[month] || 0) + 1;
-      }
+      const { byMonthCount } = marketSummaries.get(m.originalName);
       const vals = Array(12).fill(0).map((_, i) => {
         const key = Object.keys(byMonthCount).find(k => parseInt(k.split('-')[1]) === i + 1);
         return key ? Math.min(10, Math.ceil(byMonthCount[key] / 5)) : 0;
@@ -782,105 +841,30 @@ function main() {
   }
 
   // ─── Mandi Comparison Data (per crop, per mandi prices) ─────────────
-  // Helper: get most common key from frequency object { "Nendran": 45, "Local": 12 } → "Nendran"
-  function getTopKey(freq) {
-    if (!freq) return null;
-    let top = null, max = 0;
-    for (const [k, v] of Object.entries(freq)) {
-      if (v > max && k && k !== 'Other' && k !== 'Unspecified') { max = v; top = k; }
-    }
-    return top;
-  }
-
   // National series: leave out months/days whose mandi count collapses (one state's history
   // before national coverage for that crop, e.g. tomato Dec 2025 – Feb 2026 = 5 CG mandis).
   let thinRemoved = 0;
   for (const c of Object.values(allCrops)) thinRemoved += dropThinBuckets(c.byMonth).length + dropThinBuckets(c.byDay, 0.2, { keepLatest: true }).length;
   console.log(`National series: ${thinRemoved} thin month/day points left out`);
 
-  // Mandi-compare row: a recent price (last 7 days before the newest observation) with the
-  // min/max of that same window; mandis without recent data keep their historical average and
-  // last date, and are listed after every mandi with a recent price.
-  const avg = list => Math.round(list.reduce((a, b) => a + b, 0) / list.length);
-  const compareFields = m => {
-    const window = m.recentPrices.length ? m.recentPrices : m.prices;
-    return {
-      avgPrice: avg(m.prices),
-      recentPrice: m.recentPrices.length ? avg(m.recentPrices) : null,
-      minPrice: Math.min(...window), maxPrice: Math.max(...window),
-      rangeBasis: m.recentPrices.length ? 'recent' : 'all',
-      lastDate: m.lastDate || null, records: m.count,
-    };
+  // A comparison quote belongs to one commodity, market, variety, grade and
+  // actual observed day. Historical majority labels never stand in for identity.
+  const comparisonOptions = {
+    recentCutoff,
+    cropIdOf: rec => slugify(rec.commodity),
+    marketIdOf: mandiKeyOf,
+    marketNameOf: rec => cleanMandiName(rec.market),
+    stateInfoOf: rec => {
+      const state = STATES[rec.state];
+      return { state: state?.nameHi || rec.state, stateId: state?.id || slugify(rec.state), stateCode: STATE_CODES[rec.state] || null };
+    },
   };
-  const compareOrder = (a, b) => (b.recentPrice != null) - (a.recentPrice != null) || (b.recentPrice ?? b.avgPrice) - (a.recentPrice ?? a.avgPrice);
-
-  const allCropMandis = {};
-  for (const rec of allRecords) {
-    if (!isNational(rec)) continue;
-    const cropSlug = slugify(rec.commodity);
-    const mandiName = cleanMandiName(rec.market);
-    const stateInfo = STATES[rec.state];
-    const stateHi = stateInfo ? stateInfo.nameHi : rec.state;
-    if (!allCropMandis[cropSlug]) allCropMandis[cropSlug] = {};
-    const key = mandiKeyOf(rec);
-    if (!allCropMandis[cropSlug][key]) {
-      allCropMandis[cropSlug][key] = { name: mandiName, state: stateHi, stateId: stateInfo ? stateInfo.id : slugify(rec.state), stateCode: STATE_CODES[rec.state] || null, district: rec.district, prices: [], recentPrices: [], lastDate: '', count: 0, varieties: {}, grades: {} };
-    }
-    const entry = allCropMandis[cropSlug][key];
-    if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) {
-      entry.prices.push(rec.modal_price);
-      // Track recent prices (last 7 days) for accurate best/worst mandi
-      const fullDate = parseDateFull(rec.arrival_date);
-      if (fullDate && fullDate > entry.lastDate) entry.lastDate = fullDate;
-      if (fullDate && fullDate >= recentCutoff) entry.recentPrices.push(rec.modal_price);
-    }
-    if (rec.variety) entry.varieties[rec.variety] = (entry.varieties[rec.variety] || 0) + 1;
-    if (rec.grade) entry.grades[rec.grade] = (entry.grades[rec.grade] || 0) + 1;
-    entry.count++;
-  }
-
-  // Per-state mandi comparison
-  for (const [stateId, stateData] of Object.entries(byState)) {
-    const meta = STATES[stateData.name] || { id: stateId, nameHi: stateData.name };
-    const stateCropMandis = {};
-    for (const rec of stateData.records) {
-      const cropSlug = slugify(rec.commodity);
-      const mandiName = cleanMandiName(rec.market);
-      if (!stateCropMandis[cropSlug]) stateCropMandis[cropSlug] = {};
-      const key = mandiKeyOf(rec);
-      if (!stateCropMandis[cropSlug][key]) stateCropMandis[cropSlug][key] = { name: mandiName, district: rec.district, prices: [], recentPrices: [], lastDate: '', count: 0, varieties: {}, grades: {} };
-      const entry = stateCropMandis[cropSlug][key];
-      if (rec.modal_price >= MIN_PLAUSIBLE_PRICE) {
-        entry.prices.push(rec.modal_price);
-        const fullDate = parseDateFull(rec.arrival_date);
-        if (fullDate && fullDate > entry.lastDate) entry.lastDate = fullDate;
-        if (fullDate && fullDate >= recentCutoff) entry.recentPrices.push(rec.modal_price);
-      }
-      if (rec.variety) entry.varieties[rec.variety] = (entry.varieties[rec.variety] || 0) + 1;
-      if (rec.grade) entry.grades[rec.grade] = (entry.grades[rec.grade] || 0) + 1;
-      entry.count++;
-    }
-    const stateMandiCompare = {};
-    for (const [cropId, mandis] of Object.entries(stateCropMandis)) {
-      const arr = Object.values(mandis).filter(m => m.prices.length > 0).map(m => ({
-        name: m.name, district: m.district, ...compareFields(m),
-        topVariety: getTopKey(m.varieties) || null, grade: getTopKey(m.grades) || null,
-      })).sort(compareOrder);
-      if (arr.length > 0) stateMandiCompare[cropId] = arr;
-    }
-    writeJSON(path.join(INDIA_DIR, 'states', meta.id, 'mandi-compare.json'), stateMandiCompare);
-  }
-
-  // All-India mandi-compare
-  const indiaMandiCompare = {};
-  for (const [cropId, mandis] of Object.entries(allCropMandis)) {
-    const arr = Object.values(mandis).filter(m => m.prices.length > 0).map(m => ({
-      name: m.name, state: m.state, stateId: m.stateId, stateCode: m.stateCode, district: m.district, ...compareFields(m),
-      topVariety: getTopKey(m.varieties) || null, grade: getTopKey(m.grades) || null,
-    })).sort(compareOrder);
-    if (arr.length > 0) indiaMandiCompare[cropId] = arr;
-  }
+  const indiaMandiCompare = buildMandiComparison(allRecords, { ...comparisonOptions, include: isNational });
   writeJSON(path.join(INDIA_DIR, 'mandi-compare.json'), indiaMandiCompare);
+  for (const [stateId, stateData] of Object.entries(byState)) {
+    const meta = STATES[stateData.name] || { id: stateId };
+    writeJSON(path.join(INDIA_DIR, 'states', meta.id, 'mandi-compare.json'), buildMandiComparison(stateData.records, comparisonOptions));
+  }
 
   // ─── Ticker/Signal Data (per crop quick stats for Digital Board) ────
   const tickerData = [];
@@ -889,20 +873,15 @@ function main() {
     // Change only between consecutive months; null across a data gap.
     const { price: latestPrice, prevPrice, change, changePct, month: priceMonth, days: priceDays, mandis: priceMandis } = monthChange(months);
     const msp = getCropMSP(cropId);
-    const mandiCount = allCropMandis[cropId] ? Object.keys(allCropMandis[cropId]).length : 0;
-    // Use recent (last 7 days) prices for best/worst mandi — not all-time average
-    const bestMandi = allCropMandis[cropId]
-      ? Object.values(allCropMandis[cropId]).filter(m => m.recentPrices.length > 0).sort((a, b) => {
-          const avgB = b.recentPrices.reduce((x, y) => x + y, 0) / b.recentPrices.length;
-          const avgA = a.recentPrices.reduce((x, y) => x + y, 0) / a.recentPrices.length;
-          return avgB - avgA;
-        })[0] : null;
-    const worstMandi = allCropMandis[cropId]
-      ? Object.values(allCropMandis[cropId]).filter(m => m.recentPrices.length > 0).sort((a, b) => {
-          const avgA = a.recentPrices.reduce((x, y) => x + y, 0) / a.recentPrices.length;
-          const avgB = b.recentPrices.reduce((x, y) => x + y, 0) / b.recentPrices.length;
-          return avgA - avgB;
-        })[0] : null;
+    const mandiRows = indiaMandiCompare[cropId] || [];
+    const mandiCount = new Set(mandiRows.map(row => row.marketId)).size;
+    const recentRows = mandiRows.filter(row => row.recentPrice !== null);
+    const bestMandi = recentRows[0] || null;
+    const worstMandi = recentRows.at(-1) || null;
+    const tickerQuote = row => row ? {
+      name: row.name, state: row.state, stateCode: row.stateCode, price: row.quotePrice,
+      variety: row.topVariety, grade: row.grade, quoteDate: row.quoteDate, priceBasis: row.priceBasis,
+    } : null;
 
     // Signals come only from a valid month-over-month change. MSP comparisons are not used:
     // the MSP table is a past season's figures.
@@ -914,8 +893,8 @@ function main() {
       mspDiff: msp ? latestPrice - msp : null,
       mspDiffPct: msp ? parseFloat(((latestPrice - msp) / msp * 100).toFixed(1)) : null,
       records: c.records, mandiCount,
-      bestMandi: bestMandi ? { name: bestMandi.name, state: bestMandi.state, stateCode: bestMandi.stateCode, price: Math.round(bestMandi.recentPrices.reduce((a, b) => a + b, 0) / bestMandi.recentPrices.length) } : null,
-      worstMandi: worstMandi ? { name: worstMandi.name, state: worstMandi.state, stateCode: worstMandi.stateCode, price: Math.round(worstMandi.recentPrices.reduce((a, b) => a + b, 0) / worstMandi.recentPrices.length) } : null,
+      bestMandi: tickerQuote(bestMandi),
+      worstMandi: tickerQuote(worstMandi),
     });
   }
   tickerData.sort((a, b) => b.records - a.records);
@@ -1000,7 +979,7 @@ function main() {
           .map(([district, data]) => ({
             district,
             nameHi: district,
-            avgPrice: data.prices.length > 0 ? Math.round(data.prices.reduce((a, b) => a + b, 0) / data.prices.length) : 0,
+            avgPrice: data.priceCount > 0 ? Math.round(data.total / data.priceCount) : 0,
             records: data.count,
           }))
           .sort((a, b) => b.records - a.records)
@@ -1014,8 +993,8 @@ function main() {
         market: bucketPrice(data),
         volume: data.count,
         mandis: Object.keys(data.byMandi).length,
-        minPrice: data.minPrices.length > 0 ? Math.min(...data.minPrices) : 0,
-        maxPrice: data.maxPrices.length > 0 ? Math.max(...data.maxPrices) : 0,
+        minPrice: data.minPrice === Infinity ? 0 : data.minPrice,
+        maxPrice: data.maxPrice,
       }));
 
     writeJSON(path.join(INDIA_DIR, 'crop-prices', `${cropId}.json`), {
@@ -1030,10 +1009,17 @@ function main() {
   // All-India heatmap (top 30 mandis, cleaned names)
   const allMandiCounts = {};
   const allMandiOriginal = {};
+  const allMandiMonths = new Map();
   for (const rec of allRecords) {
     const cleaned = cleanMandiName(rec.market);
     allMandiCounts[cleaned] = (allMandiCounts[cleaned] || 0) + 1;
     allMandiOriginal[cleaned] = rec.market;
+    // Preserve the existing heatmap's original-name grouping; only remove the
+    // repeated full-archive scan for each of the thirty displayed markets.
+    if (!allMandiMonths.has(rec.market)) allMandiMonths.set(rec.market, {});
+    const byMonthCount = allMandiMonths.get(rec.market);
+    const month = parseDate(rec.arrival_date);
+    if (month && month >= heatmapFrom) byMonthCount[month] = (byMonthCount[month] || 0) + 1;
   }
   const topMandis = Object.entries(allMandiCounts)
     .sort((a, b) => b[1] - a[1])
@@ -1042,12 +1028,7 @@ function main() {
   const indiaHeatmap = {};
   for (const [market] of topMandis) {
     const original = allMandiOriginal[market];
-    const mRecords = allRecords.filter(r => r.market === original);
-    const byMonthCount = {};
-    for (const r of mRecords) {
-      const month = parseDate(r.arrival_date);
-      if (month && month >= heatmapFrom) byMonthCount[month] = (byMonthCount[month] || 0) + 1;
-    }
+    const byMonthCount = allMandiMonths.get(original);
     const vals = Array(12).fill(0).map((_, i) => {
       const key = Object.keys(byMonthCount).find(k => parseInt(k.split('-')[1]) === i + 1);
       return key ? Math.min(10, Math.ceil(byMonthCount[key] / 3)) : 0;
@@ -1092,7 +1073,7 @@ function main() {
     totalMandis: allMarkets.size,
     totalCrops: Object.keys(allCrops).length,
     topStates: statesList.filter(s => s.hasData).slice(0, 5),
-    dateRange: dailyFiles.map(f => f.replace('.json', '')),
+    dateRange: [...observedDates].sort(),
     lastUpdated,
     newestObservation: newestObservation || null,
     recentCutoff: recentCutoff || null,

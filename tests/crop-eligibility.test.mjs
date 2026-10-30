@@ -28,9 +28,9 @@ test('exact known non-crop IDs are excluded without excluding cowpea or lookalik
 test('price-gap candidates cannot offer livestock under quintal cost assumptions', () => {
   const rows = [{ name: 'A', topVariety: 'FAQ', recentPrice: 2000 }, { name: 'B', topVariety: 'FAQ', recentPrice: 4000 }];
   const ids = [...NON_CROP_COMMODITY_IDS, 'cowpeaveg', 'cowpealobia-karamani', 'wheat'];
-  const input = Object.fromEntries(ids.map(id => [id, rows]));
+  const input = Object.fromEntries(ids.map(id => [id, rows.map(row => ({ ...row, commodityId: id, comparisonIdentity: 'commodity-mandi-variety-grade-date-v1', marketId: row.name, grade: 'FAQ', unit: 'INR/quintal', quotePrice: row.recentPrice, quoteDate: '2026-10-29', priceBasis: 'daily-modal' }))]));
   const before = JSON.stringify(input);
-  const output = buildPriceGapCandidates(input, ids.map(id => ({ id, name: id })));
+  const output = buildPriceGapCandidates(input, ids.map(id => ({ id, name: id })), { now: new Date('2026-10-30T10:00:00Z') });
   assert.deepEqual(output.map(row => row.cropId).sort(), ['cowpeaveg', 'cowpealobia-karamani', 'wheat'].sort());
   assert.equal(JSON.stringify(input), before, 'raw market inputs remain unchanged');
 });

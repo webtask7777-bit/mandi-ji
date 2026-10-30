@@ -7,8 +7,10 @@ import { cropDetailPath } from '../src/utils/cropUrls.js';
 import { getLanguage, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, languagePath } from '../shared/languages.js';
 import { EDITORIAL_LANGUAGE_CODES } from '../shared/editorialLanguages.js';
 import { resolveSiteOrigin } from '../shared/siteOrigin.js';
-import { getCropIndexability } from '../shared/cropIndexability.js';
-import { buildMandiIndex, getMandiIndexability, mandiPath } from '../shared/mandiPages.js';
+import { CROP_INDEX_MAX_AGE_DAYS, getCropIndexability } from '../shared/cropIndexability.js';
+import { indexDeadline } from '../shared/seoLifecycle.js';
+import { BLOG_PAGE_SIZE, blogLibraryPath, parseBlogLibraryPath } from '../shared/blogPagination.js';
+import { buildMandiIndex, getMandiIndexability, mandiPath, MANDI_INDEX_MAX_AGE_DAYS, MANDI_INDEX_MIN_CROPS, isRecentMandiCrop } from '../shared/mandiPages.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.env.NODE_ENV = 'production';
@@ -28,7 +30,7 @@ const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compa
 const cache = new Map();
 const manifest = JSON.parse(await readFile(path.join(dist, '.vite/manifest.json'), 'utf8'));
 function routeAssets(route) {
-  const page = /^\/[a-z]{2,3}\/blog$/.test(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : route.startsWith('/mandi/') ? 'MandiDetailPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/kisan-calendar':'KisanCalendarPage', '/kisan-salah':'KisanSalahPage', '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
+  const page = parseBlogLibraryPath(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : route.startsWith('/mandi/') ? 'MandiDetailPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/kisan-calendar':'KisanCalendarPage', '/kisan-salah':'KisanSalahPage', '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
   const css = new Set();
   const seen = new Set();
   function visit(key) { if (seen.has(key)) return; seen.add(key); const entry = manifest[key]; if (!entry) return; (entry.css || []).forEach(file => css.add(file)); (entry.imports || []).forEach(visit); }
@@ -78,7 +80,7 @@ async function render(route) {
   const languageInfo = getLanguage(localeCode) || getLanguage('hi');
   const documentLanguage = languageInfo.code;
   return template.replace(/<html\b[^>]*>/, `<html lang="${documentLanguage}" dir="${languageInfo.dir}">`).replace('</head>', `${head}${routeAssets(route)}\n</head>`)
-    .replace('<div id="root"></div>', `<div id="root">${body.replaceAll('आज का उपलब्ध रिकॉर्ड', 'उपलब्ध दर्ज रिकॉर्ड').replace(/\d+ दिन पुराना रिकॉर्ड/g, 'पुराना रिकॉर्ड · तारीख देखें')}</div><script id="sahibhav-public-data" type="application/json">${escapeJson(pageResponses)}</script>`);
+    .replace('<div id="root"></div>', `<div id="root">${body.replaceAll('आज का उपलब्ध रिकॉर्ड', 'उपलब्ध दर्ज रिकॉर्ड').replaceAll('आज का रिकॉर्ड', 'उपलब्ध दर्ज रिकॉर्ड').replace(/\d+ दिन पुराना रिकॉर्ड/g, 'पुराना रिकॉर्ड · तारीख देखें')}</div><script id="sahibhav-public-data" type="application/json">${escapeJson(pageResponses)}</script>`);
 }
 // A frozen dataset must still age. Use one real-time reference throughout the
 // build and the same policy as CropDetailPage; rebuilds refresh the static HTML.
@@ -95,6 +97,7 @@ try {
   const knownCrops = new Set();
   // Sitemap <lastmod>: a price page changes when its newest record does; an article on its own update.
   const lastmod = new Map();
+  const expiration = new Map();
   const states = (loadIndiaData('states') || []).filter(state => state.hasData);
   const scopes = ['all', ...new Set(states.map(state => state.id))];
   for (const scope of scopes) {
@@ -107,6 +110,7 @@ try {
       let detail;
       try { detail = scope === 'all' ? loadIndiaCropPrices(crop.id) : loadStateCropPrices(scope, crop.id); } catch { /* no observed prices: keep out of sitemap */ }
       const indexability = getCropIndexability(detail, { asOf: indexAsOf });
+      expiration.set(route, indexability.noIndex === false ? indexDeadline(indexability.latestDate, CROP_INDEX_MAX_AGE_DAYS) : 0);
       if (indexability.noIndex === false) { routes.add(route); lastmod.set(route, indexability.latestDate); }
     }
   }
@@ -118,6 +122,12 @@ try {
       if (!mandi.crops.length) continue;
       const route = mandiPath(state.id, mandi.slug);
       const indexability = getMandiIndexability(mandi, { asOf: indexAsOf });
+      const newestByCrop = new Map();
+      for (const crop of mandi.crops.filter(crop => isRecentMandiCrop(crop, indexAsOf))) {
+        if (crop.lastDate > (newestByCrop.get(crop.id) || '')) newestByCrop.set(crop.id, crop.lastDate);
+      }
+      const recentDates = [...newestByCrop.values()].sort().reverse();
+      expiration.set(route, indexability.noIndex ? 0 : indexDeadline(recentDates[MANDI_INDEX_MIN_CROPS - 1], MANDI_INDEX_MAX_AGE_DAYS));
       if (indexability.noIndex) knownMandis.add(route);
       else { routes.add(route); lastmod.set(route, indexability.latestDate); }
     }
@@ -131,6 +141,18 @@ try {
       lastmod.set(route, updated);
       const library = !post.language || post.language === 'hi' ? '/blog' : `/${post.language}/blog`;
       if (routes.has(library) && updated > (lastmod.get(library) || '')) lastmod.set(library, updated);
+    }
+  }
+  // Every unfiltered page has distinct HTML and a self-canonical clean URL.
+  // Legacy ?page= links are redirected by routing middleware before static files.
+  for (const language of EDITORIAL_LANGUAGE_CODES) {
+    const result = await responseFor(`/cms/blog?page=1&limit=${BLOG_PAGE_SIZE}${language === 'hi' ? '' : `&language=${language}`}`);
+    for (let page = 2; page <= (result.data?.totalPages || 1); page++) {
+      const route = blogLibraryPath(language, page);
+      routes.add(route);
+      const pageResult = await responseFor(`/cms/blog?page=${page}&limit=${BLOG_PAGE_SIZE}${language === 'hi' ? '' : `&language=${language}`}`);
+      const updated = (pageResult.data?.posts || []).map(post => String(post.updatedAt || post.publishedAt || '').slice(0, 10)).filter(day => /^\d{4}-\d{2}-\d{2}$/.test(day)).sort().at(-1);
+      if (updated) lastmod.set(route, updated);
     }
   }
   let count = 0;
@@ -152,6 +174,8 @@ try {
   await writeFile(path.join(generated, '404.html'), notFound);
   const shell = template.replace('</head>', '<meta name="robots" content="noindex, follow" data-rh="true" /><title data-rh="true">आपका खाता | SahiBhav</title></head>');
   await writeFile(path.join(generated, 'shell.html'), shell);
+  const runtimeEntries = [...new Set([...routes, ...knownCrops, ...knownMandis])].sort().map(route => [route, lastmod.get(route) || null, expiration.has(route) ? expiration.get(route) : null]);
+  await writeFile(path.join(generated, 'runtime-index.json'), JSON.stringify({ origin: siteUrl, entries: runtimeEntries }));
   await writeFile(path.join(generated, 'routes.json'), JSON.stringify({ routes: [...routes], knownCrops: [...knownCrops] }));
   await writeFile(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...routes].sort().map(route => `  <url><loc>${xml(siteUrl + route)}</loc>${lastmod.get(route) ? `<lastmod>${lastmod.get(route)}</lastmod>` : ''}</url>`).join('\n')}\n</urlset>\n`);
   const robots = (await readFile(path.join(root, 'public/robots.txt'), 'utf8')).replace(/^Sitemap:.*$/m, `Sitemap: ${siteUrl}/sitemap.xml`);

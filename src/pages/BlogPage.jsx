@@ -11,12 +11,13 @@ import { INDIA_REGIONS, getIndiaRegion, normalizeRegionId } from '../../shared/i
 import { getCropTopic } from '../../shared/cropTopics';
 import { EDITORIAL_LANGUAGES, getEditorialLabels, editorialDate, editorialCropName, editorialStateName, editorialStateLanguage } from '@/utils/editorialLabels';
 import { getLanguage } from '../../shared/languages';
+import { BLOG_PAGE_SIZE, blogPageNumber, blogLibraryPath, blogCanonicalSearch } from '../../shared/blogPagination';
 import { readLanguageNavigation, buildLanguageChooserUrl, buildLanguageBlogUrl, buildArticleNavigationUrl, localizedToolsUrl } from '@/utils/languageNavigation';
 import '@/styles/editorial.css';
 import '@/styles/language-fonts.css';
 
 const FILTER_KEYS = ['crop', 'state', 'category', 'q'];
-const PAGE_SIZE = 10;
+const PAGE_SIZE = BLOG_PAGE_SIZE;
 
 function PostMeta({ post, language }) {
   const copy = getEditorialLabels(language);
@@ -27,14 +28,15 @@ function PostMeta({ post, language }) {
   </div>;
 }
 
-function BlogLibraryPage({ routeLanguage }) {
+function BlogLibraryPage({ routeLanguage, routePage }) {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const language = routeLanguage || (Object.hasOwn(EDITORIAL_LANGUAGES, searchParams.get('language')) ? searchParams.get('language') : 'hi');
   const libraryPath = buildLanguageBlogUrl(language);
   const copy = getEditorialLabels(language);
   const languageInfo = getLanguage(language);
-  const context = readLanguageNavigation(searchParams);
+  const page = blogPageNumber(routePage) || blogPageNumber(searchParams.get('page')) || 1;
+  const context = { ...readLanguageNavigation(searchParams), ...(page > 1 ? { page: String(page) } : {}) };
   const marketPath = localizedToolsUrl(context, language);
   const chooserPath = buildLanguageChooserUrl({ ...context, crop: context.sourceCrop, toolLanguage: context.toolLanguage || language });
   const resetPath = buildLanguageBlogUrl(language, { ...context, crop: '', state: '', q: '', category: '', page: '' });
@@ -43,7 +45,6 @@ function BlogLibraryPage({ routeLanguage }) {
   const state = normalizeRegionId(searchParams.get('state') || '');
   const category = searchParams.get('category') || '';
   const query = searchParams.get('q') || '';
-  const page = Math.max(1, Number.parseInt(searchParams.get('page'), 10) || 1);
   const apiQuery = new URLSearchParams({ page: String(page), limit: String(PAGE_SIZE) });
   if (language !== 'hi') apiQuery.set('language', language);
   for (const [key, value] of Object.entries({ crop, state, category, q: query })) if (value) apiQuery.set(key, value);
@@ -59,8 +60,9 @@ function BlogLibraryPage({ routeLanguage }) {
   const selectedCropInFacets = cropFacets.some(item => item.id === crop);
   const featured = page === 1 ? (posts.find(post => post.coverImage) || posts[0]) : null;
   const gridPosts = featured ? posts.filter(post => post.slug !== featured.slug) : posts;
-  const hasFilters = Boolean(crop || state || category || query);
-  const isFilteredUrl = searchParams.size > 0;
+  const hasFilters = Boolean(crop || (state && state !== 'all') || category || query);
+  const canonicalSearch = blogCanonicalSearch(new URLSearchParams({ crop, state, category, q: query }));
+  const canonicalPath = blogLibraryPath(language, page);
 
   function updateFilter(key, value) {
     const next = new URLSearchParams(searchParams);
@@ -90,12 +92,14 @@ function BlogLibraryPage({ routeLanguage }) {
     const next = new URLSearchParams(searchParams);
     if (state) next.set('state', state);
     next.delete('language');
-    if (nextPage > 1) next.set('page', String(nextPage)); else next.delete('page');
-    return `${libraryPath}${next.size ? `?${next}` : ''}`;
+    next.delete('page');
+    return `${blogLibraryPath(language, nextPage)}${next.size ? `?${next}` : ''}`;
   }
 
+  if (!loading && !error && data && page > totalPages) return <NotFoundPage />;
+
   return <div className={`sb-journal-page sb-language-surface sb-language-script-${languageInfo?.script || 'Devanagari'}`} lang={language} dir={languageInfo?.dir || 'ltr'}>
-    <SEO title={`${copy.guides} — ${copy.crop}, ${copy.state}, ${copy.language}`} description={copy.intro} path={libraryPath} noIndex={isFilteredUrl} language={language} image="/visuals/farm-journal-v1.webp" imageAlt={copy.guides} />
+    <SEO title={`${copy.guides} — ${copy.crop}, ${copy.state}, ${copy.language}${page > 1 ? ` — ${copy.page} ${page}` : ''}`} description={copy.intro} path={canonicalPath} canonicalSearch={canonicalSearch} noIndex={hasFilters} language={language} image="/visuals/farm-journal-v1.webp" imageAlt={copy.guides} />
     <a className="sb-journal-skip" href="#main-content">{copy.skip}</a>
     <header className="sb-journal-header"><div className="sb-journal-header__inner"><Link to={marketPath} aria-label={copy.home}><Brand /></Link><nav aria-label={copy.navigation}><Link to={chooserPath}>{copy.language}</Link><Link to={marketPath}>{copy.market}</Link><Link to={localizedToolsUrl(context, language, 'delivery')}>{copy.delivery} <ArrowRight size={15} aria-hidden="true" /></Link></nav></div></header>
     <main className="sb-journal-main" id="main-content">
@@ -134,7 +138,7 @@ function BlogLibraryPage({ routeLanguage }) {
 }
 
 export default function BlogPage() {
-  const { language } = useParams();
-  if (language && !Object.hasOwn(EDITORIAL_LANGUAGES, language)) return <NotFoundPage />;
-  return <BlogLibraryPage routeLanguage={language} />;
+  const { language, page } = useParams();
+  if ((language && !Object.hasOwn(EDITORIAL_LANGUAGES, language)) || (page && !blogPageNumber(page))) return <NotFoundPage />;
+  return <BlogLibraryPage routeLanguage={language} routePage={page} />;
 }

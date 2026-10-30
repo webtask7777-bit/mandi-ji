@@ -146,6 +146,10 @@ export const CROP_DISPLAY_NAMES = Object.freeze({
   'other-green-and-fresh-vegetables': 'अन्य हरी सब्ज़ियाँ',
   'chicorychikori-kasni': 'कासनी',
   'paddybasmati': 'बासमती धान',
+  // These newly reported source categories remain separate from common paddy
+  // and rice. Preserve all source qualifiers rather than inferring a variety.
+  'paddyfine-superfine-grade-a': 'धान (फाइन/सुपरफाइन/ग्रेड A)',
+  'ricefine-superfine-grade-a': 'चावल (फाइन/सुपरफाइन/ग्रेड A)',
   'lilly': 'लिली (फूल)',
   'leafy-vegetable': 'पत्तेदार सब्ज़ी',
   'peach': 'आड़ू',

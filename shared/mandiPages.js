@@ -43,13 +43,16 @@ export function buildMandiIndex(compare, crops = []) {
       const slug = districtsByName.get(base).size > 1 && district ? `${base}-${district}` : base;
       if (!index.has(slug)) index.set(slug, { slug, name: row.name, district: row.district || null, crops: [], latestDate: null });
       const entry = index.get(slug);
-      const price = positive(row.recentPrice) ? Number(row.recentPrice) : positive(row.avgPrice) ? Number(row.avgPrice) : null;
+      const exactQuote = row.comparisonIdentity === 'commodity-mandi-variety-grade-date-v1';
+      const price = exactQuote ? (positive(row.quotePrice) ? Number(row.quotePrice) : null) : positive(row.recentPrice) ? Number(row.recentPrice) : positive(row.avgPrice) ? Number(row.avgPrice) : null;
       if (price === null) continue;
       const crop = names.get(cropId) || {};
       entry.crops.push({
         id: cropId, name: crop.name || cropId, nameHi: crop.nameHi || crop.name || cropId,
+        quoteId: JSON.stringify([cropId, row.marketId || slug, row.topVariety || '', row.grade || '', row.quoteDate || row.lastDate || '']),
         price, minPrice: positive(row.minPrice) ? Number(row.minPrice) : null, maxPrice: positive(row.maxPrice) ? Number(row.maxPrice) : null,
-        rangeBasis: row.rangeBasis || null, lastDate: row.lastDate || null, records: Number(row.records) || 0,
+        rangeBasis: row.rangeBasis || null, lastDate: row.quoteDate || row.lastDate || null, records: Number(row.records) || 0,
+        priceBasis: row.priceBasis || null, quoteRecords: Number(row.quoteRecords) || null,
         variety: row.topVariety || null, grade: row.grade || null,
       });
       if (row.lastDate && (!entry.latestDate || row.lastDate > entry.latestDate)) entry.latestDate = row.lastDate;
@@ -69,9 +72,9 @@ export function buildMandiIndex(compare, crops = []) {
 /** Summary rows for a state's mandi list (links), most-recorded first. */
 export function mandiSummaries(index) {
   return [...index.values()].map(({ slug, name, district, crops, latestDate }) => ({
-    slug, name, district, latestDate, cropCount: crops.length,
+    slug, name, district, latestDate, cropCount: new Set(crops.map(crop => crop.id)).size,
     records: crops.reduce((sum, crop) => sum + crop.records, 0),
-    topCrops: crops.slice().sort((a, b) => b.records - a.records).slice(0, 3).map(crop => crop.nameHi),
+    topCrops: [...new Map(crops.slice().sort((a, b) => b.records - a.records).map(crop => [crop.id, crop.nameHi])).values()].slice(0, 3),
   })).filter(row => row.cropCount > 0).sort((a, b) => b.records - a.records || a.name.localeCompare(b.name));
 }
 
@@ -89,5 +92,6 @@ export function getMandiIndexability(mandi, { asOf = new Date() } = {}) {
   if (!mandi || !Array.isArray(mandi.crops) || !Number.isFinite(new Date(asOf).getTime())) return { noIndex: true, latestDate: null, recentCrops: 0 };
   const recent = mandi.crops.filter(crop => isRecentMandiCrop(crop, asOf));
   const latestDate = recent.map(crop => crop.lastDate).sort().at(-1) || null;
-  return { noIndex: recent.length < MANDI_INDEX_MIN_CROPS, latestDate, recentCrops: recent.length };
+  const recentCrops = new Set(recent.map(crop => crop.id)).size;
+  return { noIndex: recentCrops < MANDI_INDEX_MIN_CROPS, latestDate, recentCrops };
 }

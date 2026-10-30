@@ -156,6 +156,17 @@ test('category art has a disclosure and unknown source IDs preserve the neutral 
   }
 });
 
+test('new unreviewed source labels have explicit neutral artwork without guessing form or grade', () => {
+  for (const id of ['akarkara', 'bhringraj', 'gudmar', 'heena', 'paddyfine-superfine-grade-a', 'ricefine-superfine-grade-a', 'round-chilli']) {
+    assert.ok(sourceIds.has(id), `${id}: real source record`);
+    assert.equal(CROP_IMAGE_CATEGORIES[id], 'generic', id);
+    assert.equal(Object.hasOwn(CROP_IMAGES, id), false, `${id}: no unreviewed commodity illustration`);
+    assert.equal(getCropImage(id).src, '/visuals/category-generic.webp', id);
+    assert.equal(getCropImage(id).kind, 'category', id);
+    assert.match(getCropImage(id).note, /पहचान की पुष्टि बाकी/, id);
+  }
+});
+
 test('failed exact images have a clearly labelled category fallback without changing commodity identity', () => {
   for (const id of sourceIds) {
     const fallback = getCropCategoryImage(id);

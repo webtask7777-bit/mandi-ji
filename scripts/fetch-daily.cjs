@@ -16,19 +16,19 @@
  *   exits 1 until every state is stored; the next run fetches only the missing ones.
  *
  * Usage:
- *   node scripts/fetch-daily.cjs [--min-complete 0.98] [--delay 1300]
+ *   node scripts/fetch-daily.cjs [--min-complete 0.98] [--delay 1300] [--probe]
  * Env:
- *   DATA_GOV_API_KEY  registered key (the public sample key returns only 10 rows per call)
+ *   DATA_GOV_API_KEY  required; use the registered key in the existing operator environment
  */
 
 const fs = require('fs');
 const path = require('path');
 const { DAILY_DIR, arrivalToISO, normalizeRecord, recordKey, mergeRecords, writeAtomic, listDays, readDay } = require('./lib/daily-store.cjs');
+const { createPageFetcher } = require('./lib/datagov-request.cjs');
 
 const RESOURCE_ID = '9ef84268-d588-465a-a308-a864a43d0070';
 const API_BASE = `https://api.data.gov.in/resource/${RESOURCE_ID}`;
-const SAMPLE_KEY = '579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b';
-const API_KEY = process.env.DATA_GOV_API_KEY || SAMPLE_KEY;
+const API_KEY = process.env.DATA_GOV_API_KEY;
 const REQUEST_LIMIT = 1000;
 const MAX_SLICE_PASSES = 3;
 const CACHE_FILE = path.join(__dirname, '..', '.cache', 'datagov', 'states.json');
@@ -46,41 +46,30 @@ const KNOWN_STATES = [
   'Uttar Pradesh', 'Uttarakhand', 'West Bengal',
 ];
 
-function parseArgs() {
-  const args = process.argv.slice(2);
-  const opts = { minComplete: 0.98, delayMs: 1300 };
+function parseArgs(args = process.argv.slice(2)) {
+  const opts = { minComplete: 0.98, delayMs: 1300, probeOnly: false };
   for (let i = 0; i < args.length; i++) {
-    if (args[i] === '--min-complete') opts.minComplete = Math.min(1, parseFloat(args[++i]) || 0.98);
-    else if (args[i] === '--delay') opts.delayMs = Math.max(0, parseInt(args[++i], 10) || 0);
+    if (args[i] === '--min-complete') {
+      opts.minComplete = Number(args[++i]);
+      if (!(opts.minComplete > 0 && opts.minComplete <= 1)) throw new Error('--min-complete must be between 0 (exclusive) and 1');
+    } else if (args[i] === '--delay') {
+      opts.delayMs = Number(args[++i]);
+      if (!Number.isFinite(opts.delayMs) || opts.delayMs < 0) throw new Error('--delay must be a non-negative number');
+    } else if (args[i] === '--probe') opts.probeOnly = true;
+    else throw new Error('Unknown fetch option');
   }
   return opts;
 }
 
-const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-const snapshotOf = (page) => page.updated_date || String(page.updated || 'unknown');
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const snapshotOf = page => String(page.updated_date || page.updated || 'unknown');
+const fetchPage = createPageFetcher({ apiBase: API_BASE, apiKey: API_KEY, limit: REQUEST_LIMIT });
 
-async function fetchPage(offset, state, retries = 10) {
-  const params = new URLSearchParams({ 'api-key': API_KEY, format: 'json', limit: String(REQUEST_LIMIT), offset: String(offset) });
-  if (state) params.set('filters[state.keyword]', state);
-  let lastError = null;
-  for (let attempt = 1; attempt <= retries; attempt++) {
-    try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 45000);
-      const res = await fetch(`${API_BASE}?${params}`, { signal: controller.signal });
-      clearTimeout(timer);
-      if (res.status === 429 || res.status >= 500) throw new Error(`HTTP ${res.status}`);
-      if (!res.ok) throw Object.assign(new Error(`HTTP ${res.status}`), { fatal: true });
-      const data = await res.json();
-      if (!Array.isArray(data.records)) throw new Error('response without records');
-      return data;
-    } catch (e) {
-      if (e.fatal) throw e;
-      lastError = e;
-      await sleep(Math.min(180000, 3000 * 2 ** (attempt - 1))); // 429s clear within a few minutes
-    }
-  }
-  throw new Error(`${state || 'all'} offset ${offset}: ${lastError?.message || 'failed'} after ${retries} attempts`);
+// A record count alone cannot prove that prices are unchanged. Reuse only a
+// successfully stored slice of the same known source revision and total.
+function canReuseSlice(saved, probe) {
+  return Boolean(saved && saved.snapshot && saved.snapshot !== 'unknown'
+    && saved.snapshot === snapshotOf(probe) && Number(probe.total) === saved.total);
 }
 
 function uniqueValid(rows) {
@@ -95,28 +84,37 @@ function uniqueValid(rows) {
 }
 
 /** Fetch one state's slice; repeat when a re-index happened mid-slice. */
-async function fetchState(state, opts) {
+async function fetchState(state, opts, { request = fetchPage, wait = sleep, log = console.log } = {}) {
   const rows = [];
   let total = 0;
+  let latestSnapshot = 'unknown';
   for (let pass = 1; pass <= MAX_SLICE_PASSES; pass++) {
-    const first = await fetchPage(0, state);
+    const first = await request(0, state);
     total = Number(first.total) || 0;
-    if (total === 0) return { state, total: 0, rows: [] };
-    const snapshot = snapshotOf(first);
+    latestSnapshot = snapshotOf(first);
+    if (total === 0) return { state, total: 0, rows: [], snapshot: latestSnapshot };
+    if (!first.records.length) throw new Error('Source reported records but returned an empty first page');
+    const passRows = [...first.records];
     rows.push(...first.records);
     let stable = true;
-    for (let offset = first.records.length; offset < total; offset += first.records.length) {
-      await sleep(opts.delayMs);
-      const page = await fetchPage(offset, state);
-      if (snapshotOf(page) !== snapshot) stable = false;
+    // Advance by records actually returned. An empty page cannot make progress.
+    for (let offset = first.records.length; offset < total;) {
+      await wait(opts.delayMs);
+      const page = await request(offset, state);
+      if (!page.records.length) throw new Error(`Source returned an empty page before offset ${total}`);
+      if (snapshotOf(page) !== latestSnapshot || Number(page.total) !== total) stable = false;
+      passRows.push(...page.records);
       rows.push(...page.records);
+      offset += page.records.length;
     }
-    // Every row read is a real observation whatever the order, so passes accumulate.
     const unique = uniqueValid(rows).unique.size;
-    if (stable || unique >= total * opts.minComplete) return { state, total, rows };
-    console.log(`  ${state}: dataset re-indexed during the slice (${unique}/${total} unique), repeating`);
+    if (stable) return { state, total, rows: passRows, snapshot: latestSnapshot };
+    // Valid observations survive a re-index, but its completion cache must not
+    // pretend they form a verified single revision.
+    if (unique >= total * opts.minComplete) return { state, total, rows, snapshot: null };
+    log(`  ${state}: dataset re-indexed during the slice (${unique}/${total} unique), repeating`);
   }
-  return { state, total, rows };
+  return { state, total, rows, snapshot: null };
 }
 
 /** Progress belongs to the dataset's reporting date(s); the total grows during the day. */
@@ -136,71 +134,76 @@ function statesFromRecentDays() {
   return names;
 }
 
-async function main() {
-  const opts = parseArgs();
-  fs.mkdirSync(path.dirname(CACHE_FILE), { recursive: true });
-  if (API_KEY === SAMPLE_KEY) console.log('Using the public sample key (10 rows per call). Set DATA_GOV_API_KEY for faster runs.');
-
-  const first = await fetchPage(0, null);
+async function runIngestion(opts, {
+  request = fetchPage, wait = sleep, log = console.log,
+  knownStates = KNOWN_STATES, recentStates = statesFromRecentDays,
+  readCache = loadCache,
+  saveCache = cache => { fs.mkdirSync(path.dirname(CACHE_FILE), { recursive: true }); writeAtomic(CACHE_FILE, cache); },
+  clearCache = () => fs.rmSync(CACHE_FILE, { force: true }),
+  merge = rows => mergeRecords(rows, { source: SOURCE }),
+} = {}) {
+  const first = await request(0, null, opts.probeOnly ? { retries: 1, timeoutMs: 15000 } : undefined);
   const datasetTotal = Number(first.total) || 0;
-  const snapshot = snapshotOf(first);
-  const dates = [...new Set(first.records.map(r => r.arrival_date))].join(', ');
-  console.log(`Dataset ${snapshot}: ${datasetTotal} records (sample dates: ${dates})`);
-  if (!datasetTotal) { console.error('Dataset is empty.'); process.exit(1); }
-
-  // Skip when the first page is already stored with the same prices (rows are shuffled on
-  // re-index, so this compares content, not position).
-  const sample = first.records.map(r => normalizeRecord(r).record).filter(Boolean);
-  const stored = new Map();
-  for (const day of new Set(sample.map(r => arrivalToISO(r.arrival_date)))) {
-    try { for (const r of readDay(path.join(DAILY_DIR, `${day}.json`))?.records || []) stored.set(recordKey(r), r.modal_price); } catch { /* not stored */ }
-  }
-  if (sample.length && sample.every(r => stored.get(recordKey(r)) === r.modal_price)) {
-    console.log('This dataset is already stored. Nothing to do.');
-    return;
+  const dates = [...new Set(first.records.map(row => arrivalToISO(row.arrival_date)).filter(Boolean))].sort().join(', ');
+  if (!datasetTotal) throw new Error('Source dataset is empty');
+  if (!first.records.length) throw new Error('Source reported records but returned an empty first page');
+  log(`Dataset: ${datasetTotal} records (sample dates: ${dates || 'not available'})`);
+  if (opts.probeOnly) {
+    log('Source probe succeeded. No records or cache were written; this does not verify a complete refresh.');
+    return { probeOnly: true, datasetTotal };
   }
 
-  // Each state is stored as soon as its slice is complete, so a dataset swap or a failed
-  // run never loses finished states. The cache only records which states are done.
-  const cache = loadCache(dates);
+  // A matching first page says nothing about the rest of the dataset. Always
+  // inspect the state slices; durable per-state revision metadata can skip work.
+  const cache = readCache(dates);
   const failedStates = [];
   const allRejected = {};
-  const states = [...new Set([...KNOWN_STATES, ...statesFromRecentDays()])].filter(Boolean).sort();
+  const states = [...new Set([...knownStates, ...recentStates()])].filter(Boolean).sort();
   for (const state of states) {
     if (cache.states[state]) {
-      // Stored already; refetch only if the state has gained records since.
-      const probe = await fetchPage(0, state).catch(() => null);
-      if (!probe || Number(probe.total) === cache.states[state].total) continue;
-      await sleep(opts.delayMs);
+      let probe;
+      try { probe = await request(0, state); }
+      catch (error) {
+        failedStates.push(state);
+        log(`  ${state}: ${error.message}; current slice could not be verified`);
+        continue;
+      }
+      if (canReuseSlice(cache.states[state], probe)) continue;
+      await wait(opts.delayMs);
     }
     let slice;
-    try { slice = await fetchState(state, opts); }
-    catch (e) { failedStates.push(state); console.log(`  ${state}: ${e.message}; will retry on the next run`); continue; }
+    try { slice = await fetchState(state, opts, { request, wait, log }); }
+    catch (error) { failedStates.push(state); log(`  ${state}: ${error.message}; will retry on the next run`); continue; }
     const { unique, rejected } = uniqueValid(slice.rows);
-    for (const [k, n] of Object.entries(rejected)) allRejected[k] = (allRejected[k] || 0) + n;
-    if (slice.total && unique.size + Object.values(rejected).reduce((a, b) => a + b, 0) < slice.total * opts.minComplete) {
+    for (const [reason, count] of Object.entries(rejected)) allRejected[reason] = (allRejected[reason] || 0) + count;
+    // Repeated rejected rows must never count as successful coverage.
+    if (slice.total && unique.size < slice.total * opts.minComplete) {
       failedStates.push(state);
-      console.log(`  ${state}: only ${unique.size}/${slice.total} unique records; not stored, will retry`);
+      log(`  ${state}: only ${unique.size}/${slice.total} unique valid records; not stored, will retry`);
       continue;
     }
-    if (unique.size) mergeRecords([...unique.values()], { source: SOURCE });
-    cache.states[state] = { total: slice.total, stored: unique.size };
-    writeAtomic(CACHE_FILE, cache);
-    if (slice.total) console.log(`  ${state}: ${slice.total} records, ${unique.size} stored`);
+    if (unique.size) merge([...unique.values()]);
+    cache.states[state] = { total: slice.total, stored: unique.size, snapshot: slice.snapshot };
+    saveCache(cache);
+    if (slice.total) log(`  ${state}: ${slice.total} records, ${unique.size} stored`);
   }
 
-  const covered = Object.values(cache.states).reduce((n, s) => n + s.total, 0);
-  // A state's total can grow after it was stored; the probe above refetches it next time.
-  console.log(`Stored states cover ${covered}/${datasetTotal} records of this dataset.`);
-  if (Object.keys(allRejected).length) console.log('Rejected rows:', allRejected);
-  if (failedStates.length) console.log(`Failed states: ${failedStates.join(', ')}`);
-  if (covered < datasetTotal * opts.minComplete) {
-    if (!failedStates.length) console.log(`  ${datasetTotal - covered} records belong to a state name not in the list; add it to KNOWN_STATES.`);
-    console.error('Incomplete: the next run fetches only the missing states.');
-    process.exit(1);
+  const covered = Object.values(cache.states).reduce((count, state) => count + Number(state.stored || 0), 0);
+  log(`Stored valid records cover ${covered}/${datasetTotal} records of this dataset.`);
+  if (Object.keys(allRejected).length) log('Rejected rows:', allRejected);
+  if (failedStates.length) log(`Failed states: ${failedStates.join(', ')}`);
+  if (failedStates.length || covered < datasetTotal * opts.minComplete) {
+    throw new Error('Incomplete refresh: at least one state failed validation or valid-record coverage is below the required threshold. Verified state records remain stored for recovery.');
   }
-  fs.rmSync(CACHE_FILE, { force: true });
-  console.log('Done.');
+  clearCache();
+  log('Done.');
+  return { datasetTotal, covered };
 }
 
-main().catch(e => { console.error('Error:', e.message); process.exit(1); });
+async function main() {
+  const opts = parseArgs();
+  await runIngestion(opts);
+}
+
+if (require.main === module) main().catch(error => { console.error('Error:', error.message); process.exitCode = 1; });
+module.exports = { parseArgs, uniqueValid, fetchState, canReuseSlice, runIngestion };

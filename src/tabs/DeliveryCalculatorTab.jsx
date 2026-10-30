@@ -10,6 +10,7 @@ import { DELIVERY_VEHICLE_VISUALS } from '../data/deliveryVehicleVisuals';
 import CropImage from '../components/CropImage';
 import { calculateDeliveryScenario, compareDeliveryVehicles, getDeliverySummaryText, VEHICLE_PRESETS, deliveryFormToInput, convertDeliveryPrice, convertDeliveryQuantity, prefillDeliveryForm, getDeliveryTrips, getDeliveryCropOptions, priceBasisLabel } from '../utils/deliveryCalculator';
 import { getDataFreshness } from '../utils/dataFreshness';
+import { createInitialDeliveryForm as initialForm, createDeliveryExample, DEFAULT_DELIVERY_VEHICLE as DEFAULT_VEHICLE } from '../utils/deliveryFormDefaults';
 import '../styles/delivery.css';
 import '../styles/section-scenes.css';
 
@@ -17,18 +18,8 @@ const STORAGE_KEY = 'sahibhav.delivery.draft.v1';
 const SAVED_KEY = 'sahibhav.delivery.saved.v1';
 const MY_PLACE_KEY = 'sahibhav.myPlace.v1';
 const GUIDE_KEY = 'sahibhav.delivery.guideClosed.v1';
-const BASE_FORM = {
-  vehicleId: 'pickup', capacityKg: 1000, distanceKm: '', journeyFactor: 1, fromPlace: null, toPlace: null,
-  from: '', to: '', cropId: '', cropName: '', quantity: 1000, quantityUnit: 'kg', packagingWeightKg: 0,
-  buyPrice: '', benchmarkPrice: '', priceUnit: 'quintal', comparisonMode: 'local',
-  lossPercent: 2, freightMode: 'rate', ratePerKm: '', minFare: 0, quotePerTrip: '',
-  tollPerTrip: 0, loadingTotal: 0, packingTotal: 0, otherTotal: 0, marketFeePercent: 0,
-  example: false, sourceQuote: null, locationOnly: false,
-};
 const money = (value, decimals = 0) => Number.isFinite(value) ? `₹${new Intl.NumberFormat('en-IN', { maximumFractionDigits: decimals, minimumFractionDigits: decimals }).format(value)}` : '—';
 const number = (value, decimals = 0) => Number.isFinite(value) ? new Intl.NumberFormat('en-IN', { maximumFractionDigits: decimals }).format(value) : '—';
-const DEFAULT_VEHICLE = VEHICLE_PRESETS.find(vehicle => vehicle.capacityKg === 1000) || VEHICLE_PRESETS[0];
-const initialForm = () => ({ ...BASE_FORM, vehicleId: DEFAULT_VEHICLE.id, capacityKg: DEFAULT_VEHICLE.capacityKg });
 
 function readStorage(key, fallback) {
   try { const stored = JSON.parse(localStorage.getItem(key)); return stored && typeof stored === 'object' ? stored : fallback; }
@@ -92,7 +83,7 @@ export default function DeliveryCalculatorTab({ initialScenario, onScenarioConsu
   const [showStress, setShowStress] = useState(false);
   const [geo, setGeo] = useState(null);
   const [myPlace, setMyPlace] = useState(() => validPlace(readStorage(MY_PLACE_KEY, null)));
-  const [guideOpen, setGuideOpen] = useState(() => { try { return localStorage.getItem(GUIDE_KEY) !== '1'; } catch { return true; } });
+  const [guideOpen, setGuideOpen] = useState(() => { try { return localStorage.getItem(GUIDE_KEY) === '0'; } catch { return false; } });
   const lastPrefill = useRef(null);
   const consumedRef = useRef(onScenarioConsumed);
   consumedRef.current = onScenarioConsumed;
@@ -186,6 +177,11 @@ export default function DeliveryCalculatorTab({ initialScenario, onScenarioConsu
   const estimatedKm = estimateRoadKm(form.fromPlace, form.toPlace);
   const mapsUrl = mapsDirectionsUrl(routeLabel(form.from, form.fromPlace), routeLabel(form.to, form.toPlace));
   const closeGuide = () => { setGuideOpen(false); try { localStorage.setItem(GUIDE_KEY, '1'); } catch { /* optional */ } };
+  const toggleGuide = event => {
+    const open = event.currentTarget.open;
+    setGuideOpen(open);
+    try { localStorage.setItem(GUIDE_KEY, open ? '0' : '1'); } catch { /* optional */ }
+  };
 
   const selectVehicle = vehicle => setForm(previous => previous.vehicleId === vehicle.id ? previous : ({ ...previous, vehicleId: vehicle.id, capacityKg: vehicle.capacityKg, ratePerKm: '', minFare: '', quotePerTrip: '', tollPerTrip: '' }));
   const changePriceUnit = value => setForm(previous => {
@@ -195,10 +191,10 @@ export default function DeliveryCalculatorTab({ initialScenario, onScenarioConsu
   const changeQuantityUnit = value => setForm(previous => ({ ...previous, quantityUnit: value, quantity: convertDeliveryQuantity(previous.quantity, previous.quantityUnit, value) }));
   const reset = () => { setForm(initialForm()); setCompareRates({}); setShowStress(false); setNotice('नया हिसाब शुरू करें। सहेजे गए हिसाब अलग रखे हैं।'); };
   const loadExample = () => {
-    setForm({ ...initialForm(), from: 'खरीद मंडी (उदाहरण)', to: 'आपकी जगह (उदाहरण)', cropId: 'wheat', cropName: 'गेहूँ', buyPrice: 2400, benchmarkPrice: 2900, ratePerKm: 18, minFare: 1200, tollPerTrip: 100, loadingTotal: 300, packingTotal: 150, example: true });
+    setForm(createDeliveryExample());
     setCompareRates({});
     setShowStress(false);
-    setNotice('यह समझने के लिए काल्पनिक उदाहरण है। कोई लाइव भाव या गाड़ी का ऑफर नहीं।');
+    setNotice('80 km की दूरी, भाव और भाड़े वाला यह काल्पनिक उदाहरण है। कोई लाइव भाव या गाड़ी का ऑफर नहीं।');
   };
   const summary = () => `${form.example ? 'काल्पनिक उदाहरण से शुरू किया गया हिसाब — सभी मान दोबारा जाँचें\n' : ''}सही भाव · डिलीवरी का हिसाब\n${displayCropName ? `फसल: ${displayCropName}\n` : ''}${form.from || form.to ? `रास्ता: ${form.from || 'खरीद मंडी'} → ${form.to || 'आपकी जगह'}\n` : ''}गाड़ी: ${selectedVehicle.label}${form.sourceQuote?.variety ? `\nकिस्म: ${form.sourceQuote.variety}${form.sourceQuote.grade ? ` · ग्रेड: ${form.sourceQuote.grade}` : ''}` : ''}\n${getDeliverySummaryText(input, result)}${sourceSummary}\nदूरी, क्षमता, भाड़ा और अन्य खर्च उपयोगकर्ता के अनुमान हैं। वास्तविक सौदे से पहले भाव, माल की गुणवत्ता और शामिल खर्च की पुष्टि करें।`;
   const copySummary = async () => {
@@ -238,20 +234,11 @@ export default function DeliveryCalculatorTab({ initialScenario, onScenarioConsu
   };
 
   return <section className="sb-delivery" aria-labelledby={fieldId('title')}>
-    <header className="sb-delivery-heading sb-section-scene">
-      <div className="sb-section-scene-copy">
-      <div><span className="sb-delivery-eyebrow"><Route size={15} aria-hidden="true" /> भाव से आगे, पूरी तैयारी</span><h2 id={fieldId('title')}>माल वहाँ से लाना<br className="sb-delivery-mobile-break" /> कितना सही पड़ेगा?</h2><p>पूरी लागत निकालें, पैकिंग और गाड़ी समझें, फिर मंडी की यात्रा की तैयारी करें।</p></div>
-      <div className="sb-delivery-heading-actions"><button type="button" className="sb-delivery-button" onClick={loadExample}><Calculator size={16} aria-hidden="true" /> उदाहरण देखें</button><button type="button" className="sb-delivery-button is-quiet" onClick={reset}><RotateCcw size={15} aria-hidden="true" /> नया हिसाब</button></div>
-      </div>
-      <figure className="sb-section-scene-art"><FarmVisual name="farm-delivery-v1" sizes="(max-width: 620px) calc(100vw - 40px), 470px" priority /><figcaption>सांकेतिक AI चित्र · वाहन की जानकारी नीचे देखें</figcaption></figure>
+    <header className="sb-delivery-heading sb-delivery-quickstart">
+      <div><span className="sb-delivery-eyebrow"><Route size={15} aria-hidden="true" /> डिलीवरी का हिसाब · पूरी तरह मुफ़्त</span><h2 id={fieldId('title')}>माल लाने की पूरी लागत जानें</h2><p>गाड़ी, दूरी और भाड़ा भरें। अपने यहाँ पड़ने वाली लागत और बचत देखें।</p></div>
+      <div className="sb-delivery-heading-actions"><a className="sb-delivery-button is-primary" href="#delivery-calculation"><ArrowDown size={16} aria-hidden="true" /> हिसाब भरें</a><button type="button" className="sb-delivery-button" onClick={loadExample}><Calculator size={16} aria-hidden="true" /> उदाहरण देखें</button><button type="button" className="sb-delivery-button is-quiet" onClick={reset}><RotateCcw size={15} aria-hidden="true" /> नया हिसाब</button></div>
     </header>
-    <nav className="sb-delivery-jumpnav" aria-label="डिलीवरी के औज़ार और जानकारी">
-      <a href="#delivery-calculation"><Calculator size={16} aria-hidden="true" /> खर्च निकालें</a>
-      <a href="#delivery-guide"><Truck size={16} aria-hidden="true" /> गाड़ी और पैकिंग</a>
-      <a href="#delivery-quote"><Copy size={16} aria-hidden="true" /> भाड़ा पूछें</a>
-      <a href="#delivery-checklist"><Check size={16} aria-hidden="true" /> यात्रा की तैयारी</a>
-    </nav>
-    <details className="sb-delivery-guide" open={guideOpen} onToggle={event => setGuideOpen(event.currentTarget.open)}>
+    <details className="sb-delivery-guide" open={guideOpen} onToggle={toggleGuide}>
       <summary><Info size={16} aria-hidden="true" /> हिसाब कैसे करें? 4 आसान कदम <ChevronDown size={16} aria-hidden="true" /></summary>
       <ol>
         <li><strong>गाड़ी चुनें</strong> छोटा मालवाहक, पिकअप या ट्रक। क्षमता अपनी गाड़ी के अनुसार बदल सकते हैं।</li>
@@ -262,20 +249,27 @@ export default function DeliveryCalculatorTab({ initialScenario, onScenarioConsu
       <p>फिर दाईं ओर (मोबाइल पर नीचे) <strong>आपका हिसाब</strong> में दिखेगा: आपके यहाँ पहुँचने की लागत ₹/kg, कुल खर्च और बचत या घाटा। कोई खाना छूटा हो तो वहीं लिखा मिलेगा।</p>
       <button type="button" className="sb-delivery-button is-quiet" onClick={closeGuide}>समझ गया, छिपाएँ</button>
     </details>
-    {form.example && <div className="sb-delivery-example"><Info size={17} aria-hidden="true" /><span><strong>उदाहरण से शुरू किया गया</strong> · शुरुआती भाव और भाड़े काल्पनिक थे। अपने सौदे के लिए सभी मान जाँचकर बदलें।</span></div>}
+    {form.example && <div className="sb-delivery-example"><Info size={17} aria-hidden="true" /><span><strong>उदाहरण से शुरू किया गया</strong> · शुरुआती दूरी, भाव और भाड़े काल्पनिक थे। अपने सौदे के लिए सभी मान जाँचकर बदलें।</span></div>}
     {form.locationOnly && <div className="sb-delivery-source"><MapPin size={17} aria-hidden="true" /><div><strong>नक्शे से चुनी गई मंडी</strong><p>मंडी का नाम भर दिया है। दूरी, भाव और वास्तविक भाड़ा भरें। पुराने हिसाब के खर्च हटा दिए हैं; जो खर्च लागू न हो, उसमें 0 लिखें।</p></div></div>}
     {freshness && <div className="sb-delivery-source"><Info size={17} aria-hidden="true" /><div><strong>{isListingOffer ? 'विक्रेता की लिस्टिंग से लिया गया भाव' : freshness.isCurrent ? 'दर्ज मंडी भाव से शुरू किया गया' : 'दर्ज भाव को पहले जाँचें'}</strong><p>{isListingOffer ? 'लिस्टिंग की तारीख: ' : 'मंडी भाव की तारीख: '}{freshness.dateLabel} · {sourceDateLabel}। {isListingOffer ? 'यह उपयोगकर्ता का बिक्री ऑफर है, सरकारी मंडी रिकॉर्ड नहीं। ' : priceBasisLabel(form.sourceQuote.basis) ? `भाव का आधार: ${priceBasisLabel(form.sourceQuote.basis)}। ` : ''}{form.sourceQuote.variety ? `किस्म: ${form.sourceQuote.variety}${form.sourceQuote.grade ? ` · ग्रेड: ${form.sourceQuote.grade}` : ''}। ` : ''}भाव, उपलब्धता, किस्म और गुणवत्ता की विक्रेता से पुष्टि करें।</p></div></div>}
     <div className="sb-delivery-layout" id="delivery-calculation">
       <div className="sb-delivery-form">
         <section className="sb-delivery-card">
           <StepHeading number="01" icon={Truck} title="गाड़ी और रास्ता" subtitle="अपनी गाड़ी पहचानें, फिर क्षमता और दूरी भरें।" />
+          <div className="sb-delivery-vehicle-picker">
+            <VehicleIllustration vehicleId={selectedVehicle.id} priority />
+            <div className="sb-delivery-field"><label htmlFor={fieldId('vehicle')}>गाड़ी का प्रकार</label><select id={fieldId('vehicle')} value={selectedVehicle.id} onChange={event => selectVehicle(VEHICLE_PRESETS.find(vehicle => vehicle.id === event.target.value) || DEFAULT_VEHICLE)}>{VEHICLE_PRESETS.map(vehicle => <option key={vehicle.id} value={vehicle.id}>{vehicle.label} · {number(vehicle.capacityKg)} kg</option>)}</select><small>चित्र पहचान के लिए · क्षमता नीचे बदलें।</small></div>
+          </div>
+          <div className="sb-delivery-payload-row"><Field id={fieldId('capacity')} label="आपकी गाड़ी की लोड क्षमता" value={form.capacityKg} onChange={value => change('capacityKg', value)} suffix="kg / ट्रिप" min={1} error={enteredError('capacityKg', form.capacityKg)} /><p><Info size={14} aria-hidden="true" /> ये योजना के लिए क्षमता हैं। अपनी गाड़ी की स्वीकृत payload और माल के आकार के अनुसार बदलें।</p></div>
+          <details className="sb-delivery-vehicle-gallery">
+            <summary><Truck size={16} aria-hidden="true" /> पाँचों गाड़ियों के चित्र और क्षमता देखें <ChevronDown size={16} aria-hidden="true" /></summary>
           <fieldset className="sb-delivery-vehicles" aria-describedby={fieldId('vehicle-note')}>
             <legend className="sr-only">गाड़ी का प्रकार</legend>
             {VEHICLE_PRESETS.map(vehicle => {
               const isSelected = form.vehicleId === vehicle.id;
               return <button type="button" key={vehicle.id} className={`sb-delivery-vehicle${isSelected ? ' is-active' : ''}`} aria-pressed={isSelected} onClick={() => selectVehicle(vehicle)}>
                 <span className="sb-delivery-vehicle-check" aria-hidden="true">{isSelected && <Check size={13} strokeWidth={2.5} />}</span>
-                <span className="sb-delivery-vehicle-scene"><VehicleIllustration vehicleId={vehicle.id} priority={isSelected} /></span>
+                <span className="sb-delivery-vehicle-scene"><VehicleIllustration vehicleId={vehicle.id} /></span>
                 <span className="sb-delivery-vehicle-copy">
                   <strong>{vehicle.label}</strong>
                   <span className="sb-delivery-vehicle-reference">{DELIVERY_VEHICLE_VISUALS[vehicle.id].referenceLabel}</span>
@@ -285,7 +279,7 @@ export default function DeliveryCalculatorTab({ initialScenario, onScenarioConsu
             })}
           </fieldset>
           <p className="sb-delivery-vehicle-note" id={fieldId('vehicle-note')}><Info size={14} aria-hidden="true" /><span>वाहन के चित्र पहचान के लिए हैं। क्षमता अनुमानित है; अपनी गाड़ी की RC / ड्राइवर से पुष्टि करें।</span></p>
-          <div className="sb-delivery-payload-row"><Field id={fieldId('capacity')} label="आपकी गाड़ी की लोड क्षमता" value={form.capacityKg} onChange={value => change('capacityKg', value)} suffix="kg / ट्रिप" min={1} error={enteredError('capacityKg', form.capacityKg)} /><p><Info size={14} aria-hidden="true" /> ये योजना के लिए क्षमता हैं। अपनी गाड़ी की स्वीकृत payload और माल के आकार के अनुसार बदलें।</p></div>
+          </details>
           <div className="sb-delivery-route-fields"><Field id={fieldId('from')} label="माल कहाँ से आएगा?" type="text" value={form.from} onChange={value => change('from', value)} placeholder="खरीद मंडी / शहर" /><ArrowRight size={18} aria-hidden="true" /><Field id={fieldId('to')} label="कहाँ तक पहुँचाना है?" type="text" value={form.to} onChange={value => change('to', value)} placeholder="आपकी जगह / बिक्री मंडी" /></div>
           <div className="sb-delivery-places">
             <PlacePicker id={fieldId('from-place')} title="माल कहाँ से: मंडी का ज़िला" value={form.fromPlace} onChange={place => setPlace('fromPlace', place)} geo={geo} />
@@ -346,6 +340,16 @@ export default function DeliveryCalculatorTab({ initialScenario, onScenarioConsu
     <details className="sb-delivery-compare"><summary><div><span className="sb-delivery-compare-icon"><Truck size={22} aria-hidden="true" /></span><div><h3>दूसरी गाड़ी से कितना फ़र्क पड़ेगा?</h3><p>हर गाड़ी का अपना भाड़ा भरकर तुलना करें।</p></div></div><ChevronDown size={19} aria-hidden="true" /></summary><div className="sb-delivery-compare-body"><p>माल, दूरी और अन्य कुल खर्च ऊपर वाले रहेंगे। हर गाड़ी का भाड़ा और टोल अलग भरें; टोल शामिल हो तो 0 लिखें। नीचे क्षमता केवल योजना के लिए है; ज़रूरत हो तो मुख्य हिसाब में बदलें।</p><div className="sb-delivery-table-scroll"><table><thead><tr><th scope="col">गाड़ी / क्षमता</th><th scope="col">{form.freightMode === 'rate' ? 'रेट ₹/km' : '₹ / पूरी ट्रिप'}</th>{form.freightMode === 'rate' && <th scope="col">न्यूनतम / ट्रिप</th>}<th scope="col">टोल / ट्रिप</th><th scope="col">ट्रिप</th><th scope="col">पड़ने वाली लागत</th><th scope="col">चुनें</th></tr></thead><tbody>{comparisonRows.map(row => <tr key={row.id}><th scope="row"><strong>{row.label}</strong><span>{number(row.capacityKg)} kg</span></th><td><input aria-label={`${row.label} ${form.freightMode === 'rate' ? 'प्रति किलोमीटर रेट' : 'एक पूरी ट्रिप का भाड़ा'}`} type="number" min="0" placeholder="भाड़ा भरें" value={compareRates[row.id]?.[form.freightMode === 'rate' ? 'ratePerKm' : 'quotePerTrip'] ?? ''} onChange={event => setCompareRates(previous => ({ ...previous, [row.id]: { ...previous[row.id], [form.freightMode === 'rate' ? 'ratePerKm' : 'quotePerTrip']: event.target.value } }))} /></td>{form.freightMode === 'rate' && <td><input aria-label={`${row.label} का न्यूनतम भाड़ा`} type="number" min="0" value={compareRates[row.id]?.minFare ?? 0} onChange={event => setCompareRates(previous => ({ ...previous, [row.id]: { ...previous[row.id], minFare: event.target.value } }))} /></td>}<td><input aria-label={`${row.label} का टोल प्रति ट्रिप`} type="number" min="0" step="any" placeholder="टोल / 0" value={compareRates[row.id]?.tollPerTrip ?? ''} onChange={event => setCompareRates(previous => ({ ...previous, [row.id]: { ...previous[row.id], tollPerTrip: event.target.value } }))} /></td><td>{canPlan ? number(getDeliveryTrips(loadedKg, row.capacityKg)) : '—'}</td><td><strong>{row.scenario.valid ? `${money(row.scenario.landedPricePerKg, 2)} / kg` : '—'}</strong>{!row.scenario.valid && <small>{Object.values(row.scenario.errors || {})[0]}</small>}{row.rank === 1 && comparisonRows.filter(item => item.scenario.valid).length > 1 && <small>भरे हुए कोट में सबसे कम</small>}</td><td><button type="button" aria-label={`${row.label} को मुख्य हिसाब में चुनें`} disabled={!row.scenario.valid} onClick={() => { setForm(previous => ({ ...previous, vehicleId: row.id, capacityKg: row.capacityKg, ...compareRates[row.id], minFare: compareRates[row.id]?.minFare ?? 0 })); setNotice(`${row.label} का भाड़ा मुख्य हिसाब में लगा दिया है।`); }}>चुनें <ArrowRight size={14} aria-hidden="true" /></button></td></tr>)}</tbody></table></div><small>सबसे कम दिखाई गई लागत केवल भरे हुए मानों में तुलना है। उपलब्धता, वाहन की स्थिति और लोड की उपयुक्तता अलग से जाँचें।</small></div></details>
 
     {saved.length > 0 && <section className="sb-delivery-saved"><div className="sb-delivery-saved-heading"><h3><Save size={18} aria-hidden="true" /> आपके सहेजे हिसाब</h3><span>इसी ब्राउज़र में · अधिकतम 5</span></div><div>{saved.map(item => <article key={item.id}><button type="button" onClick={() => loadSavedScenario(item)}><strong>{item.title}</strong><span>{new Date(item.created).toLocaleDateString('hi-IN', { day: 'numeric', month: 'short' })} · {number(Number(item.form?.distanceKm))} km <ArrowRight size={14} aria-hidden="true" /></span></button><button type="button" className="sb-delivery-delete" onClick={() => removeSaved(item.id)} aria-label={`${item.title} का सहेजा हिसाब हटाएँ`}><Trash2 size={16} aria-hidden="true" /></button></article>)}</div></section>}
+    <section className="sb-delivery-resource-intro sb-section-scene" aria-labelledby={fieldId('resources-title')}>
+      <div className="sb-section-scene-copy"><span className="sb-delivery-eyebrow"><Package size={15} aria-hidden="true" /> हिसाब के बाद, यात्रा की तैयारी</span><h3 id={fieldId('resources-title')}>माल सही हालत में पहुँचे</h3><p>फसल के अनुसार पैकिंग चुनें, ड्राइवर से शामिल खर्च पूछें और निकलने से पहले ज़रूरी बातें जाँचें।</p></div>
+      <figure className="sb-section-scene-art"><FarmVisual name="farm-delivery-v1" sizes="(max-width: 620px) calc(100vw - 40px), 470px" /><figcaption>सांकेतिक AI चित्र · वाहन की जानकारी नीचे देखें</figcaption></figure>
+    </section>
+    <nav className="sb-delivery-jumpnav" aria-label="डिलीवरी के औज़ार और जानकारी">
+      <a href="#delivery-calculation"><Calculator size={16} aria-hidden="true" /> खर्च निकालें</a>
+      <a href="#delivery-guide"><Truck size={16} aria-hidden="true" /> गाड़ी और पैकिंग</a>
+      <a href="#delivery-quote"><Copy size={16} aria-hidden="true" /> भाड़ा पूछें</a>
+      <a href="#delivery-checklist"><Check size={16} aria-hidden="true" /> यात्रा की तैयारी</a>
+    </nav>
     <DeliveryResources form={{ ...form, cropName: displayCropName }} selectedVehicle={selectedVehicle} onApplyLoadPlan={applyLoadPlan} onNotice={setNotice} />
     <p className="sb-delivery-privacy"><ShieldCheck size={14} aria-hidden="true" /> आपका ड्राफ़्ट इसी ब्राउज़र में रहता है। किसी ड्राइवर या व्यापारी को भेजा नहीं जाता।</p>
     <p className="sb-delivery-notice" role="status" aria-live="polite">{notice}</p>

@@ -670,5 +670,16 @@
       "destination": "/mandi-bhav/:state/black-gramurd-beanswhole",
       "permanent": true
     }
-  ]
+  ],
+  "proxy": {
+    "entrypoint": "proxy.js",
+    "matcher": [
+      "/sitemap.xml",
+      "/crop/:path*",
+      "/mandi-bhav/:path*",
+      "/mandi/:path*",
+      "/blog/:path*",
+      "/:language/blog/:path*"
+    ]
+  }
 }

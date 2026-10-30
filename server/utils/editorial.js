@@ -1,4 +1,4 @@
-import { CROP_TOPICS, getCropTopic, getTopicById } from '../../shared/cropTopics.js';
+import { CROP_TOPICS, getCropTopic, getTopicById, isProcessedForm } from '../../shared/cropTopics.js';
 import { INDIA_STATES } from '../../src/data/india-states.js';
 import { EDITORIAL_LANGUAGE_CODES } from '../../shared/editorialLanguages.js';
 
@@ -45,19 +45,24 @@ const SEARCH_EQUIVALENTS = [
   ['फफूँद', 'फफूंद', 'mould', 'mold'],
   ['अंकुरण', 'germination', 'sprouting'],
   ['पत्तियों', 'पत्तियाँ', 'पत्तियां', 'पत्ती', 'leaf', 'leaves'],
-  ['पाला', 'पाले', 'frost'],
-  ['बारिश', 'वर्षा', 'rain', 'rainfall'],
+  ['पाला', 'पाले', 'frost', 'pala'],
+  ['बारिश', 'वर्षा', 'rain', 'rainfall', 'barish'],
   ['ओलावृष्टि', 'ओले', 'hail', 'hailstorm'],
-  ['भीगा', 'भीगी', 'भीगे', 'भीगना', 'भीगने', 'wet'],
-  ['नमी', 'moisture'],
-  ['भंडारण', 'storage'],
+  ['भीगा', 'भीगी', 'भीगे', 'भीगना', 'भीगने', 'wet', 'bheega'],
+  ['नमी', 'moisture', 'nami'],
+  ['भंडारण', 'storage', 'bhandaran'],
   ['सिंचाई', 'irrigation'],
-  ['बुवाई', 'बुआई', 'sowing'],
-  ['कटाई', 'harvest', 'harvesting'],
-  ['ढुलाई', 'परिवहन', 'transport', 'transportation', 'delivery'],
-  ['गेहूँ', 'गेहूं', 'wheat'],
-  ['धान', 'paddy'],
-  ['टमाटर', 'tomato', 'tomatoes'],
+  ['बुवाई', 'बुआई', 'sowing', 'buvai', 'buwai'],
+  ['कटाई', 'harvest', 'harvesting', 'katai'],
+  ['ढुलाई', 'परिवहन', 'transport', 'transportation', 'delivery', 'dhulai'],
+  ['भाड़ा', 'भाड़े', 'किराया', 'किराए', 'किराये', 'freight', 'bhada', 'kiraya'],
+  ['खर्च', 'खर्चे', 'खर्चों', 'kharcha', 'kharch'],
+  ['बिक्री', 'sale', 'selling'],
+  ['रबी', 'rabi'],
+  ['बीमा', 'insurance', 'bima'],
+  ['गेहूँ', 'गेहूं', 'wheat', 'gehun', 'gehu'],
+  ['धान', 'paddy', 'dhan'],
+  ['टमाटर', 'tomato', 'tomatoes', 'tamatar'],
 ];
 const SEARCH_ALIASES = new Map(SEARCH_EQUIVALENTS.flatMap(group => {
   const words = unique(group.map(searchText));
@@ -125,7 +130,10 @@ export function listEditorialPosts(allPosts, query = {}) {
   const categoryCounts = countBy(inLanguage, post => hasText(post.category) ? [post.category] : []);
   const languageCounts = countBy(available, post => [languageOf(post)]);
   const crop = valueOf(query.crop);
-  const topic = crop ? getCropTopic(crop) : null;
+  // Topic families help browsing, but cultivation/postharvest guides must not
+  // be recommended for a processed product such as flour, rice or beaten rice.
+  // Processed-product advice needs its own explicit applicability before use.
+  const topic = crop && !isProcessedForm(crop) ? getCropTopic(crop) : null;
   const category = valueOf(query.category);
   const search = searchTerms(query.q);
   const slugs = valueOf(query.slugs).split(',').map(value => value.trim()).filter(Boolean).slice(0, 20);

@@ -40,3 +40,19 @@ test('only mandis with several recent crops are indexable', () => {
   assert.equal(getMandiIndexability(index.get('raipur'), { asOf: new Date('2027-01-30T06:00:00Z') }).noIndex, true);
   assert.equal(getMandiIndexability(null).noIndex, true);
 });
+
+test('several variety quotes remain distinct rows but never inflate unique crop coverage', () => {
+  const rows = ['Mexican', 'Mill Quality', 'Lokwan'].map((topVariety, index) => ({
+    name: 'Raipur', district: 'Raipur', marketId: 'CG|Raipur|Raipur', topVariety, grade: 'FAQ',
+    comparisonIdentity: 'commodity-mandi-variety-grade-date-v1', priceBasis: 'daily-modal',
+    quotePrice: 3000 + index * 100, recentPrice: 9999, quoteDate: '2026-10-29', lastDate: '2026-10-29', quoteRecords: 1, records: 1,
+  }));
+  const index = buildMandiIndex({ wheat: rows }, crops);
+  const mandi = index.get('raipur');
+  assert.equal(mandi.crops.length, 3);
+  assert.equal(new Set(mandi.crops.map(crop => crop.quoteId)).size, 3);
+  assert.deepEqual(mandi.crops.map(crop => crop.price), [3000, 3100, 3200], 'exact quoted prices override legacy aggregate fields');
+  assert.deepEqual(mandiSummaries(index)[0].topCrops, ['गेहूँ']);
+  assert.equal(mandiSummaries(index)[0].cropCount, 1);
+  assert.deepEqual(getMandiIndexability(mandi, { asOf: new Date('2026-10-30T10:00:00Z') }), { noIndex: true, latestDate: '2026-10-29', recentCrops: 1 });
+});

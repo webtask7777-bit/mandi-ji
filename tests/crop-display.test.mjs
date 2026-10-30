@@ -42,6 +42,19 @@ test('display corrections preserve original source names, IDs and market fields'
   assert.equal(result.varieties, source.varieties);
 });
 
+test('fine and superfine source categories stay distinct from common paddy and rice', () => {
+  for (const [id, name, expected] of [
+    ['paddyfine-superfine-grade-a', 'Paddy(Fine/Superfine/Grade A)', 'धान (फाइन/सुपरफाइन/ग्रेड A)'],
+    ['ricefine-superfine-grade-a', 'Rice(Fine/Superfine/Grade A)', 'चावल (फाइन/सुपरफाइन/ग्रेड A)'],
+  ]) {
+    const source = { id, name, nameHi: 'चावल', price: 3100, varieties: ['Other'] };
+    assert.deepEqual(withCropDisplayName(source), { ...source, nameHi: expected });
+    assert.equal(source.nameHi, 'चावल');
+  }
+  assert.equal(withCropDisplayName({ id: 'rice', nameHi: 'चावल' }).nameHi, 'चावल');
+  assert.equal(withCropDisplayName({ id: 'paddycommon', nameHi: 'धान' }).nameHi, 'धान');
+});
+
 test('only crop and ticker datasets are normalized, never editorial or location objects', () => {
   const rows = [{ id: 'cow', nameHi: 'लोबिया', bestMandi: { id: 'cow', nameHi: 'Original mandi label' } }];
   for (const name of ['crops', 'ticker']) {

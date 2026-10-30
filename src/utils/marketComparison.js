@@ -3,6 +3,10 @@ import { quoteDateISO } from './dataFreshness.js';
 import { isCropPriceCommodity } from './cropEligibility.js';
 
 export function getMandiPrice(mandi) {
+  if (mandi?.comparisonIdentity === 'commodity-mandi-variety-grade-date-v1') {
+    const quote = Number(mandi.quotePrice);
+    return Number.isFinite(quote) && quote > 0 ? quote : null;
+  }
   const recent = Number(mandi?.recentPrice);
   const average = Number(mandi?.avgPrice);
   return Number.isFinite(recent) && recent > 0 ? recent : Number.isFinite(average) && average > 0 ? average : null;
@@ -26,16 +30,27 @@ export function sortMandiPrices(data = []) {
 export const MAX_PAIR_RATIO = 3;
 
 /**
- * Compare like-labelled observations. Only recent prices are paired: all-time averages
- * cover different periods per mandi, so their difference is not a current gap.
+ * Pair only proven same-commodity, same-variety, same-grade, same-day quotes.
+ * A historical majority label, unknown identity or mixed-period average is not
+ * enough evidence for a like-for-like comparison or calculator prefill.
  */
-export function getComparisonPair(data = []) {
+export function getComparisonPair(data = [], { now = new Date(), commodityId } = {}) {
+  const clock = new Date(now);
+  if (!Number.isFinite(clock.getTime())) return null;
+  const today = new Date(clock.getTime() + 330 * 60000).toISOString().slice(0, 10);
+  const recentCutoff = new Date(Date.parse(`${today}T00:00:00Z`) - 6 * 86400000).toISOString().slice(0, 10);
   const groups = new Map();
   for (const mandi of sortMandiPrices(data)) {
     if (getMandiPriceBasis(mandi) !== 'recent') continue;
+    if (mandi.comparisonIdentity !== 'commodity-mandi-variety-grade-date-v1' || mandi.priceBasis !== 'daily-modal' || mandi.unit !== 'INR/quintal') continue;
+    if (!mandi.commodityId || (commodityId && mandi.commodityId !== commodityId)) continue;
     const variety = mandi.topVariety?.trim();
-    if (!variety) continue;
-    const key = JSON.stringify([variety.toLowerCase(), (mandi.grade || '').trim().toLowerCase(), getMandiPriceBasis(mandi), getMandiQuoteDate(mandi)]);
+    const grade = mandi.grade?.trim();
+    const unknown = value => !value || /^(?:other|others|unspecified|unknown|not specified|na|n\/a|-)$/i.test(value);
+    if (unknown(variety) || unknown(grade) || !mandi.marketId) continue;
+    const date = getMandiQuoteDate(mandi);
+    if (!date || date < recentCutoff || date > today) continue;
+    const key = JSON.stringify([mandi.commodityId, variety.toLowerCase(), grade.toLowerCase(), date, mandi.unit]);
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(mandi);
   }
@@ -46,11 +61,11 @@ export function getComparisonPair(data = []) {
     const rows = group.filter(m => !isOutlier(getMandiPrice(m), bounds));
     if (rows.length < 2) continue;
     const high = rows[0];
-    const low = [...rows].reverse().find(m => `${m.stateCode}|${m.district}|${m.name}` !== `${high.stateCode}|${high.district}|${high.name}`);
+    const low = [...rows].reverse().find(m => m.marketId !== high.marketId);
     if (!low) continue;
     const spread = getMandiPrice(high) - getMandiPrice(low);
     if (spread <= 0 || getMandiPrice(high) / getMandiPrice(low) > MAX_PAIR_RATIO) continue;
-    candidates.push({ high, low, spread, count: rows.length, variety: high.topVariety, grade: high.grade || null, quoteDate: getMandiQuoteDate(high), basis: getMandiPriceBasis(high), outliersExcluded: group.length - rows.length });
+    candidates.push({ high, low, spread, count: rows.length, commodityId: high.commodityId, variety: high.topVariety, grade: high.grade, quoteDate: getMandiQuoteDate(high), basis: 'daily-modal', outliersExcluded: group.length - rows.length });
   }
   // Prefer the largest cohort so a rare pair doesn't dominate the comparison.
   return candidates.sort((a, b) => b.count - a.count || b.spread - a.spread)[0] || null;
@@ -70,11 +85,11 @@ export function calculateSaleScenario({ quantity, buyPrice, sellPrice, totalCost
   return { purchase, saleQuantity, revenue, investment, result: revenue - investment, returnPercent: ((revenue - investment) / investment) * 100 };
 }
 
-export function buildPriceGapCandidates(mandiData = {}, crops = []) {
+export function buildPriceGapCandidates(mandiData = {}, crops = [], options = {}) {
   const meta = new Map(crops.map(c => [c.id, c]));
   return Object.entries(mandiData).flatMap(([cropId, mandis]) => {
     if (!isCropPriceCommodity(cropId)) return [];
-    const pair = getComparisonPair(Array.isArray(mandis) ? mandis : []);
+    const pair = getComparisonPair(Array.isArray(mandis) ? mandis : [], { ...options, commodityId: cropId });
     if (!pair || pair.spread < 300) return [];
     const crop = meta.get(cropId);
     return [{

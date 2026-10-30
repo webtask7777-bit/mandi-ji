@@ -35,7 +35,7 @@ const SCHEMA = {
   author: { '@type': 'Organization', name: 'SahiBhav', url: SITE_URL },
 };
 
-export default function SEO({ title, description, path, noIndex = false, structuredData, image, imageAlt, type = 'website', language = 'hi', alternates = [], xDefaultPath }) {
+export default function SEO({ title, description, path, canonicalSearch = '', noIndex = false, structuredData, image, imageAlt, type = 'website', language = 'hi', alternates = [], xDefaultPath }) {
   const { pathname } = useLocation();
   const pageTitle = title ? `${title} | SahiBhav` : DEFAULTS.title;
   const pageDesc = description || DEFAULTS.description;
@@ -44,7 +44,8 @@ export default function SEO({ title, description, path, noIndex = false, structu
   const imageDimensions = Object.hasOwn(editorialImages, localImagePath) ? editorialImages[localImagePath] : null;
   const pageImageAlt = imageAlt || 'सही भाव — मंडी भाव और डिलीवरी खर्च';
   const pagePath = (path || pathname).split(/[?#]/)[0].replace(/\/+$/, '') || '/';
-  const pageUrl = `${SITE_URL}${pagePath.startsWith('/') ? pagePath : `/${pagePath}`}`;
+  const query = new URLSearchParams(canonicalSearch).toString();
+  const pageUrl = `${SITE_URL}${pagePath.startsWith('/') ? pagePath : `/${pagePath}`}${query ? `?${query}` : ''}`;
   const robots = noIndex || PRIVATE_ROUTES.test(pathname) ? 'noindex, follow' : 'index, follow, max-image-preview:large';
   const pageLanguage = getLanguage(language)?.code || 'hi';
   const alternatePath = value => articleAlternatePath(value) || (languageFromPath(value)?.searchReady ? value : null);

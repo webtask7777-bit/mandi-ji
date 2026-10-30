@@ -5,6 +5,7 @@ import path from 'node:path';
 import express from 'express';
 import cms from '../server/routes/cms.js';
 import { listEditorialPosts } from '../server/utils/editorial.js';
+import { blogRedirectPath } from '../shared/blogPagination.js';
 
 const root = process.cwd();
 const posts = JSON.parse(readFileSync(path.join(root, 'server/db/data/blog-posts.json'), 'utf8'));
@@ -74,12 +75,13 @@ test('CMS cards omit article bodies while article endpoints retain complete sour
 });
 
 const built = articles.every(post => existsSync(path.join(root, 'dist/blog', `${post.slug}.html`)));
-test('filtered guide pages render only matching cards and keep query combinations out of the index', { skip: existsSync(path.join(root, 'dist-ssr/entry-server.js')) ? false : 'Build the SSR bundle first.' }, async () => {
+test('guide language aliases stay indexable while actual content filters remain noindex', { skip: existsSync(path.join(root, 'dist-ssr/entry-server.js')) ? false : 'Build the SSR bundle first.' }, async () => {
   const { renderPage } = await import('../dist-ssr/entry-server.js');
-  for (const [route, expected, excluded] of [
-    ['/blog?crop=tomato', 'tamatar-mandi-dhulai-ke-baad-bachat', 'gehun-ki-buvai-sahi-samay-aur-tarika'],
-    ['/blog?language=mr', 'tamatar-vikri-vahatuk-kharch-marathi', 'tamatar-mandi-dhulai-ke-baad-bachat'],
-    ['/blog?language=gu', 'tameta-vechan-parivahan-kharch-gujarati', 'gehun-ki-buvai-sahi-samay-aur-tarika'],
+  for (const [route, expected, excluded, indexable = false, canonicalPath] of [
+    ['/blog?crop=tomato', 'tamatar-mandi-dhulai-ke-baad-bachat', 'gehun-ki-buvai-sahi-samay-aur-tarika', false, '/blog?crop=tomato'],
+    ['/blog?language=mr', 'tamatar-vikri-vahatuk-kharch-marathi', 'tamatar-mandi-dhulai-ke-baad-bachat', true, '/mr/blog'],
+    ['/blog?language=gu', 'tameta-vechan-parivahan-kharch-gujarati', 'gehun-ki-buvai-sahi-samay-aur-tarika', true, '/gu/blog'],
+    ['/blog?language=mr&crop=tomato', 'tamatar-vikri-vahatuk-kharch-marathi', 'tamatar-mandi-dhulai-ke-baad-bachat', false, '/mr/blog?crop=tomato'],
     ['/blog?crop=marget', null, 'tamatar-mandi-dhulai-ke-baad-bachat'],
   ]) {
     const responses = {};
@@ -95,7 +97,12 @@ test('filtered guide pages render only matching cards and keep query combination
       }
     }
     const html = result.head + result.html;
-    assert.match(html, /content="noindex, follow"/, route);
+    assert.match(html, indexable ? /content="index, follow, max-image-preview:large"/ : /content="noindex, follow"/, route);
+    if (canonicalPath) assert.ok(html.includes(`rel="canonical" href="https://sahibhav.in${canonicalPath}"`), `${route}: canonical represents the actual view`);
+    if (indexable) {
+      const requested = new URL(route, 'https://sahibhav.in');
+      assert.equal(blogRedirectPath(requested.pathname, requested.searchParams), canonicalPath, 'language-only query redirects to the native indexable library');
+    }
     if (expected) assert.ok(linksToArticle(html, expected), `${route}: matching article is visible`);
     assert.ok(!linksToArticle(html, excluded), `${route}: unrelated featured/card is not shown`);
   }

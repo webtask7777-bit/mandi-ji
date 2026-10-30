@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { calculateDeliveryScenario, compareDeliveryVehicles, getDeliverySummaryText, VEHICLE_PRESETS, convertDeliveryPrice, convertDeliveryQuantity, deliveryFormToInput, prefillDeliveryForm, getDeliveryTrips, getDeliveryCropOptions } from '../src/utils/deliveryCalculator.js';
+import { calculateDeliveryScenario, compareDeliveryVehicles, getDeliverySummaryText, VEHICLE_PRESETS, convertDeliveryPrice, convertDeliveryQuantity, deliveryFormToInput, prefillDeliveryForm, getDeliveryTrips, getDeliveryCropOptions, priceBasisLabel } from '../src/utils/deliveryCalculator.js';
+import { createInitialDeliveryForm, createDeliveryExample } from '../src/utils/deliveryFormDefaults.js';
 
 const plan = {
   quantityKg: 1000, packagingWeightKg: 0, capacityKg: 1000, distanceKm: 100, journeyFactor: 1,
@@ -9,6 +10,37 @@ const plan = {
   buyPricePerKg: 20, benchmarkPricePerKg: 25, lossPercent: 2, comparisonMode: 'local',
 };
 const close = (actual, expected) => assert.ok(Math.abs(actual - expected) < 1e-8, `${actual} != ${expected}`);
+
+test('the example button supplies a complete fictional 80 km scenario', () => {
+  const form = createDeliveryExample();
+  const result = calculateDeliveryScenario(deliveryFormToInput(form));
+  assert.equal(form.example, true);
+  assert.equal(form.sourceQuote, null);
+  assert.equal(form.distanceKm, 80);
+  assert.equal(result.valid, true);
+  assert.equal(result.trips, 1);
+  assert.equal(result.totalLandCost, 25990);
+  assert.equal(result.usableKg, 980);
+  close(result.landedPricePerKg, 25990 / 980);
+  assert.equal(result.benefit, 2430);
+});
+
+test('a new real-world plan does not inherit fictional example distance or quotes', () => {
+  const example = createDeliveryExample();
+  example.distanceKm = 999;
+  const fresh = createInitialDeliveryForm();
+  const result = calculateDeliveryScenario(deliveryFormToInput(fresh));
+  assert.equal(fresh.example, false);
+  for (const key of ['distanceKm', 'buyPrice', 'benchmarkPrice', 'ratePerKm']) assert.equal(fresh[key], '');
+  assert.equal(result.valid, false);
+  assert.ok(result.missingFields.includes('distanceKm'));
+  assert.equal(createDeliveryExample().distanceKm, 80);
+});
+
+test('daily modal provenance identifies the record date, variety and grade', () => {
+  assert.equal(priceBasisLabel('daily-modal'), 'उस तारीख, किस्म और ग्रेड का दर्ज मोडल भाव');
+  assert.equal(priceBasisLabel('daily-average'), 'उस दिन के दर्ज भावों का औसत');
+});
 
 test('landed cost adds purchase, each cost once, and divides by usable weight', () => {
   const r = calculateDeliveryScenario(plan);

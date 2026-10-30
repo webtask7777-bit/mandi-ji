@@ -129,6 +129,10 @@ export const CROP_IMAGE_CATEGORY_IDS = Object.freeze({
     "fish", "prawn",
   ]),
   generic: Object.freeze([
+    // New source labels: keep neutral artwork until identity/form/grade review.
+    // Never infer a traded herb part, chilli form or rice grade from its name.
+    "akarkara", "bhringraj", "gudmar", "heena",
+    "paddyfine-superfine-grade-a", "ricefine-superfine-grade-a", "round-chilli",
     "beans", "bejhar", "bop", "bullar",
     "buttery", "chilly-capsicum", "coca", "coleus",
     "cowpea", "duster-beans", "field-beananumulu", "guar",

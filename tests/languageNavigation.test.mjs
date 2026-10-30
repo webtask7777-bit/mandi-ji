@@ -219,7 +219,7 @@ test('native guide library renders actual article-language direction and preserv
   const route = buildLanguageBlogUrl('ur', { ...context, crop: '' });
   const result = await renderNavigationPage(route);
   assert.match(result.html, /sb-journal-page[^>]+lang="ur"[^>]+dir="rtl"/);
-  assert.match(result.head + result.html, /rel="canonical"[^>]+href="https:\/\/sahibhav.in\/ur\/blog"/);
+  assert.match(result.head + result.html, /rel="canonical"[^>]+href="https:\/\/sahibhav.in\/ur\/blog\?state=tamil-nadu"/);
   const articleLinks = linkedUrls(result.html).filter(url => url.pathname.startsWith('/blog/'));
   assert.ok(articleLinks.length > 0);
   for (const link of articleLinks) {

@@ -31,13 +31,14 @@ export default function MandiDetailPage() {
   const olderCrops = recentCrops.length ? crops.filter(crop => !recentCrops.includes(crop)) : [];
   const name = mandi?.name || mandiSlug;
   const latest = getDataFreshness(indexability.latestDate || mandi?.latestDate);
-  const topNames = crops.slice().sort((a, b) => b.records - a.records).slice(0, 3).map(crop => crop.nameHi);
+  const topNames = [...new Map(crops.slice().sort((a, b) => b.records - a.records).map(crop => [crop.id, crop.nameHi])).values()].slice(0, 3);
+  const cropCount = rows => new Set(rows.map(crop => crop.id)).size;
   const path = mandiPath(stateParam, mandiSlug);
   const place = [mandi?.district && mandi.district !== name ? mandi.district : null, stateNameHi].filter(Boolean).join(', ');
 
-  const cropRow = crop => <tr key={crop.id}>
+  const cropRow = crop => <tr key={crop.quoteId || JSON.stringify([crop.id, crop.variety, crop.grade, crop.lastDate])}>
     <td><div className="sb-mandi-name"><Link to={cropDetailPath(crop.id, stateParam)}>{crop.nameHi}</Link></div><span>{[crop.nameHi !== crop.name ? crop.name : null, crop.variety, crop.grade].filter(Boolean).join(' · ')}</span></td>
-    <td><strong className="sb-mandi-price">₹{money(crop.price)}</strong></td>
+    <td><strong className="sb-mandi-price">₹{money(crop.price)}</strong>{crop.priceBasis === 'daily-modal' && <small>{crop.quoteRecords > 1 ? 'उसी तारीख के मोडल भावों का औसत' : 'दर्ज मोडल भाव'}</small>}</td>
     <td><span>{crop.minPrice && crop.maxPrice ? `₹${money(crop.minPrice)} – ₹${money(crop.maxPrice)}` : '—'}</span></td>
     <td><small>{getDataFreshness(crop.lastDate).dateLabel}</small></td>
   </tr>;
@@ -45,7 +46,7 @@ export default function MandiDetailPage() {
   return (
     <div className="sb-detail-page">
       <SEO title={`${name} मंडी भाव${topNames.length ? ` — ${topNames.join(', ')} के रेट` : ''}${latest.date ? ` · ${latest.dateLabel}` : ''}`}
-        description={`${name} मंडी (${place}) के ताज़ा दर्ज भाव: ${recentCrops.length || crops.length} फसलें${topNames.length ? `, जैसे ${topNames.join(', ')}` : ''}। हर फसल का भाव ₹/क्विंटल, किस्म और तारीख के साथ। सौदे से पहले मंडी से भाव की पुष्टि करें।`}
+        description={`${name} मंडी (${place}) के ताज़ा दर्ज भाव: ${cropCount(recentCrops.length ? recentCrops : crops)} फसलें${topNames.length ? `, जैसे ${topNames.join(', ')}` : ''}। हर फसल का भाव ₹/क्विंटल, किस्म और तारीख के साथ। सौदे से पहले मंडी से भाव की पुष्टि करें।`}
         path={path} noIndex={loading ? false : unavailable || Boolean(error) || indexability.noIndex}
         structuredData={mandi && !unavailable ? { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: `${stateNameHi} के मंडी भाव`, item: `${SITE_URL}${dashboardPath}` },
@@ -58,20 +59,20 @@ export default function MandiDetailPage() {
       <main className="sb-detail-main" id="main-content">
         <nav className="sb-detail-breadcrumb" aria-label="पृष्ठ पथ"><Link to={dashboardPath}>{stateNameHi} के मंडी भाव</Link><span aria-hidden="true">/</span><span>{name} मंडी</span></nav>
         <section className="sb-crop-detail-heading">
-          <div><span className="sb-detail-kicker">मंडी के सभी दर्ज भाव</span><h1>{name} मंडी भाव</h1><p>{recentCrops.length ? `${recentCrops.length} फसलों के हाल के दर्ज रिकॉर्ड` : 'फसलवार दर्ज रिकॉर्ड'}{latest.date ? ` · अंतिम रिकॉर्ड ${latest.dateLabel}` : ''}</p></div>
+          <div><span className="sb-detail-kicker">मंडी के सभी दर्ज भाव</span><h1>{name} मंडी भाव</h1><p>{recentCrops.length ? `${cropCount(recentCrops)} फसलों के हाल के दर्ज रिकॉर्ड` : 'फसलवार दर्ज रिकॉर्ड'}{latest.date ? ` · अंतिम रिकॉर्ड ${latest.dateLabel}` : ''}</p></div>
           <span className="sb-detail-location"><MapPin size={15} aria-hidden="true" />{place}</span>
         </section>
-        {tableCrops.length > 0 && <WhatsAppShare className="sb-detail-share" text={`${name} मंडी के भाव${latest.date ? ` (${latest.dateLabel})` : ''}: ${tableCrops.slice(0, 4).map(crop => `${crop.nameHi} ₹${money(crop.price)}`).join(', ')}। सभी फसलों के भाव देखें:`} path={path} label="ये भाव WhatsApp पर भेजें" />}
+        {tableCrops.length > 0 && <WhatsAppShare className="sb-detail-share" text={`${name} मंडी के भाव${latest.date ? ` (${latest.dateLabel})` : ''}: ${tableCrops.slice(0, 4).map(crop => `${crop.nameHi}${crop.variety ? ` (${crop.variety}${crop.grade ? `, ${crop.grade}` : ''})` : ''} ₹${money(crop.price)}/क्विंटल · ${getDataFreshness(crop.lastDate).dateLabel}`).join(', ')}। सभी फसलों के भाव देखें:`} path={path} label="ये भाव WhatsApp पर भेजें" />}
         {loading ? <div className="sb-detail-status" role="status"><RefreshCw size={24} aria-hidden="true" /><h2>मंडी के रिकॉर्ड लोड हो रहे हैं</h2><p>फसलवार भाव आ रहे हैं।</p></div>
           : error ? <div className="sb-detail-notice" role="alert"><AlertCircle size={20} aria-hidden="true" /><div><strong>{unavailable ? 'यह मंडी पृष्ठ उपलब्ध नहीं है' : 'मंडी के रिकॉर्ड लोड नहीं हो पाए'}</strong><p>{unavailable ? 'राज्य की मंडियों की सूची से मंडी चुनें।' : 'कनेक्शन की जाँच करें और पृष्ठ दोबारा खोलें।'}</p></div><Link to={dashboardPath}>मंडियाँ देखें</Link></div>
           : <section className="sb-mandi-comparison" aria-label={`${name} मंडी के फसलवार भाव`}>
-            <div className="sb-comparison-heading"><div><span className="sb-comparison-eyebrow">फसलवार भाव</span><h2>{name} मंडी के फसलवार दर्ज भाव</h2></div><span className="sb-comparison-count">{tableCrops.length.toLocaleString('en-IN')} फसलें</span></div>
+            <div className="sb-comparison-heading"><div><span className="sb-comparison-eyebrow">फसलवार भाव</span><h2>{name} मंडी के फसलवार दर्ज भाव</h2></div><span className="sb-comparison-count">{cropCount(tableCrops).toLocaleString('en-IN')} फसलें · {tableCrops.length.toLocaleString('en-IN')} किस्म / ग्रेड रिकॉर्ड</span></div>
             <p className="sb-comparison-intro">भाव ₹ / क्विंटल में। हर पंक्ति की अपनी तारीख है; पुरानी तारीख वाले भाव को आज का भाव न मानें।</p>
             <div className="sb-comparison-table-wrap" tabIndex={0} role="region" aria-label="फसलवार भाव तालिका, छोटे पर्दे पर दाएँ-बाएँ स्क्रॉल करें"><table className="sb-comparison-table"><caption className="sr-only">{name} मंडी के फसलवार दर्ज भाव, किस्म और तारीख</caption>
               <thead><tr><th scope="col">फसल / किस्म</th><th scope="col">दर्ज भाव</th><th scope="col">न्यूनतम – अधिकतम</th><th scope="col">तारीख</th></tr></thead>
               <tbody>{tableCrops.map(cropRow)}</tbody>
             </table></div>
-            {olderCrops.length > 0 && <details className="sb-comparison-history"><summary>ऐतिहासिक भाव · {olderCrops.length} फसलें जिनका पिछले 30 दिन में रिकॉर्ड नहीं है</summary><p>ये पुराने रिकॉर्ड हैं, आज के भाव नहीं।</p><div className="sb-comparison-table-wrap"><table className="sb-comparison-table"><caption className="sr-only">{name} मंडी के पुराने रिकॉर्ड</caption><tbody>{olderCrops.map(cropRow)}</tbody></table></div></details>}
+            {olderCrops.length > 0 && <details className="sb-comparison-history"><summary>ऐतिहासिक भाव · {olderCrops.length} किस्म / ग्रेड रिकॉर्ड पिछले 30 दिन से पुराने हैं</summary><p>ये पुराने रिकॉर्ड हैं, आज के भाव नहीं।</p><div className="sb-comparison-table-wrap"><table className="sb-comparison-table"><caption className="sr-only">{name} मंडी के पुराने रिकॉर्ड</caption><tbody>{olderCrops.map(cropRow)}</tbody></table></div></details>}
             <p className="sb-comparison-footnote"><Info size={14} aria-hidden="true" />स्रोत: data.gov.in / agriportal के दर्ज रिकॉर्ड। किस्म, गुणवत्ता और आवक के अनुसार बिक्री का भाव अलग हो सकता है।</p>
           </section>}
         {Array.isArray(mandi?.nearby) && mandi.nearby.length > 0 && <section className="sb-detail-section">

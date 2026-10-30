@@ -23,6 +23,9 @@ test('body-only problems can be found with Hindi spelling variants and English t
 test('focused title and summary matches precede incidental body mentions', () => {
   assert.equal(slugs({ q: 'tomato delivery' })[0], tomato);
   assert.equal(slugs({ q: 'wheat sowing' })[0], 'gehun-ki-buvai-sahi-samay-aur-tarika');
+  assert.ok(slugs({ q: 'bheega dhan' }).includes(wetPaddy));
+  assert.equal(slugs({ q: 'gehun buwai' })[0], 'gehun-ki-buvai-sahi-samay-aur-tarika');
+  assert.ok(slugs({ q: 'tamatar bhada' }).includes(tomato));
 });
 
 test('search retains crop, state, language and category restrictions before pagination', () => {
@@ -62,4 +65,27 @@ test('search uses visible words, keeps product forms distinct and excludes URL f
   assert.deepEqual(find('aphids'), []);
   assert.deepEqual(find('फफूंद'), []);
   assert.deepEqual(find('  '), ['rice', 'paddy']);
+});
+
+test('processed-product filters do not inherit cultivation and raw-crop handling guides', () => {
+  for (const crop of ['rice', 'basmati-rice', 'broken-rice', 'beaten-rice', 'wheat-atta', ' RICE ']) {
+    assert.equal(listEditorialPosts(posts, { crop }).total, 0, crop);
+    assert.equal(listEditorialPosts(posts, { crop, q: 'बुवाई' }).total, 0, crop);
+  }
+  assert.ok(slugs({ crop: 'paddycommon' }).includes(wetPaddy));
+  assert.ok(slugs({ crop: 'paddybasmati' }).includes(wetPaddy));
+  assert.ok(slugs({ crop: 'wheat' }).includes('gehun-ki-buvai-sahi-samay-aur-tarika'));
+});
+
+test('advice discovery can use every published Hindi guide and search newer selling topics', () => {
+  const all = listEditorialPosts(posts, { language: 'hi', limit: '12', page: '1' });
+  assert.equal(all.total, posts.filter(post => post.language === 'hi' && post.status === 'published').length);
+  const publishedSlugs = new Set(Array.from({ length: all.totalPages }, (_, page) =>
+    listEditorialPosts(posts, { language: 'hi', limit: '12', page: String(page + 1) }).posts).flat().map(post => post.slug));
+  for (const slug of ['mandi-bhav-min-max-modal-kaise-padhen', 'enam-kisan-registration-bikri-bhugtan', 'mandi-taul-katauti-bhugtan-checklist']) {
+    assert.ok(publishedSlugs.has(slug), slug);
+  }
+  assert.ok(slugs({ language: 'hi', q: 'फफूंद' }).includes(wetPaddy));
+  assert.ok(slugs({ language: 'hi', q: 'eNAM', category: 'मंडी और लागत' }).includes('enam-kisan-registration-bikri-bhugtan'));
+  assert.equal(slugs({ language: 'hi', q: 'तौल', category: 'मंडी और लागत' })[0], 'mandi-taul-katauti-bhugtan-checklist');
 });

@@ -1,2 +1,3 @@
-server/db/data/daily/
+# Raw daily snapshots are needed at build time to regenerate comparison data.
+# Function tracing still excludes them in vercel.json.
 scraper/

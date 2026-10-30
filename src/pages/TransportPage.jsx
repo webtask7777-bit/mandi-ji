@@ -24,8 +24,8 @@ export default function TransportPage() {
       </header>
       <main id="delivery-main" className="sb-main">
         <div className="sb-calculator-page-heading"><span className="sb-eyebrow"><Truck size={16} aria-hidden="true" />सही भाव · हिसाब और तैयारी</span><h1>मंडी डिलीवरी कैलकुलेटर और गाइड</h1></div>
-        <CropImageLegend />
         <DeliveryCalculatorTab initialScenario={scenario} onScenarioConsumed={() => { setScenario(null); navigate(location.pathname, { replace: true, state: null }); }} />
+        <CropImageLegend />
         <Footer />
       </main>
     </div>

@@ -70,6 +70,7 @@ export function deliveryFormToInput(form) {
 /** Farmer-facing name of a price basis code; unknown codes are not shown raw. */
 export function priceBasisLabel(basis) {
   return ({
+    'daily-modal': 'उस तारीख, किस्म और ग्रेड का दर्ज मोडल भाव',
     'daily-average': 'उस दिन के दर्ज भावों का औसत',
     'monthly-average': 'उस महीने के दर्ज भावों का औसत',
     recent: 'आख़िरी दर्ज तारीख तक के 7 दिनों के दर्ज भावों का औसत',

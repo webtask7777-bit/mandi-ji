@@ -4,7 +4,7 @@ import { getDataFreshness, getLatestQuoteDate, quoteDateISO } from '../src/utils
 import { buildPriceGapCandidates, calculateSaleScenario, getComparisonPair, getMandiPrice, sortMandiPrices } from '../src/utils/marketComparison.js';
 
 const now = new Date('2026-10-13T02:00:00Z');
-const row = (name, recentPrice, extra = {}) => ({ name, recentPrice, topVariety: 'FAQ', grade: 'A', stateCode: 'CG', district: 'Raipur', ...extra });
+const row = (name, recentPrice, extra = {}) => ({ name, recentPrice, quotePrice: recentPrice, topVariety: 'FAQ', grade: 'A', stateCode: 'CG', district: 'Raipur', marketId: `CG|Raipur|${name}`, comparisonIdentity: 'commodity-mandi-variety-grade-date-v1', commodityId: 'wheat', unit: 'INR/quintal', priceBasis: 'daily-modal', quoteDate: '2026-10-13', ...extra });
 
 test('stale, future, invalid and missing dates are never marked current', () => {
   assert.equal(getDataFreshness('2026-07-19', now).status, 'stale');
@@ -31,21 +31,27 @@ test('invalid prices are excluded and data is sorted without mutation', () => {
 test('comparison does not mix grades, price windows, known dates or varieties', () => {
   const low = row('Low', 2000, { quoteDate: '2026-10-13' });
   for (const extra of [{ grade: 'B' }, { topVariety: 'Other' }, { quoteDate: '2026-10-12' }, { recentPrice: null, avgPrice: 4000 }]) {
-    assert.equal(getComparisonPair([low, row('High', 4000, { quoteDate: '2026-10-13', ...extra })]), null);
+    assert.equal(getComparisonPair([low, row('High', 4000, { quoteDate: '2026-10-13', ...extra })], { now }), null);
   }
 });
-test('undated comparisons remain descriptive and never invent 50km or ROI', () => {
-  const result = buildPriceGapCandidates({ wheat: [row('Low', 2000), row('High', 4000)] }, [{ id: 'wheat', nameHi: 'गेहूँ' }]);
+test('undated records are inspectable but never offered as automatic calculator pairs', () => {
+  const result = buildPriceGapCandidates({ wheat: [row('Low', 2000, { quoteDate: null }), row('High', 4000, { quoteDate: null })] }, [{ id: 'wheat', nameHi: 'गेहूँ' }], { now });
+  assert.deepEqual(result, []);
+});
+test('dated comparisons never invent distance, costs or ROI', () => {
+  const result = buildPriceGapCandidates({ wheat: [row('Low', 2000), row('High', 4000)] }, [{ id: 'wheat', nameHi: 'गेहूँ' }], { now });
   assert.equal(result.length, 1);
   assert.equal(result[0].spread, 2000);
-  for (const key of ['distance', 'costPerQ', 'roi', 'netProfit', 'quoteDate']) assert.equal(result[0][key], null);
+  assert.equal(result[0].quoteDate, '2026-10-13');
+  assert.equal(result[0].priceBasis, 'daily-modal');
+  for (const key of ['distance', 'costPerQ', 'roi', 'netProfit']) assert.equal(result[0][key], null);
   assert.equal(result[0].comparisonOnly, true);
 });
 test('same mandi observations are not shown as a trading route', () => {
-  assert.equal(getComparisonPair([row('Same', 2000), row('Same', 4000)]), null);
+  assert.equal(getComparisonPair([row('Same', 2000), row('Same', 4000)], { now }), null);
 });
 test('outlier is excluded without falling back to an implausible candidate', () => {
-  const pair = getComparisonPair([row('A', 2000), row('B', 2100), row('C', 2150), row('D', 2200), row('E', 99999)]);
+  const pair = getComparisonPair([row('A', 2000), row('B', 2100), row('C', 2150), row('D', 2200), row('E', 99999)], { now });
   assert.equal(pair.high.name, 'D');
   assert.equal(pair.outliersExcluded, 1);
 });

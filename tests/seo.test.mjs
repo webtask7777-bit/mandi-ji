@@ -133,7 +133,7 @@ test('every sitemap URL resolves to indexable HTML with unique metadata and safe
       const mandi = Object.entries(snapshot).find(([request]) => request.startsWith('/mandis/detail/'))?.[1]?.data;
       const library = Object.entries(snapshot).find(([request]) => request.startsWith('/cms/blog?'))?.[1]?.data;
       if (article) assert.equal(date, String(article.updatedAt || article.publishedAt).slice(0, 10), 'article lastmod uses actual editorial date');
-      else if (library && /^(?:\/blog|\/[a-z]{2,3}\/blog)$/.test(url.pathname)) {
+      else if (library && /^(?:\/blog|\/[a-z]{2,3}\/blog)(?:\/page\/[1-9]\d*)?$/.test(url.pathname)) {
         const updated = library.posts.map(post => String(post.updatedAt || post.publishedAt).slice(0, 10)).sort().at(-1);
         assert.equal(date, updated, 'library lastmod uses the latest actual editorial update in its language');
       }
