@@ -8,10 +8,10 @@ import '../styles/crop-guides.css';
 export default function CropGuides({ cropId, cropName, stateId = 'all' }) {
   // A processed form (atta, poha, dal, oil) keeps its tools but not the crop's growing guides.
   const topic = isProcessedForm(cropId) ? null : getCropTopic(cropId);
-  const query = new URLSearchParams({ crop: topic?.id || '', state: stateId, language: 'hi', limit: '3' });
+  const query = new URLSearchParams({ crop: topic ? cropId : '', state: stateId, language: 'hi', limit: '3' });
   const { data, loading, error } = useApi(topic ? `/cms/blog?${query}` : null);
   const posts = data?.posts || [];
-  const libraryQuery = new URLSearchParams({ ...(topic ? { crop: topic.id } : {}), ...(stateId !== 'all' ? { state: stateId } : {}) });
+  const libraryQuery = new URLSearchParams({ ...(topic ? { crop: cropId } : {}), ...(stateId !== 'all' ? { state: stateId } : {}) });
   const libraryPath = `/blog${libraryQuery.size ? `?${libraryQuery}` : ''}`;
   return <section className="sb-crop-guides" aria-labelledby="crop-guides-title">
     <div className="sb-crop-guides__heading"><div><span><BookOpen size={16} aria-hidden="true" /> भाव के साथ काम की जानकारी</span><h2 id="crop-guides-title">{cropName} की बिक्री और तैयारी</h2></div><Link to={libraryPath}>{posts.length ? 'इस फसल की सभी गाइड' : 'किसान मार्गदर्शिकाएँ'} <ArrowRight size={16} aria-hidden="true" /></Link></div>

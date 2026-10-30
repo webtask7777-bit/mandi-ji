@@ -9,7 +9,7 @@ const EDITORIAL_AUTHOR = 'सही भाव संपादकीय';
 const EDITABLE_FIELDS = [
   'title', 'slug', 'content', 'excerpt', 'tags', 'status', 'category', 'seoTitle',
   'seoDescription', 'coverImage', 'coverAlt', 'coverCaption', 'takeaways', 'sources',
-  'relatedSlugs', 'readingMinutes', 'cropTopics', 'stateIds', 'language', 'translationGroup',
+  'relatedSlugs', 'readingMinutes', 'cropTopics', 'commodityIds', 'stateIds', 'language', 'translationGroup',
   'regionLabel', 'weatherRelevant', 'editorialNote', 'priceLinks',
 ];
 const hasText = value => typeof value === 'string' && Boolean(value.trim());
@@ -129,7 +129,7 @@ export function listEditorialPosts(allPosts, query = {}) {
   const cropCounts = countBy(inLanguage, post => post.cropTopics || []);
   const categoryCounts = countBy(inLanguage, post => hasText(post.category) ? [post.category] : []);
   const languageCounts = countBy(available, post => [languageOf(post)]);
-  const crop = valueOf(query.crop);
+  const crop = valueOf(query.crop).toLowerCase();
   // Topic families help browsing, but cultivation/postharvest guides must not
   // be recommended for a processed product such as flour, rice or beaten rice.
   // Processed-product advice needs its own explicit applicability before use.
@@ -139,6 +139,10 @@ export function listEditorialPosts(allPosts, query = {}) {
   const slugs = valueOf(query.slugs).split(',').map(value => value.trim()).filter(Boolean).slice(0, 20);
   const matching = inLanguage.filter(post => {
     if (crop && (!topic || !post.cropTopics?.includes(topic.id))) return false;
+    // An explicit product scope narrows the topic; it never expands or replaces it.
+    // Empty/malformed scopes fail closed, including any legacy unvalidated records.
+    if (crop && Object.hasOwn(post, 'commodityIds') &&
+      (!Array.isArray(post.commodityIds) || !post.commodityIds.includes(crop))) return false;
     if (category && post.category !== category) return false;
     if (slugs.length && !slugs.includes(post.slug)) return false;
     return true;
@@ -187,6 +191,11 @@ export function validateEditorialPost(post, allPosts = [], { now = Date.now() } 
   if (!EDITORIAL_LANGUAGES.includes(post.language)) errors.push(`समर्थित भाषा चुनें: ${EDITORIAL_LANGUAGES.join(', ')}।`);
   for (const [field, lookup, label] of [['cropTopics', getTopicById, 'फसल समूह'], ['stateIds', id => STATE_IDS.has(id), 'राज्य']]) {
     if (!Array.isArray(post[field]) || post[field].some(id => typeof id !== 'string' || !lookup(id))) errors.push(`${label} की सूची में केवल मान्य ID रखें।`);
+  }
+  if (Object.hasOwn(post, 'commodityIds') && (!Array.isArray(post.commodityIds) || !post.commodityIds.length ||
+    post.commodityIds.some(id => typeof id !== 'string' || !COMMODITY_IDS.has(id) || !Array.isArray(post.cropTopics) || !post.cropTopics.includes(getCropTopic(id)?.id)) ||
+    new Set(post.commodityIds).size !== post.commodityIds.length)) {
+    errors.push('commodityIds में इस लेख के फसल समूहों की मान्य exact ID की non-empty सूची रखें; ID दोहराएँ नहीं।');
   }
   if (post.translationGroup != null && (!hasText(post.translationGroup) || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(post.translationGroup))) errors.push('Translation group में छोटे अंग्रेज़ी अक्षर, अंक और hyphen रखें।');
   if (post.translationGroup && otherPosts.some(item => item.translationGroup === post.translationGroup && languageOf(item) === post.language)) errors.push('इस translation group में इस भाषा का लेख पहले से है।');

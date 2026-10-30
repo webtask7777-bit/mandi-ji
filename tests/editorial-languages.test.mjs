@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { EDITORIAL_LANGUAGE_CODES } from '../shared/editorialLanguages.js';
+import { BLOG_PAGE_SIZE } from '../shared/blogPagination.js';
 import { getEditorialLabels, editorialCropName } from '../src/utils/editorialLabels.js';
 import { getEditorialPost, listEditorialPosts, validateEditorialPost } from '../server/utils/editorial.js';
 
@@ -60,7 +61,14 @@ test('native library URLs contain the correct language before JavaScript loads',
     const html = readFileSync(new URL(`../dist${route}.html`, import.meta.url), 'utf8');
     assert.match(html, new RegExp(`<html[^>]*\\blang="${code}"`), code);
     assert.ok(html.includes(`href="https://sahibhav.in${route}"`), `${code}: native self-canonical`);
-    assert.ok(html.includes(translations.find(post => post.language === code).title.replaceAll('&', '&amp;')), `${code}: native article title in initial HTML`);
+    const firstPage = listEditorialPosts(posts, { language: code, page: 1, limit: BLOG_PAGE_SIZE });
+    assert.ok(firstPage.posts.length > 0, `${code}: native library has published content`);
+    for (const post of firstPage.posts) {
+      assert.equal(post.language, code, `${code}: first-page articles retain their language`);
+      const escapedTitle = post.title.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#x27;');
+      assert.ok(html.includes(escapedTitle), `${code}: first-page article title is present before JavaScript: ${post.slug}`);
+      assert.ok(html.includes(`/blog/${post.slug}`), `${code}: first-page article has a crawlable detail link: ${post.slug}`);
+    }
     assert.ok(sitemap.includes(`<loc>https://sahibhav.in${route}</loc>`));
     assert.doesNotMatch(html.split('</head>')[0], /noindex/);
   }

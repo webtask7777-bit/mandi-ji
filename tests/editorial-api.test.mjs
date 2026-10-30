@@ -73,6 +73,52 @@ test('pagination cannot return unbounded or negative slices; search and slug fil
   assert.equal(listEditorialPosts(fixtures, { page: '10000000' }).page, 1000000);
 });
 
+test('exact commodity applicability narrows topics without mixing grain maize, baby corn or chickpea forms', () => {
+  const fixtures = [
+    post('maize-grain', { cropTopics: ['maize'], commodityIds: ['maize'], stateIds: ['punjab'] }),
+    post('maize-general', { cropTopics: ['maize'] }),
+    post('desi-chickpea', { cropTopics: ['gram'], commodityIds: ['bengal-gramgramwhole'] }),
+    post('wrong-topic', { cropTopics: ['wheat'], commodityIds: ['maize'] }),
+    post('processed', { cropTopics: ['paddy'], commodityIds: ['rice'] }),
+  ];
+  const ids = query => listEditorialPosts(fixtures, query).posts.map(item => item.id);
+  assert.deepEqual(ids({ crop: 'maize' }), ['maize-general', 'maize-grain']);
+  assert.deepEqual(ids({ crop: ' MAIZE ' }), ids({ crop: 'maize' }));
+  for (const crop of ['baby-corn', 'sweet-corn']) assert.deepEqual(ids({ crop }), ['maize-general'], crop);
+  assert.deepEqual(ids({ crop: 'bengal-gramgramwhole' }), ['desi-chickpea']);
+  for (const crop of ['kabuli-chanachickpeas-white', 'gram-rawchholia', 'bengal-gram-dalchana-dal', 'gram', 'rice', 'maiz', '__proto__', 'constructor', 'toString']) {
+    assert.deepEqual(ids({ crop }), [], crop);
+  }
+  assert.deepEqual(ids({ crop: 'maize', state: 'haryana' }), ['maize-general']);
+  assert.deepEqual(ids({ crop: 'maize', language: 'mr' }), []);
+  assert.deepEqual(ids({ crop: 'maize', slugs: 'guide-wrong-topic' }), [], 'allowlist never overrides topic mismatch');
+  const page = listEditorialPosts(fixtures, { crop: 'maize', limit: 1, page: 2 });
+  assert.equal(page.total, 2);
+  assert.equal(page.posts[0].id, 'maize-grain');
+  for (const commodityIds of [[], null, 'maize', {}]) {
+    assert.equal(listEditorialPosts([post('invalid', { cropTopics: ['maize'], commodityIds })], { crop: 'maize' }).total, 0, JSON.stringify(commodityIds));
+  }
+});
+
+test('commodity applicability validates canonical exact IDs, topic membership and editable metadata', () => {
+  const existing = post('maize', { cropTopics: ['maize'] });
+  const edited = prepareEditorialPost({ commodityIds: ['maize'] }, { existing, posts: [existing], now });
+  assert.deepEqual(edited.errors, []);
+  assert.deepEqual(edited.post.commodityIds, ['maize']);
+  assert.equal(edited.changed, true);
+  assert.equal(edited.post.updatedAt, new Date(now).toISOString());
+  const preserved = prepareEditorialPost({ title: edited.post.title }, { existing: edited.post, posts: [edited.post], now });
+  assert.deepEqual(preserved.errors, []);
+  assert.deepEqual(preserved.post.commodityIds, ['maize']);
+  assert.equal(preserved.changed, false);
+  assert.deepEqual(validateEditorialPost(post('desi', { cropTopics: ['gram'], commodityIds: ['bengal-gramgramwhole'] }), [], { now }), []);
+  for (const commodityIds of [[], null, 'maize', {}, ['not-a-crop'], ['maiz'], ['__proto__'], ['constructor'], ['toString'], [' MAIZE '], ['maize', 'maize'], ['wheat']]) {
+    const result = prepareEditorialPost({ commodityIds }, { existing, posts: [existing], now });
+    assert.ok(result.errors.some(error => error.includes('commodityIds')), JSON.stringify(commodityIds));
+  }
+  assert.ok(prepareEditorialPost({ title: 'अधूरा लेख', cropTopics: ['maize'], commodityIds: ['unknown'] }, { now, id: 'draft' }).errors.some(error => error.includes('commodityIds')), 'draft scopes are validated too');
+});
+
 test('translation and related links include only complete published records and matching related language', () => {
   const first = post('hi', { translationGroup: 'wheat-sowing', relatedSlugs: ['guide-mr', 'guide-second', 'guide-draft', 'guide-second'] });
   const fixtures = [first, post('mr', { language: 'mr', translationGroup: 'wheat-sowing' }), post('second'), post('draft', { status: 'draft', language: 'gu', translationGroup: 'wheat-sowing' })];

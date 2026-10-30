@@ -19,8 +19,12 @@ test('editorial covers are responsive and shared translation artwork is explicit
   for (const post of articles) {
     const image = imageManifest[post.coverImage];
     assert.ok(image, `${post.slug}: registered cover`);
-    assert.deepEqual(image.candidates.map(item => item.width), [640, 960, 1672]);
+    assert.ok(Number.isInteger(image.width) && image.width >= 1200, `${post.slug}: full-size share cover`);
+    assert.ok(Number.isInteger(image.height) && image.height > 0, `${post.slug}: positive cover height`);
+    assert.deepEqual(image.candidates.map(item => item.width), [640, 960, image.width], `${post.slug}: responsive widths include the original`);
+    assert.deepEqual(image.candidates.at(-1), { src: post.coverImage, width: image.width, height: image.height }, `${post.slug}: original dimensions match the manifest`);
     for (const candidate of image.candidates) {
+      assert.ok(Math.abs(candidate.height - candidate.width * image.height / image.width) <= 1, `${post.slug}: responsive aspect ratio is preserved`);
       const file = path.join(root, 'public', candidate.src);
       assert.ok(existsSync(file), `${post.slug}: responsive asset ${candidate.src}`);
       assert.ok(readFileSync(file).length > 100, `${post.slug}: nonempty responsive asset`);
@@ -116,7 +120,8 @@ test('published article HTML exposes its own social thumbnail, source links and 
     assert.ok(head.includes(`content="https://sahibhav.in${post.coverImage}"`), `${post.slug}: social cover`);
     assert.ok(html.includes(`src="${post.coverImage}"`), `${post.slug}: visible cover`);
     assert.ok(html.includes(`${post.coverImage.replace('.webp', '-640.webp')} 640w`), `${post.slug}: responsive cover markup`);
-    assert.match(head, /property="og:image:width" content="1672"/, `${post.slug}: share image dimensions`);
+    assert.match(head, new RegExp(`property="og:image:width" content="${imageManifest[post.coverImage].width}"`), `${post.slug}: share image width`);
+    assert.match(head, new RegExp(`property="og:image:height" content="${imageManifest[post.coverImage].height}"`), `${post.slug}: share image height`);
     assert.ok(html.includes('id="sources-title"'), `${post.slug}: visible source section in article language`);
     for (const source of post.sources) assert.ok(html.includes(`href="${source.url.replaceAll('&', '&amp;')}"`), `${post.slug}: clickable primary source`);
     const schemas = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
