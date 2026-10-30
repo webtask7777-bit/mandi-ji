@@ -3,13 +3,20 @@ const copyModules = import.meta.glob('./locales/*.json', { eager: true, import: 
 const copies = Object.fromEntries(Object.entries(copyModules).filter(([file]) => !file.endsWith('.crops.json')).map(([file, value]) => [file.split('/').at(-1).replace('.json', ''), value]));
 const cropNames = Object.fromEntries(Object.entries(copyModules).filter(([file]) => file.endsWith('.crops.json')).map(([file, value]) => [file.split('/').at(-1).replace('.crops.json', ''), value]));
 export function getLanguageCopy(code) { return getLanguage(code)?.status === 'available' ? copies[code] || null : null; }
-export function localizedCropName(crop, code) {
-  if (!crop) return '';
-  // Exact commodity IDs only: an editorial family is not a commodity identity. Devanagari
-  // languages without their own list (Maithili, Sanskrit) read the Hindi name, not English.
+export function localizedCropLabel(crop, code) {
+  if (!crop) return { name: '', language: code };
+  // Keep exact commodity identities and identify the language actually displayed.
+  // A shared script does not make an untranslated Hindi name Marathi or Nepali.
+  const dictionary = cropNames[code];
+  if (dictionary && Object.hasOwn(dictionary, crop.id) && dictionary[crop.id]) return { name: dictionary[crop.id], language: code };
   const devanagari = getLanguage(code)?.script === 'Devanagari';
-  return cropNames[code]?.[crop.id] || (code === 'hi' || devanagari ? crop.nameHi : crop.nameEn || crop.name) || crop.name || crop.nameHi || crop.id;
+  if ((code === 'hi' || devanagari) && crop.nameHi) return { name: crop.nameHi, language: 'hi' };
+  if (!devanagari && crop.nameEn) return { name: crop.nameEn, language: 'en' };
+  if (crop.name) return { name: crop.name, language: 'en' };
+  if (crop.nameHi) return { name: crop.nameHi, language: 'hi' };
+  return { name: crop.id, language: 'en' };
 }
+export function localizedCropName(crop, code) { return localizedCropLabel(crop, code).name; }
 export function formatLanguageNumber(value, code, options = {}) {
   const number = Number(value);
   if (!Number.isFinite(number)) return '—';

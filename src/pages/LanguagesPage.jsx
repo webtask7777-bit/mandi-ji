@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, BookOpen, Check, ChevronDown, Globe2, Languag
 import SEO, { SITE_URL } from '../components/SEO';
 import Brand from '../components/Brand';
 import { LANGUAGES, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, languagePath, getLanguage } from '../../shared/languages.js';
+import { EDITORIAL_LANGUAGE_CODES } from '../../shared/editorialLanguages.js';
 import { getIndiaRegion } from '../../shared/indiaRegions.js';
 import cropNamesHi from '../i18n/locales/hi.crops.json';
 import { useRememberedLanguage, useSuggestedLanguage } from '../hooks/useLanguagePreference';
@@ -22,7 +23,7 @@ export default function LanguagesPage() {
   const [query, setQuery] = useState('');
   const [searchParams] = useSearchParams();
   const context = readLanguageNavigation(searchParams);
-  const selection = { state: context.state, crop: context.crop || context.sourceCrop };
+  const selection = { state: context.state, crop: context.sourceCrop || context.crop };
   const navContext = { ...context, sourceCrop: selection.crop };
   const toolsPath = (code, section = context.toolSection) => localizedToolsUrl({ ...navContext, toolLanguage: code }, code, section);
   const saved = useRememberedLanguage();
@@ -37,20 +38,22 @@ export default function LanguagesPage() {
   const state = getIndiaRegion(selection.state);
   const cropName = Object.hasOwn(cropNamesHi, selection.crop) ? cropNamesHi[selection.crop] : '';
   const previewCount = AVAILABLE_LANGUAGES.filter(item => !item.searchReady).length;
-  const guidePath = buildLanguageBlogUrl(recommendation.code, navContext);
+  const guideLanguage = EDITORIAL_LANGUAGE_CODES.includes(recommendation.code) ? recommendation.code : 'hi';
+  const guidePath = buildLanguageBlogUrl(guideLanguage, navContext);
+  const guideAction = guideLanguage === recommendation.code ? 'उपलब्ध गाइड पढ़ें' : 'हिन्दी में उपलब्ध गाइड पढ़ें';
   const alternates = SEARCH_LANGUAGES.filter(item => item.code.length === 2).map(item => ({ language: item.code, path: languagePath(item.code) }));
   const resources = [
     { name: 'mandi-market-v1', icon: Sprout, title: 'अपनी फसल का भाव', text: 'दर्ज तारीख के साथ भाव देखें और उपलब्ध रिकॉर्ड समझें।', link: toolsPath(recommendation.code, 'prices'), action: 'मंडी भाव देखें', number: '01' },
     { name: 'farm-delivery-v1', icon: Truck, title: 'पहुँचने तक का खर्च', text: 'दूरी, वाहन और माल की मात्रा जोड़कर ढुलाई का हिसाब करें।', link: toolsPath(recommendation.code, 'delivery'), action: 'खर्च निकालें', number: '02' },
-    { name: 'farm-journal-v1', icon: BookOpen, title: 'खेती की काम की बात', text: 'कटाई, मौसम और बिक्री की तैयारी पर स्रोतों के साथ गाइड पढ़ें।', link: guidePath, action: 'उपलब्ध गाइड पढ़ें', number: '03' },
+    { name: 'farm-journal-v1', icon: BookOpen, title: 'खेती की काम की बात', text: 'कटाई, मौसम और बिक्री की तैयारी पर स्रोतों के साथ गाइड पढ़ें।', link: guidePath, action: guideAction, number: '03' },
   ];
 
   return <div className="sb-language-surface sb-language-chooser" lang="hi" dir="ltr">
     <SEO title="अपनी भाषा चुनें — भारत के किसानों के लिए सही भाव" description="अपनी भाषा में दर्ज मंडी भाव खोजें और डिलीवरी खर्च का हिसाब करें। उपलब्ध भारतीय भाषाएँ और अनुवाद की स्थिति देखें।" path="/languages" language="hi" image="/visuals/language-farmers-v1.webp" imageAlt="सही भाव — अपनी भाषा में खेती और मंडी की जानकारी" alternates={alternates} xDefaultPath="/languages" structuredData={{ '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'SahiBhav languages', url: `${SITE_URL}/languages`, inLanguage: ['hi', 'en'] }} />
     <a href="#language-options" className="sb-language-directory-skip">भाषा चुनने पर जाएँ / Choose a language</a>
     <header className="sb-language-chooser-header">
-      <Link to={toolsPath('hi', 'prices')} className="sb-language-wordmark" aria-label="सही भाव होम"><Brand /></Link>
-      <nav aria-label="मुख्य लिंक"><span className="sb-language-chooser-free"><span />सभी सुविधाएँ मुफ़्त</span><Link to={toolsPath('hi', 'prices')}>मंडी भाव <ArrowUpRight size={16} aria-hidden="true" /></Link></nav>
+      <Link to={toolsPath(recommendation.code, 'prices')} className="sb-language-wordmark" aria-label="सही भाव होम"><Brand /></Link>
+      <nav aria-label="मुख्य लिंक"><span className="sb-language-chooser-free"><span />सभी सुविधाएँ मुफ़्त</span><Link to={toolsPath(recommendation.code, 'prices')}>मंडी भाव <ArrowUpRight size={16} aria-hidden="true" /></Link></nav>
     </header>
     <main className="sb-language-chooser-main">
       <section className="sb-language-chooser-hero" aria-labelledby="language-hero-title">
@@ -77,9 +80,9 @@ export default function LanguagesPage() {
         {pending.length > 0 && <div className="sb-language-pending"><div><span className="sb-language-kicker">आगे की तैयारी</span><h3>इन भाषाओं में भी मिलेंगे।</h3><p>अनुवाद और स्थानीय भाषा की जाँच बाकी है। ये विकल्प अभी खुलेंगे नहीं।</p></div><div className="sb-language-pending-list">{pending.map(item => <span key={item.code} className={`sb-language-pending-item sb-language-script-${item.script}`}><strong lang={item.code} dir={item.dir}>{item.name}</strong><span lang="en">{item.english}</span></span>)}</div></div>}
       </section>
 
-      <section className="sb-language-resources" aria-labelledby="language-resources-title"><div className="sb-language-section-head"><div><span className="sb-language-kicker">मंडी से आगे, आपके काम की बात</span><h2 id="language-resources-title">अगला कदम, समझकर।</h2></div><span className="sb-language-resource-note">आपके राज्य और फसल के चयन के साथ</span></div><div className="sb-language-resource-grid">{resources.map(({ name, icon: Icon, title, text, link, action, number }) => <Link className="sb-language-resource-card" key={name} to={link}><div className="sb-language-resource-art"><LanguageArtwork name={name} /><span className="sb-language-resource-number">{number}</span><span className="sb-language-resource-icon"><Icon size={20} aria-hidden="true" /></span></div><div className="sb-language-resource-copy"><h3>{title}</h3><p>{text}</p><span>{action}<ArrowUpRight size={18} aria-hidden="true" /></span></div></Link>)}</div><small className="sb-language-art-note">बैनर सांकेतिक AI चित्र हैं। गाइड केवल उनकी उपलब्ध भाषाओं में मिलेंगी।</small></section>
+      <section className="sb-language-resources" aria-labelledby="language-resources-title"><div className="sb-language-section-head"><div><span className="sb-language-kicker">मंडी से आगे, आपके काम की बात</span><h2 id="language-resources-title">अगला कदम, समझकर।</h2></div><span className="sb-language-resource-note">आपके राज्य और फसल के चयन के साथ</span></div><div className="sb-language-resource-grid">{resources.map(resource => { const { name, icon: Icon, title, text, link, action, number } = resource; return <Link className="sb-language-resource-card" key={name} to={link}><div className="sb-language-resource-art"><LanguageArtwork name={name} /><span className="sb-language-resource-number">{number}</span><span className="sb-language-resource-icon"><Icon size={20} aria-hidden="true" /></span></div><div className="sb-language-resource-copy"><h3>{title}</h3><p>{text}</p><span>{action}<ArrowUpRight size={18} aria-hidden="true" /></span></div></Link>; })}</div><small className="sb-language-art-note">बैनर सांकेतिक AI चित्र हैं। गाइड केवल उनकी उपलब्ध भाषाओं में मिलेंगी।</small></section>
       <aside className="sb-language-coverage-note"><span className="sb-language-note-icon"><ShieldCheck size={27} aria-hidden="true" /></span><div><h2>अपनी भाषा में जानकारी। समझकर फैसला।</h2><p>भाव खोज, तारीख की जानकारी और डिलीवरी हिसाब का इंटरफ़ेस अनूदित है। सरकारी स्रोतों के मंडी, राज्य और कुछ फसल नाम मूल रूप में रहेंगे। हर लेख की उपलब्ध भाषा अलग हो सकती है; पूरी पुरानी app और हर लेख का अनुवाद अभी पूरा नहीं है।</p><Link to="/contact">किसी शब्द में सुधार सुझाएँ <ArrowUpRight size={16} aria-hidden="true" /></Link></div></aside>
     </main>
-    <footer className="sb-language-chooser-footer"><span>सही भाव · फसल आपकी। फैसला आपका।</span><div><Link to={guidePath}>खेती की मार्गदर्शिकाएँ</Link><Link to="/contact">संपर्क और सुझाव</Link></div></footer>
+    <footer className="sb-language-chooser-footer"><span>सही भाव · फसल आपकी। फैसला आपका।</span><div><Link to={guidePath}>{guideLanguage === recommendation.code ? 'खेती की मार्गदर्शिकाएँ' : 'हिन्दी में खेती की मार्गदर्शिकाएँ'}</Link><Link to="/contact">संपर्क और सुझाव</Link></div></footer>
   </div>;
 }

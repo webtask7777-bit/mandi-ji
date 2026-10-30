@@ -11,6 +11,7 @@ import { EDITORIAL_LANGUAGES, getEditorialLabels, editorialDate, editorialCropNa
 import { getLanguage, languagePath } from '../../shared/languages';
 import { readLanguageNavigation, buildLanguageChooserUrl, buildLanguageBlogUrl, buildArticleNavigationUrl, localizedToolsUrl, localizedPriceUrl, editorialNavigationUrl } from '@/utils/languageNavigation';
 import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import '@/styles/detail.css';
 import '@/styles/editorial.css';
 import '@/styles/language-fonts.css';
@@ -24,9 +25,16 @@ function sectionId(text) {
 function safeSourceUrl(value, base) {
   try { const url = new URL(value, base); return ['https:', 'http:'].includes(url.protocol) ? url.href : null; } catch { return null; }
 }
+const HINDI_TOOL_HINTS = {
+  en: 'Hindi', as: 'হিন্দী', bn: 'হিন্দি', gu: 'હિન્દી', kn: 'ಹಿಂದಿ', ml: 'ഹിന്ദി',
+  mr: 'हिंदी', ne: 'हिन्दी', or: 'ହିନ୍ଦୀ', pa: 'ਹਿੰਦੀ', ta: 'இந்தி', te: 'హిందీ', ur: 'ہندی',
+};
 function ArticleLink({ href, children, context, language }) {
   href = editorialNavigationUrl(href, context, language);
-  if (href?.startsWith('/') && !href.startsWith('//')) return <Link to={href}>{children}</Link>;
+  const hindiTool = /^\/(?:bechne-ka-hisab|kisan-calendar|kisan-salah)\/?(?:[?#]|$)/.test(href || '');
+  const hindiHint = hindiTool && HINDI_TOOL_HINTS[language];
+  const hasHindiHint = hindiHint && Object.values(HINDI_TOOL_HINTS).some(label => textContent(children).toLowerCase().includes(label.toLowerCase()));
+  if (href?.startsWith('/') && !href.startsWith('//')) return <Link to={href} hrefLang={hindiTool ? 'hi' : undefined}>{children}{hindiHint && !hasHindiHint ? ` (${hindiHint})` : null}</Link>;
   return <a href={href} rel="noopener noreferrer">{children}</a>;
 }
 
@@ -84,8 +92,8 @@ export default function BlogArticlePage() {
           <figure className="sb-journal-cover"><EditorialImage src={post.coverImage} alt={post.coverAlt || post.title} language={language} width="1672" height="941" fetchPriority="high" sizes="(max-width: 1200px) calc(100vw - 32px), 1100px" />{post.coverImage && <figcaption>{post.coverCaption || copy.caption}</figcaption>}</figure>
           <div className="sb-journal-reading-layout"><div className="sb-journal-reading-main">
             {takeaways.length > 0 && <section className="sb-journal-takeaways" aria-labelledby="takeaway-title"><span className="sb-journal-eyebrow">{copy.first}</span><h2 id="takeaway-title">{copy.takeaways}</h2><ul>{takeaways.map((item, index) => <li key={index}><Check size={18} aria-hidden="true" /><span>{item}</span></li>)}</ul></section>}
-            <div className="sb-article-content sb-journal-prose"><Markdown components={{ h1: ({ children }) => <h2>{children}</h2>, h2: ({ children }) => <h2 id={sectionId(textContent(children))}>{children}</h2>, a: props => <ArticleLink {...props} context={context} language={language} />, code: ({ children }) => <code dir="ltr" style={{ unicodeBidi: 'isolate' }}>{children}</code>, strong: ({ children }) => <strong>{/^[₹\d\s.,()+×÷=−-]+$/.test(textContent(children)) ? <bdi dir="ltr">{children}</bdi> : children}</strong> }}>{content}</Markdown></div>
-            {post.weatherRelevant && ['hi', 'mr', 'gu'].includes(language) && <LocalWeatherLinks language={language} />}
+            <div className="sb-article-content sb-journal-prose"><Markdown remarkPlugins={[remarkGfm]} components={{ h1: ({ children }) => <h2>{children}</h2>, h2: ({ children }) => <h2 id={sectionId(textContent(children))}>{children}</h2>, a: props => <ArticleLink {...props} context={context} language={language} />, table: ({ children }) => <div className="sb-journal-table-scroll" role="region" aria-label={copy.guide} tabIndex={0}><table>{children}</table></div>, code: ({ children }) => <code dir="ltr" style={{ unicodeBidi: 'isolate' }}>{children}</code>, strong: ({ children }) => <strong>{/^[₹\d\s.,()+×÷=−-]+$/.test(textContent(children)) ? <bdi dir="ltr">{children}</bdi> : children}</strong> }}>{content}</Markdown></div>
+            {post.weatherRelevant && <LocalWeatherLinks language={language} />}
             {priceLinks.length > 0 && <section className="sb-journal-price-links" aria-labelledby="article-prices-title"><h2 id="article-prices-title">{copy.prices}</h2><p>{copy.pricesHelp}</p><div>{priceLinks.map(item => <Link key={item.path} to={localizedPriceUrl(item.path, context, language) || item.path}>{item.label}<ArrowRight size={16} aria-hidden="true" /></Link>)}</div></section>}
             {sources.length > 0 && <section className="sb-journal-sources" aria-labelledby="sources-title"><span className="sb-journal-eyebrow">{copy.sourcesKicker}</span><h2 id="sources-title">{copy.sources}</h2><p>{copy.sourcesHelp}</p><ol>{sources.map((source, index) => <li key={`${source.url}-${index}`}><a href={safeSourceUrl(source.url)} target="_blank" rel="noopener noreferrer"><bdi>{source.title}</bdi><ExternalLink size={14} aria-hidden="true" /><span className="sb-journal-sr-only"> ({copy.newTab})</span></a>{source.accessedAt && editorialDate(source.accessedAt, language) && <span>{copy.accessed}: <time dateTime={source.accessedAt}><bdi>{editorialDate(source.accessedAt, language)}</bdi></time></span>}</li>)}</ol></section>}
             {cropTopics.length > 0 && <nav className="sb-journal-topic-links" aria-label={`${copy.crop} — ${copy.guides}`}>{cropTopics.map(topic => <Link key={topic.id} to={buildLanguageBlogUrl(language, { ...context, crop: topic.id })}>{editorialCropName(topic.id, topic.nameHi, language)} <ArrowRight size={13} aria-hidden="true" /></Link>)}</nav>}

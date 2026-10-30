@@ -179,6 +179,37 @@ test('rendered chooser preserves price scope while changing the tool language', 
   assert.match(result.head + result.html, /rel="canonical"[^>]+href="https:\/\/sahibhav.in\/languages"/);
 });
 
+test('chooser header retains the selected language and exact source crop over an editorial topic', { skip: hasSSR ? false : 'Build the SSR bundle first.' }, async () => {
+  const result = await renderNavigationPage('/languages?toolLanguage=ur&state=punjab&sourceCrop=paddycommon&crop=paddy');
+  const header = result.html.match(/<header\b[^>]*class="sb-language-chooser-header"[^>]*>([\s\S]*?)<\/header>/)?.[1];
+  assert.ok(header, 'the chooser has its navigation header');
+  const headerLinks = linkedUrls(header);
+  assert.equal(headerLinks.length, 2, 'both the brand and market continuation are present');
+  for (const link of headerLinks) {
+    assert.equal(link.pathname, '/ur/mandi-bhav', 'header continuation keeps the reader’s explicit language');
+    assert.equal(link.searchParams.get('state'), 'punjab');
+    assert.equal(link.searchParams.get('crop'), 'paddycommon', 'the exact commodity is not replaced by its topic');
+    assert.equal(link.hash, '#language-prices');
+  }
+  const choices = linkedUrls(result.html).filter(url => url.pathname.endsWith('/mandi-bhav'));
+  assert.equal(new Set(choices.map(url => url.pathname)).size, 18);
+  for (const link of choices) assert.equal(link.searchParams.get('crop'), 'paddycommon');
+});
+
+test('preview language chooser labels its actual Hindi guide fallback', { skip: hasSSR ? false : 'Build the SSR bundle first.' }, async () => {
+  const result = await renderNavigationPage('/languages?toolLanguage=ks&state=punjab&crop=brinjal');
+  assert.ok(result.html.includes('हिन्दी में उपलब्ध गाइड पढ़ें'));
+  assert.ok(result.html.includes('हिन्दी में खेती की मार्गदर्शिकाएँ'));
+  const guides = linkedUrls(result.html).filter(url => url.pathname.endsWith('/blog'));
+  assert.ok(guides.length >= 2);
+  for (const link of guides) {
+    assert.equal(link.pathname, '/blog', 'fallback points to the actual Hindi library');
+    assert.equal(link.searchParams.get('toolLanguage'), 'ks', 'the original tool language survives the guide visit');
+    assert.equal(link.searchParams.get('state'), 'punjab');
+    assert.equal(link.searchParams.get('sourceCrop'), 'brinjal');
+  }
+});
+
 test('delivery language choice retains the calculator destination without a saved language', { skip: hasSSR ? false : 'Build the SSR bundle first.' }, async () => {
   const { renderPage } = await import('../dist-ssr/entry-server.js');
   const delivery = await renderPage('/delivery-calculator?state=tamil-nadu&sourceCrop=paddycommon', {});

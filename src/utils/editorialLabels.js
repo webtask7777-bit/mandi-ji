@@ -117,11 +117,22 @@ const cropNames = {
   ta: taCrops,
   te: teCrops,
   ur: urCrops,
-  mr: { paddy: 'भात / तांदूळ', wheat: 'गहू', maize: 'मका', gram: 'हरभरा', mustard: 'मोहरी', soybean: 'सोयाबीन', cotton: 'कापूस', arhar: 'तूर', moong: 'मूग', urad: 'उडीद', masoor: 'मसूर', bajra: 'बाजरी', jowar: 'ज्वारी', sugarcane: 'ऊस', groundnut: 'भुईमूग', onion: 'कांदा', potato: 'बटाटा', tomato: 'टोमॅटो', garlic: 'लसूण', chilli: 'मिरची', grapes: 'द्राक्षे', banana: 'केळी', pomegranate: 'डाळिंब', mango: 'आंबा', okra: 'भेंडी', brinjal: 'वांगी', cauliflower: 'फुलकोबी', cabbage: 'कोबी' },
-  gu: { paddy: 'ડાંગર / ચોખા', wheat: 'ઘઉં', maize: 'મકાઈ', gram: 'ચણા', mustard: 'રાયડો', soybean: 'સોયાબીન', cotton: 'કપાસ', arhar: 'તુવેર', moong: 'મગ', urad: 'અડદ', masoor: 'મસૂર', bajra: 'બાજરી', jowar: 'જુવાર', sugarcane: 'શેરડી', groundnut: 'મગફળી', onion: 'ડુંગળી', potato: 'બટાટા', tomato: 'ટામેટાં', garlic: 'લસણ', chilli: 'મરચાં', grapes: 'દ્રાક્ષ', banana: 'કેળાં', pomegranate: 'દાડમ', mango: 'કેરી', okra: 'ભીંડા', brinjal: 'રીંગણ', cauliflower: 'ફુલાવર', cabbage: 'કોબી' },
+  mr: { paddy: 'भात (धान)', wheat: 'गहू', maize: 'मका', gram: 'हरभरा', mustard: 'मोहरी', soybean: 'सोयाबीन', cotton: 'कापूस', arhar: 'तूर', moong: 'मूग', urad: 'उडीद', masoor: 'मसूर', bajra: 'बाजरी', jowar: 'ज्वारी', sugarcane: 'ऊस', groundnut: 'भुईमूग', onion: 'कांदा', potato: 'बटाटा', tomato: 'टोमॅटो', garlic: 'लसूण', chilli: 'मिरची', grapes: 'द्राक्षे', banana: 'केळी', pomegranate: 'डाळिंब', mango: 'आंबा', okra: 'भेंडी', brinjal: 'वांगी', cauliflower: 'फुलकोबी', cabbage: 'कोबी' },
+  gu: { paddy: 'ડાંગર', wheat: 'ઘઉં', maize: 'મકાઈ', gram: 'ચણા', mustard: 'રાયડો', soybean: 'સોયાબીન', cotton: 'કપાસ', arhar: 'તુવેર', moong: 'મગ', urad: 'અડદ', masoor: 'મસૂર', bajra: 'બાજરી', jowar: 'જુવાર', sugarcane: 'શેરડી', groundnut: 'મગફળી', onion: 'ડુંગળી', potato: 'બટાટા', tomato: 'ટામેટાં', garlic: 'લસણ', chilli: 'મરચાં', grapes: 'દ્રાક્ષ', banana: 'કેળાં', pomegranate: 'દાડમ', mango: 'કેરી', okra: 'ભીંડા', brinjal: 'રીંગણ', cauliflower: 'ફુલાવર', cabbage: 'કોબી' },
+};
+// Editorial topic labels may reuse an explicitly equivalent whole-crop label.
+// These aliases are display-only: price, cultivar and processed-product IDs stay unchanged.
+const topicLabelCommodityIds = {
+  paddy: 'paddycommon', gram: 'bengal-gramgramwhole', arhar: 'arhartur-red-gramwhole',
+  moong: 'green-grammoongwhole', urad: 'black-gramurd-beanswhole',
+  bajra: 'bajrapearl-millet-cumbu', jowar: 'jowarsorghum', soybean: 'soyabean', okra: 'bhindiladies-finger',
 };
 export function editorialCropName(id, fallback, language = 'hi') {
-  return cropNames[language]?.[id] || (language === 'hi' ? fallback : getTopicById(id)?.nameEn) || fallback || id;
+  const names = Object.hasOwn(cropNames, language) ? cropNames[language] : null;
+  const exact = names && Object.hasOwn(names, id) ? names[id] : '';
+  const alias = Object.hasOwn(topicLabelCommodityIds, id) ? topicLabelCommodityIds[id] : '';
+  const translatedTopic = names && alias && Object.hasOwn(names, alias) ? names[alias] : '';
+  return exact || translatedTopic || (language === 'hi' ? fallback : getTopicById(id)?.nameEn) || fallback || id;
 }
 export function editorialStateName(id, fallback, language = 'hi') {
   const region = getIndiaRegion(id);
