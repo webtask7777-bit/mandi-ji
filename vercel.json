@@ -3,7 +3,7 @@
   "outputDirectory": "dist",
   "functions": {
     "api/index.mjs": {
-      "includeFiles": "server/**",
+      "includeFiles": "server/{**/*.js,db/data/*.json,db/data/crop-prices/*.json,db/data/india/**/*.json}",
       "excludeFiles": "server/db/data/daily/**"
     },
     "api/page.mjs": {
