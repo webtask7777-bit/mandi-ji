@@ -4,6 +4,13 @@ import "../styles/prices.css";
 
 const FALLBACK_NOTE = "उपज का प्रतीकात्मक चित्र; यह किसी खास फसल या किस्म की तस्वीर नहीं है।";
 
+// Rendered box widths from prices.css; the 512px original is the largest candidate.
+const DISPLAY_SIZES = { xs: "28px", sm: "40px", md: "54px", lg: "62px", hero: "163px" };
+const sizedSources = source => {
+  const match = /^\/visuals\/(crop-[a-z0-9-]+\.webp)$/.exec(source || "");
+  return match ? `/visuals/128/${match[1]} 128w, /visuals/320/${match[1]} 320w, ${source} 512w` : undefined;
+};
+
 // This original inline crate illustration needs neither a network request nor
 // an emoji font. It stays visible until artwork loads, and after failed requests.
 function CommodityPlaceholder() {
@@ -24,7 +31,7 @@ function CommodityPlaceholder() {
   </svg>;
 }
 
-function CropArtwork({ image, categoryImage, name, size, className, decorative }) {
+function CropArtwork({ image, categoryImage, name, size, className, decorative, imageSrcSet }) {
   const candidates = image.src === categoryImage.src ? [image] : [image, categoryImage];
   const [state, setState] = useState({ attempt: 0, loaded: false });
   const candidate = candidates[state.attempt];
@@ -62,8 +69,9 @@ function CropArtwork({ image, categoryImage, name, size, className, decorative }
     title={note || (representative ? FALLBACK_NOTE : undefined)}>
     {!hasArtwork && <CommodityPlaceholder />}
     {candidate && !categoryOnly && <img key={source} ref={imageRef} src={source} alt="" width="512" height="512"
+      srcSet={source === image.src ? imageSrcSet : undefined} sizes={source === image.src && imageSrcSet ? DISPLAY_SIZES[size] || DISPLAY_SIZES.hero : undefined}
       className={`sb-crop-image__artwork ${hasArtwork ? "is-loaded" : "is-loading"}`}
-      loading={size === "hero" ? "eager" : "lazy"} decoding="async"
+      loading={size === "hero" ? "eager" : "lazy"} fetchPriority={size === "hero" ? "high" : undefined} decoding="async"
       onLoad={handleLoad} onError={handleError} />}
     {representative && <span className="sb-crop-image__badge" aria-hidden="true">
       <span>≈</span>{size === "hero" && <span>प्रतीकात्मक</span>}
@@ -77,7 +85,7 @@ export default function CropImage({ id, name = "", size = "md", className = "", 
   // A new crop starts a fresh load cycle, even when two IDs share an asset.
   const normalizedId = typeof id === "string" ? id.trim().toLowerCase() : "";
   const identity = `${normalizedId}|${image.src}|${categoryImage.src}`;
-  return <CropArtwork key={identity} image={image} categoryImage={categoryImage}
+  return <CropArtwork key={identity} image={image} categoryImage={categoryImage} imageSrcSet={sizedSources(image.src)}
     name={name} size={size} className={className} decorative={decorative} />;
 }
 
