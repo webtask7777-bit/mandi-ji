@@ -2,25 +2,30 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { indexDeadline, isRuntimeIndexable, runtimeSitemap } from '../shared/seoLifecycle.js';
-import { getCropIndexability } from '../shared/cropIndexability.js';
+import { cropIndexAnchorDate, getCropIndexability } from '../shared/cropIndexability.js';
 import { getMandiIndexability } from '../shared/mandiPages.js';
 import { blogCanonicalSearch, blogLibraryPath, blogRedirectPath, parseBlogLibraryPath } from '../shared/blogPagination.js';
 
 test('crop index expiration matches the shared policy at the India midnight boundary', () => {
-  const detail = { dailyHistory: [{ date: '2026-07-31', market: 1000 }] };
-  const entry = ['/crop/example', '2026-07-31', indexDeadline('2026-07-31', 90)];
-  assert.equal(new Date(entry[2]).toISOString(), '2026-10-29T18:30:00.000Z');
-  for (const stamp of ['2026-10-29T18:29:59.999Z', '2026-10-29T18:30:00.000Z', '2026-11-02T00:00:00Z']) {
+  // Five mandis on 30 September keep the page above the recent-records minimum until that day
+  // leaves the 30-day window, well before the newest record is 90 days old.
+  const detail = { dailyHistory: [{ date: '2026-09-30', market: 1000, mandis: 5 }, { date: '2026-10-20', market: 1000, mandis: 2 }] };
+  assert.equal(cropIndexAnchorDate(detail, { asOf: '2026-10-25T00:00:00Z' }), '2026-09-30');
+  const entry = ['/crop/example', '2026-10-20', indexDeadline(cropIndexAnchorDate(detail, { asOf: '2026-10-25T00:00:00Z' }), 30)];
+  assert.equal(new Date(entry[2]).toISOString(), '2026-10-30T18:30:00.000Z');
+  for (const stamp of ['2026-10-30T18:29:59.999Z', '2026-10-30T18:30:00.000Z', '2026-11-02T00:00:00Z']) {
     assert.equal(isRuntimeIndexable(entry, Date.parse(stamp)), !getCropIndexability(detail, { asOf: stamp }).noIndex);
   }
+  // Monthly averages alone never meet the minimum, so they are never indexed or expired.
   const monthly = { history: [{ date: '2026-07', market: 1000 }] };
   assert.equal(indexDeadline('2026-07', 90), indexDeadline('2026-07-01', 90));
-  assert.equal(isRuntimeIndexable(['/crop/monthly', '2026-07', indexDeadline('2026-07', 90)], Date.parse('2026-10-01T00:00:00Z')), !getCropIndexability(monthly, { asOf: '2026-10-01T00:00:00Z' }).noIndex);
+  assert.equal(cropIndexAnchorDate(monthly), null);
+  assert.equal(getCropIndexability(monthly, { asOf: '2026-08-01T00:00:00Z' }).noIndex, true);
   assert.equal(indexDeadline('2026-02-30', 90), 0);
 });
 
-test('mandi expiration depends on three recent crops, not just its newest quote', () => {
-  const mandi = { crops: [{ id: 'wheat', lastDate: '2026-10-29' }, { id: 'paddycommon', lastDate: '2026-10-28' }, { id: 'maize', lastDate: '2026-09-30' }] };
+test('mandi expiration depends on five recent crops, not just its newest quote', () => {
+  const mandi = { crops: [{ id: 'wheat', lastDate: '2026-10-29' }, { id: 'paddycommon', lastDate: '2026-10-28' }, { id: 'onion', lastDate: '2026-10-27' }, { id: 'potato', lastDate: '2026-10-26' }, { id: 'maize', lastDate: '2026-09-30' }] };
   const entry = ['/mandi/example/market', '2026-10-29', indexDeadline('2026-09-30', 30)];
   for (const stamp of ['2026-10-30T18:29:59.999Z', '2026-10-30T18:30:00.000Z']) {
     assert.equal(isRuntimeIndexable(entry, Date.parse(stamp)), !getMandiIndexability(mandi, { asOf: stamp }).noIndex);

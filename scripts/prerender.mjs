@@ -7,7 +7,7 @@ import { cropDetailPath } from '../src/utils/cropUrls.js';
 import { getLanguage, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, languagePath } from '../shared/languages.js';
 import { EDITORIAL_LANGUAGE_CODES } from '../shared/editorialLanguages.js';
 import { resolveSiteOrigin } from '../shared/siteOrigin.js';
-import { CROP_INDEX_MAX_AGE_DAYS, getCropIndexability } from '../shared/cropIndexability.js';
+import { CROP_INDEX_RECENT_DAYS, cropIndexAnchorDate, getCropIndexability } from '../shared/cropIndexability.js';
 import { indexDeadline } from '../shared/seoLifecycle.js';
 import { BLOG_PAGE_SIZE, blogLibraryPath, parseBlogLibraryPath } from '../shared/blogPagination.js';
 import { buildMandiIndex, getMandiIndexability, mandiPath, MANDI_INDEX_MAX_AGE_DAYS, MANDI_INDEX_MIN_CROPS, isRecentMandiCrop } from '../shared/mandiPages.js';
@@ -110,7 +110,9 @@ try {
       let detail;
       try { detail = scope === 'all' ? loadIndiaCropPrices(crop.id) : loadStateCropPrices(scope, crop.id); } catch { /* no observed prices: keep out of sitemap */ }
       const indexability = getCropIndexability(detail, { asOf: indexAsOf });
-      expiration.set(route, indexability.noIndex === false ? indexDeadline(indexability.latestDate, CROP_INDEX_MAX_AGE_DAYS) : 0);
+      // The page turns thin when the record that keeps it above the minimum leaves the recent window,
+      // always before its newest record reaches the 90-day age limit.
+      expiration.set(route, indexability.noIndex === false ? indexDeadline(cropIndexAnchorDate(detail, { asOf: indexAsOf }), CROP_INDEX_RECENT_DAYS) : 0);
       if (indexability.noIndex === false) { routes.add(route); lastmod.set(route, indexability.latestDate); }
     }
   }

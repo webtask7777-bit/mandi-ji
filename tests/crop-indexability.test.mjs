@@ -74,3 +74,12 @@ test('pages with fewer than five mandi-day records in the last 30 days are thin'
   assert.equal(getCropIndexability(rows(['2026-10-01', '2026-10-05', '2026-10-10', '2026-10-15', '2026-10-20']), { asOf }).status, 'fresh');
   assert.equal(getCropIndexability(rows(['2026-09-01', '2026-10-05', '2026-10-10', '2026-10-15', '2026-10-20']), { asOf }).status, 'thin');
 });
+
+test('a national page whose records all come from one state duplicates that state page', () => {
+  const detail = districts => ({ ...daily('2026-10-20'), districtBreakdown: districts.map(([district, records]) => ({ district, records })) });
+  assert.equal(getCropIndexability(detail([['Wayanad (केरल)', 599], ['Idukki (केरल)', 17]]), { asOf }).status, 'duplicate');
+  assert.equal(getCropIndexability(detail([['Wayanad (केरल)', 599], ['Kodagu (कर्नाटक)', 40]]), { asOf }).status, 'fresh');
+  // State pages list bare district names, and a state with no recorded rows does not count.
+  assert.equal(getCropIndexability(detail([['Wayanad', 599], ['Idukki', 17]]), { asOf }).status, 'fresh');
+  assert.equal(getCropIndexability(detail([['Wayanad (केरल)', 599], ['Kodagu (कर्नाटक)', 0]]), { asOf }).status, 'duplicate');
+});
