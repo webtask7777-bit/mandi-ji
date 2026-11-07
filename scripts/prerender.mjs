@@ -11,7 +11,7 @@ import { resolveSiteOrigin } from '../shared/siteOrigin.js';
 import { CROP_INDEX_RECENT_DAYS, cropIndexAnchorDate, getCropIndexability } from '../shared/cropIndexability.js';
 import { indexDeadline } from '../shared/seoLifecycle.js';
 import { BLOG_PAGE_SIZE, blogLibraryPath, parseBlogLibraryPath } from '../shared/blogPagination.js';
-import { buildMandiIndex, getMandiIndexability, mandiPath, MANDI_INDEX_MAX_AGE_DAYS, MANDI_INDEX_MIN_CROPS, isRecentMandiCrop } from '../shared/mandiPages.js';
+import { buildMandiIndex, getMandiIndexability, mandiIndexAnchorDate, mandiPath, MANDI_INDEX_MAX_AGE_DAYS } from '../shared/mandiPages.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.env.NODE_ENV = 'production';
@@ -137,12 +137,7 @@ try {
       if (!mandi.crops.length) continue;
       const route = mandiPath(state.id, mandi.slug);
       const indexability = getMandiIndexability(mandi, { asOf: indexAsOf });
-      const newestByCrop = new Map();
-      for (const crop of mandi.crops.filter(crop => isRecentMandiCrop(crop, indexAsOf))) {
-        if (crop.lastDate > (newestByCrop.get(crop.id) || '')) newestByCrop.set(crop.id, crop.lastDate);
-      }
-      const recentDates = [...newestByCrop.values()].sort().reverse();
-      expiration.set(route, indexability.noIndex ? 0 : indexDeadline(recentDates[MANDI_INDEX_MIN_CROPS - 1], MANDI_INDEX_MAX_AGE_DAYS));
+      expiration.set(route, indexability.noIndex ? 0 : indexDeadline(mandiIndexAnchorDate(mandi, { asOf: indexAsOf }), MANDI_INDEX_MAX_AGE_DAYS));
       if (indexability.noIndex) knownMandis.add(route);
       else { routes.add(route); lastmod.set(route, indexability.latestDate); }
     }

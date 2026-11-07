@@ -6,6 +6,9 @@ import { isCropPriceCommodity } from '../src/utils/cropEligibility.js';
 export const MANDI_INDEX_MAX_AGE_DAYS = 30;
 // Mandis with fewer recent crops make thin pages that Google crawls but does not index.
 export const MANDI_INDEX_MIN_CROPS = 5;
+// A market people search for its paddy or soybean is useful with fewer crops.
+export const MANDI_INDEX_MIN_CROPS_KEY_CROP = 3;
+const KEY_CROP = /^(?:paddy|soya)/;
 const DAY_MS = 86_400_000;
 const IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
 
@@ -91,11 +94,30 @@ export function isRecentMandiCrop(crop, asOf = new Date()) {
   return crop.lastDate >= cutoff && crop.lastDate <= today;
 }
 
+/** Newest recent date per crop, newest first, and the newest paddy or soybean date. */
+function recentCropDates(mandi, asOf) {
+  const newest = new Map();
+  for (const crop of mandi.crops.filter(crop => isRecentMandiCrop(crop, asOf))) {
+    if (crop.lastDate > (newest.get(crop.id) || '')) newest.set(crop.id, crop.lastDate);
+  }
+  const keyCropDate = [...newest].filter(([id]) => KEY_CROP.test(id)).map(([, date]) => date).sort().at(-1) || null;
+  return { dates: [...newest.values()].sort().reverse(), keyCropDate };
+}
+
+/** The record whose 30-day window decides when an indexable mandi stops qualifying. */
+export function mandiIndexAnchorDate(mandi, { asOf = new Date() } = {}) {
+  const { dates, keyCropDate } = recentCropDates(mandi, asOf);
+  const full = dates[MANDI_INDEX_MIN_CROPS - 1] || null;
+  const third = dates[MANDI_INDEX_MIN_CROPS_KEY_CROP - 1];
+  const keyed = keyCropDate && third ? (keyCropDate < third ? keyCropDate : third) : null;
+  return [full, keyed].filter(Boolean).sort().at(-1) || null;
+}
+
 /** Same policy for the sitemap, the initial HTML and the browser's robots tag. */
 export function getMandiIndexability(mandi, { asOf = new Date() } = {}) {
   if (!mandi || !Array.isArray(mandi.crops) || !Number.isFinite(new Date(asOf).getTime())) return { noIndex: true, latestDate: null, recentCrops: 0 };
-  const recent = mandi.crops.filter(crop => isRecentMandiCrop(crop, asOf));
-  const latestDate = recent.map(crop => crop.lastDate).sort().at(-1) || null;
-  const recentCrops = new Set(recent.map(crop => crop.id)).size;
-  return { noIndex: recentCrops < MANDI_INDEX_MIN_CROPS, latestDate, recentCrops };
+  const { dates, keyCropDate } = recentCropDates(mandi, asOf);
+  const recentCrops = dates.length;
+  const minimum = keyCropDate ? MANDI_INDEX_MIN_CROPS_KEY_CROP : MANDI_INDEX_MIN_CROPS;
+  return { noIndex: recentCrops < minimum, latestDate: dates[0] || null, recentCrops };
 }

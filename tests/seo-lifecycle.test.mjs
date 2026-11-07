@@ -25,7 +25,7 @@ test('crop index expiration matches the shared policy at the India midnight boun
 });
 
 test('mandi expiration depends on five recent crops, not just its newest quote', () => {
-  const mandi = { crops: [{ id: 'wheat', lastDate: '2026-10-29' }, { id: 'paddycommon', lastDate: '2026-10-28' }, { id: 'onion', lastDate: '2026-10-27' }, { id: 'potato', lastDate: '2026-10-26' }, { id: 'maize', lastDate: '2026-09-30' }] };
+  const mandi = { crops: [{ id: 'wheat', lastDate: '2026-10-29' }, { id: 'garlic', lastDate: '2026-10-28' }, { id: 'onion', lastDate: '2026-10-27' }, { id: 'potato', lastDate: '2026-10-26' }, { id: 'maize', lastDate: '2026-09-30' }] };
   const entry = ['/mandi/example/market', '2026-10-29', indexDeadline('2026-09-30', 30)];
   for (const stamp of ['2026-10-30T18:29:59.999Z', '2026-10-30T18:30:00.000Z']) {
     assert.equal(isRuntimeIndexable(entry, Date.parse(stamp)), !getMandiIndexability(mandi, { asOf: stamp }).noIndex);
