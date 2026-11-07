@@ -156,12 +156,15 @@ export default function MandiJiDashboard() {
     setStateSearch("");
   }
 
+  // Nearly all searches for state pages are typed in Roman script.
+  const stateNameEn = String(stateParam).split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
   return (
     <div className="sb-dashboard">
       <a href="#main-content" className="sb-skip-link">मुख्य जानकारी पर जाएँ</a>
       <SEO
-        title={activeTab === 'calendar' ? 'किसान कैलेंडर — महीनेवार फसल योजना' : activeTab === 'delivery' ? 'डिलीवरी खर्च और माल की कुल लागत' : stateParam !== 'all' ? `${stateNameHi} मंडी भाव — सभी मंडियों और फसलों के ताज़ा रेट` : `${stateNameHi} मंडी भाव`}
-        description={`${stateNameHi} की मंडियों के उपलब्ध दर्ज भाव। सब्ज़ी, अनाज, दाल — फसल भाव, मंडी तुलना और बिक्री कैलकुलेटर।`}
+        title={activeTab === 'calendar' ? 'किसान कैलेंडर — महीनेवार फसल योजना' : activeTab === 'delivery' ? 'डिलीवरी खर्च और माल की कुल लागत' : stateParam !== 'all' ? `${stateNameHi} मंडी भाव (${stateNameEn} Mandi Bhav) — फसलों के दर्ज रेट` : `${stateNameHi} मंडी भाव`}
+        description={`${stateNameHi} की मंडियों के उपलब्ध दर्ज भाव${stateParam !== 'all' ? ` (${stateNameEn} mandi rate)` : ''}। सब्ज़ी, अनाज, दाल — फसल भाव, मंडी तुलना और बिक्री कैलकुलेटर।`}
         path={selectedState ? `/mandi-bhav/${selectedState}` : "/"}
       />
       {/* Header */}

@@ -15,7 +15,7 @@ export default function TransportPage() {
   const [scenario, setScenario] = useState(location.state?.deliveryScenario || null);
   return (
     <div className="sb-dashboard sb-delivery-page">
-      <SEO title="मंडी डिलीवरी कैलकुलेटर और गाइड — भाड़ा, गाड़ी व पैकिंग" description="मंडी से माल लाने की पूरी लागत, बोरी-क्रेट का वजन और ट्रिप निकालें। गाड़ी चुनने, फसल की पैकिंग, ड्राइवर का भाड़ा, कागज़ और यात्रा की तैयारी की हिंदी गाइड।" path="/delivery-calculator" />
+      <SEO title="मंडी खर्च कैलकुलेटर (Mandi Kharcha) — भाड़ा, गाड़ी व पैकिंग" description="मंडी खर्च निकालें: माल लाने की पूरी लागत, बोरी-क्रेट का वजन और ट्रिप निकालें। गाड़ी चुनने, फसल की पैकिंग, ड्राइवर का भाड़ा, कागज़ और यात्रा की तैयारी की हिंदी गाइड।" path="/delivery-calculator" />
       <a href="#delivery-main" className="sb-skip-link">कैलकुलेटर पर जाएँ</a>
       <header className="sb-header sb-calculator-header">
         <Link to="/" aria-label="सही भाव होम"><Brand /></Link>
