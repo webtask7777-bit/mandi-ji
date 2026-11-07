@@ -61,7 +61,8 @@ async function render(route) {
       let entry = await responseFor(request);
       const cropId = route.match(/^\/crop\/([^/]+)$|^\/mandi-bhav\/[^/]+\/([^/]+)$/);
       if (cropId && request.startsWith('/ticker?') && Array.isArray(entry.data)) {
-        entry = { data: entry.data.filter(crop => crop.id === decodeURIComponent(cropId[1] || cropId[2])) };
+        // Partial: the client must still fetch the full ticker after navigation.
+        entry = { data: entry.data.filter(crop => crop.id === decodeURIComponent(cropId[1] || cropId[2])), partial: true };
       }
       responses[request] = entry;
     }
