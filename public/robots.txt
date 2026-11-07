@@ -1,6 +1,18 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+# Not pages: names of API responses that appear in each page's embedded data.
+# Google tries them as URLs and gets a 404, which uses up crawl meant for real pages.
+Disallow: /cms/
+Disallow: /ticker
+Disallow: /mandi-compare/
+Disallow: /prices/
+Disallow: /arbitrage
+Disallow: /crops
+Disallow: /districts
+Disallow: /states
+Disallow: /stats
+Disallow: /mandis
 
 # Account/admin pages are crawlable so their noindex directives can be read.
 
