@@ -41,10 +41,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 1100,
-      "volume": 3,
+      "market": 1000,
+      "volume": 4,
       "days": 1,
-      "mandis": 3
+      "mandis": 4
     }
   ],
   "dailyHistory": [
@@ -314,14 +314,14 @@
     },
     {
       "date": "2026-11-07",
-      "market": 1100,
-      "volume": 3,
-      "mandis": 3,
-      "minPrice": 900,
+      "market": 1000,
+      "volume": 4,
+      "mandis": 4,
+      "minPrice": 800,
       "maxPrice": 1200
     }
   ],
-  "lastUpdated": "2026-11-07T14:17:38.723Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Saharsa",
@@ -380,6 +380,12 @@
     {
       "district": "Bhagalpur",
       "nameHi": "Bhagalpur",
+      "avgPrice": 900,
+      "records": 1
+    },
+    {
+      "district": "Aurangabad",
+      "nameHi": "Aurangabad",
       "avgPrice": 900,
       "records": 1
     }

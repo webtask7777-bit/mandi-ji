@@ -85,7 +85,7 @@
     "name": "Bhindi(Ladies Finger)",
     "nameHi": "भिंडी",
     "emoji": "🌱",
-    "totalRecords": 1131,
+    "totalRecords": 1132,
     "avgPrice": 1377,
     "minPrice": 200,
     "maxPrice": 10000,
@@ -98,7 +98,7 @@
     "name": "Brinjal",
     "nameHi": "बैंगन",
     "emoji": "🍆",
-    "totalRecords": 1128,
+    "totalRecords": 1130,
     "avgPrice": 2653,
     "minPrice": 1000,
     "maxPrice": 22000,
@@ -106,7 +106,8 @@
       "Brinjal",
       "Arkasheela Mattigulla",
       "Other",
-      "Round"
+      "Round",
+      "Round/Long"
     ],
     "sowingMonths": [
       5,
@@ -138,8 +139,8 @@
     "name": "Bitter gourd",
     "nameHi": "करेला",
     "emoji": "🥒",
-    "totalRecords": 661,
-    "avgPrice": 2471,
+    "totalRecords": 663,
+    "avgPrice": 2472,
     "minPrice": 800,
     "maxPrice": 23015,
     "varieties": [
@@ -189,8 +190,8 @@
     "name": "Tomato",
     "nameHi": "टमाटर",
     "emoji": "🍅",
-    "totalRecords": 496,
-    "avgPrice": 3358,
+    "totalRecords": 497,
+    "avgPrice": 3356,
     "minPrice": 1050,
     "maxPrice": 7833.33,
     "varieties": [
@@ -508,9 +509,9 @@
     "name": "Raddish",
     "nameHi": "मूली",
     "emoji": "🌱",
-    "totalRecords": 56,
-    "avgPrice": 2027,
-    "minPrice": 900,
+    "totalRecords": 57,
+    "avgPrice": 2008,
+    "minPrice": 800,
     "maxPrice": 4000,
     "varieties": [
       "Other",
@@ -696,8 +697,8 @@
     "name": "Papaya(Raw)",
     "nameHi": "पपीता",
     "emoji": "🍏",
-    "totalRecords": 18,
-    "avgPrice": 1710,
+    "totalRecords": 19,
+    "avgPrice": 1680,
     "minPrice": 800,
     "maxPrice": 4000,
     "varieties": [
@@ -813,29 +814,17 @@
     ]
   },
   {
-    "id": "elephant-yamsuran-amorphophallus",
-    "name": "Elephant Yam(Suran)/Amorphophallus",
-    "nameHi": "सूरन",
-    "emoji": "🌱",
-    "totalRecords": 5,
-    "avgPrice": 3320,
-    "minPrice": 3000,
-    "maxPrice": 4000,
-    "varieties": [
-      "Elephant Yam (Suran)"
-    ]
-  },
-  {
     "id": "spinach",
     "name": "Spinach",
     "nameHi": "पालक",
     "emoji": "🥬",
-    "totalRecords": 4,
-    "avgPrice": 2079,
+    "totalRecords": 5,
+    "avgPrice": 1863,
     "minPrice": 985,
     "maxPrice": 3100,
     "varieties": [
-      "Other"
+      "Other",
+      "Spinach"
     ],
     "sowingMonths": [
       9,
@@ -857,6 +846,19 @@
       0,
       1,
       2
+    ]
+  },
+  {
+    "id": "elephant-yamsuran-amorphophallus",
+    "name": "Elephant Yam(Suran)/Amorphophallus",
+    "nameHi": "सूरन",
+    "emoji": "🌱",
+    "totalRecords": 5,
+    "avgPrice": 3320,
+    "minPrice": 3000,
+    "maxPrice": 4000,
+    "varieties": [
+      "Elephant Yam (Suran)"
     ]
   },
   {
