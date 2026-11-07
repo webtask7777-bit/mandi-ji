@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildMandiIndex, getMandiIndexability, mandiPath, mandiSummaries, slugify } from '../shared/mandiPages.js';
+import { buildMandiIndex, getMandiIndexability, mandiIndexAnchorDate, mandiPath, mandiSummaries, slugify } from '../shared/mandiPages.js';
 
 const compare = {
   wheat: [
@@ -11,6 +11,9 @@ const compare = {
   paddycommon: [{ name: 'Raipur', district: 'Raipur', recentPrice: 2300, lastDate: '2026-10-23', records: 30 }],
   onion: [{ name: 'Raipur', district: 'Raipur', recentPrice: 0, avgPrice: 1800, lastDate: '2026-10-22', records: 5 }],
   potato: [{ name: 'Raipur', district: 'Raipur', recentPrice: null, avgPrice: null, lastDate: '2026-10-22', records: 5 }],
+  maize: [{ name: 'Raipur', district: 'Raipur', recentPrice: 1900, lastDate: '2026-10-21', records: 4 }],
+  tomato: [{ name: 'Raipur', district: 'Raipur', recentPrice: 1200, lastDate: '2026-10-21', records: 3 }],
+  goat: [{ name: 'Raipur', district: 'Raipur', recentPrice: 9000, lastDate: '2026-10-24', records: 2 }, { name: 'Pashu Bazaar', district: 'Raipur', recentPrice: 8000, lastDate: '2026-10-24', records: 9 }],
 };
 const crops = [{ id: 'wheat', name: 'Wheat', nameHi: 'गेहूँ' }, { id: 'paddycommon', name: 'Paddy', nameHi: 'धान' }];
 
@@ -22,7 +25,7 @@ test('slugs are plain ASCII and paths are encoded', () => {
 test('a mandi page collects every crop with a positive price; a shared name gets its district', () => {
   const index = buildMandiIndex(compare, crops);
   const raipur = index.get('raipur');
-  assert.deepEqual(raipur.crops.map(crop => crop.id), ['wheat', 'paddycommon', 'onion']);
+  assert.deepEqual(raipur.crops.map(crop => crop.id), ['wheat', 'paddycommon', 'onion', 'maize', 'tomato']);
   assert.equal(raipur.crops.find(crop => crop.id === 'onion').price, 1800);
   assert.equal(raipur.crops[0].nameHi, 'गेहूँ');
   assert.ok(index.has('neora-raipur') && index.has('neora-durg') && !index.has('neora'));
@@ -32,13 +35,42 @@ test('a mandi page collects every crop with a positive price; a shared name gets
   assert.equal(mandiSummaries(index)[0].slug, 'raipur');
 });
 
+test('livestock, fish, eggs and ghee never make or join a mandi page', () => {
+  const index = buildMandiIndex(compare, crops);
+  assert.ok(!index.has('pashu-bazaar'));
+  assert.ok(!index.get('raipur').crops.some(crop => crop.id === 'goat'));
+});
+
 test('only mandis with several recent crops are indexable', () => {
   const index = buildMandiIndex(compare, crops);
   const asOf = new Date('2026-10-25T06:00:00Z');
-  assert.deepEqual(getMandiIndexability(index.get('raipur'), { asOf }), { noIndex: false, latestDate: '2026-10-24', recentCrops: 3 });
+  assert.deepEqual(getMandiIndexability(index.get('raipur'), { asOf }), { noIndex: false, latestDate: '2026-10-24', recentCrops: 5 });
+  const noKeyCrop = buildMandiIndex(Object.fromEntries(Object.entries(compare).filter(([id]) => id !== 'paddycommon')), crops);
+  assert.deepEqual(getMandiIndexability(noKeyCrop.get('raipur'), { asOf }), { noIndex: true, latestDate: '2026-10-24', recentCrops: 4 });
+  const summaries = mandiSummaries(index, { asOf });
+  assert.equal(summaries.find(row => row.slug === 'raipur').indexable, true);
+  assert.equal(summaries.find(row => row.slug === 'neora-raipur').indexable, false);
   assert.equal(getMandiIndexability(index.get('neora-raipur'), { asOf }).noIndex, true);
   assert.equal(getMandiIndexability(index.get('raipur'), { asOf: new Date('2027-01-30T06:00:00Z') }).noIndex, true);
   assert.equal(getMandiIndexability(null).noIndex, true);
+});
+
+test('a recent paddy or soybean record lowers the minimum to three crops, not to one', () => {
+  const asOf = new Date('2026-10-25T06:00:00Z');
+  const mandi = ids => ({ crops: ids.map(([id, lastDate]) => ({ id, lastDate })) });
+  assert.equal(getMandiIndexability(mandi([['paddycommon', '2026-10-24'], ['wheat', '2026-10-23'], ['maize', '2026-10-22']]), { asOf }).noIndex, false);
+  assert.equal(getMandiIndexability(mandi([['soyabean', '2026-10-24'], ['wheat', '2026-10-23'], ['maize', '2026-10-22']]), { asOf }).noIndex, false);
+  assert.equal(getMandiIndexability(mandi([['paddycommon', '2026-10-24'], ['wheat', '2026-10-23']]), { asOf }).noIndex, true);
+  assert.equal(getMandiIndexability(mandi([['wheat', '2026-10-24'], ['maize', '2026-10-23'], ['onion', '2026-10-22']]), { asOf }).noIndex, true);
+  assert.equal(getMandiIndexability(mandi([['paddycommon', '2026-08-01'], ['wheat', '2026-10-23'], ['maize', '2026-10-22'], ['onion', '2026-10-21']]), { asOf }).noIndex, true);
+});
+
+test('the anchor date is when an indexable mandi would stop qualifying', () => {
+  const asOf = new Date('2026-10-25T06:00:00Z');
+  const crops = [['wheat', '2026-10-24'], ['paddycommon', '2026-10-10'], ['maize', '2026-10-20'], ['onion', '2026-10-05']].map(([id, lastDate]) => ({ id, lastDate }));
+  assert.equal(mandiIndexAnchorDate({ crops }, { asOf }), '2026-10-10');
+  const five = [...crops, { id: 'potato', lastDate: '2026-10-22' }];
+  assert.equal(mandiIndexAnchorDate({ crops: five }, { asOf }), '2026-10-10');
 });
 
 test('several variety quotes remain distinct rows but never inflate unique crop coverage', () => {

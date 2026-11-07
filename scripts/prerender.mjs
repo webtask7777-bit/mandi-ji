@@ -8,10 +8,10 @@ import { getMandiPrice, getMandiPriceBasis } from '../src/utils/marketComparison
 import { getLanguage, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, languagePath } from '../shared/languages.js';
 import { EDITORIAL_LANGUAGE_CODES } from '../shared/editorialLanguages.js';
 import { resolveSiteOrigin } from '../shared/siteOrigin.js';
-import { CROP_INDEX_MAX_AGE_DAYS, getCropIndexability } from '../shared/cropIndexability.js';
+import { CROP_INDEX_RECENT_DAYS, cropIndexAnchorDate, getCropIndexability } from '../shared/cropIndexability.js';
 import { indexDeadline } from '../shared/seoLifecycle.js';
 import { BLOG_PAGE_SIZE, blogLibraryPath, parseBlogLibraryPath } from '../shared/blogPagination.js';
-import { buildMandiIndex, getMandiIndexability, mandiPath, MANDI_INDEX_MAX_AGE_DAYS, MANDI_INDEX_MIN_CROPS, isRecentMandiCrop } from '../shared/mandiPages.js';
+import { buildMandiIndex, getMandiIndexability, mandiIndexAnchorDate, mandiPath, MANDI_INDEX_MAX_AGE_DAYS } from '../shared/mandiPages.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.env.NODE_ENV = 'production';
@@ -123,7 +123,9 @@ try {
       let detail;
       try { detail = scope === 'all' ? loadIndiaCropPrices(crop.id) : loadStateCropPrices(scope, crop.id); } catch { /* no observed prices: keep out of sitemap */ }
       const indexability = getCropIndexability(detail, { asOf: indexAsOf });
-      expiration.set(route, indexability.noIndex === false ? indexDeadline(indexability.latestDate, CROP_INDEX_MAX_AGE_DAYS) : 0);
+      // The page turns thin when the record that keeps it above the minimum leaves the recent window,
+      // always before its newest record reaches the 90-day age limit.
+      expiration.set(route, indexability.noIndex === false ? indexDeadline(cropIndexAnchorDate(detail, { asOf: indexAsOf }), CROP_INDEX_RECENT_DAYS) : 0);
       if (indexability.noIndex === false) { routes.add(route); lastmod.set(route, indexability.latestDate); }
     }
   }
@@ -135,12 +137,7 @@ try {
       if (!mandi.crops.length) continue;
       const route = mandiPath(state.id, mandi.slug);
       const indexability = getMandiIndexability(mandi, { asOf: indexAsOf });
-      const newestByCrop = new Map();
-      for (const crop of mandi.crops.filter(crop => isRecentMandiCrop(crop, indexAsOf))) {
-        if (crop.lastDate > (newestByCrop.get(crop.id) || '')) newestByCrop.set(crop.id, crop.lastDate);
-      }
-      const recentDates = [...newestByCrop.values()].sort().reverse();
-      expiration.set(route, indexability.noIndex ? 0 : indexDeadline(recentDates[MANDI_INDEX_MIN_CROPS - 1], MANDI_INDEX_MAX_AGE_DAYS));
+      expiration.set(route, indexability.noIndex ? 0 : indexDeadline(mandiIndexAnchorDate(mandi, { asOf: indexAsOf }), MANDI_INDEX_MAX_AGE_DAYS));
       if (indexability.noIndex) knownMandis.add(route);
       else { routes.add(route); lastmod.set(route, indexability.latestDate); }
     }
