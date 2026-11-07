@@ -30,6 +30,7 @@
 .sb-crop-image img.is-loading{opacity:0}
 .sb-crop-image img.is-loaded{opacity:1}
 .sb-crop-image__placeholder{display:block;width:100%;height:100%;flex-shrink:0}
+.sb-crop-image[data-image-state=loaded] .sb-crop-image__placeholder,.sb-crop-image[data-image-state=loaded] .sb-crop-image__badge{display:none}
 .sb-crop-image__badge{position:absolute;right:0;bottom:0;display:inline-flex;align-items:center;justify-content:center;gap:3px;min-width:16px;min-height:16px;box-sizing:border-box;padding:0 3px;border:1px solid #c5cfb8;border-radius:5px;background:#fffdf3;color:#3a5736;font-size:12px!important;font-weight:700;line-height:1.25;white-space:nowrap;z-index:1}
 .sb-crop-image--hero[data-image-kind=category]{overflow:visible}
 .sb-crop-image--hero .sb-crop-image__badge{left:50%;right:auto;transform:translateX(-50%);padding:3px 5px;bottom:3px}

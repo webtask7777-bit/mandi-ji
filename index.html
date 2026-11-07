@@ -22,7 +22,17 @@
     <!-- Default title (overridden by Helmet per page) -->
     <title data-rh="true">सही भाव — भारत के मंडी भाव | SahiBhav</title>
     <meta name="description" content="फसल के दर्ज मंडी भाव देखें, मंडियों की तुलना करें और बिक्री व परिवहन की तैयारी करें। सही भाव — SahiBhav।" data-rh="true" />
-  </head>
+    <script>
+    // Crop art is hidden until it loads. Show it as soon as it does, without waiting for the app bundle.
+    document.addEventListener('load', function (event) {
+      var image = event.target;
+      if (image.classList && image.classList.contains('sb-crop-image__artwork')) {
+        image.classList.replace('is-loading', 'is-loaded');
+        image.parentElement.setAttribute('data-image-state', 'loaded');
+      }
+    }, true);
+  </script>
+</head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
