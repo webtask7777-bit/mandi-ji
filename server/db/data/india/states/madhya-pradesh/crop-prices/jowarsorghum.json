@@ -10,6 +10,14 @@
   },
   "history": [
     {
+      "month": "03",
+      "date": "2026-03",
+      "market": 3900,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
       "month": "04",
       "date": "2026-04",
       "market": 2326,
@@ -48,6 +56,15 @@
       "volume": 25,
       "days": 12,
       "mandis": 15,
+      "msp": 4023
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2350,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1,
       "msp": 4023
     }
   ],
@@ -291,9 +308,17 @@
       "mandis": 5,
       "minPrice": 2025,
       "maxPrice": 3030
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2350,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2055,
+      "maxPrice": 2350
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Indore",
@@ -328,8 +353,8 @@
     {
       "district": "Bhind",
       "nameHi": "Bhind",
-      "avgPrice": 2494,
-      "records": 4
+      "avgPrice": 2465,
+      "records": 5
     },
     {
       "district": "Dewas",

@@ -61,6 +61,14 @@
       "volume": 23,
       "days": 18,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 11500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -431,15 +439,23 @@
       "mandis": 3,
       "minPrice": 5000,
       "maxPrice": 15000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 11500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 11000,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Ganganagar",
       "nameHi": "Ganganagar",
-      "avgPrice": 9295,
-      "records": 42
+      "avgPrice": 9347,
+      "records": 43
     },
     {
       "district": "Ajmer",

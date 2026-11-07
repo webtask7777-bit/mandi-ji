@@ -60,6 +60,15 @@
       "msp": 5875
     },
     {
+      "month": "06",
+      "date": "2026-06",
+      "market": 5588,
+      "volume": 5,
+      "days": 2,
+      "mandis": 5,
+      "msp": 5875
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 6155,
@@ -93,6 +102,15 @@
       "volume": 238,
       "days": 19,
       "mandis": 50,
+      "msp": 5875
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 7183,
+      "volume": 9,
+      "days": 1,
+      "mandis": 9,
       "msp": 5875
     }
   ],
@@ -1408,21 +1426,29 @@
       "mandis": 9,
       "minPrice": 1909,
       "maxPrice": 8500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 7183,
+      "volume": 9,
+      "mandis": 9,
+      "minPrice": 3109,
+      "maxPrice": 9601
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Dharwad",
       "nameHi": "Dharwad",
-      "avgPrice": 5775,
-      "records": 220
+      "avgPrice": 5783,
+      "records": 221
     },
     {
       "district": "Gadag",
       "nameHi": "Gadag",
-      "avgPrice": 6183,
-      "records": 219
+      "avgPrice": 6190,
+      "records": 221
     },
     {
       "district": "Vijayapura",
@@ -1433,8 +1459,8 @@
     {
       "district": "Raichur",
       "nameHi": "Raichur",
-      "avgPrice": 5876,
-      "records": 144
+      "avgPrice": 5886,
+      "records": 146
     },
     {
       "district": "Bidar",
@@ -1475,32 +1501,32 @@
     {
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
-      "avgPrice": 7649,
-      "records": 70
+      "avgPrice": 7662,
+      "records": 71
     },
     {
       "district": "Vijayanagara",
       "nameHi": "Vijayanagara",
-      "avgPrice": 6065,
-      "records": 52
+      "avgPrice": 6132,
+      "records": 53
     },
     {
       "district": "Bellary",
       "nameHi": "Bellary",
-      "avgPrice": 6141,
-      "records": 43
+      "avgPrice": 6169,
+      "records": 44
+    },
+    {
+      "district": "Chamarajanagar",
+      "nameHi": "Chamarajanagar",
+      "avgPrice": 6124,
+      "records": 40
     },
     {
       "district": "Mysuru",
       "nameHi": "Mysuru",
       "avgPrice": 7272,
       "records": 40
-    },
-    {
-      "district": "Chamarajanagar",
-      "nameHi": "Chamarajanagar",
-      "avgPrice": 6101,
-      "records": 39
     }
   ]
 }

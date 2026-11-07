@@ -85,6 +85,14 @@
       "volume": 223,
       "days": 23,
       "mandis": 26
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6000,
+      "volume": 4,
+      "days": 1,
+      "mandis": 4
     }
   ],
   "dailyHistory": [
@@ -1383,15 +1391,23 @@
       "mandis": 8,
       "minPrice": 760,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 6000,
+      "volume": 4,
+      "mandis": 4,
+      "minPrice": 3000,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Sehore",
       "nameHi": "Sehore",
-      "avgPrice": 9785,
-      "records": 137
+      "avgPrice": 9757,
+      "records": 138
     },
     {
       "district": "Ujjain",
@@ -1414,8 +1430,8 @@
     {
       "district": "Indore",
       "nameHi": "Indore",
-      "avgPrice": 6344,
-      "records": 90
+      "avgPrice": 6352,
+      "records": 91
     },
     {
       "district": "Dewas",
@@ -1426,8 +1442,8 @@
     {
       "district": "Jhabua",
       "nameHi": "Jhabua",
-      "avgPrice": 3971,
-      "records": 82
+      "avgPrice": 3995,
+      "records": 83
     },
     {
       "district": "Gwalior",
@@ -1460,6 +1476,12 @@
       "records": 56
     },
     {
+      "district": "Khargone",
+      "nameHi": "Khargone",
+      "avgPrice": 5839,
+      "records": 55
+    },
+    {
       "district": "Narmadapuram",
       "nameHi": "Narmadapuram",
       "avgPrice": 7006,
@@ -1469,12 +1491,6 @@
       "district": "Sagar",
       "nameHi": "Sagar",
       "avgPrice": 3602,
-      "records": 54
-    },
-    {
-      "district": "Khargone",
-      "nameHi": "Khargone",
-      "avgPrice": 5845,
       "records": 54
     }
   ]

@@ -93,6 +93,14 @@
       "volume": 45,
       "days": 22,
       "mandis": 6
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6000,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -1615,9 +1623,17 @@
       "mandis": 1,
       "minPrice": 9000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 6000,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 4000,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Malappuram",
@@ -1628,14 +1644,14 @@
     {
       "district": "Idukki",
       "nameHi": "Idukki",
-      "avgPrice": 5499,
-      "records": 176
+      "avgPrice": 5494,
+      "records": 177
     },
     {
       "district": "Ernakulam",
       "nameHi": "Ernakulam",
       "avgPrice": 7498,
-      "records": 153
+      "records": 154
     }
   ]
 }

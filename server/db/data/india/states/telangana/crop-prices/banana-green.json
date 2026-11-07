@@ -93,6 +93,14 @@
       "volume": 139,
       "days": 22,
       "mandis": 8
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1150,
+      "volume": 8,
+      "days": 1,
+      "mandis": 8
     }
   ],
   "dailyHistory": [
@@ -1631,27 +1639,35 @@
       "mandis": 6,
       "minPrice": 300,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1150,
+      "volume": 8,
+      "mandis": 8,
+      "minPrice": 200,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Hyderabad",
       "nameHi": "Hyderabad",
-      "avgPrice": 1342,
-      "records": 424
+      "avgPrice": 1337,
+      "records": 428
     },
     {
       "district": "Ranga Reddy",
       "nameHi": "Ranga Reddy",
-      "avgPrice": 3408,
-      "records": 263
+      "avgPrice": 3409,
+      "records": 266
     },
     {
       "district": "Medchal Malkajgiri",
       "nameHi": "Medchal Malkajgiri",
-      "avgPrice": 1032,
-      "records": 72
+      "avgPrice": 1029,
+      "records": 73
     }
   ]
 }

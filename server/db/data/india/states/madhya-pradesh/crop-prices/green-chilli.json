@@ -31,6 +31,14 @@
       "mandis": 13
     },
     {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2500,
+      "volume": 5,
+      "days": 2,
+      "mandis": 5
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 2531,
@@ -61,6 +69,14 @@
       "volume": 506,
       "days": 22,
       "mandis": 46
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3000,
+      "volume": 6,
+      "days": 1,
+      "mandis": 6
     }
   ],
   "dailyHistory": [
@@ -839,9 +855,17 @@
       "mandis": 14,
       "minPrice": 650,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3000,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 1000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Dhar",
@@ -858,20 +882,20 @@
     {
       "district": "Indore",
       "nameHi": "Indore",
-      "avgPrice": 3208,
-      "records": 186
+      "avgPrice": 3204,
+      "records": 187
     },
     {
       "district": "Khargone",
       "nameHi": "Khargone",
-      "avgPrice": 1874,
-      "records": 171
+      "avgPrice": 1886,
+      "records": 172
     },
     {
       "district": "Badwani",
       "nameHi": "Badwani",
-      "avgPrice": 1443,
-      "records": 169
+      "avgPrice": 1441,
+      "records": 170
     },
     {
       "district": "Dewas",
@@ -882,8 +906,8 @@
     {
       "district": "Jhabua",
       "nameHi": "Jhabua",
-      "avgPrice": 2008,
-      "records": 130
+      "avgPrice": 2012,
+      "records": 131
     },
     {
       "district": "Shivpuri",
@@ -900,8 +924,8 @@
     {
       "district": "Harda",
       "nameHi": "Harda",
-      "avgPrice": 3287,
-      "records": 96
+      "avgPrice": 3300,
+      "records": 97
     },
     {
       "district": "Narmadapuram",
@@ -930,8 +954,8 @@
     {
       "district": "Sehore",
       "nameHi": "Sehore",
-      "avgPrice": 3032,
-      "records": 85
+      "avgPrice": 3037,
+      "records": 86
     }
   ]
 }

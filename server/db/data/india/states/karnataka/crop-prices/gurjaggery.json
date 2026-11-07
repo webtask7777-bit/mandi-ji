@@ -23,6 +23,14 @@
       "mandis": 5
     },
     {
+      "month": "05",
+      "date": "2026-05",
+      "market": 3850,
+      "volume": 5,
+      "days": 4,
+      "mandis": 4
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 4590,
@@ -53,6 +61,14 @@
       "volume": 171,
       "days": 20,
       "mandis": 25
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5850,
+      "volume": 7,
+      "days": 1,
+      "mandis": 4
     }
   ],
   "dailyHistory": [
@@ -831,27 +847,35 @@
       "mandis": 6,
       "minPrice": 3700,
       "maxPrice": 6800
+    },
+    {
+      "date": "2026-11-07",
+      "market": 5850,
+      "volume": 7,
+      "mandis": 4,
+      "minPrice": 4000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Mandya",
       "nameHi": "Mandya",
-      "avgPrice": 4519,
-      "records": 432
+      "avgPrice": 4521,
+      "records": 436
     },
     {
       "district": "Belagavi",
       "nameHi": "Belagavi",
-      "avgPrice": 5165,
-      "records": 114
+      "avgPrice": 5171,
+      "records": 115
     },
     {
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
-      "avgPrice": 6134,
-      "records": 70
+      "avgPrice": 6130,
+      "records": 71
     },
     {
       "district": "Shivamogga",
@@ -860,16 +884,16 @@
       "records": 61
     },
     {
+      "district": "Chamarajanagar",
+      "nameHi": "Chamarajanagar",
+      "avgPrice": 4838,
+      "records": 55
+    },
+    {
       "district": "Bagalkot",
       "nameHi": "Bagalkot",
       "avgPrice": 4918,
       "records": 55
-    },
-    {
-      "district": "Chamarajanagar",
-      "nameHi": "Chamarajanagar",
-      "avgPrice": 4818,
-      "records": 54
     },
     {
       "district": "Mysuru",

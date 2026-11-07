@@ -55,6 +55,14 @@
       "mandis": 5
     },
     {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2600,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 2792,
@@ -85,6 +93,14 @@
       "volume": 104,
       "days": 22,
       "mandis": 9
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3000,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -1711,15 +1727,23 @@
       "mandis": 7,
       "minPrice": 1200,
       "maxPrice": 3800
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3000,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 2450,
+      "maxPrice": 3300
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Darjeeling",
       "nameHi": "Darjeeling",
-      "avgPrice": 2659,
-      "records": 395
+      "avgPrice": 2662,
+      "records": 397
     },
     {
       "district": "Jalpaiguri",
@@ -1742,8 +1766,8 @@
     {
       "district": "Paschim Bardhaman",
       "nameHi": "Paschim Bardhaman",
-      "avgPrice": 1690,
-      "records": 180
+      "avgPrice": 1695,
+      "records": 181
     },
     {
       "district": "Howrah",

@@ -10,12 +10,28 @@
   },
   "history": [
     {
+      "month": "03",
+      "date": "2026-03",
+      "market": 7169,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
       "month": "04",
       "date": "2026-04",
       "market": 7394,
       "volume": 3,
       "days": 2,
       "mandis": 3
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 6968,
+      "volume": 3,
+      "days": 3,
+      "mandis": 1
     },
     {
       "month": "07",
@@ -48,6 +64,15 @@
       "volume": 102,
       "days": 15,
       "mandis": 14,
+      "msp": 8780
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4793,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1,
       "msp": 8780
     }
   ],
@@ -667,15 +692,23 @@
       "mandis": 6,
       "minPrice": 4545,
       "maxPrice": 16052
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4793,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4793,
+      "maxPrice": 7196
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Suryapet",
       "nameHi": "Suryapet",
-      "avgPrice": 6832,
-      "records": 95
+      "avgPrice": 6811,
+      "records": 96
     },
     {
       "district": "Sangareddy",

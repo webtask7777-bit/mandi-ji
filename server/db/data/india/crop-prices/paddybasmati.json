@@ -15,22 +15,6 @@
       "mandis": 3
     },
     {
-      "month": "04",
-      "date": "2026-04",
-      "market": 3096,
-      "volume": 5,
-      "days": 4,
-      "mandis": 2
-    },
-    {
-      "month": "05",
-      "date": "2026-05",
-      "market": 3100,
-      "volume": 2,
-      "days": 2,
-      "mandis": 2
-    },
-    {
       "month": "07",
       "date": "2026-07",
       "market": 3483,
@@ -61,6 +45,14 @@
       "volume": 2642,
       "days": 23,
       "mandis": 195
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4066,
+      "volume": 67,
+      "days": 1,
+      "mandis": 54
     }
   ],
   "dailyHistory": [
@@ -807,45 +799,53 @@
       "mandis": 29,
       "minPrice": 2500,
       "maxPrice": 5425
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4066,
+      "volume": 67,
+      "mandis": 54,
+      "minPrice": 2000,
+      "maxPrice": 5514.81
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Bulandshahar (उत्तर प्रदेश)",
       "nameHi": "Bulandshahar (उत्तर प्रदेश)",
-      "avgPrice": 3478,
-      "records": 461
+      "avgPrice": 3486,
+      "records": 466
     },
     {
       "district": "Karnal (हरियाणा)",
       "nameHi": "Karnal (हरियाणा)",
-      "avgPrice": 3747,
-      "records": 347
+      "avgPrice": 3750,
+      "records": 349
     },
     {
       "district": "Amritsar (पंजाब)",
       "nameHi": "Amritsar (पंजाब)",
-      "avgPrice": 3858,
-      "records": 197
+      "avgPrice": 3860,
+      "records": 198
     },
     {
       "district": "Badaun (उत्तर प्रदेश)",
       "nameHi": "Badaun (उत्तर प्रदेश)",
-      "avgPrice": 2962,
-      "records": 185
+      "avgPrice": 2965,
+      "records": 187
     },
     {
       "district": "Aligarh (उत्तर प्रदेश)",
       "nameHi": "Aligarh (उत्तर प्रदेश)",
-      "avgPrice": 3627,
-      "records": 184
+      "avgPrice": 3629,
+      "records": 186
     },
     {
       "district": "Mathura (उत्तर प्रदेश)",
       "nameHi": "Mathura (उत्तर प्रदेश)",
-      "avgPrice": 3488,
-      "records": 183
+      "avgPrice": 3490,
+      "records": 185
     },
     {
       "district": "Kurukshetra (हरियाणा)",
@@ -854,16 +854,16 @@
       "records": 150
     },
     {
+      "district": "Jind (हरियाणा)",
+      "nameHi": "Jind (हरियाणा)",
+      "avgPrice": 4141,
+      "records": 139
+    },
+    {
       "district": "Patiala (पंजाब)",
       "nameHi": "Patiala (पंजाब)",
       "avgPrice": 4007,
       "records": 135
-    },
-    {
-      "district": "Jind (हरियाणा)",
-      "nameHi": "Jind (हरियाणा)",
-      "avgPrice": 4116,
-      "records": 134
     },
     {
       "district": "Gautam Budh Nagar (उत्तर प्रदेश)",
@@ -874,32 +874,32 @@
     {
       "district": "Panipat (हरियाणा)",
       "nameHi": "Panipat (हरियाणा)",
-      "avgPrice": 4030,
-      "records": 130
+      "avgPrice": 4037,
+      "records": 131
     },
     {
       "district": "Sambhal (उत्तर प्रदेश)",
       "nameHi": "Sambhal (उत्तर प्रदेश)",
-      "avgPrice": 2945,
-      "records": 126
+      "avgPrice": 2950,
+      "records": 128
     },
     {
       "district": "Rampur (उत्तर प्रदेश)",
       "nameHi": "Rampur (उत्तर प्रदेश)",
-      "avgPrice": 3177,
-      "records": 118
+      "avgPrice": 3171,
+      "records": 119
+    },
+    {
+      "district": "Etawah (उत्तर प्रदेश)",
+      "nameHi": "Etawah (उत्तर प्रदेश)",
+      "avgPrice": 3437,
+      "records": 101
     },
     {
       "district": "Farukhabad (उत्तर प्रदेश)",
       "nameHi": "Farukhabad (उत्तर प्रदेश)",
       "avgPrice": 2826,
       "records": 100
-    },
-    {
-      "district": "Etawah (उत्तर प्रदेश)",
-      "nameHi": "Etawah (उत्तर प्रदेश)",
-      "avgPrice": 3420,
-      "records": 98
     }
   ]
 }

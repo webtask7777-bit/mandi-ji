@@ -37,6 +37,14 @@
       "volume": 32,
       "days": 14,
       "mandis": 12
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1100,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -303,9 +311,17 @@
       "mandis": 5,
       "minPrice": 1500,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1100,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 900,
+      "maxPrice": 1200
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Saharsa",
@@ -328,8 +344,8 @@
     {
       "district": "Buxar",
       "nameHi": "Buxar",
-      "avgPrice": 2043,
-      "records": 6
+      "avgPrice": 1908,
+      "records": 7
     },
     {
       "district": "Begusarai",
@@ -338,15 +354,15 @@
       "records": 4
     },
     {
+      "district": "Kaimur/Bhabhua",
+      "nameHi": "Kaimur/Bhabhua",
+      "avgPrice": 1588,
+      "records": 4
+    },
+    {
       "district": "Supaul",
       "nameHi": "Supaul",
       "avgPrice": 2833,
-      "records": 3
-    },
-    {
-      "district": "Kaimur/Bhabhua",
-      "nameHi": "Kaimur/Bhabhua",
-      "avgPrice": 1717,
       "records": 3
     },
     {
@@ -359,6 +375,12 @@
       "district": "Gopalgang",
       "nameHi": "Gopalgang",
       "avgPrice": 2860,
+      "records": 1
+    },
+    {
+      "district": "Bhagalpur",
+      "nameHi": "Bhagalpur",
+      "avgPrice": 900,
       "records": 1
     }
   ]

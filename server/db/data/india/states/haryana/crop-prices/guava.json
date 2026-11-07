@@ -69,6 +69,14 @@
       "volume": 160,
       "days": 23,
       "mandis": 18
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3500,
+      "volume": 8,
+      "days": 1,
+      "mandis": 8
     }
   ],
   "dailyHistory": [
@@ -1063,27 +1071,35 @@
       "mandis": 5,
       "minPrice": 2500,
       "maxPrice": 7000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3500,
+      "volume": 8,
+      "mandis": 8,
+      "minPrice": 2000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 3854,
-      "records": 224
+      "avgPrice": 3851,
+      "records": 226
     },
     {
       "district": "Kurukshetra",
       "nameHi": "Kurukshetra",
       "avgPrice": 4885,
-      "records": 194
+      "records": 195
     },
     {
       "district": "Sonipat",
       "nameHi": "Sonipat",
       "avgPrice": 3528,
-      "records": 142
+      "records": 144
     },
     {
       "district": "Fatehabad",
@@ -1106,8 +1122,8 @@
     {
       "district": "Rohtak",
       "nameHi": "Rohtak",
-      "avgPrice": 2379,
-      "records": 78
+      "avgPrice": 2425,
+      "records": 79
     },
     {
       "district": "Faridabad",
@@ -1118,8 +1134,8 @@
     {
       "district": "Ambala",
       "nameHi": "Ambala",
-      "avgPrice": 3468,
-      "records": 68
+      "avgPrice": 3455,
+      "records": 69
     },
     {
       "district": "Bhiwani",
@@ -1154,8 +1170,8 @@
     {
       "district": "Jhajar",
       "nameHi": "Jhajar",
-      "avgPrice": 2613,
-      "records": 27
+      "avgPrice": 2605,
+      "records": 28
     }
   ]
 }

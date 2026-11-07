@@ -69,6 +69,14 @@
       "volume": 64,
       "days": 20,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1200,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -975,9 +983,17 @@
       "mandis": 3,
       "minPrice": 850,
       "maxPrice": 2500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1200,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 800,
+      "maxPrice": 1400
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Bilaspur",
@@ -988,8 +1004,8 @@
     {
       "district": "Durg",
       "nameHi": "Durg",
-      "avgPrice": 1149,
-      "records": 90
+      "avgPrice": 1152,
+      "records": 91
     },
     {
       "district": "Rajnandgaon",
@@ -998,16 +1014,16 @@
       "records": 77
     },
     {
+      "district": "Khairagarh Chhuikhadan Gandai",
+      "nameHi": "Khairagarh Chhuikhadan Gandai",
+      "avgPrice": 1084,
+      "records": 43
+    },
+    {
       "district": "Raigarh",
       "nameHi": "Raigarh",
       "avgPrice": 1457,
       "records": 43
-    },
-    {
-      "district": "Khairagarh Chhuikhadan Gandai",
-      "nameHi": "Khairagarh Chhuikhadan Gandai",
-      "avgPrice": 1086,
-      "records": 42
     }
   ]
 }

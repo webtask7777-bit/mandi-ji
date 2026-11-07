@@ -69,6 +69,14 @@
       "volume": 28,
       "days": 19,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -663,9 +671,17 @@
       "mandis": 1,
       "minPrice": 400,
       "maxPrice": 800
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 800,
+      "maxPrice": 1500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Indore",
@@ -692,6 +708,12 @@
       "records": 5
     },
     {
+      "district": "Dhar",
+      "nameHi": "Dhar",
+      "avgPrice": 2325,
+      "records": 4
+    },
+    {
       "district": "Morena",
       "nameHi": "Morena",
       "avgPrice": 800,
@@ -707,12 +729,6 @@
       "district": "Shivpuri",
       "nameHi": "Shivpuri",
       "avgPrice": 900,
-      "records": 3
-    },
-    {
-      "district": "Dhar",
-      "nameHi": "Dhar",
-      "avgPrice": 2767,
       "records": 3
     },
     {

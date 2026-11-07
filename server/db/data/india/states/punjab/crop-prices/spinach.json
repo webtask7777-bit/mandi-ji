@@ -23,6 +23,14 @@
       "mandis": 7
     },
     {
+      "month": "05",
+      "date": "2026-05",
+      "market": 1500,
+      "volume": 6,
+      "days": 5,
+      "mandis": 3
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 1617,
@@ -53,6 +61,14 @@
       "volume": 357,
       "days": 24,
       "mandis": 42
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1520,
+      "volume": 15,
+      "days": 1,
+      "mandis": 14
     }
   ],
   "dailyHistory": [
@@ -847,21 +863,29 @@
       "mandis": 17,
       "minPrice": 110,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1520,
+      "volume": 15,
+      "mandis": 14,
+      "minPrice": 500,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Jalandhar",
       "nameHi": "Jalandhar",
-      "avgPrice": 2000,
-      "records": 266
+      "avgPrice": 1982,
+      "records": 270
     },
     {
       "district": "Sangrur",
       "nameHi": "Sangrur",
-      "avgPrice": 1823,
-      "records": 173
+      "avgPrice": 1822,
+      "records": 176
     },
     {
       "district": "Tarntaran",
@@ -872,14 +896,14 @@
     {
       "district": "Patiala",
       "nameHi": "Patiala",
-      "avgPrice": 1931,
-      "records": 140
+      "avgPrice": 1928,
+      "records": 141
     },
     {
       "district": "Ludhiana",
       "nameHi": "Ludhiana",
-      "avgPrice": 2006,
-      "records": 80
+      "avgPrice": 2001,
+      "records": 81
     },
     {
       "district": "Fatehgarh",
@@ -888,22 +912,22 @@
       "records": 57
     },
     {
+      "district": "Hoshiarpur",
+      "nameHi": "Hoshiarpur",
+      "avgPrice": 2347,
+      "records": 53
+    },
+    {
       "district": "Muktsar",
       "nameHi": "Muktsar",
       "avgPrice": 1881,
       "records": 50
     },
     {
-      "district": "Hoshiarpur",
-      "nameHi": "Hoshiarpur",
-      "avgPrice": 2318,
-      "records": 50
-    },
-    {
       "district": "Mohali",
       "nameHi": "Mohali",
-      "avgPrice": 2988,
-      "records": 33
+      "avgPrice": 2959,
+      "records": 34
     },
     {
       "district": "Kapurthala",
@@ -926,14 +950,14 @@
     {
       "district": "Ferozpur",
       "nameHi": "Ferozpur",
-      "avgPrice": 846,
-      "records": 13
+      "avgPrice": 829,
+      "records": 14
     },
     {
       "district": "Gurdaspur",
       "nameHi": "Gurdaspur",
-      "avgPrice": 1900,
-      "records": 11
+      "avgPrice": 1917,
+      "records": 12
     },
     {
       "district": "Ropar (Rupnagar)",

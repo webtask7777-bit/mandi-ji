@@ -13,6 +13,14 @@
       "volume": 5,
       "days": 1,
       "mandis": 4
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4190,
+      "volume": 14,
+      "days": 1,
+      "mandis": 9
     }
   ],
   "dailyHistory": [
@@ -23,10 +31,42 @@
       "mandis": 4,
       "minPrice": 3950,
       "maxPrice": 5100
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4190,
+      "volume": 14,
+      "mandis": 9,
+      "minPrice": 3200,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
+    {
+      "district": "Purba Bardhaman (पश्चिम बंगाल)",
+      "nameHi": "Purba Bardhaman (पश्चिम बंगाल)",
+      "avgPrice": 3863,
+      "records": 4
+    },
+    {
+      "district": "Bankura (पश्चिम बंगाल)",
+      "nameHi": "Bankura (पश्चिम बंगाल)",
+      "avgPrice": 3967,
+      "records": 3
+    },
+    {
+      "district": "Hooghly (पश्चिम बंगाल)",
+      "nameHi": "Hooghly (पश्चिम बंगाल)",
+      "avgPrice": 4427,
+      "records": 3
+    },
+    {
+      "district": "Kamrup (असम)",
+      "nameHi": "Kamrup (असम)",
+      "avgPrice": 6767,
+      "records": 3
+    },
     {
       "district": "Sepahijala (त्रिपुरा)",
       "nameHi": "Sepahijala (त्रिपुरा)",
@@ -40,9 +80,15 @@
       "records": 2
     },
     {
-      "district": "Purba Bardhaman (पश्चिम बंगाल)",
-      "nameHi": "Purba Bardhaman (पश्चिम बंगाल)",
-      "avgPrice": 4000,
+      "district": "Paschim Bardhaman (पश्चिम बंगाल)",
+      "nameHi": "Paschim Bardhaman (पश्चिम बंगाल)",
+      "avgPrice": 4700,
+      "records": 1
+    },
+    {
+      "district": "NTR (आन्ध्र प्रदेश)",
+      "nameHi": "NTR (आन्ध्र प्रदेश)",
+      "avgPrice": 7900,
       "records": 1
     }
   ]

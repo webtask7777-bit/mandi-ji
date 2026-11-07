@@ -39,6 +39,22 @@
       "mandis": 11
     },
     {
+      "month": "05",
+      "date": "2026-05",
+      "market": 4500,
+      "volume": 10,
+      "days": 6,
+      "mandis": 5
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 3667,
+      "volume": 7,
+      "days": 3,
+      "mandis": 5
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 4380,
@@ -69,6 +85,14 @@
       "volume": 452,
       "days": 23,
       "mandis": 32
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4600,
+      "volume": 21,
+      "days": 1,
+      "mandis": 21
     }
   ],
   "dailyHistory": [
@@ -1495,45 +1519,53 @@
       "mandis": 21,
       "minPrice": 3300,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4600,
+      "volume": 21,
+      "mandis": 21,
+      "minPrice": 3300,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Salem",
       "nameHi": "Salem",
-      "avgPrice": 4204,
-      "records": 614
+      "avgPrice": 4205,
+      "records": 621
     },
     {
       "district": "Vellore",
       "nameHi": "Vellore",
-      "avgPrice": 4450,
-      "records": 588
+      "avgPrice": 4453,
+      "records": 593
     },
     {
       "district": "Thiruvannamalai",
       "nameHi": "Thiruvannamalai",
       "avgPrice": 5683,
-      "records": 433
+      "records": 436
     },
     {
       "district": "Kallakurichi",
       "nameHi": "Kallakurichi",
-      "avgPrice": 5183,
-      "records": 241
+      "avgPrice": 5182,
+      "records": 242
     },
     {
       "district": "Namakkal",
       "nameHi": "Namakkal",
-      "avgPrice": 4004,
-      "records": 230
+      "avgPrice": 4013,
+      "records": 232
     },
     {
       "district": "Coimbatore",
       "nameHi": "Coimbatore",
-      "avgPrice": 4295,
-      "records": 218
+      "avgPrice": 4296,
+      "records": 219
     },
     {
       "district": "Thirupathur",
@@ -1550,14 +1582,14 @@
     {
       "district": "Theni",
       "nameHi": "Theni",
-      "avgPrice": 7936,
-      "records": 118
+      "avgPrice": 7937,
+      "records": 119
     },
     {
       "district": "Ranipet",
       "nameHi": "Ranipet",
-      "avgPrice": 9067,
-      "records": 75
+      "avgPrice": 9053,
+      "records": 76
     },
     {
       "district": "Chengalpattu",

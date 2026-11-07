@@ -53,6 +53,14 @@
       "volume": 30,
       "days": 20,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -831,15 +839,23 @@
       "mandis": 2,
       "minPrice": 1300,
       "maxPrice": 7000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 5000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4500,
+      "maxPrice": 6500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Nashik",
       "nameHi": "Nashik",
-      "avgPrice": 4730,
-      "records": 122
+      "avgPrice": 4732,
+      "records": 123
     },
     {
       "district": "Pune",

@@ -69,6 +69,14 @@
       "volume": 108,
       "days": 21,
       "mandis": 8
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3000,
+      "volume": 5,
+      "days": 1,
+      "mandis": 5
     }
   ],
   "dailyHistory": [
@@ -1135,15 +1143,23 @@
       "mandis": 6,
       "minPrice": 2000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3000,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 1000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Dahod",
       "nameHi": "Dahod",
-      "avgPrice": 5270,
-      "records": 118
+      "avgPrice": 5243,
+      "records": 119
     },
     {
       "district": "Navsari",
@@ -1160,20 +1176,20 @@
     {
       "district": "Porbandar",
       "nameHi": "Porbandar",
-      "avgPrice": 8120,
-      "records": 75
+      "avgPrice": 8086,
+      "records": 76
     },
     {
       "district": "Surendranagar",
       "nameHi": "Surendranagar",
-      "avgPrice": 4544,
-      "records": 74
+      "avgPrice": 4517,
+      "records": 75
     },
     {
       "district": "Anand",
       "nameHi": "Anand",
-      "avgPrice": 5480,
-      "records": 70
+      "avgPrice": 5445,
+      "records": 71
     },
     {
       "district": "Vadodara(Baroda)",
@@ -1196,8 +1212,8 @@
     {
       "district": "Gandhinagar",
       "nameHi": "Gandhinagar",
-      "avgPrice": 3857,
-      "records": 7
+      "avgPrice": 3813,
+      "records": 8
     }
   ]
 }

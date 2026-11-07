@@ -21,6 +21,14 @@
       "volume": 30,
       "days": 18,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 15250,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -343,21 +351,29 @@
       "mandis": 2,
       "minPrice": 10000,
       "maxPrice": 18000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 15250,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 12000,
+      "maxPrice": 18000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Kathua",
       "nameHi": "Kathua",
-      "avgPrice": 12561,
-      "records": 33
+      "avgPrice": 12588,
+      "records": 34
     },
     {
       "district": "Jammu",
       "nameHi": "Jammu",
-      "avgPrice": 16097,
-      "records": 31
+      "avgPrice": 16125,
+      "records": 32
     }
   ]
 }

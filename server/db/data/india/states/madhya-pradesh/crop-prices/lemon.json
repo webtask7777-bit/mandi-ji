@@ -7,6 +7,14 @@
   },
   "history": [
     {
+      "month": "03",
+      "date": "2026-03",
+      "market": 4000,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
+    },
+    {
       "month": "04",
       "date": "2026-04",
       "market": 7875,
@@ -53,6 +61,14 @@
       "volume": 92,
       "days": 19,
       "mandis": 13
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3900,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -879,15 +895,23 @@
       "mandis": 3,
       "minPrice": 4450,
       "maxPrice": 7000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3900,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Sehore",
       "nameHi": "Sehore",
-      "avgPrice": 5449,
-      "records": 85
+      "avgPrice": 5444,
+      "records": 86
     },
     {
       "district": "Mandsaur",
@@ -928,8 +952,8 @@
     {
       "district": "Dhar",
       "nameHi": "Dhar",
-      "avgPrice": 3831,
-      "records": 13
+      "avgPrice": 3757,
+      "records": 14
     },
     {
       "district": "Gwalior",

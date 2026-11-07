@@ -45,6 +45,14 @@
       "volume": 34,
       "days": 19,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2400,
+      "volume": 5,
+      "days": 1,
+      "mandis": 5
     }
   ],
   "dailyHistory": [
@@ -647,32 +655,52 @@
       "mandis": 1,
       "minPrice": 2000,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2400,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 400,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 2263,
-      "records": 76
+      "avgPrice": 2260,
+      "records": 77
     },
     {
       "district": "Nagpur",
       "nameHi": "Nagpur",
-      "avgPrice": 2269,
-      "records": 34
+      "avgPrice": 2288,
+      "records": 35
     },
     {
       "district": "Jalgaon",
       "nameHi": "Jalgaon",
-      "avgPrice": 1693,
-      "records": 27
+      "avgPrice": 1721,
+      "records": 28
     },
     {
       "district": "Ahilyanagar",
       "nameHi": "Ahilyanagar",
       "avgPrice": 2250,
+      "records": 1
+    },
+    {
+      "district": "Nashik",
+      "nameHi": "Nashik",
+      "avgPrice": 1800,
+      "records": 1
+    },
+    {
+      "district": "Chattrapati Sambhajinagar",
+      "nameHi": "Chattrapati Sambhajinagar",
+      "avgPrice": 2400,
       "records": 1
     }
   ]

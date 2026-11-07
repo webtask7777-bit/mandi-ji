@@ -13,6 +13,14 @@
       "volume": 5,
       "days": 1,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2461,
+      "volume": 6,
+      "days": 1,
+      "mandis": 6
     }
   ],
   "dailyHistory": [
@@ -23,15 +31,29 @@
       "mandis": 5,
       "minPrice": 2461,
       "maxPrice": 2461
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2461,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 2461,
+      "maxPrice": 2461
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Moga",
       "nameHi": "Moga",
       "avgPrice": 2461,
-      "records": 3
+      "records": 7
+    },
+    {
+      "district": "Barnala",
+      "nameHi": "Barnala",
+      "avgPrice": 2461,
+      "records": 2
     },
     {
       "district": "Sangrur",
@@ -40,8 +62,8 @@
       "records": 1
     },
     {
-      "district": "Barnala",
-      "nameHi": "Barnala",
+      "district": "Mansa",
+      "nameHi": "Mansa",
       "avgPrice": 2461,
       "records": 1
     }

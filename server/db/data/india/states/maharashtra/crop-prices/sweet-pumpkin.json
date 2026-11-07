@@ -69,6 +69,14 @@
       "volume": 120,
       "days": 22,
       "mandis": 10
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 900,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -1031,15 +1039,23 @@
       "mandis": 5,
       "minPrice": 500,
       "maxPrice": 1600
+    },
+    {
+      "date": "2026-11-07",
+      "market": 900,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 600,
+      "maxPrice": 1000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Jalgaon",
       "nameHi": "Jalgaon",
-      "avgPrice": 1211,
-      "records": 223
+      "avgPrice": 1210,
+      "records": 224
     },
     {
       "district": "Pune",
@@ -1056,8 +1072,8 @@
     {
       "district": "Mumbai",
       "nameHi": "Mumbai",
-      "avgPrice": 1003,
-      "records": 130
+      "avgPrice": 1002,
+      "records": 131
     },
     {
       "district": "Dharashiv",

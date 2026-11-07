@@ -93,6 +93,14 @@
       "volume": 99,
       "days": 21,
       "mandis": 6
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4250,
+      "volume": 5,
+      "days": 1,
+      "mandis": 5
     }
   ],
   "dailyHistory": [
@@ -1663,45 +1671,53 @@
       "mandis": 4,
       "minPrice": 2500,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4250,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 1500,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Navsari",
       "nameHi": "Navsari",
-      "avgPrice": 4968,
-      "records": 170
+      "avgPrice": 4967,
+      "records": 171
     },
     {
       "district": "Surat",
       "nameHi": "Surat",
-      "avgPrice": 6783,
-      "records": 152
+      "avgPrice": 6768,
+      "records": 153
     },
     {
       "district": "Dahod",
       "nameHi": "Dahod",
-      "avgPrice": 3650,
-      "records": 142
+      "avgPrice": 3649,
+      "records": 143
     },
     {
       "district": "Kheda",
       "nameHi": "Kheda",
-      "avgPrice": 2046,
-      "records": 67
+      "avgPrice": 2040,
+      "records": 68
+    },
+    {
+      "district": "Vadodara(Baroda)",
+      "nameHi": "Vadodara(Baroda)",
+      "avgPrice": 4494,
+      "records": 52
     },
     {
       "district": "Patan",
       "nameHi": "Patan",
       "avgPrice": 4212,
       "records": 52
-    },
-    {
-      "district": "Vadodara(Baroda)",
-      "nameHi": "Vadodara(Baroda)",
-      "avgPrice": 4499,
-      "records": 51
     }
   ]
 }

@@ -26,6 +26,22 @@
       "mandis": 11
     },
     {
+      "month": "05",
+      "date": "2026-05",
+      "market": 3362,
+      "volume": 5,
+      "days": 5,
+      "mandis": 4
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2840,
+      "volume": 4,
+      "days": 3,
+      "mandis": 4
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 3451,
@@ -56,6 +72,15 @@
       "volume": 224,
       "days": 21,
       "mandis": 42,
+      "msp": 4023
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3695,
+      "volume": 10,
+      "days": 1,
+      "mandis": 10,
       "msp": 4023
     }
   ],
@@ -819,27 +844,35 @@
       "mandis": 13,
       "minPrice": 2319,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3695,
+      "volume": 10,
+      "mandis": 10,
+      "minPrice": 2337,
+      "maxPrice": 8121
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Gadag",
       "nameHi": "Gadag",
-      "avgPrice": 3261,
-      "records": 153
+      "avgPrice": 3274,
+      "records": 155
     },
     {
       "district": "Dharwad",
       "nameHi": "Dharwad",
-      "avgPrice": 3069,
-      "records": 126
+      "avgPrice": 3065,
+      "records": 127
     },
     {
       "district": "Vijayanagara",
       "nameHi": "Vijayanagara",
-      "avgPrice": 2752,
-      "records": 117
+      "avgPrice": 2759,
+      "records": 118
     },
     {
       "district": "Kalaburagi",
@@ -862,14 +895,20 @@
     {
       "district": "Haveri",
       "nameHi": "Haveri",
-      "avgPrice": 3581,
-      "records": 82
+      "avgPrice": 3614,
+      "records": 83
     },
     {
       "district": "Belagavi",
       "nameHi": "Belagavi",
-      "avgPrice": 4095,
-      "records": 68
+      "avgPrice": 4145,
+      "records": 69
+    },
+    {
+      "district": "Bellary",
+      "nameHi": "Bellary",
+      "avgPrice": 2869,
+      "records": 66
     },
     {
       "district": "Bagalkot",
@@ -878,16 +917,10 @@
       "records": 66
     },
     {
-      "district": "Bellary",
-      "nameHi": "Bellary",
-      "avgPrice": 2859,
-      "records": 65
-    },
-    {
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
-      "avgPrice": 3670,
-      "records": 60
+      "avgPrice": 3671,
+      "records": 61
     },
     {
       "district": "Vijayapura",
@@ -898,8 +931,8 @@
     {
       "district": "Davangere",
       "nameHi": "Davangere",
-      "avgPrice": 2888,
-      "records": 36
+      "avgPrice": 2919,
+      "records": 38
     },
     {
       "district": "Chamarajanagar",
