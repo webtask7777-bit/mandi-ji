@@ -2,6 +2,7 @@ import { readFileSync, existsSync, readdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import { normalizeCropDataset, normalizeCropPriceDetail } from './crop-display-names.js';
+import { decodeMandiCompare } from '../../shared/mandiCompareStore.cjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, 'data');
@@ -13,6 +14,12 @@ const cache = {};
 // encoded traversal can reach another data file.
 const SAFE_ID = /^[a-z0-9][a-z0-9-]*$/;
 export const isSafeId = id => typeof id === 'string' && id.length <= 80 && SAFE_ID.test(id);
+
+// mandi-compare is stored compactly; every caller gets the public rows.
+const parseDataset = (name, text) => {
+  const data = JSON.parse(text);
+  return normalizeCropDataset(name, name === 'mandi-compare' ? decodeMandiCompare(data) : data);
+};
 
 export function loadData(name) {
   if (!cache[name]) {
@@ -38,7 +45,7 @@ export function loadIndiaData(name) {
   if (!cache[key]) {
     const file = path.join(INDIA_DIR, `${name}.json`);
     if (!existsSync(file)) return null;
-    cache[key] = normalizeCropDataset(name, JSON.parse(readFileSync(file, 'utf-8')));
+    cache[key] = parseDataset(name, readFileSync(file, 'utf-8'));
   }
   return cache[key];
 }
@@ -49,7 +56,7 @@ export function loadStateData(stateId, name) {
   if (!cache[key]) {
     const file = path.join(INDIA_DIR, 'states', stateId, `${name}.json`);
     if (!existsSync(file)) return null;
-    cache[key] = normalizeCropDataset(name, JSON.parse(readFileSync(file, 'utf-8')));
+    cache[key] = parseDataset(name, readFileSync(file, 'utf-8'));
   }
   return cache[key];
 }

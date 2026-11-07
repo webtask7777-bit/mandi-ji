@@ -10,6 +10,7 @@ const path = require('path');
 const { recordKey, MIN_PLAUSIBLE_PRICE } = require('./lib/daily-store.cjs');
 const { monthChange } = require('./lib/month-change.cjs');
 const { buildMandiComparison, recentDateCutoff } = require('./lib/mandi-comparison.cjs');
+const { encodeMandiCompare } = require('../shared/mandiCompareStore.cjs');
 const { newBucket, addPrice, bucketPrice, unitMismatchedSeries, dropThinBuckets, priceSanity } = require('./lib/robust-price.cjs');
 
 const DATA_DIR = path.join(__dirname, '..', 'server', 'db', 'data');
@@ -379,6 +380,16 @@ function parseDateFull(dateStr) {
 function writeJSON(filePath, data) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+}
+
+// GitHub warns at 50 MB and refuses a push at 100 MB, which would stop the price updates.
+const GITHUB_WARN_BYTES = 50 * 1024 * 1024;
+function writeMandiCompare(filePath, compare) {
+  const body = JSON.stringify(encodeMandiCompare(compare));
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  fs.writeFileSync(filePath, body);
+  const bytes = Buffer.byteLength(body);
+  if (bytes > GITHUB_WARN_BYTES) console.log(`⚠️  ${path.relative(INDIA_DIR, filePath)} is ${(bytes / 1048576).toFixed(1)} MB; GitHub refuses pushes over 100 MB`);
 }
 
 function main() {
@@ -860,10 +871,10 @@ function main() {
     },
   };
   const indiaMandiCompare = buildMandiComparison(allRecords, { ...comparisonOptions, include: isNational });
-  writeJSON(path.join(INDIA_DIR, 'mandi-compare.json'), indiaMandiCompare);
+  writeMandiCompare(path.join(INDIA_DIR, 'mandi-compare.json'), indiaMandiCompare);
   for (const [stateId, stateData] of Object.entries(byState)) {
     const meta = STATES[stateData.name] || { id: stateId };
-    writeJSON(path.join(INDIA_DIR, 'states', meta.id, 'mandi-compare.json'), buildMandiComparison(stateData.records, comparisonOptions));
+    writeMandiCompare(path.join(INDIA_DIR, 'states', meta.id, 'mandi-compare.json'), buildMandiComparison(stateData.records, comparisonOptions));
   }
 
   // ─── Ticker/Signal Data (per crop quick stats for Digital Board) ────

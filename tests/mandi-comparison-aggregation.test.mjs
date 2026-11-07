@@ -5,6 +5,7 @@ import { getComparisonPair, getMandiPrice } from '../src/utils/marketComparison.
 
 const require = createRequire(import.meta.url);
 const { buildMandiComparison, recentDateCutoff } = require('../scripts/lib/mandi-comparison.cjs');
+const { encodeMandiCompare, decodeMandiCompare } = require('../shared/mandiCompareStore.cjs');
 const base = { state: 'Karnataka', district: 'Bidar', market: 'Basava Kalayana APMC', commodity: 'Wheat', grade: 'FAQ' };
 const quote = (date, variety, price, extra = {}) => ({ ...base, arrival_date: date, variety, modal_price: price, ...extra });
 const options = {
@@ -71,4 +72,30 @@ test('calculator pair uses matching commodity, known variety, grade, unit and ex
   ]) assert.equal(getComparisonPair([pair.low, { ...pair.high, ...change }], { now }), null, JSON.stringify(change));
   assert.equal(getComparisonPair(rows, { now: new Date('2026-11-06T10:00:00Z') }), null, 'a frozen dataset cannot keep offering stale comparisons');
   assert.equal(getComparisonPair(rows, { now: new Date('2026-10-28T10:00:00Z') }), null, 'future records are never paired');
+});
+
+test('the stored form rebuilds exactly the rows the comparison built', () => {
+  const compare = buildMandiComparison([
+    { commodity: 'wheat', market: 'Rewa', state: 'MP', district: 'Rewa', variety: 'Lokwan', grade: 'FAQ', arrival_date: '07/11/2026', min_price: 2000, max_price: 2400, modal_price: 2200 },
+    { commodity: 'wheat', market: 'Rewa', state: 'MP', district: 'Rewa', variety: 'Sharbati', grade: '', arrival_date: '01/10/2026', min_price: 2600, max_price: 2800, modal_price: 2700 },
+    { commodity: 'wheat', market: 'rewa', state: 'MP', district: 'Rewa', variety: 'Dara', grade: 'FAQ', arrival_date: '07/11/2026', min_price: 0, max_price: 0, modal_price: 2100 },
+    { commodity: 'onion', market: 'Sehore', state: 'MP', district: 'Sehore', variety: 'Red', grade: 'FAQ', arrival_date: '06/11/2026', min_price: 900, max_price: 1100, modal_price: 1000 },
+  ], {
+    recentCutoff: '2026-11-01',
+    cropIdOf: record => record.commodity,
+    marketIdOf: record => `${record.state}|${record.district}|Rewa`.replace('Sehore|Rewa', 'Sehore|Sehore'),
+    marketNameOf: record => record.market,
+    stateInfoOf: record => ({ state: record.state, stateId: 'mp', stateCode: null }),
+  });
+  const stored = JSON.parse(JSON.stringify(encodeMandiCompare(compare)));
+  // Row and key order both reach the API, so compare the serialised form.
+  assert.equal(JSON.stringify(decodeMandiCompare(stored)), JSON.stringify(compare));
+  assert.equal(stored.markets.length, 3, 'two spellings of one marketId stay distinct');
+  assert.equal(compare.wheat.filter(row => row.rangeBasis === 'historical').length, 1);
+});
+
+test('a file from before the compact format still loads unchanged', () => {
+  const legacy = { wheat: [{ commodityId: 'wheat', quotePrice: 2200 }] };
+  assert.equal(decodeMandiCompare(legacy), legacy);
+  assert.equal(decodeMandiCompare(null), null);
 });
