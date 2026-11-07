@@ -69,6 +69,14 @@
       "volume": 70,
       "days": 19,
       "mandis": 10
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 7450,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -903,15 +911,23 @@
       "mandis": 3,
       "minPrice": 7200,
       "maxPrice": 7800
+    },
+    {
+      "date": "2026-11-07",
+      "market": 7450,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 7350,
+      "maxPrice": 7550
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Mandla",
       "nameHi": "Mandla",
-      "avgPrice": 7331,
-      "records": 155
+      "avgPrice": 7332,
+      "records": 157
     },
     {
       "district": "Dindori",

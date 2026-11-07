@@ -31,6 +31,14 @@
       "mandis": 12
     },
     {
+      "month": "06",
+      "date": "2026-06",
+      "market": 7750,
+      "volume": 5,
+      "days": 3,
+      "mandis": 3
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 8067,
@@ -61,6 +69,14 @@
       "volume": 199,
       "days": 22,
       "mandis": 28
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5500,
+      "volume": 11,
+      "days": 1,
+      "mandis": 11
     }
   ],
   "dailyHistory": [
@@ -943,51 +959,59 @@
       "mandis": 12,
       "minPrice": 4900,
       "maxPrice": 11000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 5500,
+      "volume": 11,
+      "mandis": 11,
+      "minPrice": 4000,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Dhenkanal",
       "nameHi": "Dhenkanal",
-      "avgPrice": 8601,
-      "records": 171
+      "avgPrice": 8594,
+      "records": 173
     },
     {
       "district": "Bolangir",
       "nameHi": "Bolangir",
-      "avgPrice": 7607,
-      "records": 140
+      "avgPrice": 7618,
+      "records": 142
     },
     {
       "district": "Mayurbhanja",
       "nameHi": "Mayurbhanja",
-      "avgPrice": 8868,
-      "records": 123
+      "avgPrice": 8869,
+      "records": 124
     },
     {
       "district": "Sundergarh",
       "nameHi": "Sundergarh",
-      "avgPrice": 7010,
-      "records": 104
+      "avgPrice": 6995,
+      "records": 105
     },
     {
       "district": "Cuttack",
       "nameHi": "Cuttack",
-      "avgPrice": 6377,
-      "records": 73
+      "avgPrice": 6365,
+      "records": 74
     },
     {
       "district": "Rayagada",
       "nameHi": "Rayagada",
-      "avgPrice": 5510,
-      "records": 73
+      "avgPrice": 5503,
+      "records": 74
     },
     {
       "district": "Kalahandi",
       "nameHi": "Kalahandi",
-      "avgPrice": 5446,
-      "records": 71
+      "avgPrice": 5438,
+      "records": 73
     },
     {
       "district": "Nuapada",
@@ -1010,8 +1034,8 @@
     {
       "district": "Ganjam",
       "nameHi": "Ganjam",
-      "avgPrice": 6135,
-      "records": 20
+      "avgPrice": 6105,
+      "records": 21
     },
     {
       "district": "Puri",

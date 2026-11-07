@@ -61,6 +61,14 @@
       "volume": 30,
       "days": 18,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1600,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -951,15 +959,23 @@
       "mandis": 1,
       "minPrice": 1500,
       "maxPrice": 1800
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 1650
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Harda",
       "nameHi": "Harda",
-      "avgPrice": 1497,
-      "records": 93
+      "avgPrice": 1498,
+      "records": 94
     },
     {
       "district": "Shivpuri",

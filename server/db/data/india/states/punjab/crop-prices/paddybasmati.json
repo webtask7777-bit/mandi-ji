@@ -21,6 +21,14 @@
       "volume": 240,
       "days": 23,
       "mandis": 30
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4500,
+      "volume": 5,
+      "days": 1,
+      "mandis": 5
     }
   ],
   "dailyHistory": [
@@ -415,15 +423,23 @@
       "mandis": 8,
       "minPrice": 4000,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4500,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 3800,
+      "maxPrice": 5050
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Amritsar",
       "nameHi": "Amritsar",
-      "avgPrice": 3858,
-      "records": 197
+      "avgPrice": 3860,
+      "records": 198
     },
     {
       "district": "Patiala",
@@ -434,8 +450,8 @@
     {
       "district": "Sangrur",
       "nameHi": "Sangrur",
-      "avgPrice": 4090,
-      "records": 74
+      "avgPrice": 4094,
+      "records": 76
     },
     {
       "district": "Mansa",
@@ -452,8 +468,8 @@
     {
       "district": "Gurdaspur",
       "nameHi": "Gurdaspur",
-      "avgPrice": 3889,
-      "records": 26
+      "avgPrice": 3915,
+      "records": 27
     },
     {
       "district": "Faridkot",
@@ -483,7 +499,7 @@
       "district": "Muktsar",
       "nameHi": "Muktsar",
       "avgPrice": 4800,
-      "records": 1
+      "records": 2
     }
   ]
 }

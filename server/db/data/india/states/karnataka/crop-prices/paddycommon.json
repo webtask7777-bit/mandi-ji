@@ -34,6 +34,14 @@
       "mandis": 10
     },
     {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2458,
+      "volume": 7,
+      "days": 3,
+      "mandis": 6
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 2556,
@@ -64,6 +72,15 @@
       "volume": 403,
       "days": 20,
       "mandis": 60,
+      "msp": 2441
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3475,
+      "volume": 17,
+      "days": 1,
+      "mandis": 12,
       "msp": 2441
     }
   ],
@@ -835,45 +852,53 @@
       "mandis": 15,
       "minPrice": 2000,
       "maxPrice": 5980
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3475,
+      "volume": 17,
+      "mandis": 12,
+      "minPrice": 1451,
+      "maxPrice": 5467
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Koppal",
       "nameHi": "Koppal",
-      "avgPrice": 3415,
-      "records": 494
+      "avgPrice": 3425,
+      "records": 498
+    },
+    {
+      "district": "Raichur",
+      "nameHi": "Raichur",
+      "avgPrice": 3313,
+      "records": 271
     },
     {
       "district": "Mandya",
       "nameHi": "Mandya",
       "avgPrice": 2212,
-      "records": 269
-    },
-    {
-      "district": "Raichur",
-      "nameHi": "Raichur",
-      "avgPrice": 3318,
-      "records": 267
+      "records": 270
     },
     {
       "district": "Uttara Kannada",
       "nameHi": "Uttara Kannada",
-      "avgPrice": 2623,
-      "records": 199
+      "avgPrice": 2624,
+      "records": 200
     },
     {
       "district": "Bellary",
       "nameHi": "Bellary",
-      "avgPrice": 3210,
-      "records": 192
+      "avgPrice": 3214,
+      "records": 193
     },
     {
       "district": "Shivamogga",
       "nameHi": "Shivamogga",
       "avgPrice": 2984,
-      "records": 188
+      "records": 189
     },
     {
       "district": "Mysuru",
@@ -884,14 +909,14 @@
     {
       "district": "Davangere",
       "nameHi": "Davangere",
-      "avgPrice": 3186,
-      "records": 158
+      "avgPrice": 3192,
+      "records": 160
     },
     {
       "district": "Haveri",
       "nameHi": "Haveri",
-      "avgPrice": 2853,
-      "records": 106
+      "avgPrice": 2878,
+      "records": 108
     },
     {
       "district": "Chamarajanagar",
@@ -926,8 +951,8 @@
     {
       "district": "Vijayanagara",
       "nameHi": "Vijayanagara",
-      "avgPrice": 3349,
-      "records": 33
+      "avgPrice": 3371,
+      "records": 34
     }
   ]
 }

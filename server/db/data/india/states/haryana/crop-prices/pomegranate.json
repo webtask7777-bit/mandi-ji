@@ -31,6 +31,14 @@
       "mandis": 14
     },
     {
+      "month": "06",
+      "date": "2026-06",
+      "market": 13000,
+      "volume": 5,
+      "days": 3,
+      "mandis": 4
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 10833,
@@ -61,6 +69,14 @@
       "volume": 325,
       "days": 23,
       "mandis": 26
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 12000,
+      "volume": 6,
+      "days": 1,
+      "mandis": 6
     }
   ],
   "dailyHistory": [
@@ -887,27 +903,35 @@
       "mandis": 13,
       "minPrice": 5000,
       "maxPrice": 25000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 12000,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 8000,
+      "maxPrice": 20000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Kurukshetra",
       "nameHi": "Kurukshetra",
-      "avgPrice": 11472,
-      "records": 244
+      "avgPrice": 11466,
+      "records": 245
     },
     {
       "district": "Sonipat",
       "nameHi": "Sonipat",
-      "avgPrice": 10492,
-      "records": 190
+      "avgPrice": 10510,
+      "records": 191
     },
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 13288,
-      "records": 179
+      "avgPrice": 13301,
+      "records": 181
     },
     {
       "district": "Mahendragarh-Narnaul",
@@ -918,8 +942,8 @@
     {
       "district": "Ambala",
       "nameHi": "Ambala",
-      "avgPrice": 8210,
-      "records": 138
+      "avgPrice": 8216,
+      "records": 139
     },
     {
       "district": "Fatehabad",
@@ -936,8 +960,8 @@
     {
       "district": "Faridabad",
       "nameHi": "Faridabad",
-      "avgPrice": 8819,
-      "records": 94
+      "avgPrice": 8816,
+      "records": 95
     },
     {
       "district": "Yamuna Nagar",

@@ -93,6 +93,14 @@
       "volume": 16,
       "days": 16,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 20000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -1623,15 +1631,23 @@
       "mandis": 1,
       "minPrice": 19000,
       "maxPrice": 20000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 20000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 19000,
+      "maxPrice": 20000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Mayurbhanja",
       "nameHi": "Mayurbhanja",
       "avgPrice": 19762,
-      "records": 304
+      "records": 305
     },
     {
       "district": "Khurda",

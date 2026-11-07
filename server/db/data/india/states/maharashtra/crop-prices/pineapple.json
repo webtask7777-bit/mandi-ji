@@ -7,6 +7,14 @@
   },
   "history": [
     {
+      "month": "03",
+      "date": "2026-03",
+      "market": 5000,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
+    },
+    {
       "month": "04",
       "date": "2026-04",
       "market": 3750,
@@ -61,6 +69,14 @@
       "volume": 75,
       "days": 21,
       "mandis": 7
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4250,
+      "volume": 4,
+      "days": 1,
+      "mandis": 4
     }
   ],
   "dailyHistory": [
@@ -1071,27 +1087,35 @@
       "mandis": 4,
       "minPrice": 1000,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4250,
+      "volume": 4,
+      "mandis": 4,
+      "minPrice": 1000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 3730,
-      "records": 199
+      "avgPrice": 3737,
+      "records": 200
     },
     {
       "district": "Mumbai",
       "nameHi": "Mumbai",
-      "avgPrice": 4136,
-      "records": 116
+      "avgPrice": 4130,
+      "records": 117
     },
     {
       "district": "Nagpur",
       "nameHi": "Nagpur",
       "avgPrice": 2502,
-      "records": 107
+      "records": 108
     },
     {
       "district": "Solapur",
@@ -1108,8 +1132,8 @@
     {
       "district": "Sangli",
       "nameHi": "Sangli",
-      "avgPrice": 4449,
-      "records": 39
+      "avgPrice": 4463,
+      "records": 40
     },
     {
       "district": "Chattrapati Sambhajinagar",

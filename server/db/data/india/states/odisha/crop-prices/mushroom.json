@@ -7,17 +7,41 @@
   },
   "history": [
     {
+      "month": "08",
+      "date": "2026-08",
+      "market": 13250,
+      "volume": 5,
+      "days": 5,
+      "mandis": 2
+    },
+    {
       "month": "09",
       "date": "2026-09",
       "market": 12500,
-      "volume": 2,
+      "volume": 4,
       "days": 2,
+      "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 19200,
+      "volume": 1,
+      "days": 1,
       "mandis": 1
     }
   ],
   "dailyHistory": [
     {
-      "date": "2026-09-01",
+      "date": "2026-08-11",
+      "market": 14000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 13500,
+      "maxPrice": 14200
+    },
+    {
+      "date": "2026-08-12",
       "market": 12500,
       "volume": 1,
       "mandis": 1,
@@ -25,21 +49,67 @@
       "maxPrice": 13000
     },
     {
-      "date": "2026-09-02",
+      "date": "2026-08-13",
       "market": 12500,
       "volume": 1,
       "mandis": 1,
       "minPrice": 12000,
       "maxPrice": 13000
+    },
+    {
+      "date": "2026-08-14",
+      "market": 12500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 12000,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-08-17",
+      "market": 12500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 12000,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-09-01",
+      "market": 12500,
+      "volume": 2,
+      "mandis": 1,
+      "minPrice": 12000,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-09-02",
+      "market": 12500,
+      "volume": 2,
+      "mandis": 1,
+      "minPrice": 12000,
+      "maxPrice": 13000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 19200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 19000,
+      "maxPrice": 19500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Mayurbhanja",
       "nameHi": "Mayurbhanja",
-      "avgPrice": 12500,
-      "records": 2
+      "avgPrice": 13244,
+      "records": 9
+    },
+    {
+      "district": "Bhadrak",
+      "nameHi": "Bhadrak",
+      "avgPrice": 14000,
+      "records": 1
     }
   ]
 }

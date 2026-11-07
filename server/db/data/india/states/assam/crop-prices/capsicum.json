@@ -93,6 +93,14 @@
       "volume": 50,
       "days": 22,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4850,
+      "volume": 3,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -1647,15 +1655,23 @@
       "mandis": 1,
       "minPrice": 4000,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4850,
+      "volume": 3,
+      "mandis": 2,
+      "minPrice": 3500,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Kamrup",
       "nameHi": "Kamrup",
-      "avgPrice": 4827,
-      "records": 381
+      "avgPrice": 4826,
+      "records": 384
     },
     {
       "district": "Darrang",

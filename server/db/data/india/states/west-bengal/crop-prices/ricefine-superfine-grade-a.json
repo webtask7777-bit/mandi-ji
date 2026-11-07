@@ -13,6 +13,14 @@
       "volume": 3,
       "days": 1,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4150,
+      "volume": 10,
+      "days": 1,
+      "mandis": 7
     }
   ],
   "dailyHistory": [
@@ -23,10 +31,36 @@
       "mandis": 3,
       "minPrice": 3950,
       "maxPrice": 5100
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4150,
+      "volume": 10,
+      "mandis": 7,
+      "minPrice": 3400,
+      "maxPrice": 4950
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
+    {
+      "district": "Purba Bardhaman",
+      "nameHi": "Purba Bardhaman",
+      "avgPrice": 3863,
+      "records": 4
+    },
+    {
+      "district": "Bankura",
+      "nameHi": "Bankura",
+      "avgPrice": 3967,
+      "records": 3
+    },
+    {
+      "district": "Hooghly",
+      "nameHi": "Hooghly",
+      "avgPrice": 4427,
+      "records": 3
+    },
     {
       "district": "Nadia",
       "nameHi": "Nadia",
@@ -34,9 +68,9 @@
       "records": 2
     },
     {
-      "district": "Purba Bardhaman",
-      "nameHi": "Purba Bardhaman",
-      "avgPrice": 4000,
+      "district": "Paschim Bardhaman",
+      "nameHi": "Paschim Bardhaman",
+      "avgPrice": 4700,
       "records": 1
     }
   ]

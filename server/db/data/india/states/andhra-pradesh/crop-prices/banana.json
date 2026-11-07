@@ -93,6 +93,14 @@
       "volume": 215,
       "days": 22,
       "mandis": 7
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1600,
+      "volume": 11,
+      "days": 1,
+      "mandis": 6
     }
   ],
   "dailyHistory": [
@@ -1743,15 +1751,23 @@
       "mandis": 4,
       "minPrice": 1000,
       "maxPrice": 4500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1600,
+      "volume": 11,
+      "mandis": 6,
+      "minPrice": 800,
+      "maxPrice": 4900
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Dr.B.R.A.Konaseema",
       "nameHi": "Dr.B.R.A.Konaseema",
-      "avgPrice": 2766,
-      "records": 839
+      "avgPrice": 2768,
+      "records": 846
     },
     {
       "district": "East Godavari",
@@ -1763,13 +1779,13 @@
       "district": "Tirupathi",
       "nameHi": "Tirupathi",
       "avgPrice": 1299,
-      "records": 148
+      "records": 150
     },
     {
       "district": "YSR Kadapa",
       "nameHi": "YSR Kadapa",
       "avgPrice": 1566,
-      "records": 109
+      "records": 110
     },
     {
       "district": "Anakapally",
@@ -1780,8 +1796,8 @@
     {
       "district": "Vijayanagaram",
       "nameHi": "Vijayanagaram",
-      "avgPrice": 2817,
-      "records": 29
+      "avgPrice": 2824,
+      "records": 30
     }
   ]
 }

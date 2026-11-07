@@ -69,6 +69,14 @@
       "volume": 14,
       "days": 14,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6600,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -671,15 +679,23 @@
       "mandis": 1,
       "minPrice": 5100,
       "maxPrice": 7200
+    },
+    {
+      "date": "2026-11-07",
+      "market": 6600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Mumbai",
       "nameHi": "Mumbai",
-      "avgPrice": 6806,
-      "records": 99
+      "avgPrice": 6804,
+      "records": 100
     }
   ]
 }

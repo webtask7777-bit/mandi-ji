@@ -15,6 +15,14 @@
       "mandis": 2
     },
     {
+      "month": "04",
+      "date": "2026-04",
+      "market": 7750,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
+    },
+    {
       "month": "05",
       "date": "2026-05",
       "market": 5667,
@@ -53,6 +61,14 @@
       "volume": 28,
       "days": 18,
       "mandis": 6
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 8715,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -767,15 +783,23 @@
       "mandis": 1,
       "minPrice": 7000,
       "maxPrice": 9000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 8715,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 8000,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Dimapur",
       "nameHi": "Dimapur",
-      "avgPrice": 7369,
-      "records": 80
+      "avgPrice": 7389,
+      "records": 81
     },
     {
       "district": "Kohima",
@@ -810,8 +834,8 @@
     {
       "district": "Kiphire",
       "nameHi": "Kiphire",
-      "avgPrice": 6926,
-      "records": 5
+      "avgPrice": 7177,
+      "records": 6
     },
     {
       "district": "Zunheboto",

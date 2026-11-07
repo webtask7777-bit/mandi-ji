@@ -15,12 +15,36 @@
       "mandis": 2
     },
     {
+      "month": "01",
+      "date": "2026-01",
+      "market": 1482,
+      "volume": 17,
+      "days": 17,
+      "mandis": 1
+    },
+    {
+      "month": "02",
+      "date": "2026-02",
+      "market": 1714,
+      "volume": 22,
+      "days": 22,
+      "mandis": 1
+    },
+    {
       "month": "03",
       "date": "2026-03",
       "market": 1867,
       "volume": 10,
       "days": 10,
       "mandis": 2
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 1800,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
     },
     {
       "month": "05",
@@ -69,6 +93,14 @@
       "volume": 89,
       "days": 22,
       "mandis": 11
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3750,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -1607,9 +1639,17 @@
       "mandis": 2,
       "minPrice": 2300,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3750,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3500,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Kurukshetra",
@@ -1632,8 +1672,8 @@
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 2673,
-      "records": 114
+      "avgPrice": 2683,
+      "records": 115
     },
     {
       "district": "Yamuna Nagar",

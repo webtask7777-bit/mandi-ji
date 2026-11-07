@@ -69,6 +69,14 @@
       "volume": 754,
       "days": 23,
       "mandis": 55
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 14000,
+      "volume": 34,
+      "days": 1,
+      "mandis": 32
     }
   ],
   "dailyHistory": [
@@ -1023,33 +1031,47 @@
       "mandis": 30,
       "minPrice": 4500,
       "maxPrice": 18500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 14000,
+      "volume": 34,
+      "mandis": 32,
+      "minPrice": 3000,
+      "maxPrice": 20200
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Salem (तमिल नाडु)",
       "nameHi": "Salem (तमिल नाडु)",
-      "avgPrice": 14496,
-      "records": 481
+      "avgPrice": 14503,
+      "records": 486
     },
     {
       "district": "Sri Sathya Sai (आन्ध्र प्रदेश)",
       "nameHi": "Sri Sathya Sai (आन्ध्र प्रदेश)",
-      "avgPrice": 12790,
-      "records": 322
+      "avgPrice": 12815,
+      "records": 326
     },
     {
       "district": "Thiruvannamalai (तमिल नाडु)",
       "nameHi": "Thiruvannamalai (तमिल नाडु)",
-      "avgPrice": 11311,
-      "records": 309
+      "avgPrice": 11323,
+      "records": 312
     },
     {
       "district": "Krishnagiri (तमिल नाडु)",
       "nameHi": "Krishnagiri (तमिल नाडु)",
-      "avgPrice": 11367,
-      "records": 244
+      "avgPrice": 11390,
+      "records": 246
+    },
+    {
+      "district": "Dharmapuri (तमिल नाडु)",
+      "nameHi": "Dharmapuri (तमिल नाडु)",
+      "avgPrice": 11437,
+      "records": 238
     },
     {
       "district": "Nagercoil (Kannyiakumari) (तमिल नाडु)",
@@ -1058,52 +1080,46 @@
       "records": 238
     },
     {
-      "district": "Dharmapuri (तमिल नाडु)",
-      "nameHi": "Dharmapuri (तमिल नाडु)",
-      "avgPrice": 11438,
-      "records": 236
-    },
-    {
       "district": "Nagapattinam (तमिल नाडु)",
       "nameHi": "Nagapattinam (तमिल नाडु)",
-      "avgPrice": 13958,
-      "records": 201
+      "avgPrice": 13962,
+      "records": 202
     },
     {
       "district": "Tiruvarur (तमिल नाडु)",
       "nameHi": "Tiruvarur (तमिल नाडु)",
-      "avgPrice": 15885,
-      "records": 148
+      "avgPrice": 15886,
+      "records": 149
     },
     {
       "district": "Vellore (तमिल नाडु)",
       "nameHi": "Vellore (तमिल नाडु)",
-      "avgPrice": 14186,
-      "records": 132
+      "avgPrice": 14190,
+      "records": 134
     },
     {
       "district": "Hyderabad (तेलंगाना)",
       "nameHi": "Hyderabad (तेलंगाना)",
-      "avgPrice": 8953,
-      "records": 128
+      "avgPrice": 8954,
+      "records": 130
     },
     {
       "district": "Dindigul (तमिल नाडु)",
       "nameHi": "Dindigul (तमिल नाडु)",
-      "avgPrice": 13778,
-      "records": 117
+      "avgPrice": 13784,
+      "records": 118
     },
     {
       "district": "Madurai (तमिल नाडु)",
       "nameHi": "Madurai (तमिल नाडु)",
-      "avgPrice": 14372,
-      "records": 113
+      "avgPrice": 14368,
+      "records": 114
     },
     {
       "district": "Namakkal (तमिल नाडु)",
       "nameHi": "Namakkal (तमिल नाडु)",
       "avgPrice": 14009,
-      "records": 111
+      "records": 112
     },
     {
       "district": "Pudukkottai (तमिल नाडु)",
@@ -1114,8 +1130,8 @@
     {
       "district": "Thiruchirappalli (तमिल नाडु)",
       "nameHi": "Thiruchirappalli (तमिल नाडु)",
-      "avgPrice": 17198,
-      "records": 106
+      "avgPrice": 17206,
+      "records": 107
     }
   ]
 }

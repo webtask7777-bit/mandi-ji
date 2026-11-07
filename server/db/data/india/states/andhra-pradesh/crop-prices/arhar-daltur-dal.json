@@ -37,6 +37,14 @@
       "volume": 15,
       "days": 15,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5400,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -543,15 +551,23 @@
       "mandis": 1,
       "minPrice": 5600,
       "maxPrice": 5980
+    },
+    {
+      "date": "2026-11-07",
+      "market": 5400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5200,
+      "maxPrice": 5560
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Palnadu",
       "nameHi": "Palnadu",
-      "avgPrice": 8181,
-      "records": 63
+      "avgPrice": 8138,
+      "records": 64
     }
   ]
 }

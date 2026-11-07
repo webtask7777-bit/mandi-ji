@@ -10,6 +10,14 @@
   },
   "history": [
     {
+      "month": "03",
+      "date": "2026-03",
+      "market": 6575,
+      "volume": 15,
+      "days": 6,
+      "mandis": 12
+    },
+    {
       "month": "04",
       "date": "2026-04",
       "market": 6299,
@@ -61,6 +69,15 @@
       "volume": 775,
       "days": 20,
       "mandis": 98,
+      "msp": 7000
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5750,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2,
       "msp": 7000
     }
   ],
@@ -680,9 +697,17 @@
       "mandis": 36,
       "minPrice": 3501,
       "maxPrice": 8465
+    },
+    {
+      "date": "2026-11-07",
+      "market": 5750,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 5400,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Rajgarh",
@@ -735,8 +760,8 @@
     {
       "district": "Satna",
       "nameHi": "Satna",
-      "avgPrice": 6061,
-      "records": 140
+      "avgPrice": 6060,
+      "records": 141
     },
     {
       "district": "Sehore",

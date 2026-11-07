@@ -69,6 +69,14 @@
       "volume": 336,
       "days": 23,
       "mandis": 30
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3000,
+      "volume": 7,
+      "days": 1,
+      "mandis": 7
     }
   ],
   "dailyHistory": [
@@ -943,15 +951,23 @@
       "mandis": 13,
       "minPrice": 1050,
       "maxPrice": 5500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3000,
+      "volume": 7,
+      "mandis": 7,
+      "minPrice": 1500,
+      "maxPrice": 4700
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Hanumangarh",
       "nameHi": "Hanumangarh",
-      "avgPrice": 2836,
-      "records": 471
+      "avgPrice": 2840,
+      "records": 474
     },
     {
       "district": "Jaipur",
@@ -968,8 +984,14 @@
     {
       "district": "Bharatpur",
       "nameHi": "Bharatpur",
-      "avgPrice": 2408,
-      "records": 93
+      "avgPrice": 2414,
+      "records": 94
+    },
+    {
+      "district": "Ganganagar",
+      "nameHi": "Ganganagar",
+      "avgPrice": 3406,
+      "records": 90
     },
     {
       "district": "Jhunjhunu",
@@ -978,16 +1000,10 @@
       "records": 90
     },
     {
-      "district": "Ganganagar",
-      "nameHi": "Ganganagar",
-      "avgPrice": 3393,
-      "records": 89
-    },
-    {
       "district": "Udaipur",
       "nameHi": "Udaipur",
-      "avgPrice": 2418,
-      "records": 88
+      "avgPrice": 2425,
+      "records": 89
     },
     {
       "district": "Rajsamand",
@@ -1010,8 +1026,8 @@
     {
       "district": "Jodhpur",
       "nameHi": "Jodhpur",
-      "avgPrice": 2147,
-      "records": 65
+      "avgPrice": 2156,
+      "records": 66
     },
     {
       "district": "Bhilwara",

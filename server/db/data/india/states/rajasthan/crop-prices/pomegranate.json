@@ -31,6 +31,14 @@
       "mandis": 4
     },
     {
+      "month": "06",
+      "date": "2026-06",
+      "market": 18500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 10000,
@@ -61,6 +69,14 @@
       "volume": 101,
       "days": 20,
       "mandis": 8
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 9000,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -943,21 +959,29 @@
       "mandis": 5,
       "minPrice": 3000,
       "maxPrice": 25000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 9000,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 3000,
+      "maxPrice": 14500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Udaipur",
       "nameHi": "Udaipur",
-      "avgPrice": 5275,
-      "records": 89
+      "avgPrice": 5283,
+      "records": 90
     },
     {
       "district": "Ganganagar",
       "nameHi": "Ganganagar",
-      "avgPrice": 10876,
-      "records": 86
+      "avgPrice": 10911,
+      "records": 87
     },
     {
       "district": "Kota",
@@ -968,8 +992,8 @@
     {
       "district": "Jodhpur",
       "nameHi": "Jodhpur",
-      "avgPrice": 6537,
-      "records": 68
+      "avgPrice": 6572,
+      "records": 69
     },
     {
       "district": "Jaipur",

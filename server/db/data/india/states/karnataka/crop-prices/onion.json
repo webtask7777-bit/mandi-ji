@@ -69,6 +69,14 @@
       "volume": 263,
       "days": 19,
       "mandis": 28
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4000,
+      "volume": 12,
+      "days": 1,
+      "mandis": 9
     }
   ],
   "dailyHistory": [
@@ -871,21 +879,29 @@
       "mandis": 10,
       "minPrice": 500,
       "maxPrice": 6500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4000,
+      "volume": 12,
+      "mandis": 9,
+      "minPrice": 500,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
-      "avgPrice": 3068,
-      "records": 284
+      "avgPrice": 3066,
+      "records": 288
     },
     {
       "district": "Chikkaballapur",
       "nameHi": "Chikkaballapur",
-      "avgPrice": 3144,
-      "records": 197
+      "avgPrice": 3150,
+      "records": 198
     },
     {
       "district": "Chikkamagaluru",
@@ -908,14 +924,14 @@
     {
       "district": "Kolar",
       "nameHi": "Kolar",
-      "avgPrice": 3030,
-      "records": 93
+      "avgPrice": 3035,
+      "records": 94
     },
     {
       "district": "Bengaluru Rural",
       "nameHi": "Bengaluru Rural",
-      "avgPrice": 3482,
-      "records": 84
+      "avgPrice": 3457,
+      "records": 85
     },
     {
       "district": "Shivamogga",
@@ -926,19 +942,19 @@
     {
       "district": "Davangere",
       "nameHi": "Davangere",
-      "avgPrice": 3766,
-      "records": 70
+      "avgPrice": 3777,
+      "records": 71
+    },
+    {
+      "district": "Vijayanagara",
+      "nameHi": "Vijayanagara",
+      "avgPrice": 2910,
+      "records": 68
     },
     {
       "district": "Udupi",
       "nameHi": "Udupi",
       "avgPrice": 3057,
-      "records": 67
-    },
-    {
-      "district": "Vijayanagara",
-      "nameHi": "Vijayanagara",
-      "avgPrice": 2894,
       "records": 67
     },
     {
@@ -950,8 +966,8 @@
     {
       "district": "Belagavi",
       "nameHi": "Belagavi",
-      "avgPrice": 3590,
-      "records": 51
+      "avgPrice": 3608,
+      "records": 52
     },
     {
       "district": "Vijayapura",
@@ -960,10 +976,10 @@
       "records": 29
     },
     {
-      "district": "Haveri",
-      "nameHi": "Haveri",
-      "avgPrice": 1904,
-      "records": 26
+      "district": "Bagalkot",
+      "nameHi": "Bagalkot",
+      "avgPrice": 3550,
+      "records": 27
     }
   ]
 }

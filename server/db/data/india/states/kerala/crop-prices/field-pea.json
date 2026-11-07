@@ -85,6 +85,14 @@
       "volume": 37,
       "days": 21,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 8250,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -1655,15 +1663,23 @@
       "mandis": 1,
       "minPrice": 6000,
       "maxPrice": 7000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 8250,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 5000,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Ernakulam",
       "nameHi": "Ernakulam",
-      "avgPrice": 6361,
-      "records": 300
+      "avgPrice": 6374,
+      "records": 302
     }
   ]
 }

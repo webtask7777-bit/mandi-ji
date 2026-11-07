@@ -21,6 +21,14 @@
       "volume": 30,
       "days": 11,
       "mandis": 6
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 10900,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -127,9 +135,17 @@
       "mandis": 4,
       "minPrice": 8000,
       "maxPrice": 15000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 10900,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 9800,
+      "maxPrice": 14000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Nalanda",
@@ -144,22 +160,22 @@
       "records": 7
     },
     {
+      "district": "Aurangabad",
+      "nameHi": "Aurangabad",
+      "avgPrice": 10571,
+      "records": 7
+    },
+    {
       "district": "Chhapra",
       "nameHi": "Chhapra",
       "avgPrice": 9083,
       "records": 6
     },
     {
-      "district": "Aurangabad",
-      "nameHi": "Aurangabad",
-      "avgPrice": 10333,
-      "records": 6
-    },
-    {
       "district": "Bhojpur",
       "nameHi": "Bhojpur",
-      "avgPrice": 10450,
-      "records": 4
+      "avgPrice": 10320,
+      "records": 5
     }
   ]
 }

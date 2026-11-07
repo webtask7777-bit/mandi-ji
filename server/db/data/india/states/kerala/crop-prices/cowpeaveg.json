@@ -85,6 +85,14 @@
       "volume": 1000,
       "days": 23,
       "mandis": 111
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6000,
+      "volume": 27,
+      "days": 1,
+      "mandis": 27
     }
   ],
   "dailyHistory": [
@@ -1607,57 +1615,65 @@
       "mandis": 21,
       "minPrice": 3500,
       "maxPrice": 9000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 6000,
+      "volume": 27,
+      "mandis": 27,
+      "minPrice": 3000,
+      "maxPrice": 9500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Palakad",
       "nameHi": "Palakad",
       "avgPrice": 4988,
-      "records": 1307
+      "records": 1309
     },
     {
       "district": "Ernakulam",
       "nameHi": "Ernakulam",
       "avgPrice": 5236,
-      "records": 1214
+      "records": 1218
     },
     {
       "district": "Kottayam",
       "nameHi": "Kottayam",
-      "avgPrice": 6254,
-      "records": 1138
+      "avgPrice": 6253,
+      "records": 1140
     },
     {
       "district": "Thiruvananthapuram",
       "nameHi": "Thiruvananthapuram",
-      "avgPrice": 6897,
-      "records": 1088
+      "avgPrice": 6899,
+      "records": 1094
     },
     {
       "district": "Thirssur",
       "nameHi": "Thirssur",
-      "avgPrice": 4824,
-      "records": 974
+      "avgPrice": 4826,
+      "records": 976
     },
     {
       "district": "Kozhikode(Calicut)",
       "nameHi": "Kozhikode(Calicut)",
-      "avgPrice": 5468,
-      "records": 867
+      "avgPrice": 5472,
+      "records": 872
     },
     {
       "district": "Alappuzha",
       "nameHi": "Alappuzha",
       "avgPrice": 5084,
-      "records": 739
+      "records": 742
     },
     {
       "district": "Kollam",
       "nameHi": "Kollam",
-      "avgPrice": 5271,
-      "records": 606
+      "avgPrice": 5278,
+      "records": 608
     },
     {
       "district": "Malappuram",
@@ -1692,8 +1708,8 @@
     {
       "district": "Kannur",
       "nameHi": "Kannur",
-      "avgPrice": 5723,
-      "records": 189
+      "avgPrice": 5719,
+      "records": 190
     }
   ]
 }

@@ -10,6 +10,14 @@
   },
   "history": [
     {
+      "month": "03",
+      "date": "2026-03",
+      "market": 3325,
+      "volume": 13,
+      "days": 6,
+      "mandis": 6
+    },
+    {
       "month": "04",
       "date": "2026-04",
       "market": 2968,
@@ -24,6 +32,14 @@
       "volume": 28,
       "days": 8,
       "mandis": 22
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 2570,
+      "volume": 16,
+      "days": 3,
+      "mandis": 13
     },
     {
       "month": "07",
@@ -56,6 +72,15 @@
       "volume": 869,
       "days": 21,
       "mandis": 123,
+      "msp": 4023
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5500,
+      "volume": 13,
+      "days": 1,
+      "mandis": 11,
       "msp": 4023
     }
   ],
@@ -739,15 +764,23 @@
       "mandis": 34,
       "minPrice": 2151,
       "maxPrice": 11000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 5500,
+      "volume": 13,
+      "mandis": 11,
+      "minPrice": 2500,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Buldhana",
       "nameHi": "Buldhana",
-      "avgPrice": 2454,
-      "records": 580
+      "avgPrice": 2458,
+      "records": 581
     },
     {
       "district": "Solapur",
@@ -770,14 +803,14 @@
     {
       "district": "Chattrapati Sambhajinagar",
       "nameHi": "Chattrapati Sambhajinagar",
-      "avgPrice": 3162,
-      "records": 396
+      "avgPrice": 3167,
+      "records": 398
     },
     {
       "district": "Ahilyanagar",
       "nameHi": "Ahilyanagar",
-      "avgPrice": 3539,
-      "records": 376
+      "avgPrice": 3538,
+      "records": 377
     },
     {
       "district": "Nanded",
@@ -788,8 +821,8 @@
     {
       "district": "Dharashiv",
       "nameHi": "Dharashiv",
-      "avgPrice": 4140,
-      "records": 282
+      "avgPrice": 4153,
+      "records": 283
     },
     {
       "district": "Dhule",
@@ -806,8 +839,8 @@
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 5090,
-      "records": 225
+      "avgPrice": 5102,
+      "records": 226
     },
     {
       "district": "Akola",

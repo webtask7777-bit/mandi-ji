@@ -50,12 +50,37 @@
       "mandis": 5
     },
     {
+      "month": "07",
+      "date": "2026-07",
+      "market": 5000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 5075,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
+    },
+    {
       "month": "10",
       "date": "2026-10",
       "market": 6000,
       "volume": 5,
       "days": 5,
       "mandis": 3,
+      "msp": 8450
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1,
       "msp": 8450
     }
   ],
@@ -861,15 +886,15 @@
       "maxPrice": 10000
     },
     {
-      "date": "2026-10-29",
-      "market": 6750,
+      "date": "2026-11-07",
+      "market": 6500,
       "volume": 1,
       "mandis": 1,
-      "minPrice": 6500,
+      "minPrice": 6000,
       "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Vellore",
@@ -886,8 +911,8 @@
     {
       "district": "Krishnagiri",
       "nameHi": "Krishnagiri",
-      "avgPrice": 4613,
-      "records": 190
+      "avgPrice": 4623,
+      "records": 191
     },
     {
       "district": "Thiruvannamalai",

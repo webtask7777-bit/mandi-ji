@@ -53,6 +53,14 @@
       "volume": 9,
       "days": 9,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -191,15 +199,23 @@
       "mandis": 1,
       "minPrice": 5500,
       "maxPrice": 5500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 6000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Khargone",
       "nameHi": "Khargone",
-      "avgPrice": 4917,
-      "records": 12
+      "avgPrice": 5000,
+      "records": 13
     },
     {
       "district": "Neemuch",

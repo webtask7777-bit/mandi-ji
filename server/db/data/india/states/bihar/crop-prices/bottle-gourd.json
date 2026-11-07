@@ -45,6 +45,14 @@
       "volume": 70,
       "days": 22,
       "mandis": 10
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3000,
+      "volume": 6,
+      "days": 1,
+      "mandis": 6
     }
   ],
   "dailyHistory": [
@@ -967,21 +975,29 @@
       "mandis": 4,
       "minPrice": 1199.99988,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3000,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 2000,
+      "maxPrice": 3700
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Sheikhpura",
       "nameHi": "Sheikhpura",
-      "avgPrice": 2667,
-      "records": 211
+      "avgPrice": 2676,
+      "records": 213
     },
     {
       "district": "Gaya",
       "nameHi": "Gaya",
-      "avgPrice": 753,
-      "records": 57
+      "avgPrice": 792,
+      "records": 58
     },
     {
       "district": "Khagaria",
@@ -992,14 +1008,14 @@
     {
       "district": "Buxar",
       "nameHi": "Buxar",
-      "avgPrice": 1836,
-      "records": 24
+      "avgPrice": 1842,
+      "records": 25
     },
     {
       "district": "Aurangabad",
       "nameHi": "Aurangabad",
-      "avgPrice": 2090,
-      "records": 21
+      "avgPrice": 2105,
+      "records": 22
     },
     {
       "district": "Banka",
@@ -1035,6 +1051,12 @@
       "district": "Saharsa",
       "nameHi": "Saharsa",
       "avgPrice": 1600,
+      "records": 1
+    },
+    {
+      "district": "Samastipur",
+      "nameHi": "Samastipur",
+      "avgPrice": 3000,
       "records": 1
     }
   ]

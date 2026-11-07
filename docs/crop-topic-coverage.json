@@ -4,11 +4,11 @@
   "purpose": "Editorial discovery taxonomy audit of every distinct source commodity ID. This is not a botanical certification, a price merge, or an instruction to publish a page for every topic.",
   "sourceScope": "All crops.json and ticker.json plus crop-prices/*.json crop headers recursively under server/db/data (India, CG and individual states).",
   "sourceFileCount": 2862,
-  "commodityCount": 395,
+  "commodityCount": 391,
   "topicCount": 165,
   "statusCounts": {
-    "identity-review": 78,
-    "curated-crop-topic": 275,
+    "identity-review": 76,
+    "curated-crop-topic": 273,
     "mixed-or-unspecified": 27,
     "non-crop": 15
   },
@@ -240,16 +240,6 @@
       "reason": "Unverified regional label; no botanical assignment."
     },
     {
-      "commodityId": "asgand",
-      "sourceNames": [
-        "Asgand"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/asgand.json",
-      "status": "identity-review",
-      "topicId": null,
-      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
-    },
-    {
       "commodityId": "ashgourd",
       "sourceNames": [
         "Ashgourd"
@@ -262,7 +252,8 @@
     {
       "commodityId": "ashwagandha",
       "sourceNames": [
-        "Ashwagandha"
+        "Ashwagandha",
+        "Asgand"
       ],
       "sourceExample": "server/db/data/india/crop-prices/ashwagandha.json",
       "status": "curated-crop-topic",
@@ -1382,7 +1373,8 @@
     {
       "commodityId": "elephant-yamsuran-amorphophallus",
       "sourceNames": [
-        "Elephant Yam(Suran)/Amorphophallus"
+        "Elephant Yam(Suran)/Amorphophallus",
+        "Suvarna Gadde"
       ],
       "sourceExample": "server/db/data/india/crop-prices/elephant-yamsuran-amorphophallus.json",
       "status": "curated-crop-topic",
@@ -2437,16 +2429,6 @@
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
-      "commodityId": "mashrooms",
-      "sourceNames": [
-        "Mashrooms"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/mashrooms.json",
-      "status": "curated-crop-topic",
-      "topicId": "mushroom",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
       "commodityId": "masoor",
       "sourceNames": [
         "Masoor"
@@ -2579,7 +2561,8 @@
     {
       "commodityId": "mushroom",
       "sourceNames": [
-        "Mushroom"
+        "Mushroom",
+        "Mashrooms"
       ],
       "sourceExample": "server/db/data/india/crop-prices/mushroom.json",
       "status": "curated-crop-topic",
@@ -2627,19 +2610,10 @@
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
     },
     {
-      "commodityId": "nigella",
-      "sourceNames": [
-        "nigella"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/nigella.json",
-      "status": "curated-crop-topic",
-      "topicId": "nigella",
-      "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
       "commodityId": "nigella-seeds",
       "sourceNames": [
-        "nigella seeds"
+        "nigella seeds",
+        "nigella"
       ],
       "sourceExample": "server/db/data/india/crop-prices/nigella-seeds.json",
       "status": "curated-crop-topic",
@@ -3586,16 +3560,6 @@
       "status": "curated-crop-topic",
       "topicId": "dill",
       "reason": "Exact catalog label or explicitly curated equivalent; grouping is for editorial discovery only. Retain the source commodity name, form, price and regional context."
-    },
-    {
-      "commodityId": "suvarna-gadde",
-      "sourceNames": [
-        "Suvarna Gadde"
-      ],
-      "sourceExample": "server/db/data/india/crop-prices/suvarna-gadde.json",
-      "status": "identity-review",
-      "topicId": null,
-      "reason": "Regional, abbreviated or insufficiently specific market label; confirm with the source market and a botanical/crop reference before assigning."
     },
     {
       "commodityId": "sweet-corn",

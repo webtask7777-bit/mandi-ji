@@ -69,6 +69,14 @@
       "volume": 34,
       "days": 18,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -895,15 +903,23 @@
       "mandis": 2,
       "minPrice": 2000,
       "maxPrice": 5500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Surat",
       "nameHi": "Surat",
-      "avgPrice": 5117,
-      "records": 98
+      "avgPrice": 5101,
+      "records": 99
     },
     {
       "district": "Ahmedabad",

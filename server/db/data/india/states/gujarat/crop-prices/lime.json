@@ -69,6 +69,14 @@
       "volume": 17,
       "days": 17,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2100,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -703,15 +711,23 @@
       "mandis": 1,
       "minPrice": 3500,
       "maxPrice": 3750
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2100,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 2200
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Mehsana",
       "nameHi": "Mehsana",
-      "avgPrice": 3221,
-      "records": 79
+      "avgPrice": 3207,
+      "records": 80
     }
   ]
 }

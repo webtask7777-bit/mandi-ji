@@ -69,6 +69,14 @@
       "volume": 32,
       "days": 19,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 410,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -799,15 +807,23 @@
       "mandis": 1,
       "minPrice": 390,
       "maxPrice": 420
+    },
+    {
+      "date": "2026-11-07",
+      "market": 410,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 400,
+      "maxPrice": 440
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Bhadradri Kothagudem",
       "nameHi": "Bhadradri Kothagudem",
       "avgPrice": 407,
-      "records": 140
+      "records": 142
     },
     {
       "district": "Khammam",

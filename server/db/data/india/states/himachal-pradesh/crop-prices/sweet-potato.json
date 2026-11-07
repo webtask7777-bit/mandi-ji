@@ -13,6 +13,14 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -23,15 +31,23 @@
       "mandis": 1,
       "minPrice": 4500,
       "maxPrice": 4500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 5000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Una",
       "nameHi": "Una",
-      "avgPrice": 4500,
-      "records": 1
+      "avgPrice": 4750,
+      "records": 2
     }
   ]
 }

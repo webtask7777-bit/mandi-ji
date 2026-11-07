@@ -13,6 +13,14 @@
       "volume": 10,
       "days": 7,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5000,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -71,21 +79,29 @@
       "mandis": 2,
       "minPrice": 2000,
       "maxPrice": 7000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 5000,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2000,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Porbandar",
       "nameHi": "Porbandar",
-      "avgPrice": 9571,
-      "records": 7
+      "avgPrice": 9063,
+      "records": 8
     },
     {
       "district": "Rajkot",
       "nameHi": "Rajkot",
       "avgPrice": 4500,
-      "records": 3
+      "records": 4
     }
   ]
 }

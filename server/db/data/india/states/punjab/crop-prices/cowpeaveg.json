@@ -45,6 +45,14 @@
       "volume": 47,
       "days": 17,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5100,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -719,15 +727,23 @@
       "mandis": 2,
       "minPrice": 2000,
       "maxPrice": 3800
+    },
+    {
+      "date": "2026-11-07",
+      "market": 5100,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 5200
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Sangrur",
       "nameHi": "Sangrur",
-      "avgPrice": 3541,
-      "records": 159
+      "avgPrice": 3551,
+      "records": 160
     },
     {
       "district": "Muktsar",

@@ -10,6 +10,38 @@
   },
   "history": [
     {
+      "month": "03",
+      "date": "2026-03",
+      "market": 5740,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 6377,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 10105,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 9864,
+      "volume": 3,
+      "days": 2,
+      "mandis": 2
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 7370,
@@ -40,6 +72,15 @@
       "volume": 286,
       "days": 19,
       "mandis": 68,
+      "msp": 7517
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6315,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2,
       "msp": 7517
     }
   ],
@@ -779,15 +820,23 @@
       "mandis": 14,
       "minPrice": 4500,
       "maxPrice": 17400.5
+    },
+    {
+      "date": "2026-11-07",
+      "market": 6315,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 5600,
+      "maxPrice": 7100
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Jhansi",
       "nameHi": "Jhansi",
-      "avgPrice": 5912,
-      "records": 106
+      "avgPrice": 5909,
+      "records": 107
     },
     {
       "district": "Shahjahanpur",
@@ -804,8 +853,8 @@
     {
       "district": "Mahoba",
       "nameHi": "Mahoba",
-      "avgPrice": 6714,
-      "records": 79
+      "avgPrice": 6718,
+      "records": 80
     },
     {
       "district": "Lucknow",

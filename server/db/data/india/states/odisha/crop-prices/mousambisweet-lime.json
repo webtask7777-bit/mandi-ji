@@ -21,6 +21,14 @@
       "volume": 2,
       "days": 2,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3400,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -55,15 +63,23 @@
       "mandis": 1,
       "minPrice": 3300,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3300,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Gajapati",
       "nameHi": "Gajapati",
-      "avgPrice": 2900,
-      "records": 4
+      "avgPrice": 3000,
+      "records": 5
     }
   ]
 }

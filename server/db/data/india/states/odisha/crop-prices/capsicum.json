@@ -85,6 +85,14 @@
       "volume": 2,
       "days": 2,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3350,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -1335,9 +1343,17 @@
       "mandis": 1,
       "minPrice": 5500,
       "maxPrice": 5500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3350,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2700,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Sundergarh",
@@ -1391,6 +1407,12 @@
       "district": "Khurda",
       "nameHi": "Khurda",
       "avgPrice": 3800,
+      "records": 1
+    },
+    {
+      "district": "Kalahandi",
+      "nameHi": "Kalahandi",
+      "avgPrice": 3350,
       "records": 1
     }
   ]

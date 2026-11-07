@@ -61,6 +61,14 @@
       "volume": 196,
       "days": 22,
       "mandis": 16
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3500,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -1015,15 +1023,23 @@
       "mandis": 7,
       "minPrice": 2800,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3500,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 3400,
+      "maxPrice": 3600
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Hooghly",
       "nameHi": "Hooghly",
       "avgPrice": 3400,
-      "records": 487
+      "records": 489
     },
     {
       "district": "Jalpaiguri",

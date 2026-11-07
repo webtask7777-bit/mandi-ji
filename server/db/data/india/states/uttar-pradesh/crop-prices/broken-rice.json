@@ -7,6 +7,14 @@
   },
   "history": [
     {
+      "month": "05",
+      "date": "2026-05",
+      "market": 2003,
+      "volume": 6,
+      "days": 5,
+      "mandis": 6
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 1957,
@@ -37,6 +45,14 @@
       "volume": 82,
       "days": 19,
       "mandis": 27
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1925,
+      "volume": 4,
+      "days": 1,
+      "mandis": 4
     }
   ],
   "dailyHistory": [
@@ -839,15 +855,23 @@
       "mandis": 2,
       "minPrice": 2200,
       "maxPrice": 2350
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1925,
+      "volume": 4,
+      "mandis": 4,
+      "minPrice": 1600,
+      "maxPrice": 2300
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Bahraich",
       "nameHi": "Bahraich",
-      "avgPrice": 2041,
-      "records": 64
+      "avgPrice": 2034,
+      "records": 65
     },
     {
       "district": "Shahjahanpur",
@@ -858,8 +882,8 @@
     {
       "district": "Barabanki",
       "nameHi": "Barabanki",
-      "avgPrice": 2271,
-      "records": 32
+      "avgPrice": 2272,
+      "records": 33
     },
     {
       "district": "Sitapur",
@@ -882,8 +906,8 @@
     {
       "district": "Lucknow",
       "nameHi": "Lucknow",
-      "avgPrice": 1933,
-      "records": 25
+      "avgPrice": 1935,
+      "records": 26
     },
     {
       "district": "Jaunpur",
@@ -906,8 +930,8 @@
     {
       "district": "Prayagraj",
       "nameHi": "Prayagraj",
-      "avgPrice": 1742,
-      "records": 19
+      "avgPrice": 1747,
+      "records": 20
     },
     {
       "district": "Mirzapur",

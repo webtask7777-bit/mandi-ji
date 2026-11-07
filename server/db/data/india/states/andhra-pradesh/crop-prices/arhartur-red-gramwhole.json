@@ -89,6 +89,15 @@
       "days": 23,
       "mandis": 10,
       "msp": 8450
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 8475,
+      "volume": 8,
+      "days": 1,
+      "mandis": 8,
+      "msp": 8450
     }
   ],
   "dailyHistory": [
@@ -1523,21 +1532,29 @@
       "mandis": 7,
       "minPrice": 5700,
       "maxPrice": 9500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 8475,
+      "volume": 8,
+      "mandis": 8,
+      "minPrice": 5800,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Ananthapuramu",
       "nameHi": "Ananthapuramu",
-      "avgPrice": 6492,
-      "records": 225
+      "avgPrice": 6504,
+      "records": 228
     },
     {
       "district": "Markapuram",
       "nameHi": "Markapuram",
-      "avgPrice": 8428,
-      "records": 189
+      "avgPrice": 8429,
+      "records": 191
     },
     {
       "district": "Kurnool",
@@ -1548,8 +1565,8 @@
     {
       "district": "Palnadu",
       "nameHi": "Palnadu",
-      "avgPrice": 8296,
-      "records": 158
+      "avgPrice": 8308,
+      "records": 160
     },
     {
       "district": "Nandyal",
@@ -1562,6 +1579,12 @@
       "nameHi": "Guntur",
       "avgPrice": 7644,
       "records": 4
+    },
+    {
+      "district": "Sri Sathya Sai",
+      "nameHi": "Sri Sathya Sai",
+      "avgPrice": 8200,
+      "records": 1
     }
   ]
 }

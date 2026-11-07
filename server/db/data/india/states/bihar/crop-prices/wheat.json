@@ -53,6 +53,15 @@
       "days": 21,
       "mandis": 6,
       "msp": 2585
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2680,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3,
+      "msp": 2585
     }
   ],
   "dailyHistory": [
@@ -895,15 +904,23 @@
       "mandis": 2,
       "minPrice": 2400,
       "maxPrice": 2500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2680,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 2550,
+      "maxPrice": 2950
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Sheikhpura",
       "nameHi": "Sheikhpura",
-      "avgPrice": 2588,
-      "records": 204
+      "avgPrice": 2589,
+      "records": 206
     },
     {
       "district": "Kishanganj",
@@ -918,15 +935,15 @@
       "records": 2
     },
     {
+      "district": "Aurangabad",
+      "nameHi": "Aurangabad",
+      "avgPrice": 2675,
+      "records": 2
+    },
+    {
       "district": "Luckeesarai",
       "nameHi": "Luckeesarai",
       "avgPrice": 2500,
-      "records": 1
-    },
-    {
-      "district": "Aurangabad",
-      "nameHi": "Aurangabad",
-      "avgPrice": 2600,
       "records": 1
     }
   ]

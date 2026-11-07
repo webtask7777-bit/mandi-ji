@@ -69,6 +69,14 @@
       "volume": 10,
       "days": 6,
       "mandis": 4
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4500,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -559,15 +567,23 @@
       "mandis": 3,
       "minPrice": 4000,
       "maxPrice": 5800
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4500,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 3000,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Kangra",
       "nameHi": "Kangra",
-      "avgPrice": 4610,
-      "records": 107
+      "avgPrice": 4602,
+      "records": 110
     },
     {
       "district": "Una",

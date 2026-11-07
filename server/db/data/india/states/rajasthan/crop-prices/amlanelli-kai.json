@@ -69,6 +69,14 @@
       "volume": 19,
       "days": 16,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -735,15 +743,23 @@
       "mandis": 1,
       "minPrice": 2200,
       "maxPrice": 2400
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 2500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Udaipur",
       "nameHi": "Udaipur",
-      "avgPrice": 3120,
-      "records": 66
+      "avgPrice": 3110,
+      "records": 67
     },
     {
       "district": "Ganganagar",

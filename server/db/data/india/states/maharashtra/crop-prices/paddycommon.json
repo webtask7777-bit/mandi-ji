@@ -73,6 +73,15 @@
       "days": 22,
       "mandis": 18,
       "msp": 2441
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3067,
+      "volume": 13,
+      "days": 1,
+      "mandis": 10,
+      "msp": 2441
     }
   ],
   "dailyHistory": [
@@ -867,39 +876,47 @@
       "mandis": 16,
       "minPrice": 1650,
       "maxPrice": 4700
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3067,
+      "volume": 13,
+      "mandis": 10,
+      "minPrice": 2100,
+      "maxPrice": 4650
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Chandrapur",
       "nameHi": "Chandrapur",
-      "avgPrice": 3433,
-      "records": 592
+      "avgPrice": 3435,
+      "records": 596
     },
     {
       "district": "Gadchiroli",
       "nameHi": "Gadchiroli",
       "avgPrice": 3036,
-      "records": 461
+      "records": 465
     },
     {
       "district": "Gondiya",
       "nameHi": "Gondiya",
       "avgPrice": 2707,
-      "records": 258
+      "records": 260
     },
     {
       "district": "Raigad",
       "nameHi": "Raigad",
-      "avgPrice": 2408,
-      "records": 138
+      "avgPrice": 2409,
+      "records": 139
     },
     {
       "district": "Bhandara",
       "nameHi": "Bhandara",
-      "avgPrice": 2519,
-      "records": 124
+      "avgPrice": 2523,
+      "records": 126
     }
   ]
 }

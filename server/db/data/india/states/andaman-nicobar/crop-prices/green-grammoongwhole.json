@@ -73,6 +73,15 @@
       "days": 15,
       "mandis": 1,
       "msp": 8780
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 9500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1,
+      "msp": 8780
     }
   ],
   "dailyHistory": [
@@ -771,15 +780,23 @@
       "mandis": 1,
       "minPrice": 8000,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 9500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 8000,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "North and Middle Andaman",
       "nameHi": "North and Middle Andaman",
       "avgPrice": 9500,
-      "records": 87
+      "records": 88
     }
   ]
 }

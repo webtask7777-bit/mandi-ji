@@ -37,6 +37,14 @@
       "volume": 13,
       "days": 9,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3700,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -215,9 +223,17 @@
       "mandis": 2,
       "minPrice": 2500,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3700,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2200,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Koraput",
@@ -228,8 +244,8 @@
     {
       "district": "Gajapati",
       "nameHi": "Gajapati",
-      "avgPrice": 3483,
-      "records": 6
+      "avgPrice": 3686,
+      "records": 7
     },
     {
       "district": "Ganjam",
@@ -242,6 +258,12 @@
       "nameHi": "Angul",
       "avgPrice": 2717,
       "records": 3
+    },
+    {
+      "district": "Mayurbhanja",
+      "nameHi": "Mayurbhanja",
+      "avgPrice": 2600,
+      "records": 2
     },
     {
       "district": "Bolangir",
@@ -259,12 +281,6 @@
       "district": "Nuapada",
       "nameHi": "Nuapada",
       "avgPrice": 4000,
-      "records": 1
-    },
-    {
-      "district": "Mayurbhanja",
-      "nameHi": "Mayurbhanja",
-      "avgPrice": 2700,
       "records": 1
     }
   ]

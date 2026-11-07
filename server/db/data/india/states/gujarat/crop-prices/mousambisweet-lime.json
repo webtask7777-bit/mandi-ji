@@ -69,6 +69,14 @@
       "volume": 68,
       "days": 21,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2500,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -1095,21 +1103,29 @@
       "mandis": 3,
       "minPrice": 2000,
       "maxPrice": 4500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2500,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 1500,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Rajkot",
       "nameHi": "Rajkot",
-      "avgPrice": 2694,
-      "records": 97
+      "avgPrice": 2692,
+      "records": 98
     },
     {
       "district": "Porbandar",
       "nameHi": "Porbandar",
-      "avgPrice": 3458,
-      "records": 95
+      "avgPrice": 3456,
+      "records": 96
     },
     {
       "district": "Banaskanth",
@@ -1127,7 +1143,7 @@
       "district": "Bharuch",
       "nameHi": "Bharuch",
       "avgPrice": 2000,
-      "records": 13
+      "records": 14
     }
   ]
 }

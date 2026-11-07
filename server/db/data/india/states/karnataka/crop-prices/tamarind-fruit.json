@@ -61,6 +61,14 @@
       "volume": 22,
       "days": 13,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 13750,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -703,15 +711,23 @@
       "mandis": 1,
       "minPrice": 11000,
       "maxPrice": 16000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 13750,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 11000,
+      "maxPrice": 16500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
-      "avgPrice": 11395,
-      "records": 62
+      "avgPrice": 11433,
+      "records": 63
     },
     {
       "district": "Tumakuru",

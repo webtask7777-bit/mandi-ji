@@ -31,6 +31,14 @@
       "mandis": 6
     },
     {
+      "month": "06",
+      "date": "2026-06",
+      "market": 5000,
+      "volume": 4,
+      "days": 2,
+      "mandis": 3
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 7500,
@@ -61,6 +69,14 @@
       "volume": 199,
       "days": 21,
       "mandis": 18
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 7000,
+      "volume": 9,
+      "days": 1,
+      "mandis": 9
     }
   ],
   "dailyHistory": [
@@ -911,39 +927,47 @@
       "mandis": 10,
       "minPrice": 5000,
       "maxPrice": 11000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 7000,
+      "volume": 9,
+      "mandis": 9,
+      "minPrice": 3500,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Sangrur",
       "nameHi": "Sangrur",
       "avgPrice": 6969,
-      "records": 179
+      "records": 180
     },
     {
       "district": "Ludhiana",
       "nameHi": "Ludhiana",
-      "avgPrice": 6203,
-      "records": 168
+      "avgPrice": 6220,
+      "records": 171
     },
     {
       "district": "Jalandhar",
       "nameHi": "Jalandhar",
-      "avgPrice": 7397,
-      "records": 143
+      "avgPrice": 7374,
+      "records": 145
     },
     {
       "district": "Fatehgarh",
       "nameHi": "Fatehgarh",
-      "avgPrice": 9240,
-      "records": 139
+      "avgPrice": 9225,
+      "records": 140
     },
     {
       "district": "Patiala",
       "nameHi": "Patiala",
-      "avgPrice": 8261,
-      "records": 69
+      "avgPrice": 8243,
+      "records": 70
     },
     {
       "district": "Fazilka",
@@ -954,8 +978,8 @@
     {
       "district": "Mohali",
       "nameHi": "Mohali",
-      "avgPrice": 8767,
-      "records": 58
+      "avgPrice": 8720,
+      "records": 59
     },
     {
       "district": "Kapurthala",

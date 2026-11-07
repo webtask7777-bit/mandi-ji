@@ -23,6 +23,33 @@
   ],
   "headers": [
     {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/(visuals|brand|icons|geo|editorial)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
       "source": "/sw.js",
       "headers": [
         {
@@ -688,6 +715,46 @@
     {
       "source": "/mandi-bhav/:state/urad",
       "destination": "/mandi-bhav/:state/black-gramurd-beanswhole",
+      "permanent": true
+    },
+    {
+      "source": "/crop/mashrooms",
+      "destination": "/crop/mushroom",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/mashrooms",
+      "destination": "/mandi-bhav/:state/mushroom",
+      "permanent": true
+    },
+    {
+      "source": "/crop/nigella",
+      "destination": "/crop/nigella-seeds",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/nigella",
+      "destination": "/mandi-bhav/:state/nigella-seeds",
+      "permanent": true
+    },
+    {
+      "source": "/crop/asgand",
+      "destination": "/crop/ashwagandha",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/asgand",
+      "destination": "/mandi-bhav/:state/ashwagandha",
+      "permanent": true
+    },
+    {
+      "source": "/crop/suvarna-gadde",
+      "destination": "/crop/elephant-yamsuran-amorphophallus",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bhav/:state/suvarna-gadde",
+      "destination": "/mandi-bhav/:state/elephant-yamsuran-amorphophallus",
       "permanent": true
     }
   ],

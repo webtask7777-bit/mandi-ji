@@ -26,6 +26,22 @@
       "mandis": 7
     },
     {
+      "month": "05",
+      "date": "2026-05",
+      "market": 4754,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 4550,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 7660,
@@ -56,6 +72,15 @@
       "volume": 223,
       "days": 19,
       "mandis": 34,
+      "msp": 8780
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 7975,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3,
       "msp": 8780
     }
   ],
@@ -747,15 +772,23 @@
       "mandis": 8,
       "minPrice": 1115,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 7975,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 2009,
+      "maxPrice": 12500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Gadag",
       "nameHi": "Gadag",
       "avgPrice": 7926,
-      "records": 282
+      "records": 284
     },
     {
       "district": "Kalaburagi",
@@ -796,8 +829,8 @@
     {
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
-      "avgPrice": 10196,
-      "records": 69
+      "avgPrice": 10200,
+      "records": 70
     },
     {
       "district": "Yadgir",

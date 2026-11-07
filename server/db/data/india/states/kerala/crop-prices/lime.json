@@ -69,6 +69,14 @@
       "volume": 47,
       "days": 19,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 9050,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -1071,15 +1079,23 @@
       "mandis": 1,
       "minPrice": 5000,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 9050,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 6000,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Palakad",
       "nameHi": "Palakad",
-      "avgPrice": 9913,
-      "records": 303
+      "avgPrice": 9908,
+      "records": 305
     }
   ]
 }

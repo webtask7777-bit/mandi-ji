@@ -85,6 +85,14 @@
       "volume": 16,
       "days": 16,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 8200,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -895,15 +903,23 @@
       "mandis": 1,
       "minPrice": 8000,
       "maxPrice": 9900
+    },
+    {
+      "date": "2026-11-07",
+      "market": 8200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 7000,
+      "maxPrice": 8900
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Rayagada",
       "nameHi": "Rayagada",
-      "avgPrice": 7169,
-      "records": 83
+      "avgPrice": 7182,
+      "records": 84
     },
     {
       "district": "Ganjam",

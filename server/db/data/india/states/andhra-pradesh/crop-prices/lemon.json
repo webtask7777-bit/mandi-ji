@@ -69,6 +69,14 @@
       "volume": 45,
       "days": 18,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 9000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -807,15 +815,23 @@
       "mandis": 2,
       "minPrice": 3000,
       "maxPrice": 10400
+    },
+    {
+      "date": "2026-11-07",
+      "market": 9000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 13800
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Eluru",
       "nameHi": "Eluru",
-      "avgPrice": 9281,
-      "records": 219
+      "avgPrice": 9280,
+      "records": 220
     },
     {
       "district": "Guntur",

@@ -69,6 +69,14 @@
       "volume": 14,
       "days": 11,
       "mandis": 4
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 20000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -807,15 +815,23 @@
       "mandis": 2,
       "minPrice": 8000,
       "maxPrice": 20000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 20000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 20000,
+      "maxPrice": 20000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 6716,
-      "records": 234
+      "avgPrice": 6772,
+      "records": 235
     },
     {
       "district": "Sonipat",

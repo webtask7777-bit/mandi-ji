@@ -55,6 +55,14 @@
       "mandis": 16
     },
     {
+      "month": "06",
+      "date": "2026-06",
+      "market": 6000,
+      "volume": 4,
+      "days": 2,
+      "mandis": 3
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 4500,
@@ -85,6 +93,14 @@
       "volume": 73,
       "days": 22,
       "mandis": 14
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6000,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -1759,21 +1775,29 @@
       "mandis": 4,
       "minPrice": 6000,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 6000,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 5000,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 5436,
-      "records": 254
+      "avgPrice": 5443,
+      "records": 255
     },
     {
       "district": "Kurukshetra",
       "nameHi": "Kurukshetra",
-      "avgPrice": 4341,
-      "records": 208
+      "avgPrice": 4344,
+      "records": 209
     },
     {
       "district": "Mahendragarh-Narnaul",

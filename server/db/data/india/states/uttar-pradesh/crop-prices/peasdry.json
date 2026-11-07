@@ -23,6 +23,14 @@
       "mandis": 15
     },
     {
+      "month": "06",
+      "date": "2026-06",
+      "market": 3812,
+      "volume": 5,
+      "days": 3,
+      "mandis": 5
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 3922,
@@ -53,6 +61,14 @@
       "volume": 273,
       "days": 19,
       "mandis": 46
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3090,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -879,15 +895,23 @@
       "mandis": 14,
       "minPrice": 2300,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3090,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2800,
+      "maxPrice": 3650
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Jalaun (Orai)",
       "nameHi": "Jalaun (Orai)",
-      "avgPrice": 3391,
-      "records": 363
+      "avgPrice": 3390,
+      "records": 365
     },
     {
       "district": "Hamirpur",

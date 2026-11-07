@@ -37,6 +37,14 @@
       "volume": 11,
       "days": 7,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1350,
+      "volume": 6,
+      "days": 1,
+      "mandis": 6
     }
   ],
   "dailyHistory": [
@@ -135,15 +143,29 @@
       "mandis": 3,
       "minPrice": 1500,
       "maxPrice": 3800
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1350,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 500,
+      "maxPrice": 2800
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Tarntaran",
       "nameHi": "Tarntaran",
-      "avgPrice": 2983,
-      "records": 9
+      "avgPrice": 2735,
+      "records": 10
+    },
+    {
+      "district": "Hoshiarpur",
+      "nameHi": "Hoshiarpur",
+      "avgPrice": 2625,
+      "records": 4
     },
     {
       "district": "Ludhiana",
@@ -152,10 +174,10 @@
       "records": 3
     },
     {
-      "district": "Hoshiarpur",
-      "nameHi": "Hoshiarpur",
-      "avgPrice": 2750,
-      "records": 2
+      "district": "Jalandhar",
+      "nameHi": "Jalandhar",
+      "avgPrice": 1633,
+      "records": 3
     },
     {
       "district": "Kapurthala",
@@ -164,9 +186,9 @@
       "records": 1
     },
     {
-      "district": "Jalandhar",
-      "nameHi": "Jalandhar",
-      "avgPrice": 2500,
+      "district": "Sangrur",
+      "nameHi": "Sangrur",
+      "avgPrice": 1200,
       "records": 1
     }
   ]

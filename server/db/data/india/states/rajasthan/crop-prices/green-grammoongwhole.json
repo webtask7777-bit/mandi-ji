@@ -18,12 +18,28 @@
       "mandis": 7
     },
     {
+      "month": "04",
+      "date": "2026-04",
+      "market": 4850,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
+    },
+    {
       "month": "05",
       "date": "2026-05",
       "market": 6700,
       "volume": 7,
       "days": 5,
       "mandis": 6
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 6520,
+      "volume": 4,
+      "days": 3,
+      "mandis": 4
     },
     {
       "month": "07",
@@ -56,6 +72,15 @@
       "volume": 594,
       "days": 21,
       "mandis": 65,
+      "msp": 8780
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 7800,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3,
       "msp": 8780
     }
   ],
@@ -747,9 +772,17 @@
       "mandis": 12,
       "minPrice": 5000,
       "maxPrice": 8451
+    },
+    {
+      "date": "2026-11-07",
+      "market": 7800,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 6500,
+      "maxPrice": 8200
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Ganganagar",
@@ -760,8 +793,8 @@
     {
       "district": "Hanumangarh",
       "nameHi": "Hanumangarh",
-      "avgPrice": 7433,
-      "records": 315
+      "avgPrice": 7435,
+      "records": 316
     },
     {
       "district": "Bikaner",
@@ -772,8 +805,8 @@
     {
       "district": "Nagaur",
       "nameHi": "Nagaur",
-      "avgPrice": 7339,
-      "records": 150
+      "avgPrice": 7342,
+      "records": 151
     },
     {
       "district": "Jodhpur",
@@ -806,16 +839,16 @@
       "records": 82
     },
     {
+      "district": "Churu",
+      "nameHi": "Churu",
+      "avgPrice": 6514,
+      "records": 71
+    },
+    {
       "district": "Bundi",
       "nameHi": "Bundi",
       "avgPrice": 6357,
       "records": 71
-    },
-    {
-      "district": "Churu",
-      "nameHi": "Churu",
-      "avgPrice": 6502,
-      "records": 70
     },
     {
       "district": "Pali",

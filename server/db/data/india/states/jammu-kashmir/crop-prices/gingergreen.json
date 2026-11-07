@@ -93,6 +93,14 @@
       "volume": 45,
       "days": 19,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6000,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -1503,9 +1511,17 @@
       "mandis": 3,
       "minPrice": 5000,
       "maxPrice": 9000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 6000,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 5000,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Srinagar",
@@ -1516,14 +1532,14 @@
     {
       "district": "Kathua",
       "nameHi": "Kathua",
-      "avgPrice": 8671,
-      "records": 129
+      "avgPrice": 8654,
+      "records": 130
     },
     {
       "district": "Jammu",
       "nameHi": "Jammu",
-      "avgPrice": 7091,
-      "records": 91
+      "avgPrice": 7074,
+      "records": 92
     }
   ]
 }

@@ -31,6 +31,14 @@
       "mandis": 4
     },
     {
+      "month": "06",
+      "date": "2026-06",
+      "market": 750,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 1000,
@@ -61,6 +69,14 @@
       "volume": 228,
       "days": 22,
       "mandis": 23
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 900,
+      "volume": 6,
+      "days": 1,
+      "mandis": 6
     }
   ],
   "dailyHistory": [
@@ -839,15 +855,23 @@
       "mandis": 8,
       "minPrice": 300,
       "maxPrice": 2110
+    },
+    {
+      "date": "2026-11-07",
+      "market": 900,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 300,
+      "maxPrice": 2200
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Indore",
       "nameHi": "Indore",
-      "avgPrice": 810,
-      "records": 167
+      "avgPrice": 807,
+      "records": 168
     },
     {
       "district": "Sagar",
@@ -870,8 +894,8 @@
     {
       "district": "Khargone",
       "nameHi": "Khargone",
-      "avgPrice": 1085,
-      "records": 98
+      "avgPrice": 1084,
+      "records": 99
     },
     {
       "district": "Ujjain",
@@ -882,8 +906,8 @@
     {
       "district": "Sehore",
       "nameHi": "Sehore",
-      "avgPrice": 2288,
-      "records": 84
+      "avgPrice": 2271,
+      "records": 85
     },
     {
       "district": "Chhindwara",
@@ -912,20 +936,20 @@
     {
       "district": "Morena",
       "nameHi": "Morena",
-      "avgPrice": 1238,
-      "records": 55
+      "avgPrice": 1230,
+      "records": 56
     },
     {
       "district": "Jhabua",
       "nameHi": "Jhabua",
-      "avgPrice": 1131,
-      "records": 52
+      "avgPrice": 1134,
+      "records": 53
     },
     {
       "district": "Harda",
       "nameHi": "Harda",
-      "avgPrice": 1405,
-      "records": 29
+      "avgPrice": 1397,
+      "records": 30
     },
     {
       "district": "Ratlam",

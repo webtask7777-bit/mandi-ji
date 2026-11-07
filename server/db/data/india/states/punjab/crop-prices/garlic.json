@@ -85,6 +85,14 @@
       "volume": 404,
       "days": 22,
       "mandis": 45
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 11000,
+      "volume": 9,
+      "days": 1,
+      "mandis": 9
     }
   ],
   "dailyHistory": [
@@ -1487,15 +1495,23 @@
       "mandis": 12,
       "minPrice": 7000,
       "maxPrice": 15000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 11000,
+      "volume": 9,
+      "mandis": 9,
+      "minPrice": 4000,
+      "maxPrice": 14000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Ludhiana",
       "nameHi": "Ludhiana",
-      "avgPrice": 7570,
-      "records": 415
+      "avgPrice": 7587,
+      "records": 418
     },
     {
       "district": "Patiala",
@@ -1518,20 +1534,20 @@
     {
       "district": "Hoshiarpur",
       "nameHi": "Hoshiarpur",
-      "avgPrice": 10988,
-      "records": 249
+      "avgPrice": 10992,
+      "records": 251
     },
     {
       "district": "Jalandhar",
       "nameHi": "Jalandhar",
-      "avgPrice": 8546,
-      "records": 247
+      "avgPrice": 8538,
+      "records": 248
     },
     {
       "district": "Fatehgarh",
       "nameHi": "Fatehgarh",
-      "avgPrice": 10796,
-      "records": 210
+      "avgPrice": 10797,
+      "records": 211
     },
     {
       "district": "Fazilka",
@@ -1554,8 +1570,8 @@
     {
       "district": "Gurdaspur",
       "nameHi": "Gurdaspur",
-      "avgPrice": 7908,
-      "records": 153
+      "avgPrice": 7928,
+      "records": 154
     },
     {
       "district": "Kapurthala",
@@ -1578,8 +1594,8 @@
     {
       "district": "Bhatinda",
       "nameHi": "Bhatinda",
-      "avgPrice": 11489,
-      "records": 47
+      "avgPrice": 11500,
+      "records": 48
     }
   ]
 }

@@ -45,6 +45,14 @@
       "volume": 50,
       "days": 19,
       "mandis": 11
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1300,
+      "volume": 4,
+      "days": 1,
+      "mandis": 4
     }
   ],
   "dailyHistory": [
@@ -399,21 +407,35 @@
       "mandis": 4,
       "minPrice": 1500,
       "maxPrice": 4500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1300,
+      "volume": 4,
+      "mandis": 4,
+      "minPrice": 600,
+      "maxPrice": 2200
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Sangrur",
       "nameHi": "Sangrur",
-      "avgPrice": 2812,
-      "records": 38
+      "avgPrice": 2794,
+      "records": 39
     },
     {
       "district": "Tarntaran",
       "nameHi": "Tarntaran",
-      "avgPrice": 2725,
-      "records": 10
+      "avgPrice": 2550,
+      "records": 11
+    },
+    {
+      "district": "Jalandhar",
+      "nameHi": "Jalandhar",
+      "avgPrice": 2700,
+      "records": 9
     },
     {
       "district": "Muktsar",
@@ -426,12 +448,6 @@
       "nameHi": "Mohali",
       "avgPrice": 5133,
       "records": 9
-    },
-    {
-      "district": "Jalandhar",
-      "nameHi": "Jalandhar",
-      "avgPrice": 3100,
-      "records": 7
     },
     {
       "district": "Patiala",

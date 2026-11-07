@@ -69,6 +69,14 @@
       "volume": 84,
       "days": 21,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1825,
+      "volume": 4,
+      "days": 1,
+      "mandis": 4
     }
   ],
   "dailyHistory": [
@@ -1119,27 +1127,35 @@
       "mandis": 4,
       "minPrice": 1000,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1825,
+      "volume": 4,
+      "mandis": 4,
+      "minPrice": 800,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Dahod",
       "nameHi": "Dahod",
-      "avgPrice": 1963,
-      "records": 124
+      "avgPrice": 1972,
+      "records": 125
     },
     {
       "district": "Surat",
       "nameHi": "Surat",
-      "avgPrice": 2328,
-      "records": 100
+      "avgPrice": 2322,
+      "records": 101
     },
     {
       "district": "Vadodara(Baroda)",
       "nameHi": "Vadodara(Baroda)",
-      "avgPrice": 1553,
-      "records": 95
+      "avgPrice": 1557,
+      "records": 96
     },
     {
       "district": "Ahmedabad",
@@ -1150,8 +1166,8 @@
     {
       "district": "Kheda",
       "nameHi": "Kheda",
-      "avgPrice": 926,
-      "records": 60
+      "avgPrice": 925,
+      "records": 61
     }
   ]
 }

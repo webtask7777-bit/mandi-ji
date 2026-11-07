@@ -81,6 +81,15 @@
       "days": 22,
       "mandis": 112,
       "msp": 8200
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 9300,
+      "volume": 7,
+      "days": 1,
+      "mandis": 7,
+      "msp": 8200
     }
   ],
   "dailyHistory": [
@@ -1507,21 +1516,29 @@
       "mandis": 23,
       "minPrice": 6000,
       "maxPrice": 12500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 9300,
+      "volume": 7,
+      "mandis": 7,
+      "minPrice": 7000,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Solapur",
       "nameHi": "Solapur",
-      "avgPrice": 7334,
-      "records": 705
+      "avgPrice": 7337,
+      "records": 706
     },
     {
       "district": "Ahilyanagar",
       "nameHi": "Ahilyanagar",
-      "avgPrice": 7222,
-      "records": 516
+      "avgPrice": 7230,
+      "records": 518
     },
     {
       "district": "Buldhana",
@@ -1544,8 +1561,8 @@
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 8880,
-      "records": 271
+      "avgPrice": 8887,
+      "records": 272
     },
     {
       "district": "Amarawati",
@@ -1568,8 +1585,8 @@
     {
       "district": "Mumbai",
       "nameHi": "Mumbai",
-      "avgPrice": 9911,
-      "records": 154
+      "avgPrice": 9917,
+      "records": 155
     },
     {
       "district": "Beed",
@@ -1598,8 +1615,8 @@
     {
       "district": "Chattrapati Sambhajinagar",
       "nameHi": "Chattrapati Sambhajinagar",
-      "avgPrice": 7828,
-      "records": 98
+      "avgPrice": 7820,
+      "records": 99
     }
   ]
 }

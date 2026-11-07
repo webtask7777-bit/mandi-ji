@@ -69,6 +69,14 @@
       "volume": 30,
       "days": 17,
       "mandis": 4
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3000,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -911,15 +919,23 @@
       "mandis": 3,
       "minPrice": 1800,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3000,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1500,
+      "maxPrice": 4500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Durg (छत्तीसगढ़)",
       "nameHi": "Durg (छत्तीसगढ़)",
-      "avgPrice": 4601,
-      "records": 89
+      "avgPrice": 4594,
+      "records": 90
     },
     {
       "district": "Raigarh (छत्तीसगढ़)",
@@ -936,8 +952,8 @@
     {
       "district": "Khairagarh Chhuikhadan Gandai (छत्तीसगढ़)",
       "nameHi": "Khairagarh Chhuikhadan Gandai (छत्तीसगढ़)",
-      "avgPrice": 3733,
-      "records": 27
+      "avgPrice": 3671,
+      "records": 28
     }
   ]
 }

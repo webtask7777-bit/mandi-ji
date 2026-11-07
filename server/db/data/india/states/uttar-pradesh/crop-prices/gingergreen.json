@@ -93,6 +93,14 @@
       "volume": 455,
       "days": 19,
       "mandis": 80
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6000,
+      "volume": 5,
+      "days": 1,
+      "mandis": 5
     }
   ],
   "dailyHistory": [
@@ -1815,9 +1823,17 @@
       "mandis": 23,
       "minPrice": 2600,
       "maxPrice": 9800
+    },
+    {
+      "date": "2026-11-07",
+      "market": 6000,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 5000,
+      "maxPrice": 6300
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Bulandshahar",
@@ -1841,13 +1857,13 @@
       "district": "Agra",
       "nameHi": "Agra",
       "avgPrice": 5045,
-      "records": 274
+      "records": 275
     },
     {
       "district": "Jhansi",
       "nameHi": "Jhansi",
-      "avgPrice": 7107,
-      "records": 249
+      "avgPrice": 7101,
+      "records": 250
     },
     {
       "district": "Ghaziabad",
@@ -1882,8 +1898,8 @@
     {
       "district": "Mathura",
       "nameHi": "Mathura",
-      "avgPrice": 6696,
-      "records": 112
+      "avgPrice": 6690,
+      "records": 113
     },
     {
       "district": "Gonda",
@@ -1907,7 +1923,7 @@
       "district": "Prayagraj",
       "nameHi": "Prayagraj",
       "avgPrice": 6020,
-      "records": 92
+      "records": 93
     }
   ]
 }

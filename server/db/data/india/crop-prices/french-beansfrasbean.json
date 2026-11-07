@@ -93,6 +93,14 @@
       "volume": 1256,
       "days": 23,
       "mandis": 123
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5500,
+      "volume": 44,
+      "days": 1,
+      "mandis": 44
     }
   ],
   "dailyHistory": [
@@ -1791,57 +1799,65 @@
       "mandis": 39,
       "minPrice": 1200,
       "maxPrice": 9500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 5500,
+      "volume": 44,
+      "mandis": 44,
+      "minPrice": 1500,
+      "maxPrice": 12123.65
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Hyderabad (तेलंगाना)",
       "nameHi": "Hyderabad (तेलंगाना)",
       "avgPrice": 4827,
-      "records": 880
+      "records": 886
     },
     {
       "district": "Palakad (केरल)",
       "nameHi": "Palakad (केरल)",
-      "avgPrice": 6874,
-      "records": 817
+      "avgPrice": 6876,
+      "records": 819
     },
     {
       "district": "Kangra (हिमाचल प्रदेश)",
       "nameHi": "Kangra (हिमाचल प्रदेश)",
-      "avgPrice": 5683,
-      "records": 756
+      "avgPrice": 5684,
+      "records": 761
     },
     {
       "district": "Mandi (हिमाचल प्रदेश)",
       "nameHi": "Mandi (हिमाचल प्रदेश)",
-      "avgPrice": 4477,
-      "records": 523
+      "avgPrice": 4481,
+      "records": 526
     },
     {
       "district": "Kullu (हिमाचल प्रदेश)",
       "nameHi": "Kullu (हिमाचल प्रदेश)",
-      "avgPrice": 4142,
-      "records": 476
+      "avgPrice": 4147,
+      "records": 477
     },
     {
       "district": "Kozhikode(Calicut) (केरल)",
       "nameHi": "Kozhikode(Calicut) (केरल)",
-      "avgPrice": 6050,
-      "records": 398
+      "avgPrice": 6065,
+      "records": 400
     },
     {
       "district": "Solan (हिमाचल प्रदेश)",
       "nameHi": "Solan (हिमाचल प्रदेश)",
-      "avgPrice": 3787,
-      "records": 385
+      "avgPrice": 3788,
+      "records": 386
     },
     {
       "district": "Alappuzha (केरल)",
       "nameHi": "Alappuzha (केरल)",
-      "avgPrice": 6750,
-      "records": 311
+      "avgPrice": 6763,
+      "records": 313
     },
     {
       "district": "Idukki (केरल)",
@@ -1852,20 +1868,20 @@
     {
       "district": "Shimla (हिमाचल प्रदेश)",
       "nameHi": "Shimla (हिमाचल प्रदेश)",
-      "avgPrice": 3728,
-      "records": 273
-    },
-    {
-      "district": "Hamirpur (हिमाचल प्रदेश)",
-      "nameHi": "Hamirpur (हिमाचल प्रदेश)",
-      "avgPrice": 6364,
-      "records": 272
+      "avgPrice": 3726,
+      "records": 274
     },
     {
       "district": "Ranga Reddy (तेलंगाना)",
       "nameHi": "Ranga Reddy (तेलंगाना)",
-      "avgPrice": 6094,
-      "records": 271
+      "avgPrice": 6086,
+      "records": 274
+    },
+    {
+      "district": "Hamirpur (हिमाचल प्रदेश)",
+      "nameHi": "Hamirpur (हिमाचल प्रदेश)",
+      "avgPrice": 6366,
+      "records": 273
     },
     {
       "district": "Malappuram (केरल)",
@@ -1882,8 +1898,8 @@
     {
       "district": "Jalandhar (पंजाब)",
       "nameHi": "Jalandhar (पंजाब)",
-      "avgPrice": 3428,
-      "records": 239
+      "avgPrice": 3430,
+      "records": 240
     }
   ]
 }

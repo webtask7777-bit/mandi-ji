@@ -45,6 +45,14 @@
       "volume": 20,
       "days": 20,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4800,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -895,15 +903,23 @@
       "mandis": 1,
       "minPrice": 5000,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4800,
+      "maxPrice": 4800
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Puri",
       "nameHi": "Puri",
-      "avgPrice": 6240,
-      "records": 106
+      "avgPrice": 6226,
+      "records": 107
     }
   ]
 }

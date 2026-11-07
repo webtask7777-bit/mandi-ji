@@ -85,6 +85,14 @@
       "volume": 252,
       "days": 23,
       "mandis": 23
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1350,
+      "volume": 7,
+      "days": 1,
+      "mandis": 7
     }
   ],
   "dailyHistory": [
@@ -1703,33 +1711,41 @@
       "mandis": 12,
       "minPrice": 1200,
       "maxPrice": 2250
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1350,
+      "volume": 7,
+      "mandis": 7,
+      "minPrice": 800,
+      "maxPrice": 2200
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Bulandshahar",
       "nameHi": "Bulandshahar",
-      "avgPrice": 1650,
-      "records": 585
+      "avgPrice": 1651,
+      "records": 586
     },
     {
       "district": "Amroha",
       "nameHi": "Amroha",
-      "avgPrice": 1930,
-      "records": 217
+      "avgPrice": 1928,
+      "records": 218
+    },
+    {
+      "district": "Raebarelli",
+      "nameHi": "Raebarelli",
+      "avgPrice": 1260,
+      "records": 206
     },
     {
       "district": "Saharanpur",
       "nameHi": "Saharanpur",
       "avgPrice": 1516,
       "records": 206
-    },
-    {
-      "district": "Raebarelli",
-      "nameHi": "Raebarelli",
-      "avgPrice": 1261,
-      "records": 205
     },
     {
       "district": "Mau(Maunathbhanjan)",
@@ -1764,8 +1780,8 @@
     {
       "district": "Baghpat",
       "nameHi": "Baghpat",
-      "avgPrice": 1207,
-      "records": 152
+      "avgPrice": 1209,
+      "records": 153
     },
     {
       "district": "Sonbhadra",
@@ -1776,8 +1792,8 @@
     {
       "district": "Shamli",
       "nameHi": "Shamli",
-      "avgPrice": 1259,
-      "records": 149
+      "avgPrice": 1257,
+      "records": 150
     },
     {
       "district": "Mathura",
@@ -1794,8 +1810,8 @@
     {
       "district": "Khiri (Lakhimpur)",
       "nameHi": "Khiri (Lakhimpur)",
-      "avgPrice": 1440,
-      "records": 135
+      "avgPrice": 1438,
+      "records": 136
     }
   ]
 }

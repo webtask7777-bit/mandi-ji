@@ -10,6 +10,38 @@
   },
   "history": [
     {
+      "month": "03",
+      "date": "2026-03",
+      "market": 6250,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 7076,
+      "volume": 2,
+      "days": 2,
+      "mandis": 1
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 4400,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "06",
+      "date": "2026-06",
+      "market": 7500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 6384,
@@ -40,6 +72,15 @@
       "volume": 200,
       "days": 21,
       "mandis": 28,
+      "msp": 7517
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 7325,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2,
       "msp": 7517
     }
   ],
@@ -699,15 +740,23 @@
       "mandis": 8,
       "minPrice": 5600,
       "maxPrice": 9500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 7325,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 7200,
+      "maxPrice": 7600
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Bikaner",
       "nameHi": "Bikaner",
-      "avgPrice": 6925,
-      "records": 97
+      "avgPrice": 6929,
+      "records": 98
     },
     {
       "district": "Chittorgarh",

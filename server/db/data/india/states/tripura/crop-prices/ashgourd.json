@@ -93,6 +93,14 @@
       "volume": 24,
       "days": 20,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3300,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -1303,15 +1311,23 @@
       "mandis": 1,
       "minPrice": 3000,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3300,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Dhalai",
       "nameHi": "Dhalai",
       "avgPrice": 3342,
-      "records": 102
+      "records": 103
     },
     {
       "district": "South Tripura",

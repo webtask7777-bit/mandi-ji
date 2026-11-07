@@ -69,6 +69,14 @@
       "volume": 104,
       "days": 22,
       "mandis": 8
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 10438,
+      "volume": 5,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -1015,15 +1023,23 @@
       "mandis": 1,
       "minPrice": 8500,
       "maxPrice": 9200
+    },
+    {
+      "date": "2026-11-07",
+      "market": 10438,
+      "volume": 5,
+      "mandis": 2,
+      "minPrice": 8000,
+      "maxPrice": 17500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Thiruvananthapuram",
       "nameHi": "Thiruvananthapuram",
-      "avgPrice": 12145,
-      "records": 231
+      "avgPrice": 12131,
+      "records": 235
     },
     {
       "district": "Malappuram",
@@ -1040,8 +1056,8 @@
     {
       "district": "Kozhikode(Calicut)",
       "nameHi": "Kozhikode(Calicut)",
-      "avgPrice": 9001,
-      "records": 86
+      "avgPrice": 9007,
+      "records": 87
     }
   ]
 }

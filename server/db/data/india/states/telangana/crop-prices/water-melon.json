@@ -69,6 +69,14 @@
       "volume": 26,
       "days": 21,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -895,15 +903,23 @@
       "mandis": 1,
       "minPrice": 200,
       "maxPrice": 500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 300,
+      "maxPrice": 800
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Ranga Reddy",
       "nameHi": "Ranga Reddy",
-      "avgPrice": 404,
-      "records": 96
+      "avgPrice": 405,
+      "records": 97
     },
     {
       "district": "Warangal",

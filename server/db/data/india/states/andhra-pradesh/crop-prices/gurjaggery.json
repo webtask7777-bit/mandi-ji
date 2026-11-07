@@ -31,14 +31,6 @@
       "mandis": 2
     },
     {
-      "month": "06",
-      "date": "2026-06",
-      "market": 3000,
-      "volume": 2,
-      "days": 2,
-      "mandis": 1
-    },
-    {
       "month": "07",
       "date": "2026-07",
       "market": 2922,
@@ -69,6 +61,14 @@
       "volume": 162,
       "days": 24,
       "mandis": 7
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2900,
+      "volume": 8,
+      "days": 1,
+      "mandis": 6
     }
   ],
   "dailyHistory": [
@@ -895,33 +895,41 @@
       "mandis": 6,
       "minPrice": 1400,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2900,
+      "volume": 8,
+      "mandis": 6,
+      "minPrice": 1491.63,
+      "maxPrice": 9400
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Chittor",
       "nameHi": "Chittor",
-      "avgPrice": 2403,
-      "records": 239
+      "avgPrice": 2405,
+      "records": 241
     },
     {
       "district": "Anakapally",
       "nameHi": "Anakapally",
-      "avgPrice": 5191,
-      "records": 212
+      "avgPrice": 5206,
+      "records": 215
     },
     {
       "district": "Tirupathi",
       "nameHi": "Tirupathi",
-      "avgPrice": 2332,
-      "records": 149
+      "avgPrice": 2328,
+      "records": 151
     },
     {
       "district": "Annamayya",
       "nameHi": "Annamayya",
-      "avgPrice": 5291,
-      "records": 83
+      "avgPrice": 5299,
+      "records": 84
     }
   ]
 }

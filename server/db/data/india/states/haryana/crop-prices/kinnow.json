@@ -23,6 +23,14 @@
       "mandis": 6
     },
     {
+      "month": "05",
+      "date": "2026-05",
+      "market": 14000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
       "month": "09",
       "date": "2026-09",
       "market": 2431,
@@ -37,6 +45,14 @@
       "volume": 59,
       "days": 19,
       "mandis": 7
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -399,15 +415,23 @@
       "mandis": 3,
       "minPrice": 1400,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1600,
+      "maxPrice": 2200
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Kurukshetra",
       "nameHi": "Kurukshetra",
-      "avgPrice": 2503,
-      "records": 71
+      "avgPrice": 2496,
+      "records": 72
     },
     {
       "district": "Ambala",

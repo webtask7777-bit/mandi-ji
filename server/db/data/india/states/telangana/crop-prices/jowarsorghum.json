@@ -73,6 +73,15 @@
       "days": 12,
       "mandis": 8,
       "msp": 4023
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2200,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3,
+      "msp": 4023
     }
   ],
   "dailyHistory": [
@@ -635,15 +644,23 @@
       "mandis": 2,
       "minPrice": 2000,
       "maxPrice": 2905
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2200,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 2000,
+      "maxPrice": 2230
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Nirmal",
       "nameHi": "Nirmal",
-      "avgPrice": 2386,
-      "records": 45
+      "avgPrice": 2383,
+      "records": 46
     },
     {
       "district": "Sangareddy",
@@ -679,13 +696,13 @@
       "district": "Adilabad",
       "nameHi": "Adilabad",
       "avgPrice": 2100,
-      "records": 2
+      "records": 3
     },
     {
       "district": "Siddipet",
       "nameHi": "Siddipet",
       "avgPrice": 2200,
-      "records": 1
+      "records": 2
     }
   ]
 }

@@ -69,6 +69,14 @@
       "volume": 577,
       "days": 23,
       "mandis": 30
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 14500,
+      "volume": 24,
+      "days": 1,
+      "mandis": 24
     }
   ],
   "dailyHistory": [
@@ -1023,27 +1031,41 @@
       "mandis": 23,
       "minPrice": 6000,
       "maxPrice": 18000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 14500,
+      "volume": 24,
+      "mandis": 24,
+      "minPrice": 8000,
+      "maxPrice": 18000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T15:08:04.256Z",
   "districtBreakdown": [
     {
       "district": "Salem",
       "nameHi": "Salem",
-      "avgPrice": 14496,
-      "records": 481
+      "avgPrice": 14503,
+      "records": 486
     },
     {
       "district": "Thiruvannamalai",
       "nameHi": "Thiruvannamalai",
-      "avgPrice": 11311,
-      "records": 309
+      "avgPrice": 11323,
+      "records": 312
     },
     {
       "district": "Krishnagiri",
       "nameHi": "Krishnagiri",
-      "avgPrice": 11367,
-      "records": 244
+      "avgPrice": 11390,
+      "records": 246
+    },
+    {
+      "district": "Dharmapuri",
+      "nameHi": "Dharmapuri",
+      "avgPrice": 11437,
+      "records": 238
     },
     {
       "district": "Nagercoil (Kannyiakumari)",
@@ -1052,46 +1074,40 @@
       "records": 238
     },
     {
-      "district": "Dharmapuri",
-      "nameHi": "Dharmapuri",
-      "avgPrice": 11438,
-      "records": 236
-    },
-    {
       "district": "Nagapattinam",
       "nameHi": "Nagapattinam",
-      "avgPrice": 13958,
-      "records": 201
+      "avgPrice": 13962,
+      "records": 202
     },
     {
       "district": "Tiruvarur",
       "nameHi": "Tiruvarur",
-      "avgPrice": 15885,
-      "records": 148
+      "avgPrice": 15886,
+      "records": 149
     },
     {
       "district": "Vellore",
       "nameHi": "Vellore",
-      "avgPrice": 14186,
-      "records": 132
+      "avgPrice": 14190,
+      "records": 134
     },
     {
       "district": "Dindigul",
       "nameHi": "Dindigul",
-      "avgPrice": 13778,
-      "records": 117
+      "avgPrice": 13784,
+      "records": 118
     },
     {
       "district": "Madurai",
       "nameHi": "Madurai",
-      "avgPrice": 14372,
-      "records": 113
+      "avgPrice": 14368,
+      "records": 114
     },
     {
       "district": "Namakkal",
       "nameHi": "Namakkal",
       "avgPrice": 14009,
-      "records": 111
+      "records": 112
     },
     {
       "district": "Pudukkottai",
@@ -1102,20 +1118,20 @@
     {
       "district": "Thiruchirappalli",
       "nameHi": "Thiruchirappalli",
-      "avgPrice": 17198,
-      "records": 106
+      "avgPrice": 17206,
+      "records": 107
     },
     {
       "district": "Kannyiakumari",
       "nameHi": "Kannyiakumari",
-      "avgPrice": 14179,
-      "records": 105
+      "avgPrice": 14175,
+      "records": 107
     },
     {
       "district": "Thirupathur",
       "nameHi": "Thirupathur",
-      "avgPrice": 8323,
-      "records": 62
+      "avgPrice": 8349,
+      "records": 63
     }
   ]
 }
