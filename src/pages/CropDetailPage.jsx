@@ -92,13 +92,15 @@ export default function CropDetailPage() {
     .filter(row => Number(row.records) > 0).sort((a, b) => Number(b.records) - Number(a.records));
   const maxDistrictRecords = Math.max(...districts.map(row => Number(row.records)), 1);
   const msp = positive(heroRecord?.msp) ? Number(heroRecord.msp) : positive(crop.msp) ? Number(crop.msp) : null;
+  // "Paddy(Common)" reads badly in a title, and some Hindi names already carry their English.
+  const titleEnglish = /[(A-Za-z]/.test(cropName) ? '' : String(crop.name || '').replace(/\s*\(.*$/, '').trim();
   const openDeliveryCalculator = payload => navigate('/delivery-calculator', { state: { deliveryScenario: {
     ...payload, id: globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`,
   } } });
 
   return (
     <div className="sb-detail-page">
-      <SEO title={`${cropName}${crop.name && crop.name !== cropName ? ` (${crop.name})` : ''} का मंडी भाव — ${stateNameHi}${heroPrice !== null ? ` · ${quoteLabel}` : ''}`}
+      <SEO title={`${cropName}${titleEnglish ? ` (${titleEnglish})` : ''} का मंडी भाव — ${stateNameHi}${heroPrice !== null ? ` · ${quoteLabel}` : ''}`}
         description={`${stateNameHi} में ${cropName} का आख़िरी दर्ज मंडी भाव${heroPrice !== null ? `: ₹${money(heroPrice)}/क्विंटल, ${quoteLabel}` : ''}। हर मंडी का रेट, भाव का इतिहास और मंडी तुलना देखें। रिकॉर्ड की तारीख जाँचकर सौदे का भाव मंडी से पुष्टि करें।`}
         path={cropDetailPath(cropId, stateParam)} noIndex={unavailable || priceNoIndex}
         structuredData={cropName && !unavailable ? { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
