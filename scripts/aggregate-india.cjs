@@ -100,6 +100,11 @@ const COMMODITY_ALIASES = {
   'Antawala': 'Soapnut(Antawala/Retha)',
   'Thinai(Italian Millet)': 'Foxtail Millet(Navane)',
   'Hippe Seed': 'Mahua Seed(Hippe seed)',
+  // The same crop filed twice; prices of each pair sit in the same range.
+  'Mashrooms': 'Mushroom',
+  'nigella': 'nigella seeds',
+  'Asgand': 'Ashwagandha',
+  'Suvarna Gadde': 'Elephant Yam(Suran)/Amorphophallus',
 };
 
 // Commodities the source reports per piece, bunch, nut or animal (betelnut ₹4, lotus ₹8,
