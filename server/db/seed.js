@@ -348,5 +348,5 @@ for (const [key, value] of Object.entries(data)) {
   console.log(`  ✅ ${key}.json — ${Array.isArray(value) ? value.length + ' records' : Object.keys(value).length + ' entries'}`);
 }
 
-console.log('\n🌾 MandiJi database seeded successfully!');
+console.log('\n🌾 SahiBhav database seeded successfully!');
 console.log(`   📁 Data saved to: ${DATA_DIR}`);

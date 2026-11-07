@@ -1,0 +1,11 @@
+/* फसल सलाह card on crop price pages (kept apart so crop pages do not load the whole Fasal Salah CSS). */
+.sb-crop-kcc { margin-top: 24px; }
+.sb-crop-kcc ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; }
+.sb-crop-kcc li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; font-size: 13.5px; }
+.sb-crop-kcc li .sb-salah-meter { grid-column: 1 / -1; }
+.sb-crop-kcc li strong { font-variant-numeric: tabular-nums; color: #5d6e60; font-size: 12.5px; }
+
+.sb-crop-kcc .sb-salah-meter { height: 6px; border-radius: 999px; background: #edf1e8; overflow: hidden; }
+.sb-crop-kcc .sb-salah-meter span { display: block; height: 100%; border-radius: inherit; background: #174c3c; }
+.sb-crop-kcc .sb-salah-kind { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 700; color: #5d6e60; background: #edf1e8; border-radius: 999px; padding: 3px 10px; }
+.sb-crop-kcc .sb-salah-muted { color: #65736a; font-size: 13px; }

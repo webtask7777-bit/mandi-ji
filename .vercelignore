@@ -1,3 +1,11 @@
 # Raw daily snapshots are needed at build time to regenerate comparison data.
 # Function tracing still excludes them in vercel.json.
 scraper/
+.cache/
+dist/
+dist-ssr/
+
+# Environment files (keys)
+.env
+.env.*
+!.env.example

@@ -3,7 +3,7 @@
   "outputDirectory": "dist",
   "functions": {
     "api/index.mjs": {
-      "includeFiles": "server/{**/*.js,db/data/*.json,db/data/crop-prices/*.json,db/data/india/**/*.json}",
+      "includeFiles": "server/{**/*.js,db/data/*.json,db/data/crop-prices/*.json,db/data/india/**/*.json,db/data/kcc/**/*.json,db/data/price-history/*.json}",
       "excludeFiles": "server/db/data/daily/**"
     },
     "api/page.mjs": {
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "source": "/api/(.*)",
+      "source": "/api/((?!kcc|price-history).*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -108,6 +108,28 @@
         {
           "type": "host",
           "value": "mandi-ji.vercel.app"
+        }
+      ],
+      "destination": "https://sahibhav.in/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "sahibhav.vercel.app"
+        }
+      ],
+      "destination": "https://sahibhav.in/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "sahibhav.vercel.app"
         }
       ],
       "destination": "https://sahibhav.in/:path*",
@@ -755,6 +777,11 @@
     {
       "source": "/mandi-bhav/:state/suvarna-gadde",
       "destination": "/mandi-bhav/:state/elephant-yamsuran-amorphophallus",
+      "permanent": true
+    },
+    {
+      "source": "/samasya-salah",
+      "destination": "/fasal-salah",
       "permanent": true
     }
   ],

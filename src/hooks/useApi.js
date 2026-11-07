@@ -5,7 +5,10 @@ import { useApiSnapshot } from '../context/ApiSnapshotContext';
 // Price data is read from files shipped in the same deployment as the prerendered
 // HTML, so a complete snapshot already equals the API response. CMS stays revalidated.
 const deploymentData = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compare|arbitrage|stats)(?:[/?]|$)/;
-const isFinalSnapshot = (path, entry) => !!entry && !entry.error && !entry.partial && !entry.omittedRows && deploymentData.test(path);
+// KCC summaries and price history change only with a deploy, so a recorded 404 ("no data for this
+// crop") is final too: asking again on every page view would only add a request.
+const deploymentOnly = /^\/(?:kcc|price-history)(?:[/?]|$)/;
+const isFinalSnapshot = (path, entry) => !!entry && !entry.partial && !entry.omittedRows && (deploymentOnly.test(path) || (!entry.error && deploymentData.test(path)));
 
 export function useApi(path) {
   const snapshot = useApiSnapshot();

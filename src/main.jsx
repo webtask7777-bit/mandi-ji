@@ -22,6 +22,7 @@ if (snapshotElement) {
   else if (/^\/blog\/.+/.test(path)) initialPage = { kind: 'article', Component: (await import('./pages/BlogArticlePage.jsx')).default };
   else if (/^\/[a-z]{2,3}\/mandi-bhav$/.test(path)) initialPage = { kind: 'language', Component: (await import('./pages/LanguageToolsPage.jsx')).default };
   else if (path === '/languages') initialPage = { kind: 'languages', Component: (await import('./pages/LanguagesPage.jsx')).default };
+  else if (/^\/fasal-salah(?:\/|$)/.test(path)) initialPage = { kind: 'fasal-salah', Component: (await import('./pages/FasalSalahPage.jsx')).default };
   else if (path === '/delivery-calculator') initialPage = { kind: 'delivery', Component: (await import('./pages/TransportPage.jsx')).default };
   else if (path === '/kisan-calendar') initialPage = { kind: 'calendar', Component: (await import('./pages/KisanCalendarPage.jsx')).default };
   else if (path === '/kisan-salah') initialPage = { kind: 'salah', Component: (await import('./pages/KisanSalahPage.jsx')).default };

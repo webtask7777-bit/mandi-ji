@@ -11,6 +11,8 @@ import { resolveSiteOrigin } from '../shared/siteOrigin.js';
 import { CROP_INDEX_RECENT_DAYS, cropIndexAnchorDate, getCropIndexability } from '../shared/cropIndexability.js';
 import { indexDeadline } from '../shared/seoLifecycle.js';
 import { BLOG_PAGE_SIZE, blogLibraryPath, parseBlogLibraryPath } from '../shared/blogPagination.js';
+import { leanKccCrop, leanKccPage, leanPriceHistory } from './lib/lean-snapshot.mjs';
+import { isKccPageIndexable } from '../shared/kccIndexability.js';
 import { buildMandiIndex, getMandiIndexability, mandiIndexAnchorDate, mandiPath, MANDI_INDEX_MAX_AGE_DAYS } from '../shared/mandiPages.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -27,11 +29,11 @@ const origin = `http://127.0.0.1:${server.address().port}`;
 const template = (await readFile(path.join(dist, 'index.html'), 'utf8'))
   .replace(/<title\b[^>]*>[\s\S]*?<\/title>/gi, '')
   .replace(/<meta\b[^>]*data-rh="true"[^>]*>/gi, '');
-const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compare|arbitrage|stats)(?:[/?]|$)|^\/cms\/(?:blog|banners|notifications)(?:[/?]|$)/;
+const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compare|arbitrage|stats|kcc|price-history)(?:[/?]|$)|^\/cms\/(?:blog|banners|notifications)(?:[/?]|$)/;
 const cache = new Map();
 const manifest = JSON.parse(await readFile(path.join(dist, '.vite/manifest.json'), 'utf8'));
 function routeAssets(route) {
-  const page = parseBlogLibraryPath(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : route.startsWith('/mandi/') ? 'MandiDetailPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : ({ '/kisan-calendar':'KisanCalendarPage', '/kisan-salah':'KisanSalahPage', '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
+  const page = parseBlogLibraryPath(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : route.startsWith('/mandi/') ? 'MandiDetailPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : /^\/fasal-salah(?:\/|$)/.test(route) ? 'FasalSalahPage' : ({ '/kisan-calendar':'KisanCalendarPage', '/kisan-salah':'KisanSalahPage', '/editorial-policy':'EditorialPolicyPage', '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
   const css = new Set();
   const seen = new Set();
   function visit(key) { if (seen.has(key)) return; seen.add(key); const entry = manifest[key]; if (!entry) return; (entry.css || []).forEach(file => css.add(file)); (entry.imports || []).forEach(visit); }
@@ -50,6 +52,16 @@ async function responseFor(request) {
     cache.set(request, response.ok ? { data: await response.json() } : { data: null, error: `API 404: ${request}` });
   }
   return cache.get(request);
+}
+// The new sections' rows stay behind the API; see scripts/lib/lean-snapshot.mjs.
+function leanEntry(request, entry) {
+  if (entry.error || !entry.data) return null;
+  if (request.startsWith('/price-history/')) return leanPriceHistory(entry.data, indexAsOf);
+  if (request.startsWith('/kcc/crop/')) return leanKccCrop(entry.data, indexAsOf);
+  if (request.startsWith('/kcc') && !request.includes('/qa')) return leanKccPage(entry.data, indexAsOf);
+  // फसल सलाह's guide list shows titles only.
+  if (request.startsWith('/cms/blog?slugs=')) return { ...entry, data: { ...entry.data, posts: entry.data.posts.map(({ slug, title }) => ({ slug, title })), facets: undefined } };
+  return null;
 }
 async function render(route) {
   const responses = {};
@@ -72,6 +84,7 @@ async function render(route) {
         const omittedRows = entry.data.filter(row => getMandiPriceBasis(row) !== 'recent' && getMandiPrice(row) !== null).length;
         if (current.length && omittedRows) entry = { data: current, omittedRows };
       }
+      entry = leanEntry(request, entry) || entry;
       responses[request] = entry;
     }
     if (pass === 4) throw new Error(`Unresolved public API requests: ${route}`);
@@ -105,7 +118,7 @@ async function writePage(route, html) {
 }
 try {
   await mkdir(generated, { recursive: true });
-  const routes = new Set(['/', '/kisan-calendar', '/kisan-salah', '/delivery-calculator', '/bechne-ka-hisab', '/data-status', '/about', '/contact', '/privacy', '/terms', '/blog', '/languages', ...SEARCH_LANGUAGES.map(item => languagePath(item.code))]);
+  const routes = new Set(['/', '/kisan-calendar', '/kisan-salah', '/delivery-calculator', '/bechne-ka-hisab', '/data-status', '/editorial-policy', '/about', '/contact', '/privacy', '/terms', '/blog', '/languages', ...SEARCH_LANGUAGES.map(item => languagePath(item.code))]);
   for (const code of EDITORIAL_LANGUAGE_CODES) if (code !== 'hi') routes.add(`/${code}/blog`);
   const knownCrops = new Set();
   // Sitemap <lastmod>: a price page changes when its newest record does; an article on its own update.
@@ -165,6 +178,31 @@ try {
       if (updated) lastmod.set(route, updated);
     }
   }
+  // फसल सलाह: every published page is rendered; only the ones the shared rule allows are offered
+  // to search. A sampled (development) build is rendered but never indexed.
+  const salahRoutes = ['/fasal-salah'];
+  try {
+    const kccMeta = JSON.parse(await readFile(path.join(root, 'server/db/data/kcc/meta.json'), 'utf8'));
+    const kccIndex = JSON.parse(await readFile(path.join(root, 'server/db/data/kcc/index.json'), 'utf8'));
+    // The pages show the current month, so they change at each month start as well as with new calls.
+    const monthStart = `${new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 7)}-01`;
+    const salahLastmod = [kccMeta.coverage?.newestCall, monthStart].filter(Boolean).sort().at(-1);
+    const offer = route => { routes.add(route); lastmod.set(route, salahLastmod); };
+    if (!kccMeta.sampled) offer('/fasal-salah');
+    for (const state of kccIndex.states) {
+      const route = `/fasal-salah/${state.id}`;
+      salahRoutes.push(route);
+      const summary = JSON.parse(await readFile(path.join(root, `server/db/data/kcc/states/${state.id}.json`), 'utf8'));
+      if (!kccMeta.sampled && isKccPageIndexable(summary, 'state')) offer(route);
+      for (const district of state.districts) {
+        salahRoutes.push(`${route}/${district.id}`);
+        if (!kccMeta.sampled && isKccPageIndexable(district, 'district')) offer(`${route}/${district.id}`);
+      }
+    }
+  } catch (error) {
+    // No KCC summaries built: the landing page still exists (noindex, "being prepared") for the footer link.
+    if (error.code !== 'ENOENT') throw error;
+  }
   let count = 0;
   for (const route of routes) {
     const html = await render(route);
@@ -176,6 +214,7 @@ try {
   }
   // Provisional translations are reachable, but are not indexed until their terminology is reviewed.
   for (const language of AVAILABLE_LANGUAGES.filter(item => !item.searchReady)) await writePage(languagePath(language.code), await render(languagePath(language.code)));
+  for (const route of salahRoutes) if (!routes.has(route)) await writePage(route, await render(route));
   // Empty or stale catalog entries remain usable but are not advertised to search engines.
   for (const route of knownCrops) if (!routes.has(route)) await writePage(route, await render(route));
   for (const route of knownMandis) await writePage(route, await render(route));

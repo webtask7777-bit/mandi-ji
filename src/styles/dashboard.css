@@ -71,7 +71,7 @@
 .sb-splash-icon { border-radius: 20px; box-shadow: 0 8px 30px #174c3c15; }
 .sb-splash-identity p { color: #64775e; font-size: 13px; }
 .sb-splash-progress { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: #174c3c; transform-origin: left; }
-.sb-dashboard button:focus-visible, .sb-dashboard a:focus-visible { outline: 3px solid #aabd88; outline-offset: 3px; }
+.sb-dashboard button:focus-visible, .sb-dashboard a:focus-visible { outline: 3px solid #2d614b; outline-offset: 3px; }
 @media (min-width: 768px) {
   .sb-state-picker { bottom: 5vh; max-height: 85vh; border-radius: 24px; }
 }
@@ -134,7 +134,7 @@
 }
 
 /* Clear task paths and a roomier small-screen shell. */
-.sb-task-shortcuts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 16px 32px 8px; }
+.sb-task-shortcuts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 16px 32px 8px; }
 .sb-task-shortcuts > :is(a, button) { display: flex; align-items: center; gap: 12px; min-height: 82px; padding: 16px; text-align: left; background: #fffdf8; color: #1b3027; border: 1px solid #dce3d7; border-radius: 16px; text-decoration: none; transition: border-color .18s, transform .18s, background .18s; }
 .sb-task-shortcuts > :is(a, button):hover { background: #eef3e8; border-color: #a1b79b; transform: translateY(-2px); }
 .sb-task-shortcuts .sb-task-number { font-size: 12px; font-weight: 700; color: #688066; font-variant-numeric: tabular-nums; align-self: flex-start; padding-top: 3px; }
@@ -142,6 +142,8 @@
 .sb-task-shortcuts small { display: block; margin-top: 3px; color: #647568; font-size: 12px; }
 .sb-task-shortcuts svg { margin-left: auto; color: #2d614b; flex-shrink: 0; }
 .sb-task-shortcuts > :last-child { background: #e7efde; border-color: #c2d2b7; }
+.sb-task-shortcuts > :last-child .sb-task-number { color: #4f654f; }
+.sb-task-shortcuts > :last-child small { color: #4d5d51; }
 .sb-calculator-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 32px; }
 .sb-calculator-page-heading { padding: 7px 0 24px; }
 .sb-calculator-page-heading h1 { font-size: clamp(25px, 3vw, 34px); line-height: 1.35; font-weight: 750; letter-spacing: -.025em; }
@@ -151,7 +153,7 @@
 .sb-navigation .sb-tab { white-space: nowrap; }
 .sb-cms-banner .sb-icon-button { width: 44px; height: 44px; min-height: 44px; }
 @media (max-width: 760px) {
-  .sb-task-shortcuts { margin-left: 18px; margin-right: 18px; gap: 8px; }
+  .sb-task-shortcuts { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-left: 18px; margin-right: 18px; gap: 8px; }
   .sb-task-shortcuts > :is(a, button) { padding: 13px 10px; flex-wrap: wrap; gap: 6px; }
   .sb-task-shortcuts .sb-task-number { flex-basis: calc(100% - 30px); order: 0; }
   .sb-task-shortcuts svg { order: 1; width: 17px; height: 17px; }
