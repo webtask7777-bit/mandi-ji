@@ -61,6 +61,14 @@
       "volume": 19,
       "days": 15,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 11000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -799,15 +807,23 @@
       "mandis": 1,
       "minPrice": 9800,
       "maxPrice": 11000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 11000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 10000,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
-      "avgPrice": 10260,
-      "records": 87
+      "avgPrice": 10269,
+      "records": 88
     },
     {
       "district": "Hassan",

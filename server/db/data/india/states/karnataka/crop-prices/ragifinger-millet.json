@@ -65,6 +65,15 @@
       "days": 20,
       "mandis": 39,
       "msp": 5205
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3367,
+      "volume": 10,
+      "days": 1,
+      "mandis": 10,
+      "msp": 5205
     }
   ],
   "dailyHistory": [
@@ -803,21 +812,29 @@
       "mandis": 11,
       "minPrice": 2756,
       "maxPrice": 5900
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3367,
+      "volume": 10,
+      "mandis": 10,
+      "minPrice": 2281,
+      "maxPrice": 5100
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Davangere",
       "nameHi": "Davangere",
-      "avgPrice": 3281,
-      "records": 163
+      "avgPrice": 3278,
+      "records": 166
     },
     {
       "district": "Vijayanagara",
       "nameHi": "Vijayanagara",
-      "avgPrice": 3338,
-      "records": 144
+      "avgPrice": 3339,
+      "records": 146
     },
     {
       "district": "Tumakuru",
@@ -846,14 +863,14 @@
     {
       "district": "Chamarajanagar",
       "nameHi": "Chamarajanagar",
-      "avgPrice": 3315,
-      "records": 75
+      "avgPrice": 3323,
+      "records": 76
     },
     {
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
-      "avgPrice": 5143,
-      "records": 69
+      "avgPrice": 5141,
+      "records": 70
     },
     {
       "district": "Mandya",
@@ -864,8 +881,8 @@
     {
       "district": "Haveri",
       "nameHi": "Haveri",
-      "avgPrice": 3247,
-      "records": 39
+      "avgPrice": 3253,
+      "records": 40
     },
     {
       "district": "Chikkamagaluru",
@@ -888,14 +905,14 @@
     {
       "district": "Bellary",
       "nameHi": "Bellary",
-      "avgPrice": 3230,
-      "records": 14
+      "avgPrice": 3241,
+      "records": 15
     },
     {
       "district": "Shivamogga",
       "nameHi": "Shivamogga",
-      "avgPrice": 3538,
-      "records": 12
+      "avgPrice": 3515,
+      "records": 13
     }
   ]
 }

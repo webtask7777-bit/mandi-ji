@@ -53,6 +53,14 @@
       "volume": 18,
       "days": 18,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -815,15 +823,23 @@
       "mandis": 1,
       "minPrice": 1500,
       "maxPrice": 7500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1000,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Nalgonda",
       "nameHi": "Nalgonda",
-      "avgPrice": 2667,
-      "records": 96
+      "avgPrice": 2665,
+      "records": 97
     }
   ]
 }

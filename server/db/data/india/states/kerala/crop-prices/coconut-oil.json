@@ -85,6 +85,14 @@
       "volume": 89,
       "days": 21,
       "mandis": 10
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 27650,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -1647,15 +1655,23 @@
       "mandis": 3,
       "minPrice": 25500,
       "maxPrice": 30000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 27650,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 26500,
+      "maxPrice": 28800
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Kannur",
       "nameHi": "Kannur",
-      "avgPrice": 30284,
-      "records": 478
+      "avgPrice": 30273,
+      "records": 480
     },
     {
       "district": "Kasargod",

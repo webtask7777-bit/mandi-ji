@@ -37,6 +37,14 @@
       "volume": 161,
       "days": 21,
       "mandis": 33
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2000,
+      "volume": 12,
+      "days": 1,
+      "mandis": 11
     }
   ],
   "dailyHistory": [
@@ -783,9 +791,17 @@
       "mandis": 17,
       "minPrice": 1000,
       "maxPrice": 4600
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2000,
+      "volume": 12,
+      "mandis": 11,
+      "minPrice": 700,
+      "maxPrice": 4600
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Madhubani",
@@ -796,8 +812,8 @@
     {
       "district": "Muzaffarpur",
       "nameHi": "Muzaffarpur",
-      "avgPrice": 5625,
-      "records": 82
+      "avgPrice": 5533,
+      "records": 84
     },
     {
       "district": "Khagaria",
@@ -808,8 +824,14 @@
     {
       "district": "Supaul",
       "nameHi": "Supaul",
-      "avgPrice": 7383,
-      "records": 23
+      "avgPrice": 7124,
+      "records": 25
+    },
+    {
+      "district": "East Champaran/ Motihari",
+      "nameHi": "East Champaran/ Motihari",
+      "avgPrice": 2719,
+      "records": 16
     },
     {
       "district": "Begusarai",
@@ -818,16 +840,10 @@
       "records": 15
     },
     {
-      "district": "East Champaran/ Motihari",
-      "nameHi": "East Champaran/ Motihari",
-      "avgPrice": 2847,
-      "records": 15
-    },
-    {
       "district": "Gaya",
       "nameHi": "Gaya",
-      "avgPrice": 5282,
-      "records": 11
+      "avgPrice": 5225,
+      "records": 12
     },
     {
       "district": "Samastipur",
@@ -844,7 +860,13 @@
     {
       "district": "Siwan",
       "nameHi": "Siwan",
-      "avgPrice": 4200,
+      "avgPrice": 3886,
+      "records": 7
+    },
+    {
+      "district": "Buxar",
+      "nameHi": "Buxar",
+      "avgPrice": 2526,
       "records": 6
     },
     {
@@ -854,16 +876,10 @@
       "records": 6
     },
     {
-      "district": "Buxar",
-      "nameHi": "Buxar",
-      "avgPrice": 2831,
-      "records": 5
-    },
-    {
       "district": "Kaimur/Bhabhua",
       "nameHi": "Kaimur/Bhabhua",
-      "avgPrice": 2881,
-      "records": 4
+      "avgPrice": 2900,
+      "records": 5
     },
     {
       "district": "Saharsa",
@@ -872,10 +888,10 @@
       "records": 3
     },
     {
-      "district": "Sheohar",
-      "nameHi": "Sheohar",
-      "avgPrice": 4450,
-      "records": 2
+      "district": "Bhagalpur",
+      "nameHi": "Bhagalpur",
+      "avgPrice": 2600,
+      "records": 3
     }
   ]
 }

@@ -77,6 +77,14 @@
       "volume": 13,
       "days": 13,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -983,15 +991,23 @@
       "mandis": 1,
       "minPrice": 3000,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Ambala",
       "nameHi": "Ambala",
-      "avgPrice": 3139,
-      "records": 109
+      "avgPrice": 3137,
+      "records": 110
     },
     {
       "district": "Karnal",

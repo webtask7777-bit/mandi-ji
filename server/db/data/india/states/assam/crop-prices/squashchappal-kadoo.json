@@ -69,6 +69,14 @@
       "volume": 26,
       "days": 22,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 905,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -983,15 +991,23 @@
       "mandis": 1,
       "minPrice": 1000,
       "maxPrice": 1500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 905,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 800,
+      "maxPrice": 1500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Kamrup",
       "nameHi": "Kamrup",
-      "avgPrice": 1885,
-      "records": 140
+      "avgPrice": 1871,
+      "records": 142
     },
     {
       "district": "Barpeta",

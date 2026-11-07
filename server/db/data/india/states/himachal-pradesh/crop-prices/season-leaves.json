@@ -37,6 +37,14 @@
       "volume": 19,
       "days": 15,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1100,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -191,15 +199,23 @@
       "mandis": 1,
       "minPrice": 1000,
       "maxPrice": 1600
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1100,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1000,
+      "maxPrice": 1200
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Una",
       "nameHi": "Una",
-      "avgPrice": 1613,
-      "records": 15
+      "avgPrice": 1581,
+      "records": 16
     },
     {
       "district": "Shimla",

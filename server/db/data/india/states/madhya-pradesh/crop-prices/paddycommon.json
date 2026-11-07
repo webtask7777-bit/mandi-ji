@@ -65,6 +65,15 @@
       "days": 22,
       "mandis": 87,
       "msp": 2441
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3991,
+      "volume": 62,
+      "days": 1,
+      "mandis": 34,
+      "msp": 2441
     }
   ],
   "dailyHistory": [
@@ -819,45 +828,53 @@
       "mandis": 60,
       "minPrice": 1000,
       "maxPrice": 5005
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3991,
+      "volume": 62,
+      "mandis": 34,
+      "minPrice": 1600,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Balaghat",
       "nameHi": "Balaghat",
-      "avgPrice": 2671,
-      "records": 454
+      "avgPrice": 2666,
+      "records": 460
     },
     {
       "district": "Mandla",
       "nameHi": "Mandla",
       "avgPrice": 2131,
-      "records": 403
+      "records": 407
     },
     {
       "district": "Dindori",
       "nameHi": "Dindori",
-      "avgPrice": 2138,
-      "records": 336
+      "avgPrice": 2139,
+      "records": 338
     },
     {
       "district": "Raisen",
       "nameHi": "Raisen",
-      "avgPrice": 3699,
-      "records": 324
+      "avgPrice": 3706,
+      "records": 327
     },
     {
       "district": "Gwalior",
       "nameHi": "Gwalior",
-      "avgPrice": 3675,
-      "records": 169
+      "avgPrice": 3685,
+      "records": 176
     },
     {
       "district": "Anupur",
       "nameHi": "Anupur",
       "avgPrice": 2104,
-      "records": 152
+      "records": 153
     },
     {
       "district": "Shehdol",
@@ -868,38 +885,38 @@
     {
       "district": "Narmadapuram",
       "nameHi": "Narmadapuram",
-      "avgPrice": 3631,
-      "records": 138
+      "avgPrice": 3673,
+      "records": 145
     },
     {
       "district": "Vidisha",
       "nameHi": "Vidisha",
-      "avgPrice": 3779,
-      "records": 130
+      "avgPrice": 3794,
+      "records": 132
     },
     {
       "district": "Sheopur",
       "nameHi": "Sheopur",
-      "avgPrice": 3766,
-      "records": 121
-    },
-    {
-      "district": "Jabalpur",
-      "nameHi": "Jabalpur",
-      "avgPrice": 2210,
-      "records": 114
+      "avgPrice": 3776,
+      "records": 123
     },
     {
       "district": "Datia",
       "nameHi": "Datia",
-      "avgPrice": 3470,
-      "records": 114
+      "avgPrice": 3494,
+      "records": 118
+    },
+    {
+      "district": "Jabalpur",
+      "nameHi": "Jabalpur",
+      "avgPrice": 2207,
+      "records": 115
     },
     {
       "district": "Katni",
       "nameHi": "Katni",
-      "avgPrice": 2265,
-      "records": 107
+      "avgPrice": 2258,
+      "records": 109
     },
     {
       "district": "Hoshangabad",
@@ -910,8 +927,8 @@
     {
       "district": "Narsinghpur",
       "nameHi": "Narsinghpur",
-      "avgPrice": 4193,
-      "records": 75
+      "avgPrice": 4205,
+      "records": 77
     }
   ]
 }

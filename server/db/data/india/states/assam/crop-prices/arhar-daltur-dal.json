@@ -93,6 +93,14 @@
       "volume": 18,
       "days": 18,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 12500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -1335,15 +1343,23 @@
       "mandis": 1,
       "minPrice": 10000,
       "maxPrice": 15000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 12500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 10000,
+      "maxPrice": 15000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Kamrup",
       "nameHi": "Kamrup",
-      "avgPrice": 11361,
-      "records": 155
+      "avgPrice": 11369,
+      "records": 156
     }
   ]
 }

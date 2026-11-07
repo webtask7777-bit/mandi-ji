@@ -93,6 +93,14 @@
       "volume": 65,
       "days": 21,
       "mandis": 4
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1150,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -1775,21 +1783,29 @@
       "mandis": 3,
       "minPrice": 800,
       "maxPrice": 1600
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1150,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 600,
+      "maxPrice": 1600
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Surat",
       "nameHi": "Surat",
-      "avgPrice": 1268,
-      "records": 177
+      "avgPrice": 1267,
+      "records": 178
     },
     {
       "district": "Bharuch",
       "nameHi": "Bharuch",
-      "avgPrice": 773,
-      "records": 163
+      "avgPrice": 774,
+      "records": 164
     },
     {
       "district": "Ahmedabad",
@@ -1801,7 +1817,7 @@
       "district": "Surendranagar",
       "nameHi": "Surendranagar",
       "avgPrice": 1256,
-      "records": 77
+      "records": 78
     }
   ]
 }

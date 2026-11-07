@@ -7,6 +7,14 @@
   },
   "history": [
     {
+      "month": "04",
+      "date": "2026-04",
+      "market": 1986,
+      "volume": 9,
+      "days": 3,
+      "mandis": 5
+    },
+    {
       "month": "05",
       "date": "2026-05",
       "market": 2575,
@@ -53,6 +61,14 @@
       "volume": 145,
       "days": 19,
       "mandis": 32
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6200,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -1015,15 +1031,23 @@
       "mandis": 9,
       "minPrice": 400,
       "maxPrice": 11500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 6200,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 5100,
+      "maxPrice": 6823.92
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Farukhabad",
       "nameHi": "Farukhabad",
-      "avgPrice": 2023,
-      "records": 126
+      "avgPrice": 2056,
+      "records": 127
     },
     {
       "district": "Etah",
@@ -1076,8 +1100,8 @@
     {
       "district": "Gorakhpur",
       "nameHi": "Gorakhpur",
-      "avgPrice": 4149,
-      "records": 36
+      "avgPrice": 4175,
+      "records": 37
     },
     {
       "district": "Azamgarh",

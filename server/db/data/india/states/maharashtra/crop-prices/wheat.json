@@ -19,6 +19,15 @@
       "msp": 2585
     },
     {
+      "month": "05",
+      "date": "2026-05",
+      "market": 2558,
+      "volume": 34,
+      "days": 8,
+      "mandis": 26,
+      "msp": 2585
+    },
+    {
       "month": "06",
       "date": "2026-06",
       "market": 2440,
@@ -61,6 +70,15 @@
       "volume": 1467,
       "days": 22,
       "mandis": 166,
+      "msp": 2585
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3300,
+      "volume": 14,
+      "days": 1,
+      "mandis": 13,
       "msp": 2585
     }
   ],
@@ -904,21 +922,29 @@
       "mandis": 55,
       "minPrice": 2000,
       "maxPrice": 5200
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3300,
+      "volume": 14,
+      "mandis": 13,
+      "minPrice": 2610,
+      "maxPrice": 5500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Ahilyanagar",
       "nameHi": "Ahilyanagar",
-      "avgPrice": 2575,
-      "records": 1236
+      "avgPrice": 2576,
+      "records": 1238
     },
     {
       "district": "Buldhana",
       "nameHi": "Buldhana",
       "avgPrice": 2476,
-      "records": 1017
+      "records": 1018
     },
     {
       "district": "Nashik",
@@ -930,7 +956,7 @@
       "district": "Chattrapati Sambhajinagar",
       "nameHi": "Chattrapati Sambhajinagar",
       "avgPrice": 2632,
-      "records": 774
+      "records": 775
     },
     {
       "district": "Amarawati",
@@ -941,8 +967,8 @@
     {
       "district": "Solapur",
       "nameHi": "Solapur",
-      "avgPrice": 2821,
-      "records": 672
+      "avgPrice": 2822,
+      "records": 673
     },
     {
       "district": "Beed",
@@ -965,8 +991,8 @@
     {
       "district": "Nagpur",
       "nameHi": "Nagpur",
-      "avgPrice": 2744,
-      "records": 502
+      "avgPrice": 2746,
+      "records": 504
     },
     {
       "district": "Washim",
@@ -995,8 +1021,8 @@
     {
       "district": "Jalna",
       "nameHi": "Jalna",
-      "avgPrice": 2553,
-      "records": 369
+      "avgPrice": 2554,
+      "records": 370
     }
   ]
 }

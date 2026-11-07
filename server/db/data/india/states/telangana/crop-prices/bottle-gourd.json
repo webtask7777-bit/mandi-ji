@@ -93,6 +93,14 @@
       "volume": 235,
       "days": 23,
       "mandis": 16
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 850,
+      "volume": 14,
+      "days": 1,
+      "mandis": 14
     }
   ],
   "dailyHistory": [
@@ -1783,39 +1791,47 @@
       "mandis": 13,
       "minPrice": 200,
       "maxPrice": 1500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 850,
+      "volume": 14,
+      "mandis": 14,
+      "minPrice": 200,
+      "maxPrice": 2000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Hyderabad",
       "nameHi": "Hyderabad",
-      "avgPrice": 637,
-      "records": 725
+      "avgPrice": 638,
+      "records": 731
     },
     {
       "district": "Ranga Reddy",
       "nameHi": "Ranga Reddy",
       "avgPrice": 929,
-      "records": 270
+      "records": 273
     },
     {
       "district": "Siddipet",
       "nameHi": "Siddipet",
-      "avgPrice": 988,
-      "records": 176
+      "avgPrice": 985,
+      "records": 178
     },
     {
       "district": "Medchal Malkajgiri",
       "nameHi": "Medchal Malkajgiri",
-      "avgPrice": 984,
-      "records": 155
+      "avgPrice": 983,
+      "records": 156
     },
     {
       "district": "Nalgonda",
       "nameHi": "Nalgonda",
       "avgPrice": 803,
-      "records": 95
+      "records": 96
     },
     {
       "district": "Mahbubnagar",
@@ -1826,8 +1842,8 @@
     {
       "district": "Karimnagar",
       "nameHi": "Karimnagar",
-      "avgPrice": 930,
-      "records": 45
+      "avgPrice": 925,
+      "records": 46
     }
   ]
 }

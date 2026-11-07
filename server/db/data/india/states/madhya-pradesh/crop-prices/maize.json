@@ -65,6 +65,15 @@
       "days": 23,
       "mandis": 172,
       "msp": 2410
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2555,
+      "volume": 98,
+      "days": 1,
+      "mandis": 62,
+      "msp": 2410
     }
   ],
   "dailyHistory": [
@@ -923,33 +932,47 @@
       "mandis": 152,
       "minPrice": 1425,
       "maxPrice": 6710
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2555,
+      "volume": 98,
+      "mandis": 62,
+      "minPrice": 700,
+      "maxPrice": 3100
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Khargone",
       "nameHi": "Khargone",
-      "avgPrice": 1931,
-      "records": 667
+      "avgPrice": 1936,
+      "records": 672
     },
     {
       "district": "Dhar",
       "nameHi": "Dhar",
-      "avgPrice": 2005,
-      "records": 556
+      "avgPrice": 2014,
+      "records": 563
     },
     {
       "district": "Badwani",
       "nameHi": "Badwani",
-      "avgPrice": 1852,
-      "records": 456
+      "avgPrice": 1857,
+      "records": 459
     },
     {
       "district": "Chhindwara",
       "nameHi": "Chhindwara",
-      "avgPrice": 2265,
-      "records": 373
+      "avgPrice": 2269,
+      "records": 381
+    },
+    {
+      "district": "Mandsaur",
+      "nameHi": "Mandsaur",
+      "avgPrice": 2234,
+      "records": 364
     },
     {
       "district": "Dewas",
@@ -958,16 +981,10 @@
       "records": 363
     },
     {
-      "district": "Mandsaur",
-      "nameHi": "Mandsaur",
-      "avgPrice": 2231,
-      "records": 361
-    },
-    {
       "district": "Seoni",
       "nameHi": "Seoni",
-      "avgPrice": 2218,
-      "records": 302
+      "avgPrice": 2235,
+      "records": 320
     },
     {
       "district": "Harda",
@@ -978,44 +995,44 @@
     {
       "district": "Sehore",
       "nameHi": "Sehore",
-      "avgPrice": 1968,
-      "records": 261
+      "avgPrice": 1971,
+      "records": 262
     },
     {
       "district": "Khandwa",
       "nameHi": "Khandwa",
-      "avgPrice": 2010,
-      "records": 250
+      "avgPrice": 2026,
+      "records": 256
     },
     {
       "district": "Guna",
       "nameHi": "Guna",
-      "avgPrice": 2047,
-      "records": 200
+      "avgPrice": 2049,
+      "records": 202
     },
     {
       "district": "Jabalpur",
       "nameHi": "Jabalpur",
-      "avgPrice": 2218,
-      "records": 199
-    },
-    {
-      "district": "Shivpuri",
-      "nameHi": "Shivpuri",
-      "avgPrice": 1890,
-      "records": 172
+      "avgPrice": 2220,
+      "records": 201
     },
     {
       "district": "Betul",
       "nameHi": "Betul",
-      "avgPrice": 2290,
-      "records": 169
+      "avgPrice": 2310,
+      "records": 176
+    },
+    {
+      "district": "Shivpuri",
+      "nameHi": "Shivpuri",
+      "avgPrice": 1895,
+      "records": 174
     },
     {
       "district": "Narsinghpur",
       "nameHi": "Narsinghpur",
-      "avgPrice": 2159,
-      "records": 162
+      "avgPrice": 2168,
+      "records": 165
     }
   ]
 }

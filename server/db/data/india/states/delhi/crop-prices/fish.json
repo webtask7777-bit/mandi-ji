@@ -93,6 +93,14 @@
       "volume": 304,
       "days": 18,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 26875,
+      "volume": 20,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -1351,15 +1359,23 @@
       "mandis": 1,
       "minPrice": 6000,
       "maxPrice": 60000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 26875,
+      "volume": 20,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 65000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Delhi",
       "nameHi": "Delhi",
-      "avgPrice": 24078,
-      "records": 2336
+      "avgPrice": 24101,
+      "records": 2356
     }
   ]
 }

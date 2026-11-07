@@ -7,6 +7,30 @@
   },
   "history": [
     {
+      "month": "03",
+      "date": "2026-03",
+      "market": 2544,
+      "volume": 13,
+      "days": 3,
+      "mandis": 8
+    },
+    {
+      "month": "04",
+      "date": "2026-04",
+      "market": 2772,
+      "volume": 12,
+      "days": 5,
+      "mandis": 7
+    },
+    {
+      "month": "05",
+      "date": "2026-05",
+      "market": 2552,
+      "volume": 15,
+      "days": 6,
+      "mandis": 8
+    },
+    {
       "month": "06",
       "date": "2026-06",
       "market": 2565,
@@ -45,6 +69,14 @@
       "volume": 384,
       "days": 20,
       "mandis": 56
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4880,
+      "volume": 13,
+      "days": 1,
+      "mandis": 9
     }
   ],
   "dailyHistory": [
@@ -927,21 +959,29 @@
       "mandis": 10,
       "minPrice": 2300,
       "maxPrice": 10571
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4880,
+      "volume": 13,
+      "mandis": 9,
+      "minPrice": 2320,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Shivamogga",
       "nameHi": "Shivamogga",
       "avgPrice": 3000,
-      "records": 368
+      "records": 369
     },
     {
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
-      "avgPrice": 5297,
-      "records": 261
+      "avgPrice": 5303,
+      "records": 264
     },
     {
       "district": "Mysuru",
@@ -958,8 +998,14 @@
     {
       "district": "Koppal",
       "nameHi": "Koppal",
-      "avgPrice": 3151,
-      "records": 199
+      "avgPrice": 3149,
+      "records": 201
+    },
+    {
+      "district": "Mandya",
+      "nameHi": "Mandya",
+      "avgPrice": 2365,
+      "records": 158
     },
     {
       "district": "Hassan",
@@ -968,16 +1014,10 @@
       "records": 157
     },
     {
-      "district": "Mandya",
-      "nameHi": "Mandya",
-      "avgPrice": 2363,
-      "records": 157
-    },
-    {
       "district": "Davangere",
       "nameHi": "Davangere",
-      "avgPrice": 3095,
-      "records": 153
+      "avgPrice": 3118,
+      "records": 155
     },
     {
       "district": "Raichur",
@@ -1006,8 +1046,8 @@
     {
       "district": "Dakshina Kannada",
       "nameHi": "Dakshina Kannada",
-      "avgPrice": 3070,
-      "records": 70
+      "avgPrice": 3155,
+      "records": 71
     },
     {
       "district": "Uttara Kannada",

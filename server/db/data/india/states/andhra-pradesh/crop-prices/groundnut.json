@@ -10,22 +10,6 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 6599,
-      "volume": 3,
-      "days": 3,
-      "mandis": 3
-    },
-    {
-      "month": "04",
-      "date": "2026-04",
-      "market": 6537,
-      "volume": 7,
-      "days": 5,
-      "mandis": 3
-    },
-    {
       "month": "05",
       "date": "2026-05",
       "market": 6743,
@@ -64,6 +48,15 @@
       "volume": 354,
       "days": 23,
       "mandis": 24,
+      "msp": 7517
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 7530,
+      "volume": 17,
+      "days": 1,
+      "mandis": 17,
       "msp": 7517
     }
   ],
@@ -819,45 +812,53 @@
       "mandis": 19,
       "minPrice": 3000,
       "maxPrice": 9000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 7530,
+      "volume": 17,
+      "mandis": 17,
+      "minPrice": 3699,
+      "maxPrice": 9471
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Ananthapuramu",
       "nameHi": "Ananthapuramu",
-      "avgPrice": 7312,
-      "records": 401
+      "avgPrice": 7317,
+      "records": 406
     },
     {
       "district": "Sri Sathya Sai",
       "nameHi": "Sri Sathya Sai",
-      "avgPrice": 7160,
-      "records": 309
+      "avgPrice": 7162,
+      "records": 313
     },
     {
       "district": "Kurnool",
       "nameHi": "Kurnool",
-      "avgPrice": 7373,
-      "records": 233
+      "avgPrice": 7384,
+      "records": 235
     },
     {
       "district": "YSR Kadapa",
       "nameHi": "YSR Kadapa",
-      "avgPrice": 7213,
-      "records": 197
+      "avgPrice": 7219,
+      "records": 199
     },
     {
       "district": "Tirupathi",
       "nameHi": "Tirupathi",
-      "avgPrice": 6610,
-      "records": 162
+      "avgPrice": 6611,
+      "records": 164
     },
     {
       "district": "Alluri Sitharama Raju",
       "nameHi": "Alluri Sitharama Raju",
-      "avgPrice": 7204,
-      "records": 76
+      "avgPrice": 7208,
+      "records": 77
     },
     {
       "district": "Bapatla",
@@ -868,8 +869,8 @@
     {
       "district": "Annamayya",
       "nameHi": "Annamayya",
-      "avgPrice": 7869,
-      "records": 62
+      "avgPrice": 7874,
+      "records": 63
     },
     {
       "district": "Nandyal",

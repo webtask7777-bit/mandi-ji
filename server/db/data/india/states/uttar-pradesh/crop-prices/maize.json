@@ -10,6 +10,14 @@
   },
   "history": [
     {
+      "month": "03",
+      "date": "2026-03",
+      "market": 1950,
+      "volume": 10,
+      "days": 6,
+      "mandis": 7
+    },
+    {
       "month": "04",
       "date": "2026-04",
       "market": 1850,
@@ -64,6 +72,15 @@
       "volume": 697,
       "days": 19,
       "mandis": 92,
+      "msp": 2410
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2308,
+      "volume": 9,
+      "days": 1,
+      "mandis": 9,
       "msp": 2410
     }
   ],
@@ -827,15 +844,23 @@
       "mandis": 41,
       "minPrice": 1700,
       "maxPrice": 11717.67
+    },
+    {
+      "date": "2026-11-07",
+      "market": 2308,
+      "volume": 9,
+      "mandis": 9,
+      "minPrice": 2100,
+      "maxPrice": 2700
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Badaun",
       "nameHi": "Badaun",
-      "avgPrice": 2032,
-      "records": 710
+      "avgPrice": 2033,
+      "records": 711
     },
     {
       "district": "Bulandshahar",
@@ -852,8 +877,8 @@
     {
       "district": "Hardoi",
       "nameHi": "Hardoi",
-      "avgPrice": 2021,
-      "records": 264
+      "avgPrice": 2022,
+      "records": 265
     },
     {
       "district": "Sambhal",
@@ -882,14 +907,14 @@
     {
       "district": "Etah",
       "nameHi": "Etah",
-      "avgPrice": 1930,
-      "records": 187
+      "avgPrice": 1932,
+      "records": 188
     },
     {
       "district": "Kannuj",
       "nameHi": "Kannuj",
-      "avgPrice": 2151,
-      "records": 184
+      "avgPrice": 2152,
+      "records": 185
     },
     {
       "district": "Bahraich",

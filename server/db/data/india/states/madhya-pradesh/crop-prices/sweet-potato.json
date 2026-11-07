@@ -37,6 +37,14 @@
       "volume": 25,
       "days": 18,
       "mandis": 4
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1400,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -335,15 +343,23 @@
       "mandis": 1,
       "minPrice": 1500,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1400,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1200,
+      "maxPrice": 2000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Sehore",
       "nameHi": "Sehore",
-      "avgPrice": 2597,
-      "records": 35
+      "avgPrice": 2569,
+      "records": 36
     },
     {
       "district": "Bhopal",
@@ -360,8 +376,8 @@
     {
       "district": "Morena",
       "nameHi": "Morena",
-      "avgPrice": 3000,
-      "records": 1
+      "avgPrice": 2100,
+      "records": 2
     }
   ]
 }

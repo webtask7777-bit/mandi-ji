@@ -93,6 +93,14 @@
       "volume": 40,
       "days": 20,
       "mandis": 4
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -1567,9 +1575,17 @@
       "mandis": 2,
       "minPrice": 2000,
       "maxPrice": 4500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 4000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3500,
+      "maxPrice": 4500
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Pune",
@@ -1594,6 +1610,12 @@
       "nameHi": "Palghar",
       "avgPrice": 4063,
       "records": 31
+    },
+    {
+      "district": "Nagpur",
+      "nameHi": "Nagpur",
+      "avgPrice": 4000,
+      "records": 1
     }
   ]
 }

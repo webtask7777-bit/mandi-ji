@@ -53,6 +53,14 @@
       "volume": 55,
       "days": 21,
       "mandis": 7
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -967,15 +975,23 @@
       "mandis": 2,
       "minPrice": 600,
       "maxPrice": 1500
+    },
+    {
+      "date": "2026-11-07",
+      "market": 1000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 500,
+      "maxPrice": 1000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Morena",
       "nameHi": "Morena",
-      "avgPrice": 1877,
-      "records": 163
+      "avgPrice": 1871,
+      "records": 164
     },
     {
       "district": "Sagar",

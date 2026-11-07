@@ -69,6 +69,14 @@
       "volume": 53,
       "days": 21,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3000,
+      "volume": 3,
+      "days": 1,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -1063,27 +1071,35 @@
       "mandis": 3,
       "minPrice": 2000,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 3000,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 2000,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 3766,
-      "records": 219
+      "avgPrice": 3763,
+      "records": 220
     },
     {
       "district": "Mumbai",
       "nameHi": "Mumbai",
-      "avgPrice": 4101,
-      "records": 104
+      "avgPrice": 4095,
+      "records": 105
     },
     {
       "district": "Nagpur",
       "nameHi": "Nagpur",
-      "avgPrice": 3028,
-      "records": 90
+      "avgPrice": 3019,
+      "records": 91
     }
   ]
 }

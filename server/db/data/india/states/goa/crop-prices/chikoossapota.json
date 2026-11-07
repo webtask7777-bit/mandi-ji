@@ -69,6 +69,14 @@
       "volume": 10,
       "days": 10,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -743,15 +751,23 @@
       "mandis": 1,
       "minPrice": 5000,
       "maxPrice": 7000
+    },
+    {
+      "date": "2026-11-07",
+      "market": 6000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "North Goa",
       "nameHi": "North Goa",
-      "avgPrice": 5089,
-      "records": 84
+      "avgPrice": 5100,
+      "records": 85
     }
   ]
 }

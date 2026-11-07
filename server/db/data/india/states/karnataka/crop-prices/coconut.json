@@ -85,6 +85,14 @@
       "volume": 258,
       "days": 20,
       "mandis": 50
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 20000,
+      "volume": 10,
+      "days": 1,
+      "mandis": 10
     }
   ],
   "dailyHistory": [
@@ -1583,15 +1591,23 @@
       "mandis": 15,
       "minPrice": 9500,
       "maxPrice": 36620
+    },
+    {
+      "date": "2026-11-07",
+      "market": 20000,
+      "volume": 10,
+      "mandis": 10,
+      "minPrice": 13000,
+      "maxPrice": 40000
     }
   ],
-  "lastUpdated": "2026-10-29T15:07:57.965Z",
+  "lastUpdated": "2026-11-07T14:17:38.723Z",
   "districtBreakdown": [
     {
       "district": "Mandya",
       "nameHi": "Mandya",
-      "avgPrice": 21334,
-      "records": 332
+      "avgPrice": 21336,
+      "records": 333
     },
     {
       "district": "Tumakuru",
@@ -1600,16 +1616,16 @@
       "records": 216
     },
     {
+      "district": "Davangere",
+      "nameHi": "Davangere",
+      "avgPrice": 22131,
+      "records": 187
+    },
+    {
       "district": "Chikkamagaluru",
       "nameHi": "Chikkamagaluru",
       "avgPrice": 26090,
       "records": 186
-    },
-    {
-      "district": "Davangere",
-      "nameHi": "Davangere",
-      "avgPrice": 22173,
-      "records": 185
     },
     {
       "district": "Hassan",
@@ -1620,31 +1636,31 @@
     {
       "district": "Chamarajanagar",
       "nameHi": "Chamarajanagar",
-      "avgPrice": 21085,
-      "records": 182
+      "avgPrice": 21047,
+      "records": 183
     },
     {
       "district": "Uttara Kannada",
       "nameHi": "Uttara Kannada",
-      "avgPrice": 22729,
-      "records": 159
+      "avgPrice": 22802,
+      "records": 160
     },
     {
       "district": "Chitradurga",
       "nameHi": "Chitradurga",
-      "avgPrice": 21845,
-      "records": 157
+      "avgPrice": 21821,
+      "records": 158
+    },
+    {
+      "district": "Mysuru",
+      "nameHi": "Mysuru",
+      "avgPrice": 19442,
+      "records": 149
     },
     {
       "district": "Dakshina Kannada",
       "nameHi": "Dakshina Kannada",
       "avgPrice": 27027,
-      "records": 148
-    },
-    {
-      "district": "Mysuru",
-      "nameHi": "Mysuru",
-      "avgPrice": 19438,
       "records": 148
     },
     {
@@ -1656,8 +1672,8 @@
     {
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
-      "avgPrice": 25305,
-      "records": 82
+      "avgPrice": 25361,
+      "records": 83
     },
     {
       "district": "Bengaluru South",
@@ -1674,8 +1690,8 @@
     {
       "district": "Udupi",
       "nameHi": "Udupi",
-      "avgPrice": 26063,
-      "records": 32
+      "avgPrice": 26061,
+      "records": 33
     }
   ]
 }
