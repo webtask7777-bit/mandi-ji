@@ -154,6 +154,8 @@ test('rendered Hindi detail offers a native return using route scope while keepi
     '/prices/tomato?months=13&state=tamil-nadu': { data: { crop: { id: 'tomato', name: 'Tomato', nameHi: 'टमाटर' }, history: [], dailyHistory: [], districtBreakdown: [] } },
     '/mandi-compare/tomato?state=tamil-nadu': { data: [] },
     '/ticker?state=tamil-nadu': { data: [] },
+    '/kcc/crop/tomato?state=tamil-nadu': { data: null, error: 'API 404: /kcc/crop/tomato?state=tamil-nadu' },
+    '/price-history/tomato?state=tamil-nadu': { data: null, error: 'API 404: /price-history/tomato?state=tamil-nadu' },
   });
   const native = linkedUrls(result.html).filter(url => url.pathname === '/ta/mandi-bhav');
   assert.ok(native.length >= 1, 'Hindi detail has an in-app native return');

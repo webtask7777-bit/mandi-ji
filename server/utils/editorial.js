@@ -152,8 +152,11 @@ export function listEditorialPosts(allPosts, query = {}) {
     .map(({ post }) => post);
   const page = boundedInteger(query.page, 1, 1000000);
   const limit = boundedInteger(query.limit, 10, 50);
+  // No result for a search: offer the newest guides in this language, clearly as suggestions.
+  const suggestions = search.length && !matching.length ? inLanguage.slice().sort((a, b) => (Date.parse(b.publishedAt) || 0) - (Date.parse(a.publishedAt) || 0)).slice(0, 3).map(summaryOf) : [];
   return {
     posts: matching.slice((page - 1) * limit, page * limit).map(summaryOf),
+    suggestions,
     total: matching.length,
     page,
     totalPages: Math.ceil(matching.length / limit),

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
-import { ChevronDown, X, Search, MapPin, User, LogIn, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe, Scale, BookOpen } from "lucide-react";
+import { ChevronDown, X, Search, MapPin, User, LogIn, Bell, Info, AlertTriangle, Gift, CheckCircle, ChartNoAxesCombined, CalendarDays, Store, Map, ShoppingBasket, Truck, ArrowRight, Globe, Scale, BookOpen, Sprout } from "lucide-react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useApi } from "./hooks/useApi";
 import { useStateContext } from "./context/StateContext";
@@ -39,7 +39,7 @@ const TAB_ITEMS = [
   { value: "bazaar", icon: ShoppingBasket, label: "बाज़ार" },
 ];
 
-export default function MandiJiDashboard() {
+export default function SahiBhavDashboard() {
   const selectedMonth = new Date().getMonth();
   const [searchParams, setSearchParams] = useSearchParams();
   const requestedTab = searchParams.get('tab');
@@ -364,6 +364,7 @@ export default function MandiJiDashboard() {
           <Link to="/bechne-ka-hisab"><Scale size={18} aria-hidden="true" /><span><strong>कहाँ बेचूँ?</strong><small>खर्च काटकर मिलने वाली रकम</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
           <Link to={`/kisan-calendar${stateParam !== 'all' ? `?state=${stateParam}` : ''}`}><CalendarDays size={18} aria-hidden="true" /><span><strong>किसान कैलेंडर</strong><small>महीने के अनुसार तैयारी</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
           <Link to="/kisan-salah"><BookOpen size={18} aria-hidden="true" /><span><strong>समस्या के अनुसार सलाह</strong><small>मौसम, भंडारण और बिक्री</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
+          <Link to={stateParam !== 'all' ? `/fasal-salah/${stateParam}` : '/fasal-salah'}><Sprout size={18} aria-hidden="true" /><span><strong>फसल सलाह</strong><small>कीट-रोग और किसान कॉल सेंटर के जवाब</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
         </nav>}
         {activeTab === 'prices' && <CropImageLegend />}
         {stateParam !== 'all' && <MandiDirectory stateParam={stateParam} stateNameHi={stateNameHi} />}

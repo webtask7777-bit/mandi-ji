@@ -55,3 +55,18 @@ test('thin national points are dropped but the newest day is kept', async () => 
   const days = { '2026-07-18': bucket(300), '2026-07-19': bucket(280), '2026-07-20': bucket(310), '2026-10-16': bucket(4) };
   assert.deepEqual(dropThinBuckets(days, 0.2, { keepLatest: true }), []);
 });
+
+test('coconut per 1000 nuts (about 3x the per-quintal price) is left out with its tighter unit ratio', async () => {
+  const { createRequire } = await import('node:module');
+  const require = createRequire(import.meta.url);
+  const { unitMismatchedSeries } = require('../scripts/lib/robust-price.cjs');
+  const { UNIT_RATIO_OVERRIDES } = require('../scripts/lib/source-names.cjs');
+  const records = [];
+  const add = (market, price, n = 10) => { for (let i = 0; i < n; i++) records.push({ commodity: 'Coconut', market, modal_price: price }); };
+  for (const market of ['tn1', 'tn2', 'tn3', 'tn4', 'kl1', 'kl2']) add(market, 5600);
+  add('ka-per-1000', 21000); add('ap-per-1000', 17000);
+  const options = { seriesKey: r => r.market, commodityKey: r => r.commodity };
+  assert.equal(unitMismatchedSeries(records, options).size, 0, 'the default 10x misses a 3x unit difference');
+  const excluded = unitMismatchedSeries(records, { ...options, ratioFor: c => UNIT_RATIO_OVERRIDES[c] });
+  assert.deepEqual([...excluded].sort(), ['ap-per-1000', 'ka-per-1000']);
+});

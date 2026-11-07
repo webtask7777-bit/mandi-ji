@@ -17,8 +17,10 @@ export default function Footer() {
           <FooterLink to="/kisan-calendar">किसान कैलेंडर</FooterLink>
           <FooterLink to="/kisan-salah">समस्या के अनुसार सलाह</FooterLink>
           <FooterLink to="/blog/mandi-bhav-min-max-modal-kaise-padhen">मंडी भाव कैसे पढ़ें?</FooterLink>
+          <FooterLink to="/fasal-salah">फसल सलाह (कीट-रोग)</FooterLink>
           <FooterLink to="/bechne-ka-hisab">कहाँ बेचूँ? हिसाब</FooterLink>
           <FooterLink to="/data-status">भाव कितने ताज़ा हैं?</FooterLink>
+          <FooterLink to="/editorial-policy">संपादकीय नीति और सुधार</FooterLink>
           <FooterLink to="/delivery-calculator">डिलीवरी कैलकुलेटर</FooterLink>
           <FooterLink to="/privacy">गोपनीयता नीति</FooterLink>
           <FooterLink to="/terms">नियम और शर्तें</FooterLink>

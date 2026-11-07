@@ -89,3 +89,13 @@ test('advice discovery can use every published Hindi guide and search newer sell
   assert.ok(slugs({ language: 'hi', q: 'eNAM', category: 'मंडी और लागत' }).includes('enam-kisan-registration-bikri-bhugtan'));
   assert.equal(slugs({ language: 'hi', q: 'तौल', category: 'मंडी और लागत' })[0], 'mandi-taul-katauti-bhugtan-checklist');
 });
+
+test('a search with no result offers the newest guides, marked apart from matches', () => {
+  const result = listEditorialPosts(posts, { q: 'कोईऐसाशब्दनहीं' });
+  assert.equal(result.total, 0);
+  assert.deepEqual(result.posts, []);
+  assert.equal(result.suggestions.length, 3);
+  assert.ok(result.suggestions.every(post => !Object.hasOwn(post, 'content')));
+  assert.deepEqual(listEditorialPosts(posts, { q: 'फफूंद' }).suggestions, []);
+  assert.deepEqual(listEditorialPosts(posts, {}).suggestions, []);
+});
