@@ -66,7 +66,7 @@ export default function CropDetailPage() {
   // Revalidation failures must not turn a known stale page back into indexable
   // content; pending requests must not be mistaken for an empty price history.
   const priceNoIndex = indexability.noIndex ?? (lastIndexability?.request === priceRequest ? lastIndexability.noIndex : false);
-  const { data: mandiData, loading: mandiLoading, error: mandiError } = useApi(`/mandi-compare/${cropQuery}?state=${stateQuery}`);
+  const { data: mandiData, loading: mandiLoading, error: mandiError, stale: mandiStale, omittedRows: mandiOmitted, loadingFull: mandiLoadingFull, loadFull: loadAllMandis } = useApi(`/mandi-compare/${cropQuery}?state=${stateQuery}`);
   const { data: tickerData } = useApi(`/ticker?state=${stateQuery}`);
   const unavailable = [404, 422].includes(Number(priceError?.status)) || /\bAPI (404|422):/.test(priceError?.message || '');
   const cropTicker = Array.isArray(tickerData) ? tickerData.find(row => row.id === cropId) : null;
@@ -99,7 +99,7 @@ export default function CropDetailPage() {
   return (
     <div className="sb-detail-page">
       <SEO title={`${cropName}${crop.name && crop.name !== cropName ? ` (${crop.name})` : ''} का मंडी भाव — ${stateNameHi}${heroPrice !== null ? ` · ${quoteLabel}` : ''}`}
-        description={`${stateNameHi} में ${cropName} का ताज़ा दर्ज मंडी भाव${heroPrice !== null ? `: ₹${money(heroPrice)}/क्विंटल, ${quoteLabel}` : ''}। हर मंडी का रेट, भाव का इतिहास और मंडी तुलना देखें। रिकॉर्ड की तारीख जाँचकर सौदे का भाव मंडी से पुष्टि करें।`}
+        description={`${stateNameHi} में ${cropName} का आख़िरी दर्ज मंडी भाव${heroPrice !== null ? `: ₹${money(heroPrice)}/क्विंटल, ${quoteLabel}` : ''}। हर मंडी का रेट, भाव का इतिहास और मंडी तुलना देखें। रिकॉर्ड की तारीख जाँचकर सौदे का भाव मंडी से पुष्टि करें।`}
         path={cropDetailPath(cropId, stateParam)} noIndex={unavailable || priceNoIndex}
         structuredData={cropName && !unavailable ? { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: `${stateNameHi} के मंडी भाव`, item: `${SITE_URL}${dashboardPath}` },
@@ -141,7 +141,7 @@ export default function CropDetailPage() {
             </section>
           </div>
         </>}
-        {mandiLoading ? <div className="sb-detail-loading" role="status">मंडियों के रिकॉर्ड लोड हो रहे हैं…</div> : mandiError ? <div className="sb-detail-notice" role="alert"><Info size={18} aria-hidden="true" /><p>मंडी तुलना अभी लोड नहीं हो पाई। कृपया पृष्ठ दोबारा खोलें।</p></div> : mandis.length > 0 ? <MandiCompare key={`${cropId}-${stateQuery}`} data={mandis} cropName={cropName} cropId={cropId} dailyHistory={dailyHistory} onDeliveryCalculate={openDeliveryCalculator} /> : !priceLoading && <section className="sb-detail-section"><h2>मंडी तुलना</h2><p>इस फसल और क्षेत्र के लिए मंडी रिकॉर्ड उपलब्ध नहीं हैं।</p></section>}
+        {mandiLoading ? <div className="sb-detail-loading" role="status">मंडियों के रिकॉर्ड लोड हो रहे हैं…</div> : mandiError ? <div className="sb-detail-notice" role="alert"><Info size={18} aria-hidden="true" /><p>मंडी तुलना अभी लोड नहीं हो पाई। कृपया पृष्ठ दोबारा खोलें।</p></div> : mandis.length > 0 ? <MandiCompare key={`${cropId}-${stateQuery}`} data={mandis} cropName={cropName} cropId={cropId} dailyHistory={dailyHistory} onDeliveryCalculate={openDeliveryCalculator} omittedRows={mandiOmitted} loadingFull={mandiLoadingFull} fullFailed={mandiStale} onLoadFull={loadAllMandis} /> : !priceLoading && <section className="sb-detail-section"><h2>मंडी तुलना</h2><p>इस फसल और क्षेत्र के लिए मंडी रिकॉर्ड उपलब्ध नहीं हैं।</p></section>}
         {(districts.length > 0 || cropTicker || msp !== null) && <div className="sb-detail-bottom-grid">
           {districts.length > 0 && <section className="sb-detail-section"><span className="sb-detail-kicker">डेटा कहाँ से है?</span><h2>ज़िला वार रिकॉर्ड</h2><p>उपलब्ध प्रविष्टियों की संख्या; व्यापार की मात्रा नहीं।</p><div className="sb-detail-districts">{districts.slice(0, 10).map(row => <div className="sb-detail-district" key={row.district}><span>{row.nameHi || row.district}</span><div className="sb-detail-district__track" aria-hidden="true"><span style={{ width: `${Number(row.records) / maxDistrictRecords * 100}%` }} /></div><strong>{Number(row.records).toLocaleString('en-IN')}</strong></div>)}</div></section>}
           <section className="sb-detail-section"><span className="sb-detail-kicker">एक नज़र में</span><h2>फसल की जानकारी</h2><dl className="sb-detail-facts">

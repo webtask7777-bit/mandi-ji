@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { loadIndiaData, loadStateData, loadIndiaCropPrices, loadStateCropPrices } from '../server/db/connection.js';
 import { isCropPriceCommodity } from '../src/utils/cropEligibility.js';
 import { cropDetailPath } from '../src/utils/cropUrls.js';
+import { getMandiPrice, getMandiPriceBasis } from '../src/utils/marketComparison.js';
 import { getLanguage, AVAILABLE_LANGUAGES, SEARCH_LANGUAGES, languagePath } from '../shared/languages.js';
 import { EDITORIAL_LANGUAGE_CODES } from '../shared/editorialLanguages.js';
 import { resolveSiteOrigin } from '../shared/siteOrigin.js';
@@ -64,6 +65,13 @@ async function render(route) {
         // Partial: the client must still fetch the full ticker after navigation.
         entry = { data: entry.data.filter(crop => crop.id === decodeURIComponent(cropId[1] || cropId[2])), partial: true };
       }
+      // Old records sit in a closed section and are fetched when it opens; every row
+      // behind the visible table and summary tiles stays in the page.
+      if (request.startsWith('/mandi-compare/') && Array.isArray(entry.data)) {
+        const current = entry.data.filter(row => getMandiPriceBasis(row) === 'recent' && getMandiPrice(row) !== null);
+        const omittedRows = entry.data.filter(row => getMandiPriceBasis(row) !== 'recent' && getMandiPrice(row) !== null).length;
+        if (current.length && omittedRows) entry = { data: current, omittedRows };
+      }
       responses[request] = entry;
     }
     if (pass === 4) throw new Error(`Unresolved public API requests: ${route}`);
@@ -86,7 +94,11 @@ async function render(route) {
 // A frozen dataset must still age. Use one real-time reference throughout the
 // build and the same policy as CropDetailPage; rebuilds refresh the static HTML.
 const indexAsOf = new Date();
+// An engineering budget, not a Google limit: fail the build before a page outgrows it.
+const MAX_PAGE_BYTES = 1_500_000;
 async function writePage(route, html) {
+  const bytes = Buffer.byteLength(html);
+  if (bytes > MAX_PAGE_BYTES) throw new Error(`Prerendered page over budget: ${route} is ${bytes} bytes`);
   const output = path.join(dist, route === '/' ? 'index.html' : `${route.slice(1)}.html`);
   await mkdir(path.dirname(output), { recursive: true });
   await writeFile(output, html);

@@ -184,6 +184,7 @@ export const CROP_DISPLAY_NAMES = Object.freeze({
   'ambrette-seed-muskmallow': 'मुश्कदाना',
   'muleti': 'मुलेठी',
   'jarbara': 'जरबेरा (फूल)',
+  'tube-flower': 'रजनीगंधा',
   'tube-rosesingle': 'रजनीगंधा (सिंगल)',
   'muskmelon-seeds': 'खरबूजा बीज',
   'sanai-sunhemp': 'सनई (सन)',

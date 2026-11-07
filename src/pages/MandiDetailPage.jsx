@@ -46,7 +46,7 @@ export default function MandiDetailPage() {
   return (
     <div className="sb-detail-page">
       <SEO title={`${name} मंडी भाव${topNames.length ? ` — ${topNames.join(', ')} के रेट` : ''}${latest.date ? ` · ${latest.dateLabel}` : ''}`}
-        description={`${name} मंडी (${place}) के ताज़ा दर्ज भाव: ${cropCount(recentCrops.length ? recentCrops : crops)} फसलें${topNames.length ? `, जैसे ${topNames.join(', ')}` : ''}। हर फसल का भाव ₹/क्विंटल, किस्म और तारीख के साथ। सौदे से पहले मंडी से भाव की पुष्टि करें।`}
+        description={`${name} मंडी (${place}) के आख़िरी दर्ज भाव: ${cropCount(recentCrops.length ? recentCrops : crops)} फसलें${topNames.length ? `, जैसे ${topNames.join(', ')}` : ''}। हर फसल का भाव ₹/क्विंटल, किस्म और तारीख के साथ। सौदे से पहले मंडी से भाव की पुष्टि करें।`}
         path={path} noIndex={loading ? false : unavailable || Boolean(error) || indexability.noIndex}
         structuredData={mandi && !unavailable ? { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: `${stateNameHi} के मंडी भाव`, item: `${SITE_URL}${dashboardPath}` },
