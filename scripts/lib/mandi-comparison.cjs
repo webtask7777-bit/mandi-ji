@@ -1,6 +1,6 @@
 const { arrivalToISO, MIN_PLAUSIBLE_PRICE } = require('./daily-store.cjs');
+const { COMPARISON_IDENTITY, quoteRow } = require('../../shared/mandiCompareStore.cjs');
 
-const COMPARISON_IDENTITY = 'commodity-mandi-variety-grade-date-v1';
 const text = value => String(value ?? '').trim().replace(/\s+/g, ' ');
 const identity = value => text(value).toLocaleLowerCase('en');
 
@@ -47,16 +47,10 @@ function buildMandiComparison(records, { recentCutoff, cropIdOf, marketIdOf, mar
   }
   const result = {};
   for (const group of groups.values()) {
-    const { date, total, count, min, max, ...metadata } = group;
+    const { commodityId, marketId, name, district, state, stateId, stateCode, topVariety, grade, totalRecords, date, total, count, min, max } = group;
     const quotePrice = Math.round(total / count);
     const recent = Boolean(recentCutoff && date >= recentCutoff);
-    const row = {
-      ...metadata, comparisonIdentity: COMPARISON_IDENTITY, unit: 'INR/quintal',
-      quoteDate: date, lastDate: date, quotePrice, quoteRecords: count, records: count,
-      priceBasis: 'daily-modal', recentPrice: recent ? quotePrice : null,
-      // Retained for older display clients, always the exact dated quote above.
-      avgPrice: quotePrice, minPrice: min, maxPrice: max, rangeBasis: recent ? 'recent' : 'historical',
-    };
+    const row = quoteRow(commodityId, [marketId, name, district, state, stateId, stateCode], { topVariety, grade, totalRecords, date, quotePrice, count, min, max, recent });
     if (!result[group.commodityId]) result[group.commodityId] = [];
     result[group.commodityId].push(row);
   }
