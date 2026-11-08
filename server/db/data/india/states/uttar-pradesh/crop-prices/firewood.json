@@ -73,13 +73,21 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 425,
-      "volume": 19,
-      "days": 1,
-      "mandis": 19
+      "market": 409,
+      "volume": 41,
+      "days": 2,
+      "mandis": 30
     }
   ],
   "dailyHistory": [
+    {
+      "date": "2026-01-09",
+      "market": 400,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 300,
+      "maxPrice": 680
+    },
     {
       "date": "2026-03-02",
       "market": 401,
@@ -175,6 +183,14 @@
       "mandis": 12,
       "minPrice": 300,
       "maxPrice": 500
+    },
+    {
+      "date": "2026-06-21",
+      "market": 408,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 350,
+      "maxPrice": 540
     },
     {
       "date": "2026-06-29",
@@ -927,27 +943,35 @@
       "mandis": 19,
       "minPrice": 325,
       "maxPrice": 520
+    },
+    {
+      "date": "2026-11-08",
+      "market": 400,
+      "volume": 22,
+      "mandis": 22,
+      "minPrice": 300,
+      "maxPrice": 600
     }
   ],
-  "lastUpdated": "2026-11-07T15:08:04.256Z",
+  "lastUpdated": "2026-11-08T09:44:29.291Z",
   "districtBreakdown": [
     {
       "district": "Sitapur",
       "nameHi": "Sitapur",
-      "avgPrice": 381,
-      "records": 684
+      "avgPrice": 380,
+      "records": 689
     },
     {
       "district": "Rampur",
       "nameHi": "Rampur",
       "avgPrice": 447,
-      "records": 351
+      "records": 352
     },
     {
       "district": "Raebarelli",
       "nameHi": "Raebarelli",
       "avgPrice": 382,
-      "records": 348
+      "records": 349
     },
     {
       "district": "Bulandshahar",
@@ -959,25 +983,25 @@
       "district": "Hamirpur",
       "nameHi": "Hamirpur",
       "avgPrice": 417,
-      "records": 251
+      "records": 252
     },
     {
       "district": "Gonda",
       "nameHi": "Gonda",
       "avgPrice": 328,
-      "records": 243
+      "records": 244
     },
     {
       "district": "Jhansi",
       "nameHi": "Jhansi",
       "avgPrice": 476,
-      "records": 237
+      "records": 238
     },
     {
       "district": "Jalaun (Orai)",
       "nameHi": "Jalaun (Orai)",
       "avgPrice": 483,
-      "records": 226
+      "records": 227
     },
     {
       "district": "Unnao",
@@ -995,19 +1019,19 @@
       "district": "Bahraich",
       "nameHi": "Bahraich",
       "avgPrice": 496,
-      "records": 207
+      "records": 208
     },
     {
       "district": "Bareilly",
       "nameHi": "Bareilly",
       "avgPrice": 464,
-      "records": 198
+      "records": 199
     },
     {
       "district": "Amethi",
       "nameHi": "Amethi",
       "avgPrice": 440,
-      "records": 190
+      "records": 191
     },
     {
       "district": "Badaun",

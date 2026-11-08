@@ -69,6 +69,14 @@
       "volume": 33,
       "days": 17,
       "mandis": 6
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4600,
+      "volume": 2,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -1031,21 +1039,29 @@
       "mandis": 2,
       "minPrice": 2600,
       "maxPrice": 4300
+    },
+    {
+      "date": "2026-11-08",
+      "market": 4600,
+      "volume": 2,
+      "mandis": 1,
+      "minPrice": 4500,
+      "maxPrice": 4700
     }
   ],
-  "lastUpdated": "2026-11-07T15:08:04.256Z",
+  "lastUpdated": "2026-11-08T09:44:29.291Z",
   "districtBreakdown": [
+    {
+      "district": "Kollam",
+      "nameHi": "Kollam",
+      "avgPrice": 3749,
+      "records": 79
+    },
     {
       "district": "Malappuram",
       "nameHi": "Malappuram",
       "avgPrice": 3528,
       "records": 79
-    },
-    {
-      "district": "Kollam",
-      "nameHi": "Kollam",
-      "avgPrice": 3727,
-      "records": 77
     },
     {
       "district": "Alappuzha",

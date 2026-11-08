@@ -53,6 +53,14 @@
       "volume": 60,
       "days": 19,
       "mandis": 7
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -991,15 +999,23 @@
       "mandis": 2,
       "minPrice": 4200,
       "maxPrice": 7100
+    },
+    {
+      "date": "2026-11-08",
+      "market": 6000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5900,
+      "maxPrice": 6100
     }
   ],
-  "lastUpdated": "2026-11-07T15:08:04.256Z",
+  "lastUpdated": "2026-11-08T09:44:29.291Z",
   "districtBreakdown": [
     {
       "district": "South Tripura",
       "nameHi": "South Tripura",
-      "avgPrice": 5675,
-      "records": 212
+      "avgPrice": 5677,
+      "records": 213
     },
     {
       "district": "West District",

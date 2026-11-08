@@ -42,9 +42,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 2000,
-      "volume": 12,
-      "days": 1,
-      "mandis": 11
+      "volume": 14,
+      "days": 2,
+      "mandis": 12
     }
   ],
   "dailyHistory": [
@@ -799,15 +799,23 @@
       "mandis": 11,
       "minPrice": 700,
       "maxPrice": 4600
+    },
+    {
+      "date": "2026-11-08",
+      "market": 1900,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1700,
+      "maxPrice": 2000
     }
   ],
-  "lastUpdated": "2026-11-07T15:08:04.256Z",
+  "lastUpdated": "2026-11-08T09:44:29.291Z",
   "districtBreakdown": [
     {
       "district": "Madhubani",
       "nameHi": "Madhubani",
-      "avgPrice": 7488,
-      "records": 133
+      "avgPrice": 7445,
+      "records": 134
     },
     {
       "district": "Muzaffarpur",
@@ -882,15 +890,15 @@
       "records": 5
     },
     {
+      "district": "Bhagalpur",
+      "nameHi": "Bhagalpur",
+      "avgPrice": 2450,
+      "records": 4
+    },
+    {
       "district": "Saharsa",
       "nameHi": "Saharsa",
       "avgPrice": 7233,
-      "records": 3
-    },
-    {
-      "district": "Bhagalpur",
-      "nameHi": "Bhagalpur",
-      "avgPrice": 2600,
       "records": 3
     }
   ]

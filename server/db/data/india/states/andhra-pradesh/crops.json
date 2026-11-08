@@ -4,7 +4,7 @@
     "name": "Paddy(Common)",
     "nameHi": "धान",
     "emoji": "🌾",
-    "totalRecords": 8908,
+    "totalRecords": 8922,
     "avgPrice": 2473,
     "minPrice": 244,
     "maxPrice": 24500,
@@ -47,8 +47,8 @@
     "name": "Maize",
     "nameHi": "मक्का",
     "emoji": "🌽",
-    "totalRecords": 3517,
-    "avgPrice": 2557,
+    "totalRecords": 3521,
+    "avgPrice": 2558,
     "minPrice": 800,
     "maxPrice": 4820,
     "varieties": [
@@ -176,7 +176,7 @@
     "name": "Cotton",
     "nameHi": "कपास",
     "emoji": "☁️",
-    "totalRecords": 1510,
+    "totalRecords": 1511,
     "avgPrice": 8227,
     "minPrice": 700,
     "maxPrice": 22000,
@@ -221,7 +221,7 @@
     "name": "Tomato",
     "nameHi": "टमाटर",
     "emoji": "🍅",
-    "totalRecords": 1331,
+    "totalRecords": 1335,
     "avgPrice": 1657,
     "minPrice": 150,
     "maxPrice": 15000,
@@ -263,8 +263,8 @@
     "name": "Bengal Gram(Gram)(Whole)",
     "nameHi": "चना",
     "emoji": "🫘",
-    "totalRecords": 1234,
-    "avgPrice": 6002,
+    "totalRecords": 1235,
+    "avgPrice": 6003,
     "minPrice": 600,
     "maxPrice": 9000,
     "varieties": [
@@ -342,8 +342,8 @@
     "name": "Arhar(Tur/Red Gram)(Whole)",
     "nameHi": "अरहर",
     "emoji": "🫘",
-    "totalRecords": 767,
-    "avgPrice": 7566,
+    "totalRecords": 768,
+    "avgPrice": 7568,
     "minPrice": 1669,
     "maxPrice": 10000,
     "varieties": [
@@ -383,8 +383,8 @@
     "name": "Gur(Jaggery)",
     "nameHi": "Gur(Jaggery)",
     "emoji": "🌱",
-    "totalRecords": 691,
-    "avgPrice": 3612,
+    "totalRecords": 692,
+    "avgPrice": 3615,
     "minPrice": 1400,
     "maxPrice": 12000,
     "varieties": [
@@ -401,8 +401,8 @@
     "name": "Cashewnuts",
     "nameHi": "Cashewnuts",
     "emoji": "🌱",
-    "totalRecords": 451,
-    "avgPrice": 11701,
+    "totalRecords": 453,
+    "avgPrice": 11709,
     "minPrice": 8000,
     "maxPrice": 15500,
     "varieties": [
@@ -465,8 +465,8 @@
     "name": "Jowar(Sorghum)",
     "nameHi": "Jowar(Sorghum)",
     "emoji": "🌾",
-    "totalRecords": 345,
-    "avgPrice": 3310,
+    "totalRecords": 346,
+    "avgPrice": 3311,
     "minPrice": 2400,
     "maxPrice": 4050,
     "varieties": [
@@ -565,7 +565,7 @@
     "name": "Papaya",
     "nameHi": "पपीता",
     "emoji": "🍏",
-    "totalRecords": 239,
+    "totalRecords": 240,
     "avgPrice": 1537,
     "minPrice": 1200,
     "maxPrice": 1800,
@@ -657,62 +657,6 @@
     ]
   },
   {
-    "id": "coconut",
-    "name": "Coconut",
-    "nameHi": "नारियल",
-    "emoji": "🥥",
-    "totalRecords": 206,
-    "avgPrice": 16121,
-    "minPrice": 14500,
-    "maxPrice": 21000,
-    "varieties": [
-      "Medium"
-    ],
-    "sowingMonths": [],
-    "growingMonths": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11
-    ],
-    "harvestMonths": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11
-    ],
-    "peakMonths": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11
-    ]
-  },
-  {
     "id": "mousambisweet-lime",
     "name": "Mousambi(Sweet Lime)",
     "nameHi": "मौसम्बी",
@@ -745,8 +689,8 @@
     "name": "Lime",
     "nameHi": "नीबू",
     "emoji": "🌱",
-    "totalRecords": 180,
-    "avgPrice": 6673,
+    "totalRecords": 181,
+    "avgPrice": 6670,
     "minPrice": 800,
     "maxPrice": 17000,
     "varieties": [
@@ -773,7 +717,7 @@
     "name": "Ragi(Finger Millet)",
     "nameHi": "Ragi(Finger Millet)",
     "emoji": "🌱",
-    "totalRecords": 163,
+    "totalRecords": 164,
     "avgPrice": 5008,
     "minPrice": 4200,
     "maxPrice": 5300,
@@ -783,6 +727,19 @@
     "msp": 5205,
     "mspSeason": "खरीफ 2026-27",
     "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
+  },
+  {
+    "id": "ground-nut-seed",
+    "name": "Ground Nut Seed",
+    "nameHi": "Ground Nut Seed",
+    "emoji": "🌱",
+    "totalRecords": 156,
+    "avgPrice": 10853,
+    "minPrice": 8000,
+    "maxPrice": 14000,
+    "varieties": [
+      "Ground Nut Seed"
+    ]
   },
   {
     "id": "cluster-beans",
@@ -827,19 +784,6 @@
       4,
       5,
       6
-    ]
-  },
-  {
-    "id": "ground-nut-seed",
-    "name": "Ground Nut Seed",
-    "nameHi": "Ground Nut Seed",
-    "emoji": "🌱",
-    "totalRecords": 155,
-    "avgPrice": 10848,
-    "minPrice": 8000,
-    "maxPrice": 14000,
-    "varieties": [
-      "Ground Nut Seed"
     ]
   },
   {
@@ -1125,6 +1069,25 @@
     ]
   },
   {
+    "id": "paddyfine-superfine-grade-a",
+    "name": "Paddy(Fine/Superfine/Grade A)",
+    "nameHi": "Paddy(Fine/Superfine/Grade A)",
+    "emoji": "🌾",
+    "totalRecords": 30,
+    "avgPrice": 2623,
+    "minPrice": 1950,
+    "maxPrice": 4400,
+    "varieties": [
+      "B P T",
+      "I.R.-64",
+      "1121",
+      "1001",
+      "Common",
+      "MTU-1010",
+      "Paddy Medium"
+    ]
+  },
+  {
     "id": "sunflower-sunflower-seed",
     "name": "Sunflower/Sunflower Seed",
     "nameHi": "Sunflower/Sunflower Seed",
@@ -1142,25 +1105,6 @@
     "msp": 8343,
     "mspSeason": "खरीफ 2026-27",
     "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
-  },
-  {
-    "id": "paddyfine-superfine-grade-a",
-    "name": "Paddy(Fine/Superfine/Grade A)",
-    "nameHi": "Paddy(Fine/Superfine/Grade A)",
-    "emoji": "🌾",
-    "totalRecords": 24,
-    "avgPrice": 2657,
-    "minPrice": 1950,
-    "maxPrice": 4400,
-    "varieties": [
-      "B P T",
-      "I.R.-64",
-      "1121",
-      "1001",
-      "Common",
-      "MTU-1010",
-      "Paddy Medium"
-    ]
   },
   {
     "id": "millets",
@@ -1227,7 +1171,7 @@
     "name": "Prawn",
     "nameHi": "Prawn",
     "emoji": "🌱",
-    "totalRecords": 6,
+    "totalRecords": 7,
     "avgPrice": 20000,
     "minPrice": 20000,
     "maxPrice": 21000,

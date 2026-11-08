@@ -73,10 +73,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 1600,
-      "volume": 15,
-      "days": 1,
-      "mandis": 15
+      "market": 1500,
+      "volume": 25,
+      "days": 2,
+      "mandis": 19
     }
   ],
   "dailyHistory": [
@@ -1087,9 +1087,17 @@
       "mandis": 15,
       "minPrice": 800,
       "maxPrice": 2800
+    },
+    {
+      "date": "2026-11-08",
+      "market": 1500,
+      "volume": 10,
+      "mandis": 10,
+      "minPrice": 800,
+      "maxPrice": 2400
     }
   ],
-  "lastUpdated": "2026-11-07T15:08:04.256Z",
+  "lastUpdated": "2026-11-08T09:44:29.291Z",
   "districtBreakdown": [
     {
       "district": "Agra",
@@ -1113,7 +1121,7 @@
       "district": "Mathura",
       "nameHi": "Mathura",
       "avgPrice": 2161,
-      "records": 264
+      "records": 265
     },
     {
       "district": "Sonbhadra",
@@ -1124,8 +1132,8 @@
     {
       "district": "Bulandshahar",
       "nameHi": "Bulandshahar",
-      "avgPrice": 1920,
-      "records": 228
+      "avgPrice": 1916,
+      "records": 229
     },
     {
       "district": "Jalaun (Orai)",
@@ -1160,8 +1168,14 @@
     {
       "district": "Amroha",
       "nameHi": "Amroha",
-      "avgPrice": 1534,
-      "records": 157
+      "avgPrice": 1529,
+      "records": 158
+    },
+    {
+      "district": "Baghpat",
+      "nameHi": "Baghpat",
+      "avgPrice": 1987,
+      "records": 147
     },
     {
       "district": "Aligarh",
@@ -1173,12 +1187,6 @@
       "district": "Bijnor",
       "nameHi": "Bijnor",
       "avgPrice": 2028,
-      "records": 146
-    },
-    {
-      "district": "Baghpat",
-      "nameHi": "Baghpat",
-      "avgPrice": 1987,
       "records": 146
     }
   ]

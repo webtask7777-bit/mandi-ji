@@ -53,6 +53,14 @@
       "volume": 5,
       "days": 5,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -295,15 +303,23 @@
       "mandis": 1,
       "minPrice": 900,
       "maxPrice": 1100
+    },
+    {
+      "date": "2026-11-08",
+      "market": 1000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 800,
+      "maxPrice": 1000
     }
   ],
-  "lastUpdated": "2026-11-07T15:08:04.256Z",
+  "lastUpdated": "2026-11-08T09:44:29.291Z",
   "districtBreakdown": [
     {
       "district": "Idukki",
       "nameHi": "Idukki",
-      "avgPrice": 1661,
-      "records": 36
+      "avgPrice": 1643,
+      "records": 37
     }
   ]
 }
