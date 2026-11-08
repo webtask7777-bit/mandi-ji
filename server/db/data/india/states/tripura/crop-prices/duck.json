@@ -37,6 +37,14 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3800,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -71,9 +79,17 @@
       "mandis": 1,
       "minPrice": 400,
       "maxPrice": 560
+    },
+    {
+      "date": "2026-11-08",
+      "market": 3800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3500,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-11-08T09:44:29.291Z",
+  "lastUpdated": "2026-11-08T15:08:26.231Z",
   "districtBreakdown": [
     {
       "district": "Dhalai",
@@ -82,15 +98,15 @@
       "records": 2
     },
     {
+      "district": "Khowai",
+      "nameHi": "Khowai",
+      "avgPrice": 2125,
+      "records": 2
+    },
+    {
       "district": "Sepahijala",
       "nameHi": "Sepahijala",
       "avgPrice": 525,
-      "records": 1
-    },
-    {
-      "district": "Khowai",
-      "nameHi": "Khowai",
-      "avgPrice": 450,
       "records": 1
     }
   ]
