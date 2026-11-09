@@ -74,18 +74,50 @@
       "month": "11",
       "date": "2026-11",
       "market": 1500,
-      "volume": 8,
-      "days": 2,
-      "mandis": 7
+      "volume": 11,
+      "days": 3,
+      "mandis": 9
     }
   ],
   "dailyHistory": [
+    {
+      "date": "2026-03-26",
+      "market": 1900,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1800,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-03-29",
+      "market": 1800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1800,
+      "maxPrice": 1800
+    },
     {
       "date": "2026-03-30",
       "market": 1800,
       "volume": 4,
       "mandis": 4,
       "minPrice": 1500,
+      "maxPrice": 2000
+    },
+    {
+      "date": "2026-04-04",
+      "market": 1500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 1500
+    },
+    {
+      "date": "2026-04-06",
+      "market": 2000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
       "maxPrice": 2000
     },
     {
@@ -105,12 +137,36 @@
       "maxPrice": 2200
     },
     {
+      "date": "2026-05-14",
+      "market": 1800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 2000
+    },
+    {
       "date": "2026-05-15",
       "market": 1500,
       "volume": 2,
       "mandis": 2,
       "minPrice": 900,
       "maxPrice": 2300
+    },
+    {
+      "date": "2026-05-18",
+      "market": 2200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2200,
+      "maxPrice": 2200
+    },
+    {
+      "date": "2026-06-29",
+      "market": 2200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2000,
+      "maxPrice": 2500
     },
     {
       "date": "2026-06-30",
@@ -311,6 +367,14 @@
       "mandis": 4,
       "minPrice": 1400,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-07-25",
+      "market": 1800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 2000
     },
     {
       "date": "2026-07-26",
@@ -1009,6 +1073,14 @@
       "maxPrice": 2200
     },
     {
+      "date": "2026-10-27",
+      "market": 2000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1800,
+      "maxPrice": 2200
+    },
+    {
       "date": "2026-10-29",
       "market": 1600,
       "volume": 9,
@@ -1031,15 +1103,23 @@
       "mandis": 1,
       "minPrice": 1400,
       "maxPrice": 1800
+    },
+    {
+      "date": "2026-11-09",
+      "market": 1500,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 900,
+      "maxPrice": 1800
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Mayurbhanja",
       "nameHi": "Mayurbhanja",
-      "avgPrice": 2018,
-      "records": 239
+      "avgPrice": 2013,
+      "records": 241
     },
     {
       "district": "Balasore",
@@ -1062,8 +1142,8 @@
     {
       "district": "Ganjam",
       "nameHi": "Ganjam",
-      "avgPrice": 1436,
-      "records": 59
+      "avgPrice": 1428,
+      "records": 60
     },
     {
       "district": "Cuttack",

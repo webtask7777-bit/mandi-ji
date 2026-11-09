@@ -97,10 +97,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 1300,
-      "volume": 5,
-      "days": 2,
-      "mandis": 4
+      "market": 1500,
+      "volume": 10,
+      "days": 3,
+      "mandis": 8
     }
   ],
   "dailyHistory": [
@@ -1767,27 +1767,35 @@
       "mandis": 1,
       "minPrice": 800,
       "maxPrice": 1200
+    },
+    {
+      "date": "2026-11-09",
+      "market": 1500,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 700,
+      "maxPrice": 2000
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Udhamsinghnagar",
       "nameHi": "Udhamsinghnagar",
       "avgPrice": 1744,
-      "records": 368
+      "records": 369
     },
     {
       "district": "Haridwar",
       "nameHi": "Haridwar",
       "avgPrice": 781,
-      "records": 268
+      "records": 269
     },
     {
       "district": "Dehradoon",
       "nameHi": "Dehradoon",
-      "avgPrice": 1418,
-      "records": 259
+      "avgPrice": 1420,
+      "records": 262
     },
     {
       "district": "Garhwal (Pauri)",

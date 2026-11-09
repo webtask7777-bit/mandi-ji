@@ -89,10 +89,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 2800,
-      "volume": 30,
-      "days": 2,
-      "mandis": 28
+      "market": 2900,
+      "volume": 50,
+      "days": 3,
+      "mandis": 33
     }
   ],
   "dailyHistory": [
@@ -1703,27 +1703,35 @@
       "mandis": 5,
       "minPrice": 1400,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-11-09",
+      "market": 2900,
+      "volume": 20,
+      "mandis": 20,
+      "minPrice": 1250,
+      "maxPrice": 7300
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Mayurbhanja",
       "nameHi": "Mayurbhanja",
-      "avgPrice": 2383,
-      "records": 591
+      "avgPrice": 2382,
+      "records": 593
     },
     {
       "district": "Bargarh",
       "nameHi": "Bargarh",
-      "avgPrice": 2172,
-      "records": 512
+      "avgPrice": 2171,
+      "records": 513
     },
     {
       "district": "Kalahandi",
       "nameHi": "Kalahandi",
-      "avgPrice": 2615,
-      "records": 425
+      "avgPrice": 2616,
+      "records": 428
     },
     {
       "district": "Keonjhar",
@@ -1740,20 +1748,20 @@
     {
       "district": "Rayagada",
       "nameHi": "Rayagada",
-      "avgPrice": 3900,
-      "records": 274
+      "avgPrice": 3905,
+      "records": 276
     },
     {
       "district": "Dhenkanal",
       "nameHi": "Dhenkanal",
-      "avgPrice": 2874,
-      "records": 261
+      "avgPrice": 2876,
+      "records": 263
     },
     {
       "district": "Bolangir",
       "nameHi": "Bolangir",
-      "avgPrice": 2646,
-      "records": 254
+      "avgPrice": 2644,
+      "records": 255
     },
     {
       "district": "Kendrapara",
@@ -1776,8 +1784,14 @@
     {
       "district": "Boudh",
       "nameHi": "Boudh",
-      "avgPrice": 3329,
-      "records": 153
+      "avgPrice": 3333,
+      "records": 154
+    },
+    {
+      "district": "Sonepur",
+      "nameHi": "Sonepur",
+      "avgPrice": 3663,
+      "records": 140
     },
     {
       "district": "Ganjam",
@@ -1786,16 +1800,10 @@
       "records": 139
     },
     {
-      "district": "Sonepur",
-      "nameHi": "Sonepur",
-      "avgPrice": 3674,
-      "records": 137
-    },
-    {
       "district": "Koraput",
       "nameHi": "Koraput",
-      "avgPrice": 2906,
-      "records": 135
+      "avgPrice": 2904,
+      "records": 137
     }
   ]
 }

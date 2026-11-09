@@ -97,10 +97,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 2000,
-      "volume": 29,
-      "days": 2,
-      "mandis": 22
+      "market": 2108,
+      "volume": 40,
+      "days": 3,
+      "mandis": 26
     }
   ],
   "dailyHistory": [
@@ -1655,21 +1655,35 @@
       "mandis": 7,
       "minPrice": 500,
       "maxPrice": 4700
+    },
+    {
+      "date": "2026-11-09",
+      "market": 2500,
+      "volume": 11,
+      "mandis": 11,
+      "minPrice": 500,
+      "maxPrice": 9100
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Pune",
       "nameHi": "Pune",
       "avgPrice": 1805,
-      "records": 1647
+      "records": 1650
     },
     {
       "district": "Nagpur",
       "nameHi": "Nagpur",
-      "avgPrice": 1782,
-      "records": 600
+      "avgPrice": 1781,
+      "records": 601
+    },
+    {
+      "district": "Solapur",
+      "nameHi": "Solapur",
+      "avgPrice": 2638,
+      "records": 525
     },
     {
       "district": "Ahilyanagar",
@@ -1678,16 +1692,10 @@
       "records": 524
     },
     {
-      "district": "Solapur",
-      "nameHi": "Solapur",
-      "avgPrice": 2635,
-      "records": 523
-    },
-    {
       "district": "Satara",
       "nameHi": "Satara",
-      "avgPrice": 1941,
-      "records": 497
+      "avgPrice": 1942,
+      "records": 498
     },
     {
       "district": "Jalgaon",
@@ -1704,14 +1712,14 @@
     {
       "district": "Raigad",
       "nameHi": "Raigad",
-      "avgPrice": 3424,
-      "records": 290
+      "avgPrice": 3428,
+      "records": 291
     },
     {
       "district": "Chattrapati Sambhajinagar",
       "nameHi": "Chattrapati Sambhajinagar",
-      "avgPrice": 1483,
-      "records": 180
+      "avgPrice": 1479,
+      "records": 181
     },
     {
       "district": "Amarawati",
@@ -1734,8 +1742,8 @@
     {
       "district": "Ratnagiri",
       "nameHi": "Ratnagiri",
-      "avgPrice": 2066,
-      "records": 120
+      "avgPrice": 2069,
+      "records": 121
     },
     {
       "district": "Chandrapur",
@@ -1746,8 +1754,8 @@
     {
       "district": "Thane",
       "nameHi": "Thane",
-      "avgPrice": 2077,
-      "records": 90
+      "avgPrice": 2109,
+      "records": 91
     }
   ]
 }

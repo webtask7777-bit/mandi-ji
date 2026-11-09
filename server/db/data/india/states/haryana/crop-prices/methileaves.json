@@ -49,10 +49,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 1750,
-      "volume": 5,
-      "days": 2,
-      "mandis": 4
+      "market": 2100,
+      "volume": 10,
+      "days": 3,
+      "mandis": 6
     }
   ],
   "dailyHistory": [
@@ -391,33 +391,41 @@
       "mandis": 2,
       "minPrice": 1500,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-11-09",
+      "market": 3000,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 1500,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Kurukshetra",
       "nameHi": "Kurukshetra",
-      "avgPrice": 3405,
-      "records": 42
+      "avgPrice": 3372,
+      "records": 43
     },
     {
       "district": "Ambala",
       "nameHi": "Ambala",
-      "avgPrice": 2507,
-      "records": 22
+      "avgPrice": 2528,
+      "records": 23
     },
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 4842,
-      "records": 19
+      "avgPrice": 4788,
+      "records": 20
     },
     {
       "district": "Sonipat",
       "nameHi": "Sonipat",
-      "avgPrice": 3217,
-      "records": 12
+      "avgPrice": 3108,
+      "records": 13
     },
     {
       "district": "Mahendragarh-Narnaul",
@@ -436,6 +444,12 @@
       "nameHi": "Gurgaon",
       "avgPrice": 2200,
       "records": 4
+    },
+    {
+      "district": "Kaithal",
+      "nameHi": "Kaithal",
+      "avgPrice": 3100,
+      "records": 1
     }
   ]
 }

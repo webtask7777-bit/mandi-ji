@@ -70,9 +70,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 9375,
-      "volume": 4,
-      "days": 2,
-      "mandis": 2,
+      "volume": 8,
+      "days": 3,
+      "mandis": 4,
       "msp": 5708
     }
   ],
@@ -1124,26 +1124,34 @@
       "mandis": 2,
       "minPrice": 9000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-11-09",
+      "market": 9375,
+      "volume": 4,
+      "mandis": 4,
+      "minPrice": 8000,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Madurai",
       "nameHi": "Madurai",
-      "avgPrice": 9707,
-      "records": 253
+      "avgPrice": 9712,
+      "records": 254
+    },
+    {
+      "district": "Ramanathapuram",
+      "nameHi": "Ramanathapuram",
+      "avgPrice": 9261,
+      "records": 246
     },
     {
       "district": "Theni",
       "nameHi": "Theni",
       "avgPrice": 9587,
-      "records": 244
-    },
-    {
-      "district": "Ramanathapuram",
-      "nameHi": "Ramanathapuram",
-      "avgPrice": 9260,
       "records": 244
     },
     {
@@ -1155,8 +1163,8 @@
     {
       "district": "Virudhunagar",
       "nameHi": "Virudhunagar",
-      "avgPrice": 10003,
-      "records": 99
+      "avgPrice": 9993,
+      "records": 100
     },
     {
       "district": "Sivaganga",

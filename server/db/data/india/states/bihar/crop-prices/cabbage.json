@@ -41,10 +41,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 1700,
-      "volume": 2,
-      "days": 1,
-      "mandis": 2
+      "market": 1900,
+      "volume": 4,
+      "days": 2,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -751,9 +751,17 @@
       "mandis": 2,
       "minPrice": 1300,
       "maxPrice": 2100
+    },
+    {
+      "date": "2026-11-09",
+      "market": 1450,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1000,
+      "maxPrice": 2000
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Muzaffarpur",
@@ -794,13 +802,19 @@
     {
       "district": "Saharsa",
       "nameHi": "Saharsa",
-      "avgPrice": 2588,
-      "records": 8
+      "avgPrice": 2511,
+      "records": 9
     },
     {
       "district": "Samastipur",
       "nameHi": "Samastipur",
       "avgPrice": 1850,
+      "records": 2
+    },
+    {
+      "district": "Bhagalpur",
+      "nameHi": "Bhagalpur",
+      "avgPrice": 1150,
       "records": 2
     },
     {
@@ -819,12 +833,6 @@
       "district": "Luckeesarai",
       "nameHi": "Luckeesarai",
       "avgPrice": 4000,
-      "records": 1
-    },
-    {
-      "district": "Bhagalpur",
-      "nameHi": "Bhagalpur",
-      "avgPrice": 1300,
       "records": 1
     }
   ]

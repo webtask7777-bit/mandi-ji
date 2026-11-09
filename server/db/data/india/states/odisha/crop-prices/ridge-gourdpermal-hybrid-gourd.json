@@ -29,6 +29,14 @@
       "volume": 6,
       "days": 4,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2200,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -111,20 +119,28 @@
       "mandis": 2,
       "minPrice": 2050,
       "maxPrice": 2400
+    },
+    {
+      "date": "2026-11-09",
+      "market": 2200,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2050,
+      "maxPrice": 2400
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
-    {
-      "district": "Khurda",
-      "nameHi": "Khurda",
-      "avgPrice": 2850,
-      "records": 6
-    },
     {
       "district": "Bargarh",
       "nameHi": "Bargarh",
       "avgPrice": 2200,
+      "records": 8
+    },
+    {
+      "district": "Khurda",
+      "nameHi": "Khurda",
+      "avgPrice": 2850,
       "records": 6
     }
   ]

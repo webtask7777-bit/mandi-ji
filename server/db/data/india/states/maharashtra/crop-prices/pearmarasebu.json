@@ -69,6 +69,14 @@
       "volume": 13,
       "days": 11,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 7000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -671,15 +679,23 @@
       "mandis": 1,
       "minPrice": 6000,
       "maxPrice": 7500
+    },
+    {
+      "date": "2026-11-09",
+      "market": 7000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 8028,
-      "records": 129
+      "avgPrice": 8020,
+      "records": 130
     },
     {
       "district": "Mumbai",

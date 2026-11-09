@@ -97,10 +97,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 2000,
-      "volume": 4,
-      "days": 2,
-      "mandis": 3
+      "market": 2100,
+      "volume": 6,
+      "days": 3,
+      "mandis": 4
     }
   ],
   "dailyHistory": [
@@ -1903,9 +1903,17 @@
       "mandis": 1,
       "minPrice": 2000,
       "maxPrice": 2500
+    },
+    {
+      "date": "2026-11-09",
+      "market": 2500,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1850,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Keonjhar",
@@ -1922,8 +1930,8 @@
     {
       "district": "Bargarh",
       "nameHi": "Bargarh",
-      "avgPrice": 1838,
-      "records": 184
+      "avgPrice": 1839,
+      "records": 185
     },
     {
       "district": "Mayurbhanja",
@@ -1974,16 +1982,16 @@
       "records": 3
     },
     {
+      "district": "Bolangir",
+      "nameHi": "Bolangir",
+      "avgPrice": 2075,
+      "records": 2
+    },
+    {
       "district": "Boudh",
       "nameHi": "Boudh",
       "avgPrice": 2500,
       "records": 2
-    },
-    {
-      "district": "Bolangir",
-      "nameHi": "Bolangir",
-      "avgPrice": 1150,
-      "records": 1
     }
   ]
 }

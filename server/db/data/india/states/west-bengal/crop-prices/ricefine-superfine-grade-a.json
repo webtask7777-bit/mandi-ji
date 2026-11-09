@@ -17,10 +17,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 4190,
-      "volume": 18,
-      "days": 2,
-      "mandis": 9
+      "market": 4400,
+      "volume": 23,
+      "days": 3,
+      "mandis": 11
     }
   ],
   "dailyHistory": [
@@ -47,21 +47,29 @@
       "mandis": 6,
       "minPrice": 3400,
       "maxPrice": 5100
+    },
+    {
+      "date": "2026-11-09",
+      "market": 4275,
+      "volume": 5,
+      "mandis": 4,
+      "minPrice": 3500,
+      "maxPrice": 4850
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
+    {
+      "district": "Bankura",
+      "nameHi": "Bankura",
+      "avgPrice": 4013,
+      "records": 8
+    },
     {
       "district": "Purba Bardhaman",
       "nameHi": "Purba Bardhaman",
       "avgPrice": 3843,
       "records": 7
-    },
-    {
-      "district": "Bankura",
-      "nameHi": "Bankura",
-      "avgPrice": 4040,
-      "records": 5
     },
     {
       "district": "Hooghly",
@@ -78,7 +86,13 @@
     {
       "district": "Paschim Bardhaman",
       "nameHi": "Paschim Bardhaman",
-      "avgPrice": 4700,
+      "avgPrice": 4733,
+      "records": 2
+    },
+    {
+      "district": "Medinipur(E)",
+      "nameHi": "Medinipur(E)",
+      "avgPrice": 4400,
       "records": 1
     }
   ]

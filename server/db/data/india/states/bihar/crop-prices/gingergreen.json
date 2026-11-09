@@ -13,6 +13,14 @@
       "volume": 2,
       "days": 2,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 8400,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -31,20 +39,28 @@
       "mandis": 1,
       "minPrice": 9000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-11-09",
+      "market": 8400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 8000,
+      "maxPrice": 8800
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
+    {
+      "district": "Supaul",
+      "nameHi": "Supaul",
+      "avgPrice": 8950,
+      "records": 2
+    },
     {
       "district": "Madhubani",
       "nameHi": "Madhubani",
       "avgPrice": 7250,
-      "records": 1
-    },
-    {
-      "district": "Supaul",
-      "nameHi": "Supaul",
-      "avgPrice": 9500,
       "records": 1
     }
   ]

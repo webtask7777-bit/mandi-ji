@@ -98,9 +98,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 1900,
-      "volume": 30,
-      "days": 2,
-      "mandis": 23
+      "volume": 43,
+      "days": 3,
+      "mandis": 27
     }
   ],
   "dailyHistory": [
@@ -1703,33 +1703,41 @@
       "mandis": 7,
       "minPrice": 500,
       "maxPrice": 5300
+    },
+    {
+      "date": "2026-11-09",
+      "market": 2500,
+      "volume": 13,
+      "mandis": 13,
+      "minPrice": 500,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Pune",
       "nameHi": "Pune",
-      "avgPrice": 2554,
-      "records": 1564
+      "avgPrice": 2552,
+      "records": 1567
     },
     {
       "district": "Nagpur",
       "nameHi": "Nagpur",
       "avgPrice": 1570,
-      "records": 816
+      "records": 817
     },
     {
       "district": "Satara",
       "nameHi": "Satara",
-      "avgPrice": 2834,
-      "records": 757
+      "avgPrice": 2840,
+      "records": 759
     },
     {
       "district": "Solapur",
       "nameHi": "Solapur",
-      "avgPrice": 2591,
-      "records": 533
+      "avgPrice": 2592,
+      "records": 535
     },
     {
       "district": "Ahilyanagar",
@@ -1740,8 +1748,8 @@
     {
       "district": "Kolhapur",
       "nameHi": "Kolhapur",
-      "avgPrice": 2523,
-      "records": 297
+      "avgPrice": 2525,
+      "records": 298
     },
     {
       "district": "Nashik",
@@ -1758,19 +1766,19 @@
     {
       "district": "Sangli",
       "nameHi": "Sangli",
-      "avgPrice": 2415,
-      "records": 224
+      "avgPrice": 2416,
+      "records": 225
+    },
+    {
+      "district": "Chattrapati Sambhajinagar",
+      "nameHi": "Chattrapati Sambhajinagar",
+      "avgPrice": 1375,
+      "records": 179
     },
     {
       "district": "Amarawati",
       "nameHi": "Amarawati",
       "avgPrice": 1378,
-      "records": 178
-    },
-    {
-      "district": "Chattrapati Sambhajinagar",
-      "nameHi": "Chattrapati Sambhajinagar",
-      "avgPrice": 1376,
       "records": 178
     },
     {
@@ -1794,8 +1802,8 @@
     {
       "district": "Ratnagiri",
       "nameHi": "Ratnagiri",
-      "avgPrice": 1953,
-      "records": 126
+      "avgPrice": 1955,
+      "records": 127
     }
   ]
 }

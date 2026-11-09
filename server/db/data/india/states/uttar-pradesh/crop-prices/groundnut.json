@@ -10,30 +10,6 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 5740,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
-    },
-    {
-      "month": "04",
-      "date": "2026-04",
-      "market": 6377,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
-    },
-    {
-      "month": "05",
-      "date": "2026-05",
-      "market": 10105,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
-    },
-    {
       "month": "06",
       "date": "2026-06",
       "market": 9864,
@@ -77,10 +53,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 7029,
-      "volume": 5,
-      "days": 2,
-      "mandis": 5,
+      "market": 7000,
+      "volume": 10,
+      "days": 3,
+      "mandis": 9,
       "msp": 7517
     }
   ],
@@ -828,15 +804,23 @@
       "mandis": 3,
       "minPrice": 6050,
       "maxPrice": 8500
+    },
+    {
+      "date": "2026-11-09",
+      "market": 6562,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 6000,
+      "maxPrice": 8260
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Jhansi",
       "nameHi": "Jhansi",
-      "avgPrice": 5909,
-      "records": 107
+      "avgPrice": 5910,
+      "records": 108
     },
     {
       "district": "Shahjahanpur",
@@ -883,8 +867,8 @@
     {
       "district": "Bareilly",
       "nameHi": "Bareilly",
-      "avgPrice": 7861,
-      "records": 47
+      "avgPrice": 7834,
+      "records": 48
     },
     {
       "district": "Kannuj",

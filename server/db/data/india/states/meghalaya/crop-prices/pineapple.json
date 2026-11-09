@@ -7,6 +7,14 @@
   },
   "history": [
     {
+      "month": "06",
+      "date": "2026-06",
+      "market": 3000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
       "month": "07",
       "date": "2026-07",
       "market": 3447,
@@ -36,6 +44,14 @@
       "market": 6308,
       "volume": 13,
       "days": 13,
+      "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6500,
+      "volume": 1,
+      "days": 1,
       "mandis": 1
     }
   ],
@@ -703,15 +719,23 @@
       "mandis": 1,
       "minPrice": 6000,
       "maxPrice": 7000
+    },
+    {
+      "date": "2026-11-09",
+      "market": 6500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "East Khasi Hills",
       "nameHi": "East Khasi Hills",
-      "avgPrice": 4500,
-      "records": 71
+      "avgPrice": 4528,
+      "records": 72
     },
     {
       "district": "West Garo Hills",

@@ -45,6 +45,14 @@
       "volume": 3,
       "days": 3,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -215,15 +223,23 @@
       "mandis": 1,
       "minPrice": 2200,
       "maxPrice": 3850
+    },
+    {
+      "date": "2026-11-09",
+      "market": 3500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2850,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Dehradoon",
       "nameHi": "Dehradoon",
-      "avgPrice": 2816,
-      "records": 19
+      "avgPrice": 2850,
+      "records": 20
     },
     {
       "district": "Udhamsinghnagar",

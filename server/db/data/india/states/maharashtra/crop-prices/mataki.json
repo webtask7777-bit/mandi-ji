@@ -65,10 +65,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 16500,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
+      "market": 13125,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -719,21 +719,29 @@
       "mandis": 1,
       "minPrice": 15000,
       "maxPrice": 18000
+    },
+    {
+      "date": "2026-11-09",
+      "market": 9750,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 9500,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
+    {
+      "district": "Thane",
+      "nameHi": "Thane",
+      "avgPrice": 8780,
+      "records": 44
+    },
     {
       "district": "Palghar",
       "nameHi": "Palghar",
       "avgPrice": 8033,
       "records": 44
-    },
-    {
-      "district": "Thane",
-      "nameHi": "Thane",
-      "avgPrice": 8757,
-      "records": 43
     },
     {
       "district": "Nashik",

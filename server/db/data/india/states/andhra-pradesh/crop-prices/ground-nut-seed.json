@@ -41,10 +41,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 10000,
-      "volume": 2,
-      "days": 2,
-      "mandis": 1
+      "market": 10500,
+      "volume": 5,
+      "days": 3,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -767,21 +767,35 @@
       "mandis": 1,
       "minPrice": 11000,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-11-09",
+      "market": 11100,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 10100,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Ananthapuramu",
       "nameHi": "Ananthapuramu",
-      "avgPrice": 10669,
-      "records": 89
+      "avgPrice": 10678,
+      "records": 90
     },
     {
       "district": "Annamayya",
       "nameHi": "Annamayya",
       "avgPrice": 11097,
-      "records": 67
+      "records": 68
+    },
+    {
+      "district": "Nandyal",
+      "nameHi": "Nandyal",
+      "avgPrice": 10200,
+      "records": 1
     }
   ]
 }

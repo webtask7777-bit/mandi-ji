@@ -25,10 +25,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 10900,
-      "volume": 2,
-      "days": 1,
-      "mandis": 2
+      "market": 12000,
+      "volume": 5,
+      "days": 2,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -143,26 +143,34 @@
       "mandis": 2,
       "minPrice": 9800,
       "maxPrice": 14000
+    },
+    {
+      "date": "2026-11-09",
+      "market": 12000,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 9500,
+      "maxPrice": 15000
     }
   ],
-  "lastUpdated": "2026-11-08T15:08:26.231Z",
+  "lastUpdated": "2026-11-09T10:44:25.940Z",
   "districtBreakdown": [
     {
       "district": "Nalanda",
       "nameHi": "Nalanda",
-      "avgPrice": 13222,
-      "records": 9
+      "avgPrice": 13400,
+      "records": 10
+    },
+    {
+      "district": "Aurangabad",
+      "nameHi": "Aurangabad",
+      "avgPrice": 10750,
+      "records": 8
     },
     {
       "district": "Gopalgang",
       "nameHi": "Gopalgang",
       "avgPrice": 8773,
-      "records": 7
-    },
-    {
-      "district": "Aurangabad",
-      "nameHi": "Aurangabad",
-      "avgPrice": 10571,
       "records": 7
     },
     {
@@ -174,8 +182,8 @@
     {
       "district": "Bhojpur",
       "nameHi": "Bhojpur",
-      "avgPrice": 10320,
-      "records": 5
+      "avgPrice": 10183,
+      "records": 6
     }
   ]
 }
