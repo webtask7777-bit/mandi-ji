@@ -37,6 +37,14 @@
       "volume": 2,
       "days": 2,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3800,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -143,15 +151,23 @@
       "mandis": 1,
       "minPrice": 3500,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-11-09",
+      "market": 3800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3600,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-11-09T10:44:25.940Z",
+  "lastUpdated": "2026-11-09T15:08:03.635Z",
   "districtBreakdown": [
     {
       "district": "Dhalai",
       "nameHi": "Dhalai",
-      "avgPrice": 3723,
-      "records": 13
+      "avgPrice": 3729,
+      "records": 14
     }
   ]
 }

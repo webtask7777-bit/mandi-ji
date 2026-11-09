@@ -61,6 +61,14 @@
       "volume": 23,
       "days": 14,
       "mandis": 6
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -903,9 +911,17 @@
       "mandis": 4,
       "minPrice": 1200,
       "maxPrice": 3200
+    },
+    {
+      "date": "2026-11-09",
+      "market": 2000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1900,
+      "maxPrice": 2100
     }
   ],
-  "lastUpdated": "2026-11-09T10:44:25.940Z",
+  "lastUpdated": "2026-11-09T15:08:03.635Z",
   "districtBreakdown": [
     {
       "district": "Jalpaiguri",
@@ -977,7 +993,7 @@
       "district": "Malda",
       "nameHi": "Malda",
       "avgPrice": 2000,
-      "records": 1
+      "records": 2
     }
   ]
 }

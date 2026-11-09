@@ -13,6 +13,14 @@
       "volume": 2,
       "days": 2,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -31,15 +39,23 @@
       "mandis": 1,
       "minPrice": 2800,
       "maxPrice": 3100
+    },
+    {
+      "date": "2026-11-09",
+      "market": 3500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3300,
+      "maxPrice": 3700
     }
   ],
-  "lastUpdated": "2026-11-09T10:44:25.940Z",
+  "lastUpdated": "2026-11-09T15:08:03.635Z",
   "districtBreakdown": [
     {
       "district": "Balasore",
       "nameHi": "Balasore",
-      "avgPrice": 3300,
-      "records": 2
+      "avgPrice": 3367,
+      "records": 3
     }
   ]
 }

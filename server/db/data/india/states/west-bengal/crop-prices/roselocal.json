@@ -69,6 +69,14 @@
       "volume": 14,
       "days": 14,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 39000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -743,15 +751,23 @@
       "mandis": 1,
       "minPrice": 39000,
       "maxPrice": 41000
+    },
+    {
+      "date": "2026-11-09",
+      "market": 39000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 38000,
+      "maxPrice": 40000
     }
   ],
-  "lastUpdated": "2026-11-09T10:44:25.940Z",
+  "lastUpdated": "2026-11-09T15:08:03.635Z",
   "districtBreakdown": [
     {
       "district": "Medinipur(E)",
       "nameHi": "Medinipur(E)",
-      "avgPrice": 38452,
-      "records": 84
+      "avgPrice": 38459,
+      "records": 85
     }
   ]
 }

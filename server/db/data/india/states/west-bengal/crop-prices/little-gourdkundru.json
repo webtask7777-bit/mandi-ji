@@ -45,6 +45,14 @@
       "volume": 16,
       "days": 16,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1600,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -799,15 +807,23 @@
       "mandis": 1,
       "minPrice": 1500,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-11-09",
+      "market": 1600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 1800
     }
   ],
-  "lastUpdated": "2026-11-09T10:44:25.940Z",
+  "lastUpdated": "2026-11-09T15:08:03.635Z",
   "districtBreakdown": [
     {
       "district": "Jhargram",
       "nameHi": "Jhargram",
-      "avgPrice": 2361,
-      "records": 94
+      "avgPrice": 2353,
+      "records": 95
     }
   ]
 }

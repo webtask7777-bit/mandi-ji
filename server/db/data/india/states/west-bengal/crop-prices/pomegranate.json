@@ -53,6 +53,14 @@
       "volume": 19,
       "days": 19,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 10500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -807,15 +815,23 @@
       "mandis": 1,
       "minPrice": 10200,
       "maxPrice": 11200
+    },
+    {
+      "date": "2026-11-09",
+      "market": 10500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 10000,
+      "maxPrice": 11000
     }
   ],
-  "lastUpdated": "2026-11-09T10:44:25.940Z",
+  "lastUpdated": "2026-11-09T15:08:03.635Z",
   "districtBreakdown": [
     {
       "district": "Kolkata",
       "nameHi": "Kolkata",
-      "avgPrice": 11817,
-      "records": 94
+      "avgPrice": 11803,
+      "records": 95
     }
   ]
 }

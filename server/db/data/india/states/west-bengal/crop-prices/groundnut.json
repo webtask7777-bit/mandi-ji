@@ -16,6 +16,15 @@
       "volume": 6,
       "days": 6,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 10500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1,
+      "msp": 7517
     }
   ],
   "dailyHistory": [
@@ -66,15 +75,23 @@
       "mandis": 1,
       "minPrice": 9700,
       "maxPrice": 9900
+    },
+    {
+      "date": "2026-11-09",
+      "market": 10500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 10000,
+      "maxPrice": 11000
     }
   ],
-  "lastUpdated": "2026-11-09T10:44:25.940Z",
+  "lastUpdated": "2026-11-09T15:08:03.635Z",
   "districtBreakdown": [
     {
       "district": "Malda",
       "nameHi": "Malda",
-      "avgPrice": 9867,
-      "records": 6
+      "avgPrice": 9957,
+      "records": 7
     }
   ]
 }
