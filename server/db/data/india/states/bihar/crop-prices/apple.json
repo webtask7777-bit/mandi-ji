@@ -26,8 +26,8 @@
       "month": "11",
       "date": "2026-11",
       "market": 12000,
-      "volume": 5,
-      "days": 2,
+      "volume": 6,
+      "days": 3,
       "mandis": 3
     }
   ],
@@ -151,9 +151,17 @@
       "mandis": 3,
       "minPrice": 9500,
       "maxPrice": 15000
+    },
+    {
+      "date": "2026-11-10",
+      "market": 9800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 9800,
+      "maxPrice": 9800
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Nalanda",
@@ -174,15 +182,15 @@
       "records": 7
     },
     {
+      "district": "Bhojpur",
+      "nameHi": "Bhojpur",
+      "avgPrice": 10129,
+      "records": 7
+    },
+    {
       "district": "Chhapra",
       "nameHi": "Chhapra",
       "avgPrice": 9083,
-      "records": 6
-    },
-    {
-      "district": "Bhojpur",
-      "nameHi": "Bhojpur",
-      "avgPrice": 10183,
       "records": 6
     }
   ]

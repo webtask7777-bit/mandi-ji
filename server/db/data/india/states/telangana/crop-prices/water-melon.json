@@ -73,10 +73,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 500,
-      "volume": 2,
-      "days": 2,
-      "mandis": 1
+      "market": 495,
+      "volume": 3,
+      "days": 3,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -919,9 +919,17 @@
       "mandis": 1,
       "minPrice": 300,
       "maxPrice": 800
+    },
+    {
+      "date": "2026-11-10",
+      "market": 490,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 480,
+      "maxPrice": 500
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Ranga Reddy",
@@ -934,6 +942,12 @@
       "nameHi": "Warangal",
       "avgPrice": 1488,
       "records": 22
+    },
+    {
+      "district": "Bhadradri Kothagudem",
+      "nameHi": "Bhadradri Kothagudem",
+      "avgPrice": 490,
+      "records": 1
     }
   ]
 }

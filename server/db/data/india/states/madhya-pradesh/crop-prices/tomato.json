@@ -73,13 +73,21 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 1210,
-      "volume": 18,
-      "days": 3,
-      "mandis": 14
+      "market": 1160,
+      "volume": 25,
+      "days": 4,
+      "mandis": 17
     }
   ],
   "dailyHistory": [
+    {
+      "date": "2026-03-26",
+      "market": 930,
+      "volume": 7,
+      "mandis": 6,
+      "minPrice": 300,
+      "maxPrice": 1700
+    },
     {
       "date": "2026-04-09",
       "market": 800,
@@ -263,6 +271,14 @@
       "mandis": 18,
       "minPrice": 530,
       "maxPrice": 3600
+    },
+    {
+      "date": "2026-07-19",
+      "market": 1750,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 550,
+      "maxPrice": 2500
     },
     {
       "date": "2026-07-20",
@@ -1009,6 +1025,14 @@
       "maxPrice": 2600
     },
     {
+      "date": "2026-10-27",
+      "market": 1088,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 500,
+      "maxPrice": 1900
+    },
+    {
       "date": "2026-10-29",
       "market": 1200,
       "volume": 23,
@@ -1025,21 +1049,21 @@
       "maxPrice": 3000
     },
     {
-      "date": "2026-11-09",
-      "market": 1880,
-      "volume": 2,
-      "mandis": 2,
-      "minPrice": 420,
-      "maxPrice": 2500
+      "date": "2026-11-10",
+      "market": 1000,
+      "volume": 7,
+      "mandis": 7,
+      "minPrice": 600,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Morena",
       "nameHi": "Morena",
-      "avgPrice": 1773,
-      "records": 356
+      "avgPrice": 1772,
+      "records": 357
     },
     {
       "district": "Sagar",
@@ -1050,8 +1074,8 @@
     {
       "district": "Dhar",
       "nameHi": "Dhar",
-      "avgPrice": 1479,
-      "records": 284
+      "avgPrice": 1477,
+      "records": 285
     },
     {
       "district": "Khandwa",
@@ -1062,14 +1086,14 @@
     {
       "district": "Indore",
       "nameHi": "Indore",
-      "avgPrice": 1775,
-      "records": 212
+      "avgPrice": 1771,
+      "records": 213
     },
     {
       "district": "Badwani",
       "nameHi": "Badwani",
-      "avgPrice": 1324,
-      "records": 174
+      "avgPrice": 1322,
+      "records": 175
     },
     {
       "district": "Dewas",
@@ -1080,8 +1104,8 @@
     {
       "district": "Narmadapuram",
       "nameHi": "Narmadapuram",
-      "avgPrice": 1657,
-      "records": 161
+      "avgPrice": 1662,
+      "records": 162
     },
     {
       "district": "Jabalpur",
@@ -1093,7 +1117,7 @@
       "district": "Harda",
       "nameHi": "Harda",
       "avgPrice": 1874,
-      "records": 155
+      "records": 156
     },
     {
       "district": "Khargone",

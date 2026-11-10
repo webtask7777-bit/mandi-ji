@@ -61,6 +61,14 @@
       "volume": 42,
       "days": 11,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 10625,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -607,20 +615,28 @@
       "mandis": 1,
       "minPrice": 9000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-11-10",
+      "market": 10625,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 9000,
+      "maxPrice": 12000
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
+    {
+      "district": "Imphal East",
+      "nameHi": "Imphal East",
+      "avgPrice": 9583,
+      "records": 60
+    },
     {
       "district": "Imphal West",
       "nameHi": "Imphal West",
       "avgPrice": 10500,
-      "records": 59
-    },
-    {
-      "district": "Imphal East",
-      "nameHi": "Imphal East",
-      "avgPrice": 9585,
       "records": 59
     },
     {
@@ -638,8 +654,8 @@
     {
       "district": "Kakching",
       "nameHi": "Kakching",
-      "avgPrice": 11695,
-      "records": 55
+      "avgPrice": 11696,
+      "records": 56
     }
   ]
 }

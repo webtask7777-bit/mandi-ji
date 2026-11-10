@@ -38,8 +38,8 @@
     "name": "Brinjal",
     "nameHi": "बैंगन",
     "emoji": "🍆",
-    "totalRecords": 205,
-    "avgPrice": 3189,
+    "totalRecords": 206,
+    "avgPrice": 3188,
     "minPrice": 1100,
     "maxPrice": 7000,
     "varieties": [
@@ -77,8 +77,8 @@
     "name": "Green Chilli",
     "nameHi": "हरी मिर्च",
     "emoji": "🌶️",
-    "totalRecords": 184,
-    "avgPrice": 7261,
+    "totalRecords": 186,
+    "avgPrice": 7277,
     "minPrice": 1500,
     "maxPrice": 12000,
     "varieties": [
@@ -115,8 +115,8 @@
     "name": "Leafy Vegetable",
     "nameHi": "Leafy Vegetable",
     "emoji": "🌱",
-    "totalRecords": 167,
-    "avgPrice": 2558,
+    "totalRecords": 168,
+    "avgPrice": 2561,
     "minPrice": 200,
     "maxPrice": 24000,
     "varieties": [
@@ -129,8 +129,8 @@
     "name": "Bitter gourd",
     "nameHi": "करेला",
     "emoji": "🥒",
-    "totalRecords": 165,
-    "avgPrice": 4967,
+    "totalRecords": 166,
+    "avgPrice": 4971,
     "minPrice": 1900,
     "maxPrice": 9000,
     "varieties": [
@@ -168,8 +168,8 @@
     "name": "Banana",
     "nameHi": "केला",
     "emoji": "🍌",
-    "totalRecords": 164,
-    "avgPrice": 4600,
+    "totalRecords": 165,
+    "avgPrice": 4596,
     "minPrice": 2000,
     "maxPrice": 10000,
     "varieties": [
@@ -299,8 +299,8 @@
     "name": "Beans",
     "nameHi": "सेम",
     "emoji": "🌱",
-    "totalRecords": 129,
-    "avgPrice": 5667,
+    "totalRecords": 130,
+    "avgPrice": 5662,
     "minPrice": 4000,
     "maxPrice": 8000,
     "varieties": [
@@ -313,13 +313,27 @@
     "name": "Chow Chow",
     "nameHi": "चायोटे",
     "emoji": "🌱",
-    "totalRecords": 124,
-    "avgPrice": 2274,
+    "totalRecords": 125,
+    "avgPrice": 2266,
     "minPrice": 700,
     "maxPrice": 5000,
     "varieties": [
       "Chow Chow",
       "Other"
+    ]
+  },
+  {
+    "id": "gingergreen",
+    "name": "Ginger(Green)",
+    "nameHi": "अदरक",
+    "emoji": "🫐",
+    "totalRecords": 109,
+    "avgPrice": 6081,
+    "minPrice": 3200,
+    "maxPrice": 11400,
+    "varieties": [
+      "Other",
+      "Green Ginger"
     ]
   },
   {
@@ -361,20 +375,6 @@
       1,
       2,
       11
-    ]
-  },
-  {
-    "id": "gingergreen",
-    "name": "Ginger(Green)",
-    "nameHi": "अदरक",
-    "emoji": "🫐",
-    "totalRecords": 108,
-    "avgPrice": 6080,
-    "minPrice": 3200,
-    "maxPrice": 11400,
-    "varieties": [
-      "Other",
-      "Green Ginger"
     ]
   },
   {
@@ -464,8 +464,8 @@
     "name": "Yam(Ratalu)",
     "nameHi": "रतालू",
     "emoji": "🌱",
-    "totalRecords": 72,
-    "avgPrice": 4904,
+    "totalRecords": 73,
+    "avgPrice": 4896,
     "minPrice": 3000,
     "maxPrice": 6000,
     "varieties": [
@@ -787,6 +787,36 @@
     ]
   },
   {
+    "id": "orange",
+    "name": "Orange",
+    "nameHi": "संतरा",
+    "emoji": "🍊",
+    "totalRecords": 4,
+    "avgPrice": 7150,
+    "minPrice": 4000,
+    "maxPrice": 9800,
+    "varieties": [
+      "Other",
+      "Orange"
+    ],
+    "sowingMonths": [],
+    "growingMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "harvestMonths": [
+      10,
+      11,
+      0
+    ],
+    "peakMonths": [
+      11,
+      0
+    ]
+  },
+  {
     "id": "sweet-potato",
     "name": "Sweet Potato",
     "nameHi": "शकरकंद",
@@ -850,35 +880,6 @@
     "varieties": [
       "Other",
       "French Beans (Frasbean)"
-    ]
-  },
-  {
-    "id": "orange",
-    "name": "Orange",
-    "nameHi": "संतरा",
-    "emoji": "🍊",
-    "totalRecords": 3,
-    "avgPrice": 7333,
-    "minPrice": 4000,
-    "maxPrice": 9800,
-    "varieties": [
-      "Other"
-    ],
-    "sowingMonths": [],
-    "growingMonths": [
-      6,
-      7,
-      8,
-      9
-    ],
-    "harvestMonths": [
-      10,
-      11,
-      0
-    ],
-    "peakMonths": [
-      11,
-      0
     ]
   },
   {

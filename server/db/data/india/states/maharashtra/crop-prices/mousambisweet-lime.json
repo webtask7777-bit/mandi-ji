@@ -73,10 +73,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 3000,
-      "volume": 19,
-      "days": 3,
-      "mandis": 11
+      "market": 3246,
+      "volume": 24,
+      "days": 4,
+      "mandis": 12
     }
   ],
   "dailyHistory": [
@@ -1055,10 +1055,24 @@
       "mandis": 6,
       "minPrice": 1000,
       "maxPrice": 6000
+    },
+    {
+      "date": "2026-11-10",
+      "market": 3500,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 2000,
+      "maxPrice": 7000
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
+    {
+      "district": "Pune",
+      "nameHi": "Pune",
+      "avgPrice": 4587,
+      "records": 224
+    },
     {
       "district": "Solapur",
       "nameHi": "Solapur",
@@ -1066,16 +1080,10 @@
       "records": 224
     },
     {
-      "district": "Pune",
-      "nameHi": "Pune",
-      "avgPrice": 4588,
-      "records": 222
-    },
-    {
       "district": "Chattrapati Sambhajinagar",
       "nameHi": "Chattrapati Sambhajinagar",
-      "avgPrice": 2343,
-      "records": 160
+      "avgPrice": 2350,
+      "records": 161
     },
     {
       "district": "Ahilyanagar",
@@ -1098,8 +1106,8 @@
     {
       "district": "Mumbai",
       "nameHi": "Mumbai",
-      "avgPrice": 4033,
-      "records": 121
+      "avgPrice": 4029,
+      "records": 122
     },
     {
       "district": "Amarawati",
@@ -1110,8 +1118,8 @@
     {
       "district": "Sangli",
       "nameHi": "Sangli",
-      "avgPrice": 3859,
-      "records": 78
+      "avgPrice": 3854,
+      "records": 79
     },
     {
       "district": "Kolhapur",

@@ -53,6 +53,14 @@
       "volume": 19,
       "days": 19,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -687,15 +695,23 @@
       "mandis": 1,
       "minPrice": 5000,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-11-10",
+      "market": 5000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Chandigarh",
       "nameHi": "Chandigarh",
-      "avgPrice": 6030,
-      "records": 79
+      "avgPrice": 6018,
+      "records": 80
     }
   ]
 }

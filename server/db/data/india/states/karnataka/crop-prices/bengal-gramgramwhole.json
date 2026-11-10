@@ -107,10 +107,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 7183,
-      "volume": 9,
-      "days": 1,
-      "mandis": 9,
+      "market": 7000,
+      "volume": 12,
+      "days": 2,
+      "mandis": 11,
       "msp": 5875
     }
   ],
@@ -1434,10 +1434,24 @@
       "mandis": 9,
       "minPrice": 3109,
       "maxPrice": 9601
+    },
+    {
+      "date": "2026-11-10",
+      "market": 6500,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 4511,
+      "maxPrice": 7319
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
+    {
+      "district": "Gadag",
+      "nameHi": "Gadag",
+      "avgPrice": 6190,
+      "records": 222
+    },
     {
       "district": "Dharwad",
       "nameHi": "Dharwad",
@@ -1445,16 +1459,10 @@
       "records": 221
     },
     {
-      "district": "Gadag",
-      "nameHi": "Gadag",
-      "avgPrice": 6190,
-      "records": 221
-    },
-    {
       "district": "Vijayapura",
       "nameHi": "Vijayapura",
-      "avgPrice": 5911,
-      "records": 158
+      "avgPrice": 5917,
+      "records": 159
     },
     {
       "district": "Raichur",

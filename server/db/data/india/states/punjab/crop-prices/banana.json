@@ -98,9 +98,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 3000,
-      "volume": 17,
-      "days": 1,
-      "mandis": 17
+      "volume": 30,
+      "days": 2,
+      "mandis": 23
     }
   ],
   "dailyHistory": [
@@ -1727,10 +1727,24 @@
       "mandis": 17,
       "minPrice": 1600,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-10",
+      "market": 3000,
+      "volume": 13,
+      "mandis": 13,
+      "minPrice": 1800,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
+    {
+      "district": "Sangrur",
+      "nameHi": "Sangrur",
+      "avgPrice": 2685,
+      "records": 740
+    },
     {
       "district": "Bhatinda",
       "nameHi": "Bhatinda",
@@ -1738,16 +1752,10 @@
       "records": 738
     },
     {
-      "district": "Sangrur",
-      "nameHi": "Sangrur",
-      "avgPrice": 2685,
-      "records": 738
-    },
-    {
       "district": "Hoshiarpur",
       "nameHi": "Hoshiarpur",
       "avgPrice": 2930,
-      "records": 728
+      "records": 732
     },
     {
       "district": "Patiala",
@@ -1758,20 +1766,20 @@
     {
       "district": "Ludhiana",
       "nameHi": "Ludhiana",
-      "avgPrice": 2191,
-      "records": 310
+      "avgPrice": 2189,
+      "records": 312
     },
     {
       "district": "Fazilka",
       "nameHi": "Fazilka",
-      "avgPrice": 3280,
-      "records": 301
+      "avgPrice": 3282,
+      "records": 302
     },
     {
       "district": "Gurdaspur",
       "nameHi": "Gurdaspur",
-      "avgPrice": 3411,
-      "records": 284
+      "avgPrice": 3407,
+      "records": 285
     },
     {
       "district": "Fatehgarh",
@@ -1783,7 +1791,7 @@
       "district": "Muktsar",
       "nameHi": "Muktsar",
       "avgPrice": 2402,
-      "records": 230
+      "records": 231
     },
     {
       "district": "Mansa",
@@ -1794,14 +1802,14 @@
     {
       "district": "Ropar (Rupnagar)",
       "nameHi": "Ropar (Rupnagar)",
-      "avgPrice": 3067,
-      "records": 172
+      "avgPrice": 3072,
+      "records": 173
     },
     {
       "district": "Ferozpur",
       "nameHi": "Ferozpur",
-      "avgPrice": 2761,
-      "records": 140
+      "avgPrice": 2764,
+      "records": 141
     },
     {
       "district": "Moga",

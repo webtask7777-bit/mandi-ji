@@ -53,6 +53,14 @@
       "volume": 10,
       "days": 10,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 7050,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -775,15 +783,23 @@
       "mandis": 1,
       "minPrice": 3450,
       "maxPrice": 3550
+    },
+    {
+      "date": "2026-11-10",
+      "market": 7050,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 7000,
+      "maxPrice": 7100
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Malappuram",
       "nameHi": "Malappuram",
-      "avgPrice": 4902,
-      "records": 104
+      "avgPrice": 4923,
+      "records": 105
     }
   ]
 }

@@ -53,6 +53,14 @@
       "volume": 12,
       "days": 12,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 8400,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -631,15 +639,23 @@
       "mandis": 1,
       "minPrice": 8000,
       "maxPrice": 8500
+    },
+    {
+      "date": "2026-11-10",
+      "market": 8400,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 8200,
+      "maxPrice": 8600
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Ropar (Rupnagar)",
       "nameHi": "Ropar (Rupnagar)",
-      "avgPrice": 9692,
-      "records": 72
+      "avgPrice": 9674,
+      "records": 73
     }
   ]
 }

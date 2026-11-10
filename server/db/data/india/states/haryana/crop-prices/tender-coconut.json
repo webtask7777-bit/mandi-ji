@@ -61,6 +61,14 @@
       "volume": 28,
       "days": 20,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -903,15 +911,23 @@
       "mandis": 1,
       "minPrice": 6000,
       "maxPrice": 6500
+    },
+    {
+      "date": "2026-11-10",
+      "market": 6000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Mahendragarh-Narnaul",
       "nameHi": "Mahendragarh-Narnaul",
-      "avgPrice": 4682,
-      "records": 163
+      "avgPrice": 4690,
+      "records": 164
     }
   ]
 }

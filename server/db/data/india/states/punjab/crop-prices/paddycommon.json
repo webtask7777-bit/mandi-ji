@@ -30,9 +30,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 2461,
-      "volume": 35,
-      "days": 1,
-      "mandis": 34,
+      "volume": 43,
+      "days": 2,
+      "mandis": 38,
       "msp": 2441
     }
   ],
@@ -316,9 +316,17 @@
       "mandis": 34,
       "minPrice": 2461,
       "maxPrice": 4850
+    },
+    {
+      "date": "2026-11-10",
+      "market": 2461,
+      "volume": 8,
+      "mandis": 7,
+      "minPrice": 2461,
+      "maxPrice": 4850
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Ludhiana",
@@ -327,16 +335,16 @@
       "records": 154
     },
     {
+      "district": "Jalandhar",
+      "nameHi": "Jalandhar",
+      "avgPrice": 2461,
+      "records": 151
+    },
+    {
       "district": "Patiala",
       "nameHi": "Patiala",
       "avgPrice": 2802,
       "records": 150
-    },
-    {
-      "district": "Jalandhar",
-      "nameHi": "Jalandhar",
-      "avgPrice": 2461,
-      "records": 147
     },
     {
       "district": "Tarntaran",
@@ -363,16 +371,16 @@
       "records": 55
     },
     {
+      "district": "Fazilka",
+      "nameHi": "Fazilka",
+      "avgPrice": 3114,
+      "records": 54
+    },
+    {
       "district": "Mansa",
       "nameHi": "Mansa",
       "avgPrice": 2497,
       "records": 54
-    },
-    {
-      "district": "Fazilka",
-      "nameHi": "Fazilka",
-      "avgPrice": 3097,
-      "records": 52
     },
     {
       "district": "Gurdaspur",
@@ -408,7 +416,7 @@
       "district": "Bhatinda",
       "nameHi": "Bhatinda",
       "avgPrice": 2461,
-      "records": 36
+      "records": 38
     }
   ]
 }

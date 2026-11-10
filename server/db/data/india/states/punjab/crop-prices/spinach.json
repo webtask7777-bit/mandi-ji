@@ -23,14 +23,6 @@
       "mandis": 7
     },
     {
-      "month": "05",
-      "date": "2026-05",
-      "market": 1500,
-      "volume": 6,
-      "days": 5,
-      "mandis": 3
-    },
-    {
       "month": "07",
       "date": "2026-07",
       "market": 1617,
@@ -65,10 +57,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 1520,
-      "volume": 15,
-      "days": 1,
-      "mandis": 14
+      "market": 1400,
+      "volume": 30,
+      "days": 2,
+      "mandis": 22
     }
   ],
   "dailyHistory": [
@@ -103,14 +95,6 @@
       "mandis": 3,
       "minPrice": 600,
       "maxPrice": 1853
-    },
-    {
-      "date": "2026-05-19",
-      "market": 1800,
-      "volume": 2,
-      "mandis": 2,
-      "minPrice": 1200,
-      "maxPrice": 2000
     },
     {
       "date": "2026-07-20",
@@ -151,14 +135,6 @@
       "mandis": 4,
       "minPrice": 1000,
       "maxPrice": 3400
-    },
-    {
-      "date": "2026-07-25",
-      "market": 2050,
-      "volume": 2,
-      "mandis": 2,
-      "minPrice": 1000,
-      "maxPrice": 3000
     },
     {
       "date": "2026-07-27",
@@ -207,14 +183,6 @@
       "mandis": 5,
       "minPrice": 1200,
       "maxPrice": 4600
-    },
-    {
-      "date": "2026-08-02",
-      "market": 1750,
-      "volume": 2,
-      "mandis": 2,
-      "minPrice": 1500,
-      "maxPrice": 2000
     },
     {
       "date": "2026-08-03",
@@ -423,14 +391,6 @@
       "mandis": 11,
       "minPrice": 800,
       "maxPrice": 2500
-    },
-    {
-      "date": "2026-08-30",
-      "market": 1600,
-      "volume": 2,
-      "mandis": 2,
-      "minPrice": 1400,
-      "maxPrice": 2000
     },
     {
       "date": "2026-08-31",
@@ -871,39 +831,47 @@
       "mandis": 14,
       "minPrice": 500,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-10",
+      "market": 1400,
+      "volume": 15,
+      "mandis": 15,
+      "minPrice": 250,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Jalandhar",
       "nameHi": "Jalandhar",
-      "avgPrice": 1982,
-      "records": 270
+      "avgPrice": 1971,
+      "records": 274
     },
     {
       "district": "Sangrur",
       "nameHi": "Sangrur",
-      "avgPrice": 1822,
-      "records": 176
+      "avgPrice": 1817,
+      "records": 177
     },
     {
       "district": "Tarntaran",
       "nameHi": "Tarntaran",
-      "avgPrice": 1192,
-      "records": 151
+      "avgPrice": 1187,
+      "records": 153
     },
     {
       "district": "Patiala",
       "nameHi": "Patiala",
-      "avgPrice": 1928,
-      "records": 141
+      "avgPrice": 1925,
+      "records": 142
     },
     {
       "district": "Ludhiana",
       "nameHi": "Ludhiana",
-      "avgPrice": 2001,
-      "records": 81
+      "avgPrice": 1990,
+      "records": 83
     },
     {
       "district": "Fatehgarh",
@@ -914,8 +882,8 @@
     {
       "district": "Hoshiarpur",
       "nameHi": "Hoshiarpur",
-      "avgPrice": 2347,
-      "records": 53
+      "avgPrice": 2315,
+      "records": 55
     },
     {
       "district": "Muktsar",
@@ -926,8 +894,8 @@
     {
       "district": "Mohali",
       "nameHi": "Mohali",
-      "avgPrice": 2959,
-      "records": 34
+      "avgPrice": 2905,
+      "records": 36
     },
     {
       "district": "Kapurthala",
@@ -950,8 +918,8 @@
     {
       "district": "Ferozpur",
       "nameHi": "Ferozpur",
-      "avgPrice": 829,
-      "records": 14
+      "avgPrice": 813,
+      "records": 15
     },
     {
       "district": "Gurdaspur",

@@ -7,14 +7,6 @@
   },
   "history": [
     {
-      "month": "07",
-      "date": "2026-07",
-      "market": 3568,
-      "volume": 24,
-      "days": 12,
-      "mandis": 3
-    },
-    {
       "month": "08",
       "date": "2026-08",
       "market": 3640,
@@ -41,10 +33,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 4713,
-      "volume": 48,
-      "days": 3,
-      "mandis": 20
+      "market": 4775,
+      "volume": 51,
+      "days": 4,
+      "mandis": 22
     }
   ],
   "dailyHistory": [
@@ -751,9 +743,17 @@
       "mandis": 10,
       "minPrice": 3800,
       "maxPrice": 5401
+    },
+    {
+      "date": "2026-11-10",
+      "market": 4981,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 4000,
+      "maxPrice": 5431
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Karnal",
@@ -776,8 +776,8 @@
     {
       "district": "Panipat",
       "nameHi": "Panipat",
-      "avgPrice": 4045,
-      "records": 132
+      "avgPrice": 4061,
+      "records": 134
     },
     {
       "district": "Kaithal",
@@ -834,15 +834,15 @@
       "records": 24
     },
     {
+      "district": "Rohtak",
+      "nameHi": "Rohtak",
+      "avgPrice": 4045,
+      "records": 12
+    },
+    {
       "district": "Rewari",
       "nameHi": "Rewari",
       "avgPrice": 4107,
-      "records": 11
-    },
-    {
-      "district": "Rohtak",
-      "nameHi": "Rohtak",
-      "avgPrice": 3981,
       "records": 11
     }
   ]

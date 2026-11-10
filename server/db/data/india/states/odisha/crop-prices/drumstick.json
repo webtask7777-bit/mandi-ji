@@ -89,10 +89,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 9140,
-      "volume": 5,
-      "days": 3,
-      "mandis": 4
+      "market": 9080,
+      "volume": 8,
+      "days": 4,
+      "mandis": 5
     }
   ],
   "dailyHistory": [
@@ -1439,9 +1439,17 @@
       "mandis": 1,
       "minPrice": 8000,
       "maxPrice": 11040
+    },
+    {
+      "date": "2026-11-10",
+      "market": 6000,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 5000,
+      "maxPrice": 11040
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Nuapada",
@@ -1458,14 +1466,14 @@
     {
       "district": "Cuttack",
       "nameHi": "Cuttack",
-      "avgPrice": 5845,
-      "records": 47
+      "avgPrice": 5848,
+      "records": 48
     },
     {
       "district": "Rayagada",
       "nameHi": "Rayagada",
-      "avgPrice": 8063,
-      "records": 46
+      "avgPrice": 8085,
+      "records": 47
     },
     {
       "district": "Balasore",
@@ -1508,6 +1516,12 @@
       "nameHi": "Nowarangpur",
       "avgPrice": 5250,
       "records": 2
+    },
+    {
+      "district": "Boudh",
+      "nameHi": "Boudh",
+      "avgPrice": 5500,
+      "records": 1
     }
   ]
 }

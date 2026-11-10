@@ -66,9 +66,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 2000,
-      "volume": 17,
-      "days": 3,
-      "mandis": 6
+      "volume": 22,
+      "days": 4,
+      "mandis": 7
     }
   ],
   "dailyHistory": [
@@ -983,15 +983,23 @@
       "mandis": 5,
       "minPrice": 1500,
       "maxPrice": 2500
+    },
+    {
+      "date": "2026-11-10",
+      "market": 2000,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 1500,
+      "maxPrice": 3200
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Hyderabad (तेलंगाना)",
       "nameHi": "Hyderabad (तेलंगाना)",
-      "avgPrice": 1911,
-      "records": 224
+      "avgPrice": 1910,
+      "records": 226
     },
     {
       "district": "Morena (मध्य प्रदेश)",
@@ -1009,13 +1017,13 @@
       "district": "Ranga Reddy (तेलंगाना)",
       "nameHi": "Ranga Reddy (तेलंगाना)",
       "avgPrice": 2000,
-      "records": 84
+      "records": 85
     },
     {
       "district": "Medchal Malkajgiri (तेलंगाना)",
       "nameHi": "Medchal Malkajgiri (तेलंगाना)",
-      "avgPrice": 2201,
-      "records": 72
+      "avgPrice": 2205,
+      "records": 73
     },
     {
       "district": "Bhopal (मध्य प्रदेश)",
@@ -1042,6 +1050,12 @@
       "records": 6
     },
     {
+      "district": "Kamrup (असम)",
+      "nameHi": "Kamrup (असम)",
+      "avgPrice": 3050,
+      "records": 2
+    },
+    {
       "district": "Bilaspur (छत्तीसगढ़)",
       "nameHi": "Bilaspur (छत्तीसगढ़)",
       "avgPrice": 7100,
@@ -1051,12 +1065,6 @@
       "district": "Shivpuri (मध्य प्रदेश)",
       "nameHi": "Shivpuri (मध्य प्रदेश)",
       "avgPrice": 750,
-      "records": 1
-    },
-    {
-      "district": "Kamrup (असम)",
-      "nameHi": "Kamrup (असम)",
-      "avgPrice": 3000,
       "records": 1
     }
   ]

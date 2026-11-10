@@ -81,10 +81,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 6500,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
+      "market": 6350,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -439,9 +439,17 @@
       "mandis": 1,
       "minPrice": 6500,
       "maxPrice": 6500
+    },
+    {
+      "date": "2026-11-10",
+      "market": 6200,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6200,
+      "maxPrice": 6200
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Ahilyanagar",
@@ -477,6 +485,12 @@
       "district": "Bhandara",
       "nameHi": "Bhandara",
       "avgPrice": 4511,
+      "records": 1
+    },
+    {
+      "district": "Solapur",
+      "nameHi": "Solapur",
+      "avgPrice": 6200,
       "records": 1
     }
   ]

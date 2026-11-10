@@ -65,9 +65,9 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 3500,
-      "volume": 2,
-      "days": 2,
+      "market": 3333,
+      "volume": 3,
+      "days": 3,
       "mandis": 1
     }
   ],
@@ -343,15 +343,23 @@
       "mandis": 1,
       "minPrice": 1500,
       "maxPrice": 4500
+    },
+    {
+      "date": "2026-11-10",
+      "market": 3000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 4500
     }
   ],
-  "lastUpdated": "2026-11-09T15:08:03.635Z",
+  "lastUpdated": "2026-11-10T09:18:05.472Z",
   "districtBreakdown": [
     {
       "district": "Indore",
       "nameHi": "Indore",
-      "avgPrice": 4500,
-      "records": 14
+      "avgPrice": 4400,
+      "records": 15
     },
     {
       "district": "Bhopal",
