@@ -13,6 +13,14 @@
       "volume": 10,
       "days": 5,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2350,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -55,15 +63,23 @@
       "mandis": 2,
       "minPrice": 2500,
       "maxPrice": 2600
+    },
+    {
+      "date": "2026-11-10",
+      "market": 2350,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2300,
+      "maxPrice": 2350
     }
   ],
-  "lastUpdated": "2026-11-10T09:18:05.472Z",
+  "lastUpdated": "2026-11-10T15:09:10.152Z",
   "districtBreakdown": [
     {
       "district": "Kapurthala",
       "nameHi": "Kapurthala",
-      "avgPrice": 2540,
-      "records": 10
+      "avgPrice": 2523,
+      "records": 11
     }
   ]
 }

@@ -26,8 +26,8 @@
       "month": "11",
       "date": "2026-11",
       "market": 20000,
-      "volume": 2,
-      "days": 2,
+      "volume": 3,
+      "days": 3,
       "mandis": 1
     }
   ],
@@ -79,20 +79,28 @@
       "mandis": 1,
       "minPrice": 20000,
       "maxPrice": 20000
+    },
+    {
+      "date": "2026-11-10",
+      "market": 20000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 20000,
+      "maxPrice": 20000
     }
   ],
-  "lastUpdated": "2026-11-10T09:18:05.472Z",
+  "lastUpdated": "2026-11-10T15:09:10.152Z",
   "districtBreakdown": [
+    {
+      "district": "Ranga Reddy (तेलंगाना)",
+      "nameHi": "Ranga Reddy (तेलंगाना)",
+      "avgPrice": 19750,
+      "records": 4
+    },
     {
       "district": "Ganganagar (राजस्थान)",
       "nameHi": "Ganganagar (राजस्थान)",
       "avgPrice": 11333,
-      "records": 3
-    },
-    {
-      "district": "Ranga Reddy (तेलंगाना)",
-      "nameHi": "Ranga Reddy (तेलंगाना)",
-      "avgPrice": 19667,
       "records": 3
     }
   ]

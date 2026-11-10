@@ -49,6 +49,15 @@
       "days": 21,
       "mandis": 29,
       "msp": 10346
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 15000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1,
+      "msp": 10346
     }
   ],
   "dailyHistory": [
@@ -667,9 +676,17 @@
       "mandis": 7,
       "minPrice": 10000,
       "maxPrice": 15900
+    },
+    {
+      "date": "2026-11-10",
+      "market": 15000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 15000,
+      "maxPrice": 15000
     }
   ],
-  "lastUpdated": "2026-11-10T09:18:05.472Z",
+  "lastUpdated": "2026-11-10T15:09:10.152Z",
   "districtBreakdown": [
     {
       "district": "Dausa",
@@ -744,6 +761,12 @@
       "records": 2
     },
     {
+      "district": "Churu",
+      "nameHi": "Churu",
+      "avgPrice": 10050,
+      "records": 2
+    },
+    {
       "district": "Bundi",
       "nameHi": "Bundi",
       "avgPrice": 12338,
@@ -753,12 +776,6 @@
       "district": "Beawar",
       "nameHi": "Beawar",
       "avgPrice": 12500,
-      "records": 1
-    },
-    {
-      "district": "Churu",
-      "nameHi": "Churu",
-      "avgPrice": 5100,
       "records": 1
     }
   ]
