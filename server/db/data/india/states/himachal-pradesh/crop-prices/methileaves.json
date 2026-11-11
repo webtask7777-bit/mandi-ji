@@ -34,8 +34,8 @@
       "month": "11",
       "date": "2026-11",
       "market": 4500,
-      "volume": 11,
-      "days": 2,
+      "volume": 12,
+      "days": 3,
       "mandis": 7
     }
   ],
@@ -215,9 +215,17 @@
       "mandis": 5,
       "minPrice": 1500,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-11",
+      "market": 3500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3500,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
     {
       "district": "Kangra",
@@ -238,6 +246,12 @@
       "records": 6
     },
     {
+      "district": "Una",
+      "nameHi": "Una",
+      "avgPrice": 3500,
+      "records": 2
+    },
+    {
       "district": "Kullu",
       "nameHi": "Kullu",
       "avgPrice": 2800,
@@ -247,12 +261,6 @@
       "district": "Mandi",
       "nameHi": "Mandi",
       "avgPrice": 2000,
-      "records": 1
-    },
-    {
-      "district": "Una",
-      "nameHi": "Una",
-      "avgPrice": 3500,
       "records": 1
     },
     {

@@ -42,7 +42,7 @@
       "month": "11",
       "date": "2026-11",
       "market": 2000,
-      "volume": 16,
+      "volume": 19,
       "days": 4,
       "mandis": 11
     }
@@ -602,20 +602,20 @@
     },
     {
       "date": "2026-11-11",
-      "market": 2750,
-      "volume": 2,
-      "mandis": 2,
-      "minPrice": 1800,
+      "market": 2000,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 1500,
       "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
     {
       "district": "Bolangir",
       "nameHi": "Bolangir",
-      "avgPrice": 3018,
-      "records": 44
+      "avgPrice": 3013,
+      "records": 45
     },
     {
       "district": "Sambalpur",
@@ -636,6 +636,12 @@
       "records": 4
     },
     {
+      "district": "Deogarh",
+      "nameHi": "Deogarh",
+      "avgPrice": 2150,
+      "records": 4
+    },
+    {
       "district": "Bargarh",
       "nameHi": "Bargarh",
       "avgPrice": 2000,
@@ -648,15 +654,15 @@
       "records": 3
     },
     {
-      "district": "Deogarh",
-      "nameHi": "Deogarh",
-      "avgPrice": 2300,
-      "records": 3
-    },
-    {
       "district": "Boudh",
       "nameHi": "Boudh",
       "avgPrice": 3500,
+      "records": 2
+    },
+    {
+      "district": "Khurda",
+      "nameHi": "Khurda",
+      "avgPrice": 1500,
       "records": 2
     },
     {
@@ -675,12 +681,6 @@
       "district": "Nuapada",
       "nameHi": "Nuapada",
       "avgPrice": 2000,
-      "records": 1
-    },
-    {
-      "district": "Khurda",
-      "nameHi": "Khurda",
-      "avgPrice": 1500,
       "records": 1
     }
   ]

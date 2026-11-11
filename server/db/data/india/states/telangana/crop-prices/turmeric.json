@@ -53,6 +53,14 @@
       "volume": 60,
       "days": 12,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 20078,
+      "volume": 3,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -591,10 +599,24 @@
       "mandis": 3,
       "minPrice": 10289,
       "maxPrice": 22866
+    },
+    {
+      "date": "2026-11-11",
+      "market": 20078,
+      "volume": 3,
+      "mandis": 2,
+      "minPrice": 10006,
+      "maxPrice": 28111
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
+    {
+      "district": "Nizamabad",
+      "nameHi": "Nizamabad",
+      "avgPrice": 15611,
+      "records": 104
+    },
     {
       "district": "Mahabubabad",
       "nameHi": "Mahabubabad",
@@ -602,16 +624,10 @@
       "records": 102
     },
     {
-      "district": "Nizamabad",
-      "nameHi": "Nizamabad",
-      "avgPrice": 15463,
-      "records": 102
-    },
-    {
       "district": "Warangal",
       "nameHi": "Warangal",
-      "avgPrice": 14112,
-      "records": 67
+      "avgPrice": 14155,
+      "records": 68
     },
     {
       "district": "Vikarabad",

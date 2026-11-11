@@ -57,9 +57,9 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 2200,
-      "volume": 1,
-      "days": 1,
+      "market": 2100,
+      "volume": 2,
+      "days": 2,
       "mandis": 1
     }
   ],
@@ -855,15 +855,23 @@
       "mandis": 1,
       "minPrice": 2000,
       "maxPrice": 2400
+    },
+    {
+      "date": "2026-11-11",
+      "market": 2000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1800,
+      "maxPrice": 2200
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
     {
       "district": "Ganganagar",
       "nameHi": "Ganganagar",
-      "avgPrice": 2090,
-      "records": 73
+      "avgPrice": 2089,
+      "records": 74
     },
     {
       "district": "Jodhpur",

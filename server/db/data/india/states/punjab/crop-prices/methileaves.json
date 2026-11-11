@@ -49,10 +49,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 1400,
-      "volume": 8,
-      "days": 2,
-      "mandis": 6
+      "market": 1650,
+      "volume": 14,
+      "days": 3,
+      "mandis": 9
     }
   ],
   "dailyHistory": [
@@ -423,9 +423,17 @@
       "mandis": 4,
       "minPrice": 500,
       "maxPrice": 3200
+    },
+    {
+      "date": "2026-11-11",
+      "market": 1500,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 500,
+      "maxPrice": 2200
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
     {
       "district": "Sangrur",
@@ -436,14 +444,14 @@
     {
       "district": "Tarntaran",
       "nameHi": "Tarntaran",
-      "avgPrice": 2435,
-      "records": 13
+      "avgPrice": 2296,
+      "records": 14
     },
     {
       "district": "Jalandhar",
       "nameHi": "Jalandhar",
-      "avgPrice": 2364,
-      "records": 11
+      "avgPrice": 2150,
+      "records": 14
     },
     {
       "district": "Muktsar",
@@ -473,6 +481,18 @@
       "district": "Pathankot",
       "nameHi": "Pathankot",
       "avgPrice": 6000,
+      "records": 1
+    },
+    {
+      "district": "Fatehgarh",
+      "nameHi": "Fatehgarh",
+      "avgPrice": 2000,
+      "records": 1
+    },
+    {
+      "district": "Hoshiarpur",
+      "nameHi": "Hoshiarpur",
+      "avgPrice": 1500,
       "records": 1
     }
   ]

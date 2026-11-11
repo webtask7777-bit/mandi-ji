@@ -39,12 +39,36 @@
       "mandis": 6
     },
     {
+      "month": "04",
+      "date": "2026-04",
+      "market": 4600,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
+    },
+    {
+      "month": "09",
+      "date": "2026-09",
+      "market": 8120,
+      "volume": 5,
+      "days": 5,
+      "mandis": 1
+    },
+    {
       "month": "10",
       "date": "2026-10",
       "market": 4383,
       "volume": 12,
       "days": 11,
       "mandis": 4
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2750,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -863,15 +887,23 @@
       "mandis": 1,
       "minPrice": 3500,
       "maxPrice": 4500
+    },
+    {
+      "date": "2026-11-11",
+      "market": 2750,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1500,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
     {
       "district": "Patiala",
       "nameHi": "Patiala",
-      "avgPrice": 2048,
-      "records": 65
+      "avgPrice": 2047,
+      "records": 66
     },
     {
       "district": "Ludhiana",
@@ -900,8 +932,8 @@
     {
       "district": "Fatehgarh",
       "nameHi": "Fatehgarh",
-      "avgPrice": 3356,
-      "records": 9
+      "avgPrice": 3370,
+      "records": 10
     },
     {
       "district": "Amritsar",

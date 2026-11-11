@@ -74,8 +74,8 @@
       "month": "11",
       "date": "2026-11",
       "market": 600,
-      "volume": 1,
-      "days": 1,
+      "volume": 2,
+      "days": 2,
       "mandis": 1
     }
   ],
@@ -1079,15 +1079,23 @@
       "mandis": 1,
       "minPrice": 600,
       "maxPrice": 700
+    },
+    {
+      "date": "2026-11-11",
+      "market": 600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 600,
+      "maxPrice": 600
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
     {
       "district": "North 24 Parganas",
       "nameHi": "North 24 Parganas",
-      "avgPrice": 1165,
-      "records": 125
+      "avgPrice": 1160,
+      "records": 126
     }
   ]
 }

@@ -93,6 +93,14 @@
       "volume": 103,
       "days": 20,
       "mandis": 15
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 11000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -1487,15 +1495,23 @@
       "mandis": 3,
       "minPrice": 10601,
       "maxPrice": 15501
+    },
+    {
+      "date": "2026-11-11",
+      "market": 11000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 11000,
+      "maxPrice": 11000
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
     {
       "district": "Baran",
       "nameHi": "Baran",
-      "avgPrice": 11840,
-      "records": 503
+      "avgPrice": 11838,
+      "records": 504
     },
     {
       "district": "Jhalawar",

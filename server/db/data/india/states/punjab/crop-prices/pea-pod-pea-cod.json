@@ -74,9 +74,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 5600,
-      "volume": 7,
-      "days": 2,
-      "mandis": 5
+      "volume": 12,
+      "days": 3,
+      "mandis": 9
     }
   ],
   "dailyHistory": [
@@ -1055,9 +1055,17 @@
       "mandis": 3,
       "minPrice": 450,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-11-11",
+      "market": 5300,
+      "volume": 5,
+      "mandis": 5,
+      "minPrice": 3852,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
     {
       "district": "Ludhiana",
@@ -1068,8 +1076,8 @@
     {
       "district": "Patiala",
       "nameHi": "Patiala",
-      "avgPrice": 6213,
-      "records": 75
+      "avgPrice": 6209,
+      "records": 77
     },
     {
       "district": "Sangrur",
@@ -1110,8 +1118,8 @@
     {
       "district": "Gurdaspur",
       "nameHi": "Gurdaspur",
-      "avgPrice": 4989,
-      "records": 8
+      "avgPrice": 4863,
+      "records": 9
     },
     {
       "district": "Faridkot",
@@ -1126,6 +1134,12 @@
       "records": 4
     },
     {
+      "district": "Jalandhar",
+      "nameHi": "Jalandhar",
+      "avgPrice": 5633,
+      "records": 3
+    },
+    {
       "district": "Mansa",
       "nameHi": "Mansa",
       "avgPrice": 8627,
@@ -1138,16 +1152,10 @@
       "records": 3
     },
     {
-      "district": "Jalandhar",
-      "nameHi": "Jalandhar",
-      "avgPrice": 6000,
-      "records": 2
-    },
-    {
       "district": "Fazilka",
       "nameHi": "Fazilka",
-      "avgPrice": 8250,
-      "records": 2
+      "avgPrice": 8833,
+      "records": 3
     }
   ]
 }

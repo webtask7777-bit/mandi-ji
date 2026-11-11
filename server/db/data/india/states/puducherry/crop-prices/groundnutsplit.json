@@ -53,6 +53,14 @@
       "volume": 3,
       "days": 3,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5998,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -287,15 +295,23 @@
       "mandis": 1,
       "minPrice": 6082.5,
       "maxPrice": 8750
+    },
+    {
+      "date": "2026-11-11",
+      "market": 5998,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5997.5,
+      "maxPrice": 5997.5
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
     {
       "district": "Pondicherry",
       "nameHi": "Pondicherry",
-      "avgPrice": 7199,
-      "records": 29
+      "avgPrice": 7159,
+      "records": 30
     }
   ]
 }

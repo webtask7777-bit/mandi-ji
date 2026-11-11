@@ -73,9 +73,9 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 3000,
-      "volume": 2,
-      "days": 1,
+      "market": 4250,
+      "volume": 3,
+      "days": 2,
       "mandis": 2
     }
   ],
@@ -927,9 +927,17 @@
       "mandis": 2,
       "minPrice": 1500,
       "maxPrice": 4500
+    },
+    {
+      "date": "2026-11-11",
+      "market": 7000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 8000
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
     {
       "district": "Durg",
@@ -944,16 +952,16 @@
       "records": 37
     },
     {
+      "district": "Khairagarh Chhuikhadan Gandai",
+      "nameHi": "Khairagarh Chhuikhadan Gandai",
+      "avgPrice": 3786,
+      "records": 29
+    },
+    {
       "district": "Bilaspur",
       "nameHi": "Bilaspur",
       "avgPrice": 3883,
       "records": 29
-    },
-    {
-      "district": "Khairagarh Chhuikhadan Gandai",
-      "nameHi": "Khairagarh Chhuikhadan Gandai",
-      "avgPrice": 3671,
-      "records": 28
     }
   ]
 }

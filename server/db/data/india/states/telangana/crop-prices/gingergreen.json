@@ -98,8 +98,8 @@
       "month": "11",
       "date": "2026-11",
       "market": 3500,
-      "volume": 1,
-      "days": 1,
+      "volume": 2,
+      "days": 2,
       "mandis": 1
     }
   ],
@@ -1351,15 +1351,23 @@
       "mandis": 1,
       "minPrice": 2000,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-11",
+      "market": 3500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
     {
       "district": "Hyderabad",
       "nameHi": "Hyderabad",
-      "avgPrice": 5508,
-      "records": 156
+      "avgPrice": 5495,
+      "records": 157
     },
     {
       "district": "Ranga Reddy",

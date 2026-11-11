@@ -74,9 +74,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 3000,
-      "volume": 3,
-      "days": 2,
-      "mandis": 2
+      "volume": 5,
+      "days": 3,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -991,21 +991,29 @@
       "mandis": 2,
       "minPrice": 1500,
       "maxPrice": 3500
+    },
+    {
+      "date": "2026-11-11",
+      "market": 3000,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1500,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-11-11T08:44:45.275Z",
+  "lastUpdated": "2026-11-11T15:07:38.554Z",
   "districtBreakdown": [
     {
       "district": "Hyderabad",
       "nameHi": "Hyderabad",
       "avgPrice": 2983,
-      "records": 168
+      "records": 169
     },
     {
       "district": "Siddipet",
       "nameHi": "Siddipet",
-      "avgPrice": 3060,
-      "records": 47
+      "avgPrice": 3058,
+      "records": 48
     }
   ]
 }
