@@ -45,6 +45,14 @@
       "volume": 7,
       "days": 6,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1550,
+      "volume": 2,
+      "days": 1,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -351,21 +359,29 @@
       "mandis": 2,
       "minPrice": 3000,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-11",
+      "market": 1550,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 1000,
+      "maxPrice": 2000
     }
   ],
-  "lastUpdated": "2026-11-10T15:09:10.152Z",
+  "lastUpdated": "2026-11-11T08:44:45.275Z",
   "districtBreakdown": [
     {
       "district": "Morena",
       "nameHi": "Morena",
-      "avgPrice": 3943,
-      "records": 23
+      "avgPrice": 3863,
+      "records": 24
     },
     {
       "district": "Sagar",
       "nameHi": "Sagar",
-      "avgPrice": 1029,
-      "records": 7
+      "avgPrice": 1038,
+      "records": 8
     },
     {
       "district": "Bhopal",

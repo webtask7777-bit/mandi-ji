@@ -25,9 +25,9 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 1000,
-      "volume": 1,
-      "days": 1,
+      "market": 1050,
+      "volume": 2,
+      "days": 2,
       "mandis": 1
     }
   ],
@@ -71,9 +71,17 @@
       "mandis": 1,
       "minPrice": 1000,
       "maxPrice": 1100
+    },
+    {
+      "date": "2026-11-11",
+      "market": 1100,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1100,
+      "maxPrice": 1100
     }
   ],
-  "lastUpdated": "2026-11-10T15:09:10.152Z",
+  "lastUpdated": "2026-11-11T08:44:45.275Z",
   "districtBreakdown": [
     {
       "district": "Buxar",
@@ -82,15 +90,15 @@
       "records": 3
     },
     {
+      "district": "Aurangabad",
+      "nameHi": "Aurangabad",
+      "avgPrice": 1050,
+      "records": 2
+    },
+    {
       "district": "Gaya",
       "nameHi": "Gaya",
       "avgPrice": 2900,
-      "records": 1
-    },
-    {
-      "district": "Aurangabad",
-      "nameHi": "Aurangabad",
-      "avgPrice": 1000,
       "records": 1
     }
   ]

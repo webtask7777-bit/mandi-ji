@@ -73,10 +73,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 1900,
-      "volume": 9,
-      "days": 3,
-      "mandis": 8
+      "market": 1500,
+      "volume": 13,
+      "days": 4,
+      "mandis": 11
     }
   ],
   "dailyHistory": [
@@ -1047,9 +1047,17 @@
       "mandis": 4,
       "minPrice": 550,
       "maxPrice": 3300
+    },
+    {
+      "date": "2026-11-11",
+      "market": 1300,
+      "volume": 4,
+      "mandis": 4,
+      "minPrice": 1000,
+      "maxPrice": 3300
     }
   ],
-  "lastUpdated": "2026-11-10T15:09:10.152Z",
+  "lastUpdated": "2026-11-11T08:44:45.275Z",
   "districtBreakdown": [
     {
       "district": "Dhar",
@@ -1076,27 +1084,27 @@
       "records": 121
     },
     {
+      "district": "Narmadapuram",
+      "nameHi": "Narmadapuram",
+      "avgPrice": 2239,
+      "records": 112
+    },
+    {
       "district": "Ujjain",
       "nameHi": "Ujjain",
       "avgPrice": 1133,
       "records": 111
     },
     {
-      "district": "Narmadapuram",
-      "nameHi": "Narmadapuram",
-      "avgPrice": 2236,
-      "records": 111
+      "district": "Sagar",
+      "nameHi": "Sagar",
+      "avgPrice": 1248,
+      "records": 106
     },
     {
       "district": "Sehore",
       "nameHi": "Sehore",
       "avgPrice": 2311,
-      "records": 104
-    },
-    {
-      "district": "Sagar",
-      "nameHi": "Sagar",
-      "avgPrice": 1247,
       "records": 104
     },
     {
@@ -1136,9 +1144,9 @@
       "records": 62
     },
     {
-      "district": "Satna",
-      "nameHi": "Satna",
-      "avgPrice": 1166,
+      "district": "Harda",
+      "nameHi": "Harda",
+      "avgPrice": 2069,
       "records": 35
     }
   ]

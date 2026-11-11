@@ -73,13 +73,21 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 2824,
-      "volume": 37,
-      "days": 4,
-      "mandis": 26
+      "market": 2941,
+      "volume": 45,
+      "days": 5,
+      "mandis": 30
     }
   ],
   "dailyHistory": [
+    {
+      "date": "2026-03-27",
+      "market": 1400,
+      "volume": 7,
+      "mandis": 7,
+      "minPrice": 900,
+      "maxPrice": 1650
+    },
     {
       "date": "2026-03-28",
       "market": 1275,
@@ -129,12 +137,28 @@
       "maxPrice": 1600
     },
     {
+      "date": "2026-04-10",
+      "market": 1174,
+      "volume": 7,
+      "mandis": 7,
+      "minPrice": 907,
+      "maxPrice": 2467
+    },
+    {
       "date": "2026-04-21",
       "market": 1200,
       "volume": 23,
       "mandis": 23,
       "minPrice": 800,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-05-04",
+      "market": 1025,
+      "volume": 8,
+      "mandis": 7,
+      "minPrice": 800,
+      "maxPrice": 1500
     },
     {
       "date": "2026-05-05",
@@ -207,6 +231,22 @@
       "mandis": 8,
       "minPrice": 800,
       "maxPrice": 1700
+    },
+    {
+      "date": "2026-06-21",
+      "market": 1250,
+      "volume": 7,
+      "mandis": 7,
+      "minPrice": 800,
+      "maxPrice": 1600
+    },
+    {
+      "date": "2026-06-26",
+      "market": 1000,
+      "volume": 7,
+      "mandis": 7,
+      "minPrice": 700,
+      "maxPrice": 1400
     },
     {
       "date": "2026-06-29",
@@ -983,9 +1023,17 @@
       "mandis": 16,
       "minPrice": 1800,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-11-11",
+      "market": 3000,
+      "volume": 8,
+      "mandis": 8,
+      "minPrice": 1300,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-11-10T15:09:10.152Z",
+  "lastUpdated": "2026-11-11T08:44:45.275Z",
   "districtBreakdown": [
     {
       "district": "Agra",
@@ -1002,8 +1050,8 @@
     {
       "district": "Saharanpur",
       "nameHi": "Saharanpur",
-      "avgPrice": 2491,
-      "records": 225
+      "avgPrice": 2494,
+      "records": 226
     },
     {
       "district": "Bulandshahar",
@@ -1026,8 +1074,8 @@
     {
       "district": "Kanpur",
       "nameHi": "Kanpur",
-      "avgPrice": 2656,
-      "records": 152
+      "avgPrice": 2658,
+      "records": 153
     },
     {
       "district": "Mathura",
@@ -1044,20 +1092,20 @@
     {
       "district": "Prayagraj",
       "nameHi": "Prayagraj",
-      "avgPrice": 2317,
-      "records": 124
+      "avgPrice": 2326,
+      "records": 125
+    },
+    {
+      "district": "Baghpat",
+      "nameHi": "Baghpat",
+      "avgPrice": 2839,
+      "records": 114
     },
     {
       "district": "Jaunpur",
       "nameHi": "Jaunpur",
       "avgPrice": 2656,
       "records": 114
-    },
-    {
-      "district": "Baghpat",
-      "nameHi": "Baghpat",
-      "avgPrice": 2845,
-      "records": 113
     },
     {
       "district": "Sonbhadra",

@@ -4,8 +4,8 @@
     "name": "Potato",
     "nameHi": "आलू",
     "emoji": "🥔",
-    "totalRecords": 1757,
-    "avgPrice": 1213,
+    "totalRecords": 1761,
+    "avgPrice": 1212,
     "minPrice": 500,
     "maxPrice": 3000,
     "varieties": [
@@ -44,8 +44,8 @@
     "name": "Onion",
     "nameHi": "प्याज",
     "emoji": "🧅",
-    "totalRecords": 1364,
-    "avgPrice": 3763,
+    "totalRecords": 1370,
+    "avgPrice": 3766,
     "minPrice": 1200,
     "maxPrice": 7000,
     "varieties": [
@@ -85,7 +85,7 @@
     "name": "Brinjal",
     "nameHi": "बैंगन",
     "emoji": "🍆",
-    "totalRecords": 1158,
+    "totalRecords": 1159,
     "avgPrice": 2656,
     "minPrice": 1000,
     "maxPrice": 22000,
@@ -139,8 +139,8 @@
     "name": "Bitter gourd",
     "nameHi": "करेला",
     "emoji": "🥒",
-    "totalRecords": 671,
-    "avgPrice": 2488,
+    "totalRecords": 672,
+    "avgPrice": 2489,
     "minPrice": 800,
     "maxPrice": 23015,
     "varieties": [
@@ -190,8 +190,8 @@
     "name": "Tomato",
     "nameHi": "टमाटर",
     "emoji": "🍅",
-    "totalRecords": 510,
-    "avgPrice": 3345,
+    "totalRecords": 512,
+    "avgPrice": 3344,
     "minPrice": 1050,
     "maxPrice": 7833.33,
     "varieties": [
@@ -232,8 +232,8 @@
     "name": "Cauliflower",
     "nameHi": "फूलगोभी",
     "emoji": "🥦",
-    "totalRecords": 426,
-    "avgPrice": 5432,
+    "totalRecords": 428,
+    "avgPrice": 5421,
     "minPrice": 600,
     "maxPrice": 62593.327074,
     "varieties": [
@@ -269,8 +269,8 @@
     "name": "Bottle gourd",
     "nameHi": "लौकी",
     "emoji": "🥒",
-    "totalRecords": 391,
-    "avgPrice": 2125,
+    "totalRecords": 392,
+    "avgPrice": 2127,
     "minPrice": 400,
     "maxPrice": 4000,
     "varieties": [
@@ -536,10 +536,10 @@
     "name": "Apple",
     "nameHi": "सेब",
     "emoji": "🍎",
-    "totalRecords": 39,
-    "avgPrice": 10713,
+    "totalRecords": 40,
+    "avgPrice": 10795,
     "minPrice": 7000,
-    "maxPrice": 15000,
+    "maxPrice": 16000,
     "varieties": [
       "Other",
       "Apple",
@@ -739,12 +739,13 @@
     "name": "Rice",
     "nameHi": "चावल",
     "emoji": "🌾",
-    "totalRecords": 9,
-    "avgPrice": 3394,
-    "minPrice": 2600,
+    "totalRecords": 10,
+    "avgPrice": 3315,
+    "minPrice": 2400,
     "maxPrice": 6000,
     "varieties": [
-      "Medium"
+      "Medium",
+      "Other"
     ],
     "sowingMonths": [
       5,
@@ -762,6 +763,41 @@
     "peakMonths": [
       11,
       0
+    ]
+  },
+  {
+    "id": "spinach",
+    "name": "Spinach",
+    "nameHi": "पालक",
+    "emoji": "🥬",
+    "totalRecords": 6,
+    "avgPrice": 1736,
+    "minPrice": 985,
+    "maxPrice": 3100,
+    "varieties": [
+      "Other",
+      "Spinach"
+    ],
+    "sowingMonths": [
+      9,
+      10,
+      11
+    ],
+    "growingMonths": [
+      10,
+      11,
+      0
+    ],
+    "harvestMonths": [
+      11,
+      0,
+      1,
+      2
+    ],
+    "peakMonths": [
+      0,
+      1,
+      2
     ]
   },
   {
@@ -812,41 +848,6 @@
       11,
       2,
       3
-    ]
-  },
-  {
-    "id": "spinach",
-    "name": "Spinach",
-    "nameHi": "पालक",
-    "emoji": "🥬",
-    "totalRecords": 5,
-    "avgPrice": 1863,
-    "minPrice": 985,
-    "maxPrice": 3100,
-    "varieties": [
-      "Other",
-      "Spinach"
-    ],
-    "sowingMonths": [
-      9,
-      10,
-      11
-    ],
-    "growingMonths": [
-      10,
-      11,
-      0
-    ],
-    "harvestMonths": [
-      11,
-      0,
-      1,
-      2
-    ],
-    "peakMonths": [
-      0,
-      1,
-      2
     ]
   },
   {

@@ -45,6 +45,14 @@
       "volume": 7,
       "days": 6,
       "mandis": 3
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 1500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -183,9 +191,17 @@
       "mandis": 1,
       "minPrice": 3000,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-11-11",
+      "market": 1500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 1500,
+      "maxPrice": 1500
     }
   ],
-  "lastUpdated": "2026-11-10T15:09:10.152Z",
+  "lastUpdated": "2026-11-11T08:44:45.275Z",
   "districtBreakdown": [
     {
       "district": "Bhopal",
@@ -200,16 +216,16 @@
       "records": 5
     },
     {
+      "district": "Morena",
+      "nameHi": "Morena",
+      "avgPrice": 1325,
+      "records": 4
+    },
+    {
       "district": "Katni",
       "nameHi": "Katni",
       "avgPrice": 3250,
       "records": 4
-    },
-    {
-      "district": "Morena",
-      "nameHi": "Morena",
-      "avgPrice": 1267,
-      "records": 3
     }
   ]
 }

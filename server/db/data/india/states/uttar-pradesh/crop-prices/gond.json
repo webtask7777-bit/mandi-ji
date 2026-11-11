@@ -13,6 +13,14 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2700,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -23,14 +31,28 @@
       "mandis": 1,
       "minPrice": 10500,
       "maxPrice": 10500
+    },
+    {
+      "date": "2026-11-11",
+      "market": 2700,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2700,
+      "maxPrice": 2700
     }
   ],
-  "lastUpdated": "2026-11-10T15:09:10.152Z",
+  "lastUpdated": "2026-11-11T08:44:45.275Z",
   "districtBreakdown": [
     {
       "district": "Lucknow",
       "nameHi": "Lucknow",
       "avgPrice": 10500,
+      "records": 1
+    },
+    {
+      "district": "Gorakhpur",
+      "nameHi": "Gorakhpur",
+      "avgPrice": 2700,
       "records": 1
     }
   ]

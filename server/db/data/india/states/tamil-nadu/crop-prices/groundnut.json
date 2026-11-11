@@ -77,10 +77,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 6756,
-      "volume": 179,
-      "days": 4,
-      "mandis": 56,
+      "market": 6750,
+      "volume": 224,
+      "days": 5,
+      "mandis": 57,
       "msp": 7517
     }
   ],
@@ -1076,57 +1076,71 @@
       "mandis": 46,
       "minPrice": 5000,
       "maxPrice": 10000
+    },
+    {
+      "date": "2026-11-11",
+      "market": 7000,
+      "volume": 45,
+      "mandis": 45,
+      "minPrice": 5000,
+      "maxPrice": 10000
     }
   ],
-  "lastUpdated": "2026-11-10T15:09:10.152Z",
+  "lastUpdated": "2026-11-11T08:44:45.275Z",
   "districtBreakdown": [
     {
       "district": "Salem",
       "nameHi": "Salem",
-      "avgPrice": 6845,
-      "records": 888
+      "avgPrice": 6847,
+      "records": 896
     },
     {
       "district": "Vellore",
       "nameHi": "Vellore",
-      "avgPrice": 7253,
-      "records": 717
+      "avgPrice": 7249,
+      "records": 723
     },
     {
       "district": "Madurai",
       "nameHi": "Madurai",
-      "avgPrice": 7251,
-      "records": 421
+      "avgPrice": 7255,
+      "records": 425
     },
     {
       "district": "Thiruvannamalai",
       "nameHi": "Thiruvannamalai",
-      "avgPrice": 7372,
-      "records": 415
+      "avgPrice": 7368,
+      "records": 418
     },
     {
       "district": "Chengalpattu",
       "nameHi": "Chengalpattu",
       "avgPrice": 9004,
-      "records": 373
+      "records": 375
     },
     {
       "district": "Villupuram",
       "nameHi": "Villupuram",
-      "avgPrice": 7541,
-      "records": 370
+      "avgPrice": 7542,
+      "records": 373
     },
     {
       "district": "Kallakurichi",
       "nameHi": "Kallakurichi",
-      "avgPrice": 6587,
-      "records": 300
+      "avgPrice": 6583,
+      "records": 302
     },
     {
       "district": "Dharmapuri",
       "nameHi": "Dharmapuri",
       "avgPrice": 6424,
-      "records": 274
+      "records": 276
+    },
+    {
+      "district": "Krishnagiri",
+      "nameHi": "Krishnagiri",
+      "avgPrice": 7572,
+      "records": 223
     },
     {
       "district": "Coimbatore",
@@ -1135,28 +1149,22 @@
       "records": 222
     },
     {
-      "district": "Krishnagiri",
-      "nameHi": "Krishnagiri",
-      "avgPrice": 7572,
-      "records": 221
-    },
-    {
       "district": "Namakkal",
       "nameHi": "Namakkal",
-      "avgPrice": 6911,
-      "records": 217
+      "avgPrice": 6906,
+      "records": 218
     },
     {
       "district": "Nagapattinam",
       "nameHi": "Nagapattinam",
-      "avgPrice": 5614,
-      "records": 209
+      "avgPrice": 5613,
+      "records": 210
     },
     {
       "district": "Ranipet",
       "nameHi": "Ranipet",
       "avgPrice": 6747,
-      "records": 205
+      "records": 207
     },
     {
       "district": "Erode",
@@ -1168,7 +1176,7 @@
       "district": "Tiruvarur",
       "nameHi": "Tiruvarur",
       "avgPrice": 5987,
-      "records": 151
+      "records": 152
     }
   ]
 }
