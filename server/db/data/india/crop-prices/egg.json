@@ -69,6 +69,14 @@
       "volume": 16,
       "days": 12,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 9,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -791,15 +799,23 @@
       "mandis": 1,
       "minPrice": 8.5,
       "maxPrice": 9
+    },
+    {
+      "date": "2026-11-12",
+      "market": 9,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 8.5,
+      "maxPrice": 9.5
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
     {
       "district": "Alappuzha (केरल)",
       "nameHi": "Alappuzha (केरल)",
       "avgPrice": 9,
-      "records": 122
+      "records": 123
     }
   ]
 }

@@ -82,9 +82,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 2500,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -687,9 +687,17 @@
       "mandis": 1,
       "minPrice": 2500,
       "maxPrice": 2500
+    },
+    {
+      "date": "2026-11-12",
+      "market": 2500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2200,
+      "maxPrice": 2800
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
     {
       "district": "Dhar",
@@ -728,15 +736,15 @@
       "records": 3
     },
     {
-      "district": "Bhopal",
-      "nameHi": "Bhopal",
-      "avgPrice": 1500,
-      "records": 1
-    },
-    {
       "district": "Sehore",
       "nameHi": "Sehore",
       "avgPrice": 2500,
+      "records": 2
+    },
+    {
+      "district": "Bhopal",
+      "nameHi": "Bhopal",
+      "avgPrice": 1500,
       "records": 1
     },
     {

@@ -37,6 +37,14 @@
       "volume": 3,
       "days": 3,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 14500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -239,15 +247,23 @@
       "mandis": 1,
       "minPrice": 23000,
       "maxPrice": 23000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 14500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 14500,
+      "maxPrice": 14500
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
     {
       "district": "Bastar",
       "nameHi": "Bastar",
-      "avgPrice": 13076,
-      "records": 23
+      "avgPrice": 13135,
+      "records": 24
     },
     {
       "district": "Raigarh",

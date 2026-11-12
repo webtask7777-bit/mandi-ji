@@ -53,10 +53,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 2625,
-      "volume": 7,
+      "market": 2600,
+      "volume": 14,
       "days": 4,
-      "mandis": 6,
+      "mandis": 9,
       "msp": 4023
     }
   ],
@@ -327,15 +327,21 @@
     },
     {
       "date": "2026-11-12",
-      "market": 2550,
-      "volume": 3,
-      "mandis": 3,
-      "minPrice": 2400,
-      "maxPrice": 3501
+      "market": 2600,
+      "volume": 10,
+      "mandis": 9,
+      "minPrice": 2000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
+    {
+      "district": "Bhind",
+      "nameHi": "Bhind",
+      "avgPrice": 2498,
+      "records": 10
+    },
     {
       "district": "Indore",
       "nameHi": "Indore",
@@ -343,22 +349,16 @@
       "records": 8
     },
     {
+      "district": "Gwalior",
+      "nameHi": "Gwalior",
+      "avgPrice": 2774,
+      "records": 7
+    },
+    {
       "district": "Khargone",
       "nameHi": "Khargone",
       "avgPrice": 2319,
       "records": 7
-    },
-    {
-      "district": "Bhind",
-      "nameHi": "Bhind",
-      "avgPrice": 2489,
-      "records": 7
-    },
-    {
-      "district": "Gwalior",
-      "nameHi": "Gwalior",
-      "avgPrice": 2803,
-      "records": 6
     },
     {
       "district": "Badwani",
@@ -373,6 +373,12 @@
       "records": 5
     },
     {
+      "district": "Khandwa",
+      "nameHi": "Khandwa",
+      "avgPrice": 2414,
+      "records": 3
+    },
+    {
       "district": "Dewas",
       "nameHi": "Dewas",
       "avgPrice": 1989,
@@ -383,12 +389,6 @@
       "nameHi": "Neemuch",
       "avgPrice": 2417,
       "records": 3
-    },
-    {
-      "district": "Khandwa",
-      "nameHi": "Khandwa",
-      "avgPrice": 2421,
-      "records": 2
     },
     {
       "district": "Bhopal",
@@ -415,16 +415,16 @@
       "records": 2
     },
     {
-      "district": "Rajgarh",
-      "nameHi": "Rajgarh",
-      "avgPrice": 1600,
-      "records": 1
+      "district": "Vidisha",
+      "nameHi": "Vidisha",
+      "avgPrice": 6007,
+      "records": 2
     },
     {
-      "district": "Pandhurna",
-      "nameHi": "Pandhurna",
-      "avgPrice": 2500,
-      "records": 1
+      "district": "Datia",
+      "nameHi": "Datia",
+      "avgPrice": 2688,
+      "records": 2
     }
   ]
 }

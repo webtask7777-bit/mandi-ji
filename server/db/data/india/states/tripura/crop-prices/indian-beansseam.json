@@ -66,9 +66,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 5800,
-      "volume": 4,
-      "days": 2,
-      "mandis": 3
+      "volume": 5,
+      "days": 3,
+      "mandis": 4
     }
   ],
   "dailyHistory": [
@@ -351,9 +351,17 @@
       "mandis": 3,
       "minPrice": 5700,
       "maxPrice": 8000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 3900,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3900,
+      "maxPrice": 3900
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
     {
       "district": "Dhalai",
@@ -372,6 +380,12 @@
       "nameHi": "West District",
       "avgPrice": 5800,
       "records": 2
+    },
+    {
+      "district": "Unokoti",
+      "nameHi": "Unokoti",
+      "avgPrice": 3900,
+      "records": 1
     }
   ]
 }

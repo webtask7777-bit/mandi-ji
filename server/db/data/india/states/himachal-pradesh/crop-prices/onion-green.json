@@ -53,6 +53,14 @@
       "volume": 6,
       "days": 6,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -191,15 +199,23 @@
       "mandis": 1,
       "minPrice": 6000,
       "maxPrice": 6500
+    },
+    {
+      "date": "2026-11-12",
+      "market": 5500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 5000,
+      "maxPrice": 6000
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
     {
       "district": "Shimla",
       "nameHi": "Shimla",
-      "avgPrice": 4820,
-      "records": 10
+      "avgPrice": 4882,
+      "records": 11
     },
     {
       "district": "Kullu",

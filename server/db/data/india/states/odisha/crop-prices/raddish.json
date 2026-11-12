@@ -41,10 +41,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 1950,
-      "volume": 25,
+      "market": 2000,
+      "volume": 28,
       "days": 5,
-      "mandis": 12
+      "mandis": 13
     }
   ],
   "dailyHistory": [
@@ -611,13 +611,13 @@
     {
       "date": "2026-11-12",
       "market": 2000,
-      "volume": 6,
-      "mandis": 6,
+      "volume": 9,
+      "mandis": 9,
       "minPrice": 1500,
       "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
     {
       "district": "Bolangir",
@@ -650,21 +650,27 @@
       "records": 5
     },
     {
+      "district": "Deogarh",
+      "nameHi": "Deogarh",
+      "avgPrice": 2080,
+      "records": 5
+    },
+    {
       "district": "Gajapati",
       "nameHi": "Gajapati",
       "avgPrice": 1900,
       "records": 4
     },
     {
-      "district": "Deogarh",
-      "nameHi": "Deogarh",
-      "avgPrice": 2150,
-      "records": 4
-    },
-    {
       "district": "Boudh",
       "nameHi": "Boudh",
       "avgPrice": 3500,
+      "records": 3
+    },
+    {
+      "district": "Nuapada",
+      "nameHi": "Nuapada",
+      "avgPrice": 2000,
       "records": 3
     },
     {
@@ -683,12 +689,6 @@
       "district": "Keonjhar",
       "nameHi": "Keonjhar",
       "avgPrice": 1100,
-      "records": 1
-    },
-    {
-      "district": "Nuapada",
-      "nameHi": "Nuapada",
-      "avgPrice": 2000,
       "records": 1
     }
   ]

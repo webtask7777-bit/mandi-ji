@@ -73,10 +73,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 2400,
-      "volume": 6,
-      "days": 3,
-      "mandis": 3
+      "market": 2200,
+      "volume": 8,
+      "days": 4,
+      "mandis": 4
     }
   ],
   "dailyHistory": [
@@ -887,10 +887,24 @@
       "mandis": 2,
       "minPrice": 1000,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 2250,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2000,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
+    {
+      "district": "Davangere",
+      "nameHi": "Davangere",
+      "avgPrice": 1914,
+      "records": 87
+    },
     {
       "district": "Bengaluru",
       "nameHi": "Bengaluru",
@@ -898,16 +912,10 @@
       "records": 87
     },
     {
-      "district": "Davangere",
-      "nameHi": "Davangere",
-      "avgPrice": 1907,
-      "records": 86
-    },
-    {
       "district": "Mysuru",
       "nameHi": "Mysuru",
-      "avgPrice": 2419,
-      "records": 59
+      "avgPrice": 2412,
+      "records": 60
     },
     {
       "district": "Kalaburagi",

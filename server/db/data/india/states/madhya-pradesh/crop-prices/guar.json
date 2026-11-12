@@ -69,6 +69,14 @@
       "volume": 23,
       "days": 15,
       "mandis": 5
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3600,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -671,15 +679,23 @@
       "mandis": 1,
       "minPrice": 5035,
       "maxPrice": 5125
+    },
+    {
+      "date": "2026-11-12",
+      "market": 3600,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
     {
       "district": "Burhanpur",
       "nameHi": "Burhanpur",
-      "avgPrice": 3763,
-      "records": 62
+      "avgPrice": 3760,
+      "records": 63
     },
     {
       "district": "Gwalior",

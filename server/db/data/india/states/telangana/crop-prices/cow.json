@@ -69,6 +69,14 @@
       "volume": 6,
       "days": 6,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 20000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -487,9 +495,17 @@
       "mandis": 1,
       "minPrice": 50000,
       "maxPrice": 50000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 20000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 20000,
+      "maxPrice": 20000
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
     {
       "district": "Ranga Reddy",
@@ -500,8 +516,8 @@
     {
       "district": "Vikarabad",
       "nameHi": "Vikarabad",
-      "avgPrice": 25714,
-      "records": 7
+      "avgPrice": 25000,
+      "records": 8
     }
   ]
 }

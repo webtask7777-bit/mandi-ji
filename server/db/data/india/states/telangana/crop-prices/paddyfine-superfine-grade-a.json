@@ -17,8 +17,8 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 2673,
-      "volume": 125,
+      "market": 2658,
+      "volume": 136,
       "days": 6,
       "mandis": 38
     }
@@ -74,15 +74,21 @@
     },
     {
       "date": "2026-11-12",
-      "market": 2500,
-      "volume": 17,
-      "mandis": 15,
-      "minPrice": 2300,
-      "maxPrice": 4000
+      "market": 2600,
+      "volume": 28,
+      "mandis": 23,
+      "minPrice": 1809,
+      "maxPrice": 4109
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
+    {
+      "district": "Suryapet",
+      "nameHi": "Suryapet",
+      "avgPrice": 2758,
+      "records": 26
+    },
     {
       "district": "Rajanna Siricilla",
       "nameHi": "Rajanna Siricilla",
@@ -92,14 +98,8 @@
     {
       "district": "Karimnagar",
       "nameHi": "Karimnagar",
-      "avgPrice": 2638,
-      "records": 21
-    },
-    {
-      "district": "Suryapet",
-      "nameHi": "Suryapet",
-      "avgPrice": 2733,
-      "records": 20
+      "avgPrice": 2632,
+      "records": 22
     },
     {
       "district": "Bhadradri Kothagudem",
@@ -126,6 +126,12 @@
       "records": 6
     },
     {
+      "district": "Mahbubnagar",
+      "nameHi": "Mahbubnagar",
+      "avgPrice": 2998,
+      "records": 5
+    },
+    {
       "district": "Peddapalli",
       "nameHi": "Peddapalli",
       "avgPrice": 3000,
@@ -135,12 +141,6 @@
       "district": "Jogulamba Gadwal",
       "nameHi": "Jogulamba Gadwal",
       "avgPrice": 3500,
-      "records": 4
-    },
-    {
-      "district": "Mahbubnagar",
-      "nameHi": "Mahbubnagar",
-      "avgPrice": 2992,
       "records": 4
     },
     {
@@ -158,19 +158,19 @@
     {
       "district": "Narayanpet",
       "nameHi": "Narayanpet",
-      "avgPrice": 3126,
-      "records": 2
+      "avgPrice": 3017,
+      "records": 3
+    },
+    {
+      "district": "Jangaon",
+      "nameHi": "Jangaon",
+      "avgPrice": 2501,
+      "records": 3
     },
     {
       "district": "Hanumakonda",
       "nameHi": "Hanumakonda",
       "avgPrice": 2461,
-      "records": 2
-    },
-    {
-      "district": "Jangaon",
-      "nameHi": "Jangaon",
-      "avgPrice": 2559,
       "records": 2
     }
   ]

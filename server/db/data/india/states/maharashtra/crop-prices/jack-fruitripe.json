@@ -53,6 +53,14 @@
       "volume": 5,
       "days": 5,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 4000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -423,9 +431,17 @@
       "mandis": 1,
       "minPrice": 4000,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 4000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2500,
+      "maxPrice": 4500
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
     {
       "district": "Pune",
@@ -436,8 +452,8 @@
     {
       "district": "Nagpur",
       "nameHi": "Nagpur",
-      "avgPrice": 2627,
-      "records": 23
+      "avgPrice": 2685,
+      "records": 24
     }
   ]
 }

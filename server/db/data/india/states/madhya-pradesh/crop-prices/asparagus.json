@@ -69,6 +69,14 @@
       "volume": 11,
       "days": 10,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 31900,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -967,15 +975,23 @@
       "mandis": 1,
       "minPrice": 32300,
       "maxPrice": 32300
+    },
+    {
+      "date": "2026-11-12",
+      "market": 31900,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 31700,
+      "maxPrice": 31900
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
     {
       "district": "Neemuch",
       "nameHi": "Neemuch",
-      "avgPrice": 29602,
-      "records": 120
+      "avgPrice": 29621,
+      "records": 121
     }
   ]
 }

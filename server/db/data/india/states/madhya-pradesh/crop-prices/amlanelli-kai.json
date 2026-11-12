@@ -50,9 +50,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 8800,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
+      "volume": 3,
+      "days": 2,
+      "mandis": 3
     }
   ],
   "dailyHistory": [
@@ -383,15 +383,23 @@
       "mandis": 1,
       "minPrice": 7500,
       "maxPrice": 8800
+    },
+    {
+      "date": "2026-11-12",
+      "market": 8950,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 5500,
+      "maxPrice": 12300
     }
   ],
-  "lastUpdated": "2026-11-12T09:13:16.710Z",
+  "lastUpdated": "2026-11-12T15:08:04.817Z",
   "districtBreakdown": [
     {
       "district": "Neemuch",
       "nameHi": "Neemuch",
-      "avgPrice": 8955,
-      "records": 35
+      "avgPrice": 9048,
+      "records": 36
     },
     {
       "district": "Sheopur",
@@ -439,6 +447,12 @@
       "district": "Shehdol",
       "nameHi": "Shehdol",
       "avgPrice": 4500,
+      "records": 1
+    },
+    {
+      "district": "Rewa",
+      "nameHi": "Rewa",
+      "avgPrice": 5600,
       "records": 1
     }
   ]
