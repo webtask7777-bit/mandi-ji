@@ -16,8 +16,7 @@ let initialPage;
 if (snapshotElement) {
   const path = window.location.pathname;
   // Keep useful HTML visible until the current lazy route is ready.
-  if (path === '/' || /^\/mandi-bhav\/[^/]+\/?$/.test(path)) initialPage = { kind: 'dashboard', Component: (await import('./SahiBhavDashboard.jsx')).default };
-  else if (/^\/crop\//.test(path) || /^\/mandi-bhav\/[^/]+\/[^/]+\/?$/.test(path)) initialPage = { kind: 'crop', Component: (await import('./pages/CropDetailPage.jsx')).default };
+  if (/^\/crop\//.test(path) || /^\/mandi-bhav\/[^/]+\/[^/]+\/?$/.test(path)) initialPage = { kind: 'crop', Component: (await import('./pages/CropDetailPage.jsx')).default };
   else if (/^\/mandi\/[^/]+\/[^/]+\/?$/.test(path)) initialPage = { kind: 'mandi', Component: (await import('./pages/MandiDetailPage.jsx')).default };
   else if (/^\/(?:[a-z]{2,3}\/)?blog(?:\/page\/[1-9]\d*)?$/.test(path)) initialPage = { kind: 'blog', Component: (await import('./pages/BlogPage.jsx')).default };
   else if (/^\/blog\/.+/.test(path)) initialPage = { kind: 'article', Component: (await import('./pages/BlogArticlePage.jsx')).default };

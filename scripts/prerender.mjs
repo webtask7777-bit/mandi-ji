@@ -33,14 +33,11 @@ const publicApi = /^\/(?:crops|mandis|districts|states|ticker|prices|mandi-compa
 const cache = new Map();
 const manifest = JSON.parse(await readFile(path.join(dist, '.vite/manifest.json'), 'utf8'));
 function routeAssets(route) {
-  const dashboard = route === '/' || /^\/mandi-bhav\/[^/]+$/.test(route);
-  const page = dashboard ? 'SahiBhavDashboard' : parseBlogLibraryPath(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : route.startsWith('/mandi/') ? 'MandiDetailPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : /^\/fasal-salah(?:\/|$)/.test(route) ? 'FasalSalahPage' : ({ '/kisan-calendar':'KisanCalendarPage', '/kisan-salah':'KisanSalahPage', '/editorial-policy':'EditorialPolicyPage', '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
+  const page = parseBlogLibraryPath(route) ? 'BlogPage' : /^\/[a-z]{2,3}\/mandi-bhav$/.test(route) ? 'LanguageToolsPage' : route === '/languages' ? 'LanguagesPage' : route.startsWith('/mandi/') ? 'MandiDetailPage' : /^\/crop\/|^\/mandi-bhav\/[^/]+\//.test(route) ? 'CropDetailPage' : route.startsWith('/blog/') ? 'BlogArticlePage' : /^\/fasal-salah(?:\/|$)/.test(route) ? 'FasalSalahPage' : ({ '/kisan-calendar':'KisanCalendarPage', '/kisan-salah':'KisanSalahPage', '/editorial-policy':'EditorialPolicyPage', '/blog':'BlogPage', '/about':'AboutPage', '/contact':'ContactPage', '/privacy':'PrivacyPolicyPage', '/terms':'TermsPage', '/delivery-calculator':'TransportPage', '/bechne-ka-hisab':'SellComparePage', '/data-status':'DataStatusPage', '/__not-found__':'NotFoundPage' })[route];
   const css = new Set();
   const seen = new Set();
   function visit(key) { if (seen.has(key)) return; seen.add(key); const entry = manifest[key]; if (!entry) return; (entry.css || []).forEach(file => css.add(file)); (entry.imports || []).forEach(visit); }
-  // A dynamic entry outside src/pages can be keyed by its chunk name; look it up by name then.
-  const sourceKey = dashboard ? 'src/SahiBhavDashboard.jsx' : page ? `src/pages/${page}.jsx` : 'index.html';
-  const key = manifest[sourceKey] ? sourceKey : Object.keys(manifest).find(name => manifest[name].isDynamicEntry && manifest[name].name === page) || sourceKey;
+  const key = page ? `src/pages/${page}.jsx` : 'index.html';
   visit(key);
   const originalCss = new Set(manifest['index.html']?.css || []);
   return [...css].filter(file => !originalCss.has(file)).map(file => `<link rel="stylesheet" href="/${file}" />`).join('') + (manifest[key]?.file && page ? `<link rel="modulepreload" href="/${manifest[key].file}" />` : '');

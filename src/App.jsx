@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import './index.css';
 import SplashScreen from './components/SplashScreen';
+import SahiBhavDashboard from './SahiBhavDashboard';
 import { StateProvider } from './context/StateContext';
 import { AuthProvider } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
@@ -13,9 +14,6 @@ import AdminRoute from './components/auth/AdminRoute';
 import SEO from './components/SEO';
 import RouteScroll from './components/RouteScroll';
 
-// The dashboard is its own chunk, so crop, mandi and article pages do not download it.
-// main.jsx loads it before mounting on / and /mandi-bhav/:state, keeping the prerendered HTML.
-const DashboardPage = lazy(() => import('./SahiBhavDashboard'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage'));
 const CreateListingPage = lazy(() => import('./pages/CreateListingPage'));
@@ -55,7 +53,6 @@ function App({ prerender = false, initialPage }) {
   const { pathname } = useLocation();
   const needsAccountMetadata = /^\/(?:admin|register|my-listings|my-eway-bills|eway-bill|listing\/new)(?:\/|$)/.test(pathname);
   const [showSplash, setShowSplash] = useState(!prerender);
-  const SahiBhavDashboard = initialPage?.kind === 'dashboard' ? initialPage.Component : DashboardPage;
   const CropPage = initialPage?.kind === 'crop' ? initialPage.Component : CropDetailPage;
   const MandiPage = initialPage?.kind === 'mandi' ? initialPage.Component : MandiDetailPage;
   const ArticlePage = initialPage?.kind === 'article' ? initialPage.Component : BlogArticlePage;
