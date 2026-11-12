@@ -27,8 +27,8 @@
 .sb-prices-page .sb-text-button{display:flex;align-items:center;gap:5px;color:#386341;font-weight:700;font-size:12px!important;padding:6px 0;background:transparent;border:0}
 .sb-crop-image{position:relative;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;vertical-align:middle;aspect-ratio:1;overflow:hidden;isolation:isolate}
 .sb-crop-image>img.sb-crop-image__artwork{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
-.sb-crop-image img.is-loading{opacity:0}
-.sb-crop-image img.is-loaded{opacity:1}
+/* No opacity gate: the server-rendered image must paint before the bundle runs (LCP). */
+.sb-crop-image[data-image-state=loading] .sb-crop-image__placeholder,.sb-crop-image[data-image-state=loading] .sb-crop-image__badge{display:none}
 .sb-crop-image__placeholder{display:block;width:100%;height:100%;flex-shrink:0}
 .sb-crop-image[data-image-state=loaded] .sb-crop-image__placeholder,.sb-crop-image[data-image-state=loaded] .sb-crop-image__badge{display:none}
 .sb-crop-image__badge{position:absolute;right:0;bottom:0;display:inline-flex;align-items:center;justify-content:center;gap:3px;min-width:16px;min-height:16px;box-sizing:border-box;padding:0 3px;border:1px solid #c5cfb8;border-radius:5px;background:#fffdf3;color:#3a5736;font-size:12px!important;font-weight:700;line-height:1.25;white-space:nowrap;z-index:1}

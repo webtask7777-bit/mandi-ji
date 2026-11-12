@@ -37,3 +37,16 @@ export function leanPriceHistory(data, asOf = new Date()) {
     omittedRows: rows.length - kept.length,
   };
 }
+
+const EXACT_QUOTE = 'commodity-mandi-variety-grade-date-v1';
+/**
+ * /mandi-compare/* rows in the snapshot: fields the browser never reads are dropped. `rangeBasis`
+ * is unused in src/. An exact quote with a recent price is priced by quotePrice (getMandiPrice) and
+ * PricesTab reads `recentPrice || avgPrice`, so its legacy avgPrice is never reached. Every price, date, variety, grade and unit the page shows is kept.
+ */
+export function leanCompareRow(row) {
+  if (!row || typeof row !== 'object') return row;
+  const { rangeBasis: _rangeBasis, ...rest } = row;
+  if (row.comparisonIdentity === EXACT_QUOTE && Number(row.quotePrice) > 0 && Number(row.recentPrice) > 0) delete rest.avgPrice;
+  return rest;
+}
