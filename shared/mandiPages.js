@@ -2,6 +2,7 @@
 // crop → mandi comparison file, so every price shown is a record the crop
 // pages already show. Shared by the API, the page and the prerender.
 import { isCropPriceCommodity } from '../src/utils/cropEligibility.js';
+import { indexDeadline } from './seoLifecycle.js';
 
 export const MANDI_INDEX_MAX_AGE_DAYS = 30;
 // Mandis with fewer recent crops make thin pages that Google crawls but does not index.
@@ -113,11 +114,96 @@ export function mandiIndexAnchorDate(mandi, { asOf = new Date() } = {}) {
   return [full, keyed].filter(Boolean).sort().at(-1) || null;
 }
 
+/**
+ * Why a mandi page is or is not offered to search. One decision for the sitemap, the
+ * X-Robots-Tag header (via the runtime manifest), the initial HTML and the browser's robots tag.
+ *
+ * - established-market: several crops with records in the last 30 days (the original rule).
+ * - useful-local-market: a small market (often one or two crops, e.g. Muli in Bastar or
+ *   Katghora in Korba) whose page is still the only place that answers "<mandi> mandi bhav":
+ *   a dated price from the last 30 days plus at least one more crop-day (another crop, or the
+ *   same crop on another date) from the last 90 days, so the page shows a real record and some context, each labelled with its own date.
+ * - single-quote: one recent number and nothing else to compare it with; kept out of search.
+ * - no-recent-record: every record is older than 30 days; the page stays as labelled history.
+ * - no-priced-records / invalid: nothing to show.
+ */
+export const MANDI_INDEX_REASONS = Object.freeze({
+  ESTABLISHED: 'established-market',
+  USEFUL_LOCAL: 'useful-local-market',
+  SINGLE_QUOTE: 'single-quote',
+  NO_RECENT: 'no-recent-record',
+  NO_PRICES: 'no-priced-records',
+  INVALID: 'invalid',
+});
+// The context window for a small market: older quotes still on the page, clearly dated.
+export const MANDI_CONTEXT_MAX_AGE_DAYS = 90;
+export const MANDI_INDEX_MIN_CONTEXT_QUOTES = 2;
+
+function istToday(asOf) {
+  return new Date(new Date(asOf).getTime() + IST_OFFSET_MS).toISOString().slice(0, 10);
+}
+const daysBefore = (day, days) => new Date(Date.parse(`${day}T00:00:00Z`) - days * DAY_MS).toISOString().slice(0, 10);
+
+/**
+ * Distinct crop-days on or before today, newest first. Several variety or grade quotes of one
+ * crop on one day are one observation, so they never stand in for a second record.
+ */
+function datedQuotes(mandi, asOf) {
+  const today = istToday(asOf);
+  const seen = new Set();
+  const dates = [];
+  for (const crop of mandi.crops) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(crop?.lastDate || '') || crop.lastDate > today) continue;
+    const key = JSON.stringify([crop.id, crop.lastDate]);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    dates.push(crop.lastDate);
+  }
+  return dates.sort().reverse();
+}
+
+function establishedMarket(mandi, asOf) {
+  const { dates, keyCropDate } = recentCropDates(mandi, asOf);
+  const minimum = keyCropDate ? MANDI_INDEX_MIN_CROPS_KEY_CROP : MANDI_INDEX_MIN_CROPS;
+  return { dates, met: dates.length >= minimum };
+}
+
+function usefulLocalMarket(mandi, asOf) {
+  const today = istToday(asOf);
+  const quotes = datedQuotes(mandi, asOf);
+  const recent = quotes[0] && quotes[0] >= daysBefore(today, MANDI_INDEX_MAX_AGE_DAYS) ? quotes[0] : null;
+  const context = quotes[MANDI_INDEX_MIN_CONTEXT_QUOTES - 1];
+  const contextOk = Boolean(context && context >= daysBefore(today, MANDI_CONTEXT_MAX_AGE_DAYS));
+  return { recent, context: context || null, met: Boolean(recent && contextOk) };
+}
+
 /** Same policy for the sitemap, the initial HTML and the browser's robots tag. */
 export function getMandiIndexability(mandi, { asOf = new Date() } = {}) {
-  if (!mandi || !Array.isArray(mandi.crops) || !Number.isFinite(new Date(asOf).getTime())) return { noIndex: true, latestDate: null, recentCrops: 0 };
-  const { dates, keyCropDate } = recentCropDates(mandi, asOf);
-  const recentCrops = dates.length;
-  const minimum = keyCropDate ? MANDI_INDEX_MIN_CROPS_KEY_CROP : MANDI_INDEX_MIN_CROPS;
-  return { noIndex: recentCrops < minimum, latestDate: dates[0] || null, recentCrops };
+  if (!mandi || !Array.isArray(mandi.crops) || !Number.isFinite(new Date(asOf).getTime())) {
+    return { noIndex: true, reason: MANDI_INDEX_REASONS.INVALID, latestDate: null, recentCrops: 0 };
+  }
+  const established = establishedMarket(mandi, asOf);
+  const recentCrops = established.dates.length;
+  const latestDate = established.dates[0] || null;
+  if (established.met) return { noIndex: false, reason: MANDI_INDEX_REASONS.ESTABLISHED, latestDate, recentCrops };
+  const local = usefulLocalMarket(mandi, asOf);
+  if (local.met) return { noIndex: false, reason: MANDI_INDEX_REASONS.USEFUL_LOCAL, latestDate, recentCrops };
+  const reason = !mandi.crops.length ? MANDI_INDEX_REASONS.NO_PRICES
+    : !recentCrops ? MANDI_INDEX_REASONS.NO_RECENT : MANDI_INDEX_REASONS.SINGLE_QUOTE;
+  return { noIndex: true, reason, latestDate, recentCrops };
+}
+
+/**
+ * When an indexable mandi page stops qualifying if no new record arrives (ms timestamp, IST
+ * midnight), or 0 when it does not qualify now. The runtime proxy uses this so an old page
+ * turns noindex on time without a rebuild.
+ */
+export function mandiIndexDeadline(mandi, { asOf = new Date() } = {}) {
+  if (getMandiIndexability(mandi, { asOf }).noIndex) return 0;
+  const established = indexDeadline(mandiIndexAnchorDate(mandi, { asOf }), MANDI_INDEX_MAX_AGE_DAYS);
+  const local = usefulLocalMarket(mandi, asOf);
+  const localDeadline = local.met
+    ? Math.min(indexDeadline(local.recent, MANDI_INDEX_MAX_AGE_DAYS), indexDeadline(local.context, MANDI_CONTEXT_MAX_AGE_DAYS))
+    : 0;
+  return Math.max(established, localDeadline);
 }

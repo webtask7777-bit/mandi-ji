@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildMandiIndex, getMandiIndexability, mandiIndexAnchorDate, mandiPath, mandiSummaries, slugify } from '../shared/mandiPages.js';
+import { buildMandiIndex, getMandiIndexability, mandiIndexAnchorDate, mandiIndexDeadline, mandiPath, mandiSummaries, slugify } from '../shared/mandiPages.js';
+import { isPrivatePath } from '../shared/robotsPolicy.js';
+import { isRuntimeIndexable } from '../shared/seoLifecycle.js';
 
 const compare = {
   wheat: [
@@ -41,12 +43,13 @@ test('livestock, fish, eggs and ghee never make or join a mandi page', () => {
   assert.ok(!index.get('raipur').crops.some(crop => crop.id === 'goat'));
 });
 
-test('only mandis with several recent crops are indexable', () => {
+test('established markets index; a mandi with one recent quote does not', () => {
   const index = buildMandiIndex(compare, crops);
   const asOf = new Date('2026-10-25T06:00:00Z');
-  assert.deepEqual(getMandiIndexability(index.get('raipur'), { asOf }), { noIndex: false, latestDate: '2026-10-24', recentCrops: 5 });
+  assert.deepEqual(getMandiIndexability(index.get('raipur'), { asOf }), { noIndex: false, reason: 'established-market', latestDate: '2026-10-24', recentCrops: 5 });
   const noKeyCrop = buildMandiIndex(Object.fromEntries(Object.entries(compare).filter(([id]) => id !== 'paddycommon')), crops);
-  assert.deepEqual(getMandiIndexability(noKeyCrop.get('raipur'), { asOf }), { noIndex: true, latestDate: '2026-10-24', recentCrops: 4 });
+  // Four recent crops without paddy or soybean: no longer "established", but still a useful local page.
+  assert.deepEqual(getMandiIndexability(noKeyCrop.get('raipur'), { asOf }), { noIndex: false, reason: 'useful-local-market', latestDate: '2026-10-24', recentCrops: 4 });
   const summaries = mandiSummaries(index, { asOf });
   assert.equal(summaries.find(row => row.slug === 'raipur').indexable, true);
   assert.equal(summaries.find(row => row.slug === 'neora-raipur').indexable, false);
@@ -60,9 +63,9 @@ test('a recent paddy or soybean record lowers the minimum to three crops, not to
   const mandi = ids => ({ crops: ids.map(([id, lastDate]) => ({ id, lastDate })) });
   assert.equal(getMandiIndexability(mandi([['paddycommon', '2026-10-24'], ['wheat', '2026-10-23'], ['maize', '2026-10-22']]), { asOf }).noIndex, false);
   assert.equal(getMandiIndexability(mandi([['soyabean', '2026-10-24'], ['wheat', '2026-10-23'], ['maize', '2026-10-22']]), { asOf }).noIndex, false);
-  assert.equal(getMandiIndexability(mandi([['paddycommon', '2026-10-24'], ['wheat', '2026-10-23']]), { asOf }).noIndex, true);
-  assert.equal(getMandiIndexability(mandi([['wheat', '2026-10-24'], ['maize', '2026-10-23'], ['onion', '2026-10-22']]), { asOf }).noIndex, true);
-  assert.equal(getMandiIndexability(mandi([['paddycommon', '2026-08-01'], ['wheat', '2026-10-23'], ['maize', '2026-10-22'], ['onion', '2026-10-21']]), { asOf }).noIndex, true);
+  assert.equal(getMandiIndexability(mandi([['paddycommon', '2026-10-24'], ['wheat', '2026-10-23']]), { asOf }).reason, 'useful-local-market');
+  assert.equal(getMandiIndexability(mandi([['wheat', '2026-10-24'], ['maize', '2026-10-23'], ['onion', '2026-10-22']]), { asOf }).reason, 'useful-local-market');
+  assert.equal(getMandiIndexability(mandi([['paddycommon', '2026-08-01'], ['wheat', '2026-10-23'], ['maize', '2026-10-22'], ['onion', '2026-10-21']]), { asOf }).reason, 'useful-local-market');
 });
 
 test('the anchor date is when an indexable mandi would stop qualifying', () => {
@@ -86,5 +89,48 @@ test('several variety quotes remain distinct rows but never inflate unique crop 
   assert.deepEqual(mandi.crops.map(crop => crop.price), [3000, 3100, 3200], 'exact quoted prices override legacy aggregate fields');
   assert.deepEqual(mandiSummaries(index)[0].topCrops, ['गेहूँ']);
   assert.equal(mandiSummaries(index)[0].cropCount, 1);
-  assert.deepEqual(getMandiIndexability(mandi, { asOf: new Date('2026-10-30T10:00:00Z') }), { noIndex: true, latestDate: '2026-10-29', recentCrops: 1 });
+  assert.deepEqual(getMandiIndexability(mandi, { asOf: new Date('2026-10-30T10:00:00Z') }), { noIndex: true, reason: 'single-quote', latestDate: '2026-10-29', recentCrops: 1 });
+});
+
+// Shapes taken from the 13 Nov 2026 data (state chhattisgarh). Muli is a market in Bastar, not radish.
+const asOfNov = new Date('2026-11-13T06:00:00Z');
+const quote = (id, lastDate, variety = '', grade = 'FAQ') => ({ id, lastDate, variety, grade, quoteId: JSON.stringify([id, 'm', variety, grade, lastDate]), price: 2000 });
+const muli = { slug: 'muli', name: 'Muli', district: 'Bastar', crops: [quote('tamarind-fruit', '2026-11-11'), quote('maize', '2026-10-12'), quote('paddycommon', '2026-10-12')] };
+const katghora = { slug: 'katghora', name: 'Katghora', district: 'Korba', crops: [quote('paddycommon', '2026-11-12'), quote('paddycommon', '2026-10-29', 'Common'), quote('paddycommon', '2026-10-29', 'Sarna'), quote('millets', '2026-10-16')] };
+
+test('a small local market with a recent record and dated context is indexable, not blocked for its crop count', () => {
+  for (const mandi of [muli, katghora]) {
+    const decision = getMandiIndexability(mandi, { asOf: asOfNov });
+    assert.equal(decision.noIndex, false, mandi.slug);
+    assert.equal(decision.reason, 'useful-local-market', mandi.slug);
+    assert.ok(decision.recentCrops < 3, 'still a small market');
+    // The page keeps each record's own date; the newest is never relabelled as today.
+    assert.equal(decision.latestDate, mandi.crops[0].lastDate);
+    assert.ok(isRuntimeIndexable(['/mandi/chhattisgarh/' + mandi.slug, decision.latestDate, mandiIndexDeadline(mandi, { asOf: asOfNov })], asOfNov.getTime()));
+  }
+});
+
+test('one quote, only old records, or no records stay out of search with a reason', () => {
+  assert.equal(getMandiIndexability({ crops: [quote('wheat', '2026-11-10')] }, { asOf: asOfNov }).reason, 'single-quote');
+  // Two varieties of one crop on one day are one observation.
+  assert.equal(getMandiIndexability({ crops: [quote('wheat', '2026-11-10', 'Lokwan'), quote('wheat', '2026-11-10', 'Sharbati')] }, { asOf: asOfNov }).reason, 'single-quote');
+  // Recent quote, but the only other one is older than the 90-day context window.
+  assert.equal(getMandiIndexability({ crops: [quote('wheat', '2026-11-10'), quote('maize', '2026-07-01')] }, { asOf: asOfNov }).reason, 'single-quote');
+  assert.equal(getMandiIndexability({ crops: [quote('wheat', '2026-09-01'), quote('maize', '2026-08-20')] }, { asOf: asOfNov }).reason, 'no-recent-record');
+  assert.equal(getMandiIndexability({ crops: [] }, { asOf: asOfNov }).reason, 'no-priced-records');
+  assert.equal(getMandiIndexability(null).reason, 'invalid');
+  assert.equal(mandiIndexDeadline({ crops: [quote('wheat', '2026-11-10')] }, { asOf: asOfNov }), 0);
+});
+
+test('a useful local page expires when its recent record leaves the 30-day window, without a rebuild', () => {
+  const deadline = mandiIndexDeadline(muli, { asOf: asOfNov });
+  // Newest record 11 Nov: indexable through 11 Dec (IST), noindex from 12 Dec.
+  assert.ok(isRuntimeIndexable(['/x', null, deadline], Date.parse('2026-12-11T12:00:00+05:30')));
+  assert.ok(!isRuntimeIndexable(['/x', null, deadline], Date.parse('2026-12-12T00:30:00+05:30')));
+  assert.equal(getMandiIndexability(muli, { asOf: new Date('2026-12-12T06:00:00Z') }).noIndex, true);
+});
+
+test('account, listing-create and admin screens stay private; public pages do not', () => {
+  for (const path of ['/login', '/register', '/listing/new', '/listing/new?type=sell&crop=onion', '/my-listings', '/eway-bill/new', '/my-eway-bills', '/admin', '/admin/blog']) assert.ok(isPrivatePath(path), path);
+  for (const path of ['/', '/mandi/chhattisgarh/muli', '/listing/abc123', '/crop/sunflower', '/blog', '/administer']) assert.ok(!isPrivatePath(path), path);
 });

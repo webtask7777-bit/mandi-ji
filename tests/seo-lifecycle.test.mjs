@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { indexDeadline, isRuntimeIndexable, runtimeSitemap } from '../shared/seoLifecycle.js';
 import { cropIndexAnchorDate, getCropIndexability } from '../shared/cropIndexability.js';
-import { getMandiIndexability } from '../shared/mandiPages.js';
+import { getMandiIndexability, mandiIndexDeadline } from '../shared/mandiPages.js';
 import { blogCanonicalSearch, blogLibraryPath, blogRedirectPath, parseBlogLibraryPath } from '../shared/blogPagination.js';
 
 test('crop index expiration matches the shared policy at the India midnight boundary', () => {
@@ -24,12 +24,17 @@ test('crop index expiration matches the shared policy at the India midnight boun
   assert.equal(indexDeadline('2026-02-30', 90), 0);
 });
 
-test('mandi expiration depends on five recent crops, not just its newest quote', () => {
+test('mandi header expiry matches the page decision at every boundary, for both rules', () => {
   const mandi = { crops: [{ id: 'wheat', lastDate: '2026-10-29' }, { id: 'garlic', lastDate: '2026-10-28' }, { id: 'onion', lastDate: '2026-10-27' }, { id: 'potato', lastDate: '2026-10-26' }, { id: 'maize', lastDate: '2026-09-30' }] };
-  const entry = ['/mandi/example/market', '2026-10-29', indexDeadline('2026-09-30', 30)];
-  for (const stamp of ['2026-10-30T18:29:59.999Z', '2026-10-30T18:30:00.000Z']) {
-    assert.equal(isRuntimeIndexable(entry, Date.parse(stamp)), !getMandiIndexability(mandi, { asOf: stamp }).noIndex);
+  const builtAt = '2026-10-30T06:00:00.000Z';
+  const entry = ['/mandi/example/market', '2026-10-29', mandiIndexDeadline(mandi, { asOf: builtAt })];
+  // 30 Oct IST midnight: maize leaves the window (established rule ends; local-market rule continues).
+  // 28/29 Nov IST midnight: wheat, the newest record, leaves the 30-day window (page turns noindex).
+  for (const stamp of ['2026-10-30T18:29:59.999Z', '2026-10-30T18:30:00.000Z', '2026-11-28T18:29:59.999Z', '2026-11-28T18:30:00.000Z']) {
+    assert.equal(isRuntimeIndexable(entry, Date.parse(stamp)), !getMandiIndexability(mandi, { asOf: stamp }).noIndex, stamp);
   }
+  assert.equal(getMandiIndexability(mandi, { asOf: '2026-10-30T18:30:00.000Z' }).reason, 'useful-local-market');
+  assert.equal(getMandiIndexability(mandi, { asOf: '2026-11-28T18:30:00.000Z' }).reason, 'no-recent-record');
 });
 
 test('request-time sitemap expires price pages while retaining dated editorial and state hubs', () => {

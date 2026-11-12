@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import editorialImages from '../data/editorialImages.json';
 import { getLanguage, languageFromPath } from '../../shared/languages.js';
 import { resolveSiteOrigin } from '../../shared/siteOrigin.js';
+import { isPrivatePath } from '../../shared/robotsPolicy.js';
 
 // sahibhav.in was verified serving this application before the migration.
 export const SITE_URL = resolveSiteOrigin(import.meta.env.VITE_SITE_URL);
@@ -11,7 +12,6 @@ const DEFAULTS = {
   description: 'फसल के दर्ज मंडी भाव देखें, मंडियों की तुलना करें और बिक्री व परिवहन की तैयारी करें। सही भाव — SahiBhav।',
   image: `${SITE_URL}/og-image.png`,
 };
-const PRIVATE_ROUTES = /^\/(?:admin|login|register|my-listings|my-eway-bills|eway-bill|listing\/new)(?:\/|$)/;
 
 function articleAlternatePath(value) {
   if (typeof value !== 'string' || !value.startsWith('/blog/')) return null;
@@ -46,7 +46,7 @@ export default function SEO({ title, description, path, canonicalSearch = '', no
   const pagePath = (path || pathname).split(/[?#]/)[0].replace(/\/+$/, '') || '/';
   const query = new URLSearchParams(canonicalSearch).toString();
   const pageUrl = `${SITE_URL}${pagePath.startsWith('/') ? pagePath : `/${pagePath}`}${query ? `?${query}` : ''}`;
-  const robots = noIndex || PRIVATE_ROUTES.test(pathname) ? 'noindex, follow' : 'index, follow, max-image-preview:large';
+  const robots = noIndex || isPrivatePath(pathname) ? 'noindex, follow' : 'index, follow, max-image-preview:large';
   const pageLanguage = getLanguage(language)?.code || 'hi';
   const alternatePath = value => articleAlternatePath(value) || (languageFromPath(value)?.searchReady ? value : null);
   const languageLinks = [...new Map(alternates.filter(item => getLanguage(item.language)?.searchReady && item.language.length === 2 && alternatePath(item.path)).map(item => [item.language, { ...item, path: alternatePath(item.path) }])).values()];

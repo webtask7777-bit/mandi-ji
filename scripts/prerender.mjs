@@ -11,9 +11,9 @@ import { resolveSiteOrigin } from '../shared/siteOrigin.js';
 import { CROP_INDEX_RECENT_DAYS, cropIndexAnchorDate, getCropIndexability } from '../shared/cropIndexability.js';
 import { indexDeadline } from '../shared/seoLifecycle.js';
 import { BLOG_PAGE_SIZE, blogLibraryPath, parseBlogLibraryPath } from '../shared/blogPagination.js';
-import { leanKccCrop, leanKccPage, leanPriceHistory } from './lib/lean-snapshot.mjs';
+import { leanCompareRow, leanKccCrop, leanKccPage, leanPriceHistory } from './lib/lean-snapshot.mjs';
 import { isKccPageIndexable } from '../shared/kccIndexability.js';
-import { buildMandiIndex, getMandiIndexability, mandiIndexAnchorDate, mandiPath, MANDI_INDEX_MAX_AGE_DAYS } from '../shared/mandiPages.js';
+import { buildMandiIndex, getMandiIndexability, mandiIndexDeadline, mandiPath } from '../shared/mandiPages.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.env.NODE_ENV = 'production';
@@ -83,6 +83,7 @@ async function render(route) {
         const current = entry.data.filter(row => getMandiPriceBasis(row) === 'recent' && getMandiPrice(row) !== null);
         const omittedRows = entry.data.filter(row => getMandiPriceBasis(row) !== 'recent' && getMandiPrice(row) !== null).length;
         if (current.length && omittedRows) entry = { data: current, omittedRows };
+        entry = { ...entry, data: entry.data.map(leanCompareRow) };
       }
       entry = leanEntry(request, entry) || entry;
       responses[request] = entry;
@@ -124,6 +125,8 @@ try {
   // Sitemap <lastmod>: a price page changes when its newest record does; an article on its own update.
   const lastmod = new Map();
   const expiration = new Map();
+  // Route → reason code of the shared eligibility rule; a build report, not deployed.
+  const decisions = new Map();
   const states = (loadIndiaData('states') || []).filter(state => state.hasData);
   const scopes = ['all', ...new Set(states.map(state => state.id))];
   for (const scope of scopes) {
@@ -138,11 +141,12 @@ try {
       const indexability = getCropIndexability(detail, { asOf: indexAsOf });
       // The page turns thin when the record that keeps it above the minimum leaves the recent window,
       // always before its newest record reaches the 90-day age limit.
+      decisions.set(route, indexability.status);
       expiration.set(route, indexability.noIndex === false ? indexDeadline(cropIndexAnchorDate(detail, { asOf: indexAsOf }), CROP_INDEX_RECENT_DAYS) : 0);
       if (indexability.noIndex === false) { routes.add(route); lastmod.set(route, indexability.latestDate); }
     }
   }
-  // One page per mandi; only mandis with several recent crop records go in the sitemap.
+  // One page per mandi; the sitemap carries the ones the shared rule offers (see mandiPages.js).
   const knownMandis = new Set();
   for (const state of states) {
     const index = buildMandiIndex(loadStateData(state.id, 'mandi-compare') || {}, loadStateData(state.id, 'crops') || []);
@@ -150,7 +154,8 @@ try {
       if (!mandi.crops.length) continue;
       const route = mandiPath(state.id, mandi.slug);
       const indexability = getMandiIndexability(mandi, { asOf: indexAsOf });
-      expiration.set(route, indexability.noIndex ? 0 : indexDeadline(mandiIndexAnchorDate(mandi, { asOf: indexAsOf }), MANDI_INDEX_MAX_AGE_DAYS));
+      expiration.set(route, mandiIndexDeadline(mandi, { asOf: indexAsOf }));
+      decisions.set(route, indexability.reason);
       if (indexability.noIndex) knownMandis.add(route);
       else { routes.add(route); lastmod.set(route, indexability.latestDate); }
     }
@@ -225,6 +230,10 @@ try {
   await writeFile(path.join(generated, 'shell.html'), shell);
   const runtimeEntries = [...new Set([...routes, ...knownCrops, ...knownMandis])].sort().map(route => [route, lastmod.get(route) || null, expiration.has(route) ? expiration.get(route) : null]);
   await writeFile(path.join(generated, 'runtime-index.json'), JSON.stringify({ origin: siteUrl, entries: runtimeEntries }));
+  const reasonCounts = {};
+  for (const [route, reason] of decisions) { const kind = route.split('/')[1]; reasonCounts[`${kind}:${reason}`] = (reasonCounts[`${kind}:${reason}`] || 0) + 1; }
+  await writeFile(path.join(root, 'dist-ssr/index-decisions.json'), JSON.stringify({ asOf: indexAsOf.toISOString(), counts: reasonCounts, routes: Object.fromEntries([...decisions].sort()) }, null, 1));
+  console.log('Eligibility reasons:', reasonCounts);
   await writeFile(path.join(generated, 'routes.json'), JSON.stringify({ routes: [...routes], knownCrops: [...knownCrops] }));
   await writeFile(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...routes].sort().map(route => `  <url><loc>${xml(siteUrl + route)}</loc>${lastmod.get(route) ? `<lastmod>${lastmod.get(route)}</lastmod>` : ''}</url>`).join('\n')}\n</urlset>\n`);
   const robots = (await readFile(path.join(root, 'public/robots.txt'), 'utf8')).replace(/^Sitemap:.*$/m, `Sitemap: ${siteUrl}/sitemap.xml`);

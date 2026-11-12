@@ -4,15 +4,22 @@ import "../styles/prices.css";
 
 const FALLBACK_NOTE = "उपज का प्रतीकात्मक चित्र; यह किसी खास फसल या किस्म की तस्वीर नहीं है।";
 
-// Rendered box widths from prices.css; the 512px original is the largest candidate.
-const DISPLAY_SIZES = { xs: "28px", sm: "40px", md: "54px", lg: "62px", hero: "163px" };
+// Rendered box widths from prices.css (the home quote hero changes with the viewport;
+// detail and listing pages use 88–132px boxes, never larger). The browser multiplies by
+// the device pixel ratio, so a 112px phone box at 2x picks the 224px file, not 320px.
+const DISPLAY_SIZES = {
+  xs: "28px", sm: "40px", md: "54px", lg: "62px",
+  hero: "(max-width: 420px) 112px, (max-width: 760px) 160px, (max-width: 1050px) 115px, (min-width: 1300px) 163px, 150px",
+};
 const sizedSources = source => {
   const match = /^\/visuals\/(crop-[a-z0-9-]+\.webp)$/.exec(source || "");
-  return match ? `/visuals/128/${match[1]} 128w, /visuals/320/${match[1]} 320w, ${source} 512w` : undefined;
+  return match ? `/visuals/128/${match[1]} 128w, /visuals/224/${match[1]} 224w, /visuals/320/${match[1]} 320w, ${source} 512w` : undefined;
 };
 
 // This original inline crate illustration needs neither a network request nor
-// an emoji font. It stays visible until artwork loads, and after failed requests.
+// an emoji font. It shows for unknown crops and after failed requests. While an exact
+// image is loading the artwork paints as soon as its bytes arrive (prices.css hides the
+// crate), so the above-the-fold image never waits for JavaScript to mark it loaded.
 function CommodityPlaceholder() {
   return <svg className="sb-crop-image__placeholder" viewBox="0 0 160 160" fill="none" aria-hidden="true">
     <circle cx="80" cy="80" r="72" fill="#F3F0E5" />

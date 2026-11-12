@@ -42,6 +42,12 @@ export default function MandiDetailPage() {
   const latest = getDataFreshness(indexability.latestDate || mandi?.latestDate);
   const topNames = [...new Map(crops.slice().sort((a, b) => b.records - a.records).map(crop => [crop.id, crop.nameHi])).values()].slice(0, 3);
   const cropCount = rows => new Set(rows.map(crop => crop.id)).size;
+  // Small markets now reach search with one or two crops: say "1 फसल", not "1 फसलें", and name
+  // only the crops behind the count (older crops sit in the dated history section).
+  // `oblique` is the form before के: "5 फसलों के".
+  const cropsLabel = (rows, oblique = false) => { const count = cropCount(rows); return `${count.toLocaleString('en-IN')} ${count === 1 ? 'फसल' : oblique ? 'फसलों' : 'फसलें'}`; };
+  const describedRows = recentCrops.length ? recentCrops : crops;
+  const describedNames = [...new Map(describedRows.slice().sort((a, b) => b.records - a.records).map(crop => [crop.id, crop.nameHi])).values()].slice(0, 3);
   const path = mandiPath(stateParam, mandiSlug);
   const place = [mandi?.district && mandi.district !== name ? mandi.district : null, stateNameHi].filter(Boolean).join(', ');
 
@@ -58,7 +64,7 @@ export default function MandiDetailPage() {
   return (
     <div className="sb-detail-page">
       <SEO title={`${name} मंडी भाव${nameSuffix}${topNames.length ? ` — ${topNames.join(', ')} के रेट` : ''}${latest.date ? ` · ${latest.dateLabel}` : ''}`}
-        description={`${name}${nameSuffix} मंडी (${place}) के आख़िरी दर्ज भाव: ${cropCount(recentCrops.length ? recentCrops : crops)} फसलें${topNames.length ? `, जैसे ${topNames.join(', ')}` : ''}। हर फसल का भाव ₹/क्विंटल, किस्म और तारीख के साथ। सौदे से पहले मंडी से भाव की पुष्टि करें।`}
+        description={`${name}${nameSuffix} मंडी (${place}) के आख़िरी दर्ज भाव: ${cropsLabel(describedRows)}${describedNames.length ? ` (${describedNames.join(', ')})` : ''}। हर फसल का भाव ₹/क्विंटल, किस्म और तारीख के साथ। सौदे से पहले मंडी से भाव की पुष्टि करें।`}
         path={path} noIndex={loading ? false : unavailable || Boolean(error) || indexability.noIndex}
         structuredData={mandi && !unavailable ? { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: `${stateNameHi} के मंडी भाव`, item: `${SITE_URL}${dashboardPath}` },
@@ -71,7 +77,7 @@ export default function MandiDetailPage() {
       <main className="sb-detail-main" id="main-content">
         <nav className="sb-detail-breadcrumb" aria-label="पृष्ठ पथ"><Link to={dashboardPath}>{stateNameHi} के मंडी भाव</Link><span aria-hidden="true">/</span><span>{name} मंडी</span></nav>
         <section className="sb-crop-detail-heading">
-          <div><span className="sb-detail-kicker">मंडी के सभी दर्ज भाव</span><h1>{name} मंडी भाव</h1><p>{recentCrops.length ? `${cropCount(recentCrops)} फसलों के हाल के दर्ज रिकॉर्ड` : 'फसलवार दर्ज रिकॉर्ड'}{latest.date ? ` · अंतिम रिकॉर्ड ${latest.dateLabel}` : ''}</p></div>
+          <div><span className="sb-detail-kicker">मंडी के सभी दर्ज भाव</span><h1>{name} मंडी भाव</h1><p>{recentCrops.length ? `${cropsLabel(recentCrops, true)} के हाल के दर्ज रिकॉर्ड` : 'फसलवार दर्ज रिकॉर्ड'}{latest.date ? ` · अंतिम रिकॉर्ड ${latest.dateLabel}` : ''}</p></div>
           <span className="sb-detail-location"><MapPin size={15} aria-hidden="true" />{[name !== sourceName ? sourceName : null, place].filter(Boolean).join(' · ')}</span>
         </section>
         {tableCrops.length > 0 && <WhatsAppShare className="sb-detail-share" text={`${name} मंडी के भाव${latest.date ? ` (${latest.dateLabel})` : ''}: ${tableCrops.slice(0, 4).map(crop => `${crop.nameHi}${crop.variety ? ` (${crop.variety}${crop.grade ? `, ${crop.grade}` : ''})` : ''} ₹${money(crop.price)}/क्विंटल · ${getDataFreshness(crop.lastDate).dateLabel}`).join(', ')}। सभी फसलों के भाव देखें:`} path={path} label="ये भाव WhatsApp पर भेजें" />}
@@ -86,7 +92,7 @@ export default function MandiDetailPage() {
             </table></div>
           </section>}
           <section className="sb-mandi-comparison" aria-label={`${name} मंडी के फसलवार भाव`}>
-            <div className="sb-comparison-heading"><div><span className="sb-comparison-eyebrow">फसलवार भाव</span><h2>{name} मंडी के फसलवार दर्ज भाव</h2></div><span className="sb-comparison-count">{cropCount(tableCrops).toLocaleString('en-IN')} फसलें · {tableCrops.length.toLocaleString('en-IN')} किस्म / ग्रेड रिकॉर्ड</span></div>
+            <div className="sb-comparison-heading"><div><span className="sb-comparison-eyebrow">फसलवार भाव</span><h2>{name} मंडी के फसलवार दर्ज भाव</h2></div><span className="sb-comparison-count">{cropsLabel(tableCrops)} · {tableCrops.length.toLocaleString('en-IN')} किस्म / ग्रेड रिकॉर्ड</span></div>
             <p className="sb-comparison-intro">भाव ₹ / क्विंटल में। हर पंक्ति की अपनी तारीख है; पुरानी तारीख वाले भाव को आज का भाव न मानें।</p>
             <div className="sb-comparison-table-wrap" tabIndex={0} role="region" aria-label="फसलवार भाव तालिका, छोटे पर्दे पर दाएँ-बाएँ स्क्रॉल करें"><table className="sb-comparison-table"><caption className="sr-only">{name} मंडी के फसलवार दर्ज भाव, किस्म और तारीख</caption>
               <thead><tr><th scope="col">फसल / किस्म</th><th scope="col">दर्ज भाव</th><th scope="col">न्यूनतम – अधिकतम</th><th scope="col">तारीख</th></tr></thead>
