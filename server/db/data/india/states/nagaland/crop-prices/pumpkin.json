@@ -31,14 +31,6 @@
       "mandis": 3
     },
     {
-      "month": "06",
-      "date": "2026-06",
-      "market": 4000,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
-    },
-    {
       "month": "07",
       "date": "2026-07",
       "market": 3600,
@@ -73,10 +65,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 3650,
-      "volume": 7,
-      "days": 4,
-      "mandis": 4
+      "market": 3500,
+      "volume": 9,
+      "days": 5,
+      "mandis": 6
     }
   ],
   "dailyHistory": [
@@ -815,9 +807,17 @@
       "mandis": 2,
       "minPrice": 2500,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 2850,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2000,
+      "maxPrice": 3700
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Phek",
@@ -834,8 +834,8 @@
     {
       "district": "Wokha",
       "nameHi": "Wokha",
-      "avgPrice": 2990,
-      "records": 27
+      "avgPrice": 2980,
+      "records": 29
     },
     {
       "district": "Tsemenyu",

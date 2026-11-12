@@ -4,8 +4,8 @@
     "name": "Paddy(Common)",
     "nameHi": "धान",
     "emoji": "🌾",
-    "totalRecords": 93,
-    "avgPrice": 2196,
+    "totalRecords": 94,
+    "avgPrice": 2192,
     "minPrice": 1097,
     "maxPrice": 4377.5,
     "varieties": [
@@ -47,8 +47,8 @@
     "name": "Black Gram(Urd Beans)(Whole)",
     "nameHi": "सेम",
     "emoji": "🫘",
-    "totalRecords": 68,
-    "avgPrice": 7798,
+    "totalRecords": 69,
+    "avgPrice": 7804,
     "minPrice": 2300,
     "maxPrice": 10385.33,
     "varieties": [
@@ -131,6 +131,38 @@
     "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618"
   },
   {
+    "id": "green-grammoongwhole",
+    "name": "Green Gram(Moong)(Whole)",
+    "nameHi": "मूंग",
+    "emoji": "🫘",
+    "totalRecords": 7,
+    "avgPrice": 7269,
+    "minPrice": 5000,
+    "maxPrice": 8469,
+    "varieties": [
+      "Local (Whole)"
+    ],
+    "msp": 8780,
+    "mspSeason": "खरीफ 2026-27",
+    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
+    "sowingMonths": [
+      6,
+      7
+    ],
+    "growingMonths": [
+      8,
+      9
+    ],
+    "harvestMonths": [
+      9,
+      10
+    ],
+    "peakMonths": [
+      10,
+      11
+    ]
+  },
+  {
     "id": "cotton",
     "name": "Cotton",
     "nameHi": "कपास",
@@ -177,38 +209,6 @@
     "maxPrice": 13309,
     "varieties": [
       "Other"
-    ]
-  },
-  {
-    "id": "green-grammoongwhole",
-    "name": "Green Gram(Moong)(Whole)",
-    "nameHi": "मूंग",
-    "emoji": "🫘",
-    "totalRecords": 6,
-    "avgPrice": 7114,
-    "minPrice": 5000,
-    "maxPrice": 8469,
-    "varieties": [
-      "Local (Whole)"
-    ],
-    "msp": 8780,
-    "mspSeason": "खरीफ 2026-27",
-    "mspSource": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260618",
-    "sowingMonths": [
-      6,
-      7
-    ],
-    "growingMonths": [
-      8,
-      9
-    ],
-    "harvestMonths": [
-      9,
-      10
-    ],
-    "peakMonths": [
-      10,
-      11
     ]
   },
   {

@@ -73,10 +73,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 6750,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
+      "market": 6125,
+      "volume": 3,
+      "days": 2,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -831,26 +831,34 @@
       "mandis": 1,
       "minPrice": 6000,
       "maxPrice": 7500
+    },
+    {
+      "date": "2026-11-12",
+      "market": 6125,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 5000,
+      "maxPrice": 7500
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Surat",
       "nameHi": "Surat",
-      "avgPrice": 10626,
-      "records": 91
+      "avgPrice": 10584,
+      "records": 92
+    },
+    {
+      "district": "Dahod",
+      "nameHi": "Dahod",
+      "avgPrice": 7000,
+      "records": 8
     },
     {
       "district": "Ahmedabad",
       "nameHi": "Ahmedabad",
       "avgPrice": 9243,
-      "records": 7
-    },
-    {
-      "district": "Dahod",
-      "nameHi": "Dahod",
-      "avgPrice": 7214,
       "records": 7
     },
     {

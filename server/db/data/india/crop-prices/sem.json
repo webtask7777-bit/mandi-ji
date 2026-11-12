@@ -21,6 +21,14 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2900,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -39,20 +47,28 @@
       "mandis": 1,
       "minPrice": 10000,
       "maxPrice": 11000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 2900,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2800,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
+    {
+      "district": "Hailakandi (असम)",
+      "nameHi": "Hailakandi (असम)",
+      "avgPrice": 6700,
+      "records": 2
+    },
     {
       "district": "Sagar (मध्य प्रदेश)",
       "nameHi": "Sagar (मध्य प्रदेश)",
       "avgPrice": 800,
-      "records": 1
-    },
-    {
-      "district": "Hailakandi (असम)",
-      "nameHi": "Hailakandi (असम)",
-      "avgPrice": 10500,
       "records": 1
     }
   ]

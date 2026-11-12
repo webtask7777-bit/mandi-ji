@@ -97,6 +97,15 @@
       "days": 14,
       "mandis": 37,
       "msp": 2900
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 2800,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1,
+      "msp": 2900
     }
   ],
   "dailyHistory": [
@@ -1227,9 +1236,17 @@
       "mandis": 1,
       "minPrice": 2300,
       "maxPrice": 2700
+    },
+    {
+      "date": "2026-11-12",
+      "market": 2800,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 2600,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Villupuram",
@@ -1292,6 +1309,12 @@
       "records": 4
     },
     {
+      "district": "Thirupathur",
+      "nameHi": "Thirupathur",
+      "avgPrice": 2600,
+      "records": 4
+    },
+    {
       "district": "Thiruvannamalai",
       "nameHi": "Thiruvannamalai",
       "avgPrice": 2240,
@@ -1307,12 +1330,6 @@
       "district": "Perambalur",
       "nameHi": "Perambalur",
       "avgPrice": 2457,
-      "records": 3
-    },
-    {
-      "district": "Thirupathur",
-      "nameHi": "Thirupathur",
-      "avgPrice": 2533,
       "records": 3
     },
     {

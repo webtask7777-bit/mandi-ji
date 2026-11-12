@@ -38,7 +38,7 @@
     "name": "Brinjal",
     "nameHi": "बैंगन",
     "emoji": "🍆",
-    "totalRecords": 208,
+    "totalRecords": 209,
     "avgPrice": 3191,
     "minPrice": 1100,
     "maxPrice": 7000,
@@ -125,6 +125,45 @@
     ]
   },
   {
+    "id": "pumpkin",
+    "name": "Pumpkin",
+    "nameHi": "कद्दू",
+    "emoji": "🎃",
+    "totalRecords": 168,
+    "avgPrice": 3221,
+    "minPrice": 1200,
+    "maxPrice": 5000,
+    "varieties": [
+      "Other",
+      "Pumpkin",
+      "pumpkin-Organic"
+    ],
+    "sowingMonths": [
+      1,
+      2,
+      5,
+      6
+    ],
+    "growingMonths": [
+      3,
+      4,
+      7,
+      8
+    ],
+    "harvestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "peakMonths": [
+      5,
+      6,
+      10,
+      11
+    ]
+  },
+  {
     "id": "bitter-gourd",
     "name": "Bitter gourd",
     "nameHi": "करेला",
@@ -161,45 +200,6 @@
       6,
       9,
       10
-    ]
-  },
-  {
-    "id": "pumpkin",
-    "name": "Pumpkin",
-    "nameHi": "कद्दू",
-    "emoji": "🎃",
-    "totalRecords": 166,
-    "avgPrice": 3225,
-    "minPrice": 1200,
-    "maxPrice": 5000,
-    "varieties": [
-      "Other",
-      "Pumpkin",
-      "pumpkin-Organic"
-    ],
-    "sowingMonths": [
-      1,
-      2,
-      5,
-      6
-    ],
-    "growingMonths": [
-      3,
-      4,
-      7,
-      8
-    ],
-    "harvestMonths": [
-      4,
-      5,
-      9,
-      10
-    ],
-    "peakMonths": [
-      5,
-      6,
-      10,
-      11
     ]
   },
   {
@@ -313,13 +313,27 @@
     "name": "Chow Chow",
     "nameHi": "चायोटे",
     "emoji": "🌱",
-    "totalRecords": 126,
-    "avgPrice": 2268,
+    "totalRecords": 127,
+    "avgPrice": 2264,
     "minPrice": 700,
     "maxPrice": 5000,
     "varieties": [
       "Chow Chow",
       "Other"
+    ]
+  },
+  {
+    "id": "gingergreen",
+    "name": "Ginger(Green)",
+    "nameHi": "अदरक",
+    "emoji": "🫐",
+    "totalRecords": 111,
+    "avgPrice": 6096,
+    "minPrice": 3200,
+    "maxPrice": 11400,
+    "varieties": [
+      "Other",
+      "Green Ginger"
     ]
   },
   {
@@ -361,20 +375,6 @@
       1,
       2,
       11
-    ]
-  },
-  {
-    "id": "gingergreen",
-    "name": "Ginger(Green)",
-    "nameHi": "अदरक",
-    "emoji": "🫐",
-    "totalRecords": 110,
-    "avgPrice": 6095,
-    "minPrice": 3200,
-    "maxPrice": 11400,
-    "varieties": [
-      "Other",
-      "Green Ginger"
     ]
   },
   {

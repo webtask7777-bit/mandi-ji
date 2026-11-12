@@ -10,14 +10,6 @@
   },
   "history": [
     {
-      "month": "03",
-      "date": "2026-03",
-      "market": 3900,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
-    },
-    {
       "month": "04",
       "date": "2026-04",
       "market": 2326,
@@ -62,9 +54,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 2625,
-      "volume": 4,
-      "days": 3,
-      "mandis": 4,
+      "volume": 7,
+      "days": 4,
+      "mandis": 6,
       "msp": 4023
     }
   ],
@@ -332,20 +324,34 @@
       "mandis": 2,
       "minPrice": 2450,
       "maxPrice": 6013
+    },
+    {
+      "date": "2026-11-12",
+      "market": 2550,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 2400,
+      "maxPrice": 3501
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Indore",
       "nameHi": "Indore",
-      "avgPrice": 2550,
-      "records": 7
+      "avgPrice": 2669,
+      "records": 8
     },
     {
       "district": "Khargone",
       "nameHi": "Khargone",
       "avgPrice": 2319,
+      "records": 7
+    },
+    {
+      "district": "Bhind",
+      "nameHi": "Bhind",
+      "avgPrice": 2489,
       "records": 7
     },
     {
@@ -358,12 +364,6 @@
       "district": "Badwani",
       "nameHi": "Badwani",
       "avgPrice": 2098,
-      "records": 6
-    },
-    {
-      "district": "Bhind",
-      "nameHi": "Bhind",
-      "avgPrice": 2479,
       "records": 6
     },
     {
@@ -409,6 +409,12 @@
       "records": 2
     },
     {
+      "district": "Sheopur",
+      "nameHi": "Sheopur",
+      "avgPrice": 2450,
+      "records": 2
+    },
+    {
       "district": "Rajgarh",
       "nameHi": "Rajgarh",
       "avgPrice": 1600,
@@ -417,12 +423,6 @@
     {
       "district": "Pandhurna",
       "nameHi": "Pandhurna",
-      "avgPrice": 2500,
-      "records": 1
-    },
-    {
-      "district": "Sheopur",
-      "nameHi": "Sheopur",
       "avgPrice": 2500,
       "records": 1
     }

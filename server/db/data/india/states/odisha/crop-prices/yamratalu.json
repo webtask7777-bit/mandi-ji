@@ -25,10 +25,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 3600,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
+      "market": 3850,
+      "volume": 2,
+      "days": 2,
+      "mandis": 2
     }
   ],
   "dailyHistory": [
@@ -63,15 +63,23 @@
       "mandis": 1,
       "minPrice": 3500,
       "maxPrice": 3600
+    },
+    {
+      "date": "2026-11-12",
+      "market": 4100,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 4000,
+      "maxPrice": 4200
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Ganjam",
       "nameHi": "Ganjam",
-      "avgPrice": 4575,
-      "records": 4
+      "avgPrice": 4480,
+      "records": 5
     }
   ]
 }

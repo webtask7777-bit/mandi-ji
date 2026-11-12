@@ -61,6 +61,14 @@
       "volume": 5,
       "days": 5,
       "mandis": 2
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6550,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -487,15 +495,23 @@
       "mandis": 1,
       "minPrice": 5500,
       "maxPrice": 5500
+    },
+    {
+      "date": "2026-11-12",
+      "market": 6550,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6550,
+      "maxPrice": 6550
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Jaipur",
       "nameHi": "Jaipur",
-      "avgPrice": 5376,
-      "records": 39
+      "avgPrice": 5405,
+      "records": 40
     },
     {
       "district": "Udaipur",

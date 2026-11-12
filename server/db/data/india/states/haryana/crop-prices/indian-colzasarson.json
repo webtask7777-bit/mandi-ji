@@ -34,8 +34,8 @@
       "month": "11",
       "date": "2026-11",
       "market": 1000,
-      "volume": 1,
-      "days": 1,
+      "volume": 2,
+      "days": 2,
       "mandis": 1
     }
   ],
@@ -207,15 +207,23 @@
       "mandis": 1,
       "minPrice": 900,
       "maxPrice": 1600
+    },
+    {
+      "date": "2026-11-12",
+      "market": 1000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 800,
+      "maxPrice": 1000
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Yamuna Nagar",
       "nameHi": "Yamuna Nagar",
-      "avgPrice": 1676,
-      "records": 21
+      "avgPrice": 1645,
+      "records": 22
     },
     {
       "district": "Hissar",

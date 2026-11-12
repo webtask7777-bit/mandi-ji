@@ -45,6 +45,14 @@
       "volume": 54,
       "days": 14,
       "mandis": 14
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 15000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -703,15 +711,23 @@
       "mandis": 2,
       "minPrice": 11555,
       "maxPrice": 15500
+    },
+    {
+      "date": "2026-11-12",
+      "market": 15000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 13000,
+      "maxPrice": 17300
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Jodhpur",
       "nameHi": "Jodhpur",
-      "avgPrice": 11089,
-      "records": 97
+      "avgPrice": 11129,
+      "records": 98
     },
     {
       "district": "Bikaner",

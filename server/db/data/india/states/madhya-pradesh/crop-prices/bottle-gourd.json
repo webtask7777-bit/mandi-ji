@@ -89,10 +89,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 1000,
-      "volume": 34,
-      "days": 5,
-      "mandis": 20
+      "market": 900,
+      "volume": 45,
+      "days": 6,
+      "mandis": 24
     }
   ],
   "dailyHistory": [
@@ -1415,51 +1415,59 @@
       "mandis": 11,
       "minPrice": 430,
       "maxPrice": 1800
+    },
+    {
+      "date": "2026-11-12",
+      "market": 900,
+      "volume": 11,
+      "mandis": 11,
+      "minPrice": 300,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Dhar",
       "nameHi": "Dhar",
       "avgPrice": 800,
-      "records": 339
+      "records": 340
     },
     {
       "district": "Sagar",
       "nameHi": "Sagar",
-      "avgPrice": 947,
-      "records": 282
+      "avgPrice": 946,
+      "records": 284
     },
     {
       "district": "Khandwa",
       "nameHi": "Khandwa",
-      "avgPrice": 806,
-      "records": 281
+      "avgPrice": 805,
+      "records": 282
     },
     {
       "district": "Indore",
       "nameHi": "Indore",
       "avgPrice": 1574,
-      "records": 260
+      "records": 262
     },
     {
       "district": "Badwani",
       "nameHi": "Badwani",
-      "avgPrice": 964,
-      "records": 258
+      "avgPrice": 965,
+      "records": 259
     },
     {
       "district": "Harda",
       "nameHi": "Harda",
       "avgPrice": 1107,
-      "records": 222
+      "records": 223
     },
     {
       "district": "Shivpuri",
       "nameHi": "Shivpuri",
-      "avgPrice": 1170,
-      "records": 187
+      "avgPrice": 1169,
+      "records": 188
     },
     {
       "district": "Jhabua",
@@ -1471,7 +1479,7 @@
       "district": "Khargone",
       "nameHi": "Khargone",
       "avgPrice": 959,
-      "records": 142
+      "records": 143
     },
     {
       "district": "Sehore",
@@ -1498,15 +1506,15 @@
       "records": 132
     },
     {
+      "district": "Morena",
+      "nameHi": "Morena",
+      "avgPrice": 823,
+      "records": 116
+    },
+    {
       "district": "Chhindwara",
       "nameHi": "Chhindwara",
       "avgPrice": 1014,
-      "records": 115
-    },
-    {
-      "district": "Morena",
-      "nameHi": "Morena",
-      "avgPrice": 820,
       "records": 115
     }
   ]

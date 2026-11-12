@@ -89,10 +89,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 20050,
-      "volume": 28,
-      "days": 5,
-      "mandis": 12
+      "market": 20000,
+      "volume": 36,
+      "days": 6,
+      "mandis": 13
     }
   ],
   "dailyHistory": [
@@ -1615,15 +1615,23 @@
       "mandis": 7,
       "minPrice": 8000,
       "maxPrice": 26000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 22500,
+      "volume": 8,
+      "mandis": 8,
+      "minPrice": 14000,
+      "maxPrice": 28000
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Palakad",
       "nameHi": "Palakad",
-      "avgPrice": 19781,
-      "records": 588
+      "avgPrice": 19787,
+      "records": 590
     },
     {
       "district": "Malappuram",
@@ -1634,14 +1642,14 @@
     {
       "district": "Ernakulam",
       "nameHi": "Ernakulam",
-      "avgPrice": 17694,
-      "records": 278
+      "avgPrice": 17746,
+      "records": 280
     },
     {
       "district": "Alappuzha",
       "nameHi": "Alappuzha",
-      "avgPrice": 17951,
-      "records": 239
+      "avgPrice": 17960,
+      "records": 241
     },
     {
       "district": "Idukki",
@@ -1658,19 +1666,19 @@
     {
       "district": "Kottayam",
       "nameHi": "Kottayam",
-      "avgPrice": 17011,
-      "records": 100
+      "avgPrice": 17050,
+      "records": 101
+    },
+    {
+      "district": "Thirssur",
+      "nameHi": "Thirssur",
+      "avgPrice": 19556,
+      "records": 68
     },
     {
       "district": "Kozhikode(Calicut)",
       "nameHi": "Kozhikode(Calicut)",
       "avgPrice": 17167,
-      "records": 67
-    },
-    {
-      "district": "Thirssur",
-      "nameHi": "Thirssur",
-      "avgPrice": 19490,
       "records": 67
     }
   ]

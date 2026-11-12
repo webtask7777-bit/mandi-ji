@@ -13,6 +13,14 @@
       "volume": 1,
       "days": 1,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 6000,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -23,14 +31,28 @@
       "mandis": 1,
       "minPrice": 3800,
       "maxPrice": 4200
+    },
+    {
+      "date": "2026-11-12",
+      "market": 6000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 6000,
+      "maxPrice": 6200
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Gaya",
       "nameHi": "Gaya",
       "avgPrice": 4000,
+      "records": 1
+    },
+    {
+      "district": "Aurangabad",
+      "nameHi": "Aurangabad",
+      "avgPrice": 6000,
       "records": 1
     }
   ]

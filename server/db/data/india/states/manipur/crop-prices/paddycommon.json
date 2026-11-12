@@ -70,8 +70,8 @@
       "month": "11",
       "date": "2026-11",
       "market": 3000,
-      "volume": 2,
-      "days": 1,
+      "volume": 3,
+      "days": 2,
       "mandis": 2,
       "msp": 2441
     }
@@ -612,15 +612,23 @@
       "mandis": 2,
       "minPrice": 3000,
       "maxPrice": 3000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 3000,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3000
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Imphal East",
       "nameHi": "Imphal East",
       "avgPrice": 3000,
-      "records": 59
+      "records": 60
     },
     {
       "district": "Imphal West",

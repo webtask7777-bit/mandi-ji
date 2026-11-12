@@ -89,10 +89,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 8540,
-      "volume": 12,
-      "days": 5,
-      "mandis": 6
+      "market": 8000,
+      "volume": 15,
+      "days": 6,
+      "mandis": 7
     }
   ],
   "dailyHistory": [
@@ -1455,9 +1455,17 @@
       "mandis": 3,
       "minPrice": 8000,
       "maxPrice": 12000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 8000,
+      "volume": 3,
+      "mandis": 3,
+      "minPrice": 6000,
+      "maxPrice": 11040
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Nuapada",
@@ -1474,8 +1482,8 @@
     {
       "district": "Rayagada",
       "nameHi": "Rayagada",
-      "avgPrice": 8106,
-      "records": 48
+      "avgPrice": 8126,
+      "records": 49
     },
     {
       "district": "Cuttack",
@@ -1528,7 +1536,13 @@
     {
       "district": "Boudh",
       "nameHi": "Boudh",
-      "avgPrice": 5500,
+      "avgPrice": 6000,
+      "records": 2
+    },
+    {
+      "district": "Sonepur",
+      "nameHi": "Sonepur",
+      "avgPrice": 8000,
       "records": 1
     }
   ]

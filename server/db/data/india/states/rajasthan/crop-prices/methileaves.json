@@ -45,6 +45,14 @@
       "volume": 3,
       "days": 3,
       "mandis": 1
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 3300,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -143,9 +151,17 @@
       "mandis": 1,
       "minPrice": 2000,
       "maxPrice": 2000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 3300,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 3500
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Bikaner",
@@ -158,6 +174,12 @@
       "nameHi": "Ganganagar",
       "avgPrice": 1400,
       "records": 3
+    },
+    {
+      "district": "Jalore",
+      "nameHi": "Jalore",
+      "avgPrice": 3300,
+      "records": 1
     }
   ]
 }

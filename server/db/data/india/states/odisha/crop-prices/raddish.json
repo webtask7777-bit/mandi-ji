@@ -41,10 +41,10 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 2000,
-      "volume": 19,
-      "days": 4,
-      "mandis": 11
+      "market": 1950,
+      "volume": 25,
+      "days": 5,
+      "mandis": 12
     }
   ],
   "dailyHistory": [
@@ -607,15 +607,23 @@
       "mandis": 5,
       "minPrice": 1500,
       "maxPrice": 4000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 2000,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 1500,
+      "maxPrice": 4000
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Bolangir",
       "nameHi": "Bolangir",
-      "avgPrice": 3013,
-      "records": 45
+      "avgPrice": 3009,
+      "records": 46
     },
     {
       "district": "Sambalpur",
@@ -630,6 +638,18 @@
       "records": 6
     },
     {
+      "district": "Bargarh",
+      "nameHi": "Bargarh",
+      "avgPrice": 2000,
+      "records": 6
+    },
+    {
+      "district": "Sonepur",
+      "nameHi": "Sonepur",
+      "avgPrice": 2640,
+      "records": 5
+    },
+    {
       "district": "Gajapati",
       "nameHi": "Gajapati",
       "avgPrice": 1900,
@@ -642,22 +662,10 @@
       "records": 4
     },
     {
-      "district": "Bargarh",
-      "nameHi": "Bargarh",
-      "avgPrice": 2000,
-      "records": 4
-    },
-    {
-      "district": "Sonepur",
-      "nameHi": "Sonepur",
-      "avgPrice": 3133,
-      "records": 3
-    },
-    {
       "district": "Boudh",
       "nameHi": "Boudh",
       "avgPrice": 3500,
-      "records": 2
+      "records": 3
     },
     {
       "district": "Khurda",

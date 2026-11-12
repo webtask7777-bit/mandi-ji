@@ -77,14 +77,22 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 6760,
-      "volume": 153,
-      "days": 5,
-      "mandis": 83,
+      "market": 6878,
+      "volume": 244,
+      "days": 6,
+      "mandis": 118,
       "msp": 5708
     }
   ],
   "dailyHistory": [
+    {
+      "date": "2026-03-26",
+      "market": 5287,
+      "volume": 18,
+      "mandis": 16,
+      "minPrice": 2501,
+      "maxPrice": 5650
+    },
     {
       "date": "2026-03-27",
       "market": 5000,
@@ -156,6 +164,14 @@
       "mandis": 103,
       "minPrice": 500,
       "maxPrice": 8995
+    },
+    {
+      "date": "2026-07-05",
+      "market": 6350,
+      "volume": 16,
+      "mandis": 16,
+      "minPrice": 2800,
+      "maxPrice": 7430
     },
     {
       "date": "2026-07-06",
@@ -916,99 +932,107 @@
       "mandis": 68,
       "minPrice": 1000,
       "maxPrice": 8181
+    },
+    {
+      "date": "2026-11-12",
+      "market": 7023,
+      "volume": 91,
+      "mandis": 78,
+      "minPrice": 910,
+      "maxPrice": 15501
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Rajgarh",
       "nameHi": "Rajgarh",
-      "avgPrice": 6340,
-      "records": 1042
+      "avgPrice": 6344,
+      "records": 1049
     },
     {
       "district": "Dhar",
       "nameHi": "Dhar",
-      "avgPrice": 6092,
-      "records": 900
+      "avgPrice": 6097,
+      "records": 905
     },
     {
       "district": "Ujjain",
       "nameHi": "Ujjain",
-      "avgPrice": 6178,
-      "records": 852
+      "avgPrice": 6188,
+      "records": 861
     },
     {
       "district": "Shajapur",
       "nameHi": "Shajapur",
-      "avgPrice": 6215,
-      "records": 763
+      "avgPrice": 6223,
+      "records": 769
     },
     {
       "district": "Sagar",
       "nameHi": "Sagar",
-      "avgPrice": 6234,
-      "records": 752
+      "avgPrice": 6241,
+      "records": 760
     },
     {
       "district": "Mandsaur",
       "nameHi": "Mandsaur",
-      "avgPrice": 6192,
-      "records": 661
+      "avgPrice": 6197,
+      "records": 665
     },
     {
       "district": "Ratlam",
       "nameHi": "Ratlam",
-      "avgPrice": 6281,
-      "records": 615
+      "avgPrice": 6285,
+      "records": 619
     },
     {
       "district": "Sehore",
       "nameHi": "Sehore",
-      "avgPrice": 6289,
-      "records": 602
+      "avgPrice": 6294,
+      "records": 605
     },
     {
       "district": "Indore",
       "nameHi": "Indore",
-      "avgPrice": 6055,
-      "records": 596
+      "avgPrice": 6069,
+      "records": 600
     },
     {
       "district": "Dewas",
       "nameHi": "Dewas",
-      "avgPrice": 6139,
-      "records": 570
+      "avgPrice": 6147,
+      "records": 575
     },
     {
       "district": "Khandwa",
       "nameHi": "Khandwa",
-      "avgPrice": 6170,
-      "records": 471
+      "avgPrice": 6179,
+      "records": 477
     },
     {
       "district": "Shivpuri",
       "nameHi": "Shivpuri",
-      "avgPrice": 6326,
-      "records": 457
+      "avgPrice": 6331,
+      "records": 461
     },
     {
       "district": "Harda",
       "nameHi": "Harda",
-      "avgPrice": 6337,
-      "records": 450
+      "avgPrice": 6349,
+      "records": 456
     },
     {
       "district": "Vidisha",
       "nameHi": "Vidisha",
-      "avgPrice": 6350,
-      "records": 432
+      "avgPrice": 6354,
+      "records": 435
     },
     {
       "district": "Khargone",
       "nameHi": "Khargone",
-      "avgPrice": 6042,
-      "records": 422
+      "avgPrice": 6049,
+      "records": 425
     }
   ]
 }

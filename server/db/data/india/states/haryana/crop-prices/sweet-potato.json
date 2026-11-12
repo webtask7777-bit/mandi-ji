@@ -7,14 +7,6 @@
   },
   "history": [
     {
-      "month": "08",
-      "date": "2026-08",
-      "market": 4000,
-      "volume": 1,
-      "days": 1,
-      "mandis": 1
-    },
-    {
       "month": "09",
       "date": "2026-09",
       "market": 4000,
@@ -34,9 +26,9 @@
       "month": "11",
       "date": "2026-11",
       "market": 4125,
-      "volume": 21,
-      "days": 5,
-      "mandis": 7
+      "volume": 27,
+      "days": 6,
+      "mandis": 8
     }
   ],
   "dailyHistory": [
@@ -311,15 +303,23 @@
       "mandis": 5,
       "minPrice": 2500,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 4100,
+      "volume": 6,
+      "mandis": 6,
+      "minPrice": 2000,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Hissar",
       "nameHi": "Hissar",
-      "avgPrice": 4563,
-      "records": 28
+      "avgPrice": 4548,
+      "records": 30
     },
     {
       "district": "Kurukshetra",
@@ -330,19 +330,25 @@
     {
       "district": "Sonipat",
       "nameHi": "Sonipat",
-      "avgPrice": 4441,
-      "records": 22
+      "avgPrice": 4378,
+      "records": 23
     },
     {
       "district": "Jhajar",
       "nameHi": "Jhajar",
-      "avgPrice": 7464,
-      "records": 14
+      "avgPrice": 7287,
+      "records": 15
     },
     {
       "district": "Ambala",
       "nameHi": "Ambala",
       "avgPrice": 3433,
+      "records": 3
+    },
+    {
+      "district": "Mahendragarh-Narnaul",
+      "nameHi": "Mahendragarh-Narnaul",
+      "avgPrice": 3500,
       "records": 3
     },
     {
@@ -352,16 +358,10 @@
       "records": 2
     },
     {
-      "district": "Mahendragarh-Narnaul",
-      "nameHi": "Mahendragarh-Narnaul",
-      "avgPrice": 3500,
-      "records": 2
-    },
-    {
       "district": "Faridabad",
       "nameHi": "Faridabad",
-      "avgPrice": 6000,
-      "records": 1
+      "avgPrice": 5000,
+      "records": 2
     }
   ]
 }

@@ -73,9 +73,9 @@
     {
       "month": "11",
       "date": "2026-11",
-      "market": 3283,
-      "volume": 8,
-      "days": 5,
+      "market": 3333,
+      "volume": 10,
+      "days": 6,
       "mandis": 2
     }
   ],
@@ -1095,21 +1095,29 @@
       "mandis": 2,
       "minPrice": 2000,
       "maxPrice": 5000
+    },
+    {
+      "date": "2026-11-12",
+      "market": 3500,
+      "volume": 2,
+      "mandis": 2,
+      "minPrice": 2500,
+      "maxPrice": 5000
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Kamrup",
       "nameHi": "Kamrup",
-      "avgPrice": 2497,
-      "records": 154
+      "avgPrice": 2500,
+      "records": 155
     },
     {
       "district": "Tinsukia",
       "nameHi": "Tinsukia",
-      "avgPrice": 3817,
-      "records": 52
+      "avgPrice": 3821,
+      "records": 53
     }
   ]
 }

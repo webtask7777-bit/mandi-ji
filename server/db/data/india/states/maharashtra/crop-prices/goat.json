@@ -69,6 +69,14 @@
       "volume": 7,
       "days": 6,
       "mandis": 4
+    },
+    {
+      "month": "11",
+      "date": "2026-11",
+      "market": 5500,
+      "volume": 1,
+      "days": 1,
+      "mandis": 1
     }
   ],
   "dailyHistory": [
@@ -519,15 +527,23 @@
       "mandis": 1,
       "minPrice": 2300,
       "maxPrice": 11500
+    },
+    {
+      "date": "2026-11-12",
+      "market": 5500,
+      "volume": 1,
+      "mandis": 1,
+      "minPrice": 3000,
+      "maxPrice": 11500
     }
   ],
-  "lastUpdated": "2026-11-11T15:07:38.554Z",
+  "lastUpdated": "2026-11-12T09:13:16.710Z",
   "districtBreakdown": [
     {
       "district": "Sangli",
       "nameHi": "Sangli",
-      "avgPrice": 7192,
-      "records": 49
+      "avgPrice": 7158,
+      "records": 50
     },
     {
       "district": "Pune",
