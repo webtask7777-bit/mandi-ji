@@ -2,11 +2,11 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { readJSON } from '../server/db/json-store.js';
 import { resolveSiteOrigin } from '../shared/siteOrigin.js';
+import { isPrivatePath } from '../shared/robotsPolicy.js';
 
 const generated = path.join(process.cwd(), 'server/generated/seo');
 const shell = () => readFileSync(path.join(generated, 'shell.html'), 'utf8');
 const notFound = () => readFileSync(path.join(generated, '404.html'), 'utf8');
-const PRIVATE_PATH = /^\/(?:login|register|my-listings|my-eway-bills|eway-bill\/new|listing\/new)$|^\/admin(?:\/|$)/;
 const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 
 export default function page(req, res) {
@@ -23,7 +23,7 @@ export default function page(req, res) {
     res.setHeader('Location', '/');
     return res.status(308).send('');
   }
-  if (PRIVATE_PATH.test(requested)) return res.status(200).send(shell());
+  if (isPrivatePath(requested)) return res.status(200).send(shell());
   const listing = requested.match(/^\/listing\/([^/]+)$/);
   if (listing) {
     const item = readJSON('listings.json').find(item => item.id === listing[1]);
