@@ -13,9 +13,14 @@ const isFinalSnapshot = (path, entry) => !!entry && !entry.partial && !entry.omi
 export function useApi(path) {
   const snapshot = useApiSnapshot();
   if (path) snapshot.collect?.(path);
-  const request = useMemo(() => ({ path }), [path]);
+  // `reload` asks again after a failure; each attempt is a new request object.
+  // Retries belong to one path: another path starts again from its snapshot.
+  const [retry, setRetry] = useState({ path: null, n: 0 });
+  const attempt = retry.path === path ? retry.n : 0;
+  const request = useMemo(() => ({ path, attempt }), [path, attempt]);
+  const reload = useCallback(() => setRetry(previous => ({ path, n: (previous.path === path ? previous.n : 0) + 1 })), [path]);
   const initial = path ? snapshot.responses?.[path] : undefined;
-  const snapshotIsFinal = isFinalSnapshot(path, initial);
+  const snapshotIsFinal = isFinalSnapshot(path, initial) && attempt === 0;
   // Rows left out of the snapshot are fetched only once a reader asks for them.
   const [fullRequested, setFullRequested] = useState(null);
   const awaitingFull = Boolean(initial?.omittedRows) && fullRequested !== path;
@@ -35,10 +40,10 @@ export function useApi(path) {
   // A new key must never render the previous crop/state while its effect is pending.
   if (!path) return { data: null, loading: false, error: null };
   if (response.request !== request) {
-    if (initial) return { data: initial.data, loading: false, error: initial.error ? new Error(initial.error) : null, omittedRows, loadingFull: omittedRows > 0 && !awaitingFull, loadFull };
-    return { data: null, loading: true, error: null };
+    if (initial && (snapshotIsFinal || attempt === 0)) return { data: initial.data, loading: false, error: initial.error ? new Error(initial.error) : null, omittedRows, loadingFull: omittedRows > 0 && !awaitingFull, loadFull, reload };
+    return { data: initial?.data ?? null, loading: initial?.data == null, error: null, omittedRows, loadingFull: omittedRows > 0, loadFull, reload };
   }
   // A failed refresh keeps the dated snapshot; `stale` reports the failure separately.
-  if (response.error && initial?.data != null && !initial.error) return { data: initial.data, loading: false, error: null, stale: true, omittedRows, loadFull };
-  return { data: response.data, loading: false, error: response.error };
+  if (response.error && initial?.data != null && !initial.error) return { data: initial.data, loading: false, error: null, stale: true, omittedRows, loadFull, reload };
+  return { data: response.data, loading: false, error: response.error, reload };
 }

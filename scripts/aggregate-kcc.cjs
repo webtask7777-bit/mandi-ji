@@ -146,14 +146,17 @@ function addQa(store, key, row, month) {
   }
 }
 
+// scripts/fetch-kcc.cjs ends a clipped answer with "…"; the rest is not in the stored months.
+const isClipped = text => /…$/.test(String(text || '')) && String(text).length >= 699;
 const sameAdvice = (a, b) => normalizeText(a).slice(0, 160) === normalizeText(b).slice(0, 160);
 const dedupeAdvice = list => list.filter((item, index) => list.findIndex(other => sameAdvice(other.a, item.a)) === index);
 
 function bestQa(groups) {
   if (!groups) return [];
   return dedupeAdvice([...groups.values()].sort((a, b) => b.n - a.n).slice(0, QA_PER_TOPIC * 3).map(group => {
-    const answer = [...group.answers.values()].sort((a, b) => b.n - a.n || b.a.length - a.a.length)[0];
-    return answer ? { q: group.q, a: answer.a, asked: group.n, months: group.months, answeredOn: answer.last } : null;
+    // Among equally common answers a complete one beats one the fetcher clipped, then the longer.
+    const answer = [...group.answers.values()].sort((a, b) => b.n - a.n || isClipped(a.a) - isClipped(b.a) || b.a.length - a.a.length)[0];
+    return answer ? { q: group.q, a: answer.a, asked: group.n, months: group.months, answeredOn: answer.last, ...(isClipped(answer.a) ? { clipped: true } : {}) } : null;
   }).filter(Boolean)).slice(0, QA_PER_TOPIC);
 }
 
@@ -337,7 +340,8 @@ async function main() {
       const stateEntry = inc(states, state.id, () => ({ state, scope: newScope(slots), districts: new Map() }));
       addToScope(stateEntry.scope, slot, cls);
       const districtId = slug(row.d);
-      if (!districtId) continue;
+      // KCC fills an unknown district with "0", "NA" and the like: such calls count for the state only.
+      if (!districtId || !/[a-z]/.test(districtId) || /^(na|n-a|null|none|others?|unknown|not-available)$/.test(districtId)) continue;
       const district = inc(stateEntry.districts, districtId, () => ({ name: titleCase(row.d), scope: newScope(slots) }));
       addToScope(district.scope, slot, cls);
 
@@ -411,6 +415,8 @@ async function main() {
     sourceUrl: 'https://www.data.gov.in/resource/kisan-call-centre-kcc-transcripts-farmers-queries-answers',
     resourceId: RESOURCE_ID,
     coverage: { from: coveredMonths[0], to: coveredMonths.at(-1), oldestCall: oldestCall.slice(0, 10), newestCall: storedNewest.slice(0, 10), sourceNewestCall: newestDate, months: coveredMonths.length },
+    // When the fetcher last asked data.gov.in for new months (it refreshes the recent ones every run).
+    sourceCheckedOn: months.map(meta => String(meta.fetchedAt || '').slice(0, 10)).filter(Boolean).sort().at(-1) || null,
     ...(sampled ? {} : { calls: total }),
     sampled,
     mode: live ? 'live' : 'seasonal',
