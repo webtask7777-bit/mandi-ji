@@ -4,7 +4,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import express from 'express';
 import cms from '../server/routes/cms.js';
-import { listEditorialPosts } from '../server/utils/editorial.js';
+import { listEditorialPosts, validateEditorialPost } from '../server/utils/editorial.js';
 import { blogRedirectPath } from '../shared/blogPagination.js';
 
 const root = process.cwd();
@@ -140,4 +140,37 @@ test('published article HTML exposes its own social thumbnail, source links and 
       }
     }
   }
+});
+
+test('the tomato worksheet reproduces the guide\'s worked example with the shared sale calculator', async () => {
+  const { marketResult, breakEvenPerKg } = await import('../src/utils/twoMarketSale.js');
+  const near = marketResult({ pricePerKg: '14', unsoldKg: '20', freight: '800', handling: '300', crates: '200', other: '200' }, '1000');
+  const far = marketResult({ pricePerKg: '17', unsoldKg: '50', freight: '2200', handling: '500', crates: '300', other: '300' }, '1000');
+  assert.equal(near.status, 'ok');
+  assert.equal(Math.round(near.gross), 13720);
+  assert.equal(Math.round(near.net), 12220);
+  assert.equal(Math.round(far.net), 12850);
+  assert.equal(Math.round(far.net - near.net), 630);
+  assert.equal(Math.round(breakEvenPerKg(near, far) * 100) / 100, 16.34);
+  // The guide's sensitivity line: ₹16 at the far market leaves ₹11,900.
+  assert.equal(Math.round(marketResult({ pricePerKg: '16', unsoldKg: '50', freight: '2200', handling: '500', crates: '300', other: '300' }, '1000').net), 11900);
+  // Blank required costs are missing, not zero; unsold weight above the load is an error.
+  assert.equal(marketResult({ pricePerKg: '14', unsoldKg: '20', freight: '' }, '1000').status, 'incomplete');
+  assert.equal(marketResult({ pricePerKg: '14', unsoldKg: '1200', freight: '0' }, '1000').status, 'invalid');
+  assert.equal(breakEvenPerKg(near, { status: 'incomplete' }), null);
+});
+
+test('a dated article is archived only after its last valid India-time day', async () => {
+  const { isArchivedPost } = await import('../shared/editorialFreshness.js');
+  const post = { validUntil: '2026-11-03' };
+  assert.equal(isArchivedPost(post, Date.parse('2026-11-03T18:00:00Z')), false, '11:30 pm IST on the last day');
+  assert.equal(isArchivedPost(post, Date.parse('2026-11-03T18:31:00Z')), true, 'just after midnight IST');
+  assert.equal(isArchivedPost({}, Date.now()), false);
+  assert.equal(isArchivedPost({ validUntil: '2026-02-30' }, Date.now()), false, 'an impossible day is not a date');
+  const weather = posts.filter(item => item.translationGroup === 'farm-weather-oct31-2026');
+  assert.equal(weather.length, 14);
+  assert.ok(weather.every(item => item.validUntil === '2026-11-03'), 'every language version carries the same validity');
+  const base = posts.find(item => item.slug === 'krishi-mausam-31-october-3-november-2026');
+  assert.ok(validateEditorialPost({ ...base, validUntil: '2026-10-01' }, posts).some(error => /validUntil/.test(error)), 'cannot end before publication');
+  assert.ok(validateEditorialPost({ ...base, inlineTool: 'unknown-tool' }, posts).some(error => /inlineTool/.test(error)));
 });

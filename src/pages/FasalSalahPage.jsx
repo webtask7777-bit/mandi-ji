@@ -1,20 +1,26 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
-import { AlertTriangle, ArrowLeft, ArrowRight, BookOpen, Bug, CalendarDays, ChevronDown, Info, Leaf, MapPin, Phone, Search, Sprout, TrendingUp } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, ArrowRight, BookOpen, Bug, CalendarDays, ChevronDown, Info, Leaf, MapPin, Phone, RotateCw, Search, Sprout, TrendingUp } from 'lucide-react';
 import SEO, { SITE_URL } from '../components/SEO';
 import Brand from '../components/Brand';
 import { useApi } from '../hooks/useApi';
 import { isKccPageIndexable } from '../../shared/kccIndexability.js';
+import { DISTRICT_ALIASES, districtNameHi, isRealDistrict } from '../../shared/kccPlaceNames.js';
 import { cropDetailPath } from '../utils/cropUrls';
 import {
-  FAMILY_LABEL, KIND_LABEL, MONTHS_HI, MONTHS_SHORT_HI, currentMonthIST, dateHi, liftLabel, monthYearHi,
-  nextMonth, parseMonth, perHundred, risingNext, salahPath, scriptLang, searchPlaces,
+  FAMILY_LABEL, KIND_LABEL, MONTHS_HI, MONTHS_SHORT_HI, answerCautions, currentMonthIST, dateHi, findPlaces, liftLabel, monthYearHi,
+  nextMonth, parseMonth, perHundred, risingNext, salahPath, scriptLang, topicStrength,
 } from '../utils/kccAdvice';
 import '../styles/detail.css';
 import '../styles/fasal-salah.css';
 
 const KIND_ICON = { keet: Bug, rog: Leaf, poshan: Sprout, kharpatwar: Leaf, kheti: Sprout };
 const number = n => Number(n || 0).toLocaleString('en-IN');
+// A district shows its Hindi name where a verified one exists (shared/kccPlaceNames.js).
+const districtLabel = (stateId, district) => districtNameHi(stateId, district.id) || district.name;
+const withPlaceNames = (stateId, districts) => (districts || []).filter(isRealDistrict).map(district => ({
+  ...district, nameHi: districtNameHi(stateId, district.id), aliases: DISTRICT_ALIASES[`${stateId}/${district.id}`],
+}));
 
 function SourceNote({ meta, placeName, calls }) {
   if (!meta) return null;
@@ -27,7 +33,8 @@ function SourceNote({ meta, placeName, calls }) {
         {calls && placeName
           ? `किसान कॉल सेंटर (1800-180-1551) पर ${placeName} के किसानों के ${number(calls)} सवालों से बना (${range})।`
           : `किसान कॉल सेंटर (1800-180-1551) पर किसानों के ${meta.calls ? `${number(meta.calls)} ` : ''}सवालों से बना (${range})।`}
-        {meta.mode !== 'live' && ` सरकारी स्रोत में ${dateHi(meta.coverage.sourceNewestCall)} के बाद के सवाल अभी नहीं आए हैं; नए सवाल आते ही यहाँ ताज़ा बदलाव भी दिखेंगे।`}
+        {meta.mode !== 'live' && ` हमारे पास मौजूद डेटा में आख़िरी सवाल ${dateHi(meta.coverage.sourceNewestCall || meta.coverage.newestCall)} का है${meta.sourceCheckedOn ? `; सरकारी स्रोत ${dateHi(meta.sourceCheckedOn)} को जाँचा गया, तब इसके बाद के सवाल वहाँ नहीं थे` : ''}। नए सवाल जुड़ने पर यहाँ ताज़ा बदलाव भी दिखेंगे।`}
+        {meta.builtOn && ` सारांश ${dateHi(meta.builtOn)} को बना।`}
         {meta.sampled && ' अभी केवल नमूना डेटा जुड़ा है — प्रतिशत अनुमान हैं।'}
         {' '}<a href={meta.sourceUrl} target="_blank" rel="noopener noreferrer">स्रोत: data.gov.in<span className="sr-only"> (नई टैब में खुलेगा)</span></a>
       </p>
@@ -51,23 +58,47 @@ function MonthPicker({ month, onChange }) {
   </div>;
 }
 
-function Answers({ items, scopeHi }) {
-  if (items === null) return <p className="sb-salah-muted" role="status">जवाब लोड हो रहे हैं…</p>;
-  if (!items?.length) return <p className="sb-salah-muted">इस समस्या का लिखित जवाब इस क्षेत्र के रिकॉर्ड में नहीं मिला।</p>;
-  return <ol className="sb-salah-answers">
-    {items.map(item => <li key={`${item.q}-${item.answeredOn}`}>
-      <p className="sb-salah-question"><span>सवाल</span><bdi lang={scriptLang(item.q)}>{item.q}</bdi></p>
-      <p className="sb-salah-answer"><span>KCC का जवाब</span><bdi lang={scriptLang(item.a)}>{item.a}</bdi></p>
-      <small>{item.asked > 1 ? `${item.stateHi || scopeHi ? `${item.stateHi || scopeHi} में ` : ''}${number(item.asked)} बार पूछा गया · ` : item.stateHi ? `${item.stateHi} · ` : ''}{item.answeredOn ? `जवाब की तारीख ${dateHi(item.answeredOn)}` : ''}</small>
-    </li>)}
-  </ol>;
+function AnswerCautions({ item }) {
+  const { clipped, dose, perContainerOnly } = answerCautions(item);
+  if (!clipped && !dose) return null;
+  return <p className="sb-salah-caution" role="note">
+    <AlertTriangle size={14} aria-hidden="true" />
+    <span>
+      {clipped && 'यह जवाब हमारे रिकॉर्ड में अधूरा है — आगे का हिस्सा (मात्रा, समय या किन किस्मों में न डालें) छूटा हो सकता है। '}
+      {perContainerOnly && 'मात्रा "प्रति पंप/टंकी" लिखी है, पर टंकी कितने लीटर की है यह नहीं लिखा। '}
+      {dose && 'यह पुराना जवाब है, सीधे इस्तेमाल का नुस्खा नहीं: '}
+      {(clipped || dose) && <>मात्रा और तरीके की पुष्टि <a href="tel:18001801551">1800-180-1551</a>, कृषि विस्तार अधिकारी या KVK से करें; दवा हो तो उसका लेबल पढ़ें।</>}
+    </span>
+  </p>;
 }
 
-function ProblemCard({ rank, item, topic, qa, stateId, scopeHi }) {
+function Answers({ items, error, onRetry, scopeHi, scopeNote }) {
+  if (error) return <div className="sb-salah-muted" role="alert">
+    <p>जवाब अभी लोड नहीं हो पाए। इसका मतलब यह नहीं कि रिकॉर्ड में जवाब नहीं है।</p>
+    <button type="button" className="sb-detail-text-link" onClick={onRetry}><RotateCw size={15} aria-hidden="true" /> फिर कोशिश करें</button>
+  </div>;
+  if (items === null) return <p className="sb-salah-muted" role="status">जवाब लोड हो रहे हैं…</p>;
+  if (!items?.length) return <p className="sb-salah-muted">इस समस्या का लिखित जवाब इस क्षेत्र के रिकॉर्ड में नहीं मिला।</p>;
+  return <>
+    {scopeNote && <p className="sb-salah-scope">{scopeNote}</p>}
+    <ol className="sb-salah-answers">
+      {items.map(item => <li key={`${item.q}-${item.answeredOn}`}>
+        <p className="sb-salah-question"><span>सवाल</span><bdi lang={scriptLang(item.q)}>{item.q}</bdi></p>
+        <p className="sb-salah-answer"><span>KCC का जवाब</span><bdi lang={scriptLang(item.a)}>{item.a}</bdi></p>
+        <AnswerCautions item={item} />
+        <small>{item.asked > 1 ? `${item.stateHi || scopeHi ? `${item.stateHi || scopeHi} में ` : ''}${number(item.asked)} बार पूछा गया · ` : item.stateHi ? `${item.stateHi} · ` : ''}{item.answeredOn ? `जवाब की तारीख ${dateHi(item.answeredOn)}` : ''}</small>
+      </li>)}
+    </ol>
+  </>;
+}
+
+function ProblemCard({ rank, item, topic, qa, qaError, onRetry, stateId, scopeHi, scopeNote, monthData, maxShare }) {
   const [open, setOpen] = useState(rank === 1);
   if (!topic) return null;
   const Icon = KIND_ICON[topic.kind] || Leaf;
-  const lift = liftLabel(item.lift);
+  const limited = topicStrength(item, monthData) === 'limited';
+  // Few calls: no "N गुना" claim, which a handful of calls can make look large.
+  const lift = limited ? null : liftLabel(item.lift);
   const panelId = `salah-answers-${item.key.replace(/[^a-z0-9-]/gi, '-')}`;
   return <li className={`sb-salah-problem sb-salah-kind-${topic.kind}`}>
     <div className="sb-salah-problem__head">
@@ -75,15 +106,17 @@ function ProblemCard({ rank, item, topic, qa, stateId, scopeHi }) {
       <div className="sb-salah-problem__title">
         <span className="sb-salah-kind"><Icon size={14} aria-hidden="true" />{KIND_LABEL[topic.kind]}</span>
         <h3>{topic.cropHi} · {topic.problemHi}</h3>
-        <div className="sb-salah-meter" aria-hidden="true"><span style={{ width: `${Math.min(100, item.share * 2.5)}%` }} /></div>
+        {/* Bar length is relative to the month's most asked problem (see the note above the list). */}
+        <div className="sb-salah-meter" aria-hidden="true"><span style={{ width: `${maxShare > 0 ? Math.max(4, Math.round((item.share / maxShare) * 100)) : 0}%` }} /></div>
         <p>फसल से जुड़े हर {perHundred(item.share)} सवाल{item.callsPerYear ? ` · हर साल इस महीने लगभग ${number(item.callsPerYear)} फ़ोन` : ''}{lift ? <strong> · {lift}</strong> : null}</p>
+        {limited && <p className="sb-salah-limited">कम सवाल: यह पैटर्न कुछ ही फ़ोन से बना है, इसलिए कमज़ोर संकेत है।</p>}
       </div>
     </div>
     <button type="button" className="sb-salah-toggle" aria-expanded={open} aria-controls={panelId} onClick={() => setOpen(value => !value)}>
       KCC की सलाह <ChevronDown size={16} aria-hidden="true" />
     </button>
     <div id={panelId} hidden={!open}>
-      <Answers items={qa} scopeHi={scopeHi} />
+      <Answers items={qa} error={qaError} onRetry={onRetry} scopeHi={scopeHi} scopeNote={scopeNote} />
       {topic.mandiCrop && <Link className="sb-detail-text-link" to={cropDetailPath(topic.mandiCrop, stateId || 'all')}>{topic.cropHi} का मंडी भाव देखें <ArrowRight size={15} aria-hidden="true" /></Link>}
     </div>
   </li>;
@@ -155,15 +188,19 @@ function Alerts({ alerts, topics }) {
   </section>;
 }
 
-function PlaceFinder({ states }) {
+function PlaceFinder({ states, month, showStateLink }) {
   const [query, setQuery] = useState('');
-  const matches = useMemo(() => searchPlaces(states, query), [query, states]);
+  const { matches, total, similar, state } = useMemo(() => findPlaces(states, query), [query, states]);
+  const searched = query.trim().length >= 2;
+  const status = !searched ? '' : !total ? 'कोई ज़िला नहीं मिला'
+    : `${total > matches.length ? `${number(total)} में से ${matches.length}` : number(total)} ${similar ? 'मिलते-जुलते नाम' : total === 1 ? 'ज़िला मिला' : 'ज़िले मिले'}`;
   return <div className="sb-salah-finder">
     <label htmlFor="salah-district-search">अपना ज़िला खोजें</label>
-    <div className="sb-salah-finder__input"><Search size={16} aria-hidden="true" /><input id="salah-district-search" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="जैसे Raipur, Nashik, Ludhiana" autoComplete="off" aria-describedby="salah-district-status" /></div>
-    <p id="salah-district-status" className="sr-only" role="status">{query.trim().length >= 2 ? (matches.length ? `${matches.length} ज़िले मिले` : 'कोई ज़िला नहीं मिला') : ''}</p>
-    {matches.length > 0 && <ul className="sb-salah-finder__results">{matches.map(({ state, district }) => <li key={`${state.id}/${district.id}`}><Link to={salahPath(state.id, district.id)}><MapPin size={14} aria-hidden="true" />{district.name}<small>{state.nameHi}</small></Link></li>)}</ul>}
-    {query.trim().length >= 2 && !matches.length && <p className="sb-salah-muted">इस नाम का ज़िला नहीं मिला। अंग्रेज़ी नाम से खोजें।</p>}
+    <div className="sb-salah-finder__input"><Search size={16} aria-hidden="true" /><input id="salah-district-search" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="जैसे रायपुर, Nashik, लुधियाना" autoComplete="off" aria-describedby="salah-district-status" /></div>
+    <p id="salah-district-status" className={searched && total ? 'sb-salah-finder__count' : 'sr-only'} role="status">{similar ? `ठीक यही नाम नहीं मिला · ${status}` : status}</p>
+    {matches.length > 0 && <ul className="sb-salah-finder__results">{matches.map(({ state: s, district }) => <li key={`${s.id}/${district.id}`}><Link to={salahPath(s.id, district.id, month)}><MapPin size={14} aria-hidden="true" /><span>{district.nameHi || district.name}{district.nameHi && <span className="sb-salah-finder__alt" lang="en"> {district.name}</span>}</span><small>{s.nameHi}</small></Link></li>)}</ul>}
+    {searched && total > matches.length && state && showStateLink && <Link className="sb-detail-text-link" to={salahPath(state.id, null, month)}>{state.nameHi} के सभी ज़िले <ArrowRight size={15} aria-hidden="true" /></Link>}
+    {searched && !total && <p className="sb-salah-muted">इस नाम का ज़िला हमारे डेटा में नहीं मिला। नाम की वर्तनी बदलकर देखें, या ऊपर से अपना राज्य चुनें — कम सवालों वाले ज़िलों की सलाह राज्य के पेज पर है।</p>}
   </div>;
 }
 
@@ -173,14 +210,19 @@ export default function FasalSalahPage() {
   const month = parseMonth(searchParams.get('mahina'), currentMonthIST());
   const level = districtId ? 'district' : stateId ? 'state' : 'india';
   const apiPath = level === 'district' ? `/kcc/districts/${encodeURIComponent(stateId)}/${encodeURIComponent(districtId)}` : level === 'state' ? `/kcc/states/${encodeURIComponent(stateId)}` : '/kcc';
-  const { data, loading, error, omittedRows, loadFull } = useApi(apiPath);
+  const { data, loading, error, omittedRows, loadFull, stale, reload } = useApi(apiPath);
   // The prerendered page holds this month and the next; another month needs the full summary.
   useEffect(() => { if (omittedRows && !data?.months?.[month - 1]) loadFull?.(); }, [omittedRows, data, month, loadFull]);
+  // Until the full summary arrives, a month left out of the snapshot is unknown, not empty.
+  const monthPending = Boolean(data && omittedRows && !data.months?.[month - 1]);
+  const monthFailed = monthPending && stale;
   // Answers come per month, so a page carries only the chosen month's.
-  const { data: answers, loading: answersLoading } = useApi(data ? `${apiPath}/qa?mahina=${month}` : null);
+  const { data: answers, loading: answersLoading, error: answersError, reload: reloadAnswers } = useApi(data ? `${apiPath}/qa?mahina=${month}` : null);
   const meta = data?.meta;
   // Search lists the page's own places: every state on the India page, the state's districts on a state page.
-  const places = level === 'india' ? data?.states : level === 'state' && data?.districts ? [{ id: stateId, name: data.name, nameHi: data.nameHi, districts: data.districts.filter(d => d.published) }] : null;
+  const places = useMemo(() => (level === 'india' ? (data?.states || []).map(state => ({ ...state, districts: withPlaceNames(state.id, state.districts) }))
+    : level === 'state' && data?.districts ? [{ id: stateId, name: data.name, nameHi: data.nameHi, districts: withPlaceNames(stateId, data.districts.filter(d => d.published)) }] : null), [level, data, stateId]);
+  const realDistricts = (data?.districts || []).filter(isRealDistrict);
 
   const setMonth = value => setSearchParams(previous => {
     const next = new URLSearchParams(previous);
@@ -188,13 +230,17 @@ export default function FasalSalahPage() {
     return next;
   }, { replace: true });
 
-  const placeName = level === 'district' ? data?.name : level === 'state' ? data?.nameHi : 'भारत';
+  const placeName = level === 'district' ? (data ? districtLabel(stateId, data) : null) : level === 'state' ? data?.nameHi : 'भारत';
   const stateNameHi = level === 'district' ? data?.state?.nameHi : data?.nameHi;
   const monthData = data?.months?.[month - 1];
   const top = monthData?.top || [];
   // The aggregator lists clearly growing problems; older summaries without it fall back to the top lists.
   const upcoming = monthData?.rising ?? risingNext(data?.months, month);
   const path = salahPath(stateId, districtId);
+  // Links to other places keep the month on screen (FSA-004); the canonical `path` never carries it.
+  const go = (state, district) => salahPath(state, district, month);
+  const maxShare = Math.max(0, ...top.map(item => item.share || 0));
+  const answerScope = level === 'district' && stateNameHi ? `ये जवाब पूरे ${stateNameHi} के रिकॉर्ड से हैं, सिर्फ़ ${placeName} के नहीं।` : null;
   // Same-named districts exist in several states (Aurangabad, Bilaspur, Raigarh): the state goes in the title.
   const placeLabel = level === 'district' && stateNameHi ? `${placeName} (${stateNameHi})` : placeName;
   const title = placeName ? `${placeLabel}: ${MONTHS_HI[month - 1]} की फसल समस्याएँ व KCC सलाह` : 'फसल सलाह: किसान कॉल सेंटर के सवाल-जवाब';
@@ -203,6 +249,7 @@ export default function FasalSalahPage() {
     ? `${placeName} के किसान ${MONTHS_HI[month - 1]} में किसान कॉल सेंटर से सबसे ज़्यादा ${firstTopic ? `${firstTopic.cropHi} में ${firstTopic.problemHi}` : 'फसल की समस्याओं'} के बारे में पूछते हैं। हर समस्या पर KCC की सलाह और अगले महीने की तैयारी।`
     : 'किसान कॉल सेंटर के लाखों सवालों से जानें कि आपके ज़िले में इस महीने कौन-से कीट, रोग और खाद की समस्याएँ आती हैं — और KCC ने क्या सलाह दी।';
   const breadcrumbs = [{ name: 'सही भाव', path: '/' }, { name: 'फसल सलाह', path: '/fasal-salah' }, stateId && { name: stateNameHi || stateId, path: salahPath(stateId) }, districtId && { name: placeName || districtId, path }].filter(Boolean);
+  const crumbLink = crumb => (crumb.path === '/' ? '/' : `${crumb.path}${month === currentMonthIST() ? '' : `?mahina=${month}`}`);
   const notFound = error && /404/.test(String(error.message || error.status || ''));
 
   return <div className="sb-detail-page sb-salah-page">
@@ -210,12 +257,12 @@ export default function FasalSalahPage() {
       structuredData={{ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: breadcrumbs.map((crumb, i) => ({ '@type': 'ListItem', position: i + 1, name: crumb.name, item: `${SITE_URL}${crumb.path}` })) }} />
     <header className="sb-detail-header"><div className="sb-detail-header__inner">
       <Link to="/" aria-label="सही भाव होम"><Brand /></Link>
-      <Link to={level === 'district' ? salahPath(stateId) : level === 'state' ? '/fasal-salah' : '/'} className="sb-detail-back"><ArrowLeft size={16} aria-hidden="true" /> {level === 'district' ? `${stateNameHi || 'राज्य'} की फसल सलाह` : level === 'state' ? 'पूरे भारत की फसल सलाह' : 'मंडी भाव'}</Link>
+      <Link to={level === 'district' ? go(stateId) : level === 'state' ? go() : '/'} className="sb-detail-back"><ArrowLeft size={16} aria-hidden="true" /> {level === 'district' ? `${stateNameHi || 'राज्य'} की फसल सलाह` : level === 'state' ? 'पूरे भारत की फसल सलाह' : 'मंडी भाव'}</Link>
     </div></header>
     <main className="sb-detail-main" id="main-content">
       <nav className="sb-detail-breadcrumb" aria-label="पृष्ठ पथ">
         <Link to="/">सही भाव</Link>
-        {breadcrumbs.slice(1).map((crumb, i, list) => <span key={crumb.path} className="sb-salah-crumb"><span aria-hidden="true">/</span>{i === list.length - 1 ? <span aria-current="page">{crumb.name}</span> : <Link to={crumb.path}>{crumb.name}</Link>}</span>)}
+        {breadcrumbs.slice(1).map((crumb, i, list) => <span key={crumb.path} className="sb-salah-crumb"><span aria-hidden="true">/</span>{i === list.length - 1 ? <span aria-current="page">{crumb.name}</span> : <Link to={crumbLink(crumb)}>{crumb.name}</Link>}</span>)}
       </nav>
 
       <section className="sb-salah-hero">
@@ -224,14 +271,14 @@ export default function FasalSalahPage() {
           <h1>{placeName ? <>{placeLabel} में <span>{MONTHS_HI[month - 1]}</span> की आम फसल समस्याएँ</> : 'फसल सलाह'}</h1>
           <p>पिछले सालों में इसी महीने किसानों ने किसान कॉल सेंटर (KCC) से क्या पूछा — और KCC के कृषि सलाहकारों ने क्या जवाब दिया। समस्या आने से पहले तैयारी करें।</p>
         </div>
-        {level !== 'district' && places && <PlaceFinder states={places} />}
+        {level !== 'district' && places && <PlaceFinder states={places} month={month} showStateLink={level === 'india'} />}
       </section>
 
       <MonthPicker month={month} onChange={setMonth} />
-      <p className="sr-only" role="status">{data ? `${MONTHS_HI[month - 1]}: ${top.length ? `${top.length} आम समस्याएँ` : 'सवाल उपलब्ध नहीं'}` : ''}</p>
+      <p className="sr-only" role="status">{!data ? '' : monthPending ? `${MONTHS_HI[month - 1]} का डेटा लोड हो रहा है` : `${MONTHS_HI[month - 1]}: ${top.length ? `${top.length} आम समस्याएँ` : 'सवाल उपलब्ध नहीं'}`}</p>
 
       {loading && <div className="sb-detail-status" role="status"><Sprout size={24} aria-hidden="true" /><h2>सवालों का सार लोड हो रहा है</h2></div>}
-      {error && <div className="sb-detail-notice" role="alert"><AlertTriangle size={20} aria-hidden="true" /><div><strong>{notFound && level === 'india' ? 'फसल सलाह का डेटा तैयार हो रहा है' : notFound ? 'इस जगह के सवाल उपलब्ध नहीं हैं' : 'फसल सलाह अभी लोड नहीं हो पाई'}</strong><p>{notFound && level === 'india' ? 'किसान कॉल सेंटर के सवाल जोड़े जा रहे हैं। कुछ घंटों बाद फिर देखें। तब तक मंडी भाव देखें।' : notFound ? 'जिन ज़िलों से कम सवाल आए हैं, उनके लिए राज्य की सलाह देखें।' : 'थोड़ी देर बाद पृष्ठ दोबारा खोलें।'}</p></div><Link to={level === 'india' ? '/' : stateId && level === 'district' ? salahPath(stateId) : '/fasal-salah'}>{level === 'india' ? 'मंडी भाव' : stateId && level === 'district' ? 'राज्य की सलाह' : 'सभी राज्य'}</Link></div>}
+      {error && <div className="sb-detail-notice" role="alert"><AlertTriangle size={20} aria-hidden="true" /><div><strong>{notFound && level === 'india' ? 'फसल सलाह का डेटा तैयार हो रहा है' : notFound ? 'इस जगह के सवाल उपलब्ध नहीं हैं' : 'फसल सलाह अभी लोड नहीं हो पाई'}</strong><p>{notFound && level === 'india' ? 'किसान कॉल सेंटर के सवाल जोड़े जा रहे हैं। कुछ घंटों बाद फिर देखें। तब तक मंडी भाव देखें।' : notFound ? 'जिन ज़िलों से कम सवाल आए हैं, उनके लिए राज्य की सलाह देखें।' : 'थोड़ी देर बाद पृष्ठ दोबारा खोलें।'}</p></div><Link to={level === 'india' ? '/' : stateId && level === 'district' ? go(stateId) : go()}>{level === 'india' ? 'मंडी भाव' : stateId && level === 'district' ? 'राज्य की सलाह' : 'सभी राज्य'}</Link></div>}
 
       {data && <>
         <SourceNote meta={meta} placeName={level === 'india' ? null : placeName} calls={level === 'india' ? null : data.calls} />
@@ -242,12 +289,17 @@ export default function FasalSalahPage() {
               <span className="sb-detail-kicker"><Bug size={15} aria-hidden="true" /> {MONTHS_HI[month - 1]} में सबसे ज़्यादा पूछी गई</span>
               <h2 id="salah-top-title">इस महीने की आम समस्याएँ</h2>
             </div>
-            {top.length ? <ol>{top.map((item, i) => <ProblemCard key={item.key} rank={i + 1} item={item} topic={data.topics?.[item.key]} qa={answersLoading ? null : answers?.qa?.[item.key] || []} stateId={level === 'india' ? null : stateId} scopeHi={level === 'india' ? null : stateNameHi} />)}</ol>
+            {monthFailed ? <div className="sb-salah-muted" role="alert"><p>{MONTHS_HI[month - 1]} का डेटा अभी लोड नहीं हो पाया।</p><button type="button" className="sb-detail-text-link" onClick={reload}><RotateCw size={15} aria-hidden="true" /> फिर कोशिश करें</button></div>
+              : monthPending ? <div className="sb-salah-skeleton" role="status" aria-label={`${MONTHS_HI[month - 1]} की समस्याएँ लोड हो रही हैं`}><span /><span /><span /></div>
+              : top.length ? <>
+                <p className="sb-salah-scope">पट्टी की लंबाई: इस महीने सबसे ज़्यादा पूछी गई समस्या के मुकाबले। "100 में N" = {level === 'district' ? 'इस ज़िले' : level === 'state' ? 'इस राज्य' : 'पूरे भारत'} के फसल से जुड़े सवालों में हिस्सा, इसी महीने का सालाना औसत।</p>
+                <ol>{top.map((item, i) => <ProblemCard key={item.key} rank={i + 1} item={item} topic={data.topics?.[item.key]} qa={answersLoading ? null : answers?.qa?.[item.key] || []} qaError={Boolean(answersError)} onRetry={reloadAnswers} stateId={level === 'india' ? null : stateId} scopeHi={level === 'india' ? null : stateNameHi} scopeNote={answerScope} monthData={monthData} maxShare={maxShare} />)}</ol>
+              </>
               : <p className="sb-salah-muted">{monthData && monthData.covered === false ? `${MONTHS_HI[month - 1]} के सवाल अभी नहीं जुड़े हैं। दूसरा महीना चुनें।`
                 : monthData && monthData.enough === false ? `${MONTHS_HI[month - 1]} में यहाँ से फसल के सवाल इतने कम आए कि भरोसेमंद सूची नहीं बनती। ${level === 'district' ? 'राज्य की सलाह देखें या ' : ''}दूसरा महीना चुनें।` : `इस महीने के लिए पर्याप्त सवाल दर्ज नहीं हैं। दूसरा महीना चुनें${level === 'district' ? ' या राज्य की सलाह देखें' : ''}।`}</p>}
           </section>
           <aside className="sb-salah-side">
-            {upcoming.length > 0 && <section className="sb-detail-section sb-salah-next" aria-labelledby="salah-next-title">
+            {!monthPending && upcoming.length > 0 && <section className="sb-detail-section sb-salah-next" aria-labelledby="salah-next-title">
               <span className="sb-detail-kicker"><TrendingUp size={15} aria-hidden="true" /> आगे की तैयारी</span>
               <h2 id="salah-next-title">{MONTHS_HI[nextMonth(month) - 1]} में बढ़ने वाली समस्याएँ</h2>
               <ul>{upcoming.map(item => data.topics?.[item.key] && <li key={item.key}>
@@ -272,18 +324,19 @@ export default function FasalSalahPage() {
         {level === 'india' && data.states?.length > 0 && <section className="sb-detail-section sb-salah-places" aria-labelledby="salah-states-title">
           <span className="sb-detail-kicker"><MapPin size={15} aria-hidden="true" /> अपनी जगह चुनें</span>
           <h2 id="salah-states-title">राज्य के अनुसार फसल सलाह</h2>
-          <div className="sb-salah-links">{data.states.map(state => <Link key={state.id} to={salahPath(state.id)}>{state.nameHi}<small>{state.districts.length ? `${state.districts.length} ${state.districts.length === 1 ? 'ज़िला' : 'ज़िले'}` : 'राज्य स्तर'}</small></Link>)}</div>
+          <p>ज़िलों की संख्या उन ज़िलों की है जिनके लिए हमारे KCC डेटा में पर्याप्त सवाल हैं — यह राज्य के कुल प्रशासनिक ज़िले नहीं।</p>
+          <div className="sb-salah-links">{data.states.map(state => { const count = state.districts.filter(isRealDistrict).length; return <Link key={state.id} to={go(state.id)}>{state.nameHi}<small>{count ? `${count} ${count === 1 ? 'ज़िले' : 'ज़िलों'} का डेटा` : 'राज्य स्तर'}</small></Link>; })}</div>
         </section>}
         {level === 'state' && data.districts?.length > 0 && <section className="sb-detail-section sb-salah-places" aria-labelledby="salah-districts-title">
           <span className="sb-detail-kicker"><MapPin size={15} aria-hidden="true" /> ज़िला चुनें</span>
           <h2 id="salah-districts-title">{data.nameHi} के ज़िले</h2>
-          <div className="sb-salah-links">{data.districts.filter(d => d.published).map(d => <Link key={d.id} to={salahPath(stateId, d.id)}>{d.name}</Link>)}</div>
-          {data.districts.some(d => !d.published) && <p>कम सवालों वाले ज़िले ({data.districts.filter(d => !d.published).length}) अलग से नहीं दिखाए गए; उनके लिए ऊपर की राज्य स्तर की सलाह देखें।</p>}
+          <div className="sb-salah-links">{realDistricts.filter(d => d.published).map(d => <Link key={d.id} to={go(stateId, d.id)}>{districtLabel(stateId, d)}</Link>)}</div>
+          {realDistricts.some(d => !d.published) && <p>कम सवालों वाले ज़िले ({realDistricts.filter(d => !d.published).length}) अलग से नहीं दिखाए गए; उनके लिए ऊपर की राज्य स्तर की सलाह देखें।</p>}
         </section>}
         {level === 'district' && <section className="sb-detail-section sb-salah-places" aria-labelledby="salah-more-title">
           <span className="sb-detail-kicker"><MapPin size={15} aria-hidden="true" /> आस-पास</span>
           <h2 id="salah-more-title">{stateNameHi} के दूसरे ज़िले</h2>
-          <div className="sb-salah-links">{(data.neighbours || []).map(d => <Link key={d.id} to={salahPath(stateId, d.id)}>{d.name}</Link>)}<Link to={salahPath(stateId)}>पूरा {stateNameHi} <ArrowRight size={14} aria-hidden="true" /></Link></div>
+          <div className="sb-salah-links">{(data.neighbours || []).filter(isRealDistrict).map(d => <Link key={d.id} to={go(stateId, d.id)}>{districtLabel(stateId, d)}</Link>)}<Link to={go(stateId)}>पूरा {stateNameHi} <ArrowRight size={14} aria-hidden="true" /></Link></div>
           {data.crops?.length > 0 && <p>मंडी भाव भी देखें: <Link to={`/mandi-bhav/${stateId}`}>{stateNameHi} के मंडी भाव</Link></p>}
         </section>}
       </>}

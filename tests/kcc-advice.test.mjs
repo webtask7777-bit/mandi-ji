@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import express from 'express';
 import { once } from 'node:events';
@@ -190,4 +191,79 @@ test('the deployed API function ships the summaries it reads', async () => {
   const included = vercel.functions['api/index.mjs'].includeFiles;
   assert.match(included, /db\/data\/kcc\/\*\*\/\*\.json/);
   assert.match(included, /db\/data\/price-history\/\*\.json/);
+});
+
+// Fasal Salah audit (21 Nov 2026): search, month links, answer cautions, sample strength.
+const kccFile = name => JSON.parse(readFileSync(new URL(`../server/db/data/kcc/${name}`, import.meta.url), 'utf8'));
+const { DISTRICT_ALIASES, districtNameHi, isRealDistrict } = await import('../shared/kccPlaceNames.js');
+const advice = await import('../src/utils/kccAdvice.js');
+// The India page's search list, as the page builds it.
+const indiaPlaces = () => kccFile('index.json').states.map(state => ({
+  ...state,
+  districts: state.districts.filter(isRealDistrict).map(d => ({ ...d, nameHi: districtNameHi(state.id, d.id), aliases: DISTRICT_ALIASES[`${state.id}/${d.id}`] })),
+}));
+const ids = result => result.matches.map(m => `${m.state.id}/${m.district.id}`);
+
+test('Hindi and English district names find the same district first', () => {
+  const places = indiaPlaces();
+  for (const query of ['रायपुर', 'Raipur', ' raipur ', 'RAIPUR']) assert.equal(ids(advice.findPlaces(places, query))[0], 'chhattisgarh/raipur', query);
+  assert.equal(ids(advice.findPlaces(places, 'कवर्धा'))[0], 'chhattisgarh/kabeerdham', 'old name alias');
+  assert.equal(ids(advice.findPlaces(places, 'Kanker'))[0], 'chhattisgarh/uttar-bastar-kanker', 'a later word of the name');
+  // Districts without a stored Hindi name are still found by transliteration.
+  assert.equal(ids(advice.findPlaces(places, 'लुधियाना'))[0], 'punjab/ludhiana');
+  assert.equal(ids(advice.findPlaces(places, 'नासिक'))[0], 'maharashtra/nasik');
+});
+
+test('an exact district match is not padded with distant look-alikes', () => {
+  const result = advice.findPlaces(indiaPlaces(), 'Raipur');
+  assert.equal(result.similar, false);
+  for (const lookAlike of ['chandrapur', 'chhatarpur', 'dungarpur']) assert.ok(!ids(result).some(id => id.endsWith(`/${lookAlike}`)), lookAlike);
+  // A misspelling with no strong match falls back to flagged look-alikes.
+  const loose = advice.findPlaces([{ id: 's', name: 'S', districts: [{ id: 'chandrapur', name: 'Chandrapur' }] }], 'ndrapr');
+  assert.equal(loose.similar, true);
+});
+
+test('the result count is the total before the list is cut', () => {
+  const cg = kccFile('index.json').states.find(state => state.id === 'chhattisgarh');
+  const result = advice.findPlaces(indiaPlaces(), 'Chhattisgarh');
+  assert.equal(result.matches.length, 12);
+  assert.equal(result.total, cg.districts.filter(isRealDistrict).length);
+  assert.ok(result.total > 12);
+  assert.equal(result.state.id, 'chhattisgarh');
+});
+
+test('place links keep a chosen month; the current month and bad values give the plain path', () => {
+  assert.equal(advice.salahPath('chhattisgarh', null, 8, 11), '/fasal-salah/chhattisgarh?mahina=8');
+  assert.equal(advice.salahPath('chhattisgarh', 'raipur', 8, 11), '/fasal-salah/chhattisgarh/raipur?mahina=8');
+  assert.equal(advice.salahPath(null, null, 8, 11), '/fasal-salah?mahina=8');
+  assert.equal(advice.salahPath('chhattisgarh', null, 11, 11), '/fasal-salah/chhattisgarh');
+  for (const bad of [0, 13, '1x', null, undefined]) assert.equal(advice.salahPath('goa', null, bad, 11), '/fasal-salah/goa');
+});
+
+test('unknown-district placeholders are not districts', () => {
+  for (const id of ['0', '9999', 'na', 'unknown']) assert.equal(isRealDistrict({ id }), false, id);
+  assert.equal(isRealDistrict({ id: 'raipur' }), true);
+  const cg = kccFile('states/chhattisgarh.json');
+  assert.ok(cg.districts.some(d => !isRealDistrict(d)), 'the published data still holds a placeholder the page must skip');
+});
+
+test('clipped or container-only dose answers get cautions; their text is untouched', () => {
+  const haryana = Object.values(kccFile('index.json').qa).flat().find(item => /30-35 दिन बाद/.test(item.a) && /…$/.test(item.a));
+  assert.ok(haryana, 'the audited clipped answer is in the national data');
+  const before = haryana.a;
+  assert.deepEqual(advice.answerCautions(haryana), { clipped: true, dose: true, perContainerOnly: false });
+  assert.equal(haryana.a, before);
+  assert.equal(advice.answerCautions({ a: 'इमिडाक्लोप्रिड 15 ग्राम/पंप की दर से छिड़काव करें' }).perContainerOnly, true);
+  assert.equal(advice.answerCautions({ a: '15 ग्राम प्रति पंप, 15 लीटर पानी में' }).perContainerOnly, false);
+  assert.deepEqual(advice.answerCautions({ a: 'खेत की गहरी जुताई करें।' }), { clipped: false, dose: false, perContainerOnly: false });
+});
+
+test('a problem asked about a few times a year is "limited" and loses its N-times lift', () => {
+  const raipurNov = kccFile('districts/chhattisgarh/raipur.json').months[10];
+  const mustard = raipurNov.top.find(item => item.key === 'mustard~sowing');
+  assert.ok(mustard && mustard.lift >= 3, 'the audited case: a large lift on few calls');
+  assert.equal(advice.topicStrength(mustard, raipurNov), 'limited');
+  assert.equal(advice.topicStrength({ callsPerYear: 40 }, { years: 3 }), 'strong');
+  assert.equal(advice.topicStrength({ callsPerYear: 40 }, { years: 1 }), 'limited');
+  assert.equal(advice.topicStrength({ share: 5 }, { years: 3 }), 'unknown', 'sampled builds have no counts');
 });

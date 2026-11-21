@@ -8,6 +8,8 @@ import LocalWeatherLinks from '@/components/LocalWeatherLinks';
 import { useApi } from '@/hooks/useApi';
 import { getTopicById } from '../../shared/cropTopics';
 import { EDITORIAL_LANGUAGES, getEditorialLabels, editorialDate, editorialCropName, editorialArticleLanguage } from '@/utils/editorialLabels';
+import { isArchivedPost } from '../../shared/editorialFreshness.js';
+import TwoMarketSaleTool from '@/components/TwoMarketSaleTool';
 import { getLanguage, languagePath } from '../../shared/languages';
 import { readLanguageNavigation, buildLanguageChooserUrl, buildLanguageBlogUrl, buildArticleNavigationUrl, localizedToolsUrl, localizedPriceUrl, editorialNavigationUrl } from '@/utils/languageNavigation';
 import Markdown from 'react-markdown';
@@ -55,6 +57,9 @@ export default function BlogArticlePage() {
   const publishedDate = post?.publishedAt ? editorialDate(post.publishedAt, language) : null;
   const updatedDate = post?.updatedAt ? editorialDate(post.updatedAt, language) : null;
   const content = typeof post?.content === 'string' ? post.content : '';
+  // A dated bulletin past its period stays readable with its own dates, marked as an old issue.
+  const archived = isArchivedPost(post);
+  const validUntilDate = archived ? editorialDate(`${post.validUntil}T12:00:00+05:30`, language) : null;
   const tags = Array.isArray(post?.tags) ? post.tags.filter(tag => typeof tag === 'string') : [];
   const takeaways = Array.isArray(post?.takeaways) ? post.takeaways.filter(item => typeof item === 'string') : [];
   const sources = Array.isArray(post?.sources) ? post.sources.filter(source => source.title && safeSourceUrl(source.url)) : [];
@@ -87,12 +92,14 @@ export default function BlogArticlePage() {
             <h1>{post.title}</h1>{post.excerpt && <p className="sb-journal-deck">{post.excerpt}</p>}
             <div className="sb-journal-byline">{post.author && <span><UserRound size={15} aria-hidden="true" /><bdi lang={post.authorType === 'Organization' ? 'hi' : undefined}>{post.author}</bdi></span>}{publishedDate && <span><CalendarDays size={15} aria-hidden="true" />{copy.published}: <time dateTime={post.publishedAt}><bdi>{publishedDate}</bdi></time></span>}{updatedDate && <span>{copy.updated}: <time dateTime={post.updatedAt}><bdi>{updatedDate}</bdi></time></span>}</div>
             {(post.editorialNote || post.authorType === 'Organization') && <p className="sb-journal-editorial-note">{post.editorialNote || copy.editorial} <Link to="/editorial-policy" lang="hi">संपादकीय नीति</Link></p>}
+            {archived && <div className="sb-journal-archived" role="note"><AlertCircle size={18} aria-hidden="true" /><div><strong>{copy.archived.replace('{date}', validUntilDate || post.validUntil)}</strong><p>{copy.archivedHelp}</p></div></div>}
             {translations.length > 1 && <nav className="sb-journal-translations" aria-label={copy.changeLanguage}><span><Languages size={16} aria-hidden="true" />{copy.changeLanguage}</span><div>{translations.map(item => item.language === language ? <span key={item.language} lang={item.language} dir={getLanguage(item.language)?.dir} aria-current="page">{EDITORIAL_LANGUAGES[item.language]}</span> : <Link key={item.language} to={translatedArticlePath(item.slug)} lang={item.language} dir={getLanguage(item.language)?.dir} hrefLang={item.language}>{EDITORIAL_LANGUAGES[item.language]}</Link>)}</div></nav>}
           </header>
           <figure className="sb-journal-cover"><EditorialImage src={post.coverImage} alt={post.coverAlt || post.title} language={language} width="1672" height="941" fetchPriority="high" sizes="(max-width: 1200px) calc(100vw - 32px), 1100px" />{post.coverImage && <figcaption>{post.coverCaption || copy.caption}</figcaption>}</figure>
           <div className="sb-journal-reading-layout"><div className="sb-journal-reading-main">
             {takeaways.length > 0 && <section className="sb-journal-takeaways" aria-labelledby="takeaway-title"><span className="sb-journal-eyebrow">{copy.first}</span><h2 id="takeaway-title">{copy.takeaways}</h2><ul>{takeaways.map((item, index) => <li key={index}><Check size={18} aria-hidden="true" /><span>{item}</span></li>)}</ul></section>}
             <div className="sb-article-content sb-journal-prose"><Markdown remarkPlugins={[remarkGfm]} components={{ h1: ({ children }) => <h2>{children}</h2>, h2: ({ children }) => <h2 id={sectionId(textContent(children))}>{children}</h2>, a: props => <ArticleLink {...props} context={context} language={language} />, table: ({ children }) => <div className="sb-journal-table-scroll" role="region" aria-label={copy.guide} tabIndex={0}><table>{children}</table></div>, code: ({ children }) => <code dir="ltr" style={{ unicodeBidi: 'isolate' }}>{children}</code>, strong: ({ children }) => <strong>{/^[₹\d\s.,()+×÷=−-]+$/.test(textContent(children)) ? <bdi dir="ltr">{children}</bdi> : children}</strong> }}>{content}</Markdown></div>
+            {post.inlineTool === 'two-market-sale' && <TwoMarketSaleTool />}
             {post.weatherRelevant && <LocalWeatherLinks language={language} />}
             {priceLinks.length > 0 && <section className="sb-journal-price-links" aria-labelledby="article-prices-title"><h2 id="article-prices-title">{copy.prices}</h2><p>{copy.pricesHelp}</p><div>{priceLinks.map(item => <Link key={item.path} to={localizedPriceUrl(item.path, context, language) || item.path}>{item.label}<ArrowRight size={16} aria-hidden="true" /></Link>)}</div></section>}
             {sources.length > 0 && <section className="sb-journal-sources" aria-labelledby="sources-title"><span className="sb-journal-eyebrow">{copy.sourcesKicker}</span><h2 id="sources-title">{copy.sources}</h2><p>{copy.sourcesHelp}</p><ol>{sources.map((source, index) => <li key={`${source.url}-${index}`}><a href={safeSourceUrl(source.url)} target="_blank" rel="noopener noreferrer"><bdi>{source.title}</bdi><ExternalLink size={14} aria-hidden="true" /><span className="sb-journal-sr-only"> ({copy.newTab})</span></a>{source.accessedAt && editorialDate(source.accessedAt, language) && <span>{copy.accessed}: <time dateTime={source.accessedAt}><bdi>{editorialDate(source.accessedAt, language)}</bdi></time></span>}</li>)}</ol></section>}

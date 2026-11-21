@@ -34,7 +34,9 @@ const API_KEY = process.env.DATA_GOV_API_KEY || SAMPLE_KEY;
 const REQUEST_LIMIT = 1000;
 const RAW_DIR = path.join(__dirname, '..', '.cache', 'kcc', 'raw');
 const MAX_QUESTION = 300;
-const MAX_ANSWER = 700;
+// Answers carry doses, timings and varieties after the first few hundred characters: a clipped
+// one can read as a complete instruction. Long enough for nearly every KCC answer; the rest end in "…".
+const MAX_ANSWER = 3000;
 
 function parseArgs() {
   const args = process.argv.slice(2);
