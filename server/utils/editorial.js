@@ -1,6 +1,7 @@
 import { CROP_TOPICS, getCropTopic, getTopicById, isProcessedForm } from '../../shared/cropTopics.js';
 import { INDIA_STATES } from '../../src/data/india-states.js';
 import { EDITORIAL_LANGUAGE_CODES } from '../../shared/editorialLanguages.js';
+import { isEditorialDay } from '../../shared/editorialFreshness.js';
 
 export const EDITORIAL_LANGUAGES = EDITORIAL_LANGUAGE_CODES;
 const STATE_IDS = new Set([...INDIA_STATES.map(state => state.id), 'ladakh', 'dadra-daman', 'dadra-nagar-haveli-daman-diu']);
@@ -10,8 +11,10 @@ const EDITABLE_FIELDS = [
   'title', 'slug', 'content', 'excerpt', 'tags', 'status', 'category', 'seoTitle',
   'seoDescription', 'coverImage', 'coverAlt', 'coverCaption', 'takeaways', 'sources',
   'relatedSlugs', 'readingMinutes', 'cropTopics', 'commodityIds', 'stateIds', 'language', 'translationGroup',
-  'regionLabel', 'weatherRelevant', 'editorialNote', 'priceLinks',
+  'regionLabel', 'weatherRelevant', 'editorialNote', 'priceLinks', 'validUntil', 'inlineTool',
 ];
+// Interactive worksheets an article may embed (src/pages/BlogArticlePage.jsx renders them).
+export const INLINE_TOOLS = ['two-market-sale'];
 const hasText = value => typeof value === 'string' && Boolean(value.trim());
 const valueOf = value => typeof value === 'string' ? value.trim() : '';
 const languageOf = post => post.language || 'hi';
@@ -205,6 +208,8 @@ export function validateEditorialPost(post, allPosts = [], { now = Date.now() } 
   if (post.author !== EDITORIAL_AUTHOR || post.authorType !== 'Organization') errors.push('लेख की byline सही भाव संपादकीय संस्था के नाम से होनी चाहिए।');
   if (post.weatherRelevant != null && typeof post.weatherRelevant !== 'boolean') errors.push('weatherRelevant का मान true या false होना चाहिए।');
   for (const field of ['regionLabel', 'editorialNote']) if (post[field] != null && typeof post[field] !== 'string') errors.push(`${field} text होना चाहिए।`);
+  if (post.validUntil != null && (!isEditorialDay(post.validUntil) || (Number.isFinite(dateValue(post.publishedAt)) && post.validUntil < new Date(dateValue(post.publishedAt) + 5.5 * 3600e3).toISOString().slice(0, 10)))) errors.push('validUntil YYYY-MM-DD तारीख हो और प्रकाशन की तारीख से पहले की न हो।');
+  if (post.inlineTool != null && !INLINE_TOOLS.includes(post.inlineTool)) errors.push(`inlineTool इनमें से एक हो: ${INLINE_TOOLS.join(', ')}।`);
   if (post.priceLinks != null && (!Array.isArray(post.priceLinks) || post.priceLinks.some(link => !hasText(link?.label) || !isPricePath(link?.path)))) errors.push('भाव के links में label और मान्य स्थानीय फसल या राज्य पेज का path रखें।');
   for (const field of ['tags', 'takeaways', 'relatedSlugs']) {
     if (post[field] != null && (!Array.isArray(post[field]) || post[field].some(item => !hasText(item)))) errors.push(`${field} में केवल non-empty text की सूची रखें।`);
